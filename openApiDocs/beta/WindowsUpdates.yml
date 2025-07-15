@@ -1434,9 +1434,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembers
       description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience.exclusion_addMember
       parameters:
         - name: deploymentAudience-id
@@ -1481,9 +1478,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembersById
       description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience.exclusion_addMembersGraphBPreId
       parameters:
         - name: deploymentAudience-id
@@ -1532,9 +1526,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembers
       description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience.exclusion_removeMember
       parameters:
         - name: deploymentAudience-id
@@ -1579,9 +1570,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembersById
       description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience.exclusion_removeMembersGraphBPreId
       parameters:
         - name: deploymentAudience-id
@@ -2029,9 +2017,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembers
       description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience.member_addMember
       parameters:
         - name: deploymentAudience-id
@@ -2076,9 +2061,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembersById
       description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience.member_addMembersGraphBPreId
       parameters:
         - name: deploymentAudience-id
@@ -2127,9 +2109,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembers
       description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience.member_removeMember
       parameters:
         - name: deploymentAudience-id
@@ -2174,9 +2153,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembersById
       description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience.member_removeMembersGraphBPreId
       parameters:
         - name: deploymentAudience-id
@@ -2403,9 +2379,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action updateAudience
       description: 'Update the members and exclusions relationships of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it doesn''t already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, the deployment doesn''t apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience_updateAudience
       parameters:
         - name: deploymentAudience-id
@@ -2454,9 +2427,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action updateAudienceById
       description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-beta
       operationId: admin.window.update.deploymentAudience_updateAudienceGraphBPreId
       parameters:
         - name: deploymentAudience-id
@@ -3624,9 +3594,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembers
       description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience.exclusion_addMember
       parameters:
         - name: deployment-id
@@ -3671,9 +3638,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembersById
       description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience.exclusion_addMembersGraphBPreId
       parameters:
         - name: deployment-id
@@ -3722,9 +3686,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembers
       description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience.exclusion_removeMember
       parameters:
         - name: deployment-id
@@ -3769,9 +3730,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembersById
       description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience.exclusion_removeMembersGraphBPreId
       parameters:
         - name: deployment-id
@@ -4216,9 +4174,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembers
       description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience.member_addMember
       parameters:
         - name: deployment-id
@@ -4263,9 +4218,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembersById
       description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience.member_addMembersGraphBPreId
       parameters:
         - name: deployment-id
@@ -4314,9 +4266,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembers
       description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience.member_removeMember
       parameters:
         - name: deployment-id
@@ -4361,9 +4310,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembersById
       description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience.member_removeMembersGraphBPreId
       parameters:
         - name: deployment-id
@@ -4590,9 +4536,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action updateAudience
       description: 'Update the members and exclusions relationships of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it doesn''t already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, the deployment doesn''t apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience_updateAudience
       parameters:
         - name: deployment-id
@@ -4641,9 +4584,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action updateAudienceById
       description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-beta
       operationId: admin.window.update.deployment.audience_updateAudienceGraphBPreId
       parameters:
         - name: deployment-id
@@ -5624,9 +5564,6 @@ paths:
         - admin.adminWindows
       summary: Invoke function getKnownIssuesByTimeRange
       description: Get known issues related to a particular product based on a specified timeframe in the past.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-product-getknownissuesbytimerange?view=graph-rest-beta
       operationId: admin.window.update.product_getKnownIssuesGraphBPreTimeRange
       parameters:
         - name: product-id
@@ -6457,11 +6394,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get resourceConnection
-      description: Read the properties and relationships of a resourceConnection object.
+      summary: Get operationalInsightsConnection
+      description: Read the properties and relationships of an operationalInsightsConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-beta
       operationId: admin.window.update_GetResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6536,11 +6473,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete operationalInsightsConnection
-      description: Delete an operationalInsightsConnection object.
+      summary: Delete resourceConnection
+      description: Delete a resourceConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6662,11 +6599,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get azureADDevice
-      description: Read the properties of an azureADDevice object.
+      summary: Get updatableAsset
+      description: Read the properties and relationships of an updatableAsset object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-beta
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6741,11 +6678,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete azureADDevice
-      description: 'Delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered and automatically unenrolled from management for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.'
+      summary: Delete updatableAssetGroup
+      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6774,9 +6711,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembers
       description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-beta
       operationId: admin.window.update.updatableAsset_addMember
       parameters:
         - name: updatableAsset-id
@@ -6813,9 +6747,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembersById
       description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-beta
       operationId: admin.window.update.updatableAsset_addMembersGraphBPreId
       parameters:
         - name: updatableAsset-id
@@ -6856,9 +6787,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembers
       description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-beta
       operationId: admin.window.update.updatableAsset_removeMember
       parameters:
         - name: updatableAsset-id
@@ -6895,9 +6823,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembersById
       description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-beta
       operationId: admin.window.update.updatableAsset_removeMembersGraphBPreId
       parameters:
         - name: updatableAsset-id
@@ -8174,9 +8099,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembers
       description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience.exclusion_addMember
       parameters:
         - name: updatePolicy-id
@@ -8221,9 +8143,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembersById
       description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience.exclusion_addMembersGraphBPreId
       parameters:
         - name: updatePolicy-id
@@ -8272,9 +8191,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembers
       description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience.exclusion_removeMember
       parameters:
         - name: updatePolicy-id
@@ -8319,9 +8235,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembersById
       description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience.exclusion_removeMembersGraphBPreId
       parameters:
         - name: updatePolicy-id
@@ -8766,9 +8679,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembers
       description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience.member_addMember
       parameters:
         - name: updatePolicy-id
@@ -8813,9 +8723,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action addMembersById
       description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience.member_addMembersGraphBPreId
       parameters:
         - name: updatePolicy-id
@@ -8864,9 +8771,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembers
       description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience.member_removeMember
       parameters:
         - name: updatePolicy-id
@@ -8911,9 +8815,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action removeMembersById
       description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience.member_removeMembersGraphBPreId
       parameters:
         - name: updatePolicy-id
@@ -9140,9 +9041,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action updateAudience
       description: 'Update the members and exclusions relationships of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it doesn''t already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, the deployment doesn''t apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience_updateAudience
       parameters:
         - name: updatePolicy-id
@@ -9191,9 +9089,6 @@ paths:
         - admin.adminWindows
       summary: Invoke action updateAudienceById
       description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy.audience_updateAudienceGraphBPreId
       parameters:
         - name: updatePolicy-id
@@ -9345,11 +9240,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get contentApproval
-      description: Read the properties and relationships of a contentApproval object.
+      summary: Get complianceChange
+      description: Read the properties and relationships of a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -9444,11 +9339,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete contentApproval
-      description: Delete a contentApproval object.
+      summary: Delete complianceChange
+      description: Delete a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_DeleteComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -10166,8 +10061,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.windowsUpdates.deploymentAudienceCollectionResponse:
       title: Collection of deploymentAudience
       type: object
@@ -10664,7 +10559,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -10674,7 +10570,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

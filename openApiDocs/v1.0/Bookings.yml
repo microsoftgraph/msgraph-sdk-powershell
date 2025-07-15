@@ -502,9 +502,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action cancel
       description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: solution.bookingBusiness.appointment_cancel
       parameters:
         - name: bookingBusiness-id
@@ -823,9 +820,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action cancel
       description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: solution.bookingBusiness.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -878,22 +872,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
-        - name: start
-          in: query
-          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
-          required: true
-          style: form
-          explode: false
-          schema:
-            type: string
-        - name: end
-          in: query
-          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
-          required: true
-          style: form
-          explode: false
-          schema:
-            type: string
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
@@ -1423,9 +1401,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action getStaffAvailability
       description: Get the availability information of staff members of a Microsoft Bookings calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
       operationId: solution.bookingBusiness_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
@@ -1483,9 +1458,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action publish
       description: 'Make the scheduling page of a business available to external customers. Set the isPublished property to true, and the publicUrl property to the URL of the scheduling page.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
       operationId: solution.bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
@@ -1508,9 +1480,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action unpublish
       description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and the publicUrl property to null.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
       operationId: solution.bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -5035,9 +5004,6 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke function getByUserIdAndRole
       description: Get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuseridandrole?view=graph-rest-1.0
       operationId: solution.virtualEvent.townhall_getGraphBPreUserIdAndRole
       parameters:
         - name: userId
@@ -5119,9 +5085,6 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke function getByUserRole
       description: Get a list of virtualEventTownhall objects where the signed-in user is either the organizer or a coorganizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuserrole?view=graph-rest-1.0
       operationId: solution.virtualEvent.townhall_getGraphBPreUserRole
       parameters:
         - name: role
@@ -7648,9 +7611,6 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke function getByUserIdAndRole
       description: Get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuseridandrole?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar_getGraphBPreUserIdAndRole
       parameters:
         - name: userId
@@ -7732,9 +7692,6 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke function getByUserRole
       description: Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar_getGraphBPreUserRole
       parameters:
         - name: role
@@ -8360,6 +8317,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             startDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            videoOnDemandWebUrl:
+              type: string
+              description: The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.meetingAttendanceReport:
@@ -8550,7 +8511,7 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
@@ -9327,8 +9288,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.bookingCustomerBaseCollectionResponse:
       title: Collection of bookingCustomerBase
       type: object
@@ -10991,7 +10952,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -11001,7 +10963,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

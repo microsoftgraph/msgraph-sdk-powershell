@@ -1423,9 +1423,6 @@ paths:
         - print.printer
       summary: Invoke action createUploadSession
       description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
       operationId: print.printer.job.document_createUploadSession
       parameters:
         - name: printer-id
@@ -1510,9 +1507,6 @@ paths:
         - print.printer
       summary: Invoke action abort
       description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
       operationId: print.printer.job_abort
       parameters:
         - name: printer-id
@@ -1556,9 +1550,6 @@ paths:
         - print.printer
       summary: Invoke action cancel
       description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
       operationId: print.printer.job_cancel
       parameters:
         - name: printer-id
@@ -1589,9 +1580,6 @@ paths:
         - print.printer
       summary: Invoke action redirect
       description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
       operationId: print.printer.job_redirect
       parameters:
         - name: printer-id
@@ -1640,9 +1628,6 @@ paths:
         - print.printer
       summary: Invoke action start
       description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
       operationId: print.printer.job_start
       parameters:
         - name: printer-id
@@ -2111,9 +2096,6 @@ paths:
         - print.printer
       summary: Invoke action restoreFactoryDefaults
       description: Restore a printer's default settings to the values specified by the manufacturer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-1.0
       operationId: print.printer_restoreFactoryDefault
       parameters:
         - name: printer-id
@@ -2597,9 +2579,6 @@ paths:
         - print.printer
       summary: Invoke action create
       description: 'Create (register) a printer with the Universal Print service. This is a long-running operation and as such, it returns a printerCreateOperation that can be used to track and verify the registration of the printer. For help creating the required Certificate Signing Request (CSR) for creating printer, see the CSR generation code sample.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-create?view=graph-rest-1.0
       operationId: print.printer_create
       requestBody:
         description: Action parameters
@@ -4635,9 +4614,6 @@ paths:
         - print.printerShare
       summary: Invoke action createUploadSession
       description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
       operationId: print.share.job.document_createUploadSession
       parameters:
         - name: printerShare-id
@@ -4722,9 +4698,6 @@ paths:
         - print.printerShare
       summary: Invoke action abort
       description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
       operationId: print.share.job_abort
       parameters:
         - name: printerShare-id
@@ -4768,9 +4741,6 @@ paths:
         - print.printerShare
       summary: Invoke action cancel
       description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
       operationId: print.share.job_cancel
       parameters:
         - name: printerShare-id
@@ -4801,9 +4771,6 @@ paths:
         - print.printerShare
       summary: Invoke action redirect
       description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
       operationId: print.share.job_redirect
       parameters:
         - name: printerShare-id
@@ -4852,9 +4819,6 @@ paths:
         - print.printerShare
       summary: Invoke action start
       description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
       operationId: print.share.job_start
       parameters:
         - name: printerShare-id
@@ -7885,8 +7849,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.printOperationCollectionResponse:
       title: Collection of printOperation
       type: object
@@ -14234,6 +14198,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -18446,6 +18416,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20815,6 +20835,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -21915,6 +21962,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -22717,7 +22791,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -22727,7 +22802,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

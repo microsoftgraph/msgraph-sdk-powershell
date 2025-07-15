@@ -491,9 +491,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke function incidentReport
       description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant. An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-beta
       operationId: admin.serviceAnnouncement.healthOverview.issue_incidentReport
       parameters:
         - name: serviceHealth-id
@@ -754,9 +751,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke function incidentReport
       description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant. An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-beta
       operationId: admin.serviceAnnouncement.issue_incidentReport
       parameters:
         - name: serviceHealthIssue-id
@@ -1441,9 +1435,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action archive
       description: Archive a list of serviceUpdateMessages for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-beta
       operationId: admin.serviceAnnouncement.message_archive
       requestBody:
         description: Action parameters
@@ -1483,9 +1474,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action favorite
       description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-beta
       operationId: admin.serviceAnnouncement.message_favorite
       requestBody:
         description: Action parameters
@@ -1525,9 +1513,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action markRead
       description: Mark a list of serviceUpdateMessages as read for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-beta
       operationId: admin.serviceAnnouncement.message_markRead
       requestBody:
         description: Action parameters
@@ -1567,9 +1552,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action markUnread
       description: Mark a list of serviceUpdateMessages as unread for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-beta
       operationId: admin.serviceAnnouncement.message_markUnread
       requestBody:
         description: Action parameters
@@ -1609,9 +1591,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action unarchive
       description: Unarchive a list of serviceUpdateMessages for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-beta
       operationId: admin.serviceAnnouncement.message_unarchive
       requestBody:
         description: Action parameters
@@ -1651,9 +1630,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action unfavorite
       description: Remove the favorite status of serviceUpdateMessages for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-beta
       operationId: admin.serviceAnnouncement.message_unfavorite
       requestBody:
         description: Action parameters
@@ -1693,9 +1669,6 @@ paths:
         - administrativeUnits.administrativeUnit.Actions
       summary: Invoke action checkMemberGroups
       description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
       operationId: administrativeUnit_checkMemberGroup
       parameters:
         - name: administrativeUnit-id
@@ -1801,9 +1774,6 @@ paths:
         - administrativeUnits.administrativeUnit.Actions
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta
       operationId: administrativeUnit_getMemberGroup
       parameters:
         - name: administrativeUnit-id
@@ -1909,9 +1879,6 @@ paths:
         - administrativeUnits.administrativeUnit.Actions
       summary: Invoke action restore
       description: "Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
       operationId: administrativeUnit_restore
       parameters:
         - name: administrativeUnit-id
@@ -1938,9 +1905,6 @@ paths:
         - administrativeUnits.administrativeUnit.Functions
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted administrativeUnits without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/administrativeunit-delta?view=graph-rest-beta
       operationId: administrativeUnit_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2011,9 +1975,6 @@ paths:
         - administrativeUnits.administrativeUnit.Actions
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-beta
       operationId: administrativeUnit_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -2064,9 +2025,6 @@ paths:
         - administrativeUnits.administrativeUnit.Actions
       summary: Invoke action getUserOwnedObjects
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-beta
       operationId: administrativeUnit_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -2100,9 +2058,6 @@ paths:
         - administrativeUnits.administrativeUnit.Actions
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta
       operationId: administrativeUnit_validateProperty
       requestBody:
         description: Action parameters
@@ -2562,8 +2517,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.serviceUpdateMessageCollectionResponse:
       title: Collection of serviceUpdateMessage
       type: object
@@ -2719,7 +2674,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -2729,7 +2685,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

@@ -97,9 +97,6 @@ paths:
         - deviceManagement.applePushNotificationCertificate
       summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
       description: Download Apple push notification certificate signing request
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-downloadapplepushnotificationcertificatesigningrequest?view=graph-rest-1.0
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
         2XX:
@@ -376,9 +373,6 @@ paths:
         - deviceManagement.auditEvent
       summary: Invoke function getAuditCategories
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0
       operationId: deviceManagement.auditEvent_getAuditCategory
       parameters:
         - $ref: '#/components/parameters/top'
@@ -820,9 +814,6 @@ paths:
         - deviceManagement.deviceManagementPartner
       summary: Invoke action terminate
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-terminate?view=graph-rest-1.0
       operationId: deviceManagement.deviceManagementPartner_terminate
       parameters:
         - name: deviceManagementPartner-id
@@ -1054,9 +1045,6 @@ paths:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Invoke action sync
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-sync?view=graph-rest-1.0
       operationId: deviceManagement.exchangeConnector_sync
       parameters:
         - name: deviceManagementExchangeConnector-id
@@ -1718,9 +1706,6 @@ paths:
         - deviceManagement.remoteAssistancePartner
       summary: Invoke action beginOnboarding
       description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-beginonboarding?view=graph-rest-1.0
       operationId: deviceManagement.remoteAssistancePartner_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
@@ -1743,9 +1728,6 @@ paths:
         - deviceManagement.remoteAssistancePartner
       summary: Invoke action disconnect
       description: A request to remove the active TeamViewer connector
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-disconnect?view=graph-rest-1.0
       operationId: deviceManagement.remoteAssistancePartner_disconnect
       parameters:
         - name: remoteAssistancePartner-id
@@ -2244,11 +2226,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: List roleDefinitions
-      description: List properties and relationships of the roleDefinition objects.
+      summary: List deviceAndAppManagementRoleDefinitions
+      description: List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0
       operationId: deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2325,11 +2307,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: Get roleDefinition
-      description: Read properties and relationships of the roleDefinition object.
+      summary: Get deviceAndAppManagementRoleDefinition
+      description: Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-get?view=graph-rest-1.0
       operationId: deviceManagement_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2373,11 +2355,11 @@ paths:
     patch:
       tags:
         - deviceManagement.roleDefinition
-      summary: Update roleDefinition
-      description: Update the properties of a roleDefinition object.
+      summary: Update deviceAndAppManagementRoleDefinition
+      description: Update the properties of a deviceAndAppManagementRoleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -4030,9 +4012,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke function getAuditActivityTypes
       description: Get audit activity types by tenant ID.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4253,9 +4232,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke action endGracePeriod
       description: End the grace period for a specific cloudPC object. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before deprovisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPC_endGracePeriod
       parameters:
         - name: cloudPC-id
@@ -4278,9 +4254,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke action reboot
       description: Reboot a specific cloudPC object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPC_reboot
       parameters:
         - name: cloudPC-id
@@ -4303,9 +4276,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke action rename
       description: Rename a specific cloudPC object. Use this API to update the displayName of a Cloud PC entity.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPC_rename
       parameters:
         - name: cloudPC-id
@@ -4341,9 +4311,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke action restore
       description: Restore a specific cloudPC object to a previous state from a snapshot. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPC_restore
       parameters:
         - name: cloudPC-id
@@ -4379,9 +4346,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke action troubleshoot
       description: Troubleshoot a specific cloudPC object. Use this API to check the health status of the Cloud PC and the session host.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPC_troubleshoot
       parameters:
         - name: cloudPC-id
@@ -4623,9 +4587,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke function getSourceImages
       description: Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5054,9 +5015,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke action runHealthChecks
       description: 'Run health checks on the cloudPcOnPremisesConnection object. It triggers a new health check for the cloudPcOnPremisesConnection (../resources/cloudpconpremisesconnection.md) object and changes the healthCheckStatus and [healthCheckStatusDetail properties when check finished.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.onPremisesConnection_runHealthCheck
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -5970,9 +5928,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke action assign
       description: Assign a cloudPcProvisioningPolicy to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.provisioningPolicy_assign
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -6458,9 +6413,6 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Invoke action assign
       description: Assign a cloudPcUserSetting to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.userSetting_assign
       parameters:
         - name: cloudPcUserSetting-id
@@ -11333,8 +11285,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       title: Collection of complianceManagementPartner
       type: object
@@ -12789,6 +12741,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -16947,6 +16905,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20923,6 +20931,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -23840,6 +23875,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -25120,7 +25182,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -25130,7 +25193,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

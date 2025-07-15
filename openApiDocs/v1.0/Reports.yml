@@ -743,9 +743,6 @@ paths:
         - auditLogs.signIn
       summary: Invoke action confirmCompromised
       description: 'Mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-1.0
       operationId: auditLog.signIn_confirmCompromised
       requestBody:
         description: Action parameters
@@ -774,9 +771,6 @@ paths:
         - auditLogs.signIn
       summary: Invoke action confirmSafe
       description: 'Mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-1.0
       operationId: auditLog.signIn_confirmSafe
       requestBody:
         description: Action parameters
@@ -805,9 +799,6 @@ paths:
         - auditLogs.signIn
       summary: Invoke action dismiss
       description: 'Mark an event in Microsoft Entra sign-in logs as dismissed. For details about investigating Identity Protection risks, see How to investigate risk.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/signin-dismiss?view=graph-rest-1.0
       operationId: auditLog.signIn_dismiss
       requestBody:
         description: Action parameters
@@ -1130,9 +1121,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getCachedReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcachedreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getCachedReport
       requestBody:
         description: Action parameters
@@ -1200,9 +1188,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getCompliancePolicyNonComplianceReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcompliancepolicynoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getCompliancePolicyNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1276,9 +1261,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getCompliancePolicyNonComplianceSummaryReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcompliancepolicynoncompliancesummaryreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getCompliancePolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
@@ -1352,9 +1334,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getComplianceSettingNonComplianceReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcompliancesettingnoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getComplianceSettingNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1428,9 +1407,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getConfigurationPolicyNonComplianceReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationpolicynoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getConfigurationPolicyNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1504,9 +1480,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getConfigurationPolicyNonComplianceSummaryReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationpolicynoncompliancesummaryreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getConfigurationPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
@@ -1580,9 +1553,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getConfigurationSettingNonComplianceReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationsettingnoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getConfigurationSettingNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1656,9 +1626,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceManagementIntentPerSettingContributingProfiles
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicemanagementintentpersettingcontributingprofiles?view=graph-rest-1.0
       operationId: deviceManagement.report_getDeviceManagementIntentPerSettingContributingProfile
       requestBody:
         description: Action parameters
@@ -1732,9 +1699,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceManagementIntentSettingsReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicemanagementintentsettingsreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getDeviceManagementIntentSettingsReport
       requestBody:
         description: Action parameters
@@ -1808,9 +1772,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceNonComplianceReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicenoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getDeviceNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1884,9 +1845,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDevicesWithoutCompliancePolicyReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdeviceswithoutcompliancepolicyreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getDevicesWithoutCompliancePolicyReport
       requestBody:
         description: Action parameters
@@ -1960,9 +1918,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getHistoricalReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-gethistoricalreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getHistoricalReport
       requestBody:
         description: Action parameters
@@ -2033,9 +1988,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getNoncompliantDevicesAndSettingsReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getnoncompliantdevicesandsettingsreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getNoncompliantDevicesAndSettingsReport
       requestBody:
         description: Action parameters
@@ -2109,9 +2061,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getPolicyNonComplianceMetadata
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getpolicynoncompliancemetadata?view=graph-rest-1.0
       operationId: deviceManagement.report_getPolicyNonComplianceMetadata
       requestBody:
         description: Action parameters
@@ -2185,9 +2134,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getPolicyNonComplianceReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getpolicynoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getPolicyNonComplianceReport
       requestBody:
         description: Action parameters
@@ -2261,9 +2207,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getPolicyNonComplianceSummaryReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getpolicynoncompliancesummaryreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
@@ -2337,9 +2280,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getReportFilters
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getreportfilters?view=graph-rest-1.0
       operationId: deviceManagement.report_getReportFilter
       requestBody:
         description: Action parameters
@@ -2413,9 +2353,6 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getSettingNonComplianceReport
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getsettingnoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getSettingNonComplianceReport
       requestBody:
         description: Action parameters
@@ -2706,9 +2643,6 @@ paths:
         - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByFeature
       description: 'Get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbyfeature?view=graph-rest-1.0
       operationId: report.authenticationMethod_usersRegisteredGraphBPreFeature
       responses:
         2XX:
@@ -2757,9 +2691,6 @@ paths:
         - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByMethod
       description: Get the number of users registered for each authentication method.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbymethod?view=graph-rest-1.0
       operationId: report.authenticationMethod_usersRegisteredGraphBPreMethod
       responses:
         2XX:
@@ -3399,9 +3330,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
       description: Metadata for the device configuration device activity report
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-deviceconfigurationdeviceactivity?view=graph-rest-1.0
       operationId: report_deviceConfigurationDeviceActivity
       responses:
         2XX:
@@ -3419,9 +3347,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function deviceConfigurationUserActivity
       description: Metadata for the device configuration user activity report
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-deviceconfigurationuseractivity?view=graph-rest-1.0
       operationId: report_deviceConfigurationUserActivity
       responses:
         2XX:
@@ -3439,9 +3364,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getEmailActivityCounts
       description: 'Enables you to understand the trends of email activity (like how many were sent, read, and received) in your organization.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getemailactivitycounts?view=graph-rest-1.0
       operationId: report_getEmailActivityCount
       parameters:
         - name: period
@@ -3473,9 +3395,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getEmailActivityUserCounts
       description: 'Enables you to understand trends on the number of unique users who are performing email activities like send, read, and receive.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getemailactivityusercounts?view=graph-rest-1.0
       operationId: report_getEmailActivityUserCount
       parameters:
         - name: period
@@ -3571,9 +3490,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageAppsUserCounts
       description: Get the count of unique users per email app.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getemailappusageappsusercounts?view=graph-rest-1.0
       operationId: report_getEmailAppUsageAppsUserCount
       parameters:
         - name: period
@@ -3605,9 +3521,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageUserCounts
       description: Get the count of unique users that connected to Exchange Online using any email app.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getemailappusageusercounts?view=graph-rest-1.0
       operationId: report_getEmailAppUsageUserCount
       parameters:
         - name: period
@@ -3703,9 +3616,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageVersionsUserCounts
       description: Get the count of unique users by Outlook desktop version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getemailappusageversionsusercounts?view=graph-rest-1.0
       operationId: report_getEmailAppUsageVersionsUserCount
       parameters:
         - name: period
@@ -3737,9 +3647,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getGroupArchivedPrintJobs
       description: Get a list of archived print jobs for a particular group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reports-getgrouparchivedprintjobs?view=graph-rest-1.0
       operationId: report_getGroupArchivedPrintJob
       parameters:
         - name: groupId
@@ -3803,9 +3710,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getM365AppPlatformUserCounts
       description: 'Get a report that provides the trend of active users across all apps for each platform (Windows, Mac, web, and mobile) in your organization.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getm365appplatformusercounts?view=graph-rest-1.0
       operationId: report_getM365AppPlatformUserCount
       parameters:
         - name: period
@@ -3837,9 +3741,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getM365AppUserCounts
       description: 'Get a report that provides the trend in the number of active users for each app (Outlook, Word, Excel, PowerPoint, OneNote, and Teams) in your organization.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getm365appusercounts?view=graph-rest-1.0
       operationId: report_getM365AppUserCount
       parameters:
         - name: period
@@ -3935,9 +3836,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getMailboxUsageDetail
       description: Get details about mailbox usage.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagedetail?view=graph-rest-1.0
       operationId: report_getMailboxUsageDetail
       parameters:
         - name: period
@@ -3969,9 +3867,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getMailboxUsageMailboxCounts
       description: Get the total number of user mailboxes in your organization and how many are active each day of the reporting period. A mailbox is considered active if the user sent or read any email.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagemailboxcounts?view=graph-rest-1.0
       operationId: report_getMailboxUsageMailboxCount
       parameters:
         - name: period
@@ -4003,9 +3898,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getMailboxUsageQuotaStatusMailboxCounts
       description: Get the count of user mailboxes in each quota category.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagequotastatusmailboxcounts?view=graph-rest-1.0
       operationId: report_getMailboxUsageQuotaStatusMailboxCount
       parameters:
         - name: period
@@ -4037,9 +3929,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getMailboxUsageStorage
       description: Get the amount of storage used in your organization.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagestorage?view=graph-rest-1.0
       operationId: report_getMailboxUsageStorage
       parameters:
         - name: period
@@ -4071,9 +3960,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActivationCounts
       description: Get the count of Microsoft 365 activations on desktops and devices.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationcounts?view=graph-rest-1.0
       operationId: report_getOffice365ActivationCount
       responses:
         2XX:
@@ -4097,9 +3983,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActivationsUserCounts
       description: Get the count of users that are enabled and the ones that activated the Office subscription on desktop or devices or shared computers.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsusercounts?view=graph-rest-1.0
       operationId: report_getOffice365ActivationsUserCount
       responses:
         2XX:
@@ -4123,9 +4006,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActivationsUserDetail
       description: Get details about users who have activated Microsoft 365.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsuserdetail?view=graph-rest-1.0
       operationId: report_getOffice365ActivationsUserDetail
       responses:
         2XX:
@@ -4149,9 +4029,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActiveUserCounts
       description: Get the count of daily active users in the reporting period by product.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activeusercounts?view=graph-rest-1.0
       operationId: report_getOffice365ActiveUserCount
       parameters:
         - name: period
@@ -4183,9 +4060,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActiveUserDetail
       description: Get details about Microsoft 365 active users.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activeuserdetail?view=graph-rest-1.0
       operationId: report_getOffice365ActiveUserDetail
       parameters:
         - name: date
@@ -4249,9 +4123,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityCounts
       description: Get the number of group activities across group workloads.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitycounts?view=graph-rest-1.0
       operationId: report_getOffice365GroupsActivityCount
       parameters:
         - name: period
@@ -4283,9 +4154,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityDetail
       description: Get details about Microsoft 365 groups activity by group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitydetail?view=graph-rest-1.0
       operationId: report_getOffice365GroupsActivityDetail
       parameters:
         - name: date
@@ -4349,9 +4217,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityFileCounts
       description: Get the total number of files and how many of them were active across all group sites associated with a Microsoft 365 group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivityfilecounts?view=graph-rest-1.0
       operationId: report_getOffice365GroupsActivityFileCount
       parameters:
         - name: period
@@ -4383,9 +4248,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityGroupCounts
       description: 'Get the daily total number of groups and how many of them were active based on email conversations, Yammer posts, and SharePoint file activities.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitygroupcounts?view=graph-rest-1.0
       operationId: report_getOffice365GroupsActivityGroupCount
       parameters:
         - name: period
@@ -4417,9 +4279,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityStorage
       description: Get the total storage used across all group mailboxes and group sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitystorage?view=graph-rest-1.0
       operationId: report_getOffice365GroupsActivityStorage
       parameters:
         - name: period
@@ -4451,9 +4310,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365ServicesUserCounts
       description: Get the count of users by activity type and service.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getoffice365servicesusercounts?view=graph-rest-1.0
       operationId: report_getOffice365ServicesUserCount
       parameters:
         - name: period
@@ -4485,9 +4341,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOneDriveActivityFileCounts
       description: 'Get the number of unique, licensed users that performed file interactions against any OneDrive account.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityfilecounts?view=graph-rest-1.0
       operationId: report_getOneDriveActivityFileCount
       parameters:
         - name: period
@@ -4519,9 +4372,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOneDriveActivityUserCounts
       description: Get the trend in the number of active OneDrive users.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityusercounts?view=graph-rest-1.0
       operationId: report_getOneDriveActivityUserCount
       parameters:
         - name: period
@@ -4553,9 +4403,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOneDriveActivityUserDetail
       description: Get details about OneDrive activity by user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityuserdetail?view=graph-rest-1.0
       operationId: report_getOneDriveActivityUserDetail
       parameters:
         - name: date
@@ -4619,9 +4466,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageAccountCounts
       description: 'Get the trend in the number of active OneDrive for Business sites. Any site on which users viewed, modified, uploaded, downloaded, shared, or synced files is considered an active site.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getonedriveusageaccountcounts?view=graph-rest-1.0
       operationId: report_getOneDriveUsageAccountCount
       parameters:
         - name: period
@@ -4653,9 +4497,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageAccountDetail
       description: Get details about OneDrive usage by account.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getonedriveusageaccountdetail?view=graph-rest-1.0
       operationId: report_getOneDriveUsageAccountDetail
       parameters:
         - name: date
@@ -4719,9 +4560,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageFileCounts
       description: 'Get the total number of files across all sites and how many are active files. A file is considered active if it has been saved, synced, modified, or shared within the specified time period.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getonedriveusagefilecounts?view=graph-rest-1.0
       operationId: report_getOneDriveUsageFileCount
       parameters:
         - name: period
@@ -4753,9 +4591,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageStorage
       description: Get the trend on the amount of storage you're using in OneDrive for Business.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getonedriveusagestorage?view=graph-rest-1.0
       operationId: report_getOneDriveUsageStorage
       parameters:
         - name: period
@@ -4787,9 +4622,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getPrinterArchivedPrintJobs
       description: Get a list of archived print jobs that were queued for particular printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reports-getprinterarchivedprintjobs?view=graph-rest-1.0
       operationId: report_getPrinterArchivedPrintJob
       parameters:
         - name: printerId
@@ -4853,9 +4685,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getRelyingPartyDetailedSummary
       description: Get a summary of AD FS relying parties information.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0
       operationId: report_getRelyingPartyDetailedSummary
       parameters:
         - name: period
@@ -4930,9 +4759,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityFileCounts
       description: 'Get the number of unique, licensed users who interacted with files stored on SharePoint sites.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityfilecounts?view=graph-rest-1.0
       operationId: report_getSharePointActivityFileCount
       parameters:
         - name: period
@@ -4964,9 +4790,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityPages
       description: Get the number of unique pages visited by users.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivitypages?view=graph-rest-1.0
       operationId: report_getSharePointActivityPage
       parameters:
         - name: period
@@ -4998,9 +4821,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityUserCounts
       description: 'Get the trend in the number of active users. A user is considered active if they have executed a file activity (save, sync, modify, or share) or visited a page within the specified time period.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityusercounts?view=graph-rest-1.0
       operationId: report_getSharePointActivityUserCount
       parameters:
         - name: period
@@ -5032,9 +4852,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityUserDetail
       description: Get details about SharePoint activity by user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityuserdetail?view=graph-rest-1.0
       operationId: report_getSharePointActivityUserDetail
       parameters:
         - name: date
@@ -5098,9 +4915,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageDetail
       description: Get details about SharePoint site usage.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagedetail?view=graph-rest-1.0
       operationId: report_getSharePointSiteUsageDetail
       parameters:
         - name: date
@@ -5164,9 +4978,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageFileCounts
       description: 'Get the total number of files across all sites and the number of active files. A file (user or system) is considered active if it has been saved, synced, modified, or shared within the specified time period.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagefilecounts?view=graph-rest-1.0
       operationId: report_getSharePointSiteUsageFileCount
       parameters:
         - name: period
@@ -5198,9 +5009,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsagePages
       description: Get the number of pages viewed across all sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagepages?view=graph-rest-1.0
       operationId: report_getSharePointSiteUsagePage
       parameters:
         - name: period
@@ -5232,9 +5040,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageSiteCounts
       description: Get the trend of total and active site count during the reporting period.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagesitecounts?view=graph-rest-1.0
       operationId: report_getSharePointSiteUsageSiteCount
       parameters:
         - name: period
@@ -5266,9 +5071,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageStorage
       description: Get the trend of storage allocated and consumed during the reporting period.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagestorage?view=graph-rest-1.0
       operationId: report_getSharePointSiteUsageStorage
       parameters:
         - name: period
@@ -5300,9 +5102,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessActivityCounts
       description: Get the trends on how many users organized and participated in conference sessions held in your organization through Skype for Business. The report also includes the number of peer-to-peer sessions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessactivitycounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessActivityCount
       parameters:
         - name: period
@@ -5334,9 +5133,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessActivityUserCounts
       description: Get the trends on how many unique users organized and participated in conference sessions held in your organization through Skype for Business. The report also includes the number of peer-to-peer sessions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessactivityusercounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessActivityUserCount
       parameters:
         - name: period
@@ -5368,9 +5164,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
       description: Get details about Skype for Business activity by user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessactivityuserdetail?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessActivityUserDetail
       parameters:
         - name: date
@@ -5434,9 +5227,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
       description: 'Get the number of users using unique devices in your organization. The report will show you the number of users per device including Windows, Windows phone, Android phone, iPhone, and iPad.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusagedistributionusercounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessDeviceUsageDistributionUserCount
       parameters:
         - name: period
@@ -5468,9 +5258,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserCounts
       description: 'Get the usage trends on how many users in your organization have connected using the Skype for Business app. You''ll also get a breakdown by the type of device (Windows, Windows phone, Android phone, iPhone, or iPad) on which the Skype for Business client app is installed and used across your organization.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusageusercounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserCount
       parameters:
         - name: period
@@ -5502,9 +5289,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
       description: Get details about Skype for Business device usage by user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusageuserdetail?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserDetail
       parameters:
         - name: date
@@ -5568,9 +5352,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityCounts
       description: 'Get usage trends on the number and type of conference sessions held and organized by users in your organization. Types of conference sessions include IM, audio/video, application sharing, web, dial-in/out - third party, and Dial-in/out Microsoft.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessorganizeractivitycounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessOrganizerActivityCount
       parameters:
         - name: period
@@ -5602,9 +5383,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
       description: 'Get usage trends on the length in minutes and type of conference sessions held and organized by users in your organization. Types of conference sessions include audio/video, and dial-in and dial-out - Microsoft.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessorganizeractivityminutecounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessOrganizerActivityMinuteCount
       parameters:
         - name: period
@@ -5636,9 +5414,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityUserCounts
       description: 'Get usage trends on the number of unique users and type of conference sessions held and organized by users in your organization. Types of conference sessions include IM, audio/video, application sharing, web, dial-in/out - third party, and dial-in/out Microsoft.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessorganizeractivityusercounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessOrganizerActivityUserCount
       parameters:
         - name: period
@@ -5670,9 +5445,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityCounts
       description: 'Get usage trends on the number and type of conference sessions that users from your organization participated in. Types of conference sessions include IM, audio/video, application sharing, web, and dial-in/out - third party.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessparticipantactivitycounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessParticipantActivityCount
       parameters:
         - name: period
@@ -5704,9 +5476,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityMinuteCounts
       description: Get usage trends on the length in minutes and type of conference sessions that users from your organization participated in. Types of conference sessions include audio/video.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessparticipantactivityminutecounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessParticipantActivityMinuteCount
       parameters:
         - name: period
@@ -5738,9 +5507,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityUserCounts
       description: 'Get usage trends on the number of unique users and type of conference sessions that users from your organization participated in. Types of conference sessions include IM, audio/video, application sharing, web, and dial-in/out - third party.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessparticipantactivityusercounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessParticipantActivityUserCount
       parameters:
         - name: period
@@ -5772,9 +5538,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityCounts
       description: 'Get usage trends on the number and type of sessions held in your organization. Types of sessions include IM, audio, video, application sharing, and file transfer.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinesspeertopeeractivitycounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityCount
       parameters:
         - name: period
@@ -5806,9 +5569,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
       description: Get usage trends on the length in minutes and type of peer-to-peer sessions held in your organization. Types of sessions include audio and video.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinesspeertopeeractivityminutecounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCount
       parameters:
         - name: period
@@ -5840,9 +5600,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
       description: 'Get usage trends on the number of unique users and type of peer-to-peer sessions held in your organization. Types of sessions include IM, audio, video, application sharing, and file transfers in peer-to-peer sessions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinesspeertopeeractivityusercounts?view=graph-rest-1.0
       operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityUserCount
       parameters:
         - name: period
@@ -5874,9 +5631,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsDeviceUsageDistributionUserCounts
       description: Get the number of Microsoft Teams unique users by device type over the selected time period.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getteamsdeviceusagedistributionusercounts?view=graph-rest-1.0
       operationId: report_getTeamsDeviceUsageDistributionUserCount
       parameters:
         - name: period
@@ -5908,9 +5662,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsDeviceUsageUserCounts
       description: Get the number of Microsoft Teams daily unique users by device type.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getteamsdeviceusageusercounts?view=graph-rest-1.0
       operationId: report_getTeamsDeviceUsageUserCount
       parameters:
         - name: period
@@ -6006,9 +5757,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamActivityCounts
       description: Get the number of team activities across Microsoft Teams. The activity types are related to meetings and messages.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getteamsteamactivitycounts?view=graph-rest-1.0
       operationId: report_getTeamsTeamActivityCount
       parameters:
         - name: period
@@ -6104,9 +5852,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamActivityDistributionCounts
       description: Get the number of team activities across Microsoft Teams over a selected period.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getteamsteamactivitydistributioncounts?view=graph-rest-1.0
       operationId: report_getTeamsTeamActivityDistributionCount
       parameters:
         - name: period
@@ -6138,9 +5883,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamCounts
       description: Get the number of teams of a particular type in an instance of Microsoft Teams.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getteamsteamcounts?view=graph-rest-1.0
       operationId: report_getTeamsTeamCount
       parameters:
         - name: period
@@ -6172,9 +5914,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsUserActivityCounts
       description: Get the number of Microsoft Teams activities by activity type. The activities are performed by Microsoft Teams licensed users.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivitycounts?view=graph-rest-1.0
       operationId: report_getTeamsUserActivityCount
       parameters:
         - name: period
@@ -6206,9 +5945,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsUserActivityUserCounts
       description: 'Get the number of Microsoft Teams users by activity type. The activity types are number of teams chat messages, private chat messages, calls, or meetings.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivityusercounts?view=graph-rest-1.0
       operationId: report_getTeamsUserActivityUserCount
       parameters:
         - name: period
@@ -6304,9 +6040,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getUserArchivedPrintJobs
       description: Get a list of archived print jobs for a particular user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reports-getuserarchivedprintjobs?view=graph-rest-1.0
       operationId: report_getUserArchivedPrintJob
       parameters:
         - name: userId
@@ -6370,9 +6103,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerActivityCounts
       description: 'Get the trends on the amount of Yammer activity in your organization by how many messages were posted, read, and liked.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getyammeractivitycounts?view=graph-rest-1.0
       operationId: report_getYammerActivityCount
       parameters:
         - name: period
@@ -6404,9 +6134,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerActivityUserCounts
       description: 'Get the trends on the number of unique users who posted, read, and liked Yammer messages.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getyammeractivityusercounts?view=graph-rest-1.0
       operationId: report_getYammerActivityUserCount
       parameters:
         - name: period
@@ -6438,9 +6165,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerActivityUserDetail
       description: Get details about Yammer activity by user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getyammeractivityuserdetail?view=graph-rest-1.0
       operationId: report_getYammerActivityUserDetail
       parameters:
         - name: date
@@ -6504,9 +6228,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerDeviceUsageDistributionUserCounts
       description: Get the number of users by device type.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getyammerdeviceusagedistributionusercounts?view=graph-rest-1.0
       operationId: report_getYammerDeviceUsageDistributionUserCount
       parameters:
         - name: period
@@ -6538,9 +6259,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerDeviceUsageUserCounts
       description: Get the number of daily users by device type.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getyammerdeviceusageusercounts?view=graph-rest-1.0
       operationId: report_getYammerDeviceUsageUserCount
       parameters:
         - name: period
@@ -6572,9 +6290,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerDeviceUsageUserDetail
       description: Get details about Yammer device usage by user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getyammerdeviceusageuserdetail?view=graph-rest-1.0
       operationId: report_getYammerDeviceUsageUserDetail
       parameters:
         - name: date
@@ -6638,9 +6353,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerGroupsActivityCounts
       description: 'Get the number of Yammer messages posted, read, and liked in groups.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitycounts?view=graph-rest-1.0
       operationId: report_getYammerGroupsActivityCount
       parameters:
         - name: period
@@ -6672,9 +6384,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerGroupsActivityDetail
       description: Get details about Yammer groups activity by group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitydetail?view=graph-rest-1.0
       operationId: report_getYammerGroupsActivityDetail
       parameters:
         - name: date
@@ -6738,9 +6447,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerGroupsActivityGroupCounts
       description: Get the total number of groups that existed and how many included group conversation activities.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitygroupcounts?view=graph-rest-1.0
       operationId: report_getYammerGroupsActivityGroupCount
       parameters:
         - name: period
@@ -7815,7 +7521,7 @@ paths:
       tags:
         - reports.partners
       summary: Get reconciliation from reports
-      description: Represents details for billed invoice reconciliation data.
+      description: Represents details for billed and unbilled invoice reconciliation data.
       operationId: report.partner.billing_GetReconciliation
       parameters:
         - name: $select
@@ -7972,9 +7678,6 @@ paths:
         - reports.partners
       summary: Invoke action export
       description: Export the billed invoice reconciliation data.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/partners-billing-billedreconciliation-export?view=graph-rest-1.0
       operationId: report.partner.billing.reconciliation.billed_export
       requestBody:
         description: Action parameters
@@ -8006,6 +7709,7 @@ paths:
       tags:
         - reports.partners
       summary: Get unbilled from reports
+      description: Represents details for unbilled invoice reconciliation data.
       operationId: report.partner.billing.reconciliation_GetUnbilled
       parameters:
         - name: $select
@@ -8083,6 +7787,7 @@ paths:
       tags:
         - reports.partners
       summary: Invoke action export
+      description: Export the unbilled invoice reconciliation data for a specific billing period and a given currency.
       operationId: report.partner.billing.reconciliation.unbilled_export
       requestBody:
         description: Action parameters
@@ -8273,9 +7978,6 @@ paths:
         - reports.partners
       summary: Invoke action export
       description: Export the billed Azure usage data.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/partners-billing-billedusage-export?view=graph-rest-1.0
       operationId: report.partner.billing.usage.billed_export
       requestBody:
         description: Action parameters
@@ -8386,9 +8088,6 @@ paths:
         - reports.partners
       summary: Invoke action export
       description: Export unbilled Azure usage data for a specific billing period and currency.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/partners-billing-unbilledusage-export?view=graph-rest-1.0
       operationId: report.partner.billing.usage.unbilled_export
       requestBody:
         description: Action parameters
@@ -8501,9 +8200,6 @@ paths:
         - reports.securityReportsRoot
       summary: Invoke function getAttackSimulationRepeatOffenders
       description: List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-1.0
       operationId: report.security_getAttackSimulationRepeatOffender
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8540,9 +8236,6 @@ paths:
         - reports.securityReportsRoot
       summary: Invoke function getAttackSimulationSimulationUserCoverage
       description: List training coverage for each tenant user in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationsimulationusercoverage?view=graph-rest-1.0
       operationId: report.security_getAttackSimulationSimulationUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8579,9 +8272,6 @@ paths:
         - reports.securityReportsRoot
       summary: Invoke function getAttackSimulationTrainingUserCoverage
       description: List training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationtrainingusercoverage?view=graph-rest-1.0
       operationId: report.security_getAttackSimulationTrainingUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10093,8 +9783,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.provisioningObjectSummaryCollectionResponse:
       title: Collection of provisioningObjectSummary
       type: object
@@ -10480,7 +10170,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -10490,7 +10181,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

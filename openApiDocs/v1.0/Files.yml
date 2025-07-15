@@ -4006,9 +4006,6 @@ paths:
         - drives.driveItem
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: drive.item.listItem.documentSetVersion_restore
       parameters:
         - name: drive-id
@@ -5284,9 +5281,6 @@ paths:
         - drives.driveItem
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: drive.item.listItem.version_restoreVersion
       parameters:
         - name: drive-id
@@ -5402,9 +5396,6 @@ paths:
         - drives.driveItem
       summary: Invoke action checkin
       description: 'Check in a checked out driveItem resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: drive.item_checkin
       parameters:
         - name: drive-id
@@ -5451,9 +5442,6 @@ paths:
         - drives.driveItem
       summary: Invoke action checkout
       description: 'Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: drive.item_checkout
       parameters:
         - name: drive-id
@@ -5540,9 +5528,6 @@ paths:
         - drives.driveItem
       summary: Invoke action createLink
       description: "Create a link to share a driveItem driveItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: drive.item_createLink
       parameters:
         - name: drive-id
@@ -5661,9 +5646,6 @@ paths:
         - drives.driveItem
       summary: Invoke function delta
       description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: drive.item_delta
       parameters:
         - name: drive-id
@@ -5843,9 +5825,6 @@ paths:
         - drives.driveItem
       summary: Invoke action discardCheckout
       description: Discard the check out of a driveItem. This action releases a driveItem resource that was previously checked out. Any changes made to the item while it was checked out are discarded.  The same user that performed the checkout must discard it. Another alternative is to use application permissions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-discardcheckout?view=graph-rest-1.0
       operationId: drive.item_discardCheckout
       parameters:
         - name: drive-id
@@ -5909,9 +5888,6 @@ paths:
         - drives.driveItem
       summary: Invoke action follow
       description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: drive.item_follow
       parameters:
         - name: drive-id
@@ -5946,9 +5922,6 @@ paths:
         - drives.driveItem
       summary: Invoke function getActivitiesByInterval
       description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
@@ -6138,9 +6111,6 @@ paths:
         - drives.driveItem
       summary: Invoke action invite
       description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: drive.item_invite
       parameters:
         - name: drive-id
@@ -6308,9 +6278,6 @@ paths:
         - drives.driveItem
       summary: Invoke action restore
       description: Restore a driveItem that has been deleted and is currently in the recycle bin.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: drive.item_restore
       parameters:
         - name: drive-id
@@ -6360,9 +6327,6 @@ paths:
         - drives.driveItem
       summary: Invoke function search
       description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: drive.item_search
       parameters:
         - name: drive-id
@@ -6454,9 +6418,6 @@ paths:
         - drives.driveItem
       summary: Invoke action unfollow
       description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: drive.item_unfollow
       parameters:
         - name: drive-id
@@ -6789,9 +6750,6 @@ paths:
         - drives.driveItem
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: drive.item.permission_grant
       parameters:
         - name: drive-id
@@ -7290,9 +7248,6 @@ paths:
         - drives.driveItem
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: drive.item.subscription_reauthorize
       parameters:
         - name: drive-id
@@ -8039,9 +7994,6 @@ paths:
         - drives.driveItem
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: drive.item.version_restoreVersion
       parameters:
         - name: drive-id
@@ -9961,9 +9913,6 @@ paths:
         - drives.list
       summary: Invoke action associateWithHubSites
       description: Associate a published content type present in a content type hub with a list of hub sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: drive.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: drive-id
@@ -10012,9 +9961,6 @@ paths:
         - drives.list
       summary: Invoke action copyToDefaultContentLocation
       description: Copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: drive.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: drive-id
@@ -10060,9 +10006,6 @@ paths:
         - drives.list
       summary: Invoke function isPublished
       description: Check the publishing status of a contentType in a content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
       operationId: drive.list.contentType_isPublished
       parameters:
         - name: drive-id
@@ -10103,9 +10046,6 @@ paths:
         - drives.list
       summary: Invoke action publish
       description: Publishes a contentType present in the content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: drive.list.contentType_publish
       parameters:
         - name: drive-id
@@ -10136,9 +10076,6 @@ paths:
         - drives.list
       summary: Invoke action unpublish
       description: Unpublish a contentType from a content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: drive.list.contentType_unpublish
       parameters:
         - name: drive-id
@@ -10191,9 +10128,6 @@ paths:
         - drives.list
       summary: Invoke action addCopy
       description: Add a copy of a content type from a site to a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: drive.list.contentType_addCopy
       parameters:
         - name: drive-id
@@ -10232,9 +10166,6 @@ paths:
         - drives.list
       summary: Invoke action addCopyFromContentTypeHub
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: drive.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: drive-id
@@ -10273,9 +10204,6 @@ paths:
         - drives.list
       summary: Invoke function getCompatibleHubContentTypes
       description: 'Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
       operationId: drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: drive-id
@@ -11522,9 +11450,6 @@ paths:
         - drives.list
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: drive.list.item.documentSetVersion_restore
       parameters:
         - name: drive-id
@@ -12800,9 +12725,6 @@ paths:
         - drives.list
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: drive.list.item.version_restoreVersion
       parameters:
         - name: drive-id
@@ -12893,9 +12815,6 @@ paths:
         - drives.list
       summary: Invoke function delta
       description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
       operationId: drive.list.item_delta
       parameters:
         - name: drive-id
@@ -13719,9 +13638,6 @@ paths:
         - drives.list
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: drive.list.subscription_reauthorize
       parameters:
         - name: drive-id
@@ -13774,9 +13690,6 @@ paths:
         - drives.drive.Functions
       summary: Invoke function recent
       description: "List a set of items that have been recently used by the signed in user.\nThis collection includes items that are in the user's drive and items they have access to from other drives."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
       operationId: drive_recent
       parameters:
         - name: drive-id
@@ -13837,9 +13750,6 @@ paths:
         - drives.drive.Functions
       summary: Invoke function search
       description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: drive_search
       parameters:
         - name: drive-id
@@ -13908,9 +13818,6 @@ paths:
         - drives.drive.Functions
       summary: Invoke function sharedWithMe
       description: Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
       operationId: drive_sharedGraphWPreMe
       parameters:
         - name: drive-id
@@ -16467,9 +16374,6 @@ paths:
         - drives.driveItem
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: drive.root.listItem.documentSetVersion_restore
       parameters:
         - name: drive-id
@@ -17545,9 +17449,6 @@ paths:
         - drives.driveItem
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: drive.root.listItem.version_restoreVersion
       parameters:
         - name: drive-id
@@ -17639,9 +17540,6 @@ paths:
         - drives.driveItem
       summary: Invoke action checkin
       description: 'Check in a checked out driveItem resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: drive.root_checkin
       parameters:
         - name: drive-id
@@ -17680,9 +17578,6 @@ paths:
         - drives.driveItem
       summary: Invoke action checkout
       description: 'Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: drive.root_checkout
       parameters:
         - name: drive-id
@@ -17753,9 +17648,6 @@ paths:
         - drives.driveItem
       summary: Invoke action createLink
       description: "Create a link to share a driveItem driveItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: drive.root_createLink
       parameters:
         - name: drive-id
@@ -17858,9 +17750,6 @@ paths:
         - drives.driveItem
       summary: Invoke function delta
       description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: drive.root_delta
       parameters:
         - name: drive-id
@@ -18024,9 +17913,6 @@ paths:
         - drives.driveItem
       summary: Invoke action discardCheckout
       description: Discard the check out of a driveItem. This action releases a driveItem resource that was previously checked out. Any changes made to the item while it was checked out are discarded.  The same user that performed the checkout must discard it. Another alternative is to use application permissions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-discardcheckout?view=graph-rest-1.0
       operationId: drive.root_discardCheckout
       parameters:
         - name: drive-id
@@ -18074,9 +17960,6 @@ paths:
         - drives.driveItem
       summary: Invoke action follow
       description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: drive.root_follow
       parameters:
         - name: drive-id
@@ -18103,9 +17986,6 @@ paths:
         - drives.driveItem
       summary: Invoke function getActivitiesByInterval
       description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: drive-id
@@ -18279,9 +18159,6 @@ paths:
         - drives.driveItem
       summary: Invoke action invite
       description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: drive.root_invite
       parameters:
         - name: drive-id
@@ -18425,9 +18302,6 @@ paths:
         - drives.driveItem
       summary: Invoke action restore
       description: Restore a driveItem that has been deleted and is currently in the recycle bin.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: drive.root_restore
       parameters:
         - name: drive-id
@@ -18469,9 +18343,6 @@ paths:
         - drives.driveItem
       summary: Invoke function search
       description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: drive.root_search
       parameters:
         - name: drive-id
@@ -18555,9 +18426,6 @@ paths:
         - drives.driveItem
       summary: Invoke action unfollow
       description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: drive.root_unfollow
       parameters:
         - name: drive-id
@@ -18834,9 +18702,6 @@ paths:
         - drives.driveItem
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: drive.root.permission_grant
       parameters:
         - name: drive-id
@@ -19247,9 +19112,6 @@ paths:
         - drives.driveItem
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: drive.root.subscription_reauthorize
       parameters:
         - name: drive-id
@@ -19868,9 +19730,6 @@ paths:
         - drives.driveItem
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: drive.root.version_restoreVersion
       parameters:
         - name: drive-id
@@ -24896,9 +24755,6 @@ paths:
         - groups.drive
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: group.drive.item.listItem.documentSetVersion_restore
       parameters:
         - name: group-id
@@ -26374,9 +26230,6 @@ paths:
         - groups.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.item.listItem.version_restoreVersion
       parameters:
         - name: group-id
@@ -26516,9 +26369,6 @@ paths:
         - groups.drive
       summary: Invoke action checkin
       description: 'Check in a checked out driveItem resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: group.drive.item_checkin
       parameters:
         - name: group-id
@@ -26573,9 +26423,6 @@ paths:
         - groups.drive
       summary: Invoke action checkout
       description: 'Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: group.drive.item_checkout
       parameters:
         - name: group-id
@@ -26678,9 +26525,6 @@ paths:
         - groups.drive
       summary: Invoke action createLink
       description: "Create a link to share a driveItem driveItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: group.drive.item_createLink
       parameters:
         - name: group-id
@@ -26815,9 +26659,6 @@ paths:
         - groups.drive
       summary: Invoke function delta
       description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: group.drive.item_delta
       parameters:
         - name: group-id
@@ -27013,9 +26854,6 @@ paths:
         - groups.drive
       summary: Invoke action discardCheckout
       description: Discard the check out of a driveItem. This action releases a driveItem resource that was previously checked out. Any changes made to the item while it was checked out are discarded.  The same user that performed the checkout must discard it. Another alternative is to use application permissions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-discardcheckout?view=graph-rest-1.0
       operationId: group.drive.item_discardCheckout
       parameters:
         - name: group-id
@@ -27095,9 +26933,6 @@ paths:
         - groups.drive
       summary: Invoke action follow
       description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: group.drive.item_follow
       parameters:
         - name: group-id
@@ -27140,9 +26975,6 @@ paths:
         - groups.drive
       summary: Invoke function getActivitiesByInterval
       description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: group.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
@@ -27348,9 +27180,6 @@ paths:
         - groups.drive
       summary: Invoke action invite
       description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: group.drive.item_invite
       parameters:
         - name: group-id
@@ -27542,9 +27371,6 @@ paths:
         - groups.drive
       summary: Invoke action restore
       description: Restore a driveItem that has been deleted and is currently in the recycle bin.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: group.drive.item_restore
       parameters:
         - name: group-id
@@ -27602,9 +27428,6 @@ paths:
         - groups.drive
       summary: Invoke function search
       description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: group.drive.item_search
       parameters:
         - name: group-id
@@ -27704,9 +27527,6 @@ paths:
         - groups.drive
       summary: Invoke action unfollow
       description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: group.drive.item_unfollow
       parameters:
         - name: group-id
@@ -28095,9 +27915,6 @@ paths:
         - groups.drive
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: group.drive.item.permission_grant
       parameters:
         - name: group-id
@@ -28668,9 +28485,6 @@ paths:
         - groups.drive
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: group.drive.item.subscription_reauthorize
       parameters:
         - name: group-id
@@ -29545,9 +29359,6 @@ paths:
         - groups.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.item.version_restoreVersion
       parameters:
         - name: group-id
@@ -31811,9 +31622,6 @@ paths:
         - groups.drive
       summary: Invoke action associateWithHubSites
       description: Associate a published content type present in a content type hub with a list of hub sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: group.drive.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: group-id
@@ -31870,9 +31678,6 @@ paths:
         - groups.drive
       summary: Invoke action copyToDefaultContentLocation
       description: Copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: group.drive.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: group-id
@@ -31926,9 +31731,6 @@ paths:
         - groups.drive
       summary: Invoke function isPublished
       description: Check the publishing status of a contentType in a content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
       operationId: group.drive.list.contentType_isPublished
       parameters:
         - name: group-id
@@ -31977,9 +31779,6 @@ paths:
         - groups.drive
       summary: Invoke action publish
       description: Publishes a contentType present in the content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: group.drive.list.contentType_publish
       parameters:
         - name: group-id
@@ -32018,9 +31817,6 @@ paths:
         - groups.drive
       summary: Invoke action unpublish
       description: Unpublish a contentType from a content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: group.drive.list.contentType_unpublish
       parameters:
         - name: group-id
@@ -32089,9 +31885,6 @@ paths:
         - groups.drive
       summary: Invoke action addCopy
       description: Add a copy of a content type from a site to a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: group.drive.list.contentType_addCopy
       parameters:
         - name: group-id
@@ -32138,9 +31931,6 @@ paths:
         - groups.drive
       summary: Invoke action addCopyFromContentTypeHub
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: group.drive.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: group-id
@@ -32187,9 +31977,6 @@ paths:
         - groups.drive
       summary: Invoke function getCompatibleHubContentTypes
       description: 'Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
       operationId: group.drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: group-id
@@ -33644,9 +33431,6 @@ paths:
         - groups.drive
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: group.drive.list.item.documentSetVersion_restore
       parameters:
         - name: group-id
@@ -35122,9 +34906,6 @@ paths:
         - groups.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.list.item.version_restoreVersion
       parameters:
         - name: group-id
@@ -35209,9 +34990,6 @@ paths:
         - groups.drive
       summary: Invoke function delta
       description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
       operationId: group.drive.list.item_delta
       parameters:
         - name: group-id
@@ -36179,9 +35957,6 @@ paths:
         - groups.drive
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: group.drive.list.subscription_reauthorize
       parameters:
         - name: group-id
@@ -36250,9 +36025,6 @@ paths:
         - groups.drive
       summary: Invoke function recent
       description: "List a set of items that have been recently used by the signed in user.\nThis collection includes items that are in the user's drive and items they have access to from other drives."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
       operationId: group.drive_recent
       parameters:
         - name: group-id
@@ -36321,9 +36093,6 @@ paths:
         - groups.drive
       summary: Invoke function search
       description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: group.drive_search
       parameters:
         - name: group-id
@@ -36400,9 +36169,6 @@ paths:
         - groups.drive
       summary: Invoke function sharedWithMe
       description: Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
       operationId: group.drive_sharedGraphWPreMe
       parameters:
         - name: group-id
@@ -39455,9 +39221,6 @@ paths:
         - groups.drive
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: group.drive.root.listItem.documentSetVersion_restore
       parameters:
         - name: group-id
@@ -40733,9 +40496,6 @@ paths:
         - groups.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.root.listItem.version_restoreVersion
       parameters:
         - name: group-id
@@ -40851,9 +40611,6 @@ paths:
         - groups.drive
       summary: Invoke action checkin
       description: 'Check in a checked out driveItem resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: group.drive.root_checkin
       parameters:
         - name: group-id
@@ -40900,9 +40657,6 @@ paths:
         - groups.drive
       summary: Invoke action checkout
       description: 'Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: group.drive.root_checkout
       parameters:
         - name: group-id
@@ -40989,9 +40743,6 @@ paths:
         - groups.drive
       summary: Invoke action createLink
       description: "Create a link to share a driveItem driveItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: group.drive.root_createLink
       parameters:
         - name: group-id
@@ -41110,9 +40861,6 @@ paths:
         - groups.drive
       summary: Invoke function delta
       description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: group.drive.root_delta
       parameters:
         - name: group-id
@@ -41292,9 +41040,6 @@ paths:
         - groups.drive
       summary: Invoke action discardCheckout
       description: Discard the check out of a driveItem. This action releases a driveItem resource that was previously checked out. Any changes made to the item while it was checked out are discarded.  The same user that performed the checkout must discard it. Another alternative is to use application permissions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-discardcheckout?view=graph-rest-1.0
       operationId: group.drive.root_discardCheckout
       parameters:
         - name: group-id
@@ -41358,9 +41103,6 @@ paths:
         - groups.drive
       summary: Invoke action follow
       description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: group.drive.root_follow
       parameters:
         - name: group-id
@@ -41395,9 +41137,6 @@ paths:
         - groups.drive
       summary: Invoke function getActivitiesByInterval
       description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: group.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: group-id
@@ -41587,9 +41326,6 @@ paths:
         - groups.drive
       summary: Invoke action invite
       description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: group.drive.root_invite
       parameters:
         - name: group-id
@@ -41757,9 +41493,6 @@ paths:
         - groups.drive
       summary: Invoke action restore
       description: Restore a driveItem that has been deleted and is currently in the recycle bin.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: group.drive.root_restore
       parameters:
         - name: group-id
@@ -41809,9 +41542,6 @@ paths:
         - groups.drive
       summary: Invoke function search
       description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: group.drive.root_search
       parameters:
         - name: group-id
@@ -41903,9 +41633,6 @@ paths:
         - groups.drive
       summary: Invoke action unfollow
       description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: group.drive.root_unfollow
       parameters:
         - name: group-id
@@ -42238,9 +41965,6 @@ paths:
         - groups.drive
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: group.drive.root.permission_grant
       parameters:
         - name: group-id
@@ -42731,9 +42455,6 @@ paths:
         - groups.drive
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: group.drive.root.subscription_reauthorize
       parameters:
         - name: group-id
@@ -43480,9 +43201,6 @@ paths:
         - groups.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.root.version_restoreVersion
       parameters:
         - name: group-id
@@ -44241,16 +43959,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: sharedDriveItem
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
-          style: simple
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
@@ -46484,9 +46192,6 @@ paths:
         - shares.list
       summary: Invoke action associateWithHubSites
       description: Associate a published content type present in a content type hub with a list of hub sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: share.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: sharedDriveItem-id
@@ -46535,9 +46240,6 @@ paths:
         - shares.list
       summary: Invoke action copyToDefaultContentLocation
       description: Copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: share.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: sharedDriveItem-id
@@ -46583,9 +46285,6 @@ paths:
         - shares.list
       summary: Invoke function isPublished
       description: Check the publishing status of a contentType in a content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
       operationId: share.list.contentType_isPublished
       parameters:
         - name: sharedDriveItem-id
@@ -46626,9 +46325,6 @@ paths:
         - shares.list
       summary: Invoke action publish
       description: Publishes a contentType present in the content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: share.list.contentType_publish
       parameters:
         - name: sharedDriveItem-id
@@ -46659,9 +46355,6 @@ paths:
         - shares.list
       summary: Invoke action unpublish
       description: Unpublish a contentType from a content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: share.list.contentType_unpublish
       parameters:
         - name: sharedDriveItem-id
@@ -46714,9 +46407,6 @@ paths:
         - shares.list
       summary: Invoke action addCopy
       description: Add a copy of a content type from a site to a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: share.list.contentType_addCopy
       parameters:
         - name: sharedDriveItem-id
@@ -46755,9 +46445,6 @@ paths:
         - shares.list
       summary: Invoke action addCopyFromContentTypeHub
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: share.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: sharedDriveItem-id
@@ -46796,9 +46483,6 @@ paths:
         - shares.list
       summary: Invoke function getCompatibleHubContentTypes
       description: 'Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
       operationId: share.list.contentType_getCompatibleHubContentType
       parameters:
         - name: sharedDriveItem-id
@@ -48045,9 +47729,6 @@ paths:
         - shares.list
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: share.list.item.documentSetVersion_restore
       parameters:
         - name: sharedDriveItem-id
@@ -49323,9 +49004,6 @@ paths:
         - shares.list
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: share.list.item.version_restoreVersion
       parameters:
         - name: sharedDriveItem-id
@@ -49394,9 +49072,6 @@ paths:
         - shares.list
       summary: Invoke function delta
       description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
       operationId: share.list.item_delta
       parameters:
         - name: sharedDriveItem-id
@@ -50220,9 +49895,6 @@ paths:
         - shares.list
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: share.list.subscription_reauthorize
       parameters:
         - name: sharedDriveItem-id
@@ -50971,9 +50643,6 @@ paths:
         - shares.listItem
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: share.listItem.documentSetVersion_restore
       parameters:
         - name: sharedDriveItem-id
@@ -52049,9 +51718,6 @@ paths:
         - shares.listItem
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: share.listItem.version_restoreVersion
       parameters:
         - name: sharedDriveItem-id
@@ -52207,9 +51873,6 @@ paths:
         - shares.permission
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: share.permission_grant
       parameters:
         - name: sharedDriveItem-id
@@ -57188,9 +56851,6 @@ paths:
         - users.drive
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: user.drive.item.listItem.documentSetVersion_restore
       parameters:
         - name: user-id
@@ -58666,9 +58326,6 @@ paths:
         - users.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: user.drive.item.listItem.version_restoreVersion
       parameters:
         - name: user-id
@@ -58808,9 +58465,6 @@ paths:
         - users.drive
       summary: Invoke action checkin
       description: 'Check in a checked out driveItem resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: user.drive.item_checkin
       parameters:
         - name: user-id
@@ -58865,9 +58519,6 @@ paths:
         - users.drive
       summary: Invoke action checkout
       description: 'Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: user.drive.item_checkout
       parameters:
         - name: user-id
@@ -58970,9 +58621,6 @@ paths:
         - users.drive
       summary: Invoke action createLink
       description: "Create a link to share a driveItem driveItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: user.drive.item_createLink
       parameters:
         - name: user-id
@@ -59107,9 +58755,6 @@ paths:
         - users.drive
       summary: Invoke function delta
       description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: user.drive.item_delta
       parameters:
         - name: user-id
@@ -59305,9 +58950,6 @@ paths:
         - users.drive
       summary: Invoke action discardCheckout
       description: Discard the check out of a driveItem. This action releases a driveItem resource that was previously checked out. Any changes made to the item while it was checked out are discarded.  The same user that performed the checkout must discard it. Another alternative is to use application permissions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-discardcheckout?view=graph-rest-1.0
       operationId: user.drive.item_discardCheckout
       parameters:
         - name: user-id
@@ -59387,9 +59029,6 @@ paths:
         - users.drive
       summary: Invoke action follow
       description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: user.drive.item_follow
       parameters:
         - name: user-id
@@ -59432,9 +59071,6 @@ paths:
         - users.drive
       summary: Invoke function getActivitiesByInterval
       description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: user.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
@@ -59640,9 +59276,6 @@ paths:
         - users.drive
       summary: Invoke action invite
       description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: user.drive.item_invite
       parameters:
         - name: user-id
@@ -59834,9 +59467,6 @@ paths:
         - users.drive
       summary: Invoke action restore
       description: Restore a driveItem that has been deleted and is currently in the recycle bin.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: user.drive.item_restore
       parameters:
         - name: user-id
@@ -59894,9 +59524,6 @@ paths:
         - users.drive
       summary: Invoke function search
       description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: user.drive.item_search
       parameters:
         - name: user-id
@@ -59996,9 +59623,6 @@ paths:
         - users.drive
       summary: Invoke action unfollow
       description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: user.drive.item_unfollow
       parameters:
         - name: user-id
@@ -60387,9 +60011,6 @@ paths:
         - users.drive
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: user.drive.item.permission_grant
       parameters:
         - name: user-id
@@ -60960,9 +60581,6 @@ paths:
         - users.drive
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: user.drive.item.subscription_reauthorize
       parameters:
         - name: user-id
@@ -61837,9 +61455,6 @@ paths:
         - users.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: user.drive.item.version_restoreVersion
       parameters:
         - name: user-id
@@ -64103,9 +63718,6 @@ paths:
         - users.drive
       summary: Invoke action associateWithHubSites
       description: Associate a published content type present in a content type hub with a list of hub sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: user.drive.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: user-id
@@ -64162,9 +63774,6 @@ paths:
         - users.drive
       summary: Invoke action copyToDefaultContentLocation
       description: Copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: user.drive.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: user-id
@@ -64218,9 +63827,6 @@ paths:
         - users.drive
       summary: Invoke function isPublished
       description: Check the publishing status of a contentType in a content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0
       operationId: user.drive.list.contentType_isPublished
       parameters:
         - name: user-id
@@ -64269,9 +63875,6 @@ paths:
         - users.drive
       summary: Invoke action publish
       description: Publishes a contentType present in the content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: user.drive.list.contentType_publish
       parameters:
         - name: user-id
@@ -64310,9 +63913,6 @@ paths:
         - users.drive
       summary: Invoke action unpublish
       description: Unpublish a contentType from a content type hub site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: user.drive.list.contentType_unpublish
       parameters:
         - name: user-id
@@ -64381,9 +63981,6 @@ paths:
         - users.drive
       summary: Invoke action addCopy
       description: Add a copy of a content type from a site to a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: user.drive.list.contentType_addCopy
       parameters:
         - name: user-id
@@ -64430,9 +64027,6 @@ paths:
         - users.drive
       summary: Invoke action addCopyFromContentTypeHub
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: user.drive.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: user-id
@@ -64479,9 +64073,6 @@ paths:
         - users.drive
       summary: Invoke function getCompatibleHubContentTypes
       description: 'Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0
       operationId: user.drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: user-id
@@ -65936,9 +65527,6 @@ paths:
         - users.drive
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: user.drive.list.item.documentSetVersion_restore
       parameters:
         - name: user-id
@@ -67414,9 +67002,6 @@ paths:
         - users.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: user.drive.list.item.version_restoreVersion
       parameters:
         - name: user-id
@@ -67501,9 +67086,6 @@ paths:
         - users.drive
       summary: Invoke function delta
       description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0
       operationId: user.drive.list.item_delta
       parameters:
         - name: user-id
@@ -68471,9 +68053,6 @@ paths:
         - users.drive
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: user.drive.list.subscription_reauthorize
       parameters:
         - name: user-id
@@ -68542,9 +68121,6 @@ paths:
         - users.drive
       summary: Invoke function recent
       description: "List a set of items that have been recently used by the signed in user.\nThis collection includes items that are in the user's drive and items they have access to from other drives."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0
       operationId: user.drive_recent
       parameters:
         - name: user-id
@@ -68613,9 +68189,6 @@ paths:
         - users.drive
       summary: Invoke function search
       description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: user.drive_search
       parameters:
         - name: user-id
@@ -68692,9 +68265,6 @@ paths:
         - users.drive
       summary: Invoke function sharedWithMe
       description: Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0
       operationId: user.drive_sharedGraphWPreMe
       parameters:
         - name: user-id
@@ -71747,9 +71317,6 @@ paths:
         - users.drive
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: user.drive.root.listItem.documentSetVersion_restore
       parameters:
         - name: user-id
@@ -73025,9 +72592,6 @@ paths:
         - users.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: user.drive.root.listItem.version_restoreVersion
       parameters:
         - name: user-id
@@ -73143,9 +72707,6 @@ paths:
         - users.drive
       summary: Invoke action checkin
       description: 'Check in a checked out driveItem resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: user.drive.root_checkin
       parameters:
         - name: user-id
@@ -73192,9 +72753,6 @@ paths:
         - users.drive
       summary: Invoke action checkout
       description: 'Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: user.drive.root_checkout
       parameters:
         - name: user-id
@@ -73281,9 +72839,6 @@ paths:
         - users.drive
       summary: Invoke action createLink
       description: "Create a link to share a driveItem driveItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link is returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: user.drive.root_createLink
       parameters:
         - name: user-id
@@ -73402,9 +72957,6 @@ paths:
         - users.drive
       summary: Invoke function delta
       description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the changes, you may apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
       operationId: user.drive.root_delta
       parameters:
         - name: user-id
@@ -73584,9 +73136,6 @@ paths:
         - users.drive
       summary: Invoke action discardCheckout
       description: Discard the check out of a driveItem. This action releases a driveItem resource that was previously checked out. Any changes made to the item while it was checked out are discarded.  The same user that performed the checkout must discard it. Another alternative is to use application permissions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-discardcheckout?view=graph-rest-1.0
       operationId: user.drive.root_discardCheckout
       parameters:
         - name: user-id
@@ -73650,9 +73199,6 @@ paths:
         - users.drive
       summary: Invoke action follow
       description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: user.drive.root_follow
       parameters:
         - name: user-id
@@ -73687,9 +73233,6 @@ paths:
         - users.drive
       summary: Invoke function getActivitiesByInterval
       description: Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
       operationId: user.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
@@ -73879,9 +73422,6 @@ paths:
         - users.drive
       summary: Invoke action invite
       description: "Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: user.drive.root_invite
       parameters:
         - name: user-id
@@ -74049,9 +73589,6 @@ paths:
         - users.drive
       summary: Invoke action restore
       description: Restore a driveItem that has been deleted and is currently in the recycle bin.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: user.drive.root_restore
       parameters:
         - name: user-id
@@ -74101,9 +73638,6 @@ paths:
         - users.drive
       summary: Invoke function search
       description: "Search the hierarchy of items for items matching a query.\nYou can search within a folder hierarchy, a whole drive, or files shared with the current user."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0
       operationId: user.drive.root_search
       parameters:
         - name: user-id
@@ -74195,9 +73729,6 @@ paths:
         - users.drive
       summary: Invoke action unfollow
       description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: user.drive.root_unfollow
       parameters:
         - name: user-id
@@ -74530,9 +74061,6 @@ paths:
         - users.drive
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: user.drive.root.permission_grant
       parameters:
         - name: user-id
@@ -75023,9 +74551,6 @@ paths:
         - users.drive
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: user.drive.root.subscription_reauthorize
       parameters:
         - name: user-id
@@ -75772,9 +75297,6 @@ paths:
         - users.drive
       summary: Invoke action restoreVersion
       description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: user.drive.root.version_restoreVersion
       parameters:
         - name: user-id
@@ -77075,7 +76597,7 @@ components:
       properties:
         alias:
           type: string
-          description: 'The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).'
+          description: 'The alias of the domain object, for cases where an email address is unavailable (for example, security groups).'
           nullable: true
         email:
           type: string
@@ -81619,8 +81141,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.serviceProvisioningErrorCollectionResponse:
       title: Collection of microsoft.graph.serviceProvisioningError
       type: object
@@ -83046,6 +82568,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -86886,6 +86414,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -89828,6 +89406,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -92355,6 +91960,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -93012,7 +92644,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -93022,7 +92655,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

@@ -1250,11 +1250,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Create externalItem
-      description: Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
+      summary: Update externalItem
+      description: Update the properties of an externalitem.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-beta
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -2441,9 +2441,6 @@ paths:
         - external.industryDataRoot
       summary: Invoke action validate
       description: Perform validations applicable for the specific instance of the data connector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-beta
       operationId: external.industryData.dataConnector_validate
       parameters:
         - name: industryDataConnector-id
@@ -2653,11 +2650,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundFileFlow
-      description: Update the properties of an inboundFileFlow object.
+      summary: Update inboundApiFlow
+      description: Update the properties of an inboundApiFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-update?view=graph-rest-beta
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -3424,9 +3421,6 @@ paths:
         - external.industryDataRoot
       summary: Invoke action reset
       description: 'Reset a provisioningFlow. This action reprovisions all current data as if it were the initial run, and clears out the existing errors associated with the flow.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-provisioningflow-reset?view=graph-rest-beta
       operationId: external.industryData.outboundProvisioningFlowSet.provisioningFlow_reset
       parameters:
         - name: outboundProvisioningFlowSet-id
@@ -4185,9 +4179,6 @@ paths:
         - external.industryDataRoot
       summary: Invoke function getStatistics
       description: Get statistics for an industryDataRun.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-getstatistics?view=graph-rest-beta
       operationId: external.industryData.run_getStatistics
       parameters:
         - name: industryDataRun-id
@@ -5152,9 +5143,6 @@ paths:
         - search.searchEntity.Actions
       summary: Invoke action query
       description: Run a specified search query. Search results are provided in the response.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-beta
       operationId: search_query
       requestBody:
         description: Action parameters
@@ -6958,8 +6946,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.externalConnectors.externalConnectionCollectionResponse:
       title: Collection of externalConnection
       type: object
@@ -7873,7 +7861,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -7883,7 +7872,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

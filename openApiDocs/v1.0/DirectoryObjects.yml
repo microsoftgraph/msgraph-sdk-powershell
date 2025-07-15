@@ -539,9 +539,6 @@ paths:
         - directory.publicKeyInfrastructureRoot
       summary: Invoke action upload
       description: 'Append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-upload?view=graph-rest-1.0
       operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_upload
       parameters:
         - name: certificateBasedAuthPki-id
@@ -785,9 +782,6 @@ paths:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action checkMemberGroups
       description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: directoryObject_checkMemberGroup
       parameters:
         - name: directoryObject-id
@@ -893,9 +887,6 @@ paths:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: directoryObject_getMemberGroup
       parameters:
         - name: directoryObject-id
@@ -949,9 +940,6 @@ paths:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action getMemberObjects
       description: "Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: directoryObject_getMemberObject
       parameters:
         - name: directoryObject-id
@@ -1005,9 +993,6 @@ paths:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action restore
       description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: directoryObject_restore
       parameters:
         - name: directoryObject-id
@@ -1058,9 +1043,6 @@ paths:
         - directoryObjects.directoryObject.Functions
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0
       operationId: directoryObject_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1131,9 +1113,6 @@ paths:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: directoryObject_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
@@ -1179,9 +1158,6 @@ paths:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: directoryObject_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -1232,9 +1208,6 @@ paths:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: directoryObject_validateProperty
       requestBody:
         description: Action parameters
@@ -1460,8 +1433,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
@@ -1557,7 +1530,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -1567,7 +1541,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

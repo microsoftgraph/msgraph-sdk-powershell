@@ -2726,9 +2726,6 @@ paths:
         - users.licenseDetails
       summary: Invoke function getTeamsLicensingDetails
       description: Get the license status of a user in Microsoft Teams.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-beta
       operationId: user.licenseDetail_getTeamsLicensingDetail
       parameters:
         - name: user-id
@@ -4345,9 +4342,6 @@ paths:
         - users.outlookUser
       summary: Invoke function supportedLanguages
       description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by\ngetting the user's mailbox settings."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-beta
       operationId: user.outlook_supportedLanguage
       parameters:
         - name: user-id
@@ -4733,9 +4727,6 @@ paths:
         - users.outlookUser
       summary: Invoke action permanentDelete
       description: 'Permanently delete an outlook task folder and remove its items from the user''s mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlooktaskfolder-permanentdelete?view=graph-rest-beta
       operationId: user.outlook.taskFolder_permanentDelete
       parameters:
         - name: user-id
@@ -5371,9 +5362,6 @@ paths:
         - users.outlookUser
       summary: Invoke action createUploadSession
       description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
       operationId: user.outlook.taskFolder.task.attachment_createUploadSession
       parameters:
         - name: user-id
@@ -5434,9 +5422,6 @@ paths:
         - users.outlookUser
       summary: Invoke action complete
       description: 'Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The completedDateTime property represents the date when the task is finished. The time portion of completedDateTime is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-beta
       operationId: user.outlook.taskFolder.task_complete
       parameters:
         - name: user-id
@@ -5499,9 +5484,6 @@ paths:
         - users.outlookUser
       summary: Invoke action permanentDelete
       description: 'Permanently delete an Outlook task and place it in the Purges folder in the user''s mailbox. Email clients such as Outlook or the Outlook on the web can''t access permanently deleted items. Unless there''s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlooktask-permanentdelete?view=graph-rest-beta
       operationId: user.outlook.taskFolder.task_permanentDelete
       parameters:
         - name: user-id
@@ -6146,9 +6128,6 @@ paths:
         - users.outlookUser
       summary: Invoke action permanentDelete
       description: 'Permanently delete an outlook task folder and remove its items from the user''s mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlooktaskfolder-permanentdelete?view=graph-rest-beta
       operationId: user.outlook.taskGroup.taskFolder_permanentDelete
       parameters:
         - name: user-id
@@ -6872,9 +6851,6 @@ paths:
         - users.outlookUser
       summary: Invoke action createUploadSession
       description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
       operationId: user.outlook.taskGroup.taskFolder.task.attachment_createUploadSession
       parameters:
         - name: user-id
@@ -6943,9 +6919,6 @@ paths:
         - users.outlookUser
       summary: Invoke action complete
       description: 'Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The completedDateTime property represents the date when the task is finished. The time portion of completedDateTime is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-beta
       operationId: user.outlook.taskGroup.taskFolder.task_complete
       parameters:
         - name: user-id
@@ -7016,9 +6989,6 @@ paths:
         - users.outlookUser
       summary: Invoke action permanentDelete
       description: 'Permanently delete an Outlook task and place it in the Purges folder in the user''s mailbox. Email clients such as Outlook or the Outlook on the web can''t access permanently deleted items. Unless there''s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlooktask-permanentdelete?view=graph-rest-beta
       operationId: user.outlook.taskGroup.taskFolder.task_permanentDelete
       parameters:
         - name: user-id
@@ -7701,9 +7671,6 @@ paths:
         - users.outlookUser
       summary: Invoke action createUploadSession
       description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
       operationId: user.outlook.task.attachment_createUploadSession
       parameters:
         - name: user-id
@@ -7756,9 +7723,6 @@ paths:
         - users.outlookUser
       summary: Invoke action complete
       description: 'Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The completedDateTime property represents the date when the task is finished. The time portion of completedDateTime is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-beta
       operationId: user.outlook.task_complete
       parameters:
         - name: user-id
@@ -7813,9 +7777,6 @@ paths:
         - users.outlookUser
       summary: Invoke action permanentDelete
       description: 'Permanently delete an Outlook task and place it in the Purges folder in the user''s mailbox. Email clients such as Outlook or the Outlook on the web can''t access permanently deleted items. Unless there''s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/outlooktask-permanentdelete?view=graph-rest-beta
       operationId: user.outlook.task_permanentDelete
       parameters:
         - name: user-id
@@ -13236,9 +13197,6 @@ paths:
         - users.todo
       summary: Invoke action createUploadSession
       description: 'Create an upload session to iteratively upload ranges of a file as an attachment to a todoTask. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. The request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows the transfer to be resumed, in case the network connection is dropped during the upload. The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/taskfileattachment-createuploadsession?view=graph-rest-beta
       operationId: user.todo.list.task.attachment_createUploadSession
       parameters:
         - name: user-id
@@ -18845,6 +18803,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.attachmentBase:
@@ -21492,7 +21455,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -23941,11 +23904,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -24064,6 +24027,17 @@ components:
         - flaggedEmails
         - unknownFutureValue
       type: string
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     ReferenceUpdate:
       type: object
       properties:
@@ -24110,8 +24084,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
@@ -26946,12 +26920,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -26976,10 +26944,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -34665,45 +34629,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRightsIncluded:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36282,13 +36207,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -37874,6 +37799,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -45458,7 +45384,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     search:
       name: $search
@@ -45492,7 +45419,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
   requestBodies:
     refPutBody:
       description: New navigation property ref values

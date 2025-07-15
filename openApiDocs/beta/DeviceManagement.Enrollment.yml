@@ -8244,9 +8244,6 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Invoke function assignedPrincipals
       description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
       operationId: roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8386,9 +8383,6 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Invoke function assignedPrincipals
       description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
       operationId: roleManagement.cloudPC.roleDefinition_assignedPrincipal
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10673,9 +10667,6 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Invoke function assignedPrincipals
       description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
       operationId: roleManagement.defender.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10815,9 +10806,6 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Invoke function assignedPrincipals
       description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
       operationId: roleManagement.defender.roleDefinition_assignedPrincipal
       parameters:
         - name: unifiedRoleDefinition-id
@@ -11787,11 +11775,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List unifiedRoleAssignmentMultiple
-      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      summary: Get unifiedRoleAssignmentMultiple
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13123,9 +13111,6 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Invoke function assignedPrincipals
       description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
       operationId: roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
       parameters:
         - name: unifiedRoleDefinition-id
@@ -13265,9 +13250,6 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Invoke function assignedPrincipals
       description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
       operationId: roleManagement.deviceManagement.roleDefinition_assignedPrincipal
       parameters:
         - name: unifiedRoleDefinition-id
@@ -15464,9 +15446,6 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Invoke function assignedPrincipals
       description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
       operationId: roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
       parameters:
         - name: unifiedRoleDefinition-id
@@ -15606,9 +15585,6 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Invoke function assignedPrincipals
       description: 'Get the list of security principals (users, groups, and service principals) that are assigned to a specific role for different scopes either directly or transitively. You can use the $count query parameter to also get the count. This API is supported for the directory (Microsoft Entra ID) provider only. To list the direct and transitive role assignments for a specific principal, use the List transitiveRoleAssignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
       operationId: roleManagement.exchange.roleDefinition_assignedPrincipal
       parameters:
         - name: unifiedRoleDefinition-id
@@ -18940,8 +18916,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.androidForWorkEnrollmentProfileCollectionResponse:
       title: Collection of androidForWorkEnrollmentProfile
       type: object
@@ -20220,7 +20196,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -20230,7 +20207,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

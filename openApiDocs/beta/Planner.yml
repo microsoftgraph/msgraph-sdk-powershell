@@ -1665,9 +1665,6 @@ paths:
         - groups.plannerGroup
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: group.planner.plan.bucket.task_delta
       parameters:
         - name: group-id
@@ -1792,9 +1789,6 @@ paths:
         - groups.plannerGroup
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted buckets in a Planner plan without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
       operationId: group.planner.plan.bucket_delta
       parameters:
         - name: group-id
@@ -2015,9 +2009,6 @@ paths:
         - groups.plannerGroup
       summary: Invoke action archive
       description: 'Archive a plannerPlan object. Archiving a plan, also archives the plannerTasks and plannerBuckets in the plan.  An archived entity is read-only. Archived entities cannot be updated. An archived plan can be unarchived.  All archived entities can be deleted. Archived tasks are not included in the response for list of tasks assigned to a user. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-archive?view=graph-rest-beta
       operationId: group.planner.plan_archive
       parameters:
         - name: group-id
@@ -2061,9 +2052,6 @@ paths:
         - groups.plannerGroup
       summary: Invoke action moveToContainer
       description: Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-beta
       operationId: group.planner.plan_moveToContainer
       parameters:
         - name: group-id
@@ -2110,9 +2098,6 @@ paths:
         - groups.plannerGroup
       summary: Invoke action unarchive
       description: 'Unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-unarchive?view=graph-rest-beta
       operationId: group.planner.plan_unarchive
       parameters:
         - name: group-id
@@ -3076,9 +3061,6 @@ paths:
         - groups.plannerGroup
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: group.planner.plan.task_delta
       parameters:
         - name: group-id
@@ -3187,9 +3169,6 @@ paths:
         - groups.plannerGroup
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted Planner plans in either a group or a Planner roster without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta
       operationId: group.planner.plan_delta
       parameters:
         - name: group-id
@@ -4308,9 +4287,6 @@ paths:
         - planner.plannerBucket
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: planner.bucket.task_delta
       parameters:
         - name: plannerBucket-id
@@ -4403,9 +4379,6 @@ paths:
         - planner.plannerBucket
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted buckets in a Planner plan without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
       operationId: planner.bucket_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5812,9 +5785,6 @@ paths:
         - planner.plannerPlan
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: planner.plan.bucket.task_delta
       parameters:
         - name: plannerPlan-id
@@ -5923,9 +5893,6 @@ paths:
         - planner.plannerPlan
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted buckets in a Planner plan without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
       operationId: planner.plan.bucket_delta
       parameters:
         - name: plannerPlan-id
@@ -6121,9 +6088,6 @@ paths:
         - planner.plannerPlan
       summary: Invoke action archive
       description: 'Archive a plannerPlan object. Archiving a plan, also archives the plannerTasks and plannerBuckets in the plan.  An archived entity is read-only. Archived entities cannot be updated. An archived plan can be unarchived.  All archived entities can be deleted. Archived tasks are not included in the response for list of tasks assigned to a user. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-archive?view=graph-rest-beta
       operationId: planner.plan_archive
       parameters:
         - name: plannerPlan-id
@@ -6159,9 +6123,6 @@ paths:
         - planner.plannerPlan
       summary: Invoke action moveToContainer
       description: Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-beta
       operationId: planner.plan_moveToContainer
       parameters:
         - name: plannerPlan-id
@@ -6200,9 +6161,6 @@ paths:
         - planner.plannerPlan
       summary: Invoke action unarchive
       description: 'Unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-unarchive?view=graph-rest-beta
       operationId: planner.plan_unarchive
       parameters:
         - name: plannerPlan-id
@@ -7017,9 +6975,6 @@ paths:
         - planner.plannerPlan
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: planner.plan.task_delta
       parameters:
         - name: plannerPlan-id
@@ -7112,9 +7067,6 @@ paths:
         - planner.plannerPlan
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted Planner plans in either a group or a Planner roster without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta
       operationId: planner.plan_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7627,9 +7579,6 @@ paths:
         - planner.plannerRoster
       summary: Invoke action assignSensitivityLabel
       description: Assign a sensitivity label to a plannerRoster object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerroster-assignsensitivitylabel?view=graph-rest-beta
       operationId: planner.roster_assignSensitivityLabel
       parameters:
         - name: plannerRoster-id
@@ -8508,9 +8457,6 @@ paths:
         - planner.plannerTask
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: planner.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8929,9 +8875,6 @@ paths:
         - users.plannerUser
       summary: Invoke function delta
       description: 'Retrieves changes to objects that the user is subscribed to. This method allows your application to track changes to objects that the user can access from within Planner over time. The return value of this method might contain heterogeneous types of objects from Planner. For more information about tracking changes in Microsoft Graph data, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/planneruser-list-delta?view=graph-rest-beta
       operationId: user.planner.all_delta
       parameters:
         - name: user-id
@@ -10820,9 +10763,6 @@ paths:
         - users.plannerUser
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: user.planner.plan.bucket.task_delta
       parameters:
         - name: user-id
@@ -10947,9 +10887,6 @@ paths:
         - users.plannerUser
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted buckets in a Planner plan without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
       operationId: user.planner.plan.bucket_delta
       parameters:
         - name: user-id
@@ -11170,9 +11107,6 @@ paths:
         - users.plannerUser
       summary: Invoke action archive
       description: 'Archive a plannerPlan object. Archiving a plan, also archives the plannerTasks and plannerBuckets in the plan.  An archived entity is read-only. Archived entities cannot be updated. An archived plan can be unarchived.  All archived entities can be deleted. Archived tasks are not included in the response for list of tasks assigned to a user. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-archive?view=graph-rest-beta
       operationId: user.planner.plan_archive
       parameters:
         - name: user-id
@@ -11216,9 +11150,6 @@ paths:
         - users.plannerUser
       summary: Invoke action moveToContainer
       description: Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-beta
       operationId: user.planner.plan_moveToContainer
       parameters:
         - name: user-id
@@ -11265,9 +11196,6 @@ paths:
         - users.plannerUser
       summary: Invoke action unarchive
       description: 'Unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-unarchive?view=graph-rest-beta
       operationId: user.planner.plan_unarchive
       parameters:
         - name: user-id
@@ -12231,9 +12159,6 @@ paths:
         - users.plannerUser
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: user.planner.plan.task_delta
       parameters:
         - name: user-id
@@ -12342,9 +12267,6 @@ paths:
         - users.plannerUser
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted Planner plans in either a group or a Planner roster without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta
       operationId: user.planner.plan_delta
       parameters:
         - name: user-id
@@ -13474,9 +13396,6 @@ paths:
         - users.plannerUser
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
       operationId: user.planner.task_delta
       parameters:
         - name: user-id
@@ -14427,8 +14346,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.plannerRosterCollectionResponse:
       title: Collection of plannerRoster
       type: object
@@ -14771,7 +14690,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -14781,7 +14701,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

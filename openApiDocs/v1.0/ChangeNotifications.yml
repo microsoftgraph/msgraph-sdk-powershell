@@ -197,9 +197,6 @@ paths:
         - subscriptions.subscription.Actions
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: subscription_reauthorize
       parameters:
         - name: subscription-id
@@ -375,7 +372,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -385,7 +383,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

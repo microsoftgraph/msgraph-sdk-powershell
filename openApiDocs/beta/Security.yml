@@ -544,9 +544,6 @@ paths:
         - security.alert
       summary: Invoke action updateAlerts
       description: Update multiple alerts in one request instead of multiple requests.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-beta
       operationId: security.alert_updateAlert
       requestBody:
         description: Action parameters
@@ -4886,9 +4883,6 @@ paths:
         - security.casesRoot
       summary: Invoke action activate
       description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an eDiscovery (Premium) case.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-activate?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_activate
       parameters:
         - name: ediscoveryCase-id
@@ -4919,9 +4913,6 @@ paths:
         - security.casesRoot
       summary: Invoke action applyHold
       description: 'Start the process of applying hold on eDiscovery custodians. After the operation is created, you can use Get ediscoveryCustodian to retrieve the status of an ediscoveryCustodian.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -4952,9 +4943,6 @@ paths:
         - security.casesRoot
       summary: Invoke action release
       description: 'Release a custodian from a case. For details, see Release a custodian from a case.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-release?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_release
       parameters:
         - name: ediscoveryCase-id
@@ -4984,9 +4972,6 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action removeHold
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-removehold?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -5017,9 +5002,6 @@ paths:
         - security.casesRoot
       summary: Invoke action updateIndex
       description: Trigger an indexOperation
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-updateindex?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_updateIndex
       parameters:
         - name: ediscoveryCase-id
@@ -6205,9 +6187,6 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action applyHold
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -6244,9 +6223,6 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action removeHold
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-removehold?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -6284,9 +6260,6 @@ paths:
         - security.casesRoot
       summary: Invoke action updateIndex
       description: Trigger an indexOperation
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-updateindex?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.custodian_updateIndex
       parameters:
         - name: ediscoveryCase-id
@@ -7225,9 +7198,6 @@ paths:
         - security.casesRoot
       summary: Invoke action close
       description: 'Close an eDiscovery case. For details, see Close a case.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycase-close?view=graph-rest-beta
       operationId: security.case.ediscoveryCase_close
       parameters:
         - name: ediscoveryCase-id
@@ -7250,9 +7220,6 @@ paths:
         - security.casesRoot
       summary: Invoke action reopen
       description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycase-reopen?view=graph-rest-beta
       operationId: security.case.ediscoveryCase_reopen
       parameters:
         - name: ediscoveryCase-id
@@ -7678,9 +7645,6 @@ paths:
         - security.casesRoot
       summary: Invoke action applyHold
       description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-applyhold?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.noncustodialDataSource_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -7711,9 +7675,6 @@ paths:
         - security.casesRoot
       summary: Invoke action release
       description: Release the non-custodial data source from the case.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-release?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.noncustodialDataSource_release
       parameters:
         - name: ediscoveryCase-id
@@ -7744,9 +7705,6 @@ paths:
         - security.casesRoot
       summary: Invoke action removeHold
       description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.noncustodialDataSource_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -7777,9 +7735,6 @@ paths:
         - security.casesRoot
       summary: Invoke action updateIndex
       description: Trigger an indexOperation
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-updateindex?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.noncustodialDataSource_updateIndex
       parameters:
         - name: ediscoveryCase-id
@@ -7831,9 +7786,6 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action applyHold
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-applyhold?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.noncustodialDataSource_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -7870,9 +7822,6 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action removeHold
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.noncustodialDataSource_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -9214,9 +9163,6 @@ paths:
         - security.casesRoot
       summary: Invoke action addToReviewSet
       description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers. The location provides a URL that returns an Add to review set operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-addtoreviewset?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.reviewSet_addToReviewSet
       parameters:
         - name: ediscoveryCase-id
@@ -9267,9 +9213,6 @@ paths:
         - security.casesRoot
       summary: Invoke action export
       description: 'Initiate an export from a reviewSet. For more information, see Export documents from a review set in eDiscovery (Premium).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-export?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.reviewSet_export
       parameters:
         - name: ediscoveryCase-id
@@ -9602,9 +9545,6 @@ paths:
         - security.casesRoot
       summary: Invoke action applyTags
       description: 'Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-applytags?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.reviewSet.query_applyTag
       parameters:
         - name: ediscoveryCase-id
@@ -9661,9 +9601,6 @@ paths:
         - security.casesRoot
       summary: Invoke action export
       description: 'Initiate an export from a ediscoveryReviewSetQuery.  For details, see Export documents from a review set in eDiscovery (Premium).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-export?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.reviewSet.query_export
       parameters:
         - name: ediscoveryCase-id
@@ -9728,9 +9665,6 @@ paths:
         - security.casesRoot
       summary: Invoke function run
       description: Run reviewset query to get the list of files.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-run?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.reviewSet.query_run
       parameters:
         - name: ediscoveryCase-id
@@ -10679,9 +10613,6 @@ paths:
         - security.casesRoot
       summary: Invoke action estimateStatistics
       description: 'Run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-estimatestatistics?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.search_estimateStatistics
       parameters:
         - name: ediscoveryCase-id
@@ -10712,9 +10643,6 @@ paths:
         - security.casesRoot
       summary: Invoke action exportReport
       description: 'Export an item report from an estimated ediscoverySearch. For details, see Manage a collection estimate.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-exportreport?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.search_exportReport
       parameters:
         - name: ediscoveryCase-id
@@ -10771,9 +10699,6 @@ paths:
         - security.casesRoot
       summary: Invoke action exportResult
       description: 'Export results from an estimated ediscoverySearch. For details, see Manage a collection estimate.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-exportresult?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.search_exportResult
       parameters:
         - name: ediscoveryCase-id
@@ -10836,9 +10761,6 @@ paths:
         - security.casesRoot
       summary: Invoke action purgeData
       description: "Delete Exchange mailbox items or Microsoft Teams messages contained in an eDiscovery search. You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-purgedata?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.search_purgeData
       parameters:
         - name: ediscoveryCase-id
@@ -11175,9 +11097,6 @@ paths:
         - security.casesRoot
       summary: Invoke action resetToDefault
       description: Reset a caseSettings object to the default values.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-resettodefault?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.setting_resetToDefault
       parameters:
         - name: ediscoveryCase-id
@@ -11675,9 +11594,6 @@ paths:
         - security.casesRoot
       summary: Invoke function asHierarchy
       description: List eDiscovery review tags with the tag hierarchy shown.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-ashierarchy?view=graph-rest-beta
       operationId: security.case.ediscoveryCase.tag_asHierarchy
       parameters:
         - name: ediscoveryCase-id
@@ -12264,9 +12180,6 @@ paths:
         - security.collaborationRoot
       summary: Invoke action remediate
       description: 'Remove a potential threat from end users'' mailboxes. Remediation means to take prescribed action against a threat. This API can trigger email purge actions like move to junk, move to deleted items, soft delete, hard delete, or move to Inbox. This API enables scenarios and use cases such as SOAR integration, playbooks, and automations. For more information read email remediation, trigger action and track actions. If there is false positives admins can take move to inbox action.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-analyzedemail-remediate?view=graph-rest-beta
       operationId: security.collaboration.analyzedEmail_remediate
       requestBody:
         description: Action parameters
@@ -12855,6 +12768,195 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /security/dataSecurityAndGovernance/policyFiles:
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get policyFiles from security
+      operationId: security.dataSecurityAndGovernance_ListPolicyFile
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.policyFileCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Create new navigation property to policyFiles for security
+      operationId: security.dataSecurityAndGovernance_CreatePolicyFile
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.policyFile'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policyFile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/dataSecurityAndGovernance/policyFiles/{policyFile-id}':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get policyFiles from security
+      operationId: security.dataSecurityAndGovernance_GetPolicyFile
+      parameters:
+        - name: policyFile-id
+          in: path
+          description: The unique identifier of policyFile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyFile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policyFile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Update the navigation property policyFiles in security
+      operationId: security.dataSecurityAndGovernance_UpdatePolicyFile
+      parameters:
+        - name: policyFile-id
+          in: path
+          description: The unique identifier of policyFile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyFile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.policyFile'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policyFile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Delete navigation property policyFiles for security
+      operationId: security.dataSecurityAndGovernance_DeletePolicyFile
+      parameters:
+        - name: policyFile-id
+          in: path
+          description: The unique identifier of policyFile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyFile
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/dataSecurityAndGovernance/policyFiles/$count:
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get the number of the resource
+      operationId: security.dataSecurityAndGovernance.policyFile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/dataSecurityAndGovernance/protectionScopes:
     get:
       tags:
@@ -13513,9 +13615,6 @@ paths:
         - security.tenantDataSecurityAndGovernance
       summary: Invoke function computeInheritance
       description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
       operationId: security.dataSecurityAndGovernance.sensitivityLabel.sublabel_computeInheritance
       parameters:
         - name: sensitivityLabel-id
@@ -13568,9 +13667,6 @@ paths:
         - security.tenantDataSecurityAndGovernance
       summary: Invoke action computeRightsAndInheritance
       description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
       operationId: security.dataSecurityAndGovernance.sensitivityLabel.sublabel_computeRightsAndInheritance
       parameters:
         - name: sensitivityLabel-id
@@ -13676,9 +13772,6 @@ paths:
         - security.tenantDataSecurityAndGovernance
       summary: Invoke function computeInheritance
       description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
       operationId: security.dataSecurityAndGovernance.sensitivityLabel_computeInheritance
       parameters:
         - name: labelIds
@@ -13723,9 +13816,6 @@ paths:
         - security.tenantDataSecurityAndGovernance
       summary: Invoke action computeRightsAndInheritance
       description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
       operationId: security.dataSecurityAndGovernance.sensitivityLabel_computeRightsAndInheritance
       requestBody:
         description: Action parameters
@@ -14747,6 +14837,236 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/identities/identityAccounts:
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get identityAccounts from security
+      operationId: security.identity_ListIdentityAccount
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.identityAccountsCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.identityContainer
+      summary: Create new navigation property to identityAccounts for security
+      operationId: security.identity_CreateIdentityAccount
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/identityAccounts/{identityAccounts-id}':
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get identityAccounts from security
+      operationId: security.identity_GetIdentityAccount
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.identityContainer
+      summary: Update the navigation property identityAccounts in security
+      operationId: security.identity_UpdateIdentityAccount
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.identityContainer
+      summary: Delete navigation property identityAccounts for security
+      operationId: security.identity_DeleteIdentityAccount
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/identityAccounts/{identityAccounts-id}/microsoft.graph.security.invokeAction':
+    post:
+      tags:
+        - security.identityContainer
+      summary: Invoke action invokeAction
+      operationId: security.identity.identityAccount_invokeAction
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountId:
+                  type: string
+                action:
+                  $ref: '#/components/schemas/microsoft.graph.security.action'
+                identityProvider:
+                  $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.invokeActionResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /security/identities/identityAccounts/$count:
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get the number of the resource
+      operationId: security.identity.identityAccount_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/identities/sensors:
     get:
       tags:
@@ -15094,9 +15414,6 @@ paths:
         - security.identityContainer
       summary: Invoke function getDeploymentAccessKey
       description: 'Get the deployment access key associated with a Microsoft Defender for Identity, needed to install sensors associated with the workspace.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentaccesskey?view=graph-rest-beta
       operationId: security.identity.sensor_getDeploymentAccessKey
       responses:
         2XX:
@@ -15114,9 +15431,6 @@ paths:
         - security.identityContainer
       summary: Invoke function getDeploymentPackageUri
       description: Get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentpackageuri?view=graph-rest-beta
       operationId: security.identity.sensor_getDeploymentPackageUri
       responses:
         2XX:
@@ -15134,9 +15448,6 @@ paths:
         - security.identityContainer
       summary: Invoke action regenerateDeploymentAccessKey
       description: Generate a new deployment access key that can be used to install a sensor associated with the workspace.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensor-regeneratedeploymentaccesskey?view=graph-rest-beta
       operationId: security.identity.sensor_regenerateDeploymentAccessKey
       responses:
         2XX:
@@ -15556,6 +15867,261 @@ paths:
         - security.incident
       summary: Get the number of the resource
       operationId: security.incident_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/incidentTasks:
+    get:
+      tags:
+        - security.incidentTask
+      summary: Get incidentTasks from security
+      operationId: security_ListIncidentTask
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.incidentTaskCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.incidentTask
+      summary: Create new navigation property to incidentTasks for security
+      operationId: security_CreateIncidentTask
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/incidentTasks/{incidentTask-id}':
+    get:
+      tags:
+        - security.incidentTask
+      summary: Get incidentTasks from security
+      operationId: security_GetIncidentTask
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.incidentTask
+      summary: Update the navigation property incidentTasks in security
+      operationId: security_UpdateIncidentTask
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.incidentTask
+      summary: Delete navigation property incidentTasks for security
+      operationId: security_DeleteIncidentTask
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/incidentTasks/{incidentTask-id}/incident':
+    get:
+      tags:
+        - security.incidentTask
+      summary: Get incident from security
+      operationId: security.incidentTask_GetIncident
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incident'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/incidentTasks/{incidentTask-id}/microsoft.graph.security.executeResponseAction':
+    post:
+      tags:
+        - security.incidentTask
+      summary: Invoke action executeResponseAction
+      operationId: security.incidentTask_executeResponseAction
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /security/incidentTasks/$count:
+    get:
+      tags:
+        - security.incidentTask
+      summary: Get the number of the resource
+      operationId: security.incidentTask_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -16018,9 +16584,6 @@ paths:
         - security.informationProtection
       summary: Invoke action evaluateApplication
       description: 'Compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents. Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensitivitylabel-evaluateapplication?view=graph-rest-beta
       operationId: security.informationProtection.sensitivityLabel_evaluateApplication
       requestBody:
         description: Action parameters
@@ -16065,9 +16628,6 @@ paths:
         - security.informationProtection
       summary: Invoke action evaluateClassificationResults
       description: 'Use the classification results to compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide the contentInfo, which includes existing content metadata key-value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensitivitylabel-evaluateclassificationresults?view=graph-rest-beta
       operationId: security.informationProtection.sensitivityLabel_evaluateClassificationResult
       requestBody:
         description: Action parameters
@@ -16114,9 +16674,6 @@ paths:
         - security.informationProtection
       summary: Invoke action evaluateRemoval
       description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensitivitylabel-evaluateremoval?view=graph-rest-beta
       operationId: security.informationProtection.sensitivityLabel_evaluateRemoval
       requestBody:
         description: Action parameters
@@ -16161,9 +16718,6 @@ paths:
         - security.informationProtection
       summary: Invoke action extractContentLabel
       description: Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensitivitylabel-extractcontentlabel?view=graph-rest-beta
       operationId: security.informationProtection.sensitivityLabel_extractContentLabel
       requestBody:
         description: Action parameters
@@ -20659,9 +21213,6 @@ paths:
         - security.securityAction
       summary: Invoke action cancelSecurityAction
       description: Cancel a security operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/securityaction-cancelsecurityaction?view=graph-rest-beta
       operationId: security.securityAction_cancelSecurityAction
       parameters:
         - name: securityAction-id
@@ -21635,9 +22186,6 @@ paths:
         - security.subjectRightsRequest
       summary: Invoke function getFinalAttachment
       description: Get the final attachment for a subject rights request. The attachment is a zip file that contains all the files that were included by the privacy administrator.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-getfinalattachment?view=graph-rest-beta
       operationId: security.subjectRightsRequest_getFinalAttachment
       parameters:
         - name: subjectRightsRequest-id
@@ -21671,9 +22219,6 @@ paths:
         - security.subjectRightsRequest
       summary: Invoke function getFinalReport
       description: Get the final report for a subject rights request. The report is a text file that contains information about the files that were included by the privacy administrator.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-getfinalreport?view=graph-rest-beta
       operationId: security.subjectRightsRequest_getFinalReport
       parameters:
         - name: subjectRightsRequest-id
@@ -29869,9 +30414,6 @@ paths:
         - security.tiIndicator
       summary: Invoke action deleteTiIndicators
       description: Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-beta
       operationId: security.tiIndicator_deleteTiIndicator
       requestBody:
         description: Action parameters
@@ -29923,9 +30465,6 @@ paths:
         - security.tiIndicator
       summary: Invoke action deleteTiIndicatorsByExternalId
       description: 'Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicatorsbyexternalid?view=graph-rest-beta
       operationId: security.tiIndicator_deleteTiIndicatorsGraphBPreExternalId
       requestBody:
         description: Action parameters
@@ -29977,9 +30516,6 @@ paths:
         - security.tiIndicator
       summary: Invoke action submitTiIndicators
       description: Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-beta
       operationId: security.tiIndicator_submitTiIndicator
       requestBody:
         description: Action parameters
@@ -30031,9 +30567,6 @@ paths:
         - security.tiIndicator
       summary: Invoke action updateTiIndicators
       description: Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-beta
       operationId: security.tiIndicator_updateTiIndicator
       requestBody:
         description: Action parameters
@@ -31599,9 +32132,6 @@ paths:
         - users.security
       summary: Invoke action evaluateApplication
       description: 'Compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents. Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensitivitylabel-evaluateapplication?view=graph-rest-beta
       operationId: user.security.informationProtection.sensitivityLabel_evaluateApplication
       parameters:
         - name: user-id
@@ -31655,9 +32185,6 @@ paths:
         - users.security
       summary: Invoke action evaluateClassificationResults
       description: 'Use the classification results to compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide the contentInfo, which includes existing content metadata key-value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensitivitylabel-evaluateclassificationresults?view=graph-rest-beta
       operationId: user.security.informationProtection.sensitivityLabel_evaluateClassificationResult
       parameters:
         - name: user-id
@@ -31713,9 +32240,6 @@ paths:
         - users.security
       summary: Invoke action evaluateRemoval
       description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensitivitylabel-evaluateremoval?view=graph-rest-beta
       operationId: user.security.informationProtection.sensitivityLabel_evaluateRemoval
       parameters:
         - name: user-id
@@ -31769,9 +32293,6 @@ paths:
         - users.security
       summary: Invoke action extractContentLabel
       description: Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/security-sensitivitylabel-extractcontentlabel?view=graph-rest-beta
       operationId: user.security.informationProtection.sensitivityLabel_extractContentLabel
       parameters:
         - name: user-id
@@ -31861,6 +32382,11 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.security.incident'
           description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
+          x-ms-navigationProperty: true
+        incidentTasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
           x-ms-navigationProperty: true
         informationProtection:
           $ref: '#/components/schemas/microsoft.graph.security.informationProtection'
@@ -34601,6 +35127,11 @@ components:
         - title: tenantDataSecurityAndGovernance
           type: object
           properties:
+            policyFiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.policyFile'
+              x-ms-navigationProperty: true
             protectionScopes:
               $ref: '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
           additionalProperties:
@@ -34633,6 +35164,24 @@ components:
           $ref: '#/components/schemas/microsoft.graph.processContentResponse'
       additionalProperties:
         type: object
+    microsoft.graph.policyFile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: policyFile
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            fileType:
+              $ref: '#/components/schemas/microsoft.graph.policyFileType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.policyFileStatus'
+            version:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.tenantProtectionScopeContainer:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -34721,12 +35270,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -34751,10 +35294,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -35095,6 +35634,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
               description: Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
               x-ms-navigationProperty: true
+            identityAccounts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+              x-ms-navigationProperty: true
             sensors:
               type: array
               items:
@@ -35165,6 +35709,66 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.healthIssueStatus'
           additionalProperties:
             type: object
+    microsoft.graph.security.identityAccounts:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityAccounts
+          type: object
+          properties:
+            accounts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.account'
+            cloudSecurityIdentifier:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            domain:
+              type: string
+              nullable: true
+            isEnabled:
+              type: boolean
+            onPremisesSecurityIdentifier:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.action:
+      title: action
+      enum:
+        - disable
+        - enable
+        - forcePasswordReset
+        - revokeAllSessions
+        - requireUserToSignInAgain
+        - markUserAsCompromised
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.identityProvider:
+      title: identityProvider
+      enum:
+        - entraID
+        - activeDirectory
+        - okta
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.invokeActionResult:
+      title: invokeActionResult
+      type: object
+      properties:
+        accountId:
+          type: string
+        action:
+          $ref: '#/components/schemas/microsoft.graph.security.action'
+        correlationId:
+          type: string
+          nullable: true
+        identityProvider:
+          $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
+      additionalProperties:
+        type: object
     microsoft.graph.security.sensor:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -35318,6 +35922,42 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.security.alert'
               description: The list of related alerts. Supports $expand.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.incidentTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: incidentTask
+          type: object
+          properties:
+            actionStatus:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskActionStatus'
+            actionType:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskActionType'
+            createdByDisplayName:
+              type: string
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+            displayName:
+              type: string
+            lastModifiedByDisplayName:
+              type: string
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            responseAction:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskResponseAction'
+            source:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskSource'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskStatus'
+            incident:
+              $ref: '#/components/schemas/microsoft.graph.security.incident'
           additionalProperties:
             type: object
     microsoft.graph.security.informationProtection:
@@ -42478,6 +43118,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.protectionScopeState'
       additionalProperties:
         type: object
+    microsoft.graph.policyFileType:
+      title: policyFileType
+      enum:
+        - dlpPolicy
+        - dlpSensitiveInformationType
+        - dataCollectionPolicy
+        - unknownFutureValue
+      type: string
+    microsoft.graph.policyFileStatus:
+      title: policyFileStatus
+      enum:
+        - modified
+        - notModified
+        - noContent
+        - unknownFutureValue
+      type: string
     microsoft.graph.operatingSystemSpecifications:
       title: operatingSystemSpecifications
       type: object
@@ -42553,45 +43209,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRights:
       title: usageRights
       enum:
@@ -42633,6 +43250,8 @@ components:
               type: string
               description: The content format.
               nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
             label:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
           additionalProperties:
@@ -42833,6 +43452,20 @@ components:
         - suppressed
         - unknownFutureValue
       type: string
+    microsoft.graph.security.account:
+      title: account
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.action'
+        identifier:
+          type: string
+        identityProvider:
+          $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
+      additionalProperties:
+        type: object
     microsoft.graph.security.deploymentStatus:
       title: deploymentStatus
       enum:
@@ -42910,6 +43543,64 @@ components:
         - redirected
         - unknownFutureValue
         - awaitingAction
+      type: string
+    microsoft.graph.security.incidentTaskActionStatus:
+      title: incidentTaskActionStatus
+      enum:
+        - notStarted
+        - inProgress
+        - partiallyCompleted
+        - completed
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.incidentTaskActionType:
+      title: incidentTaskActionType
+      enum:
+        - text
+        - isolateDevice
+        - stopAndQuarantineFile
+        - runAntiVirusScan
+        - collectInvestigationPackage
+        - restrictAppExecution
+        - submitIocRule
+        - forceUserPasswordReset
+        - disableUser
+        - markUserAsCompromised
+        - requireSignIn
+        - hardDeleteEmail
+        - softDeleteEmail
+        - unIsolateDevice
+        - unRestrictAppExecution
+        - enableUser
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.incidentTaskResponseAction:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.security.responseAction'
+        - title: incidentTaskResponseAction
+          type: object
+          properties:
+            identifierValue:
+              type: string
+          additionalProperties:
+            type: object
+    microsoft.graph.security.incidentTaskSource:
+      title: incidentTaskSource
+      enum:
+        - defenderExpertsGuidedResponse
+        - defenderExpertsManagedResponse
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.incidentTaskStatus:
+      title: incidentTaskStatus
+      enum:
+        - open
+        - inProgress
+        - completed
+        - failed
+        - notRelevant
+        - unknownFutureValue
       type: string
     microsoft.graph.security.keyValuePair:
       title: keyValuePair
@@ -45965,7 +46656,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -48090,8 +48781,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.endUserNotificationCollectionResponse:
       title: Collection of endUserNotification
       type: object
@@ -48534,6 +49225,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.policyFileCollectionResponse:
+      title: Collection of policyFile
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.policyFile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sensitivityLabelCollectionResponse:
       title: Collection of sensitivityLabel
       type: object
@@ -48599,6 +49303,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.identityAccountsCollectionResponse:
+      title: Collection of identityAccounts
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.security.sensorCollectionResponse:
       title: Collection of sensor
       type: object
@@ -48620,6 +49337,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.incident'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.incidentTaskCollectionResponse:
+      title: Collection of incidentTask
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -51861,6 +52591,11 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.security.responseAction:
+      title: responseAction
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.security.filePlanDescriptorBase:
       title: filePlanDescriptorBase
       type: object
@@ -51934,11 +52669,6 @@ components:
           description: List of groups to which the custom detection rule applies.
         scopeType:
           $ref: '#/components/schemas/microsoft.graph.security.scopeType'
-      additionalProperties:
-        type: object
-    microsoft.graph.security.responseAction:
-      title: responseAction
-      type: object
       additionalProperties:
         type: object
     microsoft.graph.security.huntingRuleErrorCode:
@@ -62602,13 +63332,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -63813,11 +64543,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -64087,6 +64817,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEvent:
@@ -64221,6 +64956,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -65788,6 +66524,16 @@ components:
           type: string
           description: The date and time the inner error occurred.
           format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.labelActionBase:
+      title: labelActionBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
           nullable: true
       additionalProperties:
         type: object
@@ -67765,6 +68511,17 @@ components:
             webUrl:
               type: string
               description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -71779,6 +72536,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.cloudAppDiscoveryReportCollectionResponse'
+    microsoft.graph.policyFileCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.policyFileCollectionResponse'
     microsoft.graph.sensitivityLabelCollectionResponse:
       description: Retrieved collection
       content:
@@ -71809,6 +72572,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.healthIssueCollectionResponse'
+    microsoft.graph.security.identityAccountsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.identityAccountsCollectionResponse'
     microsoft.graph.security.sensorCollectionResponse:
       description: Retrieved collection
       content:
@@ -71821,6 +72590,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.incidentCollectionResponse'
+    microsoft.graph.security.incidentTaskCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.incidentTaskCollectionResponse'
     microsoft.graph.security.sensitivityLabelCollectionResponse:
       description: Retrieved collection
       content:
@@ -72118,7 +72893,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -72128,7 +72904,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

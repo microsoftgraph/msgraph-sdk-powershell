@@ -1018,9 +1018,6 @@ paths:
         - chats.teamsAppInstallation
       summary: Invoke action upgrade
       description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: chat.installedApp_upgrade
       parameters:
         - name: chat-id
@@ -1392,11 +1389,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get conversationMember
-      description: Retrieve a conversationMember from a chat or channel.
+      summary: Get conversationMember in a chat
+      description: Retrieve a conversationMember from a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -1550,9 +1547,6 @@ paths:
         - chats.conversationMember
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: chat.member_add
       parameters:
         - name: chat-id
@@ -1606,9 +1600,6 @@ paths:
         - chats.conversationMember
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: chat.member_remove
       parameters:
         - name: chat-id
@@ -1722,11 +1713,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -2357,9 +2348,6 @@ paths:
         - chats.chatMessage
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: chat.message_softDelete
       parameters:
         - name: chat-id
@@ -2390,9 +2378,6 @@ paths:
         - chats.chatMessage
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: chat.message_undoSoftDelete
       parameters:
         - name: chat-id
@@ -3261,9 +3246,6 @@ paths:
         - chats.chatMessage
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: chat.message.reply_softDelete
       parameters:
         - name: chat-id
@@ -3302,9 +3284,6 @@ paths:
         - chats.chatMessage
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: chat.message.reply_undoSoftDelete
       parameters:
         - name: chat-id
@@ -3423,9 +3402,6 @@ paths:
         - chats.chatMessage
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: chat.message.reply_delta
       parameters:
         - name: chat-id
@@ -3534,9 +3510,6 @@ paths:
         - chats.chatMessage
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: chat.message_delta
       parameters:
         - name: chat-id
@@ -3615,9 +3588,6 @@ paths:
         - chats.chat.Actions
       summary: Invoke action hideForUser
       description: Hide a chat for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
       operationId: chat_hideGraphFPreUser
       parameters:
         - name: chat-id
@@ -3652,9 +3622,6 @@ paths:
         - chats.chat.Actions
       summary: Invoke action markChatReadForUser
       description: Mark a chat as read for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
       operationId: chat_markChatReadGraphFPreUser
       parameters:
         - name: chat-id
@@ -3689,9 +3656,6 @@ paths:
         - chats.chat.Actions
       summary: Invoke action markChatUnreadForUser
       description: Mark a chat as unread for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
       operationId: chat_markChatUnreadGraphFPreUser
       parameters:
         - name: chat-id
@@ -3731,9 +3695,6 @@ paths:
         - chats.chat.Actions
       summary: Invoke action sendActivityNotification
       description: 'Send an activity feed notification in scope of a chat. For more information about sending notifications and the requirements for doing so, see sending Teams activity notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-sendactivitynotification?view=graph-rest-1.0
       operationId: chat_sendActivityNotification
       parameters:
         - name: chat-id
@@ -3789,9 +3750,6 @@ paths:
         - chats.chat.Actions
       summary: Invoke action unhideForUser
       description: Unhide a chat for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
       operationId: chat_unhideGraphFPreUser
       parameters:
         - name: chat-id
@@ -4700,9 +4658,6 @@ paths:
         - chats.chat.Functions
       summary: Invoke function getAllMessages
       description: 'Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0
       operationId: chat_getAllMessage
       parameters:
         - name: model
@@ -4777,9 +4732,6 @@ paths:
         - chats.chat.Functions
       summary: Invoke function getAllRetainedMessages
       description: 'Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-1.0
       operationId: chat_getAllRetainedMessage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5596,9 +5548,6 @@ paths:
         - groups.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: group.team.channel.allMember_add
       parameters:
         - name: group-id
@@ -5660,9 +5609,6 @@ paths:
         - groups.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: group.team.channel.allMember_remove
       parameters:
         - name: group-id
@@ -6181,9 +6127,6 @@ paths:
         - groups.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: group.team.channel.member_add
       parameters:
         - name: group-id
@@ -6245,9 +6188,6 @@ paths:
         - groups.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: group.team.channel.member_remove
       parameters:
         - name: group-id
@@ -7105,9 +7045,6 @@ paths:
         - groups.team
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: group.team.channel.message_softDelete
       parameters:
         - name: group-id
@@ -7146,9 +7083,6 @@ paths:
         - groups.team
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: group.team.channel.message_undoSoftDelete
       parameters:
         - name: group-id
@@ -8153,9 +8087,6 @@ paths:
         - groups.team
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: group.team.channel.message.reply_softDelete
       parameters:
         - name: group-id
@@ -8202,9 +8133,6 @@ paths:
         - groups.team
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: group.team.channel.message.reply_undoSoftDelete
       parameters:
         - name: group-id
@@ -8347,9 +8275,6 @@ paths:
         - groups.team
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: group.team.channel.message.reply_delta
       parameters:
         - name: group-id
@@ -8474,9 +8399,6 @@ paths:
         - groups.team
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: group.team.channel.message_delta
       parameters:
         - name: group-id
@@ -8563,9 +8485,6 @@ paths:
         - groups.team
       summary: Invoke action archive
       description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel or add and remove members from it. If you archive a team, its channels are also archived. Archiving is an asynchronous operation; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the channel: unarchive method. A channel can’t be archived or unarchived if its team is archived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: group.team.channel_archive
       parameters:
         - name: group-id
@@ -8610,9 +8529,6 @@ paths:
         - groups.team
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: group.team.channel_completeMigration
       parameters:
         - name: group-id
@@ -8643,9 +8559,6 @@ paths:
         - groups.team
       summary: Invoke function doesUserHaveAccess
       description: Determine whether a user has access to a shared channel.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: group.team.channel_doesUserHaveAccess
       parameters:
         - name: group-id
@@ -8710,9 +8623,6 @@ paths:
         - groups.team
       summary: Invoke action provisionEmail
       description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: group.team.channel_provisionEmail
       parameters:
         - name: group-id
@@ -8747,9 +8657,6 @@ paths:
         - groups.team
       summary: Invoke action removeEmail
       description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: group.team.channel_removeEmail
       parameters:
         - name: group-id
@@ -8780,9 +8687,6 @@ paths:
         - groups.team
       summary: Invoke action unarchive
       description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: group.team.channel_unarchive
       parameters:
         - name: group-id
@@ -9718,9 +9622,6 @@ paths:
         - groups.team
       summary: Invoke function getAllMessages
       description: 'Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
       operationId: group.team.channel_getAllMessage
       parameters:
         - name: group-id
@@ -9803,9 +9704,6 @@ paths:
         - groups.team
       summary: Invoke function getAllRetainedMessages
       description: 'Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-1.0
       operationId: group.team.channel_getAllRetainedMessage
       parameters:
         - name: group-id
@@ -10361,9 +10259,6 @@ paths:
         - groups.team
       summary: Invoke action upgrade
       description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: group.team.installedApp_upgrade
       parameters:
         - name: group-id
@@ -10776,9 +10671,6 @@ paths:
         - groups.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: group.team.member_add
       parameters:
         - name: group-id
@@ -10832,9 +10724,6 @@ paths:
         - groups.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: group.team.member_remove
       parameters:
         - name: group-id
@@ -10888,9 +10777,6 @@ paths:
         - groups.team
       summary: Invoke action archive
       description: "Archive the specified team. \nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
       operationId: group.team_archive
       parameters:
         - name: group-id
@@ -10927,9 +10813,6 @@ paths:
         - groups.team
       summary: Invoke action clone
       description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
       operationId: group.team_clone
       parameters:
         - name: group-id
@@ -10978,9 +10861,6 @@ paths:
         - groups.team
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a team. Migration mode is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
       operationId: group.team_completeMigration
       parameters:
         - name: group-id
@@ -11003,9 +10883,6 @@ paths:
         - groups.team
       summary: Invoke action sendActivityNotification
       description: "Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
       operationId: group.team_sendActivityNotification
       parameters:
         - name: group-id
@@ -11061,9 +10938,6 @@ paths:
         - groups.team
       summary: Invoke action unarchive
       description: 'Restore an archived team. This API restores users'' ability to send messages and edit the team, abiding by tenant and team settings. A Team is archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
       operationId: group.team_unarchive
       parameters:
         - name: group-id
@@ -12066,9 +11940,6 @@ paths:
         - groups.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: group.team.primaryChannel.allMember_add
       parameters:
         - name: group-id
@@ -12122,9 +11993,6 @@ paths:
         - groups.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: group.team.primaryChannel.allMember_remove
       parameters:
         - name: group-id
@@ -12555,9 +12423,6 @@ paths:
         - groups.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: group.team.primaryChannel.member_add
       parameters:
         - name: group-id
@@ -12611,9 +12476,6 @@ paths:
         - groups.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: group.team.primaryChannel.member_remove
       parameters:
         - name: group-id
@@ -13343,9 +13205,6 @@ paths:
         - groups.team
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_softDelete
       parameters:
         - name: group-id
@@ -13376,9 +13235,6 @@ paths:
         - groups.team
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_undoSoftDelete
       parameters:
         - name: group-id
@@ -14247,9 +14103,6 @@ paths:
         - groups.team
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message.reply_softDelete
       parameters:
         - name: group-id
@@ -14288,9 +14141,6 @@ paths:
         - groups.team
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message.reply_undoSoftDelete
       parameters:
         - name: group-id
@@ -14409,9 +14259,6 @@ paths:
         - groups.team
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message.reply_delta
       parameters:
         - name: group-id
@@ -14520,9 +14367,6 @@ paths:
         - groups.team
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_delta
       parameters:
         - name: group-id
@@ -14601,9 +14445,6 @@ paths:
         - groups.team
       summary: Invoke action archive
       description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel or add and remove members from it. If you archive a team, its channels are also archived. Archiving is an asynchronous operation; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the channel: unarchive method. A channel can’t be archived or unarchived if its team is archived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: group.team.primaryChannel_archive
       parameters:
         - name: group-id
@@ -14640,9 +14481,6 @@ paths:
         - groups.team
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: group.team.primaryChannel_completeMigration
       parameters:
         - name: group-id
@@ -14665,9 +14503,6 @@ paths:
         - groups.team
       summary: Invoke function doesUserHaveAccess
       description: Determine whether a user has access to a shared channel.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: group.team.primaryChannel_doesUserHaveAccess
       parameters:
         - name: group-id
@@ -14724,9 +14559,6 @@ paths:
         - groups.team
       summary: Invoke action provisionEmail
       description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: group.team.primaryChannel_provisionEmail
       parameters:
         - name: group-id
@@ -14753,9 +14585,6 @@ paths:
         - groups.team
       summary: Invoke action removeEmail
       description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: group.team.primaryChannel_removeEmail
       parameters:
         - name: group-id
@@ -14778,9 +14607,6 @@ paths:
         - groups.team
       summary: Invoke action unarchive
       description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: group.team.primaryChannel_unarchive
       parameters:
         - name: group-id
@@ -15893,9 +15719,6 @@ paths:
         - groups.team
       summary: Invoke action share
       description: 'Share a schedule time range with schedule members. This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers. Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The notifyTeam parameter further specifies which employees can view the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
       operationId: group.team.schedule_share
       parameters:
         - name: group-id
@@ -17649,9 +17472,6 @@ paths:
         - groups.team
       summary: Invoke action confirm
       description: Confirm a timeCard.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0
       operationId: group.team.schedule.timeCard_confirm
       parameters:
         - name: group-id
@@ -17806,9 +17626,6 @@ paths:
         - groups.team
       summary: Invoke action clockIn
       description: Clock in to start a timeCard.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0
       operationId: group.team.schedule.timeCard_clockIn
       parameters:
         - name: group-id
@@ -20005,9 +19822,6 @@ paths:
         - teams.channel
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: team.channel.allMember_add
       parameters:
         - name: team-id
@@ -20069,9 +19883,6 @@ paths:
         - teams.channel
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: team.channel.allMember_remove
       parameters:
         - name: team-id
@@ -20611,9 +20422,6 @@ paths:
         - teams.channel
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: team.channel.member_add
       parameters:
         - name: team-id
@@ -20675,9 +20483,6 @@ paths:
         - teams.channel
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: team.channel.member_remove
       parameters:
         - name: team-id
@@ -21555,9 +21360,6 @@ paths:
         - teams.channel
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: team.channel.message_softDelete
       parameters:
         - name: team-id
@@ -21596,9 +21398,6 @@ paths:
         - teams.channel
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: team.channel.message_undoSoftDelete
       parameters:
         - name: team-id
@@ -21763,11 +21562,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: team.channel.message_CreateReply
       parameters:
         - name: team-id
@@ -22619,9 +22418,6 @@ paths:
         - teams.channel
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: team.channel.message.reply_softDelete
       parameters:
         - name: team-id
@@ -22668,9 +22464,6 @@ paths:
         - teams.channel
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: team.channel.message.reply_undoSoftDelete
       parameters:
         - name: team-id
@@ -22813,9 +22606,6 @@ paths:
         - teams.channel
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: team.channel.message.reply_delta
       parameters:
         - name: team-id
@@ -22940,9 +22730,6 @@ paths:
         - teams.channel
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: team.channel.message_delta
       parameters:
         - name: team-id
@@ -23029,9 +22816,6 @@ paths:
         - teams.channel
       summary: Invoke action archive
       description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel or add and remove members from it. If you archive a team, its channels are also archived. Archiving is an asynchronous operation; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the channel: unarchive method. A channel can’t be archived or unarchived if its team is archived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: team.channel_archive
       parameters:
         - name: team-id
@@ -23076,9 +22860,6 @@ paths:
         - teams.channel
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: team.channel_completeMigration
       parameters:
         - name: team-id
@@ -23109,9 +22890,6 @@ paths:
         - teams.channel
       summary: Invoke function doesUserHaveAccess
       description: Determine whether a user has access to a shared channel.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: team.channel_doesUserHaveAccess
       parameters:
         - name: team-id
@@ -23176,9 +22954,6 @@ paths:
         - teams.channel
       summary: Invoke action provisionEmail
       description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: team.channel_provisionEmail
       parameters:
         - name: team-id
@@ -23213,9 +22988,6 @@ paths:
         - teams.channel
       summary: Invoke action removeEmail
       description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: team.channel_removeEmail
       parameters:
         - name: team-id
@@ -23246,9 +23018,6 @@ paths:
         - teams.channel
       summary: Invoke action unarchive
       description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: team.channel_unarchive
       parameters:
         - name: team-id
@@ -24215,9 +23984,6 @@ paths:
         - teams.channel
       summary: Invoke function getAllMessages
       description: 'Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
       operationId: team.channel_getAllMessage
       parameters:
         - name: team-id
@@ -24300,9 +24066,6 @@ paths:
         - teams.channel
       summary: Invoke function getAllRetainedMessages
       description: 'Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-1.0
       operationId: team.channel_getAllRetainedMessage
       parameters:
         - name: team-id
@@ -24875,9 +24638,6 @@ paths:
         - teams.teamsAppInstallation
       summary: Invoke action upgrade
       description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: team.installedApp_upgrade
       parameters:
         - name: team-id
@@ -25308,9 +25068,6 @@ paths:
         - teams.conversationMember
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: team.member_add
       parameters:
         - name: team-id
@@ -25364,9 +25121,6 @@ paths:
         - teams.conversationMember
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: team.member_remove
       parameters:
         - name: team-id
@@ -25420,9 +25174,6 @@ paths:
         - teams.team.Actions
       summary: Invoke action archive
       description: "Archive the specified team. \nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
       operationId: team_archive
       parameters:
         - name: team-id
@@ -25459,9 +25210,6 @@ paths:
         - teams.team.Actions
       summary: Invoke action clone
       description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
       operationId: team_clone
       parameters:
         - name: team-id
@@ -25510,9 +25258,6 @@ paths:
         - teams.team.Actions
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a team. Migration mode is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
       operationId: team_completeMigration
       parameters:
         - name: team-id
@@ -25535,9 +25280,6 @@ paths:
         - teams.team.Actions
       summary: Invoke action sendActivityNotification
       description: "Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
       operationId: team_sendActivityNotification
       parameters:
         - name: team-id
@@ -25593,9 +25335,6 @@ paths:
         - teams.team.Actions
       summary: Invoke action unarchive
       description: 'Restore an archived team. This API restores users'' ability to send messages and edit the team, abiding by tenant and team settings. A Team is archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
       operationId: team_unarchive
       parameters:
         - name: team-id
@@ -26617,9 +26356,6 @@ paths:
         - teams.channel
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: team.primaryChannel.allMember_add
       parameters:
         - name: team-id
@@ -26673,9 +26409,6 @@ paths:
         - teams.channel
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: team.primaryChannel.allMember_remove
       parameters:
         - name: team-id
@@ -27106,9 +26839,6 @@ paths:
         - teams.channel
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: team.primaryChannel.member_add
       parameters:
         - name: team-id
@@ -27162,9 +26892,6 @@ paths:
         - teams.channel
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: team.primaryChannel.member_remove
       parameters:
         - name: team-id
@@ -27894,9 +27621,6 @@ paths:
         - teams.channel
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: team.primaryChannel.message_softDelete
       parameters:
         - name: team-id
@@ -27927,9 +27651,6 @@ paths:
         - teams.channel
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: team.primaryChannel.message_undoSoftDelete
       parameters:
         - name: team-id
@@ -28798,9 +28519,6 @@ paths:
         - teams.channel
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: team.primaryChannel.message.reply_softDelete
       parameters:
         - name: team-id
@@ -28839,9 +28557,6 @@ paths:
         - teams.channel
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: team.primaryChannel.message.reply_undoSoftDelete
       parameters:
         - name: team-id
@@ -28960,9 +28675,6 @@ paths:
         - teams.channel
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: team.primaryChannel.message.reply_delta
       parameters:
         - name: team-id
@@ -29071,9 +28783,6 @@ paths:
         - teams.channel
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: team.primaryChannel.message_delta
       parameters:
         - name: team-id
@@ -29152,9 +28861,6 @@ paths:
         - teams.channel
       summary: Invoke action archive
       description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel or add and remove members from it. If you archive a team, its channels are also archived. Archiving is an asynchronous operation; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the channel: unarchive method. A channel can’t be archived or unarchived if its team is archived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: team.primaryChannel_archive
       parameters:
         - name: team-id
@@ -29191,9 +28897,6 @@ paths:
         - teams.channel
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: team.primaryChannel_completeMigration
       parameters:
         - name: team-id
@@ -29216,9 +28919,6 @@ paths:
         - teams.channel
       summary: Invoke function doesUserHaveAccess
       description: Determine whether a user has access to a shared channel.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: team.primaryChannel_doesUserHaveAccess
       parameters:
         - name: team-id
@@ -29275,9 +28975,6 @@ paths:
         - teams.channel
       summary: Invoke action provisionEmail
       description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: team.primaryChannel_provisionEmail
       parameters:
         - name: team-id
@@ -29304,9 +29001,6 @@ paths:
         - teams.channel
       summary: Invoke action removeEmail
       description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: team.primaryChannel_removeEmail
       parameters:
         - name: team-id
@@ -29329,9 +29023,6 @@ paths:
         - teams.channel
       summary: Invoke action unarchive
       description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: team.primaryChannel_unarchive
       parameters:
         - name: team-id
@@ -30451,9 +30142,6 @@ paths:
         - teams.schedule
       summary: Invoke action share
       description: 'Share a schedule time range with schedule members. This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers. Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The notifyTeam parameter further specifies which employees can view the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
       operationId: team.schedule_share
       parameters:
         - name: team-id
@@ -32302,9 +31990,6 @@ paths:
         - teams.schedule
       summary: Invoke action confirm
       description: Confirm a timeCard.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0
       operationId: team.schedule.timeCard_confirm
       parameters:
         - name: team-id
@@ -32459,9 +32144,6 @@ paths:
         - teams.schedule
       summary: Invoke action clockIn
       description: Clock in to start a timeCard.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0
       operationId: team.schedule.timeCard_clockIn
       parameters:
         - name: team-id
@@ -34213,9 +33895,6 @@ paths:
         - teamwork.deletedChat
       summary: Invoke action undoDelete
       description: Restore a  deletedChat to an active chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/deletedchat-undodelete?view=graph-rest-1.0
       operationId: teamwork.deletedChat_undoDelete
       parameters:
         - name: deletedChat-id
@@ -34938,9 +34617,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.allMember_add
       parameters:
         - name: deletedTeam-id
@@ -35002,9 +34678,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.allMember_remove
       parameters:
         - name: deletedTeam-id
@@ -35523,9 +35196,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.member_add
       parameters:
         - name: deletedTeam-id
@@ -35587,9 +35257,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.member_remove
       parameters:
         - name: deletedTeam-id
@@ -36447,9 +36114,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_softDelete
       parameters:
         - name: deletedTeam-id
@@ -36488,9 +36152,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_undoSoftDelete
       parameters:
         - name: deletedTeam-id
@@ -37495,9 +37156,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message.reply_softDelete
       parameters:
         - name: deletedTeam-id
@@ -37544,9 +37202,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message.reply_undoSoftDelete
       parameters:
         - name: deletedTeam-id
@@ -37689,9 +37344,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message.reply_delta
       parameters:
         - name: deletedTeam-id
@@ -37816,9 +37468,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_delta
       parameters:
         - name: deletedTeam-id
@@ -37905,9 +37554,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action archive
       description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel or add and remove members from it. If you archive a team, its channels are also archived. Archiving is an asynchronous operation; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the channel: unarchive method. A channel can’t be archived or unarchived if its team is archived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_archive
       parameters:
         - name: deletedTeam-id
@@ -37952,9 +37598,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_completeMigration
       parameters:
         - name: deletedTeam-id
@@ -37985,9 +37628,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke function doesUserHaveAccess
       description: Determine whether a user has access to a shared channel.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_doesUserHaveAccess
       parameters:
         - name: deletedTeam-id
@@ -38052,9 +37692,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action provisionEmail
       description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_provisionEmail
       parameters:
         - name: deletedTeam-id
@@ -38089,9 +37726,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action removeEmail
       description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_removeEmail
       parameters:
         - name: deletedTeam-id
@@ -38122,9 +37756,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke action unarchive
       description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_unarchive
       parameters:
         - name: deletedTeam-id
@@ -39060,9 +38691,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke function getAllMessages
       description: 'Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_getAllMessage
       parameters:
         - name: deletedTeam-id
@@ -39145,9 +38773,6 @@ paths:
         - teamwork.deletedTeam
       summary: Invoke function getAllRetainedMessages
       description: 'Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_getAllRetainedMessage
       parameters:
         - name: deletedTeam-id
@@ -39310,9 +38935,6 @@ paths:
         - teamwork.teamwork.Actions
       summary: Invoke action sendActivityNotificationToRecipients
       description: 'Send activity feed notifications to multiple users, in bulk.  For more information, see sending Teams activity notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/teamwork-sendactivitynotificationtorecipients?view=graph-rest-1.0
       operationId: teamwork_sendActivityNotificationToRecipient
       requestBody:
         description: Action parameters
@@ -40137,9 +39759,6 @@ paths:
         - users.chat
       summary: Invoke action upgrade
       description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: user.chat.installedApp_upgrade
       parameters:
         - name: user-id
@@ -40759,9 +40378,6 @@ paths:
         - users.chat
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: user.chat.member_add
       parameters:
         - name: user-id
@@ -40823,9 +40439,6 @@ paths:
         - users.chat
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: user.chat.member_remove
       parameters:
         - name: user-id
@@ -41683,9 +41296,6 @@ paths:
         - users.chat
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.chat.message_softDelete
       parameters:
         - name: user-id
@@ -41724,9 +41334,6 @@ paths:
         - users.chat
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.chat.message_undoSoftDelete
       parameters:
         - name: user-id
@@ -42731,9 +42338,6 @@ paths:
         - users.chat
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.chat.message.reply_softDelete
       parameters:
         - name: user-id
@@ -42780,9 +42384,6 @@ paths:
         - users.chat
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.chat.message.reply_undoSoftDelete
       parameters:
         - name: user-id
@@ -42925,9 +42526,6 @@ paths:
         - users.chat
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.chat.message.reply_delta
       parameters:
         - name: user-id
@@ -43052,9 +42650,6 @@ paths:
         - users.chat
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.chat.message_delta
       parameters:
         - name: user-id
@@ -43141,9 +42736,6 @@ paths:
         - users.chat
       summary: Invoke action hideForUser
       description: Hide a chat for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
       operationId: user.chat_hideGraphFPreUser
       parameters:
         - name: user-id
@@ -43186,9 +42778,6 @@ paths:
         - users.chat
       summary: Invoke action markChatReadForUser
       description: Mark a chat as read for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
       operationId: user.chat_markChatReadGraphFPreUser
       parameters:
         - name: user-id
@@ -43231,9 +42820,6 @@ paths:
         - users.chat
       summary: Invoke action markChatUnreadForUser
       description: Mark a chat as unread for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
       operationId: user.chat_markChatUnreadGraphFPreUser
       parameters:
         - name: user-id
@@ -43281,9 +42867,6 @@ paths:
         - users.chat
       summary: Invoke action sendActivityNotification
       description: 'Send an activity feed notification in scope of a chat. For more information about sending notifications and the requirements for doing so, see sending Teams activity notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-sendactivitynotification?view=graph-rest-1.0
       operationId: user.chat_sendActivityNotification
       parameters:
         - name: user-id
@@ -43347,9 +42930,6 @@ paths:
         - users.chat
       summary: Invoke action unhideForUser
       description: Unhide a chat for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
       operationId: user.chat_unhideGraphFPreUser
       parameters:
         - name: user-id
@@ -44402,9 +43982,6 @@ paths:
         - users.chat
       summary: Invoke function getAllMessages
       description: 'Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0
       operationId: user.chat_getAllMessage
       parameters:
         - name: user-id
@@ -44487,9 +44064,6 @@ paths:
         - users.chat
       summary: Invoke function getAllRetainedMessages
       description: 'Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-1.0
       operationId: user.chat_getAllRetainedMessage
       parameters:
         - name: user-id
@@ -45535,9 +45109,6 @@ paths:
         - users.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.allMember_add
       parameters:
         - name: user-id
@@ -45607,9 +45178,6 @@ paths:
         - users.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.allMember_remove
       parameters:
         - name: user-id
@@ -46216,9 +45784,6 @@ paths:
         - users.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.member_add
       parameters:
         - name: user-id
@@ -46288,9 +45853,6 @@ paths:
         - users.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.member_remove
       parameters:
         - name: user-id
@@ -47276,9 +46838,6 @@ paths:
         - users.team
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_softDelete
       parameters:
         - name: user-id
@@ -47325,9 +46884,6 @@ paths:
         - users.team
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_undoSoftDelete
       parameters:
         - name: user-id
@@ -48468,9 +48024,6 @@ paths:
         - users.team
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_softDelete
       parameters:
         - name: user-id
@@ -48525,9 +48078,6 @@ paths:
         - users.team
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_undoSoftDelete
       parameters:
         - name: user-id
@@ -48694,9 +48244,6 @@ paths:
         - users.team
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_delta
       parameters:
         - name: user-id
@@ -48837,9 +48384,6 @@ paths:
         - users.team
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_delta
       parameters:
         - name: user-id
@@ -48934,9 +48478,6 @@ paths:
         - users.team
       summary: Invoke action archive
       description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel or add and remove members from it. If you archive a team, its channels are also archived. Archiving is an asynchronous operation; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the channel: unarchive method. A channel can’t be archived or unarchived if its team is archived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_archive
       parameters:
         - name: user-id
@@ -48989,9 +48530,6 @@ paths:
         - users.team
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_completeMigration
       parameters:
         - name: user-id
@@ -49030,9 +48568,6 @@ paths:
         - users.team
       summary: Invoke function doesUserHaveAccess
       description: Determine whether a user has access to a shared channel.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_doesUserHaveAccess
       parameters:
         - name: user-id
@@ -49105,9 +48640,6 @@ paths:
         - users.team
       summary: Invoke action provisionEmail
       description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_provisionEmail
       parameters:
         - name: user-id
@@ -49150,9 +48682,6 @@ paths:
         - users.team
       summary: Invoke action removeEmail
       description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_removeEmail
       parameters:
         - name: user-id
@@ -49191,9 +48720,6 @@ paths:
         - users.team
       summary: Invoke action unarchive
       description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_unarchive
       parameters:
         - name: user-id
@@ -50281,9 +49807,6 @@ paths:
         - users.team
       summary: Invoke function getAllMessages
       description: 'Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_getAllMessage
       parameters:
         - name: user-id
@@ -50374,9 +49897,6 @@ paths:
         - users.team
       summary: Invoke function getAllRetainedMessages
       description: 'Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_getAllRetainedMessage
       parameters:
         - name: user-id
@@ -51028,9 +50548,6 @@ paths:
         - users.team
       summary: Invoke action upgrade
       description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: user.joinedTeam.installedApp_upgrade
       parameters:
         - name: user-id
@@ -51523,9 +51040,6 @@ paths:
         - users.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: user.joinedTeam.member_add
       parameters:
         - name: user-id
@@ -51587,9 +51101,6 @@ paths:
         - users.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: user.joinedTeam.member_remove
       parameters:
         - name: user-id
@@ -51651,9 +51162,6 @@ paths:
         - users.team
       summary: Invoke action archive
       description: "Archive the specified team. \nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
       operationId: user.joinedTeam_archive
       parameters:
         - name: user-id
@@ -51698,9 +51206,6 @@ paths:
         - users.team
       summary: Invoke action clone
       description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
       operationId: user.joinedTeam_clone
       parameters:
         - name: user-id
@@ -51757,9 +51262,6 @@ paths:
         - users.team
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a team. Migration mode is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
       operationId: user.joinedTeam_completeMigration
       parameters:
         - name: user-id
@@ -51790,9 +51292,6 @@ paths:
         - users.team
       summary: Invoke action sendActivityNotification
       description: "Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
       operationId: user.joinedTeam_sendActivityNotification
       parameters:
         - name: user-id
@@ -51856,9 +51355,6 @@ paths:
         - users.team
       summary: Invoke action unarchive
       description: 'Restore an archived team. This API restores users'' ability to send messages and edit the team, abiding by tenant and team settings. A Team is archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
       operationId: user.joinedTeam_unarchive
       parameters:
         - name: user-id
@@ -53077,9 +52573,6 @@ paths:
         - users.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.allMember_add
       parameters:
         - name: user-id
@@ -53141,9 +52634,6 @@ paths:
         - users.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.allMember_remove
       parameters:
         - name: user-id
@@ -53662,9 +53152,6 @@ paths:
         - users.team
       summary: Invoke action add
       description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.member_add
       parameters:
         - name: user-id
@@ -53726,9 +53213,6 @@ paths:
         - users.team
       summary: Invoke action remove
       description: Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.member_remove
       parameters:
         - name: user-id
@@ -54586,9 +54070,6 @@ paths:
         - users.team
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_softDelete
       parameters:
         - name: user-id
@@ -54627,9 +54108,6 @@ paths:
         - users.team
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_undoSoftDelete
       parameters:
         - name: user-id
@@ -55634,9 +55112,6 @@ paths:
         - users.team
       summary: Invoke action softDelete
       description: Delete a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_softDelete
       parameters:
         - name: user-id
@@ -55683,9 +55158,6 @@ paths:
         - users.team
       summary: Invoke action undoSoftDelete
       description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_undoSoftDelete
       parameters:
         - name: user-id
@@ -55828,9 +55300,6 @@ paths:
         - users.team
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_delta
       parameters:
         - name: user-id
@@ -55955,9 +55424,6 @@ paths:
         - users.team
       summary: Invoke function delta
       description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_delta
       parameters:
         - name: user-id
@@ -56044,9 +55510,6 @@ paths:
         - users.team
       summary: Invoke action archive
       description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel or add and remove members from it. If you archive a team, its channels are also archived. Archiving is an asynchronous operation; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the channel: unarchive method. A channel can’t be archived or unarchived if its team is archived.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_archive
       parameters:
         - name: user-id
@@ -56091,9 +55554,6 @@ paths:
         - users.team
       summary: Invoke action completeMigration
       description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_completeMigration
       parameters:
         - name: user-id
@@ -56124,9 +55584,6 @@ paths:
         - users.team
       summary: Invoke function doesUserHaveAccess
       description: Determine whether a user has access to a shared channel.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_doesUserHaveAccess
       parameters:
         - name: user-id
@@ -56191,9 +55648,6 @@ paths:
         - users.team
       summary: Invoke action provisionEmail
       description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_provisionEmail
       parameters:
         - name: user-id
@@ -56228,9 +55682,6 @@ paths:
         - users.team
       summary: Invoke action removeEmail
       description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_removeEmail
       parameters:
         - name: user-id
@@ -56261,9 +55712,6 @@ paths:
         - users.team
       summary: Invoke action unarchive
       description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the channel: archive method. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchiving operation completes successfully, which might occur after this method responds.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_unarchive
       parameters:
         - name: user-id
@@ -57592,9 +57040,6 @@ paths:
         - users.team
       summary: Invoke action share
       description: 'Share a schedule time range with schedule members. This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers. Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The notifyTeam parameter further specifies which employees can view the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_share
       parameters:
         - name: user-id
@@ -59692,9 +59137,6 @@ paths:
         - users.team
       summary: Invoke action confirm
       description: Confirm a timeCard.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule.timeCard_confirm
       parameters:
         - name: user-id
@@ -59881,9 +59323,6 @@ paths:
         - users.team
       summary: Invoke action clockIn
       description: Clock in to start a timeCard.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule.timeCard_clockIn
       parameters:
         - name: user-id
@@ -62400,9 +61839,6 @@ paths:
         - users.userTeamwork
       summary: Invoke action sendActivityNotification
       description: 'Send an activity feed notification to a user. For more information, see sending Teams activity notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/userteamwork-sendactivitynotification?view=graph-rest-1.0
       operationId: user.teamwork_sendActivityNotification
       parameters:
         - name: user-id
@@ -66660,8 +66096,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.chatCollectionResponse:
       title: Collection of chat
       type: object
@@ -72816,6 +72252,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -75228,6 +74670,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -77044,6 +76536,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -79040,6 +78559,33 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -79586,7 +79132,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -79596,7 +79143,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

@@ -1473,9 +1473,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action addKey
       description: 'Add a key credential to an application. This method, along with removeKey, can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don''t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won''t be able to use this service action. You can use the Update application operation to perform an update instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-addkey?view=graph-rest-beta
       operationId: application_addKey
       parameters:
         - name: application-id
@@ -1518,9 +1515,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action addPassword
       description: Adds a strong password to an application. You can also add passwords while creating the application.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-addpassword?view=graph-rest-beta
       operationId: application_addPassword
       parameters:
         - name: application-id
@@ -1559,9 +1553,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action checkMemberGroups
       description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
       operationId: application_checkMemberGroup
       parameters:
         - name: application-id
@@ -1667,9 +1658,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta
       operationId: application_getMemberGroup
       parameters:
         - name: application-id
@@ -1775,9 +1763,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action removeKey
       description: 'Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-removekey?view=graph-rest-beta
       operationId: application_removeKey
       parameters:
         - name: application-id
@@ -1816,9 +1801,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action removePassword
       description: Removes a password from an application.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-removepassword?view=graph-rest-beta
       operationId: application_removePassword
       parameters:
         - name: application-id
@@ -1855,9 +1837,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action restore
       description: "Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
       operationId: application_restore
       parameters:
         - name: application-id
@@ -1884,9 +1863,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action setVerifiedPublisher
       description: 'Set the the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-beta
       operationId: application_setVerifiedPublisher
       parameters:
         - name: application-id
@@ -1921,9 +1897,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action unsetVerifiedPublisher
       description: 'Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-beta
       operationId: application_unsetVerifiedPublisher
       parameters:
         - name: application-id
@@ -3407,9 +3380,6 @@ paths:
         - applications.synchronization
       summary: Invoke action pause
       description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job continues from where it left off when a start call is made.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-beta
       operationId: application.synchronization.job_pause
       parameters:
         - name: application-id
@@ -3440,9 +3410,6 @@ paths:
         - applications.synchronization
       summary: Invoke action provisionOnDemand
       description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. No user or group will be provisioned on-demand that would not have been provisioned through the regular provisioning cycles.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-beta
       operationId: application.synchronization.job_provisionOnDemand
       parameters:
         - name: application-id
@@ -3491,9 +3458,6 @@ paths:
         - applications.synchronization
       summary: Invoke action restart
       description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta
       operationId: application.synchronization.job_restart
       parameters:
         - name: application-id
@@ -3536,9 +3500,6 @@ paths:
         - applications.synchronization
       summary: Invoke action start
       description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta
       operationId: application.synchronization.job_start
       parameters:
         - name: application-id
@@ -3569,9 +3530,6 @@ paths:
         - applications.synchronization
       summary: Invoke action validateCredentials
       description: Validate that the credentials are valid in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta
       operationId: application.synchronization.job_validateCredential
       parameters:
         - name: application-id
@@ -4011,9 +3969,6 @@ paths:
         - applications.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-beta
       operationId: application.synchronization.job.schema.directory_discover
       parameters:
         - name: application-id
@@ -4086,9 +4041,6 @@ paths:
         - applications.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta
       operationId: application.synchronization.job.schema_filterOperator
       parameters:
         - name: application-id
@@ -4172,9 +4124,6 @@ paths:
         - applications.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta
       operationId: application.synchronization.job.schema_function
       parameters:
         - name: application-id
@@ -4258,9 +4207,6 @@ paths:
         - applications.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-beta
       operationId: application.synchronization.job.schema_parseExpression
       parameters:
         - name: application-id
@@ -4379,9 +4325,6 @@ paths:
         - applications.synchronization
       summary: Invoke action acquireAccessToken
       description: Acquire an OAuth Access token to authorize the Microsoft Entra provisioning service to provision users into an application.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-beta
       operationId: application.synchronization_acquireAccessToken
       parameters:
         - name: application-id
@@ -5123,9 +5066,6 @@ paths:
         - applications.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-beta
       operationId: application.synchronization.template.schema.directory_discover
       parameters:
         - name: application-id
@@ -5198,9 +5138,6 @@ paths:
         - applications.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta
       operationId: application.synchronization.template.schema_filterOperator
       parameters:
         - name: application-id
@@ -5284,9 +5221,6 @@ paths:
         - applications.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta
       operationId: application.synchronization.template.schema_function
       parameters:
         - name: application-id
@@ -5370,9 +5304,6 @@ paths:
         - applications.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-beta
       operationId: application.synchronization.template.schema_parseExpression
       parameters:
         - name: application-id
@@ -6160,9 +6091,6 @@ paths:
         - applications.application.Functions
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted applications without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-delta?view=graph-rest-beta
       operationId: application_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6233,9 +6161,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-beta
       operationId: application_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -6286,9 +6211,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action getUserOwnedObjects
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-beta
       operationId: application_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -6322,9 +6244,6 @@ paths:
         - applications.application.Actions
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta
       operationId: application_validateProperty
       requestBody:
         description: Action parameters
@@ -6466,9 +6385,6 @@ paths:
         - applicationTemplates.applicationTemplate.Actions
       summary: Invoke action instantiate
       description: 'Add an instance of an application from the Microsoft Entra application gallery into your directory. For non-gallery apps, use an application template with one of the following IDs to configure different single sign-on (SSO) modes like SAML SSO and password-based SSO.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta
       operationId: applicationTemplate_instantiate
       parameters:
         - name: applicationTemplate-id
@@ -13875,9 +13791,6 @@ paths:
         - servicePrincipals.licenseDetails
       summary: Invoke function getTeamsLicensingDetails
       description: Get the license status of a user in Microsoft Teams.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-beta
       operationId: servicePrincipal.licenseDetail_getTeamsLicensingDetail
       parameters:
         - name: servicePrincipal-id
@@ -14559,9 +14472,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action addTokenSigningCertificate
       description: "Creates a self-signed signing certificate and returns a selfSignedCertificate object, which is the public part of the generated certificate. The self-signed signing certificate is composed of the following objects which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with usage set to Sign.\n    + A public key object with usage set to Verify.\n+ The passwordCredentials object. All the objects have the same value of customKeyIdentifier. The passwordCredential is used to open the PFX file (private key). It and the associated private key object have the same value of keyId. Once set during creation through the displayName property, the subject of the certificate cannot be updated. The startDateTime is set to the same time the certificate is created using the action. The endDateTime can be up to three years after the certificate is created."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-beta
       operationId: servicePrincipal_addTokenSigningCertificate
       parameters:
         - name: servicePrincipal-id
@@ -14606,9 +14516,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action checkMemberGroups
       description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
       operationId: servicePrincipal_checkMemberGroup
       parameters:
         - name: servicePrincipal-id
@@ -14714,9 +14621,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action createPasswordSingleSignOnCredentials
       description: Create single sign-on credentials using a password for a user or group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-createpasswordsinglesignoncredentials?view=graph-rest-beta
       operationId: servicePrincipal_createPasswordSingleSignOnCredential
       parameters:
         - name: servicePrincipal-id
@@ -14759,9 +14663,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action deletePasswordSingleSignOnCredentials
       description: Delete single sign-on credentials using a password for a user or group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-deletepasswordsinglesignoncredentials?view=graph-rest-beta
       operationId: servicePrincipal_deletePasswordSingleSignOnCredential
       parameters:
         - name: servicePrincipal-id
@@ -14796,9 +14697,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta
       operationId: servicePrincipal_getMemberGroup
       parameters:
         - name: servicePrincipal-id
@@ -14904,9 +14802,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action getPasswordSingleSignOnCredentials
       description: Get a list of single sign-on credentials using a password for a user or group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta
       operationId: servicePrincipal_getPasswordSingleSignOnCredential
       parameters:
         - name: servicePrincipal-id
@@ -14945,9 +14840,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action restore
       description: "Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
       operationId: servicePrincipal_restore
       parameters:
         - name: servicePrincipal-id
@@ -14974,9 +14866,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action updatePasswordSingleSignOnCredentials
       description: Update single sign-on credentials using a password for a user or group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-updatepasswordsinglesignoncredentials?view=graph-rest-beta
       operationId: servicePrincipal_updatePasswordSingleSignOnCredential
       parameters:
         - name: servicePrincipal-id
@@ -18171,9 +18060,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action pause
       description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job continues from where it left off when a start call is made.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.job_pause
       parameters:
         - name: servicePrincipal-id
@@ -18204,9 +18090,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action provisionOnDemand
       description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. No user or group will be provisioned on-demand that would not have been provisioned through the regular provisioning cycles.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.job_provisionOnDemand
       parameters:
         - name: servicePrincipal-id
@@ -18255,9 +18138,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action restart
       description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.job_restart
       parameters:
         - name: servicePrincipal-id
@@ -18300,9 +18180,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action start
       description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.job_start
       parameters:
         - name: servicePrincipal-id
@@ -18333,9 +18210,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action validateCredentials
       description: Validate that the credentials are valid in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.job_validateCredential
       parameters:
         - name: servicePrincipal-id
@@ -18782,9 +18656,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.job.schema.directory_discover
       parameters:
         - name: servicePrincipal-id
@@ -18857,9 +18728,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.job.schema_filterOperator
       parameters:
         - name: servicePrincipal-id
@@ -18943,9 +18811,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.job.schema_function
       parameters:
         - name: servicePrincipal-id
@@ -19029,9 +18894,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.job.schema_parseExpression
       parameters:
         - name: servicePrincipal-id
@@ -19150,9 +19012,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action acquireAccessToken
       description: Acquire an OAuth Access token to authorize the Microsoft Entra provisioning service to provision users into an application.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-beta
       operationId: servicePrincipal.synchronization_acquireAccessToken
       parameters:
         - name: servicePrincipal-id
@@ -19897,9 +19756,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action discover
       description: 'Discover the latest schema definition for provisioning to an application. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.template.schema.directory_discover
       parameters:
         - name: servicePrincipal-id
@@ -19972,9 +19828,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke function filterOperators
       description: List all operators supported in the scoping filters.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.template.schema_filterOperator
       parameters:
         - name: servicePrincipal-id
@@ -20058,9 +19911,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke function functions
       description: List all the functions currently supported in the attributeMappingSource.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.template.schema_function
       parameters:
         - name: servicePrincipal-id
@@ -20144,9 +19994,6 @@ paths:
         - servicePrincipals.synchronization
       summary: Invoke action parseExpression
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-beta
       operationId: servicePrincipal.synchronization.template.schema_parseExpression
       parameters:
         - name: servicePrincipal-id
@@ -21287,9 +21134,6 @@ paths:
         - servicePrincipals.servicePrincipal.Functions
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-beta
       operationId: servicePrincipal_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21360,9 +21204,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-beta
       operationId: servicePrincipal_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -21413,9 +21254,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action getUserOwnedObjects
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-beta
       operationId: servicePrincipal_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -21449,9 +21287,6 @@ paths:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta
       operationId: servicePrincipal_validateProperty
       requestBody:
         description: Action parameters
@@ -27867,7 +27702,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -29688,8 +29523,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     StringCollectionResponse:
       title: Collection of string
       type: object
@@ -33077,12 +32912,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -33107,10 +32936,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -41094,45 +40919,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRightsIncluded:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -42781,13 +42567,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -44282,11 +44068,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -44556,6 +44342,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEvent:
@@ -44690,6 +44481,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -48183,6 +47975,17 @@ components:
             webUrl:
               type: string
               description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -51724,7 +51527,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -51734,7 +51538,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

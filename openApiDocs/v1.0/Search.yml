@@ -2297,9 +2297,6 @@ paths:
         - search.searchEntity.Actions
       summary: Invoke action query
       description: Runs the query specified in the request body. Search results are provided in the response.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
       operationId: search_query
       requestBody:
         description: Action parameters
@@ -3479,8 +3476,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       title: Collection of externalItem
       type: object
@@ -4053,7 +4050,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -4063,7 +4061,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

@@ -14,7 +14,7 @@ paths:
       description: Read properties and relationships of the deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-policyset-deviceappmanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetDeviceAppManagement
       parameters:
         - name: $select
@@ -54,7 +54,7 @@ paths:
       description: Update the properties of a deviceAppManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-unlock-deviceappmanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateDeviceAppManagement
       requestBody:
         description: New property values
@@ -2252,11 +2252,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: List managedAppConfigurations
-      description: List properties and relationships of the managedAppConfiguration objects.
+      summary: List windowsInformationProtections
+      description: List properties and relationships of the windowsInformationProtection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2329,11 +2329,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: Get managedAppConfiguration
-      description: Read properties and relationships of the managedAppConfiguration object.
+      summary: Get targetedManagedAppProtection
+      description: Read properties and relationships of the targetedManagedAppProtection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppPolicy
       parameters:
         - name: managedAppPolicy-id
@@ -2437,9 +2437,6 @@ paths:
         - deviceAppManagement.managedAppPolicy
       summary: Invoke action targetApps
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppPolicy_targetApp
       parameters:
         - name: managedAppPolicy-id
@@ -2569,11 +2566,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Get androidManagedAppRegistration
-      description: Read properties and relationships of the androidManagedAppRegistration object.
+      summary: Get managedAppRegistration
+      description: Read properties and relationships of the managedAppRegistration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppRegistration
       parameters:
         - name: managedAppRegistration-id
@@ -2895,9 +2892,6 @@ paths:
         - deviceAppManagement.managedAppRegistration
       summary: Invoke action targetApps
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.appliedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -3182,9 +3176,6 @@ paths:
         - deviceAppManagement.managedAppRegistration
       summary: Invoke action targetApps
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.intendedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -3523,9 +3514,6 @@ paths:
         - deviceAppManagement.managedAppRegistration
       summary: Invoke function getUserIdsWithFlaggedAppRegistration
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-getuseridswithflaggedappregistration?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration_getUserIdsGraphWPreFlaggedAppRegistration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3839,11 +3827,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get managedEBook
-      description: Read properties and relationships of the managedEBook object.
+      summary: Get iosVppEBook
+      description: Read properties and relationships of the iosVppEBook object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebook-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebook-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedEBook
       parameters:
         - name: managedEBook-id
@@ -3953,11 +3941,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: List managedEBookAssignments
-      description: List properties and relationships of the managedEBookAssignment objects.
+      summary: List iosVppEBookAssignments
+      description: List properties and relationships of the iosVppEBookAssignment objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-list?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_ListAssignment
       parameters:
         - name: managedEBook-id
@@ -4051,11 +4039,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get managedEBookAssignment
-      description: Read properties and relationships of the managedEBookAssignment object.
+      summary: Get iosVppEBookAssignment
+      description: Read properties and relationships of the iosVppEBookAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-get?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_GetAssignment
       parameters:
         - name: managedEBook-id
@@ -4581,9 +4569,6 @@ paths:
         - deviceAppManagement.managedEBook
       summary: Invoke action assign
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-books-managedebook-assign?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_assign
       parameters:
         - name: managedEBook-id
@@ -6109,9 +6094,6 @@ paths:
         - deviceAppManagement.deviceAppManagement.Actions
       summary: Invoke action syncMicrosoftStoreForBusinessApps
       description: Syncs Intune account with Microsoft Store For Business
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-syncmicrosoftstoreforbusinessapps?view=graph-rest-1.0
       operationId: deviceAppManagement_syncMicrosoftStoreGraphFPreBusinessApp
       responses:
         2XX:
@@ -6332,11 +6314,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: List managedDeviceMobileAppConfigurations
-      description: List properties and relationships of the managedDeviceMobileAppConfiguration objects.
+      summary: List iosMobileAppConfigurations
+      description: List properties and relationships of the iosMobileAppConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileAppConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6413,11 +6395,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get iosMobileAppConfiguration
-      description: Read properties and relationships of the iosMobileAppConfiguration object.
+      summary: Get managedDeviceMobileAppConfiguration
+      description: Read properties and relationships of the managedDeviceMobileAppConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileAppConfiguration
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7155,9 +7137,6 @@ paths:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
       summary: Invoke action assign
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-assign?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_assign
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7574,11 +7553,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: List macOSLobApps
-      description: List properties and relationships of the macOSLobApp objects.
+      summary: List windowsUniversalAppXs
+      description: List properties and relationships of the windowsUniversalAppX objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-macoslobapp-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-windowsuniversalappx-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileApp
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7628,11 +7607,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Create macOSLobApp
-      description: Create a new macOSLobApp object.
+      summary: Create iosVppApp
+      description: Create a new iosVppApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-macoslobapp-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-iosvppapp-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateMobileApp
       requestBody:
         description: New navigation property
@@ -7655,11 +7634,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get iosLobApp
-      description: Read properties and relationships of the iosLobApp object.
+      summary: Get managedMobileLobApp
+      description: Read properties and relationships of the managedMobileLobApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-ioslobapp-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-managedmobilelobapp-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileApp
       parameters:
         - name: mobileApp-id
@@ -7703,11 +7682,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Update iosVppApp
-      description: Update the properties of a iosVppApp object.
+      summary: Update managedAndroidStoreApp
+      description: Update the properties of a managedAndroidStoreApp object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-iosvppapp-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateMobileApp
       parameters:
         - name: mobileApp-id
@@ -7738,11 +7717,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Delete iosiPadOSWebClip
-      description: Deletes a iosiPadOSWebClip.
+      summary: Delete iosLobApp
+      description: Deletes a iosLobApp.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-apps-iosipadoswebclip-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-apps-ioslobapp-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMobileApp
       parameters:
         - name: mobileApp-id
@@ -26920,9 +26899,6 @@ paths:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Invoke action assign
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-assign?view=graph-rest-1.0
       operationId: deviceAppManagement.targetedManagedAppConfiguration_assign
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -26959,9 +26935,6 @@ paths:
         - deviceAppManagement.targetedManagedAppConfiguration
       summary: Invoke action targetApps
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.targetedManagedAppConfiguration_targetApp
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -27209,9 +27182,6 @@ paths:
         - deviceAppManagement.vppToken
       summary: Invoke action syncLicenses
       description: Syncs licenses associated with a specific appleVolumePurchaseProgramToken
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-synclicenses?view=graph-rest-1.0
       operationId: deviceAppManagement.vppToken_syncLicense
       parameters:
         - name: vppToken-id
@@ -29929,9 +29899,6 @@ paths:
         - users.managedDevice
       summary: Invoke action bypassActivationLock
       description: Bypass activation lock
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-bypassactivationlock?view=graph-rest-1.0
       operationId: user.managedDevice_bypassActivationLock
       parameters:
         - name: user-id
@@ -29962,9 +29929,6 @@ paths:
         - users.managedDevice
       summary: Invoke action cleanWindowsDevice
       description: Clean Windows device
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-cleanwindowsdevice?view=graph-rest-1.0
       operationId: user.managedDevice_cleanWindowsDevice
       parameters:
         - name: user-id
@@ -30008,9 +29972,6 @@ paths:
         - users.managedDevice
       summary: Invoke action deleteUserFromSharedAppleDevice
       description: Delete user from shared Apple device
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-deleteuserfromsharedappledevice?view=graph-rest-1.0
       operationId: user.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: user-id
@@ -30054,9 +30015,6 @@ paths:
         - users.managedDevice
       summary: Invoke action disableLostMode
       description: Disable lost mode
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-disablelostmode?view=graph-rest-1.0
       operationId: user.managedDevice_disableLostMode
       parameters:
         - name: user-id
@@ -30087,9 +30045,6 @@ paths:
         - users.managedDevice
       summary: Invoke action locateDevice
       description: Locate a device
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-locatedevice?view=graph-rest-1.0
       operationId: user.managedDevice_locateDevice
       parameters:
         - name: user-id
@@ -30120,9 +30075,6 @@ paths:
         - users.managedDevice
       summary: Invoke action logoutSharedAppleDeviceActiveUser
       description: Logout shared Apple device active user
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-logoutsharedappledeviceactiveuser?view=graph-rest-1.0
       operationId: user.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: user-id
@@ -30153,9 +30105,6 @@ paths:
         - users.managedDevice
       summary: Invoke action rebootNow
       description: Reboot device
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-rebootnow?view=graph-rest-1.0
       operationId: user.managedDevice_rebootNow
       parameters:
         - name: user-id
@@ -30186,9 +30135,6 @@ paths:
         - users.managedDevice
       summary: Invoke action recoverPasscode
       description: Recover passcode
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-recoverpasscode?view=graph-rest-1.0
       operationId: user.managedDevice_recoverPasscode
       parameters:
         - name: user-id
@@ -30219,9 +30165,6 @@ paths:
         - users.managedDevice
       summary: Invoke action remoteLock
       description: Remote lock
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-remotelock?view=graph-rest-1.0
       operationId: user.managedDevice_remoteLock
       parameters:
         - name: user-id
@@ -30252,9 +30195,6 @@ paths:
         - users.managedDevice
       summary: Invoke action requestRemoteAssistance
       description: Request remote assistance
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-requestremoteassistance?view=graph-rest-1.0
       operationId: user.managedDevice_requestRemoteAssistance
       parameters:
         - name: user-id
@@ -30285,9 +30225,6 @@ paths:
         - users.managedDevice
       summary: Invoke action resetPasscode
       description: Reset passcode
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-resetpasscode?view=graph-rest-1.0
       operationId: user.managedDevice_resetPasscode
       parameters:
         - name: user-id
@@ -30318,9 +30255,6 @@ paths:
         - users.managedDevice
       summary: Invoke action retire
       description: Retire a device
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-retire?view=graph-rest-1.0
       operationId: user.managedDevice_retire
       parameters:
         - name: user-id
@@ -30351,9 +30285,6 @@ paths:
         - users.managedDevice
       summary: Invoke action shutDown
       description: Shut down device
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-shutdown?view=graph-rest-1.0
       operationId: user.managedDevice_shutDown
       parameters:
         - name: user-id
@@ -30384,9 +30315,6 @@ paths:
         - users.managedDevice
       summary: Invoke action syncDevice
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-syncdevice?view=graph-rest-1.0
       operationId: user.managedDevice_syncDevice
       parameters:
         - name: user-id
@@ -30417,9 +30345,6 @@ paths:
         - users.managedDevice
       summary: Invoke action updateWindowsDeviceAccount
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-updatewindowsdeviceaccount?view=graph-rest-1.0
       operationId: user.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: user-id
@@ -30462,9 +30387,6 @@ paths:
         - users.managedDevice
       summary: Invoke action windowsDefenderScan
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderscan?view=graph-rest-1.0
       operationId: user.managedDevice_windowsDefenderScan
       parameters:
         - name: user-id
@@ -30508,9 +30430,6 @@ paths:
         - users.managedDevice
       summary: Invoke action windowsDefenderUpdateSignatures
       description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderupdatesignatures?view=graph-rest-1.0
       operationId: user.managedDevice_windowsDefenderUpdateSignature
       parameters:
         - name: user-id
@@ -30541,9 +30460,6 @@ paths:
         - users.managedDevice
       summary: Invoke action wipe
       description: Wipe a device
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-wipe?view=graph-rest-1.0
       operationId: user.managedDevice_wipe
       parameters:
         - name: user-id
@@ -36382,8 +36298,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.targetedManagedAppPolicyAssignmentCollectionResponse:
       title: Collection of targetedManagedAppPolicyAssignment
       type: object
@@ -40679,6 +40595,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -43897,6 +43819,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -47439,6 +47411,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -49959,6 +49958,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -51383,7 +51409,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -51393,7 +51420,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

@@ -332,9 +332,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyNotebook
       description: 'Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn''t exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-beta
       operationId: group.onenote.notebook_copyNotebook
       parameters:
         - name: group-id
@@ -1258,9 +1255,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: group.onenote.notebook.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
@@ -1336,9 +1330,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: group.onenote.notebook.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -1932,9 +1923,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.onenote.notebook.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
@@ -2807,9 +2795,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: group.onenote.notebook.section_copyToNotebook
       parameters:
         - name: group-id
@@ -2877,9 +2862,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: group.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -3401,9 +3383,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.onenote.notebook.section.page_copyToSection
       parameters:
         - name: group-id
@@ -3938,9 +3917,6 @@ paths:
         - groups.onenote
       summary: Invoke action getNotebookFromWebUrl
       description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-beta
       operationId: group.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: group-id
@@ -3980,9 +3956,6 @@ paths:
         - groups.onenote
       summary: Invoke function getRecentNotebooks
       description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-beta
       operationId: group.onenote.notebook_getRecentNotebook
       parameters:
         - name: group-id
@@ -4601,9 +4574,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.onenote.page_copyToSection
       parameters:
         - name: group-id
@@ -5958,9 +5928,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: group.onenote.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
@@ -6028,9 +5995,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: group.onenote.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -6552,9 +6516,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.onenote.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
@@ -7307,9 +7268,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: group.onenote.section_copyToNotebook
       parameters:
         - name: group-id
@@ -7369,9 +7327,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: group.onenote.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -7821,9 +7776,6 @@ paths:
         - groups.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.onenote.section.page_copyToSection
       parameters:
         - name: group-id
@@ -8710,9 +8662,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyNotebook
       description: 'Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn''t exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-beta
       operationId: site.onenote.notebook_copyNotebook
       parameters:
         - name: site-id
@@ -9636,9 +9585,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: site.onenote.notebook.sectionGroup.section_copyToNotebook
       parameters:
         - name: site-id
@@ -9714,9 +9660,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: site.onenote.notebook.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: site-id
@@ -10252,9 +10195,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.notebook.sectionGroup.section.page_copyToSection
       parameters:
         - name: site-id
@@ -11127,9 +11067,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: site.onenote.notebook.section_copyToNotebook
       parameters:
         - name: site-id
@@ -11197,9 +11134,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: site.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: site-id
@@ -11671,9 +11605,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.notebook.section.page_copyToSection
       parameters:
         - name: site-id
@@ -12208,9 +12139,6 @@ paths:
         - sites.onenote
       summary: Invoke action getNotebookFromWebUrl
       description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-beta
       operationId: site.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: site-id
@@ -12250,9 +12178,6 @@ paths:
         - sites.onenote
       summary: Invoke function getRecentNotebooks
       description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-beta
       operationId: site.onenote.notebook_getRecentNotebook
       parameters:
         - name: site-id
@@ -12837,9 +12762,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.page_copyToSection
       parameters:
         - name: site-id
@@ -14160,9 +14082,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: site.onenote.sectionGroup.section_copyToNotebook
       parameters:
         - name: site-id
@@ -14230,9 +14149,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: site.onenote.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: site-id
@@ -14704,9 +14620,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.sectionGroup.section.page_copyToSection
       parameters:
         - name: site-id
@@ -15459,9 +15372,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: site.onenote.section_copyToNotebook
       parameters:
         - name: site-id
@@ -15521,9 +15431,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: site.onenote.section_copyToSectionGroup
       parameters:
         - name: site-id
@@ -15931,9 +15838,6 @@ paths:
         - sites.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: site.onenote.section.page_copyToSection
       parameters:
         - name: site-id
@@ -16694,9 +16598,6 @@ paths:
         - users.onenote
       summary: Invoke action copyNotebook
       description: 'Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn''t exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-beta
       operationId: user.onenote.notebook_copyNotebook
       parameters:
         - name: user-id
@@ -17620,9 +17521,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: user.onenote.notebook.sectionGroup.section_copyToNotebook
       parameters:
         - name: user-id
@@ -17698,9 +17596,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: user.onenote.notebook.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: user-id
@@ -18294,9 +18189,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: user.onenote.notebook.sectionGroup.section.page_copyToSection
       parameters:
         - name: user-id
@@ -19169,9 +19061,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: user.onenote.notebook.section_copyToNotebook
       parameters:
         - name: user-id
@@ -19239,9 +19128,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: user.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: user-id
@@ -19763,9 +19649,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: user.onenote.notebook.section.page_copyToSection
       parameters:
         - name: user-id
@@ -20300,9 +20183,6 @@ paths:
         - users.onenote
       summary: Invoke action getNotebookFromWebUrl
       description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-beta
       operationId: user.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: user-id
@@ -20342,9 +20222,6 @@ paths:
         - users.onenote
       summary: Invoke function getRecentNotebooks
       description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-beta
       operationId: user.onenote.notebook_getRecentNotebook
       parameters:
         - name: user-id
@@ -20963,9 +20840,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: user.onenote.page_copyToSection
       parameters:
         - name: user-id
@@ -22320,9 +22194,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: user.onenote.sectionGroup.section_copyToNotebook
       parameters:
         - name: user-id
@@ -22390,9 +22261,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: user.onenote.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: user-id
@@ -22914,9 +22782,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: user.onenote.sectionGroup.section.page_copyToSection
       parameters:
         - name: user-id
@@ -23669,9 +23534,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: user.onenote.section_copyToNotebook
       parameters:
         - name: user-id
@@ -23731,9 +23593,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: user.onenote.section_copyToSectionGroup
       parameters:
         - name: user-id
@@ -24183,9 +24042,6 @@ paths:
         - users.onenote
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: user.onenote.section.page_copyToSection
       parameters:
         - name: user-id
@@ -25176,8 +25032,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.onenoteSectionCollectionResponse:
       title: Collection of onenoteSection
       type: object
@@ -25362,7 +25218,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -25372,7 +25229,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

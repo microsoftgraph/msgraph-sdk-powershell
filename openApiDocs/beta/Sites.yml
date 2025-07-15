@@ -2175,9 +2175,6 @@ paths:
         - groups.site
       summary: Invoke action addToDrive
       description: 'Apply a contentModel to SharePoint document libraries. For an existing model that''s already trained, this action automatically processes new documents that are added to the SharePoint libraries.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contentmodel-addtodrive?view=graph-rest-beta
       operationId: group.site.contentModel_addToDrive
       parameters:
         - name: group-id
@@ -2233,9 +2230,6 @@ paths:
         - groups.site
       summary: Invoke function getAppliedDrives
       description: List all the contentModelUsage information related to a contentModel applied to a SharePoint document library.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta
       operationId: group.site.contentModel_getAppliedDrive
       parameters:
         - name: group-id
@@ -2296,9 +2290,6 @@ paths:
         - groups.site
       summary: Invoke action removeFromDrive
       description: Remove a contentModel from a SharePoint document library.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contentmodel-removefromdrive?view=graph-rest-beta
       operationId: group.site.contentModel_removeFromDrive
       parameters:
         - name: group-id
@@ -2380,9 +2371,6 @@ paths:
         - groups.site
       summary: Invoke function getByName
       description: 'Read the properties and relationships of a contentModel object by its model name. The name should be the full model filename, including the file extension; for example, exampleModel.classifier.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contentmodel-getbyname?view=graph-rest-beta
       operationId: group.site.contentModel_getGraphBPreName
       parameters:
         - name: group-id
@@ -3854,9 +3842,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action associateWithHubSites
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-beta
       operationId: group.site.contentType_associateGraphWPreHubSite
       parameters:
         - name: group-id
@@ -3912,9 +3897,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action copyToDefaultContentLocation
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-beta
       operationId: group.site.contentType_copyToDefaultContentLocation
       parameters:
         - name: group-id
@@ -3967,9 +3949,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke function isPublished
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-beta
       operationId: group.site.contentType_isPublished
       parameters:
         - name: group-id
@@ -4017,9 +3996,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action publish
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-beta
       operationId: group.site.contentType_publish
       parameters:
         - name: group-id
@@ -4057,9 +4033,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action unpublish
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-beta
       operationId: group.site.contentType_unpublish
       parameters:
         - name: group-id
@@ -4127,9 +4100,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action addCopy
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-beta
       operationId: group.site.contentType_addCopy
       parameters:
         - name: group-id
@@ -4176,9 +4146,6 @@ paths:
         - groups.site
       summary: Invoke action addCopyFromContentTypeHub
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-beta
       operationId: group.site.contentType_addCopyFromContentTypeHub
       parameters:
         - name: group-id
@@ -4225,9 +4192,6 @@ paths:
         - groups.site
       summary: Invoke function getCompatibleHubContentTypes
       description: 'Get compatible content types in the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-beta
       operationId: group.site.contentType_getCompatibleHubContentType
       parameters:
         - name: group-id
@@ -6575,9 +6539,6 @@ paths:
         - groups.site
       summary: Invoke action evaluateApplication
       description: 'Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-beta
       operationId: group.site.informationProtection.policy.label_evaluateApplication
       parameters:
         - name: group-id
@@ -6645,9 +6606,6 @@ paths:
         - groups.site
       summary: Invoke action evaluateClassificationResults
       description: 'Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-beta
       operationId: group.site.informationProtection.policy.label_evaluateClassificationResult
       parameters:
         - name: group-id
@@ -6717,9 +6675,6 @@ paths:
         - groups.site
       summary: Invoke action evaluateRemoval
       description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta
       operationId: group.site.informationProtection.policy.label_evaluateRemoval
       parameters:
         - name: group-id
@@ -6787,9 +6742,6 @@ paths:
         - groups.site
       summary: Invoke action extractLabel
       description: 'Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-beta
       operationId: group.site.informationProtection.policy.label_extractLabel
       parameters:
         - name: group-id
@@ -7562,9 +7514,6 @@ paths:
         - groups.site
       summary: Invoke function computeInheritance
       description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
       operationId: group.site.informationProtection.sensitivityLabel.sublabel_computeInheritance
       parameters:
         - name: group-id
@@ -7633,9 +7582,6 @@ paths:
         - groups.site
       summary: Invoke action computeRightsAndInheritance
       description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
       operationId: group.site.informationProtection.sensitivityLabel.sublabel_computeRightsAndInheritance
       parameters:
         - name: group-id
@@ -7789,9 +7735,6 @@ paths:
         - groups.site
       summary: Invoke function computeInheritance
       description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
       operationId: group.site.informationProtection.sensitivityLabel_computeInheritance
       parameters:
         - name: group-id
@@ -7852,9 +7795,6 @@ paths:
         - groups.site
       summary: Invoke action computeRightsAndInheritance
       description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
       operationId: group.site.informationProtection.sensitivityLabel_computeRightsAndInheritance
       parameters:
         - name: group-id
@@ -11527,9 +11467,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action associateWithHubSites
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-beta
       operationId: group.site.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: group-id
@@ -11593,9 +11530,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action copyToDefaultContentLocation
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-beta
       operationId: group.site.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: group-id
@@ -11656,9 +11590,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke function isPublished
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-beta
       operationId: group.site.list.contentType_isPublished
       parameters:
         - name: group-id
@@ -11714,9 +11645,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action publish
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-beta
       operationId: group.site.list.contentType_publish
       parameters:
         - name: group-id
@@ -11762,9 +11690,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action unpublish
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-beta
       operationId: group.site.list.contentType_unpublish
       parameters:
         - name: group-id
@@ -11848,9 +11773,6 @@ paths:
       tags:
         - groups.site
       summary: Invoke action addCopy
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-beta
       operationId: group.site.list.contentType_addCopy
       parameters:
         - name: group-id
@@ -11905,9 +11827,6 @@ paths:
         - groups.site
       summary: Invoke action addCopyFromContentTypeHub
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-beta
       operationId: group.site.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: group-id
@@ -11962,9 +11881,6 @@ paths:
         - groups.site
       summary: Invoke function getCompatibleHubContentTypes
       description: 'Get compatible content types in the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-beta
       operationId: group.site.list.contentType_getCompatibleHubContentType
       parameters:
         - name: group-id
@@ -14526,9 +14442,6 @@ paths:
         - groups.site
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-beta
       operationId: group.site.list.item.documentSetVersion_restore
       parameters:
         - name: group-id
@@ -15510,9 +15423,6 @@ paths:
         - groups.site
       summary: Invoke action createLink
       description: "Create a sharing link for a listItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link. listItem resources inherit sharing permissions from the list the item resides in."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-createlink?view=graph-rest-beta
       operationId: group.site.list.item_createLink
       parameters:
         - name: group-id
@@ -16062,9 +15972,6 @@ paths:
         - groups.site
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta
       operationId: group.site.list.item.permission_grant
       parameters:
         - name: group-id
@@ -16156,9 +16063,6 @@ paths:
         - groups.site
       summary: Invoke action revokeGrants
       description: Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta
       operationId: group.site.list.item.permission_revokeGrant
       parameters:
         - name: group-id
@@ -16913,9 +16817,6 @@ paths:
         - groups.site
       summary: Invoke function delta
       description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Deleted items are returned with the deleted facet. Deleted indicates that the item is deleted and can't be restored.\nItems with this property should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-beta
       operationId: group.site.list.item_delta
       parameters:
         - name: group-id
@@ -18026,9 +17927,6 @@ paths:
         - groups.site
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta
       operationId: group.site.list.permission_grant
       parameters:
         - name: group-id
@@ -18112,9 +18010,6 @@ paths:
         - groups.site
       summary: Invoke action revokeGrants
       description: Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta
       operationId: group.site.list.permission_revokeGrant
       parameters:
         - name: group-id
@@ -18515,9 +18410,6 @@ paths:
         - groups.site
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-beta
       operationId: group.site.list.subscription_reauthorize
       parameters:
         - name: group-id
@@ -18632,9 +18524,6 @@ paths:
         - groups.site
       summary: Invoke action archive
       description: Archive an active SharePoint site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-archive?view=graph-rest-beta
       operationId: group.site_archive
       parameters:
         - name: group-id
@@ -18771,9 +18660,6 @@ paths:
         - groups.site
       summary: Invoke function getApplicableContentTypesForList
       description: Get site contentTypes that can be added to a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-beta
       operationId: group.site_getApplicableContentTypesGraphFPreList
       parameters:
         - name: group-id
@@ -19087,16 +18973,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -19210,16 +19086,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -19333,16 +19199,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -19517,16 +19373,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -19702,16 +19548,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -19778,16 +19614,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -20004,16 +19830,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -20141,16 +19957,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -20414,16 +20220,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -20537,16 +20333,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -20660,16 +20446,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -20783,16 +20559,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -21057,16 +20823,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -21253,9 +21009,6 @@ paths:
         - groups.site
       summary: Invoke action unarchive
       description: Unarchive an archived SharePoint site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-unarchive?view=graph-rest-beta
       operationId: group.site_unarchive
       parameters:
         - name: group-id
@@ -21670,9 +21423,6 @@ paths:
         - groups.site
       summary: Invoke action copyNotebook
       description: 'Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn''t exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-beta
       operationId: group.site.onenote.notebook_copyNotebook
       parameters:
         - name: group-id
@@ -22724,9 +22474,6 @@ paths:
         - groups.site
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: group.site.onenote.notebook.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
@@ -22810,9 +22557,6 @@ paths:
         - groups.site
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: group.site.onenote.notebook.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -23478,9 +23222,6 @@ paths:
         - groups.site
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.site.onenote.notebook.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
@@ -24473,9 +24214,6 @@ paths:
         - groups.site
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: group.site.onenote.notebook.section_copyToNotebook
       parameters:
         - name: group-id
@@ -24551,9 +24289,6 @@ paths:
         - groups.site
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: group.site.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -25147,9 +24882,6 @@ paths:
         - groups.site
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.site.onenote.notebook.section.page_copyToSection
       parameters:
         - name: group-id
@@ -25764,9 +25496,6 @@ paths:
         - groups.site
       summary: Invoke action getNotebookFromWebUrl
       description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-beta
       operationId: group.site.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: group-id
@@ -25814,9 +25543,6 @@ paths:
         - groups.site
       summary: Invoke function getRecentNotebooks
       description: Get a list of recentNotebook instances that have been accessed by the signed-in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-beta
       operationId: group.site.onenote.notebook_getRecentNotebook
       parameters:
         - name: group-id
@@ -26555,9 +26281,6 @@ paths:
         - groups.site
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.site.onenote.page_copyToSection
       parameters:
         - name: group-id
@@ -28152,9 +27875,6 @@ paths:
         - groups.site
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: group.site.onenote.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
@@ -28230,9 +27950,6 @@ paths:
         - groups.site
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: group.site.onenote.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -28826,9 +28543,6 @@ paths:
         - groups.site
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.site.onenote.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
@@ -29701,9 +29415,6 @@ paths:
         - groups.site
       summary: Invoke action copyToNotebook
       description: 'Copies a section to a specific notebook. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-beta
       operationId: group.site.onenote.section_copyToNotebook
       parameters:
         - name: group-id
@@ -29771,9 +29482,6 @@ paths:
         - groups.site
       summary: Invoke action copyToSectionGroup
       description: 'Copies a section to a specific section group. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-beta
       operationId: group.site.onenote.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -30295,9 +30003,6 @@ paths:
         - groups.site
       summary: Invoke action copyToSection
       description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-beta
       operationId: group.site.onenote.section.page_copyToSection
       parameters:
         - name: group-id
@@ -38352,9 +38057,6 @@ paths:
         - groups.site
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta
       operationId: group.site.permission_grant
       parameters:
         - name: group-id
@@ -38430,9 +38132,6 @@ paths:
         - groups.site
       summary: Invoke action revokeGrants
       description: Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta
       operationId: group.site.permission_revokeGrant
       parameters:
         - name: group-id
@@ -57829,9 +57528,6 @@ paths:
         - groups.site
       summary: Invoke action add
       description: Follow a user's site or multiple sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta
       operationId: group.site_add
       parameters:
         - name: group-id
@@ -57886,9 +57582,6 @@ paths:
         - groups.site
       summary: Invoke function delta
       description: "Get a set of newly created, updated, or deleted sites without having to perform a full read of the entire sites collection. A delta function call for sites is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, \nyou can query for incremental changes in the sites. It allows you to maintain and synchronize a local store of a user's sites without having to fetch all the sites from the server every time.\nThe application calls the API without specifying any parameters.\nThe service begins enumerating sites and returns pages of changes to these sites, accompanied by either an @odata.nextLink or an @odata.deltaLink.\nYour application should continue making calls using the @odata.nextLink until there's an @odata.deltaLink  in the response. After you receive all the changes, you can apply them to your local state.\nTo monitor future changes, call the delta API by using the @odata.deltaLink in the previous response. Any resources marked as deleted should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-delta?view=graph-rest-beta
       operationId: group.site_delta
       parameters:
         - name: group-id
@@ -57967,9 +57660,6 @@ paths:
         - groups.site
       summary: Invoke function getAllSites
       description: 'List sites across geographies in an organization. For more details, see Best practices for discovering files and detecting changes at scale.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-beta
       operationId: group.site_getAllSite
       parameters:
         - name: group-id
@@ -58045,9 +57735,6 @@ paths:
         - groups.site
       summary: Invoke action remove
       description: Unfollow a user's site or multiple sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-beta
       operationId: group.site_remove
       parameters:
         - name: group-id
@@ -59501,9 +59188,6 @@ paths:
         - sites.site.Actions
       summary: Invoke action addToDrive
       description: 'Apply a contentModel to SharePoint document libraries. For an existing model that''s already trained, this action automatically processes new documents that are added to the SharePoint libraries.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contentmodel-addtodrive?view=graph-rest-beta
       operationId: site.contentModel.getGraphBPreName_addToDrive
       parameters:
         - name: site-id
@@ -59551,9 +59235,6 @@ paths:
         - sites.site.Functions
       summary: Invoke function getAppliedDrives
       description: List all the contentModelUsage information related to a contentModel applied to a SharePoint document library.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta
       operationId: site.contentModel.getGraphBPreName_getAppliedDrive
       parameters:
         - name: site-id
@@ -59606,9 +59287,6 @@ paths:
         - sites.site.Actions
       summary: Invoke action removeFromDrive
       description: Remove a contentModel from a SharePoint document library.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contentmodel-removefromdrive?view=graph-rest-beta
       operationId: site.contentModel.getGraphBPreName_removeFromDrive
       parameters:
         - name: site-id
@@ -60913,9 +60591,6 @@ paths:
       tags:
         - sites.contentType
       summary: Invoke action associateWithHubSites
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-beta
       operationId: site.contentType_associateGraphWPreHubSite
       parameters:
         - name: site-id
@@ -60963,9 +60638,6 @@ paths:
       tags:
         - sites.contentType
       summary: Invoke action copyToDefaultContentLocation
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-beta
       operationId: site.contentType_copyToDefaultContentLocation
       parameters:
         - name: site-id
@@ -61010,9 +60682,6 @@ paths:
       tags:
         - sites.contentType
       summary: Invoke function isPublished
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-beta
       operationId: site.contentType_isPublished
       parameters:
         - name: site-id
@@ -61052,9 +60721,6 @@ paths:
       tags:
         - sites.contentType
       summary: Invoke action publish
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-beta
       operationId: site.contentType_publish
       parameters:
         - name: site-id
@@ -61084,9 +60750,6 @@ paths:
       tags:
         - sites.contentType
       summary: Invoke action unpublish
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-beta
       operationId: site.contentType_unpublish
       parameters:
         - name: site-id
@@ -61138,9 +60801,6 @@ paths:
       tags:
         - sites.contentType
       summary: Invoke action addCopy
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-beta
       operationId: site.contentType_addCopy
       parameters:
         - name: site-id
@@ -61179,9 +60839,6 @@ paths:
         - sites.contentType
       summary: Invoke action addCopyFromContentTypeHub
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-beta
       operationId: site.contentType_addCopyFromContentTypeHub
       parameters:
         - name: site-id
@@ -61220,9 +60877,6 @@ paths:
         - sites.contentType
       summary: Invoke function getCompatibleHubContentTypes
       description: 'Get compatible content types in the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-beta
       operationId: site.contentType_getCompatibleHubContentType
       parameters:
         - name: site-id
@@ -61712,11 +61366,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get metadata for a list
-      description: Return the metadata for a list.
+      summary: List operations
+      description: Get the list of richLongRunningOperations associated with a list.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-beta
       operationId: site_GetList
       parameters:
         - name: site-id
@@ -63739,9 +63393,6 @@ paths:
       tags:
         - sites.list
       summary: Invoke action associateWithHubSites
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-beta
       operationId: site.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: site-id
@@ -63797,9 +63448,6 @@ paths:
       tags:
         - sites.list
       summary: Invoke action copyToDefaultContentLocation
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-beta
       operationId: site.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: site-id
@@ -63852,9 +63500,6 @@ paths:
       tags:
         - sites.list
       summary: Invoke function isPublished
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-beta
       operationId: site.list.contentType_isPublished
       parameters:
         - name: site-id
@@ -63902,9 +63547,6 @@ paths:
       tags:
         - sites.list
       summary: Invoke action publish
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-beta
       operationId: site.list.contentType_publish
       parameters:
         - name: site-id
@@ -63942,9 +63584,6 @@ paths:
       tags:
         - sites.list
       summary: Invoke action unpublish
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-beta
       operationId: site.list.contentType_unpublish
       parameters:
         - name: site-id
@@ -64012,9 +63651,6 @@ paths:
       tags:
         - sites.list
       summary: Invoke action addCopy
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-beta
       operationId: site.list.contentType_addCopy
       parameters:
         - name: site-id
@@ -64061,9 +63697,6 @@ paths:
         - sites.list
       summary: Invoke action addCopyFromContentTypeHub
       description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-beta
       operationId: site.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: site-id
@@ -64110,9 +63743,6 @@ paths:
         - sites.list
       summary: Invoke function getCompatibleHubContentTypes
       description: 'Get compatible content types in the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-beta
       operationId: site.list.contentType_getCompatibleHubContentType
       parameters:
         - name: site-id
@@ -66282,9 +65912,6 @@ paths:
         - sites.list
       summary: Invoke action restore
       description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-beta
       operationId: site.list.item.documentSetVersion_restore
       parameters:
         - name: site-id
@@ -67050,9 +66677,6 @@ paths:
         - sites.list
       summary: Invoke action createLink
       description: "Create a sharing link for a listItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link. listItem resources inherit sharing permissions from the list the item resides in."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-createlink?view=graph-rest-beta
       operationId: site.list.item_createLink
       parameters:
         - name: site-id
@@ -67546,9 +67170,6 @@ paths:
         - sites.list
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta
       operationId: site.list.item.permission_grant
       parameters:
         - name: site-id
@@ -67632,9 +67253,6 @@ paths:
         - sites.list
       summary: Invoke action revokeGrants
       description: Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta
       operationId: site.list.item.permission_revokeGrant
       parameters:
         - name: site-id
@@ -68293,9 +67911,6 @@ paths:
         - sites.list
       summary: Invoke function delta
       description: "Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.\nThe service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.\nYour app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.\nTo check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.\nThe same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Deleted items are returned with the deleted facet. Deleted indicates that the item is deleted and can't be restored.\nItems with this property should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-beta
       operationId: site.list.item_delta
       parameters:
         - name: site-id
@@ -69262,9 +68877,6 @@ paths:
         - sites.list
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta
       operationId: site.list.permission_grant
       parameters:
         - name: site-id
@@ -69340,9 +68952,6 @@ paths:
         - sites.list
       summary: Invoke action revokeGrants
       description: Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta
       operationId: site.list.permission_revokeGrant
       parameters:
         - name: site-id
@@ -69687,9 +69296,6 @@ paths:
         - sites.list
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-beta
       operationId: site.list.subscription_reauthorize
       parameters:
         - name: site-id
@@ -69780,9 +69386,6 @@ paths:
         - sites.site.Actions
       summary: Invoke action archive
       description: Archive an active SharePoint site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-archive?view=graph-rest-beta
       operationId: site_archive
       parameters:
         - name: site-id
@@ -69903,9 +69506,6 @@ paths:
         - sites.site.Functions
       summary: Invoke function getApplicableContentTypesForList
       description: Get site contentTypes that can be added to a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-beta
       operationId: site_getApplicableContentTypesGraphFPreList
       parameters:
         - name: site-id
@@ -70171,16 +69771,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -70278,16 +69868,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -70439,16 +70019,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -70507,16 +70077,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -70575,16 +70135,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -70659,9 +70209,6 @@ paths:
         - sites.site.Actions
       summary: Invoke action archive
       description: Archive an active SharePoint site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-archive?view=graph-rest-beta
       operationId: site.getGraphBPrePath_archive
       parameters:
         - name: site-id
@@ -70798,9 +70345,6 @@ paths:
         - sites.site.Functions
       summary: Invoke function getApplicableContentTypesForList
       description: Get site contentTypes that can be added to a list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-beta
       operationId: site.getGraphBPrePath_getApplicableContentTypesGraphFPreList
       parameters:
         - name: site-id
@@ -70891,9 +70435,6 @@ paths:
         - sites.site.Actions
       summary: Invoke action unarchive
       description: Unarchive an archived SharePoint site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-unarchive?view=graph-rest-beta
       operationId: site.getGraphBPrePath_unarchive
       parameters:
         - name: site-id
@@ -70947,16 +70488,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -71054,16 +70585,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -71161,16 +70682,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -71268,16 +70779,6 @@ paths:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -71440,9 +70941,6 @@ paths:
         - sites.site.Actions
       summary: Invoke action unarchive
       description: Unarchive an archived SharePoint site.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-unarchive?view=graph-rest-beta
       operationId: site_unarchive
       parameters:
         - name: site-id
@@ -71771,11 +71269,11 @@ paths:
     post:
       tags:
         - sites.baseSitePage
-      summary: Create newsLinkPage
-      description: Create a new newsLinkPage in the site pages list of a site.
+      summary: Create a page in the site pages list of a site
+      description: Create a new sitePage in the site pages list in a site.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/newslinkpage-create?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-beta
       operationId: site_CreatePage
       parameters:
         - name: site-id
@@ -75278,9 +74776,6 @@ paths:
         - sites.permission
       summary: Invoke action grant
       description: Grant users access to a link represented by a permission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta
       operationId: site.permission_grant
       parameters:
         - name: site-id
@@ -75348,9 +74843,6 @@ paths:
         - sites.permission
       summary: Invoke action revokeGrants
       description: Revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta
       operationId: site.permission_revokeGrant
       parameters:
         - name: site-id
@@ -91133,9 +90625,6 @@ paths:
         - sites.site.Actions
       summary: Invoke action add
       description: Follow a user's site or multiple sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta
       operationId: site_add
       requestBody:
         description: Action parameters
@@ -91181,9 +90670,6 @@ paths:
         - sites.site.Functions
       summary: Invoke function delta
       description: "Get a set of newly created, updated, or deleted sites without having to perform a full read of the entire sites collection. A delta function call for sites is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, \nyou can query for incremental changes in the sites. It allows you to maintain and synchronize a local store of a user's sites without having to fetch all the sites from the server every time.\nThe application calls the API without specifying any parameters.\nThe service begins enumerating sites and returns pages of changes to these sites, accompanied by either an @odata.nextLink or an @odata.deltaLink.\nYour application should continue making calls using the @odata.nextLink until there's an @odata.deltaLink  in the response. After you receive all the changes, you can apply them to your local state.\nTo monitor future changes, call the delta API by using the @odata.deltaLink in the previous response. Any resources marked as deleted should be removed from your local state."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-delta?view=graph-rest-beta
       operationId: site_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -91254,9 +90740,6 @@ paths:
         - sites.site.Functions
       summary: Invoke function getAllSites
       description: 'List sites across geographies in an organization. For more details, see Best practices for discovering files and detecting changes at scale.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-beta
       operationId: site_getAllSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -91324,9 +90807,6 @@ paths:
         - sites.site.Actions
       summary: Invoke action remove
       description: Unfollow a user's site or multiple sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-beta
       operationId: site_remove
       requestBody:
         description: Action parameters
@@ -91506,9 +90986,6 @@ paths:
         - users.site
       summary: Invoke action add
       description: Follow a user's site or multiple sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta
       operationId: user.followedSite_add
       parameters:
         - name: user-id
@@ -91563,9 +91040,6 @@ paths:
         - users.site
       summary: Invoke action remove
       description: Unfollow a user's site or multiple sites.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-beta
       operationId: user.followedSite_remove
       parameters:
         - name: user-id
@@ -93486,12 +92960,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -93516,10 +92984,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -93925,7 +93389,7 @@ components:
       properties:
         alias:
           type: string
-          description: 'The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).'
+          description: 'The alias of the domain object, for cases where an email address is unavailable (for example, security groups).'
           nullable: true
         email:
           type: string
@@ -99249,7 +98713,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -100539,45 +100003,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRights:
       title: usageRights
       enum:
@@ -100619,6 +100044,8 @@ components:
               type: string
               description: The content format.
               nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
             label:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
           additionalProperties:
@@ -101323,8 +100750,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.columnDefinitionCollectionResponse:
       title: Collection of columnDefinition
       type: object
@@ -112728,13 +112155,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -114111,11 +113538,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -114385,6 +113812,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEvent:
@@ -114519,6 +113951,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -117584,6 +117017,17 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.communicationsIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -117776,6 +117220,16 @@ components:
         - sPSharingNotifyUser
         - sPSharingGenerateIncidentReport
       type: string
+    microsoft.graph.labelActionBase:
+      title: labelActionBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.linkRoleAbilities:
       title: linkRoleAbilities
       type: object
@@ -121180,7 +120634,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -121190,7 +120645,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

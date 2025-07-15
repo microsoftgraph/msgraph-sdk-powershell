@@ -3062,9 +3062,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: 'Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance.decision_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3155,9 +3152,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke action acceptRecommendations
       description: Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed on an accessReviewInstance object for which the calling user is a reviewer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-acceptrecommendations?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance_acceptRecommendation
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3188,9 +3182,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke action applyDecisions
       description: Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings. The status of the accessReviewInstance must be Completed to call this method.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-applydecisions?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance_applyDecision
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3221,9 +3212,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke action batchRecordDecisions
       description: 'Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance_batchRecordDecision
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3276,9 +3264,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke action resetDecisions
       description: Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-resetdecisions?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance_resetDecision
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3309,9 +3294,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke action sendReminder
       description: Send a reminder to the reviewers of an active accessReviewInstance.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance_sendReminder
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3342,9 +3324,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke action stop
       description: 'Stop a currently active accessReviewInstance. After the access review instance stops, the instance status is marked as Completed, the reviewers can no longer give input, and the access review decisions are applied. Stopping an instance will not stop future instances. To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-stop?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance_stop
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -4373,9 +4352,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: 'Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance.stage.decision_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -4474,9 +4450,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke action stop
       description: 'Stop an access review stage that is inProgress. After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created.  The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewstage-stop?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance.stage_stop
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -4545,9 +4518,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: Return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewstage-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance.stage_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -4660,9 +4630,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: Retrieve all accessReviewInstance objects on a given accessReviewScheduleDefinition where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance_filterGraphBPreCurrentUser
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -4780,9 +4747,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
       description: Returns accessReviewScheduleDefinition objects where the calling user is a reviewer on one or more accessReviewInstance objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -5265,9 +5229,6 @@ paths:
         - identityGovernance.accessReviewSet
       summary: Invoke action generateDownloadUri
       description: Generates a URI for an accessReviewHistoryInstance object the status for which is done. Each URI can be used to retrieve the instance's review history data. Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewhistoryinstance-generatedownloaduri?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.historyDefinition.instance_generateDownloadUri
       parameters:
         - name: accessReviewHistoryDefinition-id
@@ -6259,9 +6220,6 @@ paths:
         - identityGovernance.appConsentApprovalRoute
       summary: Invoke function filterByCurrentUser
       description: 'Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/userconsentrequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.appConsent.appConsentRequest.userConsentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: appConsentRequest-id
@@ -6358,9 +6316,6 @@ paths:
         - identityGovernance.appConsentApprovalRoute
       summary: Invoke function filterByCurrentUser
       description: Retrieve a collection of appConsentRequest objects for which the current user is the reviewer and the status of the userConsentRequest for accessing the specified app is InProgress.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/appconsentrequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.appConsent.appConsentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -6956,9 +6911,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApproval_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -8958,9 +8910,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke action getApplicablePolicyRequirements
       description: 'In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.accessPackage_getApplicablePolicyRequirement
       parameters:
         - name: accessPackage-id
@@ -12254,9 +12203,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.accessPackage_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -13449,9 +13395,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke action cancel
       description: 'In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-cancel?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignmentRequest_cancel
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -13474,9 +13417,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke action reprocess
       description: 'In Microsoft Entra entitlement management, callers can automatically retry a user''s request for access to an access package. It''s performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-reprocess?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignmentRequest_reprocess
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -13499,9 +13439,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke action resume
       description: 'Resume a user''s access package request after waiting for a callback from a custom extension. In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It''s performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-resume?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignmentRequest_resume
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -13602,9 +13539,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignmentRequest objects filtered on the signed-in user.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignmentRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -13954,9 +13888,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke action reprocess
       description: 'In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The state of the access package assignment must be Delivered for the administrator to reprocess the user''s assignment. Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignment-reprocess?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignment_reprocess
       parameters:
         - name: accessPackageAssignment-id
@@ -14039,9 +13970,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke function additionalAccess
       description: 'In Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  This can be used to prepare to configure the incompatible access packages for a specific access package.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignment_additionalAccess
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14191,9 +14119,6 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignment objects filtered on the signed-in user.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignment-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignment_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -14695,11 +14620,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentRequestWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+      summary: Get accessPackageAssignmentWorkflowExtension
+      description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -14794,11 +14719,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentRequestWorkflowExtension
-      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
+      summary: Delete accessPackageAssignmentWorkflowExtension
+      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -39335,9 +39260,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action activate
       description: 'Run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the ''Real-time employee termination'' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-activate?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_activate
       parameters:
         - name: workflow-id
@@ -39374,9 +39296,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action createNewVersion
       description: Create a new version of the workflow object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-createnewversion?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_createNewVersion
       parameters:
         - name: workflow-id
@@ -39415,9 +39334,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action restore
       description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_restore
       parameters:
         - name: workflow-id
@@ -39688,9 +39604,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -40679,9 +40592,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run.userProcessingResult.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -41674,9 +41584,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.taskReport.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -42520,9 +42427,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.task.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -43461,9 +43365,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.userProcessingResult.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -45015,9 +44916,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.version.task.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -45683,9 +45581,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function topTasksProcessedSummary
       description: 'Provide a summary of the most processed tasks, known as top tasks, for a specified time period in a tenant. The task definition is provided, along with numerical counts of total, successful, and failed runs. For information about workflows processed, see insights: topWorkflowsProcessedSummary.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-insights-toptasksprocessedsummary?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.insight_topTasksProcessedSummary
       parameters:
         - name: startDateTime
@@ -45740,9 +45635,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function topWorkflowsProcessedSummary
       description: 'Provide a summary of the workflows processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-insights-topworkflowsprocessedsummary?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.insight_topWorkflowsProcessedSummary
       parameters:
         - name: startDateTime
@@ -45797,9 +45689,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function workflowsProcessedByCategory
       description: 'Provide a summary of workflows processed, by category, in a tenant. This allows you to quickly get category information, by numerical value, bypassing other information found in the WorkflowsProcessedSummary call.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedbycategory?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.insight_workflowsProcessedGraphBPreCategory
       parameters:
         - name: startDateTime
@@ -45836,9 +45725,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function workflowsProcessedSummary
       description: 'Provide a summary of all workflows processed within a tenant for a specified period. Because the amount of results for listed workflows as returned by the List workflows does not tell you which workflows were processed from the list of created workflows, this summary gives you a quick overview of processed status based on counts.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedsummary?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.insight_workflowsProcessedSummary
       parameters:
         - name: startDateTime
@@ -46795,9 +46681,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action activate
       description: 'Run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the ''Real-time employee termination'' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-activate?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflow_activate
       parameters:
         - name: workflow-id
@@ -46834,9 +46717,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action createNewVersion
       description: Create a new version of the workflow object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-createnewversion?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflow_createNewVersion
       parameters:
         - name: workflow-id
@@ -46875,9 +46755,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action restore
       description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflow_restore
       parameters:
         - name: workflow-id
@@ -47157,9 +47034,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflow.run.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -48157,9 +48031,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflow.run.userProcessingResult.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -49159,9 +49030,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflow.taskReport.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -50012,9 +49880,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflow.task.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -50959,9 +50824,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflow.userProcessingResult.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -52525,9 +52387,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflow.version.task.taskProcessingResult_resume
       parameters:
         - name: workflow-id
@@ -53463,9 +53322,6 @@ paths:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
       description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
       operationId: identityGovernance.lifecycleWorkflow.workflowTemplate.task.taskProcessingResult_resume
       parameters:
         - name: workflowTemplate-id
@@ -54516,9 +54372,6 @@ paths:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/approval-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentApproval_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -55009,9 +54862,6 @@ paths:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -55446,9 +55296,6 @@ paths:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke action cancel
       description: Cancel an access assignment request to a group whose membership and ownership are governed by PIM.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_cancel
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -55577,9 +55424,6 @@ paths:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In PIM for Groups, retrieve the requests for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -56070,9 +55914,6 @@ paths:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In PIM for Groups, retrieve the schedules for membership or ownership assignments for the calling principal to groups that are governed by PIM.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentSchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -56517,9 +56358,6 @@ paths:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: Return instances of membership and ownership eligibility schedules for the calling principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -56908,9 +56746,6 @@ paths:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke action cancel
       description: Cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleRequest_cancel
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleRequest-id
@@ -57039,9 +56874,6 @@ paths:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: 'In PIM for Groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -57486,9 +57318,6 @@ paths:
         - identityGovernance.privilegedAccessRoot
       summary: Invoke function filterByCurrentUser
       description: Retrieve schedules of membership and ownership eligibility requests for the calling principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.eligibilitySchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -60826,9 +60655,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Get the instances of active role assignments for the calling principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -61228,9 +61054,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke action cancel
       description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentScheduleRequest_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -61405,9 +61228,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: 'In PIM, retrieve the requests for active role assignments for a particular principal. The principal can be the creator or approver of the unifiedRoleAssignmentScheduleRequest object, or they can be the target of the assignment.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -61909,9 +61729,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentSchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -62816,9 +62633,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Get the instances of eligible roles for the calling principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilityScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -63172,9 +62986,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke action cancel
       description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days. After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilityScheduleRequest_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -63349,9 +63160,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: 'In PIM, retrieve the requests for role eligibilities for a particular principal. The principal can be the creator or approver of the unifiedRoleEligibilityScheduleRequest object, or they can be the target of the role eligibility.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilityScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -63807,9 +63615,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Retrieve the schedules for role eligibilities for which the signed-in user is the principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilitySchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -65249,9 +65054,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Get the instances of active role assignments for the calling principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -65641,9 +65443,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke action cancel
       description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -65818,9 +65617,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: 'In PIM, retrieve the requests for active role assignments for a particular principal. The principal can be the creator or approver of the unifiedRoleAssignmentScheduleRequest object, or they can be the target of the assignment.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -66316,9 +66112,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Retrieve the schedules for active role assignment operations for which the signed-in user is the principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentSchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -67202,9 +66995,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Get the instances of eligible roles for the calling principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleInstance_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -67548,9 +67338,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke action cancel
       description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days. After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -67725,9 +67512,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: 'In PIM, retrieve the requests for role eligibilities for a particular principal. The principal can be the creator or approver of the unifiedRoleEligibilityScheduleRequest object, or they can be the target of the role eligibility.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequest_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -68177,9 +67961,6 @@ paths:
         - roleManagement.rbacApplication
       summary: Invoke function filterByCurrentUser
       description: Retrieve the schedules for role eligibilities for which the signed-in user is the principal.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedule-filterbycurrentuser?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilitySchedule_filterGraphBPreCurrentUser
       parameters:
         - name: on
@@ -76160,8 +75941,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.agreementFileLocalizationCollectionResponse:
       title: Collection of agreementFileLocalization
       type: object
@@ -78028,6 +77809,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -81854,6 +81641,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -85683,6 +85520,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -88509,6 +88373,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -89999,7 +89890,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -90009,7 +89901,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

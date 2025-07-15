@@ -2977,9 +2977,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action enable
       description: Enable the Microsoft 365 Backup Storage service for a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-beta
       operationId: solution.backupRestore_enable
       requestBody:
         description: Action parameters
@@ -4558,9 +4555,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action activate
       description: 'Activate a protectionPolicyBase. Currently, only one active backup policy per underlying service is supported (that is, one for OneDrive accounts, one for SharePoint sites, and one for Exchange Online users). You can add or remove artifacts (sites or user accounts) to or from each active policy.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/protectionpolicybase-activate?view=graph-rest-beta
       operationId: solution.backupRestore.protectionPolicy_activate
       parameters:
         - name: protectionPolicyBase-id
@@ -4587,9 +4581,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action deactivate
       description: Deactivate a protectionPolicyBase.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/protectionpolicybase-deactivate?view=graph-rest-beta
       operationId: solution.backupRestore.protectionPolicy_deactivate
       parameters:
         - name: protectionPolicyBase-id
@@ -5330,9 +5321,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action search
       description: Search for the restorePoint objects associated with a protectionUnit.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-beta
       operationId: solution.backupRestore.restorePoint_search
       requestBody:
         description: Action parameters
@@ -5560,9 +5548,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action activate
       description: 'Activate a draft restoreSessionBase object to restore a protection unit. The following points apply to restoring a protection unit:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-beta
       operationId: solution.backupRestore.restoreSession_activate
       parameters:
         - name: restoreSessionBase-id
@@ -5794,9 +5779,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action activate
       description: Activate a serviceApp.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceapp-activate?view=graph-rest-beta
       operationId: solution.backupRestore.serviceApp_activate
       parameters:
         - name: serviceApp-id
@@ -5837,9 +5819,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action deactivate
       description: Deactivate a serviceApp.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceapp-deactivate?view=graph-rest-beta
       operationId: solution.backupRestore.serviceApp_deactivate
       parameters:
         - name: serviceApp-id
@@ -9084,8 +9063,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.driveProtectionUnitCollectionResponse:
       title: Collection of driveProtectionUnit
       type: object
@@ -9762,7 +9741,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -9772,7 +9752,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

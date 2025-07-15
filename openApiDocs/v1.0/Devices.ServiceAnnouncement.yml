@@ -751,9 +751,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke function incidentReport
       description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.issue_incidentReport
       parameters:
         - name: serviceHealthIssue-id
@@ -1438,9 +1435,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action archive
       description: Archive a list of serviceUpdateMessages for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_archive
       requestBody:
         description: Action parameters
@@ -1480,9 +1474,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action favorite
       description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_favorite
       requestBody:
         description: Action parameters
@@ -1522,9 +1513,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action markRead
       description: Mark a list of serviceUpdateMessages as read for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_markRead
       requestBody:
         description: Action parameters
@@ -1564,9 +1552,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action markUnread
       description: Mark a list of serviceUpdateMessages as unread for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_markUnread
       requestBody:
         description: Action parameters
@@ -1606,9 +1591,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action unarchive
       description: Unarchive a list of serviceUpdateMessages for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_unarchive
       requestBody:
         description: Action parameters
@@ -1648,9 +1630,6 @@ paths:
         - admin.serviceAnnouncement
       summary: Invoke action unfavorite
       description: Remove the favorite status of serviceUpdateMessages for the signed in user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_unfavorite
       requestBody:
         description: Action parameters
@@ -2023,8 +2002,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.serviceUpdateMessageCollectionResponse:
       title: Collection of serviceUpdateMessage
       type: object
@@ -2166,7 +2145,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -2176,7 +2156,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

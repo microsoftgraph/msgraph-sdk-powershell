@@ -12,9 +12,6 @@ paths:
         - users.user.Actions
       summary: Invoke action assignLicense
       description: 'Add or remove licenses for the user to enable or disable their use of Microsoft cloud offerings that the company has licenses to. For example, an organization can have a Microsoft 365 Enterprise E3 subscription with 100 licenses, and this request assigns one of those licenses to a specific user. You can also enable and disable specific plans associated with a subscription. Direct user licensing method is an alternative to group-based licensing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0
       operationId: user_assignLicense
       parameters:
         - name: user-id
@@ -39,9 +36,6 @@ paths:
         - users.user.Actions
       summary: Invoke action changePassword
       description: Update the signed-in user's password. Any user can update their password without belonging to any administrator role.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0
       operationId: user_changePassword
       parameters:
         - name: user-id
@@ -66,9 +60,6 @@ paths:
         - users.user.Actions
       summary: Invoke action checkMemberGroups
       description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: user_checkMemberGroup
       parameters:
         - name: user-id
@@ -174,9 +165,6 @@ paths:
         - users.user.Actions
       summary: Invoke action exportPersonalData
       description: 'Submit a data policy operation request from a company administrator or an application to export an organizational user''s data. This data includes the user''s data stored in OneDrive and their activity reports. For more information about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-exportpersonaldata?view=graph-rest-1.0
       operationId: user_exportPersonalData
       parameters:
         - name: user-id
@@ -201,9 +189,6 @@ paths:
         - users.user.Actions
       summary: Invoke action findMeetingTimes
       description: "Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.\nBased on this value, you can better adjust the parameters and call findMeetingTimes again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-findmeetingtimes?view=graph-rest-1.0
       operationId: user_findMeetingTime
       parameters:
         - name: user-id
@@ -228,9 +213,6 @@ paths:
         - users.user.Actions
       summary: Invoke action getMailTips
       description: "Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\nbe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
       operationId: user_getMailTip
       parameters:
         - name: user-id
@@ -258,9 +240,6 @@ paths:
         - users.user.Actions
       summary: Invoke action getMemberGroups
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the DirectoryResultSizeLimitExceeded error code. If you get the DirectoryResultSizeLimitExceeded error code, use the List group transitive memberOf API instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: user_getMemberGroup
       parameters:
         - name: user-id
@@ -314,9 +293,6 @@ paths:
         - users.user.Actions
       summary: Invoke action getMemberObjects
       description: "Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: user_getMemberObject
       parameters:
         - name: user-id
@@ -370,9 +346,6 @@ paths:
         - users.user.Actions
       summary: Invoke action removeAllDevicesFromManagement
       description: Retire all devices from management for this user
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-devices-user-removealldevicesfrommanagement?view=graph-rest-1.0
       operationId: user_removeAllDevicesFromManagement
       parameters:
         - name: user-id
@@ -395,9 +368,6 @@ paths:
         - users.user.Actions
       summary: Invoke action reprocessLicenseAssignment
       description: 'Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-1.0
       operationId: user_reprocessLicenseAssignment
       parameters:
         - name: user-id
@@ -420,9 +390,6 @@ paths:
         - users.user.Actions
       summary: Invoke action restore
       description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: user_restore
       parameters:
         - name: user-id
@@ -449,9 +416,6 @@ paths:
         - users.user.Actions
       summary: Invoke action retryServiceProvisioning
       description: Retry the provisioning of a user object in Microsoft Entra ID.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-retryserviceprovisioning?view=graph-rest-1.0
       operationId: user_retryServiceProvisioning
       parameters:
         - name: user-id
@@ -474,9 +438,6 @@ paths:
         - users.user.Actions
       summary: Invoke action revokeSignInSessions
       description: 'Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user''s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization''s data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0
       operationId: user_revokeSignInSession
       parameters:
         - name: user-id
@@ -499,9 +460,6 @@ paths:
         - users.user.Actions
       summary: Invoke action sendMail
       description: 'Send the message specified in the request body using either JSON or MIME format. When using JSON format, you can include a file attachment in the same sendMail action call. When using MIME format: This method saves the message in the Sent Items folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0
       operationId: user_sendMail
       parameters:
         - name: user-id
@@ -526,9 +484,6 @@ paths:
         - users.user.Actions
       summary: Invoke action translateExchangeIds
       description: Translate identifiers of Outlook-related resources between formats.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
       operationId: user_translateExchangeId
       parameters:
         - name: user-id
@@ -556,9 +511,6 @@ paths:
         - users.user.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
       description: Issues a wipe operation on an app registration with specified device tag.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-wipemanagedappregistrationsbydevicetag?view=graph-rest-1.0
       operationId: user_wipeManagedAppRegistrationsGraphBPreDeviceTag
       parameters:
         - name: user-id
@@ -583,9 +535,6 @@ paths:
         - users.user.Actions
       summary: Invoke action getAvailableExtensionProperties
       description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: user_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
@@ -631,9 +580,6 @@ paths:
         - users.user.Actions
       summary: Invoke action getByIds
       description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: user_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -684,9 +630,6 @@ paths:
         - users.user.Actions
       summary: Invoke action validateProperties
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: user_validateProperty
       requestBody:
         description: Action parameters
@@ -5288,6 +5231,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -9311,6 +9260,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13258,6 +13257,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -16175,6 +16201,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object

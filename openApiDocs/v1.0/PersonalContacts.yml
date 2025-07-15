@@ -1530,9 +1530,6 @@ paths:
         - users.contactFolder
       summary: Invoke function delta
       description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
       operationId: user.contactFolder.childFolder.contact_delta
       parameters:
         - name: user-id
@@ -1694,9 +1691,6 @@ paths:
         - users.contactFolder
       summary: Invoke function delta
       description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
       operationId: user.contactFolder.childFolder_delta
       parameters:
         - name: user-id
@@ -2681,9 +2675,6 @@ paths:
         - users.contactFolder
       summary: Invoke function delta
       description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
       operationId: user.contactFolder.contact_delta
       parameters:
         - name: user-id
@@ -2821,9 +2812,6 @@ paths:
         - users.contactFolder
       summary: Invoke function delta
       description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
       operationId: user.contactFolder_delta
       parameters:
         - name: user-id
@@ -3656,9 +3644,6 @@ paths:
         - users.contact
       summary: Invoke function delta
       description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
       operationId: user.contact_delta
       parameters:
         - name: user-id
@@ -4121,8 +4106,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -4205,7 +4190,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -4215,7 +4201,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

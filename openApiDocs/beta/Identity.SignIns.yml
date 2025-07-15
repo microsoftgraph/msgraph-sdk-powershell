@@ -460,9 +460,6 @@ paths:
         - identity.identityApiConnector
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-beta
       operationId: identity.apiConnector_uploadClientCertificate
       parameters:
         - name: identityApiConnector-id
@@ -4089,9 +4086,6 @@ paths:
         - identity.b2cIdentityUserFlow
       summary: Invoke function getOrder
       description: Get the order of identityUserFlowAttributeAssignments being collected within a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-getorder?view=graph-rest-beta
       operationId: identity.b2cUserFlow.userAttributeAssignment_getOrder
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -4118,9 +4112,6 @@ paths:
         - identity.b2cIdentityUserFlow
       summary: Invoke action setOrder
       description: Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-beta
       operationId: identity.b2cUserFlow.userAttributeAssignment_setOrder
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -4719,9 +4710,6 @@ paths:
         - identity.b2xIdentityUserFlow
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-beta
       operationId: identity.b2xUserFlow.apiConnectorConfiguration.postAttributeCollection_uploadClientCertificate
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -4939,9 +4927,6 @@ paths:
         - identity.b2xIdentityUserFlow
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-beta
       operationId: identity.b2xUserFlow.apiConnectorConfiguration.postFederationSignup_uploadClientCertificate
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -5086,9 +5071,6 @@ paths:
         - identity.b2xIdentityUserFlow
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-beta
       operationId: identity.b2xUserFlow.apiConnectorConfiguration.preTokenIssuance_uploadClientCertificate
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -6664,9 +6646,6 @@ paths:
         - identity.b2xIdentityUserFlow
       summary: Invoke function getOrder
       description: Get the order of identityUserFlowAttributeAssignments being collected within a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-getorder?view=graph-rest-beta
       operationId: identity.b2xUserFlow.userAttributeAssignment_getOrder
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -6693,9 +6672,6 @@ paths:
         - identity.b2xIdentityUserFlow
       summary: Invoke action setOrder
       description: Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-beta
       operationId: identity.b2xUserFlow.userAttributeAssignment_setOrder
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -7871,9 +7847,6 @@ paths:
         - identity.conditionalAccessRoot
       summary: Invoke action updateAllowedCombinations
       description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-beta
       operationId: identity.conditionalAccess.authenticationStrength.policy_updateAllowedCombination
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -7914,9 +7887,6 @@ paths:
         - identity.conditionalAccessRoot
       summary: Invoke function usage
       description: 'The usage function allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-usage?view=graph-rest-beta
       operationId: identity.conditionalAccess.authenticationStrength.policy_usage
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -7957,9 +7927,6 @@ paths:
         - identity.conditionalAccessRoot
       summary: Invoke function findByMethodMode
       description: Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta
       operationId: identity.conditionalAccess.authenticationStrength.policy_findGraphBPreMethodMode
       parameters:
         - name: authenticationMethodModes
@@ -8848,9 +8815,6 @@ paths:
         - identity.conditionalAccessRoot
       summary: Invoke action updateAllowedCombinations
       description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-beta
       operationId: identity.conditionalAccess.authenticationStrength.policy_updateAllowedCombination
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -8897,9 +8861,6 @@ paths:
         - identity.conditionalAccessRoot
       summary: Invoke function usage
       description: 'The usage function allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-usage?view=graph-rest-beta
       operationId: identity.conditionalAccess.authenticationStrength.policy_usage
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -8952,9 +8913,6 @@ paths:
         - identity.conditionalAccessRoot
       summary: Invoke function findByMethodMode
       description: Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta
       operationId: identity.conditionalAccess.authenticationStrength.policy_findGraphBPreMethodMode
       parameters:
         - name: authenticationMethodModes
@@ -9431,9 +9389,6 @@ paths:
         - identity.customAuthenticationExtension
       summary: Invoke action validateAuthenticationConfiguration
       description: 'An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension object, which can represent one of the following derived types:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customauthenticationextension-validateauthenticationconfiguration?view=graph-rest-beta
       operationId: identity.customAuthenticationExtension_validateAuthenticationConfiguration
       parameters:
         - name: customAuthenticationExtension-id
@@ -9713,9 +9668,6 @@ paths:
         - identity.identityProviderBase
       summary: Invoke function availableProviderTypes
       description: Get all identity providers supported in a directory.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-beta
       operationId: identity.identityProvider_availableProviderType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10899,9 +10851,6 @@ paths:
         - identityProtection.riskyServicePrincipal
       summary: Invoke action confirmCompromised
       description: Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyserviceprincipal-confirmcompromised?view=graph-rest-beta
       operationId: identityProtection.riskyServicePrincipal_confirmCompromised
       requestBody:
         description: Action parameters
@@ -10930,9 +10879,6 @@ paths:
         - identityProtection.riskyServicePrincipal
       summary: Invoke action dismiss
       description: Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to none. You can dismiss up to 60 service principal accounts in one request.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyserviceprincipal-dismiss?view=graph-rest-beta
       operationId: identityProtection.riskyServicePrincipal_dismiss
       requestBody:
         description: Action parameters
@@ -11401,9 +11347,6 @@ paths:
         - identityProtection.riskyUser
       summary: Invoke action confirmCompromised
       description: Confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyusers-confirmcompromised?view=graph-rest-beta
       operationId: identityProtection.riskyUser_confirmCompromised
       requestBody:
         description: Action parameters
@@ -11432,9 +11375,6 @@ paths:
         - identityProtection.riskyUser
       summary: Invoke action confirmSafe
       description: Confirm one or more riskyUser objects as safe. This action sets the targeted user's risk level to none.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyuser-confirmsafe?view=graph-rest-beta
       operationId: identityProtection.riskyUser_confirmSafe
       requestBody:
         description: Action parameters
@@ -11463,9 +11403,6 @@ paths:
         - identityProtection.riskyUser
       summary: Invoke action dismiss
       description: Dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none. The maximum count of users to dismiss in one call is 60.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyusers-dismiss?view=graph-rest-beta
       operationId: identityProtection.riskyUser_dismiss
       requestBody:
         description: Action parameters
@@ -11936,9 +11873,6 @@ paths:
         - identityProviders.identityProvider.Functions
       summary: Invoke function availableProviderTypes
       description: Retrieves all identity provider types available in a directory.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-beta
       operationId: identityProvider_availableProviderType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12890,9 +12824,6 @@ paths:
         - informationProtection.informationProtectionPolicy
       summary: Invoke action evaluateApplication
       description: 'Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-beta
       operationId: informationProtection.policy.label_evaluateApplication
       requestBody:
         description: Action parameters
@@ -12943,9 +12874,6 @@ paths:
         - informationProtection.informationProtectionPolicy
       summary: Invoke action evaluateClassificationResults
       description: 'Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-beta
       operationId: informationProtection.policy.label_evaluateClassificationResult
       requestBody:
         description: Action parameters
@@ -12998,9 +12926,6 @@ paths:
         - informationProtection.informationProtectionPolicy
       summary: Invoke action evaluateRemoval
       description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta
       operationId: informationProtection.policy.label_evaluateRemoval
       requestBody:
         description: Action parameters
@@ -13051,9 +12976,6 @@ paths:
         - informationProtection.informationProtectionPolicy
       summary: Invoke action extractLabel
       description: 'Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-beta
       operationId: informationProtection.policy.label_extractLabel
       requestBody:
         description: Action parameters
@@ -13600,9 +13522,6 @@ paths:
         - informationProtection.sensitivityLabel
       summary: Invoke function computeInheritance
       description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
       operationId: informationProtection.sensitivityLabel.sublabel_computeInheritance
       parameters:
         - name: sensitivityLabel-id
@@ -13655,9 +13574,6 @@ paths:
         - informationProtection.sensitivityLabel
       summary: Invoke action computeRightsAndInheritance
       description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
       operationId: informationProtection.sensitivityLabel.sublabel_computeRightsAndInheritance
       parameters:
         - name: sensitivityLabel-id
@@ -13763,9 +13679,6 @@ paths:
         - informationProtection.sensitivityLabel
       summary: Invoke function computeInheritance
       description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
       operationId: informationProtection.sensitivityLabel_computeInheritance
       parameters:
         - name: labelIds
@@ -13810,9 +13723,6 @@ paths:
         - informationProtection.sensitivityLabel
       summary: Invoke action computeRightsAndInheritance
       description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
       operationId: informationProtection.sensitivityLabel_computeRightsAndInheritance
       requestBody:
         description: Action parameters
@@ -14977,9 +14887,6 @@ paths:
         - oauth2PermissionGrants.oAuth2PermissionGrant.Functions
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted oauth2permissiongrant objects without performing a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/oauth2permissiongrant-delta?view=graph-rest-beta
       operationId: oauth2PermissionGrant_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16992,9 +16899,6 @@ paths:
         - policies.authenticationStrengthPolicy
       summary: Invoke action updateAllowedCombinations
       description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-beta
       operationId: policy.authenticationStrengthPolicy_updateAllowedCombination
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -17035,9 +16939,6 @@ paths:
         - policies.authenticationStrengthPolicy
       summary: Invoke function usage
       description: 'The usage function allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-usage?view=graph-rest-beta
       operationId: policy.authenticationStrengthPolicy_usage
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -17078,9 +16979,6 @@ paths:
         - policies.authenticationStrengthPolicy
       summary: Invoke function findByMethodMode
       description: Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta
       operationId: policy.authenticationStrengthPolicy_findGraphBPreMethodMode
       parameters:
         - name: authenticationMethodModes
@@ -18197,9 +18095,6 @@ paths:
         - policies.crossTenantAccessPolicy
       summary: Invoke action resetToSystemDefault
       description: Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-beta
       operationId: policy.crossTenantAccessPolicy.default_resetToSystemDefault
       responses:
         2XX:
@@ -18699,9 +18594,6 @@ paths:
         - policies.crossTenantAccessPolicy
       summary: Invoke action resetToDefaultSettings
       description: 'Reset the cross-tenant access policy template with user synchronization settings for a multitenant organization to the default values. In its reset state, the template has no impact on user synchronization settings, other than that unconfigured user synchronization settings are created if needed, for every multitenant organization tenant.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/multitenantorganizationidentitysyncpolicytemplate-resettodefaultsettings?view=graph-rest-beta
       operationId: policy.crossTenantAccessPolicy.template.multiTenantOrganizationIdentitySynchronization_resetToDefaultSetting
       responses:
         2XX:
@@ -18800,9 +18692,6 @@ paths:
         - policies.crossTenantAccessPolicy
       summary: Invoke action resetToDefaultSettings
       description: 'Reset the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization to the default values. In its reset state, the template has no impact on partner configuration settings, other than that an unconfigured partner configuration is created if needed, for every multitenant organization tenant.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-resettodefaultsettings?view=graph-rest-beta
       operationId: policy.crossTenantAccessPolicy.template.multiTenantOrganizationPartnerConfiguration_resetToDefaultSetting
       responses:
         2XX:
@@ -24400,11 +24289,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Update multiTenantOrganization
-      description: Update the properties of a multi-tenant organization.
+      summary: Create multiTenantOrganization
+      description: 'Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-beta
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -25094,9 +24983,6 @@ paths:
         - trustFramework.trustFrameworkKeySet
       summary: Invoke action generateKey
       description: Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset. The caller doesn't have to provide a secret.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/trustframeworkkeyset-generatekey?view=graph-rest-beta
       operationId: trustFramework.keySet_generateKey
       parameters:
         - name: trustFrameworkKeySet-id
@@ -25147,9 +25033,6 @@ paths:
         - trustFramework.trustFrameworkKeySet
       summary: Invoke function getActiveKey
       description: Get the currently active trustFrameworkKey in a trustFrameworkKeySet. Only one key is active in the keyset at a time.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/trustframeworkkeyset-getactivekey?view=graph-rest-beta
       operationId: trustFramework.keySet_getActiveKey
       parameters:
         - name: trustFrameworkKeySet-id
@@ -25176,9 +25059,6 @@ paths:
         - trustFramework.trustFrameworkKeySet
       summary: Invoke action uploadCertificate
       description: Upload a certificate to a trustFrameworkKeyset. The input is a base-64 encoded value of the certificate contents. This method returns trustFrameworkKey.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadcertificate?view=graph-rest-beta
       operationId: trustFramework.keySet_uploadCertificate
       parameters:
         - name: trustFrameworkKeySet-id
@@ -25218,9 +25098,6 @@ paths:
         - trustFramework.trustFrameworkKeySet
       summary: Invoke action uploadPkcs12
       description: Upload a PKCS12 format key (PFX) to a trustFrameworkKeyset. The input is a base-64 encoded value of the Pfx certificate contents. This method returns trustFrameworkKey.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadpkcs12?view=graph-rest-beta
       operationId: trustFramework.keySet_uploadPkcs12
       parameters:
         - name: trustFrameworkKeySet-id
@@ -25263,9 +25140,6 @@ paths:
         - trustFramework.trustFrameworkKeySet
       summary: Invoke action uploadSecret
       description: 'Upload a plain text secret to a trustFrameworkKeyset. Examples of secrets are application secrets in Microsoft Entra ID, Google, Facebook, or any other identity provider. his method returns trustFrameworkKey.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadsecret?view=graph-rest-beta
       operationId: trustFramework.keySet_uploadSecret
       parameters:
         - name: trustFrameworkKeySet-id
@@ -26142,9 +26016,6 @@ paths:
         - users.authentication
       summary: Invoke function creationOptions
       description: 'Retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. Self-service operations aren''t supported.  '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/fido2authenticationmethod-creationoptions?view=graph-rest-beta
       operationId: user.authentication.fido2Method_creationOption
       parameters:
         - name: user-id
@@ -27300,9 +27171,6 @@ paths:
         - users.authentication
       summary: Invoke action activate
       description: Activate a hardware OATH token that is already assigned to a user. A user can self-activate their token or an admin can activate for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-activate?view=graph-rest-beta
       operationId: user.authentication.hardwareOathMethod_activate
       parameters:
         - name: user-id
@@ -27349,9 +27217,6 @@ paths:
         - users.authentication
       summary: Invoke action deactivate
       description: Deactive a hardware OATH token. It remains assigned to a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-deactivate?view=graph-rest-beta
       operationId: user.authentication.hardwareOathMethod_deactivate
       parameters:
         - name: user-id
@@ -27404,9 +27269,6 @@ paths:
         - users.authentication
       summary: Invoke action assignAndActivate
       description: Assign and activate a hardware token at the same time. This operation requires the device ID to activate it.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-assignandactivate?view=graph-rest-beta
       operationId: user.authentication.hardwareOathMethod_assignAndActivate
       parameters:
         - name: user-id
@@ -27447,9 +27309,6 @@ paths:
         - users.authentication
       summary: Invoke action assignAndActivateBySerialNumber
       description: Assign and activate a hardware token at the same time by hardware token serial number.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-assignandactivatebyserialnumber?view=graph-rest-beta
       operationId: user.authentication.hardwareOathMethod_assignAndActivateGraphBPreSerialNumber
       parameters:
         - name: user-id
@@ -27733,9 +27592,6 @@ paths:
         - users.authentication
       summary: Invoke action resetPassword
       description: 'Initiate a reset for the password associated with a password authentication method object. This can only be done by an administrator with appropriate permissions and can''t be performed on a user''s own account. To reset a user''s password in in Azure AD B2C, use the Update user API operation and update the passwordProfile > forceChangePasswordNextSignIn object. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-beta
       operationId: user.authentication.method_resetPassword
       parameters:
         - name: user-id
@@ -29337,9 +29193,6 @@ paths:
       tags:
         - users.authentication
       summary: Invoke action updatePin
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/qrpin-updatepin?view=graph-rest-beta
       operationId: user.authentication.qrCodePinMethod.pin_updatePin
       parameters:
         - name: user-id
@@ -31527,9 +31380,6 @@ paths:
         - users.informationProtection
       summary: Invoke action evaluateApplication
       description: 'Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-beta
       operationId: user.informationProtection.policy.label_evaluateApplication
       parameters:
         - name: user-id
@@ -31589,9 +31439,6 @@ paths:
         - users.informationProtection
       summary: Invoke action evaluateClassificationResults
       description: 'Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-beta
       operationId: user.informationProtection.policy.label_evaluateClassificationResult
       parameters:
         - name: user-id
@@ -31653,9 +31500,6 @@ paths:
         - users.informationProtection
       summary: Invoke action evaluateRemoval
       description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta
       operationId: user.informationProtection.policy.label_evaluateRemoval
       parameters:
         - name: user-id
@@ -31715,9 +31559,6 @@ paths:
         - users.informationProtection
       summary: Invoke action extractLabel
       description: 'Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-beta
       operationId: user.informationProtection.policy.label_extractLabel
       parameters:
         - name: user-id
@@ -32378,9 +32219,6 @@ paths:
         - users.informationProtection
       summary: Invoke function computeInheritance
       description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
       operationId: user.informationProtection.sensitivityLabel.sublabel_computeInheritance
       parameters:
         - name: user-id
@@ -32441,9 +32279,6 @@ paths:
         - users.informationProtection
       summary: Invoke action computeRightsAndInheritance
       description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
       operationId: user.informationProtection.sensitivityLabel.sublabel_computeRightsAndInheritance
       parameters:
         - name: user-id
@@ -32573,9 +32408,6 @@ paths:
         - users.informationProtection
       summary: Invoke function computeInheritance
       description: 'Calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
       operationId: user.informationProtection.sensitivityLabel_computeInheritance
       parameters:
         - name: user-id
@@ -32628,9 +32460,6 @@ paths:
         - users.informationProtection
       summary: Invoke action computeRightsAndInheritance
       description: Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-beta
       operationId: user.informationProtection.sensitivityLabel_computeRightsAndInheritance
       parameters:
         - name: user-id
@@ -34685,12 +34514,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -34715,10 +34538,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -38247,45 +38066,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRights:
       title: usageRights
       enum:
@@ -38327,6 +38107,8 @@ components:
               type: string
               description: The content format.
               nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
             label:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
           additionalProperties:
@@ -41562,7 +41344,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -43581,8 +43363,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.identityApiConnectorCollectionResponse:
       title: Collection of identityApiConnector
       type: object
@@ -57287,13 +57069,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -58718,11 +58500,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -58992,6 +58774,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEvent:
@@ -59126,6 +58913,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -59469,6 +59257,16 @@ components:
         - sPSharingNotifyUser
         - sPSharingGenerateIncidentReport
       type: string
+    microsoft.graph.labelActionBase:
+      title: labelActionBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudLicensing.assigneeTypes:
       title: assigneeTypes
       enum:
@@ -62744,6 +62542,17 @@ components:
             webUrl:
               type: string
               description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -67177,7 +66986,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -67187,7 +66997,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

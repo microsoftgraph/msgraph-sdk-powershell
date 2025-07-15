@@ -1127,9 +1127,6 @@ paths:
         - auditLogs.signIn
       summary: Invoke action confirmCompromised
       description: 'Allow admins to mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-beta
       operationId: auditLog.signIn_confirmCompromised
       requestBody:
         description: Action parameters
@@ -1158,9 +1155,6 @@ paths:
         - auditLogs.signIn
       summary: Invoke action confirmSafe
       description: 'Allow admins to mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-beta
       operationId: auditLog.signIn_confirmSafe
       requestBody:
         description: Action parameters
@@ -1189,9 +1183,6 @@ paths:
         - auditLogs.signIn
       summary: Invoke action dismiss
       description: 'Mark an event in Microsoft Entra sign-in logs as dismissed. For details about investigating Identity Protection risks, see How to investigate risk.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/signin-dismiss?view=graph-rest-beta
       operationId: auditLog.signIn_dismiss
       requestBody:
         description: Action parameters
@@ -7734,9 +7725,6 @@ paths:
         - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByFeature
       description: 'Get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbyfeature?view=graph-rest-beta
       operationId: report.authenticationMethod_usersRegisteredGraphBPreFeature
       responses:
         2XX:
@@ -7785,9 +7773,6 @@ paths:
         - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByMethod
       description: Get the number of users registered for each authentication method.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbymethod?view=graph-rest-beta
       operationId: report.authenticationMethod_usersRegisteredGraphBPreMethod
       responses:
         2XX:
@@ -9855,9 +9840,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getAttackSimulationRepeatOffenders
       description: List the users of a tenant who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getattacksimulationrepeatoffenders?view=graph-rest-beta
       operationId: report_getAttackSimulationRepeatOffender
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9900,9 +9882,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getAttackSimulationSimulationUserCoverage
       description: Get simulation coverage for users of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getattacksimulationsimulationusercoverage?view=graph-rest-beta
       operationId: report_getAttackSimulationSimulationUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9945,9 +9924,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getAttackSimulationTrainingUserCoverage
       description: List training coverage for each user of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getattacksimulationtrainingusercoverage?view=graph-rest-beta
       operationId: report_getAttackSimulationTrainingUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9990,9 +9966,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getAzureADApplicationSignInSummary
       description: Retrieve applicationSigninSummary objects within either the last seven or 30 days.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getazureadapplicationsigninsummary?view=graph-rest-beta
       operationId: report_getAzureADApplicationSignInSummary
       parameters:
         - name: period
@@ -10157,9 +10130,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getCredentialUsageSummary
       description: Report the current state of how many users in your organization used the self-service password reset capabilities.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getcredentialusagesummary?view=graph-rest-beta
       operationId: report_getCredentialUsageSummary
       parameters:
         - name: period
@@ -10234,9 +10204,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getCredentialUserRegistrationCount
       description: Report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-beta
       operationId: report_getCredentialUserRegistrationCount
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10700,9 +10667,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getGroupArchivedPrintJobs
       description: Get a list of archived print jobs for a particular group.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reports-getgrouparchivedprintjobs?view=graph-rest-beta
       operationId: report_getGroupArchivedPrintJob
       parameters:
         - name: groupId
@@ -10766,9 +10730,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getM365AppPlatformUserCounts
       description: 'Get a report that provides the trend of active users across all apps for each platform (Windows, Mac, web, and mobile) in your organization.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getm365appplatformusercounts?view=graph-rest-beta
       operationId: report_getM365AppPlatformUserCount
       parameters:
         - name: period
@@ -10800,9 +10761,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getM365AppUserCounts
       description: 'Get a report that provides the trend in the number of active users for each app (Outlook, Word, Excel, PowerPoint, OneNote, and Teams) in your organization.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getm365appusercounts?view=graph-rest-beta
       operationId: report_getM365AppUserCount
       parameters:
         - name: period
@@ -11018,9 +10976,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getMicrosoft365CopilotUsageUserDetail
       description: Get the most recent activity data for enabled users of Microsoft 365 Copilot apps.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusageuserdetail?view=graph-rest-beta
       operationId: report_getMicrosoft365CopilotUsageUserDetail
       parameters:
         - name: period
@@ -11052,9 +11007,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getMicrosoft365CopilotUserCountSummary
       description: Get the aggregated number of active and enabled users of Microsoft 365 Copilot for a specified time period.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercountsummary?view=graph-rest-beta
       operationId: report_getMicrosoft365CopilotUserCountSummary
       parameters:
         - name: period
@@ -11086,9 +11038,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getMicrosoft365CopilotUserCountTrend
       description: Get the trend in the daily number of active and enabled users of Microsoft 365 Copilot for a specified time period.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercounttrend?view=graph-rest-beta
       operationId: report_getMicrosoft365CopilotUserCountTrend
       parameters:
         - name: period
@@ -12194,9 +12143,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getPrinterArchivedPrintJobs
       description: Get a list of archived print jobs that were queued for particular printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reports-getprinterarchivedprintjobs?view=graph-rest-beta
       operationId: report_getPrinterArchivedPrintJob
       parameters:
         - name: printerId
@@ -12260,9 +12206,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getRelyingPartyDetailedSummary
       description: Get a summary of AD FS relying parties information.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-beta
       operationId: report_getRelyingPartyDetailedSummary
       parameters:
         - name: period
@@ -13791,9 +13734,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getUserArchivedPrintJobs
       description: Get a list of archived print jobs for a particular user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reports-getuserarchivedprintjobs?view=graph-rest-beta
       operationId: report_getUserArchivedPrintJob
       parameters:
         - name: userId
@@ -15845,7 +15785,7 @@ paths:
       tags:
         - reports.partners
       summary: Get reconciliation from reports
-      description: Represents details for billed invoice reconciliation data.
+      description: Represents details for billed and unbilled invoice reconciliation data.
       operationId: report.partner.billing_GetReconciliation
       parameters:
         - name: $select
@@ -16002,9 +15942,6 @@ paths:
         - reports.partners
       summary: Invoke action export
       description: Export the billed invoice reconciliation data.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/partners-billing-billedreconciliation-export?view=graph-rest-beta
       operationId: report.partner.billing.reconciliation.billed_export
       requestBody:
         description: Action parameters
@@ -16115,9 +16052,6 @@ paths:
         - reports.partners
       summary: Invoke action export
       description: Export the unbilled invoice reconciliation data for a specific billing period and a given currency.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/partners-billing-unbilledreconciliation-export?view=graph-rest-beta
       operationId: report.partner.billing.reconciliation.unbilled_export
       requestBody:
         description: Action parameters
@@ -16308,9 +16242,6 @@ paths:
         - reports.partners
       summary: Invoke action export
       description: Export the billed Azure usage data.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/partners-billing-billedusage-export?view=graph-rest-beta
       operationId: report.partner.billing.usage.billed_export
       requestBody:
         description: Action parameters
@@ -16421,9 +16352,6 @@ paths:
         - reports.partners
       summary: Invoke action export
       description: Export unbilled Azure usage data for a specific billing period and currency.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/partners-billing-unbilledusage-export?view=graph-rest-beta
       operationId: report.partner.billing.usage.unbilled_export
       requestBody:
         description: Action parameters
@@ -16536,9 +16464,6 @@ paths:
         - reports.securityReportsRoot
       summary: Invoke function getAttackSimulationRepeatOffenders
       description: List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-beta
       operationId: report.security_getAttackSimulationRepeatOffender
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16575,9 +16500,6 @@ paths:
         - reports.securityReportsRoot
       summary: Invoke function getAttackSimulationSimulationUserCoverage
       description: List training coverage for each tenant user in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationsimulationusercoverage?view=graph-rest-beta
       operationId: report.security_getAttackSimulationSimulationUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16614,9 +16536,6 @@ paths:
         - reports.securityReportsRoot
       summary: Invoke function getAttackSimulationTrainingUserCoverage
       description: List training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationtrainingusercoverage?view=graph-rest-beta
       operationId: report.security_getAttackSimulationTrainingUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16731,9 +16650,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForDesktopMailByReadEmail
       description: Get all the active usage based on the number of users who successfully read emails using desktop mail apps.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsfordesktopmailbyreademail?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreDesktopMailGraphBPreReadEmail
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -16799,9 +16715,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForEmailByModernAuthentication
       description: Get all the active usage based on the number of users who signed in with modern authentication across all email apps.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforemailbymodernauthentication?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreEmailGraphBPreModernAuthentication
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -16867,9 +16780,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForExcelWeb
       description: Get all the active usage based on the number of active users who open or save Excel for the web.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforexcelweb?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreExcelWeb
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -16935,9 +16845,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForiOSOrAndroidMailByReadEmail
       description: Get all the active usage based on the number of users who successfully read emails using iOS or Android mail apps.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforiosorandroidmailbyreademail?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreiOSOrAndroidMailGraphBPreReadEmail
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17003,9 +16910,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForOneNoteWeb
       description: Get all the active usage based on the number of active users who open or save OneNote for the web.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforonenoteweb?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreOneNoteWeb
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17071,9 +16975,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForOutlookMacByReadEmail
       description: Get all the active usage based on the number of users who successfully read emails using Outlook for Mac.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforoutlookmacbyreademail?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreOutlookMacGraphBPreReadEmail
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17139,9 +17040,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForOutlookMobileByReadEmail
       description: Get all the active usage based on the number of users who successfully read emails using Outlook apps for mobile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforoutlookmobilebyreademail?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreOutlookMobileGraphBPreReadEmail
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17207,9 +17105,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForOutlookWebByAppOpening
       description: Get all the active usage based on the number of active users that signed in and started Outlook for the web.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforoutlookwebbyappopening?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreOutlookWebGraphBPreAppOpening
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17275,9 +17170,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForOutlookWebByReadEmail
       description: Get all the active usage based on the number of users who successfully read emails using Outlook for the web.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforoutlookwebbyreademail?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreOutlookWebGraphBPreReadEmail
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17343,9 +17235,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForPowerPointWeb
       description: Get all the active usage based on the number of active users who open or save PowerPoint for the web.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforpowerpointweb?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPrePowerPointWeb
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17411,9 +17300,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForVisioWeb
       description: Get all the active usage based on the number of active users who open or save Visio for the web.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforvisioweb?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreVisioWeb
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17479,9 +17365,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getActiveUserMetricsForWordWeb
       description: Get all the active usage based on the number of active users who open or save Word for the web.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getactiveusermetricsforwordweb?view=graph-rest-beta
       operationId: report.serviceActivity_getActiveUserMetricsGraphFPreWordWeb
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17547,9 +17430,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getAudioStreamQoEMetricsForTeams
       description: Get metrics based on the percentage of audio streams for which quality of experience (QoE) telemetry was received by the Teams service.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getaudiostreamqoemetricsforteams?view=graph-rest-beta
       operationId: report.serviceActivity_getAudioStreamQoEMetricsGraphFPreTeam
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17615,9 +17495,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getAudioStreamsOverUdpMetricsForTeams
       description: Get metrics based on the percentage of audio streams that were established over User Datagram Protocol.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getaudiostreamsoverudpmetricsforteams?view=graph-rest-beta
       operationId: report.serviceActivity_getAudioStreamsOverUdpMetricsGraphFPreTeam
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17683,9 +17560,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getConnectivityMetricsForExchange
       description: Get estimated connectivity metrics based on the percentage of successful synthetic connections between organization devices and Exchange Online that might include issues outside the control of Microsoft.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getconnectivitymetricsforexchange?view=graph-rest-beta
       operationId: report.serviceActivity_getConnectivityMetricsGraphFPreExchange
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17751,9 +17625,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getMessageVolumeMetricsForEmailDelivery
       description: Get the number of messages successfully delivered by Exchange. Success is based on message delivery within 15 minutes of its receipt by Exchange Online.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getmessagevolumemetricsforemaildelivery?view=graph-rest-beta
       operationId: report.serviceActivity_getMessageVolumeMetricsGraphFPreEmailDelivery
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17819,9 +17690,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getMessageVolumeMetricsForTeamsChat
       description: Get the number of chat messages successfully sent and delivered in Teams.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getmessagevolumemetricsforteamschat?view=graph-rest-beta
       operationId: report.serviceActivity_getMessageVolumeMetricsGraphFPreTeamsChat
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17887,9 +17755,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getMetricsForConditionalAccessBlockedSignIn
       description: Retrieve the number of user sign-in attempts that were blocked by a Conditional Access policy during a specific period.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getmetricsforconditionalaccessblockedsignin?view=graph-rest-beta
       operationId: report.serviceActivity_getMetricsGraphFPreConditionalAccessBlockedSignIn
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -17955,9 +17820,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getMetricsForConditionalAccessCompliantDevicesSignInSuccess
       description: 'Get the number of user authentication requests, during a specified time period, that satisfy a Conditional Access policy that requires device compliance. Microsoft Intune manages compliant devices, including mobile iOS/Android devices, tablets, or cloud Microsoft Entra-joined computers (not hybrid).'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getmetricsforconditionalaccesscompliantdevicessigninsuccess?view=graph-rest-beta
       operationId: report.serviceActivity_getMetricsGraphFPreConditionalAccessCompliantDevicesSignInSuccess
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -18023,9 +17885,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getMetricsForConditionalAccessManagedDevicesSignInSuccess
       description: 'Get the number of user authentication requests, during a specific time period, that satisfy a Conditional Access policy requiring devices to be managed. Managed devices are computers joined to and managed by your on-premises directory and hybrid devices joined to Microsoft Entra.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getmetricsforconditionalaccessmanageddevicessigninsuccess?view=graph-rest-beta
       operationId: report.serviceActivity_getMetricsGraphFPreConditionalAccessManagedDevicesSignInSuccess
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -18091,9 +17950,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getMetricsForMfaSignInFailure
       description: 'Get the number of times users fail to complete interactive MFA sign-ins using the Microsoft Entra MFA cloud service during a specified time period. Sign-in failures happen, for example, when users abandon or cancel MFA requests, or refresh MFA sessions without doing interactive MFA.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getmetricsformfasigninfailure?view=graph-rest-beta
       operationId: report.serviceActivity_getMetricsGraphFPreMfaSignInFailure
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -18159,9 +18015,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getMetricsForMfaSignInSuccess
       description: Get the number of times users successfully completed interactive MFA sign-ins using the Microsoft Entra MFA cloud service during a specified time period.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getmetricsformfasigninsuccess?view=graph-rest-beta
       operationId: report.serviceActivity_getMetricsGraphFPreMfaSignInSuccess
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -18227,9 +18080,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getMetricsForSamlSignInSuccess
       description: Get the number of SAML 2.0 authentications successfully processed by the Microsoft Entra cloud service for the tenant during a specified time period. This health signal currently doesn't include WS-FED/SAML 1.1 apps that are integrated with Microsoft Entra.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getmetricsforsamlsigninsuccess?view=graph-rest-beta
       operationId: report.serviceActivity_getMetricsGraphFPreSamlSignInSuccess
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -18295,9 +18145,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getUsageMetricsForTeamsByLaunch
       description: Get usage metrics based on the number of times users opened the Teams app without error.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getusagemetricsforteamsbylaunch?view=graph-rest-beta
       operationId: report.serviceActivity_getUsageMetricsGraphFPreTeamsGraphBPreLaunch
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -18363,9 +18210,6 @@ paths:
         - reports.serviceActivity
       summary: Invoke function getUsageMetricsForTeamsByMeetingsJoined
       description: Get usage metrics based on the number of times users joined Teams meetings without errors.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceactivity-getusagemetricsforteamsbymeetingsjoined?view=graph-rest-beta
       operationId: report.serviceActivity_getUsageMetricsGraphFPreTeamsGraphBPreMeetingsJoined
       parameters:
         - name: inclusiveIntervalStartDateTime
@@ -25465,8 +25309,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.directoryAuditCollectionResponse:
       title: Collection of directoryAudit
       type: object
@@ -26665,7 +26509,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -26675,7 +26520,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

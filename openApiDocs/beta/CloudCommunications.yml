@@ -2106,9 +2106,6 @@ paths:
         - communications.call
       summary: Invoke action addLargeGalleryView
       description: 'Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-beta
       operationId: communication.call_addLargeGalleryView
       parameters:
         - name: call-id
@@ -2148,9 +2145,6 @@ paths:
         - communications.call
       summary: Invoke action answer
       description: 'Enable a bot to answer an incoming call. The incoming call request can be an invitation from a participant in a group call or a peer-to-peer call. If an invitation to a group call is received, the notification contains the chatInfo and meetingInfo parameters. The bot is expected to answer, reject or redirect the call before the call times out. The current timeout value is 15 seconds. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios. This API supports the following PSTN scenarios:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-answer?view=graph-rest-beta
       operationId: communication.call_answer
       parameters:
         - name: call-id
@@ -2199,9 +2193,6 @@ paths:
         - communications.call
       summary: Invoke action cancelMediaProcessing
       description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a ubscribeToTone operation because it operates independent of any operation queue.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-beta
       operationId: communication.call_cancelMediaProcessing
       parameters:
         - name: call-id
@@ -2241,9 +2232,6 @@ paths:
         - communications.call
       summary: Invoke action changeScreenSharingRole
       description: Allow applications to share screen content with the participants of a group call.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-beta
       operationId: communication.call_changeScreenSharingRole
       parameters:
         - name: call-id
@@ -2278,9 +2266,6 @@ paths:
         - communications.call
       summary: Invoke action keepAlive
       description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that doesn''t receive this request within 45 minutes is considered inactive and ends. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that ended results in a 404 Not Found error. The resources related to the call should be cleaned up on the application side.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-keepalive?view=graph-rest-beta
       operationId: communication.call_keepAlive
       parameters:
         - name: call-id
@@ -2303,9 +2288,6 @@ paths:
         - communications.call
       summary: Invoke action mute
       description: 'Allows the application to mute itself. This is a server mute, meaning that the server drops all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-mute?view=graph-rest-beta
       operationId: communication.call_mute
       parameters:
         - name: call-id
@@ -2345,9 +2327,6 @@ paths:
         - communications.call
       summary: Invoke action playPrompt
       description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-beta
       operationId: communication.call_playPrompt
       parameters:
         - name: call-id
@@ -2472,9 +2451,6 @@ paths:
         - communications.call
       summary: Invoke action recordResponse
       description: 'Record a short audio response from the caller. A bot can use this API to capture a voice response from a caller after they''re prompted for a response. For more information about how to handle operations, see commsOperation. This action isn''t intended to record the entire call. The maximum length of recording is 2 minutes.The Cloud Communications Platform doesn''t save the recording permanently and discards it shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value provided in the completed notification.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-record?view=graph-rest-beta
       operationId: communication.call_recordResponse
       parameters:
         - name: call-id
@@ -2553,9 +2529,6 @@ paths:
         - communications.call
       summary: Invoke action redirect
       description: Redirect an incoming call that wasn't answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-redirect?view=graph-rest-beta
       operationId: communication.call_redirect
       parameters:
         - name: call-id
@@ -2611,9 +2584,6 @@ paths:
         - communications.call
       summary: Invoke action reject
       description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification contains the chatInfo and meetingInfo parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API doesn''t end existing calls that have already been answered. Use delete call to end a call.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-reject?view=graph-rest-beta
       operationId: communication.call_reject
       parameters:
         - name: call-id
@@ -2857,9 +2827,6 @@ paths:
         - communications.call
       summary: Invoke action subscribeToTone
       description: Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a dialpad. This action is supported only for calls that are initiated with serviceHostedMediaConfig.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-beta
       operationId: communication.call_subscribeToTone
       parameters:
         - name: call-id
@@ -2899,9 +2866,6 @@ paths:
         - communications.call
       summary: Invoke action transfer
       description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-transfer?view=graph-rest-beta
       operationId: communication.call_transfer
       parameters:
         - name: call-id
@@ -2938,9 +2902,6 @@ paths:
         - communications.call
       summary: Invoke action unmute
       description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-unmute?view=graph-rest-beta
       operationId: communication.call_unmute
       parameters:
         - name: call-id
@@ -2980,9 +2941,6 @@ paths:
         - communications.call
       summary: Invoke action updateRecordingStatus
       description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-beta
       operationId: communication.call_updateRecordingStatus
       parameters:
         - name: call-id
@@ -3495,9 +3453,6 @@ paths:
         - communications.call
       summary: Invoke action mute
       description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-mute?view=graph-rest-beta
       operationId: communication.call.participant_mute
       parameters:
         - name: call-id
@@ -3545,9 +3500,6 @@ paths:
         - communications.call
       summary: Invoke action startHoldMusic
       description: Put a participant on hold and play music in the background.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-beta
       operationId: communication.call.participant_startHoldMusic
       parameters:
         - name: call-id
@@ -3597,9 +3549,6 @@ paths:
         - communications.call
       summary: Invoke action stopHoldMusic
       description: Reincorporate a participant previously put on hold to the call.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-beta
       operationId: communication.call.participant_stopHoldMusic
       parameters:
         - name: call-id
@@ -3669,9 +3618,6 @@ paths:
         - communications.call
       summary: Invoke action invite
       description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-beta
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -3715,9 +3661,6 @@ paths:
         - communications.call
       summary: Invoke action muteAll
       description: Mute all participants in the call.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-muteall?view=graph-rest-beta
       operationId: communication.call.participant_muteAll
       parameters:
         - name: call-id
@@ -3776,9 +3719,6 @@ paths:
         - communications.call
       summary: Invoke action logTeleconferenceDeviceQuality
       description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-beta
       operationId: communication.call_logTeleconferenceDeviceQuality
       requestBody:
         description: Action parameters
@@ -3804,9 +3744,6 @@ paths:
         - communications.cloudCommunications.Functions
       summary: Invoke function getAllOnlineMeetingMessages
       description: "Get all Teams question and answer (Q&A) conversation messages in a tenant. This function returns a snapshot of all Q&A activity in JSON format. The export includes:\n- The original question or discussion text\n- The user who posted the message\n- All replies and responders\n- Vote counts\n- Moderation status (pending or dismissed)\n- Private replies\n- The meeting ID and organizer ID that are used for mapping to meeting metadata."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudcommunications-getallonlinemeetingmessages?view=graph-rest-beta
       operationId: communication_getAllOnlineMeetingMessage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3874,9 +3811,6 @@ paths:
         - communications.cloudCommunications.Actions
       summary: Invoke action getPresencesByUserId
       description: Get the presence information for multiple users.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-beta
       operationId: communication_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
@@ -8461,9 +8395,6 @@ paths:
         - communications.onlineMeeting
       summary: Invoke function getVirtualAppointmentJoinWebUrl
       description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
       operationId: communication.onlineMeeting_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: onlineMeeting-id
@@ -8496,9 +8427,6 @@ paths:
         - communications.onlineMeeting
       summary: Invoke action sendVirtualAppointmentReminderSms
       description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
       operationId: communication.onlineMeeting_sendVirtualAppointmentReminderSm
       parameters:
         - name: onlineMeeting-id
@@ -8537,9 +8465,6 @@ paths:
         - communications.onlineMeeting
       summary: Invoke action sendVirtualAppointmentSms
       description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
       operationId: communication.onlineMeeting_sendVirtualAppointmentSm
       parameters:
         - name: onlineMeeting-id
@@ -10387,9 +10312,6 @@ paths:
         - communications.onlineMeeting
       summary: Invoke function getVirtualAppointmentJoinWebUrl
       description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
       operationId: communication.onlineMeeting.joinWebUrl_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: joinWebUrl
@@ -10422,9 +10344,6 @@ paths:
         - communications.onlineMeeting
       summary: Invoke action sendVirtualAppointmentReminderSms
       description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
       operationId: communication.onlineMeeting.joinWebUrl_sendVirtualAppointmentReminderSm
       parameters:
         - name: joinWebUrl
@@ -10463,9 +10382,6 @@ paths:
         - communications.onlineMeeting
       summary: Invoke action sendVirtualAppointmentSms
       description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
       operationId: communication.onlineMeeting.joinWebUrl_sendVirtualAppointmentSm
       parameters:
         - name: joinWebUrl
@@ -10518,9 +10434,6 @@ paths:
         - communications.onlineMeeting
       summary: Invoke action createOrGet
       description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta
       operationId: communication.onlineMeeting_createOrGet
       requestBody:
         description: Action parameters
@@ -10567,9 +10480,6 @@ paths:
         - communications.onlineMeeting
       summary: Invoke function getAllRecordings
       description: 'Get all recordings from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call recordings from channel meetings. You can apply the delta function on getAllRecordings to synchronize and get callRecording resources as they''re added for onlineMeeting instances organized by the specified user. The delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the recordings for online meetings organized by the user. Incremental synchronization gets recordings that are added since the last synchronization. Typically, you do an initial full synchronization, and then get incremental changes to that recording view periodically. Find more information in the delta query documentation. For more examples, see callRecording: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-beta
       operationId: communication.onlineMeeting_getAllRecording
       parameters:
         - name: meetingOrganizerUserId
@@ -10665,9 +10575,6 @@ paths:
         - communications.onlineMeeting
       summary: Invoke function getAllTranscripts
       description: 'Get all transcripts from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call transcripts from channel meetings. You can apply the delta function on getAllTranscripts to synchronize and get callTranscript resources as they''re added for onlineMeeting instances organized by the specified user. Delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the transcripts for online meetings organized by the user. Incremental synchronization gets transcripts that are added since the last synchronization. Typically, you do an initial full synchronization, and then get incremental changes to that recording view periodically. For more information, see delta query. For more examples, see callTranscript: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta
       operationId: communication.onlineMeeting_getAllTranscript
       parameters:
         - name: meetingOrganizerUserId
@@ -10943,9 +10850,6 @@ paths:
         - communications.presence
       summary: Invoke action clearPresence
       description: 'Clear a presence session of an application for a user. If it is the user''s only presence session, a successful clearPresence changes the user''s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-beta
       operationId: communication.presence_clearPresence
       parameters:
         - name: presence-id
@@ -10981,9 +10885,6 @@ paths:
         - communications.presence
       summary: Invoke action clearUserPreferredPresence
       description: Clear the preferred availability and activity status for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-beta
       operationId: communication.presence_clearUserPreferredPresence
       parameters:
         - name: presence-id
@@ -11006,9 +10907,6 @@ paths:
         - communications.presence
       summary: Invoke action setPresence
       description: Set the availability and activity status in a presence session of an application for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-beta
       operationId: communication.presence_setPresence
       parameters:
         - name: presence-id
@@ -11053,9 +10951,6 @@ paths:
         - communications.presence
       summary: Invoke action setStatusMessage
       description: Set a presence status message for a user. An optional expiration date and time can be supplied.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
       operationId: communication.presence_setStatusMessage
       parameters:
         - name: presence-id
@@ -11090,9 +10985,6 @@ paths:
         - communications.presence
       summary: Invoke action setUserPreferredPresence
       description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence is the preferred presence. Preferred presence takes effect only when there is at least one presence session of the user. Otherwise, the user''s presence stays as Offline. A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.  Read more about presence sessions and their time-out and expiration. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-beta
       operationId: communication.presence_setUserPreferredPresence
       parameters:
         - name: presence-id
@@ -13002,9 +12894,6 @@ paths:
         - users.onlineMeeting
       summary: Invoke function getVirtualAppointmentJoinWebUrl
       description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
       operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: user-id
@@ -13045,9 +12934,6 @@ paths:
         - users.onlineMeeting
       summary: Invoke action sendVirtualAppointmentReminderSms
       description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
       operationId: user.onlineMeeting_sendVirtualAppointmentReminderSm
       parameters:
         - name: user-id
@@ -13094,9 +12980,6 @@ paths:
         - users.onlineMeeting
       summary: Invoke action sendVirtualAppointmentSms
       description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
       operationId: user.onlineMeeting_sendVirtualAppointmentSm
       parameters:
         - name: user-id
@@ -15331,9 +15214,6 @@ paths:
         - users.onlineMeeting
       summary: Invoke function getVirtualAppointmentJoinWebUrl
       description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
       operationId: user.onlineMeeting.joinWebUrl_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: user-id
@@ -15374,9 +15254,6 @@ paths:
         - users.onlineMeeting
       summary: Invoke action sendVirtualAppointmentReminderSms
       description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
       operationId: user.onlineMeeting.joinWebUrl_sendVirtualAppointmentReminderSm
       parameters:
         - name: user-id
@@ -15423,9 +15300,6 @@ paths:
         - users.onlineMeeting
       summary: Invoke action sendVirtualAppointmentSms
       description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
       operationId: user.onlineMeeting.joinWebUrl_sendVirtualAppointmentSm
       parameters:
         - name: user-id
@@ -15494,9 +15368,6 @@ paths:
         - users.onlineMeeting
       summary: Invoke action createOrGet
       description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta
       operationId: user.onlineMeeting_createOrGet
       parameters:
         - name: user-id
@@ -15552,9 +15423,6 @@ paths:
         - users.onlineMeeting
       summary: Invoke function getAllRecordings
       description: 'Get all recordings from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call recordings from channel meetings. You can apply the delta function on getAllRecordings to synchronize and get callRecording resources as they''re added for onlineMeeting instances organized by the specified user. The delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the recordings for online meetings organized by the user. Incremental synchronization gets recordings that are added since the last synchronization. Typically, you do an initial full synchronization, and then get incremental changes to that recording view periodically. Find more information in the delta query documentation. For more examples, see callRecording: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-beta
       operationId: user.onlineMeeting_getAllRecording
       parameters:
         - name: user-id
@@ -15658,9 +15526,6 @@ paths:
         - users.onlineMeeting
       summary: Invoke function getAllTranscripts
       description: 'Get all transcripts from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call transcripts from channel meetings. You can apply the delta function on getAllTranscripts to synchronize and get callTranscript resources as they''re added for onlineMeeting instances organized by the specified user. Delta query supports both full synchronization and incremental synchronization. Full synchronization gets all the transcripts for online meetings organized by the user. Incremental synchronization gets transcripts that are added since the last synchronization. Typically, you do an initial full synchronization, and then get incremental changes to that recording view periodically. For more information, see delta query. For more examples, see callTranscript: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta
       operationId: user.onlineMeeting_getAllTranscript
       parameters:
         - name: user-id
@@ -15870,9 +15735,6 @@ paths:
         - users.presence
       summary: Invoke action clearPresence
       description: 'Clear a presence session of an application for a user. If it is the user''s only presence session, a successful clearPresence changes the user''s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-beta
       operationId: user.presence_clearPresence
       parameters:
         - name: user-id
@@ -15908,9 +15770,6 @@ paths:
         - users.presence
       summary: Invoke action clearUserPreferredPresence
       description: Clear the preferred availability and activity status for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-beta
       operationId: user.presence_clearUserPreferredPresence
       parameters:
         - name: user-id
@@ -15933,9 +15792,6 @@ paths:
         - users.presence
       summary: Invoke action setPresence
       description: Set the availability and activity status in a presence session of an application for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-beta
       operationId: user.presence_setPresence
       parameters:
         - name: user-id
@@ -15980,9 +15836,6 @@ paths:
         - users.presence
       summary: Invoke action setStatusMessage
       description: Set a presence status message for a user. An optional expiration date and time can be supplied.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
       operationId: user.presence_setStatusMessage
       parameters:
         - name: user-id
@@ -16017,9 +15870,6 @@ paths:
         - users.presence
       summary: Invoke action setUserPreferredPresence
       description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence is the preferred presence. Preferred presence takes effect only when there is at least one presence session of the user. Otherwise, the user''s presence stays as Offline. A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.  Read more about presence sessions and their time-out and expiration. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-beta
       operationId: user.presence_setUserPreferredPresence
       parameters:
         - name: user-id
@@ -18626,8 +18476,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.callRecords.sessionCollectionResponse:
       title: Collection of session
       type: object
@@ -19905,7 +19755,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -19915,7 +19766,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

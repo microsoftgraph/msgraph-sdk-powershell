@@ -1,2 +1,21 @@
 Module,ApiPath,Method,From,To
-Identity.DirectoryManagement,/contacts, Get,Parameter Count: 9,Parameter Count: 8
+Identity.DirectoryManagement,/contacts/{orgContact-id}/serviceProvisioningErrors/$count, Get,Parameter Count: 4,Parameter Count: 3
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/columns, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/contentTypes, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/drives, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/externalColumns, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/items, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/lists, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/operations, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/pages, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/permissions, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/sites, Get,Parameter Count: 11,Parameter Count: 10
+Sites,/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/columns, Get,Parameter Count: 10,Parameter Count: 9
+Sites,/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/contentTypes, Get,Parameter Count: 10,Parameter Count: 9
+Sites,/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/drives, Get,Parameter Count: 10,Parameter Count: 9
+Sites,/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/externalColumns, Get,Parameter Count: 10,Parameter Count: 9
+Sites,/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/lists, Get,Parameter Count: 10,Parameter Count: 9
+Sites,/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/operations, Get,Parameter Count: 10,Parameter Count: 9
+Sites,/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/pages, Get,Parameter Count: 10,Parameter Count: 9
+Sites,/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/permissions, Get,Parameter Count: 10,Parameter Count: 9
+Sites,/sites/{site-id}/microsoft.graph.getByPath(path='{path}')/sites, Get,Parameter Count: 10,Parameter Count: 9

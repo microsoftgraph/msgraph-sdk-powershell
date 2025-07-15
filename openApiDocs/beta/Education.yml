@@ -520,9 +520,6 @@ paths:
         - education.educationClass
       summary: Invoke function delta
       description: Get a list of newly created or updated educationCategory objects without performing a full read of the collection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-beta
       operationId: education.class.assignmentCategory_delta
       parameters:
         - name: educationClass-id
@@ -1269,9 +1266,6 @@ paths:
         - education.educationClass
       summary: Invoke function delta
       description: Get a list of newly created or updated educationCategory objects without performing a full read of the collection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-beta
       operationId: education.class.assignment.category_delta
       parameters:
         - name: educationClass-id
@@ -1465,9 +1459,6 @@ paths:
         - education.educationClass
       summary: Invoke action activate
       description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-beta
       operationId: education.class.assignment_activate
       parameters:
         - name: educationClass-id
@@ -1502,9 +1493,6 @@ paths:
         - education.educationClass
       summary: Invoke action deactivate
       description: Mark an assigned educationAssignment as inactive to signal that the assignment has no further action items for teachers and students. This action can only be performed by a teacher on assigned assignments.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-deactivate?view=graph-rest-beta
       operationId: education.class.assignment_deactivate
       parameters:
         - name: educationClass-id
@@ -1539,9 +1527,6 @@ paths:
         - education.educationClass
       summary: Invoke action publish
       description: 'Change the status of an educationAssignment from its original draft status to the published status.  You can change the status from draft to scheduled if the assignment is scheduled for a future date.  Only a teacher in the class can make this call. When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student''s list. The status of the assignment goes back to draft if there is any backend failure during publish process. To update the properties of a published assignment, see update an assignment. To update the properties of a published assignment, see update an assignment.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-beta
       operationId: education.class.assignment_publish
       parameters:
         - name: educationClass-id
@@ -1576,9 +1561,6 @@ paths:
         - education.educationClass
       summary: Invoke action setUpFeedbackResourcesFolder
       description: Create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-beta
       operationId: education.class.assignment_setUpFeedbackResourcesFolder
       parameters:
         - name: educationClass-id
@@ -1613,9 +1595,6 @@ paths:
         - education.educationClass
       summary: Invoke action setUpResourcesFolder
       description: Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-beta
       operationId: education.class.assignment_setUpResourcesFolder
       parameters:
         - name: educationClass-id
@@ -2797,9 +2776,6 @@ paths:
         - education.educationClass
       summary: Invoke action excuse
       description: 'Excuse a submission. Excused submissions aren''t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status. Otherwise, the submission status changes to returned. For more information about how to use this header, see the Examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-beta
       operationId: education.class.assignment.submission_excuse
       parameters:
         - name: educationClass-id
@@ -2842,9 +2818,6 @@ paths:
         - education.educationClass
       summary: Invoke action reassign
       description: 'Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission will be treated as a returned submission. This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively. If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status. For details, see the examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-beta
       operationId: education.class.assignment.submission_reassign
       parameters:
         - name: educationClass-id
@@ -2887,9 +2860,6 @@ paths:
         - education.educationClass
       summary: Invoke action return
       description: Make the grade and feedback associated with this submission available to the student. This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-beta
       operationId: education.class.assignment.submission_return
       parameters:
         - name: educationClass-id
@@ -2932,9 +2902,6 @@ paths:
         - education.educationClass
       summary: Invoke action setUpResourcesFolder
       description: 'Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-setupresourcesfolder?view=graph-rest-beta
       operationId: education.class.assignment.submission_setUpResourcesFolder
       parameters:
         - name: educationClass-id
@@ -2977,9 +2944,6 @@ paths:
         - education.educationClass
       summary: Invoke action submit
       description: 'Indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from working to submitted. During the submit process, all the resources are copied to the submittedResources bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-beta
       operationId: education.class.assignment.submission_submit
       parameters:
         - name: educationClass-id
@@ -3022,9 +2986,6 @@ paths:
         - education.educationClass
       summary: Invoke action unsubmit
       description: 'Indicate that a student wants to work on the submitted assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from submitted to working. During the submit process, all the resources are copied from submittedResources to  workingResources. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-beta
       operationId: education.class.assignment.submission_unsubmit
       parameters:
         - name: educationClass-id
@@ -4917,9 +4878,6 @@ paths:
         - education.educationClass
       summary: Invoke function delta
       description: Get a list of newly-created or updated assignments without reading the entire collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-beta
       operationId: education.class.assignment_delta
       parameters:
         - name: educationClass-id
@@ -6009,9 +5967,6 @@ paths:
         - education.educationClass
       summary: Invoke function getRecentlyModifiedSubmissions
       description: Retrieve submissions modified in the previous seven days. Only teachers and applications with application permissions can perform this operation. A submission object represents a student's work for an assignment. Resources associated with the submission represent their work. A teacher or application with application permissions has full access to all submission objects. The grade and feedback from a teacher are part of the educationOutcome associated with this object. Only teachers or applications with application permissions can add or change grades and feedback. Students can't see the grade or feedback until the assignment is released.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationclass-getrecentlymodifiedsubmissions?view=graph-rest-beta
       operationId: education.class_getRecentlyModifiedSubmission
       parameters:
         - name: educationClass-id
@@ -6323,9 +6278,6 @@ paths:
         - education.educationClass
       summary: Invoke action pin
       description: Pin an educationModule in the class work list. This action sets the isPinned property to true for an educationModule. Only teachers can perform this action and only one module at a time can be pinned in the class work list.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationmodule-pin?view=graph-rest-beta
       operationId: education.class.module_pin
       parameters:
         - name: educationClass-id
@@ -6360,9 +6312,6 @@ paths:
         - education.educationClass
       summary: Invoke action publish
       description: 'Change the state of an educationModule from its original draft status to the published status. Only teachers in the class can perform this operation. When a module is in draft status, students won''t see the module. When you call this API, the module appears in the student''s class work list.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationmodule-publish?view=graph-rest-beta
       operationId: education.class.module_publish
       parameters:
         - name: educationClass-id
@@ -6397,9 +6346,6 @@ paths:
         - education.educationClass
       summary: Invoke action setUpResourcesFolder
       description: Create a SharePoint folder to upload files for a given educationModule. Only teachers can perform this operation. The teacher determines what resources to upload to the SharePoint folder for the module.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationmodule-setupresourcesfolder?view=graph-rest-beta
       operationId: education.class.module_setUpResourcesFolder
       parameters:
         - name: educationClass-id
@@ -6434,9 +6380,6 @@ paths:
         - education.educationClass
       summary: Invoke action unpin
       description: Unpin an educationModule in the classwork list. This action sets the isPinned property to false for an educationModule. Only teachers in the class can perform this operation.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationmodule-unpin?view=graph-rest-beta
       operationId: education.class.module_unpin
       parameters:
         - name: educationClass-id
@@ -7183,9 +7126,6 @@ paths:
         - education.educationClass
       summary: Invoke function delta
       description: 'Get newly created or updated classes, including membership changes, without having to perform a full read of the entire class collection. See Use delta query for details.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationclass-delta?view=graph-rest-beta
       operationId: education.class_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7757,9 +7697,6 @@ paths:
         - education.educationUser
       summary: Invoke function delta
       description: Get a list of newly created or updated educationCategory objects without performing a full read of the collection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-beta
       operationId: education.me.assignment.category_delta
       parameters:
         - name: educationAssignment-id
@@ -7929,9 +7866,6 @@ paths:
         - education.educationUser
       summary: Invoke action activate
       description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-beta
       operationId: education.me.assignment_activate
       parameters:
         - name: educationAssignment-id
@@ -7958,9 +7892,6 @@ paths:
         - education.educationUser
       summary: Invoke action deactivate
       description: Mark an assigned educationAssignment as inactive to signal that the assignment has no further action items for teachers and students. This action can only be performed by a teacher on assigned assignments.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-deactivate?view=graph-rest-beta
       operationId: education.me.assignment_deactivate
       parameters:
         - name: educationAssignment-id
@@ -7987,9 +7918,6 @@ paths:
         - education.educationUser
       summary: Invoke action publish
       description: 'Change the status of an educationAssignment from its original draft status to the published status.  You can change the status from draft to scheduled if the assignment is scheduled for a future date.  Only a teacher in the class can make this call. When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student''s list. The status of the assignment goes back to draft if there is any backend failure during publish process. To update the properties of a published assignment, see update an assignment. To update the properties of a published assignment, see update an assignment.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-beta
       operationId: education.me.assignment_publish
       parameters:
         - name: educationAssignment-id
@@ -8016,9 +7944,6 @@ paths:
         - education.educationUser
       summary: Invoke action setUpFeedbackResourcesFolder
       description: Create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-beta
       operationId: education.me.assignment_setUpFeedbackResourcesFolder
       parameters:
         - name: educationAssignment-id
@@ -8045,9 +7970,6 @@ paths:
         - education.educationUser
       summary: Invoke action setUpResourcesFolder
       description: Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-beta
       operationId: education.me.assignment_setUpResourcesFolder
       parameters:
         - name: educationAssignment-id
@@ -8995,9 +8917,6 @@ paths:
         - education.educationUser
       summary: Invoke action excuse
       description: 'Excuse a submission. Excused submissions aren''t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status. Otherwise, the submission status changes to returned. For more information about how to use this header, see the Examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-beta
       operationId: education.me.assignment.submission_excuse
       parameters:
         - name: educationAssignment-id
@@ -9032,9 +8951,6 @@ paths:
         - education.educationUser
       summary: Invoke action reassign
       description: 'Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission will be treated as a returned submission. This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively. If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status. For details, see the examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-beta
       operationId: education.me.assignment.submission_reassign
       parameters:
         - name: educationAssignment-id
@@ -9069,9 +8985,6 @@ paths:
         - education.educationUser
       summary: Invoke action return
       description: Make the grade and feedback associated with this submission available to the student. This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-beta
       operationId: education.me.assignment.submission_return
       parameters:
         - name: educationAssignment-id
@@ -9106,9 +9019,6 @@ paths:
         - education.educationUser
       summary: Invoke action setUpResourcesFolder
       description: 'Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-setupresourcesfolder?view=graph-rest-beta
       operationId: education.me.assignment.submission_setUpResourcesFolder
       parameters:
         - name: educationAssignment-id
@@ -9143,9 +9053,6 @@ paths:
         - education.educationUser
       summary: Invoke action submit
       description: 'Indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from working to submitted. During the submit process, all the resources are copied to the submittedResources bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-beta
       operationId: education.me.assignment.submission_submit
       parameters:
         - name: educationAssignment-id
@@ -9180,9 +9087,6 @@ paths:
         - education.educationUser
       summary: Invoke action unsubmit
       description: 'Indicate that a student wants to work on the submitted assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from submitted to working. During the submit process, all the resources are copied from submittedResources to  workingResources. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-beta
       operationId: education.me.assignment.submission_unsubmit
       parameters:
         - name: educationAssignment-id
@@ -10779,9 +10683,6 @@ paths:
         - education.educationUser
       summary: Invoke function delta
       description: Get a list of newly-created or updated assignments without reading the entire collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-beta
       operationId: education.me.assignment_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11642,11 +11543,11 @@ paths:
     get:
       tags:
         - education.reportsRoot
-      summary: Get readingAssignmentSubmission
-      description: Read the properties and relationships of a readingAssignmentSubmission object.
+      summary: List readingAssignmentSubmissions
+      description: Get a list of reading assignments that were submitted by a student.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/readingassignmentsubmission-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/reportsroot-list-readingassignmentsubmissions?view=graph-rest-beta
       operationId: education.report_ListReadingAssignmentSubmission
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11720,6 +11621,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Get readingAssignmentSubmissions from education
+      description: Details of submitted reading assignments.
       operationId: education.report_GetReadingAssignmentSubmission
       parameters:
         - name: readingAssignmentSubmission-id
@@ -11831,15 +11733,209 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /education/reports/readingCoachPassages:
+    get:
+      tags:
+        - education.reportsRoot
+      summary: List readingCoachPassages
+      description: Get a list of Reading Coach passages that were practiced by a student.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/reportsroot-list-readingcoachpassages?view=graph-rest-beta
+      operationId: education.report_ListReadingCoachPassage
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.readingCoachPassageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - education.reportsRoot
+      summary: Create new navigation property to readingCoachPassages for education
+      operationId: education.report_CreateReadingCoachPassage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.readingCoachPassage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.readingCoachPassage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/education/reports/readingCoachPassages/{readingCoachPassage-id}':
+    get:
+      tags:
+        - education.reportsRoot
+      summary: Get readingCoachPassages from education
+      description: Details of practiced Reading Coach passages.
+      operationId: education.report_GetReadingCoachPassage
+      parameters:
+        - name: readingCoachPassage-id
+          in: path
+          description: The unique identifier of readingCoachPassage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: readingCoachPassage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.readingCoachPassage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - education.reportsRoot
+      summary: Update the navigation property readingCoachPassages in education
+      operationId: education.report_UpdateReadingCoachPassage
+      parameters:
+        - name: readingCoachPassage-id
+          in: path
+          description: The unique identifier of readingCoachPassage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: readingCoachPassage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.readingCoachPassage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.readingCoachPassage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - education.reportsRoot
+      summary: Delete navigation property readingCoachPassages for education
+      operationId: education.report_DeleteReadingCoachPassage
+      parameters:
+        - name: readingCoachPassage-id
+          in: path
+          description: The unique identifier of readingCoachPassage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: readingCoachPassage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /education/reports/readingCoachPassages/$count:
+    get:
+      tags:
+        - education.reportsRoot
+      summary: Get the number of the resource
+      operationId: education.report.readingCoachPassage_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/reports/reflectCheckInResponses:
     get:
       tags:
         - education.reportsRoot
-      summary: Get reflectCheckInResponse
-      description: Read the properties and relationships of a reflectCheckInResponse object. This method gets the responses to a Microsoft Reflect check-in.
+      summary: List reflectCheckInResponses
+      description: Get a list of Reflect check-ins that were submitted by a student.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/reflectcheckinresponse-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/reportsroot-list-reflectcheckinresponses?view=graph-rest-beta
       operationId: education.report_ListReflectCheckInResponse
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11913,6 +12009,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Get reflectCheckInResponses from education
+      description: Details of check-in responses.
       operationId: education.report_GetReflectCheckInResponse
       parameters:
         - name: reflectCheckInResponse-id
@@ -12975,9 +13072,6 @@ paths:
         - education.educationSchool
       summary: Invoke function delta
       description: Get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationschool-delta?view=graph-rest-beta
       operationId: education.school_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13175,11 +13269,11 @@ paths:
     patch:
       tags:
         - education.educationUser
-      summary: Update relatedContacts
-      description: Update the relatedContact collection of an educationUser object.
+      summary: Update educationUser properties
+      description: Update the properties of an educationuser object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/relatedcontact-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/educationuser-update?view=graph-rest-beta
       operationId: education_UpdateUser
       parameters:
         - name: educationUser-id
@@ -13764,9 +13858,6 @@ paths:
         - education.educationUser
       summary: Invoke function delta
       description: Get a list of newly created or updated educationCategory objects without performing a full read of the collection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-beta
       operationId: education.user.assignment.category_delta
       parameters:
         - name: educationUser-id
@@ -13960,9 +14051,6 @@ paths:
         - education.educationUser
       summary: Invoke action activate
       description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-beta
       operationId: education.user.assignment_activate
       parameters:
         - name: educationUser-id
@@ -13997,9 +14085,6 @@ paths:
         - education.educationUser
       summary: Invoke action deactivate
       description: Mark an assigned educationAssignment as inactive to signal that the assignment has no further action items for teachers and students. This action can only be performed by a teacher on assigned assignments.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-deactivate?view=graph-rest-beta
       operationId: education.user.assignment_deactivate
       parameters:
         - name: educationUser-id
@@ -14034,9 +14119,6 @@ paths:
         - education.educationUser
       summary: Invoke action publish
       description: 'Change the status of an educationAssignment from its original draft status to the published status.  You can change the status from draft to scheduled if the assignment is scheduled for a future date.  Only a teacher in the class can make this call. When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student''s list. The status of the assignment goes back to draft if there is any backend failure during publish process. To update the properties of a published assignment, see update an assignment. To update the properties of a published assignment, see update an assignment.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-beta
       operationId: education.user.assignment_publish
       parameters:
         - name: educationUser-id
@@ -14071,9 +14153,6 @@ paths:
         - education.educationUser
       summary: Invoke action setUpFeedbackResourcesFolder
       description: Create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-beta
       operationId: education.user.assignment_setUpFeedbackResourcesFolder
       parameters:
         - name: educationUser-id
@@ -14108,9 +14187,6 @@ paths:
         - education.educationUser
       summary: Invoke action setUpResourcesFolder
       description: Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-beta
       operationId: education.user.assignment_setUpResourcesFolder
       parameters:
         - name: educationUser-id
@@ -15250,9 +15326,6 @@ paths:
         - education.educationUser
       summary: Invoke action excuse
       description: 'Excuse a submission. Excused submissions aren''t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status. Otherwise, the submission status changes to returned. For more information about how to use this header, see the Examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-beta
       operationId: education.user.assignment.submission_excuse
       parameters:
         - name: educationUser-id
@@ -15295,9 +15368,6 @@ paths:
         - education.educationUser
       summary: Invoke action reassign
       description: 'Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission will be treated as a returned submission. This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively. If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status. For details, see the examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-beta
       operationId: education.user.assignment.submission_reassign
       parameters:
         - name: educationUser-id
@@ -15340,9 +15410,6 @@ paths:
         - education.educationUser
       summary: Invoke action return
       description: Make the grade and feedback associated with this submission available to the student. This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-beta
       operationId: education.user.assignment.submission_return
       parameters:
         - name: educationUser-id
@@ -15385,9 +15452,6 @@ paths:
         - education.educationUser
       summary: Invoke action setUpResourcesFolder
       description: 'Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-setupresourcesfolder?view=graph-rest-beta
       operationId: education.user.assignment.submission_setUpResourcesFolder
       parameters:
         - name: educationUser-id
@@ -15430,9 +15494,6 @@ paths:
         - education.educationUser
       summary: Invoke action submit
       description: 'Indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from working to submitted. During the submit process, all the resources are copied to the submittedResources bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-beta
       operationId: education.user.assignment.submission_submit
       parameters:
         - name: educationUser-id
@@ -15475,9 +15536,6 @@ paths:
         - education.educationUser
       summary: Invoke action unsubmit
       description: 'Indicate that a student wants to work on the submitted assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from submitted to working. During the submit process, all the resources are copied from submittedResources to  workingResources. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-beta
       operationId: education.user.assignment.submission_unsubmit
       parameters:
         - name: educationUser-id
@@ -17338,9 +17396,6 @@ paths:
         - education.educationUser
       summary: Invoke function delta
       description: Get a list of newly-created or updated assignments without reading the entire collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-beta
       operationId: education.user.assignment_delta
       parameters:
         - name: educationUser-id
@@ -18282,9 +18337,6 @@ paths:
         - education.educationUser
       summary: Invoke function delta
       description: Get newly created or updated educationUser without having to perform a full read of the entire collection. See Use delta query for details.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationuser-delta?view=graph-rest-beta
       operationId: education.user_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20285,11 +20337,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
+              description: Details of submitted reading assignments.
+              x-ms-navigationProperty: true
+            readingCoachPassages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.readingCoachPassage'
+              description: Details of practiced Reading Coach passages.
               x-ms-navigationProperty: true
             reflectCheckInResponses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.reflectCheckInResponse'
+              description: Details of check-in responses.
               x-ms-navigationProperty: true
             speakerAssignmentSubmissions:
               type: array
@@ -20390,6 +20450,51 @@ components:
             wordsPerMinute:
               type: number
               description: Words per minute of the reading progress.
+              format: double
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.readingCoachPassage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: readingCoachPassage
+          type: object
+          properties:
+            isReadingCompleted:
+              type: boolean
+              description: Indicates if the reading passage was completed.
+            languageTag:
+              type: string
+              description: The language of the reading passage.
+            practicedAtDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the Reading Coach passage was practiced. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            practiceWords:
+              type: array
+              items:
+                type: string
+              description: The list of challenging words for the student that they can practice further.
+            storyType:
+              $ref: '#/components/schemas/microsoft.graph.readingCoachStoryType'
+            studentId:
+              type: string
+              description: ID of the student that practiced the reading passage.
+              nullable: true
+            timeSpentReadingInSeconds:
+              type: number
+              description: The time the student spent reading in seconds.
+              format: double
+              nullable: true
+            wordsAccuracyPercentage:
+              type: number
+              description: The percentage of words that the student read correctly.
+              format: double
+              nullable: true
+            wordsPerMinute:
+              type: number
+              description: The rate the student read at in words per minute.
               format: double
               nullable: true
           additionalProperties:
@@ -24410,7 +24515,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -25451,6 +25556,14 @@ components:
           description: The specific word that the student found challenging during the reading session.
       additionalProperties:
         type: object
+    microsoft.graph.readingCoachStoryType:
+      title: readingCoachStoryType
+      enum:
+        - aiGenerated
+        - readWorks
+        - userProvided
+        - unknownFutureValue
+      type: string
     microsoft.graph.responseEmotionType:
       title: responseEmotionType
       enum:
@@ -25578,8 +25691,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.educationAssignmentCollectionResponse:
       title: Collection of educationAssignment
       type: object
@@ -25770,6 +25883,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.readingCoachPassageCollectionResponse:
+      title: Collection of readingCoachPassage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.readingCoachPassage'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -29738,12 +29864,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -29768,10 +29888,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -37350,45 +37466,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRightsIncluded:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -38609,13 +38686,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -39888,11 +39965,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -40162,6 +40239,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEvent:
@@ -40296,6 +40378,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -43813,6 +43896,17 @@ components:
             webUrl:
               type: string
               description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -47980,6 +48074,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmissionCollectionResponse'
+    microsoft.graph.readingCoachPassageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.readingCoachPassageCollectionResponse'
     microsoft.graph.reflectCheckInResponseCollectionResponse:
       description: Retrieved collection
       content:
@@ -48001,7 +48101,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -48011,7 +48112,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

@@ -313,9 +313,6 @@ paths:
         - solutions.businessScenario
       summary: Invoke action getPlan
       description: 'Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn''t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-beta
       operationId: solution.businessScenario.planner_getPlan
       parameters:
         - name: businessScenario-id
@@ -2290,8 +2287,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.businessScenarioTaskCollectionResponse:
       title: Collection of businessScenarioTask
       type: object
@@ -2825,7 +2822,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -2835,7 +2833,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

@@ -460,9 +460,6 @@ paths:
         - identity.identityApiConnector
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0
       operationId: identity.apiConnector_uploadClientCertificate
       parameters:
         - name: identityApiConnector-id
@@ -2621,9 +2618,6 @@ paths:
         - identity.b2xIdentityUserFlow
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0
       operationId: identity.b2xUserFlow.apiConnectorConfiguration.postAttributeCollection_uploadClientCertificate
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -2841,9 +2835,6 @@ paths:
         - identity.b2xIdentityUserFlow
       summary: Invoke action uploadClientCertificate
       description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0
       operationId: identity.b2xUserFlow.apiConnectorConfiguration.postFederationSignup_uploadClientCertificate
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -4459,9 +4450,6 @@ paths:
         - identity.b2xIdentityUserFlow
       summary: Invoke function getOrder
       description: Get the order of identityUserFlowAttributeAssignments being collected within a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-getorder?view=graph-rest-1.0
       operationId: identity.b2xUserFlow.userAttributeAssignment_getOrder
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -4488,9 +4476,6 @@ paths:
         - identity.b2xIdentityUserFlow
       summary: Invoke action setOrder
       description: Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0
       operationId: identity.b2xUserFlow.userAttributeAssignment_setOrder
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -5661,9 +5646,6 @@ paths:
         - identity.conditionalAccessRoot
       summary: Invoke action updateAllowedCombinations
       description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0
       operationId: identity.conditionalAccess.authenticationStrength.policy_updateAllowedCombination
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -5704,9 +5686,6 @@ paths:
         - identity.conditionalAccessRoot
       summary: Invoke function usage
       description: 'Allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-usage?view=graph-rest-1.0
       operationId: identity.conditionalAccess.authenticationStrength.policy_usage
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -5874,11 +5853,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -5909,11 +5888,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete countryNamedLocation
+      description: Delete a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -6478,9 +6457,6 @@ paths:
         - identity.customAuthenticationExtension
       summary: Invoke action validateAuthenticationConfiguration
       description: 'An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension object, which can represent one of the following derived types:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customauthenticationextension-validateauthenticationconfiguration?view=graph-rest-1.0
       operationId: identity.customAuthenticationExtension_validateAuthenticationConfiguration
       parameters:
         - name: customAuthenticationExtension-id
@@ -6760,9 +6736,6 @@ paths:
         - identity.identityProviderBase
       summary: Invoke function availableProviderTypes
       description: Get all identity providers supported in a directory.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityproviderbase-availableprovidertypes?view=graph-rest-1.0
       operationId: identity.identityProvider_availableProviderType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7705,9 +7678,6 @@ paths:
         - identityProtection.riskyServicePrincipal
       summary: Invoke action confirmCompromised
       description: Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyserviceprincipal-confirmcompromised?view=graph-rest-1.0
       operationId: identityProtection.riskyServicePrincipal_confirmCompromised
       requestBody:
         description: Action parameters
@@ -7736,9 +7706,6 @@ paths:
         - identityProtection.riskyServicePrincipal
       summary: Invoke action dismiss
       description: Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to none. You can dismiss up to 60 service principal accounts in one request.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyserviceprincipal-dismiss?view=graph-rest-1.0
       operationId: identityProtection.riskyServicePrincipal_dismiss
       requestBody:
         description: Action parameters
@@ -8207,9 +8174,6 @@ paths:
         - identityProtection.riskyUser
       summary: Invoke action confirmCompromised
       description: Confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyuser-confirmcompromised?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_confirmCompromised
       requestBody:
         description: Action parameters
@@ -8238,9 +8202,6 @@ paths:
         - identityProtection.riskyUser
       summary: Invoke action confirmSafe
       description: Confirm one or more riskyUser objects as safe. This action sets the targeted user's risk level to none.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyuser-confirmsafe?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_confirmSafe
       requestBody:
         description: Action parameters
@@ -8269,9 +8230,6 @@ paths:
         - identityProtection.riskyUser
       summary: Invoke action dismiss
       description: Dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyuser-dismiss?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_dismiss
       requestBody:
         description: Action parameters
@@ -8742,9 +8700,6 @@ paths:
         - identityProviders.identityProvider.Functions
       summary: Invoke function availableProviderTypes
       description: Retrieves all identity provider types available in a directory.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-1.0
       operationId: identityProvider_availableProviderType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10016,9 +9971,6 @@ paths:
         - oauth2PermissionGrants.oAuth2PermissionGrant.Functions
       summary: Invoke function delta
       description: 'Get newly created, updated, or deleted oauth2permissiongrant objects without performing a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/oauth2permissiongrant-delta?view=graph-rest-1.0
       operationId: oauth2PermissionGrant_delta
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11935,9 +11887,6 @@ paths:
         - policies.authenticationStrengthPolicy
       summary: Invoke action updateAllowedCombinations
       description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0
       operationId: policy.authenticationStrengthPolicy_updateAllowedCombination
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -11978,9 +11927,6 @@ paths:
         - policies.authenticationStrengthPolicy
       summary: Invoke function usage
       description: 'Allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-usage?view=graph-rest-1.0
       operationId: policy.authenticationStrengthPolicy_usage
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -12814,9 +12760,6 @@ paths:
         - policies.crossTenantAccessPolicy
       summary: Invoke action resetToSystemDefault
       description: Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.default_resetToSystemDefault
       responses:
         2XX:
@@ -17808,9 +17751,6 @@ paths:
         - users.authentication
       summary: Invoke action resetPassword
       description: 'Reset a user''s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and can''t be performed on a user''s own account. To reset a user''s password in Azure AD B2C, use the Update user API operation and update the passwordProfile > forceChangePasswordNextSignIn object. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0
       operationId: user.authentication.method_resetPassword
       parameters:
         - name: user-id
@@ -18750,9 +18690,6 @@ paths:
         - users.authentication
       summary: Invoke action disableSmsSignIn
       description: 'Disable SMS sign-in for an existing mobile phone number registered to a user. The number will no longer be available for SMS sign-in, which can prevent your user from signing in.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-disablesmssignin?view=graph-rest-1.0
       operationId: user.authentication.phoneMethod_disableSmsSignIn
       parameters:
         - name: user-id
@@ -18783,9 +18720,6 @@ paths:
         - users.authentication
       summary: Invoke action enableSmsSignIn
       description: 'Enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-1.0
       operationId: user.authentication.phoneMethod_enableSmsSignIn
       parameters:
         - name: user-id
@@ -23010,6 +22944,8 @@ components:
           nullable: true
         persistentBrowser:
           $ref: '#/components/schemas/microsoft.graph.persistentBrowserSessionControl'
+        secureSignInSession:
+          $ref: '#/components/schemas/microsoft.graph.secureSignInSessionControl'
         signInFrequency:
           $ref: '#/components/schemas/microsoft.graph.signInFrequencySessionControl'
       additionalProperties:
@@ -26268,8 +26204,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.identityApiConnectorCollectionResponse:
       title: Collection of identityApiConnector
       type: object
@@ -27286,6 +27222,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.persistentBrowserSessionMode'
           additionalProperties:
             type: object
+    microsoft.graph.secureSignInSessionControl:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
+        - title: secureSignInSessionControl
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.signInFrequencySessionControl:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
@@ -28087,6 +28030,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -32153,6 +32102,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36237,6 +36236,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -39192,6 +39218,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -40688,7 +40741,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -40698,7 +40752,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

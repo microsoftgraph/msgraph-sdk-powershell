@@ -406,9 +406,6 @@ paths:
         - bookingBusinesses.bookingAppointment
       summary: Invoke action cancel
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
       operationId: bookingBusiness.appointment_cancel
       parameters:
         - name: bookingBusiness-id
@@ -724,9 +721,6 @@ paths:
         - bookingBusinesses.bookingAppointment
       summary: Invoke action cancel
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
       operationId: bookingBusiness.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1272,9 +1266,6 @@ paths:
         - bookingBusinesses.bookingBusiness.Actions
       summary: Invoke action getStaffAvailability
       description: Get the availability information of staff members of a Microsoft Bookings calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
       operationId: bookingBusiness_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
@@ -1332,9 +1323,6 @@ paths:
         - bookingBusinesses.bookingBusiness.Actions
       summary: Invoke action publish
       description: 'Make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-beta
       operationId: bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
@@ -1357,9 +1345,6 @@ paths:
         - bookingBusinesses.bookingBusiness.Actions
       summary: Invoke action unpublish
       description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and publicUrl property to null.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-beta
       operationId: bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -2534,9 +2519,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action cancel
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
       operationId: solution.bookingBusiness.appointment_cancel
       parameters:
         - name: bookingBusiness-id
@@ -2852,9 +2834,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action cancel
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
       operationId: solution.bookingBusiness.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -3400,9 +3379,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action getStaffAvailability
       description: Get the availability information of staff members of a Microsoft Bookings calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
       operationId: solution.bookingBusiness_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
@@ -3460,9 +3436,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action publish
       description: 'Make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-beta
       operationId: solution.bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
@@ -3485,9 +3458,6 @@ paths:
         - solutions.bookingBusiness
       summary: Invoke action unpublish
       description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and publicUrl property to null.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-beta
       operationId: solution.bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -8542,9 +8512,6 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke function getByUserIdAndRole
       description: Get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuseridandrole?view=graph-rest-beta
       operationId: solution.virtualEvent.townhall_getGraphBPreUserIdAndRole
       parameters:
         - name: userId
@@ -8626,9 +8593,6 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke function getByUserRole
       description: Get a list of virtualEventTownhall objects where the signed-in user is either the organizer or a coorganizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuserrole?view=graph-rest-beta
       operationId: solution.virtualEvent.townhall_getGraphBPreUserRole
       parameters:
         - name: role
@@ -10042,6 +10006,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions for a registration.
       operationId: solution.virtualEvent.webinar.registration_GetSession
       parameters:
         - name: virtualEventWebinar-id
@@ -10103,6 +10068,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions for a registration.
       operationId: solution.virtualEvent.webinar.registration.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: virtualEventWebinar-id
@@ -11995,9 +11961,6 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke function getByUserIdAndRole
       description: Get a list of virtualEventWebinar objects where the specified user is either the organizer or a coorganizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuseridandrole?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar_getGraphBPreUserIdAndRole
       parameters:
         - name: userId
@@ -12079,9 +12042,6 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke function getByUserRole
       description: Get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-beta
       operationId: solution.virtualEvent.webinar_getGraphBPreUserRole
       parameters:
         - name: role
@@ -12960,6 +12920,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -13940,8 +13901,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.bookingCustomerCollectionResponse:
       title: Collection of bookingCustomer
       type: object
@@ -16850,7 +16811,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -16860,7 +16822,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query

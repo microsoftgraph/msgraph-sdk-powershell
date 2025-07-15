@@ -1170,9 +1170,6 @@ paths:
         - users.contactFolder
       summary: Invoke action permanentDelete
       description: 'Permanently delete a contact and place it in the Purges folder in the dumpster in the user''s mailbox. Email clients such as Outlook or Outlook on the web can''t access permanently deleted items. Unless there''s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-permanentdelete?view=graph-rest-beta
       operationId: user.contactFolder.childFolder.contact_permanentDelete
       parameters:
         - name: user-id
@@ -1534,9 +1531,6 @@ paths:
         - users.contactFolder
       summary: Invoke function delta
       description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-beta
       operationId: user.contactFolder.childFolder.contact_delta
       parameters:
         - name: user-id
@@ -1631,9 +1625,6 @@ paths:
         - users.contactFolder
       summary: Invoke action permanentDelete
       description: 'Permanently delete a contact folder and remove its items from the user''s mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-permanentdelete?view=graph-rest-beta
       operationId: user.contactFolder.childFolder_permanentDelete
       parameters:
         - name: user-id
@@ -1702,9 +1693,6 @@ paths:
         - users.contactFolder
       summary: Invoke function delta
       description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-beta
       operationId: user.contactFolder.childFolder_delta
       parameters:
         - name: user-id
@@ -2385,9 +2373,6 @@ paths:
         - users.contactFolder
       summary: Invoke action permanentDelete
       description: 'Permanently delete a contact and place it in the Purges folder in the dumpster in the user''s mailbox. Email clients such as Outlook or Outlook on the web can''t access permanently deleted items. Unless there''s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-permanentdelete?view=graph-rest-beta
       operationId: user.contactFolder.contact_permanentDelete
       parameters:
         - name: user-id
@@ -2693,9 +2678,6 @@ paths:
         - users.contactFolder
       summary: Invoke function delta
       description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-beta
       operationId: user.contactFolder.contact_delta
       parameters:
         - name: user-id
@@ -2782,9 +2764,6 @@ paths:
         - users.contactFolder
       summary: Invoke action permanentDelete
       description: 'Permanently delete a contact folder and remove its items from the user''s mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-permanentdelete?view=graph-rest-beta
       operationId: user.contactFolder_permanentDelete
       parameters:
         - name: user-id
@@ -2837,9 +2816,6 @@ paths:
         - users.contactFolder
       summary: Invoke function delta
       description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-beta
       operationId: user.contactFolder_delta
       parameters:
         - name: user-id
@@ -3424,9 +3400,6 @@ paths:
         - users.contact
       summary: Invoke action permanentDelete
       description: 'Permanently delete a contact and place it in the Purges folder in the dumpster in the user''s mailbox. Email clients such as Outlook or Outlook on the web can''t access permanently deleted items. Unless there''s a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-permanentdelete?view=graph-rest-beta
       operationId: user.contact_permanentDelete
       parameters:
         - name: user-id
@@ -3676,9 +3649,6 @@ paths:
         - users.contact
       summary: Invoke function delta
       description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-beta
       operationId: user.contact_delta
       parameters:
         - name: user-id
@@ -4197,8 +4167,8 @@ components:
       additionalProperties:
         type: object
     ODataCountResponse:
-      type: integer
-      format: int32
+      type: number
+      format: int64
     microsoft.graph.emailAddress:
       title: emailAddress
       type: object
@@ -4355,7 +4325,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
       example: 50
     skip:
       name: $skip
@@ -4365,7 +4336,8 @@ components:
       explode: false
       schema:
         minimum: 0
-        type: integer
+        type: number
+        format: int64
     search:
       name: $search
       in: query
