@@ -2977,9 +2977,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action enable
       description: Enable the Microsoft 365 Backup Storage service for a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-beta
       operationId: solution.backupRestore_enable
       requestBody:
         description: Action parameters
@@ -4558,9 +4555,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action activate
       description: 'Activate a protectionPolicyBase. Currently, only one active backup policy per underlying service is supported (that is, one for OneDrive accounts, one for SharePoint sites, and one for Exchange Online users). You can add or remove artifacts (sites or user accounts) to or from each active policy.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/protectionpolicybase-activate?view=graph-rest-beta
       operationId: solution.backupRestore.protectionPolicy_activate
       parameters:
         - name: protectionPolicyBase-id
@@ -4587,9 +4581,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action deactivate
       description: Deactivate a protectionPolicyBase.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/protectionpolicybase-deactivate?view=graph-rest-beta
       operationId: solution.backupRestore.protectionPolicy_deactivate
       parameters:
         - name: protectionPolicyBase-id
@@ -4725,6 +4716,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.cancelOffboard':
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Invoke action cancelOffboard
+      description: Cancel offboard for a protectionUnitBase.
+      operationId: solution.backupRestore.protectionUnit_cancelOffboard
+      parameters:
+        - name: protectionUnitBase-id
+          in: path
+          description: The unique identifier of protectionUnitBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: protectionUnitBase
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.driveProtectionUnit':
     get:
       tags:
@@ -4821,6 +4838,32 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.offboard':
+    post:
+      tags:
+        - solutions.backupRestoreRoot
+      summary: Invoke action offboard
+      description: Offboard a protectionUnitBase.
+      operationId: solution.backupRestore.protectionUnit_offboard
+      parameters:
+        - name: protectionUnitBase-id
+          in: path
+          description: The unique identifier of protectionUnitBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: protectionUnitBase
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.siteProtectionUnit':
     get:
       tags:
@@ -5330,9 +5373,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action search
       description: Search for the restorePoint objects associated with a protectionUnit.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-beta
       operationId: solution.backupRestore.restorePoint_search
       requestBody:
         description: Action parameters
@@ -5560,9 +5600,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action activate
       description: 'Activate a draft restoreSessionBase object to restore a protection unit. The following points apply to restoring a protection unit:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-beta
       operationId: solution.backupRestore.restoreSession_activate
       parameters:
         - name: restoreSessionBase-id
@@ -5794,9 +5831,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action activate
       description: Activate a serviceApp.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceapp-activate?view=graph-rest-beta
       operationId: solution.backupRestore.serviceApp_activate
       parameters:
         - name: serviceApp-id
@@ -5837,9 +5871,6 @@ paths:
         - solutions.backupRestoreRoot
       summary: Invoke action deactivate
       description: Deactivate a serviceApp.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceapp-deactivate?view=graph-rest-beta
       operationId: solution.backupRestore.serviceApp_deactivate
       parameters:
         - name: serviceApp-id
