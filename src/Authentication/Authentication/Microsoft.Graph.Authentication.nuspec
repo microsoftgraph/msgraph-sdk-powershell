@@ -50,12 +50,14 @@
     <file src="artifacts\Dependencies\Core\runtimes\win-arm64\native\msalruntime_arm64.dll" target="Dependencies" />
     <!-- Core-->
     <file src="artifacts\Dependencies\Core\Azure.Core.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Core\Azure.Core.Experimental.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Graph.Core.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.Extensions.Msal.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Newtonsoft.Json.dll" target="Dependencies\Core" />
     <!-- Desktop -->
     <file src="artifacts\Dependencies\Desktop\Azure.Core.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\Azure.Core.Experimental.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Microsoft.Graph.Core.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.Extensions.Msal.dll" target="Dependencies\Desktop" />
