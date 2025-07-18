@@ -20,7 +20,7 @@ if ($null -eq $ConnectCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalConnectMgGraphOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalConnectMgGraphOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalConnectMgGraphOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Connect-MgGraph command added to the list of commands in MgCommandMetadata.json"
@@ -43,7 +43,7 @@ if ($null -eq $AddEnvironmentCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalAddEnvironmentOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalAddEnvironmentOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalAddEnvironmentOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Add-MgEnvironment command added to the list of commands in MgCommandMetadata.json"
@@ -65,7 +65,7 @@ if ($null -eq $GetEnvironmentCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalGetEnvironmentOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalGetEnvironmentOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalGetEnvironmentOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Get-MgEnvironment command added to the list of commands in MgCommandMetadata.json"
@@ -87,7 +87,7 @@ if ($null -eq $RemoveEnvironmentCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalRemoveEnvironmentOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalRemoveEnvironmentOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalRemoveEnvironmentOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Remove-MgEnvironment command added to the list of commands in MgCommandMetadata.json"
@@ -109,7 +109,7 @@ if ($null -eq $SetEnvironmentCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalSetEnvironmentOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalSetEnvironmentOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalSetEnvironmentOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Set-MgEnvironment command added to the list of commands in MgCommandMetadata.json"
@@ -131,7 +131,7 @@ if ($null -eq $DisconnectCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalDisconnectOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalDisconnectOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalDisconnectOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Disconnect-MgGraph command added to the list of commands in MgCommandMetadata.json"
@@ -153,7 +153,7 @@ if ($null -eq $FindCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalFindOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalFindOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalFindOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Find-MgGraphCommand command added to the list of commands in MgCommandMetadata.json"
@@ -175,7 +175,7 @@ if ($null -eq $FindPermissionCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalFindPermissionOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalFindPermissionOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalFindPermissionOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Find-MgGraphPermission command added to the list of commands in MgCommandMetadata.json"
@@ -197,7 +197,7 @@ if ($null -eq $GetContextCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalGetContextOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalGetContextOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalGetContextOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Get-MgContext command added to the list of commands in MgCommandMetadata.json"
@@ -219,7 +219,7 @@ if ($null -eq $GetGraphOptionCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalGetGraphOptionOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalGetGraphOptionOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalGetGraphOptionOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Get-MgGraphOption command added to the list of commands in MgCommandMetadata.json"
@@ -241,7 +241,7 @@ if ($null -eq $GetRequestContextCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalGetRequestContextOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalGetRequestContextOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalGetRequestContextOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Get-MgRequestContext command added to the list of commands in MgCommandMetadata.json"
@@ -263,7 +263,7 @@ if ($null -eq $InvokeRequestCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalInvokeRequestOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalInvokeRequestOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalInvokeRequestOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Invoke-MgGraphRequest command added to the list of commands in MgCommandMetadata.json"
@@ -285,7 +285,7 @@ if ($null -eq $SetGraphOptionCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalSetGraphOptionOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalSetGraphOptionOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalSetGraphOptionOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Set-MgGraphOption command added to the list of commands in MgCommandMetadata.json"
@@ -307,7 +307,7 @@ if ($null -eq $SetRequestContextCommand) {
         Uri = $null
     }
    # Update the file
-    $FinalSetRequestContextOutPut = $CommandMetadata | ConvertTo-Json -Depth 10
+    $FinalSetRequestContextOutPut = $CommandMetadata | ConvertTo-Json -Depth 10 -Compress
     
     $FinalSetRequestContextOutPut | Set-Content -Path $CommandMetadataFile -Force
     Write-Host "Set-MgRequestContext command added to the list of commands in MgCommandMetadata.json"
