@@ -430,7 +430,6 @@ paths:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
               value: eventual
         - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
@@ -472,28 +471,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - contacts.orgContact
-      summary: Add new entity to contacts
-      operationId: contact.orgContact_CreateOrgContact
-      requestBody:
-        description: New entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.orgContact'
-        required: true
-      responses:
-        2XX:
-          description: Created entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.orgContact'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}':
     get:
@@ -541,63 +518,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.orgContact'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - contacts.orgContact
-      summary: Update entity in contacts
-      operationId: contact.orgContact_UpdateOrgContact
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: The unique identifier of orgContact
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.orgContact'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.orgContact'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - contacts.orgContact
-      summary: Delete entity from contacts
-      operationId: contact.orgContact_DeleteOrgContact
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: The unique identifier of orgContact
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1861,7 +1781,7 @@ paths:
       tags:
         - contacts.orgContact.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -2592,7 +2512,7 @@ paths:
       tags:
         - contacts.orgContact.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
+      description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
@@ -3136,7 +3056,7 @@ paths:
       tags:
         - contracts.contract.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -3252,7 +3172,7 @@ paths:
       tags:
         - contracts.contract.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
+      description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
@@ -4559,7 +4479,7 @@ paths:
       tags:
         - devices.device.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -7118,7 +7038,7 @@ paths:
       tags:
         - devices.device.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
+      description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
@@ -7399,7 +7319,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get administrativeUnit
-      description: Retrieve the properties and relationships of an administrativeUnit object.
+      description: 'Retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0
@@ -10022,7 +9942,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deleted item (directory object)
-      description: 'Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.'
+      description: "Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. Retrieve the properties of a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal\n- user"
       operationId: directory_ListDeletedItem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10074,7 +9994,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deleted item (directory object)
-      description: 'Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.'
+      description: "Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. Retrieve the properties of a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-get?view=graph-rest-1.0
@@ -10122,7 +10042,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Permanently delete an item (directory object)
-      description: 'Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.'
+      description: "Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Permanently delete a recently deleted directory object from deleted items. The following types are supported:\n- certificateBasedAuthPki\n- certificateAuthorityDetail After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-delete?view=graph-rest-1.0
@@ -10505,7 +10425,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: List deletedItems (directory objects)
-      description: 'Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.'
+      description: "Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources. Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
@@ -10553,7 +10473,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -10876,7 +10796,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Invoke action getAvailableExtensionProperties
-      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
+      description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
@@ -10977,7 +10897,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: List deletedItems (directory objects)
-      description: 'Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.'
+      description: "Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources. Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
@@ -11830,6 +11750,586 @@ paths:
         - directory.onPremisesDirectorySynchronization
       summary: Get the number of the resource
       operationId: directory.onPremisesSynchronization_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directory/publicKeyInfrastructure:
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get publicKeyInfrastructure from directory
+      description: The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
+      operationId: directory_GetPublicKeyInfrastructure
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Update the navigation property publicKeyInfrastructure in directory
+      operationId: directory_UpdatePublicKeyInfrastructure
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Delete navigation property publicKeyInfrastructure for directory
+      operationId: directory_DeletePublicKeyInfrastructure
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/publicKeyInfrastructure/certificateBasedAuthConfigurations:
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: List certificateBasedAuthPki objects
+      description: Get a list of the certificateBasedAuthPki objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-list-certificatebasedauthconfigurations?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure_ListCertificateBasedAuthConfiguration
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.certificateBasedAuthPkiCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Create certificateBasedAuthPki
+      description: Create a new certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-post-certificatebasedauthconfigurations?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure_CreateCertificateBasedAuthConfiguration
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}':
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get certificateBasedAuthPki
+      description: Read the properties and relationships of a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-get?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure_GetCertificateBasedAuthConfiguration
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Update certificateBasedAuthPki
+      description: Update the properties of a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-update?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure_UpdateCertificateBasedAuthConfiguration
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Delete certificateBasedAuthPki
+      description: Delete a certificateBasedAuthPki object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-delete-certificatebasedauthconfigurations?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure_DeleteCertificateBasedAuthConfiguration
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities':
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: List certificateAuthorityDetail objects
+      description: Get a list of the certificateAuthorityDetail objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-list-certificateauthorities?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_ListCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.certificateAuthorityDetailCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Create certificateAuthorityDetail
+      description: Create a new certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-post-certificateauthorities?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_CreateCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/{certificateAuthorityDetail-id}':
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get certificateAuthorities from directory
+      description: The collection of certificate authorities contained in this public key infrastructure resource.
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_GetCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: certificateAuthorityDetail-id
+          in: path
+          description: The unique identifier of certificateAuthorityDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateAuthorityDetail
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Update certificateAuthorityDetail
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificateauthoritydetail-update?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_UpdateCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: certificateAuthorityDetail-id
+          in: path
+          description: The unique identifier of certificateAuthorityDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateAuthorityDetail
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Delete certificateAuthorityDetail
+      description: Delete a certificateAuthorityDetail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-delete-certificateauthorities?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_DeleteCertificateAuthority
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - name: certificateAuthorityDetail-id
+          in: path
+          description: The unique identifier of certificateAuthorityDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateAuthorityDetail
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/$count':
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get the number of the resource
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration.certificateAuthority_GetCount
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/microsoft.graph.upload':
+    post:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Invoke action upload
+      description: 'Append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-upload?view=graph-rest-1.0
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_upload
+      parameters:
+        - name: certificateBasedAuthPki-id
+          in: path
+          description: The unique identifier of certificateBasedAuthPki
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthPki
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                uploadUrl:
+                  type: string
+                sha256FileHash:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/$count:
+    get:
+      tags:
+        - directory.publicKeyInfrastructureRoot
+      summary: Get the number of the resource
+      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -13786,7 +14286,7 @@ paths:
       tags:
         - directoryRoles.directoryRole.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -14251,7 +14751,7 @@ paths:
       tags:
         - directoryRoles.directoryRole.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
+      description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
@@ -14795,7 +15295,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -14911,7 +15411,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
+      description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
@@ -15719,7 +16219,7 @@ paths:
       tags:
         - domains.domain.Actions
       summary: Invoke action verify
-      description: Validates the ownership of the domain.
+      description: 'Validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-1.0
@@ -16374,10 +16874,10 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
-      description: 'Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.'
+      description: Read properties and relationships of the organization object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0
       operationId: organization_GetOrganization
       parameters:
         - name: organization-id
@@ -17625,11 +18125,11 @@ paths:
     get:
       tags:
         - organization.organizationalBranding
-      summary: Get organizationalBranding
-      description: 'Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.'
+      summary: Get organizationalBrandingLocalization
+      description: 'Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of id in the URL.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-get?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsBannerLogo
       parameters:
         - name: organization-id
@@ -19282,7 +19782,7 @@ paths:
       tags:
         - organization.organization.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. However, security groups can''t be restored. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- group\n- servicePrincipal"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -19362,7 +19862,7 @@ paths:
       tags:
         - organization.organization.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:'
+      description: 'Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
@@ -20286,6 +20786,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -20546,6 +21047,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
+            dataSecurityAndGovernance:
+              $ref: '#/components/schemas/microsoft.graph.userDataSecurityAndGovernance'
             deviceManagementTroubleshootingEvents:
               type: array
               items:
@@ -20733,6 +21236,7 @@ components:
               nullable: true
             isMemberManagementRestricted:
               type: boolean
+              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. If not set, the default value is null and the default behavior is false. Use this property to define administrative units with roles that don''t inherit from tenant-level administrators, and where the management of individual member objects is limited to administrators scoped to a restricted management administrative unit. This property is immutable and can''t be changed later.  For more information on how to work with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.'
               nullable: true
             membershipRule:
               type: string
@@ -20789,7 +21293,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
+              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
             autoSubscribeNewMembers:
               type: boolean
               description: 'Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
@@ -20845,6 +21349,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isSubscribedByMail:
               type: boolean
@@ -21218,6 +21723,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
               nullable: true
             isRooted:
               type: boolean
@@ -21683,6 +22189,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronization'
               description: A container for on-premises directory synchronization functionalities that are available for the organization.
               x-ms-navigationProperty: true
+            publicKeyInfrastructure:
+              $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
             subscriptions:
               type: array
               items:
@@ -21750,7 +22258,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique. You can use the default value provided, which is in the form api://<appId>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
+              description: 'Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API''s code, and it must be globally unique across Microsoft Entra ID. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
@@ -22016,6 +22524,102 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationConfiguration'
             features:
               $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationFeature'
+          additionalProperties:
+            type: object
+    microsoft.graph.publicKeyInfrastructureRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: publicKeyInfrastructureRoot
+          type: object
+          properties:
+            certificateBasedAuthConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+              description: The collection of public key infrastructure instances for the certificate-based authentication feature for users.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.certificateBasedAuthPki:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: certificateBasedAuthPki
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the object. Maximum length is 256 characters.
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the object was created or last modified.
+              format: date-time
+            status:
+              type: string
+              description: The status of any asynchronous jobs runs on the object which can be upload or delete.
+              nullable: true
+            statusDetails:
+              type: string
+              description: The status details of the upload/deleted operation of PKI (Public Key Infrastructure).
+              nullable: true
+            certificateAuthorities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+              description: The collection of certificate authorities contained in this public key infrastructure resource.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.certificateAuthorityDetail:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: certificateAuthorityDetail
+          type: object
+          properties:
+            certificate:
+              type: string
+              description: The public key of the certificate authority.
+              format: base64url
+            certificateAuthorityType:
+              $ref: '#/components/schemas/microsoft.graph.certificateAuthorityType'
+            certificateRevocationListUrl:
+              type: string
+              description: The URL to check if the certificate is revoked.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the certificate authority was created.
+              format: date-time
+              nullable: true
+            deltaCertificateRevocationListUrl:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the certificate authority.
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the certificate authority expires. Supports $filter (eq) and $orderby.
+              format: date-time
+            isIssuerHintEnabled:
+              type: boolean
+              description: Indicates whether the certificate picker presents the certificate authority to the user to use for authentication. Default value is false. Optional.
+              nullable: true
+            issuer:
+              type: string
+              description: The issuer of the certificate authority.
+              nullable: true
+            issuerSubjectKeyIdentifier:
+              type: string
+              description: The subject key identifier of certificate authority.
+              nullable: true
+            thumbprint:
+              type: string
+              description: 'The thumbprint of certificate authority certificate. Supports $filter (eq, startswith).'
           additionalProperties:
             type: object
     microsoft.graph.companySubscription:
@@ -23088,6 +23692,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               description: The phone numbers registered to a user for authentication.
               x-ms-navigationProperty: true
+            platformCredentialMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
+              description: Represents a platform credential instance registered to a user on Mac OS.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -23242,6 +23852,11 @@ components:
               type: string
               description: The preview of the message associated with the event. It's in text format.
               nullable: true
+            cancelledOccurrences:
+              type: array
+              items:
+                type: string
+              description: 'Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Returned only on $select in a Get operation which specifies the ID (seriesMasterId property value) of a series master event.'
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
@@ -23360,6 +23975,12 @@ components:
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
+            exceptionOccurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.event'
+              description: 'Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don''t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.'
+              x-ms-navigationProperty: true
             extensions:
               type: array
               items:
@@ -23370,7 +23991,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn''t include occurrences cancelled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn''t include occurrences canceled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -23683,6 +24304,18 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userDataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
+        - title: userDataSecurityAndGovernance
+          type: object
+          properties:
+            activities:
+              $ref: '#/components/schemas/microsoft.graph.activitiesContainer'
+            protectionScopes:
+              $ref: '#/components/schemas/microsoft.graph.userProtectionScopeContainer'
           additionalProperties:
             type: object
     microsoft.graph.deviceManagementTroubleshootingEvent:
@@ -25904,6 +26537,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.certificateAuthorityType:
+      title: certificateAuthorityType
+      enum:
+        - root
+        - intermediate
+        - unknownFutureValue
+      type: string
     microsoft.graph.servicePlanInfo:
       title: servicePlanInfo
       type: object
@@ -26569,6 +27209,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.certificateBasedAuthPkiCollectionResponse:
+      title: Collection of certificateBasedAuthPki
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.certificateAuthorityDetailCollectionResponse:
+      title: Collection of certificateAuthorityDetail
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.companySubscriptionCollectionResponse:
       title: Collection of companySubscription
       type: object
@@ -27063,6 +27729,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
             smsSignInState:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+          additionalProperties:
+            type: object
+    microsoft.graph.platformCredentialAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: platformCredentialAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time that this Platform Credential Key was registered.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the device on which Platform Credential is registered.
+              nullable: true
+            keyStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodPlatform'
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
     microsoft.graph.softwareOathAuthenticationMethod:
@@ -27750,6 +28440,34 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.dataSecurityAndGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataSecurityAndGovernance
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.activitiesContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: activitiesContainer
+          type: object
+          properties:
+            contentActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentActivity'
+              description: Collection of activity logs related to content processing.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.userProtectionScopeContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userProtectionScopeContainer
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.baseItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31228,6 +31946,17 @@ components:
         - weak
         - unknown
       type: string
+    microsoft.graph.authenticationMethodPlatform:
+      title: authenticationMethodPlatform
+      enum:
+        - unknown
+        - windows
+        - macOS
+        - iOS
+        - android
+        - linux
+        - unknownFutureValue
+      type: string
     microsoft.graph.calendarRoleType:
       title: calendarRoleType
       enum:
@@ -31675,6 +32404,24 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.contentActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentActivity
+          type: object
+          properties:
+            contentMetadata:
+              $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+            scopeIdentifier:
+              type: string
+              description: The scope identified from computed protection scopes.
+              nullable: true
+            userId:
+              type: string
+              description: ID of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.itemReference:
       title: itemReference
       type: object
@@ -32283,7 +33030,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. Any value under 45 minutes after the time of the request is automatically set to 45 minutes after the request time. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -33228,21 +33975,21 @@ components:
             recipientActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time when the recipient approved or declined the request.
               format: date-time
               nullable: true
               readOnly: true
             recipientActionMessage:
               type: string
-              description: Custom message sent by recipient of the offer shift request.
+              description: The message sent by the recipient regarding the request.
               nullable: true
             recipientUserId:
               type: string
-              description: User ID of the recipient of the offer shift request.
+              description: The recipient's user ID.
               nullable: true
             senderShiftId:
               type: string
-              description: User ID of the sender of the offer shift request.
+              description: The sender's shift ID.
               nullable: true
           additionalProperties:
             type: object
@@ -33337,7 +34084,7 @@ components:
           properties:
             recipientShiftId:
               type: string
-              description: ShiftId for the recipient user with whom the request is to swap.
+              description: The recipient's Shift ID
               nullable: true
           additionalProperties:
             type: object
@@ -33401,13 +34148,13 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off ends in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: The date and time the time off starts in ISO 8601 format and in UTC time.
               format: date-time
               nullable: true
             timeOffReasonId:
@@ -34354,6 +35101,11 @@ components:
         - title: meetingAttendanceReport
           type: object
           properties:
+            externalEventInformation:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
+              description: The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
             meetingEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -35646,6 +36398,25 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.processContentRequest:
+      title: processContentRequest
+      type: object
+      properties:
+        activityMetadata:
+          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
+        contentEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
+          description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        integratedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        protectedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
+      additionalProperties:
+        type: object
     microsoft.graph.album:
       title: album
       type: object
@@ -36294,27 +37065,33 @@ components:
             managerActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             managerActionMessage:
               type: string
+              description: The message sent by the manager regarding the scheduleChangeRequest. Optional.
               nullable: true
             managerUserId:
               type: string
+              description: The user ID of the manager who approved or declined the scheduleChangeRequest.
               nullable: true
               readOnly: true
             senderDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
             senderMessage:
               type: string
+              description: The message sent by the sender of the scheduleChangeRequest. Optional.
               nullable: true
             senderUserId:
               type: string
+              description: The user ID of the sender of the scheduleChangeRequest.
               nullable: true
               readOnly: true
             state:
@@ -36913,6 +37690,20 @@ components:
         - invited
         - organizationExcludingGuests
       type: string
+    microsoft.graph.virtualEventExternalInformation:
+      title: virtualEventExternalInformation
+      type: object
+      properties:
+        applicationId:
+          type: string
+          description: Identifier of the application that hosts the externalEventId. Read-only.
+          nullable: true
+        externalEventId:
+          type: string
+          description: 'The identifier for a virtualEventExternalInformation object that associates the virtual event with an event ID in an external application. This association bundles all the information (both supported and not supported in virtualEvent) into one virtual event object. Optional. If set, the maximum supported length is 256 characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attendanceRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36928,8 +37719,14 @@ components:
               type: string
               description: Email address of the user associated with this attendance record.
               nullable: true
+            externalRegistrationInformation:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventExternalRegistrationInformation'
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrationId:
+              type: string
+              description: Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
+              nullable: true
             role:
               type: string
               description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
@@ -38691,6 +39488,95 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.activityMetadata:
+      title: activityMetadata
+      type: object
+      properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.userActivityType'
+      additionalProperties:
+        type: object
+    microsoft.graph.processContentMetadataBase:
+      title: processContentMetadataBase
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/microsoft.graph.contentBase'
+        correlationId:
+          type: string
+          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
+          format: date-time
+        identifier:
+          type: string
+          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
+        isTruncated:
+          type: boolean
+          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
+        length:
+          type: number
+          description: The length of the original content in bytes.
+          format: int64
+          nullable: true
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
+          format: date-time
+        name:
+          type: string
+          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
+        sequenceNumber:
+          type: number
+          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceMetadata:
+      title: deviceMetadata
+      type: object
+      properties:
+        deviceType:
+          type: string
+          description: 'Optional. The general type of the device (for example, ''Managed'', ''Unmanaged'').'
+          nullable: true
+        ipAddress:
+          type: string
+          description: The Internet Protocol (IP) address of the device.
+          nullable: true
+        operatingSystemSpecifications:
+          $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
+      additionalProperties:
+        type: object
+    microsoft.graph.integratedApplicationMetadata:
+      title: integratedApplicationMetadata
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the integrated application.
+          nullable: true
+        version:
+          type: string
+          description: The version number of the integrated application.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectedApplicationMetadata:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        - title: protectedApplicationMetadata
+          type: object
+          properties:
+            applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          additionalProperties:
+            type: object
     microsoft.graph.documentSetVersionItem:
       title: documentSetVersionItem
       type: object
@@ -39051,6 +39937,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventExternalRegistrationInformation:
+      title: virtualEventExternalRegistrationInformation
+      type: object
+      properties:
+        referrer:
+          type: string
+          description: A URL or string that represents the location from which the registrant registered. Optional.
+          nullable: true
+        registrationId:
+          type: string
+          description: 'The identifier for a virtualEventExternalRegistrationInformation object. Optional. If set, the maximum supported length is 256 characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.storageQuotaBreakdown:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -39337,6 +40237,41 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.userActivityType:
+      title: userActivityType
+      enum:
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+      type: string
+    microsoft.graph.contentBase:
+      title: contentBase
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.operatingSystemSpecifications:
+      title: operatingSystemSpecifications
+      type: object
+      properties:
+        operatingSystemPlatform:
+          type: string
+          description: 'The platform of the operating system (for example, ''Windows'').'
+        operatingSystemVersion:
+          type: string
+          description: The version string of the operating system.
+      additionalProperties:
+        type: object
+    microsoft.graph.policyLocation:
+      title: policyLocation
+      type: object
+      properties:
+        value:
+          type: string
+          description: 'The actual value representing the location. Location value is specific for concretetype of the  policyLocation - policyLocationDomain, policyLocationUrl, or policyLocationApplication (for example, ''contoso.com'', ''https://partner.contoso.com/upload'', ''83ef198a-0396-4893-9d4f-d36efbffcaaa'').'
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -39510,37 +40445,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Represents the worksheet protection option of allowing using auto filter feature.
+          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
         allowDeleteColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting columns.
+          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
         allowDeleteRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing deleting rows.
+          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
         allowFormatCells:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting cells.
+          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
         allowFormatColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting columns.
+          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
         allowFormatRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing formatting rows.
+          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
         allowInsertColumns:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting columns.
+          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
         allowInsertHyperlinks:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting hyperlinks.
+          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
         allowInsertRows:
           type: boolean
-          description: Represents the worksheet protection option of allowing inserting rows.
+          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
         allowPivotTables:
           type: boolean
-          description: Represents the worksheet protection option of allowing using pivot table feature.
+          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
         allowSort:
           type: boolean
-          description: Represents the worksheet protection option of allowing using sort feature.
+          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:
@@ -40276,6 +41211,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationCollectionResponse'
+    microsoft.graph.certificateBasedAuthPkiCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPkiCollectionResponse'
+    microsoft.graph.certificateAuthorityDetailCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetailCollectionResponse'
     microsoft.graph.companySubscriptionCollectionResponse:
       description: Retrieved collection
       content:

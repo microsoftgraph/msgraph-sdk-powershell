@@ -737,6 +737,99 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /auditLogs/signIns/microsoft.graph.confirmCompromised:
+    post:
+      tags:
+        - auditLogs.signIn
+      summary: Invoke action confirmCompromised
+      description: 'Mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-1.0
+      operationId: auditLog.signIn_confirmCompromised
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /auditLogs/signIns/microsoft.graph.confirmSafe:
+    post:
+      tags:
+        - auditLogs.signIn
+      summary: Invoke action confirmSafe
+      description: 'Mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-1.0
+      operationId: auditLog.signIn_confirmSafe
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /auditLogs/signIns/microsoft.graph.dismiss:
+    post:
+      tags:
+        - auditLogs.signIn
+      summary: Invoke action dismiss
+      description: 'Mark an event in Microsoft Entra sign-in logs as dismissed. For details about investigating Identity Protection risks, see How to investigate risk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/signin-dismiss?view=graph-rest-1.0
+      operationId: auditLog.signIn_dismiss
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports:
     get:
       tags:
@@ -7908,6 +8001,116 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /reports/partners/billing/reconciliation/unbilled:
+    get:
+      tags:
+        - reports.partners
+      summary: Get unbilled from reports
+      operationId: report.partner.billing.reconciliation_GetUnbilled
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.partners
+      summary: Update the navigation property unbilled in reports
+      operationId: report.partner.billing.reconciliation_UpdateUnbilled
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.partners
+      summary: Delete navigation property unbilled for reports
+      operationId: report.partner.billing.reconciliation_DeleteUnbilled
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/partners/billing/reconciliation/unbilled/microsoft.graph.partners.billing.export:
+    post:
+      tags:
+        - reports.partners
+      summary: Invoke action export
+      operationId: report.partner.billing.reconciliation.unbilled_export
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                currencyCode:
+                  type: string
+                  nullable: true
+                billingPeriod:
+                  $ref: '#/components/schemas/microsoft.graph.partners.billing.billingPeriod'
+                attributeSet:
+                  $ref: '#/components/schemas/microsoft.graph.partners.billing.attributeSet'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.operation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /reports/partners/billing/usage:
     get:
       tags:
@@ -9112,6 +9315,8 @@ components:
           properties:
             billed:
               $ref: '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
+            unbilled:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
           additionalProperties:
             type: object
     microsoft.graph.partners.billing.billedReconciliation:
@@ -9126,6 +9331,20 @@ components:
       enum:
         - full
         - basic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.partners.billing.unbilledReconciliation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unbilledReconciliation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.partners.billing.billingPeriod:
+      title: billingPeriod
+      enum:
+        - current
+        - last
         - unknownFutureValue
       type: string
     microsoft.graph.partners.billing.azureUsage:
@@ -9154,13 +9373,6 @@ components:
           type: object
           additionalProperties:
             type: object
-    microsoft.graph.partners.billing.billingPeriod:
-      title: billingPeriod
-      enum:
-        - current
-        - last
-        - unknownFutureValue
-      type: string
     microsoft.graph.securityReportsRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

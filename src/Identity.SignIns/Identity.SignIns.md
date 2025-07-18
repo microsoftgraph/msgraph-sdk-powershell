@@ -47,6 +47,11 @@ directive:
       subject: ^IdentityConditionalAccessAuthenticationStrength.*$
       variant: ^List$|Get$|GetViaIdentity$|Update$|UpdateExpanded$|UpdateViaIdentity$|UpdateViaIdentityExpanded$|Create$|CreateExpanded$|Delete$|DeleteViaIdentity$|Usage$|UsageViaIdentity$|Find$|FindViaIdentity$
     remove: true
+  - where:
+      verb: Update
+      subject: ^IdentityProvider$
+      variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
+    remove: true
 # Removes the response content since the Patch operation returns http status code 204
   - where-operation-id: "policy_UpdateClaimsMappingPolicy"
     remove: $.responses["2XX"].content
