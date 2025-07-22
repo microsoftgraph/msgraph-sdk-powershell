@@ -12855,6 +12855,195 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /security/dataSecurityAndGovernance/policyFiles:
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get policyFiles from security
+      operationId: security.dataSecurityAndGovernance_ListPolicyFile
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.policyFileCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Create new navigation property to policyFiles for security
+      operationId: security.dataSecurityAndGovernance_CreatePolicyFile
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.policyFile'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policyFile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/dataSecurityAndGovernance/policyFiles/{policyFile-id}':
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get policyFiles from security
+      operationId: security.dataSecurityAndGovernance_GetPolicyFile
+      parameters:
+        - name: policyFile-id
+          in: path
+          description: The unique identifier of policyFile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyFile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policyFile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Update the navigation property policyFiles in security
+      operationId: security.dataSecurityAndGovernance_UpdatePolicyFile
+      parameters:
+        - name: policyFile-id
+          in: path
+          description: The unique identifier of policyFile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyFile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.policyFile'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policyFile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Delete navigation property policyFiles for security
+      operationId: security.dataSecurityAndGovernance_DeletePolicyFile
+      parameters:
+        - name: policyFile-id
+          in: path
+          description: The unique identifier of policyFile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyFile
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/dataSecurityAndGovernance/policyFiles/$count:
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get the number of the resource
+      operationId: security.dataSecurityAndGovernance.policyFile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/dataSecurityAndGovernance/protectionScopes:
     get:
       tags:
@@ -14747,6 +14936,236 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/identities/identityAccounts:
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get identityAccounts from security
+      operationId: security.identity_ListIdentityAccount
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.identityAccountsCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.identityContainer
+      summary: Create new navigation property to identityAccounts for security
+      operationId: security.identity_CreateIdentityAccount
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/identityAccounts/{identityAccounts-id}':
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get identityAccounts from security
+      operationId: security.identity_GetIdentityAccount
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.identityContainer
+      summary: Update the navigation property identityAccounts in security
+      operationId: security.identity_UpdateIdentityAccount
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.identityContainer
+      summary: Delete navigation property identityAccounts for security
+      operationId: security.identity_DeleteIdentityAccount
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/identityAccounts/{identityAccounts-id}/microsoft.graph.security.invokeAction':
+    post:
+      tags:
+        - security.identityContainer
+      summary: Invoke action invokeAction
+      operationId: security.identity.identityAccount_invokeAction
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountId:
+                  type: string
+                action:
+                  $ref: '#/components/schemas/microsoft.graph.security.action'
+                identityProvider:
+                  $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.invokeActionResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /security/identities/identityAccounts/$count:
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get the number of the resource
+      operationId: security.identity.identityAccount_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/identities/sensors:
     get:
       tags:
@@ -15556,6 +15975,261 @@ paths:
         - security.incident
       summary: Get the number of the resource
       operationId: security.incident_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/incidentTasks:
+    get:
+      tags:
+        - security.incidentTask
+      summary: Get incidentTasks from security
+      operationId: security_ListIncidentTask
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.incidentTaskCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.incidentTask
+      summary: Create new navigation property to incidentTasks for security
+      operationId: security_CreateIncidentTask
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/incidentTasks/{incidentTask-id}':
+    get:
+      tags:
+        - security.incidentTask
+      summary: Get incidentTasks from security
+      operationId: security_GetIncidentTask
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.incidentTask
+      summary: Update the navigation property incidentTasks in security
+      operationId: security_UpdateIncidentTask
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.incidentTask
+      summary: Delete navigation property incidentTasks for security
+      operationId: security_DeleteIncidentTask
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/incidentTasks/{incidentTask-id}/incident':
+    get:
+      tags:
+        - security.incidentTask
+      summary: Get incident from security
+      operationId: security.incidentTask_GetIncident
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incident'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/incidentTasks/{incidentTask-id}/microsoft.graph.security.executeResponseAction':
+    post:
+      tags:
+        - security.incidentTask
+      summary: Invoke action executeResponseAction
+      operationId: security.incidentTask_executeResponseAction
+      parameters:
+        - name: incidentTask-id
+          in: path
+          description: The unique identifier of incidentTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incidentTask
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /security/incidentTasks/$count:
+    get:
+      tags:
+        - security.incidentTask
+      summary: Get the number of the resource
+      operationId: security.incidentTask_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -31862,6 +32536,11 @@ components:
             $ref: '#/components/schemas/microsoft.graph.security.incident'
           description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
           x-ms-navigationProperty: true
+        incidentTasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
+          x-ms-navigationProperty: true
         informationProtection:
           $ref: '#/components/schemas/microsoft.graph.security.informationProtection'
         ipSecurityProfiles:
@@ -34601,6 +35280,11 @@ components:
         - title: tenantDataSecurityAndGovernance
           type: object
           properties:
+            policyFiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.policyFile'
+              x-ms-navigationProperty: true
             protectionScopes:
               $ref: '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
           additionalProperties:
@@ -34633,6 +35317,24 @@ components:
           $ref: '#/components/schemas/microsoft.graph.processContentResponse'
       additionalProperties:
         type: object
+    microsoft.graph.policyFile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: policyFile
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            fileType:
+              $ref: '#/components/schemas/microsoft.graph.policyFileType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.policyFileStatus'
+            version:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.tenantProtectionScopeContainer:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -34721,12 +35423,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -34751,10 +35447,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -35095,6 +35787,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
               description: Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
               x-ms-navigationProperty: true
+            identityAccounts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+              x-ms-navigationProperty: true
             sensors:
               type: array
               items:
@@ -35165,6 +35862,66 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.healthIssueStatus'
           additionalProperties:
             type: object
+    microsoft.graph.security.identityAccounts:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityAccounts
+          type: object
+          properties:
+            accounts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.account'
+            cloudSecurityIdentifier:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            domain:
+              type: string
+              nullable: true
+            isEnabled:
+              type: boolean
+            onPremisesSecurityIdentifier:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.action:
+      title: action
+      enum:
+        - disable
+        - enable
+        - forcePasswordReset
+        - revokeAllSessions
+        - requireUserToSignInAgain
+        - markUserAsCompromised
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.identityProvider:
+      title: identityProvider
+      enum:
+        - entraID
+        - activeDirectory
+        - okta
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.invokeActionResult:
+      title: invokeActionResult
+      type: object
+      properties:
+        accountId:
+          type: string
+        action:
+          $ref: '#/components/schemas/microsoft.graph.security.action'
+        correlationId:
+          type: string
+          nullable: true
+        identityProvider:
+          $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
+      additionalProperties:
+        type: object
     microsoft.graph.security.sensor:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -35318,6 +36075,42 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.security.alert'
               description: The list of related alerts. Supports $expand.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.incidentTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: incidentTask
+          type: object
+          properties:
+            actionStatus:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskActionStatus'
+            actionType:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskActionType'
+            createdByDisplayName:
+              type: string
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+            displayName:
+              type: string
+            lastModifiedByDisplayName:
+              type: string
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            responseAction:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskResponseAction'
+            source:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskSource'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskStatus'
+            incident:
+              $ref: '#/components/schemas/microsoft.graph.security.incident'
           additionalProperties:
             type: object
     microsoft.graph.security.informationProtection:
@@ -42478,6 +43271,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.protectionScopeState'
       additionalProperties:
         type: object
+    microsoft.graph.policyFileType:
+      title: policyFileType
+      enum:
+        - dlpPolicy
+        - dlpSensitiveInformationType
+        - dataCollectionPolicy
+        - unknownFutureValue
+      type: string
+    microsoft.graph.policyFileStatus:
+      title: policyFileStatus
+      enum:
+        - modified
+        - notModified
+        - noContent
+        - unknownFutureValue
+      type: string
     microsoft.graph.operatingSystemSpecifications:
       title: operatingSystemSpecifications
       type: object
@@ -42553,45 +43362,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRights:
       title: usageRights
       enum:
@@ -42633,6 +43403,8 @@ components:
               type: string
               description: The content format.
               nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
             label:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
           additionalProperties:
@@ -42833,6 +43605,20 @@ components:
         - suppressed
         - unknownFutureValue
       type: string
+    microsoft.graph.security.account:
+      title: account
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.action'
+        identifier:
+          type: string
+        identityProvider:
+          $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
+      additionalProperties:
+        type: object
     microsoft.graph.security.deploymentStatus:
       title: deploymentStatus
       enum:
@@ -42910,6 +43696,64 @@ components:
         - redirected
         - unknownFutureValue
         - awaitingAction
+      type: string
+    microsoft.graph.security.incidentTaskActionStatus:
+      title: incidentTaskActionStatus
+      enum:
+        - notStarted
+        - inProgress
+        - partiallyCompleted
+        - completed
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.incidentTaskActionType:
+      title: incidentTaskActionType
+      enum:
+        - text
+        - isolateDevice
+        - stopAndQuarantineFile
+        - runAntiVirusScan
+        - collectInvestigationPackage
+        - restrictAppExecution
+        - submitIocRule
+        - forceUserPasswordReset
+        - disableUser
+        - markUserAsCompromised
+        - requireSignIn
+        - hardDeleteEmail
+        - softDeleteEmail
+        - unIsolateDevice
+        - unRestrictAppExecution
+        - enableUser
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.incidentTaskResponseAction:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.security.responseAction'
+        - title: incidentTaskResponseAction
+          type: object
+          properties:
+            identifierValue:
+              type: string
+          additionalProperties:
+            type: object
+    microsoft.graph.security.incidentTaskSource:
+      title: incidentTaskSource
+      enum:
+        - defenderExpertsGuidedResponse
+        - defenderExpertsManagedResponse
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.incidentTaskStatus:
+      title: incidentTaskStatus
+      enum:
+        - open
+        - inProgress
+        - completed
+        - failed
+        - notRelevant
+        - unknownFutureValue
       type: string
     microsoft.graph.security.keyValuePair:
       title: keyValuePair
@@ -43446,11 +44290,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -45965,7 +46809,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -46169,7 +47013,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -48534,6 +49378,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.policyFileCollectionResponse:
+      title: Collection of policyFile
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.policyFile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sensitivityLabelCollectionResponse:
       title: Collection of sensitivityLabel
       type: object
@@ -48599,6 +49456,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.identityAccountsCollectionResponse:
+      title: Collection of identityAccounts
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.security.sensorCollectionResponse:
       title: Collection of sensor
       type: object
@@ -48620,6 +49490,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.incident'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.incidentTaskCollectionResponse:
+      title: Collection of incidentTask
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.incidentTask'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -51861,6 +52744,11 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.security.responseAction:
+      title: responseAction
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.security.filePlanDescriptorBase:
       title: filePlanDescriptorBase
       type: object
@@ -51934,11 +52822,6 @@ components:
           description: List of groups to which the custom detection rule applies.
         scopeType:
           $ref: '#/components/schemas/microsoft.graph.security.scopeType'
-      additionalProperties:
-        type: object
-    microsoft.graph.security.responseAction:
-      title: responseAction
-      type: object
       additionalProperties:
         type: object
     microsoft.graph.security.huntingRuleErrorCode:
@@ -62602,13 +63485,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -63813,11 +64696,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -64087,6 +64970,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEvent:
@@ -64221,6 +65109,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -65788,6 +66677,16 @@ components:
           type: string
           description: The date and time the inner error occurred.
           format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.labelActionBase:
+      title: labelActionBase
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
           nullable: true
       additionalProperties:
         type: object
@@ -67765,6 +68664,17 @@ components:
             webUrl:
               type: string
               description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -71779,6 +72689,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.cloudAppDiscoveryReportCollectionResponse'
+    microsoft.graph.policyFileCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.policyFileCollectionResponse'
     microsoft.graph.sensitivityLabelCollectionResponse:
       description: Retrieved collection
       content:
@@ -71809,6 +72725,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.healthIssueCollectionResponse'
+    microsoft.graph.security.identityAccountsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.identityAccountsCollectionResponse'
     microsoft.graph.security.sensorCollectionResponse:
       description: Retrieved collection
       content:
@@ -71821,6 +72743,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.incidentCollectionResponse'
+    microsoft.graph.security.incidentTaskCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.incidentTaskCollectionResponse'
     microsoft.graph.security.sensitivityLabelCollectionResponse:
       description: Retrieved collection
       content:

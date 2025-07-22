@@ -18845,6 +18845,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.attachmentBase:
@@ -21492,7 +21497,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -21696,7 +21701,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23941,11 +23946,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -24064,6 +24069,17 @@ components:
         - flaggedEmails
         - unknownFutureValue
       type: string
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     ReferenceUpdate:
       type: object
       properties:
@@ -26946,12 +26962,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -26976,10 +26986,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -31161,11 +31167,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -34665,45 +34671,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRightsIncluded:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36282,13 +36249,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -37874,6 +37841,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
