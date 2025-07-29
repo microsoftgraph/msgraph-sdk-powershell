@@ -4401,8 +4401,11 @@ paths:
     get:
       tags:
         - networkAccess.filteringProfile
-      summary: Get policies from networkAccess
-      description: The traffic forwarding policies associated with this profile.
+      summary: List tlsInspectionPolicyLink objects
+      description: Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-list?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_ListPolicy
       parameters:
         - name: filteringProfile-id
@@ -4460,7 +4463,11 @@ paths:
     post:
       tags:
         - networkAccess.filteringProfile
-      summary: Create new navigation property to policies for networkAccess
+      summary: Create tlsInspectionPolicyLink
+      description: Create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-post?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_CreatePolicy
       parameters:
         - name: filteringProfile-id
@@ -4492,8 +4499,11 @@ paths:
     get:
       tags:
         - networkAccess.filteringProfile
-      summary: Get policies from networkAccess
-      description: The traffic forwarding policies associated with this profile.
+      summary: Get tlsInspectionPolicyLink
+      description: Get a tlsInspectionPolicyLink object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-get?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_GetPolicy
       parameters:
         - name: filteringProfile-id
@@ -4545,7 +4555,11 @@ paths:
     patch:
       tags:
         - networkAccess.filteringProfile
-      summary: Update the navigation property policies in networkAccess
+      summary: Update tlsInspectionPolicyLink
+      description: Update the properties of a tlsInspectionPolicyLink object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-update?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_UpdatePolicy
       parameters:
         - name: filteringProfile-id
@@ -4584,7 +4598,11 @@ paths:
     delete:
       tags:
         - networkAccess.filteringProfile
-      summary: Delete navigation property policies for networkAccess
+      summary: Delete tlsInspectionPolicyLink
+      description: Delete a tlsInspectionPolicyLink object. Used to unlink a tlsInspectionPolicy from a filtering profile.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-delete?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_DeletePolicy
       parameters:
         - name: filteringProfile-id
@@ -4619,8 +4637,11 @@ paths:
     get:
       tags:
         - networkAccess.filteringProfile
-      summary: Get policy from networkAccess
-      description: Policy.
+      summary: List threatIntelligencePolicies for a filteringProfile
+      description: Get a list of threatIntelligencePolicy objects associated with a threat intelligence policy link.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-list-policy?view=graph-rest-beta
       operationId: networkAccess.filteringProfile.policy_GetPolicy
       parameters:
         - name: filteringProfile-id
@@ -7732,83 +7753,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /networkAccess/settings/enrichedAuditLogs:
-    get:
-      tags:
-        - networkAccess.settings
-      summary: Get enrichedAuditLogs from networkAccess
-      operationId: networkAccess.setting_GetEnrichedAuditLog
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.networkaccess.enrichedAuditLogs'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - networkAccess.settings
-      summary: Update the navigation property enrichedAuditLogs in networkAccess
-      operationId: networkAccess.setting_UpdateEnrichedAuditLog
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.networkaccess.enrichedAuditLogs'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.networkaccess.enrichedAuditLogs'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - networkAccess.settings
-      summary: Delete navigation property enrichedAuditLogs for networkAccess
-      operationId: networkAccess.setting_DeleteEnrichedAuditLog
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /networkAccess/settings/forwardingOptions:
     get:
       tags:
@@ -7979,7 +7923,11 @@ paths:
     get:
       tags:
         - networkAccess.threatIntelligencePolicy
-      summary: Get threatIntelligencePolicies from networkAccess
+      summary: List threatIntelligencePolicy objects
+      description: Get a list of the threatIntelligencePolicy objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-threatintelligencepolicies?view=graph-rest-beta
       operationId: networkAccess_ListThreatIntelligencePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8029,7 +7977,11 @@ paths:
     post:
       tags:
         - networkAccess.threatIntelligencePolicy
-      summary: Create new navigation property to threatIntelligencePolicies for networkAccess
+      summary: Create threatIntelligencePolicy
+      description: Create a new threatIntelligencePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-post-threatintelligencepolicies?view=graph-rest-beta
       operationId: networkAccess_CreateThreatIntelligencePolicy
       requestBody:
         description: New navigation property
@@ -8052,7 +8004,11 @@ paths:
     get:
       tags:
         - networkAccess.threatIntelligencePolicy
-      summary: Get threatIntelligencePolicies from networkAccess
+      summary: Get threatIntelligencePolicy
+      description: Read the properties and relationships of a threatIntelligencePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicy-get?view=graph-rest-beta
       operationId: networkAccess_GetThreatIntelligencePolicy
       parameters:
         - name: threatIntelligencePolicy-id
@@ -8096,7 +8052,11 @@ paths:
     patch:
       tags:
         - networkAccess.threatIntelligencePolicy
-      summary: Update the navigation property threatIntelligencePolicies in networkAccess
+      summary: Update threatIntelligencePolicy
+      description: Update the properties of a threatIntelligencePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicy-update?view=graph-rest-beta
       operationId: networkAccess_UpdateThreatIntelligencePolicy
       parameters:
         - name: threatIntelligencePolicy-id
@@ -8127,7 +8087,11 @@ paths:
     delete:
       tags:
         - networkAccess.threatIntelligencePolicy
-      summary: Delete navigation property threatIntelligencePolicies for networkAccess
+      summary: Delete threatIntelligencePolicy
+      description: Delete a threatIntelligencePolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-delete-threatintelligencepolicies?view=graph-rest-beta
       operationId: networkAccess_DeleteThreatIntelligencePolicy
       parameters:
         - name: threatIntelligencePolicy-id
@@ -8404,6 +8368,760 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /networkAccess/tls:
+    get:
+      tags:
+        - networkAccess.tlsTermination
+      summary: Get tls from networkAccess
+      description: A container for tenant-level TLS inspection settings for Global Secure Access.
+      operationId: networkAccess_GetTl
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsTermination'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - networkAccess.tlsTermination
+      summary: Update the navigation property tls in networkAccess
+      operationId: networkAccess_UpdateTl
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsTermination'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsTermination'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - networkAccess.tlsTermination
+      summary: Delete navigation property tls for networkAccess
+      operationId: networkAccess_DeleteTl
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /networkAccess/tls/externalCertificateAuthorityCertificates:
+    get:
+      tags:
+        - networkAccess.tlsTermination
+      summary: List externalCertificateAuthorityCertificate objects
+      description: Get a list of the externalCertificateAuthorityCertificate objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlstermination-list-externalcertificateauthoritycertificates?view=graph-rest-beta
+      operationId: networkAccess.tl_ListExternalCertificateAuthorityCertificate
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.networkaccess.externalCertificateAuthorityCertificateCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - networkAccess.tlsTermination
+      summary: Create externalCertificateAuthorityCertificate
+      description: Create a new externalCertificateAuthorityCertificate object. This request generates the Certificate Signing Request (CSR) that you download to sign and generate a certificate that you upload to the service using the Update externalCertificateAuthorityCertificate operation.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlstermination-post-externalcertificateauthoritycertificates?view=graph-rest-beta
+      operationId: networkAccess.tl_CreateExternalCertificateAuthorityCertificate
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.externalCertificateAuthorityCertificate'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.externalCertificateAuthorityCertificate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/tls/externalCertificateAuthorityCertificates/{externalCertificateAuthorityCertificate-id}':
+    get:
+      tags:
+        - networkAccess.tlsTermination
+      summary: Get externalCertificateAuthorityCertificate
+      description: Get a externalCertificateAuthorityCertificate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-externalcertificateauthoritycertificate-get?view=graph-rest-beta
+      operationId: networkAccess.tl_GetExternalCertificateAuthorityCertificate
+      parameters:
+        - name: externalCertificateAuthorityCertificate-id
+          in: path
+          description: The unique identifier of externalCertificateAuthorityCertificate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalCertificateAuthorityCertificate
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.externalCertificateAuthorityCertificate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - networkAccess.tlsTermination
+      summary: Update externalCertificateAuthorityCertificate
+      description: Update the properties of an externalCertificateAuthorityCertificate object. This can be used by a GSA admin to upload the generated certificate for GSA. The certificate is generated by signing the downloaded CSR with the customer's PKI.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-externalcertificateauthoritycertificate-update?view=graph-rest-beta
+      operationId: networkAccess.tl_UpdateExternalCertificateAuthorityCertificate
+      parameters:
+        - name: externalCertificateAuthorityCertificate-id
+          in: path
+          description: The unique identifier of externalCertificateAuthorityCertificate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalCertificateAuthorityCertificate
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.externalCertificateAuthorityCertificate'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.externalCertificateAuthorityCertificate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - networkAccess.tlsTermination
+      summary: Delete externalCertificateAuthorityCertificate
+      description: Delete an externalCertificateAuthorityCertificate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-externalcertificateauthoritycertificate-delete?view=graph-rest-beta
+      operationId: networkAccess.tl_DeleteExternalCertificateAuthorityCertificate
+      parameters:
+        - name: externalCertificateAuthorityCertificate-id
+          in: path
+          description: The unique identifier of externalCertificateAuthorityCertificate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalCertificateAuthorityCertificate
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /networkAccess/tls/externalCertificateAuthorityCertificates/$count:
+    get:
+      tags:
+        - networkAccess.tlsTermination
+      summary: Get the number of the resource
+      operationId: networkAccess.tl.externalCertificateAuthorityCertificate_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /networkAccess/tlsInspectionPolicies:
+    get:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: List tlsInspectionPolicy objects
+      description: Get a list of the tlsInspectionPolicy objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-tlsinspectionpolicies?view=graph-rest-beta
+      operationId: networkAccess_ListTlsInspectionPolicy
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.networkaccess.tlsInspectionPolicyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Create tlsInspectionPolicy
+      description: Create a new tlsInspectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-post-tlsinspectionpolicies?view=graph-rest-beta
+      operationId: networkAccess_CreateTlsInspectionPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsInspectionPolicy'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsInspectionPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/tlsInspectionPolicies/{tlsInspectionPolicy-id}':
+    get:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Get tlsInspectionPolicy
+      description: Get a tlsInspectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicy-get?view=graph-rest-beta
+      operationId: networkAccess_GetTlsInspectionPolicy
+      parameters:
+        - name: tlsInspectionPolicy-id
+          in: path
+          description: The unique identifier of tlsInspectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tlsInspectionPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsInspectionPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Update tlsInspectionPolicy
+      description: Update the properties of a tlsInspectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicy-update?view=graph-rest-beta
+      operationId: networkAccess_UpdateTlsInspectionPolicy
+      parameters:
+        - name: tlsInspectionPolicy-id
+          in: path
+          description: The unique identifier of tlsInspectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tlsInspectionPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsInspectionPolicy'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsInspectionPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Delete tlsInspectionPolicy
+      description: Delete a tlsInspectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicy-delete?view=graph-rest-beta
+      operationId: networkAccess_DeleteTlsInspectionPolicy
+      parameters:
+        - name: tlsInspectionPolicy-id
+          in: path
+          description: The unique identifier of tlsInspectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tlsInspectionPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/tlsInspectionPolicies/{tlsInspectionPolicy-id}/policyRules':
+    get:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: List policyRules for TLS Inspection
+      description: Get a list of the tlsInspectionRule objects in a tlsInspectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicy-list-policyrules?view=graph-rest-beta
+      operationId: networkAccess.tlsInspectionPolicy_ListPolicyRule
+      parameters:
+        - name: tlsInspectionPolicy-id
+          in: path
+          description: The unique identifier of tlsInspectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tlsInspectionPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.networkaccess.policyRuleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Create tlsInspectionRule
+      description: Create a new tlsInspectionRule object in a tlsInspectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicy-post-policyrules?view=graph-rest-beta
+      operationId: networkAccess.tlsInspectionPolicy_CreatePolicyRule
+      parameters:
+        - name: tlsInspectionPolicy-id
+          in: path
+          description: The unique identifier of tlsInspectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tlsInspectionPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/tlsInspectionPolicies/{tlsInspectionPolicy-id}/policyRules/{policyRule-id}':
+    get:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Get tlsInspectionRule
+      description: Get a tlsInspectionRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionrule-get?view=graph-rest-beta
+      operationId: networkAccess.tlsInspectionPolicy_GetPolicyRule
+      parameters:
+        - name: tlsInspectionPolicy-id
+          in: path
+          description: The unique identifier of tlsInspectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tlsInspectionPolicy
+        - name: policyRule-id
+          in: path
+          description: The unique identifier of policyRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyRule
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Update tlsInspectionRule
+      description: Update the properties of a tlsInspectionRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionrule-update?view=graph-rest-beta
+      operationId: networkAccess.tlsInspectionPolicy_UpdatePolicyRule
+      parameters:
+        - name: tlsInspectionPolicy-id
+          in: path
+          description: The unique identifier of tlsInspectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tlsInspectionPolicy
+        - name: policyRule-id
+          in: path
+          description: The unique identifier of policyRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyRule
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Delete tlsInspectionRule
+      description: Delete a tlsInspectionRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionrule-delete?view=graph-rest-beta
+      operationId: networkAccess.tlsInspectionPolicy_DeletePolicyRule
+      parameters:
+        - name: tlsInspectionPolicy-id
+          in: path
+          description: The unique identifier of tlsInspectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tlsInspectionPolicy
+        - name: policyRule-id
+          in: path
+          description: The unique identifier of policyRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyRule
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/tlsInspectionPolicies/{tlsInspectionPolicy-id}/policyRules/$count':
+    get:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Get the number of the resource
+      operationId: networkAccess.tlsInspectionPolicy.policyRule_GetCount
+      parameters:
+        - name: tlsInspectionPolicy-id
+          in: path
+          description: The unique identifier of tlsInspectionPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tlsInspectionPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /networkAccess/tlsInspectionPolicies/$count:
+    get:
+      tags:
+        - networkAccess.tlsInspectionPolicy
+      summary: Get the number of the resource
+      operationId: networkAccess.tlsInspectionPolicy_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.networkaccess.networkAccessRoot:
@@ -8435,13 +9153,11 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.networkaccess.forwardingPolicy'
-              description: A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
               x-ms-navigationProperty: true
             forwardingProfiles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.networkaccess.forwardingProfile'
-              description: A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
               x-ms-navigationProperty: true
             logs:
               $ref: '#/components/schemas/microsoft.graph.networkaccess.logs'
@@ -8455,6 +9171,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.networkaccess.threatIntelligencePolicy'
+              x-ms-navigationProperty: true
+            tls:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsTermination'
+            tlsInspectionPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsInspectionPolicy'
+              description: Allows you to configure TLS termination for your organization's network traffic through Global Secure Access.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -10925,8 +11649,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.networkaccess.conditionalAccessSettings'
             crossTenantAccess:
               $ref: '#/components/schemas/microsoft.graph.networkaccess.crossTenantAccessSettings'
-            enrichedAuditLogs:
-              $ref: '#/components/schemas/microsoft.graph.networkaccess.enrichedAuditLogs'
             forwardingOptions:
               $ref: '#/components/schemas/microsoft.graph.networkaccess.forwardingOptions'
           additionalProperties:
@@ -10949,20 +11671,6 @@ components:
           properties:
             networkPacketTaggingStatus:
               $ref: '#/components/schemas/microsoft.graph.networkaccess.status'
-          additionalProperties:
-            type: object
-    microsoft.graph.networkaccess.enrichedAuditLogs:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: enrichedAuditLogs
-          type: object
-          properties:
-            exchange:
-              $ref: '#/components/schemas/microsoft.graph.networkaccess.enrichedAuditLogsSettings'
-            sharepoint:
-              $ref: '#/components/schemas/microsoft.graph.networkaccess.enrichedAuditLogsSettings'
-            teams:
-              $ref: '#/components/schemas/microsoft.graph.networkaccess.enrichedAuditLogsSettings'
           additionalProperties:
             type: object
     microsoft.graph.networkaccess.forwardingOptions:
@@ -10998,9 +11706,72 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the policy was last modified.
               format: date-time
             settings:
               $ref: '#/components/schemas/microsoft.graph.networkaccess.threatIntelligencePolicySettings'
+          additionalProperties:
+            type: object
+    microsoft.graph.networkaccess.tlsTermination:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tlsTermination
+          type: object
+          properties:
+            externalCertificateAuthorityCertificates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.externalCertificateAuthorityCertificate'
+              description: List of customer's Certificate Authority (CA) certificates used for TLS inspection in Global Secure Access
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.networkaccess.externalCertificateAuthorityCertificate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: externalCertificateAuthorityCertificate
+          type: object
+          properties:
+            certificate:
+              type: string
+              description: The signed X.509 certificate in PEM format.
+              nullable: true
+            certificateSigningRequest:
+              type: string
+              description: The Certificate Signing Request (CSR) generated when creating the CA. This CSR should be signed using the customer's PKI infrastructure. Read-only.
+              nullable: true
+            chain:
+              type: string
+              description: 'The certificate chain in PEM format, containing all intermediate certificates up to the root CA.'
+              nullable: true
+            commonName:
+              type: string
+              description: 'The common name (CN) field of the certificate. Supports $filter (eq, ne, startsWith)'
+            name:
+              type: string
+              description: 'The display name of the CA. Supports $filter (eq, ne, startsWith)'
+            organizationName:
+              type: string
+              description: 'The organization name (OU) field of the certificate. Supports $filter (eq, ne, startsWith)'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsCertificateStatus'
+            validity:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.validityDate'
+          additionalProperties:
+            type: object
+    microsoft.graph.networkaccess.tlsInspectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.networkaccess.policy'
+        - title: tlsInspectionPolicy
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The timestamp of when the policy was last modified. Supports $filter (eq, ne, not, ge, le, in) and $orderby. Read-only.'
+              format: date-time
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsInspectionPolicySettings'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -15045,7 +15816,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -16128,14 +16899,6 @@ components:
         - guest
         - unknownFutureValue
       type: string
-    microsoft.graph.networkaccess.enrichedAuditLogsSettings:
-      title: enrichedAuditLogsSettings
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/microsoft.graph.networkaccess.status'
-      additionalProperties:
-        type: object
     microsoft.graph.networkaccess.onboardingStatus:
       title: onboardingStatus
       enum:
@@ -16153,6 +16916,37 @@ components:
       properties:
         defaultAction:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.threatIntelligenceAction'
+      additionalProperties:
+        type: object
+    microsoft.graph.networkaccess.tlsCertificateStatus:
+      title: tlsCertificateStatus
+      enum:
+        - csrGenerated
+        - enrolling
+        - active
+        - unknownFutureValue
+        - expiring
+        - expired
+      type: string
+    microsoft.graph.networkaccess.validityDate:
+      title: validityDate
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time when certificate validity expires.
+          format: date-time
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time when certificate validity begins.
+          format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.networkaccess.tlsInspectionPolicySettings:
+      title: tlsInspectionPolicySettings
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -16383,6 +17177,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.networkaccess.threatIntelligencePolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.networkaccess.externalCertificateAuthorityCertificateCollectionResponse:
+      title: Collection of externalCertificateAuthorityCertificate
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.externalCertificateAuthorityCertificate'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.networkaccess.tlsInspectionPolicyCollectionResponse:
+      title: Collection of tlsInspectionPolicy
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsInspectionPolicy'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -19272,12 +20092,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -19302,10 +20116,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -23910,11 +24720,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -27158,45 +27968,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRightsIncluded:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28946,13 +29717,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -30447,11 +31218,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -30721,6 +31492,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEvent:
@@ -30855,6 +31631,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -34493,6 +35270,17 @@ components:
             webUrl:
               type: string
               description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -38314,6 +39102,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.networkaccess.threatIntelligencePolicyCollectionResponse'
+    microsoft.graph.networkaccess.externalCertificateAuthorityCertificateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.externalCertificateAuthorityCertificateCollectionResponse'
+    microsoft.graph.networkaccess.tlsInspectionPolicyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.tlsInspectionPolicyCollectionResponse'
   parameters:
     top:
       name: $top

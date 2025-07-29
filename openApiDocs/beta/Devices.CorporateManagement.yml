@@ -2018,7 +2018,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get assignments from deviceAppManagement
-      description: The associated group assignments for IosLobAppProvisioningConfiguration.
+      description: 'The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.'
       operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_ListAssignment
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -2109,7 +2109,7 @@ paths:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
       summary: Get assignments from deviceAppManagement
-      description: The associated group assignments for IosLobAppProvisioningConfiguration.
+      description: 'The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.'
       operationId: deviceAppManagement.iosLobAppProvisioningConfiguration_GetAssignment
       parameters:
         - name: iosLobAppProvisioningConfiguration-id
@@ -10913,7 +10913,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsAndroidGraphFPreWorkApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -11004,7 +11004,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsAndroidGraphFPreWorkApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -12477,7 +12477,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsAndroidLobApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -12568,7 +12568,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsAndroidLobApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -13137,7 +13137,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsAndroidManagedStoreApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -13228,7 +13228,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsAndroidManagedStoreApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -13797,7 +13797,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsAndroidStoreApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -13888,7 +13888,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsAndroidStoreApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -15396,7 +15396,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsIosLobApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -15487,7 +15487,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsIosLobApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -16056,7 +16056,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsIosStoreApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -16147,7 +16147,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsIosStoreApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -16956,7 +16956,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsIosVppApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -17047,7 +17047,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsIosVppApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -18520,7 +18520,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsMacOSDmgApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -18611,7 +18611,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsMacOSDmgApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -20084,7 +20084,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsMacOSLobApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -20175,7 +20175,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsMacOSLobApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -21648,7 +21648,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsMacOSPkgApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -21739,7 +21739,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsMacOSPkgApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -23212,7 +23212,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsManagedAndroidLobApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -23303,7 +23303,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsManagedAndroidLobApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -24776,7 +24776,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsManagedIOSLobApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -24867,7 +24867,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsManagedIOSLobApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -26340,7 +26340,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsManagedMobileLobApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -26431,7 +26431,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsManagedMobileLobApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -27240,7 +27240,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsMicrosoftStoreGraphFPreBusinessApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -27331,7 +27331,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsMicrosoftStoreGraphFPreBusinessApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -28839,7 +28839,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWin32LobApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -28930,7 +28930,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWin32LobApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -30403,7 +30403,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsAppX_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -30494,7 +30494,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsAppX_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -31967,7 +31967,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsMobileMSI_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -32058,7 +32058,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsMobileMSI_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -32627,7 +32627,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsStoreApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -32718,7 +32718,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsStoreApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -34431,7 +34431,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsUniversalAppX_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -34522,7 +34522,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsUniversalAppX_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -35091,7 +35091,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsWebApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -35182,7 +35182,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWindowsWebApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -35751,7 +35751,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWinGetApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -35842,7 +35842,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileAppAsWinGetApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -35991,7 +35991,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileApp_ListRelationship
       parameters:
         - name: mobileApp-id
@@ -36082,7 +36082,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get relationships from deviceAppManagement
-      description: List of relationships for this mobile app.
+      description: The set of direct relationships for this app.
       operationId: deviceAppManagement.mobileApp_GetRelationship
       parameters:
         - name: mobileApp-id
@@ -47779,6 +47779,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.retrieveMacOSManagedDeviceLocalAdminAccountDetail()':
+    get:
+      tags:
+        - users.managedDevice
+      summary: Invoke function retrieveMacOSManagedDeviceLocalAdminAccountDetail
+      operationId: user.managedDevice_retrieveMacOSManagedDeviceLocalAdminAccountDetail
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.macOSManagedDeviceLocalAdminAccountDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.revokeAppleVppLicenses':
     post:
       tags:
@@ -51421,7 +51454,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Optional profile expiration date and time.
+              description: 'Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default.'
               format: date-time
               nullable: true
             lastModifiedDateTime:
@@ -51452,7 +51485,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfigurationAssignment'
-              description: The associated group assignments for IosLobAppProvisioningConfiguration.
+              description: 'The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.'
               x-ms-navigationProperty: true
             deviceStatuses:
               type: array
@@ -51593,7 +51626,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppDataEncryptionType'
             customBrowserProtocol:
               type: string
-              description: A custom browser protocol to open weblink on iOS.
+              description: 'A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             customDialerAppProtocol:
               type: string
@@ -51625,6 +51658,8 @@ components:
             filterOpenInToOnlyManagedApps:
               type: boolean
               description: Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
+            genmojiConfigurationState:
+              $ref: '#/components/schemas/microsoft.graph.genmojiIosManagedAppConfigurationState'
             managedUniversalLinks:
               type: array
               items:
@@ -51650,9 +51685,13 @@ components:
             protectInboundDataFromUnknownSources:
               type: boolean
               description: Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
+            screenCaptureConfigurationState:
+              $ref: '#/components/schemas/microsoft.graph.screenCaptureIosManagedAppConfigurationState'
             thirdPartyKeyboardsBlocked:
               type: boolean
               description: Defines if third party keyboards are allowed while accessing a managed app
+            writingToolsConfigurationState:
+              $ref: '#/components/schemas/microsoft.graph.writingToolsIosManagedAppConfigurationState'
             apps:
               type: array
               items:
@@ -52453,14 +52492,14 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the app was created.
+              description: The date and time the app was created. This property is read-only.
               format: date-time
               readOnly: true
             dependentAppCount:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: The total number of dependencies the child app has.
+              description: The total number of dependencies the child app has. This property is read-only.
               format: int32
               readOnly: true
             description:
@@ -52481,7 +52520,7 @@ components:
               nullable: true
             isAssigned:
               type: boolean
-              description: The value indicating whether the app is assigned to at least one group.
+              description: The value indicating whether the app is assigned to at least one group. This property is read-only.
               readOnly: true
             isFeatured:
               type: boolean
@@ -52491,7 +52530,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the app was last modified.
+              description: The date and time the app was last modified. This property is read-only.
               format: date-time
               readOnly: true
             notes:
@@ -52536,7 +52575,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: The upload state.
+              description: 'The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.'
               format: int32
               readOnly: true
             assignments:
@@ -52555,7 +52594,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
-              description: List of relationships for this mobile app.
+              description: The set of direct relationships for this app.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -54776,7 +54815,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.assignmentFilterEvaluationStatusDetails:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -55245,6 +55284,21 @@ components:
           - value: nonCompliant
             description: Set compliance to nonCompliant
             name: nonCompliant
+    microsoft.graph.macOSManagedDeviceLocalAdminAccountDetail:
+      title: macOSManagedDeviceLocalAdminAccountDetail
+      type: object
+      properties:
+        adminAccountPassword:
+          type: string
+          description: 'The local administrator account password for the macOS device. This password is auto generated, 15 characters by default, and unique for each device. The autogenerated password is created when the device is enrolled by Automated Device Enrollment process. Read-only.'
+        passwordLastRotatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The timestamp when the admin account password was last rotated. The timestamp type represents data and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like ''2014-01-01T00:00:00Z''. Read-only.'
+          format: date-time
+      additionalProperties:
+        type: object
+      description: The local admin account password and its last rotation timestamp of the macOS managed device
     microsoft.graph.configurationManagerAction:
       title: configurationManagerAction
       type: object
@@ -56312,6 +56366,69 @@ components:
         - conflict
         - notAssigned
       type: string
+    microsoft.graph.genmojiIosManagedAppConfigurationState:
+      title: genmojiIosManagedAppConfigurationState
+      enum:
+        - notBlocked
+        - blocked
+        - unknownFutureValue
+      type: string
+      description: Configuration state set by admin for Genmoji Apple Intelligence setting
+      x-ms-enum:
+        name: genmojiIosManagedAppConfigurationState
+        modelAsString: false
+        values:
+          - value: notBlocked
+            description: Setting is not blocked
+            name: notBlocked
+          - value: blocked
+            description: Setting is blocked
+            name: blocked
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.screenCaptureIosManagedAppConfigurationState:
+      title: screenCaptureIosManagedAppConfigurationState
+      enum:
+        - notBlocked
+        - blocked
+        - unknownFutureValue
+      type: string
+      description: Configuration state set by admin for screen capture Apple Intelligence setting
+      x-ms-enum:
+        name: screenCaptureIosManagedAppConfigurationState
+        modelAsString: false
+        values:
+          - value: notBlocked
+            description: Setting is not blocked
+            name: notBlocked
+          - value: blocked
+            description: Setting is blocked
+            name: blocked
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.writingToolsIosManagedAppConfigurationState:
+      title: writingToolsIosManagedAppConfigurationState
+      enum:
+        - notBlocked
+        - blocked
+        - unknownFutureValue
+      type: string
+      description: Configuration state set by admin for wriitng tools Apple Intelligence setting
+      x-ms-enum:
+        name: writingToolsIosManagedAppConfigurationState
+        modelAsString: false
+        values:
+          - value: notBlocked
+            description: Setting is not blocked
+            name: notBlocked
+          - value: blocked
+            description: Setting is blocked
+            name: blocked
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedAppFlaggedReason:
       title: managedAppFlaggedReason
       enum:
@@ -60454,13 +60571,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -70254,12 +70371,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
             applicationMode:
               $ref: '#/components/schemas/microsoft.graph.applicationMode'
-            assignedPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
-            autoLabeling:
-              $ref: '#/components/schemas/microsoft.graph.autoLabeling'
             autoTooltip:
               type: string
               nullable: true
@@ -70284,10 +70395,6 @@ components:
             isScopedToUser:
               type: boolean
               nullable: true
-            labelActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
             locale:
               type: string
               nullable: true
@@ -73050,11 +73157,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -76252,45 +76359,6 @@ components:
         - automatic
         - recommended
       type: string
-    microsoft.graph.labelPolicy:
-      title: labelPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier of the label policy.
-        name:
-          type: string
-          description: The display name of the label policy.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.autoLabeling:
-      title: autoLabeling
-      type: object
-      properties:
-        message:
-          type: string
-          description: The message displayed to the user when the label is applied automatically.
-          nullable: true
-        sensitiveTypeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
-      additionalProperties:
-        type: object
-    microsoft.graph.labelActionBase:
-      title: labelActionBase
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'The name of the action (for example, ''Encrypt'', ''AddHeader'').'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRightsIncluded:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -78447,11 +78515,11 @@ components:
       properties:
         calendar:
           type: string
-          description: 'The calendar to use, e.g., Gregorian Calendar.Returned by default.'
+          description: 'The calendar to use; for example, Gregorian Calendar.Returned by default.'
           nullable: true
         firstDayOfWeek:
           type: string
-          description: 'The first day of the week to use, e.g., Sunday.Returned by default.'
+          description: 'The first day of the week to use; for example, Sunday.Returned by default.'
           nullable: true
         longDateFormat:
           type: string
@@ -78721,6 +78789,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEvent:
@@ -78855,6 +78928,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -81919,6 +81993,17 @@ components:
             webUrl:
               type: string
               description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
               nullable: true
           additionalProperties:
             type: object
