@@ -1332,7 +1332,11 @@ paths:
     post:
       tags:
         - solutions.backupRestoreRoot
-      summary: Create new navigation property to exchangeRestoreSessions for solutions
+      summary: Create exchangeRestoreSession
+      description: Create a new exchangeRestoreSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-exchangerestoresessions?view=graph-rest-1.0
       operationId: solution.backupRestore_CreateExchangeRestoreSession
       requestBody:
         description: New navigation property
@@ -3595,7 +3599,11 @@ paths:
     post:
       tags:
         - solutions.backupRestoreRoot
-      summary: Create new navigation property to oneDriveForBusinessRestoreSessions for solutions
+      summary: Create oneDriveForBusinessRestoreSession
+      description: Create a new oneDriveForBusinessRestoreSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessrestoresessions?view=graph-rest-1.0
       operationId: solution.backupRestore_CreateOneDriveGraphFPreBusinessRestoreSession
       requestBody:
         description: New navigation property
@@ -5006,8 +5014,11 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: Get restorePoints from solutions
-      description: List of restore points in the tenant.
+      summary: List restorePoints
+      description: Get a list of the restorePoint objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-restorepoints?view=graph-rest-1.0
       operationId: solution.backupRestore_ListRestorePoint
       parameters:
         - $ref: '#/components/parameters/top'
