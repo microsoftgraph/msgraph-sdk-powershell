@@ -36123,7 +36123,7 @@ components:
               description: Last update time of the task. Read-only.
               format: date-time
             responseAction:
-              $ref: '#/components/schemas/microsoft.graph.security.incidentTaskResponseAction'
+              $ref: '#/components/schemas/microsoft.graph.security.responseAction'
             source:
               $ref: '#/components/schemas/microsoft.graph.security.incidentTaskSource'
             status:
@@ -43758,17 +43758,6 @@ components:
         - enableUser
         - unknownFutureValue
       type: string
-    microsoft.graph.security.incidentTaskResponseAction:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.security.responseAction'
-        - title: incidentTaskResponseAction
-          type: object
-          properties:
-            identifierValue:
-              type: string
-              description: Required. The identifier value for the response action. This value is specific to the type of action being performed.
-          additionalProperties:
-            type: object
     microsoft.graph.security.incidentTaskSource:
       title: incidentTaskSource
       enum:
