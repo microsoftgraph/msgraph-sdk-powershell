@@ -5,18 +5,13 @@
 Import-Module Microsoft.Graph.DeviceManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.windows10CustomConfiguration"
+	"@odata.type" = "#microsoft.graph.macOSCustomConfiguration"
 	description = "Description value"
 	displayName = "Display Name value"
 	version = 7
-	omaSettings = @(
-		@{
-			"@odata.type" = "microsoft.graph.omaSetting"
-			displayName = "Display Name value"
-			description = "Description value"
-			omaUri = "Oma Uri value"
-		}
-	)
+	payloadName = "Payload Name value"
+	payloadFileName = "Payload File Name value"
+	payload = "cGF5bG9hZA=="
 }
 
 Update-MgDeviceManagementDeviceConfiguration -DeviceConfigurationId $deviceConfigurationId -BodyParameter $params
