@@ -5741,6 +5741,60 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /identity/conditionalAccess/microsoft.graph.evaluate:
+    post:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Invoke action evaluate
+      description: Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/conditionalaccessroot-evaluate?view=graph-rest-1.0
+      operationId: identity.conditionalAccess_evaluate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                signInIdentity:
+                  $ref: '#/components/schemas/microsoft.graph.signInIdentity'
+                signInContext:
+                  $ref: '#/components/schemas/microsoft.graph.signInContext'
+                signInConditions:
+                  $ref: '#/components/schemas/microsoft.graph.signInConditions'
+                appliedPoliciesOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of whatIfAnalysisResult
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.whatIfAnalysisResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /identity/conditionalAccess/namedLocations:
     get:
       tags:
@@ -5874,11 +5928,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -17562,7 +17616,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete fido2AuthenticationMethod
-      description: Deletes a user's FIDO2 Security Key Authentication Method object.
+      description: Deletes a user's FIDO2 security key authentication method object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0
@@ -19795,7 +19849,7 @@ components:
           properties:
             authenticationEventsFlowId:
               type: string
-              description: Indicates the authenticationEventListener is associated with an authenticationEventsFlow. Read-only.
+              description: The identifier of the authenticationEventsFlow object.
               nullable: true
             conditions:
               $ref: '#/components/schemas/microsoft.graph.authenticationConditions'
@@ -20228,6 +20282,59 @@ components:
           x-ms-navigationProperty: true
       additionalProperties:
         type: object
+    microsoft.graph.signInIdentity:
+      title: signInIdentity
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.signInContext:
+      title: signInContext
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.signInConditions:
+      title: signInConditions
+      type: object
+      properties:
+        authenticationFlow:
+          $ref: '#/components/schemas/microsoft.graph.authenticationFlow'
+        clientAppType:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApp'
+        country:
+          type: string
+          description: Country from where the identity is authenticating.
+          nullable: true
+        deviceInfo:
+          $ref: '#/components/schemas/microsoft.graph.deviceInfo'
+        devicePlatform:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevicePlatform'
+        insiderRiskLevel:
+          $ref: '#/components/schemas/microsoft.graph.insiderRiskLevel'
+        ipAddress:
+          type: string
+          description: Ip address of the authenticating identity.
+          nullable: true
+        servicePrincipalRiskLevel:
+          $ref: '#/components/schemas/microsoft.graph.riskLevel'
+        signInRiskLevel:
+          $ref: '#/components/schemas/microsoft.graph.riskLevel'
+        userRiskLevel:
+          $ref: '#/components/schemas/microsoft.graph.riskLevel'
+      additionalProperties:
+        type: object
+    microsoft.graph.whatIfAnalysisResult:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+        - title: whatIfAnalysisResult
+          type: object
+          properties:
+            analysisReasons:
+              $ref: '#/components/schemas/microsoft.graph.whatIfAnalysisReasons'
+            policyApplies:
+              type: boolean
+              description: 'Specifies whether the policy applies to the sign-in properties provided in the request body. If policyApplies is true, the policy applies to the sign-in based on the sign-in properties provided. If policyApplies is false, the policy doesn''t apply to the sign-in based on the sign-in properties provided and the analysisReasons property is populated to show the reason for the policy not applying.'
+          additionalProperties:
+            type: object
     microsoft.graph.namedLocation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20285,6 +20392,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicyState'
             templateId:
               type: string
+              description: Specifies the unique identifier of a Conditional Access template. Inherited from entity.
               nullable: true
           additionalProperties:
             type: object
@@ -22927,6 +23035,209 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.authenticationFlow:
+      title: authenticationFlow
+      type: object
+      properties:
+        transferMethod:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessTransferMethods'
+      additionalProperties:
+        type: object
+    microsoft.graph.conditionalAccessClientApp:
+      title: conditionalAccessClientApp
+      enum:
+        - all
+        - browser
+        - mobileAppsAndDesktopClients
+        - exchangeActiveSync
+        - easSupported
+        - other
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceInfo:
+      title: deviceInfo
+      type: object
+      properties:
+        deviceId:
+          type: string
+          description: Unique identifier set by Azure Device Registration Service at the time of registration.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name for the device.
+          nullable: true
+        enrollmentProfileName:
+          type: string
+          description: Enrollment profile applied to the device.
+          nullable: true
+        extensionAttribute1:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute10:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute11:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute12:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute13:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute14:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute15:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute2:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute3:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute4:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute5:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute6:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute7:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute8:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        extensionAttribute9:
+          type: string
+          description: Extension attribute.
+          nullable: true
+        isCompliant:
+          type: boolean
+          description: Indicates the device compliance status with Mobile Management Device (MDM) policies. Default is false.
+          nullable: true
+        manufacturer:
+          type: string
+          description: Manufacturer of the device.
+          nullable: true
+        mdmAppId:
+          type: string
+          description: Application identifier used to register device into MDM.
+          nullable: true
+        model:
+          type: string
+          description: Model of the device.
+          nullable: true
+        operatingSystem:
+          type: string
+          description: The type of operating system on the device.
+          nullable: true
+        operatingSystemVersion:
+          type: string
+          description: The version of the operating system on the device.
+          nullable: true
+        ownership:
+          type: string
+          description: Ownership of the device. This property is set by Intune.
+          nullable: true
+        physicalIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A collection of physical identifiers for the device.
+        profileType:
+          type: string
+          description: The profile type of the device.
+          nullable: true
+        systemLabels:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of labels applied to the device by the system.
+        trustType:
+          type: string
+          description: Type of trust for the joined device.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.conditionalAccessDevicePlatform:
+      title: conditionalAccessDevicePlatform
+      enum:
+        - android
+        - iOS
+        - windows
+        - windowsPhone
+        - macOS
+        - all
+        - unknownFutureValue
+        - linux
+      type: string
+    microsoft.graph.insiderRiskLevel:
+      title: insiderRiskLevel
+      enum:
+        - none
+        - minor
+        - moderate
+        - elevated
+        - unknownFutureValue
+      type: string
+    microsoft.graph.riskLevel:
+      title: riskLevel
+      enum:
+        - low
+        - medium
+        - high
+        - hidden
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.whatIfAnalysisReasons:
+      title: whatIfAnalysisReasons
+      enum:
+        - notSet
+        - notEnoughInformation
+        - invalidCondition
+        - users
+        - workloadIdentities
+        - application
+        - userActions
+        - authenticationContext
+        - devicePlatform
+        - devices
+        - clientApps
+        - location
+        - signInRisk
+        - emptyPolicy
+        - invalidPolicy
+        - policyNotEnabled
+        - userRisk
+        - time
+        - insiderRisk
+        - authenticationFlow
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.conditionalAccessConditionSet:
       title: conditionalAccessConditionSet
       type: object
@@ -23010,6 +23321,8 @@ components:
           nullable: true
         persistentBrowser:
           $ref: '#/components/schemas/microsoft.graph.persistentBrowserSessionControl'
+        secureSignInSession:
+          $ref: '#/components/schemas/microsoft.graph.secureSignInSessionControl'
         signInFrequency:
           $ref: '#/components/schemas/microsoft.graph.signInFrequencySessionControl'
       additionalProperties:
@@ -23140,16 +23453,6 @@ components:
         - userChangedPasswordOnPremises
         - adminDismissedRiskForSignIn
         - adminConfirmedAccountSafe
-      type: string
-    microsoft.graph.riskLevel:
-      title: riskLevel
-      enum:
-        - low
-        - medium
-        - high
-        - hidden
-        - none
-        - unknownFutureValue
       type: string
     microsoft.graph.riskState:
       title: riskState
@@ -25341,6 +25644,7 @@ components:
               nullable: true
             externalId:
               type: string
+              description: The external ID that is a custom identifier. Optional.
               nullable: true
             isBroadcast:
               type: boolean
@@ -25556,6 +25860,12 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            outOfOfficeSettings:
+              $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            sequenceNumber:
+              type: string
+              nullable: true
+              readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
@@ -27093,6 +27403,16 @@ components:
         - resourceOwner
         - unknownFutureValue
       type: string
+    microsoft.graph.conditionalAccessTransferMethods:
+      title: conditionalAccessTransferMethods
+      enum:
+        - none
+        - deviceCodeFlow
+        - authenticationTransfer
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.conditionalAccessApplications:
       title: conditionalAccessApplications
       type: object
@@ -27146,17 +27466,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessFilter'
       additionalProperties:
         type: object
-    microsoft.graph.conditionalAccessClientApp:
-      title: conditionalAccessClientApp
-      enum:
-        - all
-        - browser
-        - mobileAppsAndDesktopClients
-        - exchangeActiveSync
-        - easSupported
-        - other
-        - unknownFutureValue
-      type: string
     microsoft.graph.conditionalAccessDevices:
       title: conditionalAccessDevices
       type: object
@@ -27284,6 +27593,13 @@ components:
           properties:
             mode:
               $ref: '#/components/schemas/microsoft.graph.persistentBrowserSessionMode'
+          additionalProperties:
+            type: object
+    microsoft.graph.secureSignInSessionControl:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
+        - title: secureSignInSessionControl
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.signInFrequencySessionControl:
@@ -28021,7 +28337,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: Deep link URL of the tab instance. Read only.
+              description: Deep link URL of the tab instance. Read-only.
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
@@ -28087,6 +28403,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -30763,6 +31085,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            isEndToEndEncryptionEnabled:
+              type: boolean
+              nullable: true
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.
@@ -31164,6 +31489,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
           additionalProperties:
             type: object
+    microsoft.graph.outOfOfficeSettings:
+      title: outOfOfficeSettings
+      type: object
+      properties:
+        isOutOfOffice:
+          type: boolean
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.presenceStatusMessage:
       title: presenceStatusMessage
       type: object
@@ -31517,28 +31854,6 @@ components:
           description: 'Rule syntax is similar to that used for membership rules for groups in Microsoft Entra ID. For details, see rules with multiple expressions'
       additionalProperties:
         type: object
-    microsoft.graph.conditionalAccessTransferMethods:
-      title: conditionalAccessTransferMethods
-      enum:
-        - none
-        - deviceCodeFlow
-        - authenticationTransfer
-        - unknownFutureValue
-      type: string
-      x-ms-enum-flags:
-        isFlags: true
-    microsoft.graph.conditionalAccessDevicePlatform:
-      title: conditionalAccessDevicePlatform
-      enum:
-        - android
-        - iOS
-        - windows
-        - windowsPhone
-        - macOS
-        - all
-        - unknownFutureValue
-        - linux
-      type: string
     microsoft.graph.conditionalAccessGuestsOrExternalUsers:
       title: conditionalAccessGuestsOrExternalUsers
       type: object
@@ -32153,6 +32468,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36237,6 +36602,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -39192,6 +39584,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -39593,7 +40012,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         isPaid:
@@ -39603,7 +40022,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         theme:

@@ -1332,7 +1332,11 @@ paths:
     post:
       tags:
         - solutions.backupRestoreRoot
-      summary: Create new navigation property to exchangeRestoreSessions for solutions
+      summary: Create exchangeRestoreSession
+      description: Create a new exchangeRestoreSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-exchangerestoresessions?view=graph-rest-1.0
       operationId: solution.backupRestore_CreateExchangeRestoreSession
       requestBody:
         description: New navigation property
@@ -3595,7 +3599,11 @@ paths:
     post:
       tags:
         - solutions.backupRestoreRoot
-      summary: Create new navigation property to oneDriveForBusinessRestoreSessions for solutions
+      summary: Create oneDriveForBusinessRestoreSession
+      description: Create a new oneDriveForBusinessRestoreSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessrestoresessions?view=graph-rest-1.0
       operationId: solution.backupRestore_CreateOneDriveGraphFPreBusinessRestoreSession
       requestBody:
         description: New navigation property
@@ -5006,8 +5014,11 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: Get restorePoints from solutions
-      description: List of restore points in the tenant.
+      summary: List restorePoints
+      description: Get a list of the restorePoint objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-restorepoints?view=graph-rest-1.0
       operationId: solution.backupRestore_ListRestorePoint
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8072,6 +8083,13 @@ components:
               description: The new restored folder name.
               nullable: true
               readOnly: true
+            restoredItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of items that are being restored in the folder.
+              format: int32
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest:
@@ -8399,6 +8417,10 @@ components:
               description: Timestamp of the last modification of the restore session.
               format: date-time
               nullable: true
+            restoreJobType:
+              $ref: '#/components/schemas/microsoft.graph.restoreJobType'
+            restoreSessionArtifactCount:
+              $ref: '#/components/schemas/microsoft.graph.restoreSessionArtifactCount'
             status:
               $ref: '#/components/schemas/microsoft.graph.restoreSessionStatus'
           additionalProperties:
@@ -8816,6 +8838,47 @@ components:
           nullable: true
         restorePoint:
           $ref: '#/components/schemas/microsoft.graph.restorePoint'
+      additionalProperties:
+        type: object
+    microsoft.graph.restoreJobType:
+      title: restoreJobType
+      enum:
+        - standard
+        - bulk
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restoreSessionArtifactCount:
+      title: restoreSessionArtifactCount
+      type: object
+      properties:
+        completed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration completed.
+          format: int32
+          nullable: true
+        failed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration failed.
+          format: int32
+          nullable: true
+        inProgress:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration is in progress.
+          format: int32
+          nullable: true
+        total:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts present in the restore session.
+          format: int32
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.restoreSessionStatus:

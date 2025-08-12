@@ -3146,10 +3146,10 @@ paths:
       tags:
         - communications.call
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -8315,11 +8315,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      summary: Get presence
+      description: Get a user's presence information.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -9226,6 +9226,12 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            outOfOfficeSettings:
+              $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            sequenceNumber:
+              type: string
+              nullable: true
+              readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
@@ -9257,6 +9263,7 @@ components:
               nullable: true
             externalId:
               type: string
+              description: The external ID that is a custom identifier. Optional.
               nullable: true
             isBroadcast:
               type: boolean
@@ -9959,6 +9966,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.outOfOfficeSettings:
+      title: outOfOfficeSettings
+      type: object
+      properties:
+        isOutOfOffice:
+          type: boolean
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.onlineMeetingBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10015,6 +10034,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            isEndToEndEncryptionEnabled:
+              type: boolean
+              nullable: true
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.

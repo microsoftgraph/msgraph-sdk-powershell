@@ -8360,6 +8360,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             startDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            videoOnDemandWebUrl:
+              type: string
+              description: The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.meetingAttendanceReport:
@@ -8550,7 +8554,7 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
@@ -9132,6 +9136,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            isEndToEndEncryptionEnabled:
+              type: boolean
+              nullable: true
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.
@@ -9867,6 +9874,10 @@ components:
               description: Timestamp of the last modification of the restore session.
               format: date-time
               nullable: true
+            restoreJobType:
+              $ref: '#/components/schemas/microsoft.graph.restoreJobType'
+            restoreSessionArtifactCount:
+              $ref: '#/components/schemas/microsoft.graph.restoreSessionArtifactCount'
             status:
               $ref: '#/components/schemas/microsoft.graph.restoreSessionStatus'
           additionalProperties:
@@ -10454,6 +10465,13 @@ components:
               description: The new restored folder name.
               nullable: true
               readOnly: true
+            restoredItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of items that are being restored in the folder.
+              format: int32
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest:
@@ -10587,6 +10605,47 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.restoreJobType:
+      title: restoreJobType
+      enum:
+        - standard
+        - bulk
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restoreSessionArtifactCount:
+      title: restoreSessionArtifactCount
+      type: object
+      properties:
+        completed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration completed.
+          format: int32
+          nullable: true
+        failed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration failed.
+          format: int32
+          nullable: true
+        inProgress:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration is in progress.
+          format: int32
+          nullable: true
+        total:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts present in the restore session.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.restoreSessionStatus:
       title: restoreSessionStatus
       enum:

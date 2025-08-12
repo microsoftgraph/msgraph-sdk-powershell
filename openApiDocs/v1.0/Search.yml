@@ -1395,6 +1395,10 @@ paths:
       tags:
         - external.externalConnection
       summary: Invoke action addActivities
+      description: Append additional instances of externalActivity objects on an externalItem.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-addactivities?view=graph-rest-1.0
       operationId: external.connection.item_addActivity
       parameters:
         - name: externalConnection-id

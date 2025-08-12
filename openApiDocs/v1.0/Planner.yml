@@ -6091,7 +6091,7 @@ paths:
     get:
       tags:
         - planner.plannerTask
-      summary: List tasks
+      summary: List plannerTask objects
       description: Retrieve a list of plannertask objects.
       externalDocs:
         description: Find more info here
