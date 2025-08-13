@@ -129,7 +129,6 @@ extends:
           runOnce:
             deploy:
               steps:
-              - checkout: self
               - task: 1ES.PublishNuget@1
                 displayName: 'Publish NuGet to feed'
                 inputs:
@@ -157,7 +156,6 @@ extends:
           runOnce:
             deploy:
               steps:
-              - checkout: self
               - task: 1ES.PublishNuget@1
                 displayName: 'Publish NuGet to feed'
                 inputs:
