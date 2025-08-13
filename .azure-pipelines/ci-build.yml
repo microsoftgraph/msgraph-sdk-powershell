@@ -118,16 +118,18 @@ extends:
       - deployment: 'DeployToInternalFeed'
         displayName: 'Deploy to Internal Feed'
         environment: 'PowerShellInternalFeed'
+        templateContext:
+            type: releaseJob
+            isProduction: true
+            inputs:
+              - input: pipelineArtifact
+                artifactName: drop
+                targetPath: '$(System.DefaultWorkingDirectory)/drop'
         strategy:
           runOnce:
             deploy:
               steps:
               - checkout: self
-              - task: DownloadPipelineArtifact@2
-                displayName: 'Download Build Artifacts'
-                inputs:
-                  buildType: 'current'
-                  targetPath: '$(System.DefaultWorkingDirectory)'
               - task: 1ES.PublishNuget@1
                 displayName: 'Publish NuGet to feed'
                 inputs:
@@ -144,16 +146,18 @@ extends:
       - deployment: 'DeployToPowerShellGallery'
         displayName: 'Deploy to PowerShell Gallery'
         environment: 'PowerShellGallery'
+        templateContext:
+          type: releaseJob
+          isProduction: true
+          inputs:
+            - input: pipelineArtifact
+              artifactName: drop
+              targetPath: '$(System.DefaultWorkingDirectory)/drop'
         strategy:
           runOnce:
             deploy:
               steps:
               - checkout: self
-              - task: DownloadPipelineArtifact@2
-                displayName: 'Download Build Artifacts'
-                inputs:
-                  buildType: 'current'
-                  targetPath: '$(System.DefaultWorkingDirectory)'
               - task: 1ES.PublishNuget@1
                 displayName: 'Publish NuGet to feed'
                 inputs:
