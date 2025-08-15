@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	onBehalfOfUserId = "a3601044-a1b5-438e-b742-f78d01d68a67"
+	userId = "a3601044-a1b5-438e-b742-f78d01d68a67"
 	clockInEvent = @{
 		dateTime = [System.DateTime]::Parse("2019-03-18T00:00:00.000Z")
 		isAtApprovedLocation = $true
