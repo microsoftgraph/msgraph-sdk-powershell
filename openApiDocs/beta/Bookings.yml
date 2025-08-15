@@ -10042,6 +10042,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions for a registration.
       operationId: solution.virtualEvent.webinar.registration_GetSession
       parameters:
         - name: virtualEventWebinar-id
@@ -10103,6 +10104,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions for a registration.
       operationId: solution.virtualEvent.webinar.registration.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: virtualEventWebinar-id
@@ -12960,6 +12962,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for a registration.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -14653,6 +14656,9 @@ components:
         - title: protectionPolicyBase
           type: object
           properties:
+            billingPolicyId:
+              type: string
+              nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
@@ -16656,7 +16662,7 @@ components:
       properties:
         isApprovalRequired:
           type: boolean
-          description: 'Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.'
+          description: 'Specifies whether approval is required to complete the plannerTask. If set to true, the task can only be marked as complete if an approval is created for the task and approved.'
           nullable: true
       additionalProperties:
         type: object
