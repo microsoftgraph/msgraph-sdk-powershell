@@ -6457,11 +6457,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get resourceConnection
-      description: Read the properties and relationships of a resourceConnection object.
+      summary: Get operationalInsightsConnection
+      description: Read the properties and relationships of an operationalInsightsConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-beta
       operationId: admin.window.update_GetResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6536,11 +6536,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete operationalInsightsConnection
-      description: Delete an operationalInsightsConnection object.
+      summary: Delete resourceConnection
+      description: Delete a resourceConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6662,11 +6662,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get azureADDevice
-      description: Read the properties of an azureADDevice object.
+      summary: Get updatableAssetGroup
+      description: Read the properties and relationships of an updatableAssetGroup object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-get?view=graph-rest-beta
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6741,11 +6741,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete azureADDevice
-      description: 'Delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered and automatically unenrolled from management for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.'
+      summary: Delete updatableAssetGroup
+      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-beta
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -9345,11 +9345,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get contentApproval
-      description: Read the properties and relationships of a contentApproval object.
+      summary: Get complianceChange
+      description: Read the properties and relationships of a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-beta
       operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id

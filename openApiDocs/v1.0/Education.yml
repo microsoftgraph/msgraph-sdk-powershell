@@ -9117,6 +9117,469 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /education/reports:
+    get:
+      tags:
+        - education.reportsRoot
+      summary: Get reports from education
+      operationId: education_GetReport
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.reportsRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - education.reportsRoot
+      summary: Update the navigation property reports in education
+      operationId: education_UpdateReport
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.reportsRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.reportsRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - education.reportsRoot
+      summary: Delete navigation property reports for education
+      operationId: education_DeleteReport
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /education/reports/readingAssignmentSubmissions:
+    get:
+      tags:
+        - education.reportsRoot
+      summary: List readingAssignmentSubmissions
+      description: Get a list of reading assignments that were submitted by a student.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/reportsroot-list-readingassignmentsubmissions?view=graph-rest-1.0
+      operationId: education.report_ListReadingAssignmentSubmission
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.readingAssignmentSubmissionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - education.reportsRoot
+      summary: Create new navigation property to readingAssignmentSubmissions for education
+      operationId: education.report_CreateReadingAssignmentSubmission
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/education/reports/readingAssignmentSubmissions/{readingAssignmentSubmission-id}':
+    get:
+      tags:
+        - education.reportsRoot
+      summary: Get readingAssignmentSubmissions from education
+      operationId: education.report_GetReadingAssignmentSubmission
+      parameters:
+        - name: readingAssignmentSubmission-id
+          in: path
+          description: The unique identifier of readingAssignmentSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: readingAssignmentSubmission
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - education.reportsRoot
+      summary: Update the navigation property readingAssignmentSubmissions in education
+      operationId: education.report_UpdateReadingAssignmentSubmission
+      parameters:
+        - name: readingAssignmentSubmission-id
+          in: path
+          description: The unique identifier of readingAssignmentSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: readingAssignmentSubmission
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - education.reportsRoot
+      summary: Delete navigation property readingAssignmentSubmissions for education
+      operationId: education.report_DeleteReadingAssignmentSubmission
+      parameters:
+        - name: readingAssignmentSubmission-id
+          in: path
+          description: The unique identifier of readingAssignmentSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: readingAssignmentSubmission
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /education/reports/readingAssignmentSubmissions/$count:
+    get:
+      tags:
+        - education.reportsRoot
+      summary: Get the number of the resource
+      operationId: education.report.readingAssignmentSubmission_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /education/reports/reflectCheckInResponses:
+    get:
+      tags:
+        - education.reportsRoot
+      summary: List reflectCheckInResponses
+      description: Get a list of Reflect check-ins that were submitted by a student.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/reportsroot-list-reflectcheckinresponses?view=graph-rest-1.0
+      operationId: education.report_ListReflectCheckInResponse
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.reflectCheckInResponseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - education.reportsRoot
+      summary: Create new navigation property to reflectCheckInResponses for education
+      operationId: education.report_CreateReflectCheckInResponse
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.reflectCheckInResponse'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.reflectCheckInResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/education/reports/reflectCheckInResponses/{reflectCheckInResponse-id}':
+    get:
+      tags:
+        - education.reportsRoot
+      summary: Get reflectCheckInResponses from education
+      operationId: education.report_GetReflectCheckInResponse
+      parameters:
+        - name: reflectCheckInResponse-id
+          in: path
+          description: The unique identifier of reflectCheckInResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: reflectCheckInResponse
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.reflectCheckInResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - education.reportsRoot
+      summary: Update the navigation property reflectCheckInResponses in education
+      operationId: education.report_UpdateReflectCheckInResponse
+      parameters:
+        - name: reflectCheckInResponse-id
+          in: path
+          description: The unique identifier of reflectCheckInResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: reflectCheckInResponse
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.reflectCheckInResponse'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.reflectCheckInResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - education.reportsRoot
+      summary: Delete navigation property reflectCheckInResponses for education
+      operationId: education.report_DeleteReflectCheckInResponse
+      parameters:
+        - name: reflectCheckInResponse-id
+          in: path
+          description: The unique identifier of reflectCheckInResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: reflectCheckInResponse
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /education/reports/reflectCheckInResponses/$count:
+    get:
+      tags:
+        - education.reportsRoot
+      summary: Get the number of the resource
+      operationId: education.report.reflectCheckInResponse_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /education/schools:
     get:
       tags:
@@ -14111,6 +14574,8 @@ components:
           x-ms-navigationProperty: true
         me:
           $ref: '#/components/schemas/microsoft.graph.educationUser'
+        reports:
+          $ref: '#/components/schemas/microsoft.graph.reportsRoot'
         schools:
           type: array
           items:
@@ -15801,6 +16266,163 @@ components:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
+    microsoft.graph.reportsRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: reportsRoot
+          type: object
+          properties:
+            readingAssignmentSubmissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
+              x-ms-navigationProperty: true
+            reflectCheckInResponses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.reflectCheckInResponse'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.readingAssignmentSubmission:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: readingAssignmentSubmission
+          type: object
+          properties:
+            accuracyScore:
+              type: number
+              description: Accuracy score of the reading progress.
+              format: double
+              nullable: true
+            action:
+              type: string
+              description: Indicates whether the submission is an attempt by the student or a miscue edit done by the educator. The possible values are Attempt and EditMiscue.
+            assignmentId:
+              type: string
+              description: ID of the assignment with which this submission is associated.
+            challengingWords:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.challengingWord'
+              description: List of words that the student found challenging during the reading session.
+            classId:
+              type: string
+              description: ID of the class this reading progress is associated with.
+              nullable: true
+            insertions:
+              type: number
+              description: Insertions of the reading progress.
+              format: int64
+            mispronunciations:
+              type: number
+              description: Mispronunciations of the reading progress.
+              format: int64
+            missedExclamationMarks:
+              type: number
+              description: Number of exclamation marks missed in the reading passage.
+              format: int64
+            missedPeriods:
+              type: number
+              description: Number of periods missed in the reading passage.
+              format: int64
+            missedQuestionMarks:
+              type: number
+              description: Number of question marks missed in the reading passage.
+              format: int64
+            missedShorts:
+              type: number
+              description: Number of short words missed during the reading session.
+              format: int64
+            monotoneScore:
+              type: number
+              description: Score that reflects the student's use of intonation and expression. Lower scores indicate more monotone reading.
+              format: double
+              nullable: true
+            omissions:
+              type: number
+              description: Omissions of the reading progress.
+              format: int64
+            repetitions:
+              type: number
+              description: Number of times the student repeated words or phrases during the reading session.
+              format: int64
+            selfCorrections:
+              type: number
+              description: Number of times the student self-corrected their reading errors.
+              format: int64
+            studentId:
+              type: string
+              description: ID of the user this reading progress is associated with.
+              nullable: true
+            submissionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time of the submission this reading progress is associated with. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            submissionId:
+              type: string
+              description: ID of the submission this reading progress is associated with.
+              nullable: true
+            unexpectedPauses:
+              type: number
+              description: Number of unexpected pauses made during the reading session.
+              format: int64
+            wordCount:
+              type: number
+              description: Words count of the reading progress.
+              format: int64
+            wordsPerMinute:
+              type: number
+              description: Words per minute of the reading progress.
+              format: double
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.reflectCheckInResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: reflectCheckInResponse
+          type: object
+          properties:
+            checkInId:
+              type: string
+              description: Identifier for the Reflect check-in.
+              nullable: true
+            checkInTitle:
+              type: string
+              description: The question or prompt of the Reflect check-in that this response addresses.
+            classId:
+              type: string
+              description: ID of the class associated with the Reflect check-in.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the Reflect check-in was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            creatorId:
+              type: string
+              description: ID of the user who created the Reflect check-in.
+              nullable: true
+            isClosed:
+              type: boolean
+              description: Indicates whether the Reflect check-in is closed (true) or open (false).
+            responderId:
+              type: string
+              description: ID of the user who responded to the Reflect check-in.
+              nullable: true
+            responseEmotion:
+              $ref: '#/components/schemas/microsoft.graph.responseEmotionType'
+            responseFeedback:
+              $ref: '#/components/schemas/microsoft.graph.responseFeedbackType'
+            submitDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the response to the Reflect check-in was submitted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+          additionalProperties:
+            type: object
     microsoft.graph.administrativeUnit:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -18404,7 +19026,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -18590,6 +19212,7 @@ components:
               nullable: true
             externalId:
               type: string
+              description: The external ID that is a custom identifier. Optional.
               nullable: true
             isBroadcast:
               type: boolean
@@ -18753,8 +19376,15 @@ components:
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
+              description: 'The base presence information for a user. Possible values are Available, availableIdle,  Away, beRightBack, Busy, busyIdle, DoNotDisturb, Offline, presenceUnknown.'
               nullable: true
+            outOfOfficeSettings:
+              $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            sequenceNumber:
+              type: string
+              description: The lexicographically sortable string stamp that represents the version of a presence object.
+              nullable: true
+              readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
@@ -18931,6 +19561,100 @@ components:
           $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
       additionalProperties:
         type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
+      type: string
+      nullable: true
+    microsoft.graph.challengingWord:
+      title: challengingWord
+      type: object
+      properties:
+        count:
+          type: number
+          description: Number of times the word was found challenging by the student during the reading session.
+          format: int64
+        word:
+          type: string
+          description: The specific word that the student found challenging during the reading session.
+      additionalProperties:
+        type: object
+    microsoft.graph.responseEmotionType:
+      title: responseEmotionType
+      enum:
+        - none
+        - confident
+        - excited
+        - happy
+        - motivated
+        - peaceful
+        - ambitious
+        - cheerful
+        - comfortable
+        - creative
+        - determined
+        - energized
+        - focused
+        - fulfilled
+        - grateful
+        - included
+        - inspired
+        - optimistic
+        - proud
+        - successful
+        - valuable
+        - annoyed
+        - bored
+        - calm
+        - confused
+        - glad
+        - content
+        - pensive
+        - reserved
+        - restless
+        - shocked
+        - tired
+        - angry
+        - depressed
+        - exhausted
+        - lonely
+        - nervous
+        - anxious
+        - apathetic
+        - concerned
+        - disappointed
+        - frightened
+        - frustrated
+        - hopeless
+        - hurt
+        - jealous
+        - miserable
+        - overwhelmed
+        - skeptical
+        - stressed
+        - stuck
+        - worthless
+        - awed
+        - ashamed
+        - curious
+        - sensitive
+        - sad
+        - unknownFutureValue
+      type: string
+    microsoft.graph.responseFeedbackType:
+      title: responseFeedbackType
+      enum:
+        - none
+        - notDetected
+        - veryUnpleasant
+        - unpleasant
+        - neutral
+        - pleasant
+        - veryPleasant
+        - unknownFutureValue
+      type: string
     ReferenceCreate:
       type: object
       properties:
@@ -19155,6 +19879,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.readingAssignmentSubmissionCollectionResponse:
+      title: Collection of readingAssignmentSubmission
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.reflectCheckInResponseCollectionResponse:
+      title: Collection of reflectCheckInResponse
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.reflectCheckInResponse'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -19183,13 +19933,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.educationItemBody'
       additionalProperties:
         type: object
-    ReferenceNumeric:
-      enum:
-        - '-INF'
-        - INF
-        - NaN
-      type: string
-      nullable: true
     microsoft.graph.onlineMeetingProviderType:
       title: onlineMeetingProviderType
       enum:
@@ -21490,7 +22233,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: Deep link URL of the tab instance. Read only.
+              description: Deep link URL of the tab instance. Read-only.
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
@@ -21530,6 +22273,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -21868,6 +22617,7 @@ components:
         - windowsAzureADJoinUsingDeviceAuth
         - appleUserEnrollment
         - appleUserEnrollmentWithServiceAccount
+        - unknownFutureValue
       type: string
       description: Possible ways of adding a mobile device to management.
       x-ms-enum:
@@ -21913,6 +22663,9 @@ components:
           - value: appleUserEnrollmentWithServiceAccount
             description: Indicates the device is enrolled via Apple User Enrollment with Company Portal using a device enrollment manager user. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities
             name: appleUserEnrollmentWithServiceAccount
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -22639,6 +23392,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            isEndToEndEncryptionEnabled:
+              type: boolean
+              nullable: true
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.
@@ -23001,6 +23757,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
           additionalProperties:
             type: object
+    microsoft.graph.outOfOfficeSettings:
+      title: outOfOfficeSettings
+      type: object
+      properties:
+        isOutOfOffice:
+          type: boolean
+          description: 'If true, either of the following is met:The current time falls within the out-of-office window configured in Outlook or Teams.An event marked as ''Show as Out of Office'' appears on the user''s calendar.Otherwise, false.'
+          nullable: true
+        message:
+          type: string
+          description: The out-of-office message configured by the user in the Outlook client (Automatic replies) or the Teams client (Schedule out of office).
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.presenceStatusMessage:
       title: presenceStatusMessage
       type: object
@@ -25858,6 +26628,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -26445,13 +27265,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -28667,6 +29487,33 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
+          additionalProperties:
+            type: object
     microsoft.graph.processContentRequest:
       title: processContentRequest
       type: object
@@ -29740,7 +30587,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         isPaid:
@@ -29750,7 +30597,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         theme:
@@ -30942,6 +31789,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -31285,37 +32159,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:
@@ -31836,6 +32710,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.educationRubricCollectionResponse'
+    microsoft.graph.readingAssignmentSubmissionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.readingAssignmentSubmissionCollectionResponse'
+    microsoft.graph.reflectCheckInResponseCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.reflectCheckInResponseCollectionResponse'
   parameters:
     top:
       name: $top

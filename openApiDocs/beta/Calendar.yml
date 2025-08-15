@@ -3851,7 +3851,7 @@ paths:
       tags:
         - places.place
       summary: Update place
-      description: 'Update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.'
+      description: 'Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-update?view=graph-rest-beta
@@ -3885,7 +3885,11 @@ paths:
     delete:
       tags:
         - places.place
-      summary: Delete entity from places
+      summary: Delete place
+      description: 'Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-beta
       operationId: place_DeletePlace
       parameters:
         - name: place-id
@@ -3908,12 +3912,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.descendants()':
+    get:
+      tags:
+        - places.place.Functions
+      summary: Invoke function descendants
+      operationId: place_descendant
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of place
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.place'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/places/{place-id}/microsoft.graph.room':
     get:
       tags:
         - places.place
-      summary: List places
-      description: "Get a collection of the specified type of place objects defined in the tenant.  You can do the following for a given tenant:\n- List all the rooms.\n- List all the workspaces.\n- List all the room lists.\n- List rooms in a specific room list.\n- List workspaces in a specific room list. A place object can be one of the following types: The room, workspace and roomList resources are derived from the place object. By default, this operation returns up to 100 places per page.  Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API."
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\n- List all buildings.\n- List all floors.\n- List all sections.\n- List all desks.\n- List all rooms.\n- List all workspaces.\n- List all room lists.\n- List rooms in a specific room list.\n- List workspaces in a specific room list. By default, this operation returns up to 100 rooms, workspaces, and room lists per page, and 1,000 buildings, floors, sections, and desks per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
@@ -4733,7 +4811,7 @@ paths:
       tags:
         - places.place
       summary: Update place
-      description: 'Update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.'
+      description: 'Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-update?view=graph-rest-beta
@@ -4767,7 +4845,11 @@ paths:
     delete:
       tags:
         - places.place
-      summary: Delete entity from places by placeId
+      summary: Delete place
+      description: 'Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-beta
       operationId: place_DeletePlaceGraphBPrePlaceId
       parameters:
         - name: placeId
@@ -4808,8 +4890,8 @@ paths:
     get:
       tags:
         - places.place
-      summary: List places
-      description: "Get a collection of the specified type of place objects defined in the tenant.  You can do the following for a given tenant:\n- List all the rooms.\n- List all the workspaces.\n- List all the room lists.\n- List rooms in a specific room list.\n- List workspaces in a specific room list. A place object can be one of the following types: The room, workspace and roomList resources are derived from the place object. By default, this operation returns up to 100 places per page.  Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API."
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\n- List all buildings.\n- List all floors.\n- List all sections.\n- List all desks.\n- List all rooms.\n- List all workspaces.\n- List all room lists.\n- List rooms in a specific room list.\n- List workspaces in a specific room list. By default, this operation returns up to 100 rooms, workspaces, and room lists per page, and 1,000 buildings, floors, sections, and desks per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
@@ -15337,17 +15419,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             displayName:
               type: string
-              description: The name associated with the place.
+              description: The name that is associated with the place.
             geoCoordinates:
               $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
+            isWheelChairAccessible:
+              type: boolean
+              description: Indicates whether the place is wheelchair accessible.
+            label:
+              type: string
+              description: User-defined description of the place.
+              nullable: true
+            parentId:
+              type: string
+              description: The ID of a parent place.
+              nullable: true
             phone:
               type: string
               description: The phone number of the place.
               nullable: true
             placeId:
               type: string
-              description: 'A unique, immutable identifier for the place. Read-only. The value of this identifier is equal to the ExternalDirectoryObjectId returned from the Get-Mailbox cmdlet.'
+              description: An alternate immutable unique identifier of the place. Read-only.
               nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+              description: Custom tags that are associated with the place for categorization or filtering.
           additionalProperties:
             type: object
     microsoft.graph.room:
@@ -15358,60 +15456,49 @@ components:
           properties:
             audioDeviceName:
               type: string
-              description: Specifies the name of the audio device in the room.
+              description: The name of the audio device that is available in the room.
               nullable: true
             bookingType:
               $ref: '#/components/schemas/microsoft.graph.bookingType'
             building:
               type: string
-              description: Specifies the building name or building number that the room is in.
+              description: The name or identifier of the building where the room is located.
               nullable: true
             capacity:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: Specifies the capacity of the room.
+              description: The maximum number of people the room can accommodate.
               format: int32
               nullable: true
             displayDeviceName:
               type: string
-              description: Specifies the name of the display device in the room.
+              description: 'The name of the display device (for example, monitor or projector) that is available in the room.'
               nullable: true
             emailAddress:
               type: string
-              description: Email address of the room.
+              description: The email address associated with the room. This email address is used for booking.
               nullable: true
             floorLabel:
               type: string
-              description: 'Specifies a descriptive label for the floor, for example, P.'
+              description: 'A human-readable label for the floor; for example, Ground Floor.'
               nullable: true
             floorNumber:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: Specifies the floor number that the room is on.
+              description: 'The numeric floor level within the building. For example, 1 for first floor, 2 for second floor, and so on.'
               format: int32
               nullable: true
-            isWheelChairAccessible:
+            isTeamsEnabled:
               type: boolean
-              description: Specifies whether the room is wheelchair accessible.
-              nullable: true
-            label:
-              type: string
-              description: 'Specifies a descriptive label for the room, for example, a number or name.'
-              nullable: true
+              description: Indicates whether the room is configured with the Microsoft Teams Rooms system.
             nickname:
               type: string
-              description: 'Specifies a nickname for the room, for example, ''conf room''.'
-            tags:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: 'Specifies other features of the room; for example, the type of view or furniture type.'
+              description: 'A short, friendly name for the room, often used for easier identification or display in UI.'
             videoDeviceName:
               type: string
-              description: Specifies the name of the video device in the room.
+              description: The name of the video device that is available in the room.
               nullable: true
           additionalProperties:
             type: object
@@ -15445,47 +15532,39 @@ components:
           properties:
             building:
               type: string
-              description: Specifies the building name or building number that the workspace is in.
+              description: The name or identifier of the building where the workspace is located.
               nullable: true
             capacity:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: Specifies the capacity of the workspace.
+              description: The maximum number of individual desks within a workspace.
               format: int32
+              nullable: true
+            displayDeviceName:
+              type: string
+              description: 'The name of the display device (for example, monitor or projector) that is available in the workspace.'
               nullable: true
             emailAddress:
               type: string
-              description: Email address of the workspace.
+              description: The email address that is associated with the workspace. This email address is used for booking.
               nullable: true
             floorLabel:
               type: string
-              description: 'Specifies a descriptive label for the floor, for example, P.'
+              description: 'A human-readable label for the floor; for example, Ground Floor.'
               nullable: true
             floorNumber:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: Specifies the floor number that the workspace is on.
+              description: 'The numeric floor level within the building. For example, 1 for first floor, 2 for second floor, and so on.'
               format: int32
               nullable: true
-            isWheelChairAccessible:
-              type: boolean
-              description: Specifies whether the workspace is wheelchair accessible.
-              nullable: true
-            label:
-              type: string
-              description: 'Specifies a descriptive label for the workspace, for example, a number or name.'
-              nullable: true
+            mode:
+              $ref: '#/components/schemas/microsoft.graph.placeMode'
             nickname:
               type: string
-              description: 'Specifies a nickname for the workspace, for example, ''quiet workspace''.'
-            tags:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: 'Specifies other features of the workspace; for example, the type of view or furniture type.'
+              description: 'A short, friendly name for the workspace, often used for easier identification or display in the UI.'
           additionalProperties:
             type: object
     microsoft.graph.calendarGroup:
@@ -15902,6 +15981,11 @@ components:
         - standard
         - reserved
       type: string
+    microsoft.graph.placeMode:
+      title: placeMode
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
