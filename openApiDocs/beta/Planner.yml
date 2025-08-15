@@ -3527,7 +3527,7 @@ paths:
     get:
       tags:
         - planner.plannerBucket
-      summary: List tasks
+      summary: List plannerTask objects for a plannerBucket
       description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
@@ -7822,7 +7822,7 @@ paths:
     get:
       tags:
         - planner.plannerTask
-      summary: List tasks
+      summary: List plannerTask objects
       description: Retrieve a list of plannertask objects.
       externalDocs:
         description: Find more info here
@@ -14567,7 +14567,7 @@ components:
       properties:
         isApprovalRequired:
           type: boolean
-          description: 'Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.'
+          description: 'Specifies whether approval is required to complete the plannerTask. If set to true, the task can only be marked as complete if an approval is created for the task and approved.'
           nullable: true
       additionalProperties:
         type: object

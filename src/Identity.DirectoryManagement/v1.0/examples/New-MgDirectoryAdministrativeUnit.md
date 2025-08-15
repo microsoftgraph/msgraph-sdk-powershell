@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Create an administrative unit
 
 ```powershell
 
@@ -16,5 +16,22 @@ $params = @{
 New-MgDirectoryAdministrativeUnit -BodyParameter $params
 
 ```
-This example shows how to use the New-MgDirectoryAdministrativeUnit Cmdlet.
+This example will create an administrative unit
+
+### Example 2: Create a restricted management administrative unit
+
+```powershell
+
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+
+$params = @{
+	displayName = "Executive Division"
+	description = "Executive division administration"
+	isMemberManagementRestricted = $true
+}
+
+New-MgDirectoryAdministrativeUnit -BodyParameter $params
+
+```
+This example will create a restricted management administrative unit
 

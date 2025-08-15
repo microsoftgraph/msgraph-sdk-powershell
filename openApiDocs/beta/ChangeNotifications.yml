@@ -216,6 +216,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /subscriptions/microsoft.graph.getVapidPublicKey():
+    get:
+      tags:
+        - subscriptions.subscription.Functions
+      summary: Invoke function getVapidPublicKey
+      description: Get the public key information required to validate push notifications according to RFC 8292 specifications.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subscription-getvapidpublickey?view=graph-rest-beta
+      operationId: subscription_getVapidPublicKey
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
 components:
   schemas:
     microsoft.graph.subscription:

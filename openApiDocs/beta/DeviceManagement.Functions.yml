@@ -598,13 +598,6 @@ components:
               type: boolean
               description: Description of the Role Scope Tag. This property is read-only.
               readOnly: true
-            permissions:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: Permissions associated with the Role Scope Tag. This property is read-only.
-              readOnly: true
             assignments:
               type: array
               items:
