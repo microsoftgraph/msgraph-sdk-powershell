@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.Beta.Search
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.industryData.inboundApiFlow"
+	"@odata.type" = "#microsoft.graph.industryData.inboundFileFlow"
 	displayName = "Updated flow name"
 }
 
