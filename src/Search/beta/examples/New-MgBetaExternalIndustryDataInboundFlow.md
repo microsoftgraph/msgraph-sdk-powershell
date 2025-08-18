@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.Beta.Search
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.industryData.inboundFileFlow"
+	"@odata.type" = "#microsoft.graph.industryData.inboundApiFlow"
 	"dataConnector@odata.bind" = "https://graph.microsoft.com/beta/external/industryData/dataConnectors/51dca0a0-85f6-4478-f526-08daddab2271"
 	dataDomain = "educationRostering"
 	displayName = "Inbound rostering flow"

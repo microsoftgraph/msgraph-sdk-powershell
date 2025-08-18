@@ -7815,7 +7815,7 @@ paths:
       tags:
         - reports.partners
       summary: Get reconciliation from reports
-      description: Represents details for billed invoice reconciliation data.
+      description: Represents details for billed and unbilled invoice reconciliation data.
       operationId: report.partner.billing_GetReconciliation
       parameters:
         - name: $select
@@ -8006,6 +8006,7 @@ paths:
       tags:
         - reports.partners
       summary: Get unbilled from reports
+      description: Represents details for unbilled invoice reconciliation data.
       operationId: report.partner.billing.reconciliation_GetUnbilled
       parameters:
         - name: $select
@@ -8083,6 +8084,10 @@ paths:
       tags:
         - reports.partners
       summary: Invoke action export
+      description: Export the unbilled invoice reconciliation data for a specific billing period and a given currency.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/partners-billing-unbilledreconciliation-export?view=graph-rest-1.0
       operationId: report.partner.billing.reconciliation.unbilled_export
       requestBody:
         description: Action parameters
@@ -8860,7 +8865,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Singleton entity that acts as a container for all reports functionality.
     microsoft.graph.deviceManagementExportJob:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

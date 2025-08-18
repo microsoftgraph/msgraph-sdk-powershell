@@ -7765,8 +7765,11 @@ paths:
     get:
       tags:
         - servicePrincipals.directoryObject
-      summary: Get createdObjects from servicePrincipals
-      description: Directory objects created by this service principal. Read-only. Nullable.
+      summary: 'servicePrincipal: List createdObjects'
+      description: Retrieve a list of directoryobject objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-1.0
       operationId: servicePrincipal_ListCreatedObject
       parameters:
         - name: servicePrincipal-id
@@ -10372,8 +10375,11 @@ paths:
     get:
       tags:
         - servicePrincipals.directoryObject
-      summary: Get ownedObjects from servicePrincipals
-      description: 'Directory objects that this service principal owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+      summary: 'servicePrincipals: List ownedObjects'
+      description: Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0
       operationId: servicePrincipal_ListOwnedObject
       parameters:
         - name: servicePrincipal-id
@@ -15083,13 +15089,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}':
-    get:
+  '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}/$ref':
+    delete:
       tags:
         - servicePrincipals.tokenIssuancePolicy
-      summary: Get tokenIssuancePolicies from servicePrincipals
-      description: The tokenIssuancePolicies assigned to this service principal.
-      operationId: servicePrincipal_GetTokenIssuancePolicy
+      summary: Delete ref of navigation property tokenIssuancePolicies for servicePrincipals
+      operationId: servicePrincipal.tokenIssuancePolicy_DeleteTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15107,33 +15112,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: tokenIssuancePolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
           schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
+            type: string
       responses:
         2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15159,6 +15146,102 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$ref':
+    get:
+      tags:
+        - servicePrincipals.tokenIssuancePolicy
+      summary: Get ref of tokenIssuancePolicies from servicePrincipals
+      description: The tokenIssuancePolicies assigned to this service principal.
+      operationId: servicePrincipal_ListTokenIssuancePolicyGraphBPreRef
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.tokenIssuancePolicy
+      summary: Create new navigation property ref to tokenIssuancePolicies for servicePrincipals
+      operationId: servicePrincipal_CreateTokenIssuancePolicyGraphBPreRef
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.tokenIssuancePolicy
+      summary: Delete ref of navigation property tokenIssuancePolicies for servicePrincipals
+      operationId: servicePrincipal_DeleteTokenIssuancePolicyGraphBPreRef
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies':
     get:
       tags:
@@ -15222,13 +15305,16 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}':
-    get:
+  '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}/$ref':
+    delete:
       tags:
         - servicePrincipals.tokenLifetimePolicy
-      summary: Get tokenLifetimePolicies from servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal.
-      operationId: servicePrincipal_GetTokenLifetimePolicy
+      summary: Remove tokenLifetimePolicies
+      description: Remove a tokenLifetimePolicy object from a service principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-tokenlifetimepolicies?view=graph-rest-1.0
+      operationId: servicePrincipal.tokenLifetimePolicy_DeleteTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -15246,33 +15332,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: tokenLifetimePolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
           schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
+            type: string
       responses:
         2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15298,6 +15366,113 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$ref':
+    get:
+      tags:
+        - servicePrincipals.tokenLifetimePolicy
+      summary: List assigned tokenLifetimePolicies
+      description: List the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-tokenlifetimepolicies?view=graph-rest-1.0
+      operationId: servicePrincipal_ListTokenLifetimePolicyGraphBPreRef
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.tokenLifetimePolicy
+      summary: Add tokenLifetimePolicy
+      description: Assign a tokenLifetimePolicy to a servicePrincipal. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per service principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-tokenlifetimepolicies?view=graph-rest-1.0
+      operationId: servicePrincipal_CreateTokenLifetimePolicyGraphBPreRef
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.tokenLifetimePolicy
+      summary: Remove tokenLifetimePolicies
+      description: Remove a tokenLifetimePolicy object from a service principal.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-tokenlifetimepolicies?view=graph-rest-1.0
+      operationId: servicePrincipal_DeleteTokenLifetimePolicyGraphBPreRef
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf':
     get:
       tags:
@@ -18743,20 +18918,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.tokenIssuancePolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
-        - title: tokenIssuancePolicy
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.tokenLifetimePolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
-        - title: tokenLifetimePolicy
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.addIn:
       title: addIn
       type: object
@@ -19083,6 +19244,20 @@ components:
             $ref: '#/components/schemas/microsoft.graph.redirectUriSettings'
       additionalProperties:
         type: object
+    microsoft.graph.tokenIssuancePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: tokenIssuancePolicy
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.tokenLifetimePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: tokenLifetimePolicy
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -21117,7 +21292,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
-          description: Devices that are managed or pre-enrolled through Intune
+          description: 'Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use ''and'', not ''or''.'
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -21321,6 +21496,7 @@ components:
               nullable: true
             externalId:
               type: string
+              description: The external ID that is a custom identifier. Optional.
               nullable: true
             isBroadcast:
               type: boolean
@@ -21534,8 +21710,15 @@ components:
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
+              description: 'The base presence information for a user. Possible values are Available, availableIdle,  Away, beRightBack, Busy, busyIdle, DoNotDisturb, Offline, presenceUnknown.'
               nullable: true
+            outOfOfficeSettings:
+              $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            sequenceNumber:
+              type: string
+              description: The lexicographically sortable string stamp that represents the version of a presence object.
+              nullable: true
+              readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
@@ -23638,7 +23821,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: Deep link URL of the tab instance. Read only.
+              description: Deep link URL of the tab instance. Read-only.
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
@@ -23704,6 +23887,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: dataSecurityAndGovernance
           type: object
+          properties:
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.activitiesContainer:
@@ -25080,6 +25269,7 @@ components:
         - windowsAzureADJoinUsingDeviceAuth
         - appleUserEnrollment
         - appleUserEnrollmentWithServiceAccount
+        - unknownFutureValue
       type: string
       description: Possible ways of adding a mobile device to management.
       x-ms-enum:
@@ -25125,6 +25315,9 @@ components:
           - value: appleUserEnrollmentWithServiceAccount
             description: Indicates the device is enrolled via Apple User Enrollment with Company Portal using a device enrollment manager user. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities
             name: appleUserEnrollmentWithServiceAccount
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -26046,6 +26239,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            isEndToEndEncryptionEnabled:
+              type: boolean
+              nullable: true
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.
@@ -26447,6 +26643,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
           additionalProperties:
             type: object
+    microsoft.graph.outOfOfficeSettings:
+      title: outOfOfficeSettings
+      type: object
+      properties:
+        isOutOfOffice:
+          type: boolean
+          description: 'If true, either of the following is met:The current time falls within the out-of-office window configured in Outlook or Teams.An event marked as ''Show as Out of Office'' appears on the user''s calendar.Otherwise, false.'
+          nullable: true
+        message:
+          type: string
+          description: The out-of-office message configured by the user in the Outlook client (Automatic replies) or the Teams client (Schedule out of office).
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.presenceStatusMessage:
       title: presenceStatusMessage
       type: object
@@ -27838,6 +28048,56 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            actionSource:
+              $ref: '#/components/schemas/microsoft.graph.labelActionSource'
+            autoTooltip:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isScopedToUser:
+              type: boolean
+              nullable: true
+            locale:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            rights:
+              $ref: '#/components/schemas/microsoft.graph.usageRightsIncluded'
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contentActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30107,13 +30367,13 @@ components:
             description: Pending reboot due to threat action
             name: pendingRebootDueToThreatAction
           - value: pendingManualStepsDueToThreatAction
-            description: 'Pending manual steps due to threat action '
+            description: Pending manual steps due to threat action
             name: pendingManualStepsDueToThreatAction
           - value: avSignaturesOutOfDate
-            description: AV signatures out of date
+            description: Antivirus (AV) signatures out of date
             name: avSignaturesOutOfDate
           - value: asSignaturesOutOfDate
-            description: AS signatures out of date
+            description: Antisypware (AS) signatures out of date
             name: asSignaturesOutOfDate
           - value: noQuickScanHappenedForSpecifiedPeriod
             description: No quick scan has happened for a specified period
@@ -31787,6 +32047,33 @@ components:
               type: string
               description: 'Write only. Content type. such as image/png, image/jpg.'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.labelActionSource:
+      title: labelActionSource
+      enum:
+        - manual
+        - automatic
+        - recommended
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.usageRightsIncluded:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRightsIncluded
+          type: object
+          properties:
+            ownerEmail:
+              type: string
+              description: The email of owner label rights.
+              nullable: true
+            userEmail:
+              type: string
+              description: The email of user with label user rights.
+              nullable: true
+            value:
+              $ref: '#/components/schemas/microsoft.graph.usageRights'
           additionalProperties:
             type: object
     microsoft.graph.processContentRequest:
@@ -34681,6 +34968,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.usageRights:
+      title: usageRights
+      enum:
+        - unknown
+        - docEdit
+        - edit
+        - comment
+        - export
+        - forward
+        - owner
+        - print
+        - reply
+        - replyAll
+        - view
+        - extract
+        - viewRightsData
+        - editRightsData
+        - objModel
+        - accessDenied
+        - userDefinedProtectionTypeNotSupportedException
+        - encryptedProtectionTypeNotSupportedException
+        - purviewClaimsChallengeNotSupportedException
+        - exception
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -35082,7 +35396,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         isPaid:
@@ -35092,7 +35406,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
         theme:
@@ -35486,37 +35800,37 @@ components:
       properties:
         allowAutoFilter:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+          description: Represents the worksheet protection option of allowing using auto filter feature.
         allowDeleteColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+          description: Represents the worksheet protection option of allowing deleting columns.
         allowDeleteRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+          description: Represents the worksheet protection option of allowing deleting rows.
         allowFormatCells:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+          description: Represents the worksheet protection option of allowing formatting cells.
         allowFormatColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+          description: Represents the worksheet protection option of allowing formatting columns.
         allowFormatRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+          description: Represents the worksheet protection option of allowing formatting rows.
         allowInsertColumns:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+          description: Represents the worksheet protection option of allowing inserting columns.
         allowInsertHyperlinks:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+          description: Represents the worksheet protection option of allowing inserting hyperlinks.
         allowInsertRows:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+          description: Represents the worksheet protection option of allowing inserting rows.
         allowPivotTables:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+          description: Represents the worksheet protection option of allowing using pivot table feature.
         allowSort:
           type: boolean
-          description: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
+          description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
     microsoft.graph.scheduleEntityTheme:

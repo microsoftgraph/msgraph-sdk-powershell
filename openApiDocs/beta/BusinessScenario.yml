@@ -2428,7 +2428,7 @@ components:
       properties:
         isApprovalRequired:
           type: boolean
-          description: 'Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.'
+          description: 'Specifies whether approval is required to complete the plannerTask. If set to true, the task can only be marked as complete if an approval is created for the task and approved.'
           nullable: true
       additionalProperties:
         type: object

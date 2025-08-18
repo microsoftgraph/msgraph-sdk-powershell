@@ -1505,7 +1505,7 @@ paths:
       tags:
         - users.profile
       summary: Delete personAward
-      description: Deletes a personAward object from a user's profile.
+      description: Delete a personAward object from a user's profile.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-beta
@@ -5478,11 +5478,17 @@ components:
             countryCode:
               type: string
               description: Contains the two-character country code associated with the users' account.
+              nullable: true
+            originTenantInfo:
+              $ref: '#/components/schemas/microsoft.graph.originTenantInfo'
             preferredLanguageTag:
               $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            userPersona:
+              $ref: '#/components/schemas/microsoft.graph.userPersona'
             userPrincipalName:
               type: string
               description: The user principal name (UPN) of the user associated with the account.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.itemAddress:
@@ -5532,6 +5538,7 @@ components:
             displayName:
               type: string
               description: Name of the award or honor.
+              nullable: true
             issuedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -5569,6 +5576,7 @@ components:
             displayName:
               type: string
               description: Title of the certification.
+              nullable: true
             endDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -5644,6 +5652,7 @@ components:
             address:
               type: string
               description: The email address itself.
+              nullable: true
             displayName:
               type: string
               description: The name or label a user has associated with a particular email address.
@@ -5677,6 +5686,7 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the interest.
+              nullable: true
             thumbnailUrl:
               type: string
               nullable: true
@@ -5695,6 +5705,7 @@ components:
             displayName:
               type: string
               description: Contains the long-form name for the language.
+              nullable: true
             proficiency:
               $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
             reading:
@@ -5792,6 +5803,7 @@ components:
             displayName:
               type: string
               description: Title of the patent or filing.
+              nullable: true
             isPending:
               type: boolean
               description: Indicates the patent is pending.
@@ -5804,7 +5816,7 @@ components:
               nullable: true
             issuingAuthority:
               type: string
-              description: Authority which granted the patent.
+              description: Authority that granted the patent.
               nullable: true
             number:
               type: string
@@ -5829,6 +5841,7 @@ components:
             number:
               type: string
               description: Phone number provided by the user.
+              nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.phoneType'
           additionalProperties:
@@ -5890,6 +5903,7 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the project.
+              nullable: true
             sponsors:
               type: array
               items:
@@ -5913,6 +5927,7 @@ components:
             displayName:
               type: string
               description: Title of the publication.
+              nullable: true
             publishedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -5954,6 +5969,7 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the skill.
+              nullable: true
             proficiency:
               $ref: '#/components/schemas/microsoft.graph.skillProficiencyLevel'
             thumbnailUrl:
@@ -5987,6 +6003,7 @@ components:
             userId:
               type: string
               description: The user name  displayed for the webaccount.
+              nullable: true
             webUrl:
               type: string
               description: Contains a link to the user's profile on the cloud service if one exists.
@@ -6012,12 +6029,14 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the website.
+              nullable: true
             thumbnailUrl:
               type: string
               nullable: true
             webUrl:
               type: string
               description: Contains a link to the website itself.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -6151,6 +6170,7 @@ components:
               type: string
               description: Provides the dateTimeOffset for when the entity was created.
               format: date-time
+              nullable: true
             inference:
               $ref: '#/components/schemas/microsoft.graph.inferenceData'
             isSearchable:
@@ -6163,6 +6183,7 @@ components:
               type: string
               description: Provides the dateTimeOffset for when the entity was created.
               format: date-time
+              nullable: true
             source:
               $ref: '#/components/schemas/microsoft.graph.personDataSources'
             sources:
@@ -6172,6 +6193,20 @@ components:
               description: Where the values within an entity originated if synced from another source.
           additionalProperties:
             type: object
+    microsoft.graph.originTenantInfo:
+      title: originTenantInfo
+      type: object
+      properties:
+        originTenantId:
+          type: string
+          description: The identifier of the tenant where the user account was originally provisioned.
+          nullable: true
+        originUserId:
+          type: string
+          description: The identifier of the user in the origin tenant.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.localeInfo:
       title: localeInfo
       type: object
@@ -6186,6 +6221,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userPersona:
+      title: userPersona
+      enum:
+        - unknown
+        - externalMember
+        - externalGuest
+        - internalMember
+        - internalGuest
+        - unknownFutureValue
+      type: string
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -6259,6 +6304,7 @@ components:
         displayName:
           type: string
           description: Name of the institution the user studied at.
+          nullable: true
         location:
           $ref: '#/components/schemas/microsoft.graph.physicalAddress'
         webUrl:
@@ -6294,6 +6340,7 @@ components:
         displayName:
           type: string
           description: Long-form name of the program that the user provided.
+          nullable: true
         fieldsOfStudy:
           type: array
           items:
@@ -6411,6 +6458,14 @@ components:
           type: string
           description: A description for the position in question.
           nullable: true
+        employeeId:
+          type: string
+          description: The identifier assigned to the employee.
+          nullable: true
+        employeeType:
+          type: string
+          description: The type of employment for the position.
+          nullable: true
         endMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
@@ -6466,6 +6521,10 @@ components:
           type: string
           description: 'Legal entity number of the company or its subdivision. For information on how to set the value for the companyCode, see profileSourceAnnotation.'
           nullable: true
+        costCenter:
+          type: string
+          description: The cost center associated with the company or department.
+          nullable: true
         department:
           type: string
           description: Department Name within a company.
@@ -6473,6 +6532,11 @@ components:
         displayName:
           type: string
           description: Company name.
+          nullable: true
+        division:
+          type: string
+          description: The division within the company.
+          nullable: true
         officeLocation:
           type: string
           description: Office Location of the person referred to.
@@ -6508,9 +6572,11 @@ components:
         name:
           type: string
           description: 'The name of the cloud service (for example, Twitter, Instagram).'
+          nullable: true
         webUrl:
           type: string
           description: Contains the URL for the service being referenced.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -6936,6 +7002,7 @@ components:
           description: Names of properties that have data from this source.
         sourceId:
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.physicalAddressType:
