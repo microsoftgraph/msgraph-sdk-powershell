@@ -11,10 +11,10 @@ paths:
       tags:
         - users.user
       summary: List users
-      description: List properties and relationships of the user objects.
+      description: Retrieve a list of user objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -152,7 +152,7 @@ paths:
       description: Update the properties of a user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0
       operationId: user_UpdateUser
       parameters:
         - name: user-id
@@ -11494,7 +11494,7 @@ paths:
       description: Update the properties of a user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0
       operationId: user_UpdateUserGraphBPreUserPrincipalName
       parameters:
         - name: userPrincipalName
@@ -21263,6 +21263,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEndToEndEncryptionEnabled:
               type: boolean
+              description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
               nullable: true
             isEntryExitAnnounced:
               type: boolean

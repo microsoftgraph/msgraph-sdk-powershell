@@ -1392,11 +1392,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get conversationMember
-      description: Retrieve a conversationMember from a chat or channel.
+      summary: Get conversationMember in a chat
+      description: Retrieve a conversationMember from a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -1722,11 +1722,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -20807,11 +20807,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -21763,11 +21763,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: team.channel.message_CreateReply
       parameters:
         - name: team-id
@@ -73945,6 +73945,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEndToEndEncryptionEnabled:
               type: boolean
+              description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
