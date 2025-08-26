@@ -841,11 +841,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
+      summary: Create openTypeExtension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-beta
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -878,10 +878,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Get a group's conversation object.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-beta
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -934,10 +934,10 @@ paths:
       tags:
         - groups.conversation
       summary: Delete conversation
-      description: Delete a group's conversation object.
+      description: Delete conversation.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-beta
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -1238,10 +1238,10 @@ paths:
       tags:
         - groups.conversation
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-beta
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -11587,11 +11587,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversation thread
-      description: Delete a thread object.
+      summary: Delete conversationThread
+      description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-beta
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -11627,10 +11627,10 @@ paths:
       tags:
         - groups.conversationThread
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-beta
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -25860,11 +25860,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
