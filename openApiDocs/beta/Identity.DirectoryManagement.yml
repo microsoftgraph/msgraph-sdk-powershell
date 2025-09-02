@@ -13780,11 +13780,11 @@ paths:
     post:
       tags:
         - directory.authenticationMethodDevice
-      summary: Create hardwareOathTokenAuthenticationMethodDevice
-      description: "Create a new hardwareOathTokenAuthenticationMethodDevice object. This API supports two scenarios:\n- Create the new hardware token without assigning to a user. You can then assign to a user.\n- Create and assign a hardware token to a user in the same request. "
+      summary: Create one or more hardwareOathTokenAuthenticationMethodDevice objects
+      description: "Create one or more hardwareOathTokenAuthenticationMethodDevice objects. This API supports two scenarios:\n- Create the new hardware tokens without assigning to users. You can then assign to a user.\n- Create and assign any individual hardware tokens to users in the same request."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationmethoddevice-post-hardwareoathdevices?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/authenticationmethoddevice-update?view=graph-rest-beta
       operationId: directory.authenticationMethodDevice_CreateHardwareOathDevice
       requestBody:
         description: New navigation property
@@ -39658,11 +39658,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object

@@ -4494,11 +4494,11 @@ paths:
     get:
       tags:
         - networkAccess.filteringProfile
-      summary: Get threatIntelligencePolicyLink
-      description: Read the properties and relationships of a threatIntelligencePolicyLink object.
+      summary: Get tlsInspectionPolicyLink
+      description: Get a tlsInspectionPolicyLink object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-get?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_GetPolicy
       parameters:
         - name: filteringProfile-id
@@ -4550,11 +4550,11 @@ paths:
     patch:
       tags:
         - networkAccess.filteringProfile
-      summary: Update tlsInspectionPolicyLink
-      description: Update the properties of a tlsInspectionPolicyLink object.
+      summary: Update threatIntelligencePolicyLink
+      description: Update the properties of a threatIntelligencePolicyLink object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-update?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_UpdatePolicy
       parameters:
         - name: filteringProfile-id
@@ -4593,11 +4593,11 @@ paths:
     delete:
       tags:
         - networkAccess.filteringProfile
-      summary: Delete tlsInspectionPolicyLink
-      description: Delete a tlsInspectionPolicyLink object. Used to unlink a tlsInspectionPolicy from a filtering profile.
+      summary: Delete threatIntelligencePolicyLink
+      description: Delete a threatIntelligencePolicyLink object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-delete?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_DeletePolicy
       parameters:
         - name: filteringProfile-id
@@ -9346,6 +9346,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.networkaccess.webCategory'
+              description: The URL category.
             branches:
               type: array
               items:
@@ -24888,11 +24889,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
