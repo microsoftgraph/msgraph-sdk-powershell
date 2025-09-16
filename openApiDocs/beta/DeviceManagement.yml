@@ -43436,26 +43436,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              description: Specify category in which the setting is under. Support $filters.
               nullable: true
             description:
               type: string
-              description: Description of the item
+              description: Description of the setting.
               nullable: true
             displayName:
               type: string
-              description: Display name of the item
+              description: 'Name of the setting. For example: Allow Toast.'
               nullable: true
             helpText:
               type: string
-              description: Help text of the item
+              description: Help text of the setting. Give more details of the setting.
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at
+              description: List of links more info for the setting can be found at.
             keywords:
               type: array
               items:
@@ -43481,7 +43481,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingRiskLevel'
             rootDefinitionId:
               type: string
-              description: Root setting definition if the setting is a child setting.
+              description: Root setting definition id if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -53270,6 +53270,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcCloudApp'
+              description: A collection of cloud apps that are built on frontline shared options and provide Windows 365 end users with access to app-only sessions instead of a full desktop experience.
               x-ms-navigationProperty: true
             cloudPCs:
               type: array
@@ -57423,7 +57424,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
           nullable: true
       additionalProperties:
         type: object
@@ -60899,11 +60900,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -64608,10 +64609,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcCloudAppActionFailedErrorCode'
             actionFailedErrorMessage:
               type: string
+              description: 'The error message when the IT admin failed to publish, unpublish, update, or reset a cloud app. For example: ''Publish failed because it exceeds the 500 cloud apps limitation under the policy. You need to unpublish some cloud apps under this policy in order to publish this cloud app again.'' Read-only.'
               nullable: true
             addedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the cloud app was added to this tenant and became visible in the admin portal. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can''t set or modify it. Supports $filter, $select, and $orderBy. Read-only.'
               format: date-time
               nullable: true
             appDetail:
@@ -64620,24 +64623,32 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcCloudAppStatus'
             availableToUser:
               type: boolean
+              description: 'Indicates whether this cloud app is available to end users through the end-user portal or the Windows App. The default value is false. It changes to true if the cloud app is successfully published, and reverts to false when the admin unpublishes the cloud app. Supports $filter, $select, and $orderBy.'
             description:
               type: string
+              description: 'The description associated with the cloud app. The maximum allowed length for this property is 512 characters. Supports $filter, $select, and $orderBy.'
               nullable: true
             discoveredAppName:
               type: string
+              description: 'Name of the discovered app associated with the cloud app. For example, Paint, Supports $filter, $select, and $orderBy. Read-only.'
             displayName:
               type: string
+              description: 'The display name for the cloud app. The display name for the cloud app, which appears on the end-user portal and must be unique within a single provisioning policy. It uses the discovered app name as the default value. The maximum allowed length for this property is 64 characters. For example, Paint. Supports $filter, $select, and $orderBy.'
             lastPublishedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The latest date time when the admin published the cloud app. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can''t set or modify it. Supports $filter, $select, and $orderBy. Read-only.'
               format: date-time
+              nullable: true
             provisioningPolicyId:
               type: string
+              description: 'The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Read-only. Required.'
             scopeIds:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The list of scope tag IDs for this cloud app. Inherited from the provisioning policy when the app is created or updated. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.cloudPC:
@@ -65329,7 +65340,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointSetting'
             selfServiceEnabled:
               type: boolean
-              description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.'
+              description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and stopped returning data on December 1, 2023.'
               nullable: true
             assignments:
               type: array
@@ -72156,17 +72167,21 @@ components:
       properties:
         commandLineArguments:
           type: string
+          description: 'Specifies the command-line arguments for the cloud app. These parameters are passed to the cloud app when it''s launched. The maximum allowed length for this property is 2,048 characters. For example, -fullscreen -loop.'
           nullable: true
         filePath:
           type: string
+          description: 'Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, C:/app.exe or shell:AppsFolder/appname!App. Read-only.'
         iconIndex:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'Specifies the index of the icon within the file specified by the iconPath property. For example, if iconPath is set to C:/Program Files/MyApp/myapp.ico and iconIndex is set to 0, the system uses the first icon in the myapp.ico file. The default value is 0.'
           format: int32
           nullable: true
         iconPath:
           type: string
+          description: 'Specifies the path to the icon file for the application within the OS of the hosting Cloud PC. When an admin updates the path of a cloud app, the value should be a rooted absolute path. For example, C:/Windows/system32/WindowsPowerShell/v1.0/powershell_ise.exe. If this property isn''t defined, a default icon is used.'
       additionalProperties:
         type: object
     microsoft.graph.cloudPcCloudAppStatus:

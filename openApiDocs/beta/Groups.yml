@@ -407,11 +407,11 @@ paths:
     post:
       tags:
         - groups.group
-      summary: Upsert group
-      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
+      summary: Create group
+      description: 'Create a new group as specified in the request body. You can create one of the following groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-beta
       operationId: group_CreateGroup
       requestBody:
         description: New entity
@@ -878,10 +878,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Get a group's conversation object.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-beta
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -11587,11 +11587,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversation thread
-      description: Delete a thread object.
+      summary: Delete conversationThread
+      description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-beta
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -25860,11 +25860,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object

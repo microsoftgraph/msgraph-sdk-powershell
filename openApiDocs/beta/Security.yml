@@ -14940,7 +14940,11 @@ paths:
     get:
       tags:
         - security.identityContainer
-      summary: Get identityAccounts from security
+      summary: List identityAccounts objects
+      description: Get a list of the identityAccounts objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identitycontainer-list-identityaccounts?view=graph-rest-beta
       operationId: security.identity_ListIdentityAccount
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15013,7 +15017,11 @@ paths:
     get:
       tags:
         - security.identityContainer
-      summary: Get identityAccounts from security
+      summary: Get identityAccounts
+      description: Read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identityaccounts-get?view=graph-rest-beta
       operationId: security.identity_GetIdentityAccount
       parameters:
         - name: identityAccounts-id
@@ -15116,6 +15124,10 @@ paths:
       tags:
         - security.identityContainer
       summary: Invoke action invokeAction
+      description: Perform actions such as revoking accounts and forcing password reset for identity accounts that are observed in Microsoft Defender for Identity. This action allows reading and performing identity security actions on behalf of the signed-in identity.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identityaccounts-invokeaction?view=graph-rest-beta
       operationId: security.identity.identityAccount_invokeAction
       parameters:
         - name: identityAccounts-id
@@ -34710,7 +34722,6 @@ components:
         - includeFolderAndPath
         - friendlyName
         - condensePaths
-        - optimizedPartitionSize
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -34744,6 +34755,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.documentVersion'
             itemsToInclude:
               $ref: '#/components/schemas/microsoft.graph.security.itemsToInclude'
+            reportFileMetadata:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.reportFileMetadata'
+              description: 'Contains the properties for report file metadata, including downloadUrl, fileName, and size.'
             reviewSet:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
             search:
@@ -34773,6 +34789,11 @@ components:
               description: The number of mailboxes that had search hits.
               format: int32
               nullable: true
+            reportFileMetadata:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.reportFileMetadata'
+              description: 'Contains the properties for report file metadata, including downloadUrl, fileName, and size.'
             siteCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -34831,7 +34852,6 @@ components:
         - condensePaths
         - friendlyName
         - splitSource
-        - optimizedPartitionSize
         - includeReport
       type: string
       x-ms-enum-flags:
@@ -35810,6 +35830,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+              description: Represents an identity's details in the context of Microsoft Defender for Identity.
               x-ms-navigationProperty: true
             sensors:
               type: array
@@ -35891,19 +35912,25 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.account'
+              description: Collection of accounts of the identity in different identity providers.
             cloudSecurityIdentifier:
               type: string
+              description: The cloud security identifier of the identityAccount.
               nullable: true
             displayName:
               type: string
+              description: The  Active Directory display name of the identityAccount.
               nullable: true
             domain:
               type: string
+              description: The Active Directory domain name of the identityAccount.
               nullable: true
             isEnabled:
               type: boolean
+              description: Boolean indicating if the identityAccounts is enabled.
             onPremisesSecurityIdentifier:
               type: string
+              description: The on-premises security identifier of the identityAccount.
               nullable: true
           additionalProperties:
             type: object
@@ -35932,10 +35959,12 @@ components:
       properties:
         accountId:
           type: string
+          description: The account ID.
         action:
           $ref: '#/components/schemas/microsoft.graph.security.action'
         correlationId:
           type: string
+          description: The unique identifier for tracking the request.
           nullable: true
         identityProvider:
           $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
@@ -42541,6 +42570,25 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.security.reportFileMetadata:
+      title: reportFileMetadata
+      type: object
+      properties:
+        downloadUrl:
+          type: string
+          description: The URL to download the report.
+          nullable: true
+        fileName:
+          type: string
+          description: The name of the file.
+          nullable: true
+        size:
+          type: number
+          description: The size of the file.
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.security.statisticsOptions:
       title: statisticsOptions
       enum:
@@ -43649,8 +43697,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.action'
+          description: 'List of the type of action. The possible values are: disable, enable, forcePasswordReset, revokeAllSessions, requireUserToSignInAgain, markUserAsCompromised.'
         identifier:
           type: string
+          description: The account ID.
         identityProvider:
           $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
       additionalProperties:
@@ -43765,14 +43815,16 @@ components:
         - unknownFutureValue
       type: string
     microsoft.graph.security.incidentTaskResponseAction:
-      title: incidentTaskResponseAction
-      type: object
-      properties:
-        identifierValue:
-          type: string
-          description: Required. The identifier value for the response action. This value is specific to the type of action being performed.
-      additionalProperties:
-        type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.security.responseAction'
+        - title: incidentTaskResponseAction
+          type: object
+          properties:
+            identifierValue:
+              type: string
+              description: Required. The identifier value for the response action. This value is specific to the type of action being performed.
+          additionalProperties:
+            type: object
     microsoft.graph.security.incidentTaskSource:
       title: incidentTaskSource
       enum:
@@ -45592,6 +45644,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
             userAccountType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+            userExperienceType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcUserExperienceType'
             userPrincipalName:
               type: string
               description: The user principal name (UPN) of the user assigned to the Cloud PC.
@@ -54357,6 +54411,13 @@ components:
         - administrator
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcUserExperienceType:
+      title: cloudPcUserExperienceType
+      enum:
+        - cloudPc
+        - cloudApp
+        - unknownFutureValue
+      type: string
     microsoft.graph.callSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -57011,32 +57072,26 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.actionItem'
-              description: The collection of AI-generated action items. Read-only.
             callId:
               type: string
-              description: The ID for the online meeting call for which the callAiInsight was generated. Read-only.
               nullable: true
             contentCorrelationId:
               type: string
-              description: The unique ID that correlates the transcript from which the insights were generated. Read-only.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the corresponding transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the corresponding transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingNotes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingNote'
-              description: The collection of AI-generated meeting notes. Read-only.
             viewpoint:
               $ref: '#/components/schemas/microsoft.graph.callAiInsightViewPoint'
           additionalProperties:
@@ -57841,8 +57896,12 @@ components:
               type: string
               description: Contains the two-character country code associated with the users' account.
               nullable: true
+            originTenantInfo:
+              $ref: '#/components/schemas/microsoft.graph.originTenantInfo'
             preferredLanguageTag:
               $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            userPersona:
+              $ref: '#/components/schemas/microsoft.graph.userPersona'
             userPrincipalName:
               type: string
               description: The user principal name (UPN) of the user associated with the account.
@@ -60878,11 +60937,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -63988,15 +64047,12 @@ components:
       properties:
         ownerDisplayName:
           type: string
-          description: The display name of the owner of the action item.
           nullable: true
         text:
           type: string
-          description: The text content of the action item.
           nullable: true
         title:
           type: string
-          description: The title of the action item.
           nullable: true
       additionalProperties:
         type: object
@@ -64008,14 +64064,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingNoteSubpoint'
-          description: A collection of subpoints of the meeting note.
         text:
           type: string
-          description: The text of the meeting note.
           nullable: true
         title:
           type: string
-          description: The title of the meeting note.
           nullable: true
       additionalProperties:
         type: object
@@ -64027,7 +64080,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.mentionEvent'
-          description: The collection of AI-generated mention events.
       additionalProperties:
         type: object
     microsoft.graph.virtualEventExternalInformation:
@@ -64293,6 +64345,9 @@ components:
           type: number
           description: 'Duration of each recurrence of review (accessReviewInstance) in number of days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.'
           format: int32
+        isAgenticExperienceEnabled:
+          type: boolean
+          nullable: true
         justificationRequiredOnApproval:
           type: boolean
           description: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
@@ -64542,6 +64597,30 @@ components:
               description: Where the values within an entity originated if synced from another source.
           additionalProperties:
             type: object
+    microsoft.graph.originTenantInfo:
+      title: originTenantInfo
+      type: object
+      properties:
+        originTenantId:
+          type: string
+          description: The identifier of the tenant where the user account was originally provisioned.
+          nullable: true
+        originUserId:
+          type: string
+          description: The identifier of the user in the origin tenant.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userPersona:
+      title: userPersona
+      enum:
+        - unknown
+        - externalMember
+        - externalGuest
+        - internalMember
+        - internalGuest
+        - unknownFutureValue
+      type: string
     microsoft.graph.personAnnualEventType:
       title: personAnnualEventType
       enum:
@@ -64681,6 +64760,14 @@ components:
           type: string
           description: A description for the position in question.
           nullable: true
+        employeeId:
+          type: string
+          description: The identifier assigned to the employee.
+          nullable: true
+        employeeType:
+          type: string
+          description: The type of employment for the position.
+          nullable: true
         endMonthYear:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
           type: string
@@ -64736,6 +64823,10 @@ components:
           type: string
           description: 'Legal entity number of the company or its subdivision. For information on how to set the value for the companyCode, see profileSourceAnnotation.'
           nullable: true
+        costCenter:
+          type: string
+          description: The cost center associated with the company or department.
+          nullable: true
         department:
           type: string
           description: Department Name within a company.
@@ -64743,6 +64834,10 @@ components:
         displayName:
           type: string
           description: Company name.
+          nullable: true
+        division:
+          type: string
+          description: The division within the company.
           nullable: true
         officeLocation:
           type: string
@@ -68334,11 +68429,9 @@ components:
       properties:
         text:
           type: string
-          description: The text of the meeting note subpoint.
           nullable: true
         title:
           type: string
-          description: The title of the meeting note subpoint.
           nullable: true
       additionalProperties:
         type: object
@@ -68349,14 +68442,12 @@ components:
         eventDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time of the mention event. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         speaker:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         transcriptUtterance:
           type: string
-          description: The utterance in the online meeting transcript that contains the mention event.
           nullable: true
       additionalProperties:
         type: object
