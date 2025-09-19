@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Get-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroup -MobilityManagementPolicyId $mobilityManagementPolicyId
+Get-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroup -MobileDeviceManagementPolicyId $mobileDeviceManagementPolicyId
 
 ```
 This example shows how to use the Get-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroup Cmdlet.
