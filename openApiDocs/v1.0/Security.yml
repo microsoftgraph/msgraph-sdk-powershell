@@ -619,11 +619,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get endUserNotification
-      description: Read the properties and relationships of an endUserNotification object.
+      summary: List endUserNotifications
+      description: Get a list of endUserNotification objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/endusernotification-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-endusernotifications?view=graph-rest-1.0
       operationId: security.attackSimulation_ListEndUserNotification
       parameters:
         - $ref: '#/components/parameters/top'
@@ -24126,10 +24126,14 @@ components:
         - title: ediscoveryCaseSettings
           type: object
           properties:
+            caseType:
+              $ref: '#/components/schemas/microsoft.graph.security.caseType'
             ocr:
               $ref: '#/components/schemas/microsoft.graph.security.ocrSettings'
             redundancyDetection:
               $ref: '#/components/schemas/microsoft.graph.security.redundancyDetectionSettings'
+            reviewSetSettings:
+              $ref: '#/components/schemas/microsoft.graph.security.reviewSetSettings'
             topicModeling:
               $ref: '#/components/schemas/microsoft.graph.security.topicModelingSettings'
           additionalProperties:
@@ -29192,6 +29196,13 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.security.caseType:
+      title: caseType
+      enum:
+        - standard
+        - premium
+        - unknownFutureValue
+      type: string
     microsoft.graph.security.ocrSettings:
       title: ocrSettings
       type: object
@@ -29246,6 +29257,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.reviewSetSettings:
+      title: reviewSetSettings
+      enum:
+        - none
+        - disableGrouping
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.security.topicModelingSettings:
       title: topicModelingSettings
       type: object
@@ -37121,6 +37141,10 @@ components:
               type: boolean
               description: Indicates whether breakout rooms are enabled for the meeting.
               nullable: true
+            allowCopyingAndSharingMeetingContent:
+              type: boolean
+              description: Indicates whether the ability to copy and share meeting content is enabled for the meeting.
+              nullable: true
             allowedLobbyAdmitters:
               $ref: '#/components/schemas/microsoft.graph.allowedLobbyAdmitterRoles'
             allowedPresenters:
@@ -37161,6 +37185,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEndToEndEncryptionEnabled:
               type: boolean
+              description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
               nullable: true
             isEntryExitAnnounced:
               type: boolean

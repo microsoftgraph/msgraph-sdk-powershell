@@ -5880,11 +5880,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get namedLocation
-      description: Retrieve the properties and relationships of a namedLocation object.
+      summary: Get ipNamedLocation
+      description: Retrieve the properties and relationships of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -5963,11 +5963,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete namedLocation
+      description: Delete a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -13125,11 +13125,11 @@ paths:
     put:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update crossTenantIdentitySyncPolicyPartner
-      description: Update the user synchronization policy of a partner-specific configuration.
+      summary: Create identitySynchronization
+      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_SetIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -31060,6 +31060,10 @@ components:
               type: boolean
               description: Indicates whether breakout rooms are enabled for the meeting.
               nullable: true
+            allowCopyingAndSharingMeetingContent:
+              type: boolean
+              description: Indicates whether the ability to copy and share meeting content is enabled for the meeting.
+              nullable: true
             allowedLobbyAdmitters:
               $ref: '#/components/schemas/microsoft.graph.allowedLobbyAdmitterRoles'
             allowedPresenters:
@@ -31100,6 +31104,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEndToEndEncryptionEnabled:
               type: boolean
+              description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
               nullable: true
             isEntryExitAnnounced:
               type: boolean

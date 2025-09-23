@@ -377,11 +377,11 @@ paths:
     post:
       tags:
         - groups.group
-      summary: Upsert group
-      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
+      summary: Create group
+      description: 'Create a new group as specified in the request body. You can create the following types of groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0
       operationId: group_CreateGroup
       requestBody:
         description: New entity
@@ -809,11 +809,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Use reply thread or reply post to further post to that conversation.
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -846,10 +846,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: The group's conversations.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -1206,10 +1206,10 @@ paths:
       tags:
         - groups.conversation
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -10291,11 +10291,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversationThread
+      summary: Delete conversation thread
       description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -10331,10 +10331,10 @@ paths:
       tags:
         - groups.conversationThread
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -24533,6 +24533,10 @@ components:
               type: boolean
               description: Indicates whether breakout rooms are enabled for the meeting.
               nullable: true
+            allowCopyingAndSharingMeetingContent:
+              type: boolean
+              description: Indicates whether the ability to copy and share meeting content is enabled for the meeting.
+              nullable: true
             allowedLobbyAdmitters:
               $ref: '#/components/schemas/microsoft.graph.allowedLobbyAdmitterRoles'
             allowedPresenters:
@@ -24573,6 +24577,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEndToEndEncryptionEnabled:
               type: boolean
+              description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
               nullable: true
             isEntryExitAnnounced:
               type: boolean

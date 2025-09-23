@@ -8036,7 +8036,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: .
+              description: This property will be deprecated soon. Don't use.
               format: int32
               nullable: true
             searchResponseId:
