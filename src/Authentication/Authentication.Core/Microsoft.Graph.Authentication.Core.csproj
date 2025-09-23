@@ -4,7 +4,7 @@
     <LangVersion>9.0</LangVersion>
     <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
-    <Version>2.26.1</Version>
+    <Version>2.30.0</Version>
     <!-- Suppress .NET Target Framework Moniker (TFM) Support Build Warnings -->
     <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
@@ -13,9 +13,9 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.13.2" />
-    <PackageReference Include="Azure.Identity.Broker" Version="1.2.0" />
-    <PackageReference Include="Microsoft.Graph.Core" Version="3.2.2" />
+    <PackageReference Include="Azure.Identity" Version="1.14.2" />
+    <PackageReference Include="Azure.Identity.Broker" Version="1.2.1" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="3.2.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
