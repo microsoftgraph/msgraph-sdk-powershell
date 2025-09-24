@@ -15,39 +15,41 @@ Microsoft Graph PowerShell supports two types of authentication: delegated and a
 ### UserParameterSet (Default)
 ```
 Connect-MgGraph [[-Scopes] <String[]>] [[-ClientId] <String>] [-TenantId <String>]
- [-ContextScope <ContextScope>] [-Environment <String>] [-UseDeviceCode] [-ClientTimeout <Double>] [-NoWelcome]
- [<CommonParameters>]
+ [-ContextScope <ContextScope>] [-Environment <String>] [-UseDeviceCode] [-ClientTimeout <Double>]
+ [-UserPrincipalName <String>] [-NoWelcome] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### AppCertificateParameterSet
 ```
 Connect-MgGraph [-ClientId] <String> [[-CertificateSubjectName] <String>] [[-CertificateThumbprint] <String>]
- [-Certificate <X509Certificate2>] [-TenantId <String>] [-ContextScope <ContextScope>] [-Environment <String>]
- [-ClientTimeout <Double>] [-NoWelcome] [<CommonParameters>]
+ [-SendCertificateChain <Boolean>] [-Certificate <X509Certificate2>] [-TenantId <String>]
+ [-ContextScope <ContextScope>] [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### IdentityParameterSet
 ```
 Connect-MgGraph [[-ClientId] <String>] [-ContextScope <ContextScope>] [-Environment <String>]
- [-ClientTimeout <Double>] [-Identity] [-NoWelcome] [<CommonParameters>]
+ [-ClientTimeout <Double>] [-Identity] [-NoWelcome] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### AppSecretCredentialParameterSet
 ```
 Connect-MgGraph [-ClientSecretCredential <PSCredential>] [-TenantId <String>] [-ContextScope <ContextScope>]
- [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome] [<CommonParameters>]
+ [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ### AccessTokenParameterSet
 ```
 Connect-MgGraph [-AccessToken] <SecureString> [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome]
- [<CommonParameters>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### EnvironmentVariableParameterSet
 ```
 Connect-MgGraph [-ContextScope <ContextScope>] [-Environment <String>] [-ClientTimeout <Double>]
- [-EnvironmentVariable] [-NoWelcome] [<CommonParameters>]
+ [-EnvironmentVariable] [-NoWelcome] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -351,6 +353,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Scopes
 An array of delegated permissions to consent to.
 
@@ -361,6 +378,21 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SendCertificateChain
+Include x5c header in client claims when acquiring a token to enable subject name / issuer based authentication using given certificate.
+
+```yaml
+Type: Boolean
+Parameter Sets: AppCertificateParameterSet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -391,6 +423,21 @@ Use device code authentication instead of a browser control.
 Type: SwitchParameter
 Parameter Sets: UserParameterSet
 Aliases: UseDeviceAuthentication, DeviceCode, DeviceAuth, Device
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserPrincipalName
+Specifies the account that you want to use to connect in order to skip the connection prompt.
+
+```yaml
+Type: String
+Parameter Sets: UserParameterSet
+Aliases: UPN
 
 Required: False
 Position: Named
