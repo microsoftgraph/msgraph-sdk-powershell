@@ -7197,6 +7197,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.retrieveEnrollmentTimeGroupingFailureReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action retrieveEnrollmentTimeGroupingFailureReport
+      operationId: deviceManagement.report_retrieveEnrollmentTimeGroupingFailureReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.retrieveSecurityTaskAppsReport:
     post:
       tags:
@@ -22637,7 +22709,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.protocolType'
             authenticationRequirement:
               type: string
-              description: 'The authentication requirement as explicitly requested by a resource provider. Does not account for previously satisfied claims. If primary authentication fails, the sign-in attempt is not evaluated by Conditional Access, so the resulting value is SingleFactorAuthentication.  Supports $filter (eq, startsWith).'
+              description: 'The authentication stage reached during sign-in. It doesn''t account for previously satisfied claims. If primary authentication fails, the sign-in attempt is not evaluated by Conditional Access, so the resulting value is singleFactorAuthentication.  Supports $filter (eq, startsWith).'
               nullable: true
             authenticationRequirementPolicies:
               type: array
@@ -23636,7 +23708,7 @@ components:
       properties:
         content:
           type: string
-          description: Report content; details vary by report type.
+          description: The http content that has the data
           format: base64url
           nullable: true
       additionalProperties:
@@ -26094,6 +26166,22 @@ components:
         - appPassword
         - unknownFutureValue
         - externalAuthMethod
+        - hardwareOneTimePasscode
+        - windowsHelloForBusiness
+        - microsoftAuthenticatorPasswordless
+        - temporaryAccessPass
+        - macOsSecureEnclaveKey
+        - passKeyDeviceBound
+        - passKeyDeviceBoundAuthenticator
+        - passKeyDeviceBoundWindowsHello
+        - softwareOneTimePasscode
+        - microsoftAuthenticatorPush
+        - mobilePhone
+        - sms
+        - alternateMobilePhone
+        - fido2SecurityKey
+        - oneTimePasscode
+        - passKeySynced
       type: string
     microsoft.graph.featureType:
       title: featureType

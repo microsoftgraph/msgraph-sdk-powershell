@@ -5642,7 +5642,7 @@ paths:
       tags:
         - communications.presence
       summary: Invoke action setPresence
-      description: Set the state of a user's presence session as an application.
+      description: 'Set the state of a user''s presence session as an application. For more information about presence sessions, states permutations, and timeouts, see Manage presence state using the Microsoft Graph API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
@@ -6871,7 +6871,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       operationId: user.onlineMeeting_ListRecording
       parameters:
         - name: user-id
@@ -6978,7 +6978,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
@@ -7379,7 +7379,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List transcripts
-      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. However, private channel meetings are not supported at this time.'
+      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -8315,11 +8315,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      summary: Get presence
+      description: Get a user's presence information.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -8485,7 +8485,7 @@ paths:
       tags:
         - users.presence
       summary: Invoke action setPresence
-      description: Set the state of a user's presence session as an application.
+      description: 'Set the state of a user''s presence session as an application. For more information about presence sessions, states permutations, and timeouts, see Manage presence state using the Microsoft Graph API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
@@ -9220,17 +9220,17 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are Available, availableIdle,  Away, beRightBack, Busy, busyIdle, DoNotDisturb, Offline, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
             sequenceNumber:
               type: string
-              description: The lexicographically sortable string stamp that represents the version of a presence object.
+              description: The lexicographically sortable String stamp that represents the version of a presence object.
               nullable: true
               readOnly: true
             statusMessage:
@@ -9649,6 +9649,10 @@ components:
           type: boolean
           description: Indicates whether delta roster is enabled for the call.
           nullable: true
+        isInteractiveRosterEnabled:
+          type: boolean
+          description: Indicates whether delta roster filtering by participant interactivity is enabled.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callRoute:
@@ -9999,6 +10003,10 @@ components:
               type: boolean
               description: Indicates whether breakout rooms are enabled for the meeting.
               nullable: true
+            allowCopyingAndSharingMeetingContent:
+              type: boolean
+              description: Indicates whether the ability to copy and share meeting content is enabled for the meeting.
+              nullable: true
             allowedLobbyAdmitters:
               $ref: '#/components/schemas/microsoft.graph.allowedLobbyAdmitterRoles'
             allowedPresenters:
@@ -10039,6 +10047,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             isEndToEndEncryptionEnabled:
               type: boolean
+              description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
