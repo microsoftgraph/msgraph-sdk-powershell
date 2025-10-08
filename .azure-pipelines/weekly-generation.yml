@@ -34,6 +34,15 @@ parameters:
   displayName: Skip OpenAPI Docs Download
   default: false
   type: boolean
+- name: SpecifyModules
+  displayName: Specify Modules to Generate
+  default: false
+  type: boolean
+- name: ModulesToGenerate
+  displayName: Modules To Generate
+  default: Insert Module Names Here separated by space, e.g., Users_v1.0 Users_beta  
+  type: string
+
 variables:
   Branch: "WeeklyApiRefresh"
   BaseBranch: ${{ parameters.BaseBranch }}
@@ -82,28 +91,80 @@ extends:
             BuildAgent: $(BuildAgent)
             SkipForceRefresh: $(SkipForceRefresh)
             SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
-      - job: MsGraphPsSdkWeeklyGeneration
+      
+      - job: SetUpModuleMatrix
+        displayName: Setup Module JSON for Matrix
         dependsOn: RefreshOpenAPIDocuments
+        condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        timeoutInMinutes: 840
+        variables:
+          WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+          ModulesToUpdate: $[ dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
+        steps:
+        - template: .azure-pipelines/common-templates/checkout.yml@self
+          parameters:
+            TargetBranch: $(WeeklyBranch)
+
+        - task: PowerShell@2
+          name: CreateMatrixJson
+          displayName: Create Matrix Json 
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              if ($${{ parameters.SpecifyModules }}) {
+                $modules = "${{ parameters.ModulesToGenerate }}"
+              } else {
+                $modules = $env:ModulesToUpdate
+              }
+
+              Write-Host "ModulesToUpdate: $modules"
+              $testDataArray = $modules -split ' '
+              $jsonOutput = @{}
+
+              foreach ($item in $testDataArray) {
+                if ($item -notmatch '_') {
+                  # If '_' is not present, create two versions: v1.0 and beta
+                  $jsonOutput["${item}_v1.0"] = @{
+                    moduleVersion = 'v1.0'
+                    moduleName    = $item
+                  }
+                  $jsonOutput["${item}_beta"] = @{
+                    moduleVersion = 'beta'
+                    moduleName    = $item
+                  }
+                } else {
+                  $name, $version = $item -split '_'
+                  $jsonOutput[$item] = @{
+                    moduleVersion = $version
+                    moduleName    = $name
+                  }
+                }
+              }
+
+              $result = $jsonOutput | ConvertTo-Json -Compress
+              Write-Host "##vso[task.setvariable variable=matrixJson;isOutput=true]$result"
+
+      - job: MsGraphPsSdkWeeklyGeneration
+        dependsOn:
+          - SetUpModuleMatrix
+          - RefreshOpenAPIDocuments
         displayName: Microsoft Graph PowerShell SDK Generation
         condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
         timeoutInMinutes: 840
         variables:
           WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+          ModulesMatrix: $[ dependencies.SetUpModuleMatrix.outputs['CreateMatrixJson.matrixJson'] ]
         templateContext:
           outputs:
           - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
             - output: pipelineArtifact
               displayName: 'Publish Module Artifacts'
               targetPath: "$(Build.ArtifactStagingDirectory)"
-              artifactName: "drop"
+              artifactName: "$(moduleName)_$(moduleVersion)_drop"
               publishLocation: "Container"
-          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-            - output: nuget
-              displayName: 'Publish NuGet to feed'
-              packageParentPath: '$(Build.ArtifactStagingDirectory)'
-              packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: $(PROJECT_NAME)/$(FEED_NAME)
-              allowPackageConflicts: true
+        strategy:
+          matrix: $[ dependencies.SetUpModuleMatrix.outputs['CreateMatrixJson.matrixJson'] ]
         steps:
         - template: .azure-pipelines/common-templates/checkout.yml@self
           parameters:
@@ -115,27 +176,30 @@ extends:
             Test: ${{ parameters.Test }}
             Pack: ${{ parameters.Pack }}
             Sign: ${{ parameters.Sign }}
-        - template: .azure-pipelines/generation-templates/workload-modules.yml@self
+        - template: .azure-pipelines/generation-templates/individualized-workload-modules.yml@self
           parameters:
             Test: ${{ parameters.Test }}
             Pack: ${{ parameters.Pack }}
             Sign: ${{ parameters.Sign }}
-        - template: .azure-pipelines/generation-templates/meta-module.yml@self
-          parameters:
-            Test: ${{ parameters.Test }}
-            Pack: ${{ parameters.Pack }}
-            Sign: ${{ parameters.Sign }}
-        - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-          - template: .azure-pipelines/common-templates/esrp/codesign-nuget.yml@self
-            parameters:
-              FolderPath: "$(Build.ArtifactStagingDirectory)"
-              Pattern: "Microsoft.Graph*.nupkg"
-        - template: .azure-pipelines/generation-templates/generate-command-metadata.yml@self
+            ModuleName: $(moduleName)
+            ModuleVersion: $(moduleVersion)
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
-        - ${{ if eq(parameters.CreatePullRequest, true) }}:
-          - template: .azure-pipelines/common-templates/create-pr.yml@self
-            parameters:
-              BaseBranch: $(BaseBranch)
-              TargetBranch: $(WeeklyBranch)
-              Title: "[v2] Weekly OpenApiDocs Refresh"
-              Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+
+      - job: CreatePullRequest
+        displayName: Create Pull Request for all changes
+        dependsOn:
+          - MsGraphPsSdkWeeklyGeneration
+          - RefreshOpenAPIDocuments
+        condition: and(succeeded(), eq(dependencies.MsGraphPsSdkWeeklyGeneration.result, 'Succeeded'), eq(${{ parameters.CreatePullRequest }}, true))
+        variables:
+          WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+        steps:
+        - template: .azure-pipelines/common-templates/checkout.yml@self
+          parameters:
+            TargetBranch: $(WeeklyBranch)
+        - template: .azure-pipelines/common-templates/create-pr.yml@self
+          parameters:
+            BaseBranch: $(BaseBranch)
+            TargetBranch: $(WeeklyBranch)
+            Title: "[v2] Weekly OpenApiDocs Refresh"
+            Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
