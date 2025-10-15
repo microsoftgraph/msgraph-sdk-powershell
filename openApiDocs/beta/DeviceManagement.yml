@@ -12957,7 +12957,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicy_ListScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -13048,7 +13048,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicy_GetScheduledActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -33237,7 +33237,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: Indicates collection of App Log Upload Request.
+      description: The collection property of AppLogUploadRequest.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_ListAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -33328,7 +33328,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: Indicates collection of App Log Upload Request.
+      description: The collection property of AppLogUploadRequest.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_GetAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -40985,12 +40985,6 @@ components:
               x-ms-navigationProperty: true
             softwareUpdateStatusSummary:
               $ref: '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
-            telecomExpenseManagementPartners:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
-              description: The telecom expense management partners.
-              x-ms-navigationProperty: true
             templateInsights:
               type: array
               items:
@@ -43514,6 +43508,9 @@ components:
               type: string
               description: Policy description
               nullable: true
+            disableEntraGroupPolicyAssignment:
+              type: boolean
+              description: Indicates whether Entra Group policy assignment is disabled
             isAssigned:
               type: boolean
               description: Policy assignment status. This property is read-only.
@@ -43607,6 +43604,9 @@ components:
               type: string
               description: Template description
               nullable: true
+            disableEntraGroupPolicyAssignment:
+              type: boolean
+              description: Indicates whether assignments to Entra security groups is disabled
             displayName:
               type: string
               description: Template display name
@@ -43781,7 +43781,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-              description: The list of scheduled action for this rule
+              description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
               x-ms-navigationProperty: true
             userStatuses:
               type: array
@@ -46802,7 +46802,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -51145,34 +51145,6 @@ components:
           additionalProperties:
             type: object
           description: 'ServiceNow properties including the ServiceNow instanceUrl, connection credentials and other metadata.'
-    microsoft.graph.telecomExpenseManagementPartner:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: telecomExpenseManagementPartner
-          type: object
-          properties:
-            appAuthorized:
-              type: boolean
-              description: Whether the partner's AAD app has been authorized to access Intune.
-            displayName:
-              type: string
-              description: Display name of the TEM partner.
-              nullable: true
-            enabled:
-              type: boolean
-              description: Whether Intune's connection to the TEM service is currently enabled or disabled.
-            lastConnectionDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp of the last request sent to Intune by the TEM partner.
-              format: date-time
-            url:
-              type: string
-              description: 'URL of the TEM partner''s administrative control panel, where an administrator can configure their TEM service.'
-              nullable: true
-          additionalProperties:
-            type: object
-          description: 'telecomExpenseManagementPartner resources represent the metadata and status of a given TEM service. Once your organization has onboarded with a partner, the partner can be enabled or disabled to switch TEM functionality on or off.'
     microsoft.graph.deviceManagementTemplateInsightsDefinition:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -53270,6 +53242,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcCloudApp'
+              description: A collection of cloud apps that are built on frontline shared options and provide Windows 365 end users with access to app-only sessions instead of a full desktop experience.
               x-ms-navigationProperty: true
             cloudPCs:
               type: array
@@ -53284,6 +53257,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
               description: The image resource on Cloud PC.
+              x-ms-navigationProperty: true
+            externalPartners:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartner'
               x-ms-navigationProperty: true
             externalPartnerSettings:
               type: array
@@ -55805,6 +55783,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
               description: The user's activities across devices. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            adhocCalls:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.adhocCall'
+              description: Ad hoc calls associated with the user. Read-only. Nullable.
               x-ms-navigationProperty: true
             agreementAcceptances:
               type: array
@@ -59092,6 +59076,8 @@ components:
         - cloudPcFrontlineInsufficientLicensesScenario
         - cloudPcInaccessibleScenario
         - cloudPcFrontlineConcurrencyScenario
+        - cloudPcUserSettingsPersistenceScenario
+        - cloudPcDeprovisionFailedScenario
       type: string
     microsoft.graph.deviceManagement.ruleSeverityType:
       title: ruleSeverityType
@@ -64608,10 +64594,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcCloudAppActionFailedErrorCode'
             actionFailedErrorMessage:
               type: string
+              description: 'The error message when the IT admin failed to publish, unpublish, update, or reset a cloud app. For example: ''Publish failed because it exceeds the 500 cloud apps limitation under the policy. You need to unpublish some cloud apps under this policy in order to publish this cloud app again.'' Read-only.'
               nullable: true
             addedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the cloud app was added to this tenant and became visible in the admin portal. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can''t set or modify it. Supports $filter, $select, and $orderBy. Read-only.'
               format: date-time
               nullable: true
             appDetail:
@@ -64620,24 +64608,32 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcCloudAppStatus'
             availableToUser:
               type: boolean
+              description: 'Indicates whether this cloud app is available to end users through the end-user portal or the Windows App. The default value is false. It changes to true if the cloud app is successfully published, and reverts to false when the admin unpublishes the cloud app. Supports $filter, $select, and $orderBy.'
             description:
               type: string
+              description: 'The description associated with the cloud app. The maximum allowed length for this property is 512 characters. Supports $filter, $select, and $orderBy.'
               nullable: true
             discoveredAppName:
               type: string
+              description: 'Name of the discovered app associated with the cloud app. For example, Paint, Supports $filter, $select, and $orderBy. Read-only.'
             displayName:
               type: string
+              description: 'The display name for the cloud app. The display name for the cloud app, which appears on the end-user portal and must be unique within a single provisioning policy. It uses the discovered app name as the default value. The maximum allowed length for this property is 64 characters. For example, Paint. Supports $filter, $select, and $orderBy.'
             lastPublishedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The latest date time when the admin published the cloud app. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can''t set or modify it. Supports $filter, $select, and $orderBy. Read-only.'
               format: date-time
+              nullable: true
             provisioningPolicyId:
               type: string
+              description: 'The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Read-only. Required.'
             scopeIds:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The list of scope tag IDs for this cloud app. Inherited from the provisioning policy when the app is created or updated. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.cloudPC:
@@ -64680,6 +64676,8 @@ components:
               description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            groupDetail:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcEntraGroupDetail'
             imageDisplayName:
               type: string
               description: Name of the OS image that's on the Cloud PC.
@@ -64757,6 +64755,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
             userAccountType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+            userDetail:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcEntraUserDetail'
             userExperienceType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcUserExperienceType'
             userPrincipalName:
@@ -64805,7 +64805,7 @@ components:
               nullable: true
             operatingSystem:
               type: string
-              description: 'The operating system of the image. For example, Windows 10 Enterprise. Read-only.'
+              description: 'The operating system of the image. For example, Windows 11 Enterprise. Read-only.'
               nullable: true
             osBuildNumber:
               type: string
@@ -64840,6 +64840,28 @@ components:
             version:
               type: string
               description: 'The image version. For example, 0.0.1 and 1.5.13. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcExternalPartner:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcExternalPartner
+          type: object
+          properties:
+            connectionStatus:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerStatus'
+            enableConnection:
+              type: boolean
+            lastSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            partnerId:
+              type: string
+            statusDetails:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -64929,7 +64951,7 @@ components:
               nullable: true
             offerDisplayName:
               type: string
-              description: 'The official display offer name of this gallery image. For example, Windows 10 Enterprise + OS Optimizations. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.'
+              description: 'The official display offer name of this gallery image. For example, Windows 11 Enterprise. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.'
               nullable: true
             offerName:
               type: string
@@ -65106,10 +65128,12 @@ components:
               nullable: true
             createdBy:
               type: string
+              description: 'The unique ID of the user who created this policy. For example, 5ccb8d35-dd04-473e-a287-69bb4473208b. Read-only. Supports $select.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The timestamp when this provisioning policy was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $select and $orderBy.'
               format: date-time
               nullable: true
             description:
@@ -65145,10 +65169,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
             lastModifiedBy:
               type: string
+              description: 'The unique ID of the user who last updated this policy. For example, 5ccb8d35-dd04-473e-a287-69bb4473208b. Read-only. Supports $select.'
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The timestamp when this provisioning policy was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $select and $orderBy.'
               format: date-time
               nullable: true
             localAdminEnabled:
@@ -65279,6 +65305,8 @@ components:
             displayName:
               type: string
               description: The name for the supported region. Read-only.
+            geographicLocationType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcGeographicLocationType'
             regionGroup:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRegionGroup'
             regionRestrictionDetail:
@@ -65329,7 +65357,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointSetting'
             selfServiceEnabled:
               type: boolean
-              description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.'
+              description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and stopped returning data on December 1, 2023.'
               nullable: true
             assignments:
               type: array
@@ -66915,6 +66943,26 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
               description: Optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.adhocCall:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: adhocCall
+          type: object
+          properties:
+            recordings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of a call. Read-only.
+              x-ms-navigationProperty: true
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              description: The transcripts of a call. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -69213,10 +69261,6 @@ components:
               type: string
               description: The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
               nullable: true
-            requestedBy:
-              type: string
-              description: The user principal name associated with the request for the managed application log collection. Read-only.
-              nullable: true
             requestedByUserPrincipalName:
               type: string
               description: The user principal name associated with the request for the managed application log collection. Read-only.
@@ -69226,10 +69270,6 @@ components:
               type: string
               description: 'DateTime of when the log upload request was received. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
               format: date-time
-            status:
-              type: string
-              description: 'Indicates the status for the app log collection request - pending, completed or failed. Default is pending.'
-              nullable: true
             uploadedLogs:
               type: array
               items:
@@ -70018,11 +70058,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.'
+              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
@@ -71232,6 +71272,9 @@ components:
         - unknownFutureValue
         - frontlineBufferUsageDuration
         - frontlineBufferUsageThreshold
+        - cloudPcUserSettingsPersistenceUsageThreshold
+        - cloudPcDeprovisionedThreshold
+        - cloudPcReserveDeprovisionFailedThreshold
       type: string
     microsoft.graph.deviceManagement.operatorType:
       title: operatorType
@@ -72156,17 +72199,21 @@ components:
       properties:
         commandLineArguments:
           type: string
+          description: 'Specifies the command-line arguments for the cloud app. These parameters are passed to the cloud app when it''s launched. The maximum allowed length for this property is 2,048 characters. For example, -fullscreen -loop.'
           nullable: true
         filePath:
           type: string
+          description: 'Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, C:/app.exe or shell:AppsFolder/appname!App. Read-only.'
         iconIndex:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'Specifies the index of the icon within the file specified by the iconPath property. For example, if iconPath is set to C:/Program Files/MyApp/myapp.ico and iconIndex is set to 0, the system uses the first icon in the myapp.ico file. The default value is 0.'
           format: int32
           nullable: true
         iconPath:
           type: string
+          description: 'Specifies the path to the icon file for the application within the OS of the hosting Cloud PC. When an admin updates the path of a cloud app, the value should be a rooted absolute path. For example, C:/Windows/system32/WindowsPowerShell/v1.0/powershell_ise.exe. If this property isn''t defined, a default icon is used.'
       additionalProperties:
         type: object
     microsoft.graph.cloudPcCloudAppStatus:
@@ -72195,6 +72242,7 @@ components:
       properties:
         enableSingleSignOn:
           type: boolean
+          description: Indicates whether single sign-on is enabled. The default value is false.
       additionalProperties:
         type: object
     microsoft.graph.cloudPcConnectivityResult:
@@ -72256,6 +72304,20 @@ components:
         - notAvailable
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcEntraGroupDetail:
+      title: cloudPcEntraGroupDetail
+      type: object
+      properties:
+        groupDisplayName:
+          type: string
+          description: The display name of the Microsoft Entra ID group. Read-only.
+          nullable: true
+        groupId:
+          type: string
+          description: The unique identifier (GUID) of the Microsoft Entra ID group. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -72368,6 +72430,20 @@ components:
         - administrator
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcEntraUserDetail:
+      title: cloudPcEntraUserDetail
+      type: object
+      properties:
+        userDisplayName:
+          type: string
+          description: The display name of the user. Read-only.
+          nullable: true
+        userId:
+          type: string
+          description: The unique identifier (GUID) of the user. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcUserExperienceType:
       title: cloudPcUserExperienceType
       enum:
@@ -72507,6 +72583,8 @@ components:
         - devBox
         - unknownFutureValue
         - rpaBox
+        - microsoft365Opal
+        - microsoft365BizChat
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -72554,6 +72632,8 @@ components:
       properties:
         domainJoinType:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
+        geographicLocationType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcGeographicLocationType'
         onPremisesConnectionId:
           type: string
           description: 'The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Microsoft Entra joined. If you enter an onPremisesConnectionId, leave the regionName property empty.'
@@ -72679,6 +72759,25 @@ components:
         - ready
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcGeographicLocationType:
+      title: cloudPcGeographicLocationType
+      enum:
+        - default
+        - asia
+        - australasia
+        - canada
+        - europe
+        - india
+        - africa
+        - usCentral
+        - usEast
+        - usWest
+        - southAmerica
+        - middleEast
+        - centralAmerica
+        - usGovernment
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcRegionGroup:
       title: cloudPcRegionGroup
       enum:
@@ -72707,6 +72806,25 @@ components:
         - mexico
         - australasia
         - europe
+        - singapore
+        - hongKong
+        - ireland
+        - sweden
+        - poland
+        - italy
+        - spain
+        - netherlands
+        - brazil
+        - israel
+        - automatic
+        - indonesia
+        - taiwan
+        - malaysia
+        - newZealand
+        - austria
+        - denmark
+        - belgium
+        - kenya
       type: string
     microsoft.graph.cloudPcSupportedRegionRestrictionDetail:
       title: cloudPcSupportedRegionRestrictionDetail
@@ -73380,6 +73498,97 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
+    microsoft.graph.callRecording:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callRecording
+          type: object
+          properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this recording. Read-only.
+              nullable: true
+            content:
+              type: string
+              description: The content of the recording. Read-only.
+              format: base64url
+              nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            recordingContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the recording. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this transcript. Read-only.
+              nullable: true
+            content:
+              type: string
+              description: The content of the transcript. Read-only.
+              format: base64url
+              nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            metadataContent:
+              type: string
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the transcript. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.agreementAcceptanceState:
       title: agreementAcceptanceState
       enum:
@@ -74042,6 +74251,11 @@ components:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'The date and time the authentication method was registered to the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            lastUsedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
               format: date-time
               nullable: true
           additionalProperties:
@@ -76262,7 +76476,7 @@ components:
           properties:
             isCloudManaged:
               type: boolean
-              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the object can be taken over by on-premises Active Directory.'
+              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
           additionalProperties:
             type: object
     microsoft.graph.plannerGroup:
@@ -76903,10 +77117,6 @@ components:
       title: managedAppLogUpload
       type: object
       properties:
-        managedAppComponent:
-          type: string
-          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
-          nullable: true
         managedAppComponentDescription:
           type: string
           description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
@@ -77596,49 +77806,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.callRecording:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: callRecording
-          type: object
-          properties:
-            callId:
-              type: string
-              description: The unique identifier for the call that is related to this recording. Read-only.
-              nullable: true
-            content:
-              type: string
-              description: The content of the recording. Read-only.
-              format: base64url
-              nullable: true
-            contentCorrelationId:
-              type: string
-              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            meetingId:
-              type: string
-              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
-              nullable: true
-            meetingOrganizer:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            recordingContentUrl:
-              type: string
-              description: The URL that can be used to access the content of the recording. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.meetingRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.meetingRegistrationBase'
@@ -77687,54 +77854,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
               description: Custom registration questions.
               x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.callTranscript:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: callTranscript
-          type: object
-          properties:
-            callId:
-              type: string
-              description: The unique identifier for the call that is related to this transcript. Read-only.
-              nullable: true
-            content:
-              type: string
-              description: The content of the transcript. Read-only.
-              format: base64url
-              nullable: true
-            contentCorrelationId:
-              type: string
-              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            meetingId:
-              type: string
-              description: The unique identifier of the online meeting related to this transcript. Read-only.
-              nullable: true
-            meetingOrganizer:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            metadataContent:
-              type: string
-              description: The time-aligned metadata of the utterances in the transcript. Read-only.
-              format: base64url
-              nullable: true
-            transcriptContentUrl:
-              type: string
-              description: The URL that can be used to access the content of the transcript. Read-only.
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outlookCategory:
@@ -79932,6 +80051,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identity'
             hashFunction:
               $ref: '#/components/schemas/microsoft.graph.hardwareOathTokenHashFunction'
+            lastUsedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             manufacturer:
               type: string
               description: Manufacturer name of the hardware token. Supports $filter (eq).
@@ -81453,6 +81577,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookComment'
+              description: Represents a collection of comments in a workbook.
               x-ms-navigationProperty: true
             functions:
               $ref: '#/components/schemas/microsoft.graph.workbookFunctions'
@@ -86665,11 +86790,11 @@ components:
           properties:
             content:
               type: string
-              description: The content of the comment.
+              description: The content of the comment that is the String displayed to end-users.
               nullable: true
             contentType:
               type: string
-              description: The content type of the comment.
+              description: 'The content type of the comment. Supported values are: plain, mention.'
             replies:
               type: array
               items:
@@ -90232,11 +90357,11 @@ components:
           properties:
             content:
               type: string
-              description: The content of the reply.
+              description: The content of the reply that is the displayed to end-users.
               nullable: true
             contentType:
               type: string
-              description: The content type for the reply.
+              description: 'The content type for the reply. Supported values are: plain, mention.'
             task:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:

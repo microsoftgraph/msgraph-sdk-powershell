@@ -1616,6 +1616,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
               description: The user's activities across devices. Read-only. Nullable.
               x-ms-navigationProperty: true
+            adhocCalls:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.adhocCall'
+              description: Ad hoc calls associated with the user. Read-only. Nullable.
+              x-ms-navigationProperty: true
             agreementAcceptances:
               type: array
               items:
@@ -2757,6 +2763,26 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.adhocCall:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: adhocCall
+          type: object
+          properties:
+            recordings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of a call. Read-only.
+              x-ms-navigationProperty: true
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              description: The transcripts of a call. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.agreementAcceptance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3746,6 +3772,8 @@ components:
               description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            groupDetail:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcEntraGroupDetail'
             imageDisplayName:
               type: string
               description: Name of the OS image that's on the Cloud PC.
@@ -3823,6 +3851,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
             userAccountType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+            userDetail:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcEntraUserDetail'
             userExperienceType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcUserExperienceType'
             userPrincipalName:
@@ -5252,10 +5282,6 @@ components:
               type: string
               description: The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
               nullable: true
-            requestedBy:
-              type: string
-              description: The user principal name associated with the request for the managed application log collection. Read-only.
-              nullable: true
             requestedByUserPrincipalName:
               type: string
               description: The user principal name associated with the request for the managed application log collection. Read-only.
@@ -5265,10 +5291,6 @@ components:
               type: string
               description: 'DateTime of when the log upload request was received. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
               format: date-time
-            status:
-              type: string
-              description: 'Indicates the status for the app log collection request - pending, completed or failed. Default is pending.'
-              nullable: true
             uploadedLogs:
               type: array
               items:
@@ -5859,7 +5881,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -6368,11 +6390,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.'
+              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
@@ -7114,6 +7136,97 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
+    microsoft.graph.callRecording:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callRecording
+          type: object
+          properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this recording. Read-only.
+              nullable: true
+            content:
+              type: string
+              description: The content of the recording. Read-only.
+              format: base64url
+              nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            recordingContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the recording. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this transcript. Read-only.
+              nullable: true
+            content:
+              type: string
+              description: The content of the transcript. Read-only.
+              format: base64url
+              nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            metadataContent:
+              type: string
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the transcript. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.agreementAcceptanceState:
       title: agreementAcceptanceState
       enum:
@@ -7776,6 +7889,11 @@ components:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'The date and time the authentication method was registered to the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            lastUsedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
               format: date-time
               nullable: true
           additionalProperties:
@@ -8463,6 +8581,7 @@ components:
       properties:
         enableSingleSignOn:
           type: boolean
+          description: Indicates whether single sign-on is enabled. The default value is false.
       additionalProperties:
         type: object
     microsoft.graph.cloudPcConnectivityResult:
@@ -8524,6 +8643,20 @@ components:
         - notAvailable
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcEntraGroupDetail:
+      title: cloudPcEntraGroupDetail
+      type: object
+      properties:
+        groupDisplayName:
+          type: string
+          description: The display name of the Microsoft Entra ID group. Read-only.
+          nullable: true
+        groupId:
+          type: string
+          description: The unique identifier (GUID) of the Microsoft Entra ID group. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcLoginResult:
       title: cloudPcLoginResult
       type: object
@@ -8710,6 +8843,20 @@ components:
         - administrator
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcEntraUserDetail:
+      title: cloudPcEntraUserDetail
+      type: object
+      properties:
+        userDisplayName:
+          type: string
+          description: The display name of the user. Read-only.
+          nullable: true
+        userId:
+          type: string
+          description: The unique identifier (GUID) of the user. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcUserExperienceType:
       title: cloudPcUserExperienceType
       enum:
@@ -10213,7 +10360,7 @@ components:
           properties:
             isCloudManaged:
               type: boolean
-              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the object can be taken over by on-premises Active Directory.'
+              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
           additionalProperties:
             type: object
     microsoft.graph.plannerGroup:
@@ -10854,10 +11001,6 @@ components:
       title: managedAppLogUpload
       type: object
       properties:
-        managedAppComponent:
-          type: string
-          description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
-          nullable: true
         managedAppComponentDescription:
           type: string
           description: 'The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.'
@@ -13176,49 +13319,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.callRecording:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: callRecording
-          type: object
-          properties:
-            callId:
-              type: string
-              description: The unique identifier for the call that is related to this recording. Read-only.
-              nullable: true
-            content:
-              type: string
-              description: The content of the recording. Read-only.
-              format: base64url
-              nullable: true
-            contentCorrelationId:
-              type: string
-              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            meetingId:
-              type: string
-              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
-              nullable: true
-            meetingOrganizer:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            recordingContentUrl:
-              type: string
-              description: The URL that can be used to access the content of the recording. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.meetingRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.meetingRegistrationBase'
@@ -13267,54 +13367,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
               description: Custom registration questions.
               x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.callTranscript:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: callTranscript
-          type: object
-          properties:
-            callId:
-              type: string
-              description: The unique identifier for the call that is related to this transcript. Read-only.
-              nullable: true
-            content:
-              type: string
-              description: The content of the transcript. Read-only.
-              format: base64url
-              nullable: true
-            contentCorrelationId:
-              type: string
-              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            meetingId:
-              type: string
-              description: The unique identifier of the online meeting related to this transcript. Read-only.
-              nullable: true
-            meetingOrganizer:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            metadataContent:
-              type: string
-              description: The time-aligned metadata of the utterances in the transcript. Read-only.
-              format: base64url
-              nullable: true
-            transcriptContentUrl:
-              type: string
-              description: The URL that can be used to access the content of the transcript. Read-only.
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outlookCategory:
@@ -15351,6 +15403,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identity'
             hashFunction:
               $ref: '#/components/schemas/microsoft.graph.hardwareOathTokenHashFunction'
+            lastUsedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             manufacturer:
               type: string
               description: Manufacturer name of the hardware token. Supports $filter (eq).
@@ -16905,6 +16962,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookComment'
+              description: Represents a collection of comments in a workbook.
               x-ms-navigationProperty: true
             functions:
               $ref: '#/components/schemas/microsoft.graph.workbookFunctions'
@@ -23002,11 +23060,11 @@ components:
           properties:
             content:
               type: string
-              description: The content of the comment.
+              description: The content of the comment that is the String displayed to end-users.
               nullable: true
             contentType:
               type: string
-              description: The content type of the comment.
+              description: 'The content type of the comment. Supported values are: plain, mention.'
             replies:
               type: array
               items:
@@ -26981,11 +27039,11 @@ components:
           properties:
             content:
               type: string
-              description: The content of the reply.
+              description: The content of the reply that is the displayed to end-users.
               nullable: true
             contentType:
               type: string
-              description: The content type for the reply.
+              description: 'The content type for the reply. Supported values are: plain, mention.'
             task:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
