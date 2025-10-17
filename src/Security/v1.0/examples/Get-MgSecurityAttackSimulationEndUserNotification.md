@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Security
 
-Get-MgSecurityAttackSimulationEndUserNotification -Filter "source eq 'global'" 
+Get-MgSecurityAttackSimulationEndUserNotification
 
 ```
 This example shows how to use the Get-MgSecurityAttackSimulationEndUserNotification Cmdlet.
