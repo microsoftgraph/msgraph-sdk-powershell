@@ -64,7 +64,7 @@ extends:
         displayName: Create Metadata Refresh Branch
         timeoutInMinutes: 1200
         steps:
-        - template: ./checkout.yml
+        - template: .azure-pipelines/common-templates/checkout.yml@self
           parameters:
             TargetBranch: ${{ parameters.BaseBranch }}
         - task: PowerShell@2
