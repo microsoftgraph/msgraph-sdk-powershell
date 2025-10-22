@@ -45,7 +45,7 @@ Update-MgPolicyAuthorizationPolicy -BodyParameter $params
 ```
 This example will disable default user role's permission to create applications
 
-### Example 4: Enable default user role to use Self-Serve Password Reset feature
+### Example 4: Enable administrators to use Self-Serve Password Reset feature
 
 ```powershell
 
@@ -58,7 +58,7 @@ $params = @{
 Update-MgPolicyAuthorizationPolicy -BodyParameter $params
 
 ```
-This example will enable default user role to use self-serve password reset feature
+This example enables administrators to use Self-Serve Password Reset feature. To disable this feature, set `allowedToUseSSPR` to `$false`.
 
 ### Example 5: Disable user consent to apps for default user role
 
