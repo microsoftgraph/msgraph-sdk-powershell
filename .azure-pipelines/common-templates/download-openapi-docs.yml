@@ -83,7 +83,6 @@ steps:
           }
           $ModuleNames = $ModulesWithChanges.Keys
           Write-Host "Modules with changes: $ModuleNames"
-          Write-Host "Testing Line"
         }
         Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
 
