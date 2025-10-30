@@ -115,6 +115,10 @@ $Users = Get-MgBetaUser
 
 ## Notes
 
+### Update Schedule
+
+The Microsoft Graph PowerShell SDK is scheduled to be updated during the week of the fourth Tuesday of each month
+
 ### Upgrading to v2
 
 The following breaking changes have been introduced between `v1.x` and `v2.x`:
