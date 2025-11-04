@@ -834,11 +834,7 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Get deviceManagementReports
-      description: Read properties and relationships of the deviceManagementReports object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-get?view=graph-rest-1.0
+      summary: Get reports from deviceManagement
       operationId: deviceManagement_GetReport
       parameters:
         - name: $select
@@ -874,11 +870,7 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Update deviceManagementReports
-      description: Update the properties of a deviceManagementReports object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-update?view=graph-rest-1.0
+      summary: Update the navigation property reports in deviceManagement
       operationId: deviceManagement_UpdateReport
       requestBody:
         description: New navigation property values
@@ -919,11 +911,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: List deviceManagementExportJobs
-      description: List properties and relationships of the deviceManagementExportJob objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-list?view=graph-rest-1.0
+      summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report.
       operationId: deviceManagement.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
@@ -973,11 +962,7 @@ paths:
     post:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Create deviceManagementExportJob
-      description: Create a new deviceManagementExportJob object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-create?view=graph-rest-1.0
+      summary: Create new navigation property to exportJobs for deviceManagement
       operationId: deviceManagement.report_CreateExportJob
       requestBody:
         description: New navigation property
@@ -1000,11 +985,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Get deviceManagementExportJob
-      description: Read properties and relationships of the deviceManagementExportJob object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-get?view=graph-rest-1.0
+      summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report.
       operationId: deviceManagement.report_GetExportJob
       parameters:
         - name: deviceManagementExportJob-id
@@ -1048,11 +1030,7 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Update deviceManagementExportJob
-      description: Update the properties of a deviceManagementExportJob object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-update?view=graph-rest-1.0
+      summary: Update the navigation property exportJobs in deviceManagement
       operationId: deviceManagement.report_UpdateExportJob
       parameters:
         - name: deviceManagementExportJob-id
@@ -1083,11 +1061,7 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Delete deviceManagementExportJob
-      description: Deletes a deviceManagementExportJob.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-delete?view=graph-rest-1.0
+      summary: Delete navigation property exportJobs for deviceManagement
       operationId: deviceManagement.report_DeleteExportJob
       parameters:
         - name: deviceManagementExportJob-id
@@ -1129,10 +1103,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getCachedReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcachedreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getCachedReport
       requestBody:
         description: Action parameters
@@ -1199,10 +1169,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getCompliancePolicyNonComplianceReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcompliancepolicynoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getCompliancePolicyNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1275,10 +1241,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getCompliancePolicyNonComplianceSummaryReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcompliancepolicynoncompliancesummaryreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getCompliancePolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
@@ -1351,10 +1313,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getComplianceSettingNonComplianceReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcompliancesettingnoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getComplianceSettingNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1427,10 +1385,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getConfigurationPolicyNonComplianceReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationpolicynoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getConfigurationPolicyNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1503,10 +1457,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getConfigurationPolicyNonComplianceSummaryReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationpolicynoncompliancesummaryreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getConfigurationPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
@@ -1579,10 +1529,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getConfigurationSettingNonComplianceReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationsettingnoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getConfigurationSettingNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1655,10 +1601,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceManagementIntentPerSettingContributingProfiles
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicemanagementintentpersettingcontributingprofiles?view=graph-rest-1.0
       operationId: deviceManagement.report_getDeviceManagementIntentPerSettingContributingProfile
       requestBody:
         description: Action parameters
@@ -1731,10 +1673,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceManagementIntentSettingsReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicemanagementintentsettingsreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getDeviceManagementIntentSettingsReport
       requestBody:
         description: Action parameters
@@ -1807,10 +1745,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceNonComplianceReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdevicenoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getDeviceNonComplianceReport
       requestBody:
         description: Action parameters
@@ -1883,10 +1817,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDevicesWithoutCompliancePolicyReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getdeviceswithoutcompliancepolicyreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getDevicesWithoutCompliancePolicyReport
       requestBody:
         description: Action parameters
@@ -1959,10 +1889,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getHistoricalReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-gethistoricalreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getHistoricalReport
       requestBody:
         description: Action parameters
@@ -2032,10 +1958,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getNoncompliantDevicesAndSettingsReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getnoncompliantdevicesandsettingsreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getNoncompliantDevicesAndSettingsReport
       requestBody:
         description: Action parameters
@@ -2108,10 +2030,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getPolicyNonComplianceMetadata
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getpolicynoncompliancemetadata?view=graph-rest-1.0
       operationId: deviceManagement.report_getPolicyNonComplianceMetadata
       requestBody:
         description: Action parameters
@@ -2184,10 +2102,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getPolicyNonComplianceReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getpolicynoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getPolicyNonComplianceReport
       requestBody:
         description: Action parameters
@@ -2260,10 +2174,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getPolicyNonComplianceSummaryReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getpolicynoncompliancesummaryreport?view=graph-rest-1.0
       operationId: deviceManagement.report_getPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
@@ -2336,10 +2246,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getReportFilters
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getreportfilters?view=graph-rest-1.0
       operationId: deviceManagement.report_getReportFilter
       requestBody:
         description: Action parameters
@@ -2412,10 +2318,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getSettingNonComplianceReport
-      description: Not yet documented
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getsettingnoncompliancereport?view=graph-rest-1.0
       operationId: deviceManagement.report_getSettingNonComplianceReport
       requestBody:
         description: Action parameters
@@ -2559,11 +2461,7 @@ paths:
     get:
       tags:
         - reports.reportRoot
-      summary: Get reportRoot
-      description: Read properties and relationships of the reportRoot object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-get?view=graph-rest-1.0
+      summary: Get reports
       operationId: report.reportRoot_GetReportRoot
       parameters:
         - name: $select
@@ -2599,11 +2497,7 @@ paths:
     patch:
       tags:
         - reports.reportRoot
-      summary: Update reportRoot
-      description: Update the properties of a reportRoot object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-update?view=graph-rest-1.0
+      summary: Update reports
       operationId: report.reportRoot_UpdateReportRoot
       requestBody:
         description: New property values
@@ -3399,9 +3293,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
       description: Metadata for the device configuration device activity report
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-deviceconfigurationdeviceactivity?view=graph-rest-1.0
       operationId: report_deviceConfigurationDeviceActivity
       responses:
         2XX:
@@ -3419,9 +3310,6 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function deviceConfigurationUserActivity
       description: Metadata for the device configuration user activity report
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-deviceconfigurationuseractivity?view=graph-rest-1.0
       operationId: report_deviceConfigurationUserActivity
       responses:
         2XX:
@@ -8861,7 +8749,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
-              description: Entity representing a job to export a report
+              description: Entity representing a job to export a report.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -8874,11 +8762,11 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report expires
+              description: Time that the exported report expires.
               format: date-time
             filter:
               type: string
-              description: Filters applied on the report
+              description: Filters applied on the report. The maximum length allowed for this property is 2000 characters.
               nullable: true
             format:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReportFileFormat'
@@ -8886,27 +8774,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJobLocalizationType'
             reportName:
               type: string
-              description: Name of the report
+              description: Name of the report. The maximum length allowed for this property is 2000 characters.
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report was requested
+              description: Time that the exported report was requested.
               format: date-time
             select:
               type: array
               items:
                 type: string
                 nullable: true
-              description: Columns selected from the report
+              description: Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.
             snapshotId:
               type: string
-              description: 'A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.'
+              description: 'A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.'
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReportStatus'
             url:
               type: string
-              description: Temporary location of the exported report
+              description: Temporary location of the exported report.
               nullable: true
           additionalProperties:
             type: object
@@ -9109,7 +8997,7 @@ components:
       properties:
         content:
           type: string
-          description: Not yet documented
+          description: The http content that has the data
           format: base64url
           nullable: true
       additionalProperties:
