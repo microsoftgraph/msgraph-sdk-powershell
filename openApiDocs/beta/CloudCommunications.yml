@@ -2345,7 +2345,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Invoke function getPstnOnlineMeetingDialoutReport
-      description: "Get aggregated report of usage and money spent for the audio conferencing dial-out service over a selected period as a collection of pstnOnlineMeetingDialoutReport entries.\nThe report is aggregated by user, user location, destination context (domestic/international), and currency. The report includes:"
+      description: "Get aggregated report of usage and money spent for the audio conferencing dial-out service over a selected period as a collection of pstnOnlineMeetingDialoutReport entries.\r\nThe report is aggregated by user, user location, destination context (domestic/international), and currency. The report includes:"
       operationId: communication.callRecord_getPstnOnlineMeetingDialoutReport
       parameters:
         - name: fromDateTime
@@ -4948,7 +4948,7 @@ paths:
       tags:
         - communications.cloudCommunications.Functions
       summary: Invoke function getAllOnlineMeetingMessages
-      description: "Get all Teams question and answer (Q&A) conversation messages in a tenant. This function returns a snapshot of all Q&A activity in JSON format. The export includes:\n- The original question or discussion text\n- The user who posted the message\n- All replies and responders\n- Vote counts\n- Moderation status (pending or dismissed)\n- Private replies\n- The meeting ID and organizer ID that are used for mapping to meeting metadata."
+      description: "Get all Teams question and answer (Q&A) conversation messages in a tenant. This function returns a snapshot of all Q&A activity in JSON format. The export includes:\r\n- The original question or discussion text\r\n- The user who posted the message\r\n- All replies and responders\r\n- Vote counts\r\n- Moderation status (pending or dismissed)\r\n- Private replies\r\n- The meeting ID and organizer ID that are used for mapping to meeting metadata."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudcommunications-getallonlinemeetingmessages?view=graph-rest-beta
@@ -16907,11 +16907,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      summary: Get presence
+      description: Get a user's presence information.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -19676,11 +19676,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object

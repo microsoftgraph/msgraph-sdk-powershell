@@ -1559,7 +1559,7 @@ paths:
       tags:
         - groups.calendar
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
@@ -1690,7 +1690,7 @@ paths:
       tags:
         - groups.calendar
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
@@ -3421,7 +3421,7 @@ paths:
       tags:
         - groups.event
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
@@ -3552,7 +3552,7 @@ paths:
       tags:
         - groups.event
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
@@ -3846,6 +3846,33 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /places:
+    post:
+      tags:
+        - places.place
+      summary: Create place
+      description: 'Create a new place object. You can also use this method to create the following child object types: building, floor, section, room, workspace, or desk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-post?view=graph-rest-beta
+      operationId: place_CreatePlace
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.place'
+        required: true
+      responses:
+        2XX:
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.place'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/places/{place-id}':
     patch:
       tags:
@@ -4238,7 +4265,7 @@ paths:
       tags:
         - places.place
       summary: List place objects
-      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\n- List all buildings.\n- List all floors.\n- List all sections.\n- List all desks.\n- List all rooms.\n- List all workspaces.\n- List all room lists.\n- List rooms in a specific room list.\n- List workspaces in a specific room list. By default, this operation returns up to 100 rooms, workspaces, and room lists per page, and 1,000 buildings, floors, sections, and desks per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API."
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
@@ -6194,7 +6221,7 @@ paths:
       tags:
         - places.place
       summary: List place objects
-      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\n- List all buildings.\n- List all floors.\n- List all sections.\n- List all desks.\n- List all rooms.\n- List all workspaces.\n- List all room lists.\n- List rooms in a specific room list.\n- List workspaces in a specific room list. By default, this operation returns up to 100 rooms, workspaces, and room lists per page, and 1,000 buildings, floors, sections, and desks per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API."
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
@@ -7920,7 +7947,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
@@ -8051,7 +8078,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
@@ -10934,7 +10961,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
@@ -11113,7 +11140,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
@@ -13791,7 +13818,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
@@ -13946,7 +13973,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
@@ -15824,7 +15851,7 @@ paths:
       tags:
         - users.event
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
@@ -15955,7 +15982,7 @@ paths:
       tags:
         - users.event
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta

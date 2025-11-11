@@ -2157,11 +2157,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update schema
-      description: Update the properties of a schema for an externalConnection.
+      summary: Create or update schema
+      description: Create a new or update an existing schema for a Microsoft Search connection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2902,11 +2902,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get longRunningOperation
-      description: 'Read the properties and relationships of a longRunningOperation object. This API allows you to retrieve the details and status of the following long-running Microsoft Graph API operations. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.'
+      summary: Get fileValidateOperations
+      description: Read the properties and relationships of a fileValidateOperation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/longrunningoperation-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-beta
       operationId: external.industryData_GetOperation
       parameters:
         - name: longRunningOperation-id
@@ -6872,6 +6872,10 @@ components:
       properties:
         includeContent:
           $ref: '#/components/schemas/microsoft.graph.searchContent'
+        includeHiddenContent:
+          type: boolean
+          description: 'Indicates whether the search results include content that is normally hidden, such as archived content and SharePoint Embedded (RaaS). The default value is false, which prevents hidden content from being returned. You can also optionally include KQL to scope your query for hidden content to specific content types. For more information, see Search hidden content.'
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.sortProperty:
