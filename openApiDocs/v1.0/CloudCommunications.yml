@@ -147,7 +147,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get callRecord
-      description: "Retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:\n* Subscribe to change notifications to the /communications/callRecords endpoint.\n* Use the callChainId property of a call. The call record is available only after the associated call is completed."
+      description: "Retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:\r\n* Subscribe to change notifications to the /communications/callRecords endpoint.\r\n* Use the callChainId property of a call. The call record is available only after the associated call is completed."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-1.0
@@ -2121,7 +2121,7 @@ paths:
       tags:
         - communications.call
       summary: Invoke action recordResponse
-      description: "Records a short audio response from the caller.\nA bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification."
+      description: "Records a short audio response from the caller.\r\nA bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-record?view=graph-rest-1.0
@@ -3229,6 +3229,76 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /communications/microsoft.graph.getAllOnlineMeetingMessages():
+    get:
+      tags:
+        - communications.cloudCommunications.Functions
+      summary: Invoke function getAllOnlineMeetingMessages
+      description: "Get all Teams question and answer (Q&A) conversation messages in a tenant. This function returns a snapshot of all Q&A activity in JSON format. The export includes:\r\n- The original question or discussion text\r\n- The user who posted the message\r\n- All replies and responders\r\n- Vote counts\r\n- Moderation status (pending or dismissed)\r\n- Private replies\r\n- The meeting ID and organizer ID that are used for mapping to meeting metadata."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudcommunications-getallonlinemeetingmessages?view=graph-rest-1.0
+      operationId: communication_getAllOnlineMeetingMessage
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of engagementConversationMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /communications/microsoft.graph.getPresencesByUserId:
     post:
       tags:
@@ -3277,6 +3347,2781 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /communications/onlineMeetingConversations:
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get onlineMeetingConversations from communications
+      description: A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
+      operationId: communication_ListOnlineMeetingConversation
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.onlineMeetingEngagementConversationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Create new navigation property to onlineMeetingConversations for communications
+      operationId: communication_CreateOnlineMeetingConversation
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingEngagementConversation'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeetingEngagementConversation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get onlineMeetingConversations from communications
+      description: A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
+      operationId: communication_GetOnlineMeetingConversation
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeetingEngagementConversation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update the navigation property onlineMeetingConversations in communications
+      operationId: communication_UpdateOnlineMeetingConversation
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingEngagementConversation'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeetingEngagementConversation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete navigation property onlineMeetingConversations for communications
+      operationId: communication_DeleteOnlineMeetingConversation
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get messages from communications
+      description: The messages in a Viva Engage conversation.
+      operationId: communication.onlineMeetingConversation_ListMessage
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.engagementConversationMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Create new navigation property to messages for communications
+      operationId: communication.onlineMeetingConversation_CreateMessage
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get messages from communications
+      description: The messages in a Viva Engage conversation.
+      operationId: communication.onlineMeetingConversation_GetMessage
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update the navigation property messages in communications
+      operationId: communication.onlineMeetingConversation_UpdateMessage
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete navigation property messages for communications
+      operationId: communication.onlineMeetingConversation_DeleteMessage
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/conversation':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get conversation from communications
+      description: The Viva Engage conversation to which this message belongs. This relationship establishes the thread context for the message.
+      operationId: communication.onlineMeetingConversation.message_GetConversation
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/reactions':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: List reactions
+      description: Get a list of the engagementConversationMessageReaction objects and their properties for an engagementConversationMessage in an online meeting.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/engagementconversationdiscussionmessage-list-reactions?view=graph-rest-1.0
+      operationId: communication.onlineMeetingConversation.message_ListReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.engagementConversationMessageReactionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Create new navigation property to reactions for communications
+      operationId: communication.onlineMeetingConversation.message_CreateReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/reactions/{engagementConversationMessageReaction-id}':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get reactions from communications
+      description: A collection of reactions (such as like and smile) that users have applied to this message.
+      operationId: communication.onlineMeetingConversation.message_GetReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update the navigation property reactions in communications
+      operationId: communication.onlineMeetingConversation.message_UpdateReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete navigation property reactions for communications
+      operationId: communication.onlineMeetingConversation.message_DeleteReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/reactions/$count':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get the number of the resource
+      operationId: communication.onlineMeetingConversation.message.reaction_GetCount
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replies':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get replies from communications
+      description: A collection of messages that are replies to this message and form a threaded discussion.
+      operationId: communication.onlineMeetingConversation.message_ListReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.engagementConversationMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Create new navigation property to replies for communications
+      operationId: communication.onlineMeetingConversation.message_CreateReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replies/{engagementConversationMessage-id1}':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get replies from communications
+      description: A collection of messages that are replies to this message and form a threaded discussion.
+      operationId: communication.onlineMeetingConversation.message_GetReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update the navigation property replies in communications
+      operationId: communication.onlineMeetingConversation.message_UpdateReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete navigation property replies for communications
+      operationId: communication.onlineMeetingConversation.message_DeleteReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replies/{engagementConversationMessage-id1}/conversation':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get conversation from communications
+      description: The Viva Engage conversation to which this message belongs. This relationship establishes the thread context for the message.
+      operationId: communication.onlineMeetingConversation.message.reply_GetConversation
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replies/{engagementConversationMessage-id1}/reactions':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get reactions from communications
+      description: A collection of reactions (such as like and smile) that users have applied to this message.
+      operationId: communication.onlineMeetingConversation.message.reply_ListReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.engagementConversationMessageReactionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Create new navigation property to reactions for communications
+      operationId: communication.onlineMeetingConversation.message.reply_CreateReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replies/{engagementConversationMessage-id1}/reactions/{engagementConversationMessageReaction-id}':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get reactions from communications
+      description: A collection of reactions (such as like and smile) that users have applied to this message.
+      operationId: communication.onlineMeetingConversation.message.reply_GetReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update the navigation property reactions in communications
+      operationId: communication.onlineMeetingConversation.message.reply_UpdateReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete navigation property reactions for communications
+      operationId: communication.onlineMeetingConversation.message.reply_DeleteReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replies/{engagementConversationMessage-id1}/reactions/$count':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get the number of the resource
+      operationId: communication.onlineMeetingConversation.message.reply.reaction_GetCount
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replies/{engagementConversationMessage-id1}/replyTo':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get replyTo from communications
+      description: 'The parent message to which this message is a reply, if it is part of a reply chain.'
+      operationId: communication.onlineMeetingConversation.message.reply_GetReplyTo
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessage-id1
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replies/$count':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get the number of the resource
+      operationId: communication.onlineMeetingConversation.message.reply_GetCount
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replyTo':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get replyTo from communications
+      description: 'The parent message to which this message is a reply, if it is part of a reply chain.'
+      operationId: communication.onlineMeetingConversation.message_GetReplyTo
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/$count':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get the number of the resource
+      operationId: communication.onlineMeetingConversation.message_GetCount
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/onlineMeeting':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get onlineMeeting from communications
+      description: The online meeting associated with the conversation.
+      operationId: communication.onlineMeetingConversation_GetOnlineMeeting
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/onlineMeeting/attendeeReport':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get attendeeReport for the navigation property onlineMeeting from communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+      operationId: communication.onlineMeetingConversation_GetOnlineMeetingAttendeeReport
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+    put:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update attendeeReport for the navigation property onlineMeeting in communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+      operationId: communication.onlineMeetingConversation_SetOnlineMeetingAttendeeReport
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete attendeeReport for the navigation property onlineMeeting in communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+      operationId: communication.onlineMeetingConversation_DeleteOnlineMeetingAttendeeReport
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get starter from communications
+      description: The first message in a Viva Engage conversation.
+      operationId: communication.onlineMeetingConversation_GetStarter
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update the navigation property starter in communications
+      operationId: communication.onlineMeetingConversation_UpdateStarter
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete navigation property starter for communications
+      operationId: communication.onlineMeetingConversation_DeleteStarter
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/conversation':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get conversation from communications
+      description: The Viva Engage conversation to which this message belongs. This relationship establishes the thread context for the message.
+      operationId: communication.onlineMeetingConversation.starter_GetConversation
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/reactions':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get reactions from communications
+      description: A collection of reactions (such as like and smile) that users have applied to this message.
+      operationId: communication.onlineMeetingConversation.starter_ListReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.engagementConversationMessageReactionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Create new navigation property to reactions for communications
+      operationId: communication.onlineMeetingConversation.starter_CreateReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/reactions/{engagementConversationMessageReaction-id}':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get reactions from communications
+      description: A collection of reactions (such as like and smile) that users have applied to this message.
+      operationId: communication.onlineMeetingConversation.starter_GetReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update the navigation property reactions in communications
+      operationId: communication.onlineMeetingConversation.starter_UpdateReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete navigation property reactions for communications
+      operationId: communication.onlineMeetingConversation.starter_DeleteReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/reactions/$count':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get the number of the resource
+      operationId: communication.onlineMeetingConversation.starter.reaction_GetCount
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/replies':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get replies from communications
+      description: A collection of messages that are replies to this message and form a threaded discussion.
+      operationId: communication.onlineMeetingConversation.starter_ListReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.engagementConversationMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Create new navigation property to replies for communications
+      operationId: communication.onlineMeetingConversation.starter_CreateReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/replies/{engagementConversationMessage-id}':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get replies from communications
+      description: A collection of messages that are replies to this message and form a threaded discussion.
+      operationId: communication.onlineMeetingConversation.starter_GetReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update the navigation property replies in communications
+      operationId: communication.onlineMeetingConversation.starter_UpdateReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete navigation property replies for communications
+      operationId: communication.onlineMeetingConversation.starter_DeleteReply
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/replies/{engagementConversationMessage-id}/conversation':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get conversation from communications
+      description: The Viva Engage conversation to which this message belongs. This relationship establishes the thread context for the message.
+      operationId: communication.onlineMeetingConversation.starter.reply_GetConversation
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/replies/{engagementConversationMessage-id}/reactions':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get reactions from communications
+      description: A collection of reactions (such as like and smile) that users have applied to this message.
+      operationId: communication.onlineMeetingConversation.starter.reply_ListReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.engagementConversationMessageReactionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Create new navigation property to reactions for communications
+      operationId: communication.onlineMeetingConversation.starter.reply_CreateReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/replies/{engagementConversationMessage-id}/reactions/{engagementConversationMessageReaction-id}':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get reactions from communications
+      description: A collection of reactions (such as like and smile) that users have applied to this message.
+      operationId: communication.onlineMeetingConversation.starter.reply_GetReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Update the navigation property reactions in communications
+      operationId: communication.onlineMeetingConversation.starter.reply_UpdateReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Delete navigation property reactions for communications
+      operationId: communication.onlineMeetingConversation.starter.reply_DeleteReaction
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: engagementConversationMessageReaction-id
+          in: path
+          description: The unique identifier of engagementConversationMessageReaction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessageReaction
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/replies/{engagementConversationMessage-id}/reactions/$count':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get the number of the resource
+      operationId: communication.onlineMeetingConversation.starter.reply.reaction_GetCount
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/replies/{engagementConversationMessage-id}/replyTo':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get replyTo from communications
+      description: 'The parent message to which this message is a reply, if it is part of a reply chain.'
+      operationId: communication.onlineMeetingConversation.starter.reply_GetReplyTo
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: engagementConversationMessage-id
+          in: path
+          description: The unique identifier of engagementConversationMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: engagementConversationMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/replies/$count':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get the number of the resource
+      operationId: communication.onlineMeetingConversation.starter.reply_GetCount
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/starter/replyTo':
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get replyTo from communications
+      description: 'The parent message to which this message is a reply, if it is part of a reply chain.'
+      operationId: communication.onlineMeetingConversation.starter_GetReplyTo
+      parameters:
+        - name: onlineMeetingEngagementConversation-id
+          in: path
+          description: The unique identifier of onlineMeetingEngagementConversation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeetingEngagementConversation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /communications/onlineMeetingConversations/$count:
+    get:
+      tags:
+        - communications.onlineMeetingEngagementConversation
+      summary: Get the number of the resource
+      operationId: communication.onlineMeetingConversation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /communications/onlineMeetings:
     get:
       tags:
@@ -8624,6 +11469,12 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.call'
           x-ms-navigationProperty: true
+        onlineMeetingConversations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeetingEngagementConversation'
+          description: A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
+          x-ms-navigationProperty: true
         onlineMeetings:
           type: array
           items:
@@ -8636,6 +11487,7 @@ components:
           x-ms-navigationProperty: true
       additionalProperties:
         type: object
+      description: Represents a container that exposes navigation properties for cloud communications resources.
     microsoft.graph.callRecords.callRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9212,6 +12064,53 @@ components:
           format: uuid
       additionalProperties:
         type: object
+    microsoft.graph.engagementConversationMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementConversationMessage
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the message was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            creationMode:
+              $ref: '#/components/schemas/microsoft.graph.engagementCreationMode'
+            from:
+              $ref: '#/components/schemas/microsoft.graph.engagementIdentitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when message was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            replyToId:
+              type: string
+              description: 'The ID of the parent message to which this message is a reply, if applicable.'
+              nullable: true
+            conversation:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversation'
+            reactions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
+              description: A collection of reactions (such as like and smile) that users have applied to this message.
+              x-ms-navigationProperty: true
+            replies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+              description: A collection of messages that are replies to this message and form a threaded discussion.
+              x-ms-navigationProperty: true
+            replyTo:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+          additionalProperties:
+            type: object
+          description: A Viva Engage conversation message.
     microsoft.graph.presence:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9237,6 +12136,72 @@ components:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
+    microsoft.graph.onlineMeetingEngagementConversation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.engagementConversation'
+        - title: onlineMeetingEngagementConversation
+          type: object
+          properties:
+            moderationState:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationModerationState'
+            onlineMeetingId:
+              type: string
+              description: The unique identifier of the online meeting associated with this conversation. The online meeting ID links the conversation to a specific meeting instance.
+            organizer:
+              $ref: '#/components/schemas/microsoft.graph.engagementIdentitySet'
+            upvoteCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of upvotes the conversation received.
+              format: int32
+              readOnly: true
+            onlineMeeting:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+          additionalProperties:
+            type: object
+          description: A conversation for Teams QA online meeting.
+    microsoft.graph.engagementConversation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementConversation
+          type: object
+          properties:
+            creationMode:
+              $ref: '#/components/schemas/microsoft.graph.engagementCreationMode'
+            starterId:
+              type: string
+              description: The unique ID of the first message in a Viva Engage conversation.
+            messages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+              description: The messages in a Viva Engage conversation.
+              x-ms-navigationProperty: true
+            starter:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+          additionalProperties:
+            type: object
+          description: Represents a conversation in Viva Engage.
+    microsoft.graph.engagementConversationMessageReaction:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementConversationMessageReaction
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the reaction was added. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            reactionBy:
+              $ref: '#/components/schemas/microsoft.graph.engagementIdentitySet'
+            reactionType:
+              $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReactionType'
+          additionalProperties:
+            type: object
+          description: A reaction to a conversation message.
     microsoft.graph.onlineMeeting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.onlineMeetingBase'
@@ -9296,6 +12261,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9971,6 +12937,52 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.engagementCreationMode:
+      title: engagementCreationMode
+      enum:
+        - none
+        - migration
+        - unknownFutureValue
+      type: string
+      description: Indicates that the resource is in migration state and is currently being used for migration purposes.
+      x-ms-enum:
+        name: engagementCreationMode
+        modelAsString: false
+        values:
+          - value: none
+            description: Unspecified creation mode.
+            name: none
+          - value: migration
+            description: Creation is a migration.
+            name: migration
+          - value: unknownFutureValue
+            description: A marker value for members added after the release of this API.
+            name: unknownFutureValue
+    microsoft.graph.engagementIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: engagementIdentitySet
+          type: object
+          properties:
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            group:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
+          description: The Viva Engage identities.
     microsoft.graph.outOfOfficeSettings:
       title: outOfOfficeSettings
       type: object
@@ -9985,6 +12997,164 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.engagementConversationModerationState:
+      title: engagementConversationModerationState
+      enum:
+        - published
+        - pendingReview
+        - dismissed
+        - unknownFutureValue
+      type: string
+      description: Represents the moderation state of an Engage conversation message.
+      x-ms-enum:
+        name: engagementConversationModerationState
+        modelAsString: false
+        values:
+          - value: published
+            description: The content is published.
+            name: published
+          - value: pendingReview
+            description: The content is pending review by a moderator.
+            name: pendingReview
+          - value: dismissed
+            description: he content has been rejected by a moderator.
+            name: dismissed
+          - value: unknownFutureValue
+            description: A marker value for members added after the release of this API.
+            name: unknownFutureValue
+    microsoft.graph.engagementConversationMessageReactionType:
+      title: engagementConversationMessageReactionType
+      enum:
+        - like
+        - love
+        - celebrate
+        - thank
+        - laugh
+        - sad
+        - happy
+        - excited
+        - smile
+        - silly
+        - intenseLaugh
+        - starStruck
+        - goofy
+        - thinking
+        - surprised
+        - mindBlown
+        - scared
+        - crying
+        - shocked
+        - angry
+        - agree
+        - praise
+        - takingNotes
+        - heartBroken
+        - support
+        - confirmed
+        - watching
+        - brain
+        - medal
+        - bullseye
+        - unknownFutureValue
+      type: string
+      description: Types of reactions to conversation messages.
+      x-ms-enum:
+        name: engagementConversationMessageReactionType
+        modelAsString: false
+        values:
+          - value: like
+            description: 'Like reaction, represented as a thumbs-up hand. A positive sentiment.'
+            name: like
+          - value: love
+            description: 'Love reaction, represented as a solid heart shape. A very positive sentiment.'
+            name: love
+          - value: celebrate
+            description: 'Celebrate reaction, represented as a party hat. A positive sentiment.'
+            name: celebrate
+          - value: thank
+            description: 'Thank reaction, represented as applauding hands. A positive sentiment.'
+            name: thank
+          - value: laugh
+            description: 'Laugh reaction, represented as a grinning face. A positive sentiment.'
+            name: laugh
+          - value: sad
+            description: 'Sad reaction, represented as a frowning face. A sympathetic sentiment.'
+            name: sad
+          - value: happy
+            description: 'Happy reaction, represented as an open mouth smile face. A very positive sentiment.'
+            name: happy
+          - value: excited
+            description: 'Excited reaction, represented as a face with closed eyes and a big smile. A very positive sentiment.'
+            name: excited
+          - value: smile
+            description: 'Smiling reaction, represented as a face with a small smile. A positive sentiment.'
+            name: smile
+          - value: silly
+            description: 'Silly reaction, represented as an upside down smiling face. A positive sentiment.'
+            name: silly
+          - value: intenseLaugh
+            description: 'Intense laughter reaction, represented as a crying laughing face. A very positive sentiment.'
+            name: intenseLaugh
+          - value: starStruck
+            description: 'Star struck reaction, represented as a face with stars for eyes. A very positive sentiment.'
+            name: starStruck
+          - value: goofy
+            description: 'Goofy reaction, represented as a face with tongue sticking out of mouth. A positive sentiment.'
+            name: goofy
+          - value: thinking
+            description: 'Thinking reaction, represented as a face with a hand on the chin. A neutral sentiment.'
+            name: thinking
+          - value: surprised
+            description: 'Surprised reaction, represented as a face with its mouth open. A neutral sentiment.'
+            name: surprised
+          - value: mindBlown
+            description: 'Mind blown reaction, represented as a face with its head covered in an exploding cloud. A positive sentiment.'
+            name: mindBlown
+          - value: scared
+            description: 'Scared reaction, represented as a face with fearful look. A negative sentiment.'
+            name: scared
+          - value: crying
+            description: 'Crying reaction, represented as a face with tears streaming down. A negative sentiment.'
+            name: crying
+          - value: shocked
+            description: 'Shocked reaction, represented as a face with two hands against cheeks and mouth open. A negative sentiment.'
+            name: shocked
+          - value: angry
+            description: 'Angry reaction, represented as a face with furrowed eyebrows and sad mouth. A very negative sentiment.'
+            name: angry
+          - value: agree
+            description: 'Agree reaction, represented as a hand pointing upward. A positive sentiment.'
+            name: agree
+          - value: praise
+            description: 'Praise reaction, represented as two hands facing outward. A positive sentiment.'
+            name: praise
+          - value: takingNotes
+            description: 'Taking notes reaction, represented as a hand holding a pen. A neutral sentiment.'
+            name: takingNotes
+          - value: heartBroken
+            description: 'Heart broken reaction, represented as a broken heart. A negative sentiment.'
+            name: heartBroken
+          - value: support
+            description: 'Support reaction, represented as red numbers showing 100. A positive sentiment.'
+            name: support
+          - value: confirmed
+            description: 'Confirmed reaction, represented as a green check mark. A neutral sentiment.'
+            name: confirmed
+          - value: watching
+            description: 'Watching reaction, represented as two eyeballs. A neutral sentiment.'
+            name: watching
+          - value: brain
+            description: 'Brain reaction, represented as a brain. A neutral sentiment.'
+            name: brain
+          - value: medal
+            description: 'Medal reaction, represented as a medal hanging from a sash. A positive sentiment.'
+            name: medal
+          - value: bullseye
+            description: 'Bullseye reaction, represented as a target with an arrow in the middle. A positive sentiment.'
+            name: bullseye
+          - value: unknownFutureValue
+            description: A marker value for members added after the release of this API.
+            name: unknownFutureValue
     microsoft.graph.onlineMeetingBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10207,18 +13377,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.itemBody:
-      title: itemBody
-      type: object
-      properties:
-        content:
-          type: string
-          description: The content of the item.
-          nullable: true
-        contentType:
-          $ref: '#/components/schemas/microsoft.graph.bodyType'
-      additionalProperties:
-        type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -10343,6 +13501,45 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.participant'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.onlineMeetingEngagementConversationCollectionResponse:
+      title: Collection of onlineMeetingEngagementConversation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeetingEngagementConversation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.engagementConversationMessageCollectionResponse:
+      title: Collection of engagementConversationMessage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.engagementConversationMessage'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.engagementConversationMessageReactionCollectionResponse:
+      title: Collection of engagementConversationMessageReaction
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReaction'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -10930,6 +14127,12 @@ components:
         - NaN
       type: string
       nullable: true
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
     microsoft.graph.allowedLobbyAdmitterRoles:
       title: allowedLobbyAdmitterRoles
       enum:
@@ -11092,12 +14295,6 @@ components:
         - unknownFutureValue
         - producer
         - coorganizer
-      type: string
-    microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
       type: string
     microsoft.graph.ODataErrors.MainError:
       required:
@@ -11330,6 +14527,24 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.participantCollectionResponse'
+    microsoft.graph.onlineMeetingEngagementConversationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeetingEngagementConversationCollectionResponse'
+    microsoft.graph.engagementConversationMessageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageCollectionResponse'
+    microsoft.graph.engagementConversationMessageReactionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.engagementConversationMessageReactionCollectionResponse'
     microsoft.graph.onlineMeetingCollectionResponse:
       description: Retrieved collection
       content:
