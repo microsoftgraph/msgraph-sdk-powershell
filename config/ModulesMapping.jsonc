@@ -26,6 +26,7 @@
   "Identity.Partner": "^tenantRelationships.delegatedAdminRelationship$|^tenantRelationships.delegatedAdminCustomer$",
   "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
   "ManagedTenants": "^tenantRelationships.managedTenant$",
+  "Migrations": "^solutions.migrations\\.",
   "NetworkAccess": "^networkAccess\\.",
   "Notes": "^users.onenote$|^groups.onenote$|^sites.onenote$",
   "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",
@@ -37,7 +38,7 @@
   "Security": "^security\\.|^users.security$",
   "Sites": "^sites.baseSitePage$|^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$|^sites.drive$|^sites.list$|^sites.sitePage$|^sites.permission$|^sites.store$|^users.site$|^groups.site$|^sites.*.Functions$|^sites.*.Actions$|^sites.richLongRunningOperation$|^termStore.sets.ListChildren$|^admin.sharepoint$",
   "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs.teamsApp$|^users.userTeamwork$|^teamwork\\.|^users.team$|^groups.team$",
-  "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.mailboxSettings|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$|^users.itemInsights$|^users.servicePrincipal$",
+  "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.mailboxSettings|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.onPremisesSyncBehavior$|^users.todo$|^users.itemInsights$|^users.servicePrincipal$",
   "Users.Actions": "^users.*.Actions$",
   "Users.Functions": "^users.*.Functions$",
   "WindowsUpdates": "^admin.adminWindows$"
