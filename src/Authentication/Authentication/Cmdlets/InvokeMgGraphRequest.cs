@@ -1026,8 +1026,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 try
                 {
                     PrepareSession();
-                    GraphSession.Instance.GraphRequestPopContext.Uri = Uri;
-                    GraphSession.Instance.GraphRequestPopContext.HttpMethod = GetHttpMethod(Method);
                     var client = HttpHelpers.GetGraphHttpClient();
                     ValidateRequestUri();
                     using (var httpRequestMessage = GetRequest(client, Uri))

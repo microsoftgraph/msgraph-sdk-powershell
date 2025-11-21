@@ -27,8 +27,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
         private const string BearerAuthenticationScheme = "Bearer";
         private const string PopAuthenticationScheme = "Pop";
         private int MaxRetry { get; set; } = 1;
-        private PopTokenRequestContext popTokenRequestContext;
-        private Request popRequest = GraphSession.Instance.GraphRequestPopContext.PopPipeline.CreateRequest();
+        private TokenRequestContext popTokenRequestContext;
+        private string cachedNonce;
 
         public AzureIdentityAccessTokenProvider AuthenticationProvider { get; set; }
 
@@ -52,10 +52,22 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
 
                 HttpResponseMessage response = await base.SendAsync(httpRequestMessage, cancellationToken).ConfigureAwait(false);
 
-                // Continuous nonce extraction on each request
-                if (GraphSession.Instance.GraphOption.EnableATPoPForMSGraph)
+                // Extract nonce from API responses for future PoP requests
+                if (GraphSession.Instance.GraphOption.EnableATPoPForMSGraph && IsApiRequest(httpRequestMessage.RequestUri))
                 {
-                    popTokenRequestContext = new PopTokenRequestContext(GraphSession.Instance.AuthContext.Scopes, isProofOfPossessionEnabled: true, proofOfPossessionNonce: WwwAuthenticateParameters.CreateFromAuthenticationHeaders(response.Headers, PopAuthenticationScheme).Nonce, request: popRequest);
+                    try
+                    {
+                        var wwwAuthParams = WwwAuthenticateParameters.CreateFromAuthenticationHeaders(response.Headers, PopAuthenticationScheme);
+                        if (wwwAuthParams?.Nonce != null && !string.IsNullOrEmpty(wwwAuthParams.Nonce))
+                        {
+                            cachedNonce = wwwAuthParams.Nonce;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"AuthenticationHandler: Failed to extract PoP nonce: {ex.Message}");
+                        // Don't throw - nonce extraction failure shouldn't break the response
+                    }
                 }
 
                 // Check if response is a 401 & is not a streamed body (is buffered)
@@ -76,17 +88,48 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
         {
             if (AuthenticationProvider != null)
             {
+                // Determine if this is an API request that should use PoP (when enabled)
+                // vs an authentication request that should always use Bearer
+                bool isApiRequest = IsApiRequest(httpRequestMessage.RequestUri);
+                bool shouldUsePoP = GraphSession.Instance.GraphOption.EnableATPoPForMSGraph && isApiRequest;
+                
+                // Debug logging for flow routing
                 if (GraphSession.Instance.GraphOption.EnableATPoPForMSGraph)
                 {
-                    popRequest.Method = RequestMethod.Parse(httpRequestMessage.Method.Method.ToUpper());
-                    popRequest.Uri.Reset(httpRequestMessage.RequestUri);
-                    foreach (var header in httpRequestMessage.Headers)
+                    var requestType = isApiRequest ? "API" : "Auth";
+                    var tokenType = shouldUsePoP ? "PoP" : "Bearer";
+                    System.Diagnostics.Debug.WriteLine($"AuthenticationHandler: {requestType} request to {httpRequestMessage.RequestUri?.Host} using {tokenType} token");
+                }
+                
+                if (shouldUsePoP)
+                {
+                    // API Request with PoP enabled - use PoP tokens ONLY
+                    try
                     {
-                        popRequest.Headers.Add(header.Key, header.Value.First());
+                        // Create proper TokenRequestContext for PoP
+                        // Note: cachedNonce may be null for initial requests - this is expected
+                        popTokenRequestContext = new TokenRequestContext(
+                            scopes: GraphSession.Instance.AuthContext.Scopes,
+                            parentRequestId: null,
+                            claims: additionalAuthenticationContext?.ContainsKey(ClaimsKey) == true ? additionalAuthenticationContext[ClaimsKey]?.ToString() : null,
+                            tenantId: null,
+                            isCaeEnabled: false,
+                            isProofOfPossessionEnabled: true,
+                            proofOfPossessionNonce: cachedNonce // May be null for initial requests
+                        );
+                        
+                        // Get TokenCredential from existing AuthenticationProvider
+                        var tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(
+                            GraphSession.Instance.AuthContext, cancellationToken).ConfigureAwait(false);
+                        
+                        var accessToken = await tokenCredential.GetTokenAsync(popTokenRequestContext, cancellationToken).ConfigureAwait(false);
+                        httpRequestMessage.Headers.Authorization = new AuthenticationHeaderValue(PopAuthenticationScheme, accessToken.Token);
                     }
-                    
-                    var accessToken = await GraphSession.Instance.GraphRequestPopContext.PopInteractiveBrowserCredential.GetTokenAsync(popTokenRequestContext, cancellationToken).ConfigureAwait(false);
-                    httpRequestMessage.Headers.Authorization = new AuthenticationHeaderValue(PopAuthenticationScheme, accessToken.Token);
+                    catch (Exception ex) when (!(ex is OperationCanceledException))
+                    {
+                        // Re-throw with context for PoP-specific failures
+                        throw new AuthenticationException($"Failed to acquire PoP token for {httpRequestMessage.RequestUri}: {ex.Message}", ex);
+                    }
                 }
                 else
                 {
@@ -155,6 +198,53 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
                 }
             }
             response.Dispose();
+        }
+
+        /// <summary>
+        /// Determines if the request is an API request that should use PoP when enabled,
+        /// vs an authentication/token request that should always use Bearer tokens.
+        /// This method implements the core routing logic for AT-PoP:
+        /// - Graph API endpoints → PoP tokens (when enabled) 
+        /// - Authentication endpoints → Bearer tokens (always)
+        /// - Unknown endpoints → Bearer tokens (safe default)
+        /// </summary>
+        /// <param name="requestUri">The request URI to evaluate</param>
+        /// <returns>True if this is an API request, false if it's an authentication request</returns>
+        private static bool IsApiRequest(Uri requestUri)
+        {
+            if (requestUri == null) return false;
+            
+            var host = requestUri.Host?.ToLowerInvariant();
+            var path = requestUri.AbsolutePath?.ToLowerInvariant();
+            
+            // Microsoft Graph API endpoints that should use PoP
+            if (host?.Contains("graph.microsoft.com") == true ||
+                host?.Contains("graph.microsoft.us") == true ||
+                host?.Contains("microsoftgraph.chinacloudapi.cn") == true ||
+                host?.Contains("graph.microsoft.de") == true)
+            {
+                // Exclude authentication/token endpoints - these should always use Bearer
+                if (path?.Contains("/oauth2/") == true ||
+                    path?.Contains("/token") == true ||
+                    path?.Contains("/authorize") == true ||
+                    path?.Contains("/devicecode") == true)
+                {
+                    return false; // Authentication request
+                }
+                return true; // API request
+            }
+            
+            // Azure AD/authentication endpoints - never use PoP
+            if (host?.Contains("login.microsoftonline.com") == true ||
+                host?.Contains("login.microsoft.com") == true ||
+                host?.Contains("login.chinacloudapi.cn") == true ||
+                host?.Contains("login.microsoftonline.de") == true ||
+                host?.Contains("login.microsoftonline.us") == true)
+            {
+                return false; // Authentication request
+            }
+            
+            return false; // Default to authentication request for unknown endpoints
         }
     }
 }
