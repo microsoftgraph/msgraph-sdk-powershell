@@ -1563,7 +1563,7 @@ paths:
       tags:
         - groups.calendar
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
@@ -1694,7 +1694,7 @@ paths:
       tags:
         - groups.calendar
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -2131,7 +2131,7 @@ paths:
       tags:
         - groups.event
       summary: List group calendarView
-      description: "Get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range,\nfrom the default calendar of a group."
+      description: "Get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range,\r\nfrom the default calendar of a group."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-calendarview?view=graph-rest-1.0
@@ -3417,7 +3417,7 @@ paths:
       tags:
         - groups.event
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
@@ -3548,7 +3548,7 @@ paths:
       tags:
         - groups.event
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -3838,6 +3838,29 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /places:
+    post:
+      tags:
+        - places.place
+      summary: Add new entity to places
+      operationId: place_CreatePlace
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.place'
+        required: true
+      responses:
+        2XX:
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.place'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/places/{place-id}':
     patch:
       tags:
@@ -3900,6 +3923,2600 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/places/{place-id}/checkIns':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: place_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.checkInClaim
+      summary: Create new navigation property to checkIns for places
+      operationId: place_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: place_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.checkInClaim
+      summary: Update the navigation property checkIns in places
+      operationId: place_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.checkInClaim
+      summary: Delete navigation property checkIns for places
+      operationId: place_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/checkIns/$count':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get the number of the resource
+      operationId: place.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.building':
+    get:
+      tags:
+        - places.place
+      summary: Get the item of type microsoft.graph.place as microsoft.graph.building
+      operationId: place_GetPlaceAsBuilding
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.building'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.building/checkIns':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsBuilding_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.checkInClaim
+      summary: Create new navigation property to checkIns for places
+      operationId: placeAsBuilding_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsBuilding_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.checkInClaim
+      summary: Update the navigation property checkIns in places
+      operationId: placeAsBuilding_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.checkInClaim
+      summary: Delete navigation property checkIns for places
+      operationId: placeAsBuilding_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/checkIns/$count':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get the number of the resource
+      operationId: placeAsBuilding.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.building/map':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get map from places
+      operationId: placeAsBuilding_GetMap
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.buildingMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.buildingMap
+      summary: Update the navigation property map in places
+      operationId: placeAsBuilding_UpdateMap
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.buildingMap'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.buildingMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.buildingMap
+      summary: Delete navigation property map for places
+      operationId: placeAsBuilding_DeleteMap
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/footprints':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get footprints from places
+      operationId: placeAsBuilding.map_ListFootprint
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.footprintMapCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.buildingMap
+      summary: Create new navigation property to footprints for places
+      operationId: placeAsBuilding.map_CreateFootprint
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.footprintMap'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.footprintMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/footprints/{footprintMap-id}':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get footprints from places
+      operationId: placeAsBuilding.map_GetFootprint
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: footprintMap-id
+          in: path
+          description: The unique identifier of footprintMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: footprintMap
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.footprintMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.buildingMap
+      summary: Update the navigation property footprints in places
+      operationId: placeAsBuilding.map_UpdateFootprint
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: footprintMap-id
+          in: path
+          description: The unique identifier of footprintMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: footprintMap
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.footprintMap'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.footprintMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.buildingMap
+      summary: Delete navigation property footprints for places
+      operationId: placeAsBuilding.map_DeleteFootprint
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: footprintMap-id
+          in: path
+          description: The unique identifier of footprintMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: footprintMap
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/footprints/$count':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get the number of the resource
+      operationId: placeAsBuilding.map.footprint_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.building/map/levels':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get levels from places
+      operationId: placeAsBuilding.map_ListLevel
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.levelMapCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.buildingMap
+      summary: Create new navigation property to levels for places
+      operationId: placeAsBuilding.map_CreateLevel
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.levelMap'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.levelMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get levels from places
+      operationId: placeAsBuilding.map_GetLevel
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.levelMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.buildingMap
+      summary: Update the navigation property levels in places
+      operationId: placeAsBuilding.map_UpdateLevel
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.levelMap'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.levelMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.buildingMap
+      summary: Delete navigation property levels for places
+      operationId: placeAsBuilding.map_DeleteLevel
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}/fixtures':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get fixtures from places
+      operationId: placeAsBuilding.map.level_ListFixture
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.fixtureMapCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.buildingMap
+      summary: Create new navigation property to fixtures for places
+      operationId: placeAsBuilding.map.level_CreateFixture
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.fixtureMap'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.fixtureMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}/fixtures/{fixtureMap-id}':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get fixtures from places
+      operationId: placeAsBuilding.map.level_GetFixture
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: fixtureMap-id
+          in: path
+          description: The unique identifier of fixtureMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: fixtureMap
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.fixtureMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.buildingMap
+      summary: Update the navigation property fixtures in places
+      operationId: placeAsBuilding.map.level_UpdateFixture
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: fixtureMap-id
+          in: path
+          description: The unique identifier of fixtureMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: fixtureMap
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.fixtureMap'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.fixtureMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.buildingMap
+      summary: Delete navigation property fixtures for places
+      operationId: placeAsBuilding.map.level_DeleteFixture
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: fixtureMap-id
+          in: path
+          description: The unique identifier of fixtureMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: fixtureMap
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}/fixtures/$count':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get the number of the resource
+      operationId: placeAsBuilding.map.level.fixture_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}/sections':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get sections from places
+      operationId: placeAsBuilding.map.level_ListSection
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.sectionMapCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.buildingMap
+      summary: Create new navigation property to sections for places
+      operationId: placeAsBuilding.map.level_CreateSection
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sectionMap'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sectionMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}/sections/{sectionMap-id}':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get sections from places
+      operationId: placeAsBuilding.map.level_GetSection
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: sectionMap-id
+          in: path
+          description: The unique identifier of sectionMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionMap
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sectionMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.buildingMap
+      summary: Update the navigation property sections in places
+      operationId: placeAsBuilding.map.level_UpdateSection
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: sectionMap-id
+          in: path
+          description: The unique identifier of sectionMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionMap
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sectionMap'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sectionMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.buildingMap
+      summary: Delete navigation property sections for places
+      operationId: placeAsBuilding.map.level_DeleteSection
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: sectionMap-id
+          in: path
+          description: The unique identifier of sectionMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionMap
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}/sections/$count':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get the number of the resource
+      operationId: placeAsBuilding.map.level.section_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}/units':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get units from places
+      operationId: placeAsBuilding.map.level_ListUnit
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.unitMapCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.buildingMap
+      summary: Create new navigation property to units for places
+      operationId: placeAsBuilding.map.level_CreateUnit
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unitMap'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unitMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}/units/{unitMap-id}':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get units from places
+      operationId: placeAsBuilding.map.level_GetUnit
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: unitMap-id
+          in: path
+          description: The unique identifier of unitMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unitMap
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unitMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.buildingMap
+      summary: Update the navigation property units in places
+      operationId: placeAsBuilding.map.level_UpdateUnit
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: unitMap-id
+          in: path
+          description: The unique identifier of unitMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unitMap
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unitMap'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unitMap'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.buildingMap
+      summary: Delete navigation property units for places
+      operationId: placeAsBuilding.map.level_DeleteUnit
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - name: unitMap-id
+          in: path
+          description: The unique identifier of unitMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unitMap
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.building/map/levels/{levelMap-id}/units/$count':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get the number of the resource
+      operationId: placeAsBuilding.map.level.unit_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: levelMap-id
+          in: path
+          description: The unique identifier of levelMap
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: levelMap
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.building/map/levels/$count':
+    get:
+      tags:
+        - places.buildingMap
+      summary: Get the number of the resource
+      operationId: placeAsBuilding.map.level_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.descendants()':
+    get:
+      tags:
+        - places.place.Functions
+      summary: Invoke function descendants
+      operationId: place_descendant
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of place
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.place'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/places/{place-id}/microsoft.graph.desk':
+    get:
+      tags:
+        - places.place
+      summary: Get the item of type microsoft.graph.place as microsoft.graph.desk
+      operationId: place_GetPlaceAsDesk
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.desk'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.desk/checkIns':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsDesk_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.checkInClaim
+      summary: Create new navigation property to checkIns for places
+      operationId: placeAsDesk_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.desk/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsDesk_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.checkInClaim
+      summary: Update the navigation property checkIns in places
+      operationId: placeAsDesk_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.checkInClaim
+      summary: Delete navigation property checkIns for places
+      operationId: placeAsDesk_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.desk/checkIns/$count':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get the number of the resource
+      operationId: placeAsDesk.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.floor':
+    get:
+      tags:
+        - places.place
+      summary: Get the item of type microsoft.graph.place as microsoft.graph.floor
+      operationId: place_GetPlaceAsFloor
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.floor'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.floor/checkIns':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsFloor_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.checkInClaim
+      summary: Create new navigation property to checkIns for places
+      operationId: placeAsFloor_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.floor/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsFloor_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.checkInClaim
+      summary: Update the navigation property checkIns in places
+      operationId: placeAsFloor_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.checkInClaim
+      summary: Delete navigation property checkIns for places
+      operationId: placeAsFloor_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.floor/checkIns/$count':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get the number of the resource
+      operationId: placeAsFloor.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/places/{place-id}/microsoft.graph.room':
     get:
       tags:
@@ -3948,6 +6565,244 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.room'
         default:
           $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.room/checkIns':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsRoom_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.checkInClaim
+      summary: Create new navigation property to checkIns for places
+      operationId: placeAsRoom_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.room/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsRoom_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.checkInClaim
+      summary: Update the navigation property checkIns in places
+      operationId: placeAsRoom_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.checkInClaim
+      summary: Delete navigation property checkIns for places
+      operationId: placeAsRoom_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.room/checkIns/$count':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get the number of the resource
+      operationId: placeAsRoom.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/places/{place-id}/microsoft.graph.roomList':
     get:
       tags:
@@ -3990,6 +6845,244 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roomList'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.roomList/checkIns':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsRoomList_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.checkInClaim
+      summary: Create new navigation property to checkIns for places
+      operationId: placeAsRoomList_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsRoomList_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.checkInClaim
+      summary: Update the navigation property checkIns in places
+      operationId: placeAsRoomList_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.checkInClaim
+      summary: Delete navigation property checkIns for places
+      operationId: placeAsRoomList_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/checkIns/$count':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get the number of the resource
+      operationId: placeAsRoomList.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
   '/places/{place-id}/microsoft.graph.roomList/rooms':
@@ -4208,6 +7301,292 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/rooms/{room-id}/checkIns':
+    get:
+      tags:
+        - places.room
+      summary: Get checkIns from places
+      operationId: placeAsRoomList.room_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.room
+      summary: Create new navigation property to checkIns for places
+      operationId: placeAsRoomList.room_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/rooms/{room-id}/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.room
+      summary: Get checkIns from places
+      operationId: placeAsRoomList.room_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.room
+      summary: Update the navigation property checkIns in places
+      operationId: placeAsRoomList.room_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.room
+      summary: Delete navigation property checkIns for places
+      operationId: placeAsRoomList.room_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/rooms/{room-id}/checkIns/$count':
+    get:
+      tags:
+        - places.room
+      summary: Get the number of the resource
+      operationId: placeAsRoomList.room.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/places/{place-id}/microsoft.graph.roomList/rooms/$count':
     get:
       tags:
@@ -4230,12 +7609,1292 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.roomList/workspaces':
+    get:
+      tags:
+        - places.workspace
+      summary: Get workspaces from places
+      operationId: placeAsRoomList_ListWorkspace
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.workspaceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.workspace
+      summary: Create new navigation property to workspaces for places
+      operationId: placeAsRoomList_CreateWorkspace
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.workspace'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workspace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/workspaces/{workspace-id}':
+    get:
+      tags:
+        - places.workspace
+      summary: Get workspaces from places
+      operationId: placeAsRoomList_GetWorkspace
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: workspace-id
+          in: path
+          description: The unique identifier of workspace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workspace
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workspace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.workspace
+      summary: Update the navigation property workspaces in places
+      operationId: placeAsRoomList_UpdateWorkspace
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: workspace-id
+          in: path
+          description: The unique identifier of workspace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workspace
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.workspace'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workspace'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.workspace
+      summary: Delete navigation property workspaces for places
+      operationId: placeAsRoomList_DeleteWorkspace
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: workspace-id
+          in: path
+          description: The unique identifier of workspace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workspace
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/workspaces/{workspace-id}/checkIns':
+    get:
+      tags:
+        - places.workspace
+      summary: Get checkIns from places
+      operationId: placeAsRoomList.workspace_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: workspace-id
+          in: path
+          description: The unique identifier of workspace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workspace
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.workspace
+      summary: Create new navigation property to checkIns for places
+      operationId: placeAsRoomList.workspace_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: workspace-id
+          in: path
+          description: The unique identifier of workspace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workspace
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/workspaces/{workspace-id}/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.workspace
+      summary: Get checkIns from places
+      operationId: placeAsRoomList.workspace_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: workspace-id
+          in: path
+          description: The unique identifier of workspace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workspace
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.workspace
+      summary: Update the navigation property checkIns in places
+      operationId: placeAsRoomList.workspace_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: workspace-id
+          in: path
+          description: The unique identifier of workspace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workspace
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.workspace
+      summary: Delete navigation property checkIns for places
+      operationId: placeAsRoomList.workspace_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: workspace-id
+          in: path
+          description: The unique identifier of workspace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workspace
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/workspaces/{workspace-id}/checkIns/$count':
+    get:
+      tags:
+        - places.workspace
+      summary: Get the number of the resource
+      operationId: placeAsRoomList.workspace.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: workspace-id
+          in: path
+          description: The unique identifier of workspace
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workspace
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.roomList/workspaces/$count':
+    get:
+      tags:
+        - places.workspace
+      summary: Get the number of the resource
+      operationId: placeAsRoomList.workspace_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.section':
+    get:
+      tags:
+        - places.place
+      summary: Get the item of type microsoft.graph.place as microsoft.graph.section
+      operationId: place_GetPlaceAsSection
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.section'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.section/checkIns':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsSection_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.checkInClaim
+      summary: Create new navigation property to checkIns for places
+      operationId: placeAsSection_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.section/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsSection_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.checkInClaim
+      summary: Update the navigation property checkIns in places
+      operationId: placeAsSection_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.checkInClaim
+      summary: Delete navigation property checkIns for places
+      operationId: placeAsSection_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.section/checkIns/$count':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get the number of the resource
+      operationId: placeAsSection.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.workspace':
+    get:
+      tags:
+        - places.place
+      summary: Get the item of type microsoft.graph.place as microsoft.graph.workspace
+      operationId: place_GetPlaceAsWorkspace
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Entity result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workspace'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.workspace/checkIns':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsWorkspace_ListCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.checkInClaimCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.checkInClaim
+      summary: Create new navigation property to checkIns for places
+      operationId: placeAsWorkspace_CreateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.workspace/checkIns/{checkInClaim-calendarEventId}':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get checkIns from places
+      operationId: placeAsWorkspace_GetCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.checkInClaim
+      summary: Update the navigation property checkIns in places
+      operationId: placeAsWorkspace_UpdateCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.checkInClaim
+      summary: Delete navigation property checkIns for places
+      operationId: placeAsWorkspace_DeleteCheckIn
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: checkInClaim-calendarEventId
+          in: path
+          description: The unique identifier of checkInClaim
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: checkInClaim
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.workspace/checkIns/$count':
+    get:
+      tags:
+        - places.checkInClaim
+      summary: Get the number of the resource
+      operationId: placeAsWorkspace.checkIn_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /places/$count:
     get:
       tags:
         - places.place
       summary: Get the number of the resource
       operationId: place_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /places/microsoft.graph.building:
+    get:
+      tags:
+        - places.place
+      summary: Get the items of type microsoft.graph.building in the microsoft.graph.place collection
+      operationId: place_ListPlaceAsBuilding
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.buildingCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /places/microsoft.graph.building/$count:
+    get:
+      tags:
+        - places.place
+      summary: Get the number of the resource
+      operationId: place_GetCountAsBuilding
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /places/microsoft.graph.desk:
+    get:
+      tags:
+        - places.place
+      summary: Get the items of type microsoft.graph.desk in the microsoft.graph.place collection
+      operationId: place_ListPlaceAsDesk
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.deskCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /places/microsoft.graph.desk/$count:
+    get:
+      tags:
+        - places.place
+      summary: Get the number of the resource
+      operationId: place_GetCountAsDesk
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /places/microsoft.graph.floor:
+    get:
+      tags:
+        - places.place
+      summary: Get the items of type microsoft.graph.floor in the microsoft.graph.place collection
+      operationId: place_ListPlaceAsFloor
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.floorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /places/microsoft.graph.floor/$count:
+    get:
+      tags:
+        - places.place
+      summary: Get the number of the resource
+      operationId: place_GetCountAsFloor
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4368,6 +9027,134 @@ paths:
         - places.place
       summary: Get the number of the resource
       operationId: place_GetCountAsRoomList
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /places/microsoft.graph.section:
+    get:
+      tags:
+        - places.place
+      summary: Get the items of type microsoft.graph.section in the microsoft.graph.place collection
+      operationId: place_ListPlaceAsSection
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.sectionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /places/microsoft.graph.section/$count:
+    get:
+      tags:
+        - places.place
+      summary: Get the number of the resource
+      operationId: place_GetCountAsSection
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /places/microsoft.graph.workspace:
+    get:
+      tags:
+        - places.place
+      summary: Get the items of type microsoft.graph.workspace in the microsoft.graph.place collection
+      operationId: place_ListPlaceAsWorkspace
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.workspaceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /places/microsoft.graph.workspace/$count:
+    get:
+      tags:
+        - places.place
+      summary: Get the number of the resource
+      operationId: place_GetCountAsWorkspace
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5974,7 +10761,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
@@ -6105,7 +10892,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -8984,7 +13771,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
@@ -9163,7 +13950,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -11748,7 +16535,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
@@ -11903,7 +16690,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -13696,7 +18483,7 @@ paths:
       tags:
         - users.event
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
+      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \r\nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\r\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\r\nthe organizer send a custom message to the attendees about the cancellation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
@@ -13827,7 +18614,7 @@ paths:
       tags:
         - users.event
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\r\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\r\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\r\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -14573,9 +19360,172 @@ components:
               description: The name associated with the place.
             geoCoordinates:
               $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
+            isWheelChairAccessible:
+              type: boolean
+              nullable: true
+            label:
+              type: string
+              nullable: true
+            parentId:
+              type: string
+              nullable: true
             phone:
               type: string
               description: The phone number of the place.
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+            checkIns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.checkInClaim:
+      title: checkInClaim
+      type: object
+      properties:
+        calendarEventId:
+          type: string
+        checkInMethod:
+          $ref: '#/components/schemas/microsoft.graph.checkInMethod'
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.building:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.place'
+        - title: building
+          type: object
+          properties:
+            resourceLinks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceLink'
+            map:
+              $ref: '#/components/schemas/microsoft.graph.buildingMap'
+          additionalProperties:
+            type: object
+    microsoft.graph.buildingMap:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseMapFeature'
+        - title: buildingMap
+          type: object
+          properties:
+            placeId:
+              type: string
+              nullable: true
+            footprints:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.footprintMap'
+              x-ms-navigationProperty: true
+            levels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.levelMap'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.footprintMap:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseMapFeature'
+        - title: footprintMap
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.levelMap:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseMapFeature'
+        - title: levelMap
+          type: object
+          properties:
+            placeId:
+              type: string
+              nullable: true
+            fixtures:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.fixtureMap'
+              x-ms-navigationProperty: true
+            sections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sectionMap'
+              x-ms-navigationProperty: true
+            units:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unitMap'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.fixtureMap:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseMapFeature'
+        - title: fixtureMap
+          type: object
+          properties:
+            placeId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.sectionMap:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseMapFeature'
+        - title: sectionMap
+          type: object
+          properties:
+            placeId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.unitMap:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseMapFeature'
+        - title: unitMap
+          type: object
+          properties:
+            placeId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.desk:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.place'
+        - title: desk
+          type: object
+          properties:
+            displayDeviceName:
+              type: string
+              nullable: true
+            mailboxDetails:
+              $ref: '#/components/schemas/microsoft.graph.mailboxDetails'
+            mode:
+              $ref: '#/components/schemas/microsoft.graph.placeMode'
+          additionalProperties:
+            type: object
+    microsoft.graph.floor:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.place'
+        - title: floor
+          type: object
+          properties:
+            sortOrder:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
               nullable: true
           additionalProperties:
             type: object
@@ -14621,23 +19571,9 @@ components:
               description: Specifies the floor number that the room is on.
               format: int32
               nullable: true
-            isWheelChairAccessible:
-              type: boolean
-              description: Specifies whether the room is wheelchair accessible.
-              nullable: true
-            label:
-              type: string
-              description: 'Specifies a descriptive label for the room, for example, a number or name.'
-              nullable: true
             nickname:
               type: string
               description: 'Specifies a nickname for the room, for example, ''conf room''.'
-            tags:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: 'Specifies other features of the room, for example, details like the type of view or furniture type.'
             videoDeviceName:
               type: string
               description: Specifies the name of the video device in the room.
@@ -14659,6 +19595,42 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.room'
               x-ms-navigationProperty: true
+            workspaces:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workspace'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workspace:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.place'
+        - title: workspace
+          type: object
+          properties:
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            displayDeviceName:
+              type: string
+              nullable: true
+            emailAddress:
+              type: string
+              nullable: true
+            mode:
+              $ref: '#/components/schemas/microsoft.graph.placeMode'
+            nickname:
+              type: string
+          additionalProperties:
+            type: object
+    microsoft.graph.section:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.place'
+        - title: section
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.calendarGroup:
@@ -15062,6 +20034,57 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.checkInMethod:
+      title: checkInMethod
+      enum:
+        - unspecified
+        - manual
+        - inferred
+        - verified
+        - unknownFutureValue
+      type: string
+    microsoft.graph.resourceLink:
+      title: resourceLink
+      type: object
+      properties:
+        linkType:
+          $ref: '#/components/schemas/microsoft.graph.resourceLinkType'
+        name:
+          type: string
+          nullable: true
+        value:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.baseMapFeature:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: baseMapFeature
+          type: object
+          properties:
+            properties:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.mailboxDetails:
+      title: mailboxDetails
+      type: object
+      properties:
+        emailAddress:
+          type: string
+          nullable: true
+        externalDirectoryObjectId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.placeMode:
+      title: placeMode
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.bookingType:
       title: bookingType
       enum:
@@ -15133,6 +20156,84 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.checkInClaimCollectionResponse:
+      title: Collection of checkInClaim
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.footprintMapCollectionResponse:
+      title: Collection of footprintMap
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.footprintMap'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.levelMapCollectionResponse:
+      title: Collection of levelMap
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.levelMap'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.fixtureMapCollectionResponse:
+      title: Collection of fixtureMap
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.fixtureMap'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sectionMapCollectionResponse:
+      title: Collection of sectionMap
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.sectionMap'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.unitMapCollectionResponse:
+      title: Collection of unitMap
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unitMap'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.roomCollectionResponse:
       title: Collection of room
       type: object
@@ -15146,6 +20247,58 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.workspaceCollectionResponse:
+      title: Collection of workspace
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.workspace'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.buildingCollectionResponse:
+      title: Collection of building
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.building'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deskCollectionResponse:
+      title: Collection of desk
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.desk'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.floorCollectionResponse:
+      title: Collection of floor
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.floor'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.roomListCollectionResponse:
       title: Collection of roomList
       type: object
@@ -15154,6 +20307,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.roomList'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sectionCollectionResponse:
+      title: Collection of section
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.section'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -15345,6 +20511,12 @@ components:
         - NaN
       type: string
       nullable: true
+    microsoft.graph.resourceLinkType:
+      title: resourceLinkType
+      enum:
+        - url
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -15471,18 +20643,84 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
+    microsoft.graph.checkInClaimCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.checkInClaimCollectionResponse'
+    microsoft.graph.footprintMapCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.footprintMapCollectionResponse'
+    microsoft.graph.levelMapCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.levelMapCollectionResponse'
+    microsoft.graph.fixtureMapCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.fixtureMapCollectionResponse'
+    microsoft.graph.sectionMapCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.sectionMapCollectionResponse'
+    microsoft.graph.unitMapCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.unitMapCollectionResponse'
     microsoft.graph.roomCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.roomCollectionResponse'
+    microsoft.graph.workspaceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.workspaceCollectionResponse'
+    microsoft.graph.buildingCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.buildingCollectionResponse'
+    microsoft.graph.deskCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deskCollectionResponse'
+    microsoft.graph.floorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.floorCollectionResponse'
     microsoft.graph.roomListCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.roomListCollectionResponse'
+    microsoft.graph.sectionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.sectionCollectionResponse'
     microsoft.graph.calendarGroupCollectionResponse:
       description: Retrieved collection
       content:

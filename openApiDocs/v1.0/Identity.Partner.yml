@@ -580,7 +580,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update delegatedAdminRelationship
-      description: "Update the properties of a delegatedAdminRelationship object.  The following restrictions apply:\n- You can update this relationship when its status property is created.\n- You can update the autoExtendDuration property when status is either created or active.\n- You can only remove the Microsoft Entra Global Administrator role when the status property is active, which indicates a long-running operation."
+      description: "Update the properties of a delegatedAdminRelationship object.  The following restrictions apply:\r\n- You can update this relationship when its status property is created.\r\n- You can update the autoExtendDuration property when status is either created or active.\r\n- You can only remove the Microsoft Entra Global Administrator role when the status property is active, which indicates a long-running operation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0
