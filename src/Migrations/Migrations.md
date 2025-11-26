@@ -18,7 +18,7 @@ require:
 ``` yaml
 # Directives go here!
 
-# Rename commands with 'SolutionMigrationCrossTenantMigrationJob'  CrossTenantMigrationJob<>
+# Rename commands with 'SolutionMigrationCrossTenantMigrationJob<x>' to 'CrossTenantMigrationJob<x>'
 directive:
   - where:
       subject: (^SolutionMigrationCrossTenantMigrationJob)(.*)
