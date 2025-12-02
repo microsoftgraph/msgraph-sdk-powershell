@@ -65,7 +65,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Publish teamsApp
-      description: "Publish an app to the Microsoft Teams app catalog.\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\nthe created resource has a distributionMethod property value of organization. The requiresReview property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center."
+      description: "Publish an app to the Microsoft Teams app catalog.\r\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\r\nthe created resource has a distributionMethod property value of organization. The requiresReview property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/teamsapp-publish?view=graph-rest-1.0
@@ -346,7 +346,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: Publish teamsApp
-      description: "Publish an app to the Microsoft Teams app catalog.\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\nthe created resource has a distributionMethod property value of organization. The requiresReview property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center."
+      description: "Publish an app to the Microsoft Teams app catalog.\r\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\r\nthe created resource has a distributionMethod property value of organization. The requiresReview property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/teamsapp-publish?view=graph-rest-1.0
@@ -1722,11 +1722,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -3725,6 +3725,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/chats/{chat-id}/microsoft.graph.removeAllAccessForUser':
+    post:
+      tags:
+        - chats.chat.Actions
+      summary: Invoke action removeAllAccessForUser
+      description: Remove access to a chat for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-removeallaccessforuser?view=graph-rest-1.0
+      operationId: chat_removeAllAccessGraphFPreUser
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/chats/{chat-id}/microsoft.graph.sendActivityNotification':
     post:
       tags:
@@ -4435,7 +4472,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Add tab to chat
-      description: "Add (pin) a tab to the specified chat. \nThe corresponding app must already be installed in the chat."
+      description: "Add (pin) a tab to the specified chat. \r\nThe corresponding app must already be installed in the chat."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chat-post-tabs?view=graph-rest-1.0
@@ -4527,7 +4564,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Update tab in chat
-      description: "Update the properties of the specified tab in a chat. \nThis can be used to configure the content of the tab."
+      description: "Update the properties of the specified tab in a chat. \r\nThis can be used to configure the content of the tab."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chat-patch-tabs?view=graph-rest-1.0
@@ -8642,7 +8679,7 @@ paths:
       tags:
         - groups.team
       summary: Invoke function doesUserHaveAccess
-      description: Determine whether a user has access to a shared channel.
+      description: Determine whether a user has access to a channel.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
@@ -10887,7 +10924,7 @@ paths:
       tags:
         - groups.team
       summary: Invoke action archive
-      description: "Archive the specified team. \nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
+      description: "Archive the specified team. \r\nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
@@ -10926,7 +10963,7 @@ paths:
       tags:
         - groups.team
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
+      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\r\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \r\nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
@@ -11002,7 +11039,7 @@ paths:
       tags:
         - groups.team
       summary: Invoke action sendActivityNotification
-      description: "Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
+      description: "Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, see\r\nsending Teams activity notifications."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
@@ -14664,7 +14701,7 @@ paths:
       tags:
         - groups.team
       summary: Invoke function doesUserHaveAccess
-      description: Determine whether a user has access to a shared channel.
+      description: Determine whether a user has access to a channel.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
@@ -20481,11 +20518,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -20916,7 +20953,7 @@ paths:
       tags:
         - teams.channel
       summary: Update chatMessage
-      description: "Update a chatMessage object. \nExcept for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation fails. This method doesn't support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message."
+      description: "Update a chatMessage object. \r\nExcept for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\r\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation fails. This method doesn't support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
@@ -21763,11 +21800,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send replies to a message in a channel
-      description: Send a new reply to a chatMessage in a specified channel.
+      summary: Reply to a message in a channel
+      description: Create a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
       operationId: team.channel.message_CreateReply
       parameters:
         - name: team-id
@@ -23108,7 +23145,7 @@ paths:
       tags:
         - teams.channel
       summary: Invoke function doesUserHaveAccess
-      description: Determine whether a user has access to a shared channel.
+      description: Determine whether a user has access to a channel.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
@@ -23546,7 +23583,7 @@ paths:
       tags:
         - teams.channel
       summary: List allowedMembers
-      description: "Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:\n- Users with Guest role\n- Users who are externally authenticated in the tenant"
+      description: "Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:\r\n- Users with Guest role\r\n- Users who are externally authenticated in the tenant"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
@@ -24002,7 +24039,7 @@ paths:
       tags:
         - teams.channel
       summary: Update tab
-      description: "Update the properties of the specified tab.\nThis API can be used to configure the content of the tab."
+      description: "Update the properties of the specified tab.\r\nThis API can be used to configure the content of the tab."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
@@ -25419,7 +25456,7 @@ paths:
       tags:
         - teams.team.Actions
       summary: Invoke action archive
-      description: "Archive the specified team. \nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
+      description: "Archive the specified team. \r\nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
@@ -25458,7 +25495,7 @@ paths:
       tags:
         - teams.team.Actions
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
+      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\r\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \r\nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
@@ -25534,7 +25571,7 @@ paths:
       tags:
         - teams.team.Actions
       summary: Invoke action sendActivityNotification
-      description: "Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
+      description: "Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, see\r\nsending Teams activity notifications."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
@@ -26100,7 +26137,7 @@ paths:
       tags:
         - teams.profilePhoto
       summary: Get profilePhoto
-      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they're stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.\nIf the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download."
+      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\r\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they're stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.\r\nIf the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.\r\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
@@ -26184,7 +26221,7 @@ paths:
       tags:
         - teams.profilePhoto
       summary: Get profilePhoto
-      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they're stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.\nIf the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download."
+      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\r\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they're stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.\r\nIf the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.\r\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
@@ -29215,7 +29252,7 @@ paths:
       tags:
         - teams.channel
       summary: Invoke function doesUserHaveAccess
-      description: Determine whether a user has access to a shared channel.
+      description: Determine whether a user has access to a channel.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
@@ -30100,7 +30137,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get schedule
-      description: "Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the provisionStatus property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the provisionStatusCode property. Clients can also inspect the configuration of the schedule."
+      description: "Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\r\nWhen clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the provisionStatus property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the provisionStatusCode property. Clients can also inspect the configuration of the schedule."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/schedule-get?view=graph-rest-1.0
@@ -30148,7 +30185,7 @@ paths:
       tags:
         - teams.schedule
       summary: Create or replace schedule
-      description: "Create or replace a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation replaces the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the provisionStatus property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the provisionStatusCode property. Clients can also inspect the configuration of the schedule."
+      description: "Create or replace a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\r\nWhen clients use the PUT method, if the schedule is provisioned, the operation replaces the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the provisionStatus property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the provisionStatusCode property. Clients can also inspect the configuration of the schedule."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-put-schedule?view=graph-rest-1.0
@@ -31454,7 +31491,7 @@ paths:
       tags:
         - teams.schedule
       summary: Delete schedulingGroup
-      description: "Mark a schedulingGroup as inactive by setting its isActive property.\nThis method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group."
+      description: "Mark a schedulingGroup as inactive by setting its isActive property.\r\nThis method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0
@@ -37984,7 +38021,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Invoke function doesUserHaveAccess
-      description: Determine whether a user has access to a shared channel.
+      description: Determine whether a user has access to a channel.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
@@ -43266,6 +43303,51 @@ paths:
                   type: string
                   format: date-time
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/chats/{chat-id}/microsoft.graph.removeAllAccessForUser':
+    post:
+      tags:
+        - users.chat
+      summary: Invoke action removeAllAccessForUser
+      description: Remove access to a chat for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-removeallaccessforuser?view=graph-rest-1.0
+      operationId: user.chat_removeAllAccessGraphFPreUser
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
               additionalProperties:
                 type: object
         required: true
@@ -49029,7 +49111,7 @@ paths:
       tags:
         - users.team
       summary: Invoke function doesUserHaveAccess
-      description: Determine whether a user has access to a shared channel.
+      description: Determine whether a user has access to a channel.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
@@ -51650,7 +51732,7 @@ paths:
       tags:
         - users.team
       summary: Invoke action archive
-      description: "Archive the specified team. \nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
+      description: "Archive the specified team. \r\nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
@@ -51697,7 +51779,7 @@ paths:
       tags:
         - users.team
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
+      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\r\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured. The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen. \r\nIf the user who opens the tab doesn't have permission to configure apps, they see a message that says that the tab isn't configured. Cloning is a long-running operation. After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed. You should continue to GET until the status isn't running. The recommended delay between GETs is 5 seconds."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
@@ -51789,7 +51871,7 @@ paths:
       tags:
         - users.team
       summary: Invoke action sendActivityNotification
-      description: "Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
+      description: "Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, see\r\nsending Teams activity notifications."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
@@ -56123,7 +56205,7 @@ paths:
       tags:
         - users.team
       summary: Invoke function doesUserHaveAccess
-      description: Determine whether a user has access to a shared channel.
+      description: Determine whether a user has access to a channel.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0
@@ -63498,6 +63580,8 @@ components:
               x-ms-navigationProperty: true
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             owners:
               type: array
               items:
@@ -66126,6 +66210,16 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.plannerGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -67621,6 +67715,12 @@ components:
               x-ms-navigationProperty: true
             cloudClipboard:
               $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
+            cloudPCs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: The user's Cloud PCs. Read-only. Nullable.
+              x-ms-navigationProperty: true
             contactFolders:
               type: array
               items:
@@ -69913,6 +70013,71 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPC:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPC
+          type: object
+          properties:
+            aadDeviceId:
+              type: string
+              description: 'The Microsoft Entra device ID for the Cloud PC, also known as the Azure Active Directory (Azure AD) device ID, that consists of 32 characters in a GUID format. Generated on a VM joined to Microsoft Entra ID. Read-only.'
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name for the Cloud PC. Maximum length is 64 characters. Read-only. You can use the cloudPC: rename API to modify the Cloud PC name.'
+              nullable: true
+            gracePeriodEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            imageDisplayName:
+              type: string
+              description: 'The name of the operating system image used for the Cloud PC. Maximum length is 50 characters. Only letters (A-Z, a-z), numbers (0-9), and special characters (-,,.) are allowed for this property. The property value can''t begin or end with an underscore. Read-only.'
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last modified date and time of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            managedDeviceId:
+              type: string
+              description: The Intune enrolled device ID for the Cloud PC that consists of 32 characters in a GUID format. The managedDeviceId property of Windows 365 Business Cloud PCs is always null as Windows 365 Business Cloud PCs aren't Intune-enrolled automatically by Windows 365. Read-only.
+              nullable: true
+            managedDeviceName:
+              type: string
+              description: The Intune enrolled device name for the Cloud PC. The managedDeviceName property of Windows 365 Business Cloud PCs is always null as Windows 365 Business Cloud PCs aren't Intune-enrolled automatically by Windows 365. Read-only.
+              nullable: true
+            onPremisesConnectionName:
+              type: string
+              description: The on-premises connection that applied during the provisioning of Cloud PCs. Read-only.
+              nullable: true
+            provisioningPolicyId:
+              type: string
+              description: The provisioning policy ID for the Cloud PC that consists of 32 characters in a GUID format. A policy defines the type of Cloud PC the user wants to create. Read-only.
+              nullable: true
+            provisioningPolicyName:
+              type: string
+              description: The provisioning policy that applied during the provisioning of Cloud PCs. Maximum length is 120 characters. Read-only.
+              nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
+            servicePlanId:
+              type: string
+              description: 'The service plan ID for the Cloud PC that consists of 32 characters in a GUID format. For more information about service plans, see Product names and service plan identifiers for licensing. Read-only.'
+              nullable: true
+            servicePlanName:
+              type: string
+              description: The service plan name for the customer-facing Cloud PC entity. Read-only.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: 'The user principal name (UPN) of the user assigned to the Cloud PC. Maximum length is 113 characters. For more information on username policies, see Password policies and account restrictions in Microsoft Entra ID. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.contactFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -70154,6 +70319,12 @@ components:
         - title: employeeExperienceUser
           type: object
           properties:
+            assignedRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRole'
+              description: Represents the collection of Viva Engage roles assigned to a user.
+              x-ms-navigationProperty: true
             learningCourseActivities:
               type: array
               items:
@@ -70504,6 +70675,8 @@ components:
               description: Reports device management certificate expiration date. This property is read-only.
               format: date-time
               readOnly: true
+            managementState:
+              $ref: '#/components/schemas/microsoft.graph.managementState'
             manufacturer:
               type: string
               description: Manufacturer of the device. This property is read-only.
@@ -70735,7 +70908,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
-              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.'
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.NOTE: When using this URL to access a message from a mailbox with delegate permissions, both the signed-in user and the target mailbox must be in the same database region. For example, an error is returned when a user with a mailbox in the EUR (Europe) region attempts to access messages from a mailbox in the NAM (North America) region.'
               nullable: true
             attachments:
               type: array
@@ -70848,6 +71021,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -72819,6 +72993,13 @@ components:
               description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
+        - unknownFutureValue
+      type: string
     microsoft.graph.dataSecurityAndGovernance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -72853,6 +73034,24 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.engagementRole:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRole
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the role.
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
+              description: Users that have this role assigned.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Represents a Viva Engage role and its members
     microsoft.graph.learningCourseActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -73344,7 +73543,7 @@ components:
           nullable: true
         virtualSecureMode:
           type: string
-          description: VSM is a container that protects high value assets from a compromised kernel
+          description: 'Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are ''enabled'', ''disabled'' and ''notApplicable''. ''enabled'' indicates Virtual Secure Mode (VSM) is enabled. ''disabled'' indicates Virtual Secure Mode (VSM) is disabled. ''notApplicable'' indicates the device is not a Windows 11 device. Default value is ''notApplicable''.'
           nullable: true
         windowsPE:
           type: string
@@ -73577,6 +73776,67 @@ components:
           - value: microsoft365ManagedMdm
             description: This device is managed by Microsoft 365 through Intune.
             name: microsoft365ManagedMdm
+    microsoft.graph.managementState:
+      title: managementState
+      enum:
+        - managed
+        - retirePending
+        - retireFailed
+        - wipePending
+        - wipeFailed
+        - unhealthy
+        - deletePending
+        - retireIssued
+        - wipeIssued
+        - wipeCanceled
+        - retireCanceled
+        - discovered
+        - unknownFutureValue
+      type: string
+      description: Management state of device in Microsoft Intune.
+      x-ms-enum:
+        name: managementState
+        modelAsString: false
+        values:
+          - value: managed
+            description: The device is under management
+            name: managed
+          - value: retirePending
+            description: A retire command is occuring on the device and in the process of unenrolling from management
+            name: retirePending
+          - value: retireFailed
+            description: Retire command failed on the device
+            name: retireFailed
+          - value: wipePending
+            description: A wipe command is occuring on the device and in the process of unenrolling from management
+            name: wipePending
+          - value: wipeFailed
+            description: Wipe command failed on the device
+            name: wipeFailed
+          - value: unhealthy
+            description: The device is unhealthy.
+            name: unhealthy
+          - value: deletePending
+            description: 'A delete command is occuring on the device '
+            name: deletePending
+          - value: retireIssued
+            description: A retire command was issued for the device
+            name: retireIssued
+          - value: wipeIssued
+            description: A wipe command was issued for the device
+            name: wipeIssued
+          - value: wipeCanceled
+            description: A wipe command for this device has been canceled
+            name: wipeCanceled
+          - value: retireCanceled
+            description: A retire command for this device has been canceled
+            name: retireCanceled
+          - value: discovered
+            description: The device is discovered but not fully enrolled.
+            name: discovered
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
       enum:
@@ -75336,6 +75596,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.engagementRoleMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRoleMember
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the role was assigned to the user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            userId:
+              type: string
+              description: The Microsoft Entra ID of the user who has the role assigned.
+              nullable: true
+              readOnly: true
+            user:
+              $ref: '#/components/schemas/microsoft.graph.user'
+          additionalProperties:
+            type: object
+          description: Entity to represent the assignment of a role to a user.
     microsoft.graph.courseStatus:
       title: courseStatus
       enum:
@@ -77319,11 +77601,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
