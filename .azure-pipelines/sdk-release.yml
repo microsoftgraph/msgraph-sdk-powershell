@@ -34,13 +34,11 @@ variables:
 trigger:
   branches:
     include:
-    - dev
-
-pr:
-  branches:
-    include:
     - main
-    - dev
+  tags:
+    include:
+      - v*
+
 resources:
   repositories:
   - repository: 1ESPipelineTemplates
@@ -64,8 +62,8 @@ extends:
     stages:
     - stage: stage
       jobs:
-      - job: MsGraphPsSdkCiBuild
-        displayName: Microsoft Graph PowerShell SDK CI Build
+      - job: SDK_Release_Build
+        displayName: Microsoft Graph PowerShell SDK Release Build
         timeoutInMinutes: 840
         templateContext:
           outputs:
@@ -134,3 +132,106 @@ extends:
                   publishVstsFeed: ${{ parameters.InternalFeed }}
                   nuGetFeedType: internal
                   allowPackageConflicts: true
+    - stage: 'Deploy_to_PsGallery'
+      dependsOn: stage
+      condition: succeeded() # Only deploy to PSGallery on main branch, this only runs on main branch due to trigger settings
+      jobs:
+      - deployment: 'DeployToPowerShellGallery'
+        displayName: 'Deploy to PowerShell Gallery'
+        environment: 'PowerShellGallery'
+        templateContext:
+          type: releaseJob
+          isProduction: true
+          inputs:
+            - input: pipelineArtifact
+              artifactName: drop
+              targetPath: '$(System.DefaultWorkingDirectory)/drop'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - task: 1ES.PublishNuget@1
+                displayName: 'Publish NuGet to feed'
+                inputs:
+                  useDotNetTask: false
+                  packageParentPath: '$(System.DefaultWorkingDirectory)'
+                  packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
+                  nuGetFeedType: external
+                  publishFeedCredentials: 'microsoftgraph PowerShell Gallery connection'
+
+    - stage: PushDockerImageToRegistry
+      condition: and(or(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['Build.SourceBranch'], variables['PREVIEW_BRANCH'])), not(contains(variables['Build.SourceBranch'], '-preview')))
+      dependsOn: stage
+      displayName: 'Push docker image'
+      jobs:
+        - job: PushDockerImage
+          displayName: 'Push docker image'
+          pool:
+            name: Azure-Pipelines-1ESPT-ExDShared
+            image: ubuntu-latest
+            os: linux
+          steps:
+          - checkout: self
+    
+          # Display the contents of the Build.SourcesDirectory
+          - bash: |
+              echo "Build.SourcesDirectory: $(Build.SourcesDirectory)"
+              ls -la $(Build.SourcesDirectory)
+            displayName: 'List contents of Build.SourcesDirectory'
+      
+          - task: AzureCLI@2
+            displayName: "Log in to Azure Container Registry"
+            inputs:
+              azureSubscription: 'ACR Images Push Service Connection' # service connection
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              'inlineScript': |
+                az acr login --name $(REGISTRY)
+          - powershell: |
+              $date = Get-Date -Format "yyyyMMdd"
+              Write-Host "##vso[task.setvariable variable=currentDate]$date"
+    
+          - script: |
+              docker run --privileged --rm tonistiigi/binfmt --install all
+            displayName: 'Enable multi-platform builds'
+          
+          - script: |
+              docker buildx create --use --name mybuilder
+            displayName: 'Set up Docker BuildX'
+    
+          - powershell: |
+              $version = $Env:BUILD_SOURCEBRANCH.replace("refs/tags/", "")
+              Write-Output "##vso[task.setvariable variable=version]$version"
+            displayName: 'Get truncated run number'
+              
+          - bash: |
+              echo "Build Number: $(Build.BuildNumber)"
+              # Extract the last 3 characters for the run number
+              runnumber=$(echo "$(Build.BuildNumber)" | grep -o '[0-9]\+$')
+              echo "Extracted Run Number: $runnumber"
+              
+              # If extraction fails, set a default
+              if [ -z "$runnumber" ]; then
+                echo "Extraction failed, using default value"
+                runnumber=$(date +"%S%N" | cut -c1-3)
+                echo "Generated fallback run number: $runnumber"
+              fi
+              
+              # Set the variable for later steps
+              echo "##vso[task.setvariable variable=RUNNUMBER]$runnumber"
+              echo "##vso[task.setvariable variable=RUNNUMBER;isOutput=true]$runnumber"
+            displayName: 'Get truncated run number'
+            name: getrunnumber
+      
+          - bash: |
+              echo "Building docker images"
+              # Format the date to be compatible with Docker tags
+              formatted_date=$(date +"%Y%m%d%H%M%S")
+              docker buildx build \
+                --platform linux/amd64 \
+                --push \
+                -t "$(REGISTRY)/$(IMAGE_NAME):latest" \
+                -t "$(REGISTRY)/$(IMAGE_NAME):$formatted_date.$RUNNUMBER" \
+                "$(Build.SourcesDirectory)"
+            displayName: 'Build and push docker images'
+
