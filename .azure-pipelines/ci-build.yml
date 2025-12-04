@@ -29,7 +29,6 @@ variables:
   GitUserName: "Microsoft Graph DevX Tooling"
   REGISTRY: 'msgraphprodregistry.azurecr.io'
   IMAGE_NAME: 'public/microsoftgraph/powershell'
-  PREVIEW_BRANCH: 'refs/heads/main'  # Updated to target your branch
 
 trigger:
   branches:
