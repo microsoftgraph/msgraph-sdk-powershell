@@ -38,7 +38,7 @@ paths:
       tags:
         - users.user.Actions
       summary: Invoke action changePassword
-      description: "Update the signed-in user's password. Any user can update their password without belonging to any administrator role.\nTo update another user's password in either delegated or app-only scenarios, update the passwordProfile property of the user instead. See Example 3: Update the passwordProfile of a user and reset their password."
+      description: "Update the signed-in user's password. Any user can update their password without belonging to any administrator role.\r\nTo update another user's password in either delegated or app-only scenarios, update the passwordProfile property of the user instead. See Example 3: Update the passwordProfile of a user and reset their password."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-beta
@@ -65,7 +65,7 @@ paths:
       tags:
         - users.user.Actions
       summary: Invoke action checkMemberGroups
-      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\r\n- user\r\n- group\r\n- service principal\r\n- organizational contact\r\n- device\r\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -249,12 +249,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.findMeetingLocations':
+    post:
+      tags:
+        - users.user.Actions
+      summary: Invoke action findMeetingLocations
+      operationId: user_findMeetingLocation
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/findMeetingLocationsRequestBody'
+      responses:
+        2XX:
+          $ref: '#/components/responses/findMeetingLocationsResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/microsoft.graph.findMeetingTimes':
     post:
       tags:
         - users.user.Actions
       summary: Invoke action findMeetingTimes
-      description: "Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.\nBased on this value, you can better adjust the parameters and call findMeetingTimes again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time."
+      description: "Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.\r\nBased on this value, you can better adjust the parameters and call findMeetingTimes again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-findmeetingtimes?view=graph-rest-beta
@@ -281,7 +304,7 @@ paths:
       tags:
         - users.user.Actions
       summary: Invoke action getMailTips
-      description: "Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\nbe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection."
+      description: "Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\r\nbe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-beta
@@ -519,7 +542,7 @@ paths:
       tags:
         - users.user.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- externalUserProfile\r\n- group\r\n- pendingExternalUserProfile\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
@@ -892,7 +915,7 @@ paths:
       tags:
         - users.user.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties:\r\n1. Validate the prefix and suffix naming policy\r\n2. Validate the custom banned words policy\r\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta
@@ -1032,6 +1055,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.attendeeType'
           additionalProperties:
             type: object
+    microsoft.graph.timeConstraint:
+      title: timeConstraint
+      type: object
+      properties:
+        activityDomain:
+          $ref: '#/components/schemas/microsoft.graph.activityDomain'
+        recurrence:
+          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+        timeSlots:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeSlot'
+      additionalProperties:
+        type: object
     microsoft.graph.locationConstraint:
       title: locationConstraint
       type: object
@@ -1049,18 +1086,6 @@ components:
           type: boolean
           description: The client requests the service to suggest one or more meeting locations.
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.timeConstraint:
-      title: timeConstraint
-      type: object
-      properties:
-        activityDomain:
-          $ref: '#/components/schemas/microsoft.graph.activityDomain'
-        timeSlots:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.timeSlot'
       additionalProperties:
         type: object
     ReferenceNumeric:
@@ -1257,7 +1282,7 @@ components:
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).'
               nullable: true
             ageGroup:
               type: string
@@ -1383,6 +1408,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
               description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.'
+            identityParentId:
+              type: string
+              description: 'The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.'
+              nullable: true
             imAddresses:
               type: array
               items:
@@ -1684,6 +1713,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: The user's Cloud PCs. Read-only. Nullable.
               x-ms-navigationProperty: true
             communications:
               $ref: '#/components/schemas/microsoft.graph.userCloudCommunication'
@@ -1849,6 +1879,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
               description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
               x-ms-navigationProperty: true
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             outlook:
               $ref: '#/components/schemas/microsoft.graph.outlookUser'
             ownedDevices:
@@ -1979,6 +2011,19 @@ components:
           description: The user principal name (UPN) of the user.
       additionalProperties:
         type: object
+    microsoft.graph.meetingLocationSuggestionsResult:
+      title: meetingLocationSuggestionsResult
+      type: object
+      properties:
+        emptySuggestionsReason:
+          type: string
+          nullable: true
+        meetingLocationSuggestions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingLocationSuggestion'
+      additionalProperties:
+        type: object
     microsoft.graph.meetingTimeSuggestionsResult:
       title: meetingTimeSuggestionsResult
       type: object
@@ -2095,6 +2140,34 @@ components:
         - optional
         - resource
       type: string
+    microsoft.graph.activityDomain:
+      title: activityDomain
+      enum:
+        - unknown
+        - work
+        - personal
+        - unrestricted
+      type: string
+    microsoft.graph.patternedRecurrence:
+      title: patternedRecurrence
+      type: object
+      properties:
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        range:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
+      additionalProperties:
+        type: object
+    microsoft.graph.timeSlot:
+      title: timeSlot
+      type: object
+      properties:
+        end:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        start:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
     microsoft.graph.locationConstraintItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.location'
@@ -2107,24 +2180,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.activityDomain:
-      title: activityDomain
-      enum:
-        - unknown
-        - work
-        - personal
-        - unrestricted
-      type: string
-    microsoft.graph.timeSlot:
-      title: timeSlot
-      type: object
-      properties:
-        end:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        start:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-      additionalProperties:
-        type: object
     microsoft.graph.outlookItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2941,6 +2996,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.'
+            createdByAppId:
+              type: string
+              description: The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.
+              nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             description:
@@ -4491,14 +4550,28 @@ components:
             isPersonalSite:
               type: boolean
               nullable: true
+            locale:
+              type: string
+              description: The language settings of the site.
+              nullable: true
+            lockState:
+              $ref: '#/components/schemas/microsoft.graph.siteLockState'
+            ownerIdentityToResolve:
+              $ref: '#/components/schemas/microsoft.graph.identityInput'
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
             settings:
               $ref: '#/components/schemas/microsoft.graph.siteSettings'
+            shareByEmailEnabled:
+              type: boolean
+              description: Determines whether the site and its content can be shared via email.
+              nullable: true
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
               $ref: '#/components/schemas/microsoft.graph.siteCollection'
+            template:
+              $ref: '#/components/schemas/microsoft.graph.siteTemplateType'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             columns:
@@ -5881,7 +5954,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -6094,6 +6167,17 @@ components:
           additionalProperties:
             type: object
           description: Represents a Microsoft online meeting.
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
+              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
+          additionalProperties:
+            type: object
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6405,6 +6489,8 @@ components:
               readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+            workLocation:
+              $ref: '#/components/schemas/microsoft.graph.userWorkLocation'
           additionalProperties:
             type: object
     microsoft.graph.profile:
@@ -6723,6 +6809,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.meetingLocationSuggestion:
+      title: meetingLocationSuggestion
+      type: object
+      properties:
+        availability:
+          $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
+        location:
+          $ref: '#/components/schemas/microsoft.graph.location'
+        timeSlotAvailabilities:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeSlotAvailability'
+      additionalProperties:
+        type: object
     microsoft.graph.meetingTimeSuggestion:
       title: meetingTimeSuggestion
       type: object
@@ -6846,6 +6946,84 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.recurrencePattern:
+      title: recurrencePattern
+      type: object
+      properties:
+        dayOfMonth:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
+          format: int32
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+        firstDayOfWeek:
+          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+        index:
+          $ref: '#/components/schemas/microsoft.graph.weekIndex'
+        interval:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
+          format: int32
+        month:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The month in which the event occurs.  This is a number from 1 to 12.
+          format: int32
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
+      additionalProperties:
+        type: object
+    microsoft.graph.recurrenceRange:
+      title: recurrenceRange
+      type: object
+      properties:
+        endDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.'
+          format: date
+          nullable: true
+        numberOfOccurrences:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of times to repeat the event. Required and must be positive if type is numbered.
+          format: int32
+        recurrenceTimeZone:
+          type: string
+          description: 'Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.'
+          nullable: true
+        startDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.'
+          format: date
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
+      additionalProperties:
+        type: object
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.location:
       title: location
       type: object
@@ -6874,19 +7052,6 @@ components:
           nullable: true
         uniqueIdType:
           $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
-      additionalProperties:
-        type: object
-    microsoft.graph.dateTimeTimeZone:
-      title: dateTimeTimeZone
-      type: object
-      properties:
-        dateTime:
-          type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
-        timeZone:
-          type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bodyType:
@@ -7865,6 +8030,8 @@ components:
               type: string
               description: The manufacturer-assigned model of the FIDO2 security key.
               nullable: true
+            passkeyType:
+              $ref: '#/components/schemas/microsoft.graph.passkeyType'
             publicKeyCredential:
               $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredential'
           additionalProperties:
@@ -7894,6 +8061,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -8181,16 +8349,6 @@ components:
           type: string
           description: The toll number that can be used to join the conference.
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.patternedRecurrence:
-      title: patternedRecurrence
-      type: object
-      properties:
-        pattern:
-          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
-        range:
-          $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
       additionalProperties:
         type: object
     microsoft.graph.responseStatus:
@@ -8775,6 +8933,12 @@ components:
         assignedToUserPrincipalName:
           type: string
           description: 'The user principal name (UPN) of the user to whom the device is currently assigned. If no user is assigned, this field remains empty. Example values, john.doe@contoso.onmicrosoft.com and .'
+          nullable: true
+        sessionStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the current user session starts, or null if no current user session exists. This value is autogenerated and assigned at the start of each session. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
           nullable: true
       additionalProperties:
         type: object
@@ -9547,7 +9711,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
-              description: Users who have been assigned this role.
+              description: Users that have this role assigned.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9598,6 +9762,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteLockState:
+      title: siteLockState
+      enum:
+        - unlocked
+        - lockedReadOnly
+        - lockedNoAccess
+        - lockedNoAdditions
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityInput:
+      title: identityInput
+      type: object
+      properties:
+        alias:
+          type: string
+          description: The alias of the identity.
+          nullable: true
+        email:
+          type: string
+          description: The email of the identity.
+          nullable: true
+        objectId:
+          type: string
+          description: The unique object ID assigned to the identity in Microsoft Entra ID.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.root:
       title: root
       type: object
@@ -9635,6 +9826,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.root'
       additionalProperties:
         type: object
+    microsoft.graph.siteTemplateType:
+      title: siteTemplateType
+      enum:
+        - sitepagepublishing
+        - group
+        - sts
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemAnalytics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10352,17 +10551,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.onPremisesSyncBehavior:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: onPremisesSyncBehavior
-          type: object
-          properties:
-            isCloudManaged:
-              type: boolean
-              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
-          additionalProperties:
-            type: object
     microsoft.graph.plannerGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10642,6 +10830,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+              x-ms-navigationProperty: true
+            enabledApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
               x-ms-navigationProperty: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -12176,6 +12369,7 @@ components:
         - wipeCanceled
         - retireCanceled
         - discovered
+        - unknownFutureValue
       type: string
       description: Management state of device in Microsoft Intune.
       x-ms-enum:
@@ -12218,6 +12412,9 @@ components:
           - value: discovered
             description: The device is discovered but not fully enrolled.
             name: discovered
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.ownerType:
       title: ownerType
       enum:
@@ -13150,6 +13347,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            expiryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
             isEndToEndEncryptionEnabled:
               type: boolean
               description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
@@ -13168,6 +13371,14 @@ components:
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            meetingOptionsWebUrl:
+              type: string
+              description: Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+              nullable: true
+            meetingSpokenLanguageTag:
+              type: string
+              description: Specifies the spoken language used during the meeting for recording and transcription purposes.
+              nullable: true
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -13552,6 +13763,11 @@ components:
               type: string
               description: The type of query. Examples include MicrosoftGraph and ARM.
               nullable: true
+            reviewerId:
+              type: string
+              nullable: true
+            scopeType:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScopeType'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScope:
@@ -13598,6 +13814,10 @@ components:
               description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
               format: date-time
               nullable: true
+            applyDescription:
+              type: string
+              description: The description of the apply result.
+              nullable: true
             applyResult:
               type: string
               description: 'The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -13610,6 +13830,8 @@ components:
               type: string
               description: Justification left by the reviewer when they made the decision.
               nullable: true
+            permission:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemPermission'
             principal:
               $ref: '#/components/schemas/microsoft.graph.identity'
             principalLink:
@@ -13815,6 +14037,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
+            contentSensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.contentSensitivityLabelAssignment'
             contexts:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContextCollection'
             createdBy:
@@ -13921,6 +14145,8 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            hasChat:
+              type: boolean
             hasDescription:
               type: boolean
               description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
@@ -14028,6 +14254,20 @@ components:
           description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userWorkLocation:
+      title: userWorkLocation
+      type: object
+      properties:
+        placeId:
+          type: string
+          description: Identifier of the place (when applicable).
+          nullable: true
+        source:
+          $ref: '#/components/schemas/microsoft.graph.workLocationSource'
+        workLocationType:
+          $ref: '#/components/schemas/microsoft.graph.workLocationType'
       additionalProperties:
         type: object
     microsoft.graph.userAccountInformation:
@@ -14610,11 +14850,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -14852,6 +15092,16 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.timeSlotAvailability:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.timeSlot'
+        - title: timeSlotAvailability
+          type: object
+          properties:
+            availability:
+              $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.attendeeAvailability:
       title: attendeeAvailability
       type: object
@@ -14862,6 +15112,43 @@ components:
           $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
       additionalProperties:
         type: object
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.weekIndex:
+      title: weekIndex
+      enum:
+        - first
+        - second
+        - third
+        - fourth
+        - last
+      type: string
+    microsoft.graph.recurrencePatternType:
+      title: recurrencePatternType
+      enum:
+        - daily
+        - weekly
+        - absoluteMonthly
+        - relativeMonthly
+        - absoluteYearly
+        - relativeYearly
+      type: string
+    microsoft.graph.recurrenceRangeType:
+      title: recurrenceRangeType
+      enum:
+        - endDate
+        - noEnd
+        - numbered
+      type: string
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
@@ -14946,17 +15233,6 @@ components:
         - disabled
         - alwaysEnabled
         - scheduled
-      type: string
-    microsoft.graph.dayOfWeek:
-      title: dayOfWeek
-      enum:
-        - sunday
-        - monday
-        - tuesday
-        - wednesday
-        - thursday
-        - friday
-        - saturday
       type: string
     microsoft.graph.timeZoneBase:
       title: timeZoneBase
@@ -15137,11 +15413,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -15379,6 +15655,13 @@ components:
         - notAttested
         - unknownFutureValue
       type: string
+    microsoft.graph.passkeyType:
+      title: passkeyType
+      enum:
+        - deviceBound
+        - synced
+        - unknownFutureValue
+      type: string
     microsoft.graph.webauthnPublicKeyCredential:
       title: webauthnPublicKeyCredential
       type: object
@@ -15406,6 +15689,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             manufacturer:
@@ -15559,71 +15843,6 @@ components:
         - delegateWithPrivateEventAccess
         - custom
       type: string
-    microsoft.graph.recurrencePattern:
-      title: recurrencePattern
-      type: object
-      properties:
-        dayOfMonth:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: number
-          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-          format: int32
-        daysOfWeek:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
-        firstDayOfWeek:
-          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-        index:
-          $ref: '#/components/schemas/microsoft.graph.weekIndex'
-        interval:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: number
-          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
-          format: int32
-        month:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: number
-          description: The month in which the event occurs.  This is a number from 1 to 12.
-          format: int32
-        type:
-          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
-      additionalProperties:
-        type: object
-    microsoft.graph.recurrenceRange:
-      title: recurrenceRange
-      type: object
-      properties:
-        endDate:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-          type: string
-          description: 'The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.'
-          format: date
-          nullable: true
-        numberOfOccurrences:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: number
-          description: The number of times to repeat the event. Required and must be positive if type is numbered.
-          format: int32
-        recurrenceTimeZone:
-          type: string
-          description: 'Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.'
-          nullable: true
-        startDate:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-          type: string
-          description: 'The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.'
-          format: date
-          nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
-      additionalProperties:
-        type: object
     microsoft.graph.responseType:
       title: responseType
       enum:
@@ -17019,7 +17238,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The timestamp when the role was assigned to the user.
+              description: 'The date and time when the role was assigned to the user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               readOnly: true
             userId:
@@ -20306,6 +20525,18 @@ components:
         - waitingOnOthers
         - deferred
       type: string
+    microsoft.graph.accessReviewReviewerScopeType:
+      title: accessReviewReviewerScopeType
+      enum:
+        - user
+        - group
+        - self
+        - manager
+        - sponsor
+        - resourceOwner
+        - managerOrSponsor
+        - unknownFutureValue
+      type: string
     microsoft.graph.userIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -20322,6 +20553,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewInstanceDecisionItemPermission:
+      title: accessReviewInstanceDecisionItemPermission
+      type: object
+      properties:
+        description:
+          type: string
+          description: The description of the permission.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the permission.
+          nullable: true
+        id:
+          type: string
+          description: The identifier of the permission.
+          nullable: true
+        type:
+          type: string
+          description: The type of the permission.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.decisionItemPrincipalResourceMembership:
       title: decisionItemPrincipalResourceMembership
       type: object
@@ -20334,6 +20587,10 @@ components:
       title: accessReviewInstanceDecisionItemResource
       type: object
       properties:
+        description:
+          type: string
+          description: Description of the resource
+          nullable: true
         displayName:
           type: string
           description: Display name of the resource
@@ -20344,7 +20601,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
       additionalProperties:
         type: object
@@ -20518,6 +20775,26 @@ components:
         url:
           type: string
           description: The full canonical URL of the container. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.contentSensitivityLabelAssignment:
+      title: contentSensitivityLabelAssignment
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignmentMethod'
+        justificationText:
+          type: string
+          description: The justification text provided when you change the sensitivity label. Used during label downgrade to document the reason. Optional.
+          nullable: true
+        sensitivityLabelId:
+          type: string
+          description: The unique identifier of the sensitivity label applied to the content. This ID corresponds to a label defined in the Microsoft Information Protection policy.
+          nullable: true
+        tenantId:
+          type: string
+          description: The unique identifier of the tenant where the sensitivity label is defined and applied.
           nullable: true
       additionalProperties:
         type: object
@@ -20726,6 +21003,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.workLocationSource:
+      title: workLocationSource
+      enum:
+        - none
+        - manual
+        - scheduled
+        - automatic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workLocationType:
+      title: workLocationType
+      enum:
+        - unspecified
+        - office
+        - remote
+        - timeOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemFacet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21091,7 +21386,7 @@ components:
               nullable: true
             hasProtection:
               type: boolean
-              description: Indicates whether the label has protection actions configured.
+              description: Indicates whether the label has protection actions (such as encryption or do not forward) configured.
             isActive:
               type: boolean
               description: Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.
@@ -21400,6 +21695,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              description: A collection of custom fields linked to the task.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -22375,32 +22671,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.weekIndex:
-      title: weekIndex
-      enum:
-        - first
-        - second
-        - third
-        - fourth
-        - last
-      type: string
-    microsoft.graph.recurrencePatternType:
-      title: recurrencePatternType
-      enum:
-        - daily
-        - weekly
-        - absoluteMonthly
-        - relativeMonthly
-        - absoluteYearly
-        - relativeYearly
-      type: string
-    microsoft.graph.recurrenceRangeType:
-      title: recurrenceRangeType
-      enum:
-        - endDate
-        - noEnd
-        - numbered
-      type: string
     microsoft.graph.teamworkUserIdentityType:
       title: teamworkUserIdentityType
       enum:
@@ -23058,6 +23328,10 @@ components:
         - title: workbookComment
           type: object
           properties:
+            cellAddress:
+              type: string
+              description: 'The cell where the comment is located. The address value is in A1-style, which contains the sheet reference (for example, Sheet1!A1). Read-only.'
+              nullable: true
             content:
               type: string
               description: The content of the comment that is the String displayed to end-users.
@@ -23065,6 +23339,15 @@ components:
             contentType:
               type: string
               description: 'The content type of the comment. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the comment. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the comment (for example, comment content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             replies:
               type: array
               items:
@@ -24564,6 +24847,14 @@ components:
         - onlineMeeting
         - plannerTask
       type: string
+    microsoft.graph.sensitivityLabelAssignmentMethod:
+      title: sensitivityLabelAssignmentMethod
+      enum:
+        - standard
+        - privileged
+        - auto
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
       enum:
@@ -25035,6 +25326,7 @@ components:
           properties:
             value:
               type: string
+              description: The value of the property.
               nullable: true
           additionalProperties:
             type: object
@@ -27031,6 +27323,26 @@ components:
         - retainAsRegulatoryRecord
         - unknownFutureValue
       type: string
+    microsoft.graph.workbookCommentMention:
+      title: workbookCommentMention
+      type: object
+      properties:
+        email:
+          type: string
+          description: Represents the email address of the person that is mentioned in a comment.
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Represents the ID of the person that is mentioned in a comment.
+          format: int32
+        name:
+          type: string
+          description: Represents the display name of the person that is mentioned in a comment.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27044,6 +27356,15 @@ components:
             contentType:
               type: string
               description: 'The content type for the reply. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the reply. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the reply (for example, reply content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             task:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
@@ -29106,6 +29427,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.conversionUserDetails'
+    findMeetingLocationsResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.meetingLocationSuggestionsResult'
     findMeetingTimesResponse:
       description: Success
       content:
@@ -29268,6 +29595,40 @@ components:
             properties:
               storageLocation:
                 type: string
+                nullable: true
+            additionalProperties:
+              type: object
+      required: true
+    findMeetingLocationsRequestBody:
+      description: Action parameters
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              attendees:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.attendeeBase'
+              timeConstraint:
+                $ref: '#/components/schemas/microsoft.graph.timeConstraint'
+              query:
+                type: string
+                nullable: true
+              allowFreeOnly:
+                type: boolean
+                default: false
+                nullable: true
+              meetingDuration:
+                pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                type: string
+                format: duration
+                nullable: true
+              maxCandidates:
+                maximum: 2147483647
+                minimum: -2147483648
+                type: number
+                format: int32
                 nullable: true
             additionalProperties:
               type: object

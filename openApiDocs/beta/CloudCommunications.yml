@@ -2345,7 +2345,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Invoke function getPstnOnlineMeetingDialoutReport
-      description: "Get aggregated report of usage and money spent for the audio conferencing dial-out service over a selected period as a collection of pstnOnlineMeetingDialoutReport entries.\nThe report is aggregated by user, user location, destination context (domestic/international), and currency. The report includes:"
+      description: "Get aggregated report of usage and money spent for the audio conferencing dial-out service over a selected period as a collection of pstnOnlineMeetingDialoutReport entries.\r\nThe report is aggregated by user, user location, destination context (domestic/international), and currency. The report includes:"
       operationId: communication.callRecord_getPstnOnlineMeetingDialoutReport
       parameters:
         - name: fromDateTime
@@ -4948,7 +4948,7 @@ paths:
       tags:
         - communications.cloudCommunications.Functions
       summary: Invoke function getAllOnlineMeetingMessages
-      description: "Get all Teams question and answer (Q&A) conversation messages in a tenant. This function returns a snapshot of all Q&A activity in JSON format. The export includes:\n- The original question or discussion text\n- The user who posted the message\n- All replies and responders\n- Vote counts\n- Moderation status (pending or dismissed)\n- Private replies\n- The meeting ID and organizer ID that are used for mapping to meeting metadata."
+      description: "Get all Teams question and answer (Q&A) conversation messages in a tenant. This function returns a snapshot of all Q&A activity in JSON format. The export includes:\r\n- The original question or discussion text\r\n- The user who posted the message\r\n- All replies and responders\r\n- Vote counts\r\n- Moderation status (pending or dismissed)\r\n- Private replies\r\n- The meeting ID and organizer ID that are used for mapping to meeting metadata."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudcommunications-getallonlinemeetingmessages?view=graph-rest-beta
@@ -12082,6 +12082,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/presences/{presence-id}/microsoft.graph.clearAutomaticLocation':
+    post:
+      tags:
+        - communications.presence
+      summary: Invoke action clearAutomaticLocation
+      description: 'Clear the automatic work location signal for a user. After clearing, the user’s final aggregated work location is recomputed according to the precedence rules: Use this operation when you need to remove the current autodetected signal without affecting manual or scheduled layers.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-clearautomaticlocation?view=graph-rest-beta
+      operationId: communication.presence_clearAutomaticLocation
+      parameters:
+        - name: presence-id
+          in: path
+          description: The unique identifier of presence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.clearLocation':
+    post:
+      tags:
+        - communications.presence
+      summary: Invoke action clearLocation
+      description: 'Clear the work location signals for a user, including both the manual and automatic layers for the current date.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-clearlocation?view=graph-rest-beta
+      operationId: communication.presence_clearLocation
+      parameters:
+        - name: presence-id
+          in: path
+          description: The unique identifier of presence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/communications/presences/{presence-id}/microsoft.graph.clearPresence':
     post:
       tags:
@@ -12139,6 +12189,86 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: presence
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.setAutomaticLocation':
+    post:
+      tags:
+        - communications.presence
+      summary: Invoke action setAutomaticLocation
+      description: 'Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn''t clear manual or scheduled signals.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta
+      operationId: communication.presence_setAutomaticLocation
+      parameters:
+        - name: presence-id
+          in: path
+          description: The unique identifier of presence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workLocationType:
+                  $ref: '#/components/schemas/microsoft.graph.workLocationType'
+                placeId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.setManualLocation':
+    post:
+      tags:
+        - communications.presence
+      summary: Invoke action setManualLocation
+      description: Set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-setmanuallocation?view=graph-rest-beta
+      operationId: communication.presence_setManualLocation
+      parameters:
+        - name: presence-id
+          in: path
+          description: The unique identifier of presence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workLocationType:
+                  $ref: '#/components/schemas/microsoft.graph.workLocationType'
+                placeId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -16907,11 +17037,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      summary: Get presence
+      description: Get a user's presence information.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -17009,6 +17139,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/presence/microsoft.graph.clearAutomaticLocation':
+    post:
+      tags:
+        - users.presence
+      summary: Invoke action clearAutomaticLocation
+      description: 'Clear the automatic work location signal for a user. After clearing, the user’s final aggregated work location is recomputed according to the precedence rules: Use this operation when you need to remove the current autodetected signal without affecting manual or scheduled layers.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-clearautomaticlocation?view=graph-rest-beta
+      operationId: user.presence_clearAutomaticLocation
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/presence/microsoft.graph.clearLocation':
+    post:
+      tags:
+        - users.presence
+      summary: Invoke action clearLocation
+      description: 'Clear the work location signals for a user, including both the manual and automatic layers for the current date.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-clearlocation?view=graph-rest-beta
+      operationId: user.presence_clearLocation
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/presence/microsoft.graph.clearPresence':
     post:
       tags:
@@ -17066,6 +17246,86 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/presence/microsoft.graph.setAutomaticLocation':
+    post:
+      tags:
+        - users.presence
+      summary: Invoke action setAutomaticLocation
+      description: 'Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn''t clear manual or scheduled signals.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta
+      operationId: user.presence_setAutomaticLocation
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workLocationType:
+                  $ref: '#/components/schemas/microsoft.graph.workLocationType'
+                placeId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/presence/microsoft.graph.setManualLocation':
+    post:
+      tags:
+        - users.presence
+      summary: Invoke action setManualLocation
+      description: Set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/presence-setmanuallocation?view=graph-rest-beta
+      operationId: user.presence_setManualLocation
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workLocationType:
+                  $ref: '#/components/schemas/microsoft.graph.workLocationType'
+                placeId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -18258,6 +18518,8 @@ components:
               readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+            workLocation:
+              $ref: '#/components/schemas/microsoft.graph.userWorkLocation'
           additionalProperties:
             type: object
     microsoft.graph.onlineMeetingEngagementConversation:
@@ -18685,6 +18947,15 @@ components:
           description: For broadcast meeting only.
       additionalProperties:
         type: object
+    microsoft.graph.workLocationType:
+      title: workLocationType
+      enum:
+        - unspecified
+        - office
+        - remote
+        - timeOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.presenceStatusMessage:
       title: presenceStatusMessage
       type: object
@@ -19279,6 +19550,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userWorkLocation:
+      title: userWorkLocation
+      type: object
+      properties:
+        placeId:
+          type: string
+          description: Identifier of the place (when applicable).
+          nullable: true
+        source:
+          $ref: '#/components/schemas/microsoft.graph.workLocationSource'
+        workLocationType:
+          $ref: '#/components/schemas/microsoft.graph.workLocationType'
+      additionalProperties:
+        type: object
     microsoft.graph.engagementConversationModerationState:
       title: engagementConversationModerationState
       enum:
@@ -19502,6 +19787,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            expiryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
             isEndToEndEncryptionEnabled:
               type: boolean
               description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
@@ -19520,6 +19811,14 @@ components:
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            meetingOptionsWebUrl:
+              type: string
+              description: Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+              nullable: true
+            meetingSpokenLanguageTag:
+              type: string
+              description: Specifies the spoken language used during the meeting for recording and transcription purposes.
+              nullable: true
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -19676,11 +19975,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -20561,6 +20860,15 @@ components:
       enum:
         - text
         - html
+      type: string
+    microsoft.graph.workLocationSource:
+      title: workLocationSource
+      enum:
+        - none
+        - manual
+        - scheduled
+        - automatic
+        - unknownFutureValue
       type: string
     microsoft.graph.allowedLobbyAdmitterRoles:
       title: allowedLobbyAdmitterRoles
