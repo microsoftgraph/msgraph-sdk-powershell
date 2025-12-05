@@ -619,11 +619,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get endUserNotification
-      description: Read the properties and relationships of an endUserNotification object.
+      summary: List endUserNotifications
+      description: Get a list of endUserNotification objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/endusernotification-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-endusernotifications?view=graph-rest-1.0
       operationId: security.attackSimulation_ListEndUserNotification
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3638,7 +3638,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create custodians
-      description: "Create a new ediscoveryCustodian object.\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site."
+      description: "Create a new ediscoveryCustodian object.\r\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-custodians?view=graph-rest-1.0
@@ -7923,7 +7923,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action purgeData
-      description: "Delete Exchange mailbox items or Microsoft Teams messages contained in an eDiscovery search. You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams "
+      description: "Delete Exchange mailbox items or Microsoft Teams messages contained in an eDiscovery search. You can collect and purge the following categories of Teams content:\r\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\r\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\r\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\r\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\r\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\r\n- eDiscovery solution series: Data spillage scenario - Search and purge\r\n- eDiscovery (Premium) workflow for content in Microsoft Teams "
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-purgedata?view=graph-rest-1.0
@@ -10110,6 +10110,551 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/identities/identityAccounts:
+    get:
+      tags:
+        - security.identityContainer
+      summary: List identityAccounts objects
+      description: Get a list of the identityAccounts objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identitycontainer-list-identityaccounts?view=graph-rest-1.0
+      operationId: security.identity_ListIdentityAccount
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.identityAccountsCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.identityContainer
+      summary: Create new navigation property to identityAccounts for security
+      operationId: security.identity_CreateIdentityAccount
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/identityAccounts/{identityAccounts-id}':
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get identityAccounts
+      description: Read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identityaccounts-get?view=graph-rest-1.0
+      operationId: security.identity_GetIdentityAccount
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.identityContainer
+      summary: Update the navigation property identityAccounts in security
+      operationId: security.identity_UpdateIdentityAccount
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.identityContainer
+      summary: Delete navigation property identityAccounts for security
+      operationId: security.identity_DeleteIdentityAccount
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/identityAccounts/{identityAccounts-id}/microsoft.graph.security.invokeAction':
+    post:
+      tags:
+        - security.identityContainer
+      summary: Invoke action invokeAction
+      description: Perform actions such as revoking accounts and forcing password reset for identity accounts that are observed in Microsoft Defender for Identity. This action allows reading and performing identity security actions on behalf of the signed-in identity.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identityaccounts-invokeaction?view=graph-rest-1.0
+      operationId: security.identity.identityAccount_invokeAction
+      parameters:
+        - name: identityAccounts-id
+          in: path
+          description: The unique identifier of identityAccounts
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityAccounts
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountId:
+                  type: string
+                action:
+                  $ref: '#/components/schemas/microsoft.graph.security.action'
+                identityProvider:
+                  $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.invokeActionResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /security/identities/identityAccounts/$count:
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get the number of the resource
+      operationId: security.identity.identityAccount_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/identities/sensorCandidateActivationConfiguration:
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get sensorCandidateActivationConfiguration
+      description: Read the properties and relationships of microsoft.graph.security.sensorCandidateActivationConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensorcandidateactivationconfiguration-get?view=graph-rest-1.0
+      operationId: security.identity_GetSensorCandidateActivationConfiguration
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensorCandidateActivationConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.identityContainer
+      summary: Update the navigation property sensorCandidateActivationConfiguration in security
+      operationId: security.identity_UpdateSensorCandidateActivationConfiguration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.sensorCandidateActivationConfiguration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensorCandidateActivationConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.identityContainer
+      summary: Delete navigation property sensorCandidateActivationConfiguration for security
+      operationId: security.identity_DeleteSensorCandidateActivationConfiguration
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/identities/sensorCandidates:
+    get:
+      tags:
+        - security.identityContainer
+      summary: List sensorCandidate objects
+      description: Get a list of the sensorCandidate objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-identitycontainer-list-sensorcandidates?view=graph-rest-1.0
+      operationId: security.identity_ListSensorCandidate
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.sensorCandidateCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.identityContainer
+      summary: Create new navigation property to sensorCandidates for security
+      operationId: security.identity_CreateSensorCandidate
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.sensorCandidate'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensorCandidate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/identities/sensorCandidates/{sensorCandidate-id}':
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get sensorCandidates from security
+      description: Represents Microsoft Defender for Identity sensors that are ready to be activated.
+      operationId: security.identity_GetSensorCandidate
+      parameters:
+        - name: sensorCandidate-id
+          in: path
+          description: The unique identifier of sensorCandidate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensorCandidate
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensorCandidate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.identityContainer
+      summary: Update the navigation property sensorCandidates in security
+      operationId: security.identity_UpdateSensorCandidate
+      parameters:
+        - name: sensorCandidate-id
+          in: path
+          description: The unique identifier of sensorCandidate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensorCandidate
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.sensorCandidate'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensorCandidate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.identityContainer
+      summary: Delete navigation property sensorCandidates for security
+      operationId: security.identity_DeleteSensorCandidate
+      parameters:
+        - name: sensorCandidate-id
+          in: path
+          description: The unique identifier of sensorCandidate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sensorCandidate
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/identities/sensorCandidates/$count:
+    get:
+      tags:
+        - security.identityContainer
+      summary: Get the number of the resource
+      operationId: security.identity.sensorCandidate_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/identities/sensorCandidates/microsoft.graph.security.activate:
+    post:
+      tags:
+        - security.identityContainer
+      summary: Invoke action activate
+      description: Activate Microsoft Defender for Identity sensors.
+      operationId: security.identity.sensorCandidate_activate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                serverIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/identities/sensors:
     get:
       tags:
@@ -18354,7 +18899,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get whoisRecord
-      description: "Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord. \n- Specify an id value to get the corresponding whoisRecord."
+      description: "Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:\r\n- Identify a host and get its current whoisRecord. \r\n- Specify an id value to get the corresponding whoisRecord."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-whoisrecord-get?view=graph-rest-1.0
@@ -21271,7 +21816,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get whoisRecord
-      description: "Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord. \n- Specify an id value to get the corresponding whoisRecord."
+      description: "Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:\r\n- Identify a host and get its current whoisRecord. \r\n- Specify an id value to get the corresponding whoisRecord."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-whoisrecord-get?view=graph-rest-1.0
@@ -22500,6 +23045,8 @@ components:
               type: string
               description: URL for the incident page in the Microsoft 365 Defender portal.
               nullable: true
+            investigationState:
+              $ref: '#/components/schemas/microsoft.graph.security.investigationState'
             lastActivityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -23696,6 +24243,8 @@ components:
               x-ms-navigationProperty: true
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             owners:
               type: array
               items:
@@ -24367,6 +24916,20 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
               description: Represents potential issues identified by Microsoft Defender for Identity within a customer's Microsoft Defender for Identity configuration.
               x-ms-navigationProperty: true
+            identityAccounts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+              description: Represents an identity's details in the context of Microsoft Defender for Identity.
+              x-ms-navigationProperty: true
+            sensorCandidateActivationConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.security.sensorCandidateActivationConfiguration'
+            sensorCandidates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.sensorCandidate'
+              description: Represents Microsoft Defender for Identity sensors that are ready to be activated.
+              x-ms-navigationProperty: true
             sensors:
               type: array
               items:
@@ -24435,6 +24998,103 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.healthIssueSeverity'
             status:
               $ref: '#/components/schemas/microsoft.graph.security.healthIssueStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.security.identityAccounts:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityAccounts
+          type: object
+          properties:
+            accounts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.account'
+              description: Collection of accounts of the identity in different identity providers.
+            cloudSecurityIdentifier:
+              type: string
+              description: The cloud security identifier of the identityAccount.
+              nullable: true
+            displayName:
+              type: string
+              description: The  Active Directory display name of the identityAccount.
+              nullable: true
+            domain:
+              type: string
+              description: The Active Directory domain name of the identityAccount.
+              nullable: true
+            isEnabled:
+              type: boolean
+              description: Boolean indicating if the identityAccounts is enabled.
+            onPremisesSecurityIdentifier:
+              type: string
+              description: The on-premises security identifier of the identityAccount.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.action:
+      title: action
+      enum:
+        - disable
+        - enable
+        - forcePasswordReset
+        - revokeAllSessions
+        - requireUserToSignInAgain
+        - markUserAsCompromised
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.identityProvider:
+      title: identityProvider
+      enum:
+        - entraID
+        - activeDirectory
+        - okta
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.invokeActionResult:
+      title: invokeActionResult
+      type: object
+      properties:
+        accountId:
+          type: string
+          description: The account ID.
+        action:
+          $ref: '#/components/schemas/microsoft.graph.security.action'
+        correlationId:
+          type: string
+          description: The unique identifier for tracking the request.
+          nullable: true
+        identityProvider:
+          $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.sensorCandidateActivationConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensorCandidateActivationConfiguration
+          type: object
+          properties:
+            activationMode:
+              $ref: '#/components/schemas/microsoft.graph.security.sensorCandidateActivationMode'
+          additionalProperties:
+            type: object
+    microsoft.graph.security.sensorCandidate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensorCandidate
+          type: object
+          properties:
+            computerDnsName:
+              type: string
+              description: The DNS name of the computer associated with the sensor.
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the sensor was last seen.
+              format: date-time
+            senseClientVersion:
+              type: string
+              description: The version of the Defender for Identity sensor client. Supports $filter (eq).
           additionalProperties:
             type: object
     microsoft.graph.security.sensor:
@@ -25501,6 +26161,12 @@ components:
               x-ms-navigationProperty: true
             cloudClipboard:
               $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
+            cloudPCs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: The user's Cloud PCs. Read-only. Nullable.
+              x-ms-navigationProperty: true
             contactFolders:
               type: array
               items:
@@ -27317,6 +27983,8 @@ components:
         - builtInMl
         - microsoftInsiderRiskManagement
         - microsoftThreatIntelligence
+        - microsoftDefenderForAIServices
+        - securityCopilot
         - microsoftSentinel
       type: string
     microsoft.graph.security.alertDetermination:
@@ -27375,6 +28043,29 @@ components:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceVerdict'
       additionalProperties:
         type: object
+    microsoft.graph.security.investigationState:
+      title: investigationState
+      enum:
+        - unknown
+        - terminated
+        - successfullyRemediated
+        - benign
+        - failed
+        - partiallyRemediated
+        - running
+        - pendingApproval
+        - pendingResource
+        - queued
+        - innerFailure
+        - preexistingAlert
+        - unsupportedOs
+        - unsupportedAlertType
+        - suppressedAlert
+        - partiallyInvestigated
+        - terminatedByUser
+        - terminatedBySystem
+        - unknownFutureValue
+      type: string
     microsoft.graph.security.serviceSource:
       title: serviceSource
       enum:
@@ -28882,6 +29573,16 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.resourceSpecificPermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -29036,6 +29737,7 @@ components:
         - purgeData
         - exportReport
         - exportResult
+        - holdPolicySync
       type: string
     microsoft.graph.resultInfo:
       title: resultInfo
@@ -29466,6 +30168,29 @@ components:
         - open
         - closed
         - suppressed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.account:
+      title: account
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.action'
+          description: 'List of the type of action. The possible values are: disable, enable, forcePasswordReset, revokeAllSessions, requireUserToSignInAgain, markUserAsCompromised, unknownFutureValue.'
+        identifier:
+          type: string
+          description: The account ID.
+        identityProvider:
+          $ref: '#/components/schemas/microsoft.graph.security.identityProvider'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.sensorCandidateActivationMode:
+      title: sensorCandidateActivationMode
+      enum:
+        - manual
+        - automated
         - unknownFutureValue
       type: string
     microsoft.graph.security.deploymentStatus:
@@ -30467,6 +31192,71 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPC:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPC
+          type: object
+          properties:
+            aadDeviceId:
+              type: string
+              description: 'The Microsoft Entra device ID for the Cloud PC, also known as the Azure Active Directory (Azure AD) device ID, that consists of 32 characters in a GUID format. Generated on a VM joined to Microsoft Entra ID. Read-only.'
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name for the Cloud PC. Maximum length is 64 characters. Read-only. You can use the cloudPC: rename API to modify the Cloud PC name.'
+              nullable: true
+            gracePeriodEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            imageDisplayName:
+              type: string
+              description: 'The name of the operating system image used for the Cloud PC. Maximum length is 50 characters. Only letters (A-Z, a-z), numbers (0-9), and special characters (-,,.) are allowed for this property. The property value can''t begin or end with an underscore. Read-only.'
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last modified date and time of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            managedDeviceId:
+              type: string
+              description: The Intune enrolled device ID for the Cloud PC that consists of 32 characters in a GUID format. The managedDeviceId property of Windows 365 Business Cloud PCs is always null as Windows 365 Business Cloud PCs aren't Intune-enrolled automatically by Windows 365. Read-only.
+              nullable: true
+            managedDeviceName:
+              type: string
+              description: The Intune enrolled device name for the Cloud PC. The managedDeviceName property of Windows 365 Business Cloud PCs is always null as Windows 365 Business Cloud PCs aren't Intune-enrolled automatically by Windows 365. Read-only.
+              nullable: true
+            onPremisesConnectionName:
+              type: string
+              description: The on-premises connection that applied during the provisioning of Cloud PCs. Read-only.
+              nullable: true
+            provisioningPolicyId:
+              type: string
+              description: The provisioning policy ID for the Cloud PC that consists of 32 characters in a GUID format. A policy defines the type of Cloud PC the user wants to create. Read-only.
+              nullable: true
+            provisioningPolicyName:
+              type: string
+              description: The provisioning policy that applied during the provisioning of Cloud PCs. Maximum length is 120 characters. Read-only.
+              nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
+            servicePlanId:
+              type: string
+              description: 'The service plan ID for the Cloud PC that consists of 32 characters in a GUID format. For more information about service plans, see Product names and service plan identifiers for licensing. Read-only.'
+              nullable: true
+            servicePlanName:
+              type: string
+              description: The service plan name for the customer-facing Cloud PC entity. Read-only.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: 'The user principal name (UPN) of the user assigned to the Cloud PC. Maximum length is 113 characters. For more information on username policies, see Password policies and account restrictions in Microsoft Entra ID. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.contactFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30708,6 +31498,12 @@ components:
         - title: employeeExperienceUser
           type: object
           properties:
+            assignedRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRole'
+              description: Represents the collection of Viva Engage roles assigned to a user.
+              x-ms-navigationProperty: true
             learningCourseActivities:
               type: array
               items:
@@ -31058,6 +31854,8 @@ components:
               description: Reports device management certificate expiration date. This property is read-only.
               format: date-time
               readOnly: true
+            managementState:
+              $ref: '#/components/schemas/microsoft.graph.managementState'
             manufacturer:
               type: string
               description: Manufacturer of the device. This property is read-only.
@@ -31289,7 +32087,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
-              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.'
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.NOTE: When using this URL to access a message from a mailbox with delegate permissions, both the signed-in user and the target mailbox must be in the same database region. For example, an error is returned when a user with a mailbox in the EUR (Europe) region attempts to access messages from a mailbox in the NAM (North America) region.'
               nullable: true
             attachments:
               type: array
@@ -31402,6 +32200,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32931,6 +33730,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.healthIssue'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.identityAccountsCollectionResponse:
+      title: Collection of identityAccounts
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.identityAccounts'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.sensorCandidateCollectionResponse:
+      title: Collection of sensorCandidate
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.sensorCandidate'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -36042,6 +36867,13 @@ components:
               description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
+        - unknownFutureValue
+      type: string
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -36089,6 +36921,24 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.engagementRole:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRole
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the role.
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
+              description: Users that have this role assigned.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Represents a Viva Engage role and its members
     microsoft.graph.learningCourseActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36580,7 +37430,7 @@ components:
           nullable: true
         virtualSecureMode:
           type: string
-          description: VSM is a container that protects high value assets from a compromised kernel
+          description: 'Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are ''enabled'', ''disabled'' and ''notApplicable''. ''enabled'' indicates Virtual Secure Mode (VSM) is enabled. ''disabled'' indicates Virtual Secure Mode (VSM) is disabled. ''notApplicable'' indicates the device is not a Windows 11 device. Default value is ''notApplicable''.'
           nullable: true
         windowsPE:
           type: string
@@ -36813,6 +37663,67 @@ components:
           - value: microsoft365ManagedMdm
             description: This device is managed by Microsoft 365 through Intune.
             name: microsoft365ManagedMdm
+    microsoft.graph.managementState:
+      title: managementState
+      enum:
+        - managed
+        - retirePending
+        - retireFailed
+        - wipePending
+        - wipeFailed
+        - unhealthy
+        - deletePending
+        - retireIssued
+        - wipeIssued
+        - wipeCanceled
+        - retireCanceled
+        - discovered
+        - unknownFutureValue
+      type: string
+      description: Management state of device in Microsoft Intune.
+      x-ms-enum:
+        name: managementState
+        modelAsString: false
+        values:
+          - value: managed
+            description: The device is under management
+            name: managed
+          - value: retirePending
+            description: A retire command is occuring on the device and in the process of unenrolling from management
+            name: retirePending
+          - value: retireFailed
+            description: Retire command failed on the device
+            name: retireFailed
+          - value: wipePending
+            description: A wipe command is occuring on the device and in the process of unenrolling from management
+            name: wipePending
+          - value: wipeFailed
+            description: Wipe command failed on the device
+            name: wipeFailed
+          - value: unhealthy
+            description: The device is unhealthy.
+            name: unhealthy
+          - value: deletePending
+            description: 'A delete command is occuring on the device '
+            name: deletePending
+          - value: retireIssued
+            description: A retire command was issued for the device
+            name: retireIssued
+          - value: wipeIssued
+            description: A wipe command was issued for the device
+            name: wipeIssued
+          - value: wipeCanceled
+            description: A wipe command for this device has been canceled
+            name: wipeCanceled
+          - value: retireCanceled
+            description: A retire command for this device has been canceled
+            name: retireCanceled
+          - value: discovered
+            description: The device is discovered but not fully enrolled.
+            name: discovered
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
       enum:
@@ -40226,6 +41137,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.engagementRoleMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRoleMember
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the role was assigned to the user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            userId:
+              type: string
+              description: The Microsoft Entra ID of the user who has the role assigned.
+              nullable: true
+              readOnly: true
+            user:
+              $ref: '#/components/schemas/microsoft.graph.user'
+          additionalProperties:
+            type: object
+          description: Entity to represent the assignment of a role to a user.
     microsoft.graph.courseStatus:
       title: courseStatus
       enum:
@@ -43100,11 +44033,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
@@ -46024,6 +46955,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.healthIssueCollectionResponse'
+    microsoft.graph.security.identityAccountsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.identityAccountsCollectionResponse'
+    microsoft.graph.security.sensorCandidateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.sensorCandidateCollectionResponse'
     microsoft.graph.security.sensorCollectionResponse:
       description: Retrieved collection
       content:

@@ -852,7 +852,7 @@ paths:
       tags:
         - identity.authenticationEventsFlow
       summary: Update authenticationEventsFlow
-      description: "Update the properties of an authenticationEventsFlow object by ID. You must specify the @odata.type property and the value of the authenticationEventsFlow object type to update. The following derived subtypes are supported:\n- externalUsersSelfServiceSignupEventsFlow"
+      description: "Update the properties of an authenticationEventsFlow object by ID. You must specify the @odata.type property and the value of the authenticationEventsFlow object type to update. The following derived subtypes are supported:\r\n- externalUsersSelfServiceSignupEventsFlow"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationeventsflow-update?view=graph-rest-beta
@@ -7612,7 +7612,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List combinationConfigurations
-      description: "Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths."
+      description: "Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:\r\n* fido2combinationConfigurations\r\n* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-beta
@@ -7674,7 +7674,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Create combinationConfiguration
-      description: "Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration"
+      description: "Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\r\n* fido2combinationConfigurations\r\n* x509certificatecombinationconfiguration"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-beta
@@ -7766,7 +7766,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Update authenticationCombinationConfiguration
-      description: "Update the properties of an authenticationCombinationConfiguration object. \nThe properties can be for one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration"
+      description: "Update the properties of an authenticationCombinationConfiguration object. \r\nThe properties can be for one of the following derived types:\r\n* fido2combinationConfigurations\r\n* x509certificatecombinationconfiguration"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-update?view=graph-rest-beta
@@ -9114,7 +9114,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List policyDeletableItem objects
-      description: "Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-list?view=graph-rest-beta
@@ -9191,7 +9191,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get policyDeletableItem
-      description: "Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-get?view=graph-rest-beta
@@ -9270,7 +9270,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Delete policyDeletableItem
-      description: "Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-delete?view=graph-rest-beta
@@ -9301,10 +9301,10 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Invoke action restore
-      description: Restore a deleted ipNamedLocation object.
+      description: Restore a deleted countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-restore?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-restore?view=graph-rest-beta
       operationId: identity.conditionalAccess.deletedItem.namedLocation_restore
       parameters:
         - name: namedLocation-id
@@ -9344,7 +9344,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List policyDeletableItem objects
-      description: "Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-list?view=graph-rest-beta
@@ -9421,7 +9421,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get policyDeletableItem
-      description: "Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-get?view=graph-rest-beta
@@ -9500,7 +9500,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Delete policyDeletableItem
-      description: "Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-delete?view=graph-rest-beta
@@ -9708,11 +9708,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get ipNamedLocation
-      description: Retrieve the properties and relationships of an ipNamedLocation object.
+      summary: Get compliantNetworkNamedLocation
+      description: Read the properties and relationships of a compliantNetworkNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/compliantnetworknamedlocation-get?view=graph-rest-beta
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9791,11 +9791,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete namedLocation
-      description: Delete a namedLocation object.
+      summary: Delete countryNamedLocation
+      description: Delete a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-beta
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9823,10 +9823,10 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Invoke action restore
-      description: Restore a deleted ipNamedLocation object.
+      description: Restore a deleted countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-restore?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-restore?view=graph-rest-beta
       operationId: identity.conditionalAccess.namedLocation_restore
       parameters:
         - name: namedLocation-id
@@ -10815,6 +10815,996 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /identity/riskPrevention:
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Get riskPrevention from identity
+      description: 'Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.'
+      operationId: identity_GetRiskPrevention
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskPreventionContainer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Update the navigation property riskPrevention in identity
+      operationId: identity_UpdateRiskPrevention
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.riskPreventionContainer'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskPreventionContainer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Delete navigation property riskPrevention for identity
+      operationId: identity_DeleteRiskPrevention
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/riskPrevention/fraudProtectionProviders:
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Get fraudProtectionProviders from identity
+      description: Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
+      operationId: identity.riskPrevention_ListFraudProtectionProvider
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.fraudProtectionProviderCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Create fraudProtectionProviders
+      description: Create a new fraudProtectionProvider object. You can create one of the following subtypes that are derived from fraudProtectionProvider.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskpreventioncontainer-post-fraudprotectionproviders?view=graph-rest-beta
+      operationId: identity.riskPrevention_CreateFraudProtectionProvider
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.fraudProtectionProvider'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.fraudProtectionProvider'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/riskPrevention/fraudProtectionProviders/{fraudProtectionProvider-id}':
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Get fraudProtectionProviders from identity
+      description: Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
+      operationId: identity.riskPrevention_GetFraudProtectionProvider
+      parameters:
+        - name: fraudProtectionProvider-id
+          in: path
+          description: The unique identifier of fraudProtectionProvider
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: fraudProtectionProvider
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.fraudProtectionProvider'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Update the navigation property fraudProtectionProviders in identity
+      operationId: identity.riskPrevention_UpdateFraudProtectionProvider
+      parameters:
+        - name: fraudProtectionProvider-id
+          in: path
+          description: The unique identifier of fraudProtectionProvider
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: fraudProtectionProvider
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.fraudProtectionProvider'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.fraudProtectionProvider'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Delete navigation property fraudProtectionProviders for identity
+      operationId: identity.riskPrevention_DeleteFraudProtectionProvider
+      parameters:
+        - name: fraudProtectionProvider-id
+          in: path
+          description: The unique identifier of fraudProtectionProvider
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: fraudProtectionProvider
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/riskPrevention/fraudProtectionProviders/$count:
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Get the number of the resource
+      operationId: identity.riskPrevention.fraudProtectionProvider_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identity/riskPrevention/webApplicationFirewallProviders:
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: List webApplicationFirewallProvider objects
+      description: Get a list of the webApplicationFirewallProvider objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskpreventioncontainer-list-webapplicationfirewallproviders?view=graph-rest-beta
+      operationId: identity.riskPrevention_ListWebApplicationFirewallProvider
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.webApplicationFirewallProviderCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Create webApplicationFirewallProvider
+      description: Create a new webApplicationFirewallProvider object. You can create one of the following subtypes that are derived from webApplicationFirewallProvider.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskpreventioncontainer-post-webapplicationfirewallproviders?view=graph-rest-beta
+      operationId: identity.riskPrevention_CreateWebApplicationFirewallProvider
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProvider'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProvider'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/riskPrevention/webApplicationFirewallProviders/{webApplicationFirewallProvider-id}':
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Get webApplicationFirewallProvider
+      description: Read the properties and relationships of webApplicationFirewallProvider object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/webapplicationfirewallprovider-get?view=graph-rest-beta
+      operationId: identity.riskPrevention_GetWebApplicationFirewallProvider
+      parameters:
+        - name: webApplicationFirewallProvider-id
+          in: path
+          description: The unique identifier of webApplicationFirewallProvider
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webApplicationFirewallProvider
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProvider'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Update webApplicationFirewallProvider
+      description: Update the properties of a webApplicationFirewallProvider object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/webapplicationfirewallprovider-update?view=graph-rest-beta
+      operationId: identity.riskPrevention_UpdateWebApplicationFirewallProvider
+      parameters:
+        - name: webApplicationFirewallProvider-id
+          in: path
+          description: The unique identifier of webApplicationFirewallProvider
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webApplicationFirewallProvider
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProvider'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProvider'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Delete webApplicationFirewallProvider
+      description: Delete a webApplicationFirewallProvider object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskpreventioncontainer-delete-webapplicationfirewallproviders?view=graph-rest-beta
+      operationId: identity.riskPrevention_DeleteWebApplicationFirewallProvider
+      parameters:
+        - name: webApplicationFirewallProvider-id
+          in: path
+          description: The unique identifier of webApplicationFirewallProvider
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webApplicationFirewallProvider
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/riskPrevention/webApplicationFirewallProviders/{webApplicationFirewallProvider-id}/microsoft.graph.verify':
+    post:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Invoke action verify
+      description: Initiate a verification operation for a webApplicationFirewallProvider object. This API triggers provider-specific verification logic and returns a webApplicationFirewallVerificationModel object describing the verification result.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/webapplicationfirewallprovider-verify?view=graph-rest-beta
+      operationId: identity.riskPrevention.webApplicationFirewallProvider_verify
+      parameters:
+        - name: webApplicationFirewallProvider-id
+          in: path
+          description: The unique identifier of webApplicationFirewallProvider
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webApplicationFirewallProvider
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hostName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationModel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /identity/riskPrevention/webApplicationFirewallProviders/$count:
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Get the number of the resource
+      operationId: identity.riskPrevention.webApplicationFirewallProvider_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identity/riskPrevention/webApplicationFirewallVerifications:
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: List webApplicationFirewallVerificationModel objects
+      description: Get a list of the webApplicationFirewallVerificationModel objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskpreventioncontainer-list-webapplicationfirewallverifications?view=graph-rest-beta
+      operationId: identity.riskPrevention_ListWebApplicationFirewallVerification
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.webApplicationFirewallVerificationModelCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Create new navigation property to webApplicationFirewallVerifications for identity
+      operationId: identity.riskPrevention_CreateWebApplicationFirewallVerification
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationModel'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationModel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/riskPrevention/webApplicationFirewallVerifications/{webApplicationFirewallVerificationModel-id}':
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Get webApplicationFirewallVerificationModel
+      description: Read the properties and relationships of webApplicationFirewallVerificationModel object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/webapplicationfirewallverificationmodel-get?view=graph-rest-beta
+      operationId: identity.riskPrevention_GetWebApplicationFirewallVerification
+      parameters:
+        - name: webApplicationFirewallVerificationModel-id
+          in: path
+          description: The unique identifier of webApplicationFirewallVerificationModel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webApplicationFirewallVerificationModel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationModel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Update the navigation property webApplicationFirewallVerifications in identity
+      operationId: identity.riskPrevention_UpdateWebApplicationFirewallVerification
+      parameters:
+        - name: webApplicationFirewallVerificationModel-id
+          in: path
+          description: The unique identifier of webApplicationFirewallVerificationModel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webApplicationFirewallVerificationModel
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationModel'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationModel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Delete webApplicationFirewallVerificationModel
+      description: Delete a webApplicationFirewallVerificationModel object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskpreventioncontainer-delete-webapplicationfirewallverifications?view=graph-rest-beta
+      operationId: identity.riskPrevention_DeleteWebApplicationFirewallVerification
+      parameters:
+        - name: webApplicationFirewallVerificationModel-id
+          in: path
+          description: The unique identifier of webApplicationFirewallVerificationModel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webApplicationFirewallVerificationModel
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/riskPrevention/webApplicationFirewallVerifications/{webApplicationFirewallVerificationModel-id}/provider':
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Get provider from identity
+      description: Reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
+      operationId: identity.riskPrevention.webApplicationFirewallVerification_GetProvider
+      parameters:
+        - name: webApplicationFirewallVerificationModel-id
+          in: path
+          description: The unique identifier of webApplicationFirewallVerificationModel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: webApplicationFirewallVerificationModel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProvider'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/riskPrevention/webApplicationFirewallVerifications/$count:
+    get:
+      tags:
+        - identity.riskPreventionContainer
+      summary: Get the number of the resource
+      operationId: identity.riskPrevention.webApplicationFirewallVerification_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identity/signInIdentifiers:
+    get:
+      tags:
+        - identity.signInIdentifierBase
+      summary: Get signInIdentifiers from identity
+      operationId: identity_ListSignInIdentifier
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.signInIdentifierBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-25'
+        date: '2025-03-26'
+        version: 2025-03/SignInWithAlias
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.signInIdentifierBase
+      summary: Create new navigation property to signInIdentifiers for identity
+      operationId: identity_CreateSignInIdentifier
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.signInIdentifierBase'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.signInIdentifierBase'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-25'
+        date: '2025-03-26'
+        version: 2025-03/SignInWithAlias
+      x-ms-docs-operation-type: operation
+  '/identity/signInIdentifiers/{signInIdentifierBase-name}':
+    get:
+      tags:
+        - identity.signInIdentifierBase
+      summary: Get signInIdentifiers from identity
+      operationId: identity_GetSignInIdentifier
+      parameters:
+        - name: signInIdentifierBase-name
+          in: path
+          description: The unique identifier of signInIdentifierBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: signInIdentifierBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.signInIdentifierBase'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-25'
+        date: '2025-03-26'
+        version: 2025-03/SignInWithAlias
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.signInIdentifierBase
+      summary: Update the navigation property signInIdentifiers in identity
+      operationId: identity_UpdateSignInIdentifier
+      parameters:
+        - name: signInIdentifierBase-name
+          in: path
+          description: The unique identifier of signInIdentifierBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: signInIdentifierBase
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.signInIdentifierBase'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.signInIdentifierBase'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-25'
+        date: '2025-03-26'
+        version: 2025-03/SignInWithAlias
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.signInIdentifierBase
+      summary: Delete navigation property signInIdentifiers for identity
+      operationId: identity_DeleteSignInIdentifier
+      parameters:
+        - name: signInIdentifierBase-name
+          in: path
+          description: The unique identifier of signInIdentifierBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: signInIdentifierBase
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-25'
+        date: '2025-03-26'
+        version: 2025-03/SignInWithAlias
+      x-ms-docs-operation-type: operation
+  /identity/signInIdentifiers/$count:
+    get:
+      tags:
+        - identity.signInIdentifierBase
+      summary: Get the number of the resource
+      operationId: identity.signInIdentifier_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-25'
+        date: '2025-03-26'
+        version: 2025-03/SignInWithAlias
   /identity/userFlowAttributes:
     get:
       tags:
@@ -11265,6 +12255,292 @@ paths:
         date: '2021-05-21'
         version: 2021-05/identityProvider
         description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
+  /identity/verifiedId:
+    get:
+      tags:
+        - identity.identityVerifiedIdRoot
+      summary: Get verifiedId from identity
+      operationId: identity_GetVerifiedId
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityVerifiedIdRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.identityVerifiedIdRoot
+      summary: Update the navigation property verifiedId in identity
+      operationId: identity_UpdateVerifiedId
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityVerifiedIdRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityVerifiedIdRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.identityVerifiedIdRoot
+      summary: Delete navigation property verifiedId for identity
+      operationId: identity_DeleteVerifiedId
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/verifiedId/profiles:
+    get:
+      tags:
+        - identity.identityVerifiedIdRoot
+      summary: List verifiedIdProfile objects
+      description: Get a list of the verifiedIdProfile objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identityverifiedidroot-list-profiles?view=graph-rest-beta
+      operationId: identity.verifiedId_ListProfile
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.verifiedIdProfileCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.identityVerifiedIdRoot
+      summary: Create verifiedIdProfile
+      description: Create a new verifiedIdProfile object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identityverifiedidroot-post-profiles?view=graph-rest-beta
+      operationId: identity.verifiedId_CreateProfile
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.verifiedIdProfile'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.verifiedIdProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/verifiedId/profiles/{verifiedIdProfile-id}':
+    get:
+      tags:
+        - identity.identityVerifiedIdRoot
+      summary: Get verifiedIdProfile
+      description: Read the properties and relationships of verifiedIdProfile object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/verifiedidprofile-get?view=graph-rest-beta
+      operationId: identity.verifiedId_GetProfile
+      parameters:
+        - name: verifiedIdProfile-id
+          in: path
+          description: The unique identifier of verifiedIdProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: verifiedIdProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.verifiedIdProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.identityVerifiedIdRoot
+      summary: Update verifiedIdProfile
+      description: Update the properties of a verifiedIdProfile object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/verifiedidprofile-update?view=graph-rest-beta
+      operationId: identity.verifiedId_UpdateProfile
+      parameters:
+        - name: verifiedIdProfile-id
+          in: path
+          description: The unique identifier of verifiedIdProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: verifiedIdProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.verifiedIdProfile'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.verifiedIdProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.identityVerifiedIdRoot
+      summary: Delete verifiedIdProfile
+      description: Delete a verifiedIdProfile object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identityverifiedidroot-delete-profiles?view=graph-rest-beta
+      operationId: identity.verifiedId_DeleteProfile
+      parameters:
+        - name: verifiedIdProfile-id
+          in: path
+          description: The unique identifier of verifiedIdProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: verifiedIdProfile
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/verifiedId/profiles/$count:
+    get:
+      tags:
+        - identity.identityVerifiedIdRoot
+      summary: Get the number of the resource
+      operationId: identity.verifiedId.profile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identityProtection:
     get:
       tags:
@@ -11324,6 +12600,203 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identityProtection/agentRiskDetections:
+    get:
+      tags:
+        - identityProtection.agentRiskDetection
+      summary: List agentRiskDetections
+      description: Retrieve the properties of a collection of agentRiskDetection objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identityprotectionroot-list-agentriskdetections?view=graph-rest-beta
+      operationId: identityProtection_ListAgentRiskDetection
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.agentRiskDetectionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityProtection.agentRiskDetection
+      summary: Create new navigation property to agentRiskDetections for identityProtection
+      operationId: identityProtection_CreateAgentRiskDetection
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agentRiskDetection'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agentRiskDetection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityProtection/agentRiskDetections/{agentRiskDetection-id}':
+    get:
+      tags:
+        - identityProtection.agentRiskDetection
+      summary: Get agentRiskDetection
+      description: Read the properties and relationships of agentRiskDetection object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/agentriskdetection-get?view=graph-rest-beta
+      operationId: identityProtection_GetAgentRiskDetection
+      parameters:
+        - name: agentRiskDetection-id
+          in: path
+          description: The unique identifier of agentRiskDetection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: agentRiskDetection
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agentRiskDetection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityProtection.agentRiskDetection
+      summary: Update the navigation property agentRiskDetections in identityProtection
+      operationId: identityProtection_UpdateAgentRiskDetection
+      parameters:
+        - name: agentRiskDetection-id
+          in: path
+          description: The unique identifier of agentRiskDetection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: agentRiskDetection
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agentRiskDetection'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agentRiskDetection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityProtection.agentRiskDetection
+      summary: Delete navigation property agentRiskDetections for identityProtection
+      operationId: identityProtection_DeleteAgentRiskDetection
+      parameters:
+        - name: agentRiskDetection-id
+          in: path
+          description: The unique identifier of agentRiskDetection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: agentRiskDetection
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityProtection/agentRiskDetections/$count:
+    get:
+      tags:
+        - identityProtection.agentRiskDetection
+      summary: Get the number of the resource
+      operationId: identityProtection.agentRiskDetection_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identityProtection/riskDetections:
     get:
       tags:
@@ -11405,11 +12878,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: List riskDetection
-      description: Retrieve the properties of a collection of riskDetection objects.
+      summary: Get riskDetection
+      description: Retrieve the properties of a riskDetection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-beta
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -11521,6 +12994,296 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /identityProtection/riskyAgents:
+    get:
+      tags:
+        - identityProtection.riskyAgent
+      summary: List riskyAgents
+      description: Retrieve the properties and relationships of a collection of riskyAgent objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskyagent-list?view=graph-rest-beta
+      operationId: identityProtection_ListRiskyAgent
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.riskyAgentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityProtection.riskyAgent
+      summary: Create new navigation property to riskyAgents for identityProtection
+      operationId: identityProtection_CreateRiskyAgent
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.riskyAgent'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskyAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityProtection/riskyAgents/{riskyAgent-id}':
+    get:
+      tags:
+        - identityProtection.riskyAgent
+      summary: Get riskyAgent
+      description: Read the properties and relationships of riskyAgent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskyagent-get?view=graph-rest-beta
+      operationId: identityProtection_GetRiskyAgent
+      parameters:
+        - name: riskyAgent-id
+          in: path
+          description: The unique identifier of riskyAgent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: riskyAgent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskyAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityProtection.riskyAgent
+      summary: Update the navigation property riskyAgents in identityProtection
+      operationId: identityProtection_UpdateRiskyAgent
+      parameters:
+        - name: riskyAgent-id
+          in: path
+          description: The unique identifier of riskyAgent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: riskyAgent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.riskyAgent'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.riskyAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityProtection.riskyAgent
+      summary: Delete navigation property riskyAgents for identityProtection
+      operationId: identityProtection_DeleteRiskyAgent
+      parameters:
+        - name: riskyAgent-id
+          in: path
+          description: The unique identifier of riskyAgent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: riskyAgent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityProtection/riskyAgents/$count:
+    get:
+      tags:
+        - identityProtection.riskyAgent
+      summary: Get the number of the resource
+      operationId: identityProtection.riskyAgent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identityProtection/riskyAgents/microsoft.graph.confirmCompromised:
+    post:
+      tags:
+        - identityProtection.riskyAgent
+      summary: Invoke action confirmCompromised
+      description: Confirm one or more riskyAgent objects as compromised. This action sets the targeted agent's riskLevel to high.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskyagent-confirmcompromised?view=graph-rest-beta
+      operationId: identityProtection.riskyAgent_confirmCompromised
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                agentIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /identityProtection/riskyAgents/microsoft.graph.confirmSafe:
+    post:
+      tags:
+        - identityProtection.riskyAgent
+      summary: Invoke action confirmSafe
+      description: Confirm one or more riskyAgent objects as safe. This action sets the targeted agent's riskLevel to none.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskyagent-confirmsafe?view=graph-rest-beta
+      operationId: identityProtection.riskyAgent_confirmSafe
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                agentIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /identityProtection/riskyAgents/microsoft.graph.dismiss:
+    post:
+      tags:
+        - identityProtection.riskyAgent
+      summary: Invoke action dismiss
+      description: Dismiss the risk of one or more riskyAgent objects. This action sets the targeted agent's riskLevel to none.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/riskyagent-dismiss?view=graph-rest-beta
+      operationId: identityProtection.riskyAgent_dismiss
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                agentIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /identityProtection/riskyServicePrincipals:
     get:
       tags:
@@ -18657,6 +20420,353 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /policies/b2bManagementPolicies:
+    get:
+      tags:
+        - policies.b2bManagementPolicy
+      summary: List b2bManagementPolicy objects
+      description: Get a list of the b2bManagementPolicy objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/policyroot-list-b2bmanagementpolicies?view=graph-rest-beta
+      operationId: policy_ListB2bManagementPolicy
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.b2bManagementPolicyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.b2bManagementPolicy
+      summary: Create b2bManagementPolicy
+      description: Create a new b2bManagementPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/policyroot-post-b2bmanagementpolicies?view=graph-rest-beta
+      operationId: policy_CreateB2bManagementPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.b2bManagementPolicy'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2bManagementPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/b2bManagementPolicies/{b2bManagementPolicy-id}':
+    get:
+      tags:
+        - policies.b2bManagementPolicy
+      summary: Get b2bManagementPolicy
+      description: Read the properties and relationships of b2bManagementPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/b2bmanagementpolicy-get?view=graph-rest-beta
+      operationId: policy_GetB2bManagementPolicy
+      parameters:
+        - name: b2bManagementPolicy-id
+          in: path
+          description: The unique identifier of b2bManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2bManagementPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2bManagementPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.b2bManagementPolicy
+      summary: Update b2bManagementPolicy
+      description: Update the properties of a b2bManagementPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/b2bmanagementpolicy-update?view=graph-rest-beta
+      operationId: policy_UpdateB2bManagementPolicy
+      parameters:
+        - name: b2bManagementPolicy-id
+          in: path
+          description: The unique identifier of b2bManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2bManagementPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.b2bManagementPolicy'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2bManagementPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.b2bManagementPolicy
+      summary: Delete b2bManagementPolicy
+      description: Delete a b2bManagementPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/policyroot-delete-b2bmanagementpolicies?view=graph-rest-beta
+      operationId: policy_DeleteB2bManagementPolicy
+      parameters:
+        - name: b2bManagementPolicy-id
+          in: path
+          description: The unique identifier of b2bManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2bManagementPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/b2bManagementPolicies/{b2bManagementPolicy-id}/appliesTo':
+    get:
+      tags:
+        - policies.b2bManagementPolicy
+      summary: List b2bManagementPolicy appliesTo
+      description: Get a list of directoryObject objects that a b2bManagementPolicy object has been applied to. The b2bManagementPolicy can only be applied to application and servicePrincipal resources.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/b2bmanagementpolicy-list-appliesto?view=graph-rest-beta
+      operationId: policy.b2bManagementPolicy_ListAppliesTo
+      parameters:
+        - name: b2bManagementPolicy-id
+          in: path
+          description: The unique identifier of b2bManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2bManagementPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/policies/b2bManagementPolicies/{b2bManagementPolicy-id}/appliesTo/{directoryObject-id}':
+    get:
+      tags:
+        - policies.b2bManagementPolicy
+      summary: Get appliesTo from policies
+      operationId: policy.b2bManagementPolicy_GetAppliesTo
+      parameters:
+        - name: b2bManagementPolicy-id
+          in: path
+          description: The unique identifier of b2bManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2bManagementPolicy
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/b2bManagementPolicies/{b2bManagementPolicy-id}/appliesTo/$count':
+    get:
+      tags:
+        - policies.b2bManagementPolicy
+      summary: Get the number of the resource
+      operationId: policy.b2bManagementPolicy.appliesTo_GetCount
+      parameters:
+        - name: b2bManagementPolicy-id
+          in: path
+          description: The unique identifier of b2bManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2bManagementPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /policies/b2bManagementPolicies/$count:
+    get:
+      tags:
+        - policies.b2bManagementPolicy
+      summary: Get the number of the resource
+      operationId: policy.b2bManagementPolicy_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/b2cAuthenticationMethodsPolicy:
     get:
       tags:
@@ -20324,7 +22434,7 @@ paths:
       tags:
         - policies.policyDeletableRoot
       summary: List policyDeletableItem objects
-      description: "Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-list?view=graph-rest-beta
@@ -20401,7 +22511,7 @@ paths:
       tags:
         - policies.policyDeletableRoot
       summary: Get policyDeletableItem
-      description: "Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-get?view=graph-rest-beta
@@ -20480,7 +22590,7 @@ paths:
       tags:
         - policies.policyDeletableRoot
       summary: Delete policyDeletableItem
-      description: "Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-delete?view=graph-rest-beta
@@ -20686,7 +22796,7 @@ paths:
       tags:
         - policies.policyDeletableRoot
       summary: List policyDeletableItem objects
-      description: "Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-list?view=graph-rest-beta
@@ -20763,7 +22873,7 @@ paths:
       tags:
         - policies.policyDeletableRoot
       summary: Get policyDeletableItem
-      description: "Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-get?view=graph-rest-beta
@@ -20842,7 +22952,7 @@ paths:
       tags:
         - policies.policyDeletableRoot
       summary: Delete policyDeletableItem
-      description: "Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:\n- crossTenantAccessPolicyConfigurationPartner\n- crossTenantIdentitySyncPolicyPartner\n- conditionalAccessPolicy\n- namedLocation"
+      description: "Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:\r\n- crossTenantAccessPolicyConfigurationPartner\r\n- crossTenantIdentitySyncPolicyPartner\r\n- conditionalAccessPolicy\r\n- namedLocation"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policydeletableitem-delete?view=graph-rest-beta
@@ -21587,11 +23697,11 @@ paths:
     get:
       tags:
         - policies.federatedTokenValidationPolicy
-      summary: List federatedTokenValidationPolicy
-      description: Get a list of the federatedTokenValidationPolicy objects and their properties.
+      summary: Get federatedTokenValidationPolicy
+      description: Read the properties and relationships of a federatedTokenValidationPolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/policyroot-list-federatedtokenvalidationpolicy?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-get?view=graph-rest-beta
       operationId: policy_GetFederatedTokenValidationPolicy
       parameters:
         - name: $select
@@ -23166,6 +25276,353 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /policies/onPremAuthenticationPolicies:
+    get:
+      tags:
+        - policies.onPremAuthenticationPolicy
+      summary: List onPremAuthenticationPolicy objects
+      description: Get a list of the onPremAuthenticationPolicy objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/policyroot-list-onpremauthenticationpolicies?view=graph-rest-beta
+      operationId: policy_ListOnPremAuthenticationPolicy
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.onPremAuthenticationPolicyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.onPremAuthenticationPolicy
+      summary: Create onPremAuthenticationPolicy
+      description: Create a new onPremAuthenticationPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/policyroot-post-onpremauthenticationpolicies?view=graph-rest-beta
+      operationId: policy_CreateOnPremAuthenticationPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremAuthenticationPolicy'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremAuthenticationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/onPremAuthenticationPolicies/{onPremAuthenticationPolicy-id}':
+    get:
+      tags:
+        - policies.onPremAuthenticationPolicy
+      summary: Get onPremAuthenticationPolicy
+      description: Read the properties and relationships of onPremAuthenticationPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onpremauthenticationpolicy-get?view=graph-rest-beta
+      operationId: policy_GetOnPremAuthenticationPolicy
+      parameters:
+        - name: onPremAuthenticationPolicy-id
+          in: path
+          description: The unique identifier of onPremAuthenticationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremAuthenticationPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremAuthenticationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.onPremAuthenticationPolicy
+      summary: Update onPremAuthenticationPolicy
+      description: Update the properties of an onPremAuthenticationPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onpremauthenticationpolicy-update?view=graph-rest-beta
+      operationId: policy_UpdateOnPremAuthenticationPolicy
+      parameters:
+        - name: onPremAuthenticationPolicy-id
+          in: path
+          description: The unique identifier of onPremAuthenticationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremAuthenticationPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremAuthenticationPolicy'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremAuthenticationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.onPremAuthenticationPolicy
+      summary: Delete onPremAuthenticationPolicy
+      description: Delete an onPremAuthenticationPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onpremauthenticationpolicy-delete?view=graph-rest-beta
+      operationId: policy_DeleteOnPremAuthenticationPolicy
+      parameters:
+        - name: onPremAuthenticationPolicy-id
+          in: path
+          description: The unique identifier of onPremAuthenticationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremAuthenticationPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/onPremAuthenticationPolicies/{onPremAuthenticationPolicy-id}/appliesTo':
+    get:
+      tags:
+        - policies.onPremAuthenticationPolicy
+      summary: List onPremAuthenticationPolicy appliesTo
+      description: List directory objects that are assigned an onPremAuthenticationPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onpremauthenticationpolicy-list-appliesto?view=graph-rest-beta
+      operationId: policy.onPremAuthenticationPolicy_ListAppliesTo
+      parameters:
+        - name: onPremAuthenticationPolicy-id
+          in: path
+          description: The unique identifier of onPremAuthenticationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremAuthenticationPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/policies/onPremAuthenticationPolicies/{onPremAuthenticationPolicy-id}/appliesTo/{directoryObject-id}':
+    get:
+      tags:
+        - policies.onPremAuthenticationPolicy
+      summary: Get appliesTo from policies
+      operationId: policy.onPremAuthenticationPolicy_GetAppliesTo
+      parameters:
+        - name: onPremAuthenticationPolicy-id
+          in: path
+          description: The unique identifier of onPremAuthenticationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremAuthenticationPolicy
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/onPremAuthenticationPolicies/{onPremAuthenticationPolicy-id}/appliesTo/$count':
+    get:
+      tags:
+        - policies.onPremAuthenticationPolicy
+      summary: Get the number of the resource
+      operationId: policy.onPremAuthenticationPolicy.appliesTo_GetCount
+      parameters:
+        - name: onPremAuthenticationPolicy-id
+          in: path
+          description: The unique identifier of onPremAuthenticationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremAuthenticationPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /policies/onPremAuthenticationPolicies/$count:
+    get:
+      tags:
+        - policies.onPremAuthenticationPolicy
+      summary: Get the number of the resource
+      operationId: policy.onPremAuthenticationPolicy_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/permissionGrantPolicies:
     get:
       tags:
@@ -24514,7 +26971,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: List rules (for a role management policy)
-      description: "Get the rules defined for a role management policy. The rules are a collection of following types that are derived from the unifiedRoleManagementPolicyRule object:\n+ unifiedRoleManagementPolicyApprovalRule\n+ unifiedRoleManagementPolicyAuthenticationContextRule\n+ unifiedRoleManagementPolicyEnablementRule\n+ unifiedRoleManagementPolicyExpirationRule\n+ unifiedRoleManagementPolicyNotificationRule To retrieve rules for a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies."
+      description: "Get the rules defined for a role management policy. The rules are a collection of following types that are derived from the unifiedRoleManagementPolicyRule object:\r\n+ unifiedRoleManagementPolicyApprovalRule\r\n+ unifiedRoleManagementPolicyAuthenticationContextRule\r\n+ unifiedRoleManagementPolicyEnablementRule\r\n+ unifiedRoleManagementPolicyExpirationRule\r\n+ unifiedRoleManagementPolicyNotificationRule To retrieve rules for a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-rules?view=graph-rest-beta
@@ -24664,7 +27121,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Update unifiedRoleManagementPolicyRule
-      description: "Update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:\n+ Overview of rules for Microsoft Entra roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Microsoft Entra ID rules"
+      description: "Update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:\r\n+ Overview of rules for Microsoft Entra roles in PIM APIs in Microsoft Graph\r\n+ Use PIM APIs in Microsoft Graph to update Microsoft Entra ID rules"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-update?view=graph-rest-beta
@@ -35691,6 +38148,13 @@ components:
             $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
           description: Represents entry point for identity provider base.
           x-ms-navigationProperty: true
+        riskPrevention:
+          $ref: '#/components/schemas/microsoft.graph.riskPreventionContainer'
+        signInIdentifiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.signInIdentifierBase'
+          x-ms-navigationProperty: true
         userFlowAttributes:
           type: array
           items:
@@ -35702,6 +38166,8 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
           x-ms-navigationProperty: true
+        verifiedId:
+          $ref: '#/components/schemas/microsoft.graph.identityVerifiedIdRoot'
       additionalProperties:
         type: object
     microsoft.graph.identityApiConnector:
@@ -35734,6 +38200,10 @@ components:
               nullable: true
             conditions:
               $ref: '#/components/schemas/microsoft.graph.authenticationConditions'
+            displayName:
+              type: string
+              description: The display name of the listener.
+              nullable: true
             priority:
               maximum: 2147483647
               minimum: -2147483648
@@ -36334,6 +38804,8 @@ components:
       title: signInConditions
       type: object
       properties:
+        agentIdRiskLevel:
+          $ref: '#/components/schemas/microsoft.graph.agentIdRiskLevel'
         authenticationFlow:
           $ref: '#/components/schemas/microsoft.graph.authenticationFlow'
         clientAppType:
@@ -36457,6 +38929,84 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.riskPreventionContainer:
+      title: riskPreventionContainer
+      type: object
+      properties:
+        fraudProtectionProviders:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.fraudProtectionProvider'
+          description: Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
+          x-ms-navigationProperty: true
+        webApplicationFirewallProviders:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProvider'
+          description: Collection of WAF provider configurations registered in the External ID tenant.
+          x-ms-navigationProperty: true
+        webApplicationFirewallVerifications:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationModel'
+          description: Collection of verification operations performed for domains or hosts with WAF providers registered in the External ID tenant.
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
+    microsoft.graph.fraudProtectionProvider:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: fraudProtectionProvider
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the fraud protection provider configuration.
+          additionalProperties:
+            type: object
+    microsoft.graph.webApplicationFirewallProvider:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: webApplicationFirewallProvider
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the WAF provider.
+          additionalProperties:
+            type: object
+    microsoft.graph.webApplicationFirewallVerificationModel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: webApplicationFirewallVerificationModel
+          type: object
+          properties:
+            providerType:
+              $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProviderType'
+            verificationResult:
+              $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationResult'
+            verifiedDetails:
+              $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerifiedDetails'
+            verifiedHost:
+              type: string
+              description: The host (domain or subdomain) that was verified as part of this verification operation.
+              nullable: true
+            provider:
+              $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProvider'
+          additionalProperties:
+            type: object
+    microsoft.graph.signInIdentifierBase:
+      title: signInIdentifierBase
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          description: Indicates whether this sign-in identifier type is enabled for user authentication in the tenant.
+        name:
+          type: string
+          description: 'The unique name identifier for this sign-in identifier configuration. Possible values include: Email, UPN, Username, CustomUsername1, CustomUsername2.'
+      additionalProperties:
+        type: object
     microsoft.graph.identityUserFlow:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36471,15 +39021,80 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.identityVerifiedIdRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityVerifiedIdRoot
+          type: object
+          properties:
+            profiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.verifiedIdProfile'
+              description: Profile containing properties about a Verified ID provider and purpose
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.verifiedIdProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: verifiedIdProfile
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description for the verified ID profile. Required.
+            faceCheckConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.faceCheckConfiguration'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: DateTime the profile was last modified. Optional.
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              description: Display name for the verified ID profile. Required.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Defines profile processing priority if multiple profiles are configured. Optional.
+              format: int32
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.verifiedIdProfileState'
+            verifiedIdProfileConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.verifiedIdProfileConfiguration'
+            verifiedIdUsageConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.verifiedIdUsageConfiguration'
+              description: 'Collection defining the usage purpose for the profile. The possible values are: recovery, onboarding, all, unknownFutureValue. Required.'
+            verifierDid:
+              type: string
+              description: Decentralized Identifier (DID) string that represents the verifier in the verifiable credential exchange. Required.
+          additionalProperties:
+            type: object
     microsoft.graph.identityProtectionRoot:
       title: identityProtectionRoot
       type: object
       properties:
+        agentRiskDetections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.agentRiskDetection'
+          x-ms-navigationProperty: true
         riskDetections:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskDetection'
           description: Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
+          x-ms-navigationProperty: true
+        riskyAgents:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.riskyAgent'
           x-ms-navigationProperty: true
         riskyServicePrincipals:
           type: array
@@ -36501,6 +39116,57 @@ components:
           x-ms-navigationProperty: true
       additionalProperties:
         type: object
+    microsoft.graph.agentRiskDetection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: agentRiskDetection
+          type: object
+          properties:
+            activityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge).'
+              format: date-time
+              nullable: true
+            additionalInfo:
+              type: string
+              description: Additional information associated with the risk detection.
+              nullable: true
+            agentDisplayName:
+              type: string
+              description: 'Name of the agent.  Supports $filter (eq, startsWith).'
+            agentId:
+              type: string
+              description: 'The unique identifier for the agent. This is equivalent to ''id'' to the specific agent type. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).'
+            detectedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge).'
+              format: date-time
+              nullable: true
+            detectionTimingType:
+              $ref: '#/components/schemas/microsoft.graph.riskDetectionTimingType'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time that the risk detection was last updated.  Supports $filter (eq, le, and ge).'
+              format: date-time
+              nullable: true
+            riskDetail:
+              $ref: '#/components/schemas/microsoft.graph.riskDetail'
+            riskEventType:
+              type: string
+              description: The type of risk event detected.  Supports $filter (eq).
+            riskEvidence:
+              type: string
+              description: Evidence on the risky activity occurred.  Supports $filter (eq).
+              nullable: true
+            riskLevel:
+              $ref: '#/components/schemas/microsoft.graph.riskLevel'
+            riskState:
+              $ref: '#/components/schemas/microsoft.graph.riskState'
+          additionalProperties:
+            type: object
     microsoft.graph.riskDetection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36580,6 +39246,39 @@ components:
               type: string
               description: The user principal name (UPN) of the user.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.riskyAgent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: riskyAgent
+          type: object
+          properties:
+            agentDisplayName:
+              type: string
+              description: 'Name of the agent.  Supports $filter (eq, startsWith).'
+              nullable: true
+            isDeleted:
+              type: boolean
+              description: Indicates whether the agent is deleted.
+            isEnabled:
+              type: boolean
+              description: Indicates whether the agent is enabled.
+            isProcessing:
+              type: boolean
+              description: Indicates whether an agent's risky state is processing in the backend.
+            riskDetail:
+              $ref: '#/components/schemas/microsoft.graph.riskDetail'
+            riskLastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time that the risky agent was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge).'
+              format: date-time
+              nullable: true
+            riskLevel:
+              $ref: '#/components/schemas/microsoft.graph.riskLevel'
+            riskState:
+              $ref: '#/components/schemas/microsoft.graph.riskState'
           additionalProperties:
             type: object
     microsoft.graph.riskyServicePrincipal:
@@ -37376,7 +40075,7 @@ components:
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).'
               nullable: true
             ageGroup:
               type: string
@@ -37502,6 +40201,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
               description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.'
+            identityParentId:
+              type: string
+              description: 'The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.'
+              nullable: true
             imAddresses:
               type: array
               items:
@@ -37803,6 +40506,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: The user's Cloud PCs. Read-only. Nullable.
               x-ms-navigationProperty: true
             communications:
               $ref: '#/components/schemas/microsoft.graph.userCloudCommunication'
@@ -37968,6 +40672,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
               description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
               x-ms-navigationProperty: true
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             outlook:
               $ref: '#/components/schemas/microsoft.graph.outlookUser'
             ownedDevices:
@@ -38166,7 +40872,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateAuthority'
-              description: Collection of certificate authorities which creates a trusted certificate chain.
+              description: Collection of certificate authorities that creates a trusted certificate chain.
           additionalProperties:
             type: object
     microsoft.graph.policyRoot:
@@ -38206,6 +40912,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
               description: The policy that controls Microsoft Entra authorization settings.
+              x-ms-navigationProperty: true
+            b2bManagementPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.b2bManagementPolicy'
+              description: The policy to manage Microsoft Entra B2B features in Microsoft Entra External ID for workforce tenants.
               x-ms-navigationProperty: true
             b2cAuthenticationMethodsPolicy:
               $ref: '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
@@ -38259,6 +40971,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileDeviceManagementPolicy'
+              x-ms-navigationProperty: true
+            onPremAuthenticationPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.onPremAuthenticationPolicy'
+              description: The policy that controls how authentication requests from on-premises environments are managed.
               x-ms-navigationProperty: true
             permissionGrantPolicies:
               type: array
@@ -38530,6 +41248,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRolePermission'
           additionalProperties:
             type: object
+    microsoft.graph.b2bManagementPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: b2bManagementPolicy
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.b2cAuthenticationMethodsPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -38653,6 +41378,8 @@ components:
             externalCloudAuthorizedApplicationId:
               type: string
               nullable: true
+            groupSyncInbound:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantGroupSyncInbound'
             tenantId:
               type: string
               description: Tenant identifier for the partner Microsoft Entra organization. Read-only.
@@ -38863,6 +41590,17 @@ components:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
         - title: mobileDeviceManagementPolicy
+          type: object
+          properties:
+            isMdmEnrollmentDuringRegistrationDisabled:
+              type: boolean
+              description: Controls the option if users in an automatic enrollment configuration on Microsoft Entra registered devices are prompted to MDM enroll their device in the Entra account registration flow.
+          additionalProperties:
+            type: object
+    microsoft.graph.onPremAuthenticationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: onPremAuthenticationPolicy
           type: object
           additionalProperties:
             type: object
@@ -39530,6 +42268,8 @@ components:
               type: string
               description: The manufacturer-assigned model of the FIDO2 security key.
               nullable: true
+            passkeyType:
+              $ref: '#/components/schemas/microsoft.graph.passkeyType'
             publicKeyCredential:
               $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredential'
           additionalProperties:
@@ -39571,6 +42311,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             manufacturer:
@@ -39613,6 +42354,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -40335,6 +43077,8 @@ components:
       title: conditionalAccessConditionSet
       type: object
       properties:
+        agentIdRiskLevels:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessAgentIdRiskLevels'
         applications:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessApplications'
         authenticationFlows:
@@ -40432,6 +43176,15 @@ components:
         - enabled
         - disabled
         - enabledForReportingButNotEnforced
+      type: string
+    microsoft.graph.agentIdRiskLevel:
+      title: agentIdRiskLevel
+      enum:
+        - none
+        - low
+        - medium
+        - high
+        - unknownFutureValue
       type: string
     microsoft.graph.authenticationFlow:
       title: authenticationFlow
@@ -40633,6 +43386,8 @@ components:
         - insiderRisk
         - authenticationFlow
         - unknownFutureValue
+        - agentIdRisk
+        - agentIdentities
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -40702,6 +43457,44 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.webApplicationFirewallProviderType:
+      title: webApplicationFirewallProviderType
+      enum:
+        - akamai
+        - cloudflare
+        - unknownFutureValue
+      type: string
+    microsoft.graph.webApplicationFirewallVerificationResult:
+      title: webApplicationFirewallVerificationResult
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.genericError'
+          description: List of errors encountered during the verification process.
+        status:
+          $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationStatus'
+        verifiedOnDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: UTC timestamp when the verification was performed or last updated. This indicates when the verification result was produced.
+          format: date-time
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.genericError'
+          description: List of warnings produced during verification.
+      additionalProperties:
+        type: object
+    microsoft.graph.webApplicationFirewallVerifiedDetails:
+      title: webApplicationFirewallVerifiedDetails
+      type: object
+      properties:
+        dnsConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallDnsConfiguration'
+      additionalProperties:
+        type: object
     microsoft.graph.userFlowType:
       title: userFlowType
       enum:
@@ -40713,14 +43506,54 @@ components:
         - resourceOwner
         - unknownFutureValue
       type: string
-    microsoft.graph.activityType:
-      title: activityType
+    microsoft.graph.faceCheckConfiguration:
+      title: faceCheckConfiguration
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          description: Defines if Face Check is required. Currently must always be true.
+        sourcePhotoClaimName:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.verifiedIdProfileState:
+      title: verifiedIdProfileState
       enum:
-        - signin
-        - user
+        - enabled
+        - disabled
         - unknownFutureValue
-        - servicePrincipal
       type: string
+    microsoft.graph.verifiedIdProfileConfiguration:
+      title: verifiedIdProfileConfiguration
+      type: object
+      properties:
+        acceptedIssuer:
+          type: string
+          description: Trusted Verified ID issuer.
+        claimBindings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.claimBinding'
+          description: Claim bindings from Verified ID to source attributes.
+        claimBindingSource:
+          $ref: '#/components/schemas/microsoft.graph.claimBindingSource'
+        type:
+          type: string
+          description: Verified ID type.
+      additionalProperties:
+        type: object
+    microsoft.graph.verifiedIdUsageConfiguration:
+      title: verifiedIdUsageConfiguration
+      type: object
+      properties:
+        isEnabledForTestOnly:
+          type: boolean
+          description: Sets profile usage for evaluation (test-only) or production.
+        purpose:
+          $ref: '#/components/schemas/microsoft.graph.verifiedIdUsageConfigurationPurpose'
+      additionalProperties:
+        type: object
     microsoft.graph.riskDetectionTimingType:
       title: riskDetectionTimingType
       enum:
@@ -40730,26 +43563,6 @@ components:
         - offline
         - unknownFutureValue
       type: string
-    microsoft.graph.signInLocation:
-      title: signInLocation
-      type: object
-      properties:
-        city:
-          type: string
-          description: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
-        countryOrRegion:
-          type: string
-          description: Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
-        geoCoordinates:
-          $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
-        state:
-          type: string
-          description: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.riskDetail:
       title: riskDetail
       enum:
@@ -40771,6 +43584,9 @@ components:
         - userChangedPasswordOnPremises
         - adminDismissedRiskForSignIn
         - adminConfirmedAccountSafe
+        - adminConfirmedAgentSafe
+        - adminConfirmedAgentCompromised
+        - adminDismissedRiskForAgent
       type: string
     microsoft.graph.riskState:
       title: riskState
@@ -40783,6 +43599,34 @@ components:
         - confirmedCompromised
         - unknownFutureValue
       type: string
+    microsoft.graph.activityType:
+      title: activityType
+      enum:
+        - signin
+        - user
+        - unknownFutureValue
+        - servicePrincipal
+      type: string
+    microsoft.graph.signInLocation:
+      title: signInLocation
+      type: object
+      properties:
+        city:
+          type: string
+          description: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+          nullable: true
+        countryOrRegion:
+          type: string
+          description: Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+          nullable: true
+        geoCoordinates:
+          $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
+        state:
+          type: string
+          description: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.riskEventType:
       title: riskEventType
       enum:
@@ -41782,6 +44626,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.'
+            createdByAppId:
+              type: string
+              description: The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.
+              nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             description:
@@ -43017,14 +45865,28 @@ components:
             isPersonalSite:
               type: boolean
               nullable: true
+            locale:
+              type: string
+              description: The language settings of the site.
+              nullable: true
+            lockState:
+              $ref: '#/components/schemas/microsoft.graph.siteLockState'
+            ownerIdentityToResolve:
+              $ref: '#/components/schemas/microsoft.graph.identityInput'
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
             settings:
               $ref: '#/components/schemas/microsoft.graph.siteSettings'
+            shareByEmailEnabled:
+              type: boolean
+              description: Determines whether the site and its content can be shared via email.
+              nullable: true
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
               $ref: '#/components/schemas/microsoft.graph.siteCollection'
+            template:
+              $ref: '#/components/schemas/microsoft.graph.siteTemplateType'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             columns:
@@ -44528,7 +47390,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -44703,6 +47565,17 @@ components:
           additionalProperties:
             type: object
           description: Represents a Microsoft online meeting.
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
+              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
+          additionalProperties:
+            type: object
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -45014,6 +47887,8 @@ components:
               readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+            workLocation:
+              $ref: '#/components/schemas/microsoft.graph.userWorkLocation'
           additionalProperties:
             type: object
     microsoft.graph.profile:
@@ -45468,6 +48343,11 @@ components:
               type: string
               description: The type of query. Examples include MicrosoftGraph and ARM.
               nullable: true
+            reviewerId:
+              type: string
+              nullable: true
+            scopeType:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScopeType'
           additionalProperties:
             type: object
     microsoft.graph.policyBase:
@@ -45703,6 +48583,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.devicesFilter'
           additionalProperties:
             type: object
+    microsoft.graph.crossTenantGroupSyncInbound:
+      title: crossTenantGroupSyncInbound
+      type: object
+      properties:
+        isSyncAllowed:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.crossTenantUserSyncInbound:
       title: crossTenantUserSyncInbound
       type: object
@@ -45944,11 +48832,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -46053,6 +48941,13 @@ components:
       enum:
         - attested
         - notAttested
+        - unknownFutureValue
+      type: string
+    microsoft.graph.passkeyType:
+      title: passkeyType
+      enum:
+        - deviceBound
+        - synced
         - unknownFutureValue
       type: string
     microsoft.graph.webauthnPublicKeyCredential:
@@ -46666,6 +49561,58 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.fraudProtectionProviderCollectionResponse:
+      title: Collection of fraudProtectionProvider
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.fraudProtectionProvider'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.webApplicationFirewallProviderCollectionResponse:
+      title: Collection of webApplicationFirewallProvider
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProvider'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.webApplicationFirewallVerificationModelCollectionResponse:
+      title: Collection of webApplicationFirewallVerificationModel
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationModel'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.signInIdentifierBaseCollectionResponse:
+      title: Collection of signInIdentifierBase
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.signInIdentifierBase'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.identityUserFlowCollectionResponse:
       title: Collection of identityUserFlow
       type: object
@@ -46679,6 +49626,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.verifiedIdProfileCollectionResponse:
+      title: Collection of verifiedIdProfile
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.verifiedIdProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.agentRiskDetectionCollectionResponse:
+      title: Collection of agentRiskDetection
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.agentRiskDetection'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.riskDetectionCollectionResponse:
       title: Collection of riskDetection
       type: object
@@ -46687,6 +49660,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskDetection'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.riskyAgentCollectionResponse:
+      title: Collection of riskyAgent
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.riskyAgent'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -46965,6 +49951,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.b2bManagementPolicyCollectionResponse:
+      title: Collection of b2bManagementPolicy
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.b2bManagementPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.claimsMappingPolicyCollectionResponse:
       title: Collection of claimsMappingPolicy
       type: object
@@ -47064,6 +50063,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.mobileDeviceManagementPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.onPremAuthenticationPolicyCollectionResponse:
+      title: Collection of onPremAuthenticationPolicy
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onPremAuthenticationPolicy'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -47465,6 +50477,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.conditionalAccessAgentIdRiskLevels:
+      title: conditionalAccessAgentIdRiskLevels
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.conditionalAccessApplications:
       title: conditionalAccessApplications
       type: object
@@ -47509,16 +50531,28 @@ components:
       title: conditionalAccessClientApplications
       type: object
       properties:
+        agentIdServicePrincipalFilter:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessFilter'
+        excludeAgentIdServicePrincipals:
+          type: array
+          items:
+            type: string
+          description: Agent identity object IDs excluded from the policy.
         excludeServicePrincipals:
           type: array
           items:
             type: string
           description: Service principal IDs excluded from the policy scope.
+        includeAgentIdServicePrincipals:
+          type: array
+          items:
+            type: string
+          description: Agent identity object IDs included in the policy.
         includeServicePrincipals:
           type: array
           items:
             type: string
-          description: 'Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.'
+          description: Service principal IDs included in the policy scope or ServicePrincipalsInMyTenant.
         servicePrincipalFilter:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessFilter'
       additionalProperties:
@@ -47660,6 +50694,7 @@ components:
         - compliantApplication
         - passwordChange
         - unknownFutureValue
+        - riskRemediation
       type: string
     microsoft.graph.applicationEnforcedRestrictionsSessionControl:
       allOf:
@@ -47765,6 +50800,62 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.webApplicationFirewallVerificationStatus:
+      title: webApplicationFirewallVerificationStatus
+      enum:
+        - success
+        - warning
+        - failure
+        - unknownFutureValue
+      type: string
+    microsoft.graph.webApplicationFirewallDnsConfiguration:
+      title: webApplicationFirewallDnsConfiguration
+      type: object
+      properties:
+        isDomainVerified:
+          type: boolean
+          description: Indicates whether the domain owning this DNS record has been verified by the WAF provider.
+        isProxied:
+          type: boolean
+          description: 'Indicates whether traffic for this DNS record is proxied through the WAF provider''s network (for example, using a CDN or reverse proxy).'
+        name:
+          type: string
+          description: 'The DNS record name (for example, www.contoso.com or contoso.com). This is the host or zone name to which the configuration applies.'
+          nullable: true
+        recordType:
+          $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallDnsRecordType'
+        value:
+          type: string
+          description: The value of the DNS record.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.claimBinding:
+      title: claimBinding
+      type: object
+      properties:
+        sourceAttribute:
+          type: string
+          description: Source attribute value
+        verifiedIdClaim:
+          type: string
+          description: Entra ID attribute value
+      additionalProperties:
+        type: object
+    microsoft.graph.claimBindingSource:
+      title: claimBindingSource
+      enum:
+        - directory
+        - unknownFutureValue
+      type: string
+    microsoft.graph.verifiedIdUsageConfigurationPurpose:
+      title: verifiedIdUsageConfigurationPurpose
+      enum:
+        - recovery
+        - onboarding
+        - all
+        - unknownFutureValue
+      type: string
     microsoft.graph.geoCoordinates:
       title: geoCoordinates
       type: object
@@ -49431,6 +52522,12 @@ components:
           type: string
           description: 'The user principal name (UPN) of the user to whom the device is currently assigned. If no user is assigned, this field remains empty. Example values, john.doe@contoso.onmicrosoft.com and .'
           nullable: true
+        sessionStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the current user session starts, or null if no current user session exists. This value is autogenerated and assigned at the start of each session. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcStatus:
@@ -50104,7 +53201,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
-              description: Users who have been assigned this role.
+              description: Users that have this role assigned.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -50155,6 +53252,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteLockState:
+      title: siteLockState
+      enum:
+        - unlocked
+        - lockedReadOnly
+        - lockedNoAccess
+        - lockedNoAdditions
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityInput:
+      title: identityInput
+      type: object
+      properties:
+        alias:
+          type: string
+          description: The alias of the identity.
+          nullable: true
+        email:
+          type: string
+          description: The email of the identity.
+          nullable: true
+        objectId:
+          type: string
+          description: The unique object ID assigned to the identity in Microsoft Entra ID.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.root:
       title: root
       type: object
@@ -50192,6 +53316,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.root'
       additionalProperties:
         type: object
+    microsoft.graph.siteTemplateType:
+      title: siteTemplateType
+      enum:
+        - sitepagepublishing
+        - group
+        - sts
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemAnalytics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -50760,17 +53892,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.onPremisesSyncBehavior:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: onPremisesSyncBehavior
-          type: object
-          properties:
-            isCloudManaged:
-              type: boolean
-              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
-          additionalProperties:
-            type: object
     microsoft.graph.plannerGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -51050,6 +54171,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+              x-ms-navigationProperty: true
+            enabledApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
               x-ms-navigationProperty: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -52584,6 +55710,7 @@ components:
         - wipeCanceled
         - retireCanceled
         - discovered
+        - unknownFutureValue
       type: string
       description: Management state of device in Microsoft Intune.
       x-ms-enum:
@@ -52626,6 +55753,9 @@ components:
           - value: discovered
             description: The device is discovered but not fully enrolled.
             name: discovered
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.ownerType:
       title: ownerType
       enum:
@@ -53628,6 +56758,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            expiryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
             isEndToEndEncryptionEnabled:
               type: boolean
               description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
@@ -53646,6 +56782,14 @@ components:
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            meetingOptionsWebUrl:
+              type: string
+              description: Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+              nullable: true
+            meetingSpokenLanguageTag:
+              type: string
+              description: Specifies the spoken language used during the meeting for recording and transcription purposes.
+              nullable: true
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -54056,6 +57200,10 @@ components:
               description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
               format: date-time
               nullable: true
+            applyDescription:
+              type: string
+              description: The description of the apply result.
+              nullable: true
             applyResult:
               type: string
               description: 'The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -54068,6 +57216,8 @@ components:
               type: string
               description: Justification left by the reviewer when they made the decision.
               nullable: true
+            permission:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemPermission'
             principal:
               $ref: '#/components/schemas/microsoft.graph.identity'
             principalLink:
@@ -54273,6 +57423,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
+            contentSensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.contentSensitivityLabelAssignment'
             contexts:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContextCollection'
             createdBy:
@@ -54379,6 +57531,8 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            hasChat:
+              type: boolean
             hasDescription:
               type: boolean
               description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
@@ -54486,6 +57640,20 @@ components:
           description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userWorkLocation:
+      title: userWorkLocation
+      type: object
+      properties:
+        placeId:
+          type: string
+          description: Identifier of the place (when applicable).
+          nullable: true
+        source:
+          $ref: '#/components/schemas/microsoft.graph.workLocationSource'
+        workLocationType:
+          $ref: '#/components/schemas/microsoft.graph.workLocationType'
       additionalProperties:
         type: object
     microsoft.graph.userAccountInformation:
@@ -55311,6 +58479,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessReviewReviewerScopeType:
+      title: accessReviewReviewerScopeType
+      enum:
+        - user
+        - group
+        - self
+        - manager
+        - sponsor
+        - resourceOwner
+        - managerOrSponsor
+        - unknownFutureValue
+      type: string
     microsoft.graph.appManagementConfiguration:
       title: appManagementConfiguration
       type: object
@@ -55814,6 +58994,12 @@ components:
         - days
         - hours
       type: string
+    microsoft.graph.webApplicationFirewallDnsRecordType:
+      title: webApplicationFirewallDnsRecordType
+      enum:
+        - cname
+        - unknownFutureValue
+      type: string
     microsoft.graph.classifcationErrorBase:
       title: classifcationErrorBase
       type: object
@@ -56112,11 +59298,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -57796,7 +60982,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The timestamp when the role was assigned to the user.
+              description: 'The date and time when the role was assigned to the user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               readOnly: true
             userId:
@@ -60942,6 +64128,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewInstanceDecisionItemPermission:
+      title: accessReviewInstanceDecisionItemPermission
+      type: object
+      properties:
+        description:
+          type: string
+          description: The description of the permission.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the permission.
+          nullable: true
+        id:
+          type: string
+          description: The identifier of the permission.
+          nullable: true
+        type:
+          type: string
+          description: The type of the permission.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.decisionItemPrincipalResourceMembership:
       title: decisionItemPrincipalResourceMembership
       type: object
@@ -60954,6 +64162,10 @@ components:
       title: accessReviewInstanceDecisionItemResource
       type: object
       properties:
+        description:
+          type: string
+          description: Description of the resource
+          nullable: true
         displayName:
           type: string
           description: Display name of the resource
@@ -60964,7 +64176,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
       additionalProperties:
         type: object
@@ -61079,6 +64291,26 @@ components:
         url:
           type: string
           description: The full canonical URL of the container. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.contentSensitivityLabelAssignment:
+      title: contentSensitivityLabelAssignment
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignmentMethod'
+        justificationText:
+          type: string
+          description: The justification text provided when you change the sensitivity label. Used during label downgrade to document the reason. Optional.
+          nullable: true
+        sensitivityLabelId:
+          type: string
+          description: The unique identifier of the sensitivity label applied to the content. This ID corresponds to a label defined in the Microsoft Information Protection policy.
+          nullable: true
+        tenantId:
+          type: string
+          description: The unique identifier of the tenant where the sensitivity label is defined and applied.
           nullable: true
       additionalProperties:
         type: object
@@ -61287,6 +64519,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.workLocationSource:
+      title: workLocationSource
+      enum:
+        - none
+        - manual
+        - scheduled
+        - automatic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workLocationType:
+      title: workLocationType
+      enum:
+        - unspecified
+        - office
+        - remote
+        - timeOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemFacet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -61652,7 +64902,7 @@ components:
               nullable: true
             hasProtection:
               type: boolean
-              description: Indicates whether the label has protection actions configured.
+              description: Indicates whether the label has protection actions (such as encryption or do not forward) configured.
             isActive:
               type: boolean
               description: Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.
@@ -61961,6 +65211,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              description: A collection of custom fields linked to the task.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -63769,6 +67020,10 @@ components:
         - title: workbookComment
           type: object
           properties:
+            cellAddress:
+              type: string
+              description: 'The cell where the comment is located. The address value is in A1-style, which contains the sheet reference (for example, Sheet1!A1). Read-only.'
+              nullable: true
             content:
               type: string
               description: The content of the comment that is the String displayed to end-users.
@@ -63776,6 +67031,15 @@ components:
             contentType:
               type: string
               description: 'The content type of the comment. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the comment. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the comment (for example, comment content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             replies:
               type: array
               items:
@@ -65186,6 +68450,14 @@ components:
         - onlineMeeting
         - plannerTask
       type: string
+    microsoft.graph.sensitivityLabelAssignmentMethod:
+      title: sensitivityLabelAssignmentMethod
+      enum:
+        - standard
+        - privileged
+        - auto
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
       enum:
@@ -65657,6 +68929,7 @@ components:
           properties:
             value:
               type: string
+              description: The value of the property.
               nullable: true
           additionalProperties:
             type: object
@@ -67598,6 +70871,26 @@ components:
         - retainAsRegulatoryRecord
         - unknownFutureValue
       type: string
+    microsoft.graph.workbookCommentMention:
+      title: workbookCommentMention
+      type: object
+      properties:
+        email:
+          type: string
+          description: Represents the email address of the person that is mentioned in a comment.
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Represents the ID of the person that is mentioned in a comment.
+          format: int32
+        name:
+          type: string
+          description: Represents the display name of the person that is mentioned in a comment.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -67611,6 +70904,15 @@ components:
             contentType:
               type: string
               description: 'The content type for the reply. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the reply. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the reply (for example, reply content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             task:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
@@ -69723,18 +73025,60 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtensionCollectionResponse'
+    microsoft.graph.fraudProtectionProviderCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.fraudProtectionProviderCollectionResponse'
+    microsoft.graph.webApplicationFirewallProviderCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallProviderCollectionResponse'
+    microsoft.graph.webApplicationFirewallVerificationModelCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.webApplicationFirewallVerificationModelCollectionResponse'
+    microsoft.graph.signInIdentifierBaseCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.signInIdentifierBaseCollectionResponse'
     microsoft.graph.identityUserFlowCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.identityUserFlowCollectionResponse'
+    microsoft.graph.verifiedIdProfileCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.verifiedIdProfileCollectionResponse'
+    microsoft.graph.agentRiskDetectionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.agentRiskDetectionCollectionResponse'
     microsoft.graph.riskDetectionCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.riskDetectionCollectionResponse'
+    microsoft.graph.riskyAgentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.riskyAgentCollectionResponse'
     microsoft.graph.riskyServicePrincipalCollectionResponse:
       description: Retrieved collection
       content:
@@ -69861,6 +73205,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.defaultUserRoleOverrideCollectionResponse'
+    microsoft.graph.b2bManagementPolicyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.b2bManagementPolicyCollectionResponse'
     microsoft.graph.claimsMappingPolicyCollectionResponse:
       description: Retrieved collection
       content:
@@ -69909,6 +73259,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.mobileDeviceManagementPolicyCollectionResponse'
+    microsoft.graph.onPremAuthenticationPolicyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.onPremAuthenticationPolicyCollectionResponse'
     microsoft.graph.permissionGrantPolicyCollectionResponse:
       description: Retrieved collection
       content:

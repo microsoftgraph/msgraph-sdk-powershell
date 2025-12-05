@@ -10,11 +10,11 @@ paths:
     get:
       tags:
         - users.user
-      summary: List users
-      description: 'Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.'
+      summary: List agentUser objects
+      description: Get a list of the agentUser objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-list?view=graph-rest-beta
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -74,7 +74,7 @@ paths:
       tags:
         - users.user
       summary: Create user
-      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
+      description: 'Create a new user. If you specify an @odata.type property with a value of #microsoft.graph.agentUser with the required properties, this API creates an agentUser object. At a minimum, you must specify the required properties. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user and agentUser. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-beta
@@ -101,7 +101,7 @@ paths:
       tags:
         - users.user
       summary: Get user
-      description: 'Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.'
+      description: 'Retrieve the properties and relationships of a user object. If the ID specified is that of an agentUser, the API returns the properties of the agentUser object. This operation returns by default only a subset of the more commonly used properties. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-beta
@@ -148,8 +148,8 @@ paths:
     patch:
       tags:
         - users.user
-      summary: Update user
-      description: Update the properties of a user object.
+      summary: Update user or agentUser
+      description: Update the properties of a user or agentUser object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-beta
@@ -184,7 +184,7 @@ paths:
       tags:
         - users.user
       summary: Delete a user
-      description: 'Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.'
+      description: 'Delete a user object. If the ID specified in the request URL is that of an agentUser object, this request deletes the agent user. When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-beta
@@ -669,8 +669,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: Get directReports from users
-      description: The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
+      summary: List directReports (for agentUser)
+      description: Get an agentUser's direct reports. Returns the users and contacts for whom this agent user is assigned as manager.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/agentuser-list-directreports?view=graph-rest-beta
       operationId: user_ListDirectReport
       parameters:
         - name: user-id
@@ -2828,11 +2831,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
+      summary: List manager (for agentUser)
+      description: Returns the user or organizational contact assigned as the agentUser's manager.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-list-manager?view=graph-rest-beta
       operationId: user_GetManager
       parameters:
         - name: user-id
@@ -2887,11 +2890,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
+      summary: List manager (for agentUser)
+      description: Returns the user or organizational contact assigned as the agentUser's manager.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-list-manager?view=graph-rest-beta
       operationId: user_GetManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -2951,11 +2954,11 @@ paths:
     delete:
       tags:
         - users.directoryObject
-      summary: Remove manager
-      description: Remove a user's manager.
+      summary: Remove manager (for agentUser)
+      description: Remove an agentUser's manager.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-delete-manager?view=graph-rest-beta
       operationId: user_DeleteManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -2982,11 +2985,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List a user's direct memberships
-      description: 'Get groups, directory roles, and administrative units that the user is a direct member of. This operation isn''t transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.'
+      summary: List agentUser direct memberships
+      description: 'Get groups, directory roles, and administrative units that the agentUser is a direct member of. This operation isn''t transitive.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-memberof?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-list-memberof?view=graph-rest-beta
       operationId: user_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -4053,6 +4056,109 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onPremisesSyncBehavior':
+    get:
+      tags:
+        - users.onPremisesSyncBehavior
+      summary: Get onPremisesSyncBehavior from users
+      description: 'Indicates the state of synchronization for a user between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.'
+      operationId: user_GetOnPremisesSyncBehavior
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.onPremisesSyncBehavior
+      summary: Update the navigation property onPremisesSyncBehavior in users
+      operationId: user_UpdateOnPremisesSyncBehavior
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onPremisesSyncBehavior
+      summary: Delete navigation property onPremisesSyncBehavior for users
+      operationId: user_DeleteOnPremisesSyncBehavior
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook':
     get:
       tags:
@@ -4344,7 +4450,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Invoke function supportedLanguages
-      description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by\ngetting the user's mailbox settings."
+      description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by\r\ngetting the user's mailbox settings."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-beta
@@ -8530,8 +8636,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: Get ownedObjects from users
-      description: 'Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+      summary: List ownedObjects (for agentUser)
+      description: Get the list of directory objects that are owned by the agentUser.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/agentuser-list-ownedobjects?view=graph-rest-beta
       operationId: user_ListOwnedObject
       parameters:
         - name: user-id
@@ -11795,11 +11904,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List sponsors
-      description: Get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
+      summary: List sponsors (for agentUser)
+      description: Get an agentUser's sponsors. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-list-sponsors?view=graph-rest-beta
       operationId: user_ListSponsor
       parameters:
         - name: user-id
@@ -14956,11 +15065,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List a user's memberships (direct and transitive)
-      description: 'Get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.'
+      summary: List transitiveMemberOf
+      description: 'Get groups, directory roles, and administrative units that the agentUser is a member of through either direct or transitive membership.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-list-transitivememberof?view=graph-rest-beta
       operationId: user_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -15611,11 +15720,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: Get transitiveReports for a user
-      description: Retrieve a count of transitive reports for a user.
+      summary: List transitiveReports (for agentUser)
+      description: Get the transitive reports for an agentUser.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-get-transitivereports?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-list-transitivereports?view=graph-rest-beta
       operationId: user_ListTransitiveReport
       parameters:
         - name: user-id
@@ -15781,7 +15890,7 @@ paths:
       tags:
         - users.user
       summary: Get user
-      description: 'Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.'
+      description: 'Retrieve the properties and relationships of a user object. If the ID specified is that of an agentUser, the API returns the properties of the agentUser object. This operation returns by default only a subset of the more commonly used properties. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-beta
@@ -15828,8 +15937,8 @@ paths:
     patch:
       tags:
         - users.user
-      summary: Update user
-      description: Update the properties of a user object.
+      summary: Update user or agentUser
+      description: Update the properties of a user or agentUser object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-beta
@@ -15864,7 +15973,7 @@ paths:
       tags:
         - users.user
       summary: Delete a user
-      description: 'Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.'
+      description: 'Delete a user object. If the ID specified in the request URL is that of an agentUser object, this request deletes the agent user. When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-beta
@@ -15928,7 +16037,7 @@ components:
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).'
               nullable: true
             ageGroup:
               type: string
@@ -16054,6 +16163,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
               description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.'
+            identityParentId:
+              type: string
+              description: 'The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.'
+              nullable: true
             imAddresses:
               type: array
               items:
@@ -16355,6 +16468,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: The user's Cloud PCs. Read-only. Nullable.
               x-ms-navigationProperty: true
             communications:
               $ref: '#/components/schemas/microsoft.graph.userCloudCommunication'
@@ -16520,6 +16634,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
               description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
               x-ms-navigationProperty: true
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             outlook:
               $ref: '#/components/schemas/microsoft.graph.outlookUser'
             ownedDevices:
@@ -16672,6 +16788,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.'
+            createdByAppId:
+              type: string
+              description: The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.
+              nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             description:
@@ -16998,6 +17118,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             transitiveMemberOf:
               type: array
               items:
@@ -17700,6 +17822,17 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
+              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
+          additionalProperties:
+            type: object
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18320,6 +18453,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationBehaviors'
             certification:
               $ref: '#/components/schemas/microsoft.graph.certification'
+            createdByAppId:
+              type: string
+              description: The globally unique appId (called Application (client) ID on the Microsoft Entra admin center) of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -18857,6 +18994,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              description: A collection of custom fields linked to the task.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -20615,14 +20753,28 @@ components:
             isPersonalSite:
               type: boolean
               nullable: true
+            locale:
+              type: string
+              description: The language settings of the site.
+              nullable: true
+            lockState:
+              $ref: '#/components/schemas/microsoft.graph.siteLockState'
+            ownerIdentityToResolve:
+              $ref: '#/components/schemas/microsoft.graph.identityInput'
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
             settings:
               $ref: '#/components/schemas/microsoft.graph.siteSettings'
+            shareByEmailEnabled:
+              type: boolean
+              description: Determines whether the site and its content can be shared via email.
+              nullable: true
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
               $ref: '#/components/schemas/microsoft.graph.siteCollection'
+            template:
+              $ref: '#/components/schemas/microsoft.graph.siteTemplateType'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             columns:
@@ -21747,7 +21899,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -22145,6 +22297,8 @@ components:
               readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+            workLocation:
+              $ref: '#/components/schemas/microsoft.graph.userWorkLocation'
           additionalProperties:
             type: object
     microsoft.graph.profile:
@@ -23223,17 +23377,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.onPremisesSyncBehavior:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: onPremisesSyncBehavior
-          type: object
-          properties:
-            isCloudManaged:
-              type: boolean
-              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
-          additionalProperties:
-            type: object
     microsoft.graph.plannerGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24138,6 +24281,7 @@ components:
           properties:
             value:
               type: string
+              description: The value of the property.
               nullable: true
           additionalProperties:
             type: object
@@ -25009,6 +25153,8 @@ components:
               type: string
               description: The manufacturer-assigned model of the FIDO2 security key.
               nullable: true
+            passkeyType:
+              $ref: '#/components/schemas/microsoft.graph.passkeyType'
             publicKeyCredential:
               $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredential'
           additionalProperties:
@@ -25038,6 +25184,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -25954,6 +26101,12 @@ components:
           type: string
           description: 'The user principal name (UPN) of the user to whom the device is currently assigned. If no user is assigned, this field remains empty. Example values, john.doe@contoso.onmicrosoft.com and .'
           nullable: true
+        sessionStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the current user session starts, or null if no current user session exists. This value is autogenerated and assigned at the start of each session. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcStatus:
@@ -26628,7 +26781,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
-              description: Users who have been assigned this role.
+              description: Users that have this role assigned.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -26679,6 +26832,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteLockState:
+      title: siteLockState
+      enum:
+        - unlocked
+        - lockedReadOnly
+        - lockedNoAccess
+        - lockedNoAdditions
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityInput:
+      title: identityInput
+      type: object
+      properties:
+        alias:
+          type: string
+          description: The alias of the identity.
+          nullable: true
+        email:
+          type: string
+          description: The email of the identity.
+          nullable: true
+        objectId:
+          type: string
+          description: The unique object ID assigned to the identity in Microsoft Entra ID.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.root:
       title: root
       type: object
@@ -26716,6 +26896,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.root'
       additionalProperties:
         type: object
+    microsoft.graph.siteTemplateType:
+      title: siteTemplateType
+      enum:
+        - sitepagepublishing
+        - group
+        - sts
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemAnalytics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27478,6 +27666,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+              x-ms-navigationProperty: true
+            enabledApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
               x-ms-navigationProperty: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -28988,6 +29181,7 @@ components:
         - wipeCanceled
         - retireCanceled
         - discovered
+        - unknownFutureValue
       type: string
       description: Management state of device in Microsoft Intune.
       x-ms-enum:
@@ -29030,6 +29224,9 @@ components:
           - value: discovered
             description: The device is discovered but not fully enrolled.
             name: discovered
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.ownerType:
       title: ownerType
       enum:
@@ -30001,6 +30198,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            expiryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
             isEndToEndEncryptionEnabled:
               type: boolean
               description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
@@ -30019,6 +30222,14 @@ components:
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            meetingOptionsWebUrl:
+              type: string
+              description: Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+              nullable: true
+            meetingSpokenLanguageTag:
+              type: string
+              description: Specifies the spoken language used during the meeting for recording and transcription purposes.
+              nullable: true
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -30245,6 +30456,11 @@ components:
               type: string
               description: The type of query. Examples include MicrosoftGraph and ARM.
               nullable: true
+            reviewerId:
+              type: string
+              nullable: true
+            scopeType:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScopeType'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScope:
@@ -30291,6 +30507,10 @@ components:
               description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
               format: date-time
               nullable: true
+            applyDescription:
+              type: string
+              description: The description of the apply result.
+              nullable: true
             applyResult:
               type: string
               description: 'The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -30303,6 +30523,8 @@ components:
               type: string
               description: Justification left by the reviewer when they made the decision.
               nullable: true
+            permission:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemPermission'
             principal:
               $ref: '#/components/schemas/microsoft.graph.identity'
             principalLink:
@@ -30508,6 +30730,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
+            contentSensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.contentSensitivityLabelAssignment'
             contexts:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContextCollection'
             createdBy:
@@ -30614,6 +30838,8 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            hasChat:
+              type: boolean
             hasDescription:
               type: boolean
               description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
@@ -30721,6 +30947,20 @@ components:
           description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userWorkLocation:
+      title: userWorkLocation
+      type: object
+      properties:
+        placeId:
+          type: string
+          description: Identifier of the place (when applicable).
+          nullable: true
+        source:
+          $ref: '#/components/schemas/microsoft.graph.workLocationSource'
+        workLocationType:
+          $ref: '#/components/schemas/microsoft.graph.workLocationType'
       additionalProperties:
         type: object
     microsoft.graph.userAccountInformation:
@@ -31303,11 +31543,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -31389,11 +31629,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -32353,6 +32593,13 @@ components:
         - notAttested
         - unknownFutureValue
       type: string
+    microsoft.graph.passkeyType:
+      title: passkeyType
+      enum:
+        - deviceBound
+        - synced
+        - unknownFutureValue
+      type: string
     microsoft.graph.webauthnPublicKeyCredential:
       title: webauthnPublicKeyCredential
       type: object
@@ -32380,6 +32627,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             manufacturer:
@@ -33983,7 +34231,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The timestamp when the role was assigned to the user.
+              description: 'The date and time when the role was assigned to the user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               readOnly: true
             userId:
@@ -37067,6 +37315,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessReviewReviewerScopeType:
+      title: accessReviewReviewerScopeType
+      enum:
+        - user
+        - group
+        - self
+        - manager
+        - sponsor
+        - resourceOwner
+        - managerOrSponsor
+        - unknownFutureValue
+      type: string
     microsoft.graph.userIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -37083,6 +37343,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewInstanceDecisionItemPermission:
+      title: accessReviewInstanceDecisionItemPermission
+      type: object
+      properties:
+        description:
+          type: string
+          description: The description of the permission.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the permission.
+          nullable: true
+        id:
+          type: string
+          description: The identifier of the permission.
+          nullable: true
+        type:
+          type: string
+          description: The type of the permission.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.decisionItemPrincipalResourceMembership:
       title: decisionItemPrincipalResourceMembership
       type: object
@@ -37095,6 +37377,10 @@ components:
       title: accessReviewInstanceDecisionItemResource
       type: object
       properties:
+        description:
+          type: string
+          description: Description of the resource
+          nullable: true
         displayName:
           type: string
           description: Display name of the resource
@@ -37105,7 +37391,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
       additionalProperties:
         type: object
@@ -37279,6 +37565,26 @@ components:
         url:
           type: string
           description: The full canonical URL of the container. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.contentSensitivityLabelAssignment:
+      title: contentSensitivityLabelAssignment
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignmentMethod'
+        justificationText:
+          type: string
+          description: The justification text provided when you change the sensitivity label. Used during label downgrade to document the reason. Optional.
+          nullable: true
+        sensitivityLabelId:
+          type: string
+          description: The unique identifier of the sensitivity label applied to the content. This ID corresponds to a label defined in the Microsoft Information Protection policy.
+          nullable: true
+        tenantId:
+          type: string
+          description: The unique identifier of the tenant where the sensitivity label is defined and applied.
           nullable: true
       additionalProperties:
         type: object
@@ -37487,6 +37793,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.workLocationSource:
+      title: workLocationSource
+      enum:
+        - none
+        - manual
+        - scheduled
+        - automatic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workLocationType:
+      title: workLocationType
+      enum:
+        - unspecified
+        - office
+        - remote
+        - timeOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemFacet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -37852,7 +38176,7 @@ components:
               nullable: true
             hasProtection:
               type: boolean
-              description: Indicates whether the label has protection actions configured.
+              description: Indicates whether the label has protection actions (such as encryption or do not forward) configured.
             isActive:
               type: boolean
               description: Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.
@@ -39646,6 +39970,10 @@ components:
         - title: workbookComment
           type: object
           properties:
+            cellAddress:
+              type: string
+              description: 'The cell where the comment is located. The address value is in A1-style, which contains the sheet reference (for example, Sheet1!A1). Read-only.'
+              nullable: true
             content:
               type: string
               description: The content of the comment that is the String displayed to end-users.
@@ -39653,6 +39981,15 @@ components:
             contentType:
               type: string
               description: 'The content type of the comment. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the comment. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the comment (for example, comment content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             replies:
               type: array
               items:
@@ -41056,6 +41393,14 @@ components:
         - teamsChannel
         - onlineMeeting
         - plannerTask
+      type: string
+    microsoft.graph.sensitivityLabelAssignmentMethod:
+      title: sensitivityLabelAssignmentMethod
+      enum:
+        - standard
+        - privileged
+        - auto
+        - unknownFutureValue
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -43374,6 +43719,26 @@ components:
         - retainAsRegulatoryRecord
         - unknownFutureValue
       type: string
+    microsoft.graph.workbookCommentMention:
+      title: workbookCommentMention
+      type: object
+      properties:
+        email:
+          type: string
+          description: Represents the email address of the person that is mentioned in a comment.
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Represents the ID of the person that is mentioned in a comment.
+          format: int32
+        name:
+          type: string
+          description: Represents the display name of the person that is mentioned in a comment.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43387,6 +43752,15 @@ components:
             contentType:
               type: string
               description: 'The content type for the reply. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the reply. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the reply (for example, reply content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             task:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:

@@ -2157,11 +2157,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update schema
-      description: Update the properties of a schema for an externalConnection.
+      summary: Create or update schema
+      description: Create a new or update an existing schema for a Microsoft Search connection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2902,11 +2902,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get longRunningOperation
-      description: 'Read the properties and relationships of a longRunningOperation object. This API allows you to retrieve the details and status of the following long-running Microsoft Graph API operations. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.'
+      summary: Get fileValidateOperations
+      description: Read the properties and relationships of a fileValidateOperation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/longrunningoperation-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-beta
       operationId: external.industryData_GetOperation
       parameters:
         - name: longRunningOperation-id
@@ -5468,6 +5468,8 @@ components:
               type: string
               description: The Teams App ID. Optional.
               nullable: true
+            contentCategory:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.contentCategory'
             description:
               type: string
               description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
@@ -6308,6 +6310,25 @@ components:
           description: A collection of application IDs for registered Microsoft Entra apps allowed to manage the externalConnection and index content in the externalConnection.
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.contentCategory:
+      title: contentCategory
+      enum:
+        - uncategorized
+        - knowledgeBase
+        - wikis
+        - fileRepository
+        - qna
+        - crm
+        - dashboard
+        - people
+        - media
+        - email
+        - messaging
+        - meetingTranscripts
+        - taskManagement
+        - learningManagement
+        - unknownFutureValue
+      type: string
     microsoft.graph.externalConnectors.contentExperienceType:
       title: contentExperienceType
       enum:
@@ -6430,9 +6451,13 @@ components:
             type: string
             nullable: true
           description: 'A set of aliases or friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
+        description:
+          type: string
+          description: 'Specifies a human-readable description that explains the purpose, usage, or guidance related to the property. This property enhances semantic understanding by helping Copilot interpret queries and accurately map them to properties that results in more relevant and precise responses. Optional but we recommend that you use this property for queryable properties. The maximum supported length is 200 characters.'
+          nullable: true
         isExactMatchRequired:
           type: boolean
-          description: Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.
+          description: Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for nonsearchable properties of type string or stringCollection. Optional.
           nullable: true
         isQueryable:
           type: boolean
@@ -6448,13 +6473,13 @@ components:
           nullable: true
         isSearchable:
           type: boolean
-          description: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren't added to the search index. Optional.
+          description: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Nonsearchable properties aren't added to the search index. Optional.
           nullable: true
         labels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions.'
         name:
           type: string
           description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
@@ -6872,6 +6897,10 @@ components:
       properties:
         includeContent:
           $ref: '#/components/schemas/microsoft.graph.searchContent'
+        includeHiddenContent:
+          type: boolean
+          description: 'Indicates whether the search results include content that is normally hidden, such as archived content and SharePoint Embedded (RaaS). The default value is false, which prevents hidden content from being returned. You can also optionally include KQL to scope your query for hidden content to specific content types. For more information, see Search hidden content.'
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.sortProperty:
@@ -7343,6 +7372,23 @@ components:
         - containerName
         - containerUrl
         - iconUrl
+        - assignedToPeople
+        - closedBy
+        - closedDate
+        - priority
+        - sprintName
+        - tags
+        - severity
+        - state
+        - dueDate
+        - itemParentId
+        - itemPath
+        - itemType
+        - numberOfReactions
+        - parentUrl
+        - priorityNormalized
+        - reportedBy
+        - secondaryId
       type: string
     microsoft.graph.externalConnectors.rankingHint:
       title: rankingHint
@@ -7365,6 +7411,7 @@ components:
         - doubleCollection
         - dateTimeCollection
         - unknownFutureValue
+        - principal
       type: string
     microsoft.graph.industryData.userMatchTargetReferenceValue:
       allOf:
