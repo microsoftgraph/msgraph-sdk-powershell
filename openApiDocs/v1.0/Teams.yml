@@ -20518,11 +20518,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id

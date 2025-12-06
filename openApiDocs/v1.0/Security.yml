@@ -619,11 +619,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: List endUserNotifications
-      description: Get a list of endUserNotification objects and their properties.
+      summary: Get endUserNotification
+      description: Read the properties and relationships of an endUserNotification object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-endusernotifications?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/endusernotification-get?view=graph-rest-1.0
       operationId: security.attackSimulation_ListEndUserNotification
       parameters:
         - $ref: '#/components/parameters/top'
