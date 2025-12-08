@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 using Azure.Core;
 using Azure.Core.Diagnostics;
+using Azure.Core.Pipeline;
 using Azure.Identity;
 using Azure.Identity.Broker;
 using Microsoft.Graph.Authentication;
@@ -114,22 +115,24 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var interactiveOptions = IsWamSupported() ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
+            var interactiveOptions = IsWamSupported() ?
+                                        new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) :
+                                        new InteractiveBrowserCredentialOptions();
             interactiveOptions.ClientId = authContext.ClientId;
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
             interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
 
+            var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
             if (!File.Exists(Constants.AuthRecordPath))
             {
                 AuthenticationRecord authRecord;
-                var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
                 if (IsWamSupported())
                 {
                     authRecord = await Task.Run(() =>
                     {
                         // Run the thread in MTA.
-                        return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                        return interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
                     });
                 }
                 else
