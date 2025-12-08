@@ -1811,6 +1811,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.requestEnterpriseUpgradeUrl:
+    post:
+      tags:
+        - deviceManagement.androidManagedStoreAccountEnterpriseSettings
+      summary: Invoke action requestEnterpriseUpgradeUrl
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_requestEnterpriseUpgradeUrl
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.requestSignupUrl:
     post:
       tags:
@@ -1846,6 +1868,23 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.retrieveStoreLayout():
+    get:
+      tags:
+        - deviceManagement.androidManagedStoreAccountEnterpriseSettings
+      summary: Invoke function retrieveStoreLayout
+      description: Gets the Managed Google Play store layout type from Google EMM API.
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_retrieveStoreLayout
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.androidManagedStoreLayoutType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.setAndroidDeviceOwnerFullyManagedEnrollmentState:
     post:
       tags:
@@ -1863,6 +1902,31 @@ paths:
                 enabled:
                   type: boolean
                   default: false
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.setStoreLayout:
+    post:
+      tags:
+        - deviceManagement.androidManagedStoreAccountEnterpriseSettings
+      summary: Invoke action setStoreLayout
+      description: Sets the Managed Google Play store layout type via Google EMM API.
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_setStoreLayout
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                storeLayoutType:
+                  $ref: '#/components/schemas/microsoft.graph.androidManagedStoreLayoutType'
               additionalProperties:
                 type: object
         required: true
@@ -33237,7 +33301,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: The collection property of AppLogUploadRequest.
+      description: Indicates collection of App Log Upload Request.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_ListAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -33328,7 +33392,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
-      description: The collection property of AppLogUploadRequest.
+      description: Indicates collection of App Log Upload Request.
       operationId: deviceManagement.mobileAppTroubleshootingEvent_GetAppLogCollectionRequest
       parameters:
         - name: mobileAppTroubleshootingEvent-id
@@ -41557,6 +41621,8 @@ components:
               description: Last modification time for Android enterprise settings
               format: date-time
               nullable: true
+            managedGooglePlayEnterpriseType:
+              $ref: '#/components/schemas/microsoft.graph.managedGooglePlayEnterpriseType'
             managedGooglePlayInitialScopeTagIds:
               type: array
               items:
@@ -41580,6 +41646,27 @@ components:
           additionalProperties:
             type: object
           description: Enterprise settings for an Android managed store account.
+    microsoft.graph.androidManagedStoreLayoutType:
+      title: androidManagedStoreLayoutType
+      enum:
+        - basic
+        - custom
+        - unknownFutureValue
+      type: string
+      description: The store layout types for Managed Google Play. Values correspond directly to the store layout types of Google enterprise objects.
+      x-ms-enum:
+        name: androidManagedStoreLayoutType
+        modelAsString: false
+        values:
+          - value: basic
+            description: Default. Basic store layout where all approved apps are automatically visible in the Google Play Store.
+            name: basic
+          - value: custom
+            description: Indicates a customized Google Play Store layout where only apps added to a specific collection in the Intune admin portal are visible in the Google Play Store on managed devices.
+            name: custom
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.androidManagedStoreAppConfigurationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43430,26 +43517,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              description: Specify category in which the setting is under. Support $filters.
               nullable: true
             description:
               type: string
-              description: Description of the item
+              description: Description of the setting.
               nullable: true
             displayName:
               type: string
-              description: Display name of the item
+              description: 'Name of the setting. For example: Allow Toast.'
               nullable: true
             helpText:
               type: string
-              description: Help text of the item
+              description: Help text of the setting. Give more details of the setting.
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at
+              description: List of links more info for the setting can be found at.
             keywords:
               type: array
               items:
@@ -43475,7 +43562,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingRiskLevel'
             rootDefinitionId:
               type: string
-              description: Root setting definition if the setting is a child setting.
+              description: Root setting definition id if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -46802,7 +46889,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -53262,6 +53349,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartner'
+              description: The external partners on a Cloud PC.
               x-ms-navigationProperty: true
             externalPartnerSettings:
               type: array
@@ -53281,6 +53369,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
               description: The gallery image resource on Cloud PC.
               x-ms-navigationProperty: true
+            managedLicenses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcManagedLicense'
+              description: The managed licenses for Cloud PCs in the organization.
+              x-ms-navigationProperty: true
             onPremisesConnections:
               type: array
               items:
@@ -53295,6 +53389,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
               description: Cloud PC provisioning policy.
               x-ms-navigationProperty: true
+            report:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcReport'
             reports:
               $ref: '#/components/schemas/microsoft.graph.cloudPcReports'
             servicePlans:
@@ -54075,6 +54171,31 @@ components:
         - none
       type: string
       description: Sync status of the tenant with the Google EMM API
+    microsoft.graph.managedGooglePlayEnterpriseType:
+      title: managedGooglePlayEnterpriseType
+      enum:
+        - enterpriseTypeUnspecified
+        - managedGoogleDomain
+        - managedGooglePlayAccountsEnterprise
+        - unknownFutureValue
+      type: string
+      description: Bind Type of the tenant with the Google EMM API
+      x-ms-enum:
+        name: managedGooglePlayEnterpriseType
+        modelAsString: false
+        values:
+          - value: enterpriseTypeUnspecified
+            description: The enterprise type is not determined or is unknown. This value is not used.
+            name: enterpriseTypeUnspecified
+          - value: managedGoogleDomain
+            description: The enterprise belongs to a managed Google domain.
+            name: managedGoogleDomain
+          - value: managedGooglePlayAccountsEnterprise
+            description: The enterprise is a managed Google Play Accounts enterprise.
+            name: managedGooglePlayAccountsEnterprise
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.androidManagedStoreAppConfigurationSchemaItem:
       title: androidManagedStoreAppConfigurationSchemaItem
       type: object
@@ -55256,6 +55377,7 @@ components:
         - wipeCanceled
         - retireCanceled
         - discovered
+        - unknownFutureValue
       type: string
       description: Management state of device in Microsoft Intune.
       x-ms-enum:
@@ -55298,6 +55420,9 @@ components:
           - value: discovered
             description: The device is discovered but not fully enrolled.
             name: discovered
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.ownerType:
       title: ownerType
       enum:
@@ -55425,7 +55550,7 @@ components:
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).'
               nullable: true
             ageGroup:
               type: string
@@ -55551,6 +55676,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
               description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.'
+            identityParentId:
+              type: string
+              description: 'The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.'
+              nullable: true
             imAddresses:
               type: array
               items:
@@ -55852,6 +55981,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: The user's Cloud PCs. Read-only. Nullable.
               x-ms-navigationProperty: true
             communications:
               $ref: '#/components/schemas/microsoft.graph.userCloudCommunication'
@@ -56017,6 +56147,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
               description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
               x-ms-navigationProperty: true
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             outlook:
               $ref: '#/components/schemas/microsoft.graph.outlookUser'
             ownedDevices:
@@ -60885,11 +61017,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -61730,11 +61862,11 @@ components:
       properties:
         name:
           type: string
-          description: Extended Key Usage Name
+          description: The extended key usage (EKU) name that provides a user-friendly way to identify an EKU.
           nullable: true
         objectIdentifier:
           type: string
-          description: Extended Key Usage Object Identifier
+          description: 'The object identifier (OID) of an extended key usage of a certificate. For example, ''1.3.6.1.5.5.7.3.2'' for client authentication.'
           nullable: true
       additionalProperties:
         type: object
@@ -62018,6 +62150,8 @@ components:
             chooseYourLockScreenDisabled:
               type: boolean
               description: Indicates if iCloud Documents and Desktop screen is disabled
+            depProfileAdminAccountPasswordRotationSetting:
+              $ref: '#/components/schemas/microsoft.graph.depProfileAdminAccountPasswordRotationSetting'
             dontAutoPopulatePrimaryAccountInfo:
               type: boolean
               description: Indicates whether Setup Assistant will auto populate the primary account information
@@ -64807,6 +64941,8 @@ components:
               type: string
               description: 'The operating system of the image. For example, Windows 11 Enterprise. Read-only.'
               nullable: true
+            osArchitecture:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcImageOsArchitectureType'
             osBuildNumber:
               type: string
               description: 'The OS build version of the image. For example, 1909. Read-only.'
@@ -64853,15 +64989,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcExternalPartnerStatus'
             enableConnection:
               type: boolean
+              description: 'Enable or disable the connection to an external partner. If true, an external partner API accepts incoming calls from external partners. Required. Supports $filter (eq).'
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Last data sync time for this external partner. The timeStamp type represents date and time information in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             partnerId:
               type: string
+              description: 'The partner identifier used to identify the external partner. When the Cloud PC service is ready to integrate with a new external partner, it generates a GUID to represent this partner. The Cloud PC service provides this partner ID to the partner, which can then use it to call this Microsoft Graph API and external partner APIs. Read-only.'
             statusDetails:
               type: string
+              description: Status details message. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -64905,13 +65045,13 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.'
+              description: 'The display name of the frontline service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.'
               nullable: true
             totalCount:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: The total number of front-line service plans purchased by the customer.
+              description: The total number of frontline service plans purchased by the customer.
               format: int32
               nullable: true
             usedCount:
@@ -64957,6 +65097,8 @@ components:
               type: string
               description: The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.
               nullable: true
+            osArchitecture:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcImageOsArchitectureType'
             osVersionNumber:
               type: string
               description: 'The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.'
@@ -65000,6 +65142,75 @@ components:
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImageStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcManagedLicense:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcManagedLicense
+          type: object
+          properties:
+            activeDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the license becomes active. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, gt, ge, lt, le). Read-only.'
+              format: date-time
+              nullable: true
+            allotmentLicensesCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'The number of licenses that are allocated to assignments. The total number of allotted licenses can''t be greater than the total license count. The allowed range is from 0 to the value of licensesCount. Supports $filter (eq, ne, gt, ge, lt, le). Read-only. Nullable.'
+              format: int32
+              nullable: true
+            assignedCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'The number of licenses currently assigned to users. The allowed range is from 0 to the value of licensesCount. Supports $filter (eq, ne, gt, ge, lt, le). Read-only.'
+              format: int32
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name of the license. For example, Cloud PC Enterprise 4vCPU/16GB/256GB. Supports $filter (eq, ne, in, startsWith). Read-only.'
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the license expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, gt, ge, lt, le). Read-only.'
+              format: date-time
+              nullable: true
+            latestLicenseStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The start date of the current license term. This date is the date of the initial purchase or the most recent renewal. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, gt, ge, lt, le). Read-only.'
+              format: date-time
+              nullable: true
+            licensesCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'The total number of licenses purchased. The allowed range is fropm 0 to 2,147,483,647. Supports $filter (eq, ne, gt, ge, lt, le). Read-only.'
+              format: int32
+              nullable: true
+            licenseType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcManagedLicenseType'
+            nextBillingDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time of the next billing cycle. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, gt, ge, lt, le). Read-only.'
+              format: date-time
+              nullable: true
+            servicePlanId:
+              type: string
+              description: 'The unique identifier for the service plan that defines the specific stock keeping unit (SKU) of the license. For example, this ID maps to a specific offering like Cloud PC Enterprise 4vCPU/16GB/256GB. For example, 3a94476b-504b-41a4-9f6a-18c5199a55e9. Supports $filter (eq). Read-only.'
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcManagedLicenseStatus'
+            subscriptionId:
+              type: string
+              description: 'The ID of the Azure commercial subscription to which the license belongs. This unique identifier specifies the subscription where the organization purchased and manages the license. For example, 0d5b1a2b-4d6e-4b8e-88e2-3e7a5b9d0f1a. Supports $filter (eq). Read-only.'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcOnPremisesConnection:
@@ -65194,6 +65405,8 @@ components:
                 nullable: true
             userExperienceType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcUserExperienceType'
+            userSettingsPersistenceConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingsPersistenceConfiguration'
             windowsSetting:
               $ref: '#/components/schemas/microsoft.graph.cloudPcWindowsSetting'
             windowsSettings:
@@ -65204,6 +65417,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
               description: 'A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.'
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcReport
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.cloudPcReports:
@@ -67124,6 +67344,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.'
+            createdByAppId:
+              type: string
+              description: The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.
+              nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             description:
@@ -68470,14 +68694,28 @@ components:
             isPersonalSite:
               type: boolean
               nullable: true
+            locale:
+              type: string
+              description: The language settings of the site.
+              nullable: true
+            lockState:
+              $ref: '#/components/schemas/microsoft.graph.siteLockState'
+            ownerIdentityToResolve:
+              $ref: '#/components/schemas/microsoft.graph.identityInput'
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
             settings:
               $ref: '#/components/schemas/microsoft.graph.siteSettings'
+            shareByEmailEnabled:
+              type: boolean
+              description: Determines whether the site and its content can be shared via email.
+              nullable: true
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
               $ref: '#/components/schemas/microsoft.graph.siteCollection'
+            template:
+              $ref: '#/components/schemas/microsoft.graph.siteTemplateType'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             columns:
@@ -69762,6 +70000,17 @@ components:
           additionalProperties:
             type: object
           description: Represents a Microsoft online meeting.
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
+              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
+          additionalProperties:
+            type: object
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -70073,6 +70322,8 @@ components:
               readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+            workLocation:
+              $ref: '#/components/schemas/microsoft.graph.userWorkLocation'
           additionalProperties:
             type: object
     microsoft.graph.profile:
@@ -71527,6 +71778,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.depProfileAdminAccountPasswordRotationSetting:
+      title: depProfileAdminAccountPasswordRotationSetting
+      type: object
+      properties:
+        autoRotationPeriodInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Indicates the number of days between 1-180 since the last rotation after which to rotate the local admin password.
+          format: int32
+        depProfileDelayAutoRotationSetting:
+          $ref: '#/components/schemas/microsoft.graph.depProfileDelayAutoRotationSetting'
+      additionalProperties:
+        type: object
+      description: Settings for local admin account password automatic rotation.
     microsoft.graph.discoverySource:
       title: discoverySource
       enum:
@@ -72401,6 +72667,12 @@ components:
           type: string
           description: 'The user principal name (UPN) of the user to whom the device is currently assigned. If no user is assigned, this field remains empty. Example values, john.doe@contoso.onmicrosoft.com and .'
           nullable: true
+        sessionStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the current user session starts, or null if no current user session exists. This value is autogenerated and assigned at the start of each session. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcStatus:
@@ -72468,6 +72740,13 @@ components:
         - sourceImageWithDiskEncryptionSetNotSupported
         - sourceImageWithAzureDiskEncryptionNotSupported
       type: string
+    microsoft.graph.cloudPcImageOsArchitectureType:
+      title: cloudPcImageOsArchitectureType
+      enum:
+        - x64
+        - arm64
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcDeviceImageOsStatus:
       title: cloudPcDeviceImageOsStatus
       enum:
@@ -72514,6 +72793,23 @@ components:
         - supported
         - supportedWithWarning
         - notSupported
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcManagedLicenseType:
+      title: cloudPcManagedLicenseType
+      enum:
+        - frontline
+        - reserve
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcManagedLicenseStatus:
+      title: cloudPcManagedLicenseStatus
+      enum:
+        - enabled
+        - expired
+        - blocked
+        - deleted
+        - unknown
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcOnPremisesConnectionType:
@@ -72669,6 +72965,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcUserSettingsPersistenceConfiguration:
+      title: cloudPcUserSettingsPersistenceConfiguration
+      type: object
+      properties:
+        userSettingsPersistenceEnabled:
+          type: boolean
+          description: 'Indicates whether user application settings are persisted between Cloud PC sessions. The default value is false. When true, user settings persistence is enabled, and Windows 365 automatically saves any user-specific application data in a central cloud storage location. Anytime the user connects to a Cloud PC within this provisioning policy, Windows 365 reconnects the user to that persisted storage. When false, this feature isn''t used. The persistent storage can only be accessed by Cloud PC; IT admins can''t access it.'
+        userSettingsPersistenceStorageSizeCategory:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingsPersistenceStorageSizeCategory'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcWindowsSetting:
       title: cloudPcWindowsSetting
       type: object
@@ -72693,6 +73000,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: 'The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.'
               x-ms-navigationProperty: true
+            userSettingsPersistenceDetail:
+              $ref: '#/components/schemas/microsoft.graph.cloudPCUserSettingsPersistenceDetail'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcExportJob:
@@ -73080,6 +73389,8 @@ components:
         - all
         - security
         - nonSecurity
+        - unknownFutureValue
+        - quickMachineRecovery
       type: string
       description: Windows quality update category
       x-ms-enum:
@@ -73095,6 +73406,12 @@ components:
           - value: nonSecurity
             description: Non security only update type
             name: nonSecurity
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+          - value: quickMachineRecovery
+            description: Quick machine recovery update type
+            name: quickMachineRecovery
     microsoft.graph.androidFotaDeploymentAssignmentTarget:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
@@ -74227,6 +74544,8 @@ components:
               type: string
               description: The manufacturer-assigned model of the FIDO2 security key.
               nullable: true
+            passkeyType:
+              $ref: '#/components/schemas/microsoft.graph.passkeyType'
             publicKeyCredential:
               $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredential'
           additionalProperties:
@@ -74256,6 +74575,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -75663,7 +75983,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
-              description: Users who have been assigned this role.
+              description: Users that have this role assigned.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -75714,6 +76034,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteLockState:
+      title: siteLockState
+      enum:
+        - unlocked
+        - lockedReadOnly
+        - lockedNoAccess
+        - lockedNoAdditions
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityInput:
+      title: identityInput
+      type: object
+      properties:
+        alias:
+          type: string
+          description: The alias of the identity.
+          nullable: true
+        email:
+          type: string
+          description: The email of the identity.
+          nullable: true
+        objectId:
+          type: string
+          description: The unique object ID assigned to the identity in Microsoft Entra ID.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.root:
       title: root
       type: object
@@ -75751,6 +76098,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.root'
       additionalProperties:
         type: object
+    microsoft.graph.siteTemplateType:
+      title: siteTemplateType
+      enum:
+        - sitepagepublishing
+        - group
+        - sts
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemAnalytics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -76468,17 +76823,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.onPremisesSyncBehavior:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: onPremisesSyncBehavior
-          type: object
-          properties:
-            isCloudManaged:
-              type: boolean
-              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
-          additionalProperties:
-            type: object
     microsoft.graph.plannerGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -76758,6 +77102,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+              x-ms-navigationProperty: true
+            enabledApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
               x-ms-navigationProperty: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -77637,6 +77986,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            expiryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
             isEndToEndEncryptionEnabled:
               type: boolean
               description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
@@ -77655,6 +78010,14 @@ components:
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            meetingOptionsWebUrl:
+              type: string
+              description: Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+              nullable: true
+            meetingSpokenLanguageTag:
+              type: string
+              description: Specifies the spoken language used during the meeting for recording and transcription purposes.
+              nullable: true
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -78039,6 +78402,11 @@ components:
               type: string
               description: The type of query. Examples include MicrosoftGraph and ARM.
               nullable: true
+            reviewerId:
+              type: string
+              nullable: true
+            scopeType:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScopeType'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScope:
@@ -78085,6 +78453,10 @@ components:
               description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
               format: date-time
               nullable: true
+            applyDescription:
+              type: string
+              description: The description of the apply result.
+              nullable: true
             applyResult:
               type: string
               description: 'The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -78097,6 +78469,8 @@ components:
               type: string
               description: Justification left by the reviewer when they made the decision.
               nullable: true
+            permission:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemPermission'
             principal:
               $ref: '#/components/schemas/microsoft.graph.identity'
             principalLink:
@@ -78302,6 +78676,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
+            contentSensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.contentSensitivityLabelAssignment'
             contexts:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContextCollection'
             createdBy:
@@ -78408,6 +78784,8 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            hasChat:
+              type: boolean
             hasDescription:
               type: boolean
               description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
@@ -78515,6 +78893,20 @@ components:
           description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userWorkLocation:
+      title: userWorkLocation
+      type: object
+      properties:
+        placeId:
+          type: string
+          description: Identifier of the place (when applicable).
+          nullable: true
+        source:
+          $ref: '#/components/schemas/microsoft.graph.workLocationSource'
+        workLocationType:
+          $ref: '#/components/schemas/microsoft.graph.workLocationType'
       additionalProperties:
         type: object
     microsoft.graph.userAccountInformation:
@@ -79325,6 +79717,22 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.depProfileDelayAutoRotationSetting:
+      title: depProfileDelayAutoRotationSetting
+      type: object
+      properties:
+        onRetrievalAutoRotatePasswordEnabled:
+          type: boolean
+          description: Indicates whether the admin account password should be rotated when retrieved by IT Admin through Intune.
+        onRetrievalDelayAutoRotatePasswordInHours:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Indicates how long in hours (between 1 and 24 hours) after password retrieval through Graph should automatic rotation be initiated for the admin account password.
+          format: int32
+      additionalProperties:
+        type: object
+      description: Settings related to auto rotation of local admin account password after password retrieval through Graph. These are optional settings
     microsoft.graph.deviceManagementConfigurationSettingValueTemplateReference:
       title: deviceManagementConfigurationSettingValueTemplateReference
       type: object
@@ -79495,11 +79903,35 @@ components:
         - starterManaged
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcUserSettingsPersistenceStorageSizeCategory:
+      title: cloudPcUserSettingsPersistenceStorageSizeCategory
+      enum:
+        - fourGB
+        - eightGB
+        - sixteenGB
+        - thirtyTwoGB
+        - sixtyFourGB
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcManagementAssignmentTarget:
       title: cloudPcManagementAssignmentTarget
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.cloudPCUserSettingsPersistenceDetail:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPCUserSettingsPersistenceDetail
+          type: object
+          properties:
+            gracePeriodEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the grace period end time when user settings persistence exceeds the available quota. If usage exceeds the available quota when the grace period expires, the system automatically deletes the profile with the oldest last attached timestamp. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcExportJobStatus:
       title: cloudPcExportJobStatus
       enum:
@@ -79539,6 +79971,7 @@ components:
         - troubleshootIssueCountReport
         - cloudPcInsightReport
         - regionalInaccessibleCloudPcTrendReport
+        - cloudPcUsageCategoryReport
       type: string
     microsoft.graph.cloudPcDisasterRecoveryNetworkSetting:
       title: cloudPcDisasterRecoveryNetworkSetting
@@ -79785,11 +80218,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -80027,6 +80460,13 @@ components:
         - notAttested
         - unknownFutureValue
       type: string
+    microsoft.graph.passkeyType:
+      title: passkeyType
+      enum:
+        - deviceBound
+        - synced
+        - unknownFutureValue
+      type: string
     microsoft.graph.webauthnPublicKeyCredential:
       title: webauthnPublicKeyCredential
       type: object
@@ -80054,6 +80494,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             manufacturer:
@@ -81634,7 +82075,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The timestamp when the role was assigned to the user.
+              description: 'The date and time when the role was assigned to the user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               readOnly: true
             userId:
@@ -83976,6 +84417,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessReviewReviewerScopeType:
+      title: accessReviewReviewerScopeType
+      enum:
+        - user
+        - group
+        - self
+        - manager
+        - sponsor
+        - resourceOwner
+        - managerOrSponsor
+        - unknownFutureValue
+      type: string
     microsoft.graph.userIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -83992,6 +84445,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewInstanceDecisionItemPermission:
+      title: accessReviewInstanceDecisionItemPermission
+      type: object
+      properties:
+        description:
+          type: string
+          description: The description of the permission.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the permission.
+          nullable: true
+        id:
+          type: string
+          description: The identifier of the permission.
+          nullable: true
+        type:
+          type: string
+          description: The type of the permission.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.decisionItemPrincipalResourceMembership:
       title: decisionItemPrincipalResourceMembership
       type: object
@@ -84004,6 +84479,10 @@ components:
       title: accessReviewInstanceDecisionItemResource
       type: object
       properties:
+        description:
+          type: string
+          description: Description of the resource
+          nullable: true
         displayName:
           type: string
           description: Display name of the resource
@@ -84014,7 +84493,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
       additionalProperties:
         type: object
@@ -84188,6 +84667,26 @@ components:
         url:
           type: string
           description: The full canonical URL of the container. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.contentSensitivityLabelAssignment:
+      title: contentSensitivityLabelAssignment
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignmentMethod'
+        justificationText:
+          type: string
+          description: The justification text provided when you change the sensitivity label. Used during label downgrade to document the reason. Optional.
+          nullable: true
+        sensitivityLabelId:
+          type: string
+          description: The unique identifier of the sensitivity label applied to the content. This ID corresponds to a label defined in the Microsoft Information Protection policy.
+          nullable: true
+        tenantId:
+          type: string
+          description: The unique identifier of the tenant where the sensitivity label is defined and applied.
           nullable: true
       additionalProperties:
         type: object
@@ -84396,6 +84895,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.workLocationSource:
+      title: workLocationSource
+      enum:
+        - none
+        - manual
+        - scheduled
+        - automatic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workLocationType:
+      title: workLocationType
+      enum:
+        - unspecified
+        - office
+        - remote
+        - timeOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemFacet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -84761,7 +85278,7 @@ components:
               nullable: true
             hasProtection:
               type: boolean
-              description: Indicates whether the label has protection actions configured.
+              description: Indicates whether the label has protection actions (such as encryption or do not forward) configured.
             isActive:
               type: boolean
               description: Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.
@@ -85070,6 +85587,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              description: A collection of custom fields linked to the task.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -86788,6 +87306,10 @@ components:
         - title: workbookComment
           type: object
           properties:
+            cellAddress:
+              type: string
+              description: 'The cell where the comment is located. The address value is in A1-style, which contains the sheet reference (for example, Sheet1!A1). Read-only.'
+              nullable: true
             content:
               type: string
               description: The content of the comment that is the String displayed to end-users.
@@ -86795,6 +87317,15 @@ components:
             contentType:
               type: string
               description: 'The content type of the comment. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the comment. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the comment (for example, comment content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             replies:
               type: array
               items:
@@ -87882,6 +88413,14 @@ components:
         - onlineMeeting
         - plannerTask
       type: string
+    microsoft.graph.sensitivityLabelAssignmentMethod:
+      title: sensitivityLabelAssignmentMethod
+      enum:
+        - standard
+        - privileged
+        - auto
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
       enum:
@@ -88353,6 +88892,7 @@ components:
           properties:
             value:
               type: string
+              description: The value of the property.
               nullable: true
           additionalProperties:
             type: object
@@ -90349,6 +90889,26 @@ components:
         - retainAsRegulatoryRecord
         - unknownFutureValue
       type: string
+    microsoft.graph.workbookCommentMention:
+      title: workbookCommentMention
+      type: object
+      properties:
+        email:
+          type: string
+          description: Represents the email address of the person that is mentioned in a comment.
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Represents the ID of the person that is mentioned in a comment.
+          format: int32
+        name:
+          type: string
+          description: Represents the display name of the person that is mentioned in a comment.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -90362,6 +90922,15 @@ components:
             contentType:
               type: string
               description: 'The content type for the reply. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the reply. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the reply (for example, reply content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             task:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:

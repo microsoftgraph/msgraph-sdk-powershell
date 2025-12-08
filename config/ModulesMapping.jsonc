@@ -26,6 +26,7 @@
   "Identity.Partner": "^tenantRelationships.delegatedAdminRelationship$|^tenantRelationships.delegatedAdminCustomer$",
   "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
   "ManagedTenants": "^tenantRelationships.managedTenant$",
+  "Migrations": "^solutions.migrationsRoot",
   "NetworkAccess": "^networkAccess\\.",
   "Notes": "^users.onenote$|^groups.onenote$|^sites.onenote$",
   "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",

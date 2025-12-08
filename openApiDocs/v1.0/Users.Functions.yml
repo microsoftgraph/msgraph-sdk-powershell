@@ -74,9 +74,6 @@ paths:
         - users.user.Functions
       summary: Invoke function getManagedAppDiagnosticStatuses
       description: Gets diagnostics validation status for a given user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0
       operationId: user_getManagedAppDiagnosticStatus
       parameters:
         - name: user-id
@@ -107,9 +104,6 @@ paths:
         - users.user.Functions
       summary: Invoke function getManagedAppPolicies
       description: Gets app restrictions for a given user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedapppolicies?view=graph-rest-1.0
       operationId: user_getManagedAppPolicy
       parameters:
         - name: user-id
@@ -170,9 +164,6 @@ paths:
         - users.user.Functions
       summary: Invoke function getManagedDevicesWithAppFailures
       description: Retrieves the list of devices with failed apps
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-troubleshooting-user-getmanageddeviceswithappfailures?view=graph-rest-1.0
       operationId: user_getManagedDevicesGraphWPreAppFailure
       parameters:
         - name: user-id
@@ -708,6 +699,12 @@ components:
               x-ms-navigationProperty: true
             cloudClipboard:
               $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
+            cloudPCs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: The user's Cloud PCs. Read-only. Nullable.
+              x-ms-navigationProperty: true
             contactFolders:
               type: array
               items:
@@ -1888,6 +1885,71 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPC:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPC
+          type: object
+          properties:
+            aadDeviceId:
+              type: string
+              description: 'The Microsoft Entra device ID for the Cloud PC, also known as the Azure Active Directory (Azure AD) device ID, that consists of 32 characters in a GUID format. Generated on a VM joined to Microsoft Entra ID. Read-only.'
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name for the Cloud PC. Maximum length is 64 characters. Read-only. You can use the cloudPC: rename API to modify the Cloud PC name.'
+              nullable: true
+            gracePeriodEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            imageDisplayName:
+              type: string
+              description: 'The name of the operating system image used for the Cloud PC. Maximum length is 50 characters. Only letters (A-Z, a-z), numbers (0-9), and special characters (-,,.) are allowed for this property. The property value can''t begin or end with an underscore. Read-only.'
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last modified date and time of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            managedDeviceId:
+              type: string
+              description: The Intune enrolled device ID for the Cloud PC that consists of 32 characters in a GUID format. The managedDeviceId property of Windows 365 Business Cloud PCs is always null as Windows 365 Business Cloud PCs aren't Intune-enrolled automatically by Windows 365. Read-only.
+              nullable: true
+            managedDeviceName:
+              type: string
+              description: The Intune enrolled device name for the Cloud PC. The managedDeviceName property of Windows 365 Business Cloud PCs is always null as Windows 365 Business Cloud PCs aren't Intune-enrolled automatically by Windows 365. Read-only.
+              nullable: true
+            onPremisesConnectionName:
+              type: string
+              description: The on-premises connection that applied during the provisioning of Cloud PCs. Read-only.
+              nullable: true
+            provisioningPolicyId:
+              type: string
+              description: The provisioning policy ID for the Cloud PC that consists of 32 characters in a GUID format. A policy defines the type of Cloud PC the user wants to create. Read-only.
+              nullable: true
+            provisioningPolicyName:
+              type: string
+              description: The provisioning policy that applied during the provisioning of Cloud PCs. Maximum length is 120 characters. Read-only.
+              nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
+            servicePlanId:
+              type: string
+              description: 'The service plan ID for the Cloud PC that consists of 32 characters in a GUID format. For more information about service plans, see Product names and service plan identifiers for licensing. Read-only.'
+              nullable: true
+            servicePlanName:
+              type: string
+              description: The service plan name for the customer-facing Cloud PC entity. Read-only.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: 'The user principal name (UPN) of the user assigned to the Cloud PC. Maximum length is 113 characters. For more information on username policies, see Password policies and account restrictions in Microsoft Entra ID. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.contactFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2177,6 +2239,12 @@ components:
         - title: employeeExperienceUser
           type: object
           properties:
+            assignedRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRole'
+              description: Represents the collection of Viva Engage roles assigned to a user.
+              x-ms-navigationProperty: true
             learningCourseActivities:
               type: array
               items:
@@ -2749,6 +2817,8 @@ components:
               description: Reports device management certificate expiration date. This property is read-only.
               format: date-time
               readOnly: true
+            managementState:
+              $ref: '#/components/schemas/microsoft.graph.managementState'
             manufacturer:
               type: string
               description: Manufacturer of the device. This property is read-only.
@@ -2980,7 +3050,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
-              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.'
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.NOTE: When using this URL to access a message from a mailbox with delegate permissions, both the signed-in user and the target mailbox must be in the same database region. For example, an error is returned when a user with a mailbox in the EUR (Europe) region attempts to access messages from a mailbox in the NAM (North America) region.'
               nullable: true
             attachments:
               type: array
@@ -3137,6 +3207,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3431,7 +3502,6 @@ components:
       properties:
         content:
           type: string
-          description: Not yet documented
           format: base64url
           nullable: true
       additionalProperties:
@@ -4568,6 +4638,13 @@ components:
               description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
+        - unknownFutureValue
+      type: string
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -4909,6 +4986,24 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.engagementRole:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRole
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the role.
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
+              description: Users that have this role assigned.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Represents a Viva Engage role and its members
     microsoft.graph.learningCourseActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5821,6 +5916,8 @@ components:
               x-ms-navigationProperty: true
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             owners:
               type: array
               items:
@@ -6473,7 +6570,7 @@ components:
           nullable: true
         virtualSecureMode:
           type: string
-          description: VSM is a container that protects high value assets from a compromised kernel
+          description: 'Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are ''enabled'', ''disabled'' and ''notApplicable''. ''enabled'' indicates Virtual Secure Mode (VSM) is enabled. ''disabled'' indicates Virtual Secure Mode (VSM) is disabled. ''notApplicable'' indicates the device is not a Windows 11 device. Default value is ''notApplicable''.'
           nullable: true
         windowsPE:
           type: string
@@ -6706,6 +6803,67 @@ components:
           - value: microsoft365ManagedMdm
             description: This device is managed by Microsoft 365 through Intune.
             name: microsoft365ManagedMdm
+    microsoft.graph.managementState:
+      title: managementState
+      enum:
+        - managed
+        - retirePending
+        - retireFailed
+        - wipePending
+        - wipeFailed
+        - unhealthy
+        - deletePending
+        - retireIssued
+        - wipeIssued
+        - wipeCanceled
+        - retireCanceled
+        - discovered
+        - unknownFutureValue
+      type: string
+      description: Management state of device in Microsoft Intune.
+      x-ms-enum:
+        name: managementState
+        modelAsString: false
+        values:
+          - value: managed
+            description: The device is under management
+            name: managed
+          - value: retirePending
+            description: A retire command is occuring on the device and in the process of unenrolling from management
+            name: retirePending
+          - value: retireFailed
+            description: Retire command failed on the device
+            name: retireFailed
+          - value: wipePending
+            description: A wipe command is occuring on the device and in the process of unenrolling from management
+            name: wipePending
+          - value: wipeFailed
+            description: Wipe command failed on the device
+            name: wipeFailed
+          - value: unhealthy
+            description: The device is unhealthy.
+            name: unhealthy
+          - value: deletePending
+            description: 'A delete command is occuring on the device '
+            name: deletePending
+          - value: retireIssued
+            description: A retire command was issued for the device
+            name: retireIssued
+          - value: wipeIssued
+            description: A wipe command was issued for the device
+            name: wipeIssued
+          - value: wipeCanceled
+            description: A wipe command for this device has been canceled
+            name: wipeCanceled
+          - value: retireCanceled
+            description: A retire command for this device has been canceled
+            name: retireCanceled
+          - value: discovered
+            description: The device is discovered but not fully enrolled.
+            name: discovered
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
       enum:
@@ -9476,6 +9634,28 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.engagementRoleMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: engagementRoleMember
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the role was assigned to the user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            userId:
+              type: string
+              description: The Microsoft Entra ID of the user who has the role assigned.
+              nullable: true
+              readOnly: true
+            user:
+              $ref: '#/components/schemas/microsoft.graph.user'
+          additionalProperties:
+            type: object
+          description: Entity to represent the assignment of a role to a user.
     microsoft.graph.courseStatus:
       title: courseStatus
       enum:
@@ -10293,6 +10473,16 @@ components:
               type: string
               description: 'The group type for which the expiration policy applies. Possible values are All, Selected or None.'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
           additionalProperties:
             type: object
     microsoft.graph.plannerGroup:
@@ -13724,11 +13914,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'

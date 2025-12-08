@@ -11,7 +11,7 @@ paths:
       tags:
         - applications.application
       summary: List applications
-      description: Get the list of applications in this organization.
+      description: 'Get the list of applications in this organization. This API also returns agentIdentityBlueprint objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprint.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list?view=graph-rest-beta
@@ -75,7 +75,7 @@ paths:
       tags:
         - applications.application
       summary: Create application
-      description: Create a new application object.
+      description: 'Create a new application object. This API can also create an agentIdentityBlueprint object when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-beta
@@ -102,7 +102,7 @@ paths:
       tags:
         - applications.application
       summary: Get application
-      description: Get the properties and relationships of an application object.
+      description: Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-beta
@@ -150,7 +150,7 @@ paths:
       tags:
         - applications.application
       summary: Upsert application
-      description: 'Create a new application object if it doesn''t exist, or update the properties of an existing application object.'
+      description: 'Create a new application object if it doesn''t exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object from an agentIdentityBlueprint if it doesn''t exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-beta
@@ -185,7 +185,7 @@ paths:
       tags:
         - applications.application
       summary: Delete application
-      description: 'Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
+      description: 'Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-beta
@@ -926,11 +926,11 @@ paths:
     post:
       tags:
         - applications.federatedIdentityCredential
-      summary: Create federatedIdentityCredential
-      description: 'Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
+      summary: Create agentIdentityBlueprint federatedIdentityCredential
+      description: 'Create a new federatedIdentityCredential object for an agentIdentityBlueprint. By configuring a trust relationship between your Microsoft Entra agent identity blueprint registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an agentIdentityBlueprint.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentidentityblueprint-post-federatedidentitycredentials?view=graph-rest-beta
       operationId: application_CreateFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -1558,7 +1558,7 @@ paths:
       tags:
         - applications.application.Actions
       summary: Invoke action checkMemberGroups
-      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\r\n- user\r\n- group\r\n- service principal\r\n- organizational contact\r\n- device\r\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -1774,10 +1774,10 @@ paths:
       tags:
         - applications.application.Actions
       summary: Invoke action removeKey
-      description: 'Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
+      description: Remove a key credential from an agentIdentityBlueprint. This method along with addKey can be used to automate rolling its expiring keys.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-removekey?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentidentityblueprint-removekey?view=graph-rest-beta
       operationId: application_removeKey
       parameters:
         - name: application-id
@@ -1854,7 +1854,7 @@ paths:
       tags:
         - applications.application.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- externalUserProfile\r\n- group\r\n- pendingExternalUserProfile\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
@@ -1883,10 +1883,10 @@ paths:
       tags:
         - applications.application.Actions
       summary: Invoke action setVerifiedPublisher
-      description: 'Set the the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.'
+      description: 'Set the the verifiedPublisher on an agentIdentityBlueprint. For more information, including prerequisites to setting a verified publisher, see Publisher verification.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentidentityblueprint-setverifiedpublisher?view=graph-rest-beta
       operationId: application_setVerifiedPublisher
       parameters:
         - name: application-id
@@ -1920,10 +1920,10 @@ paths:
       tags:
         - applications.application.Actions
       summary: Invoke action unsetVerifiedPublisher
-      description: 'Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.'
+      description: 'Unset the verifiedPublisher previously set on an agentIdentityBlueprint, removing all verified publisher properties. For more information, see Publisher verification.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentidentityblueprint-unsetverifiedpublisher?view=graph-rest-beta
       operationId: application_unsetVerifiedPublisher
       parameters:
         - name: application-id
@@ -5907,7 +5907,7 @@ paths:
       tags:
         - applications.application
       summary: Get application
-      description: Get the properties and relationships of an application object.
+      description: Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-beta
@@ -5955,7 +5955,7 @@ paths:
       tags:
         - applications.application
       summary: Upsert application
-      description: 'Create a new application object if it doesn''t exist, or update the properties of an existing application object.'
+      description: 'Create a new application object if it doesn''t exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object from an agentIdentityBlueprint if it doesn''t exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-beta
@@ -5990,7 +5990,7 @@ paths:
       tags:
         - applications.application
       summary: Delete application
-      description: 'Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
+      description: 'Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-beta
@@ -6021,7 +6021,7 @@ paths:
       tags:
         - applications.application
       summary: Get application
-      description: Get the properties and relationships of an application object.
+      description: Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-beta
@@ -6069,7 +6069,7 @@ paths:
       tags:
         - applications.application
       summary: Upsert application
-      description: 'Create a new application object if it doesn''t exist, or update the properties of an existing application object.'
+      description: 'Create a new application object if it doesn''t exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object from an agentIdentityBlueprint if it doesn''t exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-beta
@@ -6104,7 +6104,7 @@ paths:
       tags:
         - applications.application
       summary: Delete application
-      description: 'Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
+      description: 'Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-beta
@@ -6159,7 +6159,7 @@ paths:
       tags:
         - applications.application.Functions
       summary: Invoke function delta
-      description: 'Get newly created, updated, or deleted applications without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
+      description: 'Get newly created, updated, or deleted applications and agent identity blueprints without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delta?view=graph-rest-beta
@@ -6321,7 +6321,7 @@ paths:
       tags:
         - applications.application.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties:\r\n1. Validate the prefix and suffix naming policy\r\n2. Validate the custom banned words policy\r\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta
@@ -6361,7 +6361,7 @@ paths:
       tags:
         - applicationTemplates.applicationTemplate
       summary: List applicationTemplates
-      description: Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
+      description: Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta
@@ -6416,7 +6416,7 @@ paths:
       tags:
         - applicationTemplates.applicationTemplate
       summary: Get applicationTemplate
-      description: Retrieve the properties of an applicationTemplate object.
+      description: Retrieve the properties of an applicationTemplate object. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-beta
@@ -11044,6 +11044,246 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/sensors':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.privateAccessSensor
+      summary: Get sensors from onPremisesPublishingProfiles
+      description: A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
+      operationId: onPremisesPublishingProfile_ListSensor
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.privateAccessSensorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.privateAccessSensor
+      summary: Create new navigation property to sensors for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfile_CreateSensor
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.privateAccessSensor'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privateAccessSensor'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/sensors/{privateAccessSensor-id}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.privateAccessSensor
+      summary: Get sensors from onPremisesPublishingProfiles
+      description: A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
+      operationId: onPremisesPublishingProfile_GetSensor
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: privateAccessSensor-id
+          in: path
+          description: The unique identifier of privateAccessSensor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: privateAccessSensor
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privateAccessSensor'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.privateAccessSensor
+      summary: Update the navigation property sensors in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfile_UpdateSensor
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: privateAccessSensor-id
+          in: path
+          description: The unique identifier of privateAccessSensor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: privateAccessSensor
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.privateAccessSensor'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.privateAccessSensor'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.privateAccessSensor
+      summary: Delete navigation property sensors for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfile_DeleteSensor
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: privateAccessSensor-id
+          in: path
+          description: The unique identifier of privateAccessSensor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: privateAccessSensor
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/sensors/$count':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.privateAccessSensor
+      summary: Get the number of the resource
+      operationId: onPremisesPublishingProfile.sensor_GetCount
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: The unique identifier of onPremisesPublishingProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /onPremisesPublishingProfiles/$count:
     get:
       tags:
@@ -11063,7 +11303,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: List servicePrincipals
-      description: Retrieve a list of servicePrincipal objects.
+      description: 'Retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-beta
@@ -11127,7 +11367,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Create servicePrincipal
-      description: Create a new servicePrincipal object.
+      description: 'Create a new servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-beta
@@ -11154,7 +11394,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get servicePrincipal
-      description: Retrieve the properties and relationships of a servicePrincipal object.
+      description: Retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-beta
@@ -11202,7 +11442,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Upsert servicePrincipal
-      description: 'Create a new servicePrincipal object if it doesn''t exist, or update the properties of an existing servicePrincipal object.'
+      description: 'Create a new servicePrincipal object if it doesn''t exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn''t exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-beta
@@ -11237,7 +11477,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Delete servicePrincipal
-      description: Delete a servicePrincipal object.
+      description: Delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-beta
@@ -12210,11 +12450,11 @@ paths:
     put:
       tags:
         - servicePrincipals.customClaimsPolicy
-      summary: Create or replace claimsPolicy
-      description: 'Create a new customClaimsPolicy object if it doesn''t exist, or replace an existing one.'
+      summary: Update customClaimsPolicy
+      description: Update a customClaimsPolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta
       operationId: servicePrincipal_SetClaimsPolicy
       parameters:
         - name: servicePrincipal-id
@@ -12245,11 +12485,11 @@ paths:
     patch:
       tags:
         - servicePrincipals.customClaimsPolicy
-      summary: Create or replace claimsPolicy
-      description: 'Create a new customClaimsPolicy object if it doesn''t exist, or replace an existing one.'
+      summary: Update customClaimsPolicy
+      description: Update a customClaimsPolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta
       operationId: servicePrincipal_UpdateClaimsPolicy
       parameters:
         - name: servicePrincipal-id
@@ -14558,7 +14798,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action addTokenSigningCertificate
-      description: "Creates a self-signed signing certificate and returns a selfSignedCertificate object, which is the public part of the generated certificate. The self-signed signing certificate is composed of the following objects which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with usage set to Sign.\n    + A public key object with usage set to Verify.\n+ The passwordCredentials object. All the objects have the same value of customKeyIdentifier. The passwordCredential is used to open the PFX file (private key). It and the associated private key object have the same value of keyId. Once set during creation through the displayName property, the subject of the certificate cannot be updated. The startDateTime is set to the same time the certificate is created using the action. The endDateTime can be up to three years after the certificate is created."
+      description: "Creates a self-signed signing certificate and returns a selfSignedCertificate object, which is the public part of the generated certificate. The self-signed signing certificate is composed of the following objects which are added to the servicePrincipal: \r\n+ The keyCredentials object with the following objects:\r\n    + A private key object with usage set to Sign.\r\n    + A public key object with usage set to Verify.\r\n+ The passwordCredentials object. All the objects have the same value of customKeyIdentifier. The passwordCredential is used to open the PFX file (private key). It and the associated private key object have the same value of keyId. Once set during creation through the displayName property, the subject of the certificate cannot be updated. The startDateTime is set to the same time the certificate is created using the action. The endDateTime can be up to three years after the certificate is created."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-beta
@@ -14605,7 +14845,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action checkMemberGroups
-      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\n- user\n- group\n- service principal\n- organizational contact\n- device\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
+      description: "Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:\r\n- user\r\n- group\r\n- service principal\r\n- organizational contact\r\n- device\r\n- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
@@ -14944,7 +15184,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\n- administrativeUnit\n- application\n- certificateBasedAuthPki\n- certificateAuthorityDetail\n- externalUserProfile\n- group\n- pendingExternalUserProfile\n- servicePrincipal\n- user If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- externalUserProfile\r\n- group\r\n- pendingExternalUserProfile\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
@@ -21317,7 +21557,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get servicePrincipal
-      description: Retrieve the properties and relationships of a servicePrincipal object.
+      description: Retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-beta
@@ -21365,7 +21605,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Upsert servicePrincipal
-      description: 'Create a new servicePrincipal object if it doesn''t exist, or update the properties of an existing servicePrincipal object.'
+      description: 'Create a new servicePrincipal object if it doesn''t exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn''t exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-beta
@@ -21400,7 +21640,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Delete servicePrincipal
-      description: Delete a servicePrincipal object.
+      description: Delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-beta
@@ -21455,7 +21695,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal.Functions
       summary: Invoke function delta
-      description: 'Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
+      description: 'Get newly created, updated, or deleted service principals, agent identities, and agent identity blueprints without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-beta
@@ -21617,7 +21857,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties:\r\n1. Validate the prefix and suffix naming policy\r\n2. Validate the custom banned words policy\r\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you're only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta
@@ -21656,11 +21896,11 @@ paths:
     get:
       tags:
         - users.appRoleAssignment
-      summary: List appRoleAssignments granted to a user
-      description: Retrieve the list of appRoleAssignments that a user has been granted. This operation also returns app role assignments granted to groups that the user is a direct member of.
+      summary: List appRoleAssignments (for agentUser)
+      description: Retrieve the list of appRoleAssignments granted to an agentUser.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-list-approleassignments?view=graph-rest-beta
       operationId: user_ListAppRoleAssignment
       parameters:
         - name: user-id
@@ -21728,11 +21968,11 @@ paths:
     post:
       tags:
         - users.appRoleAssignment
-      summary: Grant an appRoleAssignment to a user
-      description: 'Use this API to assign an app role to a user, creating an appRoleAssignment object. To grant an app role assignment to a user, you need three identifiers:'
+      summary: Create appRoleAssignment (for agentUser)
+      description: Grant an app role assignment to an agentUser.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/agentuser-post-approleassignments?view=graph-rest-beta
       operationId: user_CreateAppRoleAssignment
       parameters:
         - name: user-id
@@ -21956,6 +22196,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationBehaviors'
             certification:
               $ref: '#/components/schemas/microsoft.graph.certification'
+            createdByAppId:
+              type: string
+              description: The globally unique appId (called Application (client) ID on the Microsoft Entra admin center) of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -22435,6 +22679,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.'
+            createdByAppId:
+              type: string
+              description: The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.
+              nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             description:
@@ -22672,7 +22920,7 @@ components:
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).'
               nullable: true
             ageGroup:
               type: string
@@ -22798,6 +23046,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
               description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.'
+            identityParentId:
+              type: string
+              description: 'The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.'
+              nullable: true
             imAddresses:
               type: array
               items:
@@ -23099,6 +23351,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: The user's Cloud PCs. Read-only. Nullable.
               x-ms-navigationProperty: true
             communications:
               $ref: '#/components/schemas/microsoft.graph.userCloudCommunication'
@@ -23264,6 +23517,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
               description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
               x-ms-navigationProperty: true
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             outlook:
               $ref: '#/components/schemas/microsoft.graph.outlookUser'
             ownedDevices:
@@ -23684,7 +23939,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.'
+              description: 'The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.  Supports $filter (contains).'
             configurationUris:
               type: array
               items:
@@ -23696,14 +23951,26 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The name of the application.
+              description: The name of the application. Supports $filter (contains).
               nullable: true
+            endpoints:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: A collection of string URLs representing various domains that are used by this application.
             homePageUrl:
               type: string
               description: The home page URL of the application.
               nullable: true
             informationalUrls:
               $ref: '#/components/schemas/microsoft.graph.informationalUrls'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the data for the application was last updated, represented using ISO 8601 format and always in UTC time.'
+              format: date-time
+              nullable: true
             logoUrl:
               type: string
               description: The URL to get the logo for this application.
@@ -23712,6 +23979,10 @@ components:
               type: string
               description: The name of the publisher for this application.
               nullable: true
+            riskFactors:
+              $ref: '#/components/schemas/microsoft.graph.applicationRiskFactors'
+            riskScore:
+              $ref: '#/components/schemas/microsoft.graph.applicationRiskScore'
             supportedClaimConfiguration:
               $ref: '#/components/schemas/microsoft.graph.supportedClaimConfiguration'
             supportedProvisioningTypes:
@@ -23790,6 +24061,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
               description: List of existing publishedResource objects. Read-only. Nullable.
               x-ms-navigationProperty: true
+            sensors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.privateAccessSensor'
+              description: A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.onPremisesAgentGroup:
@@ -23838,7 +24115,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingType'
-              description: 'Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.'
+              description: 'Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, intunePfx, oflineDomainJoin, unknownFutureValue, privateAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: privateAccess.'
             agentGroups:
               type: array
               items:
@@ -23927,6 +24204,32 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
               description: The connectorGroup that the connector is a member of. Read-only.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.privateAccessSensor:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: privateAccessSensor
+          type: object
+          properties:
+            externalIp:
+              type: string
+              description: External IP of sensor.
+            isAuditMode:
+              type: boolean
+              description: Not Implementated.
+              nullable: true
+            isBreakglassEnabled:
+              type: boolean
+              description: Not Implemented.
+            machineName:
+              type: string
+              description: Machine name of sensor.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.sensorStatus'
+            version:
+              type: string
+              description: Version of sensor.
           additionalProperties:
             type: object
     microsoft.graph.appManagementPolicy:
@@ -27153,14 +27456,28 @@ components:
             isPersonalSite:
               type: boolean
               nullable: true
+            locale:
+              type: string
+              description: The language settings of the site.
+              nullable: true
+            lockState:
+              $ref: '#/components/schemas/microsoft.graph.siteLockState'
+            ownerIdentityToResolve:
+              $ref: '#/components/schemas/microsoft.graph.identityInput'
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
             settings:
               $ref: '#/components/schemas/microsoft.graph.siteSettings'
+            shareByEmailEnabled:
+              type: boolean
+              description: Determines whether the site and its content can be shared via email.
+              nullable: true
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
               $ref: '#/components/schemas/microsoft.graph.siteCollection'
+            template:
+              $ref: '#/components/schemas/microsoft.graph.siteTemplateType'
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             columns:
@@ -28292,7 +28609,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -28467,6 +28784,17 @@ components:
           additionalProperties:
             type: object
           description: Represents a Microsoft online meeting.
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
+              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
+          additionalProperties:
+            type: object
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28778,6 +29106,8 @@ components:
               readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+            workLocation:
+              $ref: '#/components/schemas/microsoft.graph.userWorkLocation'
           additionalProperties:
             type: object
     microsoft.graph.profile:
@@ -29494,6 +29824,51 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.applicationRiskFactors:
+      title: applicationRiskFactors
+      type: object
+      properties:
+        compliance:
+          $ref: '#/components/schemas/microsoft.graph.applicationSecurityCompliance'
+        general:
+          $ref: '#/components/schemas/microsoft.graph.applicationRiskFactorGeneralInfo'
+        legal:
+          $ref: '#/components/schemas/microsoft.graph.applicationRiskFactorLegalInfo'
+        security:
+          $ref: '#/components/schemas/microsoft.graph.applicationRiskFactorSecurityInfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationRiskScore:
+      title: applicationRiskScore
+      type: object
+      properties:
+        compliance:
+          type: number
+          description: 'Specifies the compliance risk score based on the application''s alignment with regulatory standards and industry certifications such as HIPAA, CSA, and PCI-DSS.'
+          format: float
+          nullable: true
+        legal:
+          type: number
+          description: 'Specifies the legal risk score based on data protection practices, privacy policy transparency, and jurisdictional compliance to regulations and policies such as DMCA and data retention policy.'
+          format: float
+          nullable: true
+        provider:
+          type: number
+          description: 'Specifies the provider risk score based on vendor credibility, operational maturity, and trustworthiness.'
+          format: float
+          nullable: true
+        security:
+          type: number
+          description: 'Specifies the security risk score based on authentication strength, encryption, vulnerability management, and overall security hygiene.'
+          format: float
+          nullable: true
+        total:
+          type: number
+          description: Represents the composite risk score derived from all risk categories.
+          format: float
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.supportedClaimConfiguration:
       title: supportedClaimConfiguration
       type: object
@@ -29530,6 +29905,7 @@ components:
         - intunePfx
         - oflineDomainJoin
         - unknownFutureValue
+        - privateAccess
       type: string
     microsoft.graph.agentStatus:
       title: agentStatus
@@ -29560,6 +29936,7 @@ components:
         - fqdn
         - dnsSuffix
         - unknownFutureValue
+        - servicePrincipalName
       type: string
     microsoft.graph.privateNetworkProtocol:
       title: privateNetworkProtocol
@@ -29575,6 +29952,13 @@ components:
       enum:
         - active
         - inactive
+      type: string
+    microsoft.graph.sensorStatus:
+      title: sensorStatus
+      enum:
+        - active
+        - inactive
+        - unknownFutureValue
       type: string
     microsoft.graph.policyBase:
       allOf:
@@ -29769,17 +30153,6 @@ components:
               type: string
               description: 'The group type for which the expiration policy applies. Possible values are All, Selected or None.'
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.onPremisesSyncBehavior:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: onPremisesSyncBehavior
-          type: object
-          properties:
-            isCloudManaged:
-              type: boolean
-              description: 'Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.'
           additionalProperties:
             type: object
     microsoft.graph.plannerGroup:
@@ -30215,6 +30588,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.privateAccessSensorCollectionResponse:
+      title: Collection of privateAccessSensor
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.privateAccessSensor'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.claimsMappingPolicyCollectionResponse:
       title: Collection of claimsMappingPolicy
       type: object
@@ -30529,11 +30915,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -31067,6 +31453,8 @@ components:
               type: string
               description: The manufacturer-assigned model of the FIDO2 security key.
               nullable: true
+            passkeyType:
+              $ref: '#/components/schemas/microsoft.graph.passkeyType'
             publicKeyCredential:
               $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredential'
           additionalProperties:
@@ -31096,6 +31484,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -32149,6 +32538,12 @@ components:
           type: string
           description: 'The user principal name (UPN) of the user to whom the device is currently assigned. If no user is assigned, this field remains empty. Example values, john.doe@contoso.onmicrosoft.com and .'
           nullable: true
+        sessionStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the current user session starts, or null if no current user session exists. This value is autogenerated and assigned at the start of each session. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcStatus:
@@ -32921,7 +33316,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.engagementRoleMember'
-              description: Users who have been assigned this role.
+              description: Users that have this role assigned.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -32972,6 +33367,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.siteLockState:
+      title: siteLockState
+      enum:
+        - unlocked
+        - lockedReadOnly
+        - lockedNoAccess
+        - lockedNoAdditions
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityInput:
+      title: identityInput
+      type: object
+      properties:
+        alias:
+          type: string
+          description: The alias of the identity.
+          nullable: true
+        email:
+          type: string
+          description: The email of the identity.
+          nullable: true
+        objectId:
+          type: string
+          description: The unique object ID assigned to the identity in Microsoft Entra ID.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.root:
       title: root
       type: object
@@ -33009,6 +33431,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.root'
       additionalProperties:
         type: object
+    microsoft.graph.siteTemplateType:
+      title: siteTemplateType
+      enum:
+        - sitepagepublishing
+        - group
+        - sts
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemAnalytics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -33797,6 +34227,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+              x-ms-navigationProperty: true
+            enabledApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
               x-ms-navigationProperty: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -35307,6 +35742,7 @@ components:
         - wipeCanceled
         - retireCanceled
         - discovered
+        - unknownFutureValue
       type: string
       description: Management state of device in Microsoft Intune.
       x-ms-enum:
@@ -35349,6 +35785,9 @@ components:
           - value: discovered
             description: The device is discovered but not fully enrolled.
             name: discovered
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.ownerType:
       title: ownerType
       enum:
@@ -36351,6 +36790,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            expiryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
             isEndToEndEncryptionEnabled:
               type: boolean
               description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
@@ -36369,6 +36814,14 @@ components:
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            meetingOptionsWebUrl:
+              type: string
+              description: Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+              nullable: true
+            meetingSpokenLanguageTag:
+              type: string
+              description: Specifies the spoken language used during the meeting for recording and transcription purposes.
+              nullable: true
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -36753,6 +37206,11 @@ components:
               type: string
               description: The type of query. Examples include MicrosoftGraph and ARM.
               nullable: true
+            reviewerId:
+              type: string
+              nullable: true
+            scopeType:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScopeType'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScope:
@@ -36799,6 +37257,10 @@ components:
               description: 'The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
               format: date-time
               nullable: true
+            applyDescription:
+              type: string
+              description: The description of the apply result.
+              nullable: true
             applyResult:
               type: string
               description: 'The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -36811,6 +37273,8 @@ components:
               type: string
               description: Justification left by the reviewer when they made the decision.
               nullable: true
+            permission:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemPermission'
             principal:
               $ref: '#/components/schemas/microsoft.graph.identity'
             principalLink:
@@ -37016,6 +37480,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
+            contentSensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.contentSensitivityLabelAssignment'
             contexts:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContextCollection'
             createdBy:
@@ -37122,6 +37588,8 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            hasChat:
+              type: boolean
             hasDescription:
               type: boolean
               description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
@@ -37229,6 +37697,20 @@ components:
           description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userWorkLocation:
+      title: userWorkLocation
+      type: object
+      properties:
+        placeId:
+          type: string
+          description: Identifier of the place (when applicable).
+          nullable: true
+        source:
+          $ref: '#/components/schemas/microsoft.graph.workLocationSource'
+        workLocationType:
+          $ref: '#/components/schemas/microsoft.graph.workLocationType'
       additionalProperties:
         type: object
     microsoft.graph.userAccountInformation:
@@ -37811,11 +38293,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
@@ -38358,6 +38840,300 @@ components:
         - logoutUrl
         - unknownFutureValue
       type: string
+    microsoft.graph.applicationSecurityCompliance:
+      title: applicationSecurityCompliance
+      type: object
+      properties:
+        cobit:
+          type: boolean
+          description: Indicates whether the application adheres to the Control Objectives for Information and Related Technologies (COBIT) framework.
+          nullable: true
+        coppa:
+          type: boolean
+          description: Indicates whether the application complies with the Children’s Online Privacy Protection Act (COPPA).
+          nullable: true
+        csaStar:
+          $ref: '#/components/schemas/microsoft.graph.csaStarLevel'
+        fedRamp:
+          $ref: '#/components/schemas/microsoft.graph.fedRampLevel'
+        ferpa:
+          type: boolean
+          description: Indicates whether the application complies with the Family Educational Rights and Privacy Act (FERPA).
+          nullable: true
+        ffiec:
+          type: boolean
+          description: Indicates whether the application meets Federal Financial Institutions Examination Council (FFIEC) requirements.
+          nullable: true
+        finra:
+          type: boolean
+          description: Indicates whether the application complies with Financial Industry Regulatory Authority (FINRA) standards.
+          nullable: true
+        fisma:
+          type: boolean
+          description: Indicates whether the application complies with the Federal Information Security Management Act (FISMA).
+          nullable: true
+        gaap:
+          type: boolean
+          description: Indicates whether the application provider adheres to Generally Accepted Accounting Principles (GAAP).
+          nullable: true
+        gapp:
+          type: boolean
+          description: Indicates whether the application adheres to Generally Accepted Privacy Principles (GAPP).
+          nullable: true
+        glba:
+          type: boolean
+          description: Indicates whether the application complies with the Gramm–Leach–Bliley Act (GLBA) for financial data protection.
+          nullable: true
+        hipaa:
+          type: boolean
+          description: Indicates whether the application complies with the Health Insurance Portability and Accountability Act (HIPAA).
+          nullable: true
+        hitrust:
+          type: boolean
+          description: 'Indicates whether the application holds HITRUST certification, demonstrating alignment with healthcare and data security standards.'
+          nullable: true
+        isae3402:
+          type: boolean
+          description: 'Indicates whether the application complies with International Standard on Assurance Engagements (ISAE) 3,402 requirements.'
+          nullable: true
+        iso27001:
+          type: boolean
+          description: Indicates whether the application is certified against ISO/IEC 27001 for information security management systems (ISMS).
+          nullable: true
+        iso27002:
+          type: boolean
+          description: Indicates whether the application follows ISO/IEC 27002 security control best practices.
+          nullable: true
+        iso27017:
+          type: boolean
+          description: 'Indicates whether the application complies with ISO/IEC 27,017 standards for cloud security controls.'
+          nullable: true
+        iso27018:
+          type: boolean
+          description: 'Indicates whether the application complies with ISO/IEC 27,018 standards for protecting personally identifiable information (PII) in cloud environments.'
+          nullable: true
+        itar:
+          type: boolean
+          description: Indicates whether the application complies with International Traffic in Arms Regulations (ITAR).
+          nullable: true
+        jerichoForumCommandments:
+          type: boolean
+          description: Indicates whether the application aligns with Jericho Forum security principles for deperimeterized environments.
+          nullable: true
+        pci:
+          $ref: '#/components/schemas/microsoft.graph.pciVersion'
+        privacyShield:
+          type: boolean
+          description: Indicates whether the application complies with the EU–U.S. Privacy Shield framework for cross-border data transfers.
+          nullable: true
+        safeHarbor:
+          type: boolean
+          description: Indicates whether the application previously adhered to the U.S.–EU Safe Harbor data transfer framework.
+          nullable: true
+        soc1:
+          type: boolean
+          description: Indicates whether the application provider undergoes a Service Organization Control (SOC) one audit report.
+          nullable: true
+        soc2:
+          type: boolean
+          description: Indicates whether the application provider undergoes a Service Organization Control (SOC) two audit report.
+          nullable: true
+        soc3:
+          type: boolean
+          description: Indicates whether the application provider undergoes a Service Organization Control (SOC) three audit report.
+          nullable: true
+        sox:
+          type: boolean
+          description: Indicates whether the application complies with the Sarbanes–Oxley Act (SOX) financial reporting requirements.
+          nullable: true
+        sp800_53:
+          type: boolean
+          description: Indicates whether the application aligns with National Institute of Standards and Technology (NIST) Special Publication 800-53 security and privacy controls.
+          nullable: true
+        ssae16:
+          type: boolean
+          description: Indicates whether the application adheres to Statement on Standards for Attestation Engagements (SSAE) No. 16.
+          nullable: true
+        ustr:
+          type: boolean
+          description: Indicates whether the application complies with U.S. Trade Representative (USTR) data and trade protection requirements.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationRiskFactorGeneralInfo:
+      title: applicationRiskFactorGeneralInfo
+      type: object
+      properties:
+        consumerPopularity:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Indicates the relative popularity or adoption of the application based on the user or tenant usage metrics.
+          format: int32
+          nullable: true
+        domainRegistrationDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'Specifies the date when the application''s primary domain was registered, used to assess domain maturity and legitimacy.'
+          format: date
+          nullable: true
+        founded:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Year the company or organization behind the application was founded.
+          format: int32
+          nullable: true
+        hasDisasterRecoveryPlan:
+          type: boolean
+          description: Indicates whether the application provider maintains a disaster recovery or business continuity plan.
+          nullable: true
+        hold:
+          $ref: '#/components/schemas/microsoft.graph.holdType'
+        hostingCompanyName:
+          type: string
+          description: Specifies the name of the company or provider that hosts the application's infrastructure.
+          nullable: true
+        location:
+          $ref: '#/components/schemas/microsoft.graph.applicationLocation'
+        privacyPolicy:
+          type: string
+          description: Specifies the URL of the application's privacy policy.
+          nullable: true
+        processedDataTypes:
+          $ref: '#/components/schemas/microsoft.graph.applicationDataType'
+        termsOfService:
+          type: string
+          description: Specifies the URL of the application's terms of service.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationRiskFactorLegalInfo:
+      title: applicationRiskFactorLegalInfo
+      type: object
+      properties:
+        dataRetention:
+          $ref: '#/components/schemas/microsoft.graph.dataRetentionLevel'
+        gdpr:
+          $ref: '#/components/schemas/microsoft.graph.applicationRiskFactorLegalInfoGdpr'
+        hasDataOwnership:
+          type: boolean
+          description: Indicates whether customers maintain ownership and control of their data processed or stored by the application.
+          nullable: true
+        hasDmca:
+          type: boolean
+          description: Indicates whether the application or organization complies with the Digital Millennium Copyright Act (DMCA) or equivalent copyright protection frameworks.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationRiskFactorSecurityInfo:
+      title: applicationRiskFactorSecurityInfo
+      type: object
+      properties:
+        certificate:
+          $ref: '#/components/schemas/microsoft.graph.applicationRiskFactorCertificateInfo'
+        domainToCheck:
+          type: string
+          description: Specifies the domain or hostname evaluated during the security assessment.
+          nullable: true
+        hasAdminAuditTrail:
+          type: boolean
+          description: Indicates whether the application maintains an audit trail for administrative actions.
+          nullable: true
+        hasAnonymousUsage:
+          type: boolean
+          description: Indicates whether the application allows anonymous or unauthenticated usage.
+          nullable: true
+        hasDataAuditTrail:
+          type: boolean
+          description: Indicates whether the application logs access or modification of customer data for audit purposes.
+          nullable: true
+        hasDataClassification:
+          type: boolean
+          description: Indicates whether the application classifies and labels data based on sensitivity levels.
+          nullable: true
+        hasDataEncrypted:
+          type: boolean
+          description: Indicates whether data at rest and in transit are encrypted using approved algorithms.
+          nullable: true
+        hasEnforceTransportEnc:
+          type: boolean
+          description: Indicates whether HTTPS or equivalent secure transport is enforced for all communication channels.
+          nullable: true
+        hasIpRestriction:
+          type: boolean
+          description: Indicates whether access to the application can be restricted based on IP address or network range.
+          nullable: true
+        hasMFA:
+          type: boolean
+          description: Indicates whether the application supports or enforces multi-factor authentication (MFA).
+          nullable: true
+        hasPenTest:
+          type: boolean
+          description: Indicates whether the application undergoes periodic penetration testing or external security reviews.
+          nullable: true
+        hasRememberPassword:
+          type: boolean
+          description: 'Indicates whether the application supports password-saving functionality, which may pose a security risk.'
+          nullable: true
+        hasSamlSupport:
+          type: boolean
+          description: Indicates whether the application supports SAML-based single sign-on (SSO).
+          nullable: true
+        hasUserAuditLogs:
+          type: boolean
+          description: Indicates whether user activity is logged for security or compliance monitoring.
+          nullable: true
+        hasUserDataUpload:
+          type: boolean
+          description: Indicates whether users can upload or store personal or organizational data within the application.
+          nullable: true
+        hasUserRolesSupport:
+          type: boolean
+          description: Indicates whether the application supports role-based access control (RBAC).
+          nullable: true
+        hasValidCertName:
+          type: boolean
+          description: Indicates whether the certificate’s common name matches the application’s verified domain.
+          nullable: true
+        httpsSecurityHeaders:
+          type: array
+          items:
+            type: string
+          description: 'Lists the HTTP security headers detected for the application (for example, HSTS, X-Frame-Options, or CSP).'
+        isCertTrusted:
+          type: boolean
+          description: Indicates whether the application’s certificate is signed by a trusted certificate authority (CA).
+          nullable: true
+        isDrownVulnerable:
+          type: boolean
+          description: Indicates whether the application is vulnerable to the DROWN (Decrypting RSA with Obsolete and Weakened eNcryption) attack.
+          nullable: true
+        isHeartbleedProof:
+          type: boolean
+          description: Indicates whether the application’s SSL implementation is protected from the Heartbleed vulnerability.
+          nullable: true
+        lastBreachDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'Specifies the date of the last publicly reported data breach or security incident related to the application, if known.'
+          format: date
+          nullable: true
+        latestValidSSL:
+          $ref: '#/components/schemas/microsoft.graph.sslVersion'
+        passwordPolicy:
+          $ref: '#/components/schemas/microsoft.graph.passwordPolicy'
+        restEncryptionType:
+          $ref: '#/components/schemas/microsoft.graph.restEncryptionType'
+      additionalProperties:
+        type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
+      type: string
+      nullable: true
     microsoft.graph.updateWindow:
       title: updateWindow
       type: object
@@ -38871,6 +39647,13 @@ components:
         - notAttested
         - unknownFutureValue
       type: string
+    microsoft.graph.passkeyType:
+      title: passkeyType
+      enum:
+        - deviceBound
+        - synced
+        - unknownFutureValue
+      type: string
     microsoft.graph.webauthnPublicKeyCredential:
       title: webauthnPublicKeyCredential
       type: object
@@ -38898,6 +39681,7 @@ components:
             lastUsedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the authentication method was last used by the user. Read-only. Optional. This optional value is null if the authentication method doesn''t populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             manufacturer:
@@ -40598,7 +41382,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The timestamp when the role was assigned to the user.
+              description: 'The date and time when the role was assigned to the user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               readOnly: true
             userId:
@@ -42310,13 +43094,6 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
-    ReferenceNumeric:
-      enum:
-        - '-INF'
-        - INF
-        - NaN
-      type: string
-      nullable: true
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
       enum:
@@ -43780,6 +44557,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessReviewReviewerScopeType:
+      title: accessReviewReviewerScopeType
+      enum:
+        - user
+        - group
+        - self
+        - manager
+        - sponsor
+        - resourceOwner
+        - managerOrSponsor
+        - unknownFutureValue
+      type: string
     microsoft.graph.userIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -43796,6 +44585,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewInstanceDecisionItemPermission:
+      title: accessReviewInstanceDecisionItemPermission
+      type: object
+      properties:
+        description:
+          type: string
+          description: The description of the permission.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the permission.
+          nullable: true
+        id:
+          type: string
+          description: The identifier of the permission.
+          nullable: true
+        type:
+          type: string
+          description: The type of the permission.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.decisionItemPrincipalResourceMembership:
       title: decisionItemPrincipalResourceMembership
       type: object
@@ -43808,6 +44619,10 @@ components:
       title: accessReviewInstanceDecisionItemResource
       type: object
       properties:
+        description:
+          type: string
+          description: Description of the resource
+          nullable: true
         displayName:
           type: string
           description: Display name of the resource
@@ -43818,7 +44633,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
       additionalProperties:
         type: object
@@ -43992,6 +44807,26 @@ components:
         url:
           type: string
           description: The full canonical URL of the container. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.contentSensitivityLabelAssignment:
+      title: contentSensitivityLabelAssignment
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignmentMethod'
+        justificationText:
+          type: string
+          description: The justification text provided when you change the sensitivity label. Used during label downgrade to document the reason. Optional.
+          nullable: true
+        sensitivityLabelId:
+          type: string
+          description: The unique identifier of the sensitivity label applied to the content. This ID corresponds to a label defined in the Microsoft Information Protection policy.
+          nullable: true
+        tenantId:
+          type: string
+          description: The unique identifier of the tenant where the sensitivity label is defined and applied.
           nullable: true
       additionalProperties:
         type: object
@@ -44200,6 +45035,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.workLocationSource:
+      title: workLocationSource
+      enum:
+        - none
+        - manual
+        - scheduled
+        - automatic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workLocationType:
+      title: workLocationType
+      enum:
+        - unspecified
+        - office
+        - remote
+        - timeOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemFacet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -44565,7 +45418,7 @@ components:
               nullable: true
             hasProtection:
               type: boolean
-              description: Indicates whether the label has protection actions configured.
+              description: Indicates whether the label has protection actions (such as encryption or do not forward) configured.
             isActive:
               type: boolean
               description: Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.
@@ -44874,6 +45727,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              description: A collection of custom fields linked to the task.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -45131,6 +45985,187 @@ components:
         - ConnectorDataStorageRequired
         - Extensions
         - BaseObjectName
+      type: string
+    microsoft.graph.csaStarLevel:
+      title: csaStarLevel
+      enum:
+        - none
+        - attestation
+        - certification
+        - continuousMonitoring
+        - cStarAssessment
+        - selfAssessment
+        - notSupported
+        - unknownFutureValue
+      type: string
+    microsoft.graph.fedRampLevel:
+      title: fedRampLevel
+      enum:
+        - none
+        - high
+        - liSaas
+        - low
+        - moderate
+        - notSupported
+        - unknownFutureValue
+      type: string
+    microsoft.graph.pciVersion:
+      title: pciVersion
+      enum:
+        - none
+        - v3_2_1
+        - v4
+        - notSupported
+        - unknownFutureValue
+      type: string
+    microsoft.graph.holdType:
+      title: holdType
+      enum:
+        - none
+        - private
+        - public
+        - unknownFutureValue
+      type: string
+    microsoft.graph.applicationLocation:
+      title: applicationLocation
+      type: object
+      properties:
+        dataCenter:
+          type: string
+          description: Specifies the region or physical location where the application's primary data center is hosted.
+          nullable: true
+        headquarters:
+          type: string
+          description: 'Specifies the city, country or region where the application''s owning organization is headquartered.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationDataType:
+      title: applicationDataType
+      enum:
+        - none
+        - codingFiles
+        - creditCards
+        - databaseFiles
+        - documents
+        - mediaFiles
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.dataRetentionLevel:
+      title: dataRetentionLevel
+      enum:
+        - none
+        - dataRetained
+        - deletedImmediately
+        - deletedWithin1Month
+        - deletedWithin2Weeks
+        - deletedWithin3Months
+        - deletedWithinMoreThan3Months
+        - unknownFutureValue
+      type: string
+    microsoft.graph.applicationRiskFactorLegalInfoGdpr:
+      title: applicationRiskFactorLegalInfoGdpr
+      type: object
+      properties:
+        dataProtection:
+          $ref: '#/components/schemas/microsoft.graph.dataProtection'
+        hasRightToErasure:
+          type: boolean
+          description: Indicates whether the application provides users with the ability to request deletion of their personal data (the right to be forgotten).
+          nullable: true
+        isReportingDataBreaches:
+          type: boolean
+          description: Indicates whether the organization reports personal data breaches to authorities and affected users in accordance with GDPR requirements.
+          nullable: true
+        statementUrl:
+          type: string
+          description: 'Specifies the URL of the application''s GDPR or privacy compliance statement, outlining how user data is handled.'
+          nullable: true
+        userOwnership:
+          $ref: '#/components/schemas/microsoft.graph.userOwnership'
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationRiskFactorCertificateInfo:
+      title: applicationRiskFactorCertificateInfo
+      type: object
+      properties:
+        hasBadCommonName:
+          type: boolean
+          description: Indicates whether the certificate's common name doesn't match the expected domain name.
+          nullable: true
+        hasInsecureSignature:
+          type: boolean
+          description: 'Indicates whether the certificate uses a weak or insecure signature algorithm (for example, MD5 or SHA-1).'
+          nullable: true
+        hasNoChainOfTrust:
+          type: boolean
+          description: Indicates whether the certificate chain of trust is incomplete or invalid.
+          nullable: true
+        isDenylisted:
+          type: boolean
+          description: Indicates whether the certificate is on a known denylist or associated with compromised issuers.
+          nullable: true
+        isHostnameMismatch:
+          type: boolean
+          description: Indicates whether the certificate's hostname doesn't match the domain it was issued for.
+          nullable: true
+        isNotAfter:
+          type: boolean
+          description: Indicates whether the certificate is expired and no longer valid.
+          nullable: true
+        isNotBefore:
+          type: boolean
+          description: Indicates whether the certificate isn't yet valid based on its activation date.
+          nullable: true
+        isRevoked:
+          type: boolean
+          description: Indicates whether the issuing certificate authority revoked the certificate.
+          nullable: true
+        isSelfSigned:
+          type: boolean
+          description: Indicates whether the certificate is self-signed rather than issued by a trusted certificate authority.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sslVersion:
+      title: sslVersion
+      enum:
+        - none
+        - ssl3_0
+        - tls1_0
+        - tls1_1
+        - tls1_2
+        - tls1_3
+        - notSupported
+        - unknownFutureValue
+      type: string
+    microsoft.graph.passwordPolicy:
+      title: passwordPolicy
+      enum:
+        - none
+        - changePasswordPeriod
+        - charactersCombination
+        - passwordHistoryAndReuse
+        - passwordLengthLimit
+        - personalInformationUse
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.restEncryptionType:
+      title: restEncryptionType
+      enum:
+        - none
+        - aes
+        - bitlocker
+        - blowfish
+        - des
+        - rc4
+        - rsa
+        - notSupported
+        - unknownFutureValue
       type: string
     microsoft.graph.keyCredentialConfiguration:
       title: keyCredentialConfiguration
@@ -46576,6 +47611,10 @@ components:
         - title: workbookComment
           type: object
           properties:
+            cellAddress:
+              type: string
+              description: 'The cell where the comment is located. The address value is in A1-style, which contains the sheet reference (for example, Sheet1!A1). Read-only.'
+              nullable: true
             content:
               type: string
               description: The content of the comment that is the String displayed to end-users.
@@ -46583,6 +47622,15 @@ components:
             contentType:
               type: string
               description: 'The content type of the comment. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the comment. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the comment (for example, comment content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             replies:
               type: array
               items:
@@ -48041,6 +49089,14 @@ components:
         - onlineMeeting
         - plannerTask
       type: string
+    microsoft.graph.sensitivityLabelAssignmentMethod:
+      title: sensitivityLabelAssignmentMethod
+      enum:
+        - standard
+        - privileged
+        - auto
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
       enum:
@@ -48512,6 +49568,7 @@ components:
           properties:
             value:
               type: string
+              description: The value of the property.
               nullable: true
           additionalProperties:
             type: object
@@ -48708,6 +49765,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.dataProtection:
+      title: dataProtection
+      enum:
+        - none
+        - impactAssessments
+        - officers
+        - secureCrossBorderDataTransfer
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.userOwnership:
+      title: userOwnership
+      enum:
+        - none
+        - lawfulBasisForProcessing
+        - rightToAccess
+        - rightToBeInformed
+        - rightToDataPortability
+        - rightToObject
+        - rightToRectification
+        - rightToRestrictionOfProcessing
+        - rightsRelatedToAutomatedDecisionMaking
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.appManagementPolicyActorExemptions:
       title: appManagementPolicyActorExemptions
       type: object
@@ -50296,6 +51380,26 @@ components:
         - retainAsRegulatoryRecord
         - unknownFutureValue
       type: string
+    microsoft.graph.workbookCommentMention:
+      title: workbookCommentMention
+      type: object
+      properties:
+        email:
+          type: string
+          description: Represents the email address of the person that is mentioned in a comment.
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Represents the ID of the person that is mentioned in a comment.
+          format: int32
+        name:
+          type: string
+          description: Represents the display name of the person that is mentioned in a comment.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -50309,6 +51413,15 @@ components:
             contentType:
               type: string
               description: 'The content type for the reply. Supported values are: plain, mention.'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookCommentMention'
+              description: 'A collection that contains all the people mentioned within the reply. When contentType is plain, this property is an empty array. Read-only.'
+            richContent:
+              type: string
+              description: 'The rich content of the reply (for example, reply content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.'
+              nullable: true
             task:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
@@ -51984,6 +53097,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.connectorCollectionResponse'
+    microsoft.graph.privateAccessSensorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.privateAccessSensorCollectionResponse'
     microsoft.graph.claimsMappingPolicyCollectionResponse:
       description: Retrieved collection
       content:
