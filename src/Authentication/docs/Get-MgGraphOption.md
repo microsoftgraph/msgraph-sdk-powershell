@@ -13,7 +13,7 @@ Gets global configurations that apply to the SDK. For example, check if Web Acco
 ## SYNTAX
 
 ```
-Get-MgGraphOption [<CommonParameters>]
+Get-MgGraphOption [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,17 +33,30 @@ Confirms if WAM support has been enabled.
 
 ## PARAMETERS
 
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Authentication.IGraphOption
-
 ## NOTES
 
 ## RELATED LINKS

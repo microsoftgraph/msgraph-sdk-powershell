@@ -119,6 +119,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
             interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
+            interactiveOptions.LoginHint = authContext.UserPrincipalName;
 
             if (!File.Exists(Constants.AuthRecordPath))
             {

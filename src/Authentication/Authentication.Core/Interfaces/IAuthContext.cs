@@ -45,6 +45,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string Environment { get; set; }
         string AppName { get; set; }
         string Account { get; set; }
+        string UserPrincipalName { get; set; }
         string CertificateThumbprint { get; set; }
         string CertificateSubjectName { get; set; }
         bool SendCertificateChain {  get; set; }

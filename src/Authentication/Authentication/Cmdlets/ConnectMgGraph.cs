@@ -99,6 +99,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Alias("ManagedIdentity", "ManagedServiceIdentity", "MSI")]
         public SwitchParameter Identity { get; set; }
 
+        [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.UserPrincipalName)]
+        [Alias("UPN")]
+        public string UserPrincipalName { get; set; }
+
         [Parameter(ParameterSetName = Constants.EnvironmentVariableParameterSet, Mandatory = false, HelpMessage = HelpMessages.EnvironmentVariable)]
         public SwitchParameter EnvironmentVariable { get; set; }
 
@@ -182,6 +186,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientId)))
                                 authContext.ClientId = ClientId;
                             authContext.AuthType = AuthenticationType.Delegated;
+                            authContext.UserPrincipalName = UserPrincipalName;
                             string[] processedScopes = ProcessScopes(Scopes);
                             authContext.Scopes = !processedScopes.Any() ? new[] { "User.Read" } : processedScopes;
                             if (RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCulture))
