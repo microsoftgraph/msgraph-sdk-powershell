@@ -10,10 +10,10 @@ parameters:
   default: true
 - name: Pack
   type: boolean
-  default: true
+  default: false
 - name: Sign
   type: boolean
-  default: true
+  default: false
 - name: InternalFeed
   type: string
   default: '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
@@ -106,29 +106,3 @@ extends:
               Pattern: "Microsoft.Graph*.nupkg"
 
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
-    - stage: 'Deploy_to_Internal_Feed'
-      dependsOn: stage
-      jobs:
-      - deployment: 'DeployToInternalFeed'
-        displayName: 'Deploy to Internal Feed'
-        environment: 'PowerShellInternalFeed'
-        templateContext:
-            type: releaseJob
-            isProduction: true
-            inputs:
-              - input: pipelineArtifact
-                artifactName: drop
-                targetPath: '$(System.DefaultWorkingDirectory)/drop'
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-              - task: 1ES.PublishNuget@1
-                displayName: 'Publish NuGet to feed'
-                inputs:
-                  useDotNetTask: false
-                  packageParentPath: '$(System.DefaultWorkingDirectory)'
-                  packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
-                  publishVstsFeed: ${{ parameters.InternalFeed }}
-                  nuGetFeedType: internal
-                  allowPackageConflicts: true
