@@ -1,0 +1,233 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+parameters:
+- name: BuildAgent
+  default: 1es-windows-ps-compute-m
+  displayName: Build Agent
+- name: Test
+  type: boolean
+  default: true
+- name: Pack
+  type: boolean
+  default: true
+- name: Sign
+  type: boolean
+  default: true
+- name: InternalFeed
+  type: string
+  default: '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
+  displayName: Internal NuGet Feed
+  values:
+    - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_v2'
+    - 'ATPopFeed'
+    - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
+
+variables:
+  BuildAgent: ${{ parameters.BuildAgent }}
+  GitUserEmail: "GraphTooling@service.microsoft.com"
+  GitUserName: "Microsoft Graph DevX Tooling"
+  REGISTRY: 'msgraphprodregistry.azurecr.io'
+  IMAGE_NAME: 'public/microsoftgraph/powershell'
+  PREVIEW_BRANCH: 'refs/heads/main'  # Updated to target your branch
+
+trigger:
+  tags:
+    include:
+      - v*
+
+resources:
+  repositories:
+  - repository: 1ESPipelineTemplates
+    type: git
+    name: 1ESPipelineTemplates/1ESPipelineTemplates
+    ref: refs/tags/release
+extends:
+  template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
+  parameters:
+    pool: $(BuildAgent)
+    sdl:
+      binskim:
+        enabled: false
+        justificationForDisabling: "Binskim keeps on crushing and failing the weekly build pipeline. Disabling it for now because we are unable to publish the artifacts to internal feeds."
+      credscan:
+        suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
+      policheck:
+        exclusionFile: $(Build.SourcesDirectory)/.azure-pipelines/config/policheck/policheck-exclusions.xml
+    customBuildTags:
+    - ES365AIMigrationTooling
+    stages:
+    - stage: stage
+      jobs:
+      - job: SDK_Release_Build
+        displayName: Microsoft Graph PowerShell SDK Release Build
+        timeoutInMinutes: 840
+        templateContext:
+          outputs:
+          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+            - output: pipelineArtifact
+              displayName: 'Publish Module Artifacts'
+              targetPath: '$(Build.ArtifactStagingDirectory)'
+              artifactName: 'drop'
+              publishLocation: 'Container'
+        steps:
+        - script: |
+            git submodule update --init --recursive
+        - template: .azure-pipelines/common-templates/install-tools.yml@self
+        - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
+        
+        - template: .azure-pipelines/generation-templates/authentication-module.yml@self
+          parameters:
+            Test: ${{ parameters.Test }}
+            Pack: ${{ parameters.Pack }}
+            Sign: ${{ parameters.Sign }}
+
+        - template: .azure-pipelines/generation-templates/workload-modules.yml@self
+          parameters:
+            Test: ${{ parameters.Test }}
+            Pack: ${{ parameters.Pack }}
+            Sign: ${{ parameters.Sign }}
+
+        - template: .azure-pipelines/generation-templates/meta-module.yml@self
+          parameters:
+            Test: ${{ parameters.Test }}
+            Pack: ${{ parameters.Pack }}
+            Sign: ${{ parameters.Sign }}
+
+        - template: .azure-pipelines/common-templates/guardian-analyzer.yml@self
+
+        - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+          - template: .azure-pipelines/common-templates/esrp/codesign-nuget.yml@self
+            parameters:
+              FolderPath: "$(Build.ArtifactStagingDirectory)"
+              Pattern: "Microsoft.Graph*.nupkg"
+
+        - template: .azure-pipelines/common-templates/security-post-checks.yml@self
+    - stage: 'Deploy_to_Internal_Feed'
+      dependsOn: stage
+      jobs:
+      - deployment: 'DeployToInternalFeed'
+        displayName: 'Deploy to Internal Feed'
+        environment: 'PowerShellInternalFeed'
+        templateContext:
+            type: releaseJob
+            isProduction: true
+            inputs:
+              - input: pipelineArtifact
+                artifactName: drop
+                targetPath: '$(System.DefaultWorkingDirectory)/drop'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - task: 1ES.PublishNuget@1
+                displayName: 'Publish NuGet to feed'
+                inputs:
+                  useDotNetTask: false
+                  packageParentPath: '$(System.DefaultWorkingDirectory)'
+                  packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
+                  publishVstsFeed: ${{ parameters.InternalFeed }}
+                  nuGetFeedType: internal
+                  allowPackageConflicts: true
+    - stage: 'Deploy_to_PsGallery'
+      dependsOn: stage
+      condition: succeeded() # Only deploy to PSGallery on main branch, this only runs on main branch due to trigger settings
+      jobs:
+      - deployment: 'DeployToPowerShellGallery'
+        displayName: 'Deploy to PowerShell Gallery'
+        environment: 'PowerShellGallery'
+        templateContext:
+          type: releaseJob
+          isProduction: true
+          inputs:
+            - input: pipelineArtifact
+              artifactName: drop
+              targetPath: '$(System.DefaultWorkingDirectory)/drop'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - task: 1ES.PublishNuget@1
+                displayName: 'Publish NuGet to feed'
+                inputs:
+                  useDotNetTask: false
+                  packageParentPath: '$(System.DefaultWorkingDirectory)'
+                  packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
+                  nuGetFeedType: external
+                  publishFeedCredentials: 'microsoftgraph PowerShell Gallery connection'
+
+    - stage: PushDockerImageToRegistry
+      condition: and(or(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['Build.SourceBranch'], variables['PREVIEW_BRANCH'])), not(contains(variables['Build.SourceBranch'], '-preview')))
+      dependsOn: stage
+      displayName: 'Push docker image'
+      jobs:
+        - job: PushDockerImage
+          displayName: 'Push docker image'
+          pool:
+            name: Azure-Pipelines-1ESPT-ExDShared
+            image: ubuntu-latest
+            os: linux
+          steps:
+          - checkout: self
+    
+          # Display the contents of the Build.SourcesDirectory
+          - bash: |
+              echo "Build.SourcesDirectory: $(Build.SourcesDirectory)"
+              ls -la $(Build.SourcesDirectory)
+            displayName: 'List contents of Build.SourcesDirectory'
+      
+          - task: AzureCLI@2
+            displayName: "Log in to Azure Container Registry"
+            inputs:
+              azureSubscription: 'ACR Images Push Service Connection' # service connection
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              'inlineScript': |
+                az acr login --name $(REGISTRY)
+          - powershell: |
+              $date = Get-Date -Format "yyyyMMdd"
+              Write-Host "##vso[task.setvariable variable=currentDate]$date"
+    
+          - script: |
+              docker run --privileged --rm tonistiigi/binfmt --install all
+            displayName: 'Enable multi-platform builds'
+          
+          - script: |
+              docker buildx create --use --name mybuilder
+            displayName: 'Set up Docker BuildX'
+    
+          - powershell: |
+              $version = $Env:BUILD_SOURCEBRANCH.replace("refs/tags/", "")
+              Write-Output "##vso[task.setvariable variable=version]$version"
+            displayName: 'Get truncated run number'
+              
+          - bash: |
+              echo "Build Number: $(Build.BuildNumber)"
+              # Extract the last 3 characters for the run number
+              runnumber=$(echo "$(Build.BuildNumber)" | grep -o '[0-9]\+$')
+              echo "Extracted Run Number: $runnumber"
+              
+              # If extraction fails, set a default
+              if [ -z "$runnumber" ]; then
+                echo "Extraction failed, using default value"
+                runnumber=$(date +"%S%N" | cut -c1-3)
+                echo "Generated fallback run number: $runnumber"
+              fi
+              
+              # Set the variable for later steps
+              echo "##vso[task.setvariable variable=RUNNUMBER]$runnumber"
+              echo "##vso[task.setvariable variable=RUNNUMBER;isOutput=true]$runnumber"
+            displayName: 'Get truncated run number'
+            name: getrunnumber
+      
+          - bash: |
+              echo "Building docker images"
+              # Format the date to be compatible with Docker tags
+              formatted_date=$(date +"%Y%m%d%H%M%S")
+              docker buildx build \
+                --platform linux/amd64 \
+                --push \
+                -t "$(REGISTRY)/$(IMAGE_NAME):latest" \
+                -t "$(REGISTRY)/$(IMAGE_NAME):$formatted_date.$RUNNUMBER" \
+                "$(Build.SourcesDirectory)"
+            displayName: 'Build and push docker images'
