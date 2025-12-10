@@ -33,13 +33,12 @@ variables:
 trigger:
   branches:
     include:
-    - dev
+    - main
 
 pr:
   branches:
     include:
     - main
-    - dev
 resources:
   repositories:
   - repository: 1ESPipelineTemplates

@@ -32,9 +32,6 @@ variables:
   PREVIEW_BRANCH: 'refs/heads/main'  # Updated to target your branch
 
 trigger:
-  branches:
-    include:
-    - main
   tags:
     include:
       - v*
