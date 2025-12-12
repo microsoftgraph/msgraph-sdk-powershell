@@ -30,6 +30,10 @@ $params = @{
 		applicationTimeoutInMinutes = 30
 		onFailureDeviceAccessDenied = $false
 	}
+	userSettingsPersistenceConfiguration = @{
+		userSettingsPersistenceEnabled = $false
+		userSettingsPersistenceStorageSizeCategory = "fourGB"
+	}
 }
 
 Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy -CloudPcProvisioningPolicyId $cloudPcProvisioningPolicyId -BodyParameter $params
