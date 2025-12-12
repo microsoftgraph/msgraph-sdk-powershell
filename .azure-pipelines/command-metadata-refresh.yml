@@ -31,7 +31,7 @@ parameters:
 
 variables:
   BuildAgent: ${{ parameters.BuildAgent }}
-  Branch: "ModuleMetadataRefresh"
+  Branch: "ModuleCommandMetadataRefresh"
   BaseBranch: ${{ parameters.BaseBranch }}
 
 trigger:
@@ -71,14 +71,14 @@ extends:
             TargetBranch: ${{ parameters.BaseBranch }}
         - task: PowerShell@2
           name: "ComputeBranch"
-          displayName: "Compute Module Metadata Refresh Branch Name"
+          displayName: "Compute Module Command Metadata Refresh Branch Name"
           inputs:
             targetType: inline
             script: |
               $branch = "{0}/{1}" -f "$(Branch)", (Get-Date -Format yyyyMMddHHmm)
               Write-Host "##vso[task.setvariable variable=RefreshBranch;isOutput=true]$branch" 
         - task: Bash@3
-          displayName: "Create Module Metadata Refresh Branch"
+          displayName: "Create Module Command Metadata Refresh Branch"
           inputs:
             targetType: inline
             script: |
@@ -87,7 +87,7 @@ extends:
               git checkout $(ComputeBranch.RefreshBranch)
               git status               
         
-      - job: MsGraphPsSdkModuleMetadataGeneration
+      - job: MsGraphPsSdkModuleCommandMetadataGeneration
         dependsOn: CreateMetadataRefreshBranch
         displayName: Microsoft Graph PowerShell SDK Generation
         condition: succeeded()
@@ -146,5 +146,5 @@ extends:
             parameters:
               BaseBranch: $(BaseBranch)
               TargetBranch: $(RefreshBranch)
-              Title: "[v2] Module Metadata Refresh"
+              Title: "[v2] Module Command Metadata Refresh"
               Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
