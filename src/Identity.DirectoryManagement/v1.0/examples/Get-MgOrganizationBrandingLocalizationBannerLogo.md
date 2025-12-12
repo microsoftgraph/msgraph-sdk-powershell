@@ -1,4 +1,4 @@
-### Example 2: Code snippet
+### Example 1: Code snippet
 
 ```powershell
 

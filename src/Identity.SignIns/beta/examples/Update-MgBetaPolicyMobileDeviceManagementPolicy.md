@@ -11,7 +11,7 @@ $params = @{
 	termsOfUseUrl = "https://portal.uem.contoso.com/TermsofUse.aspx"
 }
 
-Update-MgBetaPolicyMobileDeviceManagementPolicy -MobilityManagementPolicyId $mobilityManagementPolicyId -BodyParameter $params
+Update-MgBetaPolicyMobileDeviceManagementPolicy -MobileDeviceManagementPolicyId $mobileDeviceManagementPolicyId -BodyParameter $params
 
 ```
 This example shows how to use the Update-MgBetaPolicyMobileDeviceManagementPolicy Cmdlet.

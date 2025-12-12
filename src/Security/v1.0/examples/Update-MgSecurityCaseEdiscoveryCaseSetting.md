@@ -5,16 +5,26 @@
 Import-Module Microsoft.Graph.Security
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.security.ediscoveryCaseSettings"
+	"@odata.type" = "https://graph.microsoft.com/v1.0/$metadata#security/cases/ediscoveryCases('b0073e4e-4184-41c6-9eb7-8c8cc3e2288b')/settings/$entity"
 	redundancyDetection = @{
-		"@odata.type" = "microsoft.graph.security.redundancyDetectionSettings"
+		isEnabled = $true
+		similarityThreshold = 65
+		minWords = 10
+		maxWords = 500000
 	}
 	topicModeling = @{
-		"@odata.type" = "microsoft.graph.security.topicModelingSettings"
+		isEnabled = $false
+		ignoreNumbers = $true
+		topicCount = 100
+		dynamicallyAdjustTopicCount = $true
 	}
 	ocr = @{
-		"@odata.type" = "microsoft.graph.security.ocrSettings"
+		isEnabled = $false
+		maxImageSize = 24576
+		timeout = "PT1M"
 	}
+	caseType = "standard"
+	reviewSetSettings = "disableGrouping"
 }
 
 Update-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params

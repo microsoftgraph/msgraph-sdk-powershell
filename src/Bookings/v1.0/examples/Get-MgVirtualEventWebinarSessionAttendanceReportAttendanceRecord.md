@@ -1,4 +1,4 @@
-### Example 2: List attendance records of a webinar session's attendance report
+### Example 1: List attendance records of a webinar session's attendance report
 
 ```powershell
 
