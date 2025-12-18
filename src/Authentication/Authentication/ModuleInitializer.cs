@@ -76,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// Checks to see if the requested assembly matches the assemblies in our dependencies folder.
         /// The requesting assembly is always available in .NET, but could be null in .NET Framework.
         /// - When the requesting assembly is available, we check whether the loading request came from this
-        ///   module (the 'Microsoft.Graph*' assembly in this case), so as to make sure we only act on the request
+        ///   module (the 'Microsoft.*', Azure.Identity, or Azure.Core assemblies in this case), so as to make sure we only act on the request
         ///   from this module.
         /// - When the requesting assembly is not available, we just have to depend on the assembly name only.
         /// </summary>
@@ -86,7 +86,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
         private static bool IsAssemblyMatching(AssemblyName assemblyName, Assembly requestingAssembly)
         {
             return requestingAssembly != null
-                ? (requestingAssembly.FullName.StartsWith("Microsoft") || requestingAssembly.FullName.StartsWith("Azure.Identity")) && IsAssemblyPresent(assemblyName)
+                ? (requestingAssembly.FullName.StartsWith("Microsoft") 
+                    || requestingAssembly.FullName.StartsWith("Azure.Identity")
+                    || requestingAssembly.FullName.StartsWith("Azure.Core")) && IsAssemblyPresent(assemblyName)
                 : IsAssemblyPresent(assemblyName);
         }
 

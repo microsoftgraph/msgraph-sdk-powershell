@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         private static bool IsWamSupported()
         {
-            return GraphSession.Instance.GraphOption.EnableWAMForMSGraph && SharedUtilities.IsWindowsPlatform();
+            return SharedUtilities.IsWindowsPlatform();
         }
 
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
@@ -134,11 +134,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 }
                 else
                 {
-                    authRecord = await Task.Run(() =>
-                    {
-                        // Run the thread in MTA.
-                        return interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
-                    });
+                    authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
                 }
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
                 return interactiveBrowserCredential;
