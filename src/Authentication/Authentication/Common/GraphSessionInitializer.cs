@@ -41,7 +41,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
             {
                 // Deserialize the JSON into the GraphOption instance
                 graphOptions = JsonConvert.DeserializeObject<GraphOption>(File.ReadAllText(Constants.GraphOptionsFilePath));
-                WriteDebug("Web Account Manager (WAM) is enabled for Microsoft Graph PowerShell SDK on Windows and cannot be disabled. This option is deprecated and any setting stating otherwise will be ignored.");
             }
 
             return new GraphSession
