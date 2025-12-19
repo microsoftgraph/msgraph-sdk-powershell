@@ -25,7 +25,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             if (this.IsParameterBound(nameof(EnableLoginByWAM)))
             {
                 GraphSession.Instance.GraphOption.EnableWAMForMSGraph = EnableLoginByWAM;
-                WriteDebug($"Signin by Web Account Manager (WAM) is {(EnableLoginByWAM ? "enabled" : "disabled")}.");
+                WriteDebug($"Requested to {(EnableLoginByWAM ? "enable" : "disable")} signin by Web Account Manager (WAM).");
+                WriteDebug("Note: Signin by Web Account Manager (WAM) is mandatory for Microsoft Graph PowerShell SDK on Windows and cannot be disabled. The option will be set to enabled by default on Windows.");
             }
             File.WriteAllText(Constants.GraphOptionsFilePath, JsonConvert.SerializeObject(GraphSession.Instance.GraphOption, Formatting.Indented));
         }

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGraphOption
 
 ## SYNOPSIS
-Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support. Web Account Manager is enabled by default on Windows systems and cannot be disabled.
 
 ## SYNTAX
 

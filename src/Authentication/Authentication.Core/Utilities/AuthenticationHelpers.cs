@@ -129,6 +129,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     authRecord = await Task.Run(() =>
                     {
                         // Run the thread in MTA.
+                        GraphSession.Instance.OutputWriter.WriteWarning("Note: Signin by Web Account Manager (WAM) is enabled by default on Windows. If using an embedded PowerShell terminal, the interactive browser window may be hidden behind other windows.");
                         return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
                     });
                 }
