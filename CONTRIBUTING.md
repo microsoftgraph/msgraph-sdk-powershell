@@ -26,3 +26,15 @@ When it comes to modifying existing cmdlets, we recommend you use [AutoREST dire
 ## SDK generation
 
 See our [SDK generation steps wiki](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/Generation-Process) for more information.
+
+## Debugging the Auth module
+
+* In a terminal run `.\tools\GenerateAuthenticationModule.ps1 -Build -Pack`
+* In Visual Studio open the `.\src\Authentication\Authentication.sln` solution
+* Start the project in debug mode
+* In the newly opened terminal run `pwd` to get the current working directory for the debug session
+* Copy the `Microsoft.Graph.Authencation.<version-number>.nupkg` to the working directory for the debug session
+* Rename the `.nupkg` file to `.zip`
+* Unzip the files to the working directory
+* In the working directory run `Import-Module .\Microsoft.Graph.Authentication.psm1`
+* Run any cmdlet from the Authentication module to hit your breakpoints

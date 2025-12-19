@@ -129,3 +129,4 @@ Set-MgGraphOption -EnableLoginByWAM $true
 ```PowerShell
 Set-MgGraphOption -EnableLoginByWAM $false
 ```
+#### Note: Signin by Web Account Manager (WAM) is enabled by default on Windows and cannot be disabled. Setting this option to $False will have no effect on Windows systems. 

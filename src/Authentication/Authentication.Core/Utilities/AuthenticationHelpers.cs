@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         private static bool IsWamSupported()
         {
-            return GraphSession.Instance.GraphOption.EnableWAMForMSGraph && SharedUtilities.IsWindowsPlatform();
+            return SharedUtilities.IsWindowsPlatform();
         }
 
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
@@ -129,16 +129,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     authRecord = await Task.Run(() =>
                     {
                         // Run the thread in MTA.
+                        GraphSession.Instance.OutputWriter.WriteWarning("Note: Sign in by Web Account Manager (WAM) is enabled by default on Windows. If using an embedded terminal, the interactive browser window may be hidden behind other windows.");
                         return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
                     });
                 }
                 else
                 {
-                    authRecord = await Task.Run(() =>
-                    {
-                        // Run the thread in MTA.
-                        return interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
-                    });
+                    authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
                 }
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
                 return interactiveBrowserCredential;

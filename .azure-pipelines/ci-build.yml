@@ -13,7 +13,7 @@ parameters:
   default: false
 - name: Sign
   type: boolean
-  default: false
+  default: true
 - name: InternalFeed
   type: string
   default: '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
