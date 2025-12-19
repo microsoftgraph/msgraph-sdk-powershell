@@ -342,6 +342,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             GraphSessionInitializer.InitializeSession();
             GraphSession.Instance.DataStore = new DiskDataStore();
+            GraphSession.Instance.OutputWriter.WriteWarning("Note: Sign in by Web Account Manager (WAM) is enabled by default on Windows systems and cannot be disabled. Any setting stating otherwise will be ignored.");
         }
 
         /// <summary>

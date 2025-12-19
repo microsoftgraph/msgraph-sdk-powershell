@@ -45,6 +45,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Authentication.IGraphOption
 
 ## NOTES
-Web Account Manager is enabled by default on Windows systems and cannot be disabled. Setting the `EnableWAMForMSGraph` option to `$False` will have no effect on Windows systems.
+Web Account Manager is enabled by default on Windows systems and cannot be disabled. Setting the `EnableWAMForMSGraph` option no longer has any effect.
 
 ## RELATED LINKS

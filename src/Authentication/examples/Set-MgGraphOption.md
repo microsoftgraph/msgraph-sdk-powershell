@@ -3,4 +3,4 @@
 PS C:\> Set-MgGraphOption -EnableLoginByWAM $True
 ```
  Sets web account manager support
- Note: Signin by Web Account Manager (WAM) is enabled by default on Windows and cannot be disabled. Setting this option to $False will have no effect on Windows systems. 
+ Note: Signin by Web Account Manager (WAM) is enabled by default on Windows and cannot be disabled. Setting this option will no longer have any effect. 
