@@ -47,7 +47,7 @@ extends:
   parameters:
     pool: $(BuildAgent)
     settings:
-      networkIsolationPolicy: Npm
+      networkIsolationPolicy: Permissive
     sdl:
       binskim:
         enabled: false
