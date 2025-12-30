@@ -9716,7 +9716,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       operationId: user.onlineMeeting_ListRecording
       parameters:
         - name: user-id
@@ -9823,7 +9823,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API supports the retrieval of call recordings from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
@@ -10224,7 +10224,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List transcripts
-      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time.'
+      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from all meeting types except live events.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -10334,7 +10334,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from all meeting types except live events. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
@@ -10488,7 +10488,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from all meeting types except live events. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
@@ -10623,7 +10623,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from all meeting types except live events. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
@@ -11512,7 +11512,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.modality'
-              description: 'List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
+              description: 'List of all the modalities used in the call. The possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
             organizer:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             participants:
@@ -11586,7 +11586,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.modality'
-              description: 'List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
+              description: 'List of modalities present in the session. The possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -11668,7 +11668,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.modality'
-              description: 'The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.'
+              description: 'The list of requested modalities. The possible values are: unknown, audio, video, videoBasedScreenSharing, data.'
             resultInfo:
               $ref: '#/components/schemas/microsoft.graph.resultInfo'
             source:
@@ -12325,7 +12325,7 @@ components:
               nullable: true
             role:
               type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647

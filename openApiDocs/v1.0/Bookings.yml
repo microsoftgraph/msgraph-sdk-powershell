@@ -8429,7 +8429,7 @@ components:
               nullable: true
             role:
               type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
