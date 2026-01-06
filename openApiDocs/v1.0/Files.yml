@@ -6951,11 +6951,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: 'driveItem: setRetentionLabel'
-      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
+      summary: 'driveItem: lockOrUnlockRecord'
+      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
       operationId: drive.item_UpdateRetentionLabel
       parameters:
         - name: drive-id
@@ -79027,7 +79027,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
-              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. The possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             canEdit:
               type: boolean
               description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.'
@@ -80698,7 +80698,7 @@ components:
               nullable: true
             permissionType:
               type: string
-              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
+              description: 'The type of permission. The possible values are: Application, Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
@@ -81230,7 +81230,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. The possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -81238,7 +81238,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. The possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -82001,7 +82001,7 @@ components:
           properties:
             calculationMode:
               type: string
-              description: 'Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.'
+              description: 'Returns the calculation mode used in the workbook. The possible values are: Automatic, AutomaticExceptTables, Manual.'
           additionalProperties:
             type: object
     microsoft.graph.workbookComment:
@@ -82051,7 +82051,7 @@ components:
               description: Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
             type:
               type: string
-              description: 'The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.'
+              description: 'The type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
               $ref: '#/components/schemas/microsoft.graph.Json'
@@ -82115,7 +82115,7 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'A constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'A constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
@@ -82571,7 +82571,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
-              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. The possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
             emailAddress:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
@@ -83662,7 +83662,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. The possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             acceptedSenders:
               type: array
@@ -86482,7 +86482,7 @@ components:
               nullable: true
             deviceOwnership:
               type: string
-              description: 'Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.'
+              description: 'Ownership of the device. Intune sets this property. The possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -86501,7 +86501,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
-              description: 'Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.'
+              description: 'Enrollment type of the device. Intune sets this property. The possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.'
               nullable: true
             isCompliant:
               type: boolean
@@ -86521,7 +86521,7 @@ components:
               nullable: true
             managementType:
               type: string
-              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
+              description: 'The management channel of the device. This property is set by Intune. The possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
@@ -89575,13 +89575,13 @@ components:
           items:
             type: string
             nullable: true
-          description: 'The media (i.e., paper) colors supported by the printer.'
+          description: 'The media (for example, paper) colors supported by the printer.'
         mediaSizes:
           type: array
           items:
             type: string
             nullable: true
-          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+          description: 'The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. For the list of supported values, see mediaSizes values.'
         mediaTypes:
           type: array
           items:
@@ -91013,7 +91013,7 @@ components:
               nullable: true
             role:
               type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647

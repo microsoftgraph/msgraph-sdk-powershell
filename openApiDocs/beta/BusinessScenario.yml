@@ -2327,7 +2327,7 @@ components:
       properties:
         defaultRule:
           type: string
-          description: 'Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block'
+          description: 'Default rule that applies when a property or action-specific rule is not provided. The possible values are: Allow, Block'
           nullable: true
         propertyRule:
           $ref: '#/components/schemas/microsoft.graph.plannerTaskPropertyRule'
