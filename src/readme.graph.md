@@ -103,6 +103,7 @@ directive:
     - MicrosoftGraphWorkbookComment
     - MicrosoftGraphSecurityHost
     - MicrosoftGraphDomain
+    - MicrosoftGraphEngagementConversationMessage
   # Set parameter alias
   - where:
       parameter-name: OrderBy
