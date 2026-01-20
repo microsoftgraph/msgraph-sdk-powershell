@@ -3905,10 +3905,14 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
               description: 'Addresses associated with the contact, for example, home address and business address.'
+            primaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             profession:
               type: string
               description: The contact's profession.
               nullable: true
+            secondaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             spouseName:
               type: string
               description: The name of the contact's spouse/partner.
@@ -3917,6 +3921,8 @@ components:
               type: string
               description: The contact's surname.
               nullable: true
+            tertiaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             title:
               type: string
               description: The contact's title.
@@ -4132,6 +4138,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.physicalAddressType'
       additionalProperties:
         type: object
+    microsoft.graph.emailAddress:
+      title: emailAddress
+      type: object
+      properties:
+        address:
+          type: string
+          description: The email address of an entity instance.
+          nullable: true
+        name:
+          type: string
+          description: The display name of an entity instance.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.website:
       title: website
       type: object
@@ -4199,20 +4219,6 @@ components:
     ODataCountResponse:
       type: integer
       format: int32
-    microsoft.graph.emailAddress:
-      title: emailAddress
-      type: object
-      properties:
-        address:
-          type: string
-          description: The email address of an entity instance.
-          nullable: true
-        name:
-          type: string
-          description: The display name of an entity instance.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.emailType:
       title: emailType
       enum:
