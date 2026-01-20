@@ -10866,7 +10866,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: number
-          description: Total number of artifacts restored.
+          description: Total number of mailbox items that can be restored for a granular restore session.
           format: int32
           nullable: true
         restorePoint:
