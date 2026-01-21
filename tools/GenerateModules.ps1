@@ -94,7 +94,7 @@ $AutoRestTempFolder | ForEach-Object {
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
 $Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
-$ModuleToGenerate | ForEach-Object -Parallel {
+$Results = $ModuleToGenerate | ForEach-Object -Parallel {
     $Module = $_
     Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
     $ServiceModuleParams = @{
@@ -112,6 +112,11 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         RequiredModules         = $using:RequiredGraphModules
     }
     & $using:GenerateServiceModulePS1 @ServiceModuleParams
+    $ExitCode = $LASTEXITCODE
+    if ($ExitCode -ne 0) {
+        Write-Host -ForegroundColor Red "Failed to generate module '$Module' with exit code $ExitCode"
+        return @{ Module = $Module; Success = $false; ExitCode = $ExitCode }
+    }
     function Get-OpenFiles {
         param (
             [string] $Path
@@ -136,7 +141,18 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         $OpenFiles = Get-OpenFiles -Path $TempPath
     }
 
+    return @{ Module = $Module; Success = $true; ExitCode = 0 }
 } -ThrottleLimit $Throttle
 $stopwatch.Stop()
+
+# Check if any modules failed to generate
+$FailedModules = $Results | Where-Object { -not $_.Success }
+if ($FailedModules.Count -gt 0) {
+    Write-Host -ForegroundColor Red "Failed to generate the following modules:"
+    $FailedModules | ForEach-Object {
+        Write-Host -ForegroundColor Red "  - $($_.Module) (Exit Code: $($_.ExitCode))"
+    }
+    Write-Error "Module generation failed. $($FailedModules.Count) module(s) failed to generate."
+}
 
 Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
