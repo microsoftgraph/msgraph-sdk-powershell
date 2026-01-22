@@ -3054,7 +3054,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\r\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\r\nhaving to fetch the entire set of messages from the server every time."
+      description: "Get a set of messages added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\r\nthat folder](/graph/delta-query-messages). It allows you to maintain and synchronize a local store of a user's messages without\r\nhaving to fetch the entire set of messages from the server every time."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
@@ -5354,7 +5354,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\r\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\r\nhaving to fetch the entire set of messages from the server every time."
+      description: "Get a set of messages added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\r\nthat folder](/graph/delta-query-messages). It allows you to maintain and synchronize a local store of a user's messages without\r\nhaving to fetch the entire set of messages from the server every time."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
@@ -7084,7 +7084,7 @@ paths:
       tags:
         - users.message
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\r\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\r\nhaving to fetch the entire set of messages from the server every time."
+      description: "Get a set of messages added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\r\nthat folder](/graph/delta-query-messages). It allows you to maintain and synchronize a local store of a user's messages without\r\nhaving to fetch the entire set of messages from the server every time."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
