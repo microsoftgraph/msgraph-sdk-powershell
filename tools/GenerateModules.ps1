@@ -97,6 +97,7 @@ $Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
 $Results = $ModuleToGenerate | ForEach-Object -Parallel {
     $Module = $_
     Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
+
     $ServiceModuleParams = @{
         Module                  = $Module
         ModulesSrc              = $using:ModulesSrc
@@ -111,48 +112,69 @@ $Results = $ModuleToGenerate | ForEach-Object -Parallel {
         ArtifactsLocation       = $using:ArtifactsLocation
         RequiredModules         = $using:RequiredGraphModules
     }
-    & $using:GenerateServiceModulePS1 @ServiceModuleParams
-    $ExitCode = $LASTEXITCODE
-    if ($ExitCode -ne 0) {
-        Write-Host -ForegroundColor Red "Failed to generate module '$Module' with exit code $ExitCode"
-        return @{ Module = $Module; Success = $false; ExitCode = $ExitCode }
-    }
-    function Get-OpenFiles {
-        param (
-            [string] $Path
-        )
-        $OpenFiles = @()
-        $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
-        $Files | ForEach-Object {
-            $File = $_
-            try {
-                $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
-                $FileStream.Close()
-            }
-            catch {
-                $OpenFiles += $File.FullName
-            }
-        }
-        return $OpenFiles
-    }
-    #Call a function to check if there are any open files in the temp folder. Recurse through the folder until all files are closed
-    $OpenFiles = Get-OpenFiles -Path $TempPath
-    if ($OpenFiles.Count -gt 0) {
-        $OpenFiles = Get-OpenFiles -Path $TempPath
-    }
 
-    return @{ Module = $Module; Success = $true; ExitCode = 0 }
+    try {
+        $Result = & $using:GenerateServiceModulePS1 @ServiceModuleParams
+
+        # Check if the script returned an exit code (failure)
+        if ($null -ne $Result -and $Result -is [int] -and $Result -ne 0) {
+            Write-Host -ForegroundColor Red "Failed to generate module '$Module' with exit code $Result"
+            return @{ Module = $Module; Success = $false; ExitCode = $Result; Error = "Generation or build failed" }
+        }
+
+        # Also check $LASTEXITCODE in case the script didn't return but set exit code
+        if ($null -ne $LASTEXITCODE -and $LASTEXITCODE -ne 0) {
+            Write-Host -ForegroundColor Red "Failed to generate module '$Module' with exit code $LASTEXITCODE"
+            return @{ Module = $Module; Success = $false; ExitCode = $LASTEXITCODE; Error = "Generation or build failed" }
+        }
+
+        function Get-OpenFiles {
+            param (
+                [string] $Path
+            )
+            $OpenFiles = @()
+            $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+            $Files | ForEach-Object {
+                $File = $_
+                try {
+                    $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+                    $FileStream.Close()
+                }
+                catch {
+                    $OpenFiles += $File.FullName
+                }
+            }
+            return $OpenFiles
+        }
+        #Call a function to check if there are any open files in the temp folder. Recurse through the folder until all files are closed
+        $OpenFiles = Get-OpenFiles -Path $using:TempPath
+        if ($OpenFiles.Count -gt 0) {
+            $OpenFiles = Get-OpenFiles -Path $using:TempPath
+        }
+
+        return @{ Module = $Module; Success = $true; ExitCode = 0; Error = $null }
+    }
+    catch {
+        Write-Host -ForegroundColor Red "Exception while generating module '$Module': $_"
+        return @{ Module = $Module; Success = $false; ExitCode = -1; Error = $_.Exception.Message }
+    }
 } -ThrottleLimit $Throttle
 $stopwatch.Stop()
 
 # Check if any modules failed to generate
 $FailedModules = $Results | Where-Object { -not $_.Success }
 if ($FailedModules.Count -gt 0) {
+    Write-Host ""
+    Write-Host -ForegroundColor Red "========================================="
     Write-Host -ForegroundColor Red "Failed to generate the following modules:"
+    Write-Host -ForegroundColor Red "========================================="
     $FailedModules | ForEach-Object {
-        Write-Host -ForegroundColor Red "  - $($_.Module) (Exit Code: $($_.ExitCode))"
+        Write-Host -ForegroundColor Red "  - $($_.Module) (Exit Code: $($_.ExitCode)) - $($_.Error)"
     }
-    Write-Error "Module generation failed. $($FailedModules.Count) module(s) failed to generate."
+    Write-Host -ForegroundColor Red "========================================="
+    Write-Host ""
+    Write-Error "Module generation failed. $($FailedModules.Count) of $($ModuleToGenerate.Count) module(s) failed to generate."
 }
-
-Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
+else {
+    Write-Host -ForegroundColor Green "All modules generated successfully in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
+}
