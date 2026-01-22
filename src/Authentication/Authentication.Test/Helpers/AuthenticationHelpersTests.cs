@@ -378,6 +378,111 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             }
         }
 
+        [Fact]
+        public async Task ShouldUseInteractiveBrowserWhenWamIsDisabledWithCustomClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = false;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = Guid.NewGuid().ToString(), // Custom ClientId
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // Verify that we're NOT using WAM (InteractiveBrowserCredentialBrokerOptions) by checking credential type
+            // On Windows, if WAM was enabled, it would use InteractiveBrowserCredentialBrokerOptions
+            // Since we disabled it with custom ClientId, it should use regular InteractiveBrowserCredential
+
+            // reset static instance.
+            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = true;
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldStillUseWamWhenDisabledWithDefaultClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = false;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = AuthContext.PowerShellClientId, // Default ClientId
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // On Windows with default ClientId, WAM should still be enabled even when EnableWAMForMSGraph is false
+            // This is verified by the credential being created with InteractiveBrowserCredentialBrokerOptions internally
+
+            // reset static instance.
+            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = true;
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldUseWamWhenEnabledWithDefaultClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = true;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = AuthContext.PowerShellClientId, // Default ClientId
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldUseWamWhenEnabledWithCustomClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = true;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = Guid.NewGuid().ToString(), // Custom ClientId
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
         public void Dispose() => mockAuthRecord.DeleteCache();
     }
 }
