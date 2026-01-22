@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             // If EnableWAMForMSGraph is disabled and the ClientId is not the default, allow disabling WAM
             if (!GraphSession.Instance.GraphOption.EnableWAMForMSGraph)
             {
-                if (!string.Equals(clientId, AuthContext.PowerShellClientId, StringComparison.OrdinalIgnoreCase))
+                if (!string.Equals(clientId, Constants.PowerShellClientId, StringComparison.OrdinalIgnoreCase))
                 {
                     return false;
                 }

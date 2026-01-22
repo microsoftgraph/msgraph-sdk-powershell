@@ -11,7 +11,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
 {
     public class AuthContext : IAuthContext
     {
-        internal const string PowerShellClientId = "14d82eec-204b-4c2f-b7e8-296a70dab67e";
         public string ClientId { get; set; }
         public string TenantId { get; set; }
         public string[] Scopes { get; set; }
@@ -31,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
         public AuthContext()
         {
-            ClientId = PowerShellClientId;
+            ClientId = Core.Constants.PowerShellClientId;
         }
     }
 }

@@ -415,7 +415,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext delegatedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.Delegated,
-                ClientId = AuthContext.PowerShellClientId, // Default ClientId
+                ClientId = Core.Constants.PowerShellClientId, // Default ClientId
                 Scopes = new[] { "User.Read" },
                 ContextScope = ContextScope.Process,
                 TokenCredentialType = TokenCredentialType.InteractiveBrowser
@@ -443,7 +443,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext delegatedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.Delegated,
-                ClientId = AuthContext.PowerShellClientId, // Default ClientId
+                ClientId = Core.Constants.PowerShellClientId, // Default ClientId
                 Scopes = new[] { "User.Read" },
                 ContextScope = ContextScope.Process,
                 TokenCredentialType = TokenCredentialType.InteractiveBrowser
