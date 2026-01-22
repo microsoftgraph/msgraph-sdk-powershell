@@ -85,6 +85,7 @@ extends:
         timeoutInMinutes: 1200
         steps:
         - template: .azure-pipelines/common-templates/download-openapi-docs.yml@self
+          condition: eq('${{ parameters.SkipOpenAPIDocsDownload }}', false)
           parameters:
             Branch: $(Branch)
             BaseBranch: $(BaseBranch)
@@ -101,9 +102,9 @@ extends:
           WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
           ModulesToUpdate: $[ dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
         steps:
-        - template: .azure-pipelines/common-templates/checkout.yml@self
-          parameters:
-            TargetBranch: $(WeeklyBranch)
+        # - template: .azure-pipelines/common-templates/checkout.yml@self
+        #   parameters:
+        #     TargetBranch: $(WeeklyBranch)
 
         - task: PowerShell@2
           name: CreateMatrixJson
