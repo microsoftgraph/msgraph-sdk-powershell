@@ -87,6 +87,23 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return SharedUtilities.IsWindowsPlatform();
         }
 
+        private static bool ShouldUseWam(string clientId)
+        {
+            if (!IsWamSupported())
+                return false;
+
+            // If EnableWAMForMSGraph is disabled and the ClientId is not the default, allow disabling WAM
+            if (!GraphSession.Instance.GraphOption.EnableWAMForMSGraph)
+            {
+                if (!string.Equals(clientId, AuthContext.PowerShellClientId, StringComparison.OrdinalIgnoreCase))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
         {
             if (authContext is null)
@@ -114,7 +131,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var interactiveOptions = IsWamSupported() ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
+            var interactiveOptions = ShouldUseWam(authContext.ClientId) ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
             interactiveOptions.ClientId = authContext.ClientId;
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
@@ -124,7 +141,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 AuthenticationRecord authRecord;
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
-                if (IsWamSupported())
+                if (ShouldUseWam(authContext.ClientId))
                 {
                     authRecord = await Task.Run(() =>
                     {
