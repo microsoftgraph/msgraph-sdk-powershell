@@ -382,7 +382,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         public async Task ShouldUseInteractiveBrowserWhenWamIsDisabledWithCustomClientIdAsync()
         {
             // Arrange
-            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = false;
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = true;
             AuthContext delegatedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.Delegated,
@@ -403,7 +403,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // Since we disabled it with custom ClientId, it should use regular InteractiveBrowserCredential
 
             // reset static instance.
-            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = true;
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = null;
             GraphSession.Reset();
         }
 
@@ -411,7 +411,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         public async Task ShouldStillUseWamWhenDisabledWithDefaultClientIdAsync()
         {
             // Arrange
-            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = false;
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = true;
             AuthContext delegatedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.Delegated,
@@ -427,19 +427,19 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // Assert
             _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
 
-            // On Windows with default ClientId, WAM should still be enabled even when EnableWAMForMSGraph is false
+            // On Windows with default ClientId, WAM should still be enabled even when DisableWAMForMSGraph is true
             // This is verified by the credential being created with InteractiveBrowserCredentialBrokerOptions internally
 
             // reset static instance.
-            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = true;
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = null;
             GraphSession.Reset();
         }
 
         [Fact]
-        public async Task ShouldUseWamWhenEnabledWithDefaultClientIdAsync()
+        public async Task ShouldUseWamWhenNotDisabledWithDefaultClientIdAsync()
         {
             // Arrange
-            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = true;
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = false;
             AuthContext delegatedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.Delegated,
@@ -460,10 +460,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         }
 
         [Fact]
-        public async Task ShouldUseWamWhenEnabledWithCustomClientIdAsync()
+        public async Task ShouldUseWamWhenNotDisabledWithCustomClientIdAsync()
         {
             // Arrange
-            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = true;
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = false;
             AuthContext delegatedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.Delegated,
