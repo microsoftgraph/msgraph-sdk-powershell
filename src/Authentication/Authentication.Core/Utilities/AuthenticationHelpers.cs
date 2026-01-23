@@ -82,26 +82,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 && (string.IsNullOrEmpty(EnvironmentVariables.ClientSecret) && string.IsNullOrEmpty(EnvironmentVariables.ClientCertificatePath)));
         }
 
-        private static bool IsWamSupported()
-        {
-            return SharedUtilities.IsWindowsPlatform();
-        }
-
         private static bool ShouldUseWam(IAuthContext authContext)
         {
-            if (!IsWamSupported())
-                return false;
-
-            // If DisableWAMForMSGraph is true and the ClientId is not the default, allow disabling WAM
-            if (GraphSession.Instance.GraphOption.DisableWAMForMSGraph == true)
-            {
-                if (!authContext.IsDefaultClientId)
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return SharedUtilities.IsWindowsPlatform() && authContext.WamEnabled;
         }
 
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)

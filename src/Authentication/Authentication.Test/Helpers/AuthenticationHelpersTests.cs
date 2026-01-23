@@ -483,6 +483,56 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             GraphSession.Reset();
         }
 
+        [Fact]
+        public async Task ShouldUseWamWhenNullWithDefaultClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = null;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                // ClientId not set, will use default from constructor
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // When DisableWAMForMSGraph is null (default), WAM should be enabled
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldUseWamWhenNullWithCustomClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = null;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = Guid.NewGuid().ToString(), // Custom ClientId
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // When DisableWAMForMSGraph is null (default), WAM should be enabled regardless of ClientId
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
         public void Dispose() => mockAuthRecord.DeleteCache();
     }
 }

@@ -29,7 +29,16 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public SecureString ClientSecret { get; set; }
         public string Environment { get; set; } = GraphEnvironmentConstants.EnvironmentName.Global;
 
-        public bool IsDefaultClientId => string.Equals(ClientId, PowerShellClientId, StringComparison.OrdinalIgnoreCase);
+        private bool IsCustomClientId => !string.Equals(ClientId, PowerShellClientId, StringComparison.OrdinalIgnoreCase);
+
+        public bool WamEnabled
+        {
+            get
+            {
+                // WAM is enabled unless DisableWAMForMSGraph is true and the ClientId is custom (not the default)
+                return !(GraphSession.Instance.GraphOption.DisableWAMForMSGraph == true && IsCustomClientId);
+            }
+        }
 
         public AuthContext()
         {
