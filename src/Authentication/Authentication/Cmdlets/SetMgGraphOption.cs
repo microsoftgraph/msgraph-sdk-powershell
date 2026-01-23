@@ -28,7 +28,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 WriteDebug($"Requested to {(DisableLoginByWAM == true ? "disable" : "enable")} sign in by Web Account Manager (WAM).");
                 if (DisableLoginByWAM == true)
                 {
-                    WriteDebug("Note: Sign in by Web Account Manager (WAM) can only be disabled when using a custom ClientId (not the default PowerShell SDK ClientId). If using the default ClientId, WAM will remain enabled.");
+                    WriteDebug("Note: DisableLoginByWAM only applies when using your own ClientId. When using the default ClientId, WAM will remain enabled.");
                 }
             }
             File.WriteAllText(Constants.GraphOptionsFilePath, JsonConvert.SerializeObject(GraphSession.Instance.GraphOption, Formatting.Indented));
