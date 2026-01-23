@@ -2,6 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Core;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using System;
 using System.Security;
@@ -30,7 +31,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
         public AuthContext()
         {
-            ClientId = Core.Constants.PowerShellClientId;
+            ClientId = Constants.PowerShellClientId;
         }
     }
 }
