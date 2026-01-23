@@ -2,7 +2,6 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph.PowerShell.Authentication.Core;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using System;
 using System.Security;
@@ -12,6 +11,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 {
     public class AuthContext : IAuthContext
     {
+        private const string PowerShellClientId = "14d82eec-204b-4c2f-b7e8-296a70dab67e";
         public string ClientId { get; set; }
         public string TenantId { get; set; }
         public string[] Scopes { get; set; }
@@ -29,9 +29,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public SecureString ClientSecret { get; set; }
         public string Environment { get; set; } = GraphEnvironmentConstants.EnvironmentName.Global;
 
+        public bool IsDefaultClientId => string.Equals(ClientId, PowerShellClientId, StringComparison.OrdinalIgnoreCase);
+
         public AuthContext()
         {
-            ClientId = Constants.PowerShellClientId;
+            ClientId = PowerShellClientId;
         }
     }
 }

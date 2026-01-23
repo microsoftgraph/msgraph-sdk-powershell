@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return SharedUtilities.IsWindowsPlatform();
         }
 
-        private static bool ShouldUseWam(string clientId)
+        private static bool ShouldUseWam(IAuthContext authContext)
         {
             if (!IsWamSupported())
                 return false;
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             // If DisableWAMForMSGraph is true and the ClientId is not the default, allow disabling WAM
             if (GraphSession.Instance.GraphOption.DisableWAMForMSGraph == true)
             {
-                if (!string.Equals(clientId, Constants.PowerShellClientId, StringComparison.OrdinalIgnoreCase))
+                if (!authContext.IsDefaultClientId)
                 {
                     return false;
                 }
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var interactiveOptions = ShouldUseWam(authContext.ClientId) ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
+            var interactiveOptions = ShouldUseWam(authContext) ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
             interactiveOptions.ClientId = authContext.ClientId;
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 AuthenticationRecord authRecord;
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
-                if (ShouldUseWam(authContext.ClientId))
+                if (ShouldUseWam(authContext))
                 {
                     authRecord = await Task.Run(() =>
                     {
