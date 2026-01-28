@@ -12,6 +12,12 @@ parameters:
   - name: ModuleVersion
     type: string
     default: ""
+  - name: Pack
+    type: boolean
+    default: true
+  - name: Sign
+    type: boolean
+    default: true
 
 steps:
   - task: PowerShell@2
@@ -20,7 +26,7 @@ steps:
       targetType: inline
       pwsh: true
       script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -ExcludeExampleTemplates -ExcludeNotesSection -ModuleToGenerate ${{ parameters.ModuleName }} -ApiVersion ${{ parameters.ModuleVersion }}
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -EnableSigning:$${{ parameters.Sign }} -Build -ExcludeExampleTemplates -ExcludeNotesSection -ModuleToGenerate ${{ parameters.ModuleName }} -ApiVersion ${{ parameters.ModuleVersion }}
   - template: ../common-templates/guardian-analyzer.yml
 
   - task: PowerShell@2
