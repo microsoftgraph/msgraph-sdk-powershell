@@ -21493,7 +21493,7 @@ components:
           properties:
             isDeleted:
               type: boolean
-              description: 'Indicates whether the user is deleted. Possible values are: true, false.'
+              description: 'Indicates whether the user is deleted. The possible values are: true, false.'
               nullable: true
             isProcessing:
               type: boolean
@@ -21764,7 +21764,7 @@ components:
               nullable: true
             status:
               type: string
-              description: 'The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.'
+              description: 'The status of the invitation. The possible values are: PendingAcceptance, Completed, InProgress, and Error.'
               nullable: true
             invitedUser:
               $ref: '#/components/schemas/microsoft.graph.user'
@@ -22124,6 +22124,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
               description: The user's activities across devices. Read-only. Nullable.
               x-ms-navigationProperty: true
+            adhocCalls:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.adhocCall'
+              description: Ad hoc calls associated with the user. Read-only. Nullable.
+              x-ms-navigationProperty: true
             agreementAcceptances:
               type: array
               items:
@@ -22290,6 +22296,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
               description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
               x-ms-navigationProperty: true
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             outlook:
               $ref: '#/components/schemas/microsoft.graph.outlookUser'
             ownedDevices:
@@ -23406,7 +23414,7 @@ components:
               nullable: true
             deviceOwnership:
               type: string
-              description: 'Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.'
+              description: 'Ownership of the device. Intune sets this property. The possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -23425,7 +23433,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
-              description: 'Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.'
+              description: 'Enrollment type of the device. Intune sets this property. The possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.'
               nullable: true
             isCompliant:
               type: boolean
@@ -23445,7 +23453,7 @@ components:
               nullable: true
             managementType:
               type: string
-              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
+              description: 'The management channel of the device. This property is set by Intune. The possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
@@ -24118,7 +24126,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApp'
-          description: 'Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.'
+          description: 'Client application types included in the policy. The possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.'
         devices:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevices'
         insiderRiskLevels:
@@ -24131,17 +24139,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskLevel'
-          description: 'Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.'
+          description: 'Service principal risk levels included in the policy. The possible values are: low, medium, high, none, unknownFutureValue.'
         signInRiskLevels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskLevel'
-          description: 'Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.'
+          description: 'Sign-in risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.'
         userRiskLevels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskLevel'
-          description: 'User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.'
+          description: 'User risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.'
         users:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessUsers'
       additionalProperties:
@@ -24874,6 +24882,26 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.adhocCall:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: adhocCall
+          type: object
+          properties:
+            recordings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of a call. Read-only.
+              x-ms-navigationProperty: true
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              description: The transcripts of a call. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.agreementAcceptance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24989,7 +25017,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
-              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. The possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             canEdit:
               type: boolean
               description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.'
@@ -26659,6 +26687,16 @@ components:
           additionalProperties:
             type: object
           description: Represents a Microsoft online meeting.
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -26779,7 +26817,7 @@ components:
               nullable: true
             permissionType:
               type: string
-              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
+              description: 'The type of permission. The possible values are: Application, Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
@@ -26852,6 +26890,8 @@ components:
               readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+            workLocation:
+              $ref: '#/components/schemas/microsoft.graph.userWorkLocation'
           additionalProperties:
             type: object
     microsoft.graph.scopedRoleMembership:
@@ -26892,7 +26932,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              description: The Windows settings of the user stored in the cloud.
               x-ms-navigationProperty: true
+            workHoursAndLocations:
+              $ref: '#/components/schemas/microsoft.graph.workHoursAndLocationsSetting'
           additionalProperties:
             type: object
     microsoft.graph.userSolutionRoot:
@@ -28531,12 +28574,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevicePlatform'
-          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.'
+          description: 'The possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.'
         includePlatforms:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevicePlatform'
-          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.'
+          description: 'The possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.'
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessUsers:
@@ -28844,6 +28887,97 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
+    microsoft.graph.callRecording:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callRecording
+          type: object
+          properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this recording. Read-only.
+              nullable: true
+            content:
+              type: string
+              description: The content of the recording. Read-only.
+              format: base64url
+              nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            recordingContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the recording. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this transcript. Read-only.
+              nullable: true
+            content:
+              type: string
+              description: The content of the transcript. Read-only.
+              format: base64url
+              nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            metadataContent:
+              type: string
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the transcript. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.agreementAcceptanceState:
       title: agreementAcceptanceState
       enum:
@@ -28898,7 +29032,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
-              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. The possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
             emailAddress:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
@@ -30615,7 +30749,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. The possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             acceptedSenders:
               type: array
@@ -32234,6 +32368,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            expiryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
             isEndToEndEncryptionEnabled:
               type: boolean
               description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
@@ -32252,10 +32392,20 @@ components:
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            meetingOptionsWebUrl:
+              type: string
+              description: Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+              nullable: true
+            meetingSpokenLanguageTag:
+              type: string
+              description: Specifies the spoken language used during the meeting for recording and transcription purposes.
+              nullable: true
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            sensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingSensitivityLabelAssignment'
             shareMeetingChatHistoryDefault:
               $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             subject:
@@ -32315,97 +32465,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
-    microsoft.graph.callRecording:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: callRecording
-          type: object
-          properties:
-            callId:
-              type: string
-              description: The unique identifier for the call that is related to this recording. Read-only.
-              nullable: true
-            content:
-              type: string
-              description: The content of the recording. Read-only.
-              format: base64url
-              nullable: true
-            contentCorrelationId:
-              type: string
-              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            meetingId:
-              type: string
-              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
-              nullable: true
-            meetingOrganizer:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            recordingContentUrl:
-              type: string
-              description: The URL that can be used to access the content of the recording. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.callTranscript:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: callTranscript
-          type: object
-          properties:
-            callId:
-              type: string
-              description: The unique identifier for the call that is related to this transcript. Read-only.
-              nullable: true
-            content:
-              type: string
-              description: The content of the transcript. Read-only.
-              format: base64url
-              nullable: true
-            contentCorrelationId:
-              type: string
-              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            meetingId:
-              type: string
-              description: The unique identifier of the online meeting related to this transcript. Read-only.
-              nullable: true
-            meetingOrganizer:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            metadataContent:
-              type: string
-              description: The time-aligned metadata of the utterances in the transcript. Read-only.
-              format: base64url
-              nullable: true
-            transcriptContentUrl:
-              type: string
-              description: The URL that can be used to access the content of the transcript. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.outlookCategory:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32669,6 +32728,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userWorkLocation:
+      title: userWorkLocation
+      type: object
+      properties:
+        placeId:
+          type: string
+          description: 'Identifier of the place, if applicable.'
+          nullable: true
+        source:
+          $ref: '#/components/schemas/microsoft.graph.workLocationSource'
+        workLocationType:
+          $ref: '#/components/schemas/microsoft.graph.workLocationType'
+      additionalProperties:
+        type: object
     microsoft.graph.userInsightsSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32724,6 +32797,28 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
               description: A collection of setting values for a given windowsSetting.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workHoursAndLocationsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workHoursAndLocationsSetting
+          type: object
+          properties:
+            maxSharedWorkLocationDetails:
+              $ref: '#/components/schemas/microsoft.graph.maxWorkLocationDetails'
+            occurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+              description: Collection of work plan occurrences.
+              x-ms-navigationProperty: true
+            recurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workPlanRecurrence'
+              description: Collection of recurring work plans defined by the user.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -32888,7 +32983,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.b2bIdentityProvidersType'
-          description: 'Collection of identity providers in priority order of preference to be used for guest invitation redemption. Possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.'
+          description: 'Collection of identity providers in priority order of preference to be used for guest invitation redemption. The possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.'
       additionalProperties:
         type: object
     microsoft.graph.devicesFilter:
@@ -33643,6 +33738,9 @@ components:
             displayName:
               type: string
               nullable: true
+            hasProtection:
+              type: boolean
+              nullable: true
             isDefault:
               type: boolean
               nullable: true
@@ -34201,6 +34299,8 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             analytics:
@@ -34537,7 +34637,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. The possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -34545,7 +34645,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. The possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -35244,16 +35344,6 @@ components:
               type: string
               description: 'The group type for which the expiration policy applies. Possible values are All, Selected or None.'
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.onPremisesSyncBehavior:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: onPremisesSyncBehavior
-          type: object
-          properties:
-            isCloudManaged:
-              type: boolean
           additionalProperties:
             type: object
     microsoft.graph.plannerGroup:
@@ -36509,6 +36599,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingSensitivityLabelAssignment:
+      title: onlineMeetingSensitivityLabelAssignment
+      type: object
+      properties:
+        sensitivityLabelId:
+          type: string
+          description: The ID of the sensitivity label that is applied to the Teams meeting.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingChatHistoryDefaultMode:
       title: meetingChatHistoryDefaultMode
       enum:
@@ -36797,6 +36897,24 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.workLocationSource:
+      title: workLocationSource
+      enum:
+        - none
+        - manual
+        - scheduled
+        - automatic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workLocationType:
+      title: workLocationType
+      enum:
+        - unspecified
+        - office
+        - remote
+        - timeOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.changeTrackedEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36907,6 +37025,59 @@ components:
             payload:
               type: string
               description: Base64-encoded JSON setting value.
+          additionalProperties:
+            type: object
+    microsoft.graph.maxWorkLocationDetails:
+      title: maxWorkLocationDetails
+      enum:
+        - unknown
+        - none
+        - approximate
+        - specific
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workPlanOccurrence:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workPlanOccurrence
+          type: object
+          properties:
+            end:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            placeId:
+              type: string
+              description: Identifier of a place from the Microsoft Graph Places Directory API. Only applicable when workLocationType is set to office.
+              nullable: true
+            recurrenceId:
+              type: string
+              description: The identifier of the parent recurrence pattern that generated this occurrence. The value is null for time-off occurrences because they don't have a parent recurrence.
+              nullable: true
+            start:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            timeOffDetails:
+              $ref: '#/components/schemas/microsoft.graph.timeOffDetails'
+            workLocationType:
+              $ref: '#/components/schemas/microsoft.graph.workLocationType'
+          additionalProperties:
+            type: object
+    microsoft.graph.workPlanRecurrence:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workPlanRecurrence
+          type: object
+          properties:
+            end:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            placeId:
+              type: string
+              description: Identifier of a place from the Microsoft Graph Places Directory API. Only applicable when workLocationType is set to office.
+              nullable: true
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+            start:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            workLocationType:
+              $ref: '#/components/schemas/microsoft.graph.workLocationType'
           additionalProperties:
             type: object
     microsoft.graph.teamInfo:
@@ -37268,13 +37439,13 @@ components:
           items:
             type: string
             nullable: true
-          description: 'The media (i.e., paper) colors supported by the printer.'
+          description: 'The media (for example, paper) colors supported by the printer.'
         mediaSizes:
           type: array
           items:
             type: string
             nullable: true
-          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+          description: 'The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. For the list of supported values, see mediaSizes values.'
         mediaTypes:
           type: array
           items:
@@ -38033,7 +38204,7 @@ components:
           properties:
             calculationMode:
               type: string
-              description: 'Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.'
+              description: 'Returns the calculation mode used in the workbook. The possible values are: Automatic, AutomaticExceptTables, Manual.'
           additionalProperties:
             type: object
     microsoft.graph.workbookComment:
@@ -38083,7 +38254,7 @@ components:
               description: Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
             type:
               type: string
-              description: 'The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.'
+              description: 'The type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
               $ref: '#/components/schemas/microsoft.graph.Json'
@@ -38147,7 +38318,7 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'A constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'A constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
@@ -39251,7 +39422,7 @@ components:
               nullable: true
             role:
               type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
@@ -39429,6 +39600,19 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.timeOffDetails:
+      title: timeOffDetails
+      type: object
+      properties:
+        isAllDay:
+          type: boolean
+          description: Indicates whether the time-off entry spans the entire day.
+        subject:
+          type: string
+          description: The subject or reason for the time-off entry.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.taskStatus:
       title: taskStatus
       enum:
