@@ -85,7 +85,7 @@ extends:
         timeoutInMinutes: 1200
         steps:
         - template: .azure-pipelines/common-templates/download-openapi-docs.yml@self
-          condition: eq('${{ parameters.SkipOpenAPIDocsDownload }}', false)
+          #condition: eq('${{ parameters.SkipOpenAPIDocsDownload }}', false)
           parameters:
             Branch: $(Branch)
             BaseBranch: $(BaseBranch)
