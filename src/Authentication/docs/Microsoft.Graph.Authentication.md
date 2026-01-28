@@ -48,7 +48,7 @@ Removes Microsoft Graph environment to the settings file
 Sets a Microsoft Graph environment to the settings file.
 
 ### [Set-MgGraphOption](Set-MgGraphOption.md)
-Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support. Web Account Manager is enabled by default on Windows systems and cannot be disabled.
 
 ### [Set-MgRequestContext](Set-MgRequestContext.md)
 Sets request context for Microsoft Graph invocations

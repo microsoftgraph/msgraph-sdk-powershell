@@ -6,9 +6,9 @@ Import-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
 	definition = @(
-	"definition-value"
+	'{"ActivityBasedTimeoutPolicy":{"Version":1,"ApplicationPolicies":[{"ApplicationId":"default","WebSessionIdleTimeout":"00:05:00"}]}}'
 )
-displayName = "displayName-value"
+displayName = "activityBasedTimeoutPolicies test"
 isOrganizationDefault = $true
 }
 
