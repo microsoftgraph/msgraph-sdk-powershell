@@ -177,7 +177,7 @@ extends:
             Test: ${{ parameters.Test }}
             Pack: ${{ parameters.Pack }}
             Sign: ${{ parameters.Sign }}
-        - template: .azure-pipelines/generation-templates/individualized-workload-modules.yml@self
+        - template: .azure-pipelines/generation-templates/individual-workload-module.yml@self
           parameters:
             Test: ${{ parameters.Test }}
             Pack: ${{ parameters.Pack }}
