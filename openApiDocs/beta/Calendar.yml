@@ -3877,11 +3877,11 @@ paths:
     patch:
       tags:
         - places.place
-      summary: Update place
-      description: 'Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.'
+      summary: Upsert places
+      description: 'Upsert one or more place objects in async mode. This API allows you to create and update multiple places efficiently in a single request. For more information on how to use this API, including scenarios, best practices, and concurrency limits, see Working with the upsert Places API in Microsoft Graph.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/place-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/place-patch-places?view=graph-rest-beta
       operationId: place_UpdatePlace
       parameters:
         - name: place-id
@@ -4003,7 +4003,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Create checkInClaim
-      description: 'Create a new checkInClaim object to record the check-in status for a specific place, such as a desk, room, or workspace, associated with a specific calendar reservation. This check-in confirms that the reserved space is in use and prevents automatic release if auto-release policies are configured for that place.'
+      description: 'Create a new checkInClaim object to record the check-in status for a specific place, such as a desk or a room, associated with a specific calendar reservation. This check-in confirms that the reserved space is in use and prevents automatic release if auto-release policies are configured for that place.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-post-checkins?view=graph-rest-beta
@@ -4191,6 +4191,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: place_ListChild
       parameters:
         - name: place-id
@@ -4250,6 +4251,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: place_GetChild
       parameters:
         - name: place-id
@@ -4613,6 +4615,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsBuilding_ListChild
       parameters:
         - name: place-id
@@ -4672,6 +4675,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsBuilding_GetChild
       parameters:
         - name: place-id
@@ -6594,6 +6598,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsDesk_ListChild
       parameters:
         - name: place-id
@@ -6653,6 +6658,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsDesk_GetChild
       parameters:
         - name: place-id
@@ -7016,6 +7022,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsFloor_ListChild
       parameters:
         - name: place-id
@@ -7075,6 +7082,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsFloor_GetChild
       parameters:
         - name: place-id
@@ -7438,6 +7446,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsRoom_ListChild
       parameters:
         - name: place-id
@@ -7497,6 +7506,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsRoom_GetChild
       parameters:
         - name: place-id
@@ -7856,6 +7866,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsRoomList_ListChild
       parameters:
         - name: place-id
@@ -7915,6 +7926,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsRoomList_GetChild
       parameters:
         - name: place-id
@@ -8494,6 +8506,7 @@ paths:
       tags:
         - places.room
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsRoomList.room_ListChild
       parameters:
         - name: place-id
@@ -8561,6 +8574,7 @@ paths:
       tags:
         - places.room
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsRoomList.room_GetChild
       parameters:
         - name: place-id
@@ -9178,6 +9192,7 @@ paths:
       tags:
         - places.workspace
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsRoomList.workspace_ListChild
       parameters:
         - name: place-id
@@ -9245,6 +9260,7 @@ paths:
       tags:
         - places.workspace
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsRoomList.workspace_GetChild
       parameters:
         - name: place-id
@@ -9646,6 +9662,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsSection_ListChild
       parameters:
         - name: place-id
@@ -9705,6 +9722,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsSection_GetChild
       parameters:
         - name: place-id
@@ -10068,6 +10086,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsWorkspace_ListChild
       parameters:
         - name: place-id
@@ -10127,6 +10146,7 @@ paths:
       tags:
         - places.place
       summary: Get children from places
+      description: A collection of children places that is only used in the Upsert places API.
       operationId: placeAsWorkspace_GetChild
       parameters:
         - name: place-id
@@ -10420,6 +10440,10 @@ paths:
       tags:
         - places.place.Functions
       summary: Invoke function getOperation
+      description: Get a placeOperation by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-getoperation?view=graph-rest-beta
       operationId: place_getOperation
       parameters:
         - name: id
@@ -10445,6 +10469,10 @@ paths:
       tags:
         - places.place.Functions
       summary: Invoke function listOperations
+      description: List all existing placeOperation objects. This API doesn't return operation details.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-listoperations?view=graph-rest-beta
       operationId: place_listOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20714,7 +20742,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
-              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. The possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             calendarGroupId:
               type: string
               description: 'The calendarGroup in which to create the calendar. If the user has never explicitly set a group for the calendar, this property is  null.'
@@ -20811,7 +20839,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
-              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. The possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
             emailAddress:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
@@ -21208,6 +21236,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.place'
+              description: A collection of children places that is only used in the Upsert places API.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -21428,7 +21457,7 @@ components:
               description: 'A short, friendly name for the room, often used for easier identification or display in UI.'
             placeId:
               type: string
-              description: An alternate immutable unique identifier of the room. Read-only.
+              description: An alternative immutable unique identifier of the room. Read-only.
               nullable: true
             teamsEnabledState:
               $ref: '#/components/schemas/microsoft.graph.placeFeatureEnablement'
@@ -21503,7 +21532,7 @@ components:
               description: 'A short, friendly name for the workspace, often used for easier identification or display in the UI.'
             placeId:
               type: string
-              description: An alternate immutable unique identifier of the workspace. Read-only.
+              description: An alternative immutable unique identifier of the workspace. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -21524,6 +21553,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.placeExecutionResult'
+              description: 'The detailed result of the operation, including errors and successful places.'
             progress:
               $ref: '#/components/schemas/microsoft.graph.placeOperationProgress'
             status:
@@ -22016,6 +22046,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.placeExecutionResult'
+          description: The upsert results of children places of the place.
         error:
           $ref: '#/components/schemas/microsoft.graph.publicError'
         succeededPlace:
@@ -22030,18 +22061,21 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of places failed to upsert.
           format: int32
           nullable: true
         succeededPlaceCount:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of places succeeded to upsert.
           format: int32
           nullable: true
         totalPlaceCount:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The total count of places in the request.
           format: int32
           nullable: true
       additionalProperties:

@@ -5558,7 +5558,7 @@ components:
               nullable: true
             deviceOwnership:
               type: string
-              description: 'Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.'
+              description: 'Ownership of the device. Intune sets this property. The possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -5581,7 +5581,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
-              description: 'Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.'
+              description: 'Enrollment type of the device. Intune sets this property. The possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.'
               nullable: true
             extensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
@@ -5613,7 +5613,7 @@ components:
               nullable: true
             managementType:
               type: string
-              description: 'Management channel of the device. Intune sets this property. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
+              description: 'Management channel of the device. Intune sets this property. The possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
@@ -6121,7 +6121,10 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. The possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              nullable: true
+            welcomeMessageEnabled:
+              type: boolean
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -6401,7 +6404,7 @@ components:
               nullable: true
             disabledByMicrosoftStatus:
               type: string
-              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).'
+              description: 'Specifies whether Microsoft has disabled the registered application. The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).'
               nullable: true
             displayName:
               type: string
@@ -6417,6 +6420,10 @@ components:
               nullable: true
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
+            isDisabled:
+              type: boolean
+              description: 'Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.'
+              nullable: true
             keyCredentials:
               type: array
               items:
@@ -6487,7 +6494,7 @@ components:
               description: 'Contains the list of identifiersUris, copied over from the associated application. More values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).'
             servicePrincipalType:
               type: string
-              description: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represents a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+              description: 'Identifies if the service principal represents an application or a managed identity. This property is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represents a managed identity this is set as ManagedIdentity.For a service principal that represents an agent identity, this is set to ServiceIdentity. The SocialIdp type is for internal use.'
               nullable: true
             signInAudience:
               type: string
@@ -7646,7 +7653,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
-              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. The possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             calendarGroupId:
               type: string
               description: 'The calendarGroup in which to create the calendar. If the user has never explicitly set a group for the calendar, this property is  null.'
@@ -8102,7 +8109,7 @@ components:
               nullable: true
             permissionType:
               type: string
-              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
+              description: 'The type of permission. The possible values are: Application, Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
@@ -8931,7 +8938,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetDeviceGroup'
-              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol. <br/<Supports $expand.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9368,7 +9375,7 @@ components:
               description: The identifier of the application. Required. Supports $filter (eq only) and $orderby.
             consentType:
               type: string
-              description: 'The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.'
+              description: 'The consent type of the request. The possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.'
               nullable: true
             pendingScopes:
               type: array
@@ -9549,8 +9556,16 @@ components:
               description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
               format: date-time
               nullable: true
+            migrationMode:
+              $ref: '#/components/schemas/microsoft.graph.migrationMode'
             onlineMeetingInfo:
               $ref: '#/components/schemas/microsoft.graph.teamworkOnlineMeetingInfo'
+            originalCreatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the original creation time for the chat. The value is null if the chat never entered migration mode.
+              format: date-time
+              nullable: true
             tenantId:
               type: string
               description: The identifier of the tenant in which the chat was created. Read-only.
@@ -9916,10 +9931,14 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
               description: 'Addresses associated with the contact, for example, home address and business address.'
+            primaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             profession:
               type: string
               description: The contact's profession.
               nullable: true
+            secondaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             spouseName:
               type: string
               description: The name of the contact's spouse/partner.
@@ -9928,6 +9947,8 @@ components:
               type: string
               description: The contact's surname.
               nullable: true
+            tertiaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             title:
               type: string
               description: The contact's title.
@@ -10224,6 +10245,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConfiguration'
+              description: The user configuration objects associated to the mailFolder.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -11057,7 +11079,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
+              description: 'The list of meeting capabilities. The possible values are: questionAndAnswer,unknownFutureValue.'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -11549,6 +11571,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsSetting'
               description: The Windows settings of the user stored in the cloud.
               x-ms-navigationProperty: true
+            workHoursAndLocations:
+              $ref: '#/components/schemas/microsoft.graph.workHoursAndLocationsSetting'
           additionalProperties:
             type: object
     microsoft.graph.userSolutionRoot:
@@ -11997,7 +12021,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
-              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. The possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
             emailAddress:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
@@ -13529,8 +13553,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelLayoutType'
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
+            migrationMode:
+              $ref: '#/components/schemas/microsoft.graph.migrationMode'
             moderationSettings:
               $ref: '#/components/schemas/microsoft.graph.channelModerationSettings'
+            originalCreatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.
+              format: date-time
+              nullable: true
             summary:
               $ref: '#/components/schemas/microsoft.graph.channelSummary'
             tenantId:
@@ -13551,6 +13583,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
+              description: A collection of enabled apps in the channel.
               x-ms-navigationProperty: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -14844,6 +14877,13 @@ components:
         - meeting
         - unknownFutureValue
       type: string
+    microsoft.graph.migrationMode:
+      title: migrationMode
+      enum:
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkOnlineMeetingInfo:
       title: teamworkOnlineMeetingInfo
       type: object
@@ -15774,6 +15814,9 @@ components:
             displayName:
               type: string
               nullable: true
+            hasProtection:
+              type: boolean
+              nullable: true
             isDefault:
               type: boolean
               nullable: true
@@ -15946,6 +15989,17 @@ components:
           properties:
             binaryData:
               type: string
+              description: Arbitrary binary data.
+              format: base64url
+              nullable: true
+            structuredData:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.structuredDataEntry'
+              description: Key-value pairs of supported data types.
+            xmlData:
+              type: string
+              description: Binary data for storing serialized XML.
               format: base64url
               nullable: true
           additionalProperties:
@@ -17975,7 +18029,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
-              description: 'Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can''t be removed through a PATCH operation once added.'
+              description: 'Specifies whose identity is anonymized in the meeting. The possible values are: attendee. The attendee value can''t be removed through a PATCH operation once added.'
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
@@ -18018,6 +18072,8 @@ components:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            sensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingSensitivityLabelAssignment'
             shareMeetingChatHistoryDefault:
               $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             subject:
@@ -18841,7 +18897,7 @@ components:
       properties:
         placeId:
           type: string
-          description: Identifier of the place (when applicable).
+          description: 'Identifier of the place, if applicable.'
           nullable: true
         source:
           $ref: '#/components/schemas/microsoft.graph.workLocationSource'
@@ -19546,6 +19602,28 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
               description: A collection of setting values for a given windowsSetting.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workHoursAndLocationsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workHoursAndLocationsSetting
+          type: object
+          properties:
+            maxSharedWorkLocationDetails:
+              $ref: '#/components/schemas/microsoft.graph.maxWorkLocationDetails'
+            occurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+              description: Collection of work plan occurrences.
+              x-ms-navigationProperty: true
+            recurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workPlanRecurrence'
+              description: Collection of recurring work plans defined by the user.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -20966,7 +21044,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. The possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -20974,7 +21052,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. The possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -23644,6 +23722,16 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.structuredDataEntry:
+      title: structuredDataEntry
+      type: object
+      properties:
+        keyEntry:
+          $ref: '#/components/schemas/microsoft.graph.structuredDataEntryTypedValue'
+        valueEntry:
+          $ref: '#/components/schemas/microsoft.graph.structuredDataEntryTypedValue'
+      additionalProperties:
+        type: object
     microsoft.graph.managedAppLogUploadState:
       title: managedAppLogUploadState
       enum:
@@ -24884,6 +24972,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingSensitivityLabelAssignment:
+      title: onlineMeetingSensitivityLabelAssignment
+      type: object
+      properties:
+        sensitivityLabelId:
+          type: string
+          description: Id of the sensitivity label that is applied to the Teams meeting.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingChatHistoryDefaultMode:
       title: meetingChatHistoryDefaultMode
       enum:
@@ -25031,7 +25129,7 @@ components:
               nullable: true
             role:
               type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
@@ -26082,6 +26180,59 @@ components:
               description: Base64-encoded JSON setting value.
           additionalProperties:
             type: object
+    microsoft.graph.maxWorkLocationDetails:
+      title: maxWorkLocationDetails
+      enum:
+        - unknown
+        - none
+        - approximate
+        - specific
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workPlanOccurrence:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workPlanOccurrence
+          type: object
+          properties:
+            end:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            placeId:
+              type: string
+              description: Identifier of a place from the Microsoft Graph Places Directory API. Only applicable when workLocationType is set to office.
+              nullable: true
+            recurrenceId:
+              type: string
+              description: The identifier of the parent recurrence pattern that generated this occurrence. The value is null for time-off occurrences because they don't have a parent recurrence.
+              nullable: true
+            start:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            timeOffDetails:
+              $ref: '#/components/schemas/microsoft.graph.timeOffDetails'
+            workLocationType:
+              $ref: '#/components/schemas/microsoft.graph.workLocationType'
+          additionalProperties:
+            type: object
+    microsoft.graph.workPlanRecurrence:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workPlanRecurrence
+          type: object
+          properties:
+            end:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            placeId:
+              type: string
+              description: Identifier of a place from the Microsoft Graph Places Directory API. Only applicable when workLocationType is set to office.
+              nullable: true
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+            start:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            workLocationType:
+              $ref: '#/components/schemas/microsoft.graph.workLocationType'
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -26767,7 +26918,7 @@ components:
           properties:
             calculationMode:
               type: string
-              description: 'Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.'
+              description: 'Returns the calculation mode used in the workbook. The possible values are: Automatic, AutomaticExceptTables, Manual.'
           additionalProperties:
             type: object
     microsoft.graph.workbookComment:
@@ -26832,7 +26983,7 @@ components:
               description: Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
             type:
               type: string
-              description: 'The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.'
+              description: 'The type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
               $ref: '#/components/schemas/microsoft.graph.Json'
@@ -26896,7 +27047,7 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'A constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'A constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
@@ -27857,7 +28008,7 @@ components:
       type: object
       properties:
         azureAdMultipleOrgs:
-          $ref: '#/components/schemas/microsoft.graph.audienceRestriction'
+          $ref: '#/components/schemas/microsoft.graph.azureAdMultipleOrgsAudienceRestriction'
         personalMicrosoftAccount:
           $ref: '#/components/schemas/microsoft.graph.audienceRestriction'
       additionalProperties:
@@ -28230,13 +28381,13 @@ components:
           items:
             type: string
             nullable: true
-          description: 'The media (that is, paper) colors supported by the printer.'
+          description: 'The media (for example, paper) colors supported by the printer.'
         mediaSizes:
           type: array
           items:
             type: string
             nullable: true
-          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+          description: 'The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. For the list of supported values, see mediaSizes values.'
         mediaTypes:
           type: array
           items:
@@ -29136,6 +29287,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.structuredDataEntryTypedValue:
+      title: structuredDataEntryTypedValue
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.structuredDataEntryValueType'
+        values:
+          type: array
+          items:
+            type: string
+          description: 'Represents the value. The contained elements might be one of the following cases: when the type is stringArray, it contains arbitrary string values; otherwise, it contains exactly one string value. The caller is responsible for data type conversion.'
+      additionalProperties:
+        type: object
     microsoft.graph.settingSource:
       title: settingSource
       type: object
@@ -29888,6 +30052,19 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.timeOffDetails:
+      title: timeOffDetails
+      type: object
+      properties:
+        isAllDay:
+          type: boolean
+          description: Indicates whether the time-off entry spans the entire day.
+        subject:
+          type: string
+          description: The subject or reason for the time-off entry.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30737,6 +30914,13 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.azureAdMultipleOrgsAudienceRestriction:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.audienceRestriction'
+        - title: azureAdMultipleOrgsAudienceRestriction
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.audienceRestriction:
       title: audienceRestriction
       type: object
@@ -32059,7 +32243,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printFinishing'
-          description: Finishing processes to use when printing.
+          description: 'Finishing processes to use when printing. Possible values are: none, staple, punch, cover, bind, saddleStitch, stitchEdge, stapleTopLeft, stapleBottomLeft, stapleTopRight, stapleBottomRight, stitchLeftEdge, stitchTopEdge, stitchRightEdge, stitchBottomEdge, stapleDualLeft, stapleDualTop, stapleDualRight, stapleDualBottom, unknownFutureValue. You must use the Prefer: include-unknown-enum-members request header to get the following values in this [evolvable enum](/graph/best-practices-concept#handling-future-members-in-evolvable-enumerottom,bindLeft,bindTop,bindRight,bindBottom,foldAccordion,foldDoubleGate,foldGate,foldHalf,foldHalfZ,foldLeftGate,foldLetter,foldParallel,foldPoster,foldRightGate,foldZ,foldEngineeringZ,punchTopLeft,punchBottomLeft,punchTopRight,punchBottomRight,punchDualLeft,punchDualTop,punchDualRight,punchDualBottom,punchTripleLeft,punchTripleTop,punchTripleRight,punchTripleBottom,punchQuadLeft,punchQuadTop,punchQuadRight,punchQuadBottom,fold,trim,bale,bookletMaker,coat,laminate,trimAfterPages,trimAfterDocuments,trimAfterCopies,trimAfterJob`.'
         fitPdfToPage:
           type: boolean
           nullable: true
@@ -32348,6 +32532,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.structuredDataEntryValueType:
+      title: structuredDataEntryValueType
+      enum:
+        - dateTime
+        - boolean
+        - byte
+        - string
+        - integer32
+        - unsignedInteger32
+        - integer64
+        - unsignedInteger64
+        - stringArray
+        - byteArray
+        - unknownFutureValue
+      type: string
     microsoft.graph.settingSourceType:
       title: settingSourceType
       enum:
@@ -32627,7 +32826,7 @@ components:
               nullable: true
             type:
               type: string
-              description: 'The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.'
+              description: 'The type of the change history. The possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.'
             undoChangeId:
               type: string
               description: The ID of the workbookDocumentTaskChange that was undone for the undo change action. Only exists on an undo change history. Nullable.
@@ -32657,7 +32856,7 @@ components:
           nullable: true
         dataOption:
           type: string
-          description: 'Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.'
+          description: 'Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.'
         icon:
           $ref: '#/components/schemas/microsoft.graph.workbookIcon'
         key:
@@ -32668,7 +32867,7 @@ components:
           format: int32
         sortOn:
           type: string
-          description: 'Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.'
+          description: 'Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.'
       additionalProperties:
         type: object
     microsoft.graph.workbookChartAxes:
@@ -33298,7 +33497,7 @@ components:
           format: int32
         set:
           type: string
-          description: 'The set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.'
+          description: 'The set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.'
       additionalProperties:
         type: object
     microsoft.graph.workbookChartAxis:
