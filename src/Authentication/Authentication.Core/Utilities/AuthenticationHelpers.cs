@@ -82,9 +82,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 && (string.IsNullOrEmpty(EnvironmentVariables.ClientSecret) && string.IsNullOrEmpty(EnvironmentVariables.ClientCertificatePath)));
         }
 
-        private static bool IsWamSupported()
+        private static bool ShouldUseWam(IAuthContext authContext)
         {
-            return SharedUtilities.IsWindowsPlatform();
+            return SharedUtilities.IsWindowsPlatform() && authContext.WamEnabled;
         }
 
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var interactiveOptions = IsWamSupported() ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
+            var interactiveOptions = ShouldUseWam(authContext) ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
             interactiveOptions.ClientId = authContext.ClientId;
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 AuthenticationRecord authRecord;
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
-                if (IsWamSupported())
+                if (ShouldUseWam(authContext))
                 {
                     authRecord = await Task.Run(() =>
                     {

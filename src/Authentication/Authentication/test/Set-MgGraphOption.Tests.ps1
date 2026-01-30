@@ -15,15 +15,15 @@ Describe "Set-MgGraphOption" {
             $SetMgGraphOptionCommand.ParameterSets | Should -HaveCount 1
             $SetMgGraphOptionCommand.ParameterSets.Parameters | Should -HaveCount 13 # PS common parameters.
         }
-    
-        It 'Executes successfully whren toggling WAM on' {
-            { Set-MgGraphOption -EnableLoginByWAM $true -Debug | Out-Null } | Should -Not -Be $null
-            { Set-MgGraphOption -EnableLoginByWAM $true -ErrorAction SilentlyContinue } | Should -Not -Throw
+
+        It 'Executes successfully when disabling WAM' {
+            { Set-MgGraphOption -DisableLoginByWAM $true -Debug | Out-Null } | Should -Not -Be $null
+            { Set-MgGraphOption -DisableLoginByWAM $true -ErrorAction SilentlyContinue } | Should -Not -Throw
         }
 
-        It 'Executes successfully when toggling WAM off' {
-            { Set-MgGraphOption -EnableLoginByWAM $false -Debug | Out-Null } | Should -Not -Be $null
-            { Set-MgGraphOption -EnableLoginByWAM $false -ErrorAction SilentlyContinue } | Should -Not -Throw
+        It 'Executes successfully when enabling WAM' {
+            { Set-MgGraphOption -DisableLoginByWAM $false -Debug | Out-Null } | Should -Not -Be $null
+            { Set-MgGraphOption -DisableLoginByWAM $false -ErrorAction SilentlyContinue } | Should -Not -Throw
         }
     }
 }
