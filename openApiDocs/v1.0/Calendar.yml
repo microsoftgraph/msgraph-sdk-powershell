@@ -3842,7 +3842,11 @@ paths:
     post:
       tags:
         - places.place
-      summary: Add new entity to places
+      summary: Create place
+      description: 'Create a new place object. You can also use this method to create the following child object types: building, floor, section, room, workspace, or desk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-post?view=graph-rest-1.0
       operationId: place_CreatePlace
       requestBody:
         description: New entity
@@ -3866,7 +3870,7 @@ paths:
       tags:
         - places.place
       summary: Update place
-      description: 'Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.'
+      description: 'Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-update?view=graph-rest-1.0
@@ -3900,7 +3904,11 @@ paths:
     delete:
       tags:
         - places.place
-      summary: Delete entity from places
+      summary: Delete place
+      description: 'Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-1.0
       operationId: place_DeletePlace
       parameters:
         - name: place-id
@@ -3927,7 +3935,8 @@ paths:
     get:
       tags:
         - places.checkInClaim
-      summary: Get checkIns from places
+      summary: Get checkInClaim
+      description: 'Read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.'
       operationId: place_ListCheckIn
       parameters:
         - name: place-id
@@ -3985,7 +3994,11 @@ paths:
     post:
       tags:
         - places.checkInClaim
-      summary: Create new navigation property to checkIns for places
+      summary: Create checkInClaim
+      description: 'Create a new checkInClaim object to record the check-in status for a specific place, such as a desk or a room, associated with a specific calendar reservation. This check-in confirms that the reserved space is in use and prevents automatic release if auto-release policies are configured for that place.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-post-checkins?view=graph-rest-1.0
       operationId: place_CreateCheckIn
       parameters:
         - name: place-id
@@ -4017,7 +4030,11 @@ paths:
     get:
       tags:
         - places.checkInClaim
-      summary: Get checkIns from places
+      summary: Get checkInClaim
+      description: 'Read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/checkinclaim-get?view=graph-rest-1.0
       operationId: place_GetCheckIn
       parameters:
         - name: place-id
@@ -4165,7 +4182,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the item of type microsoft.graph.place as microsoft.graph.building
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_GetPlaceAsBuilding
       parameters:
         - name: place-id
@@ -4210,6 +4231,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsBuilding_ListCheckIn
       parameters:
         - name: place-id
@@ -4300,6 +4322,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsBuilding_GetCheckIn
       parameters:
         - name: place-id
@@ -4447,7 +4470,11 @@ paths:
     get:
       tags:
         - places.buildingMap
-      summary: Get map from places
+      summary: Get buildingMap
+      description: Get the map of a building in IMDF format.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/buildingmap-get?view=graph-rest-1.0
       operationId: placeAsBuilding_GetMap
       parameters:
         - name: place-id
@@ -4522,7 +4549,11 @@ paths:
     delete:
       tags:
         - places.buildingMap
-      summary: Delete navigation property map for places
+      summary: Delete buildingMap
+      description: Delete the map of a specific building.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/buildingmap-delete?view=graph-rest-1.0
       operationId: placeAsBuilding_DeleteMap
       parameters:
         - name: place-id
@@ -4549,7 +4580,11 @@ paths:
     get:
       tags:
         - places.buildingMap
-      summary: Get footprints from places
+      summary: List footprints
+      description: Get a list of footprintMap objects for building footprints and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/buildingmap-list-footprints?view=graph-rest-1.0
       operationId: placeAsBuilding.map_ListFootprint
       parameters:
         - name: place-id
@@ -4640,6 +4675,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get footprints from places
+      description: Represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
       operationId: placeAsBuilding.map_GetFootprint
       parameters:
         - name: place-id
@@ -4787,7 +4823,11 @@ paths:
     get:
       tags:
         - places.buildingMap
-      summary: Get levels from places
+      summary: List levels
+      description: Get a list of the levelMap objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/buildingmap-list-levels?view=graph-rest-1.0
       operationId: placeAsBuilding.map_ListLevel
       parameters:
         - name: place-id
@@ -4878,6 +4918,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get levels from places
+      description: Represents a physical floor structure within a building. It corresponds to level.geojson in IMDF format.
       operationId: placeAsBuilding.map_GetLevel
       parameters:
         - name: place-id
@@ -5003,7 +5044,11 @@ paths:
     get:
       tags:
         - places.buildingMap
-      summary: Get fixtures from places
+      summary: List fixtures
+      description: Get a list of the fixtureMap objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/levelmap-list-fixtures?view=graph-rest-1.0
       operationId: placeAsBuilding.map.level_ListFixture
       parameters:
         - name: place-id
@@ -5110,6 +5155,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get fixtures from places
+      description: Collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
       operationId: placeAsBuilding.map.level_GetFixture
       parameters:
         - name: place-id
@@ -5169,7 +5215,11 @@ paths:
     patch:
       tags:
         - places.buildingMap
-      summary: Update the navigation property fixtures in places
+      summary: Update fixtureMap
+      description: 'Update the properties of an existing fixtureMap object in IMDF format on a specified floor, or create one if it doesn''t exist.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/fixturemap-update?view=graph-rest-1.0
       operationId: placeAsBuilding.map.level_UpdateFixture
       parameters:
         - name: place-id
@@ -5216,7 +5266,11 @@ paths:
     delete:
       tags:
         - places.buildingMap
-      summary: Delete navigation property fixtures for places
+      summary: Delete fixtureMap
+      description: Delete a fixture on a specified floor.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/fixturemap-delete?view=graph-rest-1.0
       operationId: placeAsBuilding.map.level_DeleteFixture
       parameters:
         - name: place-id
@@ -5289,7 +5343,11 @@ paths:
     get:
       tags:
         - places.buildingMap
-      summary: Get sections from places
+      summary: List sections
+      description: Get a list of the sectionMap objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/levelmap-list-sections?view=graph-rest-1.0
       operationId: placeAsBuilding.map.level_ListSection
       parameters:
         - name: place-id
@@ -5396,6 +5454,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get sections from places
+      description: Collection of sections (such as zones or partitions) on this level. Supports upsert.
       operationId: placeAsBuilding.map.level_GetSection
       parameters:
         - name: place-id
@@ -5575,7 +5634,11 @@ paths:
     get:
       tags:
         - places.buildingMap
-      summary: Get units from places
+      summary: List units
+      description: Get a list of the unitMap objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/levelmap-list-units?view=graph-rest-1.0
       operationId: placeAsBuilding.map.level_ListUnit
       parameters:
         - name: place-id
@@ -5682,6 +5745,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get units from places
+      description: Collection of units (such as rooms or offices) on this level. Supports upsert.
       operationId: placeAsBuilding.map.level_GetUnit
       parameters:
         - name: place-id
@@ -5741,7 +5805,11 @@ paths:
     patch:
       tags:
         - places.buildingMap
-      summary: Update the navigation property units in places
+      summary: Update unitMap
+      description: 'Update the properties of an existing unitMap object in IMDF format on a specified floor, or create one if it doesn''t exist.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unitmap-update?view=graph-rest-1.0
       operationId: placeAsBuilding.map.level_UpdateUnit
       parameters:
         - name: place-id
@@ -5788,7 +5856,11 @@ paths:
     delete:
       tags:
         - places.buildingMap
-      summary: Delete navigation property units for places
+      summary: Delete unitMap
+      description: Delete a unitMap object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unitmap-delete?view=graph-rest-1.0
       operationId: placeAsBuilding.map.level_DeleteUnit
       parameters:
         - name: place-id
@@ -5957,7 +6029,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the item of type microsoft.graph.place as microsoft.graph.desk
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_GetPlaceAsDesk
       parameters:
         - name: place-id
@@ -6002,6 +6078,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsDesk_ListCheckIn
       parameters:
         - name: place-id
@@ -6092,6 +6169,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsDesk_GetCheckIn
       parameters:
         - name: place-id
@@ -6239,7 +6317,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the item of type microsoft.graph.place as microsoft.graph.floor
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_GetPlaceAsFloor
       parameters:
         - name: place-id
@@ -6284,6 +6366,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsFloor_ListCheckIn
       parameters:
         - name: place-id
@@ -6374,6 +6457,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsFloor_GetCheckIn
       parameters:
         - name: place-id
@@ -6521,8 +6605,8 @@ paths:
     get:
       tags:
         - places.place
-      summary: List places
-      description: 'Get a collection of the specified type of place objects defined in the tenant. For example, you can get all the rooms, all the room lists, or the rooms in a specific room list in the tenant. A place object can be one of the following types: Both room and roomList are derived from the place object. By default, this operation returns 100 places per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. See details for how they compare.'
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
@@ -6570,6 +6654,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsRoom_ListCheckIn
       parameters:
         - name: place-id
@@ -6660,6 +6745,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsRoom_GetCheckIn
       parameters:
         - name: place-id
@@ -6852,6 +6938,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsRoomList_ListCheckIn
       parameters:
         - name: place-id
@@ -6942,6 +7029,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsRoomList_GetCheckIn
       parameters:
         - name: place-id
@@ -7306,6 +7394,7 @@ paths:
       tags:
         - places.room
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsRoomList.room_ListCheckIn
       parameters:
         - name: place-id
@@ -7412,6 +7501,7 @@ paths:
       tags:
         - places.room
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsRoomList.room_GetCheckIn
       parameters:
         - name: place-id
@@ -7830,6 +7920,7 @@ paths:
       tags:
         - places.workspace
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsRoomList.workspace_ListCheckIn
       parameters:
         - name: place-id
@@ -7936,6 +8027,7 @@ paths:
       tags:
         - places.workspace
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsRoomList.workspace_GetCheckIn
       parameters:
         - name: place-id
@@ -8137,7 +8229,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the item of type microsoft.graph.place as microsoft.graph.section
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_GetPlaceAsSection
       parameters:
         - name: place-id
@@ -8182,6 +8278,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsSection_ListCheckIn
       parameters:
         - name: place-id
@@ -8272,6 +8369,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsSection_GetCheckIn
       parameters:
         - name: place-id
@@ -8419,7 +8517,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the item of type microsoft.graph.place as microsoft.graph.workspace
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_GetPlaceAsWorkspace
       parameters:
         - name: place-id
@@ -8464,6 +8566,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsWorkspace_ListCheckIn
       parameters:
         - name: place-id
@@ -8554,6 +8657,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get checkIns from places
+      description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
       operationId: placeAsWorkspace_GetCheckIn
       parameters:
         - name: place-id
@@ -8715,7 +8819,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the items of type microsoft.graph.building in the microsoft.graph.place collection
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_ListPlaceAsBuilding
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8779,7 +8887,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the items of type microsoft.graph.desk in the microsoft.graph.place collection
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_ListPlaceAsDesk
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8843,7 +8955,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the items of type microsoft.graph.floor in the microsoft.graph.place collection
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_ListPlaceAsFloor
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8907,8 +9023,8 @@ paths:
     get:
       tags:
         - places.place
-      summary: List places
-      description: 'Get a collection of the specified type of place objects defined in the tenant. For example, you can get all the rooms, all the room lists, or the rooms in a specific room list in the tenant. A place object can be one of the following types: Both room and roomList are derived from the place object. By default, this operation returns 100 places per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. See details for how they compare.'
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
@@ -9039,7 +9155,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the items of type microsoft.graph.section in the microsoft.graph.place collection
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_ListPlaceAsSection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9103,7 +9223,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the items of type microsoft.graph.workspace in the microsoft.graph.place collection
+      summary: List place objects
+      description: "Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0
       operationId: place_ListPlaceAsWorkspace
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18916,7 +19040,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
-              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. The possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             canEdit:
               type: boolean
               description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.'
@@ -19001,7 +19125,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
-              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. The possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
             emailAddress:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
@@ -19357,17 +19481,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             displayName:
               type: string
-              description: The name associated with the place.
+              description: The name that is associated with the place.
             geoCoordinates:
               $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
             isWheelChairAccessible:
               type: boolean
+              description: Indicates whether the place is wheelchair accessible.
               nullable: true
             label:
               type: string
+              description: User-defined description of the place.
               nullable: true
             parentId:
               type: string
+              description: The ID of a parent place.
               nullable: true
             phone:
               type: string
@@ -19377,10 +19504,12 @@ components:
               type: array
               items:
                 type: string
+              description: Custom tags that are associated with the place for categorization or filtering.
             checkIns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.checkInClaim'
+              description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -19390,11 +19519,13 @@ components:
       properties:
         calendarEventId:
           type: string
+          description: 'The unique identifier for an Outlook calendar event associated with the checkInClaim object. For more information, see the iCalUId property in event.'
         checkInMethod:
           $ref: '#/components/schemas/microsoft.graph.checkInMethod'
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time when the checkInClaim object was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -19409,6 +19540,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceLink'
+              description: A set of links to external resources that are associated with the building. Inherited from place.
+            wifiState:
+              $ref: '#/components/schemas/microsoft.graph.placeFeatureEnablement'
             map:
               $ref: '#/components/schemas/microsoft.graph.buildingMap'
           additionalProperties:
@@ -19421,16 +19555,19 @@ components:
           properties:
             placeId:
               type: string
+              description: Identifier for the building to which this buildingMap belongs.
               nullable: true
             footprints:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.footprintMap'
+              description: Represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
               x-ms-navigationProperty: true
             levels:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.levelMap'
+              description: Represents a physical floor structure within a building. It corresponds to level.geojson in IMDF format.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -19449,21 +19586,25 @@ components:
           properties:
             placeId:
               type: string
+              description: Identifier of the floor to which this levelMap belongs.
               nullable: true
             fixtures:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.fixtureMap'
+              description: Collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
               x-ms-navigationProperty: true
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionMap'
+              description: Collection of sections (such as zones or partitions) on this level. Supports upsert.
               x-ms-navigationProperty: true
             units:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unitMap'
+              description: Collection of units (such as rooms or offices) on this level. Supports upsert.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -19475,6 +19616,7 @@ components:
           properties:
             placeId:
               type: string
+              description: Identifier for the floor to which this fixtureMap belongs.
               nullable: true
           additionalProperties:
             type: object
@@ -19486,6 +19628,7 @@ components:
           properties:
             placeId:
               type: string
+              description: Identifier of the section to which this sectionMap belongs.
               nullable: true
           additionalProperties:
             type: object
@@ -19497,6 +19640,7 @@ components:
           properties:
             placeId:
               type: string
+              description: Identifier of the place (such as a room) to which this unitMap belongs.
               nullable: true
           additionalProperties:
             type: object
@@ -19508,7 +19652,10 @@ components:
           properties:
             displayDeviceName:
               type: string
+              description: 'The name of the display device (for example, monitor or projector) that is available at the desk.'
               nullable: true
+            heightAdjustableState:
+              $ref: '#/components/schemas/microsoft.graph.placeFeatureEnablement'
             mailboxDetails:
               $ref: '#/components/schemas/microsoft.graph.mailboxDetails'
             mode:
@@ -19525,6 +19672,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
+              description: 'Specifies the sort order of the floor. For example, a floor might be named ''Lobby'' with a sort order of 0 to show this floor first in ordered lists.'
               format: int32
               nullable: true
           additionalProperties:
@@ -19574,6 +19722,12 @@ components:
             nickname:
               type: string
               description: 'Specifies a nickname for the room, for example, ''conf room''.'
+            placeId:
+              type: string
+              description: An alternative immutable unique identifier of the room. Read-only.
+              nullable: true
+            teamsEnabledState:
+              $ref: '#/components/schemas/microsoft.graph.placeFeatureEnablement'
             videoDeviceName:
               type: string
               description: Specifies the name of the video device in the room.
@@ -19612,18 +19766,26 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
+              description: The maximum number of individual desks within a workspace.
               format: int32
               nullable: true
             displayDeviceName:
               type: string
+              description: 'The name of the display device (for example, monitor or projector) that is available in the workspace.'
               nullable: true
             emailAddress:
               type: string
+              description: The email address that is associated with the workspace. This email address is used for booking.
               nullable: true
             mode:
               $ref: '#/components/schemas/microsoft.graph.placeMode'
             nickname:
               type: string
+              description: 'A short, friendly name for the workspace, often used for easier identification or display in the UI.'
+            placeId:
+              type: string
+              description: An alternative immutable unique identifier of the workspace. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.section:
@@ -20051,12 +20213,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.resourceLinkType'
         name:
           type: string
+          description: The link text that is visible in the Places app. The maximum length is 200 characters.
           nullable: true
         value:
           type: string
+          description: The URL of the resource link. The maximum length is 200 characters.
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.placeFeatureEnablement:
+      title: placeFeatureEnablement
+      enum:
+        - unknown
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
     microsoft.graph.baseMapFeature:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20065,6 +20237,7 @@ components:
           properties:
             properties:
               type: string
+              description: Concatenated key-value pair of all properties of a GeoJSON file for this baseMapFeature.
               nullable: true
           additionalProperties:
             type: object
@@ -20074,9 +20247,11 @@ components:
       properties:
         emailAddress:
           type: string
+          description: The primary SMTP address associated with the mailbox.
           nullable: true
         externalDirectoryObjectId:
           type: string
+          description: The unique identifier of the mailbox in the external directory (such as Microsoft Entra).
           nullable: true
       additionalProperties:
         type: object

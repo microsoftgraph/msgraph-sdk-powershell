@@ -12897,7 +12897,7 @@ components:
               nullable: true
             role:
               type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
@@ -13786,7 +13786,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
-              description: 'Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can''t be removed through a PATCH operation once added.'
+              description: 'Specifies whose identity is anonymized in the meeting. The possible values are: attendee. The attendee value can''t be removed through a PATCH operation once added.'
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
@@ -13829,6 +13829,8 @@ components:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            sensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingSensitivityLabelAssignment'
             shareMeetingChatHistoryDefault:
               $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             subject:
@@ -15184,6 +15186,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharePointMigrationTask'
+              description: A collection of sharePointMigrationTask resources that represent cross-organization migration tasks.
               x-ms-navigationProperty: true
             crossOrganizationUserMappings:
               type: array
@@ -15338,6 +15341,16 @@ components:
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.onlineMeetingSensitivityLabelAssignment:
+      title: onlineMeetingSensitivityLabelAssignment
+      type: object
+      properties:
+        sensitivityLabelId:
+          type: string
+          description: Id of the sensitivity label that is applied to the Teams meeting.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.meetingChatHistoryDefaultMode:
@@ -16153,16 +16166,19 @@ components:
             finishedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the sharePointMigrationTask ended, if available. The task might complete successfully or fail, but it ends at that time. Read-only. Only on OneDrive and SharePoint. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the sharePointMigrationTask was last updated or processed, if available. Use this property to find tasks that stopped processing for a long time. Read-only. Optional. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             parameters:
               $ref: '#/components/schemas/microsoft.graph.sharePointMigrationTaskParameters'
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the sharePointMigrationTask started, if available. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.sharePointMigrationTaskStatus'
@@ -16682,6 +16698,8 @@ components:
         - title: sharePointIdentityMapping
           type: object
           properties:
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sourceOrganizationId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -16714,32 +16732,40 @@ components:
         preferredLatestStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The preferred latest start date and time. The system cancels the sharePointMigrationTask if it doesn''t start by this time. The value must be greater than the preferredStartDateTime, if present. Optional. Only on OneDrive and SharePoint.'
           format: date-time
           nullable: true
         preferredStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The preferred start date and time that allows the sharePointMigrationTask to start at a future time instead of as soon as possible (default). Optional. Only on OneDrive and SharePoint.
           format: date-time
           nullable: true
         sourceSiteUrl:
           type: string
+          description: 'The SharePoint URL of the source site. Optional. Exactly one of sourceSiteId or sourceUrl must be specified. If both or neither are specified, it''s an error. Only on OneDrive and SharePoint.'
           nullable: true
         targetDataLocationCode:
           type: string
+          description: 'In Microsoft Entra, this value represents the geographic location (for example, JPN, NAM) of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn''t required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.'
           nullable: true
         targetOrganizationHost:
           type: string
+          description: 'The root, admin, or my site host of the specific multi-geo instance of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn''t required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.'
           nullable: true
         targetOrganizationId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
+          description: The unique Microsoft Entra company ID of the target organization to which the source resource must be migrated. Only on OneDrive and SharePoint.
           format: uuid
           nullable: true
         targetSiteUrl:
           type: string
+          description: The SharePoint URL of the target site. Only on OneDrive and SharePoint.
           nullable: true
         validateOnly:
           type: boolean
+          description: 'Indicates whether this task is an actual migration or only a validation. If the parameter is missing, the system treats it as false. The default behavior is a real migration. Optional. Only on OneDrive and SharePoint.'
           nullable: true
       additionalProperties:
         type: object
@@ -16860,7 +16886,7 @@ components:
       properties:
         defaultRule:
           type: string
-          description: 'Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block'
+          description: 'Default rule that applies when a property or action-specific rule is not provided. The possible values are: Allow, Block'
           nullable: true
         propertyRule:
           $ref: '#/components/schemas/microsoft.graph.plannerTaskPropertyRule'
@@ -17066,6 +17092,16 @@ components:
         - forceComplete
         - unknownFutureValue
       type: string
+    microsoft.graph.deleted:
+      title: deleted
+      type: object
+      properties:
+        state:
+          type: string
+          description: Represents the state of the deleted item.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerTaskPropertyRule:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerPropertyRule'

@@ -5746,7 +5746,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete serviceApp
-      description: Delete a serviceApp.
+      description: 'Delete a serviceApp. When this API is called via Microsoft Graph PowerShell, it returns a 403 Forbidden response code.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-delete-serviceapps?view=graph-rest-1.0
@@ -8307,6 +8307,8 @@ components:
               type: string
               description: The name of the policy to be created.
               nullable: true
+            isEnabled:
+              type: boolean
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
@@ -8315,6 +8317,8 @@ components:
               description: The timestamp of the last modification of the policy.
               format: date-time
               nullable: true
+            protectionPolicyArtifactCount:
+              $ref: '#/components/schemas/microsoft.graph.protectionPolicyArtifactCount'
             retentionSettings:
               type: array
               items:
@@ -8826,6 +8830,36 @@ components:
         - restoreLocked
         - unknownFutureValue
       type: string
+    microsoft.graph.protectionPolicyArtifactCount:
+      title: protectionPolicyArtifactCount
+      type: object
+      properties:
+        completed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        failed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        inProgress:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        total:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.retentionSetting:
       title: retentionSetting
       type: object
@@ -8913,7 +8947,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: number
-          description: Total number of artifacts restored.
+          description: Total number of mailbox items that can be restored for a granular restore session.
           format: int32
           nullable: true
         restorePoint:
