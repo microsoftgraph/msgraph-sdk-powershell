@@ -32,7 +32,7 @@ $params = @{
 		key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
 	}
 	passwordCredential = @{
-		secretText = "<secret here>"
+		secretText = "MKTr0w1..."
 	}
 	proof = "eyJ0eXAiOiJ..."
 }
