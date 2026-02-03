@@ -77,6 +77,7 @@ extends:
       jobs:
       - job: RefreshOpenAPIDocuments
         displayName: Refresh OpenApi documents
+        condition: eq(${{ parameters.SkipOpenAPIDocsDownload }}, false)
         timeoutInMinutes: 1200
         steps:
         - template: .azure-pipelines/common-templates/download-openapi-docs.yml@self
@@ -85,65 +86,47 @@ extends:
             BaseBranch: $(BaseBranch)
             BuildAgent: $(BuildAgent)
             SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
-      
+
       - job: SetUpModuleMatrix
         displayName: Setup Module JSON for Matrix
-        dependsOn: RefreshOpenAPIDocuments
-        condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
+          dependsOn: RefreshOpenAPIDocuments
+          condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        ${{ else }}:
+          condition: succeeded()
         timeoutInMinutes: 840
         variables:
-          WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
-          ModulesToUpdate: $[ dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
+          ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
+            WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+            ModulesToGenerate: $[ dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
+          ${{ else }}:
+            WeeklyBranch: ''
+            ModulesToGenerate: ${{ parameters.ModulesToGenerate }}
         steps:
         - task: PowerShell@2
           name: CreateMatrixJson
-          displayName: Create Matrix Json 
+          displayName: Create Matrix Json
           inputs:
             targetType: inline
             pwsh: true
             script: |
-              if ($${{ parameters.SpecifyModules }}) {
-                $modules = "${{ parameters.ModulesToGenerate }}"
-              } else {
-                $modules = $env:ModulesToUpdate
-              }
-
-              Write-Host "ModulesToUpdate: $modules"
-              $testDataArray = $modules -split ' '
-              $jsonOutput = @{}
-
-              foreach ($item in $testDataArray) {
-                if ($item -notmatch '_') {
-                  # If '_' is not present, create two versions: v1.0 and beta
-                  $jsonOutput["${item}_v1.0"] = @{
-                    moduleVersion = 'v1.0'
-                    moduleName    = $item
-                  }
-                  $jsonOutput["${item}_beta"] = @{
-                    moduleVersion = 'beta'
-                    moduleName    = $item
-                  }
-                } else {
-                  $name, $version = $item -split '_'
-                  $jsonOutput[$item] = @{
-                    moduleVersion = $version
-                    moduleName    = $name
-                  }
-                }
-              }
-
-              $result = $jsonOutput | ConvertTo-Json -Compress
-              Write-Host "##vso[task.setvariable variable=matrixJson;isOutput=true]$result"
+              & "$(System.DefaultWorkingDirectory)/tools/utilities/CreateGenerationMatrix.ps1" -ModuleNames "$(ModulesToGenerate)" -OutputVariable "matrixJson"
 
       - job: MsGraphPsSdkWeeklyGeneration
-        dependsOn:
-          - SetUpModuleMatrix
-          - RefreshOpenAPIDocuments
+        ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
+          dependsOn:
+            - SetUpModuleMatrix
+            - RefreshOpenAPIDocuments
+        ${{ else }}:
+          dependsOn: SetUpModuleMatrix
         displayName: Microsoft Graph PowerShell SDK Generation
-        condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        condition: succeeded()
         timeoutInMinutes: 840
         variables:
-          WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+          ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
+            WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+          ${{ else }}:
+            WeeklyBranch: ''
           ModulesMatrix: $[ dependencies.SetUpModuleMatrix.outputs['CreateMatrixJson.matrixJson'] ]
         templateContext:
           outputs:
