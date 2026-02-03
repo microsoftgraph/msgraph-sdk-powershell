@@ -38,6 +38,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// </summary>
         string[] Variants { get; set; }
         /// <summary>
+        /// Command Alias.
+        /// </summary>
+        string CommandAlias { get; set ; }
+        /// <summary>
+        /// The response type of the command.
+        /// </summary>
+        string ApiReferenceLink { get; set; }
+        /// <summary>
         /// The permissions needed to use the command.
         /// </summary>
         GraphPermission[] Permissions { get; set; }
@@ -73,6 +81,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// </summary>
         public string OutputType { get; set; }
         /// <summary>
+        /// The response type of the command.
+        /// </summary>
+        public string ApiReferenceLink { get; set; }
+        /// <summary>
         /// The parameter sets of the command.
         /// </summary>
         public string[] Variants { get; set; }
@@ -80,6 +92,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// The permissions needed to use the command.
         /// </summary>
         public GraphPermission[] Permissions { get; set; }
+        /// <summary>
+        /// Command Alias.
+        /// </summary>
+        public string CommandAlias { get; set ; }
     }
 
     /// <summary>
@@ -103,5 +119,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// Full deescription of the permission.
         /// </summary>
         public string FullDescription { get; set; }
+        /// <summary>
+        /// Least privilege flag shows whether the permission is the least privilege.
+        /// </summary>
+        public bool IsLeastPrivilege { get; set; }
+        
+        /// <summary>
+        /// Permission scope type. It can either be delegated or application scope.
+        /// </summary>
+        public string PermissionType { get; set; }
     }
 }

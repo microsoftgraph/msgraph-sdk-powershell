@@ -1,57 +1,52 @@
 // ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
+namespace NamespacePrefixPlaceholder.PowerShell.Cmdlets.Custom
 {
     using System;
     using System.Management.Automation;
 
-    public partial class ListCmdlet : global::System.Management.Automation.PSCmdlet
+    public partial class ListCmdlet : PSCmdlet
     {
         /// <summary>Backing field for <see cref="PageSize" /> property.</summary>
         private int _pageSize;
         
         /// <summary>Sets the page size of results.</summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Sets the page size of results.")]
-        [Microsoft.Graph.PowerShell.Runtime.Info(
+        [Parameter(Mandatory = false, HelpMessage = "Sets the page size of results.")]
+        [Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"The page size of results.",
         PossibleTypes = new[] { typeof(int) })]
-        [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
+        [Category(ParameterCategory.Runtime)]
         public int PageSize { get => this._pageSize; set => this._pageSize = value; }
 
         /// <summary>Backing field for <see cref="All" /> property.</summary>
         private global::System.Management.Automation.SwitchParameter _all;
 
         /// <summary>List All pages</summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "List all pages.")]
-        [Microsoft.Graph.PowerShell.Runtime.Info(
+        [Parameter(Mandatory = false, HelpMessage = "List all pages.")]
+        [Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"List all pages.",
         PossibleTypes = new[] { typeof(global::System.Management.Automation.SwitchParameter) })]
-        [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
+        [Category(ParameterCategory.Runtime)]
         public global::System.Management.Automation.SwitchParameter All { get => this._all; set => this._all = value; }
 
         // <summary>Backing field for <see cref="CountVariable" /> property.</summary>
         private string _countVariable;
 
         /// <summary>Specifies a count of the total number of items in a collection. </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Specifies a count of the total number of items in a collection. By default, this variable will be set in the global scope.")]
-        [Microsoft.Graph.PowerShell.Runtime.Info(
+        [Parameter(Mandatory = false, HelpMessage = "Specifies a count of the total number of items in a collection. By default, this variable will be set in the global scope.")]
+        [Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Specifies a count of the total number of items in a collection. By default, this variable will be set in the global scope.",
         PossibleTypes = new[] { typeof(string) })]
-        [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
+        [Category(ParameterCategory.Runtime)]
         [global::System.Management.Automation.Alias("CV")]
         public string CountVariable { get => this._countVariable; set => this._countVariable = value; }
-
-        /// <summary>
-        /// Default number of items per page.
-        /// </summary>
-        internal const int DefaultPageSize = 100;
 
         /// <summary>
         /// Maximum number of items per page.
@@ -101,28 +96,30 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                     null));
             }
 
-            // Move `-Top` parameter to `limit`.
             if (invocationInfo.BoundParameters.ContainsKey("Top"))
             {
-                limit = top;
-            }
+                if ((top > MaxPageSize) || IsAllPresent(invocationInfo.BoundParameters) || invocationInfo.BoundParameters.ContainsKey("PageSize"))
+                {
+                    limit = top;
+                }
 
-            int currentPageSize = invocationInfo.BoundParameters.ContainsKey("PageSize") ? PageSize : DefaultPageSize;
-            if (invocationInfo.BoundParameters.ContainsKey("Top") && limit < currentPageSize)
+                if (top > MaxPageSize)
+                {
+                    // Remove $top from query parameters, we will handle paging. 
+                    top = default;
+                    invocationInfo.BoundParameters.Remove("Top");
+                }
+
+                if (invocationInfo.BoundParameters.ContainsKey("PageSize"))
+                {
+                    invocationInfo.BoundParameters["Top"] = PageSize;
+                    top = PageSize;
+                }
+            }
+            else if (invocationInfo.BoundParameters.ContainsKey("PageSize"))
             {
-                currentPageSize = limit;
-            }
-
-            if (invocationInfo.BoundParameters.ContainsKey("PageSize") || invocationInfo.BoundParameters.ContainsKey("Top") || invocationInfo.BoundParameters.ContainsKey("All")){
-                // Explicitly set `-Top` parameter to currentPageSize in order for the generated cmdlets to construct a URL with a `$top` query parameter.
-                invocationInfo.BoundParameters["Top"] = currentPageSize;
-                top = currentPageSize;
-            }
-
-            if (limit != default)
-            {
-                requiredPages = limit / currentPageSize;
-                overflowItemsCount = limit % currentPageSize;
+                invocationInfo.BoundParameters["Top"] = PageSize;
+                top = PageSize;
             }
 
             if ((!invocationInfo.BoundParameters.ContainsKey("Count")) && invocationInfo.BoundParameters.ContainsKey("CountVariable"))
@@ -130,6 +127,15 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                 // Set Count to true when CountVariable is set.
                 invocationInfo.BoundParameters["Count"] = true;
                 count = true;
+            }
+        }
+
+        public void InitializePageCount(int initialPageSize)
+        {
+            if (limit != default && initialPageSize != default)
+            {
+                requiredPages = limit / initialPageSize;
+                overflowItemsCount = limit % initialPageSize;
             }
         }
 
@@ -145,7 +151,7 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
             iteratedPages++;
             totalFetchedItems += itemsCount;
 
-            return (boundParameters.ContainsKey("All") && limit == default) || totalFetchedItems < limit;
+            return (IsAllPresent(boundParameters) && limit == default) || totalFetchedItems < limit;
         }
 
         /// <summary>
@@ -166,7 +172,7 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                 }
                 else
                 {
-                    nextLinkUri.Query += $"$top=" + global::System.Uri.EscapeDataString(overflowItemsCount.ToString());
+                    nextLinkUri.Query += $"&$top={System.Uri.EscapeDataString(overflowItemsCount.ToString())}";
                 }
             }
             return nextLinkUri.Uri;
@@ -206,6 +212,11 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                 var psVI = SessionState.PSVariable;
                 psVI.Set(new PSVariable(CountVariable.Contains(":") ? CountVariable : $"global:{CountVariable}", odataCount));
             }
+        }
+
+        private bool IsAllPresent(global::System.Collections.Generic.Dictionary<string, object> boundParameters)
+        {
+            return boundParameters.ContainsKey("All") && All.IsPresent;
         }
     }
 }

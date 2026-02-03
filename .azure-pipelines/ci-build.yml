@@ -1,0 +1,108 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+parameters:
+- name: BuildAgent
+  default: 1es-windows-ps-compute-m
+  displayName: Build Agent
+- name: Test
+  type: boolean
+  default: true
+- name: Pack
+  type: boolean
+  default: false
+- name: Sign
+  type: boolean
+  default: true
+- name: InternalFeed
+  type: string
+  default: '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
+  displayName: Internal NuGet Feed
+  values:
+    - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_v2'
+    - 'ATPopFeed'
+    - '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
+
+variables:
+  BuildAgent: ${{ parameters.BuildAgent }}
+  GitUserEmail: "GraphTooling@service.microsoft.com"
+  GitUserName: "Microsoft Graph DevX Tooling"
+  REGISTRY: 'msgraphprodregistry.azurecr.io'
+  IMAGE_NAME: 'public/microsoftgraph/powershell'
+
+trigger:
+  branches:
+    include:
+    - main
+
+pr:
+  branches:
+    include:
+    - main
+resources:
+  repositories:
+  - repository: 1ESPipelineTemplates
+    type: git
+    name: 1ESPipelineTemplates/1ESPipelineTemplates
+    ref: refs/tags/release
+extends:
+  template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
+  parameters:
+    pool: $(BuildAgent)
+    sdl:
+      binskim:
+        enabled: false
+        justificationForDisabling: "Binskim keeps on crushing and failing the weekly build pipeline. Disabling it for now because we are unable to publish the artifacts to internal feeds."
+      credscan:
+        suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
+      policheck:
+        exclusionFile: $(Build.SourcesDirectory)/.azure-pipelines/config/policheck/policheck-exclusions.xml
+    customBuildTags:
+    - ES365AIMigrationTooling
+    stages:
+    - stage: stage
+      jobs:
+      - job: MsGraphPsSdkCiBuild
+        displayName: Microsoft Graph PowerShell SDK CI Build
+        timeoutInMinutes: 840
+        templateContext:
+          outputs:
+          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+            - output: pipelineArtifact
+              displayName: 'Publish Module Artifacts'
+              targetPath: '$(Build.ArtifactStagingDirectory)'
+              artifactName: 'drop'
+              publishLocation: 'Container'
+        steps:
+        - script: |
+            git submodule update --init --recursive
+        - template: .azure-pipelines/common-templates/install-tools.yml@self
+        - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
+        
+        - template: .azure-pipelines/generation-templates/authentication-module.yml@self
+          parameters:
+            Test: ${{ parameters.Test }}
+            Pack: ${{ parameters.Pack }}
+            Sign: ${{ parameters.Sign }}
+
+        - template: .azure-pipelines/generation-templates/workload-modules.yml@self
+          parameters:
+            Test: ${{ parameters.Test }}
+            Pack: ${{ parameters.Pack }}
+            Sign: ${{ parameters.Sign }}
+
+        - template: .azure-pipelines/generation-templates/meta-module.yml@self
+          parameters:
+            Test: ${{ parameters.Test }}
+            Pack: ${{ parameters.Pack }}
+            Sign: ${{ parameters.Sign }}
+
+        - template: .azure-pipelines/common-templates/guardian-analyzer.yml@self
+
+        - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+          - template: .azure-pipelines/common-templates/esrp/codesign-nuget.yml@self
+            parameters:
+              FolderPath: "$(Build.ArtifactStagingDirectory)"
+              Pattern: "Microsoft.Graph*.nupkg"
+
+        - template: .azure-pipelines/common-templates/security-post-checks.yml@self

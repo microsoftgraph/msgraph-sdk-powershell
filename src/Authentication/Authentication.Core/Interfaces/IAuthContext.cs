@@ -2,15 +2,19 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System;
+using System.Security;
+using System.Security.Cryptography.X509Certificates;
+
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    using System.Security.Cryptography.X509Certificates;
-
     public enum AuthenticationType
     {
         Delegated,
         AppOnly,
-        UserProvidedAccessToken
+        UserProvidedAccessToken,
+        ManagedIdentity,
+        EnvironmentVariable
     }
 
     public enum ContextScope
@@ -19,27 +23,35 @@ namespace Microsoft.Graph.PowerShell.Authentication
         CurrentUser
     }
 
-    public enum AuthProviderType
+    public enum TokenCredentialType
     {
-        InteractiveAuthenticationProvider,
-        DeviceCodeProvider,
-        DeviceCodeProviderFallBack,
-        ClientCredentialProvider,
-        UserProvidedToken
+        InteractiveBrowser,
+        DeviceCode,
+        ClientCertificate,
+        UserProvidedAccessToken,
+        ManagedIdentity,
+        ClientSecret,
+        EnvironmentVariable
     }
 
     public interface IAuthContext
     {
+        string ManagedIdentityId { get; set; }
         string ClientId { get; set; }
         string TenantId { get; set; }
-        string CertificateThumbprint { get; set; }
         string[] Scopes { get; set; }
         AuthenticationType AuthType { get; set; }
-        AuthProviderType AuthProviderType { get; set; }
-        string CertificateName { get; set; }
-        string Account { get; set; }
+        TokenCredentialType TokenCredentialType { get; set; }
+        string Environment { get; set; }
         string AppName { get; set; }
-        ContextScope ContextScope { get; set; }
+        string Account { get; set; }
+        string CertificateThumbprint { get; set; }
+        string CertificateSubjectName { get; set; }
+        bool SendCertificateChain {  get; set; }
         X509Certificate2 Certificate { get; set; }
+        ContextScope ContextScope { get; set; }
+        Version PSHostVersion { get; set; }
+        SecureString ClientSecret { get; set; }
+        bool WamEnabled { get; }
     }
 }

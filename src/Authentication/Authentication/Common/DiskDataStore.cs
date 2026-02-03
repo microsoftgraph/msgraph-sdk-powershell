@@ -2,12 +2,12 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using System.IO;
+using System.Text;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-    using System.IO;
-    using System.Text;
-
     /// <summary>
     /// Disk data store based on System.IO APIs.
     /// </summary>
@@ -213,6 +213,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// <returns>A <see cref="FileStream"/> to the specified path with shared read.</returns>
         public Stream OpenForSharedRead(string path)
         {
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
             return File.Open(path, FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read);
         }
 
@@ -223,8 +224,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// <returns>A <see cref="FileStream"/> to the specified path with exclusive write.</returns>
         public Stream OpenForExclusiveWrite(string path)
         {
-            string directory = Path.GetDirectoryName(path);
-            Directory.CreateDirectory(directory);
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
             return File.Open(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
         }
     }

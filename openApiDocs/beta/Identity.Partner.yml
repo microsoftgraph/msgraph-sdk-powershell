@@ -1,0 +1,1946 @@
+openapi: 3.0.4
+info:
+  title: Identity.Partner
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /tenantRelationships/delegatedAdminCustomers:
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: List delegatedAdminCustomers
+      description: Get a list of the delegatedAdminCustomer objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-beta
+      operationId: tenantRelationship_ListDelegatedAdminCustomer
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.delegatedAdminCustomerCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Create new navigation property to delegatedAdminCustomers for tenantRelationships
+      operationId: tenantRelationship_CreateDelegatedAdminCustomer
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminCustomer'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminCustomer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer-id}':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Get delegatedAdminCustomer
+      description: Read the properties of a delegatedAdminCustomer object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-beta
+      operationId: tenantRelationship_GetDelegatedAdminCustomer
+      parameters:
+        - name: delegatedAdminCustomer-id
+          in: path
+          description: The unique identifier of delegatedAdminCustomer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminCustomer
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminCustomer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Update the navigation property delegatedAdminCustomers in tenantRelationships
+      operationId: tenantRelationship_UpdateDelegatedAdminCustomer
+      parameters:
+        - name: delegatedAdminCustomer-id
+          in: path
+          description: The unique identifier of delegatedAdminCustomer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminCustomer
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminCustomer'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminCustomer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Delete navigation property delegatedAdminCustomers for tenantRelationships
+      operationId: tenantRelationship_DeleteDelegatedAdminCustomer
+      parameters:
+        - name: delegatedAdminCustomer-id
+          in: path
+          description: The unique identifier of delegatedAdminCustomer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminCustomer
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer-id}/serviceManagementDetails':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: List serviceManagementDetails
+      description: Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminCustomer_ListServiceManagementDetail
+      parameters:
+        - name: delegatedAdminCustomer-id
+          in: path
+          description: The unique identifier of delegatedAdminCustomer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminCustomer
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.delegatedAdminServiceManagementDetailCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Create new navigation property to serviceManagementDetails for tenantRelationships
+      operationId: tenantRelationship.delegatedAdminCustomer_CreateServiceManagementDetail
+      parameters:
+        - name: delegatedAdminCustomer-id
+          in: path
+          description: The unique identifier of delegatedAdminCustomer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminCustomer
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminServiceManagementDetail'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminServiceManagementDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer-id}/serviceManagementDetails/{delegatedAdminServiceManagementDetail-id}':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Get serviceManagementDetails from tenantRelationships
+      description: Contains the management details of a service in the customer tenant that's managed by delegated administration.
+      operationId: tenantRelationship.delegatedAdminCustomer_GetServiceManagementDetail
+      parameters:
+        - name: delegatedAdminCustomer-id
+          in: path
+          description: The unique identifier of delegatedAdminCustomer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminCustomer
+        - name: delegatedAdminServiceManagementDetail-id
+          in: path
+          description: The unique identifier of delegatedAdminServiceManagementDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminServiceManagementDetail
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminServiceManagementDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Update the navigation property serviceManagementDetails in tenantRelationships
+      operationId: tenantRelationship.delegatedAdminCustomer_UpdateServiceManagementDetail
+      parameters:
+        - name: delegatedAdminCustomer-id
+          in: path
+          description: The unique identifier of delegatedAdminCustomer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminCustomer
+        - name: delegatedAdminServiceManagementDetail-id
+          in: path
+          description: The unique identifier of delegatedAdminServiceManagementDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminServiceManagementDetail
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminServiceManagementDetail'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminServiceManagementDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Delete navigation property serviceManagementDetails for tenantRelationships
+      operationId: tenantRelationship.delegatedAdminCustomer_DeleteServiceManagementDetail
+      parameters:
+        - name: delegatedAdminCustomer-id
+          in: path
+          description: The unique identifier of delegatedAdminCustomer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminCustomer
+        - name: delegatedAdminServiceManagementDetail-id
+          in: path
+          description: The unique identifier of delegatedAdminServiceManagementDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminServiceManagementDetail
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer-id}/serviceManagementDetails/$count':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Get the number of the resource
+      operationId: tenantRelationship.delegatedAdminCustomer.serviceManagementDetail_GetCount
+      parameters:
+        - name: delegatedAdminCustomer-id
+          in: path
+          description: The unique identifier of delegatedAdminCustomer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminCustomer
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /tenantRelationships/delegatedAdminCustomers/$count:
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminCustomer
+      summary: Get the number of the resource
+      operationId: tenantRelationship.delegatedAdminCustomer_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /tenantRelationships/delegatedAdminRelationships:
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: List delegatedAdminRelationships
+      description: Get a list of the delegatedAdminRelationship objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-beta
+      operationId: tenantRelationship_ListDelegatedAdminRelationship
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.delegatedAdminRelationshipCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Create delegatedAdminRelationship
+      description: Create a new delegatedAdminRelationship object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-beta
+      operationId: tenantRelationship_CreateDelegatedAdminRelationship
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationship'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationship'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Get delegatedAdminRelationship
+      description: Read the properties of a delegatedAdminRelationship object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-beta
+      operationId: tenantRelationship_GetDelegatedAdminRelationship
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationship'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Update delegatedAdminRelationship
+      description: "Update the properties of a delegatedAdminRelationship object.  The following restrictions apply:\r\n- You can update this relationship when its status property is created.\r\n- You can update the autoExtendDuration property when status is either created or active.\r\n- You can only remove the Microsoft Entra Global Administrator role when the status property is active, which indicates a long-running operation."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-beta
+      operationId: tenantRelationship_UpdateDelegatedAdminRelationship
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationship'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationship'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Delete delegatedAdminRelationship
+      description: 'Delete a delegatedAdminRelationship object. A relationship can only be deleted if it''s in the ''created'' status. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-beta
+      operationId: tenantRelationship_DeleteDelegatedAdminRelationship
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/accessAssignments':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: List accessAssignments
+      description: Get a list of the delegatedAdminAccessAssignment objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_ListAccessAssignment
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.delegatedAdminAccessAssignmentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Create accessAssignments
+      description: Create a new delegatedAdminAccessAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_CreateAccessAssignment
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignment'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/accessAssignments/{delegatedAdminAccessAssignment-id}':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Get delegatedAdminAccessAssignment
+      description: Read the properties of a delegatedAdminAccessAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_GetAccessAssignment
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: delegatedAdminAccessAssignment-id
+          in: path
+          description: The unique identifier of delegatedAdminAccessAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminAccessAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Update delegatedAdminAccessAssignment
+      description: Update the properties of a delegatedAdminAccessAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_UpdateAccessAssignment
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: delegatedAdminAccessAssignment-id
+          in: path
+          description: The unique identifier of delegatedAdminAccessAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminAccessAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignment'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Delete delegatedAdminAccessAssignment
+      description: Delete a delegatedAdminAccessAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_DeleteAccessAssignment
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: delegatedAdminAccessAssignment-id
+          in: path
+          description: The unique identifier of delegatedAdminAccessAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminAccessAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/accessAssignments/$count':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Get the number of the resource
+      operationId: tenantRelationship.delegatedAdminRelationship.accessAssignment_GetCount
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/operations':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: List operations
+      description: Get a list of the delegatedAdminRelationshipOperation objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_ListOperation
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.delegatedAdminRelationshipOperationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Create new navigation property to operations for tenantRelationships
+      operationId: tenantRelationship.delegatedAdminRelationship_CreateOperation
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipOperation'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/operations/{delegatedAdminRelationshipOperation-id}':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Get delegatedAdminRelationshipOperation
+      description: Read the properties of a delegatedAdminRelationshipOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_GetOperation
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: delegatedAdminRelationshipOperation-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationshipOperation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationshipOperation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Update the navigation property operations in tenantRelationships
+      operationId: tenantRelationship.delegatedAdminRelationship_UpdateOperation
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: delegatedAdminRelationshipOperation-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationshipOperation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationshipOperation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipOperation'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Delete navigation property operations for tenantRelationships
+      operationId: tenantRelationship.delegatedAdminRelationship_DeleteOperation
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: delegatedAdminRelationshipOperation-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationshipOperation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationshipOperation
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/operations/$count':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Get the number of the resource
+      operationId: tenantRelationship.delegatedAdminRelationship.operation_GetCount
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/requests':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: List requests
+      description: Get a list of the delegatedAdminRelationshipRequest objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_ListRequest
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.delegatedAdminRelationshipRequestCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Create requests
+      description: Create a new delegatedAdminRelationshipRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_CreateRequest
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequest'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/requests/{delegatedAdminRelationshipRequest-id}':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Get delegatedAdminRelationshipRequest
+      description: Read the properties and relationships of a delegatedAdminRelationshipRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationshiprequest-get?view=graph-rest-beta
+      operationId: tenantRelationship.delegatedAdminRelationship_GetRequest
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: delegatedAdminRelationshipRequest-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationshipRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationshipRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Update the navigation property requests in tenantRelationships
+      operationId: tenantRelationship.delegatedAdminRelationship_UpdateRequest
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: delegatedAdminRelationshipRequest-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationshipRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationshipRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequest'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Delete navigation property requests for tenantRelationships
+      operationId: tenantRelationship.delegatedAdminRelationship_DeleteRequest
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - name: delegatedAdminRelationshipRequest-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationshipRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationshipRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/requests/$count':
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Get the number of the resource
+      operationId: tenantRelationship.delegatedAdminRelationship.request_GetCount
+      parameters:
+        - name: delegatedAdminRelationship-id
+          in: path
+          description: The unique identifier of delegatedAdminRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: delegatedAdminRelationship
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /tenantRelationships/delegatedAdminRelationships/$count:
+    get:
+      tags:
+        - tenantRelationships.delegatedAdminRelationship
+      summary: Get the number of the resource
+      operationId: tenantRelationship.delegatedAdminRelationship_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+components:
+  schemas:
+    microsoft.graph.delegatedAdminCustomer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: delegatedAdminCustomer
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The Microsoft Entra ID display name of the customer tenant. Read-only. Supports $orderby.
+              nullable: true
+            tenantId:
+              type: string
+              description: The Microsoft Entra ID-assigned tenant ID of the customer. Read-only.
+            serviceManagementDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminServiceManagementDetail'
+              description: Contains the management details of a service in the customer tenant that's managed by delegated administration.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.delegatedAdminServiceManagementDetail:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: delegatedAdminServiceManagementDetail
+          type: object
+          properties:
+            serviceManagementUrl:
+              type: string
+              description: The URL of the management portal for the managed service. Read-only.
+            serviceName:
+              type: string
+              description: The name of a managed service. Read-only.
+          additionalProperties:
+            type: object
+    microsoft.graph.delegatedAdminRelationship:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: delegatedAdminRelationship
+          type: object
+          properties:
+            accessDetails:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessDetails'
+            activatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.
+              format: date-time
+              nullable: true
+            autoExtendDuration:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              description: 'The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it isn''t automatically extended.'
+              format: duration
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
+              format: date-time
+              nullable: true
+            customer:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipCustomerParticipant'
+            displayName:
+              type: string
+              description: The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and can't be changed by the customer. Maximum length is 50 characters.
+            duration:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              description: The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+              format: duration
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in ISO 8601 format and in UTC time when the relationship was last modified. Read-only.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipStatus'
+            accessAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignment'
+              description: The access assignments associated with the delegated admin relationship.
+              x-ms-navigationProperty: true
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipOperation'
+              description: The long running operations associated with the delegated admin relationship.
+              x-ms-navigationProperty: true
+            requests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequest'
+              description: The requests associated with the delegated admin relationship.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.delegatedAdminAccessAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: delegatedAdminAccessAssignment
+          type: object
+          properties:
+            accessContainer:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessContainer'
+            accessDetails:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessDetails'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in ISO 8601 and in UTC time when this access assignment was last modified. Read-only.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignmentStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.delegatedAdminRelationshipOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: delegatedAdminRelationshipOperation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
+              format: date-time
+            data:
+              type: string
+              description: The data (payload) for the operation. Read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.
+              format: date-time
+            operationType:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipOperationType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.delegatedAdminRelationshipRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: delegatedAdminRelationshipRequest
+          type: object
+          properties:
+            action:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequestAction'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in ISO 8601 format and UTC time when this relationship request was last modified. Read-only.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequestStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdminAccessDetails:
+      title: delegatedAdminAccessDetails
+      type: object
+      properties:
+        unifiedRoles:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRole'
+          description: The directory roles that the Microsoft partner is assigned in the customer tenant.
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdminRelationshipCustomerParticipant:
+      title: delegatedAdminRelationshipCustomerParticipant
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name of the customer tenant as set by Microsoft Entra ID. Read-only
+          nullable: true
+        tenantId:
+          type: string
+          description: The Microsoft Entra ID-assigned tenant ID of the customer tenant.
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdminRelationshipStatus:
+      title: delegatedAdminRelationshipStatus
+      enum:
+        - activating
+        - active
+        - approvalPending
+        - approved
+        - created
+        - expired
+        - expiring
+        - terminated
+        - terminating
+        - terminationRequested
+        - unknownFutureValue
+      type: string
+    microsoft.graph.delegatedAdminAccessContainer:
+      title: delegatedAdminAccessContainer
+      type: object
+      properties:
+        accessContainerId:
+          type: string
+          description: 'The identifier of the access container (for example, a security group). For ''securityGroup'' access containers, this must be a valid ID of a Microsoft Entra security group in the Microsoft partner''s tenant.'
+        accessContainerType:
+          $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessContainerType'
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdminAccessAssignmentStatus:
+      title: delegatedAdminAccessAssignmentStatus
+      enum:
+        - pending
+        - active
+        - deleting
+        - deleted
+        - error
+        - unknownFutureValue
+      type: string
+    microsoft.graph.delegatedAdminRelationshipOperationType:
+      title: delegatedAdminRelationshipOperationType
+      enum:
+        - delegatedAdminAccessAssignmentUpdate
+        - unknownFutureValue
+        - delegatedAdminRelationshipUpdate
+      type: string
+    microsoft.graph.longRunningOperationStatus:
+      title: longRunningOperationStatus
+      enum:
+        - notStarted
+        - running
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.delegatedAdminRelationshipRequestAction:
+      title: delegatedAdminRelationshipRequestAction
+      enum:
+        - lockForApproval
+        - approve
+        - terminate
+        - unknownFutureValue
+        - reject
+      type: string
+    microsoft.graph.delegatedAdminRelationshipRequestStatus:
+      title: delegatedAdminRelationshipRequestStatus
+      enum:
+        - created
+        - pending
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.delegatedAdminCustomerCollectionResponse:
+      title: Collection of delegatedAdminCustomer
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminCustomer'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdminServiceManagementDetailCollectionResponse:
+      title: Collection of delegatedAdminServiceManagementDetail
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminServiceManagementDetail'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
+    microsoft.graph.delegatedAdminRelationshipCollectionResponse:
+      title: Collection of delegatedAdminRelationship
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationship'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdminAccessAssignmentCollectionResponse:
+      title: Collection of delegatedAdminAccessAssignment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdminRelationshipOperationCollectionResponse:
+      title: Collection of delegatedAdminRelationshipOperation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipOperation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdminRelationshipRequestCollectionResponse:
+      title: Collection of delegatedAdminRelationshipRequest
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.unifiedRole:
+      title: unifiedRole
+      type: object
+      properties:
+        roleDefinitionId:
+          type: string
+          description: The unified role definition ID of the directory role. Refer to unifiedRoleDefinition resource.
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdminAccessContainerType:
+      title: delegatedAdminAccessContainerType
+      enum:
+        - securityGroup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.ODataErrors.MainError:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+          x-ms-primary-error-message: true
+        target:
+          type: string
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ErrorDetails:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
+  responses:
+    microsoft.graph.delegatedAdminCustomerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminCustomerCollectionResponse'
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.delegatedAdminServiceManagementDetailCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminServiceManagementDetailCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.delegatedAdminRelationshipCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipCollectionResponse'
+    microsoft.graph.delegatedAdminAccessAssignmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessAssignmentCollectionResponse'
+    microsoft.graph.delegatedAdminRelationshipOperationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipOperationCollectionResponse'
+    microsoft.graph.delegatedAdminRelationshipRequestCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipRequestCollectionResponse'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      style: form
+      explode: false
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      style: form
+      explode: false
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

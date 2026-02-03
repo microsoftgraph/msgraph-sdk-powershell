@@ -1,29 +1,21 @@
 ﻿# Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+
+[CmdletBinding()]
 Param(
-    $ModulesToGenerate = @(),
-    [string] $RepositoryApiKey,
-    [string] $RepositoryName = "PSGallery",
-    [int] $ModulePreviewNumber = -1,
-    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
-    [switch] $UpdateAutoRest,
+    [string[]] $ModuleToGenerate = @(),
+    [ValidateSet("v1.0", "beta")]
+    $ApiVersion = @("v1.0", "beta"),
+    [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
+    [switch] $SkipGeneration = $false,
     [switch] $Build,
     [switch] $Test,
     [switch] $Pack,
-    [switch] $Publish,
     [switch] $EnableSigning,
-    [switch] $SkipVersionCheck,
     [switch] $ExcludeExampleTemplates,
     [switch] $ExcludeNotesSection,
     [switch] $Isolated
 )
-enum VersionState {
-    Invalid
-    Valid
-    EqualToFeed
-    NotOnFeed
-}
-$Error.Clear()
 $ErrorActionPreference = 'Stop'
 
 if ($PSEdition -ne 'Core') {
@@ -31,7 +23,7 @@ if ($PSEdition -ne 'Core') {
 }
 
 if (-not $Isolated) {
-    Write-Host -ForegroundColor Green 'Creating isolated process...'
+    Write-Debug 'Creating isolated process...'
     $pwsh = [System.Diagnostics.Process]::GetCurrentProcess().Path
     & "$pwsh" -NonInteractive -NoLogo -NoProfile -File $MyInvocation.MyCommand.Path @PSBoundParameters -Isolated
     return
@@ -45,213 +37,144 @@ if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
     Install-Module powershell-yaml -Repository PSGallery -Scope CurrentUser -Force
 }
 
-# Set NODE max memory to 8 Gb.
-$ENV:NODE_OPTIONS='--max-old-space-size=8192'
-$ModulePrefix = "Microsoft.Graph"
 $ScriptRoot = $PSScriptRoot
-$ModulesOutputDir = Join-Path $ScriptRoot "..\src\"
-$ArtifactsLocation = Join-Path $ScriptRoot "..\artifacts"
-$RequiredGraphModules = @()
-# PS Scripts
-$ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
-$BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
-$TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
-$PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
-$PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
-$ReadModuleReadMePS1 = Join-Path $PSScriptRoot ".\ReadModuleReadMe.ps1" -Resolve
-$ValidateUpdatedModuleVersionPS1 = Join-Path $PSScriptRoot ".\ValidateUpdatedModuleVersion.ps1" -Resolve
+$ModulesSrc = Join-Path $ScriptRoot "..\src\"
+$ModuleMappingPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc")
+$GenerateServiceModulePS1 = Join-Path $ScriptRoot ".\GenerateServiceModule.ps1" -Resolve
 
 if (-not (Test-Path $ArtifactsLocation)) {
-    New-Item -Path $ArtifactsLocation -Type Directory
+    New-Item -Path $ArtifactsLocation -Type Directory | Out-Null
 }
 
-if (-not (Test-Path $ModuleMappingConfigPath)) {
-    Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
+if (-not (Test-Path $ModuleMappingPath)) {
+    Write-Error "Module mapping file not be found: $ModuleMappingPath."
 }
 
-$AllowPreRelease = $true
-if ($ModulePreviewNumber -eq -1) {
-    $AllowPreRelease = $false
-}
-# Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
-# https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-$ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
-Write-Host -ForegroundColor Green "Auth Module: $($ExistingAuthModule.Name), $($ExistingAuthModule.Version)"
-if (!(Get-Module -Name $ExistingAuthModule.Name -ListAvailable)) {
-    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
-}
-if ($ExistingAuthModule.Version -like '*preview*' ) {
-    $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
-    Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
-    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
+# Build AutoREST.PowerShell submodule.
+Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
+rush update --purge
+rush build
+
+$RequiredGraphModules = @()
+$AuthModuleManifest = Join-Path $ModulesSrc "Authentication" "Authentication" "artifacts" "Microsoft.Graph.Authentication.psd1"
+$LoadedAuthModule = Import-Module $AuthModuleManifest -PassThru -ErrorAction SilentlyContinue
+if ($null -ne $LoadedAuthModule) {
+    $RequiredGraphModules += @{ ModuleName = $LoadedAuthModule.Name ; RequiredVersion = $LoadedAuthModule.Version; PreRelease = $LoadedAuthModule.PrivateData.PSData.PreRelease }
 }
 else {
-    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+    Write-Warning "Module not found in $AuthModuleManifest."
+}
+if ($ModuleToGenerate.Count -eq 0) {
+    [HashTable] $ModuleMapping = Get-Content $ModuleMappingPath | ConvertFrom-Json -AsHashTable
+    $ModuleToGenerate = $ModuleMapping.Keys
 }
 
-if ($UpdateAutoRest) {
-    # Update AutoRest.
-    & autorest --reset
-}
+#This is to ensure that the autorest temp folder is cleared before generating the modules
+$TempPath = [System.IO.Path]::GetTempPath()
+# Check if there is any folder with autorest in the name
+$AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
 
-if ($ModulesToGenerate.Count -eq 0) {
-    [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-    $ModulesToGenerate = $ModuleMapping.Keys
+# Go through each folder and forcefully delete autorest related files
+$AutoRestTempFolder | ForEach-Object {
+    $AutoRestTempFolder = $_
+    #Delete files and folders if they exist
+    if (Test-Path $AutoRestTempFolder.FullName) {
+        #Check if each file in the folder exists
+        Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
+            $File = $_
+            Write-Debug "Removing cached file $File"
+            if (Test-Path $File.FullName) {
+                #Remove the file
+                Remove-Item -Path $File.FullName -Force -confirm:$false
+            }
+        }
+    }
 }
-
-$NumberOfCores = ((Get-ComputerInfo -Property CsProcessors).CsProcessors.NumberOfCores)[0]
-Write-Host -ForegroundColor Green "Using '$NumberOfCores' cores in parallel."
 
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
-$ModulesToGenerate | ForEach-Object -ThrottleLimit $NumberOfCores -Parallel {
-    enum VersionState {
-        Invalid
-        Valid
-        EqualToFeed
-        NotOnFeed
+$CpuCount = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
+$Throttle = [math]::Min(4, $cpuCount / 2)  # Use half the CPU count but max 4
+$Results = $ModuleToGenerate | ForEach-Object -Parallel {
+    $Module = $_
+    Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
+
+    $ServiceModuleParams = @{
+        Module                  = $Module
+        ModulesSrc              = $using:ModulesSrc
+        ApiVersion              = $using:ApiVersion
+        SkipGeneration          = $using:SkipGeneration
+        Build                   = $using:Build
+        Test                    = $using:Test
+        Pack                    = $using:Pack
+        EnableSigning           = $using:EnableSigning
+        ExcludeExampleTemplates = $using:ExcludeExampleTemplates
+        ExcludeNotesSection     = $using:ExcludeNotesSection
+        ArtifactsLocation       = $using:ArtifactsLocation
+        RequiredModules         = $using:RequiredGraphModules
     }
 
-    $ModuleName = $_
-    $FullyQualifiedModuleName = "$using:ModulePrefix.$ModuleName"
-    Write-Host -ForegroundColor Green "Generating '$FullyQualifiedModuleName' module..."
-    $ModuleProjectDir = Join-Path $Using:ModulesOutputDir "$ModuleName\$ModuleName"
+    try {
+        $Result = & $using:GenerateServiceModulePS1 @ServiceModuleParams
 
-    # Test to see if a module's profile exists.
-    $ProfileReadmePath = Join-Path -Path $Using:ScriptRoot "..\profiles\$ModuleName\readme.md"
-    if (!(Test-Path -Path $ProfileReadmePath)) {
-        Write-Warning "[Generation skipped] : Module '$ModuleName' not found at $ProfileReadmePath."
-        break
-    }
-
-    # Copy AutoRest readme.md config is none exists.
-    if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
-        New-Item -Path $ModuleProjectDir -Type Directory -Force
-        Copy-Item (Join-Path $Using:ScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
-    }
-
-    $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
-
-    # Read specified module version from readme.
-    $ModuleVersion = & $Using:ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "module-version"
-    if ($ModuleVersion -eq $null) {
-        # Module version not set in readme.md.
-        Write-Error "Version number is not set on $FullyQualifiedModuleName module. Please set 'module-version' in $ModuleLevelReadMePath."
-    }
-
-    # Validate module version with the one on PSGallery.
-    [VersionState] $VersionState = & $Using:ValidateUpdatedModuleVersionPS1 -ModuleName "$FullyQualifiedModuleName" -NextVersion $ModuleVersion -PSRepository RepositoryName -ModulePreviewNumber $ModulePreviewNumber
-
-    if ($VersionState.Equals([VersionState]::Invalid) -and !$Using:SkipVersionCheck) {
-        Write-Warning "The specified version in $FullyQualifiedModuleName module is either higher or lower than what's on $Using:RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
-    }
-    elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$SkipVersionCheck) {
-        Write-Warning "$FullyQualifiedModuleName module skipped. Version has not changed and is equal to what's on $Using:RepositoryName."
-    }
-    elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $Using:SkipVersionCheck) {
-        # Read release notes from readme.
-        $ModuleReleaseNotes = & $Using:ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "release-notes"
-        if ($ModuleReleaseNotes -eq $null) {
-            # Release notes not set in readme.md.
-            Write-Error "Release notes not set on $FullyQualifiedModuleName module. Please set 'release-notes' in $ModuleLevelReadMePath."
+        # Check if the script returned an exit code (failure)
+        if ($null -ne $Result -and $Result -is [int] -and $Result -ne 0) {
+            Write-Host -ForegroundColor Red "Failed to generate module '$Module' with exit code $Result"
+            return @{ Module = $Module; Success = $false; ExitCode = $Result; Error = "Generation or build failed" }
         }
 
-        try {
-            # Generate PowerShell modules.
-            & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --version:"3.0.6306" --verbose
-            if ($LASTEXITCODE) {
-                Write-Error "AutoREST failed to generate '$ModuleName' module."
-                break;
-            }
-            Write-Host -ForegroundColor Green "AutoRest generated '$FullyQualifiedModuleName' successfully."
+        # Also check $LASTEXITCODE in case the script didn't return but set exit code
+        if ($null -ne $LASTEXITCODE -and $LASTEXITCODE -ne 0) {
+            Write-Host -ForegroundColor Red "Failed to generate module '$Module' with exit code $LASTEXITCODE"
+            return @{ Module = $Module; Success = $false; ExitCode = $LASTEXITCODE; Error = "Generation or build failed" }
+        }
 
-            # Manage generated module.
-            Write-Host -ForegroundColor Green "Managing '$FullyQualifiedModuleName' module..."
-            & $Using:ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix
-
-            if ($Using:Build) {
-                # Build generated module.
-                if ($Using:EnableSigning) {
-                    # Sign generated module.
-                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning -ExcludeExampleTemplates:$Using:ExcludeExampleTemplates -ExcludeNotesSection:$Using:ExcludeNotesSection
+        function Get-OpenFiles {
+            param (
+                [string] $Path
+            )
+            $OpenFiles = @()
+            $Files = Get-ChildItem -Path $Path -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+            $Files | ForEach-Object {
+                $File = $_
+                try {
+                    $FileStream = $File.Open([System.IO.FileMode]::Open, [System.IO.FileAccess]::ReadWrite, [System.IO.FileShare]::None)
+                    $FileStream.Close()
                 }
-                else {
-                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -ExcludeExampleTemplates:$Using:ExcludeExampleTemplates -ExcludeNotesSection:$Using:ExcludeNotesSection
+                catch {
+                    $OpenFiles += $File.FullName
                 }
-
-                # Get profiles for generated modules.
-                $ModuleExportsPath = Join-Path $ModuleProjectDir "\exports"
-                $Profiles = Get-ChildItem -Path $ModuleExportsPath -Directory | % { $_.Name }
-
-                # Update module manifest wiht profiles.
-                $ModuleManifestPath = Join-Path $ModuleProjectDir "$FullyQualifiedModuleName.psd1"
-                [HashTable]$PrivateData = @{ Profiles = $Profiles }
-                Update-ModuleManifest -Path $ModuleManifestPath -PrivateData $PrivateData
-
-                # Update module psm1 with Graph session profile name.
-                $ModulePsm1 = Join-Path $ModuleProjectDir "/$FullyQualifiedModuleName.psm1"
-                (Get-Content -Path $ModulePsm1) | ForEach-Object {
-                    if ($_ -match '\$instance = \[Microsoft.Graph.PowerShell.Module\]::Instance') {
-                        # Update main psm1 with Graph session profile name and module name.
-                        $_
-                        '  $instance.ProfileName = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.SelectedProfile'
-                    }
-                    else {
-                        # Rename all Azure instances in psm1 to `Microsoft Graph`.
-                        $updatedLine = $_ -replace 'Azure', 'Microsoft Graph'
-                        # Replace all 'instance.Name' declarations with fully qualified module name.
-                        $updatedLine = $updatedLine -replace '\$\(\$instance.Name\)', "$FullyQualifiedModuleName"
-                        # Replace Write-Information with Write-Debug
-                        $updatedLine = $updatedLine -replace 'Write\-Information', 'Write-Debug'
-                        $updatedLine
-                    }
-                } | Set-Content $ModulePsm1
-
-                # Address AutoREST bug where it looks for exports in the wrong directory.
-                $InternalModulePsm1 = Join-Path $ModuleProjectDir "/internal/$FullyQualifiedModuleName.internal.psm1"
-                (Get-Content -Path $InternalModulePsm1) | ForEach-Object {
-                    $updatedLine = $_
-                    # Address AutoREST bug where it looks for exports in the wrong directory.
-                    if ($_ -match '\$exportsPath = \$PSScriptRoot') {
-                        $updatedLine = '  $exportsPath = Join-Path $PSScriptRoot "../exports"'
-                    }
-
-                    # Remove duplicate instance.Name declarations in internal.psm1
-                    # Main .psm1 already handles this.
-                    if ($_ -match '\$\(\$instance.Name\)') {
-                        $updatedLine = ""
-                    }
-                    $updatedLine
-                } | Set-Content $InternalModulePsm1
             }
-
-            if ($Using:Test) {
-                & $Using:TestModulePS1 -ModulePath $ModuleProjectDir -ModuleName $FullyQualifiedModuleName -ModuleTestsPath (Join-Path $ModuleProjectDir "test")
-            }
-
-            if ($Using:Pack) {
-                # Pack generated module.
-                . $Using:PackModulePS1 -Module $ModuleName -ArtifactsLocation $Using:ArtifactsLocation -ExcludeMarkdownDocsFromNugetPackage
-            }
-
-            Write-Host -ForeGroundColor Green "Generating $ModuleName Completed"
+            return $OpenFiles
         }
-        catch {
-            Write-Error $_
+        #Call a function to check if there are any open files in the temp folder. Recurse through the folder until all files are closed
+        $OpenFiles = Get-OpenFiles -Path $using:TempPath
+        if ($OpenFiles.Count -gt 0) {
+            $OpenFiles = Get-OpenFiles -Path $using:TempPath
         }
+
+        return @{ Module = $Module; Success = $true; ExitCode = 0; Error = $null }
     }
-}
+    catch {
+        Write-Host -ForegroundColor Red "Exception while generating module '$Module': $_"
+        return @{ Module = $Module; Success = $false; ExitCode = -1; Error = $_.Exception.Message }
+    }
+} -ThrottleLimit $Throttle
 $stopwatch.Stop()
 
-if ($Error.Count -ge 1) {
-    # Write generation errors to pipeline.
-    $Error
-    Write-Error "The SDK failed to build due to $($Error.Count) errors listed above in '$($Stopwatch.Elapsed.TotalMinutes)` minutes." -ErrorAction "Stop"
+# Check if any modules failed to generate
+$FailedModules = $Results | Where-Object { -not $_.Success }
+if ($FailedModules.Count -gt 0) {
+    Write-Host ""
+    Write-Host -ForegroundColor Red "========================================="
+    Write-Host -ForegroundColor Red "Failed to generate the following modules:"
+    Write-Host -ForegroundColor Red "========================================="
+    $FailedModules | ForEach-Object {
+        Write-Host -ForegroundColor Red "  - $($_.Module) (Exit Code: $($_.ExitCode)) - $($_.Error)"
+    }
+    Write-Host -ForegroundColor Red "========================================="
+    Write-Host ""
+    Write-Error "Module generation failed. $($FailedModules.Count) of $($ModuleToGenerate.Count) module(s) failed to generate."
 }
-Write-Host -ForegroundColor Green "Generated SDK in '$($Stopwatch.Elapsed.TotalMinutes)` minutes."
-
-if ($Publish) {
-    # Publish generated modules.
-    & $PublishModulePS1 -Modules $ModuleMapping.Keys -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
+else {
+    Write-Host -ForegroundColor Green "All modules generated successfully in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
 }
-
-Write-Host -ForegroundColor Green "-------------Done-------------"

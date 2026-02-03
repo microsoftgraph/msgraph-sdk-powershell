@@ -45,8 +45,9 @@ Generated\ Files/
 
 # NUnit
 *.VisualState.xml
-TestResult.xml
+*.TestResult.xml
 nunit-*.xml
+Nuget.config
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
@@ -359,3 +360,11 @@ MigrationBackup/
 
 #Custom Environment Files
 localenv.json
+*Microsoft.Graph.Authentication-TestResults.xml
+coverage.xml
+
+#Wrong Examples report Folder
+examplesreport/
+
+# Code sign summary
+CodeSignSummary-*.md

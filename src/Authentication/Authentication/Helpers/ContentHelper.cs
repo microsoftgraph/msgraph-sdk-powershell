@@ -2,24 +2,17 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using Microsoft.Win32;
 using System;
 using System.Globalization;
 using System.Net.Http;
-using System.Text;
-
-using Microsoft.Graph.PowerShell.Authentication.Models;
-using Microsoft.Win32;
+using System.Runtime.InteropServices;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     internal static class ContentHelper
     {
-        #region Constants
-
-        // default codepage encoding for web content.  See RFC 2616.
-        private const string DefaultCodePage = "ISO-8859-1";
-
-        #endregion Constants
 
         #region Fields
         internal static RestReturnType CheckReturnType(this HttpResponseMessage response)
@@ -36,6 +29,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 rt = RestReturnType.Image;
             else if (IsOctetStream(contentType))
                 rt = RestReturnType.OctetStream;
+            else if (IsPlainText(contentType))
+                rt = RestReturnType.PlainText;
             return rt;
         }
 
@@ -87,6 +82,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return isOctetStream;
         }
 
+        private static bool IsPlainText(string contentType) => contentType.Equals("text/plain", StringComparison.OrdinalIgnoreCase);
+
         // used to split contentType arguments
         private static readonly char[] ContentTypeParamSeparator = { ';' };
 
@@ -102,29 +99,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
             // ContentType may not exist in response header.  Return null if not.
             return response.Content.Headers.ContentType?.MediaType;
-        }
-
-        internal static Encoding GetDefaultEncoding()
-        {
-            return GetEncodingOrDefault(null);
-        }
-
-        internal static Encoding GetEncodingOrDefault(string characterSet)
-        {
-            // get the name of the codepage to use for response content
-            var codepage = string.IsNullOrEmpty(characterSet) ? DefaultCodePage : characterSet;
-            Encoding encoding;
-            try
-            {
-                encoding = Encoding.GetEncoding(codepage);
-            }
-            catch (ArgumentException)
-            {
-                // 0, default code page
-                encoding = Encoding.GetEncoding(0);
-            }
-
-            return encoding;
         }
 
         internal static bool IsJson(string contentType)
@@ -183,7 +157,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                          || CheckIsJson(contentType);
 
             // Further content type analysis is available on Windows
-            if (OperatingSystem.IsWindows() && !isText)
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) && !isText)
             {
                 // Media types registered with Windows as having a perceived type of text, are text
                 using (var contentTypeKey = Registry.ClassesRoot.OpenSubKey(@"MIME\Database\Content Type\" + contentType))

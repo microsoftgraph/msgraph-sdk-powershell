@@ -2,6 +2,9 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Properties;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,11 +14,6 @@ using System.Management.Automation;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-
-using Microsoft.Graph.PowerShell.Authentication.Properties;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
@@ -49,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             {
                 if (0 < bodyBuilder.Length)
                 {
-                    bodyBuilder.Append("&");
+                    bodyBuilder.Append('&');
                 }
 
                 var value = content[key];
@@ -69,15 +67,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         /// <summary>
-        ///     Convert a JSON string back to an object of type <see cref="System.Management.Automation.PSObject"/> or
-        ///     <see cref="System.Collections.Hashtable"/> depending on parameter <paramref name="returnHashtable"/>.
+        ///     Convert a JSON string back to an object of type <see cref="PSObject"/> or
+        ///     <see cref="Hashtable"/> depending on parameter <paramref name="returnHashtable"/>.
         /// </summary>
         /// <param name="jsonString">The JSON text to convert.</param>
-        /// <param name="returnHashtable">True if the result should be returned as a <see cref="System.Collections.Hashtable"/>
-        /// instead of a <see cref="System.Management.Automation.PSObject"/>.</param>
+        /// <param name="returnHashtable">True if the result should be returned as a <see cref="Hashtable"/>
+        /// instead of a <see cref="PSObject"/>.</param>
         /// <param name="maxDepth">The max depth allowed when deserializing the json jsonString. Set to null for no maximum.</param>
         /// <param name="error">An error record if the conversion failed.</param>
-        /// <returns>A <see cref="System.Management.Automation.PSObject"/> or a <see cref="System.Collections.Hashtable"/>
+        /// <returns>A <see cref="PSObject"/> or a <see cref="Hashtable"/>
         /// if the <paramref name="returnHashtable"/> parameter is true.</returns>
         public static object ConvertFromJson(this string jsonString, bool returnHashtable, int? maxDepth, out ErrorRecord error)
         {
@@ -123,15 +121,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                          * return returnHashtable ? PopulateHashTableFromJDictionary(dictionary, out error) : PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
                          * https://github.com/PowerShell/PowerShell/blob/73f852da4252eabe4097ab48a7b67c5d147a01f3/src/System.Management.Automation/engine/MshObject.cs#L965
                          */
-                        if (returnHashtable)
-                            return PopulateHashTableFromJDictionary(dictionary, out error);
-                        else
-                            return PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
+                        return returnHashtable
+                            ? PopulateHashTableFromJDictionary(dictionary, out error)
+                            : (object)PopulateFromJDictionary(dictionary, new DuplicateMemberHashSet(), out error);
                     case JArray list:
-                        if (returnHashtable)
-                            return PopulateHashTableFromJArray(list, out error);
-                        else
-                            return PopulateFromJArray(list, out error);
+                        return returnHashtable ? PopulateHashTableFromJArray(list, out error) : (object)PopulateFromJArray(list, out error);
                     default:
                         return obj;
                 }

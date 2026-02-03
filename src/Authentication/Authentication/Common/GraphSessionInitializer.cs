@@ -2,16 +2,17 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using System;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
+using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Management.Automation;
+using RequestContext = Microsoft.Graph.PowerShell.Authentication.Models.RequestContext;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
-    using System.Management.Automation;
-
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-
     public static class GraphSessionInitializer
     {
         /// <summary>
@@ -27,9 +28,26 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// <returns><see cref="GraphSession"/></returns>
         internal static GraphSession CreateInstance(IDataStore dataStore = null)
         {
+            IGraphOption graphOptions = null;
+            // Try to create directory if it doesn't exist.
+            try 
+            {
+                Directory.CreateDirectory(Core.Constants.GraphDirectoryPath);
+            }
+            catch (Exception)
+            {
+            }
+            if (File.Exists(Constants.GraphOptionsFilePath))
+            {
+                // Deserialize the JSON into the GraphOption instance
+                graphOptions = JsonConvert.DeserializeObject<GraphOption>(File.ReadAllText(Constants.GraphOptionsFilePath));
+            }
+
             return new GraphSession
             {
-                DataStore = dataStore ?? new DiskDataStore()
+                DataStore = dataStore ?? new DiskDataStore(),
+                RequestContext = new RequestContext(),
+                GraphOption = graphOptions ?? new GraphOption()
             };
         }
         /// <summary>
@@ -47,6 +65,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
                 },
                 WriteObject = cmdLet.WriteObject,
                 WriteVerbose = cmdLet.WriteVerbose,
+                WriteWarning = cmdLet.WriteWarning,
                 WriteError = (exception, errorId, errorCategory, targetObject) =>
                 {
                     var parseResult = Enum.TryParse(errorCategory.ToString(), out ErrorCategory result);

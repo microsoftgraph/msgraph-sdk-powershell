@@ -1,0 +1,2213 @@
+openapi: 3.0.4
+info:
+  title: Devices.ServiceAnnouncement
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /admin/serviceAnnouncement:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get serviceAnnouncement from admin
+      description: A container for service communications resources. Read-only.
+      operationId: admin_GetServiceAnnouncement
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Update the navigation property serviceAnnouncement in admin
+      operationId: admin_UpdateServiceAnnouncement
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceAnnouncement'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete navigation property serviceAnnouncement for admin
+      operationId: admin_DeleteServiceAnnouncement
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/serviceAnnouncement/healthOverviews:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: List healthOverviews
+      description: Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement_ListHealthOverview
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceHealthCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Create new navigation property to healthOverviews for admin
+      operationId: admin.serviceAnnouncement_CreateHealthOverview
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealth'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealth'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get serviceHealth
+      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement_GetHealthOverview
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealth'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Update the navigation property healthOverviews in admin
+      operationId: admin.serviceAnnouncement_UpdateHealthOverview
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealth'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealth'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete navigation property healthOverviews for admin
+      operationId: admin.serviceAnnouncement_DeleteHealthOverview
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get issues from admin
+      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
+      operationId: admin.serviceAnnouncement.healthOverview_ListIssue
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceHealthIssueCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Create new navigation property to issues for admin
+      operationId: admin.serviceAnnouncement.healthOverview_CreateIssue
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get issues from admin
+      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
+      operationId: admin.serviceAnnouncement.healthOverview_GetIssue
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - name: serviceHealthIssue-id
+          in: path
+          description: The unique identifier of serviceHealthIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Update the navigation property issues in admin
+      operationId: admin.serviceAnnouncement.healthOverview_UpdateIssue
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - name: serviceHealthIssue-id
+          in: path
+          description: The unique identifier of serviceHealthIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete navigation property issues for admin
+      operationId: admin.serviceAnnouncement.healthOverview_DeleteIssue
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - name: serviceHealthIssue-id
+          in: path
+          description: The unique identifier of serviceHealthIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}/microsoft.graph.incidentReport()':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Invoke function incidentReport
+      description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
+      operationId: admin.serviceAnnouncement.healthOverview.issue_incidentReport
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - name: serviceHealthIssue-id
+          in: path
+          description: The unique identifier of serviceHealthIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/$count':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.healthOverview.issue_GetCount
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: The unique identifier of serviceHealth
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/serviceAnnouncement/healthOverviews/$count:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.healthOverview_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/serviceAnnouncement/issues:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: List issues
+      description: Retrieve serviceHealthIssue resources from the issues navigation property. This operation retrieves information about all service health issues that exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement_ListIssue
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceHealthIssueCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Create new navigation property to issues for admin
+      operationId: admin.serviceAnnouncement_CreateIssue
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get serviceHealthIssue
+      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement_GetIssue
+      parameters:
+        - name: serviceHealthIssue-id
+          in: path
+          description: The unique identifier of serviceHealthIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Update the navigation property issues in admin
+      operationId: admin.serviceAnnouncement_UpdateIssue
+      parameters:
+        - name: serviceHealthIssue-id
+          in: path
+          description: The unique identifier of serviceHealthIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete navigation property issues for admin
+      operationId: admin.serviceAnnouncement_DeleteIssue
+      parameters:
+        - name: serviceHealthIssue-id
+          in: path
+          description: The unique identifier of serviceHealthIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}/microsoft.graph.incidentReport()':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Invoke function incidentReport
+      description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.issue_incidentReport
+      parameters:
+        - name: serviceHealthIssue-id
+          in: path
+          description: The unique identifier of serviceHealthIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /admin/serviceAnnouncement/issues/$count:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.issue_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/serviceAnnouncement/messages:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: List serviceAnnouncement messages
+      description: Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement_ListMessage
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceUpdateMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Create new navigation property to messages for admin
+      operationId: admin.serviceAnnouncement_CreateMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get serviceUpdateMessage
+      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement_GetMessage
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Update the navigation property messages in admin
+      operationId: admin.serviceAnnouncement_UpdateMessage
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete navigation property messages for admin
+      operationId: admin.serviceAnnouncement_DeleteMessage
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: List attachments
+      description: Get the list of attachments associated with a service message.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.message_ListAttachment
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceAnnouncementAttachmentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Create new navigation property to attachments for admin
+      operationId: admin.serviceAnnouncement.message_CreateAttachment
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get serviceAnnouncementAttachment
+      description: Read the properties and relationships of a serviceAnnouncementAttachment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.message_GetAttachment
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: serviceAnnouncementAttachment-id
+          in: path
+          description: The unique identifier of serviceAnnouncementAttachment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceAnnouncementAttachment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Update the navigation property attachments in admin
+      operationId: admin.serviceAnnouncement.message_UpdateAttachment
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: serviceAnnouncementAttachment-id
+          in: path
+          description: The unique identifier of serviceAnnouncementAttachment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceAnnouncementAttachment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete navigation property attachments for admin
+      operationId: admin.serviceAnnouncement.message_DeleteAttachment
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: serviceAnnouncementAttachment-id
+          in: path
+          description: The unique identifier of serviceAnnouncementAttachment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceAnnouncementAttachment
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get serviceAnnouncementAttachment
+      description: Read the properties and relationships of a serviceAnnouncementAttachment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.message_GetAttachmentsContent
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: serviceAnnouncementAttachment-id
+          in: path
+          description: The unique identifier of serviceAnnouncementAttachment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceAnnouncementAttachment
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+    put:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Update content for the navigation property attachments in admin
+      description: The attachment content.
+      operationId: admin.serviceAnnouncement.message_SetAttachmentsContent
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: serviceAnnouncementAttachment-id
+          in: path
+          description: The unique identifier of serviceAnnouncementAttachment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceAnnouncementAttachment
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+        default:
+          $ref: '#/components/responses/error'
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete content for the navigation property attachments in admin
+      description: The attachment content.
+      operationId: admin.serviceAnnouncement.message_DeleteAttachmentsContent
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: serviceAnnouncementAttachment-id
+          in: path
+          description: The unique identifier of serviceAnnouncementAttachment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceAnnouncementAttachment
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/$count':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.message.attachment_GetCount
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive':
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: List attachments
+      description: Get the list of attachments associated with a service message.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+    put:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Update attachmentsArchive for the navigation property messages in admin
+      description: The zip file that contains all attachments for a message.
+      operationId: admin.serviceAnnouncement_SetMessagesAttachmentsArchive
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+    delete:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Delete attachmentsArchive for the navigation property messages in admin
+      description: The zip file that contains all attachments for a message.
+      operationId: admin.serviceAnnouncement_DeleteMessagesAttachmentsArchive
+      parameters:
+        - name: serviceUpdateMessage-id
+          in: path
+          description: The unique identifier of serviceUpdateMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceUpdateMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+  /admin/serviceAnnouncement/messages/$count:
+    get:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Get the number of the resource
+      operationId: admin.serviceAnnouncement.message_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/serviceAnnouncement/messages/microsoft.graph.archive:
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Invoke action archive
+      description: Archive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.message_archive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.favorite:
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Invoke action favorite
+      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.message_favorite
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.markRead:
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Invoke action markRead
+      description: Mark a list of serviceUpdateMessages as read for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.message_markRead
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.markUnread:
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Invoke action markUnread
+      description: Mark a list of serviceUpdateMessages as unread for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.message_markUnread
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.unarchive:
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Invoke action unarchive
+      description: Unarchive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.message_unarchive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.unfavorite:
+    post:
+      tags:
+        - admin.serviceAnnouncement
+      summary: Invoke action unfavorite
+      description: Remove the favorite status of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
+      operationId: admin.serviceAnnouncement.message_unfavorite
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+components:
+  schemas:
+    microsoft.graph.serviceAnnouncement:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: serviceAnnouncement
+          type: object
+          properties:
+            healthOverviews:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealth'
+              description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              x-ms-navigationProperty: true
+            issues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+              description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              x-ms-navigationProperty: true
+            messages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
+              description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.serviceHealth:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: serviceHealth
+          type: object
+          properties:
+            service:
+              type: string
+              description: The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealthStatus'
+            issues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+              description: 'A collection of issues that happened on the service, with detailed information for each issue.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.serviceHealthIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementBase'
+        - title: serviceHealthIssue
+          type: object
+          properties:
+            classification:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealthClassificationType'
+            feature:
+              type: string
+              description: The feature name of the service issue.
+              nullable: true
+            featureGroup:
+              type: string
+              description: The feature group name of the service issue.
+              nullable: true
+            impactDescription:
+              type: string
+              description: The description of the service issue impact.
+            isResolved:
+              type: boolean
+              description: Indicates whether the issue is resolved.
+            origin:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealthOrigin'
+            posts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceHealthIssuePost'
+              description: Collection of historical posts for the service issue.
+            service:
+              type: string
+              description: Indicates the service affected by the issue.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.serviceHealthStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.serviceUpdateMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementBase'
+        - title: serviceUpdateMessage
+          type: object
+          properties:
+            actionRequiredByDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The expected deadline of the action for the message.
+              format: date-time
+              nullable: true
+            attachmentsArchive:
+              type: string
+              description: The zip file that contains all attachments for a message.
+              format: base64url
+              nullable: true
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            category:
+              $ref: '#/components/schemas/microsoft.graph.serviceUpdateCategory'
+            hasAttachments:
+              type: boolean
+              description: Indicates whether the message has any attachment.
+            isMajorChange:
+              type: boolean
+              description: Indicates whether the message describes a major update for the service.
+              nullable: true
+            services:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The affected services by the service message.
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.serviceUpdateSeverity'
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.'
+            viewPoint:
+              $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessageViewpoint'
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+              description: A collection of serviceAnnouncementAttachments.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.serviceAnnouncementAttachment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: serviceAnnouncementAttachment
+          type: object
+          properties:
+            content:
+              type: string
+              description: The attachment content.
+              format: base64url
+              nullable: true
+            contentType:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceHealthStatus:
+      title: serviceHealthStatus
+      enum:
+        - serviceOperational
+        - investigating
+        - restoringService
+        - verifyingService
+        - serviceRestored
+        - postIncidentReviewPublished
+        - serviceDegradation
+        - serviceInterruption
+        - extendedRecovery
+        - falsePositive
+        - investigationSuspended
+        - resolved
+        - mitigatedExternal
+        - mitigated
+        - resolvedExternal
+        - confirmed
+        - reported
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serviceAnnouncementBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: serviceAnnouncementBase
+          type: object
+          properties:
+            details:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+              description: More details about service event. This property doesn't support filters.
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The end time of the service event.
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The last modified time of the service event.
+              format: date-time
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The start time of the service event.
+              format: date-time
+            title:
+              type: string
+              description: The title of the service event.
+          additionalProperties:
+            type: object
+    microsoft.graph.serviceHealthClassificationType:
+      title: serviceHealthClassificationType
+      enum:
+        - advisory
+        - incident
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serviceHealthOrigin:
+      title: serviceHealthOrigin
+      enum:
+        - microsoft
+        - thirdParty
+        - customer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serviceHealthIssuePost:
+      title: serviceHealthIssuePost
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The published time of the post.
+          format: date-time
+        description:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        postType:
+          $ref: '#/components/schemas/microsoft.graph.postType'
+      additionalProperties:
+        type: object
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceUpdateCategory:
+      title: serviceUpdateCategory
+      enum:
+        - preventOrFixIssue
+        - planForChange
+        - stayInformed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serviceUpdateSeverity:
+      title: serviceUpdateSeverity
+      enum:
+        - normal
+        - high
+        - critical
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serviceUpdateMessageViewpoint:
+      title: serviceUpdateMessageViewpoint
+      type: object
+      properties:
+        isArchived:
+          type: boolean
+          description: Indicates whether the user archived the message.
+          nullable: true
+        isFavorited:
+          type: boolean
+          description: Indicates whether the user marked the message as favorite.
+          nullable: true
+        isRead:
+          type: boolean
+          description: Indicates whether the user read the message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceHealthCollectionResponse:
+      title: Collection of serviceHealth
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceHealth'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceHealthIssueCollectionResponse:
+      title: Collection of serviceHealthIssue
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
+    microsoft.graph.serviceUpdateMessageCollectionResponse:
+      title: Collection of serviceUpdateMessage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceAnnouncementAttachmentCollectionResponse:
+      title: Collection of serviceAnnouncementAttachment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.keyValuePair:
+      title: keyValuePair
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name for this key-value pair
+        value:
+          type: string
+          description: Value for this key-value pair
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.postType:
+      title: postType
+      enum:
+        - regular
+        - quick
+        - strategic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
+    microsoft.graph.ODataErrors.MainError:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+          x-ms-primary-error-message: true
+        target:
+          type: string
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ErrorDetails:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.serviceHealthCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceHealthCollectionResponse'
+    microsoft.graph.serviceHealthIssueCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceHealthIssueCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.serviceUpdateMessageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessageCollectionResponse'
+    microsoft.graph.serviceAnnouncementAttachmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachmentCollectionResponse'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      style: form
+      explode: false
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      style: form
+      explode: false
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

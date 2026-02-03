@@ -1,0 +1,35 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: BaseBranch
+    type: string
+    default: dev
+  - name: TargetBranch
+    type: string
+    default: ""
+  - name: Title
+    type: string
+    default: ""
+  - name: Body
+    type: string
+    default: ""
+
+steps:
+  - task: PowerShell@2
+    displayName: Create Pull Request for generated build
+    env:
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+    inputs:
+      pwsh: true
+      targetType: inline
+      script: |
+        $BaseBranchName = "${{ parameters.BaseBranch }}"
+        $Head = "microsoftgraph:${{ parameters.TargetBranch }}"
+        $Title = "${{ parameters.Title }}"
+        $Body = "${{ parameters.Body }}"
+
+        git status
+        gh auth login
+        git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
+        gh pr create -t $Title -b $Body -B $BaseBranchName -H $Head

@@ -40,16 +40,19 @@ Describe "Microsoft.Graph.Authentication module" {
                     "Disconnect-MgGraph",
                     "Get-MgContext",
                     "Get-MgEnvironment",
-                    "Get-MgProfile",
                     "Invoke-MgGraphRequest",
                     "Remove-MgEnvironment",
-                    "Select-MgProfile",
                     "Set-MgEnvironment",
                     "Find-MgGraphCommand",
                     "Connect-Graph",
                     "Disconnect-Graph",
                     "Invoke-GraphRequest",
-                    "Find-MgGraphPermission"
+                    "Find-MgGraphPermission",
+                    "Invoke-MgRestMethod",
+                    "Get-MgRequestContext",
+                    "Set-MgRequestContext",
+                    "Set-MgGraphOption",
+                    "Get-MgGraphOption"
                 )
 
                 $PSModuleInfo.ExportedCommands.Keys | Should -BeIn $ExpectedCommands
@@ -61,11 +64,16 @@ Describe "Microsoft.Graph.Authentication module" {
                 $ExpectedAliases = @(
                     "Connect-Graph",
                     "Disconnect-Graph",
-                    "Invoke-GraphRequest"
+                    "Invoke-GraphRequest",
+                    "Invoke-MgRestMethod"
                 )
 
                 $PSModuleInfo.ExportedAliases.Keys | Should -BeIn $ExpectedAliases
             } | Should -Not -Throw
+        }
+
+        It 'Should lock GUID' {
+            $PSModuleInfo.Guid.Guid | Should -Be "883916f2-9184-46ee-b1f8-b6a2fb784cee"
         }
     }
 }

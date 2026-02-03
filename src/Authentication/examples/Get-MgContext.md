@@ -1,0 +1,35 @@
+### Example 1: Using Get-MgContext
+```powershell
+PS C:\> Get-MgContext
+ClientId              : 615e6e7c-aa11-4402-91a1-6234967405d5
+TenantId              : 9f32a42e-6782-4b96-a4d3-e0828a292569
+CertificateThumbprint :
+Scopes                : {AppRoleAssignment.ReadWrite.All, Directory.AccessAsUser.All, Directory.ReadWrite.All, EntitlementManagement.ReadWrite.All...}
+AuthType              : Delegated
+AuthProviderType      : InteractiveAuthenticationProvider
+CertificateName       :
+Account               : admin@Contoso.com
+AppName               : Microsoft Graph PowerShell
+ContextScope          : CurrentUser
+Certificate           :
+PSHostVersion         : 5.1.17763.1
+ClientTimeout         : 00:05:00
+```
+Retrieves session details.
+
+### Example 2: Using Get-MgContext: Retrieve all scopes you've consented to
+```powershell
+PS C:\> Get-MgContext | Select -ExpandProperty Scopes
+AppRoleAssignment.ReadWrite.All
+Directory.AccessAsUser.All
+Directory.ReadWrite.All
+EntitlementManagement.ReadWrite.All
+Group.ReadWrite.All
+openid
+Organization.Read.All
+profile
+RoleManagement.ReadWrite.Directory
+User.Read
+User.ReadWrite.All
+```
+Retrieves all scopes.

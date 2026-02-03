@@ -1,9 +1,11 @@
 
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+[CmdletBinding()]
 Param(
     [string] $RepositoryApiKey,
     [string] $RepositoryName = "PSGallery",
+    [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [int] $ModulePreviewNumber = -1,
     [switch] $Pack,
@@ -30,7 +32,6 @@ $NuspecHelperPS1 = Join-Path $PSScriptRoot ".\NuspecHelper.ps1"
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ValidateUpdatedModuleVersionPS1 = Join-Path $PSScriptRoot ".\ValidateUpdatedModuleVersion.ps1" -Resolve
 $ModuleMetadataJson = Join-Path $PSScriptRoot "..\config\ModuleMetadata.json" -Resolve
-$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
 $GraphModuleLocation = Join-Path $PSScriptRoot "..\src\Graph\Graph"
 $RollUpModuleNuspec = Join-Path $GraphModuleLocation ".\$ModulePrefix"
 $RequiredGraphModules = @()
@@ -82,14 +83,15 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     Write-Host "Adding dependency: $($ExistingAuthModule.Name) $($ExistingAuthModule.Version)" -ForegroundColor Green
     if ($ExistingAuthModule.Version -like '*preview*' ) {
         $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
-        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
+        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; RequiredVersion = $version }
     }
     else {
-        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; RequiredVersion = $ExistingAuthModule.Version }
     }
 
     foreach ($RequiredModule in $ModuleMapping.Keys) {
-        # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
+        # Install module locally in order to specify it as a dependency of the roll-up module down.
+        # New-ModuleManifest expects all required modules to be installed locally.
         # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
         $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease -ErrorAction SilentlyContinue
         if ($null -ne $ExistingWorkloadModule) {
@@ -128,6 +130,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
         AliasesToExport        = @()
         CmdletsToExport        = @()
         FunctionsToExport      = @()
+        GUID                   = $NuspecMetadata["guid"]
     }
 
     Write-Host -ForegroundColor Green "Creating '$ModulePrefix' module manifest and nuspec..."
@@ -145,6 +148,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
         Copy-Item (Join-Path $PSScriptRoot "\Templates\$ModulePrefix.nuspec") -Destination $GraphModuleLocation
     }
 
+    $NuspecMetadata.Remove("guid")
     Set-NuSpecValuesFromManifest -NuSpecFilePath "$RollUpModuleNuspec.nuspec" -Manifest $NuspecMetadata
 
     if ($Pack) {

@@ -1,0 +1,50 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+steps:
+  - task: UseDotNet@2
+    displayName: Use .NET SDK
+    inputs:
+      version: 8.x 
+
+  - task: UseDotNet@2
+    displayName: Use .NET SDK
+    inputs:
+      version: 6.x 
+      
+  - task: NuGetToolInstaller@1
+    displayName: Install Nuget
+
+  - task: NuGetAuthenticate@1
+
+  - task: PowerShell@2
+    displayName: Version Check
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        Write-Output $PSVersionTable
+
+  - task: NodeTool@0
+    displayName: Install NodeJs
+    inputs:
+      versionSpec: 16.x
+      
+  - task: Npm@1
+    displayName: Install AutoRest
+    inputs:
+      command: custom
+      customCommand: install -g autorest@latest
+    
+  - task: Npm@1
+    displayName: Install AutorestCore
+    inputs:
+      command: custom
+      customCommand: install -g @autorest/core@3.10.4
+
+  - task: Npm@1
+    displayName: Install Rush
+    inputs:
+      command: custom
+      customCommand: install -g @microsoft/rush
+

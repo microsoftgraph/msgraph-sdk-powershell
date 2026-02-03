@@ -21,8 +21,8 @@ function _Permissions_Initialize {
     # This structure models the state of the permissions class
     $permissionsVariable.Value = [PSCustomObject] @{
         msGraphPermissionsRequestUri = "https://graph.microsoft.com/v1.0/servicePrincipals?`$filter=appId eq '$Permissions_msGraphApplicationId'"
-        msGraphServicePrincipal = $null
-        isFromInvokeMgGraphRequest = $false
+        msGraphServicePrincipal      = $null
+        isFromInvokeMgGraphRequest   = $false
     }
 }
 
@@ -34,13 +34,27 @@ function Permissions_GetPermissionsData([bool] $online) {
     # Make a REST request to MS Graph to get the permissions data from the Microsoft Graph service principal
     if ( $online -or ! $_permissions.msGraphServicePrincipal -or ! $_permissions.isFromInvokeMgGraphRequest ) {
         try {
-            $restResult = Invoke-MgGraphRequest -method GET -OutputType PSObject $_permissions.msGraphPermissionsRequestUri
+            
+            # Get-MgContext is used to get the current context for the request to MS Graph
+            # From the context, we can get the current environment and use it to get the permissions request URI
+            # If the context is not available, then we will use the default permissions request URI
+
+            $context = Get-MgContext
+            $uri = $_permissions.msGraphPermissionsRequestUri
+            if($context){
+                $currentEnv = $context.Environment
+                $allEnv = Get-MgEnvironment
+                $env = $allEnv | Where-Object { $_.Name -eq $currentEnv }
+                $uri = $env.GraphEndpoint + "/v1.0/servicePrincipals?`$filter=appId eq '$Permissions_msGraphApplicationId'"
+            }
+            $restResult = Invoke-MgGraphRequest -method GET -OutputType PSObject $uri
 
             if ( $restResult ) {
                 $_permissions.msGraphServicePrincipal = $restResult | Select-Object -ExpandProperty value
                 $_permissions.isFromInvokeMgGraphRequest = $true
             }
-        } catch [System.Management.Automation.ValidationMetadataException], [System.Net.Http.HttpRequestException] {
+        }
+        catch [System.Management.Automation.ValidationMetadataException], [System.Net.Http.HttpRequestException], [Microsoft.Graph.PowerShell.AuthenticationException] {
             if ( $online ) {
                 throw
             }
@@ -58,16 +72,17 @@ function Permissions_GetOauthData( [PSCustomObject] $permissionsData ) {
     foreach ( $oauth2grant in $permissionsData.oauth2PermissionScopes ) {
         $description = If ($oauth2grant.type -eq 'Admin') {
             $oauth2grant.adminConsentDescription
-        } elseif ($oauth2grant.type -eq 'User') {
+        }
+        elseif ($oauth2grant.type -eq 'User') {
             $oauth2grant.userConsentDescription
         }
 
         $entry = [ordered] @{
-            Id = $oauth2grant.id
+            Id             = $oauth2grant.id
             PermissionType = 'Delegated'
-            Consent = $oauth2grant.type
-            Name = $oauth2grant.value
-            Description = $description
+            Consent        = $oauth2grant.type
+            Name           = $oauth2grant.value
+            Description    = $description
         }
 
         $permissions = [PSCustomObject] $entry
@@ -81,16 +96,17 @@ function Permissions_GetAppRolesData( [PSCustomObject] $permissionsData ) {
 
         $consent = if ($appRole.origin -eq 'Application') {
             'Admin'
-        } elseif ($appRole.origin -eq 'Delegated') {
+        }
+        elseif ($appRole.origin -eq 'Delegated') {
             'User'
         }
 
         $entry = [ordered] @{
-            Id = $appRole.id
+            Id             = $appRole.id
             PermissionType = 'Application'
-            Consent = $consent
-            Name = $appRole.value
-            Description = $appRole.description
+            Consent        = $consent
+            Name           = $appRole.value
+            Description    = $appRole.description
         }
 
         $permissions = [PSCustomObject] $entry

@@ -1,0 +1,67 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+    - name: FolderPath
+      type: string
+      default: $(System.DefaultWorkingDirectory)
+    - name: Pattern
+      type: string
+      default: ".*.dll"
+
+steps:
+    - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@5
+      displayName: ESRP DLL CodeSigning
+      enabled: true
+      inputs:
+          ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
+          AppRegistrationClientId: '65035b7f-7357-4f29-bf25-c5ee5c3949f8'
+          AppRegistrationTenantId: 'cdc5aeea-15c5-4db6-b079-fcadd2505dc2'
+          AuthAKVName: 'akv-prod-eastus'
+          AuthCertName: 'ReferenceLibraryPrivateCert'
+          AuthSignCertName: 'ReferencePackagePublisherCertificate'
+          FolderPath: ${{ parameters.FolderPath }}
+          Pattern: ${{ parameters.Pattern }}
+          signConfigType: inlineSignParams
+          inlineOperation: |
+              [
+                  {
+                      "keyCode": "CP-230012",
+                      "operationSetCode": "SigntoolSign",
+                      "parameters": [
+                          {
+                              "parameterName": "OpusName",
+                              "parameterValue": "Microsoft"
+                          },
+                          {
+                              "parameterName": "OpusInfo",
+                              "parameterValue": "http://www.microsoft.com"
+                          },
+                          {
+                              "parameterName": "FileDigest",
+                              "parameterValue": "/fd \"SHA256\""
+                          },
+                          {
+                              "parameterName": "PageHash",
+                              "parameterValue": "/NPH"
+                          },
+                          {
+                              "parameterName": "TimeStamp",
+                              "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                          }
+                      ],
+                      "toolName": "sign",
+                      "toolVersion": "1.0"
+                  },
+                  {
+                      "keyCode": "CP-230012",
+                      "operationSetCode": "SigntoolVerify",
+                      "parameters": [],
+                      "toolName": "sign",
+                      "toolVersion": "1.0"
+                  }
+              ]
+          SessionTimeout: 160
+          MaxConcurrency: 50
+          MaxRetryAttempts: 5
+          PendingAnalysisWaitTimeoutMinutes: 5

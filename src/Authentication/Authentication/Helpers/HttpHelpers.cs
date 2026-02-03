@@ -1,60 +1,41 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using Microsoft.Graph.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Core.Interfaces;
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+using Microsoft.Graph.PowerShell.Authentication.Handlers;
+using Microsoft.Kiota.Http.HttpClientLibrary.Middleware;
+using Microsoft.Kiota.Http.HttpClientLibrary.Middleware.Options;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Net;
+using System.Net.Http;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
-    using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Net.Http;
-    using System.Reflection;
-    using System.Security.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Handlers;
-
     /// <summary>
     /// A HTTP helper class.
     /// </summary>
     public static class HttpHelpers
     {
-        /// The version for current assembly.
-        private static AssemblyName AssemblyInfo = typeof(ConnectMgGraph).GetTypeInfo().Assembly.GetName();
-
-        /// The value for the Auth module version header.
-        private static string AuthModuleVersionHeaderValue =
-            string.Format(Constants.SDKHeaderValue,
-                AssemblyInfo.Name,
-                AssemblyInfo.Version.Major,
-                AssemblyInfo.Version.Minor,
-                AssemblyInfo.Version.Build);
-
         /// <summary>
         /// Creates a pre-configured Microsoft Graph <see cref="HttpClient"/>.
         /// </summary>
         /// <param name="authContext"></param>
         /// <returns></returns>
-        public static HttpClient GetGraphHttpClient(IAuthContext authContext = null)
+        public static HttpClient GetGraphHttpClient()
         {
-            authContext = authContext ?? GraphSession.Instance.AuthContext;
-            if (authContext is null)
-            {
-                throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext);
-            }
+            if (GraphSession.Instance?.GraphHttpClient != null)
+                return GraphSession.Instance.GraphHttpClient;
 
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
-            return GetGraphHttpClient(authProvider);
-        }
+            var requestUserAgent = new RequestUserAgent(GraphSession.Instance.AuthContext?.PSHostVersion, null);
 
-        /// <summary>
-        /// Prepend new SDKVersionHeaders
-        /// </summary>
-        /// <param name="httpClient"></param>
-        private static void PrependNewSDKVersionHeaders(HttpClient httpClient)
-        {
-            IEnumerable<string> previousSDKHeaders = httpClient.DefaultRequestHeaders.GetValues(CoreConstants.Headers.SdkVersionHeaderName);
-            httpClient.DefaultRequestHeaders.Remove(CoreConstants.Headers.SdkVersionHeaderName);
-            httpClient.DefaultRequestHeaders.Add(
-                CoreConstants.Headers.SdkVersionHeaderName,
-                previousSDKHeaders.Prepend(AuthModuleVersionHeaderValue));
+            AzureIdentityAccessTokenProvider authProvider = AuthenticationHelpers.GetAuthenticationProviderAsync(GraphSession.Instance.AuthContext).ConfigureAwait(false).GetAwaiter().GetResult();
+            var newHttpClient = GetGraphHttpClient(authProvider, GraphSession.Instance.RequestContext);
+            newHttpClient.DefaultRequestHeaders.UserAgent.ParseAdd(requestUserAgent.UserAgent);
+            GraphSession.Instance.GraphHttpClient = newHttpClient;
+            return newHttpClient;
         }
 
         /// <summary>
@@ -63,19 +44,33 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// </summary>
         /// <param name="authProvider">Custom AuthProvider</param>
         /// <returns></returns>
-        public static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider)
+        private static HttpClient GetGraphHttpClient(AzureIdentityAccessTokenProvider authProvider, IRequestContext requestContext)
         {
-            IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
+            if (requestContext is null)
+                throw new AuthenticationException(string.Format(CultureInfo.InvariantCulture, Core.ErrorConstants.Message.MissingSessionProperty, nameof(requestContext)));
 
-            // Register NationalCloudHandler after AuthHandler.
-            defaultHandlers.Insert(1, new NationalCloudHandler());
-            // Register ODataQueryOptionsHandler after NationalCloudHandler.
-            defaultHandlers.Insert(2, new ODataQueryOptionsHandler());
+            IList<DelegatingHandler> delegatingHandlers = new List<DelegatingHandler> {
+                new AuthenticationHandler(authProvider),
+                new NationalCloudHandler(),
+                new ODataQueryOptionsHandler(),
+                new HttpVersionHandler(),
+                new RetryHandler(new RetryHandlerOption{
+                    Delay = requestContext.RetryDelay,
+                    MaxRetry = requestContext.MaxRetry,
+                    RetriesTimeLimit= requestContext.RetriesTimeLimit
+                }),
+                new RedirectHandler(),
+                new RequestHeaderHandler() // Should always be last.
+            };
 
-            HttpClient httpClient = GraphClientFactory.Create(defaultHandlers);
-
-            // Prepend new SDKVersionHeaders
-            PrependNewSDKVersionHeaders(httpClient);
+            HttpClient httpClient = RuntimeUtils.IsPsCore()
+                ? GraphClientFactory.Create(delegatingHandlers)
+                : GraphClientFactory.Create(delegatingHandlers, finalHandler: new HttpClientHandler
+                {
+                    AllowAutoRedirect = false,
+                    AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+                });
+            httpClient.Timeout = requestContext.ClientTimeout;
             return httpClient;
         }
     }

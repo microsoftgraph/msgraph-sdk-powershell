@@ -1,0 +1,72 @@
+﻿{
+  "tool": "Credential Scanner",
+  "suppressions": [
+    {
+      "placeholder": "pa$$w0rd",
+      "_justification": "[Applications] hard code password in application password HTTP example"
+    },
+    {
+      "placeholder": "P@55w0rd",
+      "_justification": "[AuthenticationTests] hard code password in AuthenticationTest for self signed certificate"
+    },
+    {
+      "file": [
+        "src\\Authentication\\Authentication\\test\\Get-MgContext.Tests.ps1",
+        "src\\Authentication\\Authentication.Test\\Helpers\\AuthenticationHelpersTests.cs",
+        "src\\Authentication\\Authentication.Test\\Helpers\\AuthenticationHelpersTests.cs"
+      ],
+      "_justification": "[Authentication] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "autorest.powershell\\docs\\samples\\timeswire\\readme.md"
+      ],
+      "_justification": "[AutoRest] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "src\\Applications\\beta\\examples\\New-MgBetaServicePrincipalPasswordSingleSignOnCredentials.md",
+        "src\\Applications\\beta\\examples\\Remove-MgBetaApplicationPassword.md",
+        "src\\Applications\\beta\\examples\\Update-MgBetaServicePrincipalPasswordSingleSignOnCredentials.md",
+        "src\\Applications\\v1.0\\examples\\Add-MgServicePrincipalPassword.md",
+        "src\\Applications\\v1.0\\examples\\Remove-MgApplicationPassword.md",
+        "src\\Applications\\v1.0\\examples\\Remove-MgServicePrincipalPassword.md"
+      ],
+      "_justification": "[Applications] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "src\\Users.Actions\\beta\\examples\\Test-MgBetaUserPassword.md",
+        "src\\Users.Actions\\beta\\examples\\Update-MgBetaUserPassword.md",
+        "src\\Users.Actions\\beta\\examples\\Reset-MgBetaUserAuthenticationMethodPassword.md",
+        "src\\Users.Actions\\v1.0\\examples\\Update-MgUserPassword.md"
+      ],
+      "_justification": "[Users.Actions] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "src\\Identity.SignIns\\beta\\examples\\Reset-MgBetaUserAuthenticationMethodPassword.md",
+        "src\\Identity.SignIns\\v1.0\\examples\\Reset-MgUserAuthenticationMethodPassword.md"
+      ],
+      "_justification": "[Identity.SignIns] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "src\\DeviceManagement.Actions\\beta\\examples\\Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionAdDomainPassword.md"
+      ],
+      "_justification": "[DeviceManagement.Actions] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "src\\Users.Actions\\v1.0\\examples\\Reset-MgUserAuthenticationMethodPassword.md"
+      ],
+      "_justification": "[Users.Actions] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "tools\\Tests\\loadEnv.md"
+      ],
+      "_justification": "[ToolsTest] Examples contain random values recognized as secret"
+    }
+  ]
+}

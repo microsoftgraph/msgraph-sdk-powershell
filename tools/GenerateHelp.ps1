@@ -1,6 +1,7 @@
 								 
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+[CmdletBinding()]
 Param(
     $ModulesToGenerate = @(),
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc")
@@ -58,7 +59,7 @@ $ModulesToGenerate | ForEach-Object {
         Write-Warning "v1.0 Docs for $ModuleName not Found"
     }
     git status
-    git commit -m "Docs Generation for $ModuleName [skip ci]"
+    git commit -m "Docs Generation for $ModuleName [run ci]"
 }
 
 Write-Host -ForegroundColor Green "-------------Done-------------"

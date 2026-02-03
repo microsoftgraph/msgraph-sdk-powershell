@@ -1,0 +1,2874 @@
+openapi: 3.0.4
+info:
+  title: BusinessScenario
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /solutions/businessScenarios:
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: List businessScenarios
+      description: Get a list of all businessScenario objects in an organization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-beta
+      operationId: solution_ListBusinessScenario
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.businessScenarioCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.businessScenario
+      summary: Create businessScenario
+      description: Create a new businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-beta
+      operationId: solution_CreateBusinessScenario
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get businessScenario
+      description: Read the properties and relationships of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-beta
+      operationId: solution_GetBusinessScenario
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update businessScenario
+      description: Update the properties of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-beta
+      operationId: solution_UpdateBusinessScenario
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete businessScenario
+      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-beta
+      operationId: solution_DeleteBusinessScenario
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get businessScenarioPlanner
+      description: Read the properties and relationships of a businessScenarioPlanner object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-beta
+      operationId: solution.businessScenario_GetPlanner
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property planner in solutions
+      operationId: solution.businessScenario_UpdatePlanner
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property planner for solutions
+      operationId: solution.businessScenario_DeletePlanner
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/microsoft.graph.getPlan':
+    post:
+      tags:
+        - solutions.businessScenario
+      summary: Invoke action getPlan
+      description: 'Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn''t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_getPlan
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                target:
+                  $ref: '#/components/schemas/microsoft.graph.businessScenarioTaskTargetBase'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get plannerPlanConfiguration
+      description: Read the properties and relationships of a plannerPlanConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_GetPlanConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update plannerPlanConfiguration
+      description: Update the properties of a plannerPlanConfiguration object and its plannerPlanConfigurationLocalization collection for a businessScenario.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_UpdatePlanConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property planConfiguration for solutions
+      operationId: solution.businessScenario.planner_DeletePlanConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: List plannerPlanConfigurationLocalizations
+      description: Get a list of the plannerPlanConfigurationLocalization objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-beta
+      operationId: solution.businessScenario.planner.planConfiguration_ListLocalization
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.businessScenario
+      summary: Create new navigation property to localizations for solutions
+      operationId: solution.businessScenario.planner.planConfiguration_CreateLocalization
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations/{plannerPlanConfigurationLocalization-id}':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get localizations from solutions
+      description: Localized names for the plan configuration.
+      operationId: solution.businessScenario.planner.planConfiguration_GetLocalization
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: plannerPlanConfigurationLocalization-id
+          in: path
+          description: The unique identifier of plannerPlanConfigurationLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlanConfigurationLocalization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property localizations in solutions
+      operationId: solution.businessScenario.planner.planConfiguration_UpdateLocalization
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: plannerPlanConfigurationLocalization-id
+          in: path
+          description: The unique identifier of plannerPlanConfigurationLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlanConfigurationLocalization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property localizations for solutions
+      operationId: solution.businessScenario.planner.planConfiguration_DeleteLocalization
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: plannerPlanConfigurationLocalization-id
+          in: path
+          description: The unique identifier of plannerPlanConfigurationLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlanConfigurationLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations/$count':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get the number of the resource
+      operationId: solution.businessScenario.planner.planConfiguration.localization_GetCount
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/businessScenarios/{businessScenario-id}/planner/taskConfiguration':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get plannerTaskConfiguration
+      description: Read the properties and relationships of a plannerTaskConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_GetTaskConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update plannerTaskConfiguration
+      description: Update the properties of a plannerTaskConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_UpdateTaskConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property taskConfiguration for solutions
+      operationId: solution.businessScenario.planner_DeleteTaskConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: List businessScenarioTasks
+      description: Get a list of the businessScenarioTask objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_ListTask
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.businessScenarioTaskCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.businessScenario
+      summary: Create businessScenarioTask
+      description: Create a new businessScenarioTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_CreateTask
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get businessScenarioTask
+      description: Read the properties and relationships of a businessScenarioTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_GetTask
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update businessScenarioTask
+      description: Update the properties of a businessScenarioTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_UpdateTask
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete businessScenarioTask
+      description: Delete a businessScenarioTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-beta
+      operationId: solution.businessScenario.planner_DeleteTask
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/assignedToTaskBoardFormat':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get assignedToTaskBoardFormat from solutions
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: solution.businessScenario.planner.task_GetAssignedToTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property assignedToTaskBoardFormat in solutions
+      operationId: solution.businessScenario.planner.task_UpdateAssignedToTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property assignedToTaskBoardFormat for solutions
+      operationId: solution.businessScenario.planner.task_DeleteAssignedToTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/bucketTaskBoardFormat':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get bucketTaskBoardFormat from solutions
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: solution.businessScenario.planner.task_GetBucketTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property bucketTaskBoardFormat in solutions
+      operationId: solution.businessScenario.planner.task_UpdateBucketTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property bucketTaskBoardFormat for solutions
+      operationId: solution.businessScenario.planner.task_DeleteBucketTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/details':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get details from solutions
+      description: Read-only. Nullable. More details about the task.
+      operationId: solution.businessScenario.planner.task_GetDetail
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property details in solutions
+      operationId: solution.businessScenario.planner.task_UpdateDetail
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property details for solutions
+      operationId: solution.businessScenario.planner.task_DeleteDetail
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/progressTaskBoardFormat':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get progressTaskBoardFormat from solutions
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: solution.businessScenario.planner.task_GetProgressTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property progressTaskBoardFormat in solutions
+      operationId: solution.businessScenario.planner.task_UpdateProgressTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property progressTaskBoardFormat for solutions
+      operationId: solution.businessScenario.planner.task_DeleteProgressTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/$count':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get the number of the resource
+      operationId: solution.businessScenario.planner.task_GetCount
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/businessScenarios(uniqueName=''{uniqueName}'')':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get businessScenario
+      description: Read the properties and relationships of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-beta
+      operationId: solution.businessScenario_GetGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update businessScenario
+      description: Update the properties of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-beta
+      operationId: solution.businessScenario_UpdateGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete businessScenario
+      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-beta
+      operationId: solution.businessScenario_DeleteGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /solutions/businessScenarios/$count:
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get the number of the resource
+      operationId: solution.businessScenario_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+components:
+  schemas:
+    microsoft.graph.businessScenario:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: businessScenario
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the scenario was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            displayName:
+              type: string
+              description: Display name of the scenario.
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the scenario was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            ownerAppIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Identifiers of applications that are authorized to work with this scenario.
+            uniqueName:
+              type: string
+              description: 'Unique name of the scenario. To avoid conflicts, the recommended value for the unique name is a reverse domain name format, owned by the author of the scenario. For example, a scenario authored by Contoso.com would have a unique name that starts with com.contoso.'
+              nullable: true
+            planner:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
+          additionalProperties:
+            type: object
+    microsoft.graph.businessScenarioPlanner:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: businessScenarioPlanner
+          type: object
+          properties:
+            planConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
+            taskConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+              description: The Planner tasks for the scenario.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.businessScenarioTaskTargetBase:
+      title: businessScenarioTaskTargetBase
+      type: object
+      properties:
+        taskTargetKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerTaskTargetKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.businessScenarioPlanReference:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: businessScenarioPlanReference
+          type: object
+          properties:
+            title:
+              type: string
+              description: The title property of the plannerPlan.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerPlanConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerPlanConfiguration
+          type: object
+          properties:
+            buckets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationBucketDefinition'
+              description: List the buckets that should be created in the plan.
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            defaultLanguage:
+              type: string
+              description: The language code for the default language to be used for the names of the objects created for the plan.
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the plan configuration was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            localizations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+              description: Localized names for the plan configuration.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerPlanConfigurationLocalization:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerPlanConfigurationLocalization
+          type: object
+          properties:
+            buckets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationBucketLocalization'
+              description: Localized names for configured buckets in the plan configuration.
+            languageTag:
+              type: string
+              description: The language code associated with the localized names in this object.
+              nullable: true
+            planTitle:
+              type: string
+              description: Localized title of the plan.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerTaskConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerTaskConfiguration
+          type: object
+          properties:
+            editPolicy:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskPolicy'
+          additionalProperties:
+            type: object
+    microsoft.graph.businessScenarioTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        - title: businessScenarioTask
+          type: object
+          properties:
+            businessScenarioProperties:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioProperties'
+            target:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioTaskTargetBase'
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerAssignedToTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHintsByAssignee:
+              $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
+            unassignedOrderHint:
+              type: string
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task isn''t assigned to anyone, or if the orderHintsByAssignee dictionary doesn''t provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerBucketTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerBucketTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerTaskDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerTaskDetails
+          type: object
+          properties:
+            approvalAttachment:
+              $ref: '#/components/schemas/microsoft.graph.plannerBaseApprovalAttachment'
+            checklist:
+              $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
+            completionRequirements:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCompletionRequirementDetails'
+            description:
+              type: string
+              description: Description of the task.
+              nullable: true
+            forms:
+              $ref: '#/components/schemas/microsoft.graph.plannerFormsDictionary'
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            previewType:
+              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            references:
+              $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerProgressTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerProgressTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskTargetKind:
+      title: plannerTaskTargetKind
+      enum:
+        - group
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerPlanConfigurationBucketDefinition:
+      title: plannerPlanConfigurationBucketDefinition
+      type: object
+      properties:
+        externalBucketId:
+          type: string
+          description: Application-specified identifier of the bucket.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanConfigurationBucketLocalization:
+      title: plannerPlanConfigurationBucketLocalization
+      type: object
+      properties:
+        externalBucketId:
+          type: string
+          description: Application-specified identifier of the bucket.
+          nullable: true
+        name:
+          type: string
+          description: Name of the bucket.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskPolicy:
+      title: plannerTaskPolicy
+      type: object
+      properties:
+        rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerTaskRoleBasedRule'
+          description: 'The rules that should be enforced on the tasks when they''re being changed outside of the scenario, based on the role of the caller.'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerTask
+          type: object
+          properties:
+            activeChecklistItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'The number of checklist items with value set to false, representing incomplete items.'
+              format: int32
+              nullable: true
+            appliedCategories:
+              $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
+            assigneePriority:
+              type: string
+              description: 'A hint that is used to order items of this type in a list view. For more information, see Using order hints in planner.'
+              nullable: true
+            assignments:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
+            bucketId:
+              type: string
+              description: Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
+              nullable: true
+            checklistItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of checklist items that are present on the task.
+              format: int32
+              nullable: true
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. The date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            conversationThreadId:
+              type: string
+              description: The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
+            dueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            hasChat:
+              type: boolean
+            hasDescription:
+              type: boolean
+              description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
+              nullable: true
+            isArchived:
+              type: boolean
+              description: 'Read-only. If set to true, the task is archived. An archived task is read-only.'
+              nullable: true
+            isOnMyDay:
+              type: boolean
+              description: 'Indicates whether to show this task in the MyDay view. If true, it shows the task.'
+              nullable: true
+            isOnMyDayLastModifiedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Read-only. The date on which task is added to or removed from MyDay.
+              format: date
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            orderHint:
+              type: string
+              description: 'The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.'
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'The percentage of task completion. When set to 100, the task is completed.'
+              format: int32
+              nullable: true
+            planId:
+              type: string
+              description: Plan ID to which the task belongs.
+              nullable: true
+            previewType:
+              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''. Currently, planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
+              format: int32
+              nullable: true
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskRecurrence'
+            referenceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Number of external references that exist on the task.
+              format: int32
+              nullable: true
+            specifiedCompletionRequirements:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCompletionRequirements'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            title:
+              type: string
+              description: Title of the task.
+            assignedToTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+            bucketTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+            details:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+            progressTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+          additionalProperties:
+            type: object
+    microsoft.graph.businessScenarioProperties:
+      title: businessScenarioProperties
+      type: object
+      properties:
+        externalBucketId:
+          type: string
+          description: The identifier for the bucketDefinition configured in the plannerPlanConfiguration for the scenario. The task will be placed in the corresponding plannerBucket in the target plan. Required.
+          nullable: true
+        externalContextId:
+          type: string
+          description: 'The identifier for the context of the task. Context is an application controlled value, and tasks can be queried by their externalContextId. Optional.'
+          nullable: true
+        externalObjectId:
+          type: string
+          description: Application-specific identifier for the task. Every task for the same scenario must have a unique identifier specified for this property. Required.
+          nullable: true
+        externalObjectVersion:
+          type: string
+          description: Application-specific version of the task. Optional.
+          nullable: true
+        webUrl:
+          type: string
+          description: The URL to the application-specific experience for this task. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerDelta:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerDelta
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerOrderHintsByAssignee:
+      title: plannerOrderHintsByAssignee
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerBaseApprovalAttachment:
+      title: plannerBaseApprovalAttachment
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerChecklistItems:
+      title: plannerChecklistItems
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskCompletionRequirementDetails:
+      title: plannerTaskCompletionRequirementDetails
+      type: object
+      properties:
+        approvalRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalRequirement'
+        checklistRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerChecklistRequirement'
+        formsRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerFormsRequirement'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerFormsDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: plannerFormsDictionary
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPreviewType:
+      title: plannerPreviewType
+      enum:
+        - automatic
+        - noPreview
+        - checklist
+        - description
+        - reference
+      type: string
+    microsoft.graph.plannerExternalReferences:
+      title: plannerExternalReferences
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.businessScenarioCollectionResponse:
+      title: Collection of businessScenario
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse:
+      title: Collection of plannerPlanConfigurationLocalization
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
+    microsoft.graph.businessScenarioTaskCollectionResponse:
+      title: Collection of businessScenarioTask
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskRoleBasedRule:
+      title: plannerTaskRoleBasedRule
+      type: object
+      properties:
+        defaultRule:
+          type: string
+          description: 'Default rule that applies when a property or action-specific rule is not provided. The possible values are: Allow, Block'
+          nullable: true
+        propertyRule:
+          $ref: '#/components/schemas/microsoft.graph.plannerTaskPropertyRule'
+        role:
+          $ref: '#/components/schemas/microsoft.graph.plannerTaskConfigurationRoleBase'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerAppliedCategories:
+      title: plannerAppliedCategories
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerArchivalInfo:
+      title: plannerArchivalInfo
+      type: object
+      properties:
+        justification:
+          type: string
+          description: Read-only. Reason why the entity was archived or unarchived.
+          nullable: true
+        statusChangedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        statusChangedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Read-only. Date and time at which the entity's archive status changed.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerAssignments:
+      title: plannerAssignments
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskCreation:
+      title: plannerTaskCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
+        teamsPublicationInfo:
+          $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskRecurrence:
+      title: plannerTaskRecurrence
+      type: object
+      properties:
+        nextInSeriesTaskId:
+          type: string
+          description: 'The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.'
+          nullable: true
+        occurrenceId:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
+          format: int32
+        previousInSeriesTaskId:
+          type: string
+          description: The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
+          nullable: true
+        recurrenceStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+        schedule:
+          $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
+        seriesId:
+          type: string
+          description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskCompletionRequirements:
+      title: plannerTaskCompletionRequirements
+      enum:
+        - none
+        - checklistCompletion
+        - unknownFutureValue
+        - formCompletion
+        - approvalCompletion
+        - completionInHostedApp
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.plannerApprovalStatus:
+      title: plannerApprovalStatus
+      enum:
+        - requested
+        - approved
+        - rejected
+        - cancelled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerApprovalRequirement:
+      title: plannerApprovalRequirement
+      type: object
+      properties:
+        isApprovalRequired:
+          type: boolean
+          description: 'Specifies whether approval is required to complete the plannerTask. If set to true, the task can only be marked as complete if an approval is created for the task and approved.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerChecklistRequirement:
+      title: plannerChecklistRequirement
+      type: object
+      properties:
+        requiredChecklistItemIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerFormsRequirement:
+      title: plannerFormsRequirement
+      type: object
+      properties:
+        requiredForms:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Read-only. A collection of keys from the plannerFormsDictionary that identify the plannerFormReference objects that specify the requirements to complete the plannerTask.
+      additionalProperties:
+        type: object
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
+    microsoft.graph.ODataErrors.MainError:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+          x-ms-primary-error-message: true
+        target:
+          type: string
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskPropertyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerPropertyRule'
+        - title: plannerTaskPropertyRule
+          type: object
+          properties:
+            appliedCategories:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            approvalAttachment:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            assignments:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            checkLists:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            completionRequirements:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.'
+            delete:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Rules and restrictions for deleting the task. Accepted values are allow and block.
+            dueDate:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
+            forms:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            move:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.'
+            notes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
+            order:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Rules and restrictions for changing the order of the task. Accepted values are allow and block.
+            percentComplete:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.'
+            previewType:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
+            priority:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
+            references:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            startDate:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Rules and restrictions for changing the start date of the task. Accepted values are allow and block.
+            title:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Rules and restrictions for changing the title of the task. Accepted values are allow and block.
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerTaskConfigurationRoleBase:
+      title: plannerTaskConfigurationRoleBase
+      type: object
+      properties:
+        roleKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerUserRoleKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerCreationSourceKind:
+      title: plannerCreationSourceKind
+      enum:
+        - none
+        - external
+        - publication
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerTeamsPublicationInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
+        - title: plannerTeamsPublicationInfo
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when this task was last modified by the publication process. Read-only.
+              format: date-time
+              nullable: true
+            publicationId:
+              type: string
+              description: The identifier of the publication. Read-only.
+              nullable: true
+            publicationName:
+              type: string
+              description: The name of the published task list. Read-only.
+              nullable: true
+            publishedToPlanId:
+              type: string
+              description: The identifier of the plannerPlan this task was originally placed in. Read-only.
+              nullable: true
+            publishingTeamId:
+              type: string
+              description: The identifier of the team that initiated the publication process. Read-only.
+              nullable: true
+            publishingTeamName:
+              type: string
+              description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerRecurrenceSchedule:
+      title: plannerRecurrenceSchedule
+      type: object
+      properties:
+        nextOccurrenceDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The next date for this schedule. When a new task is instantiated to continue the recurrence series, this date is used for the dueDateTime of the new plannerTask. Auto-generated by the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+          nullable: true
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        patternStartDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The start date for the recurrence pattern. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ErrorDetails:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
+    microsoft.graph.plannerPropertyRule:
+      title: plannerPropertyRule
+      type: object
+      properties:
+        ruleKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerRuleKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerFieldRules:
+      title: plannerFieldRules
+      type: object
+      properties:
+        defaultRules:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The default rules that apply if no override matches to the current data.
+        overrides:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerRuleOverride'
+          description: Overrides that specify different rules for specific data associated with the field.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerUserRoleKind:
+      title: plannerUserRoleKind
+      enum:
+        - relationship
+        - unknownFutureValue
+      type: string
+    microsoft.graph.recurrencePattern:
+      title: recurrencePattern
+      type: object
+      properties:
+        dayOfMonth:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
+          format: int32
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+        firstDayOfWeek:
+          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+        index:
+          $ref: '#/components/schemas/microsoft.graph.weekIndex'
+        interval:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
+          format: int32
+        month:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The month in which the event occurs.  This is a number from 1 to 12.
+          format: int32
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerRuleKind:
+      title: plannerRuleKind
+      enum:
+        - taskRule
+        - bucketRule
+        - planRule
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerRuleOverride:
+      title: plannerRuleOverride
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the override. Allowed override values will be dependent on the property affected by the rule.
+          nullable: true
+        rules:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Overridden rules. These are used as rules for the override instead of the default rules.
+      additionalProperties:
+        type: object
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.weekIndex:
+      title: weekIndex
+      enum:
+        - first
+        - second
+        - third
+        - fourth
+        - last
+      type: string
+    microsoft.graph.recurrencePatternType:
+      title: recurrencePatternType
+      enum:
+        - daily
+        - weekly
+        - absoluteMonthly
+        - relativeMonthly
+        - absoluteYearly
+        - relativeYearly
+      type: string
+  responses:
+    microsoft.graph.businessScenarioCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.businessScenarioCollectionResponse'
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.businessScenarioTaskCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.businessScenarioTaskCollectionResponse'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      style: form
+      explode: false
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      style: form
+      explode: false
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

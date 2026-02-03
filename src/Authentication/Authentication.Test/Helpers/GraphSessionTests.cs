@@ -2,14 +2,14 @@
 using Microsoft.Graph.PowerShell.Authentication.Models;
 
 using Xunit.Abstractions;
+using Microsoft.Graph.PowerShell.Authentication;
+
+using System;
+
+using Xunit;
 
 namespace Microsoft.Graph.Authentication.Test.Helpers
 {
-    using Microsoft.Graph.PowerShell.Authentication;
-
-    using System;
-
-    using Xunit;
     public class GraphSessionTests
     {
         private readonly ITestOutputHelper _helper;

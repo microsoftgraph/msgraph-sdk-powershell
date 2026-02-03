@@ -1,3 +1,4 @@
+[CmdletBinding()]
 Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $apiVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $serverUrl

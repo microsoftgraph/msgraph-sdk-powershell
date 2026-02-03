@@ -35,7 +35,7 @@ function GraphUri_ConvertRelativeUriToAbsoluteUri {
         $UriBuilder.Path = $Uri
     }
     else {
-        if ([System.String]::IsNullOrWhiteSpace($ApiVersion)) { $CurrentAPIVersion = (Get-MgProfile).Name } else { $CurrentAPIVersion = $ApiVersion }
+        if ([System.String]::IsNullOrWhiteSpace($ApiVersion)) { $CurrentAPIVersion = "v1.0" } else { $CurrentAPIVersion = $ApiVersion }
         $UriBuilder.Path = "$CurrentAPIVersion/$Uri"
     }
     return New-Object -TypeName Uri -ArgumentList ([System.Uri]::UnescapeDataString($UriBuilder.Uri))
@@ -48,11 +48,29 @@ function GraphUri_TokenizeIds {
     )
 
     $TokenizedUri = $Uri.GetComponents([System.UriComponents]::SchemeAndServer, [System.UriFormat]::SafeUnescaped)
+    $LastSegmentIndex = $Uri.Segments.length - 1
+    $LastSegment = $Uri.Segments[$LastSegmentIndex]
+    $UnescapedUri = $Uri.ToString()
     for ($i = 0 ; $i -lt $Uri.Segments.length; $i++) {
         # Segment contains an integer/id and is not API version.
         if ($Uri.Segments[$i] -match "[^v1.0|beta]\d") {
-            # Substitute integers/ids with {id} tokens, e.g, /users/289ee2a5-9450-4837-aa87-6bd8d8e72891 -> users/{id}.
-            $TokenizedUri += "{id}/"
+            #For Uris whose last segments match the regex '(.*?)', all characters from the first '(' are substituted with '.*' 
+            if ($i -eq $LastSegmentIndex) {
+                if ($UnescapedUri -match '(.*?)') {
+                    try {
+                        $UpdatedLastSegment = $LastSegment.Substring(0, $LastSegment.IndexOf("("))
+                        $TokenizedUri += $UpdatedLastSegment + ".*"
+
+                    }
+                    catch {
+                        $TokenizedUri += "{id}/"
+                    }
+                }
+            }
+            else {
+                # Substitute integers/ids with {id} tokens, e.g, /users/289ee2a5-9450-4837-aa87-6bd8d8e72891 -> users/{id}.
+                $TokenizedUri += "{id}/"
+            }
         }
         else {
             $TokenizedUri += $Uri.Segments[$i]
@@ -85,14 +103,21 @@ function GraphUri_RemoveNamespaceFromActionFunction {
     $ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
 
     $NewUri = $Uri
-    # Remove FQN in action/function names.
+    # Remove FQN in paths.
     if ($Uri -match $ActionFunctionFQNPattern) {
         $MatchedUriSegment = $Matches.0
+        $SegmentBuilder = ""
         # Trim nested namespace segments.
-        $NestedNamespaceSegments = $Matches.1 -split "\."
-        # Remove trailing '()' from functions.
-        $LastSegment = $NestedNamespaceSegments[-1] -replace "\(\)", ""
-        $NewUri = $Uri -replace [Regex]::Escape($MatchedUriSegment), "/$LastSegment"
+        $NestedNamespaceSegments = $Matches.1 -split "/"
+        foreach($Segment in $NestedNamespaceSegments){
+            # Remove microsoft.graph prefix and trailing '()' from functions.
+            $Segment = $segment.Replace("microsoft.graph.","").Replace("()", "")
+            # Get resource object name from segment if it exists. e.g get 'updateAudience' from windowsUpdates.updateAudience
+            $ResourceObj = $Segment.Split(".")
+            $Segment = $ResourceObj[$ResourceObj.Count-1]
+            $SegmentBuilder += "/$Segment"
+        }
+        $NewUri = $Uri -replace [Regex]::Escape($MatchedUriSegment), $SegmentBuilder
     }
 
     return $NewUri

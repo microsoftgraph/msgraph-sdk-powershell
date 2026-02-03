@@ -1,0 +1,96 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: Test
+    type: boolean
+    default: true
+  - name: Pack
+    type: boolean
+    default: true
+  - name: Sign
+    type: boolean
+    default: true
+
+steps:
+  - task: PowerShell@2
+    displayName: Generate Workload Modules
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -EnableSigning:$${{ parameters.Sign }} -Build -ExcludeExampleTemplates -ExcludeNotesSection
+
+  - template: ../common-templates/guardian-analyzer.yml
+
+  - task: PowerShell@2
+    displayName: Test Workload Modules
+    enabled: false
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Test
+
+  - task: PowerShell@2
+    displayName: Find Duplicate Commands
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/PostGeneration/FindDuplicateCommand.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/"
+  - task: PowerShell@2
+    displayName: Generate authentication module metadata
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/PostGeneration/AuthModuleMetadata.ps1
+
+  - ${{ if eq(parameters.Sign, true) }}:
+      - template: ../common-templates/esrp/strongname.yml
+        parameters:
+          FolderPath: "$(System.DefaultWorkingDirectory)/src"
+          Pattern: "Microsoft.Graph.*.private.dll"
+
+      - template: ../common-templates/esrp/codesign.yml
+        parameters:
+          FolderPath: "$(System.DefaultWorkingDirectory)/src"
+          Pattern: "Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.psd1, Microsoft.Graph.*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1, Unprotect-SecureString.ps1, *-Mg*EntitlementManagement*.ps1"
+
+      - task: PowerShell@2
+        displayName: "Validate Authenticode Signature"
+        inputs:
+          targetType: "inline"
+          pwsh: true
+          script: |
+            $ModuleMappingConfigPath = '$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc'
+            [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+            @("v1.0", "beta") | ForEach-Object {
+              $ApiVersion = $_
+              $ModuleMapping.Keys | ForEach-Object {
+                  $ModuleName = $_
+                  $ModulePath = "$(System.DefaultWorkingDirectory)/src/$ModuleName/$ApiVersion"
+                  $ModulePsd1 = Join-Path $ModulePath "Microsoft.Graph*.$ModuleName.psd1"
+                  $ModulePsm1 = Join-Path $ModulePath "Microsoft.Graph*.$ModuleName.psm1"
+                  Write-Host "Validating Authenticode Signature for $ModulePsd1"
+                  Write-Host "Validating Authenticode Signature for $ModulePsm1"
+                  if ((Test-Path $ModulePsd1) -and (Test-Path $ModulePsm1)) {
+                    $ModulePsd1AuthCodeSignature = $ModulePsd1 | Get-AuthenticodeSignature
+                    $ModulePsm1AuthCodeSignature = $ModulePsm1 | Get-AuthenticodeSignature
+                    Write-Host "Authenticode Signature for $ModulePsd1 is $($ModulePsd1AuthCodeSignature.Status)"
+                    Write-Host "Authenticode Signature for $ModulePsm1 is $($ModulePsm1AuthCodeSignature.Status)"
+                    $ModulePsd1AuthCodeSignature.Status | Should -Be "Valid"
+                    $ModulePsm1AuthCodeSignature.Status | Should -Be "Valid"
+                  }
+              }
+            }
+
+  - ${{ if eq(parameters.Pack, true) }}:
+      - task: PowerShell@2
+        displayName: Pack Workload Modules
+        inputs:
+          targetType: inline
+          pwsh: true
+          script: |
+            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)

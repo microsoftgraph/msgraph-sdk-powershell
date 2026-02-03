@@ -1,0 +1,1 @@
+Gets global configurations that apply to the SDK. For example, check if Web Account Manager (WAM) support has been enabled.

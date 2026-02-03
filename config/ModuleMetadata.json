@@ -1,12 +1,14 @@
 {
+  "assemblyOriginatorKeyFile": "35MSSharedLib1024.snk",
   "authors": "Microsoft",
-  "owners": "Microsoft",
-  "description": "Microsoft Graph PowerShell module",
-  "requireLicenseAcceptance": "true",
   "copyright": "© Microsoft Corporation. All rights reserved.",
+  "description": "Microsoft Graph PowerShell module",
+  "iconUri": "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/docs/images/graph_color256.png",
   "licenseUri": "https://aka.ms/devservicesagreement",
+  "owners": "Microsoft",
   "projectUri": "https://github.com/microsoftgraph/msgraph-sdk-powershell",
-  "iconUri": "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png",
+  "releaseNotes": "See https://aka.ms/GraphPowerShell-Release.",
+  "requireLicenseAcceptance": "true",
   "tags": [
     "MicrosoftGraph",
     "Microsoft",
@@ -18,9 +20,22 @@
     "AzureAD",
     "SharePoint",
     "Intune",
-    "AzureAutomationNotSupported"
+    "AzureAutomationNotSupported",
+    "PSModule",
+    "PSIncludes_Cmdlet"
   ],
-  "releaseNotes": "See https://aka.ms/GraphPowerShell-Release.",
-  "assemblyOriginatorKeyFile": "35MSSharedLib1024.snk",
-  "version": "1.7.0"
+  "versions": {
+    "authentication": {
+      "prerelease": "",
+      "version": "2.35.0"
+    },
+    "beta": {
+      "prerelease": "",
+      "version": "2.35.0"
+    },
+    "v1.0": {
+      "prerelease": "",
+      "version": "2.35.0"
+    }
+  }
 }

@@ -37,6 +37,14 @@ function Set-NuSpecValuesFromManifest(
         Set-Dependencies -XmlDocument $XmlDocument -MetadataElement $MetadataElement -Dependencies $Manifest["dependencies"]
         $Manifest.Remove("dependencies")
 
+        if ($Manifest["prerelease"]) {
+            Set-ElementValue -XmlDocument $XmlDocument -MetadataElement $MetadataElement -ElementName "version" -ElementValue "$($Manifest["version"])-$($Manifest["prerelease"])"
+        } else {
+            Set-ElementValue -XmlDocument $XmlDocument -MetadataElement $MetadataElement -ElementName "version" -ElementValue $Manifest["version"]
+        }
+        $Manifest.Remove("version")
+        $Manifest.Remove("prerelease")
+
         Set-ElementValue -XmlDocument $XmlDocument -MetadataElement $MetadataElement -ElementName "projectUrl" -ElementValue $Manifest["projectUri"]
         $Manifest.Remove("projectUri")
 
@@ -58,10 +66,11 @@ function Set-NuSpecValuesFromManifest(
 function Set-ElementValue(
     [System.Xml.XmlDocument] $XmlDocument,
     [System.Xml.XmlElement] $MetadataElement,
-    [string] $ElementName, [string] $ElementValue) {
+    [string] $ElementName,
+    [string] $ElementValue) {
     if(-not $MetadataElement[$ElementName]){
         $NewElement = $XmlDocument.CreateElement($ElementName, $XmlDocument.DocumentElement.NamespaceURI)
-        $MetadataElement.AppendChild($NewElement)
+        $MetadataElement.AppendChild($NewElement) | Out-Null
     }
     $MetadataElement[$ElementName].InnerText = $ElementValue
 }
@@ -72,7 +81,7 @@ function Set-Dependencies(
     [hashtable[]] $Dependencies) {
     if(-not $MetadataElement["dependencies"]){
         $NewDependenciesElement = $XmlDocument.CreateElement("dependencies", $XmlDocument.DocumentElement.NamespaceURI)
-        $MetadataElement.AppendChild($NewDependenciesElement)
+        $MetadataElement.AppendChild($NewDependenciesElement) | Out-Null
     } else {
         $MetadataElement["dependencies"].RemoveAll()   
     }
@@ -80,9 +89,24 @@ function Set-Dependencies(
     foreach($Dependency in $Dependencies){
         $NewDependencyElement = $XmlDocument.CreateElement("dependency", $XmlDocument.DocumentElement.NamespaceURI)
         $NewDependencyElement.SetAttribute("id", $Dependency.ModuleName)
-        $NewDependencyElement.SetAttribute("version", $Dependency.ModuleVersion ?? $Dependency.RequiredVersion)
+        if ($Dependency.ModuleVersion) {
+            $FullVersion = $Dependency.PreRelease ? "$($Dependency.ModuleVersion)-$($Dependency.PreRelease)" : $Dependency.ModuleVersion
+            $NewDependencyElement.SetAttribute("version", $FullVersion)
+        } else {
+            $FullVersion = $Dependency.PreRelease ? "$($Dependency.RequiredVersion)-$($Dependency.PreRelease)" : $Dependency.RequiredVersion
+            $NewDependencyElement.SetAttribute("version", "[$FullVersion]")
+        }
 
-        $MetadataElement["dependencies"].AppendChild($NewDependencyElement)
+        $MetadataElement["dependencies"].AppendChild($NewDependencyElement) | Out-Null
+    }
+}
+
+function Remove-Element(
+    [System.Xml.XmlDocument] $XmlDocument,
+    [System.Xml.XmlElement] $MetadataElement,
+    [string] $ElementName) {
+    if($MetadataElement[$ElementName]){
+        $MetadataElement.RemoveChild($MetadataElement[$ElementName])
     }
 }
 

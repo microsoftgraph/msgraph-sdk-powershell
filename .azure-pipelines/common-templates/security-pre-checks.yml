@@ -1,0 +1,17 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+steps:
+  - task: CredScan@3
+    displayName: "Run CredScan"
+    inputs:
+      debugMode: false
+      toolMajorVersion: V2
+      scanFolder: '$(Build.SourcesDirectory)/src'
+      suppressionsFile: $(System.DefaultWorkingDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
+
+  - task: PoliCheck@2
+    displayName: "Run PoliCheck"
+    inputs:
+      inputType: CmdLine
+      cmdLineArgs: '/F:$(Build.SourcesDirectory)/src /T:9 /Sev:"1|2" /PE:1|2|3|4 /O:poli_result_src.xml'
+      optionsUEPATH: $(System.DefaultWorkingDirectory)/.azure-pipelines/config/policheck/policheck-exclusions.xml

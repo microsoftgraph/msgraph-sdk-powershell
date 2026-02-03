@@ -1,0 +1,35 @@
+{
+  "New-MgGroup+[NoContext]+ShouldCreateNewGroup+$POST+https://graph.microsoft.com/v1.0/groups+1": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/v1.0/groups",
+      "Content": "{\r\n  \"displayName\": \"new-mggroup-test\",\r\n  \"mailEnabled\": false,\r\n  \"mailNickname\": \"unused\",\r\n  \"securityEnabled\": true\r\n}",
+      "isContentBase64": false,
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "123" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "86476695-f973-44df-8964-2a53227404ab" ],
+        "client-request-id": [ "aeceaf2b-98af-4fc0-a276-577a2e182727" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF0000749D\"}}" ],
+        "WWW-Authenticate": [ "Bearer realm=\"\", authorization_uri=\"https://login.microsoftonline.com/common/oauth2/authorize\", client_id=\"00000003-0000-0000-c000-000000000000\"" ],
+        "Date": [ "Mon, 19 Jun 2023 23:03:34 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Encoding": [ "gzip" ]
+      },
+      "Content": "{\r\n    \"@odata.context\": \"https://graph.microsoft.com/v1.0/$metadata#groups/$entity\",\r\n    \"id\": \"02bd9fd6-8f93-4758-87c3-1fb73740a315\",\r\n    \"displayName\": \"new-mggroup-test\",\r\n    \"groupTypes\": [\r\n        \"Unified\"\r\n    ],\r\n    \"mailEnabled\": false,\r\n    \"mailNickname\": \"unused\",\r\n    \"securityEnabled\": true\r\n}",
+      "isContentBase64": false
+    }
+  }
+}

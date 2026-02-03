@@ -1,0 +1,1 @@
+Removes Microsoft Graph environment to the settings file

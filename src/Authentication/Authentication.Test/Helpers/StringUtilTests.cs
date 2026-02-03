@@ -1,14 +1,14 @@
-﻿namespace Microsoft.Graph.Authentication.Test.Helpers
+﻿
+using System.Collections;
+using System.Collections.Generic;
+using System.Management.Automation;
+
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+
+using Xunit;
+
+namespace Microsoft.Graph.Authentication.Test.Helpers
 {
-
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Management.Automation;
-
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-
-    using Xunit;
-
     public class StringUtilTests
     {
         private const string TestJsonArray = "{\"@odata.context\": \"https://graph.microsoft.com/v1.0/$metadata#users\"," + "\"value\": [{\"id\": \"6e7b768e-07e2-4810-8459-485f84f8f204\"},{\"id\": \"87d349ed-44d7-43e1-9a83-5f2406dee5bd\"}]}";

@@ -1,25 +1,24 @@
+using Microsoft.Graph.PowerShell.Authentication.Handlers;
+using System;
+using System.Linq;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using Xunit;
+
 namespace Microsoft.Graph.Authentication.Test
 {
-    using Microsoft.Graph.PowerShell.Authentication.Handlers;
-    using System;
-    using System.Linq;
-    using System.Net.Http;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Xunit;
     public class ODataQueryOptionsHandlerTests : IDisposable
     {
-        private HttpMessageInvoker _invoker;
-        private FakeSuccessHandler _fakeSuccessHandler;
-        private ODataQueryOptionsHandler _graphODataHandler;
-        private string _randomGuid;
+        private readonly HttpMessageInvoker _invoker;
+        private readonly FakeSuccessHandler _fakeSuccessHandler;
+        private readonly ODataQueryOptionsHandler _graphODataHandler;
 
         public ODataQueryOptionsHandlerTests()
         {
             this._fakeSuccessHandler = new FakeSuccessHandler();
-            this._graphODataHandler = new ODataQueryOptionsHandler(_fakeSuccessHandler);
+            this._graphODataHandler = new ODataQueryOptionsHandler(new HttpVersionHandler(_fakeSuccessHandler));
             this._invoker = new HttpMessageInvoker(_graphODataHandler);
-            this._randomGuid = Guid.NewGuid().ToString();
         }
 
         public void Dispose()
@@ -65,7 +64,7 @@ namespace Microsoft.Graph.Authentication.Test
         }
 
         [Fact]
-        public async Task ShouldSkipWhenGraphVersionIsBeta()
+        public async Task ShouldAddDollarSignWhenGraphVersionIsBeta()
         {
             // Arrange
             string topParam = "$top=5";
@@ -79,9 +78,15 @@ namespace Microsoft.Graph.Authentication.Test
 
             // Act
             var response = await this._invoker.SendAsync(httpRequestMessage, new CancellationToken());
+            var sentRequestQuery = response.RequestMessage.RequestUri.Query;
 
             // Assert
-            Assert.Equal(requestUrl.ToString(), response.RequestMessage.RequestUri.ToString());
+            Assert.NotEqual(requestUrl.Query, sentRequestQuery);
+            Assert.Contains(topParam, sentRequestQuery);
+            Assert.Contains(orderbyParam, sentRequestQuery);
+            Assert.Contains($"${selectParam}", sentRequestQuery);
+            Assert.Contains($"${filterParam}", sentRequestQuery);
+            Assert.Contains($"${expandParam}", sentRequestQuery);
             Assert.Equal(5, response.RequestMessage.RequestUri.Query.Split('&').Length);
         }
 

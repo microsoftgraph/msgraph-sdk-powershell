@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: DeviceManagement.Functions
   version: v1.0
@@ -6,73 +6,94 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
-  /deviceManagement/applePushNotificationCertificate/microsoft.graph.downloadApplePushNotificationCertificateSigningRequest():
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
-      description: Download Apple push notification certificate signing request
-      operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: string
-                nullable: true
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
     get:
       tags:
-        - deviceManagement.Functions
+        - deviceManagement.deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
       description: Retrieves the effective permissions of the currently authenticated user
-      operationId: deviceManagement_getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermission
       parameters:
         - name: scope
           in: path
-          description: 'Usage: scope={scope}'
+          description: 'Usage: scope=''{scope}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.rolePermission'
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.rolePermission'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/microsoft.graph.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices():
+    get:
+      tags:
+        - deviceManagement.deviceManagement.Functions
+      summary: Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+      operationId: deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevice
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
   '/deviceManagement/microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName=''{domainName}'')':
     get:
       tags:
-        - deviceManagement.Functions
+        - deviceManagement.deviceManagement.Functions
       summary: Invoke function verifyWindowsEnrollmentAutoDiscovery
       operationId: deviceManagement_verifyWindowsEnrollmentAutoDiscovery
       parameters:
         - name: domainName
           in: path
-          description: 'Usage: domainName={domainName}'
+          description: 'Usage: domainName=''{domainName}'''
           required: true
+          style: simple
           schema:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -90,6 +111,81 @@ components:
       additionalProperties:
         type: object
       description: Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
+    microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary:
+      title: userExperienceAnalyticsWorkFromAnywhereDevicesSummary
+      type: object
+      properties:
+        autopilotDevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary'
+        cloudIdentityDevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsCloudIdentityDevicesSummary'
+        cloudManagementDevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary'
+        coManagedDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Total number of co-managed devices. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        devicesNotAutopilotRegistered:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        devicesWithoutAutopilotProfileAssigned:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of intune devices not autopilot profile assigned. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        devicesWithoutCloudIdentity:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of devices that are not cloud identity. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        intuneDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        tenantAttachDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Total count of tenant attach devices. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        totalDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The total count of devices. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        unsupportedOSversionDevices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of Windows 10 devices that have unsupported OS versions. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        windows10Devices:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of windows 10 devices. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+        windows10DevicesSummary:
+          $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary'
+        windows10DevicesWithoutTenantAttach:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of windows 10 devices that are Intune and co-managed. Read-only. Valid values -2147483648 to 2147483647
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics Work From Anywhere metrics devices summary.
     microsoft.graph.resourceAction:
       title: resourceAction
       type: object
@@ -109,16 +205,92 @@ components:
       additionalProperties:
         type: object
       description: Set of allowed and not allowed actions for a resource.
-    odata.error:
+    microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary:
+      title: userExperienceAnalyticsAutopilotDevicesSummary
+      type: object
+      properties:
+        devicesNotAutopilotRegistered:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of intune devices that are not autopilot registerd. Read-only.
+          format: int32
+        devicesWithoutAutopilotProfileAssigned:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of intune devices not autopilot profile assigned. Read-only.
+          format: int32
+        totalWindows10DevicesWithoutTenantAttached:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of windows 10 devices that are Intune and co-managed. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics summary of Devices not windows autopilot ready.
+    microsoft.graph.userExperienceAnalyticsCloudIdentityDevicesSummary:
+      title: userExperienceAnalyticsCloudIdentityDevicesSummary
+      type: object
+      properties:
+        deviceWithoutCloudIdentityCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of devices that are not cloud identity. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics work from anywhere cloud identity devices summary.
+    microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary:
+      title: userExperienceAnalyticsCloudManagementDevicesSummary
+      type: object
+      properties:
+        coManagedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Total number of  co-managed devices. Read-only.
+          format: int32
+        intuneDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of intune devices that are not autopilot registerd. Read-only.
+          format: int32
+        tenantAttachDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Total count of tenant attach devices. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience work from anywhere Cloud management devices summary.
+    microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary:
+      title: userExperienceAnalyticsWindows10DevicesSummary
+      type: object
+      properties:
+        unsupportedOSversionDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The count of Windows 10 devices that have unsupported OS versions. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+      description: The user experience analytics work from anywhere Windows 10 devices summary.
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -128,20 +300,19 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
-        innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -153,15 +324,65 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      style: form
+      explode: false
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      style: form
+      explode: false
+      schema:
+        type: boolean
   securitySchemes:
     azureaadv2:
       type: oauth2

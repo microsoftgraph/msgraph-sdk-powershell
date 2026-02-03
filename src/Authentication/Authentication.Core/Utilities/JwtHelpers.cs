@@ -2,16 +2,16 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.PowerShell.Authentication.Helpers
-{
-    using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication.Core;
-    using Microsoft.Identity.Client;
-    using Newtonsoft.Json;
-    using System;
-    using System.Globalization;
-    using System.IdentityModel.Tokens.Jwt;
+using Microsoft.Graph.PowerShell.Authentication.Core.Models;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using Microsoft.Identity.Client;
+using System;
+using System.Globalization;
+using System.Text;
+using System.Text.Json;
 
+namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
+{
     /// <summary>
     /// A JwtHelpers class.
     /// </summary>
@@ -25,24 +25,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <param name="authContext">An <see cref="IAuthContext"/> to store JWT claims in.</param>
         internal static void DecodeJWT(string jwToken, IAccount account, ref IAuthContext authContext)
         {
-            var jwtPayload = JwtHelpers.DecodeToObject<Models.JwtPayload>(jwToken);
-            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
+            var jwtPayload = DecodeToObject<JwtPayload>(jwToken);
+            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken &&
+                jwtPayload != null &&
+                jwtPayload.Exp <= ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
             {
-                if (jwtPayload == null)
-                {
-                    throw new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.InvalidUserProvidedToken,
-                            "AccessToken"));
-                }
-
-                if (jwtPayload.Exp <= JwtHelpers.ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
-                {
-                    throw new Exception(string.Format(
+                // Throw exception if access token is expired or is about to expire with a 5 minutes buffer.
+                throw new Exception(string.Format(
                             CultureInfo.CurrentCulture,
                             ErrorConstants.Message.ExpiredUserProvidedToken,
                             "AccessToken"));
-                }
             }
 
             authContext.ClientId = jwtPayload?.Appid ?? authContext.ClientId;
@@ -50,22 +42,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             authContext.TenantId = jwtPayload?.Tid ?? account?.HomeAccountId?.TenantId;
             authContext.AppName = jwtPayload?.AppDisplayname;
             authContext.Account = jwtPayload?.Upn ?? account?.Username;
-        }
-
-        /// <summary>
-        /// Decodes a JWT token by extracting claims from the payload.
-        /// </summary>
-        /// <param name="jwToken">A JWT string.</param>
-        internal static string Decode(string jwToken)
-        {
-            JwtSecurityTokenHandler jwtHandler = new JwtSecurityTokenHandler();
-            if (jwtHandler.CanReadToken(jwToken))
-            {
-                JwtSecurityToken token = jwtHandler.ReadJwtToken(jwToken);
-                return token.Payload.SerializeToJson();
-            } else {
-                return null;
-            }
         }
 
         /// <summary>
@@ -77,20 +53,49 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             try
             {
-                string decodedJWT = Decode(jwtString);
-                if (decodedJWT == null)
-                    return default(T);
-                return JsonConvert.DeserializeObject<T>(decodedJWT);
+                var decodedJWT = DecodeJWT(jwtString);
+                if (string.IsNullOrWhiteSpace(decodedJWT?.Payload))
+                    return default;
+                return JsonSerializer.Deserialize<T>(decodedJWT.Payload);
             }
             catch (Exception ex)
             {
-                throw new AuthenticationException(
-                        new Error
-                        {
-                            Code = ErrorConstants.Codes.InvalidJWT,
-                            Message = ErrorConstants.Message.InvalidJWT
-                        }, ex);
+                throw new AuthenticationException(ErrorConstants.Message.InvalidJWT, ex);
             }
+        }
+
+        internal static JwtContent DecodeJWT(string jwtString)
+        {
+            if (string.IsNullOrWhiteSpace(jwtString))
+                throw new ArgumentException("Invalid JSON Web Token (JWT).");
+            // See JWT RFC spec: https://tools.ietf.org/html/rfc7519.
+            if (!jwtString.Contains(".") || !jwtString.StartsWith("eyJ", StringComparison.OrdinalIgnoreCase))
+                return null; // Personal account access token are not JWT and cannot be decoded. See https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2386.
+
+            var jwtSegments = jwtString.Split('.');
+
+            if (jwtSegments.Length <= 1)
+                throw new ArgumentException("Invalid JWT. JWT does not have a payload.");
+
+            // Header
+            var jwtHeader = DecodeJwtSegment(jwtSegments[0]);
+
+            // Payload
+            var jwtPayload = DecodeJwtSegment(jwtSegments[1]);
+
+            return new JwtContent { Header = jwtHeader, Payload = jwtPayload };
+        }
+
+        private static string DecodeJwtSegment(string jwtSegment)
+        {
+            jwtSegment = jwtSegment.Replace('-', '+').Replace('_', '/');
+            // Fixes padding by adding '=' until header length modulus 4 equals 0.
+            while ((jwtSegment.Length % 4) != 0)
+                jwtSegment += "=";
+
+            var jwtTokenBytes = Convert.FromBase64String(jwtSegment);
+            var jwtSegmentInJson = Encoding.UTF8.GetString(jwtTokenBytes);
+            return jwtSegmentInJson;
         }
 
         /// <summary>
