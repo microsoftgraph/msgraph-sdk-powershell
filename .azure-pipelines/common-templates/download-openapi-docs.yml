@@ -8,8 +8,6 @@ parameters:
     type: string
   - name: BuildAgent
     displayName: Build Agent
-  - name: SkipForceRefresh
-    type: string
   - name: SkipOpenAPIDocsDownload
     type: boolean
     default: false
@@ -27,11 +25,18 @@ steps:
     inputs:
       targetType: inline
       script: |
-        $branch = "{0}/{1}" -f "$(Branch)", (Get-Date -Format yyyyMMddHHmm)
+        if ('${{ parameters.SkipOpenAPIDocsDownload }}' -eq 'True') {
+          $branch = ""
+          Write-Host "Skipping branch creation - using current branch"
+        } else {
+          $branch = "{0}/{1}" -f "$(Branch)", (Get-Date -Format yyyyMMddHHmm)
+          Write-Host "Computed weekly branch: $branch"
+        }
         Write-Host "##vso[task.setvariable variable=WeeklyBranch;isOutput=true]$branch"
 
   - task: Bash@3
     displayName: "Create weekly branch"
+    condition: eq('${{ parameters.SkipOpenAPIDocsDownload }}', false)
     inputs:
       targetType: inline
       script: |
@@ -46,7 +51,6 @@ steps:
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
-      arguments: -SkipForceRefresh:$$(SkipForceRefresh)
       pwsh: true
 
   - task: PowerShell@2
@@ -55,7 +59,7 @@ steps:
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
-      arguments: -BetaGraphVersion -SkipForceRefresh:$$(SkipForceRefresh)
+      arguments: -BetaGraphVersion
       pwsh: true
 
   - task: PowerShell@2
@@ -106,7 +110,7 @@ steps:
 
   - task: Bash@3
     displayName: Commit downloaded files
-    condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false))
     env:
       GITHUB_TOKEN: $(GITHUB_TOKEN)
     inputs:
