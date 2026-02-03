@@ -3545,6 +3545,108 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onPremisesSyncBehavior':
+    get:
+      tags:
+        - users.onPremisesSyncBehavior
+      summary: Get onPremisesSyncBehavior from users
+      operationId: user_GetOnPremisesSyncBehavior
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.onPremisesSyncBehavior
+      summary: Update the navigation property onPremisesSyncBehavior in users
+      operationId: user_UpdateOnPremisesSyncBehavior
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onPremisesSyncBehavior
+      summary: Delete navigation property onPremisesSyncBehavior for users
+      operationId: user_DeleteOnPremisesSyncBehavior
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook':
     get:
       tags:
@@ -7093,6 +7195,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get windows from users
+      description: The Windows settings of the user stored in the cloud.
       operationId: user.setting_ListWindow
       parameters:
         - name: user-id
@@ -7183,6 +7286,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get windows from users
+      description: The Windows settings of the user stored in the cloud.
       operationId: user.setting_GetWindow
       parameters:
         - name: user-id
@@ -7598,6 +7702,698 @@ paths:
         - users.userSettings
       summary: Get the number of the resource
       operationId: user.setting.window_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/settings/workHoursAndLocations':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get workHoursAndLocations from users
+      description: The user's settings for work hours and location preferences for scheduling and availability management.
+      operationId: user.setting_GetWorkHoursAndLocation
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workHoursAndLocationsSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property workHoursAndLocations in users
+      operationId: user.setting_UpdateWorkHoursAndLocation
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.workHoursAndLocationsSetting'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workHoursAndLocationsSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/workHoursAndLocations/microsoft.graph.occurrencesView(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
+    get:
+      tags:
+        - users.userSettings
+      summary: Invoke function occurrencesView
+      description: Get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/workhoursandlocationssetting-occurrencesview?view=graph-rest-1.0
+      operationId: user.setting.workHoursAndLocation_occurrencesView
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime=''{startDateTime}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime=''{endDateTime}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of workPlanOccurrence
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/settings/workHoursAndLocations/occurrences':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get occurrences from users
+      description: Collection of work plan occurrences.
+      operationId: user.setting.workHoursAndLocation_ListOccurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.workPlanOccurrenceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.userSettings
+      summary: Create new navigation property to occurrences for users
+      operationId: user.setting.workHoursAndLocation_CreateOccurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/workHoursAndLocations/occurrences/{workPlanOccurrence-id}':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get occurrences from users
+      description: Collection of work plan occurrences.
+      operationId: user.setting.workHoursAndLocation_GetOccurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: workPlanOccurrence-id
+          in: path
+          description: The unique identifier of workPlanOccurrence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workPlanOccurrence
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property occurrences in users
+      operationId: user.setting.workHoursAndLocation_SetOccurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: workPlanOccurrence-id
+          in: path
+          description: The unique identifier of workPlanOccurrence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workPlanOccurrence
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userSettings
+      summary: Delete navigation property occurrences for users
+      operationId: user.setting.workHoursAndLocation_DeleteOccurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: workPlanOccurrence-id
+          in: path
+          description: The unique identifier of workPlanOccurrence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workPlanOccurrence
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/workHoursAndLocations/occurrences/$count':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get the number of the resource
+      operationId: user.setting.workHoursAndLocation.occurrence_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/settings/workHoursAndLocations/occurrences/microsoft.graph.setCurrentLocation':
+    post:
+      tags:
+        - users.userSettings
+      summary: Invoke action setCurrentLocation
+      description: Update your work location for the current day or current active segment. This action allows you to quickly update your work location without modifying individual occurrences.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/workplanoccurrence-setcurrentlocation?view=graph-rest-1.0
+      operationId: user.setting.workHoursAndLocation.occurrence_setCurrentLocation
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updateScope:
+                  $ref: '#/components/schemas/microsoft.graph.workLocationUpdateScope'
+                workLocationType:
+                  $ref: '#/components/schemas/microsoft.graph.workLocationType'
+                placeId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/settings/workHoursAndLocations/recurrences':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get recurrences from users
+      description: Collection of recurring work plans defined by the user.
+      operationId: user.setting.workHoursAndLocation_ListRecurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.workPlanRecurrenceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.userSettings
+      summary: Create new navigation property to recurrences for users
+      operationId: user.setting.workHoursAndLocation_CreateRecurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.workPlanRecurrence'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workPlanRecurrence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/workHoursAndLocations/recurrences/{workPlanRecurrence-id}':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get recurrences from users
+      description: Collection of recurring work plans defined by the user.
+      operationId: user.setting.workHoursAndLocation_GetRecurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: workPlanRecurrence-id
+          in: path
+          description: The unique identifier of workPlanRecurrence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workPlanRecurrence
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workPlanRecurrence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property recurrences in users
+      operationId: user.setting.workHoursAndLocation_SetRecurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: workPlanRecurrence-id
+          in: path
+          description: The unique identifier of workPlanRecurrence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workPlanRecurrence
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.workPlanRecurrence'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workPlanRecurrence'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userSettings
+      summary: Delete navigation property recurrences for users
+      operationId: user.setting.workHoursAndLocation_DeleteRecurrence
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: workPlanRecurrence-id
+          in: path
+          description: The unique identifier of workPlanRecurrence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workPlanRecurrence
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/workHoursAndLocations/recurrences/$count':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get the number of the resource
+      operationId: user.setting.workHoursAndLocation.recurrence_GetCount
       parameters:
         - name: user-id
           in: path
@@ -11926,6 +12722,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
               description: The user's activities across devices. Read-only. Nullable.
               x-ms-navigationProperty: true
+            adhocCalls:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.adhocCall'
+              description: Ad hoc calls associated with the user. Read-only. Nullable.
+              x-ms-navigationProperty: true
             agreementAcceptances:
               type: array
               items:
@@ -12092,6 +12894,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
               description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
               x-ms-navigationProperty: true
+            onPremisesSyncBehavior:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSyncBehavior'
             outlook:
               $ref: '#/components/schemas/microsoft.graph.outlookUser'
             ownedDevices:
@@ -12236,7 +13040,7 @@ components:
               nullable: true
             disabledByMicrosoftStatus:
               type: string
-              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).'
+              description: 'Specifies whether Microsoft has disabled the registered application. The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).'
               nullable: true
             displayName:
               type: string
@@ -12307,7 +13111,7 @@ components:
               description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).'
             servicePrincipalType:
               type: string
-              description: 'Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Microsoft Entra ID internally. The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens aren''t issued for the service principal.ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but can''t be updated or modified directly.Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. A legacy service principal can have credentials, service principal names, reply URLs, and other properties that are editable by an authorized user, but doesn''t have an associated app registration. The appId value doesn''t associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.SocialIdp - For internal use.'
+              description: 'Identifies whether the service principal represents an application, a managed identity, or a legacy application. This property is set by Microsoft Entra ID internally. The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens aren''t issued for the service principal.ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but can''t be updated or modified directly.Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. A legacy service principal can have credentials, service principal names, reply URLs, and other properties that are editable by an authorized user, but doesn''t have an associated app registration. The appId value doesn''t associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.ServiceIdentity - A service principal that represents an agent identity.SocialIdp - For internal use.'
               nullable: true
             signInAudience:
               type: string
@@ -12944,7 +13748,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. The possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             acceptedSenders:
               type: array
@@ -13110,6 +13914,16 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.onPremisesSyncBehavior:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesSyncBehavior
+          type: object
+          properties:
+            isCloudManaged:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13256,7 +14070,7 @@ components:
               nullable: true
             deviceOwnership:
               type: string
-              description: 'Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.'
+              description: 'Ownership of the device. Intune sets this property. The possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -13275,7 +14089,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
-              description: 'Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.'
+              description: 'Enrollment type of the device. Intune sets this property. The possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.'
               nullable: true
             isCompliant:
               type: boolean
@@ -13295,7 +14109,7 @@ components:
               nullable: true
             managementType:
               type: string
-              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
+              description: 'The management channel of the device. This property is set by Intune. The possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
@@ -13453,7 +14267,7 @@ components:
               nullable: true
             disabledByMicrosoftStatus:
               type: string
-              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).'
+              description: 'Specifies whether Microsoft has disabled the registered application. The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).'
               nullable: true
             displayName:
               type: string
@@ -13641,7 +14455,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              description: The Windows settings of the user stored in the cloud.
               x-ms-navigationProperty: true
+            workHoursAndLocations:
+              $ref: '#/components/schemas/microsoft.graph.workHoursAndLocationsSetting'
           additionalProperties:
             type: object
     microsoft.graph.userInsightsSettings:
@@ -13769,6 +14586,88 @@ components:
             payload:
               type: string
               description: Base64-encoded JSON setting value.
+          additionalProperties:
+            type: object
+    microsoft.graph.workHoursAndLocationsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workHoursAndLocationsSetting
+          type: object
+          properties:
+            maxSharedWorkLocationDetails:
+              $ref: '#/components/schemas/microsoft.graph.maxWorkLocationDetails'
+            occurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+              description: Collection of work plan occurrences.
+              x-ms-navigationProperty: true
+            recurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workPlanRecurrence'
+              description: Collection of recurring work plans defined by the user.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.workPlanOccurrence:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workPlanOccurrence
+          type: object
+          properties:
+            end:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            placeId:
+              type: string
+              description: Identifier of a place from the Microsoft Graph Places Directory API. Only applicable when workLocationType is set to office.
+              nullable: true
+            recurrenceId:
+              type: string
+              description: The identifier of the parent recurrence pattern that generated this occurrence. The value is null for time-off occurrences because they don't have a parent recurrence.
+              nullable: true
+            start:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            timeOffDetails:
+              $ref: '#/components/schemas/microsoft.graph.timeOffDetails'
+            workLocationType:
+              $ref: '#/components/schemas/microsoft.graph.workLocationType'
+          additionalProperties:
+            type: object
+    microsoft.graph.workLocationUpdateScope:
+      title: workLocationUpdateScope
+      enum:
+        - currentSegment
+        - currentDay
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workLocationType:
+      title: workLocationType
+      enum:
+        - unspecified
+        - office
+        - remote
+        - timeOff
+        - unknownFutureValue
+      type: string
+    microsoft.graph.workPlanRecurrence:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workPlanRecurrence
+          type: object
+          properties:
+            end:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            placeId:
+              type: string
+              description: Identifier of a place from the Microsoft Graph Places Directory API. Only applicable when workLocationType is set to office.
+              nullable: true
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+            start:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            workLocationType:
+              $ref: '#/components/schemas/microsoft.graph.workLocationType'
           additionalProperties:
             type: object
     microsoft.graph.todo:
@@ -14430,6 +15329,26 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.adhocCall:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: adhocCall
+          type: object
+          properties:
+            recordings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of a call. Read-only.
+              x-ms-navigationProperty: true
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              description: The transcripts of a call. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.agreementAcceptance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14576,7 +15495,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
-              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. The possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             canEdit:
               type: boolean
               description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.'
@@ -16315,7 +17234,7 @@ components:
               nullable: true
             permissionType:
               type: string
-              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
+              description: 'The type of permission. The possible values are: Application, Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
@@ -16366,6 +17285,8 @@ components:
               readOnly: true
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+            workLocation:
+              $ref: '#/components/schemas/microsoft.graph.userWorkLocation'
           additionalProperties:
             type: object
     microsoft.graph.scopedRoleMembership:
@@ -16777,7 +17698,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetDeviceGroup'
-              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol. <br/<Supports $expand.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -16868,16 +17789,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.phoneType'
       additionalProperties:
         type: object
-    microsoft.graph.onPremisesSyncBehavior:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: onPremisesSyncBehavior
-          type: object
-          properties:
-            isCloudManaged:
-              type: boolean
-          additionalProperties:
-            type: object
     microsoft.graph.officeGraphInsights:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17632,6 +18543,51 @@ components:
         - backup
         - unknownFutureValue
       type: string
+    microsoft.graph.maxWorkLocationDetails:
+      title: maxWorkLocationDetails
+      enum:
+        - unknown
+        - none
+        - approximate
+        - specific
+        - unknownFutureValue
+      type: string
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.timeOffDetails:
+      title: timeOffDetails
+      type: object
+      properties:
+        isAllDay:
+          type: boolean
+          description: Indicates whether the time-off entry spans the entire day.
+        subject:
+          type: string
+          description: The subject or reason for the time-off entry.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.patternedRecurrence:
+      title: patternedRecurrence
+      type: object
+      properties:
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        range:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
+      additionalProperties:
+        type: object
     microsoft.graph.wellknownListName:
       title: wellknownListName
       enum:
@@ -17652,19 +18608,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
       additionalProperties:
         type: object
-    microsoft.graph.dateTimeTimeZone:
-      title: dateTimeTimeZone
-      type: object
-      properties:
-        dateTime:
-          type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
-        timeZone:
-          type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.importance:
       title: importance
       enum:
@@ -17672,16 +18615,6 @@ components:
         - normal
         - high
       type: string
-    microsoft.graph.patternedRecurrence:
-      title: patternedRecurrence
-      type: object
-      properties:
-        pattern:
-          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
-        range:
-          $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
-      additionalProperties:
-        type: object
     microsoft.graph.taskStatus:
       title: taskStatus
       enum:
@@ -18006,6 +18939,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.workPlanOccurrenceCollectionResponse:
+      title: Collection of workPlanOccurrence
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.workPlanOccurrence'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workPlanRecurrenceCollectionResponse:
+      title: Collection of workPlanRecurrence
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.workPlanRecurrence'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.todoTaskListCollectionResponse:
       title: Collection of todoTaskList
       type: object
@@ -18201,6 +19160,97 @@ components:
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
+          additionalProperties:
+            type: object
+    microsoft.graph.callRecording:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callRecording
+          type: object
+          properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this recording. Read-only.
+              nullable: true
+            content:
+              type: string
+              description: The content of the recording. Read-only.
+              format: base64url
+              nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            recordingContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the recording. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            callId:
+              type: string
+              description: The unique identifier for the call that is related to this transcript. Read-only.
+              nullable: true
+            content:
+              type: string
+              description: The content of the transcript. Read-only.
+              format: base64url
+              nullable: true
+            contentCorrelationId:
+              type: string
+              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            metadataContent:
+              type: string
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the transcript. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -18504,7 +19554,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
-              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. The possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
             emailAddress:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
@@ -21445,6 +22495,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            expiryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
             isEndToEndEncryptionEnabled:
               type: boolean
               description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
@@ -21463,10 +22519,20 @@ components:
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            meetingOptionsWebUrl:
+              type: string
+              description: Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+              nullable: true
+            meetingSpokenLanguageTag:
+              type: string
+              description: Specifies the spoken language used during the meeting for recording and transcription purposes.
+              nullable: true
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            sensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingSensitivityLabelAssignment'
             shareMeetingChatHistoryDefault:
               $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             subject:
@@ -21526,97 +22592,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
-    microsoft.graph.callRecording:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: callRecording
-          type: object
-          properties:
-            callId:
-              type: string
-              description: The unique identifier for the call that is related to this recording. Read-only.
-              nullable: true
-            content:
-              type: string
-              description: The content of the recording. Read-only.
-              format: base64url
-              nullable: true
-            contentCorrelationId:
-              type: string
-              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            meetingId:
-              type: string
-              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
-              nullable: true
-            meetingOrganizer:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            recordingContentUrl:
-              type: string
-              description: The URL that can be used to access the content of the recording. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.callTranscript:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: callTranscript
-          type: object
-          properties:
-            callId:
-              type: string
-              description: The unique identifier for the call that is related to this transcript. Read-only.
-              nullable: true
-            content:
-              type: string
-              description: The content of the transcript. Read-only.
-              format: base64url
-              nullable: true
-            contentCorrelationId:
-              type: string
-              description: The unique identifier that links the transcript with its corresponding recording. Read-only.
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
-              format: date-time
-              nullable: true
-            meetingId:
-              type: string
-              description: The unique identifier of the online meeting related to this transcript. Read-only.
-              nullable: true
-            meetingOrganizer:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            metadataContent:
-              type: string
-              description: The time-aligned metadata of the utterances in the transcript. Read-only.
-              format: base64url
-              nullable: true
-            transcriptContentUrl:
-              type: string
-              description: The URL that can be used to access the content of the transcript. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.personType:
       title: personType
       type: object
@@ -21846,6 +22821,20 @@ components:
           description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userWorkLocation:
+      title: userWorkLocation
+      type: object
+      properties:
+        placeId:
+          type: string
+          description: 'Identifier of the place, if applicable.'
+          nullable: true
+        source:
+          $ref: '#/components/schemas/microsoft.graph.workLocationSource'
+        workLocationType:
+          $ref: '#/components/schemas/microsoft.graph.workLocationType'
       additionalProperties:
         type: object
     microsoft.graph.identity:
@@ -22285,12 +23274,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
-      type: string
     microsoft.graph.recurrencePattern:
       title: recurrencePattern
       type: object
@@ -22356,6 +23339,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
       additionalProperties:
         type: object
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -22937,6 +23926,9 @@ components:
             displayName:
               type: string
               nullable: true
+            hasProtection:
+              type: boolean
+              nullable: true
             isDefault:
               type: boolean
               nullable: true
@@ -23516,6 +24508,8 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             analytics:
@@ -23852,7 +24846,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. The possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -23860,7 +24854,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. The possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -25592,6 +26586,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingSensitivityLabelAssignment:
+      title: onlineMeetingSensitivityLabelAssignment
+      type: object
+      properties:
+        sensitivityLabelId:
+          type: string
+          description: The ID of the sensitivity label that is applied to the Teams meeting.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingChatHistoryDefaultMode:
       title: meetingChatHistoryDefaultMode
       enum:
@@ -25836,6 +26840,15 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.workLocationSource:
+      title: workLocationSource
+      enum:
+        - none
+        - manual
+        - scheduled
+        - automatic
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -26168,13 +27181,13 @@ components:
           items:
             type: string
             nullable: true
-          description: 'The media (i.e., paper) colors supported by the printer.'
+          description: 'The media (for example, paper) colors supported by the printer.'
         mediaSizes:
           type: array
           items:
             type: string
             nullable: true
-          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+          description: 'The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. For the list of supported values, see mediaSizes values.'
         mediaTypes:
           type: array
           items:
@@ -26907,7 +27920,7 @@ components:
           properties:
             calculationMode:
               type: string
-              description: 'Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.'
+              description: 'Returns the calculation mode used in the workbook. The possible values are: Automatic, AutomaticExceptTables, Manual.'
           additionalProperties:
             type: object
     microsoft.graph.workbookComment:
@@ -26957,7 +27970,7 @@ components:
               description: Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
             type:
               type: string
-              description: 'The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.'
+              description: 'The type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.'
               nullable: true
             value:
               $ref: '#/components/schemas/microsoft.graph.Json'
@@ -27021,7 +28034,7 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'A constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'A constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
@@ -27938,7 +28951,7 @@ components:
               nullable: true
             role:
               type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
@@ -31273,6 +32286,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.windowsSettingInstanceCollectionResponse'
+    microsoft.graph.workPlanOccurrenceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.workPlanOccurrenceCollectionResponse'
+    microsoft.graph.workPlanRecurrenceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.workPlanRecurrenceCollectionResponse'
     microsoft.graph.todoTaskListCollectionResponse:
       description: Retrieved collection
       content:

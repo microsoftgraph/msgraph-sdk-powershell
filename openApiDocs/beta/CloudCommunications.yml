@@ -1210,6 +1210,194 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/communications/adhocCalls/microsoft.graph.getAllRecordings(userId=''@userId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
+    get:
+      tags:
+        - communications.adhocCall
+      summary: Invoke function getAllRecordings
+      operationId: communication.adhocCall_getAllRecording
+      parameters:
+        - name: userId
+          in: query
+          description: 'Usage: userId=''@userId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+            nullable: true
+        - name: startDateTime
+          in: query
+          description: 'Usage: startDateTime=@startDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: query
+          description: 'Usage: endDateTime=@endDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callRecording
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecording'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/communications/adhocCalls/microsoft.graph.getAllTranscripts(userId=''@userId'',startDateTime=@startDateTime,endDateTime=@endDateTime)':
+    get:
+      tags:
+        - communications.adhocCall
+      summary: Invoke function getAllTranscripts
+      operationId: communication.adhocCall_getAllTranscript
+      parameters:
+        - name: userId
+          in: query
+          description: 'Usage: userId=''@userId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+            nullable: true
+        - name: startDateTime
+          in: query
+          description: 'Usage: startDateTime=@startDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: query
+          description: 'Usage: endDateTime=@endDateTime'
+          style: form
+          explode: false
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callTranscript
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /communications/callRecords:
     get:
       tags:
@@ -12200,7 +12388,7 @@ paths:
       tags:
         - communications.presence
       summary: Invoke action setAutomaticLocation
-      description: 'Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn''t clear manual or scheduled signals.'
+      description: 'Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network and location agents, or OEM docking apps). It doesn''t clear manual or scheduled signals.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta
@@ -12240,7 +12428,7 @@ paths:
       tags:
         - communications.presence
       summary: Invoke action setManualLocation
-      description: Set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
+      description: Set the manual work location signal for a user. The explicit value chosen by a user or an authorized client overrides any automatically detected or scheduled working hours and location.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setmanuallocation?view=graph-rest-beta
@@ -14521,7 +14709,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from private chat meetings, channel meetings, ad hoc calls, including PSTN, 1:1, and group calls. Private channel meetings are not supported. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       operationId: user.onlineMeeting_ListRecording
       parameters:
         - name: user-id
@@ -14628,7 +14816,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from private chat meetings, channel meetings, ad hoc calls, including PSTN, 1:1, and group calls. Private channel meetings are not supported. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-beta
@@ -14782,7 +14970,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from private chat meetings, channel meetings, ad hoc calls, including PSTN, 1:1, and group calls. Private channel meetings are not supported. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-beta
@@ -15943,7 +16131,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported.  Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
+      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
@@ -16097,7 +16285,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported.  Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
+      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
@@ -16232,7 +16420,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported.  Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
+      description: 'Retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
@@ -17257,7 +17445,7 @@ paths:
       tags:
         - users.presence
       summary: Invoke action setAutomaticLocation
-      description: 'Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn''t clear manual or scheduled signals.'
+      description: 'Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network and location agents, or OEM docking apps). It doesn''t clear manual or scheduled signals.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta
@@ -17297,7 +17485,7 @@ paths:
       tags:
         - users.presence
       summary: Invoke action setManualLocation
-      description: Set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
+      description: Set the manual work location signal for a user. The explicit value chosen by a user or an authorized client overrides any automatically detected or scheduled working hours and location.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setmanuallocation?view=graph-rest-beta
@@ -17636,7 +17824,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.modality'
-              description: 'List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
+              description: 'List of all the modalities used in the call. The possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
             organizer:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             participants:
@@ -17710,7 +17898,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.modality'
-              description: 'List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
+              description: 'List of modalities present in the session. The possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -17916,7 +18104,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.modality'
-              description: 'The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.'
+              description: 'The list of active modalities. The possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.'
             answeredBy:
               $ref: '#/components/schemas/microsoft.graph.participantInfo'
             callbackUri:
@@ -17954,7 +18142,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.modality'
-              description: 'The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.'
+              description: 'The list of requested modalities. The possible values are: unknown, audio, video, videoBasedScreenSharing, data.'
             resultInfo:
               $ref: '#/components/schemas/microsoft.graph.resultInfo'
             ringingTimeoutInSeconds:
@@ -17968,7 +18156,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.routingPolicy'
-              description: 'This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.'
+              description: 'This property is applicable for peer to peer calls only. The possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.'
             source:
               $ref: '#/components/schemas/microsoft.graph.participantInfo'
             state:
@@ -18614,7 +18802,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
+              description: 'The list of meeting capabilities. The possible values are: questionAndAnswer,unknownFutureValue.'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -18781,7 +18969,7 @@ components:
               nullable: true
             role:
               type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
@@ -19556,7 +19744,7 @@ components:
       properties:
         placeId:
           type: string
-          description: Identifier of the place (when applicable).
+          description: 'Identifier of the place, if applicable.'
           nullable: true
         source:
           $ref: '#/components/schemas/microsoft.graph.workLocationSource'
@@ -19780,7 +19968,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
-              description: 'Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can''t be removed through a PATCH operation once added.'
+              description: 'Specifies whose identity is anonymized in the meeting. The possible values are: attendee. The attendee value can''t be removed through a PATCH operation once added.'
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
@@ -19823,6 +20011,8 @@ components:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            sensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingSensitivityLabelAssignment'
             shareMeetingChatHistoryDefault:
               $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             subject:
@@ -20982,6 +21172,16 @@ components:
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.onlineMeetingSensitivityLabelAssignment:
+      title: onlineMeetingSensitivityLabelAssignment
+      type: object
+      properties:
+        sensitivityLabelId:
+          type: string
+          description: Id of the sensitivity label that is applied to the Teams meeting.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.meetingChatHistoryDefaultMode:

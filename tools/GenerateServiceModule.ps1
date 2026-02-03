@@ -72,7 +72,7 @@ $ApiVersion | ForEach-Object {
             npx autorest --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2
             if ($LastExitCode -ne 0) {
                 Write-Host -ForegroundColor Red "AutoREST failed to generate '$ModuleFullName' module."
-                exit $LastExitCode
+                return $LastExitCode
             }
             Write-Debug "AutoRest generated '$ModuleFullName' successfully."
 
@@ -87,7 +87,7 @@ $ApiVersion | ForEach-Object {
             & $CleanUpPsm1 -ModuleProjectPath $ModuleProjectPath -FullyQualifiedModuleName $ModuleFullName
             if ($LastExitCode -ne 0) {
                 Write-Host -ForegroundColor Red "Failed to build '$ModuleFullName' module."
-                exit $LastExitCode
+                return $LastExitCode
             }
         }
 
