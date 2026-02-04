@@ -135,7 +135,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 }
                 else
                 {
-                    authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                    authRecord = await Task.Run(() =>
+                    {
+                        return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                    });
                 }
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
                 return interactiveBrowserCredential;
