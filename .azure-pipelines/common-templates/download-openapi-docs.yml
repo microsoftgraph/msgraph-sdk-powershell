@@ -57,26 +57,8 @@ steps:
     name: OpenAPIDocDiff
     displayName: Get OpenAPI docs diff and set ModuleGenerationList variable
     inputs:
+      filePath: "$(System.DefaultWorkingDirectory)/tools/Utilities/OpenApiDocDiff.ps1"
       pwsh: true
-      targetType: "inline"
-      script: |
-        $diff = git diff --name-only
-        $ModulesWithChanges = @{}
-        $diff | %{
-          if ($_ -match 'openApiDocs\/(v1.0|beta)\/(.*)\.yml') {
-            $version = if ($matches[1] -eq 'v1.0') { 'v1.0' } else { 'beta' }
-            $moduleName = "$($matches[2])_$version"
-            if (!$ModulesWithChanges.ContainsKey($moduleName)) {
-              $ModulesWithChanges.Add($moduleName, $matches[1])
-            }
-          }
-        }
-        $ModuleNames = $ModulesWithChanges.Keys
-        Write-Host "Modules with changes: $ModuleNames"
-        # Set the ModuleGenerationList pipeline variable
-        Write-Host "##vso[task.setvariable variable=ModuleGenerationList;isOutput=false]$ModuleNames"
-        # Set output variable for job condition checks
-        Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
 
   - task: PowerShell@2
     name: BuildOpenApiMetadataDetectionTool
@@ -98,7 +80,7 @@ steps:
 
   - task: Bash@3
     displayName: Commit downloaded files
-    condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    condition: and(succeeded(), ne(variables['ModuleGenerationList'], ''))
     env:
       GITHUB_TOKEN: $(GITHUB_TOKEN)
     inputs:

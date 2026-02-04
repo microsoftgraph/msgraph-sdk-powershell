@@ -91,9 +91,7 @@ extends:
         displayName: Setup Module JSON for Matrix
         ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
           dependsOn: RefreshOpenAPIDocuments
-          condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
-        ${{ else }}:
-          condition: succeeded()
+        condition: and(succeeded(), ne(variables['ModuleGenerationList'], ''))
         timeoutInMinutes: 840
         steps:
         - task: PowerShell@2
@@ -105,7 +103,7 @@ extends:
             script: |
               $modules = "$(ModuleGenerationList)"
               Write-Host "Using ModuleGenerationList: $modules"
-              & "$(System.DefaultWorkingDirectory)/tools/utilities/CreateGenerationMatrix.ps1" -ModuleNames $modules -OutputVariable "matrixJson"
+              & "$(System.DefaultWorkingDirectory)/tools/utilities/CreateGenerationMatrix.ps1" -ModuleNames $modules 
 
       - job: MsGraphPsSdkWeeklyGeneration
         ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
