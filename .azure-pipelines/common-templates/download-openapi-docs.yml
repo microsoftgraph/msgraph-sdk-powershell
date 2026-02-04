@@ -4,13 +4,11 @@
 parameters:
   - name: Branch
     type: string
+    default: "WeeklyApiRefresh"
   - name: BaseBranch
     type: string
   - name: BuildAgent
     displayName: Build Agent
-  - name: SkipOpenAPIDocsDownload
-    type: boolean
-    default: false
 
 steps:
   - template: ./checkout.yml
@@ -21,33 +19,27 @@ steps:
 
   - task: PowerShell@2
     name: "ComputeBranch"
-    displayName: "Compute weekly branch name"
+    displayName: "Compute weekly branch name and set Branch variable"
     inputs:
       targetType: inline
       script: |
-        if ('${{ parameters.SkipOpenAPIDocsDownload }}' -eq 'True') {
-          $branch = ""
-          Write-Host "Skipping branch creation - using current branch"
-        } else {
-          $branch = "{0}/{1}" -f "$(Branch)", (Get-Date -Format yyyyMMddHHmm)
-          Write-Host "Computed weekly branch: $branch"
-        }
-        Write-Host "##vso[task.setvariable variable=WeeklyBranch;isOutput=true]$branch"
+        $branch = "{0}/{1}" -f "${{ parameters.Branch }}", (Get-Date -Format yyyyMMddHHmm)
+        Write-Host "Computed weekly branch: $branch"
+        # Set the Branch pipeline variable
+        Write-Host "##vso[task.setvariable variable=Branch;isOutput=false]$branch"
 
   - task: Bash@3
     displayName: "Create weekly branch"
-    condition: eq('${{ parameters.SkipOpenAPIDocsDownload }}', false)
     inputs:
       targetType: inline
       script: |
         git status
-        git branch $(ComputeBranch.WeeklyBranch)
-        git checkout $(ComputeBranch.WeeklyBranch)
+        git branch $(Branch)
+        git checkout $(Branch)
         git status
 
   - task: PowerShell@2
     displayName: Download v1.0 OpenApi docs
-    condition: and(succeeded(), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false))
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
@@ -55,7 +47,6 @@ steps:
 
   - task: PowerShell@2
     displayName: Download beta OpenApi docs
-    condition: and(succeeded(), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false))
     continueOnError: false
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
@@ -64,30 +55,27 @@ steps:
 
   - task: PowerShell@2
     name: OpenAPIDocDiff
-    displayName: Get OpenAPI docs diff
+    displayName: Get OpenAPI docs diff and set ModuleGenerationList variable
     inputs:
       pwsh: true
       targetType: "inline"
       script: |
-        Write-Host "SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}"
-        if ('${{ parameters.SkipOpenAPIDocsDownload }}' -eq 'True') {
-          $ModuleNames = "Skipped"
-          Write-Warning "Skipped OpenAPI Docs Download."
-        } else  {
-          $diff = git diff --name-only
-          $ModulesWithChanges = @{}
-          $diff | %{
-            if ($_ -match 'openApiDocs\/(v1.0|beta)\/(.*)\.yml') {
-              $version = if ($matches[1] -eq 'v1.0') { 'v1.0' } else { 'beta' }
-              $moduleName = "$($matches[2])_$version"
-              if (!$ModulesWithChanges.ContainsKey($moduleName)) {
-                $ModulesWithChanges.Add($moduleName, $matches[1])
-              }
+        $diff = git diff --name-only
+        $ModulesWithChanges = @{}
+        $diff | %{
+          if ($_ -match 'openApiDocs\/(v1.0|beta)\/(.*)\.yml') {
+            $version = if ($matches[1] -eq 'v1.0') { 'v1.0' } else { 'beta' }
+            $moduleName = "$($matches[2])_$version"
+            if (!$ModulesWithChanges.ContainsKey($moduleName)) {
+              $ModulesWithChanges.Add($moduleName, $matches[1])
             }
           }
-          $ModuleNames = $ModulesWithChanges.Keys
-          Write-Host "Modules with changes: $ModuleNames"
         }
+        $ModuleNames = $ModulesWithChanges.Keys
+        Write-Host "Modules with changes: $ModuleNames"
+        # Set the ModuleGenerationList pipeline variable
+        Write-Host "##vso[task.setvariable variable=ModuleGenerationList;isOutput=false]$ModuleNames"
+        # Set output variable for job condition checks
         Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
 
   - task: PowerShell@2
@@ -110,7 +98,7 @@ steps:
 
   - task: Bash@3
     displayName: Commit downloaded files
-    condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''), eq('${{ parameters.SkipOpenAPIDocsDownload }}', false))
+    condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
     env:
       GITHUB_TOKEN: $(GITHUB_TOKEN)
     inputs:
@@ -120,7 +108,7 @@ steps:
         git add .
         git commit -m 'Weekly OpenApiDocs Download.'
         git status
-        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyBranch)
+        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(Branch)
         git status
 
 # References

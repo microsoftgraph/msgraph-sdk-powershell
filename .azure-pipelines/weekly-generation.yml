@@ -40,9 +40,10 @@ parameters:
   type: string
 
 variables:
-  Branch: "WeeklyApiRefresh"
+  Branch: ""
   BaseBranch: ${{ parameters.BaseBranch }}
   BuildAgent: ${{ parameters.BuildAgent }}
+  ModuleGenerationList: "${{ parameters.ModulesToGenerate }}"
 trigger: none
 pr: none
 schedules:
@@ -85,7 +86,6 @@ extends:
             Branch: $(Branch)
             BaseBranch: $(BaseBranch)
             BuildAgent: $(BuildAgent)
-            SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
 
       - job: SetUpModuleMatrix
         displayName: Setup Module JSON for Matrix
@@ -95,13 +95,6 @@ extends:
         ${{ else }}:
           condition: succeeded()
         timeoutInMinutes: 840
-        variables:
-          ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
-            WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
-            ModulesToGenerate: $[ dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
-          ${{ else }}:
-            WeeklyBranch: ''
-            ModulesToGenerate: ${{ parameters.ModulesToGenerate }}
         steps:
         - task: PowerShell@2
           name: CreateMatrixJson
@@ -110,7 +103,9 @@ extends:
             targetType: inline
             pwsh: true
             script: |
-              & "$(System.DefaultWorkingDirectory)/tools/utilities/CreateGenerationMatrix.ps1" -ModuleNames "$(ModulesToGenerate)" -OutputVariable "matrixJson"
+              $modules = "$(ModuleGenerationList)"
+              Write-Host "Using ModuleGenerationList: $modules"
+              & "$(System.DefaultWorkingDirectory)/tools/utilities/CreateGenerationMatrix.ps1" -ModuleNames $modules -OutputVariable "matrixJson"
 
       - job: MsGraphPsSdkWeeklyGeneration
         ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
@@ -123,10 +118,6 @@ extends:
         condition: succeeded()
         timeoutInMinutes: 840
         variables:
-          ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
-            WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
-          ${{ else }}:
-            WeeklyBranch: ''
           ModulesMatrix: $[ dependencies.SetUpModuleMatrix.outputs['CreateMatrixJson.matrixJson'] ]
         templateContext:
           outputs:
@@ -141,7 +132,7 @@ extends:
         steps:
         - template: .azure-pipelines/common-templates/checkout.yml@self
           parameters:
-            TargetBranch: $(WeeklyBranch)
+            TargetBranch: $(Branch)
         - template: .azure-pipelines/common-templates/install-tools.yml@self
         - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
         - template: .azure-pipelines/generation-templates/authentication-module.yml@self
@@ -164,15 +155,13 @@ extends:
           - MsGraphPsSdkWeeklyGeneration
           - RefreshOpenAPIDocuments
         condition: and(succeeded(), eq(dependencies.MsGraphPsSdkWeeklyGeneration.result, 'Succeeded'), eq(${{ parameters.CreatePullRequest }}, true), eq(${{ parameters.SkipOpenAPIDocsDownload }}, false))
-        variables:
-          WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
         steps:
         - template: .azure-pipelines/common-templates/checkout.yml@self
           parameters:
-            TargetBranch: $(WeeklyBranch)
+            TargetBranch: $(Branch)
         - template: .azure-pipelines/common-templates/create-pr.yml@self
           parameters:
             BaseBranch: $(BaseBranch)
-            TargetBranch: $(WeeklyBranch)
+            TargetBranch: $(Branch)
             Title: "[v2] Weekly OpenApiDocs Refresh"
             Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
