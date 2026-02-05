@@ -2,9 +2,6 @@
 # Licensed under the MIT License.
 
 parameters:
-  - name: Branch
-    type: string
-    default: "WeeklyApiRefresh"
   - name: BaseBranch
     type: string
   - name: BuildAgent
@@ -23,7 +20,7 @@ steps:
     inputs:
       targetType: inline
       script: |
-        $branch = "{0}/{1}" -f "${{ parameters.Branch }}", (Get-Date -Format yyyyMMddHHmm)
+        $branch = "WeeklyApiRefresh/{0}" -f (Get-Date -Format yyyyMMddHHmm)
         Write-Host "Computed weekly branch: $branch"
         # Set the Branch pipeline variable for current job
         Write-Host "##vso[task.setvariable variable=Branch;isOutput=false]$branch"
@@ -60,6 +57,7 @@ steps:
     displayName: Get OpenAPI docs diff and set ModuleGenerationList variable
     inputs:
       filePath: "$(System.DefaultWorkingDirectory)/tools/Utilities/OpenApiDocDiff.ps1"
+      arguments: -OutputVariable "ModuleGenerationList"
       pwsh: true
 
   - task: PowerShell@2

@@ -40,10 +40,8 @@ parameters:
   type: string
 
 variables:
-  Branch: ""
   BaseBranch: ${{ parameters.BaseBranch }}
   BuildAgent: ${{ parameters.BuildAgent }}
-  ModuleGenerationList: "${{ parameters.ModulesToGenerate }}"
 trigger: none
 pr: none
 schedules:
@@ -83,7 +81,6 @@ extends:
         steps:
         - template: .azure-pipelines/common-templates/download-openapi-docs.yml@self
           parameters:
-            Branch: $(Branch)
             BaseBranch: $(BaseBranch)
             BuildAgent: $(BuildAgent)
 
@@ -91,8 +88,12 @@ extends:
         displayName: Setup Module JSON for Matrix
         ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
           dependsOn: RefreshOpenAPIDocuments
-        condition: and(succeeded(), ne(variables['ModuleGenerationList'], ''))
         timeoutInMinutes: 840
+        variables:
+          ${{ if eq(parameters.SkipOpenAPIDocsDownload, false) }}:
+            ModuleGenerationList: $[ dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModuleGenerationList'] ]
+          ${{ else }}:
+            ModuleGenerationList: "${{ parameters.ModulesToGenerate }}"
         steps:
         - task: PowerShell@2
           name: CreateMatrixJson
@@ -102,6 +103,10 @@ extends:
             pwsh: true
             script: |
               $modules = "$(ModuleGenerationList)"
+              if ([string]::IsNullOrWhiteSpace($modules)) {
+                Write-Error "ModuleGenerationList is empty. No modules to generate."
+                exit 1
+              }
               Write-Host "Using ModuleGenerationList: $modules"
               & "$(System.DefaultWorkingDirectory)/tools/utilities/CreateGenerationMatrix.ps1" -ModuleNames $modules 
 

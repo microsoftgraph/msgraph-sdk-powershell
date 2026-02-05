@@ -52,5 +52,7 @@ $ModuleNames = $ModulesWithChanges.Keys
 
 Write-Host "Modules with changes: $ModuleNames"
 
-# Set the pipeline variable
+# Set the pipeline variable for current job
 Write-Host "##vso[task.setvariable variable=$OutputVariable;isOutput=false]$ModuleNames"
+# Set the pipeline variable as output for subsequent jobs
+Write-Host "##vso[task.setvariable variable=$OutputVariable;isOutput=true]$ModuleNames"
