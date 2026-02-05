@@ -15230,6 +15230,8 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.dlpEvaluationInput'
                 notificationInfo:
                   $ref: '#/components/schemas/microsoft.graph.dlpNotification'
+                classifyText:
+                  $ref: '#/components/schemas/microsoft.graph.textClassificationRequest'
               additionalProperties:
                 type: object
         required: true
@@ -35647,6 +35649,8 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.dlpEvaluationInput'
                 notificationInfo:
                   $ref: '#/components/schemas/microsoft.graph.dlpNotification'
+                classifyText:
+                  $ref: '#/components/schemas/microsoft.graph.textClassificationRequest'
               additionalProperties:
                 type: object
         required: true
@@ -39589,6 +39593,31 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.textClassificationRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: textClassificationRequest
+          type: object
+          properties:
+            contentMetaData:
+              $ref: '#/components/schemas/microsoft.graph.classificationRequestContentMetaData'
+            fileExtension:
+              type: string
+              nullable: true
+            matchTolerancesToInclude:
+              $ref: '#/components/schemas/microsoft.graph.mlClassificationMatchTolerance'
+            scopesToRun:
+              $ref: '#/components/schemas/microsoft.graph.sensitiveTypeScope'
+            sensitiveTypeIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            text:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.dlpEvaluatePoliciesJobResponse:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.jobResponseBase'
@@ -43130,12 +43159,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessGrantControl'
-          description: 'List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.'
+          description: 'List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue, riskRemediation. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: riskRemediation.'
         customAuthenticationFactors:
           type: array
           items:
             type: string
-          description: 'List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).'
+          description: 'List of custom controls IDs required by the policy. For more information, see Custom controls.'
         operator:
           type: string
           description: 'Defines the relationship of the grant controls. Possible values: AND, OR.'
@@ -43701,6 +43730,31 @@ components:
         - removableDataVolume
         - unknownFutureValue
       type: string
+    microsoft.graph.classificationRequestContentMetaData:
+      title: classificationRequestContentMetaData
+      type: object
+      properties:
+        sourceId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.mlClassificationMatchTolerance:
+      title: mlClassificationMatchTolerance
+      enum:
+        - exact
+        - near
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.sensitiveTypeScope:
+      title: sensitiveTypeScope
+      enum:
+        - fullDocument
+        - partialDocument
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.jobResponseBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43883,6 +43937,7 @@ components:
         - encryptedProtectionTypeNotSupportedException
         - purviewClaimsChallengeNotSupportedException
         - exception
+        - labelNotFoundException
         - unknownFutureValue
       type: string
       x-ms-enum-flags:
@@ -46261,6 +46316,7 @@ components:
               nullable: true
             welcomeMessageEnabled:
               type: boolean
+              description: 'Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -48617,6 +48673,7 @@ components:
       properties:
         isSyncAllowed:
           type: boolean
+          description: Defines whether group objects should be synchronized from the partner tenant. false stops any current group synchronization from the source tenant to the target tenant. This property has no impact on existing groups that were synchronized.
       additionalProperties:
         type: object
     microsoft.graph.crossTenantUserSyncInbound:
@@ -48649,6 +48706,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.audiencesConfiguration'
             identifierUris:
               $ref: '#/components/schemas/microsoft.graph.identifierUriConfiguration'
+            redirectUris:
+              $ref: '#/components/schemas/microsoft.graph.redirectUriConfiguration'
           additionalProperties:
             type: object
     microsoft.graph.appManagementServicePrincipalConfiguration:
@@ -52583,6 +52642,7 @@ components:
         - resizePendingLicense
         - updatingSingleSignOn
         - modifyingSingleSignOn
+        - refreshPolicyConfiguration
         - preparing
       type: string
     microsoft.graph.cloudPcStatusDetail:
@@ -53355,7 +53415,6 @@ components:
       title: siteTemplateType
       enum:
         - sitepagepublishing
-        - group
         - sts
         - unknownFutureValue
       type: string
@@ -58594,6 +58653,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.audiencesConfiguration'
         identifierUris:
           $ref: '#/components/schemas/microsoft.graph.identifierUriConfiguration'
+        redirectUris:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriConfiguration'
       additionalProperties:
         type: object
     microsoft.graph.enforceAppPIN:
@@ -58720,6 +58781,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
         uriAdditionWithoutUniqueTenantIdentifier:
           $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriConfiguration:
+      title: redirectUriConfiguration
+      type: object
+      properties:
+        uriWithBlockedDomain:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriBlockedDomainConfiguration'
+        uriWithBlockedScheme:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriBlockedSchemeConfiguration'
+        uriWithoutAllowedDomain:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriAllowedDomainConfiguration'
+        uriWithoutAllowedScheme:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriAllowedSchemeConfiguration'
+        uriWithWildcard:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriWildcardConfiguration'
       additionalProperties:
         type: object
     microsoft.graph.deviceRegistrationMembership:
@@ -65656,6 +65733,142 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
       additionalProperties:
         type: object
+    microsoft.graph.redirectUriBlockedDomainConfiguration:
+      title: redirectUriBlockedDomainConfiguration
+      type: object
+      properties:
+        blockedDomains:
+          type: array
+          items:
+            type: string
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        publicClient:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedDomainConfiguration'
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        spa:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedDomainConfiguration'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+        web:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedDomainConfiguration'
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriBlockedSchemeConfiguration:
+      title: redirectUriBlockedSchemeConfiguration
+      type: object
+      properties:
+        blockedSchemes:
+          type: array
+          items:
+            type: string
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        exemptFormats:
+          type: array
+          items:
+            type: string
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        publicClient:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration'
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        spa:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+        web:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration'
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriAllowedDomainConfiguration:
+      title: redirectUriAllowedDomainConfiguration
+      type: object
+      properties:
+        allowedDomains:
+          type: array
+          items:
+            type: string
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        publicClient:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedDomainConfiguration'
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        spa:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedDomainConfiguration'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+        web:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedDomainConfiguration'
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriAllowedSchemeConfiguration:
+      title: redirectUriAllowedSchemeConfiguration
+      type: object
+      properties:
+        allowedSchemes:
+          type: array
+          items:
+            type: string
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        publicClient:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration'
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        spa:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+        web:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration'
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriWildcardConfiguration:
+      title: redirectUriWildcardConfiguration
+      type: object
+      properties:
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        excludeFormats:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriWildcardExcludeFormats'
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+      additionalProperties:
+        type: object
     microsoft.graph.permissionKind:
       title: permissionKind
       enum:
@@ -69313,6 +69526,62 @@ components:
         - application
         - unknownFutureValue
       type: string
+    microsoft.graph.redirectUriPlatformBlockedDomainConfiguration:
+      title: redirectUriPlatformBlockedDomainConfiguration
+      type: object
+      properties:
+        blockedDomains:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration:
+      title: redirectUriPlatformBlockedSchemeConfiguration
+      type: object
+      properties:
+        blockedSchemes:
+          type: array
+          items:
+            type: string
+        exemptFormats:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriPlatformAllowedDomainConfiguration:
+      title: redirectUriPlatformAllowedDomainConfiguration
+      type: object
+      properties:
+        allowedDomains:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration:
+      title: redirectUriPlatformAllowedSchemeConfiguration
+      type: object
+      properties:
+        allowedSchemes:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriWildcardExcludeFormats:
+      title: redirectUriWildcardExcludeFormats
+      type: object
+      properties:
+        excludeWildcardsInPath:
+          type: boolean
+        excludeWildcardsInPathWithDomains:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessExternalTenantsMembershipKind:
       title: conditionalAccessExternalTenantsMembershipKind
       enum:
