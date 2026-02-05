@@ -25,8 +25,10 @@ steps:
       script: |
         $branch = "{0}/{1}" -f "${{ parameters.Branch }}", (Get-Date -Format yyyyMMddHHmm)
         Write-Host "Computed weekly branch: $branch"
-        # Set the Branch pipeline variable
+        # Set the Branch pipeline variable for current job
         Write-Host "##vso[task.setvariable variable=Branch;isOutput=false]$branch"
+        # Set the Branch variable as output for subsequent jobs
+        Write-Host "##vso[task.setvariable variable=Branch;isOutput=true]$branch"
 
   - task: Bash@3
     displayName: "Create weekly branch"
