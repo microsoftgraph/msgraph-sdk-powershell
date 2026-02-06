@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Applications
 
-Get-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId
+Get-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId
 
 ```
 This example shows how to use the Get-MgBetaApplicationFederatedIdentityCredential Cmdlet.
