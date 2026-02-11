@@ -43,6 +43,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
             /// The German sovereign cloud operated by Delos.
             /// </summary>
             public const string DelosCloud = "DelosCloud";
+
+            /// <summary>
+            /// The Singapore government sovereign cloud.
+            /// </summary>
+            public const string GovSGCloud = "GovSGCloud";
         }
 
         /// <summary>
@@ -117,6 +122,16 @@ namespace Microsoft.Graph.PowerShell.Authentication
                     Type = EnvironmentType.BuiltIn,
                     AzureADEndpoint = "https://login.sovcloud-identity.de",
                     GraphEndpoint = "https://graph.svc.sovcloud.de"
+                }
+            },
+            // Singapore government sovereign cloud endpoints.
+            {
+                EnvironmentName.GovSGCloud, new GraphEnvironment
+                {
+                    Name = EnvironmentName.GovSGCloud,
+                    Type = EnvironmentType.BuiltIn,
+                    AzureADEndpoint = "https://login.sovcloud-identity.sg",
+                    GraphEndpoint = "https://graph.svc.sovcloud.sg"
                 }
             }
         };

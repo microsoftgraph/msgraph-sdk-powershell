@@ -115,8 +115,8 @@ namespace Microsoft.Graph.Authentication.Test.Common
 
             // Assert
             Assert.NotNull(loadedEnvironment);
-            // 6 built-in + 2 user-defined
-            Assert.Equal(8, settings.Environments.Count());
+            // 7 built-in + 2 user-defined
+            Assert.Equal(9, settings.Environments.Count());
             Assert.Equal("https://login.MyNewCloud.com", loadedEnvironment.AzureADEndpoint);
             Assert.Equal("https://graph.MyNewCloud.com", loadedEnvironment.GraphEndpoint);
             Assert.Equal(GraphEnvironmentConstants.EnvironmentType.UserDefined, loadedEnvironment.Type);
@@ -155,8 +155,8 @@ namespace Microsoft.Graph.Authentication.Test.Common
 
             // Assert
             Assert.NotEmpty(settingsContent);
-            // 6 built-in + 1 user-defined
-            Assert.Equal(7, settings.Environments.Count());
+            // 7 built-in + 1 user-defined
+            Assert.Equal(8, settings.Environments.Count());
 
             GraphSession.Reset();
         }
