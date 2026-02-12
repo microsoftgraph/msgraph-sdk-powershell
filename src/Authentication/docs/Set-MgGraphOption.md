@@ -1,4 +1,4 @@
-﻿---
+---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/set-mgenvironment
@@ -8,8 +8,7 @@ schema: 2.0.0
 # Set-MgGraphOption
 
 ## SYNOPSIS
-Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support. Web Account Manager is enabled by default on Windows systems and cannot be disabled.
-
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
 ## SYNTAX
 
 ```
@@ -18,15 +17,13 @@ Set-MgGraphOption [-EnableLoginByWAM <Boolean>] [<CommonParameters>]
 
 ## DESCRIPTION
 Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
-
 ## EXAMPLES
-
 ### Example 1: Set web account manager support
 ```powershell
 PS C:\> Set-MgGraphOption -EnableLoginByWAM $True
 ```
-
  Sets web account manager support
+ Note: Signin by Web Account Manager (WAM) is enabled by default on Windows and cannot be disabled. Setting this option will no longer have any effect. 
 
 ## PARAMETERS
 
@@ -57,4 +54,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Object
 ## NOTES
 
-## RELATED LINKS
+## RELATED LIN

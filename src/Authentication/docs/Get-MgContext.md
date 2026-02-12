@@ -1,4 +1,4 @@
-﻿---
+---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/get-mgcontext
@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get-MgContext is used to retrieve the details about your current session, which include:  - ClientID - TenantID - Certificate Thumbprint - Scopes consented to - AuthType: Delegated or app-only - AuthProviderType - CertificateName - Account - AppName - ContextScope - Certificate - PSHostVersion - ClientTimeOut.
-
 ## SYNTAX
 
 ```
@@ -18,9 +17,7 @@ Get-MgContext [<CommonParameters>]
 
 ## DESCRIPTION
 Retrieves session details.
-
 ## EXAMPLES
-
 ### Example 1: Using Get-MgContext
 ```powershell
 PS C:\> Get-MgContext
@@ -38,7 +35,6 @@ Certificate           :
 PSHostVersion         : 5.1.17763.1
 ClientTimeout         : 00:05:00
 ```
-
 Retrieves session details.
 
 ### Example 2: Using Get-MgContext: Retrieve all scopes you've consented to
@@ -56,7 +52,6 @@ RoleManagement.ReadWrite.Directory
 User.Read
 User.ReadWrite.All
 ```
-
 Retrieves all scopes.
 
 ## PARAMETERS
@@ -74,5 +69,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/get-mgcontext](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/get-mgcontext)
-
+[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/get-mgcontext](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/get-mgcontext

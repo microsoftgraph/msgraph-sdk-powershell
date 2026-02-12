@@ -1,4 +1,4 @@
-﻿---
+---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/add-mgenvironment
@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
  Adds Microsoft Graph environment to the settings file.
-
 ## SYNTAX
 
 ```
@@ -19,9 +18,7 @@ Add-MgEnvironment [-Name] <String> [-AzureADEndpoint] <String> [-GraphEndpoint] 
 
 ## DESCRIPTION
  Adds Microsoft Graph environment to the settings file.
-
 ## EXAMPLES
-
 ### Example 1: Add user defined environment
 ```powershell
 PS C:\> Add-MgEnvironment -Name "Canary" -GraphEndpoint "https://canary.graph.microsoft.com" -AzureADEndpoint "https://login.microsoftonline.com"
@@ -29,7 +26,6 @@ Name     AzureADEndpoint                      GraphEndpoint                 Type
 ----     ---------------                      -------------                 ----
 Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-defined
 ```
-
 Adds user defined environment.
 
 ## PARAMETERS
@@ -125,5 +121,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/add-mgenvironment](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/add-mgenvironment)
-
+[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/add-mgenvironment](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/add-mgenvironment

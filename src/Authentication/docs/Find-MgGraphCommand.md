@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Find-MgGraphCommand aims to make it easier for you to discover which API path a command calls, by providing a URI or a command name. The Find-MgGraphCommand allows to:  - Pass a Microsoft Graph URL (relative and absolute) and get an equivalent Microsoft Graph PowerShell command. - Pass a command and get the URL it calls. - Pass a command or URI wildcard (.*) to find all commands that match it.
-
 ## SYNTAX
 
 ### FindByCommandOrUri (Default)
@@ -32,9 +31,7 @@ Find-MgGraphCommand [-ApiVersion <String>] -Command <String[]> [-ProgressAction 
 
 ## DESCRIPTION
 Find-MgGraphCommand aims to make it easier for you to discover which API path a command calls, by providing a URI or a command name.
-
 ## EXAMPLES
-
 ### Example 1: Use a URI to get all related cmdlets
 ```powershell
 PS C:\> Find-MgGraphCommand -Uri "/users/{id}"
@@ -55,8 +52,8 @@ Command       Module Method URI              OutputType          Permissions    
 Get-MgUser    Users  GET    /users/{user-id} IMicrosoftGraphUser {DeviceManagementApps.Read.All, DeviceManagementApps.ReadWrite.All, DeviceManagementManagedDevices.Read.All, DeviceManagementManagedDevices.ReadWrite.All...}  {Get, GetViaIdentity}
 Remove-MgUser Users  DELETE /users/{user-id}                     {DeviceManagementApps.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All, Directory.AccessAsUser.All}    {Delete1, DeleteViaIdentity1}
 Update-MgUser Users  PATCH  /users/{user-id}                     {DeviceManagementApps.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All, Directory.AccessAsUser.All...} {Update1, UpdateExpanded1, UpdateViaIdentity1, UpdateViaIdentityExpanded1}
-```
 
+```
 This example finds all commands that call the provided Microsoft Graph URI.
 
 ### Example 2: Pass a command and get the URI it calls
@@ -78,7 +75,6 @@ Command    Module Method URI              OutputType          Permissions       
 Get-MgUser Users  GET    /users/{user-id} IMicrosoftGraphUser {DeviceManagementApps.Read.All, DeviceManagementApps.ReadWrite.All, DeviceManagementManagedDevices.Read.All, DeviceManagementManagedDevices.ReadWrite.All...} {Get, GetViaIdentity}
 Get-MgUser Users  GET    /users           IMicrosoftGraphUser {DeviceManagementApps.Read.All, DeviceManagementApps.ReadWrite.All, DeviceManagementManagedDevices.Read.All, DeviceManagementManagedDevices.ReadWrite.All...} {List}
 ```
-
 This example looks up a command with the provided command name that calls both beta and v1.0 version of the API.
 
 ### Example 3: Pass a command and get the permissions required
@@ -94,7 +90,6 @@ User.Read.All                                True    Read all users' full profil
 User.ReadBasic.All                           False   Read all users' basic profiles                Allows the app to read a basic set of profile properties of other users in your organization on your behalf. Includes display name, first and last name, email address a...
 User.ReadWrite.All                           True    Read and write all users' full profiles       Allows the app to read and write the full set of profile properties, reports, and managers of other users in your organization, on your behalf.
 ```
-
 This example retrieves the scopes required for a particular command.
 
 ### Example 4: Find Microsoft Graph PowerShell commands using a command wildcard
@@ -112,7 +107,6 @@ Get-MgUserTodoListExtension                    Users           GET    /users/{us
 Get-MgUserTodoListTask                         Users           GET    /users/{user-id}/todo/lists/{todoTaskList-id}/tasks
 Get-MgUserTodoListTask                         Users           GET    /users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}
 ```
-
 Uses a wildcard syntax to search for commands.
 
 ### Example 5: Find Microsoft Graph PowerShell commands using a URI wildcard
@@ -126,7 +120,6 @@ Get-MgUserActivity                    CrossDeviceExperiences       GET    /users
 Get-MgUserActivity                    CrossDeviceExperiences       GET    /users/{user-id}/activities
 Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}
 ```
-
 Searches for commands using URI wildcard.
 
 ## PARAMETERS
@@ -241,5 +234,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphcommand](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphcommand)
-
+[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphcommand](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphcommand

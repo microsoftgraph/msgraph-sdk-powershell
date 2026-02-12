@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The Microsoft Graph PowerShell SDK application requires users to have domain knowledge of both the semantics and syntax of Microsoft Graph API permissions used to authorize access to the API. This cmdlet helps to answer the following questions:  - How do I find the values to supply to the permission-related parameters of commands like New-MgApplication and other application and consent related commands? - What permissions are applicable to a certain domain, for example, application, directory? To use Microsoft Graph PowerShell SDK to access Microsoft Graph, users must sign in to an Azure AD application using the Connect-MgGraph command. Use the Find-MgGraphCommand to find which permissions to use for a specific cmdlet or API.-  Currently PowerShell commands and scripts, including those implemented with Microsoft Graph PowerShell SDK itself, have no way of validating user input that refers to permissions or providing "auto-complete" user experiences to help users accurately supply input to commands
-
 ## SYNTAX
 
 ### Search
@@ -26,9 +25,7 @@ Find-MgGraphPermission [-PermissionType <String>] [-Online] [-All] [-ProgressAct
 
 ## DESCRIPTION
 Retrieves permissions that are applicable to a certain domain. For example application, directory.
-
 ## EXAMPLES
-
 ### Example 1: Find permissions related to a given domain
 ```powershell
 PS C:\> Find-MgGraphPermission application
@@ -47,10 +44,9 @@ Id                                   Consent Name                               
 --                                   ------- ----                                      -----------
 9a5d68dd-52b0-4cc2-bd40-abcf44ac3a30 Admin   Application.Read.All                      Allows the app to read all applications and service principals without a signed-in user.
 1bfefb4e-e0b5-418b-a88f-73c46d2cc8e9 Admin   Application.ReadWrite.All                 Allows the app to create, read, update and delete applications and service principals without a signed-in user.  Does not allow management of consent grants.
-18a4783c-866b-4cc7-a460-3d5e5662c884 Admin   Application.ReadWrite.OwnedBy             Allows the app to create other applications, and fully manage those applications (read, update, update application secrets and delete), without a signed-in user.  It cannot update any apps that it is not an owner of.
+18a4783c-866b-4cc7-a460-3d5e5662c884 Admin   Application.ReadWrite.OwnedBy             Allows the app to create other applications, and fully manage those applications (read, update, update application secrets and delete), without a signed-in user. Â It cannot update any apps that it is not an owner of.
 be74164b-cff1-491c-8741-e671cb536e13 Admin   Policy.ReadWrite.ApplicationConfiguration Allows the app to read and write your organization's application configuration policies, without a signed-in user.  This includes policies such as activityBasedTimeoutPolicy, claimsMappingPolicy, homeRealmDiscoveryPolicy, tokenIssuancePolicy  and tokenLifetimePolicy.
 ```
-
 Retrieves permissions related to a given domain.
 
 ### Example 2: Find the identifier for a specific permission
@@ -74,7 +70,6 @@ Consent        : Admin
 Name           : Application.Read.All
 Description    : Allows the app to read all applications and service principals without a signed-in user.
 ```
-
 Retrieves identifier for a specific permission.
 
 ## PARAMETERS
@@ -203,5 +198,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphpermission](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphpermission)
-
+[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphpermission](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphpermission
