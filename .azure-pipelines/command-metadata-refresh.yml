@@ -62,8 +62,8 @@ extends:
     stages:
     - stage: stage
       jobs:
-      - job: CreateMetadataRefreshBranch
-        displayName: Create Metadata Refresh Branch
+      - job: MsGraphPsSdkModuleCommandMetadataGeneration
+        displayName: Microsoft Graph PowerShell SDK Generation
         timeoutInMinutes: 1200
         steps:
         - template: .azure-pipelines/common-templates/checkout.yml@self
@@ -76,28 +76,16 @@ extends:
             targetType: inline
             script: |
               $branch = "{0}/{1}" -f "$(Branch)", (Get-Date -Format yyyyMMddHHmm)
-              Write-Host "##vso[task.setvariable variable=RefreshBranch;isOutput=true]$branch" 
+              Write-Host "##vso[task.setvariable variable=RefreshBranch]$branch"
         - task: Bash@3
           displayName: "Create Module Command Metadata Refresh Branch"
           inputs:
             targetType: inline
             script: |
               git status
-              git branch $(ComputeBranch.RefreshBranch)
-              git checkout $(ComputeBranch.RefreshBranch)
-              git status               
-        
-      - job: MsGraphPsSdkModuleCommandMetadataGeneration
-        dependsOn: CreateMetadataRefreshBranch
-        displayName: Microsoft Graph PowerShell SDK Generation
-        condition: succeeded()
-        timeoutInMinutes: 840
-        variables:
-          RefreshBranch: $[ dependencies.CreateMetadataRefreshBranch.outputs['ComputeBranch.RefreshBranch'] ]
-        steps:
-        - template: .azure-pipelines/common-templates/checkout.yml@self
-          parameters:
-            TargetBranch: $(RefreshBranch)
+              git branch $(RefreshBranch)
+              git checkout $(RefreshBranch)
+              git status
         - template: .azure-pipelines/common-templates/install-tools.yml@self
         - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
         - template: .azure-pipelines/generation-templates/authentication-module.yml@self
