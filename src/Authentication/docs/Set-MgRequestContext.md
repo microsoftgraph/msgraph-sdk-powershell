@@ -1,4 +1,4 @@
----
+﻿---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/set-mgenvironment
@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Sets request context for Microsoft Graph invocations
+
 ## SYNTAX
 
 ```
@@ -18,7 +19,9 @@ Set-MgRequestContext [-RetryDelay <Int32>] [-MaxRetry <Int32>] [-RetriesTimeLimi
 
 ## DESCRIPTION
 Sets request context for Microsoft Graph invocations
+
 ## EXAMPLES
+
 ### Example 1: Set Http client timeout in seconds
 ```powershell
 PS C:\> Set-MgRequestContext -ClientTimeout 5
@@ -26,6 +29,7 @@ ClientTimeout     RetryDelay                      MaxRetry                 Retri
 -------------     ----------                      --------                 ----------------
 00:00:05                   3                             2                         00:00:00
 ```
+
 Sets Http client timeout in seconds.
 
 ### Example 2: Set the maximum time in seconds allowed for request retries
@@ -35,6 +39,7 @@ ClientTimeout     RetryDelay                      MaxRetry                 Retri
 -------------     ----------                      --------                 ----------------
 00:00:05                   3                             2                         00:00:02
 ```
+
 Sets the maximum time in seconds allowed for request retries.
 
 ### Example 3: Set the maximum number of retries for a request
@@ -44,6 +49,7 @@ ClientTimeout     RetryDelay                      MaxRetry                 Retri
 -------------     ----------                      --------                 ----------------
 00:00:05                   3                             2                         00:00:02
 ```
+
 Sets the maximum number of retries for a request.
 
 ### Example 4: Set the waiting time in seconds before retrying a request
@@ -53,6 +59,7 @@ ClientTimeout     RetryDelay                      MaxRetry                 Retri
 -------------     ----------                      --------                 ----------------
 00:00:05                   3                             2                         00:00:02
 ```
+
 Sets the waiting time in seconds before retrying a request.
 
 ## PARAMETERS
@@ -163,4 +170,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-## RELATED LIN
+## RELATED LINKS

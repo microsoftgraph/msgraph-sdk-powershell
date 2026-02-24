@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             public const string DelosCloud = "DelosCloud";
 
             /// <summary>
-            /// The Singapore government sovereign cloud.
+            /// Sovereign Government Cloud.
             /// </summary>
             public const string GovSGCloud = "GovSGCloud";
         }
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
                     GraphEndpoint = "https://graph.svc.sovcloud.de"
                 }
             },
-            // Singapore government sovereign cloud endpoints.
+            // Sovereign Government Cloud endpoints.
             {
                 EnvironmentName.GovSGCloud, new GraphEnvironment
                 {

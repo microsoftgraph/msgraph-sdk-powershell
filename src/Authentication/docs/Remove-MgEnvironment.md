@@ -1,4 +1,4 @@
----
+﻿---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/remove-mgenvironment
@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Removes Microsoft Graph environment to the settings file
+
 ## SYNTAX
 
 ```
@@ -17,7 +18,9 @@ Remove-MgEnvironment [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## DESCRIPTION
 Removes Microsoft Graph environment to the settings file
+
 ## EXAMPLES
+
 ### Example 1: Remove user-defined environment
 ```powershell
 PS C:\> Remove-MgEnvironment Canary
@@ -25,6 +28,7 @@ Name     AzureADEndpoint                      GraphEndpoint                 Type
 ----     ---------------                      -------------                 ----
 Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-defined
 ```
+
 Removes user-defined environment.
 
 ## PARAMETERS
@@ -90,4 +94,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/remove-mgenvironment](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/remove-mgenvironment
+[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/remove-mgenvironment](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/remove-mgenvironment)
+

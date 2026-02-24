@@ -1,6 +1,6 @@
----
+﻿---
 Module Name: Microsoft.Graph.Authentication
-Module Guid: 49546c54-147a-482e-9a9e-78b954f26400
+Module Guid: 0fecf360-9875-4e02-998c-b6d7b6653b6b
 Download Help Link: https://learn.microsoft.com/powershell/module/Microsoft.Graph.Authentication
 Help Version: 1.0.0.0
 Locale: en-US
@@ -52,8 +52,4 @@ Sets global configurations that apply to the SDK. For example, toggle Web Accoun
 
 ### [Set-MgRequestContext](Set-MgRequestContext.md)
 Sets request context for Microsoft Graph invocations
-
-
-
-
 

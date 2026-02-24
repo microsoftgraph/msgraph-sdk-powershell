@@ -1,4 +1,4 @@
----
+﻿---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/disconnect-graph
@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Once you're signed in, you'll remain signed in until you invoke Disconnect-MgGraph. Microsoft Graph PowerShell automatically refreshes the access token for you and sign-in persists across PowerShell sessions because Microsoft Graph PowerShell securely caches the token.
+
 ## SYNTAX
 
 ```
@@ -17,12 +18,14 @@ Disconnect-MgGraph [<CommonParameters>]
 
 ## DESCRIPTION
 Use Disconnect-MgGraph to sign out.
+
 ## EXAMPLES
 
 ### Example 1: Using Disconnect-MgGraph
 ```powershell
 PS C:\> Disconnect-MgGraph
 ```
+
 Use Disconnect-MgGraph to sign out.
 
 ## PARAMETERS
@@ -40,4 +43,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/disconnect-graph](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/disconnect-graph
+[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/disconnect-graph](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/disconnect-graph)
+

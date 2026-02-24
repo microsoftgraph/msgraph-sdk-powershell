@@ -1,4 +1,4 @@
----
+﻿---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest
@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Invoke-MgGraphRequest issues REST API requests to the Graph API. It works for any Graph API if you know the REST URI, method, and optional body parameter. This command is especially useful for accessing APIs for which there isn't an equivalent cmdlet yet.
+
 ## SYNTAX
 
 ```
@@ -22,7 +23,9 @@ Invoke-MgGraphRequest [[-Method] <GraphRequestMethod>] [-Uri] <Uri> [[-Body] <Ob
 
 ## DESCRIPTION
 This command issues REST API requests.
+
 ## EXAMPLES
+
 ### Example 1: Using Invoke-MgGraphRequest
 ```powershell
 PS C:\> Invoke-MgGraphRequest -Method GET https://graph.microsoft.com/v1.0/me
@@ -41,6 +44,7 @@ officeLocation
 businessPhones                 {425-555-0100}
 surname                        Administrator
 ```
+
 Issues REST API requests.
 
 ## PARAMETERS
@@ -318,4 +322,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest
+[https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest)
+
