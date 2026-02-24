@@ -13419,6 +13419,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.browseSessionBase'
+              description: The list of browse sessions in the tenant.
               x-ms-navigationProperty: true
             driveInclusionRules:
               type: array
@@ -13472,6 +13473,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessBrowseSession'
+              description: The list of onedriveforbusiness browse sessions in the tenant.
               x-ms-navigationProperty: true
             oneDriveForBusinessProtectionPolicies:
               type: array
@@ -13519,6 +13521,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharePointBrowseSession'
+              description: The list of sharepoint browse sessions in the tenant.
               x-ms-navigationProperty: true
             sharePointProtectionPolicies:
               type: array
@@ -14524,10 +14527,12 @@ components:
           properties:
             backupSizeInBytes:
               type: string
+              description: The size of the backup in bytes.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the browse session was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             error:
@@ -14535,11 +14540,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time after which the browse session is deleted automatically.
               format: date-time
               nullable: true
             restorePointDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time of the restore point on which the browse session is created.
               format: date-time
               nullable: true
             status:
@@ -14729,6 +14736,7 @@ components:
           properties:
             directoryObjectId:
               type: string
+              description: Id of the backed-up OneDrive.
               nullable: true
           additionalProperties:
             type: object
@@ -14779,6 +14787,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.granularDriveRestoreArtifact'
+              description: A collection of browse session id and item key details that can be used to restore OneDrive for work or school files and folders.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -14812,6 +14821,11 @@ components:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'The date and time when the policy was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            offboardRequestedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
               format: date-time
               nullable: true
             protectionMode:
@@ -14969,6 +14983,7 @@ components:
           properties:
             siteId:
               type: string
+              description: Id of the backed-up SharePoint site.
               nullable: true
           additionalProperties:
             type: object
@@ -15007,6 +15022,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.granularSiteRestoreArtifact'
+              description: A collection of browse session id and item key details that can be used to restore SharePoint files and folders.
               x-ms-navigationProperty: true
             siteRestoreArtifacts:
               type: array
@@ -15800,6 +15816,7 @@ components:
           properties:
             directoryObjectId:
               type: string
+              description: Id of the drive in which artifact is present.
               nullable: true
           additionalProperties:
             type: object
@@ -15869,6 +15886,8 @@ components:
         - active
         - unknownFutureValue
         - dormant
+        - offboardRequested
+        - offboarded
       type: string
     microsoft.graph.protectionSource:
       title: protectionSource
@@ -15972,6 +15991,7 @@ components:
           properties:
             siteId:
               type: string
+              description: Id of the site in which artifact is present.
               nullable: true
           additionalProperties:
             type: object
@@ -16422,35 +16442,43 @@ components:
           properties:
             browseSessionId:
               type: string
+              description: The unique identifier of the browseSession
               nullable: true
             completionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date time when the artifact's restoration completes.
               format: date-time
               nullable: true
             restoredItemKey:
               type: string
+              description: The unique identifier for the restored artifact.
               nullable: true
             restoredItemPath:
               type: string
+              description: The path of the restored artifact. It's the path of the folder where all the artifacts are restored within a granular restore session.
               nullable: true
             restoredItemWebUrl:
               type: string
+              description: The web url of the restord artifact.
               nullable: true
             restorePointDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The restore point date time to which the artifact is restored.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The start time of the restoration.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.artifactRestoreStatus'
             webUrl:
               type: string
+              description: The original web url of the artifact being restored.
               nullable: true
           additionalProperties:
             type: object
