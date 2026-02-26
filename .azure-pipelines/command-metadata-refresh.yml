@@ -47,6 +47,8 @@ extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
     pool: $(BuildAgent)
+    settings:
+      networkIsolationPolicy: Permissive
     sdl:
       binskim:
         enabled: false
