@@ -66,9 +66,17 @@ extends:
         displayName: Microsoft Graph PowerShell SDK Generation
         timeoutInMinutes: 1200
         steps:
-        - template: .azure-pipelines/common-templates/checkout.yml@self
-          parameters:
-            TargetBranch: ${{ parameters.BaseBranch }}
+        - script: |
+            git submodule update --init --recursive
+          displayName: "Initialize submodules"
+        - task: PowerShell@2
+          displayName: "Configure user"
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              git config --global user.email "GraphTooling@service.microsoft.com"
+              git config --global user.name "Microsoft Graph DevX Tooling"
         - task: PowerShell@2
           name: "ComputeBranch"
           displayName: "Compute Module Command Metadata Refresh Branch Name"
