@@ -62,7 +62,6 @@ extends:
       jobs:
       - job: MsGraphPsSdkModuleCommandMetadataGeneration
         templateContext:
-          type: pipeline
           isProduction: true
         displayName: Microsoft Graph PowerShell SDK Generation
         timeoutInMinutes: 1200
