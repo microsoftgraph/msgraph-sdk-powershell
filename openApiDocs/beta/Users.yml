@@ -18301,6 +18301,7 @@ components:
               nullable: true
             welcomeMessageEnabled:
               type: boolean
+              description: 'Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -19973,10 +19974,25 @@ components:
       title: userCloudLicensing
       type: object
       properties:
+        assignmentErrors:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudLicensing.assignmentError'
+          x-ms-navigationProperty: true
+        assignments:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudLicensing.assignment'
+          x-ms-navigationProperty: true
         usageRights:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudLicensing.usageRight'
+          x-ms-navigationProperty: true
+        waitingMembers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudLicensing.waitingMember'
           x-ms-navigationProperty: true
       additionalProperties:
         type: object
@@ -24079,6 +24095,11 @@ components:
       title: groupCloudLicensing
       type: object
       properties:
+        assignments:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudLicensing.assignment'
+          x-ms-navigationProperty: true
         usageRights:
           type: array
           items:
@@ -25596,6 +25617,54 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudLicensing.assignmentError:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: assignmentError
+          type: object
+          properties:
+            code:
+              type: string
+              description: The error code associated with the assignment synchronization failure.
+            message:
+              type: string
+              description: The error message associated with the assignment synchronization failure.
+            occurrenceDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time at which the error most recently occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            skuId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: Unique identifier (GUID) for the service SKU that is equal to the skuId property on the related subscribedSku object. Read-only. Supports $filter.
+              format: uuid
+              nullable: true
+            assignedTo:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            usageRight:
+              $ref: '#/components/schemas/microsoft.graph.cloudLicensing.usageRight'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudLicensing.assignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: assignment
+          type: object
+          properties:
+            disabledServicePlanIds:
+              type: array
+              items:
+                pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                type: string
+                format: uuid
+              description: The list of disabled service plans for this assignment. Not nullable.
+            allotment:
+              $ref: '#/components/schemas/microsoft.graph.cloudLicensing.allotment'
+            assignedTo:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          additionalProperties:
+            type: object
     microsoft.graph.cloudLicensing.usageRight:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25617,6 +25686,35 @@ components:
               type: string
               description: 'Unique SKU display name that is equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
+            allotments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudLicensing.allotment'
+              description: The set of allotments associated with the assignments that combine to form this usageRight.
+              x-ms-navigationProperty: true
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudLicensing.assignment'
+              description: 'The set of assignments that combine to form this usageRight, including both direct assignments and assignments inherited through group membership.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudLicensing.waitingMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: waitingMember
+          type: object
+          properties:
+            waitingSinceDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the moment when the user or device first waited for this license. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            allotment:
+              $ref: '#/components/schemas/microsoft.graph.cloudLicensing.allotment'
+            assignedTo:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
           additionalProperties:
             type: object
     microsoft.graph.printerShare:
@@ -26994,6 +27092,7 @@ components:
         - resizePendingLicense
         - updatingSingleSignOn
         - modifyingSingleSignOn
+        - refreshPolicyConfiguration
         - preparing
       type: string
     microsoft.graph.cloudPcStatusDetail:
@@ -27767,7 +27866,6 @@ components:
       title: siteTemplateType
       enum:
         - sitepagepublishing
-        - group
         - sts
         - unknownFutureValue
       type: string
@@ -33286,6 +33384,60 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.cloudLicensing.allotment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: allotment
+          type: object
+          properties:
+            allottedUnits:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of licenses contained within the allotment. Not nullable. Read-only.
+              format: int32
+            assignableTo:
+              $ref: '#/components/schemas/microsoft.graph.cloudLicensing.assigneeTypes'
+            consumedUnits:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of licenses that are currently consumed by assignments from this allotment. Not nullable. Read-only.
+              format: int32
+            services:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudLicensing.service'
+              description: The list of services that might be enabled or disabled for assignments from this allotment. Not nullable. Read-only.
+            skuId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: Unique identifier (GUID) for the service SKU that is equal to the skuId property on the related subscribedSku object. Read-only. Supports $filter.
+              format: uuid
+              nullable: true
+            skuPartNumber:
+              type: string
+              description: 'Unique SKU display name that is equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
+              nullable: true
+            subscriptions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudLicensing.subscription'
+              description: Basic information about the subscriptions that supports this allotment.
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudLicensing.assignment'
+              description: The list of license assignments that consume licenses from this allotment. Not nullable.
+              x-ms-navigationProperty: true
+            waitingMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudLicensing.waitingMember'
+              description: List of over-assigned users who are in the waiting room for an allotment due to license capacity limits.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudLicensing.service:
       title: service
       type: object
@@ -39289,6 +39441,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.audiencesConfiguration'
         identifierUris:
           $ref: '#/components/schemas/microsoft.graph.identifierUriConfiguration'
+        redirectUris:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriConfiguration'
       additionalProperties:
         type: object
     microsoft.graph.customClaimConfiguration:
@@ -39616,6 +39770,29 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.cloudLicensing.subscription:
+      title: subscription
+      type: object
+      properties:
+        nextLifecycleDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: The date on which the current state transitions to the next state.
+          format: date
+        startDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: The date when the subscription started.
+          format: date
+        state:
+          $ref: '#/components/schemas/microsoft.graph.cloudLicensing.subscriptionState'
+        subscriptionId:
+          type: string
+          description: Identifier for the subscription object.
+        tags:
+          $ref: '#/components/schemas/microsoft.graph.cloudLicensing.subscriptionTags'
+      additionalProperties:
+        type: object
     microsoft.graph.printerCapabilities:
       title: printerCapabilities
       type: object
@@ -41443,6 +41620,7 @@ components:
         - encryptedProtectionTypeNotSupportedException
         - purviewClaimsChallengeNotSupportedException
         - exception
+        - labelNotFoundException
         - unknownFutureValue
       type: string
       x-ms-enum-flags:
@@ -42866,6 +43044,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identifierUriRestriction'
       additionalProperties:
         type: object
+    microsoft.graph.redirectUriConfiguration:
+      title: redirectUriConfiguration
+      type: object
+      properties:
+        uriWithBlockedDomain:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriBlockedDomainConfiguration'
+        uriWithBlockedScheme:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriBlockedSchemeConfiguration'
+        uriWithoutAllowedDomain:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriAllowedDomainConfiguration'
+        uriWithoutAllowedScheme:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriAllowedSchemeConfiguration'
+        uriWithWildcard:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriWildcardConfiguration'
+      additionalProperties:
+        type: object
     microsoft.graph.customClaimAttributeBase:
       title: customClaimAttributeBase
       type: object
@@ -43147,6 +43341,25 @@ components:
         - onPremisesUserPrincipalUsername
         - onPremisesSAMAccountName
       type: string
+    microsoft.graph.cloudLicensing.subscriptionState:
+      title: subscriptionState
+      enum:
+        - active
+        - warning
+        - suspended
+        - lockedOut
+        - deleted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudLicensing.subscriptionTags:
+      title: subscriptionTags
+      enum:
+        - none
+        - trial
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.printColorMode:
       title: printColorMode
       enum:
@@ -45299,6 +45512,142 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
       additionalProperties:
         type: object
+    microsoft.graph.redirectUriBlockedDomainConfiguration:
+      title: redirectUriBlockedDomainConfiguration
+      type: object
+      properties:
+        blockedDomains:
+          type: array
+          items:
+            type: string
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        publicClient:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedDomainConfiguration'
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        spa:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedDomainConfiguration'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+        web:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedDomainConfiguration'
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriBlockedSchemeConfiguration:
+      title: redirectUriBlockedSchemeConfiguration
+      type: object
+      properties:
+        blockedSchemes:
+          type: array
+          items:
+            type: string
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        exemptFormats:
+          type: array
+          items:
+            type: string
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        publicClient:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration'
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        spa:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+        web:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration'
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriAllowedDomainConfiguration:
+      title: redirectUriAllowedDomainConfiguration
+      type: object
+      properties:
+        allowedDomains:
+          type: array
+          items:
+            type: string
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        publicClient:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedDomainConfiguration'
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        spa:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedDomainConfiguration'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+        web:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedDomainConfiguration'
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriAllowedSchemeConfiguration:
+      title: redirectUriAllowedSchemeConfiguration
+      type: object
+      properties:
+        allowedSchemes:
+          type: array
+          items:
+            type: string
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        publicClient:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration'
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        spa:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+        web:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration'
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriWildcardConfiguration:
+      title: redirectUriWildcardConfiguration
+      type: object
+      properties:
+        excludeActors:
+          $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
+        excludeFormats:
+          $ref: '#/components/schemas/microsoft.graph.redirectUriWildcardExcludeFormats'
+        isStateSetByMicrosoft:
+          type: boolean
+          readOnly: true
+        restrictForAppsCreatedAfterDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        state:
+          $ref: '#/components/schemas/microsoft.graph.appManagementRestrictionState'
+      additionalProperties:
+        type: object
     microsoft.graph.transformationAttribute:
       title: transformationAttribute
       type: object
@@ -46058,6 +46407,62 @@ components:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeComparisonOperator'
           additionalProperties:
             type: object
+    microsoft.graph.redirectUriPlatformBlockedDomainConfiguration:
+      title: redirectUriPlatformBlockedDomainConfiguration
+      type: object
+      properties:
+        blockedDomains:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration:
+      title: redirectUriPlatformBlockedSchemeConfiguration
+      type: object
+      properties:
+        blockedSchemes:
+          type: array
+          items:
+            type: string
+        exemptFormats:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriPlatformAllowedDomainConfiguration:
+      title: redirectUriPlatformAllowedDomainConfiguration
+      type: object
+      properties:
+        allowedDomains:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration:
+      title: redirectUriPlatformAllowedSchemeConfiguration
+      type: object
+      properties:
+        allowedSchemes:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.redirectUriWildcardExcludeFormats:
+      title: redirectUriWildcardExcludeFormats
+      type: object
+      properties:
+        excludeWildcardsInPath:
+          type: boolean
+        excludeWildcardsInPathWithDomains:
+          type: array
+          items:
+            type: string
+      additionalProperties:
+        type: object
     microsoft.graph.attributeMapping:
       title: attributeMapping
       type: object
