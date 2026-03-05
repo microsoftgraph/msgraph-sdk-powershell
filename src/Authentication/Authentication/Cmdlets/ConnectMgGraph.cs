@@ -249,10 +249,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, _cancellationTokenSource.Token).ConfigureAwait(false);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine(e.StackTrace);
                     // Reset session instance on error. This will allow the user to re-authenticate without holding on to the previous auth context.
                     await AuthenticationHelpers.LogoutAsync();
                     throw;
