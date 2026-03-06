@@ -78,8 +78,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         private static bool IsAuthFlowNotSupported()
         {
-            return ((!string.IsNullOrEmpty(EnvironmentVariables.Username) && !string.IsNullOrEmpty(EnvironmentVariables.Password))
-                && (string.IsNullOrEmpty(EnvironmentVariables.ClientSecret) && string.IsNullOrEmpty(EnvironmentVariables.ClientCertificatePath)));
+            return !string.IsNullOrEmpty(EnvironmentVariables.Username) && !string.IsNullOrEmpty(EnvironmentVariables.Password)
+                && string.IsNullOrEmpty(EnvironmentVariables.ClientSecret) && string.IsNullOrEmpty(EnvironmentVariables.ClientCertificatePath);
         }
 
         private static bool ShouldUseWam(IAuthContext authContext)
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     {
                         return interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
                     });
-                }        
+                }
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
                 return interactiveBrowserCredential;
             }
