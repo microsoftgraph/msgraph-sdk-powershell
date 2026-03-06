@@ -10,7 +10,7 @@
     <WarningsAsErrors />
     <NuspecFile>Microsoft.Graph.Authentication.nuspec</NuspecFile>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
-    <Version>2.32.0</Version>
+    <Version>2.35.1</Version>
   </PropertyGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
