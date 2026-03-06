@@ -86,9 +86,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
         private static bool IsAssemblyMatching(AssemblyName assemblyName, Assembly requestingAssembly)
         {
             return requestingAssembly != null
-                ? (requestingAssembly.FullName.StartsWith("Microsoft") 
+                ? (requestingAssembly.FullName.StartsWith("Microsoft")
                     || requestingAssembly.FullName.StartsWith("Azure.Identity")
-                    || requestingAssembly.FullName.StartsWith("Azure.Core")) && IsAssemblyPresent(assemblyName)
+                    || requestingAssembly.FullName.StartsWith("Azure.Core")
+                    || requestingAssembly.FullName.StartsWith("System.Text.Json")) && IsAssemblyPresent(assemblyName)
                 : IsAssemblyPresent(assemblyName);
         }
 
