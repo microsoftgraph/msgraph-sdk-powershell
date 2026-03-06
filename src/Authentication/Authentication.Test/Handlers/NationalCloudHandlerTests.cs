@@ -64,13 +64,13 @@ namespace Microsoft.Graph.Authentication.Test
         }
 
         [Fact]
-        public async Task ShouldUseGermanyCloudWhenEnvironmentIsSetToGermany()
+        public async Task ShouldUseDelosCloudWhenEnvironmentIsSetToDelos()
         {
             GraphSession.Initialize(() => new GraphSession());
 
             // Arrange
-            GraphEnvironment germanyEnvironment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.Germany];
-            GraphSession.Instance.Environment = germanyEnvironment;
+            GraphEnvironment delosEnvironment = GraphEnvironment.BuiltInEnvironments[GraphEnvironmentConstants.EnvironmentName.DelosCloud];
+            GraphSession.Instance.Environment = delosEnvironment;
             Uri requestUrl = new Uri($"https://graph.microsoft.com/beta/users?{topParam}&{selectParam}");
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUrl);
 
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Authentication.Test
 
             // Assert
             Assert.Equal(requestUrl.Scheme, response.RequestMessage.RequestUri.Scheme);
-            Assert.Equal("graph.microsoft.de", response.RequestMessage.RequestUri.Host);
+            Assert.Equal("graph.svc.sovcloud.de", response.RequestMessage.RequestUri.Host);
             Assert.Contains(topParam, sentRequestQuery);
             Assert.Contains(selectParam, sentRequestQuery);
             Assert.Equal(2, sentRequestQuery.Split('&').Length);

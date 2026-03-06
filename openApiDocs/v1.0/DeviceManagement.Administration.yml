@@ -9095,6 +9095,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
               description: The email address registered to a user for authentication.
               x-ms-navigationProperty: true
+            externalAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.externalAuthenticationMethod'
+              description: Represents the external authentication methods registered to a user for authentication using an external identity provider.
+              x-ms-navigationProperty: true
             fido2Methods:
               type: array
               items:
@@ -11901,6 +11907,20 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.externalAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: externalAuthenticationMethod
+          type: object
+          properties:
+            configurationId:
+              type: string
+              description: A unique identifier used to manage the external auth method within Microsoft Entra ID.
+            displayName:
+              type: string
+              description: Custom name given to the registered external authentication method.
+          additionalProperties:
+            type: object
     microsoft.graph.fido2AuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -11919,12 +11939,6 @@ components:
               description: The attestation certificate(s) attached to this security key.
             attestationLevel:
               $ref: '#/components/schemas/microsoft.graph.attestationLevel'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The timestamp when this key was registered to the user.
-              format: date-time
-              nullable: true
             displayName:
               type: string
               description: The display name of the key as given by the user.
@@ -11940,6 +11954,13 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: authenticationMethod
           type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Represents the date and time when an entity was created. Read-only.
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
@@ -11948,12 +11969,6 @@ components:
         - title: microsoftAuthenticatorAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.
-              format: date-time
-              nullable: true
             deviceTag:
               type: string
               description: Tags containing app metadata.
@@ -12007,12 +12022,6 @@ components:
         - title: passwordAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
             password:
               type: string
               description: 'For security, the password is always returned as null from a LIST or GET operation.'
@@ -12041,12 +12050,6 @@ components:
         - title: platformCredentialAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time that this Platform Credential Key was registered.
-              format: date-time
-              nullable: true
             displayName:
               type: string
               description: The name of the device on which Platform Credential is registered.
@@ -12077,12 +12080,6 @@ components:
         - title: temporaryAccessPassAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the Temporary Access Pass was created.
-              format: date-time
-              nullable: true
             isUsable:
               type: boolean
               description: The state of the authentication method that indicates whether it's currently usable by the user.
@@ -12120,12 +12117,6 @@ components:
         - title: windowsHelloForBusinessAuthenticationMethod
           type: object
           properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time that this Windows Hello for Business key was registered.
-              format: date-time
-              nullable: true
             displayName:
               type: string
               description: The name of the device on which Windows Hello for Business is registered
@@ -13883,6 +13874,14 @@ components:
               description: 'Timestamp of when the group was last renewed. This value can''t be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
+            resourceBehaviorOptions:
+              type: array
+              items:
+                type: string
+            resourceProvisioningOptions:
+              type: array
+              items:
+                type: string
             securityEnabled:
               type: boolean
               description: 'Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).'
@@ -24093,6 +24092,7 @@ components:
         - encryptedProtectionTypeNotSupportedException
         - purviewClaimsChallengeNotSupportedException
         - exception
+        - labelNotFoundException
         - unknownFutureValue
       type: string
       x-ms-enum-flags:
