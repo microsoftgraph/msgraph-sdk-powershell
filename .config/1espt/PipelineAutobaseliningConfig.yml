@@ -69,3 +69,14 @@ pipelines:
           lastModifiedDate: 2025-12-20
         accessibilityinsights:
           lastModifiedDate: 2025-12-20
+  663:
+    retail:
+      source:
+        eslint:
+          lastModifiedDate: 2026-03-07
+        psscriptanalyzer:
+          lastModifiedDate: 2026-03-07
+        armory:
+          lastModifiedDate: 2026-03-07
+        accessibilityinsights:
+          lastModifiedDate: 2026-03-07
