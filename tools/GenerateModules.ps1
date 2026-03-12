@@ -92,7 +92,8 @@ $AutoRestTempFolder | ForEach-Object {
 }
 
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
-$Throttle = 2  # Reduced from 4 to prevent file locking issues in parallel module generation
+$CpuCount = (Get-CimInstance Win32_Processor | Measure-Object -Property NumberOfLogicalProcessors -Sum).Sum
+$Throttle = [int][math]::Max(1, [math]::Min(4, $CpuCount / 2))  # Use half the CPU count but max 4, min 1
 $Results = $ModuleToGenerate | ForEach-Object -Parallel {
     $Module = $_
     Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
