@@ -1,0 +1,1854 @@
+openapi: 3.0.4
+info:
+  title: ConfigurationManagement
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /admin/configurationManagement:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get configurationManagement from admin
+      operationId: admin_GetConfigurationManagement
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationManagement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.configurationManagement
+      summary: Update the navigation property configurationManagement in admin
+      operationId: admin_UpdateConfigurationManagement
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationManagement'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationManagement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.configurationManagement
+      summary: Delete navigation property configurationManagement for admin
+      operationId: admin_DeleteConfigurationManagement
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/configurationManagement/configurationDrifts:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: List configurationDrifts
+      description: Get a list of the configurationDrift objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationdrifts?view=graph-rest-beta
+      operationId: admin.configurationManagement_ListConfigurationDrift
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.configurationDriftCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.configurationManagement
+      summary: Create new navigation property to configurationDrifts for admin
+      operationId: admin.configurationManagement_CreateConfigurationDrift
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationDrift'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationDrift'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/configurationManagement/configurationDrifts/{configurationDrift-id}':
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get configurationDrift
+      description: Get the properties and relationships of a configurationDrift object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationdrift-get?view=graph-rest-beta
+      operationId: admin.configurationManagement_GetConfigurationDrift
+      parameters:
+        - name: configurationDrift-id
+          in: path
+          description: The unique identifier of configurationDrift
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationDrift
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationDrift'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.configurationManagement
+      summary: Update the navigation property configurationDrifts in admin
+      operationId: admin.configurationManagement_UpdateConfigurationDrift
+      parameters:
+        - name: configurationDrift-id
+          in: path
+          description: The unique identifier of configurationDrift
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationDrift
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationDrift'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationDrift'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.configurationManagement
+      summary: Delete navigation property configurationDrifts for admin
+      operationId: admin.configurationManagement_DeleteConfigurationDrift
+      parameters:
+        - name: configurationDrift-id
+          in: path
+          description: The unique identifier of configurationDrift
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationDrift
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/configurationManagement/configurationDrifts/$count:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get the number of the resource
+      operationId: admin.configurationManagement.configurationDrift_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/configurationManagement/configurationMonitoringResults:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: List configurationMonitoringResults
+      description: Get a list of the configurationMonitoringResult objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitoringresults?view=graph-rest-beta
+      operationId: admin.configurationManagement_ListConfigurationMonitoringResult
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.configurationMonitoringResultCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.configurationManagement
+      summary: Create new navigation property to configurationMonitoringResults for admin
+      operationId: admin.configurationManagement_CreateConfigurationMonitoringResult
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/configurationManagement/configurationMonitoringResults/{configurationMonitoringResult-id}':
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get configurationMonitoringResult
+      description: Read the properties and relationships of a configurationMonitoringResult object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmonitoringresult-get?view=graph-rest-beta
+      operationId: admin.configurationManagement_GetConfigurationMonitoringResult
+      parameters:
+        - name: configurationMonitoringResult-id
+          in: path
+          description: The unique identifier of configurationMonitoringResult
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationMonitoringResult
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.configurationManagement
+      summary: Update the navigation property configurationMonitoringResults in admin
+      operationId: admin.configurationManagement_UpdateConfigurationMonitoringResult
+      parameters:
+        - name: configurationMonitoringResult-id
+          in: path
+          description: The unique identifier of configurationMonitoringResult
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationMonitoringResult
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.configurationManagement
+      summary: Delete navigation property configurationMonitoringResults for admin
+      operationId: admin.configurationManagement_DeleteConfigurationMonitoringResult
+      parameters:
+        - name: configurationMonitoringResult-id
+          in: path
+          description: The unique identifier of configurationMonitoringResult
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationMonitoringResult
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/configurationManagement/configurationMonitoringResults/$count:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get the number of the resource
+      operationId: admin.configurationManagement.configurationMonitoringResult_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/configurationManagement/configurationMonitors:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: List configurationMonitors
+      description: Get a list of the configurationMonitor objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitors?view=graph-rest-beta
+      operationId: admin.configurationManagement_ListConfigurationMonitor
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.configurationMonitorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.configurationManagement
+      summary: Create configurationMonitor
+      description: Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-post-configurationmonitors?view=graph-rest-beta
+      operationId: admin.configurationManagement_CreateConfigurationMonitor
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationMonitor'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationMonitor'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/configurationManagement/configurationMonitors/{configurationMonitor-id}':
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get configurationMonitor
+      description: Get the properties and relationships of a configurationMonitor object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmonitor-get?view=graph-rest-beta
+      operationId: admin.configurationManagement_GetConfigurationMonitor
+      parameters:
+        - name: configurationMonitor-id
+          in: path
+          description: The unique identifier of configurationMonitor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationMonitor
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationMonitor'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.configurationManagement
+      summary: Update configurationMonitor
+      description: 'Update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmonitor-update?view=graph-rest-beta
+      operationId: admin.configurationManagement_UpdateConfigurationMonitor
+      parameters:
+        - name: configurationMonitor-id
+          in: path
+          description: The unique identifier of configurationMonitor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationMonitor
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationMonitor'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationMonitor'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.configurationManagement
+      summary: Delete configurationMonitor
+      description: 'Delete a configurationMonitor object permanently. When deleted, the configurationMonitor data can''t be restored.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmonitor-delete?view=graph-rest-beta
+      operationId: admin.configurationManagement_DeleteConfigurationMonitor
+      parameters:
+        - name: configurationMonitor-id
+          in: path
+          description: The unique identifier of configurationMonitor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationMonitor
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/configurationManagement/configurationMonitors/{configurationMonitor-id}/baseline':
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get configurationBaseline
+      description: Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationbaseline-get?view=graph-rest-beta
+      operationId: admin.configurationManagement.configurationMonitor_GetBaseline
+      parameters:
+        - name: configurationMonitor-id
+          in: path
+          description: The unique identifier of configurationMonitor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationMonitor
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.configurationManagement
+      summary: Update the navigation property baseline in admin
+      operationId: admin.configurationManagement.configurationMonitor_UpdateBaseline
+      parameters:
+        - name: configurationMonitor-id
+          in: path
+          description: The unique identifier of configurationMonitor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationMonitor
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.configurationManagement
+      summary: Delete navigation property baseline for admin
+      operationId: admin.configurationManagement.configurationMonitor_DeleteBaseline
+      parameters:
+        - name: configurationMonitor-id
+          in: path
+          description: The unique identifier of configurationMonitor
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationMonitor
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/configurationManagement/configurationMonitors/$count:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get the number of the resource
+      operationId: admin.configurationManagement.configurationMonitor_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/configurationManagement/configurationSnapshotJobs:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: List configurationSnapshotJobs
+      description: Get a list of the configurationSnapshotJob objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshotjobs?view=graph-rest-beta
+      operationId: admin.configurationManagement_ListConfigurationSnapshotJob
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.configurationSnapshotJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.configurationManagement
+      summary: Create new navigation property to configurationSnapshotJobs for admin
+      operationId: admin.configurationManagement_CreateConfigurationSnapshotJob
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/configurationManagement/configurationSnapshotJobs/{configurationSnapshotJob-id}':
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get configurationSnapshotJob
+      description: Read the properties and relationships of a configurationSnapshotJob object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationsnapshotjob-get?view=graph-rest-beta
+      operationId: admin.configurationManagement_GetConfigurationSnapshotJob
+      parameters:
+        - name: configurationSnapshotJob-id
+          in: path
+          description: The unique identifier of configurationSnapshotJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationSnapshotJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.configurationManagement
+      summary: Update the navigation property configurationSnapshotJobs in admin
+      operationId: admin.configurationManagement_UpdateConfigurationSnapshotJob
+      parameters:
+        - name: configurationSnapshotJob-id
+          in: path
+          description: The unique identifier of configurationSnapshotJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationSnapshotJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.configurationManagement
+      summary: Delete configurationSnapshotJob
+      description: Delete a configurationSnapshotJob object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationsnapshotjob-delete?view=graph-rest-beta
+      operationId: admin.configurationManagement_DeleteConfigurationSnapshotJob
+      parameters:
+        - name: configurationSnapshotJob-id
+          in: path
+          description: The unique identifier of configurationSnapshotJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationSnapshotJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/configurationManagement/configurationSnapshotJobs/$count:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get the number of the resource
+      operationId: admin.configurationManagement.configurationSnapshotJob_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/configurationManagement/configurationSnapshots:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get configurationSnapshots from admin
+      description: A container for configuration snapshot baselines.
+      operationId: admin.configurationManagement_ListConfigurationSnapshot
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.configurationBaselineCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.configurationManagement
+      summary: Create new navigation property to configurationSnapshots for admin
+      operationId: admin.configurationManagement_CreateConfigurationSnapshot
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/configurationManagement/configurationSnapshots/{configurationBaseline-id}':
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get configurationSnapshots from admin
+      description: A container for configuration snapshot baselines.
+      operationId: admin.configurationManagement_GetConfigurationSnapshot
+      parameters:
+        - name: configurationBaseline-id
+          in: path
+          description: The unique identifier of configurationBaseline
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationBaseline
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.configurationManagement
+      summary: Update the navigation property configurationSnapshots in admin
+      operationId: admin.configurationManagement_UpdateConfigurationSnapshot
+      parameters:
+        - name: configurationBaseline-id
+          in: path
+          description: The unique identifier of configurationBaseline
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationBaseline
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.configurationManagement
+      summary: Delete navigation property configurationSnapshots for admin
+      operationId: admin.configurationManagement_DeleteConfigurationSnapshot
+      parameters:
+        - name: configurationBaseline-id
+          in: path
+          description: The unique identifier of configurationBaseline
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: configurationBaseline
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/configurationManagement/configurationSnapshots/$count:
+    get:
+      tags:
+        - admin.configurationManagement
+      summary: Get the number of the resource
+      operationId: admin.configurationManagement.configurationSnapshot_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+components:
+  schemas:
+    microsoft.graph.configurationManagement:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: configurationManagement
+          type: object
+          properties:
+            configurationDrifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.configurationDrift'
+              description: A container for configuration drift resources.
+              x-ms-navigationProperty: true
+            configurationMonitoringResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
+              description: A container for configuration monitoring results resources.
+              x-ms-navigationProperty: true
+            configurationMonitors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.configurationMonitor'
+              description: A container for configuration monitor resources.
+              x-ms-navigationProperty: true
+            configurationSnapshotJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
+              description: A container for snapshot job resources.
+              x-ms-navigationProperty: true
+            configurationSnapshots:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+              description: A container for configuration snapshot baselines.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.configurationDrift:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: configurationDrift
+          type: object
+          properties:
+            baselineResourceDisplayName:
+              type: string
+              description: Resource instance for which the drift is detected.
+              readOnly: true
+            driftedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driftedProperty'
+              description: Properties within one or more resource instances in which drift is detected.
+              readOnly: true
+            firstReportedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time at which drift is first detected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            monitorId:
+              type: string
+              description: Globally unique identifier (GUID) of the monitor. System-generated.
+              readOnly: true
+            resourceInstanceIdentifier:
+              $ref: '#/components/schemas/microsoft.graph.openComplexDictionaryType'
+            resourceType:
+              type: string
+              description: Resource for which the drift is detected.
+              readOnly: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.driftStatus'
+            tenantId:
+              type: string
+              description: Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.configurationMonitoringResult:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: configurationMonitoringResult
+          type: object
+          properties:
+            driftsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Number of drifts observed during a monitor run.
+              format: int32
+              readOnly: true
+            errorDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.errorDetail'
+              description: All the error details that prevent the monitor from running successfully. The error details are a contained entity.
+              readOnly: true
+            monitorId:
+              type: string
+              description: Globally unique identifier (GUID) of the monitor. System-generated.
+              readOnly: true
+            runCompletionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the monitor run completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            runInitiationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the monitor run initiated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            runStatus:
+              $ref: '#/components/schemas/microsoft.graph.monitorRunStatus'
+            tenantId:
+              type: string
+              description: Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.configurationMonitor:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: configurationMonitor
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            description:
+              type: string
+              description: User-friendly description of the monitor given by the user.
+            displayName:
+              type: string
+              description: User-friendly name given by the user to the monitor.
+            inactivationReason:
+              type: string
+              description: The reason for the monitor's inactivation.
+              nullable: true
+              readOnly: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the monitor was last modified. If no modifications are made to the monitor, it''s the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            mode:
+              $ref: '#/components/schemas/microsoft.graph.monitorMode'
+            monitorRunFrequencyInHours:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Frequency at which the monitor runs. The default frequency is six hours. Regardless of when you create or update a monitor, it gets triggered within the next 6 hours. Currently, monitors are picked up at fixed times: 6 AM, 12 PM, 6 PM, and 12 AM (all in GMT). For example, if you create a monitor at 9 AM, it gets triggered around 12 PM. If you update a monitor at 4 PM, it gets triggered around 6 PM.'
+              format: int32
+              readOnly: true
+            parameters:
+              $ref: '#/components/schemas/microsoft.graph.openComplexDictionaryType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.monitorStatus'
+            tenantId:
+              type: string
+              description: Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
+              readOnly: true
+            baseline:
+              $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+          additionalProperties:
+            type: object
+    microsoft.graph.configurationBaseline:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: configurationBaseline
+          type: object
+          properties:
+            description:
+              type: string
+              description: User-friendly description of the baseline given by the user.
+            displayName:
+              type: string
+              description: User-friendly name given by the user to the baseline.
+            parameters:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baselineParameter'
+              description: Collection of parameters attached to the baseline.
+            resources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baselineResource'
+              description: Collection of resources and their properties that are added to the baseline. At least one property of one resource must be present in the baseline.
+          additionalProperties:
+            type: object
+    microsoft.graph.configurationSnapshotJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: configurationSnapshotJob
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the snapshot job was completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the snapshot job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              readOnly: true
+            description:
+              type: string
+              description: User-friendly description of the snapshot given by the user.
+            displayName:
+              type: string
+              description: User-friendly name provided by the user during snapshot creation.
+            errorDetails:
+              type: array
+              items:
+                type: string
+              description: Details of errors related to the reasons why the snapshot can't complete.
+              readOnly: true
+            resourceLocation:
+              type: string
+              description: The URL at which the snapshot file resides.
+              readOnly: true
+            resources:
+              type: array
+              items:
+                type: string
+              description: The names of all resources included in the request body by the user who created the snapshot. Fetched by the system.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.snapshotJobStatus'
+            tenantId:
+              type: string
+              description: Globally unique identifier (GUID) of the tenant for which the snapshot is created.
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.driftedProperty:
+      title: driftedProperty
+      type: object
+      properties:
+        currentValue:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+        desiredValue:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+        propertyName:
+          type: string
+          description: The name of the property.
+          readOnly: true
+      additionalProperties:
+        type: object
+    microsoft.graph.openComplexDictionaryType:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: openComplexDictionaryType
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.driftStatus:
+      title: driftStatus
+      enum:
+        - active
+        - fixed
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: driftStatus
+        modelAsString: false
+        values:
+          - value: unknownFutureValue
+            description: A marker value for members added after the release of this API.
+            name: unknownFutureValue
+    microsoft.graph.errorDetail:
+      title: errorDetail
+      type: object
+      properties:
+        errorMessage:
+          type: string
+          description: The message that describes the error to help the admin take action.
+          readOnly: true
+        resourceInstanceName:
+          type: string
+          description: The resource type identifier.
+          readOnly: true
+        resourceType:
+          type: string
+          description: Name of the resource type.
+          readOnly: true
+      additionalProperties:
+        type: object
+    microsoft.graph.monitorRunStatus:
+      title: monitorRunStatus
+      enum:
+        - successful
+        - partiallySuccessful
+        - failed
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: monitorRunStatus
+        modelAsString: false
+        values:
+          - value: unknownFutureValue
+            description: A marker value for members added after the release of this API.
+            name: unknownFutureValue
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.monitorMode:
+      title: monitorMode
+      enum:
+        - monitorOnly
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: monitorMode
+        modelAsString: false
+        values:
+          - value: unknownFutureValue
+            description: A marker value for members added after the release of this API.
+            name: unknownFutureValue
+    microsoft.graph.monitorStatus:
+      title: monitorStatus
+      enum:
+        - active
+        - inactive
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: monitorStatus
+        modelAsString: false
+        values:
+          - value: unknownFutureValue
+            description: A marker value for members added after the release of this API.
+            name: unknownFutureValue
+    microsoft.graph.baselineParameter:
+      title: baselineParameter
+      type: object
+      properties:
+        description:
+          type: string
+          description: User-friendly description of the parameter.
+          nullable: true
+        displayName:
+          type: string
+          description: Parameter names such as FQDN and Tenant ID.
+        parameterType:
+          $ref: '#/components/schemas/microsoft.graph.baselineParameterType'
+      additionalProperties:
+        type: object
+    microsoft.graph.baselineResource:
+      title: baselineResource
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Unique name of the resource.
+        properties:
+          $ref: '#/components/schemas/microsoft.graph.openComplexDictionaryType'
+        resourceType:
+          type: string
+          description: Name of the resource type.
+      additionalProperties:
+        type: object
+    microsoft.graph.snapshotJobStatus:
+      title: snapshotJobStatus
+      enum:
+        - notStarted
+        - running
+        - succeeded
+        - failed
+        - unknownFutureValue
+        - partiallySuccessful
+      type: string
+      x-ms-enum:
+        name: snapshotJobStatus
+        modelAsString: false
+        values:
+          - value: unknownFutureValue
+            description: A marker value for members added after the release of this API.
+            name: unknownFutureValue
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.configurationDriftCollectionResponse:
+      title: Collection of configurationDrift
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.configurationDrift'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
+    microsoft.graph.configurationMonitoringResultCollectionResponse:
+      title: Collection of configurationMonitoringResult
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.configurationMonitorCollectionResponse:
+      title: Collection of configurationMonitor
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.configurationMonitor'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.configurationSnapshotJobCollectionResponse:
+      title: Collection of configurationSnapshotJob
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.configurationBaselineCollectionResponse:
+      title: Collection of configurationBaseline
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.Json:
+      title: Json
+      type: object
+      additionalProperties:
+        type: object
+      description: Standard way to represent a Json blob on Graph.
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.baselineParameterType:
+      title: baselineParameterType
+      enum:
+        - string
+        - integer
+        - boolean
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: baselineParameterType
+        modelAsString: false
+        values:
+          - value: unknownFutureValue
+            description: A marker value for members added after the release of this API.
+            name: unknownFutureValue
+    microsoft.graph.ODataErrors.MainError:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+          x-ms-primary-error-message: true
+        target:
+          type: string
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ErrorDetails:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.configurationDriftCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.configurationDriftCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.configurationMonitoringResultCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResultCollectionResponse'
+    microsoft.graph.configurationMonitorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.configurationMonitorCollectionResponse'
+    microsoft.graph.configurationSnapshotJobCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJobCollectionResponse'
+    microsoft.graph.configurationBaselineCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.configurationBaselineCollectionResponse'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      style: form
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      style: form
+      explode: false
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      style: form
+      explode: false
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      style: form
+      explode: false
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]
