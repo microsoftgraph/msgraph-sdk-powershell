@@ -42,12 +42,16 @@ steps:
       command: custom
       customCommand: install -g @autorest/core@3.10.4
 
-  - task: PowerShell@2
+  - task: Npm@1
     displayName: Install Rush
+    inputs:
+      command: custom
+      customCommand: install -g @microsoft/rush
+  
+  - task: PowerShell@2
+    displayName: Rush Build
     inputs:
       targetType: inline
       pwsh: true
-      script: |
-        cd autorest.powershell
-        node .\common\scripts\install-run-rush.js install
-        rush build
+      workingDirectory: autorest.powershell
+      script: rush build
