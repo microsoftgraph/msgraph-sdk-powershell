@@ -53,5 +53,7 @@ steps:
     inputs:
       targetType: inline
       pwsh: true
-      workingDirectory: autorest.powershell
-      script: rush build
+      workingDirectory: "autorest.powershell"
+      script: |
+        rush link
+        rush build
