@@ -55,5 +55,6 @@ steps:
       pwsh: true
       workingDirectory: "autorest.powershell"
       script: |
+        rush install
         rush link
-        rush build
+        rush rebuild
