@@ -28,7 +28,7 @@ steps:
   - task: NodeTool@0
     displayName: Install NodeJs
     inputs:
-      versionSpec: 16.x
+      versionSpec: 18.x
       
   - task: Npm@1
     displayName: Install AutoRest
@@ -47,4 +47,14 @@ steps:
     inputs:
       command: custom
       customCommand: install -g @microsoft/rush
-
+  
+  - task: PowerShell@2
+    displayName: Rush Build
+    inputs:
+      targetType: inline
+      pwsh: true
+      workingDirectory: "autorest.powershell"
+      script: |
+        rush install
+        rush link
+        rush rebuild
