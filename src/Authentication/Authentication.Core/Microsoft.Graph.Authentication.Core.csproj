@@ -12,6 +12,9 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(SignAssembly)' == 'true'">
+    <DefineConstants>$(DefineConstants);SIGNED_BUILD</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.18.0" />
     <PackageReference Include="Azure.Identity.Broker" Version="1.4.0" />
