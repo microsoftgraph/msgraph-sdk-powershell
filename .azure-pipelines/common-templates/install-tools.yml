@@ -29,7 +29,25 @@ steps:
     displayName: Install NodeJs
     inputs:
       versionSpec: 18.x
-      
+
+  - task: PowerShell@2
+    displayName: Configure private npm feed
+    inputs:
+      targetType: filePath
+      pwsh: true
+      filePath: $(Build.SourcesDirectory)/tools/Configure-PrivateNpmFeed.ps1
+      arguments: -SourcesDirectory "$(Build.SourcesDirectory)"
+
+  - task: npmAuthenticate@0
+    displayName: Authenticate to private npm feed
+    inputs:
+      workingFile: $(Build.SourcesDirectory)/.npmrc
+
+  - task: npmAuthenticate@0
+    displayName: Authenticate to private npm feed (Rush)
+    inputs:
+      workingFile: $(Build.SourcesDirectory)/autorest.powershell/common/config/rush/.npmrc
+
   - task: Npm@1
     displayName: Install AutoRest
     inputs:
