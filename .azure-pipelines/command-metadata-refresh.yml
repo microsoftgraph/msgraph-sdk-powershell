@@ -19,7 +19,7 @@ parameters:
   default: false
 - name: Sign
   type: boolean
-  default: false
+  default: true
 - name: BumpModuleVersion
   type: boolean
   default: false
@@ -36,6 +36,17 @@ trigger:
   branches:
     include:
     - main
+  paths:
+    include:
+    - openApiDocs/*
+
+schedules:
+- cron: "0 0 * * 3"
+  displayName: Weekly Wednesday Run
+  branches:
+    include:
+    - main
+  always: true
 
 resources:
   repositories:
