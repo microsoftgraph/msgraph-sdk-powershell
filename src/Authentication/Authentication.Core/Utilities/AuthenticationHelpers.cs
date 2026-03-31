@@ -160,7 +160,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext),
                 DeviceCodeCallback = (code, cancellation) =>
                 {
-                    GraphSession.Instance.OutputWriter.WriteObject(code.Message);
+                    try
+                    {
+                        GraphSession.Instance.OutputWriter.WriteObject(code.Message);
+                    }
+                    catch
+                    {
+                        Console.WriteLine(code.Message);
+                    }
                     return Task.CompletedTask;
                 }
             };
@@ -277,7 +284,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             var tokenCredential = await GetTokenCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
-            var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext)), cancellationToken).ConfigureAwait(false);
+            // Use isCaeEnabled: true to match the TokenRequestContext that AzureIdentityAccessTokenProvider will use
+            // during API calls, ensuring MSAL caches a CAE-capable token that can be found silently later.
+            var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext), isCaeEnabled: true), cancellationToken).ConfigureAwait(false);
             JwtHelpers.DecodeJWT(token.Token, account: null, ref authContext);
             return authContext;
         }
