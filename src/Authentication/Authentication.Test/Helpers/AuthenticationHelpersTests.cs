@@ -623,7 +623,6 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             Assert.True(signInContext.IsCaeEnabled,
                 "SignInAsync must pass isCaeEnabled: true to GetTokenAsync.");
             Assert.NotNull(providerContext);
-                "SignInAsync must pass isCaeEnabled: true to GetTokenAsync.");
             Assert.True(providerContext.IsCaeEnabled,
                 "AzureIdentityAccessTokenProvider must forward isCaeEnabled: true.");
 
