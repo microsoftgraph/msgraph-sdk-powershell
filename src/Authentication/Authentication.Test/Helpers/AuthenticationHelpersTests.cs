@@ -556,7 +556,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             IAuthContext result = await AuthenticationHelpers.SignInAsync(
                 authContext, CancellationToken.None, capturingCredential);
 
-            // Assert: GetTokenAsync must receive isCaeEnabled: true so that MSAL caches
+            // Assert: GetTokenAsync must have been called (Scopes will be non-null).
+            Assert.NotNull(capturedContext.Scopes);
+
+            // GetTokenAsync must receive isCaeEnabled: true so that MSAL caches
             // a CAE-capable token that can be served silently by
             // AzureIdentityAccessTokenProvider during subsequent API calls.
             Assert.True(capturedContext.IsCaeEnabled,
