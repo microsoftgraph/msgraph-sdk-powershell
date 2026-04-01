@@ -557,7 +557,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             IAuthContext result = await AuthenticationHelpers.SignInAsync(
                 authContext, CancellationToken.None, capturingCredential);
 
-            // Assert: GetTokenAsync must have been called (Scopes will be non-null).
+            // Assert: GetTokenAsync must have been called and provided a context.
+            Assert.NotNull(capturedContext);
             Assert.NotNull(capturedContext.Scopes);
 
             // GetTokenAsync must receive isCaeEnabled: true so that MSAL caches
