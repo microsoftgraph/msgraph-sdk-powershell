@@ -577,31 +577,49 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         }
 
         [Fact]
-        public async Task SignInAsync_WithoutCaeEnabled_ShouldDifferInTokenRequestContextAsync()
+        public async Task SignInAndProviderShouldUseSameCaeSettingAsync()
         {
-            // Arrange: two capturing credentials to compare with and without CAE.
-            TokenRequestContext caeContext = default;
-            TokenRequestContext noCaeContext = default;
-            var caeCredential = new CapturingTokenCredential(
-                ctx => caeContext = ctx,
-                MockConstants.DummyAccessToken);
-            var noCaeCredential = new CapturingTokenCredential(
-                ctx => noCaeContext = ctx,
+            // Arrange: two capturing credentials — one for the sign-in path, one for
+            // the provider path — so we can verify they both receive isCaeEnabled: true.
+            TokenRequestContext signInContext = default;
+            var signInCredential = new CapturingTokenCredential(
+                ctx => signInContext = ctx,
                 MockConstants.DummyAccessToken);
 
-            var scopes = new[] { "User.Read" };
+            TokenRequestContext providerContext = default;
+            var providerCredential = new CapturingTokenCredential(
+                ctx => providerContext = ctx,
+                MockConstants.DummyAccessToken);
 
-            // Act — call GetTokenAsync with and without isCaeEnabled to show the difference.
-            await caeCredential.GetTokenAsync(
-                new TokenRequestContext(scopes, isCaeEnabled: true), CancellationToken.None);
-            await noCaeCredential.GetTokenAsync(
-                new TokenRequestContext(scopes, isCaeEnabled: false), CancellationToken.None);
+            AuthContext authContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.DeviceCode
+            };
 
-            // Assert: the two contexts must differ on IsCaeEnabled.
-            Assert.True(caeContext.IsCaeEnabled,
-                "A CAE-enabled request should set IsCaeEnabled = true.");
-            Assert.False(noCaeContext.IsCaeEnabled,
-                "A non-CAE request should set IsCaeEnabled = false.");
+            // Act — exercise the production SignInAsync path.
+            await AuthenticationHelpers.SignInAsync(
+                authContext, CancellationToken.None, signInCredential);
+
+            // Build the provider the same way GetAuthenticationProviderAsync does,
+            // but with the capturing credential so we can observe the context.
+            var authProvider = new AzureIdentityAccessTokenProvider(
+                credential: providerCredential,
+                observabilityOptions: null,
+                isCaeEnabled: true,
+                scopes: authContext.Scopes);
+
+            _ = await authProvider.GetAuthorizationTokenAsync(
+                new Uri("https://graph.microsoft.com/v1.0/me"));
+
+            // Assert: both paths must use isCaeEnabled: true so that MSAL serves
+            // the cached token silently during API calls.
+            Assert.True(signInContext.IsCaeEnabled,
+                "SignInAsync must pass isCaeEnabled: true to GetTokenAsync.");
+            Assert.True(providerContext.IsCaeEnabled,
+                "AzureIdentityAccessTokenProvider must forward isCaeEnabled: true.");
 
             // reset static instance.
             GraphSession.Reset();

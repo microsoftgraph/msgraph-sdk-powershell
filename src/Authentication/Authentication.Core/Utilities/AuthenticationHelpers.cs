@@ -160,14 +160,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext),
                 DeviceCodeCallback = (code, cancellation) =>
                 {
-                    if (GraphSession.Instance != null && GraphSession.Instance.OutputWriter != null)
+                    if (GraphSession.Exists)
                     {
-                        GraphSession.Instance.OutputWriter.WriteObject(code.Message);
+                        try
+                        {
+                            GraphSession.Instance.OutputWriter.WriteObject(code.Message);
+                            return Task.CompletedTask;
+                        }
+                        catch
+                        {
+                            // Fall through to console output if OutputWriter is unavailable.
+                        }
                     }
-                    else
-                    {
-                        Console.WriteLine(code.Message);
-                    }
+                    Console.WriteLine(code.Message);
                     return Task.CompletedTask;
                 }
             };
