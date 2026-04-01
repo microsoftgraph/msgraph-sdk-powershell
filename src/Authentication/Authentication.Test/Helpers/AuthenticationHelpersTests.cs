@@ -533,7 +533,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // reset static instance.
             GraphSession.Reset();
         }
-
+
+
         [Fact]
         public async Task SignInAsync_ShouldCallGetTokenAsync_WithCaeEnabledAsync()
         {
@@ -617,9 +618,11 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             _ = await authProvider.GetAuthorizationTokenAsync(
                 new Uri("https://graph.microsoft.com/v1.0/me"));
 
-            // Assert: both paths must use isCaeEnabled: true so that MSAL serves
             // the cached token silently during API calls.
+            Assert.NotNull(signInContext);
             Assert.True(signInContext.IsCaeEnabled,
+                "SignInAsync must pass isCaeEnabled: true to GetTokenAsync.");
+            Assert.NotNull(providerContext);
                 "SignInAsync must pass isCaeEnabled: true to GetTokenAsync.");
             Assert.True(providerContext.IsCaeEnabled,
                 "AzureIdentityAccessTokenProvider must forward isCaeEnabled: true.");

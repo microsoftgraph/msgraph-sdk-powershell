@@ -167,7 +167,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                             GraphSession.Instance.OutputWriter.WriteObject(code.Message);
                             return Task.CompletedTask;
                         }
-                        catch
+                        catch (InvalidOperationException)
+                        {
+                            // Fall through to console output if OutputWriter is unavailable.
+                        }
+                        catch (ObjectDisposedException)
                         {
                             // Fall through to console output if OutputWriter is unavailable.
                         }
