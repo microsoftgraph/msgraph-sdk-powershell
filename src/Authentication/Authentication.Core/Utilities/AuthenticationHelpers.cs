@@ -171,10 +171,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         {
                             // Fall through to console output if OutputWriter is unavailable.
                         }
-                        catch (ObjectDisposedException)
-                        {
-                            // Fall through to console output if OutputWriter is unavailable.
-                        }
                     }
                     Console.WriteLine(code.Message);
                     return Task.CompletedTask;
