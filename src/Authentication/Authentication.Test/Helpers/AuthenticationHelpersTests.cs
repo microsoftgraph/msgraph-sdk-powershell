@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -531,6 +532,131 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // When DisableWAMForMSGraph is null (default), WAM should be enabled regardless of ClientId
             // reset static instance.
             GraphSession.Reset();
+        }
+
+
+        [Fact]
+        public async Task SignInAsync_ShouldCallGetTokenAsync_WithCaeEnabledAsync()
+        {
+            // Arrange: a capturing credential that records the TokenRequestContext it receives.
+            TokenRequestContext capturedContext = default;
+            var capturingCredential = new CapturingTokenCredential(
+                ctx => capturedContext = ctx,
+                MockConstants.DummyAccessToken);
+
+            AuthContext authContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.DeviceCode
+            };
+
+            // Act — call SignInAsync with the capturing credential so we can
+            // observe the TokenRequestContext passed to GetTokenAsync.
+            IAuthContext result = await AuthenticationHelpers.SignInAsync(
+                authContext, CancellationToken.None, capturingCredential);
+
+            // Assert: GetTokenAsync must have been called and provided a context.
+            Assert.NotNull(capturedContext);
+            Assert.NotNull(capturedContext.Scopes);
+
+            // GetTokenAsync must receive isCaeEnabled: true so that MSAL caches
+            // a CAE-capable token that can be served silently by
+            // AzureIdentityAccessTokenProvider during subsequent API calls.
+            Assert.True(capturedContext.IsCaeEnabled,
+                "SignInAsync must pass isCaeEnabled: true to GetTokenAsync so the " +
+                "cached token matches the CAE-enabled context used during API calls.");
+
+            // Verify the scopes forwarded to the credential match the original request.
+            Assert.Equal(new[] { "User.Read" }, capturedContext.Scopes);
+
+            // Verify that the returned token was decoded and the auth context populated.
+            Assert.Equal("mockAppId", result.ClientId);
+            Assert.Equal("mockTid", result.TenantId);
+            Assert.Equal("upn@contoso.com", result.Account);
+            Assert.Equal("mockName", result.AppName);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task SignInAndProviderShouldUseSameCaeSettingAsync()
+        {
+            // Arrange: two capturing credentials — one for the sign-in path, one for
+            // the provider path — so we can verify they both receive isCaeEnabled: true.
+            TokenRequestContext signInContext = default;
+            var signInCredential = new CapturingTokenCredential(
+                ctx => signInContext = ctx,
+                MockConstants.DummyAccessToken);
+
+            TokenRequestContext providerContext = default;
+            var providerCredential = new CapturingTokenCredential(
+                ctx => providerContext = ctx,
+                MockConstants.DummyAccessToken);
+
+            AuthContext authContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.DeviceCode
+            };
+
+            // Act — exercise the production SignInAsync path.
+            await AuthenticationHelpers.SignInAsync(
+                authContext, CancellationToken.None, signInCredential);
+
+            // Build the provider the same way GetAuthenticationProviderAsync does,
+            // but with the capturing credential so we can observe the context.
+            var authProvider = new AzureIdentityAccessTokenProvider(
+                credential: providerCredential,
+                observabilityOptions: null,
+                isCaeEnabled: true,
+                scopes: authContext.Scopes);
+
+            _ = await authProvider.GetAuthorizationTokenAsync(
+                new Uri("https://graph.microsoft.com/v1.0/me"));
+
+            // the cached token silently during API calls.
+            Assert.NotNull(signInContext);
+            Assert.True(signInContext.IsCaeEnabled,
+                "SignInAsync must pass isCaeEnabled: true to GetTokenAsync.");
+            Assert.NotNull(providerContext);
+            Assert.True(providerContext.IsCaeEnabled,
+                "AzureIdentityAccessTokenProvider must forward isCaeEnabled: true.");
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        /// <summary>
+        /// Minimal <see cref="TokenCredential"/> that captures the <see cref="TokenRequestContext"/>
+        /// it receives and returns a fixed dummy token.
+        /// </summary>
+        private sealed class CapturingTokenCredential : TokenCredential
+        {
+            private readonly Action<TokenRequestContext> _onGetToken;
+            private readonly string _token;
+
+            public CapturingTokenCredential(Action<TokenRequestContext> onGetToken, string token)
+            {
+                _onGetToken = onGetToken;
+                _token = token;
+            }
+
+            public override AccessToken GetToken(TokenRequestContext requestContext, CancellationToken cancellationToken)
+            {
+                _onGetToken(requestContext);
+                return new AccessToken(_token, DateTimeOffset.UtcNow.AddHours(1));
+            }
+
+            public override ValueTask<AccessToken> GetTokenAsync(TokenRequestContext requestContext, CancellationToken cancellationToken)
+            {
+                _onGetToken(requestContext);
+                return new ValueTask<AccessToken>(new AccessToken(_token, DateTimeOffset.UtcNow.AddHours(1)));
+            }
         }
 
         public void Dispose() => mockAuthRecord.DeleteCache();
