@@ -79025,7 +79025,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalAuthenticationMethod'
-              description: Represents the external authentication methods registered to a user for authentication using an external identity provider.
+              description: Represents the external MFA registered to a user for authentication using an external identity provider.
               x-ms-navigationProperty: true
             fido2Methods:
               type: array
@@ -82509,7 +82509,7 @@ components:
               description: A unique identifier used to manage the external auth method within Microsoft Entra ID.
             displayName:
               type: string
-              description: Custom name given to the registered external authentication method.
+              description: Custom name given to the registered external MFA.
           additionalProperties:
             type: object
     microsoft.graph.fido2AuthenticationMethod:
@@ -83799,10 +83799,12 @@ components:
               type: array
               items:
                 type: string
+              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This property can be set only as part of creation (POST). For the list of possible values, see Microsoft 365 group behaviors and provisioning options.'
             resourceProvisioningOptions:
               type: array
               items:
                 type: string
+              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).'
             securityEnabled:
               type: boolean
               description: 'Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).'
@@ -83834,6 +83836,9 @@ components:
             visibility:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. The possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              nullable: true
+            welcomeMessageEnabled:
+              type: boolean
               nullable: true
             acceptedSenders:
               type: array
