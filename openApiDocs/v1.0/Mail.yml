@@ -2453,10 +2453,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\r\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\r\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\r\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\r\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\r\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_createForward
       parameters:
         - name: user-id
@@ -4833,10 +4829,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\r\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\r\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\r\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\r\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\r\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
       operationId: user.mailFolder.message_createForward
       parameters:
         - name: user-id
@@ -6643,10 +6635,6 @@ paths:
       tags:
         - users.message
       summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\r\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\r\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\r\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\r\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\r\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
       operationId: user.message_createForward
       parameters:
         - name: user-id

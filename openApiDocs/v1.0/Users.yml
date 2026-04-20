@@ -8473,13 +8473,16 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/sponsors/{directoryObject-id}':
-    get:
+  '/users/{user-id}/sponsors/{directoryObject-id}/$ref':
+    delete:
       tags:
         - users.directoryObject
-      summary: Get sponsors from users
-      description: 'The users and groups responsible for this guest''s privileges in the tenant and keeping the guest''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
-      operationId: user_GetSponsor
+      summary: Remove sponsor
+      description: Remove a user's sponsor.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0
+      operationId: user.sponsor_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -8497,33 +8500,15 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
           schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
+            type: string
       responses:
         2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8549,6 +8534,113 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/sponsors/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: List sponsors
+      description: Get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0
+      operationId: user_ListSponsorGraphBPreRef
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.directoryObject
+      summary: Add sponsor
+      description: Assign a user a sponsor. Sponsors are users and groups that are responsible for this guest user's privileges in the tenant and for keeping the guest user's information and access up to date.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-post-sponsors?view=graph-rest-1.0
+      operationId: user_CreateSponsorGraphBPreRef
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Remove sponsor
+      description: Remove a user's sponsor.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0
+      operationId: user_DeleteSponsorGraphBPreRef
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/todo':
     get:
       tags:
@@ -13722,10 +13814,12 @@ components:
               type: array
               items:
                 type: string
+              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This property can be set only as part of creation (POST). For the list of possible values, see Microsoft 365 group behaviors and provisioning options.'
             resourceProvisioningOptions:
               type: array
               items:
                 type: string
+              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).'
             securityEnabled:
               type: boolean
               description: 'Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).'
@@ -13757,6 +13851,9 @@ components:
             visibility:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. The possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              nullable: true
+            welcomeMessageEnabled:
+              type: boolean
               nullable: true
             acceptedSenders:
               type: array
@@ -15435,7 +15532,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalAuthenticationMethod'
-              description: Represents the external authentication methods registered to a user for authentication using an external identity provider.
+              description: Represents the external MFA registered to a user for authentication using an external identity provider.
               x-ms-navigationProperty: true
             fido2Methods:
               type: array
@@ -18655,6 +18752,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ReferenceCreate:
+      type: object
+      properties:
+        '@odata.id':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.userCollectionResponse:
       title: Collection of user
       type: object
@@ -18979,6 +19083,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    StringCollectionResponse:
+      title: Collection of string
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.todoTaskListCollectionResponse:
       title: Collection of todoTaskList
       type: object
@@ -19297,7 +19414,7 @@ components:
               description: A unique identifier used to manage the external auth method within Microsoft Entra ID.
             displayName:
               type: string
-              description: Custom name given to the registered external authentication method.
+              description: Custom name given to the registered external MFA.
           additionalProperties:
             type: object
     microsoft.graph.fido2AuthenticationMethod:
@@ -32298,6 +32415,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.workPlanRecurrenceCollectionResponse'
+    StringCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/StringCollectionResponse'
     microsoft.graph.todoTaskListCollectionResponse:
       description: Retrieved collection
       content:
@@ -32385,6 +32508,13 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ReferenceUpdate'
+      required: true
+    refPostBody:
+      description: New navigation property ref value
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReferenceCreate'
       required: true
   securitySchemes:
     azureaadv2:
