@@ -6892,7 +6892,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       operationId: roleManagement.cloudPC_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6949,7 +6949,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-beta
@@ -6982,7 +6982,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
@@ -7036,7 +7036,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update unifiedRoleAssignmentMultiple
-      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
+      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-beta
@@ -7077,7 +7077,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete unifiedRoleAssignmentMultiple
-      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR Unified RBAC)"
+      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-beta
@@ -7770,7 +7770,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online"
+      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR)\r\n- directory (Microsoft Entra ID) \r\n- entitlement management (Microsoft Entra ID)\r\n- Exchange Online"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta
@@ -7830,7 +7830,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- Defender (Microsoft Defender XDR)\n- directory (Microsoft Entra ID)"
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\r\n- Cloud PC\r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR)\r\n- directory (Microsoft Entra ID)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-beta
@@ -7863,7 +7863,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR Unified RBAC)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online (Except China operated by 21Vianet)"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta
@@ -7917,7 +7917,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update unifiedRoleDefinition
-      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) "
+      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\r\n- Cloud PC\r\n- device management (Intune)\r\n- directory (Microsoft Entra ID) "
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-beta
@@ -7958,7 +7958,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete unifiedRoleDefinition
-      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- Defender (Microsoft Defender XDR Unified RBAC)\n- directory (Microsoft Entra ID) "
+      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\r\n- Cloud PC\r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra ID) "
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta
@@ -9358,11 +9358,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      summary: List unifiedRoleAssignmentMultiple
+      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9419,7 +9419,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-beta
@@ -9452,7 +9452,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
@@ -9506,7 +9506,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update unifiedRoleAssignmentMultiple
-      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
+      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-beta
@@ -9547,7 +9547,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete unifiedRoleAssignmentMultiple
-      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR Unified RBAC)"
+      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-beta
@@ -12055,7 +12055,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
+      description: "Get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:\r\n- directory (Microsoft Entra ID)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-beta
@@ -12573,7 +12573,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online"
+      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR)\r\n- directory (Microsoft Entra ID) \r\n- entitlement management (Microsoft Entra ID)\r\n- Exchange Online"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta
@@ -12662,7 +12662,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- Defender (Microsoft Defender XDR Unified RBAC)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online (Except China operated by 21Vianet)"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta
@@ -14396,6 +14396,8 @@ components:
             chooseYourLockScreenDisabled:
               type: boolean
               description: Indicates if iCloud Documents and Desktop screen is disabled
+            depProfileAdminAccountPasswordRotationSetting:
+              $ref: '#/components/schemas/microsoft.graph.depProfileAdminAccountPasswordRotationSetting'
             dontAutoPopulatePrimaryAccountInfo:
               type: boolean
               description: Indicates whether Setup Assistant will auto populate the primary account information
@@ -15908,6 +15910,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.depProfileAdminAccountPasswordRotationSetting:
+      title: depProfileAdminAccountPasswordRotationSetting
+      type: object
+      properties:
+        autoRotationPeriodInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Indicates the number of days between 1-180 since the last rotation after which to rotate the local admin password.
+          format: int32
+        depProfileDelayAutoRotationSetting:
+          $ref: '#/components/schemas/microsoft.graph.depProfileDelayAutoRotationSetting'
+      additionalProperties:
+        type: object
+      description: Settings for local admin account password automatic rotation.
     microsoft.graph.discoverySource:
       title: discoverySource
       enum:
@@ -16931,6 +16948,22 @@ components:
           - value: exclude
             description: 'Indicates out-filter, rule matching will not offer the payload to devices.'
             name: exclude
+    microsoft.graph.depProfileDelayAutoRotationSetting:
+      title: depProfileDelayAutoRotationSetting
+      type: object
+      properties:
+        onRetrievalAutoRotatePasswordEnabled:
+          type: boolean
+          description: Indicates whether the admin account password should be rotated when retrieved by IT Admin through Intune.
+        onRetrievalDelayAutoRotatePasswordInHours:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Indicates how long in hours (between 1 and 24 hours) after password retrieval through Graph should automatic rotation be initiated for the admin account password.
+          format: int32
+      additionalProperties:
+        type: object
+      description: Settings related to auto rotation of local admin account password after password retrieval through Graph. These are optional settings
     microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
       title: importedWindowsAutopilotDeviceIdentityImportStatus
       enum:
@@ -17467,11 +17500,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
           nullable: true
       additionalProperties:
         type: object
