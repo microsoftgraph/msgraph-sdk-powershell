@@ -368,3 +368,6 @@ examplesreport/
 
 # Code sign summary
 CodeSignSummary-*.md
+
+# PowerShell module manifests (generated at build time)
+*.psd1
