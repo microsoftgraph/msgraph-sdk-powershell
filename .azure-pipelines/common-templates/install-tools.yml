@@ -53,21 +53,21 @@ steps:
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install -g autorest@3.7.2
+      customCommand: install -g autorest@3.7.2 --registry https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/
 
   - task: Npm@1
     displayName: Install AutorestCore
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install -g @autorest/core@3.10.4
+      customCommand: install -g @autorest/core@3.10.4 --registry https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/
 
   - task: Npm@1
     displayName: Install Rush
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install -g @microsoft/rush
+      customCommand: install -g @microsoft/rush --registry https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/
   
   - task: PowerShell@2
     displayName: Rush Build
