@@ -48,7 +48,7 @@ if (-not (Test-Path $ModuleMappingPath)) {
 
 # Build AutoREST.PowerShell submodule.
 Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
-rush update --purge
+rush install
 rush build
 
 $RequiredGraphModules = @()
