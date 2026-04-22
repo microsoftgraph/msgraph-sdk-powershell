@@ -52,18 +52,21 @@ steps:
     displayName: Install AutoRest
     inputs:
       command: custom
+      workingDir: $(Build.SourcesDirectory)
       customCommand: install -g autorest@3.7.2
-    
+
   - task: Npm@1
     displayName: Install AutorestCore
     inputs:
       command: custom
+      workingDir: $(Build.SourcesDirectory)
       customCommand: install -g @autorest/core@3.10.4
 
   - task: Npm@1
     displayName: Install Rush
     inputs:
       command: custom
+      workingDir: $(Build.SourcesDirectory)
       customCommand: install -g @microsoft/rush
   
   - task: PowerShell@2
