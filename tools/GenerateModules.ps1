@@ -32,10 +32,6 @@ if (-not $Isolated) {
 # Module import.
 Import-Module PowerShellGet
 
-# Install Powershell-yaml
-if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
-    Install-Module powershell-yaml -Repository PSGallery -Scope CurrentUser -Force
-}
 
 $ScriptRoot = $PSScriptRoot
 $ModulesSrc = Join-Path $ScriptRoot "..\src\"
