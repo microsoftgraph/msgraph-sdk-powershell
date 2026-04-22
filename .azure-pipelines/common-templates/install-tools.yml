@@ -48,6 +48,14 @@ steps:
     inputs:
       workingFile: $(Build.SourcesDirectory)/autorest.powershell/common/config/rush/.npmrc
 
+  - task: PowerShell@2
+    displayName: Set npm userconfig for all npm subprocesses
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        Write-Host "##vso[task.setvariable variable=NPM_CONFIG_USERCONFIG]$(Build.SourcesDirectory)/.npmrc"
+
   - task: Npm@1
     displayName: Install AutoRest
     inputs:
