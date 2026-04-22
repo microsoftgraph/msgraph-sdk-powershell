@@ -35,3 +35,18 @@ Write-Host "Created $rootNpmrc"
 $rushNpmrc = Join-Path $SourcesDirectory "autorest.powershell/common/config/rush/.npmrc"
 Set-Content -Path $rushNpmrc -Value $npmrcContent -NoNewline
 Write-Host "Updated $rushNpmrc"
+
+# Create NuGet.config to redirect dotnet restore to the private feed
+$nugetFeed = $Registry -replace "/npm/registry/$", "/nuget/v3/index.json"
+$nugetConfig = @"
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="PowerShell_V2_Build" value="$nugetFeed" />
+  </packageSources>
+</configuration>
+"@
+$nugetConfigPath = Join-Path $SourcesDirectory "NuGet.config"
+Set-Content -Path $nugetConfigPath -Value $nugetConfig -NoNewline
+Write-Host "Created $nugetConfigPath"
