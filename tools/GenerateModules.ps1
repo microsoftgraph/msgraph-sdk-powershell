@@ -63,10 +63,22 @@ if (Test-Path $coreCacheDir) {
 } else {
     Write-Host "WARNING: Autorest core cache directory not found at $coreCacheDir"
 }
+$modelerfourCacheDir = Join-Path $autorestHome "@autorest\modelerfour"
+if (Test-Path $modelerfourCacheDir) {
+    Write-Host "Autorest modelerfour cache versions: $(Get-ChildItem $modelerfourCacheDir -Directory | Select-Object -ExpandProperty Name)"
+    $modelerfourNodeModules = Join-Path $modelerfourCacheDir "4.24.3\node_modules\@autorest\modelerfour"
+    Write-Host "Cache modelerfour 4.24.3 node_modules present: $(Test-Path $modelerfourNodeModules)"
+} else {
+    Write-Host "WARNING: Autorest modelerfour cache directory not found at $modelerfourCacheDir"
+}
 Write-Host "npm registry: $(npm config get registry 2>&1)"
+Write-Host "npm_config_registry env: $env:npm_config_registry"
 Write-Host "NPM_CONFIG_USERCONFIG: $env:NPM_CONFIG_USERCONFIG"
 $userNpmrc = Join-Path $env:USERPROFILE ".npmrc"
 Write-Host "~/.npmrc exists: $(Test-Path $userNpmrc)"
+if (Test-Path $userNpmrc) {
+    Write-Host "~/.npmrc registry line: $(Select-String -Path $userNpmrc -Pattern '^registry=' | Select-Object -First 1 -ExpandProperty Line)"
+}
 Write-Host "--- End diagnostics ---"
 
 $RequiredGraphModules = @()

@@ -69,6 +69,10 @@ $ApiVersion | ForEach-Object {
             else {
                 $FullModuleVersion = $ModuleMetadata.versions[$CurrentApiVersion].version
             }
+            # Route autorest's internal npm registry calls (fetchPackageMetadata for extension
+            # resolution) through the private feed. The public npm registry is DNS-blocked by
+            # 1ES supply-chain security enforcement on release pipelines.
+            $env:npm_config_registry = "https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/"
             $autorestLog = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), "autorest-$($ModuleFullName -replace '[^a-zA-Z0-9-]', '-').log")
             npx autorest --verbose --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 2>&1 | Out-File -FilePath $autorestLog -Encoding utf8
             $autorestExitCode = $LASTEXITCODE
