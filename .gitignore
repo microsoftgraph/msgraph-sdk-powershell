@@ -371,3 +371,4 @@ CodeSignSummary-*.md
 
 # PowerShell module manifests (generated at build time)
 *.psd1
+!src/Authentication/Authentication/Microsoft.Graph.Authentication.psd1
