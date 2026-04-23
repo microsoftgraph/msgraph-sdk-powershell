@@ -129,4 +129,9 @@ Set-MgGraphOption -DisableLoginByWAM $true
 ```PowerShell
 Set-MgGraphOption -DisableLoginByWAM $false
 ```
-#### Note: Signin by Web Account Manager (WAM) is enabled by default on Windows. When using the default ClientId, WAM cannot be disabled — `DisableLoginByWAM` only takes effect when a custom ClientId is provided.
+
+**Note: Signin by Web Account Manager (WAM) is enabled by default on Windows and cannot be disabled. Setting this option to $False will have no effect on Windows systems. Except if you use your own app (see below)**
+
+Starting with v2.35.1, to disable WAM on Windows, use `Set-MgGraphOption -DisableLoginByWAM $true` and then connect with a custom `-ClientId`.
+To create your custom app, follow the guide to [Use delegated access with a custom application for Microsoft Graph PowerShell](https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0#use-delegated-access-with-a-custom-application-for-microsoft-graph-powershell
+). You should also add the redirect URI of `ms-appx-web://Microsoft.AAD.BrokerPlugin/<yourAppId>` to ensure that you can use WAM against that app registration as well.
