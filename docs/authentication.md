@@ -118,15 +118,15 @@ WAM is a Windows 10+ component that acts as an authentication broker allowing th
 
 Microsoft Graph PowerShell module supports WAM in the following scenario:
 
-- To enable WAM on supported devices
+- To disable WAM on supported devices (requires a custom ClientId)
 
 ```PowerShell
-Set-MgGraphOption -EnableLoginByWAM $true
+Set-MgGraphOption -DisableLoginByWAM $true
 ```
 
-- To disable WAM on supported devices
+- To re-enable WAM after disabling it
 
 ```PowerShell
-Set-MgGraphOption -EnableLoginByWAM $false
+Set-MgGraphOption -DisableLoginByWAM $false
 ```
-#### Note: Signin by Web Account Manager (WAM) is enabled by default on Windows and cannot be disabled. Setting this option to $False will have no effect on Windows systems. 
+#### Note: Signin by Web Account Manager (WAM) is enabled by default on Windows. When using the default ClientId, WAM cannot be disabled — `DisableLoginByWAM` only takes effect when a custom ClientId is provided.
