@@ -69,12 +69,23 @@ $ApiVersion | ForEach-Object {
             else {
                 $FullModuleVersion = $ModuleMetadata.versions[$CurrentApiVersion].version
             }
-            # Route autorest's internal npm registry calls (fetchPackageMetadata for extension
-            # resolution) through the private feed. The public npm registry is DNS-blocked by
-            # 1ES supply-chain security enforcement on release pipelines.
-            $env:npm_config_registry = "https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/"
+            # Pass @autorest/modelerfour as a local --use:<path> argument so autorest loads it
+            # directly from the pre-populated cache without calling fetchPackageMetadata.
+            # fetchPackageMetadata is called unconditionally before the cache check inside
+            # ExtensionManager.findPackage, and it hits the npm registry which is DNS-blocked
+            # by 1ES supply-chain security on release pipelines. A local --use path bypasses
+            # findPackage entirely: the extension goes straight into localExtensions, and when
+            # use-extension in autorest-configuration.md is processed, resolveExtension finds
+            # it there without any registry call.
+            $autorestHome = if ($env:AUTOREST_HOME) { $env:AUTOREST_HOME } else { Join-Path $env:USERPROFILE ".autorest" }
+            $modelerFourPath = Join-Path $autorestHome "@autorest" "modelerfour" "4.24.3" "node_modules" "@autorest" "modelerfour"
+            $modelerFourUseFlag = if (Test-Path $modelerFourPath) { @("--use:$modelerFourPath") } else { @() }
+            if ($modelerFourUseFlag.Count -eq 0) {
+                Write-Host -ForegroundColor Yellow "WARNING: @autorest/modelerfour local cache not found at $modelerFourPath — autorest will attempt npm registry lookup (may fail in network-isolated environment)"
+            }
+
             $autorestLog = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), "autorest-$($ModuleFullName -replace '[^a-zA-Z0-9-]', '-').log")
-            npx autorest --verbose --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 2>&1 | Out-File -FilePath $autorestLog -Encoding utf8
+            npx autorest @modelerFourUseFlag --verbose --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 2>&1 | Out-File -FilePath $autorestLog -Encoding utf8
             $autorestExitCode = $LASTEXITCODE
             if ($autorestExitCode -ne 0) {
                 Write-Host -ForegroundColor Red "AutoREST failed (exit $autorestExitCode) generating '$ModuleFullName'."
