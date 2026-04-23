@@ -76,20 +76,35 @@ steps:
       customCommand: install -g @autorest/core@3.10.4 --registry https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/
 
   - task: PowerShell@2
-    displayName: Pre-populate autorest core cache
+    displayName: Pre-populate autorest extension cache
     inputs:
       targetType: inline
       pwsh: true
       script: |
-        # Autorest looks for @autorest/core in ~/.autorest/@autorest/core/<version>/node_modules/
-        # Pre-installing it here with the explicit registry flag means autorest never needs
-        # to make any npm calls during module generation.
-        $cacheDir = Join-Path $env:USERPROFILE ".autorest\@autorest\core\3.10.4"
-        New-Item -ItemType Directory -Force -Path $cacheDir | Out-Null
-        Write-Host "Pre-installing @autorest/core@3.10.4 into autorest cache: $cacheDir"
-        npm install @autorest/core@3.10.4 --prefix $cacheDir --registry https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/
-        if ($LASTEXITCODE -ne 0) { throw "Failed to pre-install @autorest/core@3.10.4 into autorest cache (exit $LASTEXITCODE)" }
-        Write-Host "Autorest core cache pre-populated successfully"
+        # Autorest resolves extensions from ~/.autorest/<pkg>/<version>/node_modules/.
+        # Pre-install every extension referenced by autorest-configuration.md so autorest
+        # makes zero npm network calls during module generation.
+        $registry = "https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/"
+        $extensions = @(
+            "@autorest/core@3.10.4",
+            "@autorest/modelerfour@4.24.3"
+        )
+        foreach ($ext in $extensions) {
+            $parts   = $ext -split '@(?=[^@]+$)'   # split on last @
+            $pkg     = $parts[0]
+            $ver     = $parts[1]
+            $cacheDir = Join-Path $env:USERPROFILE ".autorest\$($pkg.Replace('/','\'))\$ver"
+            $nodeModules = Join-Path $cacheDir "node_modules\$($pkg.Replace('/','\'))"
+            if (Test-Path $nodeModules) {
+                Write-Host "Cache already present: $ext"
+                continue
+            }
+            New-Item -ItemType Directory -Force -Path $cacheDir | Out-Null
+            Write-Host "Pre-installing $ext into $cacheDir"
+            npm install $ext --prefix $cacheDir --registry $registry
+            if ($LASTEXITCODE -ne 0) { throw "Failed to pre-install $ext (exit $LASTEXITCODE)" }
+            Write-Host "Done: $ext"
+        }
 
   - task: Npm@1
     displayName: Install Rush
