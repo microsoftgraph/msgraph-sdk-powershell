@@ -8,12 +8,12 @@ schema: 2.0.0
 # Set-MgGraphOption
 
 ## SYNOPSIS
-Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support. Web Account Manager is enabled by default on Windows systems and cannot be disabled.
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
 
 ## SYNTAX
 
 ```
-Set-MgGraphOption [-EnableLoginByWAM <Boolean>] [<CommonParameters>]
+Set-MgGraphOption [-DisableLoginByWAM <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,22 +21,37 @@ Sets global configurations that apply to the SDK. For example, toggle Web Accoun
 
 ## EXAMPLES
 
-### Example 1: Set web account manager support
+### Example 1: Disable web account manager support
 ```powershell
-PS C:\> Set-MgGraphOption -EnableLoginByWAM $True
+PS C:\> Set-MgGraphOption -DisableLoginByWAM $True
 ```
 
- Sets web account manager support
+ Disables sign in via Web Account Manager (WAM). Note: This only takes effect when using a custom ClientId. When using the default ClientId, WAM remains enabled regardless of this setting.
 
 ## PARAMETERS
 
-### -EnableLoginByWAM
-{{ Fill EnableLoginByWAM Description }}
+### -DisableLoginByWAM
+{{ Fill DisableLoginByWAM Description }}
 
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named
@@ -51,7 +66,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
-
 ## OUTPUTS
 
 ### System.Object
