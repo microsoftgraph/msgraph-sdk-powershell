@@ -51,6 +51,24 @@ Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
 rush install
 rush build
 
+# Diagnostic: show autorest cache state and npm registry config before generation.
+Write-Host "--- Autorest/npm diagnostics ---"
+$autorestHome = if ($env:AUTOREST_HOME) { $env:AUTOREST_HOME } else { Join-Path $env:USERPROFILE ".autorest" }
+Write-Host "AUTOREST_HOME: $autorestHome"
+$coreCacheDir = Join-Path $autorestHome "@autorest\core"
+if (Test-Path $coreCacheDir) {
+    Write-Host "Autorest core cache versions: $(Get-ChildItem $coreCacheDir -Directory | Select-Object -ExpandProperty Name)"
+    $nodeModulesDir = Join-Path $coreCacheDir "3.10.4\node_modules\@autorest\core"
+    Write-Host "Cache 3.10.4 node_modules present: $(Test-Path $nodeModulesDir)"
+} else {
+    Write-Host "WARNING: Autorest core cache directory not found at $coreCacheDir"
+}
+Write-Host "npm registry: $(npm config get registry 2>&1)"
+Write-Host "NPM_CONFIG_USERCONFIG: $env:NPM_CONFIG_USERCONFIG"
+$userNpmrc = Join-Path $env:USERPROFILE ".npmrc"
+Write-Host "~/.npmrc exists: $(Test-Path $userNpmrc)"
+Write-Host "--- End diagnostics ---"
+
 $RequiredGraphModules = @()
 $AuthModuleManifest = Join-Path $ModulesSrc "Authentication" "Authentication" "artifacts" "Microsoft.Graph.Authentication.psd1"
 $LoadedAuthModule = Import-Module $AuthModuleManifest -PassThru -ErrorAction SilentlyContinue
