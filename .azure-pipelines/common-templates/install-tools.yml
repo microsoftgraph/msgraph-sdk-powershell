@@ -53,18 +53,24 @@ steps:
     inputs:
       command: custom
       customCommand: install -g autorest@3.7.2
+      customRegistry: useNpmrc
+      customEndpoint: ''
     
   - task: Npm@1
     displayName: Install AutorestCore
     inputs:
       command: custom
       customCommand: install -g @autorest/core@3.10.4
+      customRegistry: useNpmrc
+      customEndpoint: ''
 
   - task: Npm@1
     displayName: Install Rush
     inputs:
       command: custom
       customCommand: install -g @microsoft/rush
+      customRegistry: useNpmrc
+      customEndpoint: ''
   
   - task: PowerShell@2
     displayName: Rush Build
