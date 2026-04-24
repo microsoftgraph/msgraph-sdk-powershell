@@ -79,7 +79,10 @@ $ApiVersion | ForEach-Object {
             # it there without any registry call.
             $autorestHome = if ($env:AUTOREST_HOME) { $env:AUTOREST_HOME } else { Join-Path $env:USERPROFILE ".autorest" }
             $modelerFourPath = Join-Path $autorestHome "@autorest" "modelerfour" "4.24.3" "node_modules" "@autorest" "modelerfour"
-            $modelerFourUseFlag = if (Test-Path $modelerFourPath) { @("--use:$modelerFourPath") } else { @() }
+            # @(if ...) always produces [object[]], preventing PowerShell from unwrapping the
+            # single-element array to a [string] scalar. A scalar string splatted with @
+            # enumerates IEnumerable<char>, passing each character as a separate argument.
+            $modelerFourUseFlag = @(if (Test-Path $modelerFourPath) { "--use:$modelerFourPath" })
             if ($modelerFourUseFlag.Count -eq 0) {
                 Write-Host -ForegroundColor Yellow "WARNING: @autorest/modelerfour local cache not found at $modelerFourPath — autorest will attempt npm registry lookup (may fail in network-isolated environment)"
             }
