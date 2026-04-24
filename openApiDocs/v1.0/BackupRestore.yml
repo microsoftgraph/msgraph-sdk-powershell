@@ -4449,7 +4449,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete protectionPolicyBase
-      description: Delete a protection policy. Read the properties and relationships of a protectionPolicyBase object.
+      description: 'Delete a protectionPolicyBase object. A protection policy can be deleted only after it was deactivated. When you delete a policy, all associated protection units are removed, and backup protection stops for the resources previously covered by the policy. Existing backup data is retained according to the retention policy before it''s offboarded. You can restore data using previous restore points even after deletion.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionpolicybase-delete?view=graph-rest-1.0
@@ -4509,7 +4509,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Invoke action deactivate
-      description: Deactivate a protectionPolicyBase.
+      description: 'Deactivate a protectionPolicyBase. When a protection policy is deactivated, backup activity stops immediately, no new backups are taken, and the protected resources are no longer covered by the policy. Any backups taken before deactivation are retained according to the retention policy, after which they''re offboarded. You can restore data using previous restore points even after deactivation. To reactivate a deactivated policy, use the activate API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionpolicybase-deactivate?view=graph-rest-1.0

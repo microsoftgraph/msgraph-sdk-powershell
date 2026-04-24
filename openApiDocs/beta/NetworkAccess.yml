@@ -463,6 +463,473 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /networkAccess/cloudFirewallPolicies:
+    get:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: List cloudFirewallPolicy objects
+      description: Get a list of the cloudFirewallPolicy objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-cloudfirewallpolicies?view=graph-rest-beta
+      operationId: networkAccess_ListCloudFirewallPolicy
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.networkaccess.cloudFirewallPolicyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Create cloudFirewallPolicy
+      description: Create a new cloudFirewallPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-post-cloudfirewallpolicies?view=graph-rest-beta
+      operationId: networkAccess_CreateCloudFirewallPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallPolicy'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/cloudFirewallPolicies/{cloudFirewallPolicy-id}':
+    get:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Get cloudFirewallPolicy
+      description: Read the properties and relationships of a cloudFirewallPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-cloudfirewallpolicy-get?view=graph-rest-beta
+      operationId: networkAccess_GetCloudFirewallPolicy
+      parameters:
+        - name: cloudFirewallPolicy-id
+          in: path
+          description: The unique identifier of cloudFirewallPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudFirewallPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Update cloudFirewallPolicy
+      description: Update the properties of a cloudFirewallPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-cloudfirewallpolicy-update?view=graph-rest-beta
+      operationId: networkAccess_UpdateCloudFirewallPolicy
+      parameters:
+        - name: cloudFirewallPolicy-id
+          in: path
+          description: The unique identifier of cloudFirewallPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudFirewallPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallPolicy'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Delete cloudFirewallPolicy
+      description: Delete a cloudFirewallPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-cloudfirewallpolicy-delete?view=graph-rest-beta
+      operationId: networkAccess_DeleteCloudFirewallPolicy
+      parameters:
+        - name: cloudFirewallPolicy-id
+          in: path
+          description: The unique identifier of cloudFirewallPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudFirewallPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/cloudFirewallPolicies/{cloudFirewallPolicy-id}/policyRules':
+    get:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: List policyRules for cloudFirewallPolicy
+      description: Get a list of the cloudFirewallRule objects and their properties for a cloudFirewallPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-cloudfirewallpolicy-list-policyrules?view=graph-rest-beta
+      operationId: networkAccess.cloudFirewallPolicy_ListPolicyRule
+      parameters:
+        - name: cloudFirewallPolicy-id
+          in: path
+          description: The unique identifier of cloudFirewallPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudFirewallPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.networkaccess.policyRuleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Create cloudFirewallRule
+      description: Create a new cloudFirewallRule object in a cloudFirewallPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-cloudfirewallpolicy-post-policyrules?view=graph-rest-beta
+      operationId: networkAccess.cloudFirewallPolicy_CreatePolicyRule
+      parameters:
+        - name: cloudFirewallPolicy-id
+          in: path
+          description: The unique identifier of cloudFirewallPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudFirewallPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/cloudFirewallPolicies/{cloudFirewallPolicy-id}/policyRules/{policyRule-id}':
+    get:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Get cloudFirewallRule
+      description: Read the properties and relationships of a cloudFirewallRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-cloudfirewallrule-get?view=graph-rest-beta
+      operationId: networkAccess.cloudFirewallPolicy_GetPolicyRule
+      parameters:
+        - name: cloudFirewallPolicy-id
+          in: path
+          description: The unique identifier of cloudFirewallPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudFirewallPolicy
+        - name: policyRule-id
+          in: path
+          description: The unique identifier of policyRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyRule
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Update cloudFirewallRule
+      description: Update the properties of a cloudFirewallRule object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-cloudfirewallrule-update?view=graph-rest-beta
+      operationId: networkAccess.cloudFirewallPolicy_UpdatePolicyRule
+      parameters:
+        - name: cloudFirewallPolicy-id
+          in: path
+          description: The unique identifier of cloudFirewallPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudFirewallPolicy
+        - name: policyRule-id
+          in: path
+          description: The unique identifier of policyRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyRule
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Delete cloudFirewallRule
+      description: 'Delete a cloudFirewallRule object from a [cloudFirewallPolicy(../resources/networkaccess-cloudfirewallpolicy.md).'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/networkaccess-cloudfirewallrule-delete?view=graph-rest-beta
+      operationId: networkAccess.cloudFirewallPolicy_DeletePolicyRule
+      parameters:
+        - name: cloudFirewallPolicy-id
+          in: path
+          description: The unique identifier of cloudFirewallPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudFirewallPolicy
+        - name: policyRule-id
+          in: path
+          description: The unique identifier of policyRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: policyRule
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/cloudFirewallPolicies/{cloudFirewallPolicy-id}/policyRules/$count':
+    get:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Get the number of the resource
+      operationId: networkAccess.cloudFirewallPolicy.policyRule_GetCount
+      parameters:
+        - name: cloudFirewallPolicy-id
+          in: path
+          description: The unique identifier of cloudFirewallPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudFirewallPolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /networkAccess/cloudFirewallPolicies/$count:
+    get:
+      tags:
+        - networkAccess.cloudFirewallPolicy
+      summary: Get the number of the resource
+      operationId: networkAccess.cloudFirewallPolicy_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /networkAccess/connectivity:
     get:
       tags:
@@ -4420,11 +4887,11 @@ paths:
     get:
       tags:
         - networkAccess.filteringProfile
-      summary: List threatIntelligencePolicyLink objects
-      description: Get a list of the threatIntelligencePolicyLink objects and their properties.
+      summary: List filteringPolicyLink objects
+      description: "Get a list of the filteringPolicyLink objects and their properties. The response can include one or more of the following objects:\r\n- cloudFirewallPolicyLink\r\n- threatIntelligencePolicyLink\r\n- tlsInspectionPolicyLink objects"
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-list?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-list?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_ListPolicy
       parameters:
         - name: filteringProfile-id
@@ -4482,11 +4949,11 @@ paths:
     post:
       tags:
         - networkAccess.filteringProfile
-      summary: Create tlsInspectionPolicyLink
-      description: Create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
+      summary: Add policy to filteringProfile
+      description: 'Add a Global Secure Access network policy to a filteringProfile. The policy can be one of the following types:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-post?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-post?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_CreatePolicy
       parameters:
         - name: filteringProfile-id
@@ -4518,11 +4985,11 @@ paths:
     get:
       tags:
         - networkAccess.filteringProfile
-      summary: Get threatIntelligencePolicyLink
-      description: Read the properties and relationships of a threatIntelligencePolicyLink object.
+      summary: Get filteringPolicyLink
+      description: "Get a filteringPolicyLink object. The returned object can be a:\r\n- cloudFirewallPolicyLink\r\n- threatIntelligencePolicyLink\r\n- tlsInspectionPolicyLink"
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-get?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_GetPolicy
       parameters:
         - name: filteringProfile-id
@@ -4574,11 +5041,11 @@ paths:
     patch:
       tags:
         - networkAccess.filteringProfile
-      summary: Update threatIntelligencePolicyLink
-      description: Update the properties of a threatIntelligencePolicyLink object.
+      summary: Update filteringPolicyLink
+      description: "Modify the properties of an existing filteringPolicyLink object to update its traffic rules. Use this operation to update any derived type, including:\r\n- cloudFirewallPolicyLink\r\n- threatIntelligencePolicyLink\r\n- tlsInspectionPolicyLink"
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-update?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_UpdatePolicy
       parameters:
         - name: filteringProfile-id
@@ -4617,11 +5084,11 @@ paths:
     delete:
       tags:
         - networkAccess.filteringProfile
-      summary: Delete threatIntelligencePolicyLink
-      description: Delete a threatIntelligencePolicyLink object.
+      summary: Delete filtering Policy Link
+      description: "Delete a filteringPolicyLink object. Use this operation to delete any derived type, including:\r\n- cloudFirewallPolicyLink\r\n- threatIntelligencePolicyLink\r\n- tlsInspectionPolicyLink"
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-delete?view=graph-rest-beta
       operationId: networkAccess.filteringProfile_DeletePolicy
       parameters:
         - name: filteringProfile-id
@@ -6050,6 +6517,195 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /networkAccess/logs/generativeAIInsights:
+    get:
+      tags:
+        - networkAccess.logs
+      summary: Get generativeAIInsights from networkAccess
+      operationId: networkAccess.log_ListGenerativeAIInsight
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.networkaccess.generativeAIInsightCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - networkAccess.logs
+      summary: Create new navigation property to generativeAIInsights for networkAccess
+      operationId: networkAccess.log_CreateGenerativeAIInsight
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.generativeAIInsight'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.generativeAIInsight'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/networkAccess/logs/generativeAIInsights/{generativeAIInsight-transactionId}':
+    get:
+      tags:
+        - networkAccess.logs
+      summary: Get generativeAIInsights from networkAccess
+      operationId: networkAccess.log_GetGenerativeAIInsight
+      parameters:
+        - name: generativeAIInsight-transactionId
+          in: path
+          description: The unique identifier of generativeAIInsight
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: generativeAIInsight
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.generativeAIInsight'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - networkAccess.logs
+      summary: Update the navigation property generativeAIInsights in networkAccess
+      operationId: networkAccess.log_UpdateGenerativeAIInsight
+      parameters:
+        - name: generativeAIInsight-transactionId
+          in: path
+          description: The unique identifier of generativeAIInsight
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: generativeAIInsight
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.generativeAIInsight'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.generativeAIInsight'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - networkAccess.logs
+      summary: Delete navigation property generativeAIInsights for networkAccess
+      operationId: networkAccess.log_DeleteGenerativeAIInsight
+      parameters:
+        - name: generativeAIInsight-transactionId
+          in: path
+          description: The unique identifier of generativeAIInsight
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: generativeAIInsight
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /networkAccess/logs/generativeAIInsights/$count:
+    get:
+      tags:
+        - networkAccess.logs
+      summary: Get the number of the resource
+      operationId: networkAccess.log.generativeAIInsight_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /networkAccess/logs/remoteNetworks:
     get:
       tags:
@@ -6248,7 +6904,7 @@ paths:
     get:
       tags:
         - networkAccess.logs
-      summary: List networkAccessTraffic
+      summary: List networkAccessTraffic objects
       description: Get a list of log events for traffic routed through the Global Secure Access services.
       externalDocs:
         description: Find more info here
@@ -6521,7 +7177,7 @@ paths:
       tags:
         - networkAccess.logs
       summary: Get mailboxSettings property value
-      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Requires $select to retrieve.'
       operationId: networkAccess.log.traffic.user_GetMailboxSetting
       parameters:
         - name: networkAccessTraffic-transactionId
@@ -6882,7 +7538,7 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/networkAccess/reports/microsoft.graph.networkaccess.deviceReport(startDateTime={startDateTime},endDateTime={endDateTime},discoveredApplicationSegmentId=''@discoveredApplicationSegmentId'')':
+  '/networkAccess/reports/microsoft.graph.networkaccess.deviceReport(startDateTime={startDateTime},endDateTime={endDateTime},discoveredApplicationSegmentId=''@discoveredApplicationSegmentId'',applicationId=''@applicationId'')':
     get:
       tags:
         - networkAccess.reports
@@ -6910,6 +7566,14 @@ paths:
         - name: discoveredApplicationSegmentId
           in: query
           description: 'Usage: discoveredApplicationSegmentId=''@discoveredApplicationSegmentId'''
+          style: form
+          explode: false
+          schema:
+            type: string
+            nullable: true
+        - name: applicationId
+          in: query
+          description: 'Usage: applicationId=''@applicationId'''
           style: form
           explode: false
           schema:
@@ -7134,7 +7798,7 @@ paths:
       tags:
         - networkAccess.reports
       summary: Invoke function getConnectionSummaries
-      description: 'An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.'
+      description: 'Returns connections count per traffic type: Private/Internet/Microsoft.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/networkaccess-reports-getconnectionsummaries?view=graph-rest-beta
@@ -7236,7 +7900,7 @@ paths:
       tags:
         - networkAccess.reports
       summary: Invoke function getDestinationSummaries
-      description: Get counts of the visits to the top destination aggregations as logged in Global Secure Access
+      description: Get counts of the visits to the top destination aggregations as logged in Global Secure Access.
       operationId: networkAccess.report_getDestinationSummary
       parameters:
         - name: startDateTime
@@ -7342,7 +8006,7 @@ paths:
       tags:
         - networkAccess.reports
       summary: Invoke function getDiscoveredApplicationSegmentReport
-      description: Returns a collection of discoveredApplicationSegmentReport based on aggregated traffic logs for a given period.
+      description: Returns a collection of discovered application segments based on aggregated traffic logs for a given period.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/networkaccess-reports-getdiscoveredapplicationsegmentreport?view=graph-rest-beta
@@ -7472,7 +8136,7 @@ paths:
       tags:
         - networkAccess.reports
       summary: Invoke function transactionSummaries
-      description: 'Get the total number of transactions and the number of blocked transactions in Global Secure Access, grouped by traffic type.'
+      description: 'Get the total number of transactions , including blocked transactions in Global Secure Access, grouped by traffic type.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/networkaccess-reports-transactionsummaries?view=graph-rest-beta
@@ -9441,6 +10105,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.networkaccess.alert'
               x-ms-navigationProperty: true
+            cloudFirewallPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallPolicy'
+              description: A collection of cloud firewall policies that define rules for managing network traffic through the Global Secure Access services.
+              x-ms-navigationProperty: true
             connectivity:
               $ref: '#/components/schemas/microsoft.graph.networkaccess.connectivity'
             filteringPolicies:
@@ -9647,6 +10317,32 @@ components:
           $ref: '#/components/schemas/microsoft.graph.networkaccess.alertSeverity'
       additionalProperties:
         type: object
+    microsoft.graph.networkaccess.cloudFirewallPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.networkaccess.policy'
+        - title: cloudFirewallPolicy
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the policy was last modified. Read-only.
+              format: date-time
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallPolicySettings'
+          additionalProperties:
+            type: object
+    microsoft.graph.networkaccess.policyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: policyRule
+          type: object
+          properties:
+            name:
+              type: string
+              description: Name.
+          additionalProperties:
+            type: object
     microsoft.graph.networkaccess.connectivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9899,7 +10595,7 @@ components:
               description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.'
             createdByAppId:
               type: string
-              description: The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.
+              description: The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
               nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
@@ -10199,17 +10895,6 @@ components:
           x-ms-navigationProperty: true
       additionalProperties:
         type: object
-    microsoft.graph.networkaccess.policyRule:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: policyRule
-          type: object
-          properties:
-            name:
-              type: string
-              description: Name.
-          additionalProperties:
-            type: object
     microsoft.graph.networkaccess.filteringProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.networkaccess.profile'
@@ -10294,6 +10979,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.networkaccess.connection'
               description: An aggregated log entry that contains comprehensive information about network traffic events.
               x-ms-navigationProperty: true
+            generativeAIInsights:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.generativeAIInsight'
+              x-ms-navigationProperty: true
             remoteNetworks:
               type: array
               items:
@@ -10325,6 +11015,8 @@ components:
               type: string
               description: The time the connection was created.
               format: date-time
+            crossTenantAccessType:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.crossTenantAccessType'
             destinationFqdn:
               type: string
               description: The destination FQDN of the connection.
@@ -10346,6 +11038,8 @@ components:
               type: string
               description: The DeviceID.
               nullable: true
+            deviceJoinType:
+              $ref: '#/components/schemas/microsoft.graph.networkaccess.deviceJoinType'
             deviceOperatingSystem:
               type: string
               description: The device operating system type.
@@ -10359,6 +11053,10 @@ components:
               type: string
               description: The time the connection was terminated.
               format: date-time
+              nullable: true
+            homeTenantId:
+              type: string
+              description: 'The identifier of the home tenant, for Entra B2B scenarios.'
               nullable: true
             initiatingProcessName:
               type: string
@@ -10432,6 +11130,58 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.networkaccess.generativeAIInsight:
+      title: generativeAIInsight
+      type: object
+      properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.networkaccess.applicationActivity'
+        content:
+          type: string
+          description: The prompt text or content captured for this insight. Supports $filter (eq) and $orderby.
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the insight was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Supports $filter (eq) and $orderby.'
+          format: date-time
+        destinationUrl:
+          type: string
+          description: The destination URL associated with this insight. Supports $filter (eq) and $orderby.
+          nullable: true
+        eventId:
+          type: string
+          description: The unique identifier for the event. Supports $filter (eq) and $orderby.
+          nullable: true
+        eventType:
+          type: string
+          description: The event type that classifies the insight event. Supports $filter (eq) and $orderby.
+          nullable: true
+        mcpClientName:
+          type: string
+          description: The MCP client name when the activity is related to MCP interactions. Supports $filter (eq) and $orderby.
+          nullable: true
+        mcpServerName:
+          type: string
+          description: The MCP server name when the activity is related to MCP interactions. Supports $filter (eq) and $orderby.
+          nullable: true
+        sessionId:
+          type: string
+          description: The session identifier used to correlate related events. Supports $filter (eq) and $orderby.
+          nullable: true
+        subactivity:
+          type: string
+          description: 'A finer-grained classification of activity, such as chat-interaction, tools/call, or data-analysis. Supports $filter (eq) and $orderby.'
+          nullable: true
+        transactionId:
+          type: string
+          description: A unique identifier assigned to a specific transaction or operation. Key. Supports $filter (eq) and $orderby.
+        userPrincipalName:
+          type: string
+          description: The UPN of the user associated with this insight. Supports $filter (eq) and $orderby.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.networkaccess.remoteNetworkHealthEvent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10785,7 +11535,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Requires $select to retrieve. Supports $filter (eq).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -10889,7 +11639,7 @@ components:
           properties:
             aboutMe:
               type: string
-              description: A freeform text entry field for users to describe themselves. Returned only on $select.
+              description: A freeform text entry field for users to describe themselves. Requires $select to retrieve.
               nullable: true
             accountEnabled:
               type: boolean
@@ -10914,7 +11664,7 @@ components:
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.'
+              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Requires $select to retrieve.'
               format: date-time
             businessPhones:
               type: array
@@ -11012,13 +11762,15 @@ components:
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Requires $select to retrieve.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             identities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
               description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.'
+            identityGovernance:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernanceUserSettings'
             identityParentId:
               type: string
               description: 'The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.'
@@ -11039,7 +11791,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for users to describe their interests. Returned only on $select.
+              description: A list for users to describe their interests. Requires $select to retrieve.
             isLicenseReconciliationNeeded:
               type: boolean
               description: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
@@ -11059,18 +11811,18 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
+              description: 'When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Requires $select to retrieve.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Requires $select to retrieve.'
               nullable: true
             licenseAssignmentStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Requires $select to retrieve.
             mail:
               type: string
               description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
@@ -11087,7 +11839,7 @@ components:
               nullable: true
             mySite:
               type: string
-              description: The URL for the user's site. Returned only on $select.
+              description: The URL for the user's site. Requires $select to retrieve.
               nullable: true
             officeLocation:
               type: string
@@ -11152,7 +11904,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for users to enumerate their past projects. Returned only on $select.
+              description: A list for users to enumerate their past projects. Requires $select to retrieve.
             postalCode:
               type: string
               description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -11167,7 +11919,7 @@ components:
               nullable: true
             preferredName:
               type: string
-              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
+              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Requires $select to retrieve.
               nullable: true
             print:
               $ref: '#/components/schemas/microsoft.graph.userPrint'
@@ -11192,13 +11944,13 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate their responsibilities. Returned only on $select.
+              description: A list for the user to enumerate their responsibilities. Requires $select to retrieve.
             schools:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate the schools they have attended. Returned only on $select.
+              description: A list for the user to enumerate the schools they have attended. Requires $select to retrieve.
             securityIdentifier:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
@@ -11225,7 +11977,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate their skills. Returned only on $select.
+              description: A list for the user to enumerate their skills. Requires $select to retrieve.
             state:
               type: string
               description: 'The state or province in the user''s address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -11782,6 +12534,7 @@ components:
         - bytesSent
         - bytesReceived
         - totalBytes
+        - connections
       type: string
     microsoft.graph.networkaccess.applicationAnalyticsUsagePoint:
       title: applicationAnalyticsUsagePoint
@@ -12450,6 +13203,14 @@ components:
         - bypass
         - alert
       type: string
+    microsoft.graph.networkaccess.cloudFirewallPolicySettings:
+      title: cloudFirewallPolicySettings
+      type: object
+      properties:
+        defaultAction:
+          $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallAction'
+      additionalProperties:
+        type: object
     microsoft.graph.networkaccess.connectivityState:
       title: connectivityState
       enum:
@@ -12498,6 +13259,11 @@ components:
         - franceSouth
         - israelCentral
         - unknownFutureValue
+        - taiwanNorth
+        - mexicoCentral
+        - spainCentral
+        - jioIndiaCentral
+        - brazilSouthEast
       type: string
     microsoft.graph.networkaccess.localConnectivityConfiguration:
       title: localConnectivityConfiguration
@@ -12590,6 +13356,12 @@ components:
         - other
         - ciscoCatalyst
         - unknownFutureValue
+        - aviatrix
+        - netskope
+        - teridion
+        - aristaNetworks
+        - aristaVeloCloud
+        - juniperNetworks
       type: string
     microsoft.graph.networkaccess.redundancyConfiguration:
       title: redundancyConfiguration
@@ -12786,7 +13558,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
+          description: 'Value for the key credential. Should be a Base64 encoded value. Requires $select to retrieve; only available for single object requests (GET /applications/{applicationId}?$select=keyCredentials or GET /servicePrincipals/{servicePrincipalId}?$select=keyCredentials); otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -13195,12 +13967,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvedClientApp'
+              description: The collection of approved client apps that are associated with the RDS configuration. Supports $expand.
               x-ms-navigationProperty: true
             targetDeviceGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetDeviceGroup'
-              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol. <br/<Supports $expand.
+              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -13275,6 +14048,13 @@ components:
           description: The unique identifier of the application accessed during the transaction.
       additionalProperties:
         type: object
+    microsoft.graph.networkaccess.crossTenantAccessType:
+      title: crossTenantAccessType
+      enum:
+        - none
+        - b2bCollaboration
+        - unknownFutureValue
+      type: string
     microsoft.graph.networkaccess.deviceCategory:
       title: deviceCategory
       enum:
@@ -13282,6 +14062,14 @@ components:
         - branch
         - unknownFutureValue
         - remoteNetwork
+      type: string
+    microsoft.graph.networkaccess.deviceJoinType:
+      title: deviceJoinType
+      enum:
+        - none
+        - microsoftEntraJoined
+        - microsoftEntraRegistered
+        - unknownFutureValue
       type: string
     microsoft.graph.networkaccess.networkingProtocol:
       title: networkingProtocol
@@ -13359,6 +14147,14 @@ components:
         - all
         - unknownFutureValue
       type: string
+    microsoft.graph.networkaccess.applicationActivity:
+      title: applicationActivity
+      enum:
+        - none
+        - prompt
+        - mcp
+        - unknownFutureValue
+      type: string
     microsoft.graph.networkaccess.remoteNetworkStatus:
       title: remoteNetworkStatus
       enum:
@@ -13373,6 +14169,8 @@ components:
       title: cloudApplicationMetadata
       type: object
       properties:
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.networkaccess.applicationActivity'
         categories:
           type: array
           items:
@@ -13410,7 +14208,7 @@ components:
           nullable: true
         name:
           type: string
-          description: 'The name of the application (e.g., ChatGPT, Salesforce, Bing).'
+          description: 'The name of the application, for example, ChatGPT, Salesforce, or Bing.'
           nullable: true
         riskScore:
           maximum: 2147483647
@@ -13428,6 +14226,7 @@ components:
           nullable: true
         subactivity:
           type: string
+          description: 'A finer-grained activity classification, for example, chat-interaction or tools/call.'
           nullable: true
       additionalProperties:
         type: object
@@ -13775,11 +14574,11 @@ components:
       properties:
         costCenter:
           type: string
-          description: The cost center associated with the user. Returned only on $select. Supports $filter.
+          description: The cost center associated with the user. Requires $select to retrieve. Supports $filter.
           nullable: true
         division:
           type: string
-          description: The name of the division in which the user works. Returned only on $select. Supports $filter.
+          description: The name of the division in which the user works. Requires $select to retrieve. Supports $filter.
           nullable: true
       additionalProperties:
         type: object
@@ -13799,6 +14598,14 @@ components:
           type: string
           description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity updates the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, are performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernanceUserSettings:
+      title: identityGovernanceUserSettings
+      type: object
+      properties:
+        approverDelegate:
+          $ref: '#/components/schemas/microsoft.graph.approverDelegate'
       additionalProperties:
         type: object
     microsoft.graph.licenseAssignmentState:
@@ -14208,7 +15015,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalAuthenticationMethod'
-              description: Represents the external methods registered to a user for authentication.
+              description: Represents the external MFA registered to a user for authentication.
               x-ms-navigationProperty: true
             fido2Methods:
               type: array
@@ -14688,6 +15495,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
+              x-ms-navigationProperty: true
+            targetedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+              description: A collection of targeted messages in the chat that are visible only to specific users. Nullable.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -15228,6 +16041,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
+            storyline:
+              $ref: '#/components/schemas/microsoft.graph.storyline'
           additionalProperties:
             type: object
           description: Represents a container that exposes navigation properties for employee experience user resources.
@@ -15426,21 +16241,21 @@ components:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
               type: boolean
-              description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             assignedLabels:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
+              description: The licenses that are assigned to the group. Requires $select to retrieve. Supports $filter (eq). Read-only.
             autoSubscribeNewMembers:
               type: boolean
-              description: 'Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             classification:
               type: string
@@ -15483,11 +16298,11 @@ components:
               nullable: true
             hideFromAddressLists:
               type: boolean
-              description: 'true if the group isn''t displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'true if the group isn''t displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'true if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'true if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             infoCatalogs:
               type: array
@@ -15512,7 +16327,7 @@ components:
               nullable: true
             isSubscribedByMail:
               type: boolean
-              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -15542,6 +16357,8 @@ components:
               type: string
               description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.'
               nullable: true
+            onPremisesExtensionAttributes:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15626,21 +16443,21 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
+              description: Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Requires $select to retrieve.
               format: int32
               nullable: true
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: 'Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             unseenMessagesCount:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Returned only on $select.
+              description: Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Requires $select to retrieve.
               format: int32
               nullable: true
             visibility:
@@ -15649,7 +16466,7 @@ components:
               nullable: true
             welcomeMessageEnabled:
               type: boolean
-              description: 'Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -16626,7 +17443,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
-              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Requires $select to retrieve. Read-only.
             internetMessageId:
               type: string
               description: The message ID in the format specified by RFC5322. Updatable only if isDraft is true.
@@ -17500,6 +18317,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
               description: The apps installed in the personal scope of this user.
               x-ms-navigationProperty: true
+            sections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamworkSection'
+              description: The sections in the user's chat list.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.todo:
@@ -17758,6 +18581,32 @@ components:
     ODataCountResponse:
       type: integer
       format: int32
+    microsoft.graph.networkaccess.cloudFirewallPolicyCollectionResponse:
+      title: Collection of cloudFirewallPolicy
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallPolicy'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.networkaccess.policyRuleCollectionResponse:
+      title: Collection of policyRule
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.networkaccess.branchSiteCollectionResponse:
       title: Collection of branchSite
       type: object
@@ -17849,19 +18698,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.networkaccess.policyRuleCollectionResponse:
-      title: Collection of policyRule
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRule'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.networkaccess.filteringProfileCollectionResponse:
       title: Collection of filteringProfile
       type: object
@@ -17909,6 +18745,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.networkaccess.connection'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.networkaccess.generativeAIInsightCollectionResponse:
+      title: Collection of generativeAIInsight
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.generativeAIInsight'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -17997,6 +18846,13 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.networkaccess.cloudFirewallAction:
+      title: cloudFirewallAction
+      enum:
+        - allow
+        - block
+        - unknownFutureValue
+      type: string
     microsoft.graph.networkaccess.redundancyTier:
       title: redundancyTier
       enum:
@@ -18164,6 +19020,7 @@ components:
           properties:
             displayName:
               type: string
+              description: Display name for the client application.
               nullable: true
           additionalProperties:
             type: object
@@ -18396,6 +19253,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
           additionalProperties:
             type: object
+    microsoft.graph.approverDelegate:
+      title: approverDelegate
+      type: object
+      properties:
+        delegate:
+          $ref: '#/components/schemas/microsoft.graph.subjectSet'
+        schedule:
+          $ref: '#/components/schemas/microsoft.graph.requestSchedule'
+      additionalProperties:
+        type: object
     microsoft.graph.printerShare:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.printerBase'
@@ -18761,7 +19628,7 @@ components:
               description: A unique identifier used to manage the external auth method within Microsoft Entra ID.
             displayName:
               type: string
-              description: Custom name given to the registered external authentication method.
+              description: Custom name given to the registered external MFA.
           additionalProperties:
             type: object
     microsoft.graph.fido2AuthenticationMethod:
@@ -19643,6 +20510,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
           additionalProperties:
             type: object
+    microsoft.graph.targetedChatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        - title: targetedChatMessage
+          type: object
+          properties:
+            recipient:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
     microsoft.graph.cloudClipboardItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20510,6 +21387,13 @@ components:
               type: string
               description: The displayable title of the list.
               nullable: true
+            itemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of items in the list. Read-only.
+              format: int32
+              nullable: true
             list:
               $ref: '#/components/schemas/microsoft.graph.listInfo'
             sharepointIds:
@@ -20616,6 +21500,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
+    microsoft.graph.storyline:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: storyline
+          type: object
+          properties:
+            followers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.storylineFollower'
+              description: The users who are following this user.
+              x-ms-navigationProperty: true
+            followings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.storylineFollowing'
+              description: The users that this user is following.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: User's storyline singleton container.
     microsoft.graph.deleted:
       title: deleted
       type: object
@@ -23767,6 +24672,10 @@ components:
               type: string
               description: Current anti malware version
               nullable: true
+            controlledConfigurationEnabled:
+              type: boolean
+              description: 'When TRUE indicates the Windows Defender controlled configuration feature is enabled, when FALSE indicates the Windows Defender controlled configuration feature is not enabled. Defaults to setting on client device.'
+              nullable: true
             deviceState:
               $ref: '#/components/schemas/microsoft.graph.windowsDeviceHealthState'
             engineVersion:
@@ -25086,9 +25995,10 @@ components:
               nullable: true
             hasChat:
               type: boolean
+              description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
             hasDescription:
               type: boolean
-              description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.'
+              description: 'Read-only. This value is true if the details object of the task has a nonempty description. Otherwise, false.'
               nullable: true
             isArchived:
               type: boolean
@@ -25113,7 +26023,7 @@ components:
               nullable: true
             orderHint:
               type: string
-              description: 'The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.'
+              description: 'The hint used to order items of this type in a list view. For more information, see Using order hints in planner.'
               nullable: true
             percentComplete:
               maximum: 2147483647
@@ -25161,6 +26071,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+            messages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskChatMessage'
+              description: Read-only. Nullable. Chat messages associated with the task.
+              x-ms-navigationProperty: true
             progressTaskBoardFormat:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
           additionalProperties:
@@ -25969,6 +26885,49 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chat'
           additionalProperties:
             type: object
+    microsoft.graph.teamworkSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkSection
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the section was created. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            displayIcon:
+              $ref: '#/components/schemas/microsoft.graph.sectionDisplayIcon'
+            displayName:
+              type: string
+              description: 'The display name of the section. Required. Maximum length is 50 characters. Display names are case-sensitive and must be unique within a user''s sections. The following names are reserved for system-defined sections and can''t be used when creating a user-defined section: RecentChats, QuickViews, TeamsAndChannels, MutedChats, MeetingChats, EngageCommunities.'
+            isExpanded:
+              type: boolean
+              description: Indicates whether the section is expanded in the user interface. The default value is true.
+              nullable: true
+            isHierarchicalViewEnabled:
+              type: boolean
+              description: Indicates whether the hierarchical view is enabled for the section. Read-only.
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the section was last modified. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            sectionType:
+              $ref: '#/components/schemas/microsoft.graph.sectionType'
+            sortType:
+              $ref: '#/components/schemas/microsoft.graph.sectionSortType'
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamworkSectionItem'
+              description: 'The items (chats, channels, meetings, or communities) organized within the section.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.todoTaskList:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25992,6 +26951,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the task list. Nullable.
+              x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueExtendedProperty'
+              description: The collection of single-value extended properties defined for the task list. Read-only. Nullable.
               x-ms-navigationProperty: true
             tasks:
               type: array
@@ -26096,12 +27061,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyCredentialConfiguration'
-          x-ms-navigationProperty: true
+          description: Collection of certificate restrictions settings to be applied to an application or service principal.
         passwordCredentials:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.passwordCredentialConfiguration'
-          x-ms-navigationProperty: true
+          description: Collection of password restrictions settings to be applied to an application or service principal.
       additionalProperties:
         type: object
     microsoft.graph.customAppManagementApplicationConfiguration:
@@ -26383,6 +27348,27 @@ components:
         planName:
           type: string
           description: The name of the service plan that is equal to the servicePlanName property on the related servicePlanInfo objects.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.requestSchedule:
+      title: requestSchedule
+      type: object
+      properties:
+        expiration:
+          $ref: '#/components/schemas/microsoft.graph.expirationPattern'
+        recurrence:
+          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. In PIM, when the  eligible or active assignment becomes active.'
+          format: date-time
           nullable: true
       additionalProperties:
         type: object
@@ -27291,6 +28277,8 @@ components:
         - availableWithWarning
         - unavailable
         - unknownFutureValue
+        - underServiceMaintenance
+        - inUse
       type: string
     microsoft.graph.cloudPcDisasterRecoveryCapabilityType:
       title: cloudPcDisasterRecoveryCapabilityType
@@ -27712,6 +28700,8 @@ components:
       title: file
       type: object
       properties:
+        archiveStatus:
+          $ref: '#/components/schemas/microsoft.graph.fileArchiveStatus'
         hashes:
           $ref: '#/components/schemas/microsoft.graph.hashes'
         mimeType:
@@ -28319,6 +29309,28 @@ components:
         - completed
         - unknownFutureValue
       type: string
+    microsoft.graph.storylineFollower:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: storylineFollower
+          type: object
+          properties:
+            follower:
+              $ref: '#/components/schemas/microsoft.graph.engagementIdentitySet'
+          additionalProperties:
+            type: object
+          description: Engagement storyline follower.
+    microsoft.graph.storylineFollowing:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: storylineFollowing
+          type: object
+          properties:
+            following:
+              $ref: '#/components/schemas/microsoft.graph.engagementIdentitySet'
+          additionalProperties:
+            type: object
+          description: Engagement storyline following.
     microsoft.graph.siteArchivalDetails:
       title: siteArchivalDetails
       type: object
@@ -28328,6 +29340,7 @@ components:
         archivedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Time when the container was archived. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         archiveStatus:
@@ -28871,6 +29884,8 @@ components:
           properties:
             group:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            sharePointGroup:
+              $ref: '#/components/schemas/microsoft.graph.sharePointGroupIdentity'
             siteGroup:
               $ref: '#/components/schemas/microsoft.graph.sharePointIdentity'
             siteUser:
@@ -32092,6 +33107,51 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
           additionalProperties:
             type: object
+    microsoft.graph.plannerTaskChatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerTaskChatMessage
+          type: object
+          properties:
+            content:
+              type: string
+              description: The content of the chat message. Supports plain text and sanitized HTML.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the message was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            editedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskChatMention'
+              description: The list of mentions in the message.
+            messageType:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskChatMessageType'
+            parentEntityId:
+              type: string
+              description: The ID of the parent plannerTask that this message belongs to.
+              nullable: true
+            reactions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskChatReaction'
+              description: The reactions on the message.
+          additionalProperties:
+            type: object
     microsoft.graph.plannerProgressTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -32219,7 +33279,7 @@ components:
       properties:
         abbreviation:
           type: string
-          description: 'Shortened name of the degree or program (example: PhD, MBA)'
+          description: 'Shortened name of the degree or program, for example, PhD and MBA.'
           nullable: true
         activities:
           type: array
@@ -32246,14 +33306,14 @@ components:
           items:
             type: string
             nullable: true
-          description: Majors and minors associated with the program. (if applicable)
+          description: 'Majors and minors associated with the program, if applicable.'
         grade:
           type: string
-          description: 'The final grade, class, GPA, or score.'
+          description: 'The final grade, class, grade point average (GPA), or score.'
           nullable: true
         notes:
           type: string
-          description: More notes the user provided.
+          description: More notes provided by the user.
           nullable: true
         webUrl:
           type: string
@@ -32754,6 +33814,63 @@ components:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
             type: object
+    microsoft.graph.sectionDisplayIcon:
+      title: sectionDisplayIcon
+      type: object
+      properties:
+        contentUrl:
+          type: string
+          description: The URL to a custom icon image. Applicable when iconType is custom.
+          nullable: true
+        displayName:
+          type: string
+          description: The human-readable name of the icon.
+          nullable: true
+        iconType:
+          type: string
+          description: 'The type of icon. Use an emoji character such as 👍 for an emoji icon, or custom for a custom image icon.'
+        skinTone:
+          $ref: '#/components/schemas/microsoft.graph.sectionIconSkinTone'
+      additionalProperties:
+        type: object
+    microsoft.graph.sectionType:
+      title: sectionType
+      enum:
+        - userDefined
+        - systemDefined
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sectionSortType:
+      title: sectionSortType
+      enum:
+        - mostRecent
+        - unreadThenMostRecent
+        - nameAlphabetical
+        - userDefinedCustomOrder
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamworkSectionItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkSectionItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the item was added to the section. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            itemType:
+              $ref: '#/components/schemas/microsoft.graph.sectionItemType'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the item was last modified. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.wellknownListName:
       title: wellknownListName
       enum:
@@ -32762,6 +33879,18 @@ components:
         - flaggedEmails
         - unknownFutureValue
       type: string
+    microsoft.graph.singleValueExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
+              description: The value of the property.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.todoTask:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -33403,6 +34532,26 @@ components:
           description: Identifier for the subscription object.
         tags:
           $ref: '#/components/schemas/microsoft.graph.cloudLicensing.subscriptionTags'
+      additionalProperties:
+        type: object
+    microsoft.graph.expirationPattern:
+      title: expirationPattern
+      type: object
+      properties:
+        duration:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'The requestor''s desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime shouldn''t be present and the type property should be set to afterDuration.'
+          format: duration
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.expirationPatternType'
       additionalProperties:
         type: object
     microsoft.graph.printerCapabilities:
@@ -34480,6 +35629,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.fileArchiveStatus:
+      title: fileArchiveStatus
+      enum:
+        - notArchived
+        - fullyArchived
+        - reactivating
+        - unknownFutureValue
+      type: string
     microsoft.graph.hashes:
       title: hashes
       type: object
@@ -34888,6 +36045,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.engagementIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: engagementIdentitySet
+          type: object
+          properties:
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            group:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
+          description: The Viva Engage identities.
     microsoft.graph.siteArchiveStatus:
       title: siteArchiveStatus
       enum:
@@ -35139,6 +36309,22 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.webPart'
               description: The set of web parts in this section.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.sharePointGroupIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: sharePointGroupIdentity
+          type: object
+          properties:
+            principalId:
+              type: string
+              description: The principal ID of the SharePoint group in the tenant. Read-only.
+              nullable: true
+            title:
+              type: string
+              description: The title of the SharePoint group. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.sharePointIdentity:
@@ -36472,6 +37658,45 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerTaskChatMention:
+      title: plannerTaskChatMention
+      type: object
+      properties:
+        mentioned:
+          type: string
+          description: The ID of the mentioned user.
+          nullable: true
+        mentionType:
+          $ref: '#/components/schemas/microsoft.graph.plannerTaskChatMentionType'
+        position:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The zero-based position of the mention in the message content.
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskChatMessageType:
+      title: plannerTaskChatMessageType
+      enum:
+        - richTextHtml
+        - plainText
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerTaskChatReaction:
+      title: plannerTaskChatReaction
+      type: object
+      properties:
+        reactionEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerTaskChatReactionEvent'
+        reactionType:
+          type: string
+          description: 'The type of reaction, such as like, heart, or emoji characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.allowedAudiences:
       title: allowedAudiences
       enum:
@@ -36608,6 +37833,25 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.sectionIconSkinTone:
+      title: sectionIconSkinTone
+      enum:
+        - light
+        - mediumLight
+        - medium
+        - mediumDark
+        - dark
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sectionItemType:
+      title: sectionItemType
+      enum:
+        - chat
+        - channel
+        - meeting
+        - community
+        - unknownFutureValue
+      type: string
     microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36709,18 +37953,6 @@ components:
             webUrl:
               type: string
               description: Deep link to the linkedResource.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.singleValueExtendedProperty:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: singleValueExtendedProperty
-          type: object
-          properties:
-            value:
-              type: string
-              description: The value of the property.
               nullable: true
           additionalProperties:
             type: object
@@ -36884,7 +38116,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeExemption'
-          x-ms-navigationProperty: true
+          description: The collection of customSecurityAttributeExemption to exempt from the policy enforcement. Limit of 5.
       additionalProperties:
         type: object
     microsoft.graph.appKeyCredentialRestrictionType:
@@ -37278,6 +38510,14 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+    microsoft.graph.expirationPatternType:
+      title: expirationPatternType
+      enum:
+        - notSpecified
+        - noExpiration
+        - afterDateTime
+        - afterDuration
+      type: string
     microsoft.graph.printColorMode:
       title: printColorMode
       enum:
@@ -38629,6 +39869,8 @@ components:
       properties:
         content:
           $ref: '#/components/schemas/microsoft.graph.contentBase'
+        contentCategory:
+          $ref: '#/components/schemas/microsoft.graph.contentCategory'
         correlationId:
           type: string
           description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
@@ -39301,6 +40543,26 @@ components:
           description: Read-only. A collection of keys from the plannerFormsDictionary that identify the plannerFormReference objects that specify the requirements to complete the plannerTask.
       additionalProperties:
         type: object
+    microsoft.graph.plannerTaskChatMentionType:
+      title: plannerTaskChatMentionType
+      enum:
+        - user
+        - application
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerTaskChatReactionEvent:
+      title: plannerTaskChatReactionEvent
+      type: object
+      properties:
+        createdBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the reaction was added. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+      additionalProperties:
+        type: object
     microsoft.graph.storageQuotaBreakdown:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -39383,6 +40645,8 @@ components:
         - title: customSecurityAttributeExemption
           type: object
           properties:
+            id:
+              type: string
             operator:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeComparisonOperator'
           additionalProperties:
@@ -39772,6 +41036,13 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.contentCategory:
+      title: contentCategory
+      enum:
+        - none
+        - ai
+        - unknownFutureValue
+      type: string
     microsoft.graph.operatingSystemSpecifications:
       title: operatingSystemSpecifications
       type: object
@@ -40703,6 +41974,18 @@ components:
         text/plain:
           schema:
             $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.networkaccess.cloudFirewallPolicyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.cloudFirewallPolicyCollectionResponse'
+    microsoft.graph.networkaccess.policyRuleCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRuleCollectionResponse'
     microsoft.graph.networkaccess.branchSiteCollectionResponse:
       description: Retrieved collection
       content:
@@ -40745,12 +42028,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.networkaccess.filteringPolicyCollectionResponse'
-    microsoft.graph.networkaccess.policyRuleCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.networkaccess.policyRuleCollectionResponse'
     microsoft.graph.networkaccess.filteringProfileCollectionResponse:
       description: Retrieved collection
       content:
@@ -40775,6 +42052,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.networkaccess.connectionCollectionResponse'
+    microsoft.graph.networkaccess.generativeAIInsightCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.generativeAIInsightCollectionResponse'
     microsoft.graph.networkaccess.remoteNetworkHealthEventCollectionResponse:
       description: Retrieved collection
       content:

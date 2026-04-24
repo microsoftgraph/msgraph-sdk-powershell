@@ -1,9 +1,9 @@
 openapi: 3.0.4
 info:
   title: ConfigurationManagement
-  version: v1.0-beta
+  version: v1.0
 servers:
-  - url: https://graph.microsoft.com/beta/
+  - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
   /admin/configurationManagement:
@@ -11,6 +11,7 @@ paths:
       tags:
         - admin.configurationManagement
       summary: Get configurationManagement from admin
+      description: A container for Tenant Configuration Management (TCM) resources. Read-only.
       operationId: admin_GetConfigurationManagement
       parameters:
         - name: $select
@@ -91,7 +92,7 @@ paths:
       description: Get a list of the configurationDrift objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationdrifts?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationdrifts?view=graph-rest-1.0
       operationId: admin.configurationManagement_ListConfigurationDrift
       parameters:
         - $ref: '#/components/parameters/top'
@@ -168,7 +169,7 @@ paths:
       description: Get the properties and relationships of a configurationDrift object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationdrift-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationdrift-get?view=graph-rest-1.0
       operationId: admin.configurationManagement_GetConfigurationDrift
       parameters:
         - name: configurationDrift-id
@@ -288,7 +289,7 @@ paths:
       description: Get a list of the configurationMonitoringResult objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitoringresults?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitoringresults?view=graph-rest-1.0
       operationId: admin.configurationManagement_ListConfigurationMonitoringResult
       parameters:
         - $ref: '#/components/parameters/top'
@@ -365,7 +366,7 @@ paths:
       description: Read the properties and relationships of a configurationMonitoringResult object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmonitoringresult-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmonitoringresult-get?view=graph-rest-1.0
       operationId: admin.configurationManagement_GetConfigurationMonitoringResult
       parameters:
         - name: configurationMonitoringResult-id
@@ -485,7 +486,7 @@ paths:
       description: Get a list of the configurationMonitor objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitors?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitors?view=graph-rest-1.0
       operationId: admin.configurationManagement_ListConfigurationMonitor
       parameters:
         - $ref: '#/components/parameters/top'
@@ -536,10 +537,10 @@ paths:
       tags:
         - admin.configurationManagement
       summary: Create configurationMonitor
-      description: Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
+      description: Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency. You can create up to 30 configurationMonitor objects per tenant. Each monitor runs at a fixed interval of 6 hours and cannot be configured to run at any other frequency. An administrator can monitor up to 800 configuration resources per day per tenant across all monitors.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmanagement-post-configurationmonitors?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-post-configurationmonitors?view=graph-rest-1.0
       operationId: admin.configurationManagement_CreateConfigurationMonitor
       requestBody:
         description: New navigation property
@@ -566,7 +567,7 @@ paths:
       description: Get the properties and relationships of a configurationMonitor object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmonitor-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmonitor-get?view=graph-rest-1.0
       operationId: admin.configurationManagement_GetConfigurationMonitor
       parameters:
         - name: configurationMonitor-id
@@ -611,10 +612,10 @@ paths:
       tags:
         - admin.configurationManagement
       summary: Update configurationMonitor
-      description: 'Update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.'
+      description: 'Update the properties of a configurationMonitor object, including the monitor name, description, and baseline.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmonitor-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmonitor-update?view=graph-rest-1.0
       operationId: admin.configurationManagement_UpdateConfigurationMonitor
       parameters:
         - name: configurationMonitor-id
@@ -646,10 +647,10 @@ paths:
       tags:
         - admin.configurationManagement
       summary: Delete configurationMonitor
-      description: 'Delete a configurationMonitor object permanently. When deleted, the configurationMonitor data can''t be restored.'
+      description: Delete a configurationMonitor object permanently. A deleted configurationMonitor can't be restored.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmonitor-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmonitor-delete?view=graph-rest-1.0
       operationId: admin.configurationManagement_DeleteConfigurationMonitor
       parameters:
         - name: configurationMonitor-id
@@ -680,7 +681,7 @@ paths:
       description: Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationbaseline-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationbaseline-get?view=graph-rest-1.0
       operationId: admin.configurationManagement.configurationMonitor_GetBaseline
       parameters:
         - name: configurationMonitor-id
@@ -800,7 +801,7 @@ paths:
       description: Get a list of the configurationSnapshotJob objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshotjobs?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshotjobs?view=graph-rest-1.0
       operationId: admin.configurationManagement_ListConfigurationSnapshotJob
       parameters:
         - $ref: '#/components/parameters/top'
@@ -877,7 +878,7 @@ paths:
       description: Read the properties and relationships of a configurationSnapshotJob object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationsnapshotjob-get?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationsnapshotjob-get?view=graph-rest-1.0
       operationId: admin.configurationManagement_GetConfigurationSnapshotJob
       parameters:
         - name: configurationSnapshotJob-id
@@ -956,7 +957,7 @@ paths:
       description: Delete a configurationSnapshotJob object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationsnapshotjob-delete?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationsnapshotjob-delete?view=graph-rest-1.0
       operationId: admin.configurationManagement_DeleteConfigurationSnapshotJob
       parameters:
         - name: configurationSnapshotJob-id
@@ -1001,7 +1002,7 @@ paths:
       description: Get a list of configurationBaseline objects that represent configuration snapshots and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshots?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshots?view=graph-rest-1.0
       operationId: admin.configurationManagement_ListConfigurationSnapshot
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1589,8 +1590,8 @@ components:
         - running
         - succeeded
         - failed
-        - unknownFutureValue
         - partiallySuccessful
+        - unknownFutureValue
       type: string
       x-ms-enum:
         name: snapshotJobStatus
@@ -1681,7 +1682,6 @@ components:
       type: object
       additionalProperties:
         type: object
-      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.Dictionary:
       title: Dictionary
       type: object
@@ -1693,7 +1693,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
           nullable: true
         id:
           type: string
