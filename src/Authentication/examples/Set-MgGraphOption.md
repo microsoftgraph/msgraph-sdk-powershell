@@ -1,9 +1,8 @@
-### Example 1: Set web account manager support
+### Example 1: Disable web account manager support
 ```powershell
-PS C:\> Set-MgGraphOption -EnableLoginByWAM $True
+PS C:\> Set-MgGraphOption -DisableLoginByWAM $True
 ```
- Sets web account manager support
- Note: Signin by Web Account Manager (WAM) is enabled by default on Windows and cannot be disabled. Setting this option will no longer have any effect. 
+ Disables sign in via Web Account Manager (WAM). Note: This only takes effect when using a custom ClientId. When using the default ClientId, WAM remains enabled regardless of this setting.
 
 ### Example 2: Disable WAM for sovereign cloud environments
 ```powershell
