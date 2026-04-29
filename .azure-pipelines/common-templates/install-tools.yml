@@ -66,14 +66,14 @@ steps:
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install -g autorest@3.7.2 --registry https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/
+      customCommand: install -g autorest@3.7.2
 
   - task: Npm@1
     displayName: Install AutorestCore
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install -g @autorest/core@3.10.4 --registry https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/
+      customCommand: install -g @autorest/core@3.10.4
 
   - task: PowerShell@2
     displayName: Pre-populate autorest extension cache
@@ -84,7 +84,7 @@ steps:
         # Autorest resolves extensions from ~/.autorest/<pkg>/<version>/node_modules/.
         # Pre-install every extension referenced by autorest-configuration.md so autorest
         # makes zero npm network calls during module generation.
-        $registry = "https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/"
+        # Registry and auth are read from ~/.npmrc (copied from the authenticated .npmrc above).
         $extensions = @(
             "@autorest/core@3.10.4",
             "@autorest/modelerfour@4.24.3"
@@ -101,7 +101,7 @@ steps:
             }
             New-Item -ItemType Directory -Force -Path $cacheDir | Out-Null
             Write-Host "Pre-installing $ext into $cacheDir"
-            npm install $ext --prefix $cacheDir --registry $registry
+            npm install $ext --prefix $cacheDir
             if ($LASTEXITCODE -ne 0) { throw "Failed to pre-install $ext (exit $LASTEXITCODE)" }
             Write-Host "Done: $ext"
         }
@@ -111,7 +111,7 @@ steps:
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install -g @microsoft/rush --registry https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/
+      customCommand: install -g @microsoft/rush
   
   - task: PowerShell@2
     displayName: Rush Build
