@@ -48,8 +48,8 @@ if (-not (Test-Path $ModuleMappingPath)) {
 
 # Build AutoREST.PowerShell submodule.
 Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
-rush install
-rush build
+npx rush install
+npx rush build
 
 # Diagnostic: show autorest cache state and npm registry config before generation.
 Write-Host "--- Autorest/npm diagnostics ---"
