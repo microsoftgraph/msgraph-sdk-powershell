@@ -88,7 +88,7 @@ $ApiVersion | ForEach-Object {
             }
 
             $autorestLog = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), "autorest-$($ModuleFullName -replace '[^a-zA-Z0-9-]', '-').log")
-            npx autorest @modelerFourUseFlag --verbose --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 2>&1 | Out-File -FilePath $autorestLog -Encoding utf8
+            npx --no-install autorest @modelerFourUseFlag --verbose --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 2>&1 | Out-File -FilePath $autorestLog -Encoding utf8
             $autorestExitCode = $LASTEXITCODE
             if ($autorestExitCode -ne 0) {
                 Write-Host -ForegroundColor Red "AutoREST failed (exit $autorestExitCode) generating '$ModuleFullName'."

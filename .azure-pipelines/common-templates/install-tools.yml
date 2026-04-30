@@ -66,14 +66,14 @@ steps:
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install autorest@3.7.2
+      customCommand: install --no-package-lock autorest@3.7.2
 
   - task: Npm@1
     displayName: Install AutorestCore
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install @autorest/core@3.10.4
+      customCommand: install --no-package-lock @autorest/core@3.10.4
 
   - task: PowerShell@2
     displayName: Pre-populate autorest extension cache
@@ -111,7 +111,7 @@ steps:
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install @microsoft/rush
+      customCommand: install --no-package-lock @microsoft/rush
   
   - task: PowerShell@2
     displayName: Rush Build
@@ -120,9 +120,9 @@ steps:
       pwsh: true
       workingDirectory: "autorest.powershell"
       script: |
-        npx rush install
+        npx --no-install rush install
         if ($LASTEXITCODE -ne 0) { throw "rush install failed with exit code $LASTEXITCODE" }
-        npx rush link
+        npx --no-install rush link
         if ($LASTEXITCODE -ne 0) { throw "rush link failed with exit code $LASTEXITCODE" }
-        npx rush rebuild
+        npx --no-install rush rebuild
         if ($LASTEXITCODE -ne 0) { throw "rush rebuild failed with exit code $LASTEXITCODE" }

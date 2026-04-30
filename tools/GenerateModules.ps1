@@ -48,38 +48,43 @@ if (-not (Test-Path $ModuleMappingPath)) {
 
 # Build AutoREST.PowerShell submodule.
 Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
-npx rush install
-npx rush build
+npx --no-install rush install
+npx --no-install rush build
 
 # Diagnostic: show autorest cache state and npm registry config before generation.
-Write-Host "--- Autorest/npm diagnostics ---"
-$autorestHome = if ($env:AUTOREST_HOME) { $env:AUTOREST_HOME } else { Join-Path $env:USERPROFILE ".autorest" }
-Write-Host "AUTOREST_HOME: $autorestHome"
-$coreCacheDir = Join-Path $autorestHome "@autorest\core"
-if (Test-Path $coreCacheDir) {
-    Write-Host "Autorest core cache versions: $(Get-ChildItem $coreCacheDir -Directory | Select-Object -ExpandProperty Name)"
-    $nodeModulesDir = Join-Path $coreCacheDir "3.10.4\node_modules\@autorest\core"
-    Write-Host "Cache 3.10.4 node_modules present: $(Test-Path $nodeModulesDir)"
+# Gated behind ENABLE_AUTOREST_DIAGNOSTICS to avoid npm calls in network-isolated release pipelines.
+if ($env:ENABLE_AUTOREST_DIAGNOSTICS) {
+    Write-Host "--- Autorest/npm diagnostics ---"
+    $autorestHome = if ($env:AUTOREST_HOME) { $env:AUTOREST_HOME } else { Join-Path $env:USERPROFILE ".autorest" }
+    Write-Host "AUTOREST_HOME: $autorestHome"
+    $coreCacheDir = Join-Path $autorestHome "@autorest\core"
+    if (Test-Path $coreCacheDir) {
+        Write-Host "Autorest core cache versions: $(Get-ChildItem $coreCacheDir -Directory | Select-Object -ExpandProperty Name)"
+        $nodeModulesDir = Join-Path $coreCacheDir "3.10.4\node_modules\@autorest\core"
+        Write-Host "Cache 3.10.4 node_modules present: $(Test-Path $nodeModulesDir)"
+    } else {
+        Write-Host "WARNING: Autorest core cache directory not found at $coreCacheDir"
+    }
+    $modelerfourCacheDir = Join-Path $autorestHome "@autorest\modelerfour"
+    if (Test-Path $modelerfourCacheDir) {
+        Write-Host "Autorest modelerfour cache versions: $(Get-ChildItem $modelerfourCacheDir -Directory | Select-Object -ExpandProperty Name)"
+        $modelerfourNodeModules = Join-Path $modelerfourCacheDir "4.24.3\node_modules\@autorest\modelerfour"
+        Write-Host "Cache modelerfour 4.24.3 node_modules present: $(Test-Path $modelerfourNodeModules)"
+    } else {
+        Write-Host "WARNING: Autorest modelerfour cache directory not found at $modelerfourCacheDir"
+    }
+    Write-Host "npm registry: $(npm config get registry 2>&1)"
+    Write-Host "npm_config_registry env: $env:npm_config_registry"
+    Write-Host "NPM_CONFIG_USERCONFIG: $env:NPM_CONFIG_USERCONFIG"
+    $userNpmrc = Join-Path $env:USERPROFILE ".npmrc"
+    Write-Host "~/.npmrc exists: $(Test-Path $userNpmrc)"
+    if (Test-Path $userNpmrc) {
+        Write-Host "~/.npmrc registry line: $(Select-String -Path $userNpmrc -Pattern '^registry=' | Select-Object -First 1 -ExpandProperty Line)"
+    }
+    Write-Host "--- End diagnostics ---"
 } else {
-    Write-Host "WARNING: Autorest core cache directory not found at $coreCacheDir"
+    Write-Host "Autorest diagnostics skipped (set ENABLE_AUTOREST_DIAGNOSTICS=1 to enable)"
 }
-$modelerfourCacheDir = Join-Path $autorestHome "@autorest\modelerfour"
-if (Test-Path $modelerfourCacheDir) {
-    Write-Host "Autorest modelerfour cache versions: $(Get-ChildItem $modelerfourCacheDir -Directory | Select-Object -ExpandProperty Name)"
-    $modelerfourNodeModules = Join-Path $modelerfourCacheDir "4.24.3\node_modules\@autorest\modelerfour"
-    Write-Host "Cache modelerfour 4.24.3 node_modules present: $(Test-Path $modelerfourNodeModules)"
-} else {
-    Write-Host "WARNING: Autorest modelerfour cache directory not found at $modelerfourCacheDir"
-}
-Write-Host "npm registry: $(npm config get registry 2>&1)"
-Write-Host "npm_config_registry env: $env:npm_config_registry"
-Write-Host "NPM_CONFIG_USERCONFIG: $env:NPM_CONFIG_USERCONFIG"
-$userNpmrc = Join-Path $env:USERPROFILE ".npmrc"
-Write-Host "~/.npmrc exists: $(Test-Path $userNpmrc)"
-if (Test-Path $userNpmrc) {
-    Write-Host "~/.npmrc registry line: $(Select-String -Path $userNpmrc -Pattern '^registry=' | Select-Object -First 1 -ExpandProperty Line)"
-}
-Write-Host "--- End diagnostics ---"
 
 $RequiredGraphModules = @()
 $AuthModuleManifest = Join-Path $ModulesSrc "Authentication" "Authentication" "artifacts" "Microsoft.Graph.Authentication.psd1"
