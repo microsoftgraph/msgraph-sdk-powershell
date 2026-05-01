@@ -49,7 +49,14 @@ if (-not (Test-Path $ModuleMappingPath)) {
 # Build AutoREST.PowerShell submodule.
 Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
 npx --no-install rush install
+if ($LASTEXITCODE -ne 0) {
+    throw "Command 'npx --no-install rush install' failed with exit code $LASTEXITCODE."
+}
+
 npx --no-install rush build
+if ($LASTEXITCODE -ne 0) {
+    throw "Command 'npx --no-install rush build' failed with exit code $LASTEXITCODE."
+}
 
 # Diagnostic: show autorest cache state and npm registry config before generation.
 # Gated behind ENABLE_AUTOREST_DIAGNOSTICS to avoid npm calls in network-isolated release pipelines.
