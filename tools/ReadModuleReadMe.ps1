@@ -6,17 +6,7 @@ param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $FieldToRead
 ) 
 $ErrorActionPreference = "Stop"
-
-function ConvertFrom-SimpleYaml {
-    param([string]$Yaml)
-    $result = @{}
-    $Yaml -split "`n" | ForEach-Object {
-        if ($_.Trim() -match '^([^:]+):\s*(.*)$') {
-            $result[$Matches[1].Trim()] = $Matches[2].Trim()
-        }
-    }
-    return $result
-}
+. "$PSScriptRoot\utilities\utils.ps1"
 
 $FieldValue = $null
 # Read readme.md.

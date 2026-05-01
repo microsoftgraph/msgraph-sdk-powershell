@@ -78,33 +78,9 @@ steps:
   - task: PowerShell@2
     displayName: Pre-populate autorest extension cache
     inputs:
-      targetType: inline
+      targetType: filePath
       pwsh: true
-      script: |
-        # Autorest resolves extensions from ~/.autorest/<pkg>/<version>/node_modules/.
-        # Pre-install every extension referenced by autorest-configuration.md so autorest
-        # makes zero npm network calls during module generation.
-        # Registry and auth are read from ~/.npmrc (copied from the authenticated .npmrc above).
-        $extensions = @(
-            "@autorest/core@3.10.4",
-            "@autorest/modelerfour@4.24.3"
-        )
-        foreach ($ext in $extensions) {
-            $parts   = $ext -split '@(?=[^@]+$)'   # split on last @
-            $pkg     = $parts[0]
-            $ver     = $parts[1]
-            $cacheDir = Join-Path $env:USERPROFILE ".autorest\$($pkg.Replace('/','\'))\$ver"
-            $nodeModules = Join-Path $cacheDir "node_modules\$($pkg.Replace('/','\'))"
-            if (Test-Path $nodeModules) {
-                Write-Host "Cache already present: $ext"
-                continue
-            }
-            New-Item -ItemType Directory -Force -Path $cacheDir | Out-Null
-            Write-Host "Pre-installing $ext into $cacheDir"
-            npm install $ext --prefix $cacheDir
-            if ($LASTEXITCODE -ne 0) { throw "Failed to pre-install $ext (exit $LASTEXITCODE)" }
-            Write-Host "Done: $ext"
-        }
+      filePath: $(Build.SourcesDirectory)/tools/utilities/PrePopulateAutorestCache.ps1
 
   - task: Npm@1
     displayName: Install Rush
