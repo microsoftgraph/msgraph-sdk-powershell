@@ -41,7 +41,7 @@ Write-Host "Updated $rushNpmrc"
 $normalizedRegistry = $Registry.TrimEnd('/')
 $npmSuffix = "/npm/registry"
 if (-not $normalizedRegistry.EndsWith($npmSuffix)) {
-    throw "Cannot derive NuGet feed URL: Registry '$Registry' does not end with '$npmSuffix'. Pass an explicit Azure Artifacts npm registry URL or add a -NugetFeed parameter."
+    throw "Cannot derive NuGet feed URL: Registry '$Registry' does not end with '$npmSuffix'. Pass an explicit Azure Artifacts npm registry URL using the -Registry parameter."
 }
 $nugetFeed = $normalizedRegistry.Substring(0, $normalizedRegistry.Length - $npmSuffix.Length) + "/nuget/v3/index.json"
 $nugetConfig = @"
