@@ -6319,7 +6319,7 @@ components:
       properties:
         abbreviation:
           type: string
-          description: 'Shortened name of the degree or program (example: PhD, MBA)'
+          description: 'Shortened name of the degree or program, for example, PhD and MBA.'
           nullable: true
         activities:
           type: array
@@ -6346,14 +6346,14 @@ components:
           items:
             type: string
             nullable: true
-          description: Majors and minors associated with the program. (if applicable)
+          description: 'Majors and minors associated with the program, if applicable.'
         grade:
           type: string
-          description: 'The final grade, class, GPA, or score.'
+          description: 'The final grade, class, grade point average (GPA), or score.'
           nullable: true
         notes:
           type: string
-          description: More notes the user provided.
+          description: More notes provided by the user.
           nullable: true
         webUrl:
           type: string

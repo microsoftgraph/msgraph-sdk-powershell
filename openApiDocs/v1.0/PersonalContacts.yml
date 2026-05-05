@@ -3888,10 +3888,14 @@ components:
               type: string
               description: The user's notes about the contact.
               nullable: true
+            primaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             profession:
               type: string
               description: The contact's profession.
               nullable: true
+            secondaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             spouseName:
               type: string
               description: The name of the contact's spouse/partner.
@@ -3900,6 +3904,8 @@ components:
               type: string
               description: The contact's surname.
               nullable: true
+            tertiaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             title:
               type: string
               description: The contact's title.
