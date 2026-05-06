@@ -7581,7 +7581,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the item of type microsoft.graph.place as microsoft.graph.roomList
+      summary: Get place
+      description: 'Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-get?view=graph-rest-beta
       operationId: place_GetPlaceAsRoomList
       parameters:
         - name: place-id
@@ -10606,7 +10610,11 @@ paths:
     get:
       tags:
         - places.place
-      summary: Get the items of type microsoft.graph.roomList in the microsoft.graph.place collection
+      summary: Get place
+      description: 'Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/place-get?view=graph-rest-beta
       operationId: place_ListPlaceAsRoomList
       parameters:
         - $ref: '#/components/parameters/top'

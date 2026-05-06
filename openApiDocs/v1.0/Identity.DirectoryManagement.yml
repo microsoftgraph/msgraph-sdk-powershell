@@ -341,6 +341,532 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /admin/people/profilePropertySettings:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: List profilePropertySettings
+      description: Get a collection of profilePropertySetting objects that define the configuration for user profile properties in an organization. The id property identifies each resource object uniquely.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilepropertysettings?view=graph-rest-1.0
+      operationId: admin.person_ListProfilePropertySetting
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.profilePropertySettingCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Create profilePropertySetting
+      description: Create a new profilePropertySetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilepropertysettings?view=graph-rest-1.0
+      operationId: admin.person_CreateProfilePropertySetting
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/people/profilePropertySettings/{profilePropertySetting-id}':
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get profilePropertySetting
+      description: Read the properties and relationships of profilePropertySetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilepropertysetting-get?view=graph-rest-1.0
+      operationId: admin.person_GetProfilePropertySetting
+      parameters:
+        - name: profilePropertySetting-id
+          in: path
+          description: The unique identifier of profilePropertySetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePropertySetting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Update profilePropertySetting
+      description: Update the properties of a profilePropertySetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilepropertysetting-update?view=graph-rest-1.0
+      operationId: admin.person_UpdateProfilePropertySetting
+      parameters:
+        - name: profilePropertySetting-id
+          in: path
+          description: The unique identifier of profilePropertySetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePropertySetting
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Delete profilePropertySetting
+      description: Delete a profilePropertySetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilepropertysetting-delete?view=graph-rest-1.0
+      operationId: admin.person_DeleteProfilePropertySetting
+      parameters:
+        - name: profilePropertySetting-id
+          in: path
+          description: The unique identifier of profilePropertySetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePropertySetting
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/people/profilePropertySettings/$count:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get the number of the resource
+      operationId: admin.person.profilePropertySetting_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/people/profileSources:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: List profileSources
+      description: 'Get a list of the profileSource objects and their properties, which represent both external data sources and out-of-the-box Microsoft data sources configured for user profiles in an organization.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilesources?view=graph-rest-1.0
+      operationId: admin.person_ListProfileSource
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.profileSourceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Create profileSource
+      description: Create a new profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilesources?view=graph-rest-1.0
+      operationId: admin.person_CreateProfileSource
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileSource'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/people/profileSources/{profileSource-id}':
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get profileSources from admin
+      description: A collection of profile source settings configured by an administrator in an organization.
+      operationId: admin.person_GetProfileSource
+      parameters:
+        - name: profileSource-id
+          in: path
+          description: The unique identifier of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profileSource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Update profileSource
+      description: Update the properties of a profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilesource-update?view=graph-rest-1.0
+      operationId: admin.person_UpdateProfileSource
+      parameters:
+        - name: profileSource-id
+          in: path
+          description: The unique identifier of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profileSource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileSource'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Delete profileSource
+      description: Delete a profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilesource-delete?view=graph-rest-1.0
+      operationId: admin.person_DeleteProfileSource
+      parameters:
+        - name: profileSource-id
+          in: path
+          description: The unique identifier of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profileSource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/people/profileSources(sourceId=''{sourceId}'')':
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get profileSources from admin
+      description: A collection of profile source settings configured by an administrator in an organization.
+      operationId: admin.person.profileSource_GetGraphBPreSourceId
+      parameters:
+        - name: sourceId
+          in: path
+          description: Alternate key of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Update profileSource
+      description: Update the properties of a profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilesource-update?view=graph-rest-1.0
+      operationId: admin.person.profileSource_UpdateGraphBPreSourceId
+      parameters:
+        - name: sourceId
+          in: path
+          description: Alternate key of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileSource'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Delete profileSource
+      description: Delete a profileSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilesource-delete?view=graph-rest-1.0
+      operationId: admin.person.profileSource_DeleteGraphBPreSourceId
+      parameters:
+        - name: sourceId
+          in: path
+          description: Alternate key of profileSource
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/people/profileSources/$count:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get the number of the resource
+      operationId: admin.person.profileSource_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /admin/people/pronouns:
     get:
       tags:
@@ -1839,7 +2365,7 @@ paths:
       tags:
         - contacts.orgContact.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -3220,7 +3746,7 @@ paths:
       tags:
         - contracts.contract.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -4643,7 +5169,7 @@ paths:
       tags:
         - devices.device.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -10106,7 +10632,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deleted item (directory object)
-      description: "Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. Retrieve the properties of a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user"
+      description: "Retrieve the properties of a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user"
       operationId: directory_ListDeletedItem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10158,7 +10684,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deleted item (directory object)
-      description: "Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. Retrieve the properties of a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user"
+      description: "Retrieve the properties of a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-get?view=graph-rest-1.0
@@ -10205,8 +10731,8 @@ paths:
     delete:
       tags:
         - directory.directoryObject
-      summary: Permanently delete an item (directory object)
-      description: "Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Permanently delete a recently deleted directory object from deleted items. The following types are supported:\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored."
+      summary: Permanently delete item (directory object)
+      description: "Permanently delete a recently deleted directory object from deleted items. The following types are supported:\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-delete?view=graph-rest-1.0
@@ -10589,7 +11115,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: List deletedItems (directory objects)
-      description: "Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources. Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user"
+      description: "Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
@@ -10637,7 +11163,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Invoke action restore
-      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -11061,7 +11587,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: List deletedItems (directory objects)
-      description: "Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources. Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user"
+      description: "Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
@@ -14450,7 +14976,7 @@ paths:
       tags:
         - directoryRoles.directoryRole.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -15459,7 +15985,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -19946,7 +20472,7 @@ paths:
       tags:
         - organization.organization.Actions
       summary: Invoke action restore
-      description: "Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
+      description: "Restore a recently deleted directory object from deleted items. The following types are supported:\r\n- administrativeUnit\r\n- application\r\n- agentIdentityBlueprint\r\n- agentIdentity\r\n- agentIdentityBlueprintPrincipal\r\n- agentUser\r\n- certificateBasedAuthPki\r\n- certificateAuthorityDetail\r\n- group\r\n- servicePrincipal\r\n- user If an item is accidentally deleted, you can fully restore the item. Additionally, restoring an application doesn't automatically restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -20644,6 +21170,18 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
               description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
               x-ms-navigationProperty: true
+            profilePropertySettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+              description: A collection of profile property configuration settings defined by an administrator for an organization.
+              x-ms-navigationProperty: true
+            profileSources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileSource'
+              description: A collection of profile source settings configured by an administrator in an organization.
+              x-ms-navigationProperty: true
             pronouns:
               $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
           additionalProperties:
@@ -20678,6 +21216,56 @@ components:
             directoryPropertyName:
               type: string
               description: 'Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Microsoft Entra ID properties on the Microsoft 365 profile card within their tenant. When present, the Microsoft Entra ID field referenced in this property is visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.profilePropertySetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profilePropertySetting
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Name of the property-level setting.
+              nullable: true
+            name:
+              type: string
+              description: Other name of the property-level setting. For backward compatibility.
+              nullable: true
+            prioritizedSourceUrls:
+              type: array
+              items:
+                type: string
+              description: A collection of prioritized profile source URLs ordered by data precedence within an organization.
+          additionalProperties:
+            type: object
+    microsoft.graph.profileSource:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profileSource
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Name of the profile source intended to inform users about the profile source name.
+              nullable: true
+            kind:
+              type: string
+              description: Type of the profile source.
+              nullable: true
+            localizations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileSourceLocalization'
+              description: Alternative localized labels specified by an administrator.
+            sourceId:
+              type: string
+              description: Profile source identifier used as an alternate key.
+              nullable: true
+            webUrl:
+              type: string
+              description: Web URL of the profile source that directs users to the page view of the profile data.
               nullable: true
           additionalProperties:
             type: object
@@ -20811,32 +21399,32 @@ components:
           properties:
             aboutMe:
               type: string
-              description: A freeform text entry field for the user to describe themselves. Returned only on $select.
+              description: A freeform text entry field for the user to describe themselves. Requires $select to retrieve.
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Requires $select to retrieve. Supports $filter (eq, ne, not, and in).'
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Requires $select to retrieve. Supports $filter (eq, ne, not, and in).'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Requires $select to retrieve. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
-              description: The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
+              description: The plans that are assigned to the user. Read-only. Not nullable. Requires $select to retrieve. Supports $filter (eq and not).
             authorizationInfo:
               $ref: '#/components/schemas/microsoft.graph.authorizationInfo'
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.'
+              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Requires $select to retrieve.'
               format: date-time
             businessPhones:
               type: array
@@ -20845,35 +21433,35 @@ components:
               description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
-              description: 'The city where the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The city where the user is located. Maximum length is 128 characters. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             companyName:
               type: string
-              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that a guest comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that a guest comes from. The maximum length is 64 characters.Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent was obtained for minors. Allowed values: null, Granted, Denied, and NotRequired. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets whether consent was obtained for minors. Allowed values: null, Granted, Denied, and NotRequired. For more information, see legal age group property definitions. Requires $select to retrieve. Supports $filter (eq, ne, not, and in).'
               nullable: true
             country:
               type: string
-              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created, in ISO 8601 format and UTC. The value can''t be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and UTC. The value can''t be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Requires $select to retrieve. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
               type: string
-              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by a guest signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).'
+              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by a guest signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Requires $select to retrieve. Supports $filter (eq, ne, not, in).'
               nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             department:
               type: string
-              description: 'The name of the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).'
+              description: 'The name of the department in which the user works. Maximum length is 64 characters. Requires $select to retrieve. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).'
               nullable: true
             deviceEnrollmentLimit:
               maximum: 2147483647
@@ -20888,12 +21476,12 @@ components:
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user was hired or will start work in a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time when the user was hired or will start work in a future hire. Requires $select to retrieve. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             employeeId:
               type: string
-              description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
+              description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Requires $select to retrieve. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -20905,21 +21493,21 @@ components:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
             employeeType:
               type: string
-              description: 'Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith).'
+              description: 'Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Requires $select to retrieve. Supports $filter (eq, ne, not , ge, le, in, startsWith).'
               nullable: true
             externalUserState:
               type: string
-              description: 'For a guest invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).'
+              description: 'For a guest invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Requires $select to retrieve. Supports $filter (eq, ne, not , in).'
               nullable: true
             externalUserStateChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Shows the timestamp for the latest change to the externalUserState property. Returned only on $select. Supports $filter (eq, ne, not , in).'
+              description: 'Shows the timestamp for the latest change to the externalUserState property. Requires $select to retrieve. Supports $filter (eq, ne, not , in).'
               format: date-time
               nullable: true
             faxNumber:
               type: string
-              description: 'The fax number of the user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
+              description: 'The fax number of the user. Requires $select to retrieve. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             givenName:
               type: string
@@ -20928,28 +21516,31 @@ components:
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint in Microsoft 365. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Requires $select to retrieve.  Note: This property is specific to SharePoint in Microsoft 365. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             identities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It might contain multiple items with the same signInType value. Returned only on $select.  Supports $filter (eq) with limitations.'
+              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It might contain multiple items with the same signInType value. Requires $select to retrieve.  Supports $filter (eq) with limitations.'
+            identityParentId:
+              type: string
+              nullable: true
             imAddresses:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Requires $select to retrieve. Supports $filter (eq, not, ge, le, startsWith).'
             interests:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for the user to describe their interests. Returned only on $select.
+              description: A list for the user to describe their interests. Requires $select to retrieve.
             isManagementRestricted:
               type: boolean
-              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
+              description: 'true if the user is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a user who is a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Requires $select to retrieve.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -20962,18 +21553,18 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.'
+              description: 'The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Requires $select to retrieve.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined,  MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined,  MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Requires $select to retrieve.'
               nullable: true
             licenseAssignmentStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user inherited through group memberships. Read-only. Requires $select to retrieve.
             mail:
               type: string
               description: 'The SMTP address for the user, for example, jeff@contoso.com. Changes to this property update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
@@ -20982,7 +21573,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
             mailNickname:
               type: string
-              description: 'The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mobilePhone:
               type: string
@@ -20990,7 +21581,7 @@ components:
               nullable: true
             mySite:
               type: string
-              description: The URL for the user's site. Returned only on $select.
+              description: The URL for the user's site. Requires $select to retrieve.
               nullable: true
             officeLocation:
               type: string
@@ -20998,53 +21589,53 @@ components:
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select.
+              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Requires $select to retrieve.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Requires $select to retrieve.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: 'Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).'
+              description: 'Errors when using Microsoft synchronization product during provisioning. Requires $select to retrieve. Supports $filter (eq, not, ge, le).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq including on null values).
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Requires $select to retrieve. Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Microsoft Entra ID. Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Microsoft Entra ID. Read-only. Requires $select to retrieve. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             otherMails:
               type: array
               items:
                 type: string
-              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Requires $select to retrieve. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Requires $select to retrieve. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -21053,10 +21644,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate their past projects. Returned only on $select.
+              description: A list for the user to enumerate their past projects. Requires $select to retrieve.
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country or region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country or region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             preferredDataLocation:
               type: string
@@ -21068,7 +21659,7 @@ components:
               nullable: true
             preferredName:
               type: string
-              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
+              description: The preferred name for the user. Not Supported. This attribute returns an empty string.Requires $select to retrieve.
               nullable: true
             print:
               $ref: '#/components/schemas/microsoft.graph.userPrint'
@@ -21076,24 +21667,24 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.provisionedPlan'
-              description: 'The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).'
+              description: 'The plans that are provisioned for the user. Read-only. Not nullable. Requires $select to retrieve. Supports $filter (eq, not, ge, le).'
             proxyAddresses:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while those addresses prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while those addresses prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Requires $select to retrieve. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             responsibilities:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate their responsibilities. Returned only on $select.
+              description: A list for the user to enumerate their responsibilities. Requires $select to retrieve.
             schools:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate the schools they attended. Returned only on $select.
+              description: A list for the user to enumerate the schools they attended. Requires $select to retrieve.
             securityIdentifier:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
@@ -21112,7 +21703,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or session tokens (session cookies) issued before this time are invalid. Applications get an error when using an invalid refresh or session token to acquire a delegated access token (to access APIs such as Microsoft Graph). If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
+              description: 'Any refresh tokens or session tokens (session cookies) issued before this time are invalid. Applications get an error when using an invalid refresh or session token to acquire a delegated access token (to access APIs such as Microsoft Graph). If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Requires $select to retrieve.'
               format: date-time
               nullable: true
             skills:
@@ -21120,14 +21711,14 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A list for the user to enumerate their skills. Returned only on $select.
+              description: A list for the user to enumerate their skills. Requires $select to retrieve.
             state:
               type: string
-              description: 'The state or province in the user''s address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The state or province in the user''s address. Maximum length is 128 characters. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             streetAddress:
               type: string
-              description: 'The street address of the user''s place of business. Maximum length is 1,024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The street address of the user''s place of business. Maximum length is 1,024 characters. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             surname:
               type: string
@@ -21135,7 +21726,7 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries/regions. Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries/regions. Examples include: US, JP, and GB. Not nullable. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
@@ -21143,7 +21734,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for members and guests, see What are the default user permissions in Microsoft Entra ID?'
+              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Requires $select to retrieve. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for members and guests, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             activities:
               type: array
@@ -21459,21 +22050,21 @@ components:
           properties:
             allowExternalSenders:
               type: boolean
-              description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             assignedLabels:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
+              description: The licenses that are assigned to the group. Requires $select to retrieve. Supports $filter (eq). Read-only.
             autoSubscribeNewMembers:
               type: boolean
-              description: 'Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             classification:
               type: string
@@ -21510,11 +22101,11 @@ components:
               nullable: true
             hideFromAddressLists:
               type: boolean
-              description: 'True if the group isn''t displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group isn''t displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'True if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             isArchived:
               type: boolean
@@ -21526,11 +22117,11 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
+              description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Requires $select to retrieve.'
               nullable: true
             isSubscribedByMail:
               type: boolean
-              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -21639,7 +22230,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: 'Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Count of conversations that received new posts since the signed-in user last visited the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             visibility:
@@ -21925,7 +22516,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.'
+              description: 'Indicates whether the device is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a device that''s a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Requires $select to retrieve.'
               nullable: true
             isRooted:
               type: boolean
@@ -21955,7 +22546,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Requires $select to retrieve. Supports $filter (eq).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -22146,6 +22737,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: 'The roles exposed by the application that''s linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable.'
+            createdByAppId:
+              type: string
+              description: The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
+              nullable: true
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             description:
@@ -22166,6 +22761,9 @@ components:
               nullable: true
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
+            isDisabled:
+              type: boolean
+              nullable: true
             keyCredentials:
               type: array
               items:
@@ -22431,6 +23029,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationBehaviors'
             certification:
               $ref: '#/components/schemas/microsoft.graph.certification'
+            createdByAppId:
+              type: string
+              description: The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -22467,6 +23069,9 @@ components:
               type: boolean
               description: Specifies whether this application supports device authentication without a user. The default is false.
               nullable: true
+            isDisabled:
+              type: boolean
+              nullable: true
             isFallbackPublicClient:
               type: boolean
               description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can''t determine the client application type. For example, the ROPC flow where it''s configured without specifying a redirect URI. In those cases, Microsoft Entra ID interprets the application type based on the value of this property.'
@@ -22480,6 +23085,13 @@ components:
               type: string
               description: The main logo for the application. Not nullable.
               format: base64url
+            managerApplications:
+              type: array
+              items:
+                pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                type: string
+                format: uuid
+              description: 'A collection of application IDs for Microsoft first-party applications designated as managers. Manager applications can create service principals, agent identities, and agent users for managed agent blueprints. Limited to a maximum of 10 entries. Not nullable. Only supported on agentIdentityBlueprint objects; attempts to set this property on non-agent-blueprint applications return an error. Not returned by default; must be explicitly requested via $select.'
             nativeAuthenticationApisEnabled:
               $ref: '#/components/schemas/microsoft.graph.nativeAuthenticationApisEnabled'
             notes:
@@ -23323,6 +23935,24 @@ components:
           description: 'Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a nb-NO client gets ''Kostnadssenter'' as the attribute label, rather than ''Cost Center.'''
       additionalProperties:
         type: object
+    microsoft.graph.profileSourceLocalization:
+      title: profileSourceLocalization
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Localized display name.
+          nullable: true
+        languageTag:
+          type: string
+          description: Language locale.
+          nullable: true
+        webUrl:
+          type: string
+          description: Localized profile source URL.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.physicalOfficeAddress:
       title: physicalOfficeAddress
       type: object
@@ -23482,11 +24112,11 @@ components:
       properties:
         costCenter:
           type: string
-          description: The cost center associated with the user. Returned only on $select. Supports $filter.
+          description: The cost center associated with the user. Requires $select to retrieve. Supports $filter.
           nullable: true
         division:
           type: string
-          description: The name of the division in which the user works. Returned only on $select. Supports $filter.
+          description: The name of the division in which the user works. Requires $select to retrieve. Supports $filter.
           nullable: true
       additionalProperties:
         type: object
@@ -23514,6 +24144,7 @@ components:
       properties:
         assignedByGroup:
           type: string
+          description: 'Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.'
           nullable: true
         disabledPlans:
           type: array
@@ -23522,21 +24153,26 @@ components:
             type: string
             format: uuid
             nullable: true
+          description: The service plans that are disabled in this assignment. Read-Only.
         error:
           type: string
+          description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.'
           nullable: true
         lastUpdatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The timestamp when the state of the license assignment was last updated.
           format: date-time
           nullable: true
         skuId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
+          description: The unique identifier for the SKU. Read-Only.
           format: uuid
           nullable: true
         state:
           type: string
+          description: 'Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.'
           nullable: true
       additionalProperties:
         type: object
@@ -24084,7 +24720,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Returned only on $select in a Get operation which specifies the ID (seriesMasterId property value) of a series master event.'
+              description: 'Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Requires $select to retrieve. Only returned in a Get operation that specifies the ID (seriesMasterId property value) of a series master event.'
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
@@ -24207,7 +24843,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don''t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.'
+              description: 'Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don''t include canceled occurrences.Requires $select and $expand to retrieve. Only returned in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.'
               x-ms-navigationProperty: true
             extensions:
               type: array
@@ -24259,8 +24895,15 @@ components:
               description: Date and time at which the chat was renamed or the list of members was last changed. Read-only.
               format: date-time
               nullable: true
+            migrationMode:
+              $ref: '#/components/schemas/microsoft.graph.migrationMode'
             onlineMeetingInfo:
               $ref: '#/components/schemas/microsoft.graph.teamworkOnlineMeetingInfo'
+            originalCreatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             tenantId:
               type: string
               description: The identifier of the tenant in which the chat was created. Read-only.
@@ -24549,10 +25192,14 @@ components:
               type: string
               description: The user's notes about the contact.
               nullable: true
+            primaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             profession:
               type: string
               description: The contact's profession.
               nullable: true
+            secondaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             spouseName:
               type: string
               description: The name of the contact's spouse/partner.
@@ -24561,6 +25208,8 @@ components:
               type: string
               description: The contact's surname.
               nullable: true
+            tertiaryEmailAddress:
+              $ref: '#/components/schemas/microsoft.graph.emailAddress'
             title:
               type: string
               description: The contact's title.
@@ -25430,7 +26079,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
-              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Requires $select to retrieve. Read-only.
             internetMessageId:
               type: string
               description: The message ID in the format specified by RFC2822.
@@ -25854,6 +26503,8 @@ components:
             contributionToContentDiscoveryDisabled:
               type: boolean
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for work or school is affected. Users can control this setting in Office Delve.'
+            exchange:
+              $ref: '#/components/schemas/microsoft.graph.exchangeSettings'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
             shiftPreferences:
@@ -26046,7 +26697,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
-              description: 'The Cc: recipients for the thread. Returned only on $select.'
+              description: 'The Cc: recipients for the thread. Requires $select to retrieve.'
             hasAttachments:
               type: boolean
               description: Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
@@ -26068,7 +26719,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
-              description: 'The To: recipients for the thread. Returned only on $select.'
+              description: 'The To: recipients for the thread. Requires $select to retrieve.'
             uniqueSenders:
               type: array
               items:
@@ -26205,7 +26856,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Requires $select to retrieve; only available for single object requests (GET /applications/{applicationId}?$select=keyCredentials or GET /servicePrincipals/{servicePrincipalId}?$select=keyCredentials); otherwise, it''s always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -26454,11 +27105,17 @@ components:
             isRemoteDesktopProtocolEnabled:
               type: boolean
               description: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+            approvedClientApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvedClientApp'
+              description: The collection of approved client apps that are associated with the RDS configuration. Supports $expand.
+              x-ms-navigationProperty: true
             targetDeviceGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetDeviceGroup'
-              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol. <br/<Supports $expand.
+              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -27251,6 +27908,32 @@ components:
     ODataCountResponse:
       type: integer
       format: int32
+    microsoft.graph.profilePropertySettingCollectionResponse:
+      title: Collection of profilePropertySetting
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.profilePropertySetting'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.profileSourceCollectionResponse:
+      title: Collection of profileSource
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.profileSource'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.orgContactCollectionResponse:
       title: Collection of orgContact
       type: object
@@ -28025,14 +28708,14 @@ components:
           properties:
             aaGuid:
               type: string
-              description: 'Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.'
+              description: 'Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.'
               nullable: true
             attestationCertificates:
               type: array
               items:
                 type: string
                 nullable: true
-              description: The attestation certificate(s) attached to this security key.
+              description: The attestation certificate or certificates attached to this passkey.
             attestationLevel:
               $ref: '#/components/schemas/microsoft.graph.attestationLevel'
             displayName:
@@ -28041,8 +28724,12 @@ components:
               nullable: true
             model:
               type: string
-              description: The manufacturer-assigned model of the FIDO2 security key.
+              description: The manufacturer-assigned model of the FIDO2 passkey.
               nullable: true
+            passkeyType:
+              $ref: '#/components/schemas/microsoft.graph.passkeyType'
+            publicKeyCredential:
+              $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredential'
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethod:
@@ -28543,6 +29230,13 @@ components:
         - oneOnOne
         - group
         - meeting
+        - unknownFutureValue
+      type: string
+    microsoft.graph.migrationMode:
+      title: migrationMode
+      enum:
+        - inProgress
+        - completed
         - unknownFutureValue
       type: string
     microsoft.graph.teamworkOnlineMeetingInfo:
@@ -29778,8 +30472,17 @@ components:
               type: boolean
               description: 'Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.'
               nullable: true
+            layoutType:
+              $ref: '#/components/schemas/microsoft.graph.channelLayoutType'
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
+            migrationMode:
+              $ref: '#/components/schemas/microsoft.graph.migrationMode'
+            originalCreatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             summary:
               $ref: '#/components/schemas/microsoft.graph.channelSummary'
             tenantId:
@@ -29795,6 +30498,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
               description: 'A collection of membership records associated with the channel, including both direct and indirect members of shared channels.'
+              x-ms-navigationProperty: true
+            enabledApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+              description: A collection of enabled apps in the channel.
               x-ms-navigationProperty: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -30903,6 +31612,10 @@ components:
               type: string
               description: Current anti malware version
               nullable: true
+            controlledConfigurationEnabled:
+              type: boolean
+              description: 'When TRUE indicates the Windows Defender controlled configuration feature is enabled, when FALSE indicates the Windows Defender controlled configuration feature is not enabled. Defaults to setting on client device.'
+              nullable: true
             deviceState:
               $ref: '#/components/schemas/microsoft.graph.windowsDeviceHealthState'
             engineVersion:
@@ -31635,6 +32348,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.workLocationType'
       additionalProperties:
         type: object
+    microsoft.graph.exchangeSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: exchangeSettings
+          type: object
+          properties:
+            primaryMailboxId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.userInsightsSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31913,6 +32637,18 @@ components:
         - high
         - unknownFutureValue
       type: string
+    microsoft.graph.approvedClientApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvedClientApp
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the approved client application.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.targetDeviceGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32381,6 +33117,26 @@ components:
         - notAttested
         - unknownFutureValue
       type: string
+    microsoft.graph.passkeyType:
+      title: passkeyType
+      enum:
+        - deviceBound
+        - synced
+        - unknownFutureValue
+      type: string
+    microsoft.graph.webauthnPublicKeyCredential:
+      title: webauthnPublicKeyCredential
+      type: object
+      properties:
+        clientExtensionResults:
+          $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticationExtensionsClientOutputs'
+        id:
+          type: string
+          nullable: true
+        response:
+          $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticatorAttestationResponse'
+      additionalProperties:
+        type: object
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
       enum:
@@ -34179,6 +34935,8 @@ components:
           properties:
             group:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            sharePointGroup:
+              $ref: '#/components/schemas/microsoft.graph.sharePointGroupIdentity'
             siteGroup:
               $ref: '#/components/schemas/microsoft.graph.sharePointIdentity'
             siteUser:
@@ -34382,6 +35140,13 @@ components:
       enum:
         - strict
         - moderate
+        - unknownFutureValue
+      type: string
+    microsoft.graph.channelLayoutType:
+      title: channelLayoutType
+      enum:
+        - post
+        - chat
         - unknownFutureValue
       type: string
     microsoft.graph.channelMembershipType:
@@ -36840,6 +37605,23 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
           additionalProperties:
             type: object
+    microsoft.graph.webauthnAuthenticationExtensionsClientOutputs:
+      title: webauthnAuthenticationExtensionsClientOutputs
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.webauthnAuthenticatorAttestationResponse:
+      title: webauthnAuthenticatorAttestationResponse
+      type: object
+      properties:
+        attestationObject:
+          type: string
+          nullable: true
+        clientDataJSON:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.attendeeType:
       title: attendeeType
       enum:
@@ -37559,6 +38341,22 @@ components:
               x-ms-navigationProperty: true
             set:
               $ref: '#/components/schemas/microsoft.graph.termStore.set'
+          additionalProperties:
+            type: object
+    microsoft.graph.sharePointGroupIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: sharePointGroupIdentity
+          type: object
+          properties:
+            principalId:
+              type: string
+              description: The principal ID of the SharePoint group in the tenant. Read-only.
+              nullable: true
+            title:
+              type: string
+              description: The title of the SharePoint group. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.sharePointIdentity:
@@ -41779,6 +42577,18 @@ components:
         text/plain:
           schema:
             $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.profilePropertySettingCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.profilePropertySettingCollectionResponse'
+    microsoft.graph.profileSourceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.profileSourceCollectionResponse'
     microsoft.graph.orgContactCollectionResponse:
       description: Retrieved collection
       content:

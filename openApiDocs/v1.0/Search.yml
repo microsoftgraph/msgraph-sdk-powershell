@@ -2578,6 +2578,8 @@ components:
               type: string
               description: The Teams app ID. Optional.
               nullable: true
+            contentCategory:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.contentCategory'
             description:
               type: string
               description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
@@ -2996,6 +2998,25 @@ components:
           description: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.contentCategory:
+      title: contentCategory
+      enum:
+        - uncategorized
+        - knowledgeBase
+        - wikis
+        - fileRepository
+        - qna
+        - crm
+        - dashboard
+        - people
+        - media
+        - email
+        - messaging
+        - meetingTranscripts
+        - taskManagement
+        - learningManagement
+        - unknownFutureValue
+      type: string
     microsoft.graph.externalConnectors.searchSettings:
       title: searchSettings
       type: object
@@ -3107,6 +3128,10 @@ components:
             type: string
             nullable: true
           description: 'A set of aliases or a friendly name for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
+        description:
+          type: string
+          description: 'Specifies a human-readable description that explains the purpose, usage, or guidance related to the property. This property enhances semantic understanding by helping Copilot interpret queries and accurately map them to properties that results in more relevant and precise responses. Optional but we recommend that you use this property for queryable properties. The maximum supported length is 200 characters.'
+          nullable: true
         isQueryable:
           type: boolean
           description: Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
@@ -3676,7 +3701,50 @@ components:
         - fileName
         - fileExtension
         - unknownFutureValue
+        - containerName
+        - containerUrl
         - iconUrl
+        - assignedToPeople
+        - closedBy
+        - closedDate
+        - priority
+        - sprintName
+        - tags
+        - severity
+        - state
+        - dueDate
+        - itemParentId
+        - itemPath
+        - itemType
+        - numberOfReactions
+        - parentUrl
+        - priorityNormalized
+        - reportedBy
+        - secondaryId
+        - personEmails
+        - personAddresses
+        - personAnniversaries
+        - personName
+        - personNote
+        - personPhones
+        - personCurrentPosition
+        - personWebAccounts
+        - personWebSite
+        - personSkills
+        - personProjects
+        - personAccount
+        - personAwards
+        - personCertifications
+        - personAssistants
+        - personColleagues
+        - personManager
+        - personAlternateContacts
+        - personEmergencyContacts
+        - personEducationalActivities
+        - personInterests
+        - personLanguages
+        - personPublications
+        - personPatents
       type: string
     microsoft.graph.externalConnectors.propertyType:
       title: propertyType
@@ -3691,6 +3759,8 @@ components:
         - doubleCollection
         - dateTimeCollection
         - unknownFutureValue
+        - principal
+        - principalCollection
       type: string
     microsoft.graph.search.identitySet:
       title: identitySet
