@@ -9616,6 +9616,7 @@ components:
         - userChangedPasswordOnPremises
         - adminDismissedRiskForSignIn
         - adminConfirmedAccountSafe
+        - microsoftRevokedSessions
       type: string
     microsoft.graph.riskEventType:
       title: riskEventType
