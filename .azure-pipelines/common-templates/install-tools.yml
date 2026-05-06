@@ -48,23 +48,46 @@ steps:
     inputs:
       workingFile: $(Build.SourcesDirectory)/autorest.powershell/common/config/rush/.npmrc
 
+  - task: PowerShell@2
+    displayName: Apply npm auth config to user profile
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        # Copy authenticated .npmrc to the user home dir so ALL npm subprocesses
+        # (including autorest's internal npm calls) use the private feed + auth tokens.
+        $src = "$(Build.SourcesDirectory)/.npmrc"
+        $dst = Join-Path $env:USERPROFILE ".npmrc"
+        Copy-Item -Path $src -Destination $dst -Force
+        Write-Host "Copied npm config to $dst"
+
   - task: Npm@1
     displayName: Install AutoRest
     inputs:
       command: custom
-      customCommand: install -g autorest@3.7.2
-    
+      workingDir: $(Build.SourcesDirectory)
+      customCommand: install --no-package-lock autorest@3.7.2
+
   - task: Npm@1
     displayName: Install AutorestCore
     inputs:
       command: custom
-      customCommand: install -g @autorest/core@3.10.4
+      workingDir: $(Build.SourcesDirectory)
+      customCommand: install --no-package-lock @autorest/core@3.10.4
+
+  - task: PowerShell@2
+    displayName: Pre-populate autorest extension cache
+    inputs:
+      targetType: filePath
+      pwsh: true
+      filePath: $(Build.SourcesDirectory)/tools/utilities/PrePopulateAutorestCache.ps1
 
   - task: Npm@1
     displayName: Install Rush
     inputs:
       command: custom
-      customCommand: install -g @microsoft/rush
+      workingDir: $(Build.SourcesDirectory)
+      customCommand: install --no-package-lock @microsoft/rush
   
   - task: PowerShell@2
     displayName: Rush Build
@@ -73,6 +96,9 @@ steps:
       pwsh: true
       workingDirectory: "autorest.powershell"
       script: |
-        rush install
-        rush link
-        rush rebuild
+        npx --no-install rush install
+        if ($LASTEXITCODE -ne 0) { throw "rush install failed with exit code $LASTEXITCODE" }
+        npx --no-install rush link
+        if ($LASTEXITCODE -ne 0) { throw "rush link failed with exit code $LASTEXITCODE" }
+        npx --no-install rush rebuild
+        if ($LASTEXITCODE -ne 0) { throw "rush rebuild failed with exit code $LASTEXITCODE" }

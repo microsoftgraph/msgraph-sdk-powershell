@@ -7,14 +7,18 @@ param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $NewFieldValue
 ) 
 $ErrorActionPreference = "Stop"
+. "$PSScriptRoot\utilities\utils.ps1"
+
 # Read readme.md.
 $ReadMeContent = Get-Content $ReadMePath -Delimiter "### Versioning"
 if ($ReadMeContent.Length -eq 2) {
     # Convert versioning section to yaml.
     $UpdatedVersionSection = "### Versioning" + $ReadMeContent[1]
-    $VersioningSection = $ReadMeContent[1].Replace("``", "").Replace("yaml", "") | ConvertFrom-Yaml
+    $VersioningSection = $ReadMeContent[1].Replace("``", "").Replace("yaml", "") | ConvertFrom-SimpleYaml
     $FieldValue = $VersioningSection[$FieldName]
-    $RegexPattern = "$FieldName`:\s*$FieldValue"
+    $EscapedFieldName = [regex]::Escape($FieldName)
+    $EscapedFieldValue = [regex]::Escape($FieldValue)
+    $RegexPattern = "$EscapedFieldName`:\s*$EscapedFieldValue"
     $UpdatedVersionSection = $UpdatedVersionSection -replace $RegexPattern, "$FieldName`: $NewFieldValue"
     
     $ReadMeContent[0] = $ReadMeContent[0].Trim()

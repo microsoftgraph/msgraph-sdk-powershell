@@ -35,3 +35,24 @@ Write-Host "Created $rootNpmrc"
 $rushNpmrc = Join-Path $SourcesDirectory "autorest.powershell/common/config/rush/.npmrc"
 Set-Content -Path $rushNpmrc -Value $npmrcContent -NoNewline
 Write-Host "Updated $rushNpmrc"
+
+# Create NuGet.config to redirect dotnet restore to the private feed
+# Normalize the registry URL and validate the expected suffix before transforming
+$normalizedRegistry = $Registry.TrimEnd('/')
+$npmSuffix = "/npm/registry"
+if (-not $normalizedRegistry.EndsWith($npmSuffix)) {
+    throw "Cannot derive NuGet feed URL: Registry '$Registry' does not end with '$npmSuffix'. Pass an explicit Azure Artifacts npm registry URL using the -Registry parameter."
+}
+$nugetFeed = $normalizedRegistry.Substring(0, $normalizedRegistry.Length - $npmSuffix.Length) + "/nuget/v3/index.json"
+$nugetConfig = @"
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="PowerShell_V2_Build" value="$nugetFeed" />
+  </packageSources>
+</configuration>
+"@
+$nugetConfigPath = Join-Path $SourcesDirectory "NuGet.config"
+Set-Content -Path $nugetConfigPath -Value $nugetConfig -NoNewline
+Write-Host "Created $nugetConfigPath"

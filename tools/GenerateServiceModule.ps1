@@ -69,10 +69,33 @@ $ApiVersion | ForEach-Object {
             else {
                 $FullModuleVersion = $ModuleMetadata.versions[$CurrentApiVersion].version
             }
-            npx autorest --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2
-            if ($LastExitCode -ne 0) {
-                Write-Host -ForegroundColor Red "AutoREST failed to generate '$ModuleFullName' module."
-                return $LastExitCode
+            # Pass @autorest/modelerfour as a local --use:<path> argument so autorest loads it
+            # directly from the pre-populated cache without calling fetchPackageMetadata.
+            # fetchPackageMetadata is called unconditionally before the cache check inside
+            # ExtensionManager.findPackage, and it hits the npm registry which is DNS-blocked
+            # by 1ES supply-chain security on release pipelines. A local --use path bypasses
+            # findPackage entirely: the extension goes straight into localExtensions, and when
+            # use-extension in autorest-configuration.md is processed, resolveExtension finds
+            # it there without any registry call.
+            $autorestHome = if ($env:AUTOREST_HOME) { $env:AUTOREST_HOME } else { Join-Path $env:USERPROFILE ".autorest" }
+            $modelerFourPath = Join-Path $autorestHome "@autorest" "modelerfour" "4.24.3" "node_modules" "@autorest" "modelerfour"
+            # @(if ...) always produces [object[]], preventing PowerShell from unwrapping the
+            # single-element array to a [string] scalar. A scalar string splatted with @
+            # enumerates IEnumerable<char>, passing each character as a separate argument.
+            $modelerFourUseFlag = @(if (Test-Path $modelerFourPath) { "--use:$modelerFourPath" })
+            if ($modelerFourUseFlag.Count -eq 0) {
+                Write-Host -ForegroundColor Yellow "WARNING: @autorest/modelerfour local cache not found at $modelerFourPath — autorest will attempt npm registry lookup (may fail in network-isolated environment)"
+            }
+
+            $autorestLog = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), "autorest-$($ModuleFullName -replace '[^a-zA-Z0-9-]', '-').log")
+            npx --no-install autorest @modelerFourUseFlag --verbose --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 2>&1 | Out-File -FilePath $autorestLog -Encoding utf8
+            $autorestExitCode = $LASTEXITCODE
+            if ($autorestExitCode -ne 0) {
+                Write-Host -ForegroundColor Red "AutoREST failed (exit $autorestExitCode) generating '$ModuleFullName'."
+                Write-Host -ForegroundColor Yellow "=== AutoREST log: $autorestLog ==="
+                if (Test-Path $autorestLog) { Get-Content $autorestLog | ForEach-Object { Write-Host $_ } }
+                Write-Host -ForegroundColor Yellow "=== End AutoREST log ==="
+                return $autorestExitCode
             }
             Write-Debug "AutoRest generated '$ModuleFullName' successfully."
 
