@@ -2397,6 +2397,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.releaseAppleDevices':
+    post:
+      tags:
+        - deviceManagement.depOnboardingSetting
+      summary: Invoke action releaseAppleDevices
+      operationId: deviceManagement.depOnboardingSetting_releaseAppleDevice
+      parameters:
+        - name: depOnboardingSetting-id
+          in: path
+          description: The unique identifier of depOnboardingSetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: depOnboardingSetting
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                depToken:
+                  type: string
+                  nullable: true
+                deviceSerialNumbers:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/microsoft.graph.shareForSchoolDataSyncService':
     post:
       tags:
@@ -14439,6 +14478,9 @@ components:
             skipPrimarySetupAccountCreation:
               type: boolean
               description: Indicates whether Setup Assistant will skip the user interface for primary account setup
+            usePlatformSSODuringSetupAssistant:
+              type: boolean
+              description: 'Indicates whether Platform SSO is used as part of device enrollment during Setup Assistant. When TRUE, Platform SSO is used in device enrollment during Setup Assistant. When FALSE Platform SSO is not used in enrollment during Setup Assistant. Note: This value cannot be TRUE when configurationWebUrl is TRUE.'
             zoomDisabled:
               type: boolean
               description: Indicates if zoom setup pane is disabled

@@ -997,8 +997,11 @@ paths:
     get:
       tags:
         - admin.configurationManagement
-      summary: Get configurationSnapshots from admin
-      description: A container for configuration snapshot baselines.
+      summary: List configurationSnapshots
+      description: Get a list of configurationBaseline objects that represent configuration snapshots and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshots?view=graph-rest-beta
       operationId: admin.configurationManagement_ListConfigurationSnapshot
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1232,35 +1235,35 @@ components:
           properties:
             baselineResourceDisplayName:
               type: string
-              description: Resource instance for which the drift is detected.
+              description: 'Resource instance for which the drift is detected. Supports $filter (eq, ne, startsWith) and $orderby.'
               readOnly: true
             driftedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driftedProperty'
-              description: Properties within one or more resource instances in which drift is detected.
+              description: Properties within one or more resource instances in which drift is detected. Requires $select to retrieve.
               readOnly: true
             firstReportedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time at which drift is first detected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time at which drift is first detected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.'
               format: date-time
               readOnly: true
             monitorId:
               type: string
-              description: Globally unique identifier (GUID) of the monitor. System-generated.
+              description: 'Globally unique identifier (GUID) of the monitor. System-generated. Supports $filter (eq, ne).'
               readOnly: true
             resourceInstanceIdentifier:
               $ref: '#/components/schemas/microsoft.graph.openComplexDictionaryType'
             resourceType:
               type: string
-              description: Resource for which the drift is detected.
+              description: 'Resource for which the drift is detected. Supports $filter (eq, ne, startsWith).'
               readOnly: true
             status:
               $ref: '#/components/schemas/microsoft.graph.driftStatus'
             tenantId:
               type: string
-              description: Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
+              description: 'Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).'
               readOnly: true
           additionalProperties:
             type: object
@@ -1274,36 +1277,36 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: Number of drifts observed during a monitor run.
+              description: 'Number of drifts observed during a monitor run. Supports $filter (eq, ne, ge, le) and $orderby.'
               format: int32
               readOnly: true
             errorDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.errorDetail'
-              description: All the error details that prevent the monitor from running successfully. The error details are a contained entity.
+              description: All the error details that prevent the monitor from running successfully. The error details are a contained entity. Requires $select to retrieve.
               readOnly: true
             monitorId:
               type: string
-              description: Globally unique identifier (GUID) of the monitor. System-generated.
+              description: 'Globally unique identifier (GUID) of the monitor. System-generated. Supports $filter (eq, ne).'
               readOnly: true
             runCompletionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the monitor run completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time at which the monitor run completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.'
               format: date-time
               readOnly: true
             runInitiationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the monitor run initiated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time at which the monitor run initiated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.'
               format: date-time
               readOnly: true
             runStatus:
               $ref: '#/components/schemas/microsoft.graph.monitorRunStatus'
             tenantId:
               type: string
-              description: Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
+              description: 'Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).'
               readOnly: true
           additionalProperties:
             type: object
@@ -1318,18 +1321,18 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.'
               format: date-time
               readOnly: true
             description:
               type: string
-              description: User-friendly description of the monitor given by the user.
+              description: 'User-friendly description of the monitor given by the user. Supports $filter (eq, ne, startsWith) and $orderby.'
             displayName:
               type: string
-              description: User-friendly name given by the user to the monitor.
+              description: 'User-friendly name given by the user to the monitor. Supports $filter (eq, ne, startsWith) and $orderby.'
             inactivationReason:
               type: string
-              description: The reason for the monitor's inactivation.
+              description: The reason for the monitor's inactivation. Requires $select to retrieve.
               nullable: true
               readOnly: true
             lastModifiedBy:
@@ -1337,7 +1340,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the monitor was last modified. If no modifications are made to the monitor, it''s the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time when the monitor was last modified. If no modifications are made to the monitor, it''s the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.'
               format: date-time
               readOnly: true
             mode:
@@ -1355,7 +1358,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.monitorStatus'
             tenantId:
               type: string
-              description: Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
+              description: 'Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).'
               readOnly: true
             baseline:
               $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
@@ -1394,7 +1397,7 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the snapshot job was completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time when the snapshot job was completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.'
               format: date-time
               readOnly: true
             createdBy:
@@ -1402,35 +1405,35 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the snapshot job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time when the snapshot job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.'
               format: date-time
               readOnly: true
             description:
               type: string
-              description: User-friendly description of the snapshot given by the user.
+              description: 'User-friendly description of the snapshot given by the user. Supports $filter (eq, ne, startsWith) and $orderby.'
             displayName:
               type: string
-              description: User-friendly name provided by the user during snapshot creation.
+              description: 'User-friendly name provided by the user during snapshot creation. Supports $filter (eq, ne, startsWith) and $orderby.'
             errorDetails:
               type: array
               items:
                 type: string
-              description: Details of errors related to the reasons why the snapshot can't complete.
+              description: Details of errors related to the reasons why the snapshot can't complete. Requires $select to retrieve.
               readOnly: true
             resourceLocation:
               type: string
-              description: The URL at which the snapshot file resides.
+              description: The URL at which the snapshot file resides. Requires $select to retrieve.
               readOnly: true
             resources:
               type: array
               items:
                 type: string
-              description: The names of all resources included in the request body by the user who created the snapshot. Fetched by the system.
+              description: The names of all resources included in the request body by the user who created the snapshot. Fetched by the system. Requires $select to retrieve.
             status:
               $ref: '#/components/schemas/microsoft.graph.snapshotJobStatus'
             tenantId:
               type: string
-              description: Globally unique identifier (GUID) of the tenant for which the snapshot is created.
+              description: 'Globally unique identifier (GUID) of the tenant for which the snapshot is created. Supports $filter (eq, ne).'
               readOnly: true
           additionalProperties:
             type: object
