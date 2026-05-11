@@ -1,11 +1,11 @@
-### Example 1: Code snippet
+### Example 2: Get a tlsInspectionPolicyLink
 
 ```powershell
 
 Import-Module Microsoft.Graph.Beta.NetworkAccess
 
-Get-MgBetaNetworkAccessFilteringProfilePolicy -FilteringProfileId $filteringProfileId -Filter "isof('microsoft.graph.networkaccess.securityProviderPolicyLink')" 
+Get-MgBetaNetworkAccessFilteringProfilePolicy -FilteringProfileId $filteringProfileId -PolicyLinkId $policyLinkId
 
 ```
-This example shows how to use the Get-MgBetaNetworkAccessFilteringProfilePolicy Cmdlet.
+This example will get a tlsinspectionpolicylink
 
