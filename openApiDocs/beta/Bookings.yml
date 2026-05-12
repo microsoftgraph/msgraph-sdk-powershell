@@ -12763,6 +12763,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
               description: 'The external information of a virtual event. Returned only for event organizers or coorganizers; otherwise, null.'
+            isRegistrationEnabled:
+              type: boolean
+              nullable: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.virtualEventSettings'
             startDateTime:
@@ -12810,6 +12813,12 @@ components:
         - title: virtualEventSession
           type: object
           properties:
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             startDateTime:
@@ -12978,6 +12987,12 @@ components:
           properties:
             audience:
               $ref: '#/components/schemas/microsoft.graph.meetingAudience'
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
             coOrganizers:
               type: array
               items:
@@ -13832,6 +13847,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            cloudVideoInteropInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudVideoInteropInfo'
             expiryDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15545,6 +15562,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudVideoInteropInfo:
+      title: cloudVideoInteropInfo
+      type: object
+      properties:
+        moreInfoWebUrl:
+          type: string
+          nullable: true
+        tenantKey:
+          type: string
+          nullable: true
+        videoTeleconferenceId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -16703,6 +16735,8 @@ components:
               description: Date time when the artifact's restoration completes.
               format: date-time
               nullable: true
+            destinationType:
+              $ref: '#/components/schemas/microsoft.graph.destinationType'
             restoredItemKey:
               type: string
               description: The unique identifier for the restored artifact.

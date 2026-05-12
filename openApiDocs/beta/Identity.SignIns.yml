@@ -10439,7 +10439,11 @@ paths:
     patch:
       tags:
         - identity.customAuthenticationExtension
-      summary: Update the navigation property customAuthenticationExtensions in identity
+      summary: Update customAuthenticationExtension
+      description: Update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/customauthenticationextension-update?view=graph-rest-beta
       operationId: identity_UpdateCustomAuthenticationExtension
       parameters:
         - name: customAuthenticationExtension-id
@@ -12264,6 +12268,7 @@ paths:
       tags:
         - identity.identityVerifiedIdRoot
       summary: Get verifiedId from identity
+      description: Entry point for verified ID operations.
       operationId: identity_GetVerifiedId
       parameters:
         - name: $select
@@ -21595,6 +21600,204 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/crossTenantAccessPolicy/default/m365Capabilities:
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: List m365Capabilities for default policy
+      description: 'Get a list of Microsoft 365 cross-tenant capabilities configured for the default cross-tenant access policy. The returned collection is a heterogeneous collection of derived types of m365CapabilityBase, differentiated by their @odata.type property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-list-m365capabilities?view=graph-rest-beta
+      operationId: policy.crossTenantAccessPolicy.default_ListM365Capability
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.m365CapabilityBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Create m365CapabilityBase for default policy
+      description: Create a new Microsoft 365 cross-tenant capability for the default cross-tenant access policy. The @odata.type property in the request body is required to specify which type of capability to create.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-post-m365capabilities?view=graph-rest-beta
+      operationId: policy.crossTenantAccessPolicy.default_CreateM365Capability
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/crossTenantAccessPolicy/default/m365Capabilities/{m365CapabilityBase-name}':
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Get m365Capabilities from policies
+      description: Defines the default Microsoft 365 cross-tenant capabilities for inbound access from external organizations.
+      operationId: policy.crossTenantAccessPolicy.default_GetM365Capability
+      parameters:
+        - name: m365CapabilityBase-name
+          in: path
+          description: The unique identifier of m365CapabilityBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: m365CapabilityBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Update the navigation property m365Capabilities in policies
+      operationId: policy.crossTenantAccessPolicy.default_UpdateM365Capability
+      parameters:
+        - name: m365CapabilityBase-name
+          in: path
+          description: The unique identifier of m365CapabilityBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: m365CapabilityBase
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Delete navigation property m365Capabilities for policies
+      operationId: policy.crossTenantAccessPolicy.default_DeleteM365Capability
+      parameters:
+        - name: m365CapabilityBase-name
+          in: path
+          description: The unique identifier of m365CapabilityBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: m365CapabilityBase
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/crossTenantAccessPolicy/default/m365Capabilities/$count:
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Get the number of the resource
+      operationId: policy.crossTenantAccessPolicy.default.m365Capability_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /policies/crossTenantAccessPolicy/default/microsoft.graph.resetToSystemDefault:
     post:
       tags:
@@ -21949,6 +22152,253 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner-tenantId}/m365Capabilities':
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: List m365Capabilities for partner
+      description: 'Get a list of Microsoft 365 cross-tenant capabilities configured for a partner organization in the cross-tenant access policy. The returned collection is a heterogeneous collection of derived types of m365CapabilityBase, differentiated by their @odata.type property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-list-m365capabilities?view=graph-rest-beta
+      operationId: policy.crossTenantAccessPolicy.partner_ListM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.m365CapabilityBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Create m365CapabilityBase for partner
+      description: Create a new Microsoft 365 cross-tenant capability for a partner organization in the cross-tenant access policy. The @odata.type property in the request body is required to specify which type of capability to create.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-post-m365capabilities?view=graph-rest-beta
+      operationId: policy.crossTenantAccessPolicy.partner_CreateM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner-tenantId}/m365Capabilities/{m365CapabilityBase-name}':
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Get m365Capabilities from policies
+      description: Defines the partner-specific Microsoft 365 cross-tenant capabilities for inbound access from the partner organization.
+      operationId: policy.crossTenantAccessPolicy.partner_GetM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - name: m365CapabilityBase-name
+          in: path
+          description: The unique identifier of m365CapabilityBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: m365CapabilityBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Update the navigation property m365Capabilities in policies
+      operationId: policy.crossTenantAccessPolicy.partner_UpdateM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - name: m365CapabilityBase-name
+          in: path
+          description: The unique identifier of m365CapabilityBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: m365CapabilityBase
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Delete navigation property m365Capabilities for policies
+      operationId: policy.crossTenantAccessPolicy.partner_DeleteM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - name: m365CapabilityBase-name
+          in: path
+          description: The unique identifier of m365CapabilityBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: m365CapabilityBase
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner-tenantId}/m365Capabilities/$count':
+    get:
+      tags:
+        - policies.crossTenantAccessPolicy
+      summary: Get the number of the resource
+      operationId: policy.crossTenantAccessPolicy.partner.m365Capability_GetCount
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner-tenantId}/microsoft.graph.restore':
     post:
       tags:
@@ -22754,6 +23204,246 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner-tenantId}/m365Capabilities':
+    get:
+      tags:
+        - policies.policyDeletableRoot
+      summary: Get m365Capabilities from policies
+      description: Defines the partner-specific Microsoft 365 cross-tenant capabilities for inbound access from the partner organization.
+      operationId: policy.deletedItem.crossTenantPartner_ListM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.m365CapabilityBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.policyDeletableRoot
+      summary: Create new navigation property to m365Capabilities for policies
+      operationId: policy.deletedItem.crossTenantPartner_CreateM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner-tenantId}/m365Capabilities/{m365CapabilityBase-name}':
+    get:
+      tags:
+        - policies.policyDeletableRoot
+      summary: Get m365Capabilities from policies
+      description: Defines the partner-specific Microsoft 365 cross-tenant capabilities for inbound access from the partner organization.
+      operationId: policy.deletedItem.crossTenantPartner_GetM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - name: m365CapabilityBase-name
+          in: path
+          description: The unique identifier of m365CapabilityBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: m365CapabilityBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.policyDeletableRoot
+      summary: Update the navigation property m365Capabilities in policies
+      operationId: policy.deletedItem.crossTenantPartner_UpdateM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - name: m365CapabilityBase-name
+          in: path
+          description: The unique identifier of m365CapabilityBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: m365CapabilityBase
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.policyDeletableRoot
+      summary: Delete navigation property m365Capabilities for policies
+      operationId: policy.deletedItem.crossTenantPartner_DeleteM365Capability
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - name: m365CapabilityBase-name
+          in: path
+          description: The unique identifier of m365CapabilityBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: m365CapabilityBase
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner-tenantId}/m365Capabilities/$count':
+    get:
+      tags:
+        - policies.policyDeletableRoot
+      summary: Get the number of the resource
+      operationId: policy.deletedItem.crossTenantPartner.m365Capability_GetCount
+      parameters:
+        - name: crossTenantAccessPolicyConfigurationPartner-tenantId
+          in: path
+          description: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantAccessPolicyConfigurationPartner
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner-tenantId}/microsoft.graph.restore':
     post:
       tags:
@@ -40623,6 +41313,11 @@ components:
               x-ms-navigationProperty: true
             cloudClipboard:
               $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
+            cloudPcPools:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcPool'
+              x-ms-navigationProperty: true
             cloudPCs:
               type: array
               items:
@@ -41445,6 +42140,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
             blockServiceProviderOutboundAccess:
               type: boolean
+              description: Specifies whether users can use granular delegated admin privileges (GDAP) to sign-in and access resources in other organizations. Default value is false.
               nullable: true
             inboundTrust:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyInboundTrust'
@@ -41460,6 +42156,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyM365CollaborationOutboundSetting'
             tenantRestrictions:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTenantRestrictions'
+            m365Capabilities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+              description: Defines the default Microsoft 365 cross-tenant capabilities for inbound access from external organizations.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.m365CapabilityBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: m365CapabilityBase
+          type: object
+          properties:
+            inboundAccess:
+              $ref: '#/components/schemas/microsoft.graph.m365CapabilityInboundAccess'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The automatically updated last modified timestamp for the capability. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
+              format: date-time
+            name:
+              type: string
+              description: The name or identifier of the capability. Key.
           additionalProperties:
             type: object
     microsoft.graph.crossTenantAccessPolicyConfigurationPartner:
@@ -41482,6 +42202,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyB2BSetting'
             blockServiceProviderOutboundAccess:
               type: boolean
+              description: Specifies whether users can use granular delegated admin privileges (GDAP) to sign-in and access resources in other organizations. Default value is false.
               nullable: true
             inboundTrust:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyInboundTrust'
@@ -41504,6 +42225,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTenantRestrictions'
             identitySynchronization:
               $ref: '#/components/schemas/microsoft.graph.crossTenantIdentitySyncPolicyPartner'
+            m365Capabilities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+              description: Defines the partner-specific Microsoft 365 cross-tenant capabilities for inbound access from the partner organization.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.crossTenantIdentitySyncPolicyPartner:
@@ -41621,11 +42348,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.azureADRegistrationPolicy'
             description:
               type: string
-              description: 'The description of the device registration policy. It''s always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.'
+              description: 'The description of the device registration policy. Always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.'
               nullable: true
             displayName:
               type: string
-              description: The name of the device registration policy. It's always set to Device Registration Policy. Read-only.
+              description: The name of the device registration policy. Always set to Device Registration Policy. Read-only.
               nullable: true
             localAdminPassword:
               $ref: '#/components/schemas/microsoft.graph.localAdminPasswordSettings'
@@ -43688,6 +44415,7 @@ components:
           description: Defines if Face Check is required. Currently must always be true.
         sourcePhotoClaimName:
           type: string
+          description: Source of photo to validate Face Check against. Currently must always be portrait
       additionalProperties:
         type: object
     microsoft.graph.verifiedIdProfileState:
@@ -43711,6 +44439,8 @@ components:
           description: Claim bindings from Verified ID to source attributes.
         claimBindingSource:
           $ref: '#/components/schemas/microsoft.graph.claimBindingSource'
+        claimValidation:
+          $ref: '#/components/schemas/microsoft.graph.claimValidation'
         type:
           type: string
           description: Verified ID type.
@@ -45572,6 +46302,38 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcPool:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcPool
+          type: object
+          properties:
+            capabilities:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPoolCapabilityConfiguration'
+            cloudPcConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConfiguration'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            networkConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcNetworkConfiguration'
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcPoolAssignment'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPC:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -46449,7 +47211,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
+              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).'
             securityEnabled:
               type: boolean
               description: 'Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).'
@@ -48879,6 +49641,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.devicesFilter'
           additionalProperties:
             type: object
+    microsoft.graph.m365CapabilityInboundAccess:
+      title: m365CapabilityInboundAccess
+      type: object
+      properties:
+        isAllowed:
+          type: boolean
+          description: Indicates whether this capability should be allowed or blocked for inbound access.
+          nullable: true
+        resourceScopes:
+          $ref: '#/components/schemas/microsoft.graph.m365CapabilityResourceScopes'
+      additionalProperties:
+        type: object
     microsoft.graph.crossTenantGroupSyncInbound:
       title: crossTenantGroupSyncInbound
       type: object
@@ -48961,7 +49735,7 @@ components:
       properties:
         isEnabled:
           type: boolean
-          description: Specifies whether this policy scope is configurable by the admin. The default value is false. An admin can set it to true to enable Local Admin Password Solution (LAPS) within their organzation.
+          description: Specifies whether LAPS is enabled. The default value is false. An admin can set it to true to enable Local Admin Password Solution (LAPS) within their organization.
           nullable: true
       additionalProperties:
         type: object
@@ -50304,6 +51078,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.m365CapabilityBaseCollectionResponse:
+      title: Collection of m365CapabilityBase
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.m365CapabilityBase'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.crossTenantAccessPolicyConfigurationPartnerCollectionResponse:
       title: Collection of crossTenantAccessPolicyConfigurationPartner
       type: object
@@ -51161,6 +51948,8 @@ components:
       title: claimBinding
       type: object
       properties:
+        matchConfidenceLevel:
+          $ref: '#/components/schemas/microsoft.graph.matchConfidenceLevel'
         sourceAttribute:
           type: string
           description: Source attribute value
@@ -51175,6 +51964,18 @@ components:
         - directory
         - unknownFutureValue
       type: string
+    microsoft.graph.claimValidation:
+      title: claimValidation
+      type: object
+      properties:
+        customExtensionId:
+          type: string
+          description: The identifier of a custom extension for claim validation.
+        isEnabled:
+          type: boolean
+          description: Indicates whether claim validation is enabled.
+      additionalProperties:
+        type: object
     microsoft.graph.verifiedIdUsageConfigurationPurpose:
       title: verifiedIdUsageConfigurationPurpose
       enum:
@@ -51377,7 +52178,7 @@ components:
       type: object
       properties:
         delegate:
-          $ref: '#/components/schemas/microsoft.graph.subjectSet'
+          $ref: '#/components/schemas/microsoft.graph.userSet'
         schedule:
           $ref: '#/components/schemas/microsoft.graph.requestSchedule'
       additionalProperties:
@@ -52744,6 +53545,38 @@ components:
               description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcPoolCapabilityConfiguration:
+      title: cloudPcPoolCapabilityConfiguration
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcConfiguration:
+      title: cloudPcConfiguration
+      type: object
+      properties:
+        imageDisplayName:
+          type: string
+          nullable: true
+        imageId:
+          type: string
+        imageType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
+        osLocale:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcNetworkConfiguration:
+      title: cloudPcNetworkConfiguration
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcPoolAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcPoolAssignment
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcConnectionSetting:
       title: cloudPcConnectionSetting
       type: object
@@ -53573,7 +54406,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: The number of items in the list. Read-only.
+              description: The total count of items in the list. Read-only.
               format: int32
               nullable: true
             list:
@@ -57247,6 +58080,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            cloudVideoInteropInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudVideoInteropInfo'
             expiryDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -58764,6 +59599,7 @@ components:
           properties:
             inPlaceArchiveMailboxId:
               type: string
+              description: The unique identifier for the user's In-Place Archive mailbox.
               nullable: true
             primaryMailboxId:
               type: string
@@ -59194,6 +60030,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.m365CapabilityResourceScopes:
+      title: m365CapabilityResourceScopes
+      type: object
+      properties:
+        excluded:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.m365CapabilityResourceScope'
+          description: 'Resources to exclude from the scope. If a resource appears in both included and excluded, the excluded property takes precedence.'
+        included:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.m365CapabilityResourceScope'
+          description: Resources to include in the scope.
+      additionalProperties:
+        type: object
     microsoft.graph.audiencesConfiguration:
       title: audiencesConfiguration
       type: object
@@ -59595,6 +60447,13 @@ components:
         - cname
         - unknownFutureValue
       type: string
+    microsoft.graph.matchConfidenceLevel:
+      title: matchConfidenceLevel
+      enum:
+        - exact
+        - relaxed
+        - unknownFutureValue
+      type: string
     microsoft.graph.classifcationErrorBase:
       title: classifcationErrorBase
       type: object
@@ -59778,9 +60637,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.subjectSet:
-      title: subjectSet
+    microsoft.graph.userSet:
+      title: userSet
       type: object
+      properties:
+        isBackup:
+          type: boolean
+          description: 'For a user in an approval stage, this property indicates whether the user is a backup fallback approver.'
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.requestSchedule:
@@ -60638,6 +61502,13 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcProvisioningPolicyImageType:
+      title: cloudPcProvisioningPolicyImageType
+      enum:
+        - gallery
+        - custom
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcHealthCheckItem:
       title: cloudPcHealthCheckItem
       type: object
@@ -64541,6 +65412,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudVideoInteropInfo:
+      title: cloudVideoInteropInfo
+      type: object
+      properties:
+        moreInfoWebUrl:
+          type: string
+          nullable: true
+        tenantKey:
+          type: string
+          nullable: true
+        videoTeleconferenceId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -66123,6 +67009,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
               description: 'The external information of a virtual event. Returned only for event organizers or coorganizers; otherwise, null.'
+            isRegistrationEnabled:
+              type: boolean
+              nullable: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.virtualEventSettings'
             startDateTime:
@@ -66337,6 +67226,18 @@ components:
         - defaultConfiguredIdp
         - unknownFutureValue
       type: string
+    microsoft.graph.m365CapabilityResourceScope:
+      title: m365CapabilityResourceScope
+      type: object
+      properties:
+        resourceId:
+          type: string
+          description: The ID of the resource to modify (a user or group ID).
+          nullable: true
+        resourceType:
+          $ref: '#/components/schemas/microsoft.graph.m365ResourceType'
+      additionalProperties:
+        type: object
     microsoft.graph.azureAdMultipleOrgsAudienceRestriction:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.audienceRestriction'
@@ -70185,6 +71086,12 @@ components:
         - title: virtualEventSession
           type: object
           properties:
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             startDateTime:
@@ -70309,6 +71216,14 @@ components:
         - user
         - group
         - application
+        - unknownFutureValue
+      type: string
+    microsoft.graph.m365ResourceType:
+      title: m365ResourceType
+      enum:
+        - none
+        - group
+        - user
         - unknownFutureValue
       type: string
     microsoft.graph.redirectUriPlatformBlockedDomainConfiguration:
@@ -74529,6 +75444,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicyCollectionResponse'
+    microsoft.graph.m365CapabilityBaseCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.m365CapabilityBaseCollectionResponse'
     microsoft.graph.crossTenantAccessPolicyConfigurationPartnerCollectionResponse:
       description: Retrieved collection
       content:

@@ -13044,6 +13044,8 @@ components:
               description: Date time when the artifact's restoration completes.
               format: date-time
               nullable: true
+            destinationType:
+              $ref: '#/components/schemas/microsoft.graph.destinationType'
             restoredItemKey:
               type: string
               description: The unique identifier for the restored artifact.

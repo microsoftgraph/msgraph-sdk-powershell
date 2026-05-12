@@ -19975,6 +19975,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            cloudVideoInteropInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudVideoInteropInfo'
             expiryDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21141,6 +21143,21 @@ components:
         allowTextOnly:
           type: boolean
           description: Indicates whether only text is allowed in the meeting chat. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudVideoInteropInfo:
+      title: cloudVideoInteropInfo
+      type: object
+      properties:
+        moreInfoWebUrl:
+          type: string
+          nullable: true
+        tenantKey:
+          type: string
+          nullable: true
+        videoTeleconferenceId:
+          type: string
           nullable: true
       additionalProperties:
         type: object
