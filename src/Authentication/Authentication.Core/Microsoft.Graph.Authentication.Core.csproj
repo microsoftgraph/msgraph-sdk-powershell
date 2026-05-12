@@ -21,7 +21,7 @@
     <!-- Explicitly reference Microsoft.Identity.Client to ensure form_post support -->
     <PackageReference Include="Microsoft.Identity.Client" Version="4.82.1" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.3" />
-    <PackageReference Include="Microsoft.Graph.Core" Version="3.2.5" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="4.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Text.Json" Version="10.0.3" />
   </ItemGroup>
