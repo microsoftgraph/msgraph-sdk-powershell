@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.WindowsUpdates
 
-Remove-MgBetaWindowsUpdatesPolicy -UpdatePolicyId $updatePolicyId
+Remove-MgBetaWindowsUpdatesPolicy -PolicyId $policyId
 
 ```
 This example shows how to use the Remove-MgBetaWindowsUpdatesPolicy Cmdlet.
