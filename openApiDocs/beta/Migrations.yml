@@ -348,6 +348,66 @@ paths:
         date: '2023-11-15'
         version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/microsoft.graph.migrate':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action migrate
+      operationId: solution.migration.crossTenantMigrationJob_migrate
+      parameters:
+        - name: crossTenantMigrationJob-id
+          in: path
+          description: The unique identifier of crossTenantMigrationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantMigrationJob
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/microsoft.graph.validate':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action validate
+      operationId: solution.migration.crossTenantMigrationJob_validate
+      parameters:
+        - name: crossTenantMigrationJob-id
+          in: path
+          description: The unique identifier of crossTenantMigrationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: crossTenantMigrationJob
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users':
     get:
       tags:
@@ -813,6 +873,64 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationCancelResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/microsoft.graph.migrate':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action migrate
+      operationId: solution.migration.crossTenantMigrationJob.displayName_migrate
+      parameters:
+        - name: displayName
+          in: path
+          description: Alternate key of crossTenantMigrationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/microsoft.graph.validate':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action validate
+      operationId: solution.migration.crossTenantMigrationJob.displayName_validate
+      parameters:
+        - name: displayName
+          in: path
+          description: Alternate key of crossTenantMigrationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
         default:
           $ref: '#/components/responses/error'
       deprecated: true

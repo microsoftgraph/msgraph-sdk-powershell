@@ -3712,6 +3712,10 @@ paths:
       tags:
         - chats.chat.Actions
       summary: Invoke action completeMigration
+      description: 'Complete the migration of external messages by removing migration mode from a chat. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. After a completeMigration request is made for an existing or new chat, you can start a migration session by calling chat: startMigration. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-completemigration?view=graph-rest-1.0
       operationId: chat_completeMigration
       parameters:
         - name: chat-id
@@ -3944,6 +3948,10 @@ paths:
       tags:
         - chats.chat.Actions
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing chat. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. You can define a minimum timestamp for content migration that enables the import of messages from the past. The specified timestamp must be earlier than the current createdDateTime of the chat. Imported content is always limited by the createdDateTime of the target thread. An optional createdDateTime property in the payload allows you to update this value, but with strict rules: This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-startmigration?view=graph-rest-1.0
       operationId: chat_startMigration
       parameters:
         - name: chat-id
@@ -9075,7 +9083,7 @@ paths:
       tags:
         - groups.team
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -9245,6 +9253,10 @@ paths:
       tags:
         - groups.team
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: group.team.channel_startMigration
       parameters:
         - name: group-id
@@ -15383,7 +15395,7 @@ paths:
       tags:
         - groups.team
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -15521,6 +15533,10 @@ paths:
       tags:
         - groups.team
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: group.team.primaryChannel_startMigration
       parameters:
         - name: group-id
@@ -24135,7 +24151,7 @@ paths:
       tags:
         - teams.channel
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -24305,6 +24321,10 @@ paths:
       tags:
         - teams.channel
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: team.channel_startMigration
       parameters:
         - name: team-id
@@ -30528,7 +30548,7 @@ paths:
       tags:
         - teams.channel
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -30666,6 +30686,10 @@ paths:
       tags:
         - teams.channel
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: team.primaryChannel_startMigration
       parameters:
         - name: team-id
@@ -39599,7 +39623,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -39769,6 +39793,10 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_startMigration
       parameters:
         - name: deletedTeam-id
@@ -44946,6 +44974,10 @@ paths:
       tags:
         - users.chat
       summary: Invoke action completeMigration
+      description: 'Complete the migration of external messages by removing migration mode from a chat. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. After a completeMigration request is made for an existing or new chat, you can start a migration session by calling chat: startMigration. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-completemigration?view=graph-rest-1.0
       operationId: user.chat_completeMigration
       parameters:
         - name: user-id
@@ -45226,6 +45258,10 @@ paths:
       tags:
         - users.chat
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing chat. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. You can define a minimum timestamp for content migration that enables the import of messages from the past. The specified timestamp must be earlier than the current createdDateTime of the chat. Imported content is always limited by the createdDateTime of the target thread. An optional createdDateTime property in the payload allows you to update this value, but with strict rules: This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-startmigration?view=graph-rest-1.0
       operationId: user.chat_startMigration
       parameters:
         - name: user-id
@@ -51226,7 +51262,7 @@ paths:
       tags:
         - users.team
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -51428,6 +51464,10 @@ paths:
       tags:
         - users.team
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_startMigration
       parameters:
         - name: user-id
@@ -58654,7 +58694,7 @@ paths:
       tags:
         - users.team
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -58824,6 +58864,10 @@ paths:
       tags:
         - users.team
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_startMigration
       parameters:
         - name: user-id
@@ -65163,6 +65207,7 @@ components:
             originalCreatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp of the original creation time for the chat. The value is null if the chat never entered migration mode.
               format: date-time
               nullable: true
             tenantId:
@@ -65685,6 +65730,7 @@ components:
             originalCreatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.
               format: date-time
               nullable: true
             summary:
@@ -65934,6 +65980,10 @@ components:
               type: boolean
               description: 'True if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
+            infoCatalogs:
+              type: array
+              items:
+                type: string
             isArchived:
               type: boolean
               description: 'When a group is associated with a team, this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
@@ -75170,6 +75220,29 @@ components:
         - darkPink
         - darkYellow
         - unknownFutureValue
+        - darkRed
+        - cranberry
+        - darkOrange
+        - bronze
+        - peach
+        - gold
+        - lime
+        - forest
+        - lightGreen
+        - jade
+        - lightTeal
+        - darkTeal
+        - steel
+        - skyBlue
+        - blueGray
+        - lavender
+        - lilac
+        - plum
+        - magenta
+        - darkBrown
+        - beige
+        - charcoal
+        - silver
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
@@ -77155,6 +77228,7 @@ components:
           properties:
             primaryMailboxId:
               type: string
+              description: The unique identifier for the user's primary mailbox.
               nullable: true
           additionalProperties:
             type: object

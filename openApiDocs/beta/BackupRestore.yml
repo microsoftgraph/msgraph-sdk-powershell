@@ -12319,6 +12319,8 @@ components:
               description: The time when protection unit offboard was requested.
               format: date-time
               nullable: true
+            pendingRetentionPeriodChange:
+              $ref: '#/components/schemas/microsoft.graph.retentionPeriodChange'
             policyId:
               type: string
               description: The unique identifier of the protection policy based on which protection unit was created.
@@ -13044,6 +13046,8 @@ components:
               description: Date time when the artifact's restoration completes.
               format: date-time
               nullable: true
+            destinationType:
+              $ref: '#/components/schemas/microsoft.graph.destinationType'
             restoredItemKey:
               type: string
               description: The unique identifier for the restored artifact.
@@ -13144,6 +13148,25 @@ components:
         - offboardRequested
         - offboarded
       type: string
+    microsoft.graph.retentionPeriodChange:
+      title: retentionPeriodChange
+      type: object
+      properties:
+        effectiveFromDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.retentionPeriodChangeStatus'
+        targetRetentionPeriodInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.protectionSource:
       title: protectionSource
       enum:
@@ -13972,6 +13995,15 @@ components:
         - active
         - completed
         - completedWithErrors
+        - unknownFutureValue
+      type: string
+    microsoft.graph.retentionPeriodChangeStatus:
+      title: retentionPeriodChangeStatus
+      enum:
+        - none
+        - inProgress
+        - failed
+        - completed
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.MainError:

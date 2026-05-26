@@ -323953,34 +323953,6 @@
   },
   {
     "PathInfo": {
-      "Path": "/users/{user-id}/sponsors/{directoryObject-id}",
-      "Module": "Users"
-    },
-    "MethodInfo": {
-      "OperationId": "user_GetSponsor",
-      "Method": "Get",
-      "Parameters": [
-        {
-          "Name": "user-id",
-          "Location": "Path"
-        },
-        {
-          "Name": "directoryObject-id",
-          "Location": "Path"
-        },
-        {
-          "Name": "$select",
-          "Location": "Query"
-        },
-        {
-          "Name": "$expand",
-          "Location": "Query"
-        }
-      ]
-    }
-  },
-  {
-    "PathInfo": {
       "Path": "/users/{user-id}/sponsors/$count",
       "Module": "Users"
     },
