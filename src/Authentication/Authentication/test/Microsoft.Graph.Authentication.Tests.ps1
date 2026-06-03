@@ -75,5 +75,51 @@ Describe "Microsoft.Graph.Authentication module" {
         It 'Should lock GUID' {
             $PSModuleInfo.Guid.Guid | Should -Be "883916f2-9184-46ee-b1f8-b6a2fb784cee"
         }
+
+        It 'Should load the root authentication assembly outside the default AssemblyLoadContext' -Skip:($PSEdition -ne 'Core') {
+            $assembly = [AppDomain]::CurrentDomain.GetAssemblies() |
+                Where-Object { $_.GetName().Name -eq $ModuleName } |
+                Select-Object -First 1
+
+            $assembly | Should -Not -BeNullOrEmpty
+            [System.Runtime.Loader.AssemblyLoadContext]::Default.Assemblies |
+                Where-Object { $_.GetName().Name -eq $ModuleName } |
+                Should -BeNullOrEmpty
+
+            $loadContext = [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($assembly)
+            $loadContext.Name | Should -Match '^Microsoft\.Graph\.Authentication\.'
+        }
+
+        It 'Should resolve isolated dependencies from worker threads on PowerShell Core' -Skip:($PSEdition -ne 'Core') {
+            if (-not ('GraphAuthenticationAssemblyLoadContextTestHelper' -as [type])) {
+                Add-Type -TypeDefinition @'
+using System.Reflection;
+using System.Runtime.Loader;
+using System.Threading.Tasks;
+
+public static class GraphAuthenticationAssemblyLoadContextTestHelper
+{
+    public static Assembly LoadFromWorker(AssemblyLoadContext context, string assemblyName)
+    {
+        return Task.Run(() => context.LoadFromAssemblyName(new AssemblyName(assemblyName))).GetAwaiter().GetResult();
+    }
+}
+'@
+            }
+
+            $assembly = [AppDomain]::CurrentDomain.GetAssemblies() |
+                Where-Object { $_.GetName().Name -eq $ModuleName } |
+                Select-Object -First 1
+
+            $loadContext = [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($assembly)
+            $dependencyAssembly = [GraphAuthenticationAssemblyLoadContextTestHelper]::LoadFromWorker($loadContext, 'Azure.Core')
+            $dependencyContext = [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($dependencyAssembly)
+
+            $dependencyAssembly.GetName().Name | Should -Be 'Azure.Core'
+            $dependencyContext.Name | Should -Be $loadContext.Name
+            [System.Runtime.Loader.AssemblyLoadContext]::Default.Assemblies |
+                Where-Object { $_.GetName().Name -eq 'Azure.Core' } |
+                Should -BeNullOrEmpty
+        }
     }
 }
