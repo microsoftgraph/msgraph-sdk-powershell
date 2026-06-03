@@ -93167,7 +93167,7 @@ components:
               nullable: true
             isResourceAccount:
               type: boolean
-              description: Do not use – reserved for future use.
+              description: Do not use. Reserved for future use.
               nullable: true
             jobTitle:
               type: string
@@ -93437,6 +93437,11 @@ components:
               x-ms-navigationProperty: true
             cloudClipboard:
               $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
+            cloudPcPools:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcPool'
+              x-ms-navigationProperty: true
             cloudPCs:
               type: array
               items:
@@ -94436,7 +94441,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: The number of items in the list. Read-only.
+              description: The total count of items in the list. Read-only.
               format: int32
               nullable: true
             list:
@@ -98137,6 +98142,38 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcPool:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcPool
+          type: object
+          properties:
+            capabilities:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPoolCapabilityConfiguration'
+            cloudPcConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConfiguration'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            networkConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcNetworkConfiguration'
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcPoolAssignment'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPC:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -98236,6 +98273,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'The scope IDs of the corresponding permission. Currently, it''s the Intune scope tag ID. Read-only.'
             servicePlanId:
               type: string
               description: The service plan ID of the Cloud PC.
@@ -99042,7 +99080,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
+              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).'
             securityEnabled:
               type: boolean
               description: 'Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).'
@@ -103208,7 +103246,7 @@ components:
       type: object
       properties:
         delegate:
-          $ref: '#/components/schemas/microsoft.graph.subjectSet'
+          $ref: '#/components/schemas/microsoft.graph.userSet'
         schedule:
           $ref: '#/components/schemas/microsoft.graph.requestSchedule'
       additionalProperties:
@@ -104910,6 +104948,38 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
               description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcPoolCapabilityConfiguration:
+      title: cloudPcPoolCapabilityConfiguration
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcConfiguration:
+      title: cloudPcConfiguration
+      type: object
+      properties:
+        imageDisplayName:
+          type: string
+          nullable: true
+        imageId:
+          type: string
+        imageType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
+        osLocale:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcNetworkConfiguration:
+      title: cloudPcNetworkConfiguration
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcPoolAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcPoolAssignment
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.cloudPcConnectionSetting:
@@ -108507,6 +108577,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            cloudVideoInteropInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudVideoInteropInfo'
             expiryDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -109333,6 +109405,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Read-only. Date and time at which this is last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             orderHint:
@@ -110049,6 +110122,7 @@ components:
           properties:
             inPlaceArchiveMailboxId:
               type: string
+              description: The unique identifier for the user's In-Place Archive mailbox.
               nullable: true
             primaryMailboxId:
               type: string
@@ -111070,9 +111144,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.subjectSet:
-      title: subjectSet
+    microsoft.graph.userSet:
+      title: userSet
       type: object
+      properties:
+        isBackup:
+          type: boolean
+          description: 'For a user in an approval stage, this property indicates whether the user is a backup fallback approver.'
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.requestSchedule:
@@ -112167,6 +112246,13 @@ components:
           description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcProvisioningPolicyImageType:
+      title: cloudPcProvisioningPolicyImageType
+      enum:
+        - gallery
+        - custom
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcHealthCheckItem:
       title: cloudPcHealthCheckItem
       type: object
@@ -114424,6 +114510,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudVideoInteropInfo:
+      title: cloudVideoInteropInfo
+      type: object
+      properties:
+        moreInfoWebUrl:
+          type: string
+          nullable: true
+        tenantKey:
+          type: string
+          nullable: true
+        videoTeleconferenceId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -114597,6 +114698,11 @@ components:
               type: string
               description: Email address of the user associated with this attendance record.
               nullable: true
+            engagements:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.meetingEngagement'
+              description: The list of real-time participant interaction behaviors during a meeting.
             externalRegistrationInformation:
               $ref: '#/components/schemas/microsoft.graph.virtualEventExternalRegistrationInformation'
             identity:
@@ -116091,6 +116197,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
               description: 'The external information of a virtual event. Returned only for event organizers or coorganizers; otherwise, null.'
+            isRegistrationEnabled:
+              type: boolean
+              nullable: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.virtualEventSettings'
             startDateTime:
@@ -116135,13 +116244,6 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
         - title: virtualEventWebinarRegistrationConfiguration
           type: object
-          properties:
-            isManualApprovalEnabled:
-              type: boolean
-              nullable: true
-            isWaitlistEnabled:
-              type: boolean
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEventRegistration:
@@ -117883,7 +117985,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
-          description: A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. Required.
+          description: 'A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses, file metadata for files, and content activity metadata for enforcement result status entries. Required.'
         deviceMetadata:
           $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
         integratedAppMetadata:
@@ -118804,6 +118906,24 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.meetingEngagement:
+      title: meetingEngagement
+      type: object
+      properties:
+        dateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The UTC date and time when the engagement event occurred, in ISO 8601 format.'
+          format: date-time
+          nullable: true
+        engagementSubType:
+          type: string
+          description: 'The specific engagement action within the type (e.g., like, love, applause, laugh, surprised for reactions; raiseHand for hand; cameraOn for camera; unmute, mute for microphone).'
+          nullable: true
+        engagementType:
+          $ref: '#/components/schemas/microsoft.graph.meetingEngagementType'
+      additionalProperties:
+        type: object
     microsoft.graph.virtualEventExternalRegistrationInformation:
       title: virtualEventExternalRegistrationInformation
       type: object
@@ -119485,6 +119605,12 @@ components:
         - title: virtualEventSession
           type: object
           properties:
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             startDateTime:
@@ -119517,6 +119643,12 @@ components:
               type: number
               description: Total capacity of the virtual event.
               format: int32
+              nullable: true
+            isManualApprovalEnabled:
+              type: boolean
+              nullable: true
+            isWaitlistEnabled:
+              type: boolean
               nullable: true
             registrationWebUrl:
               type: string
@@ -121142,7 +121274,7 @@ components:
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.'
+          description: 'String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to asymmetricKeyLifetime.'
           format: duration
           nullable: true
         restrictForAppsCreatedAfterDateTime:
@@ -121757,6 +121889,15 @@ components:
         - deviceIntent
       type: string
       description: Authoring source of a policy
+    microsoft.graph.meetingEngagementType:
+      title: meetingEngagementType
+      enum:
+        - reaction
+        - hand
+        - camera
+        - microphone
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerApprovalStatus:
       title: plannerApprovalStatus
       enum:
@@ -122229,7 +122370,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         excludeAppsReceivingV2Tokens:
           type: boolean
-          description: 'If true, the restriction isn''t enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction isn''t enforced for those applications.'
+          description: 'If true, the restriction isn''t enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction is enforced for those applications.'
           nullable: true
         excludeSaml:
           type: boolean
@@ -122625,6 +122766,29 @@ components:
         - darkPink
         - darkYellow
         - unknownFutureValue
+        - darkRed
+        - cranberry
+        - darkOrange
+        - bronze
+        - peach
+        - gold
+        - lime
+        - forest
+        - lightGreen
+        - jade
+        - lightTeal
+        - darkTeal
+        - steel
+        - skyBlue
+        - blueGray
+        - lavender
+        - lilac
+        - plum
+        - magenta
+        - darkBrown
+        - beige
+        - charcoal
+        - silver
       type: string
     microsoft.graph.workbookChartGridlinesFormat:
       allOf:
