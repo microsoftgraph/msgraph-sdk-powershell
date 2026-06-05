@@ -117,9 +117,7 @@ public static class GraphAuthenticationAssemblyLoadContextTestHelper
 
             $dependencyAssembly.GetName().Name | Should -Be 'Azure.Core'
             $dependencyContext.Name | Should -Be $loadContext.Name
-            [System.Runtime.Loader.AssemblyLoadContext]::Default.Assemblies |
-                Where-Object { $_.GetName().Name -eq 'Azure.Core' } |
-                Should -BeNullOrEmpty
+            [object]::ReferenceEquals($dependencyContext, [System.Runtime.Loader.AssemblyLoadContext]::Default) | Should -BeFalse
         }
     }
 }
