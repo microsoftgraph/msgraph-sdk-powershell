@@ -167340,6 +167340,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPool'
+              description: The user's Cloud PC pools. Read-only. Nullable.
               x-ms-navigationProperty: true
             cloudPCs:
               type: array
@@ -173053,15 +173054,19 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the pool was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Read-only.'
               format: date-time
             description:
               type: string
+              description: The description of the pool. The maximum length is 512 characters.
               nullable: true
             displayName:
               type: string
+              description: The display name of the pool. The name is unique across Cloud PC pools in an organization. The maximum length is 60 characters.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the pool was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Read-only.'
               format: date-time
             networkConfiguration:
               $ref: '#/components/schemas/microsoft.graph.cloudPcNetworkConfiguration'
@@ -173069,6 +173074,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPoolAssignment'
+              description: The collection of assignments that grant user or service principal identities access to this pool.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -179845,13 +179851,16 @@ components:
       properties:
         imageDisplayName:
           type: string
+          description: The display name of the image. Read-only.
           nullable: true
         imageId:
           type: string
+          description: 'The unique identifier of the operating system image used for provisioning new Cloud PCs. The format for a gallery type image is: {publisherNameofferNameskuName}.'
         imageType:
           $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
         osLocale:
           type: string
+          description: The operating system locale for the Cloud PC.
       additionalProperties:
         type: object
     microsoft.graph.cloudPcNetworkConfiguration:
@@ -181813,6 +181822,11 @@ components:
               x-ms-navigationProperty: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
+            joinedUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              x-ms-navigationProperty: true
             members:
               type: array
               items:
@@ -187799,6 +187813,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.fileArchiveStatus'
         hashes:
           $ref: '#/components/schemas/microsoft.graph.hashes'
+        lockInfo:
+          $ref: '#/components/schemas/microsoft.graph.lockInfo'
         mimeType:
           type: string
           description: The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
@@ -192787,6 +192803,9 @@ components:
             isRegistrationEnabled:
               type: boolean
               nullable: true
+            isRegistrationRequired:
+              type: boolean
+              nullable: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.virtualEventSettings'
             startDateTime:
@@ -194294,6 +194313,28 @@ components:
           type: string
           description: This property isn't supported. Don't use.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.lockInfo:
+      title: lockInfo
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        expirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lockType:
+          $ref: '#/components/schemas/microsoft.graph.lockType'
+        owners:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userIdentity'
       additionalProperties:
         type: object
     microsoft.graph.folderView:
@@ -196660,6 +196701,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
+              description: Represents the expected number of attendees for town hall session.
               format: int32
               nullable: true
             endDateTime:
@@ -196697,9 +196739,11 @@ components:
               nullable: true
             isManualApprovalEnabled:
               type: boolean
+              description: Indicates whether registrations require organizer approval before a participant is confirmed.
               nullable: true
             isWaitlistEnabled:
               type: boolean
+              description: Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.
               nullable: true
             registrationWebUrl:
               type: string
@@ -198578,6 +198622,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.lockType:
+      title: lockType
+      enum:
+        - none
+        - exclusive
+        - shared
+        - unknownFutureValue
+      type: string
     microsoft.graph.mediaSourceContentCategory:
       title: mediaSourceContentCategory
       enum:
@@ -199841,6 +199893,7 @@ components:
         - uploadFile
         - downloadText
         - downloadFile
+        - copyToClipboard
         - unknownFutureValue
       type: string
     microsoft.graph.contentBase:

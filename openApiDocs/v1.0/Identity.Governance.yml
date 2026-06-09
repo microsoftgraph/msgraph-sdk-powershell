@@ -37909,6 +37909,343 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /identityGovernance/entitlementManagement/subjects:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get subjects from identityGovernance
+      operationId: identityGovernance.entitlementManagement_ListSubject
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.accessPackageSubjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to subjects for identityGovernance
+      operationId: identityGovernance.entitlementManagement_CreateSubject
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/subjects/{accessPackageSubject-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get subjects from identityGovernance
+      operationId: identityGovernance.entitlementManagement_GetSubject
+      parameters:
+        - name: accessPackageSubject-id
+          in: path
+          description: The unique identifier of accessPackageSubject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageSubject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property subjects in identityGovernance
+      operationId: identityGovernance.entitlementManagement_UpdateSubject
+      parameters:
+        - name: accessPackageSubject-id
+          in: path
+          description: The unique identifier of accessPackageSubject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageSubject
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property subjects for identityGovernance
+      operationId: identityGovernance.entitlementManagement_DeleteSubject
+      parameters:
+        - name: accessPackageSubject-id
+          in: path
+          description: The unique identifier of accessPackageSubject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageSubject
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/subjects/{accessPackageSubject-id}/connectedOrganization':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get connectedOrganization from identityGovernance
+      description: The connected organization of the subject. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.subject_GetConnectedOrganization
+      parameters:
+        - name: accessPackageSubject-id
+          in: path
+          description: The unique identifier of accessPackageSubject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageSubject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/subjects(objectId=''{objectId}'')':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get subjects from identityGovernance
+      operationId: identityGovernance.entitlementManagement.subject_GetGraphBPreObjectId
+      parameters:
+        - name: objectId
+          in: path
+          description: Alternate key of accessPackageSubject
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property subjects in identityGovernance
+      operationId: identityGovernance.entitlementManagement.subject_UpdateGraphBPreObjectId
+      parameters:
+        - name: objectId
+          in: path
+          description: Alternate key of accessPackageSubject
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property subjects for identityGovernance
+      operationId: identityGovernance.entitlementManagement.subject_DeleteGraphBPreObjectId
+      parameters:
+        - name: objectId
+          in: path
+          description: Alternate key of accessPackageSubject
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/entitlementManagement/subjects/$count:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get the number of the resource
+      operationId: identityGovernance.entitlementManagement.subject_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identityGovernance/lifecycleWorkflows:
     get:
       tags:
@@ -70813,6 +71150,11 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.entitlementManagementSettings'
+            subjects:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.approvalFilterByCurrentUserOptions:
@@ -71417,6 +71759,8 @@ components:
               type: string
               description: 'The principal name, if known, of the subject.'
               nullable: true
+            subjectLifecycle:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageSubjectLifecycle'
             subjectType:
               $ref: '#/components/schemas/microsoft.graph.accessPackageSubjectType'
             connectedOrganization:
@@ -74811,6 +75155,14 @@ components:
         - deliveryFailed
         - unknownFutureValue
       type: string
+    microsoft.graph.accessPackageSubjectLifecycle:
+      title: accessPackageSubjectLifecycle
+      enum:
+        - notDefined
+        - notGoverned
+        - governed
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessPackageSubjectType:
       title: accessPackageSubjectType
       enum:
@@ -75755,6 +76107,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
+              x-ms-navigationProperty: true
+            targetedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -78502,6 +78859,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessPackageSubjectCollectionResponse:
+      title: Collection of accessPackageSubject
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.identityGovernance.customTaskExtensionCollectionResponse:
       title: Collection of customTaskExtension
       type: object
@@ -79964,6 +80334,16 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.targetedChatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        - title: targetedChatMessage
+          type: object
+          properties:
+            recipient:
+              $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
             type: object
     microsoft.graph.cloudClipboardItem:
@@ -83378,6 +83758,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticationExtensionsClientOutputs'
         id:
           type: string
+          description: The credential ID created by the WebAuthn Authenticator. This value is Base64URL-encoded without padding.
           nullable: true
         response:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticatorAttestationResponse'
@@ -87808,9 +88189,11 @@ components:
       properties:
         attestationObject:
           type: string
+          description: A CBOR-encoded attestation object containing the authenticator data and attestation statement. This value is Base64URL-encoded without padding.
           nullable: true
         clientDataJSON:
           type: string
+          description: Contains the JSON-compatible serialization of client data passed to the authenticator by the client. This value is Base64URL-encoded without padding.
           nullable: true
       additionalProperties:
         type: object
@@ -92252,6 +92635,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessPackageResourceRequestCollectionResponse'
+    microsoft.graph.accessPackageSubjectCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageSubjectCollectionResponse'
     microsoft.graph.identityGovernance.customTaskExtensionCollectionResponse:
       description: Retrieved collection
       content:

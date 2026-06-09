@@ -422,6 +422,45 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/alerts_v2/microsoft.graph.security.moveAlerts:
+    post:
+      tags:
+        - security.alert
+      summary: Invoke action moveAlerts
+      operationId: security.alerts_v2_moveAlert
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                alertIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                incidentId:
+                  type: string
+                  nullable: true
+                alertComment:
+                  type: string
+                  nullable: true
+                newCorrelationReasons:
+                  $ref: '#/components/schemas/microsoft.graph.security.correlationReason'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.mergeResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/security/alerts/{alert-id}':
     get:
       tags:
@@ -11877,6 +11916,42 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/incidents/microsoft.graph.security.mergeIncidents:
+    post:
+      tags:
+        - security.incident
+      summary: Invoke action mergeIncidents
+      operationId: security.incident_mergeIncident
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                incidentIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                incidentComment:
+                  type: string
+                  nullable: true
+                mergeReasons:
+                  $ref: '#/components/schemas/microsoft.graph.security.correlationReason'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.mergeResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/labels:
     get:
       tags:
@@ -23552,6 +23627,38 @@ components:
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.security.correlationReason:
+      title: correlationReason
+      enum:
+        - repeatedAlertOccurrence
+        - sameGeography
+        - similarArtifacts
+        - sameTargetedAsset
+        - sameNetworkSegment
+        - eventSequence
+        - timeFrame
+        - sameThreatSource
+        - similarTTPsOrBehavior
+        - sameActor
+        - sameCampaign
+        - sharedIndicators
+        - sameAsset
+        - networkProximity
+        - eventCasualSequence
+        - temporalProximity
+        - lateralMovementPath
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.security.mergeResponse:
+      title: mergeResponse
+      type: object
+      properties:
+        targetIncidentId:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.attackSimulationRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31747,6 +31854,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
               x-ms-navigationProperty: true
+            targetedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.cloudClipboardRoot:
@@ -37542,6 +37654,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
           additionalProperties:
             type: object
+    microsoft.graph.targetedChatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        - title: targetedChatMessage
+          type: object
+          properties:
+            recipient:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
     microsoft.graph.cloudClipboardItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -41426,6 +41548,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticationExtensionsClientOutputs'
         id:
           type: string
+          description: The credential ID created by the WebAuthn Authenticator. This value is Base64URL-encoded without padding.
           nullable: true
         response:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticatorAttestationResponse'
@@ -44583,9 +44706,11 @@ components:
       properties:
         attestationObject:
           type: string
+          description: A CBOR-encoded attestation object containing the authenticator data and attestation statement. This value is Base64URL-encoded without padding.
           nullable: true
         clientDataJSON:
           type: string
+          description: Contains the JSON-compatible serialization of client data passed to the authenticator by the client. This value is Base64URL-encoded without padding.
           nullable: true
       additionalProperties:
         type: object

@@ -19663,6 +19663,10 @@ paths:
       tags:
         - users.authentication
       summary: Invoke function creationOptions
+      description: 'Retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. This function returns WebAuthn credential creation options that include a challenge, relying party information, and user information, which are used by the client to create a new FIDO2 credential. The challenge property and credential IDs in excludeCredentials are Base64URL-encoded without padding. All binary data in the response follows Base64URL encoding as defined in RFC 4648 Section 5.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/fido2authenticationmethod-creationoptions?view=graph-rest-1.0
       operationId: user.authentication.fido2Method_creationOption
       parameters:
         - name: user-id
@@ -24713,6 +24717,7 @@ components:
         challengeTimeoutDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the challenge times out and can no longer be used to create a credential.
           format: date-time
           nullable: true
         publicKey:
@@ -26821,6 +26826,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
+              x-ms-navigationProperty: true
+            targetedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -29031,6 +29041,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticationExtensionsClientOutputs'
         id:
           type: string
+          description: The credential ID created by the WebAuthn Authenticator. This value is Base64URL-encoded without padding.
           nullable: true
         response:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticatorAttestationResponse'
@@ -29042,28 +29053,33 @@ components:
       properties:
         attestation:
           type: string
+          description: Specifies the relying party's preference for attestation conveyance.
           nullable: true
         authenticatorSelection:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticatorSelectionCriteria'
         challenge:
           type: string
+          description: The challenge that the authenticator must sign to prove possession of the credential. This value is Base64URL-encoded without padding.
           nullable: true
         excludeCredentials:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredentialDescriptor'
+          description: 'A list of credentials that are already registered for this user, which should be excluded from selection.'
         extensions:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticationExtensionsClientInputs'
         pubKeyCredParams:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredentialParameters'
+          description: 'The cryptographic parameters that the relying party supports, in order of preference.'
         rp:
           $ref: '#/components/schemas/microsoft.graph.webauthnPublicKeyCredentialRpEntity'
         timeout:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'The time, in milliseconds, that the caller is willing to wait for the operation to complete.'
           format: int32
           nullable: true
         user:
@@ -31175,6 +31191,16 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.targetedChatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        - title: targetedChatMessage
+          type: object
+          properties:
+            recipient:
+              $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
             type: object
     microsoft.graph.cloudClipboardItem:
@@ -34770,9 +34796,11 @@ components:
       properties:
         attestationObject:
           type: string
+          description: A CBOR-encoded attestation object containing the authenticator data and attestation statement. This value is Base64URL-encoded without padding.
           nullable: true
         clientDataJSON:
           type: string
+          description: Contains the JSON-compatible serialization of client data passed to the authenticator by the client. This value is Base64URL-encoded without padding.
           nullable: true
       additionalProperties:
         type: object
@@ -34782,12 +34810,15 @@ components:
       properties:
         authenticatorAttachment:
           type: string
+          description: 'Specifies the preferred attachment modality for the authenticator. Possible values: platform (device-bound authenticator, such as Windows Hello), cross-platform (removable authenticator, such as a USB security key), or null (no preference).'
           nullable: true
         requireResidentKey:
           type: boolean
+          description: 'Indicates whether the authenticator must create a client-side-resident credential (also known as a discoverable credential). If true, the credential can be used without providing a credential ID.'
           nullable: true
         userVerification:
           type: string
+          description: 'Specifies the relying party''s preference for user verification during credential creation. Possible values: required, preferred, or discouraged.'
           nullable: true
       additionalProperties:
         type: object
@@ -34797,14 +34828,17 @@ components:
       properties:
         id:
           type: string
+          description: The credential ID of the credential being described. This value is Base64URL-encoded without padding.
           nullable: true
         transports:
           type: array
           items:
             type: string
             nullable: true
+          description: 'A hint about the types of transport that the authenticator supports. Possible values include: usb, nfc, ble, internal.'
         type:
           type: string
+          description: 'The type of credential. Currently, the only supported value is public-key.'
           nullable: true
       additionalProperties:
         type: object
@@ -34821,10 +34855,12 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'A COSE algorithm identifier representing the cryptographic algorithm to use for this credential type. For example, -7 represents ES256.'
           format: int32
           nullable: true
         type:
           type: string
+          description: 'The type of credential to create. Currently, the only supported value is public-key.'
           nullable: true
       additionalProperties:
         type: object
@@ -34834,9 +34870,11 @@ components:
       properties:
         id:
           type: string
+          description: 'The relying party identifier. For web applications, this value is typically the domain name.'
           nullable: true
         name:
           type: string
+          description: The human-readable name for the relying party.
           nullable: true
       additionalProperties:
         type: object
@@ -34846,12 +34884,15 @@ components:
       properties:
         displayName:
           type: string
+          description: 'A human-readable name for the user account, intended for display.'
           nullable: true
         id:
           type: string
+          description: 'A user identifier, determined by the relying party. This value is opaque to the authenticator and is Base64URL-encoded without padding.'
           nullable: true
         name:
           type: string
+          description: 'A human-readable identifier for the user account, such as a username or email address.'
           nullable: true
       additionalProperties:
         type: object
@@ -39094,7 +39135,7 @@ components:
           description: The object identifier of a Microsoft Entra user or group.
         targetedAuthenticationMethod:
           type: string
-          description: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
+          description: The authentication method that the user is prompted to register. The value can be Fido2 or microsoftAuthenticator.
           nullable: true
         targetType:
           $ref: '#/components/schemas/microsoft.graph.authenticationMethodTargetType'

@@ -91,6 +91,342 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /admin/reportSettings/sharePoint:
+    get:
+      tags:
+        - admin.adminReportSettings
+      summary: Get sharePoint from admin
+      description: A container for SharePoint-specific report settings. Access the SharePoint API usage report metrics through the operations defined on the sharePointReportSettings resource type.
+      operationId: admin.reportSetting_GetSharePoint
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharePointReportSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminReportSettings
+      summary: Update the navigation property sharePoint in admin
+      operationId: admin.reportSetting_UpdateSharePoint
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharePointReportSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharePointReportSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminReportSettings
+      summary: Delete navigation property sharePoint for admin
+      operationId: admin.reportSetting_DeleteSharePoint
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/reportSettings/sharePoint/apiUsageReportMetrics:
+    get:
+      tags:
+        - admin.adminReportSettings
+      summary: List apiUsageReportMetrics
+      description: 'Get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointreportsettings-list-apiusagereportmetrics?view=graph-rest-beta
+      operationId: admin.reportSetting.sharePoint_ListApiUsageReportMetric
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.apiUsageReportEnablementStatusCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminReportSettings
+      summary: Create new navigation property to apiUsageReportMetrics for admin
+      operationId: admin.reportSetting.sharePoint_CreateApiUsageReportMetric
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatus'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/reportSettings/sharePoint/apiUsageReportMetrics/{apiUsageReportEnablementStatus-metric}':
+    get:
+      tags:
+        - admin.adminReportSettings
+      summary: Get apiUsageReportMetrics from admin
+      description: The collection of API usage report metrics and the status of their enablement.
+      operationId: admin.reportSetting.sharePoint_GetApiUsageReportMetric
+      parameters:
+        - name: apiUsageReportEnablementStatus-metric
+          in: path
+          description: The unique identifier of apiUsageReportEnablementStatus
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: apiUsageReportEnablementStatus
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminReportSettings
+      summary: Update the navigation property apiUsageReportMetrics in admin
+      operationId: admin.reportSetting.sharePoint_UpdateApiUsageReportMetric
+      parameters:
+        - name: apiUsageReportEnablementStatus-metric
+          in: path
+          description: The unique identifier of apiUsageReportEnablementStatus
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: apiUsageReportEnablementStatus
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatus'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminReportSettings
+      summary: Delete navigation property apiUsageReportMetrics for admin
+      operationId: admin.reportSetting.sharePoint_DeleteApiUsageReportMetric
+      parameters:
+        - name: apiUsageReportEnablementStatus-metric
+          in: path
+          description: The unique identifier of apiUsageReportEnablementStatus
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: apiUsageReportEnablementStatus
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/reportSettings/sharePoint/apiUsageReportMetrics/$count:
+    get:
+      tags:
+        - admin.adminReportSettings
+      summary: Get the number of the resource
+      operationId: admin.reportSetting.sharePoint.apiUsageReportMetric_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/reportSettings/sharePoint/microsoft.graph.disableApiUsageReport:
+    post:
+      tags:
+        - admin.adminReportSettings
+      summary: Invoke action disableApiUsageReport
+      description: 'Disable a SharePoint API usage report metric for the tenant. After you disable a metric, SharePoint stops collecting and reporting data for that specific usage metric.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointreportsettings-disableapiusagereport?view=graph-rest-beta
+      operationId: admin.reportSetting.sharePoint_disableApiUsageReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                metric:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/reportSettings/sharePoint/microsoft.graph.enableApiUsageReport:
+    post:
+      tags:
+        - admin.adminReportSettings
+      summary: Invoke action enableApiUsageReport
+      description: 'Enable a SharePoint API usage report metric for the tenant. After you enable a metric, SharePoint starts collecting and reporting data for that specific usage metric.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointreportsettings-enableapiusagereport?view=graph-rest-beta
+      operationId: admin.reportSetting.sharePoint_enableApiUsageReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                metric:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /auditLogs:
     get:
       tags:
@@ -24273,8 +24609,35 @@ components:
             displayConcealedNames:
               type: boolean
               description: 'If set to true, all reports conceal user information such as usernames, groups, and sites. If false, all reports show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.'
+            sharePoint:
+              $ref: '#/components/schemas/microsoft.graph.sharePointReportSettings'
           additionalProperties:
             type: object
+    microsoft.graph.sharePointReportSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sharePointReportSettings
+          type: object
+          properties:
+            apiUsageReportMetrics:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatus'
+              description: The collection of API usage report metrics and the status of their enablement.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.apiUsageReportEnablementStatus:
+      title: apiUsageReportEnablementStatus
+      type: object
+      properties:
+        metric:
+          type: string
+          description: 'The name of the API usage report metric. Currently, only EgressReport is supported.'
+        onboardingStatus:
+          $ref: '#/components/schemas/microsoft.graph.apiUsageReportOnboardingStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.auditLogRoot:
       title: auditLogRoot
       type: object
@@ -24590,6 +24953,8 @@ components:
               type: string
               description: The tenant identifier of the user initiating the sign-in. Supports $filter (eq).
               nullable: true
+            tokenIssuerType:
+              $ref: '#/components/schemas/microsoft.graph.tokenIssuerType'
             userPrincipalName:
               type: string
               description: 'User principal name of the user that initiated the sign-in. This value is always in lowercase. For guest users whose values in the user object typically contain #EXT# before the domain part, this property stores the value in both lowercase and the ''true'' format. For example, while the user object stores AdeleVance_fabrikam.com#EXT#@contoso.com, the sign-in logs store adelevance@fabrikam.com. Supports $filter (eq).'
@@ -24680,7 +25045,7 @@ components:
               nullable: true
             isDisabled:
               type: boolean
-              description: 'Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.'
+              description: 'Deactivate an app without deleting it. This configuration specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false. Learn more in Deactivate an app registration.'
               nullable: true
             isFallbackPublicClient:
               type: boolean
@@ -27531,6 +27896,15 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.apiUsageReportOnboardingStatus:
+      title: apiUsageReportOnboardingStatus
+      enum:
+        - enabling
+        - enabled
+        - disabling
+        - disabled
+        - unknownFutureValue
+      type: string
     microsoft.graph.keyValue:
       title: keyValue
       type: object
@@ -27782,6 +28156,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.tokenIssuerType:
+      title: tokenIssuerType
+      enum:
+        - AzureAD
+        - ADFederationServices
+        - UnknownFutureValue
+        - AzureADBackupAuth
+        - ADFederationServicesMFAAdapter
+        - NPSExtension
+      type: string
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28894,16 +29278,6 @@ components:
         - onPremisesUserPrincipalName
         - unknownFutureValue
       type: string
-    microsoft.graph.tokenIssuerType:
-      title: tokenIssuerType
-      enum:
-        - AzureAD
-        - ADFederationServices
-        - UnknownFutureValue
-        - AzureADBackupAuth
-        - ADFederationServicesMFAAdapter
-        - NPSExtension
-      type: string
     microsoft.graph.tokenProtectionStatusDetails:
       title: tokenProtectionStatusDetails
       type: object
@@ -29623,6 +29997,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    microsoft.graph.apiUsageReportEnablementStatusCollectionResponse:
+      title: Collection of apiUsageReportEnablementStatus
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatus'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.auditActivityTypeCollectionResponse:
       title: Collection of auditActivityType
       type: object
@@ -29636,9 +30026,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    ODataCountResponse:
-      type: integer
-      format: int32
     microsoft.graph.customSecurityAttributeAuditCollectionResponse:
       title: Collection of customSecurityAttributeAudit
       type: object
@@ -32467,18 +32854,24 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
-    microsoft.graph.auditActivityTypeCollectionResponse:
+    microsoft.graph.apiUsageReportEnablementStatusCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.auditActivityTypeCollectionResponse'
+            $ref: '#/components/schemas/microsoft.graph.apiUsageReportEnablementStatusCollectionResponse'
     ODataCountResponse:
       description: The count of the resource
       content:
         text/plain:
           schema:
             $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.auditActivityTypeCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.auditActivityTypeCollectionResponse'
     microsoft.graph.customSecurityAttributeAuditCollectionResponse:
       description: Retrieved collection
       content:
