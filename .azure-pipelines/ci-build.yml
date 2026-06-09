@@ -75,6 +75,9 @@ extends:
               publishLocation: 'Container'
         steps:
         - script: |
+            reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+          displayName: "Enable Win32 long paths"
+        - script: |
             git submodule update --init --recursive
         - template: .azure-pipelines/common-templates/install-tools.yml@self
         - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
