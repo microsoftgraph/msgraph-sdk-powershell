@@ -3562,6 +3562,7 @@ components:
             originalCreatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp of the original creation time for the chat. The value is null if the chat never entered migration mode.
               format: date-time
               nullable: true
             tenantId:
@@ -3615,6 +3616,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
+              x-ms-navigationProperty: true
+            targetedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -5416,6 +5422,7 @@ components:
             originalCreatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.
               format: date-time
               nullable: true
             summary:
@@ -5533,6 +5540,10 @@ components:
               type: boolean
               description: 'True if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
+            infoCatalogs:
+              type: array
+              items:
+                type: string
             isArchived:
               type: boolean
               description: 'When a group is associated with a team, this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
@@ -7129,6 +7140,16 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.targetedChatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        - title: targetedChatMessage
+          type: object
+          properties:
+            recipient:
+              $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
             type: object
     microsoft.graph.cloudClipboardItem:
@@ -9590,6 +9611,7 @@ components:
           properties:
             primaryMailboxId:
               type: string
+              description: The unique identifier for the user's primary mailbox.
               nullable: true
           additionalProperties:
             type: object
@@ -10589,6 +10611,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticationExtensionsClientOutputs'
         id:
           type: string
+          description: The credential ID created by the WebAuthn Authenticator. This value is Base64URL-encoded without padding.
           nullable: true
         response:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticatorAttestationResponse'
@@ -14854,9 +14877,11 @@ components:
       properties:
         attestationObject:
           type: string
+          description: A CBOR-encoded attestation object containing the authenticator data and attestation statement. This value is Base64URL-encoded without padding.
           nullable: true
         clientDataJSON:
           type: string
+          description: Contains the JSON-compatible serialization of client data passed to the authenticator by the client. This value is Base64URL-encoded without padding.
           nullable: true
       additionalProperties:
         type: object
@@ -18259,6 +18284,29 @@ components:
         - darkPink
         - darkYellow
         - unknownFutureValue
+        - darkRed
+        - cranberry
+        - darkOrange
+        - bronze
+        - peach
+        - gold
+        - lime
+        - forest
+        - lightGreen
+        - jade
+        - lightTeal
+        - darkTeal
+        - steel
+        - skyBlue
+        - blueGray
+        - lavender
+        - lilac
+        - plum
+        - magenta
+        - darkBrown
+        - beige
+        - charcoal
+        - silver
       type: string
     microsoft.graph.printMargin:
       title: printMargin

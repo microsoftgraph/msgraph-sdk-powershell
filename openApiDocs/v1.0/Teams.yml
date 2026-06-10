@@ -3712,6 +3712,10 @@ paths:
       tags:
         - chats.chat.Actions
       summary: Invoke action completeMigration
+      description: 'Complete the migration of external messages by removing migration mode from a chat. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. After a completeMigration request is made for an existing or new chat, you can start a migration session by calling chat: startMigration. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-completemigration?view=graph-rest-1.0
       operationId: chat_completeMigration
       parameters:
         - name: chat-id
@@ -3944,6 +3948,10 @@ paths:
       tags:
         - chats.chat.Actions
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing chat. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. You can define a minimum timestamp for content migration that enables the import of messages from the past. The specified timestamp must be earlier than the current createdDateTime of the chat. Imported content is always limited by the createdDateTime of the target thread. An optional createdDateTime property in the payload allows you to update this value, but with strict rules: This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-startmigration?view=graph-rest-1.0
       operationId: chat_startMigration
       parameters:
         - name: chat-id
@@ -4856,6 +4864,1760 @@ paths:
         - chats.teamsTab
       summary: Get the number of the resource
       operationId: chat.tab_GetCount
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/chats/{chat-id}/targetedMessages':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get targetedMessages from chats
+      operationId: chat_ListTargetedMessage
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.targetedChatMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.targetedChatMessage
+      summary: Create new navigation property to targetedMessages for chats
+      operationId: chat_CreateTargetedMessage
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get targetedMessages from chats
+      operationId: chat_GetTargetedMessage
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - chats.targetedChatMessage
+      summary: Update the navigation property targetedMessages in chats
+      operationId: chat_UpdateTargetedMessage
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.targetedChatMessage
+      summary: Delete navigation property targetedMessages for chats
+      operationId: chat_DeleteTargetedMessage
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/hostedContents':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get hostedContents from chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      operationId: chat.targetedMessage_ListHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.targetedChatMessage
+      summary: Create new navigation property to hostedContents for chats
+      operationId: chat.targetedMessage_CreateHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/hostedContents/{chatMessageHostedContent-id}':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get hostedContents from chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      operationId: chat.targetedMessage_GetHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - chats.targetedChatMessage
+      summary: Update the navigation property hostedContents in chats
+      operationId: chat.targetedMessage_UpdateHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.targetedChatMessage
+      summary: Delete navigation property hostedContents for chats
+      operationId: chat.targetedMessage_DeleteHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get media content for the navigation property hostedContents from chats
+      description: The unique identifier for an entity. Read-only.
+      operationId: chat.targetedMessage_GetHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+    put:
+      tags:
+        - chats.targetedChatMessage
+      summary: Update media content for the navigation property hostedContents in chats
+      description: The unique identifier for an entity. Read-only.
+      operationId: chat.targetedMessage_SetHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+    delete:
+      tags:
+        - chats.targetedChatMessage
+      summary: Delete media content for the navigation property hostedContents in chats
+      description: The unique identifier for an entity. Read-only.
+      operationId: chat.targetedMessage_DeleteHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/hostedContents/$count':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get the number of the resource
+      operationId: chat.targetedMessage.hostedContent_GetCount
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get replies from chats
+      description: Replies for a specified message. Supports $expand for channel messages.
+      operationId: chat.targetedMessage_ListReply
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.targetedChatMessage
+      summary: Create new navigation property to replies for chats
+      operationId: chat.targetedMessage_CreateReply
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get replies from chats
+      description: Replies for a specified message. Supports $expand for channel messages.
+      operationId: chat.targetedMessage_GetReply
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - chats.targetedChatMessage
+      summary: Update the navigation property replies in chats
+      operationId: chat.targetedMessage_UpdateReply
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.targetedChatMessage
+      summary: Delete navigation property replies for chats
+      operationId: chat.targetedMessage_DeleteReply
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/hostedContents':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get hostedContents from chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      operationId: chat.targetedMessage.reply_ListHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.targetedChatMessage
+      summary: Create new navigation property to hostedContents for chats
+      operationId: chat.targetedMessage.reply_CreateHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get hostedContents from chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      operationId: chat.targetedMessage.reply_GetHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - chats.targetedChatMessage
+      summary: Update the navigation property hostedContents in chats
+      operationId: chat.targetedMessage.reply_UpdateHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.targetedChatMessage
+      summary: Delete navigation property hostedContents for chats
+      operationId: chat.targetedMessage.reply_DeleteHostedContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get media content for the navigation property hostedContents from chats
+      description: The unique identifier for an entity. Read-only.
+      operationId: chat.targetedMessage.reply_GetHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+    put:
+      tags:
+        - chats.targetedChatMessage
+      summary: Update media content for the navigation property hostedContents in chats
+      description: The unique identifier for an entity. Read-only.
+      operationId: chat.targetedMessage.reply_SetHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+    delete:
+      tags:
+        - chats.targetedChatMessage
+      summary: Delete media content for the navigation property hostedContents in chats
+      description: The unique identifier for an entity. Read-only.
+      operationId: chat.targetedMessage.reply_DeleteHostedContentsContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/hostedContents/$count':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get the number of the resource
+      operationId: chat.targetedMessage.reply.hostedContent_GetCount
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - chats.targetedChatMessage
+      summary: Invoke action setReaction
+      operationId: chat.targetedMessage.reply_setReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - chats.targetedChatMessage
+      summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
+      operationId: chat.targetedMessage.reply_softDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - chats.targetedChatMessage
+      summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
+      operationId: chat.targetedMessage.reply_undoSoftDelete
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - chats.targetedChatMessage
+      summary: Invoke action unsetReaction
+      operationId: chat.targetedMessage.reply_unsetReaction
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/$count':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get the number of the resource
+      operationId: chat.targetedMessage.reply_GetCount
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/microsoft.graph.delta()':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Invoke function delta
+      description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
+      operationId: chat.targetedMessage.reply_delta
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/microsoft.graph.replyWithQuote':
+    post:
+      tags:
+        - chats.targetedChatMessage
+      summary: Invoke action replyWithQuote
+      description: Reply with quote to a single chat message or multiple chat messages in a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-replywithquote?view=graph-rest-1.0
+      operationId: chat.targetedMessage.reply_replyGraphWPreQuote
+      parameters:
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                replyMessage:
+                  $ref: '#/components/schemas/microsoft.graph.chatMessage'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/targetedMessages/$count':
+    get:
+      tags:
+        - chats.targetedChatMessage
+      summary: Get the number of the resource
+      operationId: chat.targetedMessage_GetCount
       parameters:
         - name: chat-id
           in: path
@@ -9075,7 +10837,7 @@ paths:
       tags:
         - groups.team
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -9245,6 +11007,10 @@ paths:
       tags:
         - groups.team
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: group.team.channel_startMigration
       parameters:
         - name: group-id
@@ -15383,7 +17149,7 @@ paths:
       tags:
         - groups.team
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -15521,6 +17287,10 @@ paths:
       tags:
         - groups.team
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: group.team.primaryChannel_startMigration
       parameters:
         - name: group-id
@@ -24135,7 +25905,7 @@ paths:
       tags:
         - teams.channel
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -24305,6 +26075,10 @@ paths:
       tags:
         - teams.channel
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: team.channel_startMigration
       parameters:
         - name: team-id
@@ -30528,7 +32302,7 @@ paths:
       tags:
         - teams.channel
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -30666,6 +32440,10 @@ paths:
       tags:
         - teams.channel
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: team.primaryChannel_startMigration
       parameters:
         - name: team-id
@@ -39599,7 +41377,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -39769,6 +41547,10 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_startMigration
       parameters:
         - name: deletedTeam-id
@@ -44946,6 +46728,10 @@ paths:
       tags:
         - users.chat
       summary: Invoke action completeMigration
+      description: 'Complete the migration of external messages by removing migration mode from a chat. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. After a completeMigration request is made for an existing or new chat, you can start a migration session by calling chat: startMigration. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-completemigration?view=graph-rest-1.0
       operationId: user.chat_completeMigration
       parameters:
         - name: user-id
@@ -45226,6 +47012,10 @@ paths:
       tags:
         - users.chat
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing chat. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. You can define a minimum timestamp for content migration that enables the import of messages from the past. The specified timestamp must be earlier than the current createdDateTime of the chat. Imported content is always limited by the createdDateTime of the target thread. An optional createdDateTime property in the payload allows you to update this value, but with strict rules: This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-startmigration?view=graph-rest-1.0
       operationId: user.chat_startMigration
       parameters:
         - name: user-id
@@ -46274,6 +48064,2048 @@ paths:
         - users.chat
       summary: Get the number of the resource
       operationId: user.chat.tab_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/chats/{chat-id}/targetedMessages':
+    get:
+      tags:
+        - users.chat
+      summary: Get targetedMessages from users
+      operationId: user.chat_ListTargetedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.targetedChatMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.chat
+      summary: Create new navigation property to targetedMessages for users
+      operationId: user.chat_CreateTargetedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}':
+    get:
+      tags:
+        - users.chat
+      summary: Get targetedMessages from users
+      operationId: user.chat_GetTargetedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.chat
+      summary: Update the navigation property targetedMessages in users
+      operationId: user.chat_UpdateTargetedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.chat
+      summary: Delete navigation property targetedMessages for users
+      operationId: user.chat_DeleteTargetedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/hostedContents':
+    get:
+      tags:
+        - users.chat
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      operationId: user.chat.targetedMessage_ListHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.chat
+      summary: Create new navigation property to hostedContents for users
+      operationId: user.chat.targetedMessage_CreateHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/hostedContents/{chatMessageHostedContent-id}':
+    get:
+      tags:
+        - users.chat
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      operationId: user.chat.targetedMessage_GetHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.chat
+      summary: Update the navigation property hostedContents in users
+      operationId: user.chat.targetedMessage_UpdateHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.chat
+      summary: Delete navigation property hostedContents for users
+      operationId: user.chat.targetedMessage_DeleteHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - users.chat
+      summary: Get media content for the navigation property hostedContents from users
+      description: The unique identifier for an entity. Read-only.
+      operationId: user.chat.targetedMessage_GetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+    put:
+      tags:
+        - users.chat
+      summary: Update media content for the navigation property hostedContents in users
+      description: The unique identifier for an entity. Read-only.
+      operationId: user.chat.targetedMessage_SetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+    delete:
+      tags:
+        - users.chat
+      summary: Delete media content for the navigation property hostedContents in users
+      description: The unique identifier for an entity. Read-only.
+      operationId: user.chat.targetedMessage_DeleteHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/hostedContents/$count':
+    get:
+      tags:
+        - users.chat
+      summary: Get the number of the resource
+      operationId: user.chat.targetedMessage.hostedContent_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies':
+    get:
+      tags:
+        - users.chat
+      summary: Get replies from users
+      description: Replies for a specified message. Supports $expand for channel messages.
+      operationId: user.chat.targetedMessage_ListReply
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.chatMessageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.chat
+      summary: Create new navigation property to replies for users
+      operationId: user.chat.targetedMessage_CreateReply
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}':
+    get:
+      tags:
+        - users.chat
+      summary: Get replies from users
+      description: Replies for a specified message. Supports $expand for channel messages.
+      operationId: user.chat.targetedMessage_GetReply
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.chat
+      summary: Update the navigation property replies in users
+      operationId: user.chat.targetedMessage_UpdateReply
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.chat
+      summary: Delete navigation property replies for users
+      operationId: user.chat.targetedMessage_DeleteReply
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/hostedContents':
+    get:
+      tags:
+        - users.chat
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      operationId: user.chat.targetedMessage.reply_ListHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.chatMessageHostedContentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.chat
+      summary: Create new navigation property to hostedContents for users
+      operationId: user.chat.targetedMessage.reply_CreateHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}':
+    get:
+      tags:
+        - users.chat
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      operationId: user.chat.targetedMessage.reply_GetHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.chat
+      summary: Update the navigation property hostedContents in users
+      operationId: user.chat.targetedMessage.reply_UpdateHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.chat
+      summary: Delete navigation property hostedContents for users
+      operationId: user.chat.targetedMessage.reply_DeleteHostedContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - users.chat
+      summary: Get media content for the navigation property hostedContents from users
+      description: The unique identifier for an entity. Read-only.
+      operationId: user.chat.targetedMessage.reply_GetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+    put:
+      tags:
+        - users.chat
+      summary: Update media content for the navigation property hostedContents in users
+      description: The unique identifier for an entity. Read-only.
+      operationId: user.chat.targetedMessage.reply_SetHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+    delete:
+      tags:
+        - users.chat
+      summary: Delete media content for the navigation property hostedContents in users
+      description: The unique identifier for an entity. Read-only.
+      operationId: user.chat.targetedMessage.reply_DeleteHostedContentsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: The unique identifier of chatMessageHostedContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/hostedContents/$count':
+    get:
+      tags:
+        - users.chat
+      summary: Get the number of the resource
+      operationId: user.chat.targetedMessage.reply.hostedContent_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/microsoft.graph.setReaction':
+    post:
+      tags:
+        - users.chat
+      summary: Invoke action setReaction
+      operationId: user.chat.targetedMessage.reply_setReaction
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/microsoft.graph.softDelete':
+    post:
+      tags:
+        - users.chat
+      summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
+      operationId: user.chat.targetedMessage.reply_softDelete
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/microsoft.graph.undoSoftDelete':
+    post:
+      tags:
+        - users.chat
+      summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
+      operationId: user.chat.targetedMessage.reply_undoSoftDelete
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/{chatMessage-id}/microsoft.graph.unsetReaction':
+    post:
+      tags:
+        - users.chat
+      summary: Invoke action unsetReaction
+      operationId: user.chat.targetedMessage.reply_unsetReaction
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - name: chatMessage-id
+          in: path
+          description: The unique identifier of chatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reactionType:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/$count':
+    get:
+      tags:
+        - users.chat
+      summary: Get the number of the resource
+      operationId: user.chat.targetedMessage.reply_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.chat
+      summary: Invoke function delta
+      description: 'Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
+      operationId: user.chat.targetedMessage.reply_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/microsoft.graph.replyWithQuote':
+    post:
+      tags:
+        - users.chat
+      summary: Invoke action replyWithQuote
+      description: Reply with quote to a single chat message or multiple chat messages in a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chatmessage-replywithquote?view=graph-rest-1.0
+      operationId: user.chat.targetedMessage.reply_replyGraphWPreQuote
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: targetedChatMessage-id
+          in: path
+          description: The unique identifier of targetedChatMessage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedChatMessage
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                replyMessage:
+                  $ref: '#/components/schemas/microsoft.graph.chatMessage'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/chats/{chat-id}/targetedMessages/$count':
+    get:
+      tags:
+        - users.chat
+      summary: Get the number of the resource
+      operationId: user.chat.targetedMessage_GetCount
       parameters:
         - name: user-id
           in: path
@@ -51226,7 +55058,7 @@ paths:
       tags:
         - users.team
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -51428,6 +55260,10 @@ paths:
       tags:
         - users.team
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_startMigration
       parameters:
         - name: user-id
@@ -58654,7 +62490,7 @@ paths:
       tags:
         - users.team
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can''t import additional messages into the team. You can add members to the team after the request returns a successful response.'
+      description: 'Complete migration on existing channels or new channels. Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Consider the following points when completing migration for new and existing channels: After a completeMigration request is made for existing or new channels, you can still import more messages into the team by calling channel: startMigration. This API supportes the following channel types.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -58824,6 +62660,10 @@ paths:
       tags:
         - users.team
       summary: Invoke action startMigration
+      description: 'Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_startMigration
       parameters:
         - name: user-id
@@ -65002,6 +68842,191 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/teamwork/microsoft.graph.deleteTargetedMessage':
+    post:
+      tags:
+        - users.userTeamwork
+      summary: Invoke action deleteTargetedMessage
+      operationId: user.teamwork_deleteTargetedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                teamId:
+                  type: string
+                channelId:
+                  type: string
+                messageId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/teamwork/microsoft.graph.getAllRetainedTargetedMessages()':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Invoke function getAllRetainedTargetedMessages
+      operationId: user.teamwork_getAllRetainedTargetedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of targetedChatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/teamwork/microsoft.graph.getAllTargetedMessages()':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Invoke function getAllTargetedMessages
+      operationId: user.teamwork_getAllTargetedMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of targetedChatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/teamwork/microsoft.graph.sendActivityNotification':
     post:
       tags:
@@ -65163,6 +69188,7 @@ components:
             originalCreatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp of the original creation time for the chat. The value is null if the chat never entered migration mode.
               format: date-time
               nullable: true
             tenantId:
@@ -65216,6 +69242,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
+              x-ms-navigationProperty: true
+            targetedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -65527,6 +69558,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
           additionalProperties:
             type: object
+    microsoft.graph.targetedChatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        - title: targetedChatMessage
+          type: object
+          properties:
+            recipient:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -65685,6 +69726,7 @@ components:
             originalCreatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.
               format: date-time
               nullable: true
             summary:
@@ -65934,6 +69976,10 @@ components:
               type: boolean
               description: 'True if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
+            infoCatalogs:
+              type: array
+              items:
+                type: string
             isArchived:
               type: boolean
               description: 'When a group is associated with a team, this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
@@ -69432,6 +73478,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.targetedChatMessageCollectionResponse:
+      title: Collection of targetedChatMessage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -75170,6 +79229,29 @@ components:
         - darkPink
         - darkYellow
         - unknownFutureValue
+        - darkRed
+        - cranberry
+        - darkOrange
+        - bronze
+        - peach
+        - gold
+        - lime
+        - forest
+        - lightGreen
+        - jade
+        - lightTeal
+        - darkTeal
+        - steel
+        - skyBlue
+        - blueGray
+        - lavender
+        - lilac
+        - plum
+        - magenta
+        - darkBrown
+        - beige
+        - charcoal
+        - silver
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
@@ -77155,6 +81237,7 @@ components:
           properties:
             primaryMailboxId:
               type: string
+              description: The unique identifier for the user's primary mailbox.
               nullable: true
           additionalProperties:
             type: object
@@ -78029,6 +82112,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticationExtensionsClientOutputs'
         id:
           type: string
+          description: The credential ID created by the WebAuthn Authenticator. This value is Base64URL-encoded without padding.
           nullable: true
         response:
           $ref: '#/components/schemas/microsoft.graph.webauthnAuthenticatorAttestationResponse'
@@ -80216,9 +84300,11 @@ components:
       properties:
         attestationObject:
           type: string
+          description: A CBOR-encoded attestation object containing the authenticator data and attestation statement. This value is Base64URL-encoded without padding.
           nullable: true
         clientDataJSON:
           type: string
+          description: Contains the JSON-compatible serialization of client data passed to the authenticator by the client. This value is Base64URL-encoded without padding.
           nullable: true
       additionalProperties:
         type: object
@@ -82705,6 +86791,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.teamsTabCollectionResponse'
+    microsoft.graph.targetedChatMessageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.targetedChatMessageCollectionResponse'
     microsoft.graph.channelCollectionResponse:
       description: Retrieved collection
       content:

@@ -91,7 +91,11 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: Get browseSessions from solutions
+      summary: List browseSessions
+      description: Get a list of the browseSessionBase objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-browsesessions?view=graph-rest-1.0
       operationId: solution.backupRestore_ListBrowseSession
       parameters:
         - $ref: '#/components/parameters/top'
@@ -165,6 +169,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get browseSessions from solutions
+      description: The list of browse sessions in the tenant.
       operationId: solution.backupRestore_GetBrowseSession
       parameters:
         - name: browseSessionBase-id
@@ -3223,7 +3228,11 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: Get oneDriveForBusinessBrowseSessions from solutions
+      summary: List oneDriveForBusinessBrowseSessions
+      description: Get a list of the oneDriveForBusinessBrowseSession objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-onedriveforbusinessbrowsesessions?view=graph-rest-1.0
       operationId: solution.backupRestore_ListOneDriveGraphFPreBusinessBrowseSession
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3273,7 +3282,11 @@ paths:
     post:
       tags:
         - solutions.backupRestoreRoot
-      summary: Create new navigation property to oneDriveForBusinessBrowseSessions for solutions
+      summary: Create oneDriveForBusinessBrowseSession
+      description: Create a new oneDriveForBusinessBrowseSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessbrowsesessions?view=graph-rest-1.0
       operationId: solution.backupRestore_CreateOneDriveGraphFPreBusinessBrowseSession
       requestBody:
         description: New navigation property
@@ -3296,7 +3309,11 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: Get oneDriveForBusinessBrowseSessions from solutions
+      summary: Get oneDriveForBusinessBrowseSession
+      description: Read the properties and relationships of oneDriveForBusinessBrowseSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onedriveforbusinessbrowsesession-get?view=graph-rest-1.0
       operationId: solution.backupRestore_GetOneDriveGraphFPreBusinessBrowseSession
       parameters:
         - name: oneDriveForBusinessBrowseSession-id
@@ -4086,7 +4103,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create oneDriveForBusinessRestoreSession
-      description: Create a new oneDriveForBusinessRestoreSession object.
+      description: 'Create a new oneDriveForBusinessRestoreSession object. To create a granular restore session, granular drive restore artifacts must be present in the payload. A request can''t include both granularDriveRestoreArtifact and driveRestoreArtifact in the same create or update request. If no payload is provided when you create the restore session, the request creates an empty standard restore session by default.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessrestoresessions?view=graph-rest-1.0
@@ -4770,7 +4787,11 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: Get granularDriveRestoreArtifacts from solutions
+      summary: List granularDriveRestoreArtifacts
+      description: Get a list of the granularDriveRestoreArtifact objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-list-granulardriverestoreartifacts?view=graph-rest-1.0
       operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_ListGranularDriveRestoreArtifact
       parameters:
         - name: oneDriveForBusinessRestoreSession-id
@@ -4861,6 +4882,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get granularDriveRestoreArtifacts from solutions
+      description: A collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
       operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_GetGranularDriveRestoreArtifact
       parameters:
         - name: oneDriveForBusinessRestoreSession-id
@@ -6586,7 +6608,11 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: Get sharePointBrowseSessions from solutions
+      summary: List sharePointBrowseSessions
+      description: Get a list of the sharePointBrowseSession objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-sharepointbrowsesessions?view=graph-rest-1.0
       operationId: solution.backupRestore_ListSharePointBrowseSession
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6636,7 +6662,11 @@ paths:
     post:
       tags:
         - solutions.backupRestoreRoot
-      summary: Create new navigation property to sharePointBrowseSessions for solutions
+      summary: Create sharePointBrowseSession
+      description: Create a new sharePointBrowseSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-sharepointbrowsesessions?view=graph-rest-1.0
       operationId: solution.backupRestore_CreateSharePointBrowseSession
       requestBody:
         description: New navigation property
@@ -6659,7 +6689,11 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: Get sharePointBrowseSessions from solutions
+      summary: Get sharePointBrowseSession
+      description: Read the properties and relationships of sharePointBrowseSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointbrowsesession-get?view=graph-rest-1.0
       operationId: solution.backupRestore_GetSharePointBrowseSession
       parameters:
         - name: sharePointBrowseSession-id
@@ -7449,7 +7483,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create sharePointRestoreSession
-      description: Create a new sharePointRestoreSession object.
+      description: 'Create a new sharePointRestoreSession object. To create a granular restore session, granular site restore artifacts must be present in the payload. A request can''t include both granularSiteRestoreArtifact and siteRestoreArtifact in the same create or update request. If no payload is provided when you create the restore session, the request creates an empty standard restore session by default.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-sharepointrestoresessions?view=graph-rest-1.0
@@ -7520,7 +7554,11 @@ paths:
     patch:
       tags:
         - solutions.backupRestoreRoot
-      summary: Update the navigation property sharePointRestoreSessions in solutions
+      summary: Update sharePointRestoreSession
+      description: Update the properties of a sharePointRestoreSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointrestoresession-update?view=graph-rest-1.0
       operationId: solution.backupRestore_UpdateSharePointRestoreSession
       parameters:
         - name: sharePointRestoreSession-id
@@ -7578,7 +7616,11 @@ paths:
     get:
       tags:
         - solutions.backupRestoreRoot
-      summary: Get granularSiteRestoreArtifacts from solutions
+      summary: List granularSiteRestoreArtifacts
+      description: Get a list of the granularSiteRestoreArtifact objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sharepointrestoresession-list-granularsiterestoreartifacts?view=graph-rest-1.0
       operationId: solution.backupRestore.sharePointRestoreSession_ListGranularSiteRestoreArtifact
       parameters:
         - name: sharePointRestoreSession-id
@@ -7669,6 +7711,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get granularSiteRestoreArtifacts from solutions
+      description: A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
       operationId: solution.backupRestore.sharePointRestoreSession_GetGranularSiteRestoreArtifact
       parameters:
         - name: sharePointRestoreSession-id
@@ -8962,6 +9005,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.browseSessionBase'
+              description: The list of browse sessions in the tenant.
               x-ms-navigationProperty: true
             driveInclusionRules:
               type: array
@@ -9013,6 +9057,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessBrowseSession'
+              description: The list of OneDrive for Business browse sessions in the tenant.
               x-ms-navigationProperty: true
             oneDriveForBusinessProtectionPolicies:
               type: array
@@ -9060,6 +9105,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharePointBrowseSession'
+              description: The list of SharePoint browse sessions in the tenant.
               x-ms-navigationProperty: true
             sharePointProtectionPolicies:
               type: array
@@ -9100,10 +9146,12 @@ components:
           properties:
             backupSizeInBytes:
               type: string
+              description: The size of the backup in bytes.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the browse session was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             error:
@@ -9111,11 +9159,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time after which the browse session is deleted automatically.
               format: date-time
               nullable: true
             restorePointDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time of the restore point on which the browse session is created.
               format: date-time
               nullable: true
             restorePointId:
@@ -9149,23 +9199,28 @@ components:
       properties:
         itemKey:
           type: string
+          description: Unique identifier of the returned item.
           nullable: true
         itemsCount:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'The count of items present within the items; for example, the count of files in a folder.'
           format: int32
           nullable: true
         name:
           type: string
+          description: The name of the item.
           nullable: true
         sizeInBytes:
           type: string
+          description: The size of the item in bytes.
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.browseQueryResponseItemType'
         webUrl:
           type: string
+          description: The web URL of the item.
           nullable: true
       additionalProperties:
         type: object
@@ -9453,6 +9508,7 @@ components:
           properties:
             directoryObjectId:
               type: string
+              description: Id of the backed-up OneDrive.
               nullable: true
           additionalProperties:
             type: object
@@ -9503,6 +9559,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.granularDriveRestoreArtifact'
+              description: A collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9556,6 +9613,7 @@ components:
           properties:
             directoryObjectId:
               type: string
+              description: Id of the drive in which artifact is present.
               nullable: true
           additionalProperties:
             type: object
@@ -9805,6 +9863,7 @@ components:
           properties:
             siteId:
               type: string
+              description: Id of the backed-up SharePoint site.
               nullable: true
           additionalProperties:
             type: object
@@ -9875,6 +9934,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.granularSiteRestoreArtifact'
+              description: A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
               x-ms-navigationProperty: true
             siteRestoreArtifacts:
               type: array
@@ -9898,6 +9958,7 @@ components:
           properties:
             siteId:
               type: string
+              description: Id of the site in which artifact is present.
               nullable: true
           additionalProperties:
             type: object
@@ -10178,35 +10239,43 @@ components:
           properties:
             browseSessionId:
               type: string
+              description: The unique identifier of the browseSession
               nullable: true
             completionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date time when the artifact's restoration completes.
               format: date-time
               nullable: true
             restoredItemKey:
               type: string
+              description: The unique identifier for the restored artifact.
               nullable: true
             restoredItemPath:
               type: string
+              description: The path of the restored artifact. It's the path of the folder where all the artifacts are restored within a granular restore session.
               nullable: true
             restoredItemWebUrl:
               type: string
+              description: The web url of the restored artifact.
               nullable: true
             restorePointDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The restore point date time to which the artifact is restored.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The start time of the restoration.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.artifactRestoreStatus'
             webUrl:
               type: string
+              description: The original web url of the artifact being restored.
               nullable: true
           additionalProperties:
             type: object
