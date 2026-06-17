@@ -31,6 +31,70 @@ steps:
       versionSpec: 20.x
 
   - task: PowerShell@2
+    displayName: Enable Win32 long paths for Node.js
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        # 1. Enable long paths at the OS level
+        reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+        if ($LASTEXITCODE -ne 0) { Write-Warning "Failed to set LongPathsEnabled registry key (may require admin)" }
+
+        # 2. Patch node.exe manifest to declare longPathAware
+        $nodePath = (Get-Command node).Source
+        Write-Host "Node.js path: $nodePath"
+        Write-Host "Node.js version: $(node --version)"
+
+        $manifestContent = @"
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+          <application xmlns="urn:schemas-microsoft-com:asm.v3">
+            <windowsSettings>
+              <longPathAware xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">true</longPathAware>
+            </windowsSettings>
+          </application>
+        </assembly>
+        "@
+
+        $manifestPath = Join-Path ([System.IO.Path]::GetTempPath()) "node-longpath.manifest"
+        $manifestContent | Set-Content -Path $manifestPath -Encoding UTF8
+
+        # Find mt.exe from Windows SDK
+        $mtCandidates = Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin" -Recurse -Filter "mt.exe" -ErrorAction SilentlyContinue |
+            Where-Object { $_.DirectoryName -match 'x64' } |
+            Sort-Object { $_.DirectoryName } -Descending
+        
+        if ($mtCandidates) {
+            $mtPath = $mtCandidates[0].FullName
+            Write-Host "Using mt.exe: $mtPath"
+            & $mtPath -manifest $manifestPath -outputresource:"$nodePath;#1" -nologo
+            if ($LASTEXITCODE -eq 0) {
+                Write-Host "Successfully patched node.exe manifest for long path support"
+            } else {
+                Write-Warning "mt.exe failed with exit code $LASTEXITCODE - trying external manifest approach"
+                Copy-Item $manifestPath -Destination "$nodePath.manifest" -Force
+                Write-Host "Placed external manifest at $nodePath.manifest"
+                # Enable external manifest preference
+                reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide" /v PreferExternalManifest /t REG_DWORD /d 1 /f
+            }
+        } else {
+            Write-Warning "mt.exe not found - using external manifest approach"
+            Copy-Item $manifestPath -Destination "$nodePath.manifest" -Force
+            Write-Host "Placed external manifest at $nodePath.manifest"
+            reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide" /v PreferExternalManifest /t REG_DWORD /d 1 /f
+        }
+
+        # 3. Verify: try creating a file with a long name
+        $testDir = Join-Path ([System.IO.Path]::GetTempPath()) "longpath-test"
+        New-Item -ItemType Directory -Path $testDir -Force | Out-Null
+        $longName = "A" * 250 + ".txt"
+        $testPath = Join-Path $testDir $longName
+        Write-Host "Testing long path creation (total length: $($testPath.Length) chars)..."
+        $result = node -e "const fs = require('fs'); try { fs.writeFileSync('$($testPath -replace '\\','\\\\')','test'); console.log('SUCCESS: Long path write works'); fs.unlinkSync('$($testPath -replace '\\','\\\\')'); } catch(e) { console.error('FAILED:', e.message); process.exit(1); }"
+        Write-Host $result
+        Remove-Item $testDir -Recurse -Force -ErrorAction SilentlyContinue
+
+  - task: PowerShell@2
     displayName: Configure private npm feed
     inputs:
       targetType: filePath
