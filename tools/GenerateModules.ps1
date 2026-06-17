@@ -14,6 +14,7 @@ Param(
     [switch] $EnableSigning,
     [switch] $ExcludeExampleTemplates,
     [switch] $ExcludeNotesSection,
+    [switch] $AllowUnsupportedNode,
     [switch] $Isolated
 )
 $ErrorActionPreference = 'Stop'
@@ -48,6 +49,13 @@ if (-not (Test-Path $ModuleMappingPath)) {
 
 # Build AutoREST.PowerShell submodule.
 Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
+
+# Rush in autorest.powershell requires Node <20 per rush.json.
+# Allow bypassing this check when using Node 20+ for long path support.
+if ($AllowUnsupportedNode) {
+    $env:RUSH_ALLOW_UNSUPPORTED_NODEJS = '1'
+}
+
 npx --no-install rush install
 if ($LASTEXITCODE -ne 0) {
     throw "Command 'npx --no-install rush install' failed with exit code $LASTEXITCODE."
