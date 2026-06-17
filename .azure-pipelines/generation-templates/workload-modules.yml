@@ -19,7 +19,7 @@ steps:
       targetType: inline
       pwsh: true
       script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -EnableSigning:$${{ parameters.Sign }} -Build -ExcludeExampleTemplates -ExcludeNotesSection
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -EnableSigning:$${{ parameters.Sign }} -Build -ExcludeExampleTemplates -ExcludeNotesSection -AllowUnsupportedNode
 
   - template: ../common-templates/guardian-analyzer.yml
 
@@ -30,7 +30,7 @@ steps:
       targetType: inline
       pwsh: true
       script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Test
+        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Test -AllowUnsupportedNode
 
   - task: PowerShell@2
     displayName: Find Duplicate Commands
@@ -93,4 +93,4 @@ steps:
           targetType: inline
           pwsh: true
           script: |
-            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory) -AllowUnsupportedNode

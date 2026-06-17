@@ -28,7 +28,7 @@ steps:
   - task: NodeTool@0
     displayName: Install NodeJs
     inputs:
-      versionSpec: 18.x
+      versionSpec: 20.x
 
   - task: PowerShell@2
     displayName: Configure private npm feed
@@ -96,6 +96,7 @@ steps:
       pwsh: true
       workingDirectory: "autorest.powershell"
       script: |
+        $env:RUSH_ALLOW_UNSUPPORTED_NODEJS = '1'
         npx --no-install rush install
         if ($LASTEXITCODE -ne 0) { throw "rush install failed with exit code $LASTEXITCODE" }
         npx --no-install rush link
