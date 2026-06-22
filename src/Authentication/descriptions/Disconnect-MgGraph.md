@@ -1,1 +1,1 @@
-Use Disconnect-MgGraph to sign out.
+Use Disconnect-MgGraph to sign out. This clears the persisted MSAL token cache from disk when using CurrentUser context scope, as well as removing the in-memory token cache and authentication record.

@@ -430,6 +430,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             var authContext = GraphSession.Instance.AuthContext;
             GraphSession.Instance.InMemoryTokenCache?.ClearCache();
+            if (authContext?.ContextScope == ContextScope.CurrentUser)
+            {
+                try
+                {
+                    await TokenCacheUtilities.ClearPersistedTokenCacheAsync(Constants.CacheName).ConfigureAwait(false);
+                }
+                catch (Exception)
+                {
+                    // Non-fatal: persisted cache clearing may fail on some platforms.
+                    // The auth record and in-memory state are still cleared below.
+                }
+            }
             GraphSession.Instance.AuthContext = null;
             GraphSession.Instance.GraphHttpClient = null;
             await DeleteAuthRecordAsync().ConfigureAwait(false);
