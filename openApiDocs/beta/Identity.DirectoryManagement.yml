@@ -556,7 +556,7 @@ paths:
       tags:
         - admin.peopleAdminSettings
       summary: List profilePropertySettings
-      description: Get a collection of profilePropertySetting objects that define the configuration for user profile properties in an organization. The id property identifies each resource object uniquely.
+      description: Get a collection of profilePropertySetting objects that define the configuration for user profile property settings in an organization. The id property identifies each resource object uniquely.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilepropertysettings?view=graph-rest-beta
@@ -720,7 +720,7 @@ paths:
       tags:
         - admin.peopleAdminSettings
       summary: Delete profilePropertySetting
-      description: Delete a profilePropertySetting object.
+      description: 'Delete a profilePropertySetting object. You shouldn''t delete a profilePropertySetting that includes a source precedence configuration. Instead, patch it to a default state that contains only the Microsoft Entra ID source reference. This delete operation is supported but fails unless the prioritizedSourceUrls property contains only the Entra ID source reference.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/profilepropertysetting-delete?view=graph-rest-beta
@@ -35326,7 +35326,7 @@ components:
           properties:
             displayName:
               type: string
-              description: Name of the property-level setting.
+              description: Name of the property associated with this setting.
               nullable: true
             name:
               type: string
@@ -35337,7 +35337,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: A collection of prioritized profile source URLs ordered by data precedence within an organization.
+              description: 'A collection of prioritized profile source URLs ordered by data precedence within an organization. For details, see Manage profile source precedence in Microsoft 365.'
           additionalProperties:
             type: object
     microsoft.graph.profileSource:
@@ -48677,7 +48677,7 @@ components:
               nullable: true
             timeZone:
               type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
+              description: 'The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.'
               nullable: true
             workforceIntegrationIds:
               type: array

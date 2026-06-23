@@ -427,6 +427,7 @@ paths:
       tags:
         - security.alert
       summary: Invoke action moveAlerts
+      description: Move one or more alert resources to a new or existing incident.
       operationId: security.alerts_v2_moveAlert
       requestBody:
         description: Action parameters
@@ -11921,6 +11922,7 @@ paths:
       tags:
         - security.incident
       summary: Invoke action mergeIncidents
+      description: Merge multiple incident resources into a single incident.
       operationId: security.incident_mergeIncident
       requestBody:
         description: Action parameters
@@ -23657,6 +23659,7 @@ components:
       properties:
         targetIncidentId:
           type: string
+          description: The ID of the target incident after the operation completes.
       additionalProperties:
         type: object
     microsoft.graph.attackSimulationRoot:
@@ -33579,7 +33582,7 @@ components:
               nullable: true
             timeZone:
               type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
+              description: 'The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.'
               nullable: true
             workforceIntegrationIds:
               type: array

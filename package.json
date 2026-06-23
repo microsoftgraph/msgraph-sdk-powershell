@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@autorest/core": "^3.10.4",
+    "@microsoft/rush": "^5.177.1",
+    "autorest": "^3.7.2"
+  }
+}

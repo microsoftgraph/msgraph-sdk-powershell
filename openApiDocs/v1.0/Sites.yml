@@ -124561,7 +124561,7 @@ components:
               nullable: true
             timeZone:
               type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
+              description: 'The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.'
               nullable: true
             workforceIntegrationIds:
               type: array

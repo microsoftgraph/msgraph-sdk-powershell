@@ -302604,22 +302604,6 @@
       "Module": "Security"
     },
     "MethodInfo": {
-      "OperationId": "security.auditLog_UpdateQuery",
-      "Method": "Patch",
-      "Parameters": [
-        {
-          "Name": "auditLogQuery-id",
-          "Location": "Path"
-        }
-      ]
-    }
-  },
-  {
-    "PathInfo": {
-      "Path": "/security/auditLog/queries/{auditLogQuery-id}",
-      "Module": "Security"
-    },
-    "MethodInfo": {
       "OperationId": "security.auditLog_DeleteQuery",
       "Method": "Delete",
       "Parameters": [
@@ -302684,22 +302668,6 @@
   },
   {
     "PathInfo": {
-      "Path": "/security/auditLog/queries/{auditLogQuery-id}/records",
-      "Module": "Security"
-    },
-    "MethodInfo": {
-      "OperationId": "security.auditLog.query_CreateRecord",
-      "Method": "Post",
-      "Parameters": [
-        {
-          "Name": "auditLogQuery-id",
-          "Location": "Path"
-        }
-      ]
-    }
-  },
-  {
-    "PathInfo": {
       "Path": "/security/auditLog/queries/{auditLogQuery-id}/records/{auditLogRecord-id}",
       "Module": "Security"
     },
@@ -302722,50 +302690,6 @@
         {
           "Name": "$expand",
           "Location": "Query"
-        }
-      ]
-    }
-  },
-  {
-    "PathInfo": {
-      "Path": "/security/auditLog/queries/{auditLogQuery-id}/records/{auditLogRecord-id}",
-      "Module": "Security"
-    },
-    "MethodInfo": {
-      "OperationId": "security.auditLog.query_UpdateRecord",
-      "Method": "Patch",
-      "Parameters": [
-        {
-          "Name": "auditLogQuery-id",
-          "Location": "Path"
-        },
-        {
-          "Name": "auditLogRecord-id",
-          "Location": "Path"
-        }
-      ]
-    }
-  },
-  {
-    "PathInfo": {
-      "Path": "/security/auditLog/queries/{auditLogQuery-id}/records/{auditLogRecord-id}",
-      "Module": "Security"
-    },
-    "MethodInfo": {
-      "OperationId": "security.auditLog.query_DeleteRecord",
-      "Method": "Delete",
-      "Parameters": [
-        {
-          "Name": "auditLogQuery-id",
-          "Location": "Path"
-        },
-        {
-          "Name": "auditLogRecord-id",
-          "Location": "Path"
-        },
-        {
-          "Name": "If-Match",
-          "Location": "Header"
         }
       ]
     }
@@ -409490,34 +409414,6 @@
         {
           "Name": "$orderby",
           "Location": "Query"
-        },
-        {
-          "Name": "$select",
-          "Location": "Query"
-        },
-        {
-          "Name": "$expand",
-          "Location": "Query"
-        }
-      ]
-    }
-  },
-  {
-    "PathInfo": {
-      "Path": "/users/{user-id}/sponsors/{directoryObject-id}",
-      "Module": "Users"
-    },
-    "MethodInfo": {
-      "OperationId": "user_GetSponsor",
-      "Method": "Get",
-      "Parameters": [
-        {
-          "Name": "user-id",
-          "Location": "Path"
-        },
-        {
-          "Name": "directoryObject-id",
-          "Location": "Path"
         },
         {
           "Name": "$select",
