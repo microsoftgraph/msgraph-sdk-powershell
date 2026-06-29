@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example: Create a federated identity credential for an application
 
 ```powershell
 
@@ -16,5 +16,5 @@ $params = @{
 New-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgApplicationFederatedIdentityCredential Cmdlet.
+This example will### example: create a federated identity credential for an application
 

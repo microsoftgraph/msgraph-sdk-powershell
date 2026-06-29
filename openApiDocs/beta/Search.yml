@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Search
   version: v1.0-beta
@@ -147,7 +147,7 @@ paths:
       tags:
         - external.authorizationSystem
       summary: Get authorizationSystems from external
-      description: 'Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.'
+      description: 'Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.'
       operationId: external_GetAuthorizationSystem
       parameters:
         - name: authorizationSystem-id
@@ -1681,7 +1681,7 @@ paths:
   '/external/connections/{externalConnection-id}/items/{externalItem-id}/microsoft.graph.externalConnectors.addActivities':
     post:
       tags:
-        - external.Actions
+        - external.externalConnection
       summary: Invoke action addActivities
       operationId: external.connection.item_addActivity
       parameters:
@@ -2157,11 +2157,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update schema
-      description: Update the properties of a schema for an externalConnection.
+      summary: Create or update schema
+      description: Create a new or update an existing schema for a Microsoft Search connection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2298,11 +2298,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create oneRosterApiDataConnector
-      description: Create a new oneRosterApiDataConnector object.
+      summary: Create azureDataLakeConnector
+      description: Create a new azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-onerosterapidataconnector-post?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-beta
       operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
@@ -2438,7 +2438,7 @@ paths:
   '/external/industryData/dataConnectors/{industryDataConnector-id}/microsoft.graph.industryData.validate':
     post:
       tags:
-        - external.Actions
+        - external.industryDataRoot
       summary: Invoke action validate
       description: Perform validations applicable for the specific instance of the data connector.
       externalDocs:
@@ -2578,11 +2578,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFileFlow
-      description: Create a new inboundFileFlow object.
+      summary: Create inboundApiFlow
+      description: Create a new inboundApiFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-beta
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-post?view=graph-rest-beta
       operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
@@ -3421,7 +3421,7 @@ paths:
   '/external/industryData/outboundProvisioningFlowSets/{outboundProvisioningFlowSet-id}/provisioningFlows/{provisioningFlow-id}/microsoft.graph.industryData.reset':
     post:
       tags:
-        - external.Actions
+        - external.industryDataRoot
       summary: Invoke action reset
       description: 'Reset a provisioningFlow. This action reprovisions all current data as if it were the initial run, and clears out the existing errors associated with the flow.'
       externalDocs:
@@ -4182,7 +4182,7 @@ paths:
   '/external/industryData/runs/{industryDataRun-id}/microsoft.graph.industryData.getStatistics()':
     get:
       tags:
-        - external.Functions
+        - external.industryDataRoot
       summary: Invoke function getStatistics
       description: Get statistics for an industryDataRun.
       externalDocs:
@@ -4225,7 +4225,7 @@ paths:
   /external/industryData/runs/microsoft.graph.industryData.getStatistics():
     get:
       tags:
-        - external.Functions
+        - external.industryDataRoot
       summary: Invoke function getStatistics
       operationId: external.industryData.run_getStatistics
       responses:
@@ -4238,6 +4238,19 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /external/industryData/runs/microsoft.graph.industryData.start:
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Invoke action start
+      description: 'Start a new industryDataRun. Industry data automates a run every 12 hours; however, users can use the start action to perform an on-demand run. The industry data service throttles the start of runs, allowing up to five successful runs every 12 hours. An on-demand run causes the next system-scheduled run to be skipped if it is set to run within the next 10 hours.'
+      operationId: external.industryData.run_start
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /external/industryData/sourceSystems:
     get:
       tags:
@@ -5136,7 +5149,7 @@ paths:
   /search/microsoft.graph.query:
     post:
       tags:
-        - search.Actions
+        - search.searchEntity.Actions
       summary: Invoke action query
       description: Run a specified search query. Search results are provided in the response.
       externalDocs:
@@ -5399,7 +5412,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.authorizationSystem'
-          description: 'Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.'
+          description: 'Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.'
           x-ms-navigationProperty: true
         connections:
           type: array
@@ -5455,6 +5468,8 @@ components:
               type: string
               description: The Teams App ID. Optional.
               nullable: true
+            contentCategory:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.contentCategory'
             description:
               type: string
               description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
@@ -5462,7 +5477,7 @@ components:
             enabledContentExperiences:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.contentExperienceType'
             ingestedItemsCount:
-              type: integer
+              type: number
               description: 'The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.'
               format: int64
               nullable: true
@@ -5596,7 +5611,7 @@ components:
           type: object
           properties:
             itemsRemaining:
-              type: integer
+              type: number
               description: 'The minimum of two values, one representing the items remaining in the connection and the other remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min ({max capacity in the connection} – {number of items in the connection}, {tenant quota} – {number of items indexed in all connections}). If the connection is not monetized, such as in a preview connector or preview content experience, then this property is simply the number of remaining items in the connection.'
               format: int64
               nullable: true
@@ -5790,6 +5805,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
+          description: The status of a long-running operation.
     microsoft.graph.industryData.outboundProvisioningFlowSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5881,7 +5897,7 @@ components:
             sortIndex:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.
               format: int32
             source:
@@ -6078,7 +6094,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
-              description: 'List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
+              description: 'List of devices and operating systems that are able to view this bookmark. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             powerAppIds:
               type: array
               items:
@@ -6091,7 +6107,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
+              description: 'Variations of a bookmark for different countries/regions or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.searchRequest:
@@ -6119,7 +6135,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.'
+          description: 'Contains the connection to be targeted. Respects the following format: /external/connections/connectionid where connectionid is the ConnectionId defined in the connectors administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.'
         enableTopResults:
           type: boolean
           description: 'This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.'
@@ -6128,17 +6144,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
-          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.'
+          description: 'One or more types of resources expected in the response. The possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.'
         fields:
           type: array
           items:
             type: string
             nullable: true
-          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.'
+          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft 365 Copilot connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax : label_title.Optional.'
         from:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
           format: int32
         query:
@@ -6156,7 +6172,7 @@ components:
         size:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the page to be retrieved. The maximum value is 500. Optional.
           format: int32
         sortProperties:
@@ -6172,7 +6188,7 @@ components:
           description: This is now replaced by the fields property.
         trimDuplicates:
           type: boolean
-          description: Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
+          description: Indicates whether to trim away the duplicate SharePoint files from search results. The default value is false. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -6237,14 +6253,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
-              description: 'List of devices and operating systems that are able to view this QnA. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
+              description: 'List of devices and operating systems that are able to view this QnA. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             state:
               $ref: '#/components/schemas/microsoft.graph.search.answerState'
             targetedVariations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
+              description: 'Variations of a QnA for different countries/regions or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -6291,9 +6307,28 @@ components:
           items:
             type: string
             nullable: true
-          description: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+          description: A collection of application IDs for registered Microsoft Entra apps allowed to manage the externalConnection and index content in the externalConnection.
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.contentCategory:
+      title: contentCategory
+      enum:
+        - uncategorized
+        - knowledgeBase
+        - wikis
+        - fileRepository
+        - qna
+        - crm
+        - dashboard
+        - people
+        - media
+        - email
+        - messaging
+        - meetingTranscripts
+        - taskManagement
+        - learningManagement
+        - unknownFutureValue
+      type: string
     microsoft.graph.externalConnectors.contentExperienceType:
       title: contentExperienceType
       enum:
@@ -6415,10 +6450,13 @@ components:
           items:
             type: string
             nullable: true
-          description: 'A set of aliases or friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
+          description: 'A set of aliases or friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following special characters: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
+        description:
+          type: string
+          nullable: true
         isExactMatchRequired:
           type: boolean
-          description: Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.
+          description: Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for nonsearchable properties of type string or stringCollection. Optional.
           nullable: true
         isQueryable:
           type: boolean
@@ -6434,16 +6472,16 @@ components:
           nullable: true
         isSearchable:
           type: boolean
-          description: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren't added to the search index. Optional.
+          description: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Nonsearchable properties aren't added to the search index. Optional.
           nullable: true
         labels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.. The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions. Use the Prefer: include-unknown-enum-members request header to retrieve additional values defined in this evolvable enum.For people connectors you can include : personEmails, personAddresses, personAnniversaries, personName, personNote, personPhones, personCurrentPosition, personWebAccounts, personWebSite, personSkills, personProjects, personAccount, personAwards, personCertifications, personAssistants, personColleagues, personManager, personAlternateContacts, personEmergencyContacts.'
         name:
           type: string
-          description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
+          description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following special characters: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
         rankingHint:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.rankingHint'
         type:
@@ -6459,7 +6497,7 @@ components:
         priorityOrder:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The priority order to apply when a user has multiple RefRole codes assigned.
           format: int32
         sourceIdentifier:
@@ -6556,7 +6594,7 @@ components:
         errors:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of errors encountered by activities during this run.
           format: int32
           nullable: true
@@ -6564,7 +6602,7 @@ components:
         groups:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of active inbound groups processed during the run.
           format: int32
           nullable: true
@@ -6578,7 +6616,7 @@ components:
         memberships:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of active inbound memberships processed during the run.
           format: int32
           nullable: true
@@ -6586,7 +6624,7 @@ components:
         organizations:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of active inbound organizations processed during the run.
           format: int32
           nullable: true
@@ -6594,7 +6632,7 @@ components:
         people:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of active inbound people processed during the run.
           format: int32
           nullable: true
@@ -6608,7 +6646,7 @@ components:
         warnings:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The aggregate count of warnings generated by activities during this run.
           format: int32
           nullable: true
@@ -6732,7 +6770,7 @@ components:
             description: Indicates Mobile Application Management (MAM) for iOS devices
             name: iOSMobileApplicationManagement
           - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
           - value: windowsMobileApplicationManagement
             description: Indicates Mobile Application Management (MAM) for Windows devices.
@@ -6773,7 +6811,7 @@ components:
         size:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of searchBucket resources to be returned. This isn''t required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.'
           format: int32
           nullable: true
@@ -6791,7 +6829,7 @@ components:
         limit:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
           format: int16
       additionalProperties:
@@ -6858,6 +6896,10 @@ components:
       properties:
         includeContent:
           $ref: '#/components/schemas/microsoft.graph.searchContent'
+        includeHiddenContent:
+          type: boolean
+          description: 'Indicates whether the search results include content that is normally hidden, such as archived content and SharePoint Embedded (RaaS). The default value is false, which prevents hidden content from being returned. You can also optionally include KQL to scope your query for hidden content to specific content types. For more information, see Search hidden content.'
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.sortProperty:
@@ -6894,7 +6936,7 @@ components:
         total:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.'
           format: int32
           nullable: true
@@ -7213,7 +7255,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
           format: int32
           nullable: true
@@ -7231,7 +7273,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
           format: int32
         rules:
@@ -7329,6 +7371,47 @@ components:
         - containerName
         - containerUrl
         - iconUrl
+        - assignedToPeople
+        - closedBy
+        - closedDate
+        - priority
+        - sprintName
+        - tags
+        - severity
+        - state
+        - dueDate
+        - itemParentId
+        - itemPath
+        - itemType
+        - numberOfReactions
+        - parentUrl
+        - priorityNormalized
+        - reportedBy
+        - secondaryId
+        - personEmails
+        - personAddresses
+        - personAnniversaries
+        - personName
+        - personNote
+        - personPhones
+        - personCurrentPosition
+        - personWebAccounts
+        - personWebSite
+        - personSkills
+        - personProjects
+        - personAccount
+        - personAwards
+        - personCertifications
+        - personAssistants
+        - personColleagues
+        - personManager
+        - personAlternateContacts
+        - personEmergencyContacts
+        - personEducationalActivities
+        - personInterests
+        - personLanguages
+        - personPublications
+        - personPatents
       type: string
     microsoft.graph.externalConnectors.rankingHint:
       title: rankingHint
@@ -7351,6 +7434,8 @@ components:
         - doubleCollection
         - dateTimeCollection
         - unknownFutureValue
+        - principal
+        - principalCollection
       type: string
     microsoft.graph.industryData.userMatchTargetReferenceValue:
       allOf:
@@ -7385,7 +7470,7 @@ components:
         count:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of people in this role.
           format: int32
           nullable: true
@@ -7419,7 +7504,7 @@ components:
         minimumCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
           format: int32
           nullable: true
@@ -7479,7 +7564,7 @@ components:
         rank:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The rank or the order of the result.
           format: int32
           nullable: true
@@ -7497,7 +7582,7 @@ components:
         _score:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           format: int32
           nullable: true
         _summary:
@@ -7567,6 +7652,7 @@ components:
       type: object
       additionalProperties:
         type: object
+      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.externalConnectors.propertyRule:
       title: propertyRule
       type: object
@@ -7637,7 +7723,7 @@ components:
         count:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
           format: int32
           nullable: true
@@ -7654,14 +7740,14 @@ components:
         length:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the length of a changed segment.
           format: int32
           nullable: true
         offset:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the offset of a changed segment.
           format: int32
           nullable: true

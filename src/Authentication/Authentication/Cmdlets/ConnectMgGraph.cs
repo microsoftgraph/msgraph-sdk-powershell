@@ -275,6 +275,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             stringBuilder.AppendLine($"SDK Docs: {Constants.SdkDocsLink}");
             stringBuilder.AppendLine($"API Docs: {Constants.ApiDocsLink}{System.Environment.NewLine}");
             stringBuilder.AppendLine($"NOTE: You can use the -NoWelcome parameter to suppress this message.");
+            stringBuilder.AppendLine($"NOTE: Sign in by Web Account Manager (WAM) is enabled by default on Windows systems and cannot be disabled when using the default ClientId.");
+            stringBuilder.AppendLine($"To disable WAM run Set-MgGraphOption -DisableLoginByWAM $true and then use a custom ClientId.");
             return stringBuilder.ToString();
         }
 

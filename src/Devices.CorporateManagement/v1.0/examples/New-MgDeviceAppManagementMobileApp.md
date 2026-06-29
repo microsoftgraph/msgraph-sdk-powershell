@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.Devices.CorporateManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.androidStoreApp"
+	"@odata.type" = "#microsoft.graph.macOSLobApp"
 	displayName = "Display Name value"
 	description = "Description value"
 	publisher = "Publisher value"
@@ -21,27 +21,41 @@ $params = @{
 	developer = "Developer value"
 	notes = "Notes value"
 	publishingState = "processing"
-	packageId = "Package Id value"
-	appStoreUrl = "https://example.com/appStoreUrl/"
+	committedContentVersion = "Committed Content Version value"
+	fileName = "File Name value"
+	size = 
+	bundleId = "Bundle Id value"
 	minimumSupportedOperatingSystem = @{
-		"@odata.type" = "microsoft.graph.androidMinimumOperatingSystem"
-		v4_0 = $true
-		v4_0_3 = $true
-		v4_1 = $true
-		v4_2 = $true
-		v4_3 = $true
-		v4_4 = $true
-		v5_0 = $true
-		v5_1 = $true
-		v6_0 = $true
-		v7_0 = $true
-		v7_1 = $true
-		v8_0 = $true
-		v8_1 = $true
-		v9_0 = $true
-		v10_0 = $true
+		"@odata.type" = "microsoft.graph.macOSMinimumOperatingSystem"
+		v10_7 = $true
+		v10_8 = $true
+		v10_9 = $true
+		v10_10 = $true
+		v10_11 = $true
+		v10_12 = $true
+		v10_13 = $true
+		v10_14 = $true
+		v10_15 = $true
 		v11_0 = $true
+		v12_0 = $true
+		v13_0 = $true
 	}
+	buildNumber = "Build Number value"
+	versionNumber = "Version Number value"
+	childApps = @(
+		@{
+			"@odata.type" = "microsoft.graph.macOSLobChildApp"
+			bundleId = "Bundle Id value"
+			buildNumber = "Build Number value"
+			versionNumber = "Version Number value"
+		}
+	)
+	md5HashChunkSize = 
+	md5Hash = @(
+	"Md5Hash value"
+)
+ignoreVersionDetection = $true
+installAsManaged = $true
 }
 
 New-MgDeviceAppManagementMobileApp -BodyParameter $params

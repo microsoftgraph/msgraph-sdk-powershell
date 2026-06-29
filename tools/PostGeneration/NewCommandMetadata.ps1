@@ -38,7 +38,7 @@ $OpenApiTagPattern = '\[OpenAPI\].s*(.*)=>(.*):\"(.*)\"'
 $ExternalDocsPattern = 'https://learn.microsoft.com/graph/api/(.*?(graph-rest-1.0|graph-rest-beta))'
 $AliasPattern = '\[global::System.Management.Automation.Alias(.*?)\]'
 $ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
-$PermissionsUrl = "https://graphexplorerapi.azurewebsites.net/permissions"
+$PermissionsUrl = "https://devxapi-func-prod-eastus.azurewebsites.net/permissions"
 
 Write-Debug "Crawling cmdlets in $CmdletPathPattern."
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
@@ -138,7 +138,6 @@ $ApiVersion | ForEach-Object {
                                 IsLeastPrivilege = $_.isLeastPrivilege
                             }
                         }
-                        $Permissions = $Permissions | Sort-Object -Property Name -Unique
                         $Permissions = $Permissions | Sort-Object -Property PermissionType
                         $Permissions = $Permissions | Sort-Object -Property IsLeastPrivilege
                         [array]::Reverse($Permissions)
@@ -162,7 +161,7 @@ if ($CommandPathMapping.Count -eq 0) {
 }
 else {
     Write-Debug "Writing metadata to $MgCommandMetadataFile."
-    $CommandPathMapping.GetEnumerator() | Sort-Object Name | Select-Object -ExpandProperty Value | ConvertTo-Json -Depth 4 | Out-File -FilePath $MgCommandMetadataFile
+    $CommandPathMapping.GetEnumerator() | Sort-Object Name | Select-Object -ExpandProperty Value | ConvertTo-Json -Depth 4 -Compress | Out-File -FilePath $MgCommandMetadataFile
 }
 $stopwatch.Stop()
 Write-Debug "Generated command metadata file in '$($Stopwatch.Elapsed.TotalSeconds)`s."

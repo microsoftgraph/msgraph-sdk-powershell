@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: ChangeNotifications
   version: v1.0-beta
@@ -194,7 +194,7 @@ paths:
   '/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
     post:
       tags:
-        - subscriptions.Actions
+        - subscriptions.subscription.Actions
       summary: Invoke action reauthorize
       description: Reauthorize a subscription when you receive a reauthorizationRequired challenge.
       externalDocs:
@@ -216,6 +216,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /subscriptions/microsoft.graph.getVapidPublicKey():
+    get:
+      tags:
+        - subscriptions.subscription.Functions
+      summary: Invoke function getVapidPublicKey
+      description: Get the public key information required to validate push notifications according to RFC 8292 specifications.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/subscription-getvapidpublickey?view=graph-rest-beta
+      operationId: subscription_getVapidPublicKey
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
 components:
   schemas:
     microsoft.graph.subscription:
@@ -250,7 +276,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. Any value under 45 minutes after the time of the request is automatically set to 45 minutes after the request time. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean

@@ -9,7 +9,7 @@ Remove-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participan
 ```
 This example shows how to use the Remove-MgCommunicationCallParticipant Cmdlet.
 
-### Example 2: Code snippet
+### Example 3: Code snippet
 
 ```powershell
 

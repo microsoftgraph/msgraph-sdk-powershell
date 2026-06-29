@@ -9,7 +9,7 @@ parameters:
     type: string
     default: ""
   - name: BUILDAGENT
-    default: 1es-windows-ps-compute
+    default: 1es-windows-ps-compute-m
     displayName: Build Agent
 
 steps:

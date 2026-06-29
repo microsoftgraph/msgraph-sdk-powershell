@@ -9,7 +9,7 @@ Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $partic
 ```
 This example shows how to use the Remove-MgBetaCommunicationCallParticipant Cmdlet.
 
-### Example 2: Code snippet
+### Example 3: Code snippet
 
 ```powershell
 

@@ -29,7 +29,7 @@ directive:
 # Remove cmdlets
   - where:
       verb: Get
-      subject: ReportTenantSecureScore
+      subject: ^ReportTenantSecureScore$|^DeviceManagementReportCertificateReport$
     remove: true
   - where:
       verb: Invoke

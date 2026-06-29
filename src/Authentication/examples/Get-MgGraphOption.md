@@ -5,4 +5,4 @@ EnableWAMForMSGraph
 --------------------
                 True
 ```
-Confirms if WAM support has been enabled.
+Confirms if WAM support has been enabled. Web Account Manager is enabled by default on Windows systems and cannot be disabled.

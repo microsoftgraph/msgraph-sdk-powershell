@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Create a connected organization
 
 ```powershell
 
@@ -20,5 +20,5 @@ $params = @{
 New-MgEntitlementManagementConnectedOrganization -BodyParameter $params
 
 ```
-This example shows how to use the New-MgEntitlementManagementConnectedOrganization Cmdlet.
+This example will create a connected organization
 

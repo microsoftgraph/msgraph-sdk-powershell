@@ -368,3 +368,9 @@ examplesreport/
 
 # Code sign summary
 CodeSignSummary-*.md
+
+# PowerShell module manifests (generated at build time)
+*.psd1
+!src/Authentication/Authentication/Microsoft.Graph.Authentication.psd1
+!src/Graph/beta/Microsoft.Graph.Beta.psd1
+!src/Graph/v1.0/Microsoft.Graph.psd1

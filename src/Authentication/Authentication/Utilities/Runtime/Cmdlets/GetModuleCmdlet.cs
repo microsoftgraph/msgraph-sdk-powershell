@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
+using System.Management.Automation.Language;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Utilities.Runtime.Cmdlets
 {
@@ -70,7 +71,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities.Runtime.Cmdlets
 
         private IEnumerable<CommandInfo> GetModuleCmdlets(string modulePath)
         {
-            var getCmdletsCommand = $"(Get-Command -Module (Import-Module '{modulePath}' -PassThru))";
+            var escapedModulePath = CodeGeneration.EscapeSingleQuotedStringContent(modulePath);
+            var getCmdletsCommand = $"(Get-Command -Module (Import-Module '{escapedModulePath}' -PassThru))";
             return PSCmdletExtensions.RunScript<CommandInfo>(getCmdletsCommand);
         }
     }

@@ -268,12 +268,14 @@ function Update-ExampleFile {
     $SearchTextForNewImports = "{{ Add description here }}"
     $ReplaceEverything = $False
     if ($HeaderList.Count -eq 0) {
+        Write-Host "The header list is empty. Please check the external docs url."
         for ($d = 0; $d -lt $ExampleList.Count; $d++) {
             $sum = $d + 1
             $HL = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
         }
     }
     if ($HeaderList.Count -ne $ExampleList.Count) {
+        Write-Host "The number of examples and the number of headers are not equal. Please check the external docs url."
         $HeaderList.Clear()
         for ($d = 0; $d -lt $ExampleList.Count; $d++) {
             $sum = $d + 1
@@ -286,6 +288,14 @@ function Update-ExampleFile {
     }
     $HeadCount = $HeaderList.Count
     $ExampleCount = $ExampleList.Count
+    #On the example list check the one that contains the command pattern and if doesn't match remove it from the list. Also remove the header from the header list
+    for ($x = 0; $x -lt $HeaderList.Count; $x++) {
+        if ($ExampleList[$x] -notmatch "\b$CommandPattern\b") {
+            $ExampleList.RemoveAt($x)
+            $HeaderList.RemoveAt($x)
+        }
+    }
+
     $WrongExamplesCount = 0;
     $SkippedExample = -1
     $TotalText = ""
@@ -298,9 +308,12 @@ function Update-ExampleFile {
         Clear-Content $ExampleFile -Force
         for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
             $CodeValue = $ExampleList[$d].Trim()
+           
             if ($CodeValue -match "\b$CommandPattern\b") {
+                Write-Host $CodeValue
                 $TitleValue = $HeaderList[$d].Trim()
                 $TitleDesc = $TitleValue
+
                 if (-not($TitleValue.Contains("Code snippet"))) {
                     if ($TitleDesc -match $DescriptionRegex) {
                         $TitleDesc = $TitleDesc -replace $DescriptionRegex, ''
@@ -313,8 +326,17 @@ function Update-ExampleFile {
                     elseif ($FirstDescriptionString.EndsWith("ing")) {
                         $DescriptionPrefix = "This example shows"
                     }
-                   
-                    $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                    elseif ($FirstDescriptionString.EndsWith("Example")) {
+                        $DescriptionPrefix = "This example shows how to use"
+                    }
+                    
+                    $Description = ""
+                    if ($FirstDescriptionString -eq "Example") {
+                        $Description = "This example shows how to use the $CommandPattern Cmdlet."
+                    }
+                    else {
+                        $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                    }
                 }
                 $TotalText = "$TitleValue`r`n`n$CodeValue`r`n$Description`r`n"
                 Add-Content -Path $ExampleFile -Value $TotalText
@@ -340,6 +362,7 @@ function Update-ExampleFile {
                 $ContainsPatternToSearch = $True
             }
         }
+        Write-Host $ContainsPatternToSearch
         if ($ContainsPatternToSearch) {
             Clear-Content $ExampleFile -Force    
             for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
@@ -360,8 +383,17 @@ function Update-ExampleFile {
                         elseif ($FirstDescriptionString.EndsWith("ing")) {
                             $DescriptionPrefix = "This example shows"
                         }
-                       
-                        $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                        elseif ($FirstDescriptionString.EndsWith("Example")) {
+                            $DescriptionPrefix = "This example shows how to use"
+                        }
+                        
+                        $Description = ""
+                        if ($FirstDescriptionString -eq "Example") {
+                            $Description = "This example shows how to use the $CommandPattern Cmdlet."
+                        }
+                        else {
+                            $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                        }
                     }      
                     $TotalText = "$TitleValue`r`n`n$CodeValue`r`n$Description`r`n"
                     Add-Content -Path $ExampleFile -Value $TotalText
@@ -556,6 +588,7 @@ Import-Module -ErrorAction Stop PowerHTML
 Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #Comment the above and uncomment the below start command, if you manually want to manually pass ExternalDocs url.
+
 #This is for scenarios where the correponding external docs url to the uri path gotten from Find-MgGraph command, is missing on the openapi.yml file for a particular module.
 #Ensure that you pass all correct parameters as per the already existing example
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0&tabs=http" -GraphCommand "New-MgServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "v1.0"
@@ -573,4 +606,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/subscription-reauthorize?view=graph-rest-1.0&tabs=powershell" -GraphCommand "Invoke-MgReauthorizeSubscription" -GraphModule "ChangeNotifications" -Profile "v1.0"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-beta" -GraphCommand "New-MgBetaRoleManagementCloudPcRoleDefinition" -GraphModule "DeviceManagement.Enrollment" -Profile "beta"

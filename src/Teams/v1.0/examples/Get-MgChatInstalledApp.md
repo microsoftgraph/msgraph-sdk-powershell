@@ -7,7 +7,7 @@ Import-Module Microsoft.Graph.Teams
 Get-MgChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
 
 ```
-This example will### example 1 : get the app installed in the specified chat
+This example will get the app installed in the specified chat
 
 ### Example 2: Get the set of resource-specific permissions consented for the app installed in the specified chat
 

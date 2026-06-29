@@ -5,7 +5,10 @@
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 
 $params = @{
-	displayName = "Greater Seattle District Technical Schools"
+	displayName = "Executive Division"
+	membershipType = "Dynamic"
+	membershipRule = "(user.country -eq "United States")"
+	membershipRuleProcessingState = "On"
 }
 
 Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId -BodyParameter $params

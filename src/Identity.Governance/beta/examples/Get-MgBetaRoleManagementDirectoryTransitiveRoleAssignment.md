@@ -8,7 +8,7 @@ Get-MgBetaRoleManagementDirectoryTransitiveRoleAssignment -CountVariable CountVa
 
 
 ```
-This example will### example 1 : get direct and transitive role assignments of a principal
+This example will get direct and transitive role assignments of a principal
 
 ### Example 2: Get direct and transitive assignments of a principal, but only specific role definitions
 

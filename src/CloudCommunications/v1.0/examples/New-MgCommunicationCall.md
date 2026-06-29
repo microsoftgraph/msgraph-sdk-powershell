@@ -450,5 +450,5 @@ $params = @{
 New-MgCommunicationCall -BodyParameter $params
 
 ```
-This example will### example 10: create peer-to-peer pstn call with application hosted media
+This example will create peer-to-peer pstn call with application hosted media
 

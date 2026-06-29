@@ -263,7 +263,7 @@ $params = @{
 New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example will### Example 6: @mention a channel in a channel message
+This example will @mention a channel in a channel message
 
 ### Example 7: @mention a team in a channel message
 
@@ -328,7 +328,7 @@ $params = @{
 New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example will### Example 8: @mention a tag in a channel message
+This example will @mention a tag in a channel message
 
 ### Example 9: Send message that contains cards that are attributed to a Teams app
 
@@ -371,7 +371,7 @@ $params = @{
 New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example will### Example 9: send message that contains cards that are attributed to a teams app
+This example will send message that contains cards that are attributed to a teams app
 
 ### Example 10: Send a message that contains an announcement
 
@@ -412,5 +412,5 @@ $params = @{
 New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ```
-This example will### Example 10: send a message that contains an announcement
+This example will send a message that contains an announcement
 

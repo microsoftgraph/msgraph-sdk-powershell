@@ -5,7 +5,7 @@
 Import-Module Microsoft.Graph.DeviceManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.macOSCompliancePolicy"
+	"@odata.type" = "#microsoft.graph.windows81CompliancePolicy"
 	description = "Description value"
 	displayName = "Display Name value"
 	version = 7
@@ -14,18 +14,12 @@ $params = @{
 	passwordExpirationDays = 
 	passwordMinimumLength = 
 	passwordMinutesOfInactivityBeforeLock = 
-	passwordPreviousPasswordBlockCount = 
 	passwordMinimumCharacterSetCount = 
 	passwordRequiredType = "alphanumeric"
+	passwordPreviousPasswordBlockCount = 
 	osMinimumVersion = "Os Minimum Version value"
 	osMaximumVersion = "Os Maximum Version value"
-	systemIntegrityProtectionEnabled = $true
-	deviceThreatProtectionEnabled = $true
-	deviceThreatProtectionRequiredSecurityLevel = "secured"
 	storageRequireEncryption = $true
-	firewallEnabled = $true
-	firewallBlockAllIncoming = $true
-	firewallEnableStealthMode = $true
 }
 
 Update-MgDeviceManagementDeviceCompliancePolicy -DeviceCompliancePolicyId $deviceCompliancePolicyId -BodyParameter $params

@@ -1,48 +1,53 @@
-### Example 1: Using the Find-MgBetaUserMeetingTime Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Users.Actions
+
 $params = @{
-	Attendees = @(
+	attendees = @(
 		@{
-			Type = "required"
-			EmailAddress = @{
-				Name = "Alex Wilbur"
-				Address = "alexw@contoso.onmicrosoft.com"
+			type = "required"
+			emailAddress = @{
+				name = "Alex Wilbur"
+				address = "alexw@contoso.com"
 			}
 		}
 	)
-	LocationConstraint = @{
-		IsRequired = "false"
-		SuggestLocation = "false"
-		Locations = @(
+	locationConstraint = @{
+		isRequired = "false"
+		suggestLocation = "false"
+		locations = @(
 			@{
-				ResolveAvailability = "false"
-				DisplayName = "Conf room Hood"
+				resolveAvailability = "false"
+				displayName = "Conf room Hood"
 			}
 		)
 	}
-	TimeConstraint = @{
-		ActivityDomain = "work"
-		TimeSlots = @(
+	timeConstraint = @{
+		activityDomain = "work"
+		timeSlots = @(
 			@{
-				Start = @{
-					DateTime = "2019-04-16T09:00:00"
-					TimeZone = "Pacific Standard Time"
+				start = @{
+					dateTime = "2019-04-16T09:00:00"
+					timeZone = "Pacific Standard Time"
 				}
-				End = @{
-					DateTime = "2019-04-18T17:00:00"
-					TimeZone = "Pacific Standard Time"
+				end = @{
+					dateTime = "2019-04-18T17:00:00"
+					timeZone = "Pacific Standard Time"
 				}
 			}
 		)
 	}
-	IsOrganizerOptional = "false"
-	MeetingDuration = "PT1H"
-	ReturnSuggestionReasons = "true"
-	MinimumAttendeePercentage = "100"
+	isOrganizerOptional = "false"
+	meetingDuration = "PT1H"
+	returnSuggestionReasons = "true"
+	minimumAttendeePercentage = 100
 }
+
 # A UPN can also be used as -UserId.
 Find-MgBetaUserMeetingTime -UserId $userId -BodyParameter $params
+
 ```
 This example shows how to use the Find-MgBetaUserMeetingTime Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

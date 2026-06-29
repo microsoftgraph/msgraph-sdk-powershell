@@ -1,7 +1,7 @@
 ### Example 1:  List all permission grant policies
 
 ```powershell
-Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant"  
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant"  
 Get-MgBetaPolicyPermissionGrantPolicy | fl  
 
 DeletedDateTime      :
@@ -30,7 +30,7 @@ This command retrieves a list of all permission grant policies in Azure AD.
 ### Example 2: Get a permission grant policy by ID
 
 ```powershell
-Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant"  
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant"  
 Get-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId "microsoft-all-application-permissions" | fl  
 
 DeletedDateTime      :

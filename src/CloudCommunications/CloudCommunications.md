@@ -33,4 +33,20 @@ directive:
     set:
       verb: Invoke
       subject: CreateOrGet$1
+  - where:
+      verb: New
+      subject: ^UserOnlineMeeting$
+      variant: ^(Create|CreateExpanded|CreateViaIdentity|CreateViaIdentityExpanded)([1-9]{1,2})$
+    remove: true
+
+#Remove cmdlet to avoid conflicts where alias has been set: [#3241](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3241)
+  - where:
+      verb: Get
+      subject: ^AllUserOnlineMeetingRecording$
+    remove: true
+  - where:
+      verb: Get
+      subject: ^AllUserOnlineMeetingTranscript$
+    remove: true
+
 ```

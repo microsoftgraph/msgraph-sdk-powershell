@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Reports
   version: v1.0
@@ -737,15 +737,104 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /auditLogs/signIns/microsoft.graph.confirmCompromised:
+    post:
+      tags:
+        - auditLogs.signIn
+      summary: Invoke action confirmCompromised
+      description: 'Mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-1.0
+      operationId: auditLog.signIn_confirmCompromised
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /auditLogs/signIns/microsoft.graph.confirmSafe:
+    post:
+      tags:
+        - auditLogs.signIn
+      summary: Invoke action confirmSafe
+      description: 'Mark an event in Microsoft Entra sign-in logs as safe. Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-1.0
+      operationId: auditLog.signIn_confirmSafe
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /auditLogs/signIns/microsoft.graph.dismiss:
+    post:
+      tags:
+        - auditLogs.signIn
+      summary: Invoke action dismiss
+      description: 'Mark an event in Microsoft Entra sign-in logs as dismissed. For details about investigating Identity Protection risks, see How to investigate risk.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/signin-dismiss?view=graph-rest-1.0
+      operationId: auditLog.signIn_dismiss
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports:
     get:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Get deviceManagementReports
-      description: Read properties and relationships of the deviceManagementReports object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-get?view=graph-rest-1.0
+      summary: Get reports from deviceManagement
       operationId: deviceManagement_GetReport
       parameters:
         - name: $select
@@ -781,11 +870,7 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Update deviceManagementReports
-      description: Update the properties of a deviceManagementReports object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-update?view=graph-rest-1.0
+      summary: Update the navigation property reports in deviceManagement
       operationId: deviceManagement_UpdateReport
       requestBody:
         description: New navigation property values
@@ -826,11 +911,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: List deviceManagementExportJobs
-      description: List properties and relationships of the deviceManagementExportJob objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-list?view=graph-rest-1.0
+      summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report.
       operationId: deviceManagement.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
@@ -880,11 +962,7 @@ paths:
     post:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Create deviceManagementExportJob
-      description: Create a new deviceManagementExportJob object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-create?view=graph-rest-1.0
+      summary: Create new navigation property to exportJobs for deviceManagement
       operationId: deviceManagement.report_CreateExportJob
       requestBody:
         description: New navigation property
@@ -907,11 +985,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Get deviceManagementExportJob
-      description: Read properties and relationships of the deviceManagementExportJob object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-get?view=graph-rest-1.0
+      summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report.
       operationId: deviceManagement.report_GetExportJob
       parameters:
         - name: deviceManagementExportJob-id
@@ -955,11 +1030,7 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Update deviceManagementExportJob
-      description: Update the properties of a deviceManagementExportJob object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-update?view=graph-rest-1.0
+      summary: Update the navigation property exportJobs in deviceManagement
       operationId: deviceManagement.report_UpdateExportJob
       parameters:
         - name: deviceManagementExportJob-id
@@ -990,11 +1061,7 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Delete deviceManagementExportJob
-      description: Deletes a deviceManagementExportJob.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-delete?view=graph-rest-1.0
+      summary: Delete navigation property exportJobs for deviceManagement
       operationId: deviceManagement.report_DeleteExportJob
       parameters:
         - name: deviceManagementExportJob-id
@@ -1031,15 +1098,1370 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /deviceManagement/reports/microsoft.graph.getCachedReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getCachedReport
+      operationId: deviceManagement.report_getCachedReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getCompliancePolicyNonComplianceReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getCompliancePolicyNonComplianceReport
+      operationId: deviceManagement.report_getCompliancePolicyNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getCompliancePolicyNonComplianceSummaryReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getCompliancePolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getCompliancePolicyNonComplianceSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getComplianceSettingNonComplianceReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getComplianceSettingNonComplianceReport
+      operationId: deviceManagement.report_getComplianceSettingNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getConfigurationPolicyNonComplianceReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getConfigurationPolicyNonComplianceReport
+      operationId: deviceManagement.report_getConfigurationPolicyNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getConfigurationPolicyNonComplianceSummaryReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getConfigurationPolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getConfigurationPolicyNonComplianceSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getConfigurationSettingNonComplianceReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getConfigurationSettingNonComplianceReport
+      operationId: deviceManagement.report_getConfigurationSettingNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceManagementIntentPerSettingContributingProfiles:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getDeviceManagementIntentPerSettingContributingProfiles
+      operationId: deviceManagement.report_getDeviceManagementIntentPerSettingContributingProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceManagementIntentSettingsReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getDeviceManagementIntentSettingsReport
+      operationId: deviceManagement.report_getDeviceManagementIntentSettingsReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceNonComplianceReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getDeviceNonComplianceReport
+      operationId: deviceManagement.report_getDeviceNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDevicesWithoutCompliancePolicyReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getDevicesWithoutCompliancePolicyReport
+      operationId: deviceManagement.report_getDevicesWithoutCompliancePolicyReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getHistoricalReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getHistoricalReport
+      operationId: deviceManagement.report_getHistoricalReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getNoncompliantDevicesAndSettingsReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getNoncompliantDevicesAndSettingsReport
+      operationId: deviceManagement.report_getNoncompliantDevicesAndSettingsReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getPolicyNonComplianceMetadata:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getPolicyNonComplianceMetadata
+      operationId: deviceManagement.report_getPolicyNonComplianceMetadata
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getPolicyNonComplianceReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getPolicyNonComplianceReport
+      operationId: deviceManagement.report_getPolicyNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getPolicyNonComplianceSummaryReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getPolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getPolicyNonComplianceSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getReportFilters:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getReportFilters
+      operationId: deviceManagement.report_getReportFilter
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getSettingNonComplianceReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action getSettingNonComplianceReport
+      operationId: deviceManagement.report_getSettingNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.retrieveDeviceAppInstallationStatusReport:
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Invoke action retrieveDeviceAppInstallationStatusReport
+      operationId: deviceManagement.report_retrieveDeviceAppInstallationStatusReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: number
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /reports:
     get:
       tags:
         - reports.reportRoot
-      summary: Get reportRoot
-      description: Read properties and relationships of the reportRoot object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-get?view=graph-rest-1.0
+      summary: Get reports
       operationId: report.reportRoot_GetReportRoot
       parameters:
         - name: $select
@@ -1075,11 +2497,7 @@ paths:
     patch:
       tags:
         - reports.reportRoot
-      summary: Update reportRoot
-      description: Update the properties of a reportRoot object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-update?view=graph-rest-1.0
+      summary: Update reports
       operationId: report.reportRoot_UpdateReportRoot
       requestBody:
         description: New property values
@@ -1179,7 +2597,7 @@ paths:
   /reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature():
     get:
       tags:
-        - reports.Functions
+        - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByFeature
       description: 'Get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.'
       externalDocs:
@@ -1199,7 +2617,7 @@ paths:
   '/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes=''{includedUserTypes}'',includedUserRoles=''{includedUserRoles}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByFeature
       operationId: report.authenticationMethod_usersRegisteredGraphBPreFeature
       parameters:
@@ -1230,7 +2648,7 @@ paths:
   /reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod():
     get:
       tags:
-        - reports.Functions
+        - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByMethod
       description: Get the number of users registered for each authentication method.
       externalDocs:
@@ -1250,7 +2668,7 @@ paths:
   '/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes=''{includedUserTypes}'',includedUserRoles=''{includedUserRoles}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByMethod
       operationId: report.authenticationMethod_usersRegisteredGraphBPreMethod
       parameters:
@@ -1872,12 +3290,9 @@ paths:
   /reports/microsoft.graph.deviceConfigurationDeviceActivity():
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
       description: Metadata for the device configuration device activity report
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-deviceconfigurationdeviceactivity?view=graph-rest-1.0
       operationId: report_deviceConfigurationDeviceActivity
       responses:
         2XX:
@@ -1892,12 +3307,9 @@ paths:
   /reports/microsoft.graph.deviceConfigurationUserActivity():
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function deviceConfigurationUserActivity
       description: Metadata for the device configuration user activity report
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-deviceconfigurationuseractivity?view=graph-rest-1.0
       operationId: report_deviceConfigurationUserActivity
       responses:
         2XX:
@@ -1912,7 +3324,7 @@ paths:
   '/reports/microsoft.graph.getEmailActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getEmailActivityCounts
       description: 'Enables you to understand the trends of email activity (like how many were sent, read, and received) in your organization.'
       externalDocs:
@@ -1946,7 +3358,7 @@ paths:
   '/reports/microsoft.graph.getEmailActivityUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getEmailActivityUserCounts
       description: 'Enables you to understand trends on the number of unique users who are performing email activities like send, read, and receive.'
       externalDocs:
@@ -1980,7 +3392,7 @@ paths:
   '/reports/microsoft.graph.getEmailActivityUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getEmailActivityUserDetail
       description: Get details about email activity users have performed.
       operationId: report_getEmailActivityUserDetail
@@ -2013,7 +3425,7 @@ paths:
   '/reports/microsoft.graph.getEmailActivityUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getEmailActivityUserDetail
       description: Get details about email activity users have performed.
       operationId: report_getEmailActivityUserDetail
@@ -2044,7 +3456,7 @@ paths:
   '/reports/microsoft.graph.getEmailAppUsageAppsUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageAppsUserCounts
       description: Get the count of unique users per email app.
       externalDocs:
@@ -2078,7 +3490,7 @@ paths:
   '/reports/microsoft.graph.getEmailAppUsageUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageUserCounts
       description: Get the count of unique users that connected to Exchange Online using any email app.
       externalDocs:
@@ -2112,7 +3524,7 @@ paths:
   '/reports/microsoft.graph.getEmailAppUsageUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageUserDetail
       description: Get details about which activities users performed on the various email apps.
       operationId: report_getEmailAppUsageUserDetail
@@ -2145,7 +3557,7 @@ paths:
   '/reports/microsoft.graph.getEmailAppUsageUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageUserDetail
       description: Get details about which activities users performed on the various email apps.
       operationId: report_getEmailAppUsageUserDetail
@@ -2176,7 +3588,7 @@ paths:
   '/reports/microsoft.graph.getEmailAppUsageVersionsUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageVersionsUserCounts
       description: Get the count of unique users by Outlook desktop version.
       externalDocs:
@@ -2210,7 +3622,7 @@ paths:
   '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getGroupArchivedPrintJobs
       description: Get a list of archived print jobs for a particular group.
       externalDocs:
@@ -2276,7 +3688,7 @@ paths:
   '/reports/microsoft.graph.getM365AppPlatformUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getM365AppPlatformUserCounts
       description: 'Get a report that provides the trend of active users across all apps for each platform (Windows, Mac, web, and mobile) in your organization.'
       externalDocs:
@@ -2310,7 +3722,7 @@ paths:
   '/reports/microsoft.graph.getM365AppUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getM365AppUserCounts
       description: 'Get a report that provides the trend in the number of active users for each app (Outlook, Word, Excel, PowerPoint, OneNote, and Teams) in your organization.'
       externalDocs:
@@ -2344,7 +3756,7 @@ paths:
   '/reports/microsoft.graph.getM365AppUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getM365AppUserDetail
       description: Get a report that provides the details about which apps and platforms users have used.
       operationId: report_getM365AppUserDetail
@@ -2377,7 +3789,7 @@ paths:
   '/reports/microsoft.graph.getM365AppUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getM365AppUserDetail
       description: Get a report that provides the details about which apps and platforms users have used.
       operationId: report_getM365AppUserDetail
@@ -2408,7 +3820,7 @@ paths:
   '/reports/microsoft.graph.getMailboxUsageDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getMailboxUsageDetail
       description: Get details about mailbox usage.
       externalDocs:
@@ -2442,7 +3854,7 @@ paths:
   '/reports/microsoft.graph.getMailboxUsageMailboxCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getMailboxUsageMailboxCounts
       description: Get the total number of user mailboxes in your organization and how many are active each day of the reporting period. A mailbox is considered active if the user sent or read any email.
       externalDocs:
@@ -2476,7 +3888,7 @@ paths:
   '/reports/microsoft.graph.getMailboxUsageQuotaStatusMailboxCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getMailboxUsageQuotaStatusMailboxCounts
       description: Get the count of user mailboxes in each quota category.
       externalDocs:
@@ -2510,7 +3922,7 @@ paths:
   '/reports/microsoft.graph.getMailboxUsageStorage(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getMailboxUsageStorage
       description: Get the amount of storage used in your organization.
       externalDocs:
@@ -2544,7 +3956,7 @@ paths:
   /reports/microsoft.graph.getOffice365ActivationCounts():
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActivationCounts
       description: Get the count of Microsoft 365 activations on desktops and devices.
       externalDocs:
@@ -2570,9 +3982,9 @@ paths:
   /reports/microsoft.graph.getOffice365ActivationsUserCounts():
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActivationsUserCounts
-      description: Get the count of users that are enabled and those that have activated the Office subscription on desktop or devices or shared computers.
+      description: Get the count of users that are enabled and the ones that activated the Office subscription on desktop or devices or shared computers.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsusercounts?view=graph-rest-1.0
@@ -2596,7 +4008,7 @@ paths:
   /reports/microsoft.graph.getOffice365ActivationsUserDetail():
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActivationsUserDetail
       description: Get details about users who have activated Microsoft 365.
       externalDocs:
@@ -2622,7 +4034,7 @@ paths:
   '/reports/microsoft.graph.getOffice365ActiveUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActiveUserCounts
       description: Get the count of daily active users in the reporting period by product.
       externalDocs:
@@ -2656,7 +4068,7 @@ paths:
   '/reports/microsoft.graph.getOffice365ActiveUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActiveUserDetail
       description: Get details about Microsoft 365 active users.
       externalDocs:
@@ -2692,7 +4104,7 @@ paths:
   '/reports/microsoft.graph.getOffice365ActiveUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActiveUserDetail
       operationId: report_getOffice365ActiveUserDetail
       parameters:
@@ -2722,7 +4134,7 @@ paths:
   '/reports/microsoft.graph.getOffice365GroupsActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityCounts
       description: Get the number of group activities across group workloads.
       externalDocs:
@@ -2756,7 +4168,7 @@ paths:
   '/reports/microsoft.graph.getOffice365GroupsActivityDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityDetail
       description: Get details about Microsoft 365 groups activity by group.
       externalDocs:
@@ -2792,7 +4204,7 @@ paths:
   '/reports/microsoft.graph.getOffice365GroupsActivityDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityDetail
       operationId: report_getOffice365GroupsActivityDetail
       parameters:
@@ -2822,7 +4234,7 @@ paths:
   '/reports/microsoft.graph.getOffice365GroupsActivityFileCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityFileCounts
       description: Get the total number of files and how many of them were active across all group sites associated with a Microsoft 365 group.
       externalDocs:
@@ -2856,7 +4268,7 @@ paths:
   '/reports/microsoft.graph.getOffice365GroupsActivityGroupCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityGroupCounts
       description: 'Get the daily total number of groups and how many of them were active based on email conversations, Yammer posts, and SharePoint file activities.'
       externalDocs:
@@ -2890,7 +4302,7 @@ paths:
   '/reports/microsoft.graph.getOffice365GroupsActivityStorage(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityStorage
       description: Get the total storage used across all group mailboxes and group sites.
       externalDocs:
@@ -2924,7 +4336,7 @@ paths:
   '/reports/microsoft.graph.getOffice365ServicesUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOffice365ServicesUserCounts
       description: Get the count of users by activity type and service.
       externalDocs:
@@ -2958,7 +4370,7 @@ paths:
   '/reports/microsoft.graph.getOneDriveActivityFileCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOneDriveActivityFileCounts
       description: 'Get the number of unique, licensed users that performed file interactions against any OneDrive account.'
       externalDocs:
@@ -2992,7 +4404,7 @@ paths:
   '/reports/microsoft.graph.getOneDriveActivityUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOneDriveActivityUserCounts
       description: Get the trend in the number of active OneDrive users.
       externalDocs:
@@ -3026,7 +4438,7 @@ paths:
   '/reports/microsoft.graph.getOneDriveActivityUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOneDriveActivityUserDetail
       description: Get details about OneDrive activity by user.
       externalDocs:
@@ -3062,7 +4474,7 @@ paths:
   '/reports/microsoft.graph.getOneDriveActivityUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOneDriveActivityUserDetail
       operationId: report_getOneDriveActivityUserDetail
       parameters:
@@ -3092,7 +4504,7 @@ paths:
   '/reports/microsoft.graph.getOneDriveUsageAccountCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageAccountCounts
       description: 'Get the trend in the number of active OneDrive for Business sites. Any site on which users viewed, modified, uploaded, downloaded, shared, or synced files is considered an active site.'
       externalDocs:
@@ -3126,7 +4538,7 @@ paths:
   '/reports/microsoft.graph.getOneDriveUsageAccountDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageAccountDetail
       description: Get details about OneDrive usage by account.
       externalDocs:
@@ -3162,7 +4574,7 @@ paths:
   '/reports/microsoft.graph.getOneDriveUsageAccountDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageAccountDetail
       operationId: report_getOneDriveUsageAccountDetail
       parameters:
@@ -3192,7 +4604,7 @@ paths:
   '/reports/microsoft.graph.getOneDriveUsageFileCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageFileCounts
       description: 'Get the total number of files across all sites and how many are active files. A file is considered active if it has been saved, synced, modified, or shared within the specified time period.'
       externalDocs:
@@ -3226,7 +4638,7 @@ paths:
   '/reports/microsoft.graph.getOneDriveUsageStorage(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageStorage
       description: Get the trend on the amount of storage you're using in OneDrive for Business.
       externalDocs:
@@ -3260,7 +4672,7 @@ paths:
   '/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId=''{printerId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getPrinterArchivedPrintJobs
       description: Get a list of archived print jobs that were queued for particular printer.
       externalDocs:
@@ -3326,7 +4738,7 @@ paths:
   '/reports/microsoft.graph.getRelyingPartyDetailedSummary(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getRelyingPartyDetailedSummary
       description: Get a summary of AD FS relying parties information.
       externalDocs:
@@ -3403,7 +4815,7 @@ paths:
   '/reports/microsoft.graph.getSharePointActivityFileCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityFileCounts
       description: 'Get the number of unique, licensed users who interacted with files stored on SharePoint sites.'
       externalDocs:
@@ -3437,7 +4849,7 @@ paths:
   '/reports/microsoft.graph.getSharePointActivityPages(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityPages
       description: Get the number of unique pages visited by users.
       externalDocs:
@@ -3471,7 +4883,7 @@ paths:
   '/reports/microsoft.graph.getSharePointActivityUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityUserCounts
       description: 'Get the trend in the number of active users. A user is considered active if they have executed a file activity (save, sync, modify, or share) or visited a page within the specified time period.'
       externalDocs:
@@ -3505,7 +4917,7 @@ paths:
   '/reports/microsoft.graph.getSharePointActivityUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityUserDetail
       description: Get details about SharePoint activity by user.
       externalDocs:
@@ -3541,7 +4953,7 @@ paths:
   '/reports/microsoft.graph.getSharePointActivityUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityUserDetail
       operationId: report_getSharePointActivityUserDetail
       parameters:
@@ -3571,7 +4983,7 @@ paths:
   '/reports/microsoft.graph.getSharePointSiteUsageDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageDetail
       description: Get details about SharePoint site usage.
       externalDocs:
@@ -3607,7 +5019,7 @@ paths:
   '/reports/microsoft.graph.getSharePointSiteUsageDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageDetail
       operationId: report_getSharePointSiteUsageDetail
       parameters:
@@ -3637,7 +5049,7 @@ paths:
   '/reports/microsoft.graph.getSharePointSiteUsageFileCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageFileCounts
       description: 'Get the total number of files across all sites and the number of active files. A file (user or system) is considered active if it has been saved, synced, modified, or shared within the specified time period.'
       externalDocs:
@@ -3671,7 +5083,7 @@ paths:
   '/reports/microsoft.graph.getSharePointSiteUsagePages(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsagePages
       description: Get the number of pages viewed across all sites.
       externalDocs:
@@ -3705,7 +5117,7 @@ paths:
   '/reports/microsoft.graph.getSharePointSiteUsageSiteCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageSiteCounts
       description: Get the trend of total and active site count during the reporting period.
       externalDocs:
@@ -3739,7 +5151,7 @@ paths:
   '/reports/microsoft.graph.getSharePointSiteUsageStorage(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageStorage
       description: Get the trend of storage allocated and consumed during the reporting period.
       externalDocs:
@@ -3773,7 +5185,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessActivityCounts
       description: Get the trends on how many users organized and participated in conference sessions held in your organization through Skype for Business. The report also includes the number of peer-to-peer sessions.
       externalDocs:
@@ -3807,7 +5219,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessActivityUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessActivityUserCounts
       description: Get the trends on how many unique users organized and participated in conference sessions held in your organization through Skype for Business. The report also includes the number of peer-to-peer sessions.
       externalDocs:
@@ -3841,7 +5253,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
       description: Get details about Skype for Business activity by user.
       externalDocs:
@@ -3877,7 +5289,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
       operationId: report_getSkypeGraphFPreBusinessActivityUserDetail
       parameters:
@@ -3907,7 +5319,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageDistributionUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
       description: 'Get the number of users using unique devices in your organization. The report will show you the number of users per device including Windows, Windows phone, Android phone, iPhone, and iPad.'
       externalDocs:
@@ -3941,7 +5353,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserCounts
       description: 'Get the usage trends on how many users in your organization have connected using the Skype for Business app. You''ll also get a breakdown by the type of device (Windows, Windows phone, Android phone, iPhone, or iPad) on which the Skype for Business client app is installed and used across your organization.'
       externalDocs:
@@ -3975,7 +5387,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
       description: Get details about Skype for Business device usage by user.
       externalDocs:
@@ -4011,7 +5423,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
       operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserDetail
       parameters:
@@ -4041,7 +5453,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityCounts
       description: 'Get usage trends on the number and type of conference sessions held and organized by users in your organization. Types of conference sessions include IM, audio/video, application sharing, web, dial-in/out - third party, and Dial-in/out Microsoft.'
       externalDocs:
@@ -4075,7 +5487,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityMinuteCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
       description: 'Get usage trends on the length in minutes and type of conference sessions held and organized by users in your organization. Types of conference sessions include audio/video, and dial-in and dial-out - Microsoft.'
       externalDocs:
@@ -4109,7 +5521,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessOrganizerActivityUserCounts
       description: 'Get usage trends on the number of unique users and type of conference sessions held and organized by users in your organization. Types of conference sessions include IM, audio/video, application sharing, web, dial-in/out - third party, and dial-in/out Microsoft.'
       externalDocs:
@@ -4143,7 +5555,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessParticipantActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityCounts
       description: 'Get usage trends on the number and type of conference sessions that users from your organization participated in. Types of conference sessions include IM, audio/video, application sharing, web, and dial-in/out - third party.'
       externalDocs:
@@ -4177,7 +5589,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessParticipantActivityMinuteCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityMinuteCounts
       description: Get usage trends on the length in minutes and type of conference sessions that users from your organization participated in. Types of conference sessions include audio/video.
       externalDocs:
@@ -4211,7 +5623,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessParticipantActivityUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessParticipantActivityUserCounts
       description: 'Get usage trends on the number of unique users and type of conference sessions that users from your organization participated in. Types of conference sessions include IM, audio/video, application sharing, web, and dial-in/out - third party.'
       externalDocs:
@@ -4245,7 +5657,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityCounts
       description: 'Get usage trends on the number and type of sessions held in your organization. Types of sessions include IM, audio, video, application sharing, and file transfer.'
       externalDocs:
@@ -4279,7 +5691,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityMinuteCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
       description: Get usage trends on the length in minutes and type of peer-to-peer sessions held in your organization. Types of sessions include audio and video.
       externalDocs:
@@ -4313,7 +5725,7 @@ paths:
   '/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
       description: 'Get usage trends on the number of unique users and type of peer-to-peer sessions held in your organization. Types of sessions include IM, audio, video, application sharing, and file transfers in peer-to-peer sessions.'
       externalDocs:
@@ -4347,7 +5759,7 @@ paths:
   '/reports/microsoft.graph.getTeamsDeviceUsageDistributionUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsDeviceUsageDistributionUserCounts
       description: Get the number of Microsoft Teams unique users by device type over the selected time period.
       externalDocs:
@@ -4381,7 +5793,7 @@ paths:
   '/reports/microsoft.graph.getTeamsDeviceUsageUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsDeviceUsageUserCounts
       description: Get the number of Microsoft Teams daily unique users by device type.
       externalDocs:
@@ -4415,7 +5827,7 @@ paths:
   '/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsDeviceUsageUserDetail
       description: Get details about Microsoft Teams device usage by user.
       operationId: report_getTeamsDeviceUsageUserDetail
@@ -4448,7 +5860,7 @@ paths:
   '/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsDeviceUsageUserDetail
       description: Get details about Microsoft Teams device usage by user.
       operationId: report_getTeamsDeviceUsageUserDetail
@@ -4479,7 +5891,7 @@ paths:
   '/reports/microsoft.graph.getTeamsTeamActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamActivityCounts
       description: Get the number of team activities across Microsoft Teams. The activity types are related to meetings and messages.
       externalDocs:
@@ -4513,7 +5925,7 @@ paths:
   '/reports/microsoft.graph.getTeamsTeamActivityDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamActivityDetail
       description: Get details about Microsoft Teams activity by team. The numbers include activities for both licensed and nonlicensed users.
       operationId: report_getTeamsTeamActivityDetail
@@ -4546,7 +5958,7 @@ paths:
   '/reports/microsoft.graph.getTeamsTeamActivityDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamActivityDetail
       description: Get details about Microsoft Teams activity by team. The numbers include activities for both licensed and nonlicensed users.
       operationId: report_getTeamsTeamActivityDetail
@@ -4577,7 +5989,7 @@ paths:
   '/reports/microsoft.graph.getTeamsTeamActivityDistributionCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamActivityDistributionCounts
       description: Get the number of team activities across Microsoft Teams over a selected period.
       externalDocs:
@@ -4611,7 +6023,7 @@ paths:
   '/reports/microsoft.graph.getTeamsTeamCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamCounts
       description: Get the number of teams of a particular type in an instance of Microsoft Teams.
       externalDocs:
@@ -4645,7 +6057,7 @@ paths:
   '/reports/microsoft.graph.getTeamsUserActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsUserActivityCounts
       description: Get the number of Microsoft Teams activities by activity type. The activities are performed by Microsoft Teams licensed users.
       externalDocs:
@@ -4679,7 +6091,7 @@ paths:
   '/reports/microsoft.graph.getTeamsUserActivityUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsUserActivityUserCounts
       description: 'Get the number of Microsoft Teams users by activity type. The activity types are number of teams chat messages, private chat messages, calls, or meetings.'
       externalDocs:
@@ -4713,7 +6125,7 @@ paths:
   '/reports/microsoft.graph.getTeamsUserActivityUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsUserActivityUserDetail
       description: Get details about Microsoft Teams user activity by user.
       operationId: report_getTeamsUserActivityUserDetail
@@ -4746,7 +6158,7 @@ paths:
   '/reports/microsoft.graph.getTeamsUserActivityUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getTeamsUserActivityUserDetail
       description: Get details about Microsoft Teams user activity by user.
       operationId: report_getTeamsUserActivityUserDetail
@@ -4777,7 +6189,7 @@ paths:
   '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getUserArchivedPrintJobs
       description: Get a list of archived print jobs for a particular user.
       externalDocs:
@@ -4843,7 +6255,7 @@ paths:
   '/reports/microsoft.graph.getYammerActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerActivityCounts
       description: 'Get the trends on the amount of Yammer activity in your organization by how many messages were posted, read, and liked.'
       externalDocs:
@@ -4877,7 +6289,7 @@ paths:
   '/reports/microsoft.graph.getYammerActivityUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerActivityUserCounts
       description: 'Get the trends on the number of unique users who posted, read, and liked Yammer messages.'
       externalDocs:
@@ -4911,7 +6323,7 @@ paths:
   '/reports/microsoft.graph.getYammerActivityUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerActivityUserDetail
       description: Get details about Yammer activity by user.
       externalDocs:
@@ -4947,7 +6359,7 @@ paths:
   '/reports/microsoft.graph.getYammerActivityUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerActivityUserDetail
       operationId: report_getYammerActivityUserDetail
       parameters:
@@ -4977,7 +6389,7 @@ paths:
   '/reports/microsoft.graph.getYammerDeviceUsageDistributionUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerDeviceUsageDistributionUserCounts
       description: Get the number of users by device type.
       externalDocs:
@@ -5011,7 +6423,7 @@ paths:
   '/reports/microsoft.graph.getYammerDeviceUsageUserCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerDeviceUsageUserCounts
       description: Get the number of daily users by device type.
       externalDocs:
@@ -5045,7 +6457,7 @@ paths:
   '/reports/microsoft.graph.getYammerDeviceUsageUserDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerDeviceUsageUserDetail
       description: Get details about Yammer device usage by user.
       externalDocs:
@@ -5081,7 +6493,7 @@ paths:
   '/reports/microsoft.graph.getYammerDeviceUsageUserDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerDeviceUsageUserDetail
       operationId: report_getYammerDeviceUsageUserDetail
       parameters:
@@ -5111,7 +6523,7 @@ paths:
   '/reports/microsoft.graph.getYammerGroupsActivityCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerGroupsActivityCounts
       description: 'Get the number of Yammer messages posted, read, and liked in groups.'
       externalDocs:
@@ -5145,7 +6557,7 @@ paths:
   '/reports/microsoft.graph.getYammerGroupsActivityDetail(date={date})':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerGroupsActivityDetail
       description: Get details about Yammer groups activity by group.
       externalDocs:
@@ -5181,7 +6593,7 @@ paths:
   '/reports/microsoft.graph.getYammerGroupsActivityDetail(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerGroupsActivityDetail
       operationId: report_getYammerGroupsActivityDetail
       parameters:
@@ -5211,7 +6623,7 @@ paths:
   '/reports/microsoft.graph.getYammerGroupsActivityGroupCounts(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function getYammerGroupsActivityGroupCounts
       description: Get the total number of groups that existed and how many included group conversation activities.
       externalDocs:
@@ -5245,7 +6657,7 @@ paths:
   /reports/microsoft.graph.managedDeviceEnrollmentFailureDetails():
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
       operationId: report_managedDeviceEnrollmentFailureDetail
       responses:
@@ -5261,7 +6673,7 @@ paths:
   '/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter=''{filter}'',skipToken=''{skipToken}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
       operationId: report_managedDeviceEnrollmentFailureDetail
       parameters:
@@ -5273,7 +6685,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
         - name: top
@@ -5284,7 +6696,7 @@ paths:
           schema:
             maximum: 2147483647
             minimum: -2147483648
-            type: integer
+            type: number
             format: int32
             nullable: true
         - name: filter
@@ -5316,7 +6728,7 @@ paths:
   /reports/microsoft.graph.managedDeviceEnrollmentTopFailures():
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
       operationId: report_managedDeviceEnrollmentTopFailure
       responses:
@@ -5332,7 +6744,7 @@ paths:
   '/reports/microsoft.graph.managedDeviceEnrollmentTopFailures(period=''{period}'')':
     get:
       tags:
-        - reports.Functions
+        - reports.reportRoot.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
       operationId: report_managedDeviceEnrollmentTopFailure
       parameters:
@@ -6291,7 +7703,7 @@ paths:
       tags:
         - reports.partners
       summary: Get reconciliation from reports
-      description: Represents details for billed invoice reconciliation data.
+      description: Represents details for billed and unbilled invoice reconciliation data.
       operationId: report.partner.billing_GetReconciliation
       parameters:
         - name: $select
@@ -6445,7 +7857,7 @@ paths:
   /reports/partners/billing/reconciliation/billed/microsoft.graph.partners.billing.export:
     post:
       tags:
-        - reports.Actions
+        - reports.partners
       summary: Invoke action export
       description: Export the billed invoice reconciliation data.
       externalDocs:
@@ -6462,6 +7874,121 @@ paths:
                 invoiceId:
                   type: string
                   nullable: true
+                attributeSet:
+                  $ref: '#/components/schemas/microsoft.graph.partners.billing.attributeSet'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.operation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /reports/partners/billing/reconciliation/unbilled:
+    get:
+      tags:
+        - reports.partners
+      summary: Get unbilled from reports
+      description: Represents details for unbilled invoice reconciliation data.
+      operationId: report.partner.billing.reconciliation_GetUnbilled
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.partners
+      summary: Update the navigation property unbilled in reports
+      operationId: report.partner.billing.reconciliation_UpdateUnbilled
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.partners
+      summary: Delete navigation property unbilled for reports
+      operationId: report.partner.billing.reconciliation_DeleteUnbilled
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/partners/billing/reconciliation/unbilled/microsoft.graph.partners.billing.export:
+    post:
+      tags:
+        - reports.partners
+      summary: Invoke action export
+      description: Export the unbilled invoice reconciliation data for a specific billing period and a given currency.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/partners-billing-unbilledreconciliation-export?view=graph-rest-1.0
+      operationId: report.partner.billing.reconciliation.unbilled_export
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                currencyCode:
+                  type: string
+                  nullable: true
+                billingPeriod:
+                  $ref: '#/components/schemas/microsoft.graph.partners.billing.billingPeriod'
                 attributeSet:
                   $ref: '#/components/schemas/microsoft.graph.partners.billing.attributeSet'
               additionalProperties:
@@ -6636,7 +8163,7 @@ paths:
   /reports/partners/billing/usage/billed/microsoft.graph.partners.billing.export:
     post:
       tags:
-        - reports.Actions
+        - reports.partners
       summary: Invoke action export
       description: Export the billed Azure usage data.
       externalDocs:
@@ -6749,7 +8276,7 @@ paths:
   /reports/partners/billing/usage/unbilled/microsoft.graph.partners.billing.export:
     post:
       tags:
-        - reports.Actions
+        - reports.partners
       summary: Invoke action export
       description: Export unbilled Azure usage data for a specific billing period and currency.
       externalDocs:
@@ -6864,7 +8391,7 @@ paths:
   /reports/security/microsoft.graph.getAttackSimulationRepeatOffenders():
     get:
       tags:
-        - reports.Functions
+        - reports.securityReportsRoot
       summary: Invoke function getAttackSimulationRepeatOffenders
       description: List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
       externalDocs:
@@ -6903,7 +8430,7 @@ paths:
   /reports/security/microsoft.graph.getAttackSimulationSimulationUserCoverage():
     get:
       tags:
-        - reports.Functions
+        - reports.securityReportsRoot
       summary: Invoke function getAttackSimulationSimulationUserCoverage
       description: List training coverage for each tenant user in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
       externalDocs:
@@ -6942,7 +8469,7 @@ paths:
   /reports/security/microsoft.graph.getAttackSimulationTrainingUserCoverage():
     get:
       tags:
-        - reports.Functions
+        - reports.securityReportsRoot
       summary: Invoke function getAttackSimulationTrainingUserCoverage
       description: List training coverage for tenant users in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
       externalDocs:
@@ -7085,7 +8612,7 @@ components:
             durationInMilliseconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Indicates how long this provisioning action took to finish. Measured in milliseconds.
               format: int32
               nullable: true
@@ -7143,7 +8670,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
-              description: 'Provides a list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.'
+              description: 'Provides a list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Permissions for viewing applied conditional access (CA) policies in sign-ins.'
             clientAppUsed:
               type: string
               description: 'Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).'
@@ -7222,11 +8749,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
-              description: Entity representing a job to export a report
+              description: Entity representing a job to export a report.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Singleton entity that acts as a container for all reports functionality.
     microsoft.graph.deviceManagementExportJob:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7236,11 +8762,11 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report expires
+              description: Time that the exported report expires.
               format: date-time
             filter:
               type: string
-              description: Filters applied on the report
+              description: Filters applied on the report. The maximum length allowed for this property is 2000 characters.
               nullable: true
             format:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReportFileFormat'
@@ -7248,27 +8774,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJobLocalizationType'
             reportName:
               type: string
-              description: Name of the report
+              description: Name of the report. The maximum length allowed for this property is 2000 characters.
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report was requested
+              description: Time that the exported report was requested.
               format: date-time
             select:
               type: array
               items:
                 type: string
                 nullable: true
-              description: Columns selected from the report
+              description: Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.
             snapshotId:
               type: string
-              description: 'A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.'
+              description: 'A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.'
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReportStatus'
             url:
               type: string
-              description: Temporary location of the exported report
+              description: Temporary location of the exported report.
               nullable: true
           additionalProperties:
             type: object
@@ -7328,7 +8854,7 @@ components:
       type: object
       properties:
         totalUserCount:
-          type: integer
+          type: number
           description: 'Total number of users accounts, excluding those that are blocked.'
           format: int64
         userRegistrationFeatureCounts:
@@ -7364,7 +8890,7 @@ components:
       type: object
       properties:
         totalUserCount:
-          type: integer
+          type: number
           description: Total number of users in the tenant.
           format: int64
         userRegistrationMethodCounts:
@@ -7426,7 +8952,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).'
+              description: 'Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. The possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).'
             userDisplayName:
               type: string
               description: 'The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.'
@@ -7471,7 +8997,7 @@ components:
       properties:
         content:
           type: string
-          description: Not yet documented
+          description: The http content that has the data
           format: base64url
           nullable: true
       additionalProperties:
@@ -7499,7 +9025,7 @@ components:
         copiesPrinted:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The number of copies that were printed. Read-only.
           format: int32
         createdBy:
@@ -7531,7 +9057,7 @@ components:
           type: object
           properties:
             failedSignInCount:
-              type: integer
+              type: number
               description: 'Number of failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).'
               format: int64
             migrationStatus:
@@ -7559,16 +9085,17 @@ components:
               type: number
               description: 'Calculated as Number of successful / (Number of successful + Number of failed sign ins) or successfulSignInCount / totalSignInCount on AD FS in the period specified. Supports $orderby, $filter (eq).'
               format: double
+              nullable: true
             successfulSignInCount:
-              type: integer
+              type: number
               description: 'Number of successful sign ins on AD FS. Supports $orderby, $filter (eq).'
               format: int64
             totalSignInCount:
-              type: integer
+              type: number
               description: 'Number of successful + failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).'
               format: int64
             uniqueUserCount:
-              type: integer
+              type: number
               description: 'Number of unique users that signed into the application. Supports $orderby, $filter (eq).'
               format: int64
           additionalProperties:
@@ -7616,7 +9143,7 @@ components:
             blobCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The total file count for this partner tenant ID.
               format: int32
             blobs:
@@ -7680,6 +9207,8 @@ components:
           properties:
             billed:
               $ref: '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
+            unbilled:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.unbilledReconciliation'
           additionalProperties:
             type: object
     microsoft.graph.partners.billing.billedReconciliation:
@@ -7694,6 +9223,20 @@ components:
       enum:
         - full
         - basic
+        - unknownFutureValue
+      type: string
+    microsoft.graph.partners.billing.unbilledReconciliation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unbilledReconciliation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.partners.billing.billingPeriod:
+      title: billingPeriod
+      enum:
+        - current
+        - last
         - unknownFutureValue
       type: string
     microsoft.graph.partners.billing.azureUsage:
@@ -7722,13 +9265,6 @@ components:
           type: object
           additionalProperties:
             type: object
-    microsoft.graph.partners.billing.billingPeriod:
-      title: billingPeriod
-      enum:
-        - current
-        - last
-        - unknownFutureValue
-      type: string
     microsoft.graph.securityReportsRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7745,7 +9281,7 @@ components:
         repeatOffenceCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of repeat offences of the user in attack simulation and training campaigns.
           format: int32
           nullable: true
@@ -7760,14 +9296,14 @@ components:
         clickCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
           format: int32
           nullable: true
         compromisedCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of compromising actions by the user in attack simulation and training campaigns.
           format: int32
           nullable: true
@@ -7780,7 +9316,7 @@ components:
         simulationCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Number of attack simulation and training campaigns that the user was included in.
           format: int32
           nullable: true
@@ -8080,6 +9616,7 @@ components:
         - userChangedPasswordOnPremises
         - adminDismissedRiskForSignIn
         - adminConfirmedAccountSafe
+        - microsoftRevokedSessions
       type: string
     microsoft.graph.riskEventType:
       title: riskEventType
@@ -8132,7 +9669,7 @@ components:
         errorCode:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
           format: int32
           nullable: true
@@ -8150,7 +9687,7 @@ components:
         - json
         - unknownFutureValue
       type: string
-      description: Possible values for the file format of a report.
+      description: Possible values for the file format of a report to be exported.
       x-ms-enum:
         name: deviceManagementReportFileFormat
         modelAsString: false
@@ -8220,7 +9757,7 @@ components:
         feature:
           $ref: '#/components/schemas/microsoft.graph.authenticationMethodFeature'
         userCount:
-          type: integer
+          type: number
           description: Number of users.
           format: int64
       additionalProperties:
@@ -8233,7 +9770,7 @@ components:
           type: string
           description: Name of the authentication method.
         userCount:
-          type: integer
+          type: number
           description: Number of users registered.
           format: int64
       additionalProperties:
@@ -8264,40 +9801,40 @@ components:
           type: object
           properties:
             blackAndWhitePageCount:
-              type: integer
+              type: number
               format: int64
               nullable: true
             colorPageCount:
-              type: integer
+              type: number
               format: int64
               nullable: true
             completedBlackAndWhiteJobCount:
-              type: integer
+              type: number
               format: int64
             completedColorJobCount:
-              type: integer
+              type: number
               format: int64
             completedJobCount:
-              type: integer
+              type: number
               format: int64
               nullable: true
             doubleSidedSheetCount:
-              type: integer
+              type: number
               format: int64
               nullable: true
             incompleteJobCount:
-              type: integer
+              type: number
               format: int64
             mediaSheetCount:
-              type: integer
+              type: number
               format: int64
               nullable: true
             pageCount:
-              type: integer
+              type: number
               format: int64
               nullable: true
             singleSidedSheetCount:
-              type: integer
+              type: number
               format: int64
               nullable: true
             usageDate:
@@ -8361,6 +9898,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.partners.billing.blob:
       title: blob
       type: object

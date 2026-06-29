@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Search
   version: v1.0
@@ -962,11 +962,11 @@ paths:
     put:
       tags:
         - external.externalConnection
-      summary: Update externalItem
-      description: Update the properties of an externalItem object.
+      summary: Create externalItem
+      description: Create a new externalItem object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0
       operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
@@ -1393,8 +1393,12 @@ paths:
   '/external/connections/{externalConnection-id}/items/{externalItem-id}/microsoft.graph.externalConnectors.addActivities':
     post:
       tags:
-        - external.Actions
+        - external.externalConnection
       summary: Invoke action addActivities
+      description: Append additional instances of externalActivity objects on an externalItem.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-addactivities?view=graph-rest-1.0
       operationId: external.connection.item_addActivity
       parameters:
         - name: externalConnection-id
@@ -2294,7 +2298,7 @@ paths:
   /search/microsoft.graph.query:
     post:
       tags:
-        - search.Actions
+        - search.searchEntity.Actions
       summary: Invoke action query
       description: Runs the query specified in the request body. Search results are provided in the response.
       externalDocs:
@@ -2574,6 +2578,8 @@ components:
               type: string
               description: The Teams app ID. Optional.
               nullable: true
+            contentCategory:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.contentCategory'
             description:
               type: string
               description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
@@ -2801,7 +2807,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
-              description: 'List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
+              description: 'List of devices and operating systems that are able to view this bookmark. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             powerAppIds:
               type: array
               items:
@@ -2814,7 +2820,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
+              description: 'Variations of a bookmark for different countries/regions or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.searchRequest:
@@ -2851,17 +2857,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
-          description: 'One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
+          description: 'One or more types of resources expected in the response. The possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
         fields:
           type: array
           items:
             type: string
             nullable: true
-          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from the content that Microsoft Graph connectors bring in. The fields property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: label_title. Optional.'
+          description: 'Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from the content that Microsoft 365 Copilot connectors bring in. The fields property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: label_title. Optional.'
         from:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
           format: int32
         query:
@@ -2879,7 +2885,7 @@ components:
         size:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The size of the page to be retrieved. The maximum value is 500. Optional.
           format: int32
         sortProperties:
@@ -2950,14 +2956,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
-              description: 'List of devices and operating systems that are able to view this QnA. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
+              description: 'List of devices and operating systems that are able to view this QnA. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             state:
               $ref: '#/components/schemas/microsoft.graph.search.answerState'
             targetedVariations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
+              description: 'Variations of a QnA for different countries/regions or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -2992,6 +2998,25 @@ components:
           description: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.contentCategory:
+      title: contentCategory
+      enum:
+        - uncategorized
+        - knowledgeBase
+        - wikis
+        - fileRepository
+        - qna
+        - crm
+        - dashboard
+        - people
+        - media
+        - email
+        - messaging
+        - meetingTranscripts
+        - taskManagement
+        - learningManagement
+        - unknownFutureValue
+      type: string
     microsoft.graph.externalConnectors.searchSettings:
       title: searchSettings
       type: object
@@ -3103,6 +3128,10 @@ components:
             type: string
             nullable: true
           description: 'A set of aliases or a friendly name for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
+        description:
+          type: string
+          description: 'Specifies a human-readable description that explains the purpose, usage, or guidance related to the property. This property enhances semantic understanding by helping Copilot interpret queries and accurately map them to properties that results in more relevant and precise responses. Optional but we recommend that you use this property for queryable properties. The maximum supported length is 200 characters.'
+          nullable: true
         isQueryable:
           type: boolean
           description: Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
@@ -3123,7 +3152,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: iconUrl.'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional..The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions. Use the Prefer: include-unknown-enum-members request header to retrieve additional values defined in this evolvable enum,For People Connectors you can include : personEmails, personAddresses, personAnniversaries, personName, personNote, personPhones, personCurrentPosition, personWebAccounts, personWebSite, personSkills, personProjects, personAccount, personAwards, personCertifications, personAssistants, personColleagues, personManager, personAlternateContacts, personEmergencyContacts.'
         name:
           type: string
           description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
@@ -3285,7 +3314,7 @@ components:
         size:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The number of searchBucket resources to be returned. This isn''t required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.'
           format: int32
           nullable: true
@@ -3303,7 +3332,7 @@ components:
         limit:
           maximum: 32767
           minimum: -32768
-          type: integer
+          type: number
           description: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
           format: int16
       additionalProperties:
@@ -3403,7 +3432,7 @@ components:
         total:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'The total number of results. Note this isn''t the number of results on the page, but the total number of results satisfying the query.'
           format: int32
           nullable: true
@@ -3566,7 +3595,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
           format: int32
           nullable: true
@@ -3584,7 +3613,7 @@ components:
         priority:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
           format: int32
         rules:
@@ -3672,7 +3701,50 @@ components:
         - fileName
         - fileExtension
         - unknownFutureValue
+        - containerName
+        - containerUrl
         - iconUrl
+        - assignedToPeople
+        - closedBy
+        - closedDate
+        - priority
+        - sprintName
+        - tags
+        - severity
+        - state
+        - dueDate
+        - itemParentId
+        - itemPath
+        - itemType
+        - numberOfReactions
+        - parentUrl
+        - priorityNormalized
+        - reportedBy
+        - secondaryId
+        - personEmails
+        - personAddresses
+        - personAnniversaries
+        - personName
+        - personNote
+        - personPhones
+        - personCurrentPosition
+        - personWebAccounts
+        - personWebSite
+        - personSkills
+        - personProjects
+        - personAccount
+        - personAwards
+        - personCertifications
+        - personAssistants
+        - personColleagues
+        - personManager
+        - personAlternateContacts
+        - personEmergencyContacts
+        - personEducationalActivities
+        - personInterests
+        - personLanguages
+        - personPublications
+        - personPatents
       type: string
     microsoft.graph.externalConnectors.propertyType:
       title: propertyType
@@ -3687,6 +3759,8 @@ components:
         - doubleCollection
         - dateTimeCollection
         - unknownFutureValue
+        - principal
+        - principalCollection
       type: string
     microsoft.graph.search.identitySet:
       title: identitySet
@@ -3711,7 +3785,7 @@ components:
         minimumCount:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
           format: int32
           nullable: true
@@ -3769,7 +3843,7 @@ components:
         rank:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The rank or the order of the result.
           format: int32
           nullable: true
@@ -3904,7 +3978,7 @@ components:
         count:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
           format: int32
           nullable: true
@@ -3921,14 +3995,14 @@ components:
         length:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the length of a changed segment.
           format: int32
           nullable: true
         offset:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: Defines the offset of a changed segment.
           format: int32
           nullable: true

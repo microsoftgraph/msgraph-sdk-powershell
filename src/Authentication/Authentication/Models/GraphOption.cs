@@ -8,7 +8,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
 {
     internal class GraphOption : IGraphOption
     {
-        public bool EnableWAMForMSGraph { get; set; }
+        public bool? DisableWAMForMSGraph { get; set; }
+
+        // Display property that returns false when null for Get-MgGraphOption output
+        public bool DisableLoginByWAM => DisableWAMForMSGraph ?? false;
     }
 
 }

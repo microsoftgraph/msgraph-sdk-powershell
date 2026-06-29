@@ -6,6 +6,7 @@ Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
 	displayName = "New_Module5 updated"
+	languageTag = "en-GB"
 	description = "updated for description"
 }
 

@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: A successful validation request
 
 ```powershell
 
@@ -14,5 +14,23 @@ $params = @{
 Test-MgDirectoryObjectProperty -BodyParameter $params
 
 ```
-This example shows how to use the Test-MgDirectoryObjectProperty Cmdlet.
+This example will a successful validation request
+
+### Example 2: An unsuccessful validation request
+
+```powershell
+
+Import-Module Microsoft.Graph.DirectoryObjects
+
+$params = @{
+	entityType = "Group"
+	displayName = "test"
+	mailNickname = "test"
+	onBehalfOfUserId = "onBehalfOfUserId-value"
+}
+
+Test-MgDirectoryObjectProperty -BodyParameter $params
+
+```
+This example will an unsuccessful validation request
 

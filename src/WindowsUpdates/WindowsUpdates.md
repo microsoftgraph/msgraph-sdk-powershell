@@ -40,6 +40,18 @@ directive:
       verb: Invoke
       subject: ^(Enroll|UnEnroll)WindowsUpdatesDeploymentAudience(ExclusionAsset|ExclusionAssetById|MemberAsset|MemberAssetById)$
     remove: true
+# Remove conflicting numbered variants from overlapping API paths.
+# /deployments/{deployment-id}/audience/ variants conflict with /deploymentAudiences/{deploymentAudience-id}/ variants.
+# /updatePolicies/ variants conflict with /policies/ variants.
+  - where:
+      subject: (.*)WindowsUpdatesDeploymentAudience(.*)
+      variant: .*1$
+    remove: true
+  - where:
+      subject: ^WindowsUpdatesPolicy(Count)?$
+      variant: .*1$
+    set:
+      subject: WindowsUpdatesUpdatePolicy$1
 # Alias cmdlets.
 # NB: We have to rename the command to the desired alias name, alias based on the rename, then undo the rename due to - https://github.com/Azure/autorest.powershell/issues/769
   - where:

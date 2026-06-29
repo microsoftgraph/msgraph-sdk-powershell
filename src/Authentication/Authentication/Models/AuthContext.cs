@@ -28,7 +28,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public string ManagedIdentityId { get; set; }
         public SecureString ClientSecret { get; set; }
         public string Environment { get; set; } = GraphEnvironmentConstants.EnvironmentName.Global;
-
+        private bool IsCustomClientId => !string.Equals(ClientId, PowerShellClientId, StringComparison.OrdinalIgnoreCase);
+        public bool WamEnabled => !(GraphSession.Instance.GraphOption.DisableWAMForMSGraph == true && IsCustomClientId);
+        
         public AuthContext()
         {
             ClientId = PowerShellClientId;

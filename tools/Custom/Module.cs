@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using NamespacePrefixPlaceholder.PowerShell.Runtime;
 using Microsoft.Graph.PowerShell.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using static NamespacePrefixPlaceholder.PowerShell.Runtime.Extensions;
 
 namespace NamespacePrefixPlaceholder.PowerShell
 {
@@ -70,7 +71,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
 
         private async Task OnCmdletBeginProcessing(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal, InvocationInfo invocationInfo)
         {
-            using (Extensions.NoSynchronizationContext)
+            using (NoSynchronizationContext)
             {
                 string[] commandNameSegment = invocationInfo.MyCommand.Name.Split('_');
                 if (commandNameSegment.Length > 1)
@@ -93,7 +94,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
 
         private async Task OnBeforeCall(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal)
         {
-            using (Extensions.NoSynchronizationContext)
+            using (NoSynchronizationContext)
             {
                 var eventData = EventDataConverter.ConvertFrom(getEventData());
                 var request = eventData?.RequestMessage as HttpRequestMessage;
@@ -107,7 +108,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
 
         private async Task OnResponseCreated(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal)
         {
-            using (Extensions.NoSynchronizationContext)
+            using (NoSynchronizationContext)
             {
                 var eventData = EventDataConverter.ConvertFrom(getEventData());
                 var response = eventData?.ResponseMessage as HttpResponseMessage;
@@ -138,7 +139,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
 
         private async Task OnCmdletException(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal, Exception exception)
         {
-            using (Extensions.NoSynchronizationContext)
+            using (NoSynchronizationContext)
             {
                 var eventData = EventDataConverter.ConvertFrom(getEventData());
                 await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[{id}]: Received exception with message '{eventData?.Message}'"));
@@ -147,7 +148,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
 
         private async Task OnCmdletEndProcessing(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal, InvocationInfo invocationInfo)
         {
-            using (Extensions.NoSynchronizationContext)
+            using (NoSynchronizationContext)
             {
                 string[] commandNameSegment = invocationInfo.MyCommand.Name.Split('_');
                 if (commandNameSegment.Length > 1)

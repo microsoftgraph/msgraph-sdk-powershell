@@ -60,7 +60,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-
+            //There is need for explicitly adding TenantId to the TokenCredentialOptions for EnvironmentCredential due to stricter security requirements.
+            authContext.TenantId = EnvironmentVariables.TenantId;
             var tokenCredentialOptions = new TokenCredentialOptions
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext))
@@ -77,13 +78,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         private static bool IsAuthFlowNotSupported()
         {
-            return ((!string.IsNullOrEmpty(EnvironmentVariables.Username) && !string.IsNullOrEmpty(EnvironmentVariables.Password))
-                && (string.IsNullOrEmpty(EnvironmentVariables.ClientSecret) && string.IsNullOrEmpty(EnvironmentVariables.ClientCertificatePath)));
+            return !string.IsNullOrEmpty(EnvironmentVariables.Username) && !string.IsNullOrEmpty(EnvironmentVariables.Password)
+                && string.IsNullOrEmpty(EnvironmentVariables.ClientSecret) && string.IsNullOrEmpty(EnvironmentVariables.ClientCertificatePath);
         }
 
-        private static bool IsWamSupported()
+        private static bool ShouldUseWam(IAuthContext authContext)
         {
-            return GraphSession.Instance.GraphOption.EnableWAMForMSGraph && SharedUtilities.IsWindowsPlatform();
+            return SharedUtilities.IsWindowsPlatform() && authContext.WamEnabled;
         }
 
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
@@ -113,7 +114,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var interactiveOptions = IsWamSupported() ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
+            var interactiveOptions = ShouldUseWam(authContext) ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
             interactiveOptions.ClientId = authContext.ClientId;
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
@@ -123,11 +124,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 AuthenticationRecord authRecord;
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
-                if (IsWamSupported())
+                if (ShouldUseWam(authContext))
                 {
+                    GraphSession.Instance.OutputWriter.WriteWarning("Note: Sign in by Web Account Manager (WAM) is enabled by default on Windows. If using an embedded terminal, the interactive browser window may be hidden behind other windows.");
                     authRecord = await Task.Run(() =>
                     {
-                        // Run the thread in MTA.
                         return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
                     });
                 }
@@ -135,7 +136,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 {
                     authRecord = await Task.Run(() =>
                     {
-                        // Run the thread in MTA.
                         return interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
                     });
                 }
@@ -160,7 +160,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext),
                 DeviceCodeCallback = (code, cancellation) =>
                 {
-                    GraphSession.Instance.OutputWriter.WriteObject(code.Message);
+                    if (GraphSession.Exists)
+                    {
+                        try
+                        {
+                            GraphSession.Instance.OutputWriter.WriteObject(code.Message);
+                            return Task.CompletedTask;
+                        }
+                        catch (InvalidOperationException)
+                        {
+                            // Fall through to console output if OutputWriter is unavailable.
+                        }
+                    }
+                    Console.WriteLine(code.Message);
                     return Task.CompletedTask;
                 }
             };
@@ -207,8 +219,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var tokenCrdential = await GetTokenCredentialAsync(authContext, default).ConfigureAwait(false);
-            return new AzureIdentityAccessTokenProvider(credential: tokenCrdential, scopes: GetScopes(authContext));
+            var tokenCredential = await GetTokenCredentialAsync(authContext, default).ConfigureAwait(false);
+            return new AzureIdentityAccessTokenProvider(credential:tokenCredential, observabilityOptions: null,isCaeEnabled: true,scopes: GetScopes(authContext));
         }
 
         public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken)
@@ -272,12 +284,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return signInAuthContext;
         }
 
-        private static async Task<IAuthContext> SignInAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        internal static async Task<IAuthContext> SignInAsync(IAuthContext authContext, CancellationToken cancellationToken = default, TokenCredential tokenCredential = null)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            var tokenCredential = await GetTokenCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
-            var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext)), cancellationToken).ConfigureAwait(false);
+            tokenCredential ??= await GetTokenCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
+            // Use isCaeEnabled: true to match the TokenRequestContext that AzureIdentityAccessTokenProvider will use
+            // during API calls, ensuring MSAL caches a CAE-capable token that can be found silently later.
+            var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext), isCaeEnabled: true), cancellationToken).ConfigureAwait(false);
             JwtHelpers.DecodeJWT(token.Token, account: null, ref authContext);
             return authContext;
         }

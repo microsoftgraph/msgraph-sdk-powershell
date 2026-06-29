@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Remove-MgBetaPolicyMobileAppManagementPolicy -MobilityManagementPolicyId $mobilityManagementPolicyId
+Remove-MgBetaPolicyMobileAppManagementPolicy -MobileAppManagementPolicyId $mobileAppManagementPolicyId
 
 ```
 This example shows how to use the Remove-MgBetaPolicyMobileAppManagementPolicy Cmdlet.
