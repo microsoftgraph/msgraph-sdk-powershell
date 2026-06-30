@@ -56,14 +56,19 @@ if ($AllowUnsupportedNode) {
     $env:RUSH_ALLOW_UNSUPPORTED_NODEJS = '1'
 }
 
-npx --no-install rush install
-if ($LASTEXITCODE -ne 0) {
-    throw "Command 'npx --no-install rush install' failed with exit code $LASTEXITCODE."
+$rushBootstrapScript = Join-Path (Get-Location) "common/scripts/install-run-rush.js"
+if (-not (Test-Path $rushBootstrapScript)) {
+    throw "Rush bootstrap script not found: $rushBootstrapScript"
 }
 
-npx --no-install rush build
+node $rushBootstrapScript install
 if ($LASTEXITCODE -ne 0) {
-    throw "Command 'npx --no-install rush build' failed with exit code $LASTEXITCODE."
+    throw "Command 'node common/scripts/install-run-rush.js install' failed with exit code $LASTEXITCODE."
+}
+
+node $rushBootstrapScript build
+if ($LASTEXITCODE -ne 0) {
+    throw "Command 'node common/scripts/install-run-rush.js build' failed with exit code $LASTEXITCODE."
 }
 
 # Diagnostic: show autorest cache state and npm registry config before generation.
@@ -117,8 +122,11 @@ if ($ModuleToGenerate.Count -eq 0) {
 
 #This is to ensure that the autorest temp folder is cleared before generating the modules
 $TempPath = [System.IO.Path]::GetTempPath()
-# Check if there is any folder with autorest in the name
-$AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory | Where-Object { $_.Name -match "autorest" }
+# Check if there is any folder with autorest in the name.
+# Use -ErrorAction SilentlyContinue so that access-denied errors on temp entries owned or
+# locked by other users/processes (common on shared build agents) don't abort the whole run
+# because of $ErrorActionPreference = 'Stop'.
+$AutoRestTempFolder = Get-ChildItem -Path $TempPath -Recurse -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match "autorest" }
 
 # Go through each folder and forcefully delete autorest related files
 $AutoRestTempFolder | ForEach-Object {
@@ -126,12 +134,18 @@ $AutoRestTempFolder | ForEach-Object {
     #Delete files and folders if they exist
     if (Test-Path $AutoRestTempFolder.FullName) {
         #Check if each file in the folder exists
-        Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse | ForEach-Object {
+        Get-ChildItem -Path $AutoRestTempFolder.FullName -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
             $File = $_
             Write-Debug "Removing cached file $File"
             if (Test-Path $File.FullName) {
-                #Remove the file
-                Remove-Item -Path $File.FullName -Force -confirm:$false
+                #Remove the file. Skip entries we can't delete (locked/owned by another
+                #process) instead of failing the entire generation with an access-denied error.
+                try {
+                    Remove-Item -Path $File.FullName -Force -Confirm:$false -ErrorAction Stop
+                }
+                catch {
+                    Write-Warning "Skipping cached file that could not be removed: $($File.FullName). $($_.Exception.Message)"
+                }
             }
         }
     }
