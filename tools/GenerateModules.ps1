@@ -158,6 +158,16 @@ $Results = $ModuleToGenerate | ForEach-Object -Parallel {
     $Module = $_
     Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
 
+    # ForEach-Object -Parallel runs each iteration in a separate runspace that does NOT inherit
+    # modules imported in the parent process. Re-import the Authentication module here so that
+    # Update-ModuleManifest (in BuildModule.ps1) can resolve the 'Microsoft.Graph.Authentication'
+    # RequiredModules entry; otherwise it fails with "module is not imported in the session" and
+    # the manifest is reported as invalid.
+    $AuthModuleManifest = $using:AuthModuleManifest
+    if (Test-Path $AuthModuleManifest) {
+        Import-Module $AuthModuleManifest -ErrorAction SilentlyContinue
+    }
+
     $ServiceModuleParams = @{
         Module                  = $Module
         ModulesSrc              = $using:ModulesSrc
