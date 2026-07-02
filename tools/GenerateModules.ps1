@@ -46,6 +46,35 @@ if (-not (Test-Path $ModuleMappingPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingPath."
 }
 
+# Ensure the Node build tools (rush + autorest) are available so 'npx --no-install' can resolve them.
+# In Azure DevOps these are installed at the repo root by install-tools.yml, so this check is a no-op there.
+# On a fresh local clone they are missing, so we bootstrap them here using the same versions as CI.
+$RepoRoot = (Resolve-Path (Join-Path $ScriptRoot "..")).Path
+
+# Fail fast if the autorest.powershell git submodule has not been initialized.
+$AutoRestPowerShellPath = Join-Path $RepoRoot "autorest.powershell"
+$RushConfigPath = Join-Path $AutoRestPowerShellPath "rush.json"
+if (-not (Test-Path $RushConfigPath)) {
+    throw "The 'autorest.powershell' submodule is not initialized ('$RushConfigPath' not found). Run 'git submodule update --init --recursive' from the repository root, then re-run this script."
+}
+
+$NodeBinPath = Join-Path $RepoRoot "node_modules" ".bin"
+$RushInstalled = (Test-Path (Join-Path $NodeBinPath "rush")) -or (Test-Path (Join-Path $NodeBinPath "rush.cmd"))
+$AutoRestInstalled = (Test-Path (Join-Path $NodeBinPath "autorest")) -or (Test-Path (Join-Path $NodeBinPath "autorest.cmd"))
+if (-not ($RushInstalled -and $AutoRestInstalled)) {
+    Write-Host "Node build tools not found at '$RepoRoot'. Installing rush and autorest..."
+    Push-Location $RepoRoot
+    try {
+        npm install --no-package-lock '@microsoft/rush' 'autorest@3.7.2' '@autorest/core@3.10.4'
+        if ($LASTEXITCODE -ne 0) {
+            throw "Command 'npm install' for Node build tools (rush, autorest) failed with exit code $LASTEXITCODE."
+        }
+    }
+    finally {
+        Pop-Location
+    }
+}
+
 # Build AutoREST.PowerShell submodule.
 Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
 npx --no-install rush install
