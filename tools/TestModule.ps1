@@ -36,4 +36,4 @@ $PesterConfiguration.TestResult.Enabled = $true
 $PesterConfiguration.TestResult.OutputPath = (Join-Path $ModuleTestsPath "$moduleName-TestResults.xml")
 
 $TestResults = Invoke-Pester -Configuration $PesterConfiguration
-If ($TestResults.FailedCount -gt 0) { Write-Error "$($TestResults.FailedCount) tests failed." }
+If (($TestResults.FailedCount + $TestResults.FailedBlocksCount + $TestResults.FailedContainersCount) -gt 0) { Write-Error "Pester run failed: $($TestResults.FailedCount) failed test(s), $($TestResults.FailedBlocksCount) failed block(s), $($TestResults.FailedContainersCount) failed container(s), of $($TestResults.TotalCount) total tests" }
