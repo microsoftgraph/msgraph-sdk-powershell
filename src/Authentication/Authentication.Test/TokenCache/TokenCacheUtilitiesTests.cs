@@ -15,6 +15,7 @@ namespace Microsoft.Graph.Authentication.Test.TokenCache
         {
             GraphSession.Initialize(() => new GraphSession());
             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
+            GraphSession.Instance.GraphOption = new GraphOption();
         }
 
         public void Dispose()
@@ -70,6 +71,49 @@ namespace Microsoft.Graph.Authentication.Test.TokenCache
 
             // Act - should not throw even if no persisted cache exists on disk
             var result = await AuthenticationHelpers.LogoutAsync();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(ContextScope.CurrentUser, result.ContextScope);
+            Assert.Null(GraphSession.Instance.AuthContext);
+        }
+
+        [Fact]
+        public async Task LogoutAsyncWithSignOutFromBrokerShouldNotThrowWhenBrokerNotInUse()
+        {
+            // Arrange - a custom client id with WAM disabled means the broker path is skipped,
+            // so no real broker accounts are touched during the test.
+            GraphSession.Instance.GraphOption = new GraphOption { DisableWAMForMSGraph = true };
+            GraphSession.Instance.AuthContext = new AuthContext
+            {
+                ClientId = "11111111-1111-1111-1111-111111111111",
+                AuthType = AuthenticationType.UserProvidedAccessToken,
+                ContextScope = ContextScope.Process
+            };
+
+            // Act - requesting broker sign-out must not throw when the broker is not in use.
+            var result = await AuthenticationHelpers.LogoutAsync(signOutFromBroker: true);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Null(GraphSession.Instance.AuthContext);
+            Assert.Null(GraphSession.Instance.GraphHttpClient);
+        }
+
+        [Fact]
+        public async Task LogoutAsyncWithSignOutFromBrokerShouldStillClearContextForCurrentUser()
+        {
+            // Arrange - WAM disabled so the broker path is skipped; the file cache clear still runs.
+            GraphSession.Instance.GraphOption = new GraphOption { DisableWAMForMSGraph = true };
+            GraphSession.Instance.AuthContext = new AuthContext
+            {
+                ClientId = "11111111-1111-1111-1111-111111111111",
+                AuthType = AuthenticationType.UserProvidedAccessToken,
+                ContextScope = ContextScope.CurrentUser
+            };
+
+            // Act
+            var result = await AuthenticationHelpers.LogoutAsync(signOutFromBroker: true);
 
             // Assert
             Assert.NotNull(result);

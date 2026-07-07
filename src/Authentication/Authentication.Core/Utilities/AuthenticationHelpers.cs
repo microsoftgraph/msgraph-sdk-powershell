@@ -8,6 +8,7 @@ using Azure.Identity.Broker;
 using Microsoft.Graph.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Identity.Client;
+using Microsoft.Identity.Client.Broker;
 using Microsoft.Identity.Client.Extensions.Msal;
 using System;
 using System.Diagnostics.Tracing;
@@ -425,8 +426,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <summary>
         /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
         /// </summary>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
-        public static async Task<IAuthContext> LogoutAsync()
+        /// <param name="signOutFromBroker">
+        /// When <c>true</c> and the Windows broker (WAM) is in use, cached accounts for this module
+        /// are also removed from the broker. This affects the shared OS-level broker store and may
+        /// sign the user out of other broker-enabled applications using the same Windows account.
+        /// </param>
+        /// <returns>The <see cref="IAuthContext"/> that was signed out from.</returns>
+        public static async Task<IAuthContext> LogoutAsync(bool signOutFromBroker = false)
         {
             var authContext = GraphSession.Instance.AuthContext;
             GraphSession.Instance.InMemoryTokenCache?.ClearCache();
@@ -436,16 +442,76 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 {
                     await TokenCacheUtilities.ClearPersistedTokenCacheAsync(Constants.CacheName).ConfigureAwait(false);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     // Non-fatal: persisted cache clearing may fail on some platforms.
                     // The auth record and in-memory state are still cleared below.
+                    LogCacheClearFailure("Failed to clear the persisted MSAL token cache during Disconnect-MgGraph", ex);
                 }
             }
+
+            if (signOutFromBroker && authContext != null && ShouldUseWam(authContext))
+            {
+                try
+                {
+                    await ClearBrokerTokenCacheAsync(authContext).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    // Non-fatal: removing broker accounts may fail. Disconnect still completes.
+                    LogCacheClearFailure("Failed to remove cached accounts from the Windows broker (WAM) during Disconnect-MgGraph", ex);
+                }
+            }
+
             GraphSession.Instance.AuthContext = null;
             GraphSession.Instance.GraphHttpClient = null;
             await DeleteAuthRecordAsync().ConfigureAwait(false);
             return authContext;
+        }
+
+        /// <summary>
+        /// Removes cached accounts for the current module from the Windows broker (WAM).
+        /// This only has an effect on Windows when the broker is in use. Because the broker store is
+        /// shared at the OS level, removing accounts here may also sign the user out of other
+        /// broker-enabled applications (for example Visual Studio, Azure CLI, or Azure PowerShell)
+        /// that are using the same Windows account.
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> whose broker accounts should be removed.</param>
+        private static async Task ClearBrokerTokenCacheAsync(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var pca = PublicClientApplicationBuilder
+                .Create(authContext.ClientId)
+                .WithAuthority(GetAuthorityUrl(authContext))
+                .WithBroker(new BrokerOptions(BrokerOptions.OperatingSystems.Windows))
+                .WithParentActivityOrWindow(WindowHandleUtlities.GetConsoleOrTerminalWindow)
+                .Build();
+
+            var accounts = await pca.GetAccountsAsync().ConfigureAwait(false);
+            foreach (var account in accounts)
+            {
+                await pca.RemoveAsync(account).ConfigureAwait(false);
+            }
+        }
+
+        /// <summary>
+        /// Writes a best-effort diagnostic for a non-fatal cache clearing failure. Logging must never
+        /// prevent Disconnect-MgGraph from completing, so any failure to log is swallowed.
+        /// </summary>
+        private static void LogCacheClearFailure(string summary, Exception ex)
+        {
+            try
+            {
+                var writer = GraphSession.Instance.OutputWriter;
+                writer.WriteWarning?.Invoke($"{summary}: {ex.Message}");
+                writer.WriteDebug?.Invoke($"{summary}: {ex}");
+            }
+            catch
+            {
+                // Diagnostics are best-effort and must not break sign-out.
+            }
         }
 
         private static async Task<AuthenticationRecord> ReadAuthRecordAsync()
