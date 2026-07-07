@@ -476,6 +476,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// broker-enabled applications (for example Visual Studio, Azure CLI, or Azure PowerShell)
         /// that are using the same Windows account.
         /// </summary>
+        /// <summary>
+        /// Removes cached accounts for the current module from the Windows broker (WAM).
+        /// This only has an effect on Windows when the broker is in use. When the current session's
+        /// account can be identified (via the persisted <see cref="AuthenticationRecord"/>), only that
+        /// account is removed to limit the impact on other broker-enabled applications. When no account
+        /// can be identified, all accounts for this module are removed as a fallback.
+        /// Because the broker store is shared at the OS level, removing an account here may also sign
+        /// the user out of other broker-enabled applications (for example Visual Studio, Azure CLI, or
+        /// Azure PowerShell) that are using the same Windows account.
+        /// </summary>
         /// <param name="authContext">The <see cref="IAuthContext"/> whose broker accounts should be removed.</param>
         private static async Task ClearBrokerTokenCacheAsync(IAuthContext authContext)
         {
@@ -490,9 +500,48 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 .Build();
 
             var accounts = await pca.GetAccountsAsync().ConfigureAwait(false);
+
+            // Narrow removal to the account that signed in for this session, identified by the
+            // HomeAccountId persisted in the AuthenticationRecord. This avoids removing other accounts
+            // the user may have signed into via this module from the shared broker store.
+            var homeAccountId = await GetCurrentHomeAccountIdAsync().ConfigureAwait(false);
+            if (!string.IsNullOrEmpty(homeAccountId))
+            {
+                var matchingAccounts = accounts
+                    .Where(a => string.Equals(a.HomeAccountId?.Identifier, homeAccountId, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+                if (matchingAccounts.Count > 0)
+                {
+                    foreach (var account in matchingAccounts)
+                    {
+                        await pca.RemoveAsync(account).ConfigureAwait(false);
+                    }
+                    return;
+                }
+            }
+
+            // Fallback: no identifiable session account, remove all accounts for this module.
             foreach (var account in accounts)
             {
                 await pca.RemoveAsync(account).ConfigureAwait(false);
+            }
+        }
+
+        /// <summary>
+        /// Reads the HomeAccountId of the account persisted for the current session, if any.
+        /// Returns <c>null</c> when no authentication record is available or it cannot be read.
+        /// </summary>
+        private static async Task<string> GetCurrentHomeAccountIdAsync()
+        {
+            try
+            {
+                var authRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+                return authRecord?.HomeAccountId;
+            }
+            catch
+            {
+                // A missing or unreadable auth record simply means we cannot narrow the removal.
+                return null;
             }
         }
 
