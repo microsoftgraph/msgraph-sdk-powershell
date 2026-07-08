@@ -8,6 +8,7 @@ using Azure.Identity.Broker;
 using Microsoft.Graph.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Identity.Client;
+using Microsoft.Identity.Client.Broker;
 using Microsoft.Identity.Client.Extensions.Msal;
 using System;
 using System.Diagnostics.Tracing;
@@ -140,10 +141,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     });
                 }
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                authContext.HomeAccountId = TryGetHomeAccountId(authRecord);
                 return interactiveBrowserCredential;
             }
 
-            interactiveOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            var interactiveAuthRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            interactiveOptions.AuthenticationRecord = interactiveAuthRecord;
+            authContext.HomeAccountId = TryGetHomeAccountId(interactiveAuthRecord);
             return new InteractiveBrowserCredential(interactiveOptions);
         }
 
@@ -181,10 +185,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 var deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
                 var authRecord = await deviceCodeCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                authContext.HomeAccountId = TryGetHomeAccountId(authRecord);
                 return deviceCodeCredential;
             }
 
-            deviceCodeOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            var deviceCodeAuthRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            deviceCodeOptions.AuthenticationRecord = deviceCodeAuthRecord;
+            authContext.HomeAccountId = TryGetHomeAccountId(deviceCodeAuthRecord);
             return new DeviceCodeCredential(deviceCodeOptions);
         }
 
@@ -425,15 +432,173 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <summary>
         /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
         /// </summary>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
-        public static async Task<IAuthContext> LogoutAsync()
+        /// <param name="signOutFromBroker">
+        /// When <c>true</c> and the Windows broker (WAM) is in use, cached accounts for this module
+        /// are also removed from the broker. This affects the shared OS-level broker store and may
+        /// sign the user out of other broker-enabled applications using the same Windows account.
+        /// </param>
+        /// <returns>The <see cref="IAuthContext"/> that was signed out from.</returns>
+        public static async Task<IAuthContext> LogoutAsync(bool signOutFromBroker = false)
         {
             var authContext = GraphSession.Instance.AuthContext;
             GraphSession.Instance.InMemoryTokenCache?.ClearCache();
+
+            // Identify the account that signed in for this session so cache clearing can be scoped to
+            // it. Prefer the HomeAccountId captured on the session's auth context (set at sign-in) for
+            // correct isolation when multiple identities share the per-user persisted store. Fall back
+            // to the persisted auth record, then to clearing all accounts when neither is available.
+            var homeAccountId = !string.IsNullOrEmpty(authContext?.HomeAccountId)
+                ? authContext.HomeAccountId
+                : await GetCurrentHomeAccountIdAsync().ConfigureAwait(false);
+
+            if (authContext?.ContextScope == ContextScope.CurrentUser)
+            {
+                try
+                {
+                    await TokenCacheUtilities.ClearPersistedTokenCacheAsync(
+                        Constants.CacheName,
+                        authContext.ClientId,
+                        GetAuthorityUrl(authContext),
+                        homeAccountId).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    // Non-fatal: persisted cache clearing may fail on some platforms.
+                    // The auth record and in-memory state are still cleared below.
+                    LogCacheClearFailure("Failed to clear the persisted MSAL token cache during Disconnect-MgGraph", ex);
+                }
+            }
+
+            if (signOutFromBroker && authContext != null && ShouldUseWam(authContext))
+            {
+                try
+                {
+                    await ClearBrokerTokenCacheAsync(authContext, homeAccountId).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    // Non-fatal: removing broker accounts may fail. Disconnect still completes.
+                    LogCacheClearFailure("Failed to remove cached accounts from the Windows broker (WAM) during Disconnect-MgGraph", ex);
+                }
+            }
+
             GraphSession.Instance.AuthContext = null;
             GraphSession.Instance.GraphHttpClient = null;
             await DeleteAuthRecordAsync().ConfigureAwait(false);
             return authContext;
+        }
+
+        /// <summary>
+        /// Removes cached accounts for the current module from the Windows broker (WAM).
+        /// This only has an effect on Windows when the broker is in use. Because the broker store is
+        /// shared at the OS level, removing accounts here may also sign the user out of other
+        /// broker-enabled applications (for example Visual Studio, Azure CLI, or Azure PowerShell)
+        /// that are using the same Windows account.
+        /// </summary>
+        /// <summary>
+        /// Removes cached accounts for the current module from the Windows broker (WAM).
+        /// This only has an effect on Windows when the broker is in use. When the current session's
+        /// account can be identified (via the persisted <see cref="AuthenticationRecord"/>), only that
+        /// account is removed to limit the impact on other broker-enabled applications. When no account
+        /// can be identified, all accounts for this module are removed as a fallback.
+        /// Because the broker store is shared at the OS level, removing an account here may also sign
+        /// the user out of other broker-enabled applications (for example Visual Studio, Azure CLI, or
+        /// Azure PowerShell) that are using the same Windows account.
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> whose broker accounts should be removed.</param>
+        /// <param name="homeAccountId">
+        /// The HomeAccountId of the current session's account, used to scope removal to that account.
+        /// When <c>null</c> or empty, all accounts for the module are removed as a fallback.
+        /// </param>
+        private static async Task ClearBrokerTokenCacheAsync(IAuthContext authContext, string homeAccountId)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var pca = PublicClientApplicationBuilder
+                .Create(authContext.ClientId)
+                .WithAuthority(GetAuthorityUrl(authContext))
+                .WithBroker(new BrokerOptions(BrokerOptions.OperatingSystems.Windows))
+                .WithParentActivityOrWindow(WindowHandleUtlities.GetConsoleOrTerminalWindow)
+                .Build();
+
+            var accounts = await pca.GetAccountsAsync().ConfigureAwait(false);
+
+            // Narrow removal to the account that signed in for this session, identified by the
+            // HomeAccountId persisted in the AuthenticationRecord. This avoids removing other accounts
+            // the user may have signed into via this module from the shared broker store.
+            if (!string.IsNullOrEmpty(homeAccountId))
+            {
+                var matchingAccounts = accounts
+                    .Where(a => string.Equals(a.HomeAccountId?.Identifier, homeAccountId, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+                if (matchingAccounts.Count > 0)
+                {
+                    foreach (var account in matchingAccounts)
+                    {
+                        await pca.RemoveAsync(account).ConfigureAwait(false);
+                    }
+                    return;
+                }
+            }
+
+            // Fallback: no identifiable session account, remove all accounts for this module.
+            foreach (var account in accounts)
+            {
+                await pca.RemoveAsync(account).ConfigureAwait(false);
+            }
+        }
+
+        /// <summary>
+        /// Reads the HomeAccountId of the account persisted for the current session, if any.
+        /// Returns <c>null</c> when no authentication record is available or it cannot be read.
+        /// </summary>
+        private static async Task<string> GetCurrentHomeAccountIdAsync()
+        {
+            try
+            {
+                var authRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+                return TryGetHomeAccountId(authRecord);
+            }
+            catch
+            {
+                // A missing or unreadable auth record simply means we cannot narrow the removal.
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Safely reads the HomeAccountId from an <see cref="AuthenticationRecord"/>. Capturing this
+        /// diagnostic identifier must never fail sign-in, so any error yields <c>null</c>.
+        /// </summary>
+        private static string TryGetHomeAccountId(AuthenticationRecord authRecord)
+        {
+            try
+            {
+                return authRecord?.HomeAccountId;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Writes a best-effort diagnostic for a non-fatal cache clearing failure. Logging must never
+        /// prevent Disconnect-MgGraph from completing, so any failure to log is swallowed.
+        /// </summary>
+        private static void LogCacheClearFailure(string summary, Exception ex)
+        {
+            try
+            {
+                var writer = GraphSession.Instance.OutputWriter;
+                writer.WriteWarning?.Invoke($"{summary}: {ex.Message}");
+                writer.WriteDebug?.Invoke($"{summary}: {ex}");
+            }
+            catch
+            {
+                // Diagnostics are best-effort and must not break sign-out.
+            }
         }
 
         private static async Task<AuthenticationRecord> ReadAuthRecordAsync()

@@ -4,7 +4,7 @@
     <LangVersion>9.0</LangVersion>
     <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
-    <Version>2.35.1</Version>
+    <Version>2.38.0</Version>
     <!-- Suppress .NET Target Framework Moniker (TFM) Support Build Warnings -->
     <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
@@ -20,6 +20,10 @@
     <PackageReference Include="Azure.Identity.Broker" Version="1.4.0" />
     <!-- Explicitly reference Microsoft.Identity.Client to ensure form_post support -->
     <PackageReference Include="Microsoft.Identity.Client" Version="4.82.1" />
+    <!-- Explicitly reference the MSAL broker to clear WAM/broker cached accounts on disconnect -->
+    <PackageReference Include="Microsoft.Identity.Client.Broker" Version="4.82.1" />
+    <!-- Explicitly reference MSAL Extensions to clear persisted token cache on disconnect -->
+    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="4.78.0" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.3" />
     <PackageReference Include="Microsoft.Graph.Core" Version="4.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
