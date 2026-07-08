@@ -141,10 +141,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     });
                 }
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                authContext.HomeAccountId = TryGetHomeAccountId(authRecord);
                 return interactiveBrowserCredential;
             }
 
-            interactiveOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            var interactiveAuthRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            interactiveOptions.AuthenticationRecord = interactiveAuthRecord;
+            authContext.HomeAccountId = TryGetHomeAccountId(interactiveAuthRecord);
             return new InteractiveBrowserCredential(interactiveOptions);
         }
 
@@ -182,10 +185,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 var deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
                 var authRecord = await deviceCodeCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                authContext.HomeAccountId = TryGetHomeAccountId(authRecord);
                 return deviceCodeCredential;
             }
 
-            deviceCodeOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            var deviceCodeAuthRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            deviceCodeOptions.AuthenticationRecord = deviceCodeAuthRecord;
+            authContext.HomeAccountId = TryGetHomeAccountId(deviceCodeAuthRecord);
             return new DeviceCodeCredential(deviceCodeOptions);
         }
 
@@ -438,8 +444,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             GraphSession.Instance.InMemoryTokenCache?.ClearCache();
 
             // Identify the account that signed in for this session so cache clearing can be scoped to
-            // it. When unavailable, callers fall back to clearing all accounts for the module.
-            var homeAccountId = await GetCurrentHomeAccountIdAsync().ConfigureAwait(false);
+            // it. Prefer the HomeAccountId captured on the session's auth context (set at sign-in) for
+            // correct isolation when multiple identities share the per-user persisted store. Fall back
+            // to the persisted auth record, then to clearing all accounts when neither is available.
+            var homeAccountId = !string.IsNullOrEmpty(authContext?.HomeAccountId)
+                ? authContext.HomeAccountId
+                : await GetCurrentHomeAccountIdAsync().ConfigureAwait(false);
 
             if (authContext?.ContextScope == ContextScope.CurrentUser)
             {
@@ -548,11 +558,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             try
             {
                 var authRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
-                return authRecord?.HomeAccountId;
+                return TryGetHomeAccountId(authRecord);
             }
             catch
             {
                 // A missing or unreadable auth record simply means we cannot narrow the removal.
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Safely reads the HomeAccountId from an <see cref="AuthenticationRecord"/>. Capturing this
+        /// diagnostic identifier must never fail sign-in, so any error yields <c>null</c>.
+        /// </summary>
+        private static string TryGetHomeAccountId(AuthenticationRecord authRecord)
+        {
+            try
+            {
+                return authRecord?.HomeAccountId;
+            }
+            catch
+            {
                 return null;
             }
         }

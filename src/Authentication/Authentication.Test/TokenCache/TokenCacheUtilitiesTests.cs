@@ -101,6 +101,28 @@ namespace Microsoft.Graph.Authentication.Test.TokenCache
         }
 
         [Fact]
+        public async Task LogoutAsyncShouldUseAuthContextHomeAccountIdForCurrentUserScope()
+        {
+            // Arrange - a CurrentUser context with a session HomeAccountId exercises the account-scoped
+            // file cache clearing path. With no matching account on disk it safely falls back.
+            GraphSession.Instance.AuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ContextScope = ContextScope.CurrentUser,
+                HomeAccountId = "00000000-0000-0000-0000-000000000000.11111111-1111-1111-1111-111111111111"
+            };
+
+            // Act - should not throw even if no persisted cache exists on disk
+            var result = await AuthenticationHelpers.LogoutAsync();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(ContextScope.CurrentUser, result.ContextScope);
+            Assert.Equal("00000000-0000-0000-0000-000000000000.11111111-1111-1111-1111-111111111111", result.HomeAccountId);
+            Assert.Null(GraphSession.Instance.AuthContext);
+        }
+
+        [Fact]
         public async Task LogoutAsyncWithSignOutFromBrokerShouldStillClearContextForCurrentUser()
         {
             // Arrange - WAM disabled so the broker path is skipped; the file cache clear still runs.
