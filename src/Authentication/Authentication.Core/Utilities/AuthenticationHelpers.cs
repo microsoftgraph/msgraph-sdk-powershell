@@ -436,11 +436,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             var authContext = GraphSession.Instance.AuthContext;
             GraphSession.Instance.InMemoryTokenCache?.ClearCache();
+
+            // Identify the account that signed in for this session so cache clearing can be scoped to
+            // it. When unavailable, callers fall back to clearing all accounts for the module.
+            var homeAccountId = await GetCurrentHomeAccountIdAsync().ConfigureAwait(false);
+
             if (authContext?.ContextScope == ContextScope.CurrentUser)
             {
                 try
                 {
-                    await TokenCacheUtilities.ClearPersistedTokenCacheAsync(Constants.CacheName).ConfigureAwait(false);
+                    await TokenCacheUtilities.ClearPersistedTokenCacheAsync(
+                        Constants.CacheName,
+                        authContext.ClientId,
+                        GetAuthorityUrl(authContext),
+                        homeAccountId).ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {
@@ -454,7 +463,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 try
                 {
-                    await ClearBrokerTokenCacheAsync(authContext).ConfigureAwait(false);
+                    await ClearBrokerTokenCacheAsync(authContext, homeAccountId).ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {
@@ -487,7 +496,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// Azure PowerShell) that are using the same Windows account.
         /// </summary>
         /// <param name="authContext">The <see cref="IAuthContext"/> whose broker accounts should be removed.</param>
-        private static async Task ClearBrokerTokenCacheAsync(IAuthContext authContext)
+        /// <param name="homeAccountId">
+        /// The HomeAccountId of the current session's account, used to scope removal to that account.
+        /// When <c>null</c> or empty, all accounts for the module are removed as a fallback.
+        /// </param>
+        private static async Task ClearBrokerTokenCacheAsync(IAuthContext authContext, string homeAccountId)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
@@ -504,7 +517,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             // Narrow removal to the account that signed in for this session, identified by the
             // HomeAccountId persisted in the AuthenticationRecord. This avoids removing other accounts
             // the user may have signed into via this module from the shared broker store.
-            var homeAccountId = await GetCurrentHomeAccountIdAsync().ConfigureAwait(false);
             if (!string.IsNullOrEmpty(homeAccountId))
             {
                 var matchingAccounts = accounts
