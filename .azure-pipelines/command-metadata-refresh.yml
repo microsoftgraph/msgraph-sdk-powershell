@@ -137,6 +137,7 @@ extends:
               targetType: inline
               script: |
                 . "$(System.DefaultWorkingDirectory)\tools\Versions\BumpModuleVersion.ps1" -BumpV1Module -BumpBetaModule -BumpAuthModule -Debug
+          - template: .azure-pipelines/common-templates/get-github-app-token.yml@self
           - task: Bash@3
             displayName: Push version bump changes
             env:

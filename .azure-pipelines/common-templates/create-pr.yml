@@ -16,6 +16,8 @@ parameters:
     default: ""
 
 steps:
+  - template: ./get-github-app-token.yml
+
   - task: PowerShell@2
     displayName: Create Pull Request for generated build
     env:
