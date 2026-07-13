@@ -17,6 +17,8 @@ steps:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/PostGeneration/AuthModuleMetadata.ps1
 
+  - template: ../common-templates/get-github-app-token.yml
+
   - task: Bash@3
     displayName: Push command metadata
     enabled: true
