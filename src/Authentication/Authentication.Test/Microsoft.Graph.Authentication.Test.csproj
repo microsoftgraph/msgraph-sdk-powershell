@@ -7,7 +7,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
     <!-- As described in this post https://devblogs.microsoft.com/powershell/depending-on-the-right-powershell-nuget-package-in-your-net-project, reference the SDK for dotnetcore-->
-    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.5.0" PrivateAssets="all" Condition="'$(TargetFramework)' == 'net8.0'" />
+    <!-- Microsoft.PowerShell.SDK 7.5.x targets net9.0 and contributes no assemblies to a net8.0 build,
+         which silently leaves the PowerShellStandard.Library stub (whose APIs return null) as the runtime
+         System.Management.Automation. Keep this on the latest 7.4.x (net8.0) release so PSObject-dependent
+         tests exercise the real PowerShell runtime. -->
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.4.17" PrivateAssets="all" Condition="'$(TargetFramework)' == 'net8.0'" />
     <PackageReference Include="Moq" Version="4.20.70" />
   <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="xunit" Version="2.4.2" />
