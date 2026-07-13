@@ -92,7 +92,7 @@ steps:
         git add .
         git commit -m 'Weekly OpenApiDocs Download.'
         git status
-        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(Branch)
+        git push --set-upstream "https://x-access-token:$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(Branch)
         git status
 
 # References
