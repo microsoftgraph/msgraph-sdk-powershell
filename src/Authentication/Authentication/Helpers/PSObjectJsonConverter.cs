@@ -53,3 +53,4 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
     }
 }
+ 
