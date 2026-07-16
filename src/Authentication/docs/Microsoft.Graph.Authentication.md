@@ -1,6 +1,6 @@
 ﻿---
 Module Name: Microsoft.Graph.Authentication
-Module Guid: 0fecf360-9875-4e02-998c-b6d7b6653b6b
+Module Guid: 61cf1e7f-ce6b-43c6-a180-6c350c372009
 Download Help Link: https://learn.microsoft.com/powershell/module/Microsoft.Graph.Authentication
 Help Version: 1.0.0.0
 Locale: en-US
@@ -48,7 +48,7 @@ Removes Microsoft Graph environment to the settings file
 Sets a Microsoft Graph environment to the settings file.
 
 ### [Set-MgGraphOption](Set-MgGraphOption.md)
-Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support. Web Account Manager is enabled by default on Windows systems and cannot be disabled.
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
 
 ### [Set-MgRequestContext](Set-MgRequestContext.md)
 Sets request context for Microsoft Graph invocations
