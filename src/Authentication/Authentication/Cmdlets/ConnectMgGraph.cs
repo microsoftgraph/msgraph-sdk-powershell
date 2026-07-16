@@ -198,8 +198,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                                 // Default to CurrentUser but allow the customer to change this via `-ContextScope`.
                                 authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
                             }
-                            if (this.IsParameterBound(nameof(LoginHint)))
-                                authContext.LoginHint = LoginHint;
+if (this.IsParameterBound(nameof(LoginHint)) && !string.IsNullOrWhiteSpace(LoginHint))
+    authContext.LoginHint = LoginHint;
                             authContext.TokenCredentialType = UseDeviceCode ? TokenCredentialType.DeviceCode : TokenCredentialType.InteractiveBrowser;
                         }
                         break;

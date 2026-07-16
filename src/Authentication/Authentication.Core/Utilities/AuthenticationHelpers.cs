@@ -171,15 +171,42 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         internal static async Task<AuthenticationRecord> ResolveInteractiveAuthRecordAsync(string loginHint)
         {
             if (string.IsNullOrWhiteSpace(loginHint))
-                return await ReadAuthRecordAsync().ConfigureAwait(false);
+            {
+                try
+                {
+                    return await ReadAuthRecordAsync().ConfigureAwait(false);
+                }
+                catch
+                {
+                    return null;
+                }
+            }
 
-            var keyedRecord = await ReadAuthRecordAsync(loginHint).ConfigureAwait(false);
+            AuthenticationRecord keyedRecord = null;
+            try
+            {
+                keyedRecord = await ReadAuthRecordAsync(loginHint).ConfigureAwait(false);
+            }
+            catch
+            {
+                keyedRecord = null;
+            }
+
             if (keyedRecord != null)
                 return MatchesLoginHint(keyedRecord, loginHint) ? keyedRecord : null;
 
             // Migration: a pre-existing shared record for this same account is promoted to a
             // per-account record so existing users are not forced through the account picker again.
-            var legacyRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            AuthenticationRecord legacyRecord = null;
+            try
+            {
+                legacyRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            }
+            catch
+            {
+                legacyRecord = null;
+            }
+
             if (legacyRecord != null && MatchesLoginHint(legacyRecord, loginHint))
             {
                 await WriteAuthRecordAsync(legacyRecord, loginHint).ConfigureAwait(false);

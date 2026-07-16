@@ -419,7 +419,7 @@ Get-MgUserActivityHistoryItem         CrossDeviceExperiences       GET    /users
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>All</maml:name>
           <maml:description>
-            <maml:para>To return all possible permissions rather than just those that match the SearchString parameter, specify the All parameter. The All parameter may also be used with the PermissionType to enumerate all applicaition permissions or all delegated permissions.</maml:para>
+            <maml:para>To return all possible permissions rather than just those that match the SearchString parameter, specify the All parameter. The All parameter may also be used with the PermissionType to enumerate all application permissions or all delegated permissions.</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
