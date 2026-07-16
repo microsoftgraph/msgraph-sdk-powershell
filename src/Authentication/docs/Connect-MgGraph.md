@@ -15,8 +15,8 @@ Microsoft Graph PowerShell supports two types of authentication: delegated and a
 ### UserParameterSet (Default)
 ```
 Connect-MgGraph [[-Scopes] <String[]>] [[-ClientId] <String>] [-TenantId <String>]
- [-ContextScope <ContextScope>] [-Environment <String>] [-UseDeviceCode] [-ClientTimeout <Double>] [-NoWelcome]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [-ContextScope <ContextScope>] [-Environment <String>] [-UseDeviceCode] [-LoginHint <String>]
+ [-ClientTimeout <Double>] [-NoWelcome] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### AppCertificateParameterSet
@@ -359,6 +359,21 @@ Aliases: ManagedIdentity, ManagedServiceIdentity, MSI
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LoginHint
+The login hint (typically a username or email) used to pre-populate the account field during interactive browser authentication.
+
+```yaml
+Type: String
+Parameter Sets: UserParameterSet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

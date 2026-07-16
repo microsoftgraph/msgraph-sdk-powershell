@@ -485,6 +485,18 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>LoginHint</maml:name>
+          <maml:description>
+            <maml:para>The login hint (typically a username or email) used to pre-populate the account field during interactive browser authentication.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>NoWelcome</maml:name>
           <maml:description>
             <maml:para>Hides the welcome message.</maml:para>
@@ -920,6 +932,18 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>LoginHint</maml:name>
+        <maml:description>
+          <maml:para>The login hint (typically a username or email) used to pre-populate the account field during interactive browser authentication.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>NoWelcome</maml:name>
