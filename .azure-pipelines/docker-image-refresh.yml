@@ -15,6 +15,9 @@
 name: $(Date:yyyyMMdd)$(Rev:.r)_docker-image-refresh
 
 parameters:
+- name: WindowsPool
+  type: string
+  default: 1es-windows-ps-compute-m
 - name: LinuxPool
   type: string
   default: Azure-Pipelines-1ESPT-ExDShared
@@ -47,10 +50,10 @@ resources:
 extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
-    pool:
-      name: ${{ parameters.LinuxPool }}
-      image: ubuntu-latest
-      os: linux
+    # The 1ES template injects an SDL/compliance stage that MUST run on a Windows pool, so the
+    # template-level pool is Windows. The actual container build overrides to a Linux pool at the
+    # job level below. (Same pattern as sdk-release.yml.)
+    pool: ${{ parameters.WindowsPool }}
     settings:
       networkIsolationPolicy: Permissive
     customBuildTags:
