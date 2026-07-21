@@ -1,0 +1,98 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+#
+# Scheduled rebuild of the microsoftgraph/powershell container image.
+#
+# Why this pipeline exists:
+#   The release pipeline (sdk-release.yml) only builds and pushes this image on `v*` tags, so
+#   between releases the published digest goes stale and keeps accruing Ubuntu USN / PowerShell
+#   CVEs. That is the root cause of the two S360 "Replace Vulnerable Registry Reference" items.
+#   This lightweight pipeline rebuilds the image on a cadence against a patched base and pushes a
+#   fresh digest to :latest, keeping the registry copy patched without re-running the full release.
+#
+# Setup (one-time): register this YAML as a new pipeline definition in the
+#   "Graph Developer Experiences" ADO project, targeting the default branch.
+name: $(Date:yyyyMMdd)$(Rev:.r)_docker-image-refresh
+
+parameters:
+- name: LinuxPool
+  type: string
+  default: Azure-Pipelines-1ESPT-ExDShared
+
+variables:
+  REGISTRY: 'msgraphprodregistry.azurecr.io'
+  IMAGE_NAME: 'public/microsoftgraph/powershell'
+
+# Rebuild weekly so the image regularly picks up patched OS layers. `always: true` forces a run
+# even when there are no new commits (the whole point is to refresh the base image).
+schedules:
+- cron: "0 6 * * 1"   # 06:00 UTC every Monday
+  displayName: Weekly image refresh
+  branches:
+    include:
+    - main
+  always: true
+
+# Do not build on every push/PR; the release pipeline already handles tag-driven publishes.
+trigger: none
+pr: none
+
+resources:
+  repositories:
+  - repository: 1ESPipelineTemplates
+    type: git
+    name: 1ESPipelineTemplates/1ESPipelineTemplates
+    ref: refs/tags/release
+
+extends:
+  template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
+  parameters:
+    pool:
+      name: ${{ parameters.LinuxPool }}
+      image: ubuntu-latest
+      os: linux
+    settings:
+      networkIsolationPolicy: Permissive
+    customBuildTags:
+    - ES365AIMigrationTooling
+    stages:
+    - stage: RefreshDockerImage
+      displayName: 'Refresh docker image'
+      jobs:
+      - job: RebuildAndPush
+        displayName: 'Rebuild and push patched image'
+        pool:
+          name: ${{ parameters.LinuxPool }}
+          image: ubuntu-latest
+          os: linux
+        steps:
+        - checkout: self
+
+        - task: AzureCLI@2
+          displayName: 'Log in to Azure Container Registry'
+          inputs:
+            azureSubscription: 'ACR Images Push Service Connection'
+            scriptType: 'bash'
+            scriptLocation: 'inlineScript'
+            inlineScript: |
+              az acr login --name $(REGISTRY)
+
+        - script: |
+            docker run --privileged --rm tonistiigi/binfmt --install all
+          displayName: 'Enable multi-platform builds'
+
+        - script: |
+            docker buildx create --use --name refreshbuilder
+          displayName: 'Set up Docker BuildX'
+
+        - bash: |
+            set -euo pipefail
+            formatted_date=$(date +"%Y%m%d%H%M%S")
+            echo "Rebuilding $(REGISTRY)/$(IMAGE_NAME) on a patched base"
+            docker buildx build \
+              --platform linux/amd64 \
+              --push \
+              -t "$(REGISTRY)/$(IMAGE_NAME):latest" \
+              -t "$(REGISTRY)/$(IMAGE_NAME):$formatted_date" \
+              "$(Build.SourcesDirectory)"
+          displayName: 'Build and push refreshed image'
