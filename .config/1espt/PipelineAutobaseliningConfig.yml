@@ -81,3 +81,14 @@ pipelines:
           lastModifiedDate: 2026-05-13
         accessibilityinsights:
           lastModifiedDate: 2026-03-07
+  714:
+    retail:
+      source:
+        eslint:
+          lastModifiedDate: 2026-07-22
+        psscriptanalyzer:
+          lastModifiedDate: 2026-07-22
+        armory:
+          lastModifiedDate: 2026-07-22
+        accessibilityinsights:
+          lastModifiedDate: 2026-07-22
