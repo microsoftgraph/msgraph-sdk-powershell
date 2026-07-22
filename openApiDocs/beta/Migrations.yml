@@ -162,7 +162,7 @@ paths:
       tags:
         - solutions.migrationsRoot
       summary: Create crossTenantMigrationJob
-      description: Create a new crossTenantMigrationJob.
+      description: 'Create a new crossTenantMigrationJob. A job defines the migration batch but doesn''t start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/migrationsroot-post-crosstenantmigrationjobs?view=graph-rest-beta
@@ -353,6 +353,10 @@ paths:
       tags:
         - solutions.migrationsRoot
       summary: Invoke action migrate
+      description: 'Migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-migrate?view=graph-rest-beta
       operationId: solution.migration.crossTenantMigrationJob_migrate
       parameters:
         - name: crossTenantMigrationJob-id
@@ -383,6 +387,10 @@ paths:
       tags:
         - solutions.migrationsRoot
       summary: Invoke action validate
+      description: 'Validate the configuration of a cross-tenant migration job asynchronously. This action doesn''t migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that affect an actual migration job. The job must be in a submitted or validateFailed status before you can call this action. This action is asynchronous. After you call the validate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of validatePassed or validateFailed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-validate?view=graph-rest-beta
       operationId: solution.migration.crossTenantMigrationJob_validate
       parameters:
         - name: crossTenantMigrationJob-id
@@ -886,6 +894,10 @@ paths:
       tags:
         - solutions.migrationsRoot
       summary: Invoke action migrate
+      description: 'Migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-migrate?view=graph-rest-beta
       operationId: solution.migration.crossTenantMigrationJob.displayName_migrate
       parameters:
         - name: displayName
@@ -915,6 +927,10 @@ paths:
       tags:
         - solutions.migrationsRoot
       summary: Invoke action validate
+      description: 'Validate the configuration of a cross-tenant migration job asynchronously. This action doesn''t migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that affect an actual migration job. The job must be in a submitted or validateFailed status before you can call this action. This action is asynchronous. After you call the validate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of validatePassed or validateFailed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-validate?view=graph-rest-beta
       operationId: solution.migration.crossTenantMigrationJob.displayName_validate
       parameters:
         - name: displayName
@@ -958,65 +974,6 @@ paths:
         removalDate: '2026-07-09'
         date: '2023-11-15'
         version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
-  /solutions/migrations/crossTenantMigrationJobs/microsoft.graph.validate:
-    post:
-      tags:
-        - solutions.migrationsRoot
-      summary: Invoke action validate
-      description: 'Validate the configuration of a crossTenantMigrationJob. This function doesn''t migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that would affect an actual migration job. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-validate?view=graph-rest-beta
-      operationId: solution.migration.crossTenantMigrationJob_validate
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                displayName:
-                  type: string
-                  nullable: true
-                completeAfterDateTime:
-                  type: string
-                  nullable: true
-                sourceTenantId:
-                  type: string
-                  nullable: true
-                exchangeSettings:
-                  $ref: '#/components/schemas/microsoft.graph.exchangeOnlineCrossTenantMigrationSettings'
-                workloads:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
-                resourceType:
-                  type: string
-                  nullable: true
-                resources:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2025-07-09'
-        version: 2025-07/PrivatePreview:CrossTenantContentMigrationAPI
-      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.migrationsRoot:
@@ -1042,19 +999,19 @@ components:
             completeAfterDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: DateTime after which the migration should be performed
+              description: 'Date and time after which the migration should be performed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
               format: date-time
             createdBy:
               type: string
-              description: ID of the user that created the job
+              description: User principal name (UPN) of the user who created the job. Read-only.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: When the job what created
+              description: 'When the job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Read-only.'
               format: date-time
             displayName:
               type: string
-              description: Display name of the job. Must be unique per tenant
+              description: Display name of the job. Must be unique per tenant.
             exchangeSettings:
               $ref: '#/components/schemas/microsoft.graph.exchangeOnlineCrossTenantMigrationSettings'
             jobType:
@@ -1062,38 +1019,38 @@ components:
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: When this migration job was last updated
+              description: 'When this migration job was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Read-only.'
               format: date-time
             message:
               type: string
-              description: Status message of the migration job
+              description: Status message of the migration job. Nullable. Read-only.
               nullable: true
             resources:
               type: array
               items:
                 type: string
-              description: IDs (GUID) of the resources being migrated with the migration job
+              description: IDs (GUID) of the resources that are migrated with the migration job.
             resourceType:
               type: string
-              description: Type of resource being migrated. Only Users is currently supported
+              description: Type of resource being migrated. Only Users is currently supported.
             sourceTenantId:
               type: string
-              description: ID (GUID) of the tenant that content is being migrated from
+              description: ID (GUID) of the tenant that content is migrated from.
             status:
               $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJobStatus'
             targetTenantId:
               type: string
-              description: ID of the tenant that content is being migrated to
+              description: ID of the tenant that content is migrated to. Read-only.
             workloads:
               type: array
               items:
                 type: string
-              description: 'Workloads to migrate. Supported workloads are Teams, Exchange, and ODSP (OneDrive/SharePoint)'
+              description: 'Workloads to migrate. Supported workloads are Teams, Exchange, and ODSP (OneDrive/SharePoint).'
             users:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationTask'
-              description: Details and status of the users being migrated in this migration job
+              description: Details and status of the users migrated in this migration job.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -1132,6 +1089,15 @@ components:
               description: Type of migration task. Only Users are supported at this time.
           additionalProperties:
             type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
+      additionalProperties:
+        type: object
     microsoft.graph.exchangeOnlineCrossTenantMigrationSettings:
       title: exchangeOnlineCrossTenantMigrationSettings
       type: object
@@ -1142,15 +1108,6 @@ components:
         targetDeliveryDomain:
           type: string
           description: Delivery domain on the target tenant
-      additionalProperties:
-        type: object
-    microsoft.graph.entity:
-      title: entity
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.crossTenantMigrationJobType:

@@ -5555,6 +5555,8 @@ components:
               description: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
             content:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItemContent'
+            informationProtectionLabel:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItemInformationProtectionLabel'
             properties:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.properties'
             activities:
@@ -6393,6 +6395,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.externalItemInformationProtectionLabel:
+      title: externalItemInformationProtectionLabel
+      type: object
+      properties:
+        sensitivityLabelId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.externalConnectors.properties:
       title: properties
       type: object
@@ -6770,7 +6781,7 @@ components:
             description: Indicates Mobile Application Management (MAM) for iOS devices
             name: iOSMobileApplicationManagement
           - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
+            description: Evolvable enumeration sentinel value. Do not use
             name: unknownFutureValue
           - value: windowsMobileApplicationManagement
             description: Indicates Mobile Application Management (MAM) for Windows devices.
@@ -7412,6 +7423,7 @@ components:
         - personLanguages
         - personPublications
         - personPatents
+        - personWorkPositions
       type: string
     microsoft.graph.externalConnectors.rankingHint:
       title: rankingHint

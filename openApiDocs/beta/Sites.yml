@@ -92611,6 +92611,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.image'
             location:
               $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
+            lockInfo:
+              $ref: '#/components/schemas/microsoft.graph.lockInfo'
             malware:
               $ref: '#/components/schemas/microsoft.graph.malware'
             media:
@@ -92748,7 +92750,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hyperlinkOrPictureColumn'
             indexed:
               type: boolean
-              description: Specifies whether the column values can used for sorting and searching.
+              description: Specifies whether the column values can be used for sorting and searching.
               nullable: true
             isDeletable:
               type: boolean
@@ -92761,6 +92763,10 @@ components:
             isSealed:
               type: boolean
               description: Specifies whether the column can be changed.
+              nullable: true
+            isSearchable:
+              type: boolean
+              description: Specifies whether the column values can be used for searching. Currently supported only for columns in a fileStorageContainer.
               nullable: true
             lookup:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
@@ -93008,7 +93014,7 @@ components:
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             ageGroup:
               type: string
@@ -93035,7 +93041,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
             city:
               type: string
               description: 'The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -93200,7 +93206,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             mySite:
               type: string
@@ -93222,7 +93228,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters can''t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters can''t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -93257,7 +93263,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -93361,7 +93367,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             userType:
               type: string
@@ -93493,6 +93499,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
+              x-ms-navigationProperty: true
+            distributionLists:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.distributionList'
+              description: The personal distribution lists in the user's mailbox. Read-only. Nullable.
               x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
@@ -94761,6 +94773,18 @@ components:
             resource:
               type: string
               description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
+            vapidPublicKey:
+              type: string
+              description: 'Optional. The application server''s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.'
+              nullable: true
+            webPushEncryptionP256dhPublicKey:
+              type: string
+              description: 'Optional. The subscriber''s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''p256dh''). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
+            webPushEncryptionSecret:
+              type: string
+              description: 'Optional. The subscriber''s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''auth''). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.onenote:
@@ -95818,8 +95842,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.fileArchiveStatus'
         hashes:
           $ref: '#/components/schemas/microsoft.graph.hashes'
-        lockInfo:
-          $ref: '#/components/schemas/microsoft.graph.lockInfo'
         mimeType:
           type: string
           description: The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
@@ -95907,6 +95929,31 @@ components:
           description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
           format: double
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.lockInfo:
+      title: lockInfo
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the lock was created, in UTC. Read-only.'
+          format: date-time
+          nullable: true
+        expirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the lock expires, in UTC. Read-only.'
+          format: date-time
+          nullable: true
+        lockType:
+          $ref: '#/components/schemas/microsoft.graph.lockType'
+        owners:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userIdentity'
+          description: The collection of users that currently hold the lock on the file. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.malware:
@@ -96251,7 +96298,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.thumbnail'
           additionalProperties:
             type: object
-          description: The ThumbnailSet resource is a keyed collection of thumbnail resources.
     microsoft.graph.driveItemVersion:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItemVersion'
@@ -98228,6 +98274,8 @@ components:
               type: string
               description: Name of the OS image that's on the Cloud PC.
               nullable: true
+            isDisasterRecoveryActive:
+              type: boolean
             lastLoginResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcLoginResult'
             lastModifiedDateTime:
@@ -98859,6 +98907,40 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.distributionList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
+        - title: distributionList
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the distribution list.
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.member'
+              description: The list of members in the distribution list. Not returned by default; use $select=members to include.
+            notes:
+              type: string
+              nullable: true
+            personIdentifier:
+              type: string
+              nullable: true
+            distributionListMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.distributionListMember'
+              description: The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.
+              x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.employeeExperienceUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -98880,7 +98962,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.storyline'
           additionalProperties:
             type: object
-          description: Represents a container that exposes navigation properties for employee experience user resources.
     microsoft.graph.inferenceClassification:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -98918,7 +98999,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
             assignedLicenses:
               type: array
               items:
@@ -99285,7 +99366,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft Entra group.
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -100461,7 +100541,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft online meeting.
     microsoft.graph.onPremisesSyncBehavior:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -100511,6 +100590,11 @@ components:
         - title: accessReviewInstance
           type: object
           properties:
+            delegatedBy:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userIdentity'
+              description: The identities of users who delegated this review instance to the current reviewer. Null if the instance wasn't delegated. Only returned via filterByCurrentUser when explicitly requested via $select. Read-only.
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -102767,28 +102851,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.lockInfo:
-      title: lockInfo
-      type: object
-      properties:
-        createdDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        expirationDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        lockType:
-          $ref: '#/components/schemas/microsoft.graph.lockType'
-        owners:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.userIdentity'
-      additionalProperties:
-        type: object
     microsoft.graph.folderView:
       title: folderView
       type: object
@@ -102807,6 +102869,30 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.lockType:
+      title: lockType
+      enum:
+        - none
+        - exclusive
+        - shared
+        - unknownFutureValue
+      type: string
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address associated with the user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.mediaSource:
       title: mediaSource
       type: object
@@ -103225,6 +103311,9 @@ components:
         - title: usageRight
           type: object
           properties:
+            externalServiceIdentifier:
+              type: string
+              nullable: true
             services:
               type: array
               items:
@@ -104783,7 +104872,7 @@ components:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
+              description: 'Read-only. Timestamp at which the chat message was deleted, or null if not deleted.'
               format: date-time
               nullable: true
             etag:
@@ -104799,13 +104888,13 @@ components:
             lastEditedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+              description: Read-only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
+              description: 'Read-only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
               format: date-time
               nullable: true
             locale:
@@ -104935,7 +105024,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: Deep link URL of the tab instance. Read only.
+              description: Deep link URL of the tab instance. Read-only.
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
@@ -105253,6 +105342,8 @@ components:
         - modifyingSingleSignOn
         - refreshPolicyConfiguration
         - preparing
+        - failoverInProgress
+        - failbackInProgress
       type: string
     microsoft.graph.cloudPcStatusDetail:
       title: cloudPcStatusDetail
@@ -105669,6 +105760,50 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.member:
+      title: member
+      type: object
+      properties:
+        contactId:
+          type: string
+          description: 'The ID of the referenced contact, if applicable. Optional.'
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the member. Optional.
+          nullable: true
+        key:
+          type: string
+          description: The email address or routing key of the member. Required.
+          nullable: true
+        recipientType:
+          $ref: '#/components/schemas/microsoft.graph.recipientType'
+        routingType:
+          type: string
+          description: 'The routing type for the member, for example, SMTP. Optional.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.distributionListMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: distributionListMember
+          type: object
+          properties:
+            contactId:
+              type: string
+              description: 'The ID of the referenced contact, if applicable. Read-only.'
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the member. Read-only.
+              nullable: true
+            recipientType:
+              $ref: '#/components/schemas/microsoft.graph.recipientType'
+            contact:
+              $ref: '#/components/schemas/microsoft.graph.contact'
+          additionalProperties:
+            type: object
     microsoft.graph.engagementRole:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -105789,6 +105924,7 @@ components:
         - private
         - secret
         - public
+        - unknownFutureValue
       type: string
     microsoft.graph.assignedLabel:
       title: assignedLabel
@@ -106151,7 +106287,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp at which the channel was created.
+              description: Read-only. Timestamp at which the channel was created.
               format: date-time
               nullable: true
             description:
@@ -106303,7 +106439,7 @@ components:
               nullable: true
             timeZone:
               type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
+              description: 'The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.'
               nullable: true
             workforceIntegrationIds:
               type: array
@@ -108649,6 +108785,8 @@ components:
               type: string
               description: Specifies the spoken language used during the meeting for recording and transcription purposes.
               nullable: true
+            meetingType:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingType'
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -109098,6 +109236,11 @@ components:
               type: string
               description: 'Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow. Supports $select, $orderby, and $filter (eq only).'
               nullable: true
+            delegatedBy:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userIdentity'
+              description: The identities of users who delegated this decision item to the current reviewer. Null if the item wasn't delegated. A collection because multiple reviewers can delegate to the same user. Only returned via filterByCurrentUser when explicitly requested via $select. Read-only.
             justification:
               type: string
               description: Justification left by the reviewer when they made the decision.
@@ -109347,6 +109490,11 @@ components:
               x-ms-navigationProperty: true
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+            historyItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerHistoryItem'
+              x-ms-navigationProperty: true
             tasks:
               type: array
               items:
@@ -110799,30 +110947,6 @@ components:
         - reactivating
         - unknownFutureValue
       type: string
-    microsoft.graph.lockType:
-      title: lockType
-      enum:
-        - none
-        - exclusive
-        - shared
-        - unknownFutureValue
-      type: string
-    microsoft.graph.userIdentity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: userIdentity
-          type: object
-          properties:
-            ipAddress:
-              type: string
-              description: Indicates the client IP address associated with the user performing the activity (audit log only).
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: The userPrincipalName attribute of the user.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.mediaSourceContentCategory:
       title: mediaSourceContentCategory
       enum:
@@ -111155,6 +111279,9 @@ components:
               type: number
               description: The number of licenses that are currently consumed by assignments from this allotment. Not nullable. Read-only.
               format: int32
+            externalServiceIdentifier:
+              type: string
+              nullable: true
             services:
               type: array
               items:
@@ -111405,7 +111532,7 @@ components:
           nullable: true
         defaultLabel:
           type: string
-          description: Label that would be used if no customizedLabel is provided. Read only.
+          description: Label that would be used if no customizedLabel is provided. Read-only.
           nullable: true
         fieldId:
           type: string
@@ -112534,6 +112661,15 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.recipientType:
+      title: recipientType
+      enum:
+        - contact
+        - oneOff
+        - mailbox
+        - privateDL
+        - unknownFutureValue
+      type: string
     microsoft.graph.engagementRoleMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -114578,12 +114714,15 @@ components:
       properties:
         moreInfoWebUrl:
           type: string
+          description: Provides other video teleconferencing (VTC) dial-in options. Read-only.
           nullable: true
         tenantKey:
           type: string
+          description: The tenant key that is used to dial into the interactive voice response (IVR) of the partner CVI service.
           nullable: true
         videoTeleconferenceId:
           type: string
+          description: The video teleconferencing ID. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -114617,6 +114756,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingType:
+      title: onlineMeetingType
+      enum:
+        - adhoc
+        - scheduled
+        - recurring
+        - broadcast
+        - meetnow
+        - unknownFutureValue
+      type: string
     microsoft.graph.onlineMeetingSensitivityLabelAssignment:
       title: onlineMeetingSensitivityLabelAssignment
       type: object
@@ -115222,6 +115371,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContextDetailsCollection'
             sharedWith:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerHistoryItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerHistoryItem
+          type: object
+          properties:
+            actor:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            entityId:
+              type: string
+            entityType:
+              $ref: '#/components/schemas/microsoft.graph.historyEntityType'
+            eventType:
+              $ref: '#/components/schemas/microsoft.graph.historyEventType'
+            occurredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            planId:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.plannerAppliedCategories:
@@ -115862,7 +116034,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify ''fr'' for the neutral French culture, but not ''fr-FR'' for the French culture in France. Returned by default. Read only.'
+          description: 'The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify ''fr'' for the neutral French culture, but not ''fr-FR'' for the French culture in France. Returned by default. Read-only.'
       additionalProperties:
         type: object
     microsoft.graph.changeTrackedEntity:
@@ -116248,6 +116420,7 @@ components:
               nullable: true
             isRegistrationRequired:
               type: boolean
+              description: Indicates whether attendee registration is enabled for the virtual event.
               nullable: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.virtualEventSettings'
@@ -118035,6 +118208,8 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
           description: 'A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses, file metadata for files, and content activity metadata for enforcement result status entries. Required.'
+        contextMetadata:
+          $ref: '#/components/schemas/microsoft.graph.contextMetadata'
         deviceMetadata:
           $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
         integratedAppMetadata:
@@ -119191,6 +119366,22 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.historyEntityType:
+      title: historyEntityType
+      enum:
+        - task
+        - unknownFutureValue
+      type: string
+    microsoft.graph.historyEventType:
+      title: historyEventType
+      enum:
+        - created
+        - updated
+        - deleted
+        - undeleted
+        - moved
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerTeamsPublicationInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
@@ -119792,6 +119983,7 @@ components:
         - sPSharingNotifyUser
         - sPSharingGenerateIncidentReport
         - restrictWebGrounding
+        - policyTip
       type: string
     microsoft.graph.labelActionBase:
       title: labelActionBase
@@ -121788,6 +121980,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.contextMetadata:
+      title: contextMetadata
+      type: object
+      properties:
+        metadataProperties:
+          $ref: '#/components/schemas/microsoft.graph.customMetadataDictionary'
+      additionalProperties:
+        type: object
     microsoft.graph.deviceMetadata:
       title: deviceMetadata
       type: object
@@ -122450,16 +122650,19 @@ components:
           type: array
           items:
             type: string
+          description: 'Collection of domain names that are blocked globally across all platforms. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.'
         excludeActors:
           $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         isStateSetByMicrosoft:
           type: boolean
+          description: Indicates whether the restriction state was set by Microsoft.
           readOnly: true
         publicClient:
           $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedDomainConfiguration'
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
           format: date-time
           nullable: true
         spa:
@@ -122478,20 +122681,24 @@ components:
           type: array
           items:
             type: string
+          description: Collection of URI schemes that are blocked globally across all platforms. Schemes refer to URI schemes as defined in RFC 3986 §3.1.
         excludeActors:
           $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         exemptFormats:
           type: array
           items:
             type: string
+          description: Collection of URI patterns that are exempt from the blocked scheme restrictions. Patterns must follow specific validation rules for standard URI formats or URN formats.
         isStateSetByMicrosoft:
           type: boolean
+          description: Indicates whether the restriction state was set by Microsoft.
           readOnly: true
         publicClient:
           $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration'
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
           format: date-time
           nullable: true
         spa:
@@ -122510,16 +122717,19 @@ components:
           type: array
           items:
             type: string
+          description: 'Collection of domain names that are allowed globally across all platforms. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.'
         excludeActors:
           $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         isStateSetByMicrosoft:
           type: boolean
+          description: Indicates whether the restriction state was set by Microsoft.
           readOnly: true
         publicClient:
           $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedDomainConfiguration'
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
           format: date-time
           nullable: true
         spa:
@@ -122538,16 +122748,19 @@ components:
           type: array
           items:
             type: string
+          description: Collection of URI schemes that are allowed globally across all platforms. Schemes refer to URI schemes as defined in RFC 3986 §3.1. The value '*' can be used to allow any scheme.
         excludeActors:
           $ref: '#/components/schemas/microsoft.graph.appManagementPolicyActorExemptions'
         isStateSetByMicrosoft:
           type: boolean
+          description: Indicates whether the restriction state was set by Microsoft.
           readOnly: true
         publicClient:
           $ref: '#/components/schemas/microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration'
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
           format: date-time
           nullable: true
         spa:
@@ -122568,10 +122781,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.redirectUriWildcardExcludeFormats'
         isStateSetByMicrosoft:
           type: boolean
+          description: Indicates whether the restriction state was set by Microsoft.
           readOnly: true
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
           format: date-time
           nullable: true
         state:
@@ -122768,6 +122983,9 @@ components:
         - downloadText
         - downloadFile
         - copyToClipboard
+        - pasteFromClipboard
+        - print
+        - accessDebugTools
         - unknownFutureValue
       type: string
     microsoft.graph.contentBase:
@@ -122782,6 +123000,13 @@ components:
         - ai
         - unknownFutureValue
       type: string
+    microsoft.graph.customMetadataDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: customMetadataDictionary
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.operatingSystemSpecifications:
       title: operatingSystemSpecifications
       type: object
@@ -122892,6 +123117,7 @@ components:
           type: array
           items:
             type: string
+          description: 'Collection of domain names that are blocked for this specific platform. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.'
       additionalProperties:
         type: object
     microsoft.graph.redirectUriPlatformBlockedSchemeConfiguration:
@@ -122902,10 +123128,12 @@ components:
           type: array
           items:
             type: string
+          description: Collection of URI schemes that are blocked for this specific platform. Schemes refer to URI schemes as defined in RFC 3986 §3.1.
         exemptFormats:
           type: array
           items:
             type: string
+          description: Collection of URI patterns that are exempt from the blocked scheme restrictions for this platform. Patterns must follow specific validation rules for standard URI formats or URN formats.
       additionalProperties:
         type: object
     microsoft.graph.redirectUriPlatformAllowedDomainConfiguration:
@@ -122916,6 +123144,7 @@ components:
           type: array
           items:
             type: string
+          description: 'Collection of domain names that are allowed for this specific platform. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.'
       additionalProperties:
         type: object
     microsoft.graph.redirectUriPlatformAllowedSchemeConfiguration:
@@ -122926,6 +123155,7 @@ components:
           type: array
           items:
             type: string
+          description: Collection of URI schemes that are allowed for this specific platform. Schemes refer to URI schemes as defined in RFC 3986 §3.1. The value '*' can be used to allow any scheme for this platform.
       additionalProperties:
         type: object
     microsoft.graph.redirectUriWildcardExcludeFormats:
@@ -122934,10 +123164,12 @@ components:
       properties:
         excludeWildcardsInPath:
           type: boolean
+          description: 'When true, blocks the use of wildcards in the path portion of redirect URIs. When false, allows wildcards in paths.'
         excludeWildcardsInPathWithDomains:
           type: array
           items:
             type: string
+          description: 'Collection of domain names where wildcards in the path portion of redirect URIs are blocked. Accepts only valid host names (no wildcards) as defined in RFC 3986 §3.2.2. For example, login.microsoft.com or contoso.com.'
       additionalProperties:
         type: object
     microsoft.graph.attributeMapping:
