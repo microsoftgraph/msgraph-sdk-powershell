@@ -6,6 +6,7 @@ using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using System;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
@@ -117,6 +118,43 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
             // reset static instance.
             GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldCreateInteractiveBrowserCredentialWhenLoginHintIsProvidedAsync()
+        {
+            // Arrange
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser,
+                LoginHint = "user@contoso.com"
+            };
+
+            // A per-account record for the hinted user lets the credential be built silently
+            // (no interactive browser / broker call) so the code path is exercised in-process.
+            var record = await BuildAuthRecordAsync("user@contoso.com").ConfigureAwait(false);
+            await AuthenticationHelpers.WriteAuthRecordAsync(record, "user@contoso.com").ConfigureAwait(false);
+            var keyedPath = AuthenticationHelpers.GetAuthRecordPath("user@contoso.com");
+
+            try
+            {
+                // Act
+                TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+                // Assert: supplying a LoginHint must not break interactive credential creation.
+                _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+                Assert.Equal("user@contoso.com", delegatedAuthContext.LoginHint);
+            }
+            finally
+            {
+                if (File.Exists(keyedPath))
+                    File.Delete(keyedPath);
+                // reset static instance.
+                GraphSession.Reset();
+            }
         }
 
         [Fact]
@@ -657,6 +695,102 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 _onGetToken(requestContext);
                 return new ValueTask<AccessToken>(new AccessToken(_token, DateTimeOffset.UtcNow.AddHours(1)));
             }
+        }
+
+        [Fact]
+        public void GetAuthRecordPathReturnsLegacyPathWhenNoAccountKey()
+        {
+            Assert.Equal(PowerShell.Authentication.Core.Constants.AuthRecordPath, AuthenticationHelpers.GetAuthRecordPath(null));
+            Assert.Equal(PowerShell.Authentication.Core.Constants.AuthRecordPath, AuthenticationHelpers.GetAuthRecordPath(string.Empty));
+            Assert.Equal(PowerShell.Authentication.Core.Constants.AuthRecordPath, AuthenticationHelpers.GetAuthRecordPath("   "));
+        }
+
+        [Fact]
+        public void GetAuthRecordPathReturnsStablePerAccountPath()
+        {
+            var path = AuthenticationHelpers.GetAuthRecordPath("user@contoso.com");
+
+            Assert.NotEqual(PowerShell.Authentication.Core.Constants.AuthRecordPath, path);
+            Assert.Equal(PowerShell.Authentication.Core.Constants.GraphDirectoryPath, Path.GetDirectoryName(path));
+            var fileName = Path.GetFileName(path);
+            Assert.StartsWith("mg.authrecord.", fileName);
+            Assert.EndsWith(".json", fileName);
+
+            // Casing and surrounding whitespace must resolve to the same file.
+            Assert.Equal(path, AuthenticationHelpers.GetAuthRecordPath("  USER@Contoso.COM "));
+            // Different accounts must resolve to different files.
+            Assert.NotEqual(path, AuthenticationHelpers.GetAuthRecordPath("other@contoso.com"));
+        }
+
+        [Fact]
+        public async Task MatchesLoginHintIsCaseInsensitiveAndRejectsMismatch()
+        {
+            AuthenticationRecord record = await BuildAuthRecordAsync("User@Contoso.com").ConfigureAwait(false);
+
+            Assert.True(AuthenticationHelpers.MatchesLoginHint(record, "user@contoso.com"));
+            Assert.True(AuthenticationHelpers.MatchesLoginHint(record, "  USER@CONTOSO.COM "));
+            Assert.False(AuthenticationHelpers.MatchesLoginHint(record, "different@contoso.com"));
+            Assert.False(AuthenticationHelpers.MatchesLoginHint(null, "user@contoso.com"));
+        }
+
+        [Fact]
+        public async Task ResolveInteractiveAuthRecordDoesNotReuseDifferentUsersRecord()
+        {
+            // A saved record exists (legacy path) for a different user than the login hint.
+            await WriteLegacyAuthRecordAsync("alice@contoso.com").ConfigureAwait(false);
+            var keyedPath = AuthenticationHelpers.GetAuthRecordPath("bob@contoso.com");
+            try
+            {
+                var resolved = await AuthenticationHelpers.ResolveInteractiveAuthRecordAsync("bob@contoso.com").ConfigureAwait(false);
+
+                // Must force a fresh interactive sign-in rather than reuse alice's record.
+                Assert.Null(resolved);
+                Assert.False(File.Exists(keyedPath));
+            }
+            finally
+            {
+                if (File.Exists(keyedPath))
+                    File.Delete(keyedPath);
+            }
+        }
+
+        [Fact]
+        public async Task ResolveInteractiveAuthRecordMigratesMatchingLegacyRecord()
+        {
+            // A legacy shared record exists for the SAME account as the login hint.
+            await WriteLegacyAuthRecordAsync("carol@contoso.com").ConfigureAwait(false);
+            var keyedPath = AuthenticationHelpers.GetAuthRecordPath("carol@contoso.com");
+            try
+            {
+                Assert.False(File.Exists(keyedPath));
+
+                var resolved = await AuthenticationHelpers.ResolveInteractiveAuthRecordAsync("carol@contoso.com").ConfigureAwait(false);
+
+                Assert.NotNull(resolved);
+                Assert.Equal("carol@contoso.com", resolved.Username);
+                // The matching legacy record is promoted to a per-account record for picker-free reuse.
+                Assert.True(File.Exists(keyedPath));
+            }
+            finally
+            {
+                if (File.Exists(keyedPath))
+                    File.Delete(keyedPath);
+            }
+        }
+
+        private static async Task WriteLegacyAuthRecordAsync(string username)
+        {
+            var record = await BuildAuthRecordAsync(username).ConfigureAwait(false);
+            await AuthenticationHelpers.WriteAuthRecordAsync(record).ConfigureAwait(false);
+        }
+
+        private static async Task<AuthenticationRecord> BuildAuthRecordAsync(string username)
+        {
+            var json = $"{{\"username\":\"{username}\",\"authority\":\"login.windows.net\"," +
+                       $"\"homeAccountId\":\"{Guid.NewGuid()}.{Guid.NewGuid()}\"," +
+                       $"\"tenantId\":\"{Guid.NewGuid()}\",\"clientId\":\"{Guid.NewGuid()}\",\"version\":\"1.0\"}}";
+            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(json)))
+                return await AuthenticationRecord.DeserializeAsync(stream).ConfigureAwait(false);
         }
 
         public void Dispose() => mockAuthRecord.DeleteCache();

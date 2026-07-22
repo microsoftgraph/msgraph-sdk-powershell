@@ -43,6 +43,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             public const string ContextScope = "Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.";
             public const string Environment = "The name of the national cloud environment to connect to. By default global cloud is used.";
             public const string UseDeviceCode = "Use device code authentication instead of a browser control.";
+            public const string LoginHint = "The login hint (typically a username or email) used to pre-populate the account field during interactive browser authentication.";
             public const string ClientTimeout = "Sets the HTTP client timeout in seconds.";
             public const string NoWelcome = "Hides the welcome message.";
             public const string Identity = "Login using a Managed Identity.";
