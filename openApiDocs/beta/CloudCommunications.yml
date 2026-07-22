@@ -4822,52 +4822,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.admitFromLobby':
-    post:
-      tags:
-        - communications.call
-      summary: Invoke action admitFromLobby
-      operationId: communication.call.participant_admitFromLobby
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: participant-id
-          in: path
-          description: The unique identifier of participant
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: participant
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                clientContext:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.admitFromLobbyOperation'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.mute':
     post:
       tags:
@@ -4915,52 +4869,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.muteParticipantOperation'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.removeFromLobby':
-    post:
-      tags:
-        - communications.call
-      summary: Invoke action removeFromLobby
-      operationId: communication.call.participant_removeFromLobby
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: participant-id
-          in: path
-          description: The unique identifier of participant
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: participant
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                clientContext:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.removeFromLobbyOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -5088,44 +4996,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/communications/calls/{call-id}/participants/microsoft.graph.admitAllFromLobby':
-    post:
-      tags:
-        - communications.call
-      summary: Invoke action admitAllFromLobby
-      operationId: communication.call.participant_admitAllFromLobby
-      parameters:
-        - name: call-id
-          in: path
-          description: The unique identifier of call
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                clientContext:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.admitAllFromLobbyOperation'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/communications/calls/{call-id}/participants/microsoft.graph.invite':
     post:
       tags:
@@ -16151,7 +16021,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List transcripts
-      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. Access to this API is governed by tenant administrator settings. See Error responses.
+      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from private chat meetings and channel meetings. However, private channel meetings are not supported at this time.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-beta
@@ -18678,20 +18548,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.admitFromLobbyOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
-        - title: admitFromLobbyOperation
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.removeFromLobbyOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
-        - title: removeFromLobbyOperation
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.startHoldMusicOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.commsOperation'
@@ -18703,13 +18559,6 @@ components:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.commsOperation'
         - title: stopHoldMusicOperation
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.admitAllFromLobbyOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
-        - title: admitAllFromLobbyOperation
           type: object
           additionalProperties:
             type: object
@@ -19018,6 +18867,7 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+          description: Represents a Microsoft online meeting.
     microsoft.graph.callAiInsight:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20164,8 +20014,6 @@ components:
               type: string
               description: Specifies the spoken language used during the meeting for recording and transcription purposes.
               nullable: true
-            meetingType:
-              $ref: '#/components/schemas/microsoft.graph.onlineMeetingType'
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -21327,15 +21175,12 @@ components:
       properties:
         moreInfoWebUrl:
           type: string
-          description: Provides other video teleconferencing (VTC) dial-in options. Read-only.
           nullable: true
         tenantKey:
           type: string
-          description: The tenant key that is used to dial into the interactive voice response (IVR) of the partner CVI service.
           nullable: true
         videoTeleconferenceId:
           type: string
-          description: The video teleconferencing ID. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -21369,16 +21214,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
-    microsoft.graph.onlineMeetingType:
-      title: onlineMeetingType
-      enum:
-        - adhoc
-        - scheduled
-        - recurring
-        - broadcast
-        - meetnow
-        - unknownFutureValue
-      type: string
     microsoft.graph.onlineMeetingSensitivityLabelAssignment:
       title: onlineMeetingSensitivityLabelAssignment
       type: object
