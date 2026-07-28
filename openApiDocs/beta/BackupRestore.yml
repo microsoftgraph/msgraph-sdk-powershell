@@ -12500,8 +12500,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.restorableArtifact'
         queryExpression:
           type: string
-          description: Specifies criteria to retrieve artifacts.
+          description: 'Deprecated. Going forward, use the structuredQueryExpression property instead. Specifies criteria to retrieve artifacts.'
           nullable: true
+        structuredQueryExpression:
+          $ref: '#/components/schemas/microsoft.graph.restoreSearchArtifactQueryExpression'
       additionalProperties:
         type: object
     microsoft.graph.restorePointSearchResponse:
@@ -13141,6 +13143,8 @@ components:
               nullable: true
             destinationType:
               $ref: '#/components/schemas/microsoft.graph.destinationType'
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
             restoredItemKey:
               type: string
               description: The unique identifier for the restored artifact.
@@ -13346,6 +13350,39 @@ components:
         - message
         - unknownFutureValue
       type: string
+    microsoft.graph.restoreSearchArtifactQueryExpression:
+      title: restoreSearchArtifactQueryExpression
+      type: object
+      properties:
+        hasAttachment:
+          type: boolean
+          description: Indicates whether the artifact has an attachment. Optional.
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.granularRestoreItems'
+          description: The types of items to include in the search. Optional.
+        recipients:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The recipient email addresses to filter by. Optional.
+        senders:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The sender email addresses to filter by. Optional.
+        subjects:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The subject lines to filter by. Optional.
+      additionalProperties:
+        type: object
     microsoft.graph.restorePointSearchResult:
       title: restorePointSearchResult
       type: object
@@ -14097,6 +14134,16 @@ components:
         - inProgress
         - failed
         - completed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.granularRestoreItems:
+      title: granularRestoreItems
+      enum:
+        - email
+        - note
+        - contact
+        - task
+        - calendar
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.MainError:

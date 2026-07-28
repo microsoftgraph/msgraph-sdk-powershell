@@ -15,12 +15,16 @@
 name: $(Date:yyyyMMdd)$(Rev:.r)_docker-image-refresh
 
 parameters:
+- name: WindowsPool
+  type: string
+  default: 1es-windows-ps-compute-m
 - name: LinuxPool
   type: string
   default: Azure-Pipelines-1ESPT-ExDShared
 
 variables:
   REGISTRY: 'msgraphprodregistry.azurecr.io'
+  REGISTRY_NAME: 'msgraphprodregistry'   # ACR resource name (az acr build uses this, not the FQDN)
   IMAGE_NAME: 'public/microsoftgraph/powershell'
 
 # Rebuild weekly so the image regularly picks up patched OS layers. `always: true` forces a run
@@ -47,10 +51,10 @@ resources:
 extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
-    pool:
-      name: ${{ parameters.LinuxPool }}
-      image: ubuntu-latest
-      os: linux
+    # The 1ES template injects an SDL/compliance stage that MUST run on a Windows pool, so the
+    # template-level pool is Windows. The actual container build overrides to a Linux pool at the
+    # job level below. (Same pattern as sdk-release.yml.)
+    pool: ${{ parameters.WindowsPool }}
     settings:
       networkIsolationPolicy: Permissive
     customBuildTags:
@@ -68,31 +72,22 @@ extends:
         steps:
         - checkout: self
 
+        # Build server-side with ACR Tasks: no local Docker daemon, no buildx/QEMU, and no
+        # Docker Hub dependency (which the network-isolated 1ES pool can't reach). ACR pulls the
+        # base image from MCR and pushes the result back to the registry.
         - task: AzureCLI@2
-          displayName: 'Log in to Azure Container Registry'
+          displayName: 'Build and push patched image (ACR Tasks)'
           inputs:
             azureSubscription: 'ACR Images Push Service Connection'
             scriptType: 'bash'
             scriptLocation: 'inlineScript'
             inlineScript: |
-              az acr login --name $(REGISTRY)
-
-        - script: |
-            docker run --privileged --rm tonistiigi/binfmt --install all
-          displayName: 'Enable multi-platform builds'
-
-        - script: |
-            docker buildx create --use --name refreshbuilder
-          displayName: 'Set up Docker BuildX'
-
-        - bash: |
-            set -euo pipefail
-            formatted_date=$(date +"%Y%m%d%H%M%S")
-            echo "Rebuilding $(REGISTRY)/$(IMAGE_NAME) on a patched base"
-            docker buildx build \
-              --platform linux/amd64 \
-              --push \
-              -t "$(REGISTRY)/$(IMAGE_NAME):latest" \
-              -t "$(REGISTRY)/$(IMAGE_NAME):$formatted_date" \
-              "$(Build.SourcesDirectory)"
-          displayName: 'Build and push refreshed image'
+              set -euo pipefail
+              formatted_date=$(date +"%Y%m%d%H%M%S")
+              echo "Rebuilding $(REGISTRY_NAME) / $(IMAGE_NAME) on a patched base via ACR Tasks"
+              az acr build \
+                --registry $(REGISTRY_NAME) \
+                --image "$(IMAGE_NAME):latest" \
+                --image "$(IMAGE_NAME):$formatted_date" \
+                --platform linux/amd64 \
+                "$(Build.SourcesDirectory)"

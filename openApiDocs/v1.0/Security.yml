@@ -427,6 +427,10 @@ paths:
       tags:
         - security.alert
       summary: Invoke action moveAlerts
+      description: Move one or more alert resources to a new or existing incident.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-alert-movealerts?view=graph-rest-1.0
       operationId: security.alerts_v2_moveAlert
       requestBody:
         description: Action parameters
@@ -2685,7 +2689,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update simulation
-      description: Update an attack simulation campaign for a tenant.
+      description: Update an attack simulation campaign for a tenant. You can only update simulations that are in draft status.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/simulation-update?view=graph-rest-1.0
@@ -3330,6 +3334,389 @@ paths:
         - security.attackSimulationRoot
       summary: Get the number of the resource
       operationId: security.attackSimulation.training_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/auditLog:
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get auditLog from security
+      operationId: security_GetAuditLog
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditCoreRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.auditCoreRoot
+      summary: Update the navigation property auditLog in security
+      operationId: security_UpdateAuditLog
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.auditCoreRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditCoreRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.auditCoreRoot
+      summary: Delete navigation property auditLog for security
+      operationId: security_DeleteAuditLog
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/auditLog/queries:
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: List auditLogQueries
+      description: Get a list of auditLogQuery objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-auditcoreroot-list-auditlogqueries?view=graph-rest-1.0
+      operationId: security.auditLog_ListQuery
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.auditLogQueryCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.auditCoreRoot
+      summary: Create auditLogQuery
+      description: Create a new auditLogQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-auditcoreroot-post-auditlogqueries?view=graph-rest-1.0
+      operationId: security.auditLog_CreateQuery
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/auditLog/queries/{auditLogQuery-id}':
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get auditLogQuery
+      description: Read the properties and relationships of an auditLogQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-auditlogquery-get?view=graph-rest-1.0
+      operationId: security.auditLog_GetQuery
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.auditCoreRoot
+      summary: Delete navigation property queries for security
+      operationId: security.auditLog_DeleteQuery
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/auditLog/queries/{auditLogQuery-id}/records':
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get records from security
+      description: An individual audit log record.
+      operationId: security.auditLog.query_ListRecord
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.auditLogRecordCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/security/auditLog/queries/{auditLogQuery-id}/records/{auditLogRecord-id}':
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get records from security
+      description: An individual audit log record.
+      operationId: security.auditLog.query_GetRecord
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - name: auditLogRecord-id
+          in: path
+          description: The unique identifier of auditLogRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogRecord
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/auditLog/queries/{auditLogQuery-id}/records/$count':
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get the number of the resource
+      operationId: security.auditLog.query.record_GetCount
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/auditLog/queries/$count:
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get the number of the resource
+      operationId: security.auditLog.query_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5472,6 +5859,9 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action applyHold
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -5508,6 +5898,9 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action removeHold
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-removehold?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -6151,6 +6544,9 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action applyHold
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-applyhold?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.noncustodialDataSource_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -6187,6 +6583,9 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action removeHold
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.noncustodialDataSource_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -9053,6 +9452,9 @@ paths:
         - security.casesRoot
       summary: Invoke function asHierarchy
       description: List eDiscovery review tags with the tag hierarchy shown.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-ashierarchy?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.tag_asHierarchy
       parameters:
         - name: ediscoveryCase-id
@@ -9136,6 +9538,324 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/collaboration:
+    get:
+      tags:
+        - security.collaborationRoot
+      summary: Get collaboration from security
+      operationId: security_GetCollaboration
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.collaborationRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.collaborationRoot
+      summary: Update the navigation property collaboration in security
+      operationId: security_UpdateCollaboration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.collaborationRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.collaborationRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.collaborationRoot
+      summary: Delete navigation property collaboration for security
+      operationId: security_DeleteCollaboration
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/collaboration/analyzedEmails:
+    get:
+      tags:
+        - security.collaborationRoot
+      summary: List analyzedEmails
+      description: 'Get a list of analyzedEmail objects and their properties. This API allows Security Operations teams to have direct access to hunt (query) for threats, IOCs, attack vectors, and evidences for a tenant. It is a powerful, near real-time tool to help Security Operations teams investigate and respond to threats. It consists of email metadata, verdict information, related underlying entities (attachments/URL), filters, and more.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-collaborationroot-list-analyzedemails?view=graph-rest-1.0
+      operationId: security.collaboration_ListAnalyzedEmail
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.analyzedEmailCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.collaborationRoot
+      summary: Create new navigation property to analyzedEmails for security
+      operationId: security.collaboration_CreateAnalyzedEmail
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/collaboration/analyzedEmails/{analyzedEmail-id}':
+    get:
+      tags:
+        - security.collaborationRoot
+      summary: Get analyzedEmail
+      description: Read the properties and relationships of an analyzedEmail object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-analyzedemail-get?view=graph-rest-1.0
+      operationId: security.collaboration_GetAnalyzedEmail
+      parameters:
+        - name: analyzedEmail-id
+          in: path
+          description: The unique identifier of analyzedEmail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: analyzedEmail
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.collaborationRoot
+      summary: Update the navigation property analyzedEmails in security
+      operationId: security.collaboration_UpdateAnalyzedEmail
+      parameters:
+        - name: analyzedEmail-id
+          in: path
+          description: The unique identifier of analyzedEmail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: analyzedEmail
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.collaborationRoot
+      summary: Delete navigation property analyzedEmails for security
+      operationId: security.collaboration_DeleteAnalyzedEmail
+      parameters:
+        - name: analyzedEmail-id
+          in: path
+          description: The unique identifier of analyzedEmail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: analyzedEmail
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/collaboration/analyzedEmails/$count:
+    get:
+      tags:
+        - security.collaborationRoot
+      summary: Get the number of the resource
+      operationId: security.collaboration.analyzedEmail_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/collaboration/analyzedEmails/microsoft.graph.security.remediate:
+    post:
+      tags:
+        - security.collaborationRoot
+      summary: Invoke action remediate
+      description: 'Remove a potential threat from end users'' mailboxes. Remediation means to take prescribed action against a threat. This API can trigger email purge actions like move to junk, move to deleted items, soft delete, hard delete, or move to Inbox. This API enables scenarios and use cases such as SOAR integration, playbooks, and automations. For more information read email remediation, trigger action and track actions. If there is false positives admins can take move to inbox action.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-analyzedemail-remediate?view=graph-rest-1.0
+      operationId: security.collaboration.analyzedEmail_remediate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+                severity:
+                  $ref: '#/components/schemas/microsoft.graph.security.remediationSeverity'
+                action:
+                  $ref: '#/components/schemas/microsoft.graph.security.remediationAction'
+                remediateSendersCopy:
+                  type: boolean
+                  default: false
+                  nullable: true
+                analyzedEmails:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/dataSecurityAndGovernance:
     get:
       tags:
@@ -10923,6 +11643,9 @@ paths:
         - security.identityContainer
       summary: Invoke action activate
       description: Activate Microsoft Defender for Identity sensors.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensorcandidate-activate?view=graph-rest-1.0
       operationId: security.identity.sensorCandidate_activate
       requestBody:
         description: Action parameters
@@ -11292,6 +12015,9 @@ paths:
         - security.identityContainer
       summary: Invoke function getDeploymentAccessKey
       description: Get the deployment access key for Microsoft Defender for Identity that is required to install sensors associated with the workspace.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentaccesskey?view=graph-rest-1.0
       operationId: security.identity.sensor_getDeploymentAccessKey
       responses:
         2XX:
@@ -11309,6 +12035,9 @@ paths:
         - security.identityContainer
       summary: Invoke function getDeploymentPackageUri
       description: Get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentpackageuri?view=graph-rest-1.0
       operationId: security.identity.sensor_getDeploymentPackageUri
       responses:
         2XX:
@@ -11326,6 +12055,9 @@ paths:
         - security.identityContainer
       summary: Invoke action regenerateDeploymentAccessKey
       description: Generate a new deployment access key that can be used to install a sensor associated with the workspace.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sensor-regeneratedeploymentaccesskey?view=graph-rest-1.0
       operationId: security.identity.sensor_regenerateDeploymentAccessKey
       responses:
         2XX:
@@ -11921,6 +12653,10 @@ paths:
       tags:
         - security.incident
       summary: Invoke action mergeIncidents
+      description: Merge multiple incident resources into a single incident.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-incident-mergeincidents?view=graph-rest-1.0
       operationId: security.incident_mergeIncident
       requestBody:
         description: Action parameters
@@ -13389,8 +14125,11 @@ paths:
     get:
       tags:
         - security.labelsRoot
-      summary: Get retentionLabels from security
-      description: 'Represents how customers can manage their data, whether and for how long to retain or delete it.'
+      summary: Get retentionLabel
+      description: Read the properties and relationships of a retentionLabel object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-retentionlabel-get?view=graph-rest-1.0
       operationId: security.label_GetRetentionLabel
       parameters:
         - name: retentionLabel-id
@@ -23233,8 +23972,12 @@ components:
               x-ms-navigationProperty: true
             attackSimulation:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
+            auditLog:
+              $ref: '#/components/schemas/microsoft.graph.security.auditCoreRoot'
             cases:
               $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
+            collaboration:
+              $ref: '#/components/schemas/microsoft.graph.security.collaborationRoot'
             dataSecurityAndGovernance:
               $ref: '#/components/schemas/microsoft.graph.tenantDataSecurityAndGovernance'
             identities:
@@ -23270,6 +24013,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
           additionalProperties:
             type: object
+          description: Security singleton providing access to audit log resources.
     microsoft.graph.alert:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23657,6 +24401,7 @@ components:
       properties:
         targetIncidentId:
           type: string
+          description: The ID of the target incident after the operation completes.
       additionalProperties:
         type: object
     microsoft.graph.attackSimulationRoot:
@@ -24276,6 +25021,152 @@ components:
               description: Content locale for the training detail.
           additionalProperties:
             type: object
+    microsoft.graph.security.auditCoreRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: auditCoreRoot
+          type: object
+          properties:
+            queries:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Root entity for the audit log API.
+    microsoft.graph.security.auditLogQuery:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: auditLogQuery
+          type: object
+          properties:
+            administrativeUnitIdFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The administrative units tagged to an audit log record.
+            displayName:
+              type: string
+              description: The display name of the saved audit log query.
+              nullable: true
+            filterEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The end date of the date range in the query.
+              format: date-time
+              nullable: true
+            filterStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The start date of the date range in the query.
+              format: date-time
+              nullable: true
+            ipAddressFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The IP address of the device that was used when the activity was logged.
+            keywordFilter:
+              type: string
+              description: Free text field to search non-indexed properties of the audit log.
+              nullable: true
+            objectIdFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'For SharePoint and OneDrive for Business activity, the full path name of the file or folder accessed by the user. For Exchange admin audit logging, the name of the object that was modified by the cmdlet.'
+            operationFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.'
+            recordTypeFilters:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogRecordType'
+              description: 'The type of operation indicated by the record. For the list of member values, see auditLogRecordType.'
+            serviceFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogQueryStatus'
+            userPrincipalNameFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, myname@mydomain_name.'
+            records:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+              description: An individual audit log record.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Represents a query against the unified audit log.
+    microsoft.graph.security.auditLogRecord:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: auditLogRecord
+          type: object
+          properties:
+            administrativeUnits:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The administrative units tagged to an audit log record.
+            auditData:
+              $ref: '#/components/schemas/microsoft.graph.security.auditData'
+            auditLogRecordType:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogRecordType'
+            clientIp:
+              type: string
+              description: The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time in UTC when the user performed the activity.
+              format: date-time
+              nullable: true
+            objectId:
+              type: string
+              description: 'For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.'
+              nullable: true
+            operation:
+              type: string
+              description: The name of the user or admin activity.
+              nullable: true
+            organizationId:
+              type: string
+              description: The GUID for your organization.
+              nullable: true
+            service:
+              type: string
+              description: The Microsoft 365 service where the activity occurred.
+              nullable: true
+            userId:
+              type: string
+              description: 'The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the ''user'' who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.'
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: UPN of the user who performed the action.
+              nullable: true
+            userType:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogUserType'
+          additionalProperties:
+            type: object
+          description: Represents an individual audit log record.
     microsoft.graph.security.casesRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24541,6 +25432,8 @@ components:
         - title: group
           type: object
           properties:
+            accessType:
+              $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
               type: boolean
               description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
@@ -24549,7 +25442,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
             assignedLicenses:
               type: array
               items:
@@ -24612,6 +25505,10 @@ components:
               type: boolean
               description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can''t be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
+            isFavorite:
+              type: boolean
+              description: 'Indicates whether the user marked the group as favorite. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              nullable: true
             isManagementRestricted:
               type: boolean
               description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Requires $select to retrieve.'
@@ -24646,6 +25543,8 @@ components:
               type: string
               description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.'
               nullable: true
+            onPremisesExtensionAttributes:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -24723,11 +25622,25 @@ components:
               type: string
               description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
+            unseenConversationsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Count of conversations that have had one or more new posts delivered since the signed-in user''s last visit to the group. This property is the same as unseenCount. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              format: int32
+              nullable: true
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: 'Count of conversations that received new posts since the signed-in user last visited the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              format: int32
+              nullable: true
+            unseenMessagesCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Count of new posts that have been delivered to the group''s conversations since the signed-in user''s last visit to the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             visibility:
@@ -24874,7 +25787,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft Entra group.
     microsoft.graph.security.userSource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.security.dataSource'
@@ -25019,6 +25931,7 @@ components:
         - messageConversationExpansion
         - locationsWithoutHits
         - allItemsInFolder
+        - cloudNativeHtmlConversion
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -25255,6 +26168,203 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.topicModelingSettings'
           additionalProperties:
             type: object
+    microsoft.graph.security.collaborationRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: collaborationRoot
+          type: object
+          properties:
+            analyzedEmails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+              description: Contains metadata for analyzed emails.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.analyzedEmail:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: analyzedEmail
+          type: object
+          properties:
+            alertIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: A collection of values that contain the IDs of any alerts associated with the email.
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailAttachment'
+              description: A collection of the attachments in the email.
+            authenticationDetails:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailAuthenticationDetail'
+            bulkComplaintLevel:
+              type: string
+              description: The bulk complaint level of the email. A higher level is more likely to be spam.
+              nullable: true
+            clientType:
+              type: string
+              description: 'Shows the type of client that sent the message (for example, REST).'
+              nullable: true
+            contexts:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Provides context of the email.
+            detectionMethods:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The methods of detection used.
+            directionality:
+              $ref: '#/components/schemas/microsoft.graph.security.antispamDirectionality'
+            distributionList:
+              type: string
+              description: The distribution list details to which the email was sent.
+              nullable: true
+            dlpRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailDlpRuleInfo'
+              description: Data loss prevention rules configured in purview.
+            emailClusterId:
+              type: string
+              description: The identifier for the group of similar emails clustered based on heuristic analysis of their content.
+              nullable: true
+            exchangeTransportRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailExchangeTransportRuleInfo'
+              description: The name of the Exchange transport rules (ETRs) associated with the email.
+            forwardingDetail:
+              type: string
+              description: Email smtp forwarding details.
+              nullable: true
+            inboundConnectorFormattedName:
+              type: string
+              description: Custom instructions name that defines organizational mail flow and how the email was routed.
+              nullable: true
+            internetMessageId:
+              type: string
+              description: A public-facing identifier for the email that is sent. The message ID is in the format specified by RFC2822.
+              nullable: true
+            language:
+              type: string
+              description: The detected language of the email content.
+              nullable: true
+            latestDelivery:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailDeliveryDetail'
+            loggedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date-time when the email record was logged.
+              format: date-time
+              nullable: true
+            networkMessageId:
+              type: string
+              description: An internal identifier for the email generated by Microsoft 365.
+              nullable: true
+            originalDelivery:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailDeliveryDetail'
+            overrideSources:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: An aggregated list of all overrides with source on email.
+            phishConfidenceLevel:
+              type: string
+              description: The phish confidence level associated with the email
+              nullable: true
+            policy:
+              type: string
+              description: The action policy that took effect.
+              nullable: true
+            policyAction:
+              type: string
+              description: The action taken on the email based on the configured policy.
+              nullable: true
+            policyType:
+              type: string
+              description: Type of policy configured that defines the delivery action on email.
+              nullable: true
+            primaryOverrideSource:
+              type: string
+              description: 'Shows the organization or user setting that altered the intended delivery location of the message (allowed instead of blocked, or blocked instead of allowed).'
+              nullable: true
+            recipientDetail:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailRecipientDetail'
+            recipientEmailAddress:
+              type: string
+              description: Contains the email address of the recipient.
+              nullable: true
+            returnPath:
+              type: string
+              description: A field that indicates where and how bounced emails are processed.
+              nullable: true
+            senderDetail:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailSenderDetail'
+            sizeInBytes:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Size of the email in bytes.
+              format: int32
+              nullable: true
+            spamConfidenceLevel:
+              type: string
+              description: Spam confidence of the email.
+              nullable: true
+            subject:
+              type: string
+              description: Subject of the email.
+              nullable: true
+            threatDetectionDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.threatDetectionDetail'
+              description: Information about threats detected in the email.
+            threatTypes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.threatType'
+              description: 'Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.'
+            timelineEvents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.timelineEvent'
+              description: Delivery and post-delivery events that happened to the email.
+            urls:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailUrl'
+              description: A collection of the URLs in the email.
+          additionalProperties:
+            type: object
+    microsoft.graph.security.remediationSeverity:
+      title: remediationSeverity
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.remediationAction:
+      title: remediationAction
+      enum:
+        - moveToJunk
+        - moveToInbox
+        - hardDelete
+        - softDelete
+        - moveToDeletedItems
+        - unknownFutureValue
+        - moveToQuarantine
+      type: string
     microsoft.graph.tenantDataSecurityAndGovernance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.dataSecurityAndGovernance'
@@ -26390,7 +27500,7 @@ components:
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Requires $select to retrieve. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Requires $select to retrieve. Supports $filter (eq, ne, not, and in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             ageGroup:
               type: string
@@ -26417,7 +27527,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
             city:
               type: string
               description: 'The city where the user is located. Maximum length is 128 characters. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -26564,7 +27674,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             mySite:
               type: string
@@ -26586,7 +27696,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -26619,7 +27729,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Requires $select to retrieve. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Requires $select to retrieve. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Requires $select to retrieve. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -26717,7 +27827,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             userType:
               type: string
@@ -26974,7 +28084,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -28700,6 +29809,7 @@ components:
         - microsoftSentinel
         - microsoftInsiderRiskManagement
         - microsoftThreatIntelligence
+        - microsoftSecurityForAI
       type: string
     microsoft.graph.security.alertSeverity:
       title: alertSeverity
@@ -29055,6 +30165,520 @@ components:
         - phishing
         - unknownFutureValue
       type: string
+    microsoft.graph.security.auditLogRecordType:
+      title: auditLogRecordType
+      enum:
+        - ExchangeAdmin
+        - ExchangeItem
+        - ExchangeItemGroup
+        - SharePoint
+        - SyntheticProbe
+        - SharePointFileOperation
+        - OneDrive
+        - AzureActiveDirectory
+        - AzureActiveDirectoryAccountLogon
+        - DataCenterSecurityCmdlet
+        - ComplianceDLPSharePoint
+        - Sway
+        - ComplianceDLPExchange
+        - SharePointSharingOperation
+        - AzureActiveDirectoryStsLogon
+        - SkypeForBusinessPSTNUsage
+        - SkypeForBusinessUsersBlocked
+        - SecurityComplianceCenterEOPCmdlet
+        - ExchangeAggregatedOperation
+        - PowerBIAudit
+        - CRM
+        - Yammer
+        - SkypeForBusinessCmdlets
+        - Discovery
+        - MicrosoftTeams
+        - ThreatIntelligence
+        - MailSubmission
+        - MicrosoftFlow
+        - AeD
+        - MicrosoftStream
+        - ComplianceDLPSharePointClassification
+        - ThreatFinder
+        - Project
+        - SharePointListOperation
+        - SharePointCommentOperation
+        - DataGovernance
+        - Kaizala
+        - SecurityComplianceAlerts
+        - ThreatIntelligenceUrl
+        - SecurityComplianceInsights
+        - MIPLabel
+        - WorkplaceAnalytics
+        - PowerAppsApp
+        - PowerAppsPlan
+        - ThreatIntelligenceAtpContent
+        - LabelContentExplorer
+        - TeamsHealthcare
+        - ExchangeItemAggregated
+        - HygieneEvent
+        - DataInsightsRestApiAudit
+        - InformationBarrierPolicyApplication
+        - SharePointListItemOperation
+        - SharePointContentTypeOperation
+        - SharePointFieldOperation
+        - MicrosoftTeamsAdmin
+        - HRSignal
+        - MicrosoftTeamsDevice
+        - MicrosoftTeamsAnalytics
+        - InformationWorkerProtection
+        - Campaign
+        - DLPEndpoint
+        - AirInvestigation
+        - Quarantine
+        - MicrosoftForms
+        - ApplicationAudit
+        - ComplianceSupervisionExchange
+        - CustomerKeyServiceEncryption
+        - OfficeNative
+        - MipAutoLabelSharePointItem
+        - MipAutoLabelSharePointPolicyLocation
+        - MicrosoftTeamsShifts
+        - SecureScore
+        - MipAutoLabelExchangeItem
+        - CortanaBriefing
+        - Search
+        - WDATPAlerts
+        - PowerPlatformAdminDlp
+        - PowerPlatformAdminEnvironment
+        - MDATPAudit
+        - SensitivityLabelPolicyMatch
+        - SensitivityLabelAction
+        - SensitivityLabeledFileAction
+        - AttackSim
+        - AirManualInvestigation
+        - SecurityComplianceRBAC
+        - UserTraining
+        - AirAdminActionInvestigation
+        - MSTIC
+        - PhysicalBadgingSignal
+        - TeamsEasyApprovals
+        - AipDiscover
+        - AipSensitivityLabelAction
+        - AipProtectionAction
+        - AipFileDeleted
+        - AipHeartBeat
+        - MCASAlerts
+        - OnPremisesFileShareScannerDlp
+        - OnPremisesSharePointScannerDlp
+        - ExchangeSearch
+        - SharePointSearch
+        - PrivacyDataMinimization
+        - LabelAnalyticsAggregate
+        - MyAnalyticsSettings
+        - SecurityComplianceUserChange
+        - ComplianceDLPExchangeClassification
+        - ComplianceDLPEndpoint
+        - MipExactDataMatch
+        - MSDEResponseActions
+        - MSDEGeneralSettings
+        - MSDEIndicatorsSettings
+        - MS365DCustomDetection
+        - MSDERolesSettings
+        - MAPGAlerts
+        - MAPGPolicy
+        - MAPGRemediation
+        - PrivacyRemediationAction
+        - PrivacyDigestEmail
+        - MipAutoLabelSimulationProgress
+        - MipAutoLabelSimulationCompletion
+        - MipAutoLabelProgressFeedback
+        - DlpSensitiveInformationType
+        - MipAutoLabelSimulationStatistics
+        - LargeContentMetadata
+        - Microsoft365Group
+        - CDPMlInferencingResult
+        - FilteringMailMetadata
+        - CDPClassificationMailItem
+        - CDPClassificationDocument
+        - OfficeScriptsRunAction
+        - FilteringPostMailDeliveryAction
+        - CDPUnifiedFeedback
+        - TenantAllowBlockList
+        - ConsumptionResource
+        - HealthcareSignal
+        - DlpImportResult
+        - CDPCompliancePolicyExecution
+        - MultiStageDisposition
+        - PrivacyDataMatch
+        - FilteringDocMetadata
+        - FilteringEmailFeatures
+        - PowerBIDlp
+        - FilteringUrlInfo
+        - FilteringAttachmentInfo
+        - CoreReportingSettings
+        - ComplianceConnector
+        - PowerPlatformLockboxResourceAccessRequest
+        - PowerPlatformLockboxResourceCommand
+        - CDPPredictiveCodingLabel
+        - CDPCompliancePolicyUserFeedback
+        - WebpageActivityEndpoint
+        - OMEPortal
+        - CMImprovementActionChange
+        - FilteringUrlClick
+        - MipLabelAnalyticsAuditRecord
+        - FilteringEntityEvent
+        - FilteringRuleHits
+        - FilteringMailSubmission
+        - LabelExplorer
+        - MicrosoftManagedServicePlatform
+        - PowerPlatformServiceActivity
+        - ScorePlatformGenericAuditRecord
+        - FilteringTimeTravelDocMetadata
+        - Alert
+        - AlertStatus
+        - AlertIncident
+        - IncidentStatus
+        - Case
+        - CaseInvestigation
+        - RecordsManagement
+        - PrivacyRemediation
+        - DataShareOperation
+        - CdpDlpSensitive
+        - EHRConnector
+        - FilteringMailGradingResult
+        - PublicFolder
+        - PrivacyTenantAuditHistoryRecord
+        - AipScannerDiscoverEvent
+        - EduDataLakeDownloadOperation
+        - M365ComplianceConnector
+        - MicrosoftGraphDataConnectOperation
+        - MicrosoftPurview
+        - FilteringEmailContentFeatures
+        - PowerPagesSite
+        - PowerAppsResource
+        - PlannerPlan
+        - PlannerCopyPlan
+        - PlannerTask
+        - PlannerRoster
+        - PlannerPlanList
+        - PlannerTaskList
+        - PlannerTenantSettings
+        - ProjectForTheWebProject
+        - ProjectForTheWebTask
+        - ProjectForTheWebRoadmap
+        - ProjectForTheWebRoadmapItem
+        - ProjectForTheWebProjectSettings
+        - ProjectForTheWebRoadmapSettings
+        - QuarantineMetadata
+        - MicrosoftTodoAudit
+        - TimeTravelFilteringDocMetadata
+        - TeamsQuarantineMetadata
+        - SharePointAppPermissionOperation
+        - MicrosoftTeamsSensitivityLabelAction
+        - FilteringTeamsMetadata
+        - FilteringTeamsUrlInfo
+        - FilteringTeamsPostDeliveryAction
+        - MDCAssessments
+        - MDCRegulatoryComplianceStandards
+        - MDCRegulatoryComplianceControls
+        - MDCRegulatoryComplianceAssessments
+        - MDCSecurityConnectors
+        - MDADataSecuritySignal
+        - VivaGoals
+        - FilteringRuntimeInfo
+        - AttackSimAdmin
+        - MicrosoftGraphDataConnectConsent
+        - FilteringAtpDetonationInfo
+        - PrivacyPortal
+        - ManagedTenants
+        - UnifiedSimulationMatchedItem
+        - UnifiedSimulationSummary
+        - UpdateQuarantineMetadata
+        - MS365DSuppressionRule
+        - PurviewDataMapOperation
+        - FilteringUrlPostClickAction
+        - IrmUserDefinedDetectionSignal
+        - TeamsUpdates
+        - PlannerRosterSensitivityLabel
+        - MS365DIncident
+        - FilteringDelistingMetadata
+        - ComplianceDLPSharePointClassificationExtended
+        - MicrosoftDefenderForIdentityAudit
+        - SupervisoryReviewDayXInsight
+        - DefenderExpertsforXDRAdmin
+        - CDPEdgeBlockedMessage
+        - HostedRpa
+        - CdpContentExplorerAggregateRecord
+        - CDPHygieneAttachmentInfo
+        - CDPHygieneSummary
+        - CDPPostMailDeliveryAction
+        - CDPEmailFeatures
+        - CDPHygieneUrlInfo
+        - CDPUrlClick
+        - CDPPackageManagerHygieneEvent
+        - FilteringDocScan
+        - TimeTravelFilteringDocScan
+        - MAPGOnboard
+        - VfamCreatePolicy
+        - VfamUpdatePolicy
+        - VfamDeletePolicy
+        - M365DAAD
+        - CdpColdCrawlStatus
+        - PowerPlatformAdministratorActivity
+        - Windows365CustomerLockbox
+        - CdpResourceScopeChangeEvent
+        - ComplianceCCExchangeExecutionResult
+        - CdpOcrCostEstimatorRecord
+        - CopilotInteraction
+        - CdpOcrBillingRecord
+        - ComplianceDLPApplications
+        - UAMOperation
+        - VivaLearning
+        - VivaLearningAdmin
+        - PurviewPolicyOperation
+        - PurviewMetadataPolicyOperation
+        - PeopleAdminSettings
+        - CdpComplianceDLPExchangeClassification
+        - CdpComplianceDLPSharePointClassification
+        - FilteringBulkSenderInsightData
+        - FilteringBulkThresholdInsightData
+        - PrivacyOpenAccess
+        - OWAAuth
+        - ComplianceDLPApplicationsClassification
+        - SharePointESignature
+        - Dynamics365BusinessCentral
+        - MeshWorlds
+        - VivaPulseResponse
+        - VivaPulseOrganizer
+        - VivaPulseAdmin
+        - VivaPulseReport
+        - AIAppInteraction
+        - ComplianceDLMExchange
+        - ComplianceDLMSharePoint
+        - ProjectForTheWebAssignedToMeSettings
+        - CPSOperation
+        - ComplianceDLPExchangeDiscovery
+        - PurviewMCRecommendation
+        - ComplianceDLPEndpointDiscovery
+        - InsiderRiskScopedUserInsights
+        - MicrosoftTeamsRetentionLabelAction
+        - AadRiskDetection
+        - AuditSearch
+        - AuditRetentionPolicy
+        - AuditConfig
+        - Microsoft365BackupBackupPolicy
+        - Microsoft365BackupRestoreTask
+        - Microsoft365BackupRestoreItem
+        - Microsoft365BackupBackupItem
+        - URBACAssignment
+        - URBACRole
+        - URBACEnableState
+        - IRMSecurityAlert
+        - PurviewInsiderRiskCases
+        - PurviewInsiderRiskAlerts
+        - InsiderRiskScopedUsers
+        - CdpConsumptionResource
+        - CreateCopilotPlugin
+        - UpdateCopilotPlugin
+        - DeleteCopilotPlugin
+        - EnableCopilotPlugin
+        - DisableCopilotPlugin
+        - CreateCopilotWorkspace
+        - UpdateCopilotWorkspace
+        - DeleteCopilotWorkspace
+        - EnableCopilotWorkspace
+        - DisableCopilotWorkspace
+        - CreateCopilotPromptBook
+        - UpdateCopilotPromptBook
+        - DeleteCopilotPromptBook
+        - EnableCopilotPromptBook
+        - DisableCopilotPromptBook
+        - UpdateCopilotSettings
+        - P4AIAssessmentRecord
+        - P4AIAssessmentLocationResultRecord
+        - ConnectedAIAppInteraction
+        - PrivaPrivacyConsentOperation
+        - PrivaPrivacyAssessmentOperation
+        - DataCatalogAccessRequests
+        - ComplianceSettingsChange
+        - DataSecurityInvestigation
+        - TeamCopilotInteraction
+        - IRMActivityAuditTrail
+        - SharePointContentSecurityPolicy
+        - CloudUpdateProfileConfig
+        - CloudUpdateTenantConfig
+        - CloudUpdateDeviceConfig
+        - DefenderPreviewFeatures
+        - DeviceDiscoverySettingsExclusion
+        - DeviceDiscoverySettingsAuthenticatedScans
+        - CriticalAssetManagementClassification
+        - DeviceDiscoverySettings
+        - USXWorkspaceOnboarding
+        - VivaGlintAdvancedConfiguration
+        - VivaGlintPulseProgram
+        - VivaGlintPulseProgramRespondentRate
+        - VivaGlintQuestion
+        - VivaGlintRole
+        - VivaGlintRubicon
+        - VivaGlintSupportAccess
+        - VivaGlintSystem
+        - VivaGlintUser
+        - VivaGlintUserGroup
+        - VivaGlintFeedbackProgram
+        - FabricAudit
+        - TrainableClassifier
+        - WebContentFiltering
+        - NoisyAlertPolicy
+        - OnDemandSharePointClassification
+        - AIInteractionsExport
+        - Microsoft365CopilotScheduledPrompt
+        - PlacesDirectory
+        - MDAAudit
+        - OpticalCharacterRecognition
+        - M365SearchSections
+        - OfficeClientRestrictedModeAction
+        - CrossTenantAccessPolicy
+        - OutlookCopilotAutomation
+        - VivaEngageNetworkAssociation
+        - AppAdminActivity
+        - AppSettingsAdminActivity
+        - UniversalPrintPrintJob
+        - SentinelNotebookOnLake
+        - SentinelJob
+        - SentinelGraph
+        - SentinelKQLOnLake
+        - SentinelPackage
+        - VivaAmplifyOutlookSensitivityLabel
+        - CopilotActions
+        - AIInteractionsSubscription
+        - AIInteractionsChangeNotification
+        - FilteringMailMetadataExtended
+        - SentinelLakeOnboarding
+        - SentinelLakeDataOnboarding
+        - OfficeRestrictedModeAction
+        - CopilotForSecurityTrigger
+        - CopilotAgentManagement
+        - P4AIAssessmentFabricScannerRecord
+        - PlannerGoal
+        - PlannerGoalList
+        - ThreatIntelligenceObject
+        - ThreatIntelligenceExport
+        - SubmissionAgenticGradingResult
+        - AgentAdminActivity
+        - DeployFeatureActivity
+        - AgentSettingsAdminActivity
+        - OrganizationalDataInM365
+        - PlannerChatMessage
+        - PlannerChatMessageList
+        - SentinelAITool
+        - M365ODSPAssetMetadata
+        - AIExecuteTool
+        - AIInvokeAgent
+        - AIInferenceCall
+        - CdpClassifierHealthRecord
+        - SensitiveInfoRemediationAgentData
+        - ComplianceDLPEnforcement
+        - A365AIExecuteTool
+        - A365AIInvokeAgent
+        - A365AIInferenceCall
+        - VivaEngageSegment
+        - RTIOperationsAgent
+        - ContentStoreMetadata
+        - CCRAIPolicyViolation
+        - PlannerPlanSensitivityLabel
+        - MosAgentInfoRecord
+        - A365AIRunSummary
+        - UnifiedCatalogConceptAction
+        - DefenderCaseManagement
+        - CopilotForSecurityLogging
+        - VivaEngageEvents
+        - CallActivityEvent
+        - SonarDetonationContentMetadata
+        - UniversalPrintManagement
+        - YammerUserHiding
+        - Microsoft365BackupGranularBrowseTask
+        - PurviewPostureAgent
+        - MSDECustomCollection
+        - SCPUsageEvent
+        - SCPConfigurationEvent
+        - MDCConfigurationEvent
+        - MDCUsageEvent
+        - A365SpanOutputs
+        - PowerPlatformTenantIsolation
+        - CDPDLMAIInteractionInsights
+        - P4AIAssessmentCategoryRecord
+        - SentinelLakeEncryption
+        - AZFWNetworkRule
+        - AZFWDnsQuery
+        - AZFWApplicationRuleAggregation
+        - TeamsEvalDataHubDataAccess
+        - TeamsEvalDataHubPermissionChange
+        - TeamsEvalDataHubAdminOperation
+        - VivaGlintOrganizationalData
+        - AlertSubmission
+        - AlertSubmissionResultDetail
+        - ComplianceSitGradingSharePoint
+        - CompliancePolicyGradingSharePoint
+        - AzureAISearchAudit
+        - P4AIRiskScoreRecord
+        - DragonCopilotAdmin
+        - AISpanOutputs
+        - EopSubmissionFeedEntity
+        - SonarFileDetonationEntity
+        - SonarSubmissionEntity
+        - SonarUrlDetonationEntity
+        - SubmissionEntity
+        - SonarDetonationEntity
+        - MicrosoftTeamsUserConcern
+        - VivaGlintAgenticCampaign
+        - MSPVectorSearchContentMetadata
+        - FabricPolicy
+        - SecurityCopilotAgentIdentityManagement
+        - CopilotSessionSharing
+        - DragonCopilotAccess
+        - DragonCopilotClinicalData
+        - DragonCopilotSession
+        - MosAgentInfoRecordV2
+        - SecurityDevelopmentLifecycleAILog
+        - MDASH
+        - DefenderSecurityForAIConfiguration
+        - SparkCoreCustomLivePool
+        - unknownFutureValue
+      type: string
+      description: Specifies the type of audit log record.
+    microsoft.graph.security.auditLogQueryStatus:
+      title: auditLogQueryStatus
+      enum:
+        - notStarted
+        - running
+        - succeeded
+        - failed
+        - cancelled
+        - unknownFutureValue
+      type: string
+      description: Status of an audit log query.
+    microsoft.graph.security.auditData:
+      title: auditData
+      type: object
+      properties:
+        dynamicProperties:
+          $ref: '#/components/schemas/microsoft.graph.security.auditRecordTypeDictionary'
+      additionalProperties:
+        type: object
+      description: Abstract base type for audit event data.
+    microsoft.graph.security.auditLogUserType:
+      title: auditLogUserType
+      enum:
+        - Regular
+        - Reserved
+        - Admin
+        - DcAdmin
+        - System
+        - Application
+        - ServicePrincipal
+        - CustomPolicy
+        - SystemPolicy
+        - PartnerTechnician
+        - Guest
+        - unknownFutureValue
+      type: string
+      description: Type of user associated with an audit log record.
     microsoft.graph.security.case:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -29553,6 +31177,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the list.
               x-ms-navigationProperty: true
+            permissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+              x-ms-navigationProperty: true
             subscriptions:
               type: array
               items:
@@ -29746,6 +31375,15 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.groupAccessType:
+      title: groupAccessType
+      enum:
+        - none
+        - private
+        - secret
+        - public
+        - unknownFutureValue
+      type: string
     microsoft.graph.assignedLabel:
       title: assignedLabel
       type: object
@@ -29785,6 +31423,72 @@ components:
       properties:
         state:
           type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.onPremisesExtensionAttributes:
+      title: onPremisesExtensionAttributes
+      type: object
+      properties:
+        extensionAttribute1:
+          type: string
+          description: First customizable extension attribute.
+          nullable: true
+        extensionAttribute10:
+          type: string
+          description: Tenth customizable extension attribute.
+          nullable: true
+        extensionAttribute11:
+          type: string
+          description: Eleventh customizable extension attribute.
+          nullable: true
+        extensionAttribute12:
+          type: string
+          description: Twelfth customizable extension attribute.
+          nullable: true
+        extensionAttribute13:
+          type: string
+          description: Thirteenth customizable extension attribute.
+          nullable: true
+        extensionAttribute14:
+          type: string
+          description: Fourteenth customizable extension attribute.
+          nullable: true
+        extensionAttribute15:
+          type: string
+          description: Fifteenth customizable extension attribute.
+          nullable: true
+        extensionAttribute2:
+          type: string
+          description: Second customizable extension attribute.
+          nullable: true
+        extensionAttribute3:
+          type: string
+          description: Third customizable extension attribute.
+          nullable: true
+        extensionAttribute4:
+          type: string
+          description: Fourth customizable extension attribute.
+          nullable: true
+        extensionAttribute5:
+          type: string
+          description: Fifth customizable extension attribute.
+          nullable: true
+        extensionAttribute6:
+          type: string
+          description: Sixth customizable extension attribute.
+          nullable: true
+        extensionAttribute7:
+          type: string
+          description: Seventh customizable extension attribute.
+          nullable: true
+        extensionAttribute8:
+          type: string
+          description: Eighth customizable extension attribute.
+          nullable: true
+        extensionAttribute9:
+          type: string
+          description: Ninth customizable extension attribute.
           nullable: true
       additionalProperties:
         type: object
@@ -30619,6 +32323,264 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.analyzedEmailAttachment:
+      title: analyzedEmailAttachment
+      type: object
+      properties:
+        detonationDetails:
+          $ref: '#/components/schemas/microsoft.graph.security.detonationDetails'
+        fileExtension:
+          type: string
+          description: Extension of the file.
+          nullable: true
+        fileName:
+          type: string
+          description: The name of the attachment in the email.
+          nullable: true
+        fileSize:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Size of the file.
+          format: int32
+          nullable: true
+        fileType:
+          type: string
+          description: The type of the attachment in the email.
+          nullable: true
+        malwareFamily:
+          type: string
+          description: The threat name associated with the threat type.
+          nullable: true
+        sha256:
+          type: string
+          description: The SHA256 file hash of the attachment.
+          nullable: true
+        tenantAllowBlockListDetailInfo:
+          type: string
+          description: Details of entries in tenant allow/block list configured by tenant.
+          nullable: true
+        threatType:
+          $ref: '#/components/schemas/microsoft.graph.security.threatType'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailAuthenticationDetail:
+      title: analyzedEmailAuthenticationDetail
+      type: object
+      properties:
+        compositeAuthentication:
+          type: string
+          description: 'A value used by Microsoft 365 to combine email authentication such as SPF, DKIM, and DMARC, to determine whether the message is authentic.'
+          nullable: true
+        dkim:
+          type: string
+          description: DomainKeys identified mail (DKIM). Indicates whether it was pass/fail/soft fail.
+          nullable: true
+        dmarc:
+          type: string
+          description: Domain-based Message Authentication. Indicates whether it was pass/fail/soft fail.
+          nullable: true
+        senderPolicyFramework:
+          type: string
+          description: Sender Policy Framework (SPF). Indicates whether it was pass/fail/soft fail.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.antispamDirectionality:
+      title: antispamDirectionality
+      enum:
+        - unknown
+        - inbound
+        - outbound
+        - intraOrg
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.analyzedEmailDlpRuleInfo:
+      title: analyzedEmailDlpRuleInfo
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the the data loss prevention rule.
+          nullable: true
+        ruleId:
+          type: string
+          description: Unique identifier of the data loss prevention rule.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailExchangeTransportRuleInfo:
+      title: analyzedEmailExchangeTransportRuleInfo
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the Exchange transport rules (ETRs) that are part of the email.
+          nullable: true
+        ruleId:
+          type: string
+          description: The ETR rule ID.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailDeliveryDetail:
+      title: analyzedEmailDeliveryDetail
+      type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/microsoft.graph.security.deliveryAction'
+        latestThreats:
+          type: string
+          description: Latest known threat on the email.
+          nullable: true
+        location:
+          $ref: '#/components/schemas/microsoft.graph.security.deliveryLocation'
+        originalThreats:
+          type: string
+          description: Threats identified at the time of delivery.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailRecipientDetail:
+      title: analyzedEmailRecipientDetail
+      type: object
+      properties:
+        ccRecipients:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Recipient address in the cc field.
+        domainName:
+          type: string
+          description: Domain name of the recipient.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailSenderDetail:
+      title: analyzedEmailSenderDetail
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name of sender from address.
+          nullable: true
+        domainCreationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time of creation of the sender domain.
+          format: date-time
+          nullable: true
+        domainName:
+          type: string
+          description: Registered name of the domain.
+          nullable: true
+        domainOwner:
+          type: string
+          description: Owner of the domain.
+          nullable: true
+        fromAddress:
+          type: string
+          description: 'The sender email address in the mail From header, also known as the envelope sender or the P1 sender.'
+          nullable: true
+        ipv4:
+          type: string
+          description: The IPv4 address of the last detected mail server that relayed the message.
+          nullable: true
+        location:
+          type: string
+          description: Location of the domain.
+          nullable: true
+        mailFromAddress:
+          type: string
+          description: 'The sender email address in the From header, which is visible to email recipients on their email clients. Also known as P2 sender.'
+          nullable: true
+        mailFromDomainName:
+          type: string
+          description: Domain name of sender mail from address.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.threatDetectionDetail:
+      title: threatDetectionDetail
+      type: object
+      properties:
+        confidenceLevel:
+          type: string
+          description: Indicates the confidence level in the threat detection.
+          nullable: true
+        priorityAccountProtection:
+          type: string
+          description: Indicates if the account has priority protection enabled.
+          nullable: true
+        threats:
+          type: string
+          description: Lists the detected threats.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.threatType:
+      title: threatType
+      enum:
+        - unknown
+        - spam
+        - malware
+        - phish
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.timelineEvent:
+      title: timelineEvent
+      type: object
+      properties:
+        eventDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the event occurred.
+          format: date-time
+          nullable: true
+        eventDetails:
+          type: string
+          description: Additional details or context about the event.
+          nullable: true
+        eventResult:
+          type: string
+          description: 'The outcome or result of the event, such as delivery location or action taken.'
+          nullable: true
+        eventSource:
+          $ref: '#/components/schemas/microsoft.graph.security.eventSource'
+        eventThreats:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Collection of threats identified or associated with this event.
+        eventType:
+          $ref: '#/components/schemas/microsoft.graph.security.timelineEventType'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailUrl:
+      title: analyzedEmailUrl
+      type: object
+      properties:
+        detectionMethod:
+          type: string
+          description: The method used to detect threats in the URL.
+          nullable: true
+        detonationDetails:
+          $ref: '#/components/schemas/microsoft.graph.security.detonationDetails'
+        tenantAllowBlockListDetailInfo:
+          type: string
+          description: Details of entries in tenant allow/block list configured by tenant.
+          nullable: true
+        threatType:
+          $ref: '#/components/schemas/microsoft.graph.security.threatType'
+        url:
+          type: string
+          description: 'The URL that is found in the email. This is full URL string, including query parameters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.dataSecurityAndGovernance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31363,72 +33325,6 @@ components:
         state:
           type: string
           description: 'Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.onPremisesExtensionAttributes:
-      title: onPremisesExtensionAttributes
-      type: object
-      properties:
-        extensionAttribute1:
-          type: string
-          description: First customizable extension attribute.
-          nullable: true
-        extensionAttribute10:
-          type: string
-          description: Tenth customizable extension attribute.
-          nullable: true
-        extensionAttribute11:
-          type: string
-          description: Eleventh customizable extension attribute.
-          nullable: true
-        extensionAttribute12:
-          type: string
-          description: Twelfth customizable extension attribute.
-          nullable: true
-        extensionAttribute13:
-          type: string
-          description: Thirteenth customizable extension attribute.
-          nullable: true
-        extensionAttribute14:
-          type: string
-          description: Fourteenth customizable extension attribute.
-          nullable: true
-        extensionAttribute15:
-          type: string
-          description: Fifteenth customizable extension attribute.
-          nullable: true
-        extensionAttribute2:
-          type: string
-          description: Second customizable extension attribute.
-          nullable: true
-        extensionAttribute3:
-          type: string
-          description: Third customizable extension attribute.
-          nullable: true
-        extensionAttribute4:
-          type: string
-          description: Fourth customizable extension attribute.
-          nullable: true
-        extensionAttribute5:
-          type: string
-          description: Fifth customizable extension attribute.
-          nullable: true
-        extensionAttribute6:
-          type: string
-          description: Sixth customizable extension attribute.
-          nullable: true
-        extensionAttribute7:
-          type: string
-          description: Seventh customizable extension attribute.
-          nullable: true
-        extensionAttribute8:
-          type: string
-          description: Eighth customizable extension attribute.
-          nullable: true
-        extensionAttribute9:
-          type: string
-          description: Ninth customizable extension attribute.
           nullable: true
       additionalProperties:
         type: object
@@ -32889,7 +34785,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft online meeting.
     microsoft.graph.outlookUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -33372,7 +35267,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp at which the channel was created.
+              description: Read-only. Timestamp at which the channel was created.
               format: date-time
               nullable: true
             description:
@@ -33579,7 +35474,7 @@ components:
               nullable: true
             timeZone:
               type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
+              description: 'The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.'
               nullable: true
             workforceIntegrationIds:
               type: array
@@ -34252,6 +36147,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.auditLogQueryCollectionResponse:
+      title: Collection of auditLogQuery
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.auditLogRecordCollectionResponse:
+      title: Collection of auditLogRecord
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.security.ediscoveryCaseCollectionResponse:
       title: Collection of ediscoveryCase
       type: object
@@ -34429,6 +36350,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailCollectionResponse:
+      title: Collection of analyzedEmail
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -35301,6 +37235,12 @@ components:
         - custom
         - unknownFutureValue
       type: string
+    microsoft.graph.security.auditRecordTypeDictionary:
+      title: auditRecordTypeDictionary
+      type: object
+      additionalProperties:
+        type: object
+      description: A dictionary of name-value pairs for dynamic audit event properties.
     microsoft.graph.security.caseStatus:
       title: caseStatus
       enum:
@@ -35992,6 +37932,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
             fields:
               $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
+            permissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+              x-ms-navigationProperty: true
             versions:
               type: array
               items:
@@ -36842,6 +38787,107 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.security.detonationDetails:
+      title: detonationDetails
+      type: object
+      properties:
+        analysisDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time of detonation.
+          format: date-time
+          nullable: true
+        compromiseIndicators:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.compromiseIndicator'
+          description: Represents indicators and its associated verdict that suggests whether an email is compromised.
+        detonationBehaviourDetails:
+          $ref: '#/components/schemas/microsoft.graph.security.detonationBehaviourDetails'
+        detonationBehaviourDetailsV2:
+          type: string
+          description: 'Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation in a JSON format.'
+          nullable: true
+        detonationChain:
+          $ref: '#/components/schemas/microsoft.graph.security.detonationChain'
+        detonationObservables:
+          $ref: '#/components/schemas/microsoft.graph.security.detonationObservables'
+        detonationScreenshotUri:
+          type: string
+          description: 'Show any screenshots that were captured during detonation. No screenshots are captured if the URL opens into a link that directly downloads a file. However, you see the downloaded file in the detonation chain.'
+          nullable: true
+        detonationVerdict:
+          type: string
+          description: The verdict of the detonation.
+          nullable: true
+        detonationVerdictReason:
+          type: string
+          description: The reason for the verdict of the detonation.
+          nullable: true
+        entityMetadata:
+          type: string
+          description: Additional metadata about the entity in JSON format.
+          nullable: true
+        mitreTechniques:
+          type: string
+          description: 'The attack techniques, as aligned with the MITRE ATT&CK framework.'
+          nullable: true
+        staticAnalysis:
+          type: string
+          description: The results of static analysis performed on the file or URL.
+          nullable: true
+        submissionSource:
+          type: string
+          description: The source of the submission.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.deliveryAction:
+      title: deliveryAction
+      enum:
+        - unknown
+        - deliveredToJunk
+        - delivered
+        - blocked
+        - replaced
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.deliveryLocation:
+      title: deliveryLocation
+      enum:
+        - unknown
+        - inbox_folder
+        - junkFolder
+        - deletedFolder
+        - quarantine
+        - onprem_external
+        - failed
+        - dropped
+        - others
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.eventSource:
+      title: eventSource
+      enum:
+        - system
+        - admin
+        - user
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.timelineEventType:
+      title: timelineEventType
+      enum:
+        - originalDelivery
+        - systemTimeTravel
+        - dynamicDelivery
+        - userUrlClick
+        - reprocessed
+        - zap
+        - quarantineRelease
+        - air
+        - unknown
+        - unknownFutureValue
+      type: string
     microsoft.graph.activityMetadata:
       title: activityMetadata
       type: object
@@ -37061,6 +39107,7 @@ components:
       type: object
       additionalProperties:
         type: object
+      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.status:
       title: status
       enum:
@@ -37547,7 +39594,7 @@ components:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
+              description: 'Read-only. Timestamp at which the chat message was deleted, or null if not deleted.'
               format: date-time
               nullable: true
             etag:
@@ -37563,13 +39610,13 @@ components:
             lastEditedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+              description: Read-only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
+              description: 'Read-only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
               format: date-time
               nullable: true
             locale:
@@ -41362,6 +43409,101 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
+    microsoft.graph.security.compromiseIndicator:
+      title: compromiseIndicator
+      type: object
+      properties:
+        value:
+          type: string
+          description: Indicator.
+          nullable: true
+        verdict:
+          $ref: '#/components/schemas/microsoft.graph.security.verdictCategory'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.detonationBehaviourDetails:
+      title: detonationBehaviourDetails
+      type: object
+      properties:
+        actionStatus:
+          type: string
+          description: 'The status of the action performed during detonation (e.g., ''Successful'', ''Failed'', ''Blocked'').'
+          nullable: true
+        behaviourCapability:
+          type: string
+          description: Categorizes the capability or type of behavior observed.
+          nullable: true
+        behaviourGroup:
+          type: string
+          description: Groups related behaviors together for classification purposes.
+          nullable: true
+        details:
+          type: string
+          description: More contextual information about the observed behavior or action.
+          nullable: true
+        eventDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the behavior or action was observed during detonation.
+          format: date-time
+          nullable: true
+        operation:
+          type: string
+          description: The specific operation or action that was performed.
+          nullable: true
+        processId:
+          type: string
+          description: The unique identifier of the process involved in the behavior.
+          nullable: true
+        processName:
+          type: string
+          description: The name of the process that performed or was involved in the behavior.
+          nullable: true
+        target:
+          type: string
+          description: The target of the operation.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.detonationChain:
+      title: detonationChain
+      type: object
+      properties:
+        childNodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.detonationChain'
+          description: A list of all child nodes in the chain.
+        value:
+          type: string
+          description: The value of the chain.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.detonationObservables:
+      title: detonationObservables
+      type: object
+      properties:
+        contactedIps:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The list of all contacted IPs in the detonation.
+        contactedUrls:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The list of all URLs found in the detonation.
+        droppedfiles:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The list of all dropped files in the detonation.
+      additionalProperties:
+        type: object
     microsoft.graph.userActivityType:
       title: userActivityType
       enum:
@@ -44255,6 +46397,20 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.security.verdictCategory:
+      title: verdictCategory
+      enum:
+        - none
+        - malware
+        - phish
+        - siteUnavailable
+        - spam
+        - decryptionFailed
+        - unsupportedUriScheme
+        - unsupportedFileType
+        - undefined
+        - unknownFutureValue
+      type: string
     microsoft.graph.classifcationErrorBase:
       title: classifcationErrorBase
       type: object
@@ -47849,6 +50005,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.trainingLanguageDetailCollectionResponse'
+    microsoft.graph.security.auditLogQueryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.auditLogQueryCollectionResponse'
+    microsoft.graph.security.auditLogRecordCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.auditLogRecordCollectionResponse'
     microsoft.graph.security.ediscoveryCaseCollectionResponse:
       description: Retrieved collection
       content:
@@ -47933,6 +50101,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTagCollectionResponse'
+    microsoft.graph.security.analyzedEmailCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailCollectionResponse'
     microsoft.graph.sensitivityLabelCollectionResponse:
       description: Retrieved collection
       content:

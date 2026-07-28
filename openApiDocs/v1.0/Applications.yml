@@ -3286,7 +3286,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action pause
-      description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
+      description: 'Temporarily stop a running synchronizationJob. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
@@ -3319,7 +3319,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action provisionOnDemand
-      description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
+      description: Select a user and provision the account on-demand for a synchronizationJob. The rate limit for this API is 5 requests per 10 seconds.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
@@ -3370,7 +3370,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action restart
-      description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
+      description: 'Restart a stopped synchronizationJob, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
@@ -3415,7 +3415,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action start
-      description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
+      description: 'Start an existing synchronizationJob. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
@@ -3448,7 +3448,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action validateCredentials
-      description: Validate that the credentials are valid in the tenant.
+      description: Validate that the credentials are valid in the tenant for a synchronizationJob.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
@@ -3890,7 +3890,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action discover
-      description: 'Discover the latest schema definition for provisioning to an application. '
+      description: Discover the latest schema definition for provisioning to an application for the directoryDefinition.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
@@ -3965,7 +3965,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke function filterOperators
-      description: List all operators supported in the scoping filters.
+      description: List all operators supported in the scoping filters for a synchronizationSchema.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
@@ -4051,7 +4051,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke function functions
-      description: List all the functions currently supported in the attributeMappingSource.
+      description: List all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
@@ -4137,7 +4137,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action parseExpression
-      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
+      description: 'Parse a given string expression into an attributeMappingSource object for a synchronizationSchema. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
@@ -4258,7 +4258,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action acquireAccessToken
-      description: Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
+      description: Acquire an OAuth access token from the synchronization resource to authorize the Microsoft Entra provisioning service to provision users into an application.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
@@ -4508,7 +4508,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update synchronizationTemplate
-      description: Update (override) the synchronization template associated with a given application.
+      description: Update (override) the synchronizationTemplate associated with a given application.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
@@ -4971,7 +4971,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action discover
-      description: 'Discover the latest schema definition for provisioning to an application. '
+      description: Discover the latest schema definition for provisioning to an application for the directoryDefinition.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
@@ -5046,7 +5046,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke function filterOperators
-      description: List all operators supported in the scoping filters.
+      description: List all operators supported in the scoping filters for a synchronizationSchema.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
@@ -5132,7 +5132,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke function functions
-      description: List all the functions currently supported in the attributeMappingSource.
+      description: List all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
@@ -5218,7 +5218,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action parseExpression
-      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
+      description: 'Parse a given string expression into an attributeMappingSource object for a synchronizationSchema. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
@@ -12810,7 +12810,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: List synchronization jobs
-      description: List existing jobs for a given application instance (service principal).
+      description: List existing synchronizationJob objects for a given application instance (service principal).
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
@@ -12872,7 +12872,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create synchronizationJob
-      description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+      description: Create a new synchronizationJob with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
@@ -12908,7 +12908,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get synchronizationJob
-      description: Retrieve the existing synchronization job and its properties.
+      description: Retrieve an existing synchronizationJob and its properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
@@ -13003,7 +13003,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete synchronizationJob
-      description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.'
+      description: 'Stop the synchronizationJob, and permanently delete all the state associated with it. Synchronized accounts are left as-is.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
@@ -13273,7 +13273,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action pause
-      description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
+      description: 'Temporarily stop a running synchronizationJob. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
@@ -13306,7 +13306,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action provisionOnDemand
-      description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
+      description: Select a user and provision the account on-demand for a synchronizationJob. The rate limit for this API is 5 requests per 10 seconds.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
@@ -13357,7 +13357,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action restart
-      description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
+      description: 'Restart a stopped synchronizationJob, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
@@ -13402,7 +13402,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action start
-      description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
+      description: 'Start an existing synchronizationJob. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
@@ -13435,7 +13435,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action validateCredentials
-      description: Validate that the credentials are valid in the tenant.
+      description: Validate that the credentials are valid in the tenant for a synchronizationJob.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
@@ -13492,7 +13492,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get synchronizationSchema
-      description: Retrieve the schema for a given synchronization job or template.
+      description: Retrieve the synchronizationSchema for a given synchronization job or template.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
@@ -13548,7 +13548,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update synchronizationSchema
-      description: 'Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.'
+      description: 'Update the synchronizationSchema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
@@ -13884,7 +13884,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action discover
-      description: 'Discover the latest schema definition for provisioning to an application. '
+      description: Discover the latest schema definition for provisioning to an application for the directoryDefinition.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
@@ -13959,7 +13959,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke function filterOperators
-      description: List all operators supported in the scoping filters.
+      description: List all operators supported in the scoping filters for a synchronizationSchema.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
@@ -14045,7 +14045,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke function functions
-      description: List all the functions currently supported in the attributeMappingSource.
+      description: List all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
@@ -14131,7 +14131,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action parseExpression
-      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
+      description: 'Parse a given string expression into an attributeMappingSource object for a synchronizationSchema. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
@@ -14252,7 +14252,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action acquireAccessToken
-      description: Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
+      description: Acquire an OAuth access token from the synchronization resource to authorize the Microsoft Entra provisioning service to provision users into an application.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
@@ -14291,7 +14291,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Add synchronization secrets
-      description: Provide credentials for establishing connectivity with the target system.
+      description: Provide credentials for establishing connectivity with the target system and store them in the synchronization resource.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-1.0
@@ -14362,7 +14362,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: List existing synchronization templates
-      description: List the synchronization templates associated with a given application or service principal.
+      description: List synchronizationTemplate objects associated with a given application or service principal.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
@@ -14968,7 +14968,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action discover
-      description: 'Discover the latest schema definition for provisioning to an application. '
+      description: Discover the latest schema definition for provisioning to an application for the directoryDefinition.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
@@ -15043,7 +15043,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke function filterOperators
-      description: List all operators supported in the scoping filters.
+      description: List all operators supported in the scoping filters for a synchronizationSchema.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
@@ -15129,7 +15129,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke function functions
-      description: List all the functions currently supported in the attributeMappingSource.
+      description: List all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
@@ -15215,7 +15215,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action parseExpression
-      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
+      description: 'Parse a given string expression into an attributeMappingSource object for a synchronizationSchema. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
@@ -17290,6 +17290,7 @@ components:
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format; each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique within the app. It has a limit of 600 characters. Supports $filter (eq).'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
@@ -17716,7 +17717,7 @@ components:
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Requires $select to retrieve. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Requires $select to retrieve. Supports $filter (eq, ne, not, and in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             ageGroup:
               type: string
@@ -17743,7 +17744,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
             city:
               type: string
               description: 'The city where the user is located. Maximum length is 128 characters. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -17890,7 +17891,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             mySite:
               type: string
@@ -17912,7 +17913,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -17945,7 +17946,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Requires $select to retrieve. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Requires $select to retrieve. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Requires $select to retrieve. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -18043,7 +18044,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             userType:
               type: string
@@ -18300,7 +18301,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft Entra user account.
     microsoft.graph.synchronization:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18796,7 +18796,7 @@ components:
               nullable: true
             roleTemplateId:
               type: string
-              description: 'The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.'
+              description: 'The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read-only. Supports $filter (eq), $select.'
               nullable: true
             members:
               type: array
@@ -18818,6 +18818,8 @@ components:
         - title: group
           type: object
           properties:
+            accessType:
+              $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
               type: boolean
               description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
@@ -18826,7 +18828,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
             assignedLicenses:
               type: array
               items:
@@ -18889,6 +18891,10 @@ components:
               type: boolean
               description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can''t be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
+            isFavorite:
+              type: boolean
+              description: 'Indicates whether the user marked the group as favorite. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              nullable: true
             isManagementRestricted:
               type: boolean
               description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Requires $select to retrieve.'
@@ -18923,6 +18929,8 @@ components:
               type: string
               description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.'
               nullable: true
+            onPremisesExtensionAttributes:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -19000,11 +19008,25 @@ components:
               type: string
               description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
+            unseenConversationsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Count of conversations that have had one or more new posts delivered since the signed-in user''s last visit to the group. This property is the same as unseenCount. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              format: int32
+              nullable: true
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: 'Count of conversations that received new posts since the signed-in user last visited the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              format: int32
+              nullable: true
+            unseenMessagesCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Count of new posts that have been delivered to the group''s conversations since the signed-in user''s last visit to the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             visibility:
@@ -19151,7 +19173,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft Entra group.
     microsoft.graph.selfSignedCertificate:
       title: selfSignedCertificate
       type: object
@@ -22009,7 +22030,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft online meeting.
     microsoft.graph.onPremisesSyncBehavior:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22776,6 +22796,15 @@ components:
         - high
         - unknownFutureValue
       type: string
+    microsoft.graph.groupAccessType:
+      title: groupAccessType
+      enum:
+        - none
+        - private
+        - secret
+        - public
+        - unknownFutureValue
+      type: string
     microsoft.graph.assignedLabel:
       title: assignedLabel
       type: object
@@ -23498,6 +23527,7 @@ components:
       type: object
       additionalProperties:
         type: object
+      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.status:
       title: status
       enum:
@@ -24367,7 +24397,7 @@ components:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
+              description: 'Read-only. Timestamp at which the chat message was deleted, or null if not deleted.'
               format: date-time
               nullable: true
             etag:
@@ -24383,13 +24413,13 @@ components:
             lastEditedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+              description: Read-only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
+              description: 'Read-only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
               format: date-time
               nullable: true
             locale:
@@ -24852,6 +24882,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the list.
+              x-ms-navigationProperty: true
+            permissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permission'
               x-ms-navigationProperty: true
             subscriptions:
               type: array
@@ -25439,7 +25474,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp at which the channel was created.
+              description: Read-only. Timestamp at which the channel was created.
               format: date-time
               nullable: true
             description:
@@ -25608,7 +25643,7 @@ components:
               nullable: true
             timeZone:
               type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
+              description: 'The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.'
               nullable: true
             workforceIntegrationIds:
               type: array
@@ -29727,6 +29762,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
             fields:
               $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
+            permissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+              x-ms-navigationProperty: true
             versions:
               type: array
               items:
