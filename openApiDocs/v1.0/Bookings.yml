@@ -70,7 +70,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: List bookingBusinesses
-      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.'
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it doesn''t return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
@@ -8607,6 +8607,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
+            emailNotificationsSetting:
+              $ref: '#/components/schemas/microsoft.graph.emailNotificationsSetting'
             exchangeProtectionPolicies:
               type: array
               items:
@@ -9680,6 +9682,21 @@ components:
               description: The list of email addresses to add to the OneDrive protection policy.
           additionalProperties:
             type: object
+    microsoft.graph.emailNotificationsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: emailNotificationsSetting
+          type: object
+          properties:
+            additionalEvents:
+              $ref: '#/components/schemas/microsoft.graph.notificationEventsType'
+            isEnabled:
+              type: boolean
+              description: Indicates whether notifications are enabled.
+            recipients:
+              $ref: '#/components/schemas/microsoft.graph.notificationRecipients'
+          additionalProperties:
+            type: object
     microsoft.graph.exchangeProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
@@ -10600,6 +10617,28 @@ components:
               $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobStatus'
           additionalProperties:
             type: object
+    microsoft.graph.notificationEventsType:
+      title: notificationEventsType
+      enum:
+        - none
+        - restoreAndPolicyUpdates
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.notificationRecipients:
+      title: notificationRecipients
+      type: object
+      properties:
+        customRecipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.emailIdentity'
+          description: A list of users or groups that receive notifications. Only specify this property when role is set to custom.
+        role:
+          $ref: '#/components/schemas/microsoft.graph.notificationRecipientsType'
+      additionalProperties:
+        type: object
     microsoft.graph.granularMailboxRestoreArtifact:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
@@ -11019,6 +11058,30 @@ components:
         - completedWithErrors
         - unknownFutureValue
       type: string
+    microsoft.graph.emailIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: emailIdentity
+          type: object
+          properties:
+            email:
+              type: string
+              description: Email address of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.notificationRecipientsType:
+      title: notificationRecipientsType
+      enum:
+        - none
+        - globalAdmins
+        - backupAdmins
+        - custom
+        - allAdmins
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.restoreArtifactBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

@@ -3745,6 +3745,7 @@ components:
         - personLanguages
         - personPublications
         - personPatents
+        - personWorkPositions
       type: string
     microsoft.graph.externalConnectors.propertyType:
       title: propertyType
@@ -3917,6 +3918,7 @@ components:
       type: object
       additionalProperties:
         type: object
+      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.externalConnectors.propertyRule:
       title: propertyRule
       type: object

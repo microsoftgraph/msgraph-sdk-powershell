@@ -3061,7 +3061,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
-      description: 'Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.'
+      description: Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review for which the calling user is the reviewer. The decision items are presented as accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0
@@ -3220,7 +3220,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Invoke action batchRecordDecisions
-      description: 'Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.'
+      description: 'Enables reviewers to review all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using principalId, resourceId, or neither.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-1.0
@@ -3374,7 +3374,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List stages (of an access review)
-      description: Retrieve the stages in a multi-stage access review instance.
+      description: Retrieve the accessReviewStage objects for a specific accessReviewInstance in a multi-stage access review.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-stages?view=graph-rest-1.0
@@ -3642,7 +3642,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List decisions (from a multi-stage access review)
-      description: Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
+      description: Get the accessReviewInstanceDecisionItem objects from an accessReviewStage in a multi-stage access review.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewstage-list-decisions?view=graph-rest-1.0
@@ -4372,7 +4372,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Invoke function filterByCurrentUser
-      description: 'Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.'
+      description: Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review for which the calling user is the reviewer. The decision items are presented as accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0
@@ -8957,7 +8957,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Invoke action getApplicablePolicyRequirements
-      description: 'In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.'
+      description: 'In Microsoft Entra entitlement management, this action retrieves accessPackageAssignmentRequestRequirements objects for an accessPackage that the currently signed-in user can use to create an accessPackageAssignmentRequest. Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-1.0
@@ -12325,6 +12325,320 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /identityGovernance/entitlementManagement/accessPackageSuggestions:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get accessPackageSuggestions from identityGovernance
+      description: Suggested access packages for end users based on various criteria such as related people insights and assignment history.
+      operationId: identityGovernance.entitlementManagement_ListAccessPackageSuggestion
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.accessPackageSuggestionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to accessPackageSuggestions for identityGovernance
+      operationId: identityGovernance.entitlementManagement_CreateAccessPackageSuggestion
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestion'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestion'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackageSuggestions/{accessPackageSuggestion-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get accessPackageSuggestions from identityGovernance
+      description: Suggested access packages for end users based on various criteria such as related people insights and assignment history.
+      operationId: identityGovernance.entitlementManagement_GetAccessPackageSuggestion
+      parameters:
+        - name: accessPackageSuggestion-id
+          in: path
+          description: The unique identifier of accessPackageSuggestion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageSuggestion
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestion'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property accessPackageSuggestions in identityGovernance
+      operationId: identityGovernance.entitlementManagement_UpdateAccessPackageSuggestion
+      parameters:
+        - name: accessPackageSuggestion-id
+          in: path
+          description: The unique identifier of accessPackageSuggestion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageSuggestion
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestion'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestion'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property accessPackageSuggestions for identityGovernance
+      operationId: identityGovernance.entitlementManagement_DeleteAccessPackageSuggestion
+      parameters:
+        - name: accessPackageSuggestion-id
+          in: path
+          description: The unique identifier of accessPackageSuggestion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageSuggestion
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackageSuggestions/{accessPackageSuggestion-id}/accessPackage':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get accessPackage from identityGovernance
+      description: The access package information for the suggested package.
+      operationId: identityGovernance.entitlementManagement.accessPackageSuggestion_GetAccessPackage
+      parameters:
+        - name: accessPackageSuggestion-id
+          in: path
+          description: The unique identifier of accessPackageSuggestion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageSuggestion
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.availableAccessPackage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/entitlementManagement/accessPackageSuggestions/$count:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get the number of the resource
+      operationId: identityGovernance.entitlementManagement.accessPackageSuggestion_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/identityGovernance/entitlementManagement/accessPackageSuggestions/microsoft.graph.filterByCurrentUser(on=''{on}'')':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Invoke function filterByCurrentUser
+      description: Retrieve suggested accessPackageSuggestion objects for the current end user. This operation returns access packages that are suggested based on various criteria such as related people insights and the user's assignment history. The suggestions help end users discover relevant access packages they may need for their role or work context.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accesspackagesuggestions-filterbycurrentuser?view=graph-rest-1.0
+      operationId: identityGovernance.entitlementManagement.accessPackageSuggestion_filterGraphBPreCurrentUser
+      parameters:
+        - name: on
+          in: path
+          description: 'Usage: on=''{on}'''
+          required: true
+          style: simple
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestionFilterByCurrentUserOptions'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of accessPackageSuggestion
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestion'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /identityGovernance/entitlementManagement/assignmentPolicies:
     get:
       tags:
@@ -14262,6 +14576,336 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /identityGovernance/entitlementManagement/availableAccessPackages:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get availableAccessPackages from identityGovernance
+      description: Access packages available for end users to browse and request.
+      operationId: identityGovernance.entitlementManagement_ListAvailableAccessPackage
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.availableAccessPackageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to availableAccessPackages for identityGovernance
+      operationId: identityGovernance.entitlementManagement_CreateAvailableAccessPackage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.availableAccessPackage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.availableAccessPackage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/availableAccessPackages/{availableAccessPackage-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get availableAccessPackages from identityGovernance
+      description: Access packages available for end users to browse and request.
+      operationId: identityGovernance.entitlementManagement_GetAvailableAccessPackage
+      parameters:
+        - name: availableAccessPackage-id
+          in: path
+          description: The unique identifier of availableAccessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: availableAccessPackage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.availableAccessPackage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property availableAccessPackages in identityGovernance
+      operationId: identityGovernance.entitlementManagement_UpdateAvailableAccessPackage
+      parameters:
+        - name: availableAccessPackage-id
+          in: path
+          description: The unique identifier of availableAccessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: availableAccessPackage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.availableAccessPackage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.availableAccessPackage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property availableAccessPackages for identityGovernance
+      operationId: identityGovernance.entitlementManagement_DeleteAvailableAccessPackage
+      parameters:
+        - name: availableAccessPackage-id
+          in: path
+          description: The unique identifier of availableAccessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: availableAccessPackage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/availableAccessPackages/{availableAccessPackage-id}/resourceRoleScopes':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: List resourceRoleScopes
+      description: Get a list of the accessPackageResourceRoleScope objects associated with an availableAccessPackage.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/availableaccesspackage-list-resourcerolescopes?view=graph-rest-1.0
+      operationId: identityGovernance.entitlementManagement.availableAccessPackage_ListResourceRoleScope
+      parameters:
+        - name: availableAccessPackage-id
+          in: path
+          description: The unique identifier of availableAccessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: availableAccessPackage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.accessPackageResourceRoleScopeCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/availableAccessPackages/{availableAccessPackage-id}/resourceRoleScopes/{accessPackageResourceRoleScope-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get resourceRoleScopes from identityGovernance
+      description: The resource role scopes associated with this available access package.
+      operationId: identityGovernance.entitlementManagement.availableAccessPackage_GetResourceRoleScope
+      parameters:
+        - name: availableAccessPackage-id
+          in: path
+          description: The unique identifier of availableAccessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: availableAccessPackage
+        - name: accessPackageResourceRoleScope-id
+          in: path
+          description: The unique identifier of accessPackageResourceRoleScope
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageResourceRoleScope
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageResourceRoleScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/availableAccessPackages/{availableAccessPackage-id}/resourceRoleScopes/$count':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get the number of the resource
+      operationId: identityGovernance.entitlementManagement.availableAccessPackage.resourceRoleScope_GetCount
+      parameters:
+        - name: availableAccessPackage-id
+          in: path
+          description: The unique identifier of availableAccessPackage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: availableAccessPackage
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identityGovernance/entitlementManagement/availableAccessPackages/$count:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get the number of the resource
+      operationId: identityGovernance.entitlementManagement.availableAccessPackage_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identityGovernance/entitlementManagement/catalogs:
     get:
       tags:
@@ -14598,7 +15242,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List accessPackageCustomWorkflowExtensions
-      description: Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
+      description: List the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects in the accessPackageCustomWorkflowExtensions relationship of an accessPackageCatalog. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-1.0
@@ -14660,7 +15304,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackageCustomWorkflowExtension
-      description: Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object. You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
+      description: Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object in the accessPackageCustomWorkflowExtensions relationship of an accessPackageCatalog. You must explicitly provide an @odata.type property that indicates whether the object is an accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-post-accesspackagecustomworkflowextensions?view=graph-rest-1.0
@@ -20994,7 +21638,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Remove externalSponsors
-      description: Remove a user or a group from the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+      description: Remove a user or a group from the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0
@@ -21093,7 +21737,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Add externalSponsors
-      description: Add a user or a group to the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+      description: Add a user or a group to the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-post-externalsponsors?view=graph-rest-1.0
@@ -21119,7 +21763,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Remove externalSponsors
-      description: Remove a user or a group from the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+      description: Remove a user or a group from the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0
@@ -21217,7 +21861,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Remove internalSponsors
-      description: Remove a user or a group from the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+      description: Remove a user or a group from the internalSponsors relationship of a connectedOrganization. Internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-1.0
@@ -21316,7 +21960,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Add internalSponsors
-      description: Add a user or a group to the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+      description: Add a user or a group to the internalSponsors relationship of a connectedOrganization. Internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-post-internalsponsors?view=graph-rest-1.0
@@ -21342,7 +21986,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Remove internalSponsors
-      description: Remove a user or a group from the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+      description: Remove a user or a group from the internalSponsors relationship of a connectedOrganization. Internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-1.0
@@ -21382,6 +22026,197 @@ paths:
         - identityGovernance.entitlementManagement
       summary: Get the number of the resource
       operationId: identityGovernance.entitlementManagement.connectedOrganization_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identityGovernance/entitlementManagement/controlConfigurations:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get controlConfigurations from identityGovernance
+      description: Configuration settings that control the lifecycle and access policies of entitlement management within a tenant.
+      operationId: identityGovernance.entitlementManagement_ListControlConfiguration
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.controlConfigurationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to controlConfigurations for identityGovernance
+      operationId: identityGovernance.entitlementManagement_CreateControlConfiguration
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.controlConfiguration'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.controlConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/controlConfigurations/{controlConfiguration-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get controlConfigurations from identityGovernance
+      description: Configuration settings that control the lifecycle and access policies of entitlement management within a tenant.
+      operationId: identityGovernance.entitlementManagement_GetControlConfiguration
+      parameters:
+        - name: controlConfiguration-id
+          in: path
+          description: The unique identifier of controlConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: controlConfiguration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.controlConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property controlConfigurations in identityGovernance
+      operationId: identityGovernance.entitlementManagement_SetControlConfiguration
+      parameters:
+        - name: controlConfiguration-id
+          in: path
+          description: The unique identifier of controlConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: controlConfiguration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.controlConfiguration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.controlConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property controlConfigurations for identityGovernance
+      operationId: identityGovernance.entitlementManagement_DeleteControlConfiguration
+      parameters:
+        - name: controlConfiguration-id
+          in: path
+          description: The unique identifier of controlConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: controlConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/entitlementManagement/controlConfigurations/$count:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get the number of the resource
+      operationId: identityGovernance.entitlementManagement.controlConfiguration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -37913,7 +38748,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get subjects from identityGovernance
+      summary: Get accessPackageSubject
+      description: Get the properties of an external directory user represented by an existing accessPackageSubject object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accesspackagesubject-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement_ListSubject
       parameters:
         - $ref: '#/components/parameters/top'
@@ -38030,7 +38869,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update the navigation property subjects in identityGovernance
+      summary: Update accessPackageSubject
+      description: Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accesspackagesubject-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement_UpdateSubject
       parameters:
         - name: accessPackageSubject-id
@@ -38178,7 +39021,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update the navigation property subjects in identityGovernance
+      summary: Update accessPackageSubject
+      description: Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accesspackagesubject-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.subject_UpdateGraphBPreObjectId
       parameters:
         - name: objectId
@@ -38997,7 +39844,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List deletedItems (deleted lifecycle workflows)
-      description: Get a list of the deleted workflow objects and their properties.
+      description: Get a list of deleted workflow objects and their properties from the deletedItemContainer.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-deleteditems?view=graph-rest-1.0
@@ -39878,6 +40725,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/microsoft.graph.identityGovernance.cancelProcessing':
+    post:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Invoke action cancelProcessing
+      description: Cancel one or more workflow runs that are currently in queued or inProgress status. Currently limited to canceling one run per request.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-cancelprocessing?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_cancelProcessing
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scope:
+                  $ref: '#/components/schemas/microsoft.graph.identityGovernance.cancelScope'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/microsoft.graph.identityGovernance.clearQuarantine':
+    post:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Invoke action clearQuarantine
+      description: 'Release a quarantined workflow so that it resumes processing. A workflow is automatically quarantined when a run exceeds the threshold conditions defined in its quarantineConfiguration. After an administrator reviews the cause of the quarantine, calling this action clears the quarantine state and allows the workflow to run again.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-clearquarantine?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_clearQuarantine
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.workflow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/microsoft.graph.identityGovernance.createNewVersion':
     post:
       tags:
@@ -39919,12 +40832,93 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/microsoft.graph.identityGovernance.previewTaskFailures':
+    post:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Invoke action previewTaskFailures
+      description: 'Validate the tasks configured in a workflow to check for configuration errors. This action identifies any tasks that would fail during execution, allowing you to fix issues before running the workflow. Returns an empty collection if no task failures are detected.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-previewtaskfailures?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_previewTaskFailure
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.identityGovernance.previewFailedTask'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/microsoft.graph.identityGovernance.previewWorkflow':
+    post:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Invoke action previewWorkflow
+      description: 'Run a workflow in preview mode for selected directory objects without affecting production users. This action triggers workflow processing in preview mode, and results can be retrieved by using the List userProcessingResults operation with $filter=workflowExecutionType eq ''previewMode''.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-previewworkflow?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_previewWorkflow
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                subjects:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/microsoft.graph.identityGovernance.restore':
     post:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action restore
-      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
+      description: Restore a deleted workflow object. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0
@@ -39948,6 +40942,142 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/previewScope':
+    get:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Get previewScope from identityGovernance
+      description: The preview scope for the workflow.
+      operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_ListPreviewScope
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/previewScope/{directoryObject-id}':
+    get:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Get previewScope from identityGovernance
+      description: The preview scope for the workflow.
+      operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_GetPreviewScope
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/previewScope/$count':
+    get:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Get the number of the resource
+      operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.previewScope_GetCount
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow-id}/runs':
     get:
       tags:
@@ -40357,7 +41487,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -41532,7 +42662,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -42527,7 +43657,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -43373,7 +44503,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -44474,7 +45604,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -46197,7 +47327,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -46865,7 +47995,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function topTasksProcessedSummary
-      description: 'Provide a summary of the most processed tasks, known as top tasks, for a specified time period in a tenant. The task definition is provided, along with numerical counts of total, successful, and failed runs. For information about workflows processed, see insights: topWorkflowsProcessedSummary.'
+      description: 'Provide a summary from the insights resource of the most processed task objects, known as top tasks, for a specified time period in a tenant. The task definition is provided, along with numerical counts of total, successful, and failed runs. For information about workflows processed, see insights: topWorkflowsProcessedSummary.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-insights-toptasksprocessedsummary?view=graph-rest-1.0
@@ -46922,7 +48052,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function topWorkflowsProcessedSummary
-      description: 'Provide a summary of the workflows processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.'
+      description: 'Provide a summary from the insights resource of the workflow objects processed the most, known as top workflows, for a specified period in a tenant. Workflow basic details are given, along with run information. For information about tasks processed, see insights: topTasksProcessedSummary.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-insights-topworkflowsprocessedsummary?view=graph-rest-1.0
@@ -46979,7 +48109,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function workflowsProcessedByCategory
-      description: 'Provide a summary of workflows processed, by category, in a tenant. This allows you to quickly get category information, by numerical value, bypassing other information found in the WorkflowsProcessedSummary call.'
+      description: 'Provide a summary from the insights resource of workflow objects processed by category in a tenant. This allows you to quickly get category information, by numerical value, without retrieving the other information included in the workflowsProcessedSummary call.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedbycategory?view=graph-rest-1.0
@@ -47018,7 +48148,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function workflowsProcessedSummary
-      description: 'Provide a summary of all workflows processed within a tenant for a specified period. Because the amount of results for listed workflows as returned by the List workflows does not tell you which workflows were processed from the list of created workflows, this summary gives you a quick overview of processed status based on counts.'
+      description: 'Provide a summary from the insights resource of workflow objects processed within a tenant for a specified period. Because the list returned by List workflows doesn''t indicate which workflows were processed, this summary gives you a quick overview based on counts.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedsummary?view=graph-rest-1.0
@@ -47242,7 +48372,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List workflows
-      description: Get a list of workflow resources that are associated with lifecycle workflows.
+      description: Get a list of workflow resources that are associated with Lifecycle Workflows.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-1.0
@@ -47406,7 +48536,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Delete workflow
-      description: 'Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.'
+      description: 'Delete a workflow object and its associated tasks, taskProcessingResults and versions. The deleted workflow is sent to the deleted workflows container. You can restore a deleted workflow and its associated objects within 30 days of deletion.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-delete?view=graph-rest-1.0
@@ -48184,6 +49314,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/microsoft.graph.identityGovernance.cancelProcessing':
+    post:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Invoke action cancelProcessing
+      description: Cancel one or more workflow runs that are currently in queued or inProgress status. Currently limited to canceling one run per request.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-cancelprocessing?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.workflow_cancelProcessing
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scope:
+                  $ref: '#/components/schemas/microsoft.graph.identityGovernance.cancelScope'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/microsoft.graph.identityGovernance.clearQuarantine':
+    post:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Invoke action clearQuarantine
+      description: 'Release a quarantined workflow so that it resumes processing. A workflow is automatically quarantined when a run exceeds the threshold conditions defined in its quarantineConfiguration. After an administrator reviews the cause of the quarantine, calling this action clears the quarantine state and allows the workflow to run again.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-clearquarantine?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.workflow_clearQuarantine
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.workflow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/microsoft.graph.identityGovernance.createNewVersion':
     post:
       tags:
@@ -48225,12 +49421,93 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/microsoft.graph.identityGovernance.previewTaskFailures':
+    post:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Invoke action previewTaskFailures
+      description: 'Validate the tasks configured in a workflow to check for configuration errors. This action identifies any tasks that would fail during execution, allowing you to fix issues before running the workflow. Returns an empty collection if no task failures are detected.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-previewtaskfailures?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.workflow_previewTaskFailure
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.identityGovernance.previewFailedTask'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/microsoft.graph.identityGovernance.previewWorkflow':
+    post:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Invoke action previewWorkflow
+      description: 'Run a workflow in preview mode for selected directory objects without affecting production users. This action triggers workflow processing in preview mode, and results can be retrieved by using the List userProcessingResults operation with $filter=workflowExecutionType eq ''previewMode''.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-previewworkflow?view=graph-rest-1.0
+      operationId: identityGovernance.lifecycleWorkflow.workflow_previewWorkflow
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                subjects:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/microsoft.graph.identityGovernance.restore':
     post:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action restore
-      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
+      description: Restore a deleted workflow object. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0
@@ -48254,12 +49531,148 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/previewScope':
+    get:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Get previewScope from identityGovernance
+      description: The preview scope for the workflow.
+      operationId: identityGovernance.lifecycleWorkflow.workflow_ListPreviewScope
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/previewScope/{directoryObject-id}':
+    get:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Get previewScope from identityGovernance
+      description: The preview scope for the workflow.
+      operationId: identityGovernance.lifecycleWorkflow.workflow_GetPreviewScope
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/previewScope/$count':
+    get:
+      tags:
+        - identityGovernance.lifecycleWorkflowsContainer
+      summary: Get the number of the resource
+      operationId: identityGovernance.lifecycleWorkflow.workflow.previewScope_GetCount
+      parameters:
+        - name: workflow-id
+          in: path
+          description: The unique identifier of workflow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: workflow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/identityGovernance/lifecycleWorkflows/workflows/{workflow-id}/runs':
     get:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List runs
-      description: Get a list of the run objects and their properties for a lifecycle workflow.
+      description: Get a list of run objects and their properties for a workflow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-1.0
@@ -48672,7 +50085,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -49176,7 +50589,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get userProcessingResult
-      description: Get the user processing result of a user processing result of a run.
+      description: Get a userProcessingResult for a run.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0
@@ -49856,7 +51269,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -50456,7 +51869,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
-      description: 'Get a summary of runs for a specified time period. Because the amount of runs returned by the List API call can be overwhelming, this summary allows the administrator to get a quick overview based on counts.'
+      description: 'Get a runSummary for run objects over a specified time period. Because the number of runs returned by the list API call can be overwhelming, this summary allows administrators to get a quick overview based on counts.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.run_summary
       parameters:
         - name: workflow-id
@@ -50858,7 +52271,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -51313,7 +52726,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke function summary
-      description: 'Get a taskReportSummary object. This API provides a summary of task processing results for a specified time period. Because the volume of task processing results and task reports returned by the List API calls can be overwhelming, this summary allows the administrator to get a quick overview based on counts.'
+      description: 'Get a taskReportSummary for a taskReport. This API provides a summary of task processing results for a specified time period. Because the volume of task processing results and task reports returned by the List API calls can be overwhelming, this summary allows the administrator to get a quick overview based on counts.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.taskReport_summary
       parameters:
         - name: workflow-id
@@ -51357,7 +52770,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List tasks (in Lifecycle Workflows)
-      description: Retrieve the details of the built-in tasks in Lifecycle Workflows.
+      description: Retrieve the details of the built-in task objects in a workflow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-task?view=graph-rest-1.0
@@ -51711,7 +53124,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -52818,7 +54231,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -54553,7 +55966,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -55491,7 +56904,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
+      description: 'Resume a taskProcessingResult that''s inProgress. In the default case, an Azure Logic Apps system-assigned managed identity calls this API. For more information, see Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -71095,6 +72508,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
               description: Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
               x-ms-navigationProperty: true
+            accessPackageSuggestions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestion'
+              description: Suggested access packages for end users based on various criteria such as related people insights and assignment history.
+              x-ms-navigationProperty: true
             assignmentPolicies:
               type: array
               items:
@@ -71113,6 +72532,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
               description: The assignment of an access package to a subject for a period of time.
               x-ms-navigationProperty: true
+            availableAccessPackages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.availableAccessPackage'
+              description: Access packages available for end users to browse and request.
+              x-ms-navigationProperty: true
             catalogs:
               type: array
               items:
@@ -71124,6 +72549,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
               description: References to a directory or domain of another organization whose users can request access.
+              x-ms-navigationProperty: true
+            controlConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.controlConfiguration'
+              description: Configuration settings that control the lifecycle and access policies of entitlement management within a tenant.
               x-ms-navigationProperty: true
             resourceEnvironments:
               type: array
@@ -71500,8 +72931,10 @@ components:
               nullable: true
             originSystem:
               type: string
-              description: 'The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.'
+              description: 'The type of the resource in the origin system, such as SharePointOnline, AadApplication, AzureResources, or AadGroup.'
               nullable: true
+            type:
+              $ref: '#/components/schemas/microsoft.graph.roleType'
             resource:
               $ref: '#/components/schemas/microsoft.graph.accessPackageResource'
           additionalProperties:
@@ -71629,11 +73062,11 @@ components:
               nullable: true
             originId:
               type: string
-              description: The unique identifier for the scope in the resource as defined in the origin system.
+              description: 'The unique identifier of the resource in the origin system. If a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).'
               nullable: true
             originSystem:
               type: string
-              description: The origin system for the scope.
+              description: 'The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup, AzureResources, or CustomDataProvidedResource. Supports $filter (eq).'
               nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.accessPackageResource'
@@ -71645,6 +73078,53 @@ components:
         - allowedRequestor
         - unknownFutureValue
       type: string
+    microsoft.graph.accessPackageSuggestion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessPackageSuggestion
+          type: object
+          properties:
+            reasons:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestionReason'
+              description: A collection of reasons why this access package is being suggested to the user.
+            accessPackage:
+              $ref: '#/components/schemas/microsoft.graph.availableAccessPackage'
+          additionalProperties:
+            type: object
+    microsoft.graph.availableAccessPackage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: availableAccessPackage
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description of the access package.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the access package.
+              nullable: true
+            resourceRoleScopes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageResourceRoleScope'
+              description: The resource role scopes associated with this available access package.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.accessPackageSuggestionFilterByCurrentUserOptions:
+      title: accessPackageSuggestionFilterByCurrentUserOptions
+      enum:
+        - none
+        - relatedPeopleAssignments
+        - assignmentHistory
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.accessPackageAssignmentRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -71833,6 +73313,37 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.controlConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: controlConfiguration
+          type: object
+          properties:
+            createdBy:
+              type: string
+              description: The userPrincipalName of the user or identity that created the control configuration.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the control configuration was created.
+              format: date-time
+              nullable: true
+            isEnabled:
+              type: boolean
+              description: Determines whether or not the control configuration is enabled.
+            modifiedBy:
+              type: string
+              description: The userPrincipalName of the user or identity that modified the control configuration.
+              nullable: true
+            modifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the control configuration was modified.
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.accessPackageResourceRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -71947,7 +73458,7 @@ components:
               nullable: true
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Requires $select to retrieve. Supports $filter (eq, ne, not, and in).'
+              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Requires $select to retrieve. Supports $filter (eq, ne, not, and in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             ageGroup:
               type: string
@@ -71974,7 +73485,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The telephone numbers for the user. NOTE: Although it''s a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
             city:
               type: string
               description: 'The city where the user is located. Maximum length is 128 characters. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -72121,7 +73632,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             mySite:
               type: string
@@ -72143,7 +73654,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le, in). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -72176,7 +73687,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Requires $select to retrieve. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of other email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. Can store up to 250 values, each with a limit of 250 characters. NOTE: This property can''t contain accent characters. Requires $select to retrieve. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0). This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two might be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Requires $select to retrieve. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
@@ -72274,7 +73785,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this value should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby. This property is subject to sensitive action restrictions; only specific privileged administrator roles can update it.'
               nullable: true
             userType:
               type: string
@@ -72531,7 +74042,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft Entra user account.
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -72599,6 +74109,10 @@ components:
               description: 'The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.'
               format: date-time
               nullable: true
+            quarantineDetails:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.quarantineDetails'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.workflowSetting'
             version:
               maximum: 2147483647
               minimum: -2147483648
@@ -72611,6 +74125,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityGovernance.userProcessingResult'
               description: The list of users that meet the workflowExecutionConditions of a workflow.
+              x-ms-navigationProperty: true
+            previewScope:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The preview scope for the workflow.
               x-ms-navigationProperty: true
             runs:
               type: array
@@ -72722,6 +74242,29 @@ components:
     microsoft.graph.identityGovernance.activationScope:
       title: activationScope
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.cancelScope:
+      title: cancelScope
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.previewFailedTask:
+      title: previewFailedTask
+      type: object
+      properties:
+        definitionId:
+          type: string
+          description: The identifier of the task definition of the task that failed during the preview operation of a workflow.
+        failureReason:
+          type: string
+          description: The reason why the task failed in the preview operation of a workflow.
+        name:
+          type: string
+          description: The name of the task that failed within the preview operation of a workflow.
+        taskId:
+          type: string
+          description: The identifier of the task that failed during the preview operation of a workflow.
       additionalProperties:
         type: object
     microsoft.graph.identityGovernance.run:
@@ -73116,6 +74659,8 @@ components:
         - title: workflowVersion
           type: object
           properties:
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.workflowSetting'
             versionNumber:
               maximum: 2147483647
               minimum: -2147483648
@@ -73363,6 +74908,8 @@ components:
           properties:
             emailSettings:
               $ref: '#/components/schemas/microsoft.graph.emailSettings'
+            quarantineConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.quarantineConfiguration'
             workflowScheduleIntervalInHours:
               maximum: 2147483647
               minimum: -2147483648
@@ -73521,6 +75068,8 @@ components:
         - title: group
           type: object
           properties:
+            accessType:
+              $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
               type: boolean
               description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
@@ -73529,7 +75078,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
             assignedLicenses:
               type: array
               items:
@@ -73592,6 +75141,10 @@ components:
               type: boolean
               description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group can''t be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
+            isFavorite:
+              type: boolean
+              description: 'Indicates whether the user marked the group as favorite. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              nullable: true
             isManagementRestricted:
               type: boolean
               description: 'Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Requires $select to retrieve.'
@@ -73626,6 +75179,8 @@ components:
               type: string
               description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.'
               nullable: true
+            onPremisesExtensionAttributes:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -73703,11 +75258,25 @@ components:
               type: string
               description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
+            unseenConversationsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Count of conversations that have had one or more new posts delivered since the signed-in user''s last visit to the group. This property is the same as unseenCount. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              format: int32
+              nullable: true
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: 'Count of conversations that received new posts since the signed-in user last visited the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
+              format: int32
+              nullable: true
+            unseenMessagesCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Count of new posts that have been delivered to the group''s conversations since the signed-in user''s last visit to the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).'
               format: int32
               nullable: true
             visibility:
@@ -73854,7 +75423,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft Entra group.
     microsoft.graph.assignmentScheduleInstanceFilterByCurrentUserOptions:
       title: assignmentScheduleInstanceFilterByCurrentUserOptions
       enum:
@@ -75048,6 +76616,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.roleType:
+      title: roleType
+      enum:
+        - active
+        - eligible
+        - application
+        - delegated
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessPackageResourceAttribute:
       title: accessPackageResourceAttribute
       type: object
@@ -75076,6 +76653,11 @@ components:
           type: string
           description: The endpoint that is used by Entitlement Management to communicate with the access package resource.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessPackageSuggestionReason:
+      title: accessPackageSuggestionReason
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.accessPackageAnswer:
@@ -77457,7 +79039,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft online meeting.
     microsoft.graph.onPremisesSyncBehavior:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -77893,6 +79474,32 @@ components:
           x-ms-navigationProperty: true
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.quarantineDetails:
+      title: quarantineDetails
+      type: object
+      properties:
+        quarantinedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the workflow was quarantined.
+          format: date-time
+          nullable: true
+        quarantineReason:
+          type: string
+          description: The reason the workflow was quarantined.
+          nullable: true
+        quarantineType:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.quarantineType'
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.workflowSetting:
+      title: workflowSetting
+      type: object
+      properties:
+        quarantineConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.quarantineConfiguration'
+      additionalProperties:
+        type: object
     microsoft.graph.identityGovernance.lifecycleWorkflowProcessingStatus:
       title: lifecycleWorkflowProcessingStatus
       enum:
@@ -77903,6 +79510,8 @@ components:
         - canceled
         - failed
         - unknownFutureValue
+        - canceling
+        - quarantined
       type: string
     microsoft.graph.identityGovernance.workflowExecutionType:
       title: workflowExecutionType
@@ -77911,6 +79520,7 @@ components:
         - onDemand
         - unknownFutureValue
         - activatedWithScope
+        - preview
       type: string
     microsoft.graph.identityGovernance.customTaskExtensionOperationStatus:
       title: customTaskExtensionOperationStatus
@@ -77979,6 +79589,19 @@ components:
           description: Specifies if the organization’s banner logo should be included in email notifications. The banner logo will replace the Microsoft logo at the top of the email notification. If true the banner logo will be taken from the tenant’s branding settings. This value can only be set to true if the organizationalBranding bannerLogo property is set.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.quarantineConfiguration:
+      title: quarantineConfiguration
+      type: object
+      properties:
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityGovernance.quarantineCondition'
+          description: The set of threshold conditions evaluated for the workflow. Each condition is either a countBasedQuarantineCondition or a percentageBasedQuarantineCondition.
+        matchMode:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.matchMode'
+      additionalProperties:
+        type: object
     microsoft.graph.identityGovernance.workflowExecutionConditions:
       title: workflowExecutionConditions
       type: object
@@ -78023,6 +79646,15 @@ components:
       enum:
         - direct
         - group
+        - unknownFutureValue
+      type: string
+    microsoft.graph.groupAccessType:
+      title: groupAccessType
+      enum:
+        - none
+        - private
+        - secret
+        - public
         - unknownFutureValue
       type: string
     microsoft.graph.assignedLabel:
@@ -78742,6 +80374,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessPackageSuggestionCollectionResponse:
+      title: Collection of accessPackageSuggestion
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestion'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.accessPackageAssignmentRequestCollectionResponse:
       title: Collection of accessPackageAssignmentRequest
       type: object
@@ -78763,6 +80408,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.availableAccessPackageCollectionResponse:
+      title: Collection of availableAccessPackage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.availableAccessPackage'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -78828,6 +80486,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.controlConfigurationCollectionResponse:
+      title: Collection of controlConfiguration
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.controlConfiguration'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -79270,6 +80941,8 @@ components:
       title: accessPackageApprovalStage
       type: object
       properties:
+        approverInformationVisibility:
+          $ref: '#/components/schemas/microsoft.graph.approverInformationVisibility'
         durationBeforeAutomaticDenial:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -79286,7 +80959,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.subjectSet'
-          description: 'If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.'
+          description: 'If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who are asked to approve requests.'
         fallbackEscalationApprovers:
           type: array
           items:
@@ -79309,7 +80982,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.subjectSet'
-          description: 'The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors, or targetUserSponsors.'
+          description: 'The subjects, typically users, who are asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors, or targetUserSponsors.'
       additionalProperties:
         type: object
     microsoft.graph.accessReviewExpirationBehavior:
@@ -79377,6 +81050,7 @@ components:
       type: object
       additionalProperties:
         type: object
+      description: Standard way to represent a Json blob on Graph.
     microsoft.graph.status:
       title: status
       enum:
@@ -80229,7 +81903,7 @@ components:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
+              description: 'Read-only. Timestamp at which the chat message was deleted, or null if not deleted.'
               format: date-time
               nullable: true
             etag:
@@ -80245,13 +81919,13 @@ components:
             lastEditedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+              description: Read-only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
+              description: 'Read-only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
               format: date-time
               nullable: true
             locale:
@@ -80702,6 +82376,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the list.
+              x-ms-navigationProperty: true
+            permissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permission'
               x-ms-navigationProperty: true
             subscriptions:
               type: array
@@ -81314,7 +82993,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Read only. Timestamp at which the channel was created.
+              description: Read-only. Timestamp at which the channel was created.
               format: date-time
               nullable: true
             description:
@@ -81483,7 +83162,7 @@ components:
               nullable: true
             timeZone:
               type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
+              description: 'The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.'
               nullable: true
             workforceIntegrationIds:
               type: array
@@ -83438,6 +85117,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.quarantineType:
+      title: quarantineType
+      enum:
+        - notQuarantined
+        - countBasedThresholdExceeded
+        - percentageBasedThresholdExceeded
+        - multipleConditionsExceeded
+        - unknownFutureValue
+      type: string
     microsoft.graph.identityGovernance.valueType:
       title: valueType
       enum:
@@ -83445,6 +85133,18 @@ components:
         - string
         - int
         - bool
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.quarantineCondition:
+      title: quarantineCondition
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.matchMode:
+      title: matchMode
+      enum:
+        - any
+        - all
         - unknownFutureValue
       type: string
     microsoft.graph.settingValue:
@@ -83623,6 +85323,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
       additionalProperties:
         type: object
+    microsoft.graph.approverInformationVisibility:
+      title: approverInformationVisibility
+      enum:
+        - default
+        - notVisible
+        - visible
+        - unknownFutureValue
+      type: string
     microsoft.graph.printerBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -84979,6 +86687,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
             fields:
               $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
+            permissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permission'
+              x-ms-navigationProperty: true
             versions:
               type: array
               items:
@@ -92581,6 +94294,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessPackageResourceScopeCollectionResponse'
+    microsoft.graph.accessPackageSuggestionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageSuggestionCollectionResponse'
     microsoft.graph.accessPackageAssignmentRequestCollectionResponse:
       description: Retrieved collection
       content:
@@ -92593,6 +94312,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentCollectionResponse'
+    microsoft.graph.availableAccessPackageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.availableAccessPackageCollectionResponse'
     microsoft.graph.accessPackageCatalogCollectionResponse:
       description: Retrieved collection
       content:
@@ -92623,6 +94348,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
+    microsoft.graph.controlConfigurationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.controlConfigurationCollectionResponse'
     microsoft.graph.accessPackageResourceEnvironmentCollectionResponse:
       description: Retrieved collection
       content:

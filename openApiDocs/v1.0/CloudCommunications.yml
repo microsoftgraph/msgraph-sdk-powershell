@@ -3339,7 +3339,7 @@ paths:
       tags:
         - communications.call
       summary: Invoke action keepAlive
-      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that does not receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a 404 Not-Found error. The resources related to the call should be cleaned up on the application side.'
+      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that doesn''t receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a 404 Not-Found error. The resources related to the call should be cleaned up on the application side.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-keepalive?view=graph-rest-1.0
@@ -3577,7 +3577,7 @@ paths:
       tags:
         - communications.call
       summary: Invoke action reject
-      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.'
+      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API doesn''t end existing calls that have already been answered. Use delete call to end a call.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
@@ -11685,7 +11685,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List transcripts
-      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from all meeting types except live events.
+      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API supports the retrieval of call transcripts from all meeting types except live events. Access to this API is governed by tenant administrator settings. For more information, see Error responses.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -13970,7 +13970,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-          description: Represents a Microsoft online meeting.
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
