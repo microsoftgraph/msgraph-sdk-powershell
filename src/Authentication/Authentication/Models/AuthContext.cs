@@ -21,6 +21,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public string CertificateSubjectName { get; set; }
         public bool SendCertificateChain { get; set; }
         public string Account { get; set; }
+        public string LoginHint { get; set; }
         public string HomeAccountId { get; set; }
         public string AppName { get; set; }
         public ContextScope ContextScope { get; set; }

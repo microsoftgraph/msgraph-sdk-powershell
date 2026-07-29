@@ -21450,7 +21450,6 @@ components:
               description: 'A short, friendly name for the room, often used for easier identification or display in UI.'
             placeId:
               type: string
-              description: An alternative immutable unique identifier of the room. Read-only.
               nullable: true
             teamsEnabledState:
               $ref: '#/components/schemas/microsoft.graph.placeFeatureEnablement'
@@ -21525,7 +21524,6 @@ components:
               description: 'A short, friendly name for the workspace, often used for easier identification or display in the UI.'
             placeId:
               type: string
-              description: An alternative immutable unique identifier of the workspace. Read-only.
               nullable: true
           additionalProperties:
             type: object
