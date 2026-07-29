@@ -164,21 +164,15 @@ extends:
         dependsOn: stage
         condition: succeeded()
         jobs:
-        - deployment: DeployPowerShellPackagesToAcr
+        - job: DeployPowerShellPackagesToAcr
           displayName: Deploy PowerShell packages to ACR
-          environment: PowerShellAcr
           templateContext:
-            type: releaseJob
-            isProduction: true
             inputs:
               - input: pipelineArtifact
                 artifactName: drop
                 targetPath: '$(System.DefaultWorkingDirectory)/drop'
-          strategy:
-            runOnce:
-              deploy:
-                steps:
-                - template: .azure-pipelines/common-templates/publish-psresources-acr.yml@self
+          steps:
+          - template: .azure-pipelines/common-templates/publish-psresources-acr.yml@self
 
     - stage: PushDockerImageToRegistry
       condition: and(or(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['Build.SourceBranch'], variables['PREVIEW_BRANCH'])), not(contains(variables['Build.SourceBranch'], '-preview')))

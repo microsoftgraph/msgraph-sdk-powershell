@@ -138,18 +138,12 @@ extends:
         dependsOn: stage
         condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), ne(variables['Build.Reason'], 'PullRequest'), eq(dependencies.stage.outputs['MsGraphPsSdkCiBuild.DetectAcrChanges.ShouldPublishToAcr'], 'true'))
         jobs:
-        - deployment: DeployPowerShellPackagesToAcr
+        - job: DeployPowerShellPackagesToAcr
           displayName: Deploy PowerShell packages to ACR
-          environment: PowerShellAcr
           templateContext:
-            type: releaseJob
-            isProduction: true
             inputs:
               - input: pipelineArtifact
                 artifactName: drop
                 targetPath: '$(System.DefaultWorkingDirectory)/drop'
-          strategy:
-            runOnce:
-              deploy:
-                steps:
-                - template: .azure-pipelines/common-templates/publish-psresources-acr.yml@self
+          steps:
+          - template: .azure-pipelines/common-templates/publish-psresources-acr.yml@self

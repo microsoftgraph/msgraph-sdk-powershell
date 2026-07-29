@@ -1,25 +1,17 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-parameters:
-  - name: AzureSubscription
-    type: string
-    default: 'ACR Images Push Service Connection'
-  - name: RegistryUri
-    type: string
-    default: 'https://msgraphprodregistry.azurecr.io'
-  - name: RepositoryName
-    type: string
-    default: 'MicrosoftGraphAcr'
-  - name: ArtifactPath
-    type: string
-    default: '$(System.DefaultWorkingDirectory)/drop'
+variables:
+  ACR_SERVICE_CONNECTION: 'ACR Images Push Service Connection'
+  REGISTRY: 'msgraphprodregistry.azurecr.io'
+  REGISTRY_NAME: 'msgraphprodregistry'
+  ARTIFACT_PATH: '$(System.DefaultWorkingDirectory)/drop'
 
 steps:
   - task: AzurePowerShell@5
     displayName: 'Publish PowerShell packages to ACR'
     inputs:
-      azureSubscription: ${{ parameters.AzureSubscription }}
+      azureSubscription: $(ACR_SERVICE_CONNECTION)
       ScriptType: InlineScript
       azurePowerShellVersion: LatestVersion
       pwsh: true
@@ -36,12 +28,12 @@ steps:
         }
         Import-Module Microsoft.PowerShell.PSResourceGet -MinimumVersion $minimumPsResourceGetVersion -Force
 
-        $repositoryName = '${{ parameters.RepositoryName }}'
+        $repositoryName = '$(REGISTRY_NAME)'
         $existingRepository = Get-PSResourceRepository -Name $repositoryName -ErrorAction SilentlyContinue
         if ($null -ne $existingRepository) {
           Unregister-PSResourceRepository -Name $repositoryName
         }
-        Register-PSResourceRepository -Name $repositoryName -Uri '${{ parameters.RegistryUri }}'
+        Register-PSResourceRepository -Name $repositoryName -Uri 'https://$(REGISTRY)'
 
         Add-Type -AssemblyName System.IO.Compression.FileSystem
         function Get-PackageMetadata {
@@ -73,10 +65,10 @@ steps:
           }
         }
 
-        $packages = @(Get-ChildItem -Path '${{ parameters.ArtifactPath }}' -Recurse -File -Filter 'Microsoft.Graph*.nupkg' |
+        $packages = @(Get-ChildItem -Path '$(ARTIFACT_PATH)' -Recurse -File -Filter 'Microsoft.Graph*.nupkg' |
           ForEach-Object { Get-PackageMetadata -PackagePath $_.FullName })
         if ($packages.Count -eq 0) {
-          throw "No Microsoft Graph PowerShell packages were found under '${{ parameters.ArtifactPath }}'."
+          throw "No Microsoft Graph PowerShell packages were found under '$(ARTIFACT_PATH)'."
         }
 
         $packages = $packages | Sort-Object @{
