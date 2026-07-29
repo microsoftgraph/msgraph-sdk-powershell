@@ -27,7 +27,9 @@ variables:
   BuildAgent: ${{ parameters.BuildAgent }}
   GitUserEmail: "GraphTooling@service.microsoft.com"
   GitUserName: "Microsoft Graph DevX Tooling"
+  ACR_SERVICE_CONNECTION: 'ACR Images Push Service Connection'
   REGISTRY: 'msgraphprodregistry.azurecr.io'
+  REGISTRY_NAME: 'msgraphprodregistry'
   IMAGE_NAME: 'public/microsoftgraph/powershell'
 
 trigger:

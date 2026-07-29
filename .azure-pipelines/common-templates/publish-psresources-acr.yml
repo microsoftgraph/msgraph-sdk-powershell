@@ -1,12 +1,6 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-variables:
-  ACR_SERVICE_CONNECTION: 'ACR Images Push Service Connection'
-  REGISTRY: 'msgraphprodregistry.azurecr.io'
-  REGISTRY_NAME: 'msgraphprodregistry'
-  ARTIFACT_PATH: '$(System.DefaultWorkingDirectory)/drop'
-
 steps:
   - task: AzurePowerShell@5
     displayName: 'Publish PowerShell packages to ACR'
@@ -65,10 +59,11 @@ steps:
           }
         }
 
-        $packages = @(Get-ChildItem -Path '$(ARTIFACT_PATH)' -Recurse -File -Filter 'Microsoft.Graph*.nupkg' |
+        $artifactPath = '$(System.DefaultWorkingDirectory)/drop'
+        $packages = @(Get-ChildItem -Path $artifactPath -Recurse -File -Filter 'Microsoft.Graph*.nupkg' |
           ForEach-Object { Get-PackageMetadata -PackagePath $_.FullName })
         if ($packages.Count -eq 0) {
-          throw "No Microsoft Graph PowerShell packages were found under '$(ARTIFACT_PATH)'."
+          throw "No Microsoft Graph PowerShell packages were found under '$artifactPath'."
         }
 
         $packages = $packages | Sort-Object @{
