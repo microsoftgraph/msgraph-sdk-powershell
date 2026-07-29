@@ -82,6 +82,7 @@ extends:
             targetType: 'filePath'
             pwsh: true
             filePath: tools\ImportExamples.ps1
+        - template: .azure-pipelines/common-templates/get-github-app-token.yml@self
         - task: PowerShell@2
           displayName: Pushing to github
           env:
@@ -95,7 +96,7 @@ extends:
               git status
               git add .
               git commit -m "Updating examples"
-              git push --set-upstream https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git $(ComputeBranch.WeeklyExamplesBranch)
+              git push --set-upstream "https://x-access-token:$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyExamplesBranch)
               git status
         - template: .azure-pipelines/common-templates/create-pr.yml@self
           parameters:

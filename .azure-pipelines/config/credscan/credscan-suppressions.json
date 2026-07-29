@@ -58,6 +58,12 @@
     },
     {
       "file": [
+        "src\\DeviceManagement.Administration\\v1.0\\examples\\Update-MgDeviceManagementVirtualEndpointOnPremiseConnectionAdDomainPassword.md"
+      ],
+      "_justification": "[DeviceManagement.Administration] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
         "src\\Users.Actions\\v1.0\\examples\\Reset-MgUserAuthenticationMethodPassword.md"
       ],
       "_justification": "[Users.Actions] Examples contain random values recognized as secret"

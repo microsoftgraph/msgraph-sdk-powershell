@@ -137,6 +137,7 @@ extends:
               targetType: inline
               script: |
                 . "$(System.DefaultWorkingDirectory)\tools\Versions\BumpModuleVersion.ps1" -BumpV1Module -BumpBetaModule -BumpAuthModule -Debug
+          - template: .azure-pipelines/common-templates/get-github-app-token.yml@self
           - task: Bash@3
             displayName: Push version bump changes
             env:
@@ -147,7 +148,7 @@ extends:
                 git status
                 git add "$(System.DefaultWorkingDirectory)/config/ModuleMetadata.json"
                 git commit -m 'Bump module versions after metadata generation.'
-                git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
+                git push "https://x-access-token:$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
                 git status
                   
         - ${{ if eq(parameters.CreatePullRequest, true) }}:

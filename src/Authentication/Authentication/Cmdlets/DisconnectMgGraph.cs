@@ -17,6 +17,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     {
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
 
+        /// <summary>
+        /// When specified, also removes cached accounts for this module from the Windows broker (WAM).
+        /// Because the broker store is shared at the OS level, this may sign the user out of other
+        /// broker-enabled applications (for example Visual Studio, Azure CLI, or Azure PowerShell)
+        /// that are using the same Windows account. Has no effect when the broker is not in use.
+        /// </summary>
+        [Parameter(Mandatory = false, HelpMessage = "Also removes cached accounts from the Windows broker (WAM). This is a shared, OS-level store, so it may sign you out of other broker-enabled applications (e.g. Visual Studio, Azure CLI, Azure PowerShell) using the same Windows account.")]
+        public SwitchParameter SignOutFromBroker { get; set; }
+
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
@@ -49,7 +58,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
             else
             {
-                var authContext = await AuthenticationHelpers.LogoutAsync();
+                var authContext = await AuthenticationHelpers.LogoutAsync(SignOutFromBroker.IsPresent);
                 WriteObject(authContext);
             }
         }
