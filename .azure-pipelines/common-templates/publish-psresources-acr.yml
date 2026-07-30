@@ -1,11 +1,19 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
+parameters:
+  - name: AzureSubscription
+    type: string
+  - name: Registry
+    type: string
+  - name: RegistryName
+    type: string
+
 steps:
   - task: AzurePowerShell@5
     displayName: 'Publish PowerShell packages to ACR'
     inputs:
-      azureSubscription: $(ACR_SERVICE_CONNECTION)
+      azureSubscription: ${{ parameters.AzureSubscription }}
       ScriptType: InlineScript
       azurePowerShellVersion: LatestVersion
       pwsh: true
@@ -22,12 +30,12 @@ steps:
         }
         Import-Module Microsoft.PowerShell.PSResourceGet -MinimumVersion $minimumPsResourceGetVersion -Force
 
-        $repositoryName = '$(REGISTRY_NAME)'
+        $repositoryName = '${{ parameters.RegistryName }}'
         $existingRepository = Get-PSResourceRepository -Name $repositoryName -ErrorAction SilentlyContinue
         if ($null -ne $existingRepository) {
           Unregister-PSResourceRepository -Name $repositoryName
         }
-        Register-PSResourceRepository -Name $repositoryName -Uri 'https://$(REGISTRY)'
+        Register-PSResourceRepository -Name $repositoryName -Uri 'https://${{ parameters.Registry }}'
 
         Add-Type -AssemblyName System.IO.Compression.FileSystem
         function Get-PackageMetadata {

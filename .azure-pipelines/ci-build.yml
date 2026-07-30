@@ -149,3 +149,7 @@ extends:
                 targetPath: '$(System.DefaultWorkingDirectory)/drop'
           steps:
           - template: .azure-pipelines/common-templates/publish-psresources-acr.yml@self
+            parameters:
+              AzureSubscription: $(ACR_SERVICE_CONNECTION)
+              Registry: $(REGISTRY)
+              RegistryName: $(REGISTRY_NAME)
