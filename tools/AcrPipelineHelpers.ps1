@@ -14,7 +14,7 @@ function Set-CiModulePrerelease {
     )
 
     $metadata = Get-Content -Path $MetadataPath -Raw | ConvertFrom-Json -AsHashtable
-    $prerelease = "ci.$BuildId"
+    $prerelease = "ci$BuildId"
 
     foreach ($versionMetadata in $metadata.versions.Values) {
         $versionMetadata.prerelease = $prerelease

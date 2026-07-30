@@ -16,12 +16,18 @@ Describe 'Set-CiModulePrerelease' {
             }
         } | ConvertTo-Json -Depth 10 | Set-Content -Path $metadataPath
 
-        Set-CiModulePrerelease -MetadataPath $metadataPath -BuildId '12345' | Should -Be 'ci.12345'
+        $prerelease = Set-CiModulePrerelease -MetadataPath $metadataPath -BuildId '12345'
+        $prerelease | Should -Be 'ci12345'
 
         $metadata = Get-Content -Path $metadataPath -Raw | ConvertFrom-Json
-        $metadata.versions.authentication.prerelease | Should -Be 'ci.12345'
-        $metadata.versions.beta.prerelease | Should -Be 'ci.12345'
-        $metadata.versions.'v1.0'.prerelease | Should -Be 'ci.12345'
+        $metadata.versions.authentication.prerelease | Should -Be 'ci12345'
+        $metadata.versions.beta.prerelease | Should -Be 'ci12345'
+        $metadata.versions.'v1.0'.prerelease | Should -Be 'ci12345'
+
+        $manifestPath = Join-Path $TestDrive 'TestModule.psd1'
+        Set-Content -Path (Join-Path $TestDrive 'TestModule.psm1') -Value ''
+        New-ModuleManifest -Path $manifestPath -RootModule 'TestModule.psm1' -ModuleVersion '1.0.0'
+        { Update-ModuleManifest -Path $manifestPath -Prerelease $prerelease } | Should -Not -Throw
     }
 }
 
