@@ -5,11 +5,9 @@
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
 $params = @{
-	"@odata.type" = "#microsoft.graph.photoUpdateSettings"
-	source = "String"
+	source = "cloud"
 	allowedRoles = @(
-	"String"
-)
+	)
 }
 
 Update-MgBetaAdminPeoplePhotoUpdateSetting -BodyParameter $params
