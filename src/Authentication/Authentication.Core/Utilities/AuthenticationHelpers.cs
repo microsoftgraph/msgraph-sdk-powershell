@@ -15,7 +15,9 @@ using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -120,10 +122,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
             interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
-
-            if (!File.Exists(Constants.AuthRecordPath))
+            var loginHint = authContext.LoginHint;
+            if (!string.IsNullOrWhiteSpace(loginHint))
             {
-                AuthenticationRecord authRecord;
+                interactiveOptions.LoginHint = loginHint;
+            }
+
+            // Resolve the persisted authentication record for this account. When a login hint is
+            // supplied a per-account record is used so we never silently reuse a different user's
+            // record and so repeat sign-ins for the same account are picker-free.
+            var authRecord = await ResolveInteractiveAuthRecordAsync(loginHint).ConfigureAwait(false);
+
+            if (authRecord is null)
+            {
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
                 if (ShouldUseWam(authContext))
                 {
@@ -140,15 +151,97 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         return interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
                     });
                 }
-                await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                await WriteAuthRecordAsync(authRecord, loginHint).ConfigureAwait(false);
                 authContext.HomeAccountId = TryGetHomeAccountId(authRecord);
                 return interactiveBrowserCredential;
             }
 
-            var interactiveAuthRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
-            interactiveOptions.AuthenticationRecord = interactiveAuthRecord;
-            authContext.HomeAccountId = TryGetHomeAccountId(interactiveAuthRecord);
+            interactiveOptions.AuthenticationRecord = authRecord;
+            authContext.HomeAccountId = TryGetHomeAccountId(authRecord);
             return new InteractiveBrowserCredential(interactiveOptions);
+        }
+
+        /// <summary>
+        /// Resolves the persisted <see cref="AuthenticationRecord"/> to use for an interactive sign-in.
+        /// Without a login hint the shared, legacy record is used. With a login hint the per-account
+        /// record is preferred; if it is absent, an existing shared record is migrated only when it
+        /// belongs to the hinted account. A record whose username does not match the supplied hint is
+        /// never returned, so a different user's record is never silently reused.
+        /// </summary>
+        internal static async Task<AuthenticationRecord> ResolveInteractiveAuthRecordAsync(string loginHint)
+        {
+            if (string.IsNullOrWhiteSpace(loginHint))
+            {
+                try
+                {
+                    return await ReadAuthRecordAsync().ConfigureAwait(false);
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+
+            AuthenticationRecord keyedRecord = null;
+            try
+            {
+                keyedRecord = await ReadAuthRecordAsync(loginHint).ConfigureAwait(false);
+            }
+            catch
+            {
+                keyedRecord = null;
+            }
+
+            if (keyedRecord != null)
+                return MatchesLoginHint(keyedRecord, loginHint) ? keyedRecord : null;
+
+            // Migration: a pre-existing shared record for this same account is promoted to a
+            // per-account record so existing users are not forced through the account picker again.
+            AuthenticationRecord legacyRecord = null;
+            try
+            {
+                legacyRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            }
+            catch
+            {
+                legacyRecord = null;
+            }
+
+            if (legacyRecord != null && MatchesLoginHint(legacyRecord, loginHint))
+            {
+                await WriteAuthRecordAsync(legacyRecord, loginHint).ConfigureAwait(false);
+                return legacyRecord;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Determines whether the username on an <see cref="AuthenticationRecord"/> matches the supplied
+        /// login hint (case-insensitive). Reading the username must never throw, so failures yield a
+        /// non-match, which forces a fresh interactive sign-in rather than reusing an unverified record.
+        /// </summary>
+        internal static bool MatchesLoginHint(AuthenticationRecord authRecord, string loginHint)
+        {
+            var username = TryGetUsername(authRecord);
+            return !string.IsNullOrWhiteSpace(username)
+                && string.Equals(username.Trim(), loginHint.Trim(), StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Safely reads the username from an <see cref="AuthenticationRecord"/>; any error yields
+        /// <c>null</c> so account matching can never fail sign-in.
+        /// </summary>
+        private static string TryGetUsername(AuthenticationRecord authRecord)
+        {
+            try
+            {
+                return authRecord?.Username;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         private static async Task<DeviceCodeCredential> GetDeviceCodeCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
@@ -443,13 +536,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             var authContext = GraphSession.Instance.AuthContext;
             GraphSession.Instance.InMemoryTokenCache?.ClearCache();
 
+            // The login hint (when supplied at sign-in) keys the per-account auth record for this
+            // session, so cache clearing and record deletion below are scoped to the correct account.
+            var accountKey = authContext?.LoginHint;
+
             // Identify the account that signed in for this session so cache clearing can be scoped to
             // it. Prefer the HomeAccountId captured on the session's auth context (set at sign-in) for
             // correct isolation when multiple identities share the per-user persisted store. Fall back
             // to the persisted auth record, then to clearing all accounts when neither is available.
             var homeAccountId = !string.IsNullOrEmpty(authContext?.HomeAccountId)
                 ? authContext.HomeAccountId
-                : await GetCurrentHomeAccountIdAsync().ConfigureAwait(false);
+                : await GetCurrentHomeAccountIdAsync(accountKey).ConfigureAwait(false);
 
             if (authContext?.ContextScope == ContextScope.CurrentUser)
             {
@@ -484,7 +581,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
             GraphSession.Instance.AuthContext = null;
             GraphSession.Instance.GraphHttpClient = null;
-            await DeleteAuthRecordAsync().ConfigureAwait(false);
+            await DeleteAuthRecordAsync(accountKey).ConfigureAwait(false);
             return authContext;
         }
 
@@ -553,11 +650,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// Reads the HomeAccountId of the account persisted for the current session, if any.
         /// Returns <c>null</c> when no authentication record is available or it cannot be read.
         /// </summary>
-        private static async Task<string> GetCurrentHomeAccountIdAsync()
+        private static async Task<string> GetCurrentHomeAccountIdAsync(string accountKey = null)
         {
             try
             {
-                var authRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+                var authRecord = await ReadAuthRecordAsync(accountKey).ConfigureAwait(false);
                 return TryGetHomeAccountId(authRecord);
             }
             catch
@@ -601,29 +698,57 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             }
         }
 
-        private static async Task<AuthenticationRecord> ReadAuthRecordAsync()
+        internal static async Task<AuthenticationRecord> ReadAuthRecordAsync(string accountKey = null)
         {
             // Try to create directory if it doesn't exist.
             Directory.CreateDirectory(Constants.GraphDirectoryPath);
-            if (!File.Exists(Constants.AuthRecordPath))
+            var authRecordPath = GetAuthRecordPath(accountKey);
+            if (!File.Exists(authRecordPath))
                 return null;
-            using (FileStream authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Open, FileAccess.Read))
+            using (FileStream authRecordStream = new FileStream(authRecordPath, FileMode.Open, FileAccess.Read))
                 return await AuthenticationRecord.DeserializeAsync(authRecordStream).ConfigureAwait(false);
         }
 
-        public static async Task WriteAuthRecordAsync(AuthenticationRecord authRecord)
+        public static async Task WriteAuthRecordAsync(AuthenticationRecord authRecord, string accountKey = null)
         {
             // Try to create directory if it doesn't exist.
             Directory.CreateDirectory(Constants.GraphDirectoryPath);
-            using (FileStream authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Create, FileAccess.Write))
+            using (FileStream authRecordStream = new FileStream(GetAuthRecordPath(accountKey), FileMode.Create, FileAccess.Write))
                 await authRecord.SerializeAsync(authRecordStream).ConfigureAwait(false);
         }
 
-        public static Task DeleteAuthRecordAsync()
+        public static Task DeleteAuthRecordAsync(string accountKey = null)
         {
-            if (File.Exists(Constants.AuthRecordPath))
-                File.Delete(Constants.AuthRecordPath);
+            var authRecordPath = GetAuthRecordPath(accountKey);
+            if (File.Exists(authRecordPath))
+                File.Delete(authRecordPath);
             return Task.CompletedTask;
+        }
+
+        /// <summary>
+        /// Resolves the on-disk path of the persisted <see cref="AuthenticationRecord"/> for a given
+        /// account. When <paramref name="accountKey"/> is null or empty the shared, legacy record path
+        /// (<see cref="Constants.AuthRecordPath"/>) is returned to preserve backwards compatibility for
+        /// sign-ins without a login hint. Otherwise a per-account file is used so that a hinted sign-in
+        /// reuses only that account's record (avoiding silent reuse of a different user's record and
+        /// enabling picker-free repeat sign-ins). The account key is normalized (trimmed, lower-cased)
+        /// and hashed so the file name is stable, case-insensitive, filesystem-safe, and does not embed
+        /// the user's identifier in clear text.
+        /// </summary>
+        internal static string GetAuthRecordPath(string accountKey)
+        {
+            if (string.IsNullOrWhiteSpace(accountKey))
+                return Constants.AuthRecordPath;
+
+            var normalized = accountKey.Trim().ToLowerInvariant();
+            using (var sha256 = SHA256.Create())
+            {
+                var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(normalized));
+                var builder = new StringBuilder(hashBytes.Length * 2);
+                foreach (var b in hashBytes)
+                    builder.Append(b.ToString("x2", CultureInfo.InvariantCulture));
+                return Path.Combine(Constants.GraphDirectoryPath, $"mg.authrecord.{builder}.json");
+            }
         }
     }
 }

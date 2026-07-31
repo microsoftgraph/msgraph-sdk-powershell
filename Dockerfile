@@ -1,4 +1,11 @@
-FROM mcr.microsoft.com/powershell
+# Pin to a maintained Ubuntu 22.04 PowerShell base tag instead of the floating :latest.
+# The PowerShell team rebuilds these date-stamped rolling tags with patched OS layers, so a
+# scheduled rebuild (see .azure-pipelines/docker-image-refresh.yml) picks up Ubuntu/USN and
+# PowerShell CVE fixes and produces a fresh digest, clearing the S360
+# "Replace Vulnerable Registry Reference" findings. Override at build time with
+# --build-arg PS_BASE_TAG=<tag> (e.g. 7.4-ubuntu-22.04 or lts-ubuntu-22.04).
+ARG PS_BASE_TAG=lts-ubuntu-22.04
+FROM mcr.microsoft.com/powershell:${PS_BASE_TAG}
 
 ARG VERSION=latest
 
