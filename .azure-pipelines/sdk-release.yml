@@ -27,7 +27,9 @@ variables:
   BuildAgent: ${{ parameters.BuildAgent }}
   GitUserEmail: "GraphTooling@service.microsoft.com"
   GitUserName: "Microsoft Graph DevX Tooling"
+  ACR_SERVICE_CONNECTION: 'ACR Images Push Service Connection'
   REGISTRY: 'msgraphprodregistry.azurecr.io'
+  REGISTRY_NAME: 'msgraphprodregistry'
   IMAGE_NAME: 'public/microsoftgraph/powershell'
   PREVIEW_BRANCH: 'refs/heads/main'  # Updated to target your branch
 
@@ -157,6 +159,26 @@ extends:
                   packagesToPush: '$(System.DefaultWorkingDirectory)/**/drop/**/*.nupkg'
                   nuGetFeedType: external
                   publishFeedCredentials: 'microsoftgraph PowerShell Gallery connection'
+
+    - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+      - stage: Deploy_to_ACR
+        displayName: Deploy PowerShell packages to ACR
+        dependsOn: stage
+        condition: succeeded()
+        jobs:
+        - job: DeployPowerShellPackagesToAcr
+          displayName: Deploy PowerShell packages to ACR
+          templateContext:
+            inputs:
+              - input: pipelineArtifact
+                artifactName: drop
+                targetPath: '$(System.DefaultWorkingDirectory)/drop'
+          steps:
+          - template: .azure-pipelines/common-templates/publish-psresources-acr.yml@self
+            parameters:
+              AzureSubscription: $(ACR_SERVICE_CONNECTION)
+              Registry: $(REGISTRY)
+              RegistryName: $(REGISTRY_NAME)
 
     - stage: PushDockerImageToRegistry
       condition: and(or(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['Build.SourceBranch'], variables['PREVIEW_BRANCH'])), not(contains(variables['Build.SourceBranch'], '-preview')))
