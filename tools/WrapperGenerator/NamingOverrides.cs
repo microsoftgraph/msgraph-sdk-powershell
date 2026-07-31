@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text.RegularExpressions;
 
 namespace WrapperGenerator;
@@ -21,20 +22,27 @@ public static partial class NamingOverrides
         StripNounPrefix,
     }
 
-    private sealed record Entry(OverrideKind Kind, string? Method, string PathPrefix, bool ExactPath, string? Value, string Reason);
+    private sealed record Entry(OverrideKind Kind, HttpMethod? Method, string PathPrefix, bool ExactPath, string? Value, string Reason);
 
     private static readonly List<Entry> Entries =
     [
         // The SDK ships no Update cmdlet for /users/{id}/calendar. Its pipeline removes the
         // operation outright, in src/Calendar/Calendar.md: remove-path-by-operation
         // user_UpdateCalendar. The wrapper must not invent a cmdlet the SDK chose to drop.
-        new(OverrideKind.SuppressOperation, "PATCH", "/users/{}/calendar", ExactPath: true, Value: null,
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/users/{}/calendar", ExactPath: true, Value: null,
             Reason: "Calendar.md remove-path-by-operation user_UpdateCalendar"),
 
         // GET /users/{id}/calendar ships as Get-MgUserDefaultCalendar, renamed in
         // src/Calendar/Calendar.md: "^(User)(Calendar)$" -> "$1Default$2".
-        new(OverrideKind.ReplaceNoun, "GET", "/users/{}/calendar", ExactPath: true, Value: "UserDefaultCalendar",
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/users/{}/calendar", ExactPath: true, Value: "UserDefaultCalendar",
             Reason: "Calendar.md directive renames UserCalendar to UserDefaultCalendar"),
+
+        // The SDK ships no cmdlets for the /solutions root singleton itself (Get-MgSolution /
+        // Update-MgSolution do not exist): src/Bookings/Bookings.md removes every solutionsRoot
+        // operation with remove-path-by-operation ^solution\.solutionsRoot.*$. Exact-path, all
+        // methods, so operations on children like /solutions/bookingBusinesses are unaffected.
+        new(OverrideKind.SuppressOperation, Method: null, "/solutions", ExactPath: true, Value: null,
+            Reason: "Bookings.md remove-path-by-operation ^solution\\.solutionsRoot.*$"),
 
         // Most nouns under /solutions/ drop the "Solution" prefix (for example
         // Get-MgBookingBusiness, Get-MgVirtualEventWebinar). BackupRestore is a known
@@ -52,7 +60,7 @@ public static partial class NamingOverrides
     private static string NormalizePath(string pathTemplate) =>
         PathParamRegex().Replace(pathTemplate, "{}").TrimEnd('/').ToLowerInvariant();
 
-    public static bool IsSuppressed(string httpMethod, string pathTemplate)
+    public static bool IsSuppressed(HttpMethod httpMethod, string pathTemplate)
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
@@ -65,7 +73,7 @@ public static partial class NamingOverrides
         return false;
     }
 
-    public static string ApplyNounOverrides(string httpMethod, string pathTemplate, string noun)
+    public static string ApplyNounOverrides(HttpMethod httpMethod, string pathTemplate, string noun)
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
@@ -94,9 +102,10 @@ public static partial class NamingOverrides
         return noun;
     }
 
-    private static bool Matches(Entry entry, string httpMethod, string normalizedPath)
+    private static bool Matches(Entry entry, HttpMethod httpMethod, string normalizedPath)
     {
-        if (entry.Method is not null && !string.Equals(entry.Method, httpMethod, StringComparison.OrdinalIgnoreCase))
+        // HttpMethod's own equality is case-insensitive, so no string comparison is needed.
+        if (entry.Method is not null && entry.Method != httpMethod)
             return false;
         return entry.ExactPath
             ? string.Equals(normalizedPath, entry.PathPrefix, StringComparison.Ordinal)

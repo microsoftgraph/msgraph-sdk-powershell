@@ -56,7 +56,7 @@ A few published names aren't algorithmic — they come from hand-written directi
 
 ## The one subtle part: list + item GET become one cmdlet
 
-Graph has two GETs for a resource — the collection (`GET …/messages`) and a single item (`GET …/messages/{message-id}`) — but the published SDK exposes **one** cmdlet, `Get-MgUserMessage`,that does both: no `-MessageId` lists them, a `-MessageId` fetches one.
+Graph has two GETs for a resource — the collection (`GET …/messages`) and a single item (`GET …/messages/{message-id}`) — but the published SDK exposes **one** cmdlet, `Get-MgUserMessage`, that does both: no `-MessageId` lists them, a `-MessageId` fetches one.
 
 The generator reproduces that. When it finds a list GET and an item GET that share a noun, it emits **three** files:
 

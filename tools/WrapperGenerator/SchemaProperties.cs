@@ -32,11 +32,11 @@ public static class SchemaProperties
 
                 if (IsPlainScalar(propSchema))
                 {
-                    result.Add(new CmdletProperty(name, name.ToFirstCharacterUpperCase(), MapPsType(propSchema.Type!.Value), IsArray: false));
+                    result.Add(new CmdletProperty(name, name.ToFirstCharacterUpperCase(), MapPsType(propSchema), IsArray: false));
                 }
                 else if (propSchema.Type == JsonSchemaType.Array && propSchema.Items is { } items && IsPlainScalar(items))
                 {
-                    result.Add(new CmdletProperty(name, name.ToFirstCharacterUpperCase(), MapPsType(items.Type!.Value) + "[]", IsArray: true));
+                    result.Add(new CmdletProperty(name, name.ToFirstCharacterUpperCase(), MapPsType(items) + "[]", IsArray: true));
                 }
             }
         }
@@ -67,11 +67,16 @@ public static class SchemaProperties
         _ => false,
     };
 
-    private static string MapPsType(JsonSchemaType openApiType) => (openApiType & ~JsonSchemaType.Null) switch
+    // Numeric mapping follows the OpenAPI format so values survive the round trip: an int64
+    // property must not truncate to int (overflow above ~2.1 billion) and a number property
+    // must not lose its fraction to integer truncation.
+    private static string MapPsType(IOpenApiSchema schema) => (schema.Type & ~JsonSchemaType.Null) switch
     {
         JsonSchemaType.String => "string",
         JsonSchemaType.Boolean => "bool",
-        JsonSchemaType.Integer or JsonSchemaType.Number => "int",
+        JsonSchemaType.Integer when string.Equals(schema.Format, "int64", StringComparison.OrdinalIgnoreCase) => "long",
+        JsonSchemaType.Integer => "int",
+        JsonSchemaType.Number => "double",
         _ => "string",
     };
 

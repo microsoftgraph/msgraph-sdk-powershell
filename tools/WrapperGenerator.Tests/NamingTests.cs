@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Net.Http;
 using WrapperGenerator;
 using Xunit;
 
@@ -62,16 +62,8 @@ public sealed class SingularizerTests
 
 public sealed class NamingTests
 {
-    private static CmdletNaming Resolve(string method, string path)
-    {
-        var pathParams = new List<string>();
-        foreach (var segment in path.Split('/'))
-        {
-            if (segment.StartsWith('{') && segment.EndsWith('}'))
-                pathParams.Add(segment[1..^1]);
-        }
-        return Naming.Resolve(new OperationInfo(method, path, "test_op", pathParams, [], HasBody: false));
-    }
+    private static CmdletNaming Resolve(string method, string path) =>
+        Naming.Resolve(new OperationInfo(new HttpMethod(method), path));
 
     [Theory]
     // pilot module goldens (Microsoft.Graph.* 2.37.0 names)
@@ -135,9 +127,29 @@ public sealed class NamingTests
     {
         // Calendar.md remove-path-by-operation user_UpdateCalendar: no Update cmdlet ships for
         // the default-calendar singleton.
-        Assert.True(NamingOverrides.IsSuppressed("PATCH", "/users/{user-id}/calendar"));
-        Assert.False(NamingOverrides.IsSuppressed("GET", "/users/{user-id}/calendar"));
-        Assert.False(NamingOverrides.IsSuppressed("PATCH", "/users/{user-id}/messages/{message-id}"));
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/calendar"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/users/{user-id}/calendar"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/messages/{message-id}"));
+
+        // Bookings.md remove-path-by-operation ^solution\.solutionsRoot.*$: the /solutions root
+        // singleton ships no cmdlets, but its children are untouched.
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/solutions"));
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Patch, "/solutions"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/solutions/bookingBusinesses/{bookingBusiness-id}"));
+    }
+
+    [Theory]
+    // Both cast prefixes the specs use resolve to the same noun part.
+    [InlineData("graph.user", "AsUser")]
+    [InlineData("microsoft.graph.user", "AsUser")]
+    // A plural cast type is singularized rather than assumed singular (review hardening).
+    [InlineData("microsoft.graph.users", "AsUser")]
+    // Non-cast segments are not cast nouns.
+    [InlineData("messages", null)]
+    [InlineData("users", null)]
+    public void BuildsCastSegmentNouns(string segment, string? expected)
+    {
+        Assert.Equal(expected, Naming.TryBuildCastSegmentNoun(segment));
     }
 
     [Fact]

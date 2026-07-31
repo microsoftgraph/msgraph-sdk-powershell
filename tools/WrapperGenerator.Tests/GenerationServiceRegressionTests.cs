@@ -106,6 +106,40 @@ public sealed class GenerationServiceRegressionTests
         Assert.DoesNotContain(files, f => f != "Shared.g.cs");
     }
 
+    [Theory]
+    // $count would produce a mangled noun (Get-MgUsercount); $value an invalid builder chain
+    // (client...$value does not compile); parameterized function segments mangle into garbage
+    // nouns. All are skipped up front until those shapes are supported.
+    [InlineData("/users/$count")]
+    [InlineData("/users/{user-id}/photo/$value")]
+    [InlineData("/solutions/virtualEvents/townhalls/getByUserIdAndRole(userId='{userId}',role='{role}')")]
+    public async Task GenerateAsync_SkipsUnsupportedODataPathSegments_DoesNotEmitMalformedCmdlets(string path)
+    {
+        var operation = new OpenApiOperation
+        {
+            OperationId = "unsupported_shape",
+            Responses = new OpenApiResponses
+            {
+                ["2XX"] = new OpenApiResponse
+                {
+                    Content = new Dictionary<string, IOpenApiMediaType>
+                    {
+                        ["application/json"] = new OpenApiMediaType
+                        {
+                            Schema = new OpenApiSchema { Type = JsonSchemaType.Object },
+                        },
+                    },
+                },
+            },
+        };
+
+        var document = BuildDocument(HttpMethod.Get, path, operation);
+        var files = await RunGeneratorAndListFilesAsync(document);
+
+        Assert.Contains("Shared.g.cs", files);
+        Assert.DoesNotContain(files, f => f != "Shared.g.cs");
+    }
+
     private static OpenApiDocument BuildDocument(HttpMethod method, string path, OpenApiOperation operation)
     {
         return new OpenApiDocument

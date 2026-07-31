@@ -173,7 +173,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
-    [Cmdlet(VerbsCommon.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : PSCmdlet
     {
@@ -278,7 +278,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
-    [Cmdlet(VerbsCommon.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : PSCmdlet
     {
@@ -383,7 +383,7 @@ using {{ctx.ModelsNamespace}};
 
 namespace {{ctx.CmdletNamespace}}
 {
-    [Cmdlet(VerbsCommon.Get, "{{EscapeLiteral(listNaming.Noun)}}", DefaultParameterSetName = "List")]
+    [Cmdlet({{listNaming.VerbsClass}}.{{listNaming.VerbName}}, "{{EscapeLiteral(listNaming.Noun)}}", DefaultParameterSetName = "List")]
     [OutputType(typeof({{collectionResponseType}}), ParameterSetName = new[] { "List" })]
     [OutputType(typeof({{entityType}}), ParameterSetName = new[] { "Get" })]
     public class {{listNaming.ClassName}} : PSCmdlet
@@ -420,7 +420,7 @@ namespace {{ctx.CmdletNamespace}}
                     null,
                     MyInvocation.BoundParameters, internalCmdletName);
             }
-{{CatchBlock(TargetId(itemNaming))}}
+{{CatchBlock($"ParameterSetName == \"Get\" ? {TargetId(itemNaming)} : {TargetId(listNaming)}")}}
         }
     }
 }
@@ -448,7 +448,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
-    [Cmdlet(VerbsCommon.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : PSCmdlet
     {
@@ -505,7 +505,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
-    [Cmdlet(VerbsData.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : PSCmdlet
     {
@@ -572,7 +572,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
-    [Cmdlet(VerbsCommon.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class {{naming.ClassName}} : PSCmdlet
     {
 {{PathParams(naming)}}

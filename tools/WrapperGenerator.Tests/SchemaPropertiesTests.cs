@@ -8,8 +8,8 @@ namespace WrapperGenerator.Tests;
 
 public sealed class SchemaPropertiesTests
 {
-    private static OpenApiSchema Scalar(JsonSchemaType type, bool readOnly = false) =>
-        new() { Type = type, ReadOnly = readOnly };
+    private static OpenApiSchema Scalar(JsonSchemaType type, bool readOnly = false, string? format = null) =>
+        new() { Type = type, ReadOnly = readOnly, Format = format };
 
     [Fact]
     public void KeepsPrimitivesAndPrimitiveArrays_ExcludesServerManagedAndComplex()
@@ -73,6 +73,29 @@ public sealed class SchemaPropertiesTests
         Assert.True(array.IsArray);
         Assert.Equal("string[]", array.PsTypeName);
         Assert.Equal("BusinessPhones", array.PascalName);
+    }
+
+    [Fact]
+    public void MapsNumericFormatsWithoutDataLoss()
+    {
+        var body = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Object,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                ["riskScore"] = Scalar(JsonSchemaType.Number),                      // fractions must survive
+                ["sizeInBytes"] = Scalar(JsonSchemaType.Integer, format: "int64"), // values > 2^31 must survive
+                ["retryCount"] = Scalar(JsonSchemaType.Integer, format: "int32"),
+                ["plainCount"] = Scalar(JsonSchemaType.Integer),
+            },
+        };
+
+        var props = SchemaProperties.ExtractPrimitiveProperties(body);
+
+        Assert.Equal("double", props.Single(p => p.OpenApiName == "riskScore").PsTypeName);
+        Assert.Equal("long", props.Single(p => p.OpenApiName == "sizeInBytes").PsTypeName);
+        Assert.Equal("int", props.Single(p => p.OpenApiName == "retryCount").PsTypeName);
+        Assert.Equal("int", props.Single(p => p.OpenApiName == "plainCount").PsTypeName);
     }
 
     [Fact]

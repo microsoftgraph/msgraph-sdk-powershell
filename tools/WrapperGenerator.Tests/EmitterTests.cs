@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using WrapperGenerator;
+﻿using WrapperGenerator;
 using Xunit;
 
 namespace WrapperGenerator.Tests;

@@ -4,7 +4,6 @@ using System.IO;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 
@@ -68,7 +67,7 @@ internal static class Program
         IncludePathFilter.Apply(document, includePaths);
 
         var config = new GeneratorConfig(ClientNamespaceName: clientNamespace, OutputPath: outputPath);
-        var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance);
+        var service = new PowerShellWrapperGenerationService(document, config, new StderrLogger());
         await service.GenerateAsync(CancellationToken.None).ConfigureAwait(false);
 
         // The generation service writes only *.g.cs. Also write a minimal kiota-lock.json recording

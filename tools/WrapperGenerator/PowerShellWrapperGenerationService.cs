@@ -10,10 +10,10 @@ using Microsoft.OpenApi;
 
 namespace WrapperGenerator;
 
-// Drives the "PowerShellWrapper" generation language: emits one PowerShell cmdlet class per
-// selected OpenAPI operation, straight from the OpenApiDocument that KiotaBuilder already
-// loaded and filtered with --include-path/--exclude-path. It bypasses the CodeDOM, refiner,
-// and writer pipeline, the same way PluginsGenerationService does for plugin output.
+// Emits one PowerShell cmdlet class per selected OpenAPI operation, straight from the
+// OpenApiDocument that Program loaded and IncludePathFilter trimmed. There is no CodeDOM,
+// refiner, or writer pipeline in between: an operation goes from OpenAPI to C# source text
+// in one pass (naming via CmdletNaming, code text via CmdletEmitter).
 public sealed partial class PowerShellWrapperGenerationService
 {
     private readonly OpenApiDocument document;
@@ -61,36 +61,43 @@ public sealed partial class PowerShellWrapperGenerationService
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
+                // Operation shapes the emitters cannot produce a valid cmdlet for yet are
+                // skipped up front instead of emitted malformed: OData $-segments would produce
+                // broken names (Get-MgBookingBusinesscount) or invalid builder chains
+                // (client...$value does not compile), and parameterized function segments
+                // ("getByUserIdAndRole(userId='{userId}',...)") mangle into garbage nouns.
+                // The README's gap list tracks these shapes as future work.
+                if (HasUnsupportedPathSegment(pathTemplate))
+                {
+                    LogSkippedUnsupportedOperation(httpMethod.Method, pathTemplate, "unsupported OData path segment ($-segment or parameterized function), not generated yet");
+                    continue;
+                }
+
                 // Skip operations the published SDK deliberately does not ship. NamingOverrides
                 // holds the citation for each one.
-                if (NamingOverrides.IsSuppressed(httpMethod.Method, pathTemplate))
+                if (NamingOverrides.IsSuppressed(httpMethod, pathTemplate))
                 {
                     LogSuppressedOperation(httpMethod.Method, pathTemplate);
                     continue;
                 }
 
-                var pathParams = (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Path).Select(p => p.Name!).ToList();
                 var queryParams = (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Query).Select(p => p.Name!).ToList();
                 var headerParams = (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Header).Select(p => p.Name!).ToList();
 
                 // Only GET responses need inspecting: the list/item pairing is decided by the
                 // response shape, and DELETE returns 204 with no body.
                 //
-                // The "2XX" response key and "application/json" content type are intentional,
-                // Graph-scoped assumptions, not a generic OpenAPI reader: the Graph metadata keys
-                // every success response as "2XX" and describes JSON bodies. This generator only
-                // targets Graph, so the direct indexers are deliberate. A general reader would
-                // need to fall back across 200/201/default and negotiate content types.
+                // Success-response resolution is Graph-scoped on purpose: the Graph metadata
+                // keys success responses as "2XX" with JSON content, so TryGetSuccessJsonSchema
+                // checks "2XX" first and falls back across 200/201/default and "+json" content
+                // types for the few operations that deviate, rather than doing general content
+                // negotiation the way a generic OpenAPI reader would have to.
                 var responseSchema = httpMethod == HttpMethod.Get
                     ? TryGetSuccessJsonSchema(operation)
                     : null;
                 var collectionValueSchema = responseSchema is not null ? FindProperty(responseSchema, "value") : null;
-                var isCollection = collectionValueSchema is not null;
 
-                var operationId = operation.OperationId
-                    ?? throw new InvalidOperationException($"Operation at '{pathTemplate}' ({httpMethod}) has no operationId.");
-                var opInfo = new OperationInfo(httpMethod.Method, pathTemplate, operationId, pathParams, queryParams, operation.RequestBody is not null, isCollection, headerParams);
-                var cmdletNaming = Naming.Resolve(opInfo);
+                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams));
 
                 if (httpMethod == HttpMethod.Get && responseSchema is null)
                 {
@@ -242,6 +249,15 @@ public sealed partial class PowerShellWrapperGenerationService
     [LoggerMessage(Level = LogLevel.Warning, Message = "Skipped {Method} {PathTemplate}: {Reason}")]
     private partial void LogSkippedUnsupportedOperation(string method, string pathTemplate, string reason);
 
+    // True when the path contains a segment shape the emitters cannot handle yet: an OData
+    // $-segment ($count/$value/$ref) or a parameterized function/action call (any segment
+    // with parentheses, including delta()). OData cast segments (microsoft.graph.user) are
+    // deliberately NOT excluded here: they emit valid builder chains and the parity gate
+    // tracks them separately.
+    private static bool HasUnsupportedPathSegment(string pathTemplate) =>
+        pathTemplate.Split('/', StringSplitOptions.RemoveEmptyEntries)
+            .Any(segment => segment.StartsWith('$') || segment.Contains('('));
+
     // collectionValueSchema is the already-resolved "value" array property from
     // GetOperationRecord, so nothing is re-walked here.
     private static bool TryResolveListEntityTypeName(IOpenApiSchema collectionValueSchema, string modelsNamespace, out string entityTypeName)
@@ -348,11 +364,6 @@ public sealed partial class PowerShellWrapperGenerationService
         entityTypeName = SchemaNameToTypeName(id, modelsNamespace);
         return true;
     }
-
-    private static string ResolveReferenceId(IOpenApiSchema schema) =>
-        schema.GetReferenceId() is string id && !string.IsNullOrEmpty(id)
-            ? id
-            : throw new InvalidOperationException("Expected a $ref schema for entity type resolution.");
 
     private static string SchemaNameToTypeName(string schemaName, string modelsNamespace)
     {
