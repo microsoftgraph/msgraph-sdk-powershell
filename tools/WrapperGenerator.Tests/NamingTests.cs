@@ -29,11 +29,17 @@ public sealed class SingularizerTests
     [InlineData("Plans", "Plan")]
     [InlineData("Settings", "Setting")]
     [InlineData("Licenses", "License")]
-    // irregulars (Get-MgDriveItemChild, Get-MgUserPerson)
+    // irregulars (Get-MgDriveItemChild, Get-MgUserPerson,
+    // Get-MgSecurityThreatIntelligenceHostCookie, Get-MgSubscribedSku)
     [InlineData("Children", "Child")]
     [InlineData("People", "Person")]
-    // invariants (Get-MgUserSettingWindows)
+    [InlineData("Cookies", "Cookie")]
+    [InlineData("Skus", "Sku")]
+    // invariants (Get-MgUserSettingWindows, Get-MgDomainVerificationDnsRecord,
+    // Get-MgDeviceAppManagementIosManagedAppProtection)
     [InlineData("Windows", "Windows")]
+    [InlineData("Dns", "Dns")]
+    [InlineData("Ios", "Ios")]
     // acronyms are never plural forms
     [InlineData("OS", "OS")]
     public void SingularizesWords(string word, string expected)

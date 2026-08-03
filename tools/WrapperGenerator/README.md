@@ -157,7 +157,7 @@ dotnet run --project tools/WrapperGenerator -- `
 ```powershell
 # 1. Naming rules pinned to published Microsoft.Graph names (69 tests)
 dotnet test tools/WrapperGenerator.Tests
-#    => Passed! - Failed: 0, Passed: 69, Total: 69
+#    => Passed! - Failed: 0, Passed: 82, Total: 82
 
 # 2. Parity gate: generate, then check every cmdlet name against Graph's own command inventory
 .\tools\Compare-WrapperCmdletNames.ps1 -GeneratedPath <output-folder>

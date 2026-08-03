@@ -18,17 +18,25 @@ namespace WrapperGenerator;
 public static partial class Singularizer
 {
     // Irregular plurals the SDK singularizes: Get-MgDriveItemChild, Get-MgUserPerson.
+    // "Cookies" would hit the ies-rule ("Cooky") but ships as Get-MgSecurityThreatIntelligenceHostCookie;
+    // "Skus" would hit the us-guard (stay put) but ships as Get-MgSubscribedSku.
     private static readonly Dictionary<string, string> Irregulars = new(StringComparer.Ordinal)
     {
         ["Children"] = "Child",
         ["People"] = "Person",
+        ["Cookies"] = "Cookie",
+        ["Skus"] = "Sku",
     };
 
     // Words that end in "s" but are not plurals. The SDK keeps them as-is:
-    // /users/{id}/settings/windows ships as Get-MgUserSettingWindows.
+    // /users/{id}/settings/windows ships as Get-MgUserSettingWindows, verificationDnsRecords
+    // as Get-MgDomainVerificationDnsRecord, iosManagedAppProtections as
+    // Get-MgDeviceAppManagementIosManagedAppProtection.
     private static readonly HashSet<string> Invariants = new(StringComparer.Ordinal)
     {
         "Windows",
+        "Dns",
+        "Ios",
     };
 
     // Splits Pascal or camel text into words. Handles acronym runs ("OS" in "MacOSDmgApp"),
