@@ -90,7 +90,8 @@ steps:
           }
 
           Write-Host "Publishing $($package.Id) $($package.Version) to $repositoryName."
-          Publish-PSResource -NupkgPath $package.Path -Repository $repositoryName -ErrorAction Stop
+          $prefix = "public/psresource"
+          Publish-PSResource -NupkgPath $package.Path -Repository $repositoryName -ModulePrefix $prefix -ErrorAction Stop
         }
 
         foreach ($package in $packages) {
