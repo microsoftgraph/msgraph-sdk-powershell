@@ -3,13 +3,6 @@
 trigger: none # disable triggers based on commits.
 pr: none # disable as a PR gate.
 name: 'PowerShellExamplesUpdateV2 Check'
-schedules:
-  - cron: "0 3 * * FRI"  # every Friday at 3AM UTC (off hours for Redmond, Nairobi and Montréal)
-    displayName: 'PowerShellExamplesUpdateV2'
-    branches:
-      include:
-      - features/2.0
-    always: true
 parameters:
 - name: PipelineTimeout
   displayName: PipelineTimeout
