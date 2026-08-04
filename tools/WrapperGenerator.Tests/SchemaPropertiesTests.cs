@@ -87,6 +87,12 @@ public sealed class SchemaPropertiesTests
                 ["sizeInBytes"] = Scalar(JsonSchemaType.Integer, format: "int64"), // values > 2^31 must survive
                 ["retryCount"] = Scalar(JsonSchemaType.Integer, format: "int32"),
                 ["plainCount"] = Scalar(JsonSchemaType.Integer),
+                // Graph's docs declare Edm.Int32/Int64 as type "number" with the format carrying
+                // the real type (mailFolder.childFolderCount, messageRule.sequence). The format
+                // must win or the parameter type contradicts the Kiota model and won't compile.
+                ["childFolderCount"] = Scalar(JsonSchemaType.Number, format: "int32"),
+                ["quotaUsed"] = Scalar(JsonSchemaType.Number, format: "int64"),
+                ["confidence"] = Scalar(JsonSchemaType.Number, format: "float"),
             },
         };
 
@@ -96,6 +102,9 @@ public sealed class SchemaPropertiesTests
         Assert.Equal("long", props.Single(p => p.OpenApiName == "sizeInBytes").PsTypeName);
         Assert.Equal("int", props.Single(p => p.OpenApiName == "retryCount").PsTypeName);
         Assert.Equal("int", props.Single(p => p.OpenApiName == "plainCount").PsTypeName);
+        Assert.Equal("int", props.Single(p => p.OpenApiName == "childFolderCount").PsTypeName);
+        Assert.Equal("long", props.Single(p => p.OpenApiName == "quotaUsed").PsTypeName);
+        Assert.Equal("float", props.Single(p => p.OpenApiName == "confidence").PsTypeName);
     }
 
     [Fact]
