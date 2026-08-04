@@ -67,16 +67,24 @@ public static class SchemaProperties
         _ => false,
     };
 
-    // Numeric mapping follows the OpenAPI format so values survive the round trip: an int64
-    // property must not truncate to int (overflow above ~2.1 billion) and a number property
-    // must not lose its fraction to integer truncation.
+    // Numeric mapping: when a format is present it decides the CLR type, mirroring Kiota's
+    // own mapping, so a wrapper parameter always matches the Kiota model property it is
+    // assigned to. Graph's docs declare Edm.Int32 as "type: number, format: int32" — going by
+    // the type alone would emit double? against Kiota's int? and not compile. Without a
+    // format, integer stays int and number stays double (fraction and 64-bit safety).
     private static string MapPsType(IOpenApiSchema schema) => (schema.Type & ~JsonSchemaType.Null) switch
     {
         JsonSchemaType.String => "string",
         JsonSchemaType.Boolean => "bool",
-        JsonSchemaType.Integer when string.Equals(schema.Format, "int64", StringComparison.OrdinalIgnoreCase) => "long",
-        JsonSchemaType.Integer => "int",
-        JsonSchemaType.Number => "double",
+        JsonSchemaType.Integer or JsonSchemaType.Number => schema.Format?.ToLowerInvariant() switch
+        {
+            "int64" => "long",
+            "int32" => "int",
+            "float" => "float",
+            "double" => "double",
+            "decimal" => "decimal",
+            _ => (schema.Type & ~JsonSchemaType.Null) == JsonSchemaType.Integer ? "int" : "double",
+        },
         _ => "string",
     };
 
