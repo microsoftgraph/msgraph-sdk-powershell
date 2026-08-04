@@ -24,6 +24,11 @@ public sealed class SingularizerTests
     [InlineData("Access", "Access")]
     [InlineData("Status", "Status")]
     [InlineData("Analysis", "Analysis")]
+    // "Whois" also hits the is-guard — a deliberate correction, not a parity pin: the SDK
+    // ships Get-MgSecurityThreatIntelligenceHostWhoi (AutoRest inflected the trailing
+    // "whois" segment) while its 28 whoisRecords/whoisHistoryRecords siblings keep "Whois".
+    // See edge-cases/naming-edge-cases.md.
+    [InlineData("Whois", "Whois")]
     // plain s
     [InlineData("Messages", "Message")]
     [InlineData("Plans", "Plan")]
@@ -36,10 +41,12 @@ public sealed class SingularizerTests
     [InlineData("Cookies", "Cookie")]
     [InlineData("Skus", "Sku")]
     // invariants (Get-MgUserSettingWindows, Get-MgDomainVerificationDnsRecord,
-    // Get-MgDeviceAppManagementIosManagedAppProtection)
+    // Get-MgDeviceAppManagementIosManagedAppProtection,
+    // Get-MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation)
     [InlineData("Windows", "Windows")]
     [InlineData("Dns", "Dns")]
     [InlineData("Ios", "Ios")]
+    [InlineData("Statistics", "Statistics")]
     // acronyms are never plural forms
     [InlineData("OS", "OS")]
     public void SingularizesWords(string word, string expected)
@@ -60,6 +67,8 @@ public sealed class SingularizerTests
     [InlineData("OnPremisesSynchronization", "OnPremiseSynchronization")]
     // version tag: Get-MgSecurityAlertV2
     [InlineData("Alerts_v2", "AlertV2")]
+    // interior "Whois" survives per-word inflection (Get-MgSecurityThreatIntelligenceWhoisHistoryRecord)
+    [InlineData("WhoisHistoryRecords", "WhoisHistoryRecord")]
     public void SingularizesSegments(string segment, string expected)
     {
         Assert.Equal(expected, Singularizer.SingularizeSegment(segment));
@@ -86,6 +95,9 @@ public sealed class NamingTests
     [InlineData("GET", "/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}", "Get", "MgIdentityConditionalAccessPolicy")]
     [InlineData("GET", "/planner/plans", "Get", "MgPlannerPlan")]
     [InlineData("GET", "/security/alerts_v2", "Get", "MgSecurityAlertV2")]
+    [InlineData("GET", "/security/threatIntelligence/whoisRecords/{whoisRecord-id}", "Get", "MgSecurityThreatIntelligenceWhoisRecord")]
+    // interior "Statistics" survives per-word inflection (invariant found via the DEVX API's Humanizer exception list)
+    [InlineData("GET", "/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/lastEstimateStatisticsOperation", "Get", "MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation")]
     [InlineData("PATCH", "/admin/reportSettings", "Update", "MgAdminReportSetting")]
     [InlineData("GET", "/schemaExtensions", "Get", "MgSchemaExtension")]
     [InlineData("GET", "/domains/{domain-id}", "Get", "MgDomain")]
@@ -107,6 +119,22 @@ public sealed class NamingTests
         Assert.Equal(expectedVerb, naming.VerbName);
         Assert.Equal(expectedNoun, naming.Noun);
         Assert.Equal($"{expectedVerb}{expectedNoun}Command", naming.ClassName);
+    }
+
+    [Theory]
+    // Deliberate corrections: the published name is wrong (an AutoRest naming defect) and the
+    // generator emits the corrected name instead of reproducing it. Every entry here must have
+    // an edge-cases/naming-edge-cases.md entry and a matching row in
+    // Compare-WrapperCmdletNames.ps1's $deliberateCorrections table, so the parity gate
+    // reports it as [CORRECTED], not a failure.
+    // Shipped: Get-MgSecurityThreatIntelligenceHostWhoi — the only whois-family cmdlet (of 30)
+    // where "Whois" was inflected to "Whoi".
+    [InlineData("GET", "/security/threatIntelligence/hosts/{host-id}/whois", "Get", "MgSecurityThreatIntelligenceHostWhois")]
+    public void AppliesDeliberateNameCorrections(string method, string path, string expectedVerb, string expectedNoun)
+    {
+        var naming = Resolve(method, path);
+        Assert.Equal(expectedVerb, naming.VerbName);
+        Assert.Equal(expectedNoun, naming.Noun);
     }
 
     [Theory]
