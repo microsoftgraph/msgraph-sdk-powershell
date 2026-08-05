@@ -88,7 +88,22 @@ $ApiVersion | ForEach-Object {
             }
 
             $autorestLog = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), "autorest-$($ModuleFullName -replace '[^a-zA-Z0-9-]', '-').log")
-            npx --no-install autorest @modelerFourUseFlag --verbose --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 2>&1 | Out-File -FilePath $autorestLog -Encoding utf8
+
+            # Belt-and-suspenders for 1ES network isolation (CFSClean): make autorest's internal
+            # npm-registry-fetch use the authenticated private feed configured in ~/.npmrc
+            # (set up by install-tools.yml) rather than defaulting to registry.npmjs.org.
+            if (-not $env:npm_config_registry) {
+                $userNpmrc = Join-Path $env:USERPROFILE ".npmrc"
+                if (Test-Path $userNpmrc) {
+                    $regLine = Select-String -Path $userNpmrc -Pattern '^registry=' | Select-Object -First 1
+                    if ($regLine) { $env:npm_config_registry = ($regLine.Line -replace '^registry=', '').Trim() }
+                }
+            }
+
+            # --skip-upgrade-check stops autorest core from querying registry.npmjs.org to check
+            # for a newer @autorest/core version (the residual CFSClean network-isolation leak;
+            # the @autorest/modelerfour extension is already supplied as a local --use above).
+            npx --no-install autorest @modelerFourUseFlag --skip-upgrade-check --verbose --max-memory-size=$MaxMemorySize --module-version:$FullModuleVersion --module-name:$ModuleFullName --service-name:$Module --input-file:$OpenApiFile $AutoRestModuleConfig --max-cpu=2 --network-calls=2 2>&1 | Out-File -FilePath $autorestLog -Encoding utf8
             $autorestExitCode = $LASTEXITCODE
             if ($autorestExitCode -ne 0) {
                 Write-Host -ForegroundColor Red "AutoREST failed (exit $autorestExitCode) generating '$ModuleFullName'."
