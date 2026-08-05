@@ -25,10 +25,10 @@ steps:
       script: |
         Write-Output $PSVersionTable
 
-  - task: NodeTool@0
+  - task: NodeTool@1
     displayName: Install NodeJs
     inputs:
-      versionSpec: 18.x
+      version: 22.x
 
   - task: PowerShell@2
     displayName: Configure private npm feed
