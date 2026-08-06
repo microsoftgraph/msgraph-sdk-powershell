@@ -22,6 +22,21 @@ $extensions = @(
     "@autorest/modelerfour@4.24.3"
 )
 
+# Force these installs onto the authenticated private feed. `npm install --prefix <dir>` does not
+# reliably pick up the registry/auth from ~/.npmrc (it was observed hitting registry.npmjs.org
+# directly, breaking CFSClean network isolation), so pass --userconfig and --registry explicitly,
+# derived from the authenticated ~/.npmrc that install-tools.yml produced.
+$npmFeedArgs = @()
+$userNpmrc = Join-Path $env:USERPROFILE ".npmrc"
+if (Test-Path $userNpmrc) {
+    $npmFeedArgs += @('--userconfig', $userNpmrc)
+    $regLine = Select-String -Path $userNpmrc -Pattern '^registry=' | Select-Object -First 1
+    if ($regLine) { $npmFeedArgs += @('--registry', ($regLine.Line -replace '^registry=', '').Trim()) }
+}
+else {
+    Write-Host "WARNING: ~/.npmrc not found; npm install may reach the public registry (CFSClean risk)."
+}
+
 foreach ($ext in $extensions) {
     $parts   = $ext -split '@(?=[^@]+$)'   # split on last @
     $pkg     = $parts[0]
@@ -36,7 +51,8 @@ foreach ($ext in $extensions) {
 
     New-Item -ItemType Directory -Force -Path $cacheDir | Out-Null
     Write-Host "Pre-installing $ext into $cacheDir"
-    npm install $ext --prefix $cacheDir
+    npm install $ext --prefix $cacheDir @npmFeedArgs
     if ($LASTEXITCODE -ne 0) { throw "Failed to pre-install $ext (exit $LASTEXITCODE)" }
     Write-Host "Done: $ext"
 }
+
