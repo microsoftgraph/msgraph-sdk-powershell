@@ -47,6 +47,7 @@ public sealed class SingularizerTests
     [InlineData("Dns", "Dns")]
     [InlineData("Ios", "Ios")]
     [InlineData("Statistics", "Statistics")]
+    [InlineData("Rights", "Rights")]
     // acronyms are never plural forms
     [InlineData("OS", "OS")]
     public void SingularizesWords(string word, string expected)
@@ -98,6 +99,8 @@ public sealed class NamingTests
     [InlineData("GET", "/security/threatIntelligence/whoisRecords/{whoisRecord-id}", "Get", "MgSecurityThreatIntelligenceWhoisRecord")]
     // interior "Statistics" survives per-word inflection (invariant found via the DEVX API's Humanizer exception list)
     [InlineData("GET", "/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/lastEstimateStatisticsOperation", "Get", "MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation")]
+    // interior "Rights" survives per-word inflection (Get-MgPrivacySubjectRightsRequest, found by the full-module parity sweep)
+    [InlineData("GET", "/privacy/subjectRightsRequests/{subjectRightsRequest-id}", "Get", "MgPrivacySubjectRightsRequest")]
     [InlineData("PATCH", "/admin/reportSettings", "Update", "MgAdminReportSetting")]
     [InlineData("GET", "/schemaExtensions", "Get", "MgSchemaExtension")]
     [InlineData("GET", "/domains/{domain-id}", "Get", "MgDomain")]
@@ -130,6 +133,10 @@ public sealed class NamingTests
     // Shipped: Get-MgSecurityThreatIntelligenceHostWhoi — the only whois-family cmdlet (of 30)
     // where "Whois" was inflected to "Whoi".
     [InlineData("GET", "/security/threatIntelligence/hosts/{host-id}/whois", "Get", "MgSecurityThreatIntelligenceHostWhois")]
+    // Shipped: New-MgPlaceCheck — AutoRest truncated "CheckIns" at the preposition (#912
+    // class) while Get-MgPlaceCheckInCount keeps "In" intact.
+    [InlineData("GET", "/places/{place-id}/checkIns", "Get", "MgPlaceCheckIn")]
+    [InlineData("POST", "/places/{place-id}/checkIns", "New", "MgPlaceCheckIn")]
     public void AppliesDeliberateNameCorrections(string method, string path, string expectedVerb, string expectedNoun)
     {
         var naming = Resolve(method, path);

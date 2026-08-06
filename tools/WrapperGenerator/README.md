@@ -143,7 +143,7 @@ The wrappers compile and run only alongside step 1's output. Wiring the two into
 
 ```powershell
 dotnet run --project tools/WrapperGenerator -- `
-  -d openApiDocs/v1.0/Mail.yml `
+  -d openApiDocs_KiotaCompat/v1.0/Mail.yml `
   -o <output-folder> `
   -n Microsoft.Graph.PowerShell.Mail.Client `
   --include-path '/users/{user-id}/message[s]#GET,POST' `
@@ -157,7 +157,7 @@ dotnet run --project tools/WrapperGenerator -- `
 ```powershell
 # 1. Naming rules pinned to published Microsoft.Graph names
 dotnet test tools/WrapperGenerator.Tests
-#    => Passed! - Failed: 0, Passed: 88, Total: 88
+#    => Passed! - Failed: 0, Passed: 103, Total: 103
 
 # 2. Parity gate: generate, then check every cmdlet name against Graph's own command inventory
 .\tools\Compare-WrapperCmdletNames.ps1 -GeneratedPath <output-folder>
@@ -168,7 +168,7 @@ The unit tests guard the naming rules (their expected values are real published 
 
 ## Gaps / not done yet
 
-- **Output isn't wired into a module.** Files go to whatever `-o` folder you pass, in a fixed `MgPoC` namespace. The target design commits wrappers into `src/{Module}/` with a per-module namespace; that alignment (and a namespace override) isn't built.
+- **Output isn't committed into `src/{Module}/`.** `tools/Build-WrapperModule.ps1` now turns a module into an importable build under `artifacts/` (kiota client + wrappers + csproj + PSD1; `tools/Test-WrapperModule.ps1` smoke-tests it), with generation reading the Kiota-compatible docs (`openApiDocs_KiotaCompat`) by default. The target design — wrappers committed into `src/{Module}/` with a per-module namespace instead of `MgPoC` — is still open.
 - **No runtime base classes or real auth flow.** Shared paging, a proper `Connect-MgGraph`/session integration, and base cmdlet classes are a later phase.
 - **Body binding is shallow** — top-level primitive properties only; no nested/complex types beyond the `passwordProfile` special case.
 - **Some operation shapes aren't generated** — `$count`/`$ref`/`$value`, delta, OData actions/functions, and cast endpoints.

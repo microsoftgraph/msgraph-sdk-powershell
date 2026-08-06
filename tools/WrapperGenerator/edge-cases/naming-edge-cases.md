@@ -46,6 +46,7 @@ Entry template (keep the field names exact so the file converts cleanly):
 | Case | Class | Status |
 |---|---|---|
 | `HostWhoi` → `HostWhois` | inflection-defect | corrected |
+| `PlaceCheck` → `PlaceCheckIn` | operationid-truncation | corrected |
 | operationId preposition truncation | operationid-truncation | structurally-avoided |
 | `SkypeForBusiness` subject truncation | operationid-truncation | not-yet-reachable |
 | `Cookies`/`Skus`/`Dns`/`Ios`/`Statistics` quirks | inflection-defect | reproduced-for-parity |
@@ -68,6 +69,22 @@ Entry template (keep the field names exact so the file converts cleanly):
   Security module is generated for real.
 - **References:** pinned in `AppliesDeliberateNameCorrections` (NamingTests.cs); gate rows in
   `$deliberateCorrections` (Compare-WrapperCmdletNames.ps1).
+
+## CheckIns truncated to Check on the places API
+
+- **Class:** operationid-truncation
+- **Status:** corrected
+- **Evidence:** `/places/{place-id}/checkIns` shipped as `{Get,New,Update,Remove}-Mg(Beta)PlaceCheck`
+  (8 commands) — AutoRest truncated "CheckIns" at the preposition "In", the #912 defect
+  class. The SDK is inconsistent with itself: `Get-MgPlaceCheckInCount` (the `$count` path)
+  keeps "In" intact. Found by the parity gate during the full-inventory module fan-out.
+- **Decision:** emit `...PlaceCheckIn` for all four verbs, v1.0 and beta; no alias for the
+  old names. Pinned in `AppliesDeliberateNameCorrections`; gate rows in
+  `$deliberateCorrections`.
+- **Migration impact:** scripts using `*-MgPlaceCheck` must switch to `*-MgPlaceCheckIn`.
+  Belongs in the migration guide when the Calendar module ships for real.
+- **References:** issue [#912](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/912)
+  (the AutoRest defect class).
 
 ## operationId preposition/linking-verb truncation
 
@@ -130,9 +147,8 @@ Entry template (keep the field names exact so the file converts cleanly):
 
 Cases spotted but deliberately not acted on yet, so they aren't lost:
 
-- **`usageRights` vs `rights` (beta-only):** the shipped SDK keeps `usageRights` plural
-  (`Get-MgBetaDeviceUsageRights` for `/devices/{id}/usageRights`) but singularizes bare
-  `rights` (`Get-MgBetaGroupSiteInformationProtectionSensitivityLabelRight` for
-  `.../sensitivityLabels/{id}/rights`). Our rules match the bare-`rights` case and would
-  diverge on `usageRights`. All affected paths are beta; resolve when the beta parity audit
-  runs.
+- **bare `rights` (beta-only):** "Rights" is now an invariant — v1.0 evidence arrived via
+  `subjectRightsRequests` (42 cmdlets ship keeping "Rights"; `usageRights` in beta agrees).
+  The one holdout is beta's bare `.../sensitivityLabels/{id}/rights`, which ships
+  singularized (`...SensitivityLabelRight`) and now diverges from our invariant. Beta-only,
+  4 cmdlets; resolve at the beta parity audit (likely a correction or a path override).
