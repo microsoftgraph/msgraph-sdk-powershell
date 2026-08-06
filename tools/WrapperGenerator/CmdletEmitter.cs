@@ -154,10 +154,21 @@ public static class CmdletEmitter
         return $"{call}{args}requestConfiguration =>\n                {{{bindings}\n                }})";
     }
 
-    public static string EmitItemGet(CmdletNaming naming, EmitContext ctx, string entityType)
+    public static string EmitItemGet(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlySet<string> queryParamNames)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
+        ArgumentNullException.ThrowIfNull(queryParamNames);
+
+        // Only what the operation declares: kiota omits query-parameter properties the doc
+        // doesn't declare (subscribedSkus/{id} has $select but no $expand), so an
+        // unconditional binding would not compile against the builder.
+        var applicable = CollectionQueryOptions
+            .Where(o => o.ODataName is "$select" or "$expand" && queryParamNames.Contains(o.ODataName))
+            .ToList();
+        var queryParamDecls = string.Join("\n", applicable.Select(o => o.ParamDecl(null)));
+        var queryBindings = string.Join("\n\n", applicable.Select(o => o.Binding));
+
         return $$"""
 #nullable enable
 
@@ -181,13 +192,7 @@ namespace {{ctx.CmdletNamespace}}
 
 {{AccessTokenParamDecl()}}
 
-        [Parameter(Mandatory = false)]
-        [Alias("Select")]
-        public string[]? Property { get; set; }
-
-        [Parameter(Mandatory = false)]
-        [Alias("Expand")]
-        public string[]? ExpandProperty { get; set; }
+{{queryParamDecls}}
 {{HeaderParamDecls(naming)}}
 {{GenericHeadersParamDecl()}}
 
@@ -200,11 +205,7 @@ namespace {{ctx.CmdletNamespace}}
             {
                 result = client.{{naming.BuilderExpression}}.GetAsync(requestConfiguration =>
                 {
-                    if (this.IsParameterBound(nameof(Property)))
-                        requestConfiguration.QueryParameters.Select = Property;
-
-                    if (this.IsParameterBound(nameof(ExpandProperty)))
-                        requestConfiguration.QueryParameters.Expand = ExpandProperty;
+{{queryBindings}}
 {{HeaderBindings(naming)}}
 {{GenericHeadersBinding()}}
                 }).GetAwaiter().GetResult();
@@ -315,7 +316,7 @@ namespace {{ctx.CmdletNamespace}}
     }
 
     // The dispatcher's list-only parameter declarations: CollectionQueryOptions minus
-    // $select/$expand, which are shared with the "Get" set and declared once at class level.
+    // $select/$expand, which are declared separately per the sets that support them.
     // Declarations only; binding happens in the internal list cmdlet the dispatcher calls.
     private static IEnumerable<(string ODataName, string ParamDecl)> ListOnlyQueryOptionsForMerge() =>
         CollectionQueryOptions
@@ -353,20 +354,37 @@ namespace {{ctx.CmdletNamespace}}
     // call shares the caller's session, including an active Connect-MgGraph.
     public static string EmitGetDispatcher(CmdletNaming listNaming, CmdletNaming itemNaming,
         CmdletNaming internalListNaming, CmdletNaming internalItemNaming, EmitContext ctx,
-        string entityType, string collectionResponseType, IReadOnlySet<string> queryParamNames)
+        string entityType, string collectionResponseType, IReadOnlySet<string> listQueryParamNames, IReadOnlySet<string> itemQueryParamNames)
     {
         ArgumentNullException.ThrowIfNull(listNaming);
         ArgumentNullException.ThrowIfNull(itemNaming);
         ArgumentNullException.ThrowIfNull(internalListNaming);
         ArgumentNullException.ThrowIfNull(internalItemNaming);
         ArgumentNullException.ThrowIfNull(ctx);
-        ArgumentNullException.ThrowIfNull(queryParamNames);
+        ArgumentNullException.ThrowIfNull(listQueryParamNames);
+        ArgumentNullException.ThrowIfNull(itemQueryParamNames);
 
         var sharedPathParams = listNaming.PathParamNames;
         var getOnlyPathParams = itemNaming.PathParamNames.Skip(sharedPathParams.Count).ToList();
 
-        var applicable = ListOnlyQueryOptionsForMerge().Where(o => queryParamNames.Contains(o.ODataName)).ToList();
+        var applicable = ListOnlyQueryOptionsForMerge().Where(o => listQueryParamNames.Contains(o.ODataName)).ToList();
         var listOnlyParamDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl));
+
+        // $select/$expand support can differ between the two operations (subscribedSkus
+        // declares $expand on the list but not the item), so each declaration is scoped to
+        // the parameter set(s) whose worker actually binds it.
+        var selectExpandDecls = string.Join("\n\n", new[] { "$select", "$expand" }
+            .Select(od =>
+            {
+                var row = CollectionQueryOptions.First(o => o.ODataName == od);
+                var inList = listQueryParamNames.Contains(od);
+                var inItem = itemQueryParamNames.Contains(od);
+                return inList && inItem ? row.ParamDecl(null)
+                    : inList ? row.ParamDecl("List")
+                    : inItem ? row.ParamDecl("Get")
+                    : null;
+            })
+            .Where(static d => d is not null));
 
         var (sharedHeaders, listOnlyHeaders, getOnlyHeaders) = PartitionHeaderParams(listNaming, itemNaming);
 
@@ -392,13 +410,7 @@ namespace {{ctx.CmdletNamespace}}
 
 {{AccessTokenParamDecl()}}
 
-        [Parameter(Mandatory = false)]
-        [Alias("Select")]
-        public string[]? Property { get; set; }
-
-        [Parameter(Mandatory = false)]
-        [Alias("Expand")]
-        public string[]? ExpandProperty { get; set; }
+{{selectExpandDecls}}
 
 {{listOnlyParamDecls}}
 {{HeaderParamDeclsFor(sharedHeaders, parameterSetName: null)}}
@@ -419,6 +431,16 @@ namespace {{ctx.CmdletNamespace}}
                     PipelineResultTypes.Output | PipelineResultTypes.Error,
                     null,
                     MyInvocation.BoundParameters, internalCmdletName);
+            }
+            // The workers signal failure via ThrowTerminatingError, which InvokeScript surfaces
+            // as a RuntimeException carrying the worker's ErrorRecord. Rethrow that record
+            // unchanged so the caller sees the worker's error identity (NoGraphSession,
+            // GraphRequestFailed, ...) instead of every failure collapsing into a generic
+            // dispatcher error.
+            catch (RuntimeException rex) when (rex.ErrorRecord is not null)
+            {
+                ThrowTerminatingError(rex.ErrorRecord);
+                return;
             }
 {{CatchBlock($"ParameterSetName == \"Get\" ? {TargetId(itemNaming)} : {TargetId(listNaming)}")}}
         }
@@ -485,7 +507,7 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
-    public static string EmitUpdate(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, bool hasPasswordProfile)
+    public static string EmitUpdate(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, bool hasPasswordProfile, bool reFetchAfterUpdate = true)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
@@ -534,20 +556,9 @@ namespace {{ctx.CmdletNamespace}}
             }
 {{CatchBlock(TargetId(naming))}}
 
-            // Graph often answers a successful PATCH with 204 and no body (seen live on
-            // schemaExtension update). Re-fetch so the cmdlet returns the updated resource
-            // instead of nothing.
-            if (result is null)
-            {
-                WriteVerbose("[MgPoC] PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.{{naming.BuilderExpression}}.GetAsync().GetAwaiter().GetResult();
-                }
-{{CatchBlock(TargetId(naming), "    ")}}
-            }
-
-            WriteObject(result);
+{{(reFetchAfterUpdate ? ReFetchBlock(naming) : "")}}
+            if (result is not null)
+                WriteObject(result);
         }
     }
 }
@@ -648,18 +659,38 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
+    // Graph often answers a successful PATCH with 204 and no body (seen live on
+    // schemaExtension update), so Update re-fetches to return the updated resource — but
+    // only when the path actually has a GET (PATCH-only resources like /places/{id} have no
+    // GetAsync on their builder; found by compiling the Calendar module).
+    private static string ReFetchBlock(CmdletNaming naming) => $$"""
+
+            if (result is null)
+            {
+                WriteVerbose("[MgPoC] PATCH succeeded with no response body, re-fetching the updated resource.");
+                try
+                {
+                    result = client.{{naming.BuilderExpression}}.GetAsync().GetAwaiter().GetResult();
+                }
+{{CatchBlock(TargetId(naming), "    ")}}
+            }
+""";
+
+    // ParameterName (not PascalName) names the parameter: it carries the "1" suffix when a
+    // body property collides with a path id. The body assignment keeps PascalName — the
+    // Kiota model property is unaffected by the parameter rename.
     private static string EmitPropertyParameters(IReadOnlyList<CmdletProperty> properties) =>
         string.Join("\n", properties.Select(p => $$"""
 
                 [Parameter(Mandatory = false)]
-                public {{p.PsTypeName}}? {{p.PascalName}} { get; set; }
+                public {{p.PsTypeName}}? {{p.ParameterName}} { get; set; }
         """));
 
     private static string EmitPropertyAssignments(IReadOnlyList<CmdletProperty> properties) =>
         string.Join("\n", properties.Select(p => $$"""
 
-            if (this.IsParameterBound(nameof({{p.PascalName}})))
-                body.{{p.PascalName}} = {{(p.IsArray ? $"{p.PascalName}!.ToList()" : p.PascalName)}};
+            if (this.IsParameterBound(nameof({{p.ParameterName}})))
+                body.{{p.PascalName}} = {{(p.IsArray ? $"{p.ParameterName}!.ToList()" : p.ParameterName)}};
         """));
 
     private static string EmitPasswordProfileParameters() => """

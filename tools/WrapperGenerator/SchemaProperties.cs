@@ -5,7 +5,12 @@ using Microsoft.OpenApi;
 
 namespace WrapperGenerator;
 
-public sealed record CmdletProperty(string OpenApiName, string PascalName, string PsTypeName, bool IsArray);
+public sealed record CmdletProperty(string OpenApiName, string PascalName, string PsTypeName, bool IsArray)
+{
+    // The emitted -Parameter name. Differs from PascalName only when the body property
+    // collides with a path parameter; see ResolveParameterNameCollisions.
+    public string ParameterName { get; init; } = PascalName;
+}
 
 // Maps a body schema's top-level primitive properties onto cmdlet parameters. Deliberately
 // shallow, per team decision: nested complex properties (assignedLicenses, employeeOrgData,
@@ -32,17 +37,34 @@ public static class SchemaProperties
 
                 if (IsPlainScalar(propSchema))
                 {
-                    result.Add(new CmdletProperty(name, name.ToFirstCharacterUpperCase(), MapPsType(propSchema), IsArray: false));
+                    result.Add(new CmdletProperty(name, ToKiotaPropertyName(name), MapPsType(propSchema), IsArray: false));
                 }
                 else if (propSchema.Type == JsonSchemaType.Array && propSchema.Items is { } items && IsPlainScalar(items))
                 {
-                    result.Add(new CmdletProperty(name, name.ToFirstCharacterUpperCase(), MapPsType(items) + "[]", IsArray: true));
+                    result.Add(new CmdletProperty(name, ToKiotaPropertyName(name), MapPsType(items) + "[]", IsArray: true));
                 }
             }
         }
 
         Walk(schema);
         return result;
+    }
+
+    // A body property whose Pascal name matches a path parameter would emit a duplicate C#
+    // property (PATCH /devices/{device-id} has a path id AND a body property "deviceId" —
+    // different values: the URL takes the object id, the body carries Entra's deviceId).
+    // The published SDK keeps both reachable by suffixing the body one with "1"
+    // (Update-MgDevice ships -DeviceId and -DeviceId1); reproduce that convention rather
+    // than dropping a settable property.
+    public static IReadOnlyList<CmdletProperty> ResolveParameterNameCollisions(
+        IReadOnlyList<CmdletProperty> properties, IReadOnlyList<string> pathParamNames)
+    {
+        ArgumentNullException.ThrowIfNull(properties);
+        ArgumentNullException.ThrowIfNull(pathParamNames);
+        var taken = new HashSet<string>(pathParamNames, StringComparer.Ordinal);
+        return properties
+            .Select(p => taken.Contains(p.PascalName) ? p with { ParameterName = p.PascalName + "1" } : p)
+            .ToList();
     }
 
     // passwordProfile is a nested complex type, so ExtractPrimitiveProperties skips it, but
@@ -67,18 +89,36 @@ public static class SchemaProperties
         _ => false,
     };
 
-    // Numeric mapping follows the OpenAPI format so values survive the round trip: an int64
-    // property must not truncate to int (overflow above ~2.1 billion) and a number property
-    // must not lose its fraction to integer truncation.
+    // Numeric mapping: when a format is present it decides the CLR type, mirroring Kiota's
+    // own mapping, so a wrapper parameter always matches the Kiota model property it is
+    // assigned to. Graph's docs declare Edm.Int32 as "type: number, format: int32" — going by
+    // the type alone would emit double? against Kiota's int? and not compile. Without a
+    // format, integer stays int and number stays double (fraction and 64-bit safety).
     private static string MapPsType(IOpenApiSchema schema) => (schema.Type & ~JsonSchemaType.Null) switch
     {
         JsonSchemaType.String => "string",
         JsonSchemaType.Boolean => "bool",
-        JsonSchemaType.Integer when string.Equals(schema.Format, "int64", StringComparison.OrdinalIgnoreCase) => "long",
-        JsonSchemaType.Integer => "int",
-        JsonSchemaType.Number => "double",
+        JsonSchemaType.Integer or JsonSchemaType.Number => schema.Format?.ToLowerInvariant() switch
+        {
+            "int64" => "long",
+            "int32" => "int",
+            "float" => "float",
+            "double" => "double",
+            "decimal" => "decimal",
+            _ => (schema.Type & ~JsonSchemaType.Null) == JsonSchemaType.Integer ? "int" : "double",
+        },
         _ => "string",
     };
+
+    // Kiota cleans property symbols when generating model members: underscores are dropped
+    // and the following character upper-cased ("riskEventTypes_v2" -> RiskEventTypesV2,
+    // verified against a generated SignIn model). The body assignment targets that member,
+    // so this mapping must match kiota's or the emitted code does not compile.
+    private static string ToKiotaPropertyName(string openApiName)
+    {
+        var parts = openApiName.Split('_', StringSplitOptions.RemoveEmptyEntries);
+        return string.Concat(parts.Select(static p => char.ToUpperInvariant(p[0]) + p[1..]));
+    }
 
     // Excludes properties a caller cannot or should not set. "id" is server-assigned.
     // "@"-prefixed names like "@odata.type" are OData control data that Kiota's serializer
