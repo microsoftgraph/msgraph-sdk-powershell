@@ -8,6 +8,53 @@ namespace WrapperGenerator.Tests;
 
 public sealed class SchemaPropertiesTests
 {
+    // Kiota strips underscores when naming model members: signIn's "riskEventTypes_v2"
+    // becomes RiskEventTypesV2 (verified against a generated SignIn model). The body
+    // assignment targets that member, so extraction must produce the same name.
+    [Fact]
+    public void MapsUnderscorePropertyNamesTheWayKiotaDoes()
+    {
+        var schema = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Object,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                ["riskEventTypes_v2"] = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Array,
+                    Items = new OpenApiSchema { Type = JsonSchemaType.String },
+                },
+            },
+        };
+
+        var property = Assert.Single(SchemaProperties.ExtractPrimitiveProperties(schema));
+        Assert.Equal("RiskEventTypesV2", property.PascalName);
+        Assert.Equal("riskEventTypes_v2", property.OpenApiName);
+    }
+
+    // PATCH /devices/{device-id} carries a body property "deviceId" (Entra's device
+    // identifier — a different value from the path's object id). The published SDK ships
+    // both as -DeviceId and -DeviceId1; the resolver reproduces that "1" suffix. The body
+    // assignment target (PascalName) must stay untouched — only the parameter renames.
+    [Fact]
+    public void SuffixesBodyPropertyThatCollidesWithPathParameter()
+    {
+        var properties = new[]
+        {
+            new CmdletProperty("deviceId", "DeviceId", "string", IsArray: false),
+            new CmdletProperty("displayName", "DisplayName", "string", IsArray: false),
+        };
+
+        var resolved = SchemaProperties.ResolveParameterNameCollisions(properties, new[] { "DeviceId" });
+
+        var renamed = Assert.Single(resolved, p => p.OpenApiName == "deviceId");
+        Assert.Equal("DeviceId1", renamed.ParameterName);
+        Assert.Equal("DeviceId", renamed.PascalName);
+
+        var untouched = Assert.Single(resolved, p => p.OpenApiName == "displayName");
+        Assert.Equal("DisplayName", untouched.ParameterName);
+    }
+
     private static OpenApiSchema Scalar(JsonSchemaType type, bool readOnly = false, string? format = null) =>
         new() { Type = type, ReadOnly = readOnly, Format = format };
 
