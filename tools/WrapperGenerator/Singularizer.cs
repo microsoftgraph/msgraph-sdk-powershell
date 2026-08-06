@@ -17,18 +17,24 @@ namespace WrapperGenerator;
 // it splits a segment into words and runs the rules on each word.
 public static partial class Singularizer
 {
-    // Irregular plurals the SDK singularizes: Get-MgDriveItemChild, Get-MgUserPerson.
+    // Irregular plurals the ordered rules below would inflect wrongly. Evidence for each
+    // entry lives in the README rule table and docs/edge-cases.
     private static readonly Dictionary<string, string> Irregulars = new(StringComparer.Ordinal)
     {
         ["Children"] = "Child",
         ["People"] = "Person",
+        ["Cookies"] = "Cookie",
+        ["Skus"] = "Sku",
     };
 
-    // Words that end in "s" but are not plurals. The SDK keeps them as-is:
-    // /users/{id}/settings/windows ships as Get-MgUserSettingWindows.
+    // Words that end in "s" but are not plurals; never singularized. Evidence for each
+    // entry lives in the README rule table and docs/edge-cases.
     private static readonly HashSet<string> Invariants = new(StringComparer.Ordinal)
     {
         "Windows",
+        "Dns",
+        "Ios",
+        "Statistics",
     };
 
     // Splits Pascal or camel text into words. Handles acronym runs ("OS" in "MacOSDmgApp"),
@@ -85,7 +91,7 @@ public static partial class Singularizer
         if (EndsWithSibilantEs(word))
             return word[..^2];                                         // Businesses -> Business, Mailboxes -> Mailbox
         if (word.EndsWith("ss", StringComparison.Ordinal) || word.EndsWith("us", StringComparison.Ordinal) || word.EndsWith("is", StringComparison.Ordinal))
-            return word;                                               // Access, Status, Analysis stay put
+            return word;                                               // Access -> Access, Status -> Status, Analysis -> Analysis
         if (word.EndsWith('s'))
             return word[..^1];                                         // Messages -> Message, Plans -> Plan
         return word;

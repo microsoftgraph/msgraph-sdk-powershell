@@ -8,10 +8,9 @@ namespace WrapperGenerator;
 public sealed record CmdletProperty(string OpenApiName, string PascalName, string PsTypeName, bool IsArray);
 
 // Maps a body schema's top-level primitive properties onto cmdlet parameters. Deliberately
-// shallow, per team decision: nested complex properties (assignedLicenses, employeeOrgData,
-// and the like) are skipped rather than modeled. Two special cases: "id" is excluded because
-// the server assigns it, and passwordProfile is flagged separately via HasPasswordProfile
-// because creating a user requires it.
+// shallow, per team decision: nested complex properties are skipped rather than modeled.
+// Server-managed properties are excluded, and passwordProfile is flagged separately via
+// HasPasswordProfile.
 public static class SchemaProperties
 {
     public static IReadOnlyList<CmdletProperty> ExtractPrimitiveProperties(IOpenApiSchema schema)
@@ -45,9 +44,9 @@ public static class SchemaProperties
         return result;
     }
 
-    // passwordProfile is a nested complex type, so ExtractPrimitiveProperties skips it, but
-    // Graph requires it to create a user. This flag lets the emitter add the two flattened
-    // parameters (-Password, -ForceChangePasswordNextSignIn) that make New-MgUser usable.
+    // Detects a passwordProfile property (directly or via allOf) so the emitter can flatten
+    // it into parameters; Graph requires it to create a user. Generalizing this pattern is
+    // tracked in #3690.
     public static bool HasPasswordProfile(IOpenApiSchema schema)
     {
         ArgumentNullException.ThrowIfNull(schema);
@@ -67,16 +66,22 @@ public static class SchemaProperties
         _ => false,
     };
 
-    // Numeric mapping follows the OpenAPI format so values survive the round trip: an int64
-    // property must not truncate to int (overflow above ~2.1 billion) and a number property
-    // must not lose its fraction to integer truncation.
+    // Numeric mapping: an explicit format decides the CLR type, mirroring Kiota's own
+    // mapping so a wrapper parameter always matches the Kiota model property it is assigned
+    // to. Without a format, integer stays int and number stays double.
     private static string MapPsType(IOpenApiSchema schema) => (schema.Type & ~JsonSchemaType.Null) switch
     {
         JsonSchemaType.String => "string",
         JsonSchemaType.Boolean => "bool",
-        JsonSchemaType.Integer when string.Equals(schema.Format, "int64", StringComparison.OrdinalIgnoreCase) => "long",
-        JsonSchemaType.Integer => "int",
-        JsonSchemaType.Number => "double",
+        JsonSchemaType.Integer or JsonSchemaType.Number => schema.Format?.ToLowerInvariant() switch
+        {
+            "int64" => "long",
+            "int32" => "int",
+            "float" => "float",
+            "double" => "double",
+            "decimal" => "decimal",
+            _ => (schema.Type & ~JsonSchemaType.Null) == JsonSchemaType.Integer ? "int" : "double",
+        },
         _ => "string",
     };
 
