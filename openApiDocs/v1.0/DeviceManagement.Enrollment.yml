@@ -1634,6 +1634,9 @@ components:
               type: string
               description: 'Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).'
               nullable: true
+            principalOrganizationId:
+              type: string
+              nullable: true
             roleDefinitionId:
               type: string
               description: 'Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).'
