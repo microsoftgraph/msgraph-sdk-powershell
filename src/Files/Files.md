@@ -18,6 +18,7 @@ require:
 ``` yaml
 directive:
   - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activity$|.*\.activity.*$|share\..*_createLink
+  - remove-path-by-operation: ^share\.listItem\.permission_grant$
   - where:
       verb: Get
       subject: ^(Group|User)(Drive)$
