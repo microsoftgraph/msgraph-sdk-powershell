@@ -34,7 +34,7 @@ Entry template (keep the field names exact so the file converts cleanly):
 ```
 ## <short case name>
 - **Class:** <inflection-defect | operationid-truncation | hand-rename | ...>
-- **Status:** <corrected | reproduced-for-parity | structurally-avoided | not-yet-reachable>
+- **Status:** <corrected | reproduced-for-parity | structurally-avoided | not-yet-reachable | handled | partially-handled | workaround> — optionally followed by a short parenthetical qualifier
 - **Evidence:** <what the oracle/spec shows>
 - **Decision:** <what the generator does and why>
 - **Migration impact:** <what breaks for users, if anything>
@@ -50,6 +50,8 @@ Entry template (keep the field names exact so the file converts cleanly):
 | operationId preposition truncation | operationid-truncation | structurally-avoided |
 | `SkypeForBusiness` subject truncation | operationid-truncation | not-yet-reachable |
 | `Cookies`/`Skus`/`Dns`/`Ios`/`Statistics` quirks | inflection-defect | reproduced-for-parity |
+| Self-referential `sites/{id}/sites` → `SubSite` | adjacent-duplicate-segments | handled |
+| Route duplicates (spec paths the SDK never shipped) | duplicate-routes | partially-handled |
 
 ## Whois truncated to Whoi on the host navigation
 
@@ -142,6 +144,45 @@ Entry template (keep the field names exact so the file converts cleanly):
   `microsoftgraph/microsoft-graph-devx-api` repo) — its five entries are `drives→drive`,
   `data`, `delta`, `quota` (Humanizer-specific mistakes this rule engine never makes) and
   `statistics` (the one that applied here).
+
+## Self-referential paths collide with their parent's cmdlet
+
+- **Class:** adjacent-duplicate-segments
+- **Status:** handled (loud failure + directive-cited renames)
+- **Evidence:** singularizing a self-referencing path collapses it onto its parent's noun:
+  `/sites/{id}/sites` produced `GetMgSite.g.cs`, silently overwriting the get-site-by-id
+  cmdlet — the same silent-drop failure AutoRest had. Nothing could detect it: writes are
+  not logged at console level, the summary counts surviving files, and the parity gate only
+  inspects files that exist.
+- **Decision:** the generator now fails generation loudly on any cmdlet file collision,
+  listing every colliding pair. Shipped cases are renamed via NamingOverrides with their
+  directive cited (`sites/{id}/sites` → `SubSite`/`GroupSubSite`, per Sites.md
+  `subject: SubSite` directives); paths the SDK ships nothing for are suppressed as they
+  surface.
+- **Migration impact:** none — renames match the published names exactly.
+- **References:** issue #3704; `NamingOverrides.cs` SubSite entries; Sites.md lines 32–61.
+
+## Route duplicates: the spec publishes paths the SDK never shipped
+
+- **Class:** duplicate-routes
+- **Status:** partially-handled (oracle-cited suppressions/renames)
+- **Evidence:** the collision guard's first full-inventory sweep found 966 silent collisions
+  (per-module counts on issue #3704). Beyond self-references, the dominant cause is the spec
+  publishing the same data
+  under two routes while the SDK ships exactly one: nested navs duplicating top-level sets
+  (`hosts/{id}/components` vs `hostComponents` — 14 Security paths, ships nothing nested),
+  default-singleton vs collection (`/users/{id}/drive` ships renamed `UserDefaultDrive`;
+  `/users/{id}/calendar/events` ships `UserDefaultCalendarEvent`), Info-wrapper navs that
+  never shipped (`pinnedMessages/{id}/message`), and stitched pairs where GET ships from one
+  route and PATCH/DELETE from the other (termStore, agreement file/files).
+- **Decision:** each resolved family is a `NamingOverrides` entry citing the shipped
+  command or the oracle's absence. Two families remain open on #3704 with full evidence:
+  the Identity.Governance mirrored navigations (the shipped survivor alternates by nesting
+  level, needing a dedupe design decision) and the Sites termStore `children` recursion
+  (resolver and direct oracle probes disagree; needs reconciliation before encoding).
+- **Migration impact:** none — suppressed routes never shipped; renames match shipped names.
+- **References:** issue #3704 (remainder inventory + resolver evidence); `NamingOverrides.cs`
+  "Collision resolutions" section.
 
 ## Watch list
 

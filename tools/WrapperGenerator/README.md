@@ -52,7 +52,7 @@ Singularization runs per camel-case word (so `termsAndConditions` → `TermAndCo
 | ends in `ss`/`us`/`is` stays | `Access`, `Status`, `Analysis` |
 | trailing `s` drops | `Messages` → `Message` |
 
-A few published names aren't algorithmic — they come from hand-written directives in the SDK's module configs. Those live as data in `NamingOverrides.cs`, each with a cited source, rather than as special cases in the naming code. There are three today: suppress `PATCH /users/{id}/calendar` (the SDK ships no such cmdlet), rename `GET /users/{id}/calendar` to `…UserDefaultCalendar`, and strip the `Solution` prefix for most `/solutions/*` nouns (for example, `Get-MgBookingBusiness`, not `Get-MgSolutionBookingBusiness`) while preserving it for known exceptions such as BackupRestore (`Get-MgSolutionBackupRestore`).
+A few published names aren't algorithmic, and the spec publishes some routes the SDK never shipped. Both live as data in `NamingOverrides.cs` — renames mirroring the SDK's hand-written AutoRest directives, and suppressions for routes that ship nothing — each entry citing its evidence: the directive when one exists, otherwise the shipped-command inventory. Examples: the `GET /users/{id}/calendar` rename to `…UserDefaultCalendar` (Calendar.md), the `Solution` prefix strip under `/solutions/*` with the BackupRestore exception (Bookings.md), and the self-referential `sites/{id}/sites` rename to `SubSite`/`GroupSubSite` (Sites.md) — without which the sub-sites cmdlets would collide with `Get-MgSite` itself. The generator fails loudly on any such file collision rather than silently overwriting.
 
 ## The one subtle part: list + item GET become one cmdlet
 
@@ -126,7 +126,7 @@ The wrappers compile and run only alongside step 1's output. Wiring the two into
 | `PowerShellWrapperGenerationService.cs` | The orchestrator: walks the paths, pairs list/item GETs, writes the files |
 | `CmdletNaming.cs` | Verb + noun + the `client.X[Y].Z` request chain |
 | `Singularizer.cs` | The per-word singularization rules |
-| `NamingOverrides.cs` | The three hand-cited name exceptions |
+| `NamingOverrides.cs` | Cited rename/suppression data mirroring the shipped SDK surface |
 | `CmdletEmitter.cs` | The C# templates for each cmdlet shape (the actual code text) |
 | `SchemaProperties.cs` | Which body properties become `New`/`Update` parameters |
 | `OperationInfo.cs`, `EmitContext.cs`, `GeneratorConfig.cs` | Small data/config carriers |
@@ -157,7 +157,7 @@ dotnet run --project tools/WrapperGenerator -- `
 ```powershell
 # 1. Naming rules pinned to published Microsoft.Graph names
 dotnet test tools/WrapperGenerator.Tests
-#    => Passed! - Failed: 0, Passed: 103, Total: 103
+#    => Passed! - Failed: 0, Passed: 115, Total: 115
 
 # 2. Parity gate: generate, then check every cmdlet name against Graph's own command inventory
 .\tools\Compare-WrapperCmdletNames.ps1 -GeneratedPath <output-folder>

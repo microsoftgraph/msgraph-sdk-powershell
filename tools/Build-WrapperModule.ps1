@@ -143,7 +143,19 @@ function Build-OneModule {
         }
 
         $wrapperOut = & dotnet run --project $generatorProject -- -d $spec -o $cmdletsDir -n $clientNs 2>&1
-        if ($LASTEXITCODE -ne 0) { $result.FailedAt = 'wrapper-generator'; $result.Error = ($wrapperOut | Select-Object -Last 3) -join ' | '; return $result }
+        if ($LASTEXITCODE -ne 0) {
+            # Skip warnings precede the failure; the exception message is what identifies it.
+            $result.FailedAt = 'wrapper-generator'
+            $lines = @($wrapperOut | ForEach-Object { "$_" })
+            $exception = $lines | Where-Object { $_ -match 'Unhandled exception|Exception:' } | Select-Object -First 1
+            $exceptionIndex = if ($exception) { $lines.IndexOf($exception) } else { -1 }
+            $result.Error = if ($exceptionIndex -ge 0) {
+                ($lines[$exceptionIndex..([Math]::Min($exceptionIndex + 5, $lines.Count - 1))] | Where-Object { $_ -notmatch '^\s+at ' }) -join ' | '
+            } else {
+                ($lines | Where-Object { $_ -notmatch '^\s+at ' } | Select-Object -First 6) -join ' | '
+            }
+            return $result
+        }
 
         # Generated artifact, machine-local by design (absolute reference into this clone).
         $csprojPath = Join-Path $srcDir "$moduleName.csproj"

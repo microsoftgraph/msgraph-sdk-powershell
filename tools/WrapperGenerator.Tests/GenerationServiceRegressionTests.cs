@@ -181,6 +181,83 @@ public sealed class GenerationServiceRegressionTests
         Assert.DoesNotContain(files, f => f != "Shared.g.cs");
     }
 
+    // Two operations resolving to the same cmdlet file must fail generation loudly,
+    // identifying both operations — never silently overwrite. The real shipped collision
+    // (/sites/{id}/sites) is renamed via NamingOverrides, so a synthetic self-referential
+    // path keeps the guard itself exercised.
+    [Fact]
+    public async Task GenerateAsync_FailsLoudlyWhenTwoCmdletsResolveToTheSameFile()
+    {
+        var document = new OpenApiDocument
+        {
+            Paths = new OpenApiPaths(),
+            Components = new OpenApiComponents
+            {
+                Schemas = new Dictionary<string, IOpenApiSchema>
+                {
+                    ["microsoft.graph.widget"] = new OpenApiSchema
+                    {
+                        Type = JsonSchemaType.Object,
+                        Properties = new Dictionary<string, IOpenApiSchema>
+                        {
+                            ["displayName"] = new OpenApiSchema { Type = JsonSchemaType.String },
+                        },
+                    },
+                },
+            },
+        };
+
+        static OpenApiOperation ItemGet(OpenApiDocument doc) => new()
+        {
+            Responses = new OpenApiResponses
+            {
+                ["200"] = new OpenApiResponse
+                {
+                    Content = new Dictionary<string, IOpenApiMediaType>
+                    {
+                        ["application/json"] = new OpenApiMediaType
+                        {
+                            Schema = new OpenApiSchemaReference("microsoft.graph.widget", doc),
+                        },
+                    },
+                },
+            },
+        };
+
+        // /widgets/{id} and /widgets/{id}/widgets/{id2} both singularize to the noun Widget;
+        // with two same-noun item GETs nothing merges, and both emit GetMgWidget.g.cs.
+        document.Paths["/widgets/{widget-id}"] = new OpenApiPathItem
+        {
+            Operations = new Dictionary<HttpMethod, OpenApiOperation> { [HttpMethod.Get] = ItemGet(document) },
+        };
+        document.Paths["/widgets/{widget-id}/widgets/{widget-id1}"] = new OpenApiPathItem
+        {
+            Operations = new Dictionary<HttpMethod, OpenApiOperation> { [HttpMethod.Get] = ItemGet(document) },
+        };
+
+        var outputDir = Path.Combine(Path.GetTempPath(), "wrapper-generator-tests", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(outputDir);
+        try
+        {
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Test.Client", outputDir);
+            var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance);
+
+            var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => service.GenerateAsync(CancellationToken.None));
+
+            Assert.Contains("GetMgWidget.g.cs", ex.Message);
+            Assert.Contains("collision", ex.Message);
+            // Both colliding cmdlets are named Get-MgWidget, so only their builder expressions
+            // prove the message identifies both operations.
+            Assert.Contains("[Widgets[WidgetId]]", ex.Message);
+            Assert.Contains("Widgets[WidgetId].Widgets[WidgetId1]", ex.Message);
+        }
+        finally
+        {
+            if (Directory.Exists(outputDir))
+                Directory.Delete(outputDir, recursive: true);
+        }
+    }
+
     private static OpenApiDocument BuildDocument(HttpMethod method, string path, OpenApiOperation operation)
     {
         return new OpenApiDocument
