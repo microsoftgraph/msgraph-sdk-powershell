@@ -24,7 +24,10 @@ param(
     [string]$Registry = "https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/npm/registry/"
 )
 
-$npmrcContent = "registry=$Registry`nalways-auth=true"
+# Disable npm audit and funding messages: Rush self-installs Rush and pnpm via `npm install`,
+# and npm audit posts to the public registry.npmjs.org audit endpoint (the private feed does not
+# serve it), which breaks CFSClean network isolation. always-auth keeps auth on the private feed.
+$npmrcContent = "registry=$Registry`nalways-auth=true`naudit=false`nfund=false"
 
 # Create .npmrc at repo root for global npm installs (autorest, rush)
 $rootNpmrc = Join-Path $SourcesDirectory ".npmrc"
