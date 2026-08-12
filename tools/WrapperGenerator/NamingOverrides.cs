@@ -213,11 +213,16 @@ public static partial class NamingOverrides
     private static string NormalizePath(string pathTemplate) =>
         PathParamRegex().Replace(pathTemplate, "{}").TrimEnd('/').ToLowerInvariant();
 
-    public static bool IsSuppressed(HttpMethod httpMethod, string pathTemplate)
+    // config carries the API version the derived collision data is keyed by; null (the unit
+    // tests' default) applies only the curated entries below, so a data-file change can never
+    // silently shift a pinned naming expectation.
+    public static bool IsSuppressed(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config = null)
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
         var path = NormalizePath(pathTemplate);
+        if (config is { UseCollisionData: true } && DerivedCollisionResolutions.IsSuppressed(config.ApiVersion, httpMethod, path))
+            return true;
         foreach (var entry in Entries)
         {
             if (entry.Kind == OverrideKind.SuppressOperation && Matches(entry, httpMethod, path))
@@ -226,12 +231,16 @@ public static partial class NamingOverrides
         return false;
     }
 
-    public static string ApplyNounOverrides(HttpMethod httpMethod, string pathTemplate, string noun)
+    public static string ApplyNounOverrides(HttpMethod httpMethod, string pathTemplate, string noun, GeneratorConfig? config = null)
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
         ArgumentNullException.ThrowIfNull(noun);
         var path = NormalizePath(pathTemplate);
+
+        // A derived rename is the published noun verbatim; nothing curated may rewrite it.
+        if (config is { UseCollisionData: true } && DerivedCollisionResolutions.TryReplaceNoun(config.ApiVersion, httpMethod, path, out var derivedNoun))
+            return derivedNoun;
 
         // Published BackupRestore cmdlets retain the Solution prefix (for example,
         // Get-MgSolutionBackupRestore). Do not apply /solutions/* strip rules here.

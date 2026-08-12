@@ -41,7 +41,7 @@ public static class Naming
         [HttpMethod.Delete] = PsVerb.Remove,
     };
 
-    public static CmdletNaming Resolve(OperationInfo operation)
+    public static CmdletNaming Resolve(OperationInfo operation, GeneratorConfig? config = null)
     {
         ArgumentNullException.ThrowIfNull(operation);
         if (!VerbMap.TryGetValue(operation.HttpMethod, out var verb))
@@ -51,7 +51,7 @@ public static class Naming
         // plurality the spec author chose, while the published SDK names follow the path:
         // GET /users/{id}/messages is Get-MgUserMessage. The few hand-tuned exceptions the
         // published SDK carries are mirrored as data in NamingOverrides, never as code here.
-        var noun = GeneratorConstants.NounPrefix + NamingOverrides.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path));
+        var noun = GeneratorConstants.NounPrefix + NamingOverrides.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path), config);
 
         // A list GET (/users/{id}/messages) and its item GET (/users/{id}/messages/{message-id})
         // get the same noun on purpose. PowerShellWrapperGenerationService pairs them into one
@@ -219,7 +219,7 @@ public static class Naming
         // plain list/item pair; without this the two emit identical file names and collide.
         var listCast = TrailingCastMember(list.BuilderExpression);
         var itemCast = TrailingCastMember(item.BuilderExpression);
-        if (listCast is null || !string.Equals(listCast, itemCast, StringComparison.Ordinal))
+        if (listCast is null || itemCast is null || !string.Equals(listCast, itemCast, StringComparison.Ordinal))
             return false;
 
         var listStem = list.BuilderExpression[..^(listCast.Length + 1)];

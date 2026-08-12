@@ -1,0 +1,1254 @@
+[
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementCatalogResourceRoleResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementCatalogResourceRoleResourceScopeResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScopeResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementCatalogResourceScopeResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementCatalogResourceScopeResourceRoleResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRoleResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementResourceRequestCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Remove-MgEntitlementManagementResourceRequestCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}",
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles",
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRole"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRole"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/environment",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleResourceEnvironment"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/environment"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceEnvironment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}",
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes",
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleResourceScope"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleResourceScope"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScopeResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}/resource/environment",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceEnvironment"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}/resource/environment"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScopeResourceEnvironment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/environment",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeResourceEnvironment"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/environment"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceEnvironment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}",
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles",
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeResourceRole"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeResourceRole"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRoleResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}/resource/environment",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceEnvironment"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}/resource/environment"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRoleResourceEnvironment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}",
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles",
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRole"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRole"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/environment",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceEnvironment"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/environment"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceEnvironment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}",
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes",
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}/resource/environment",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceEnvironment"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}/resource/environment"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceEnvironment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/environment",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceEnvironment"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/environment"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceEnvironment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}",
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles",
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+      ]
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}/resource",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}/resource"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}/resource/environment",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceEnvironment"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}/resource/environment"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceEnvironment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "PATCH",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Update-MgEntitlementManagementCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "PATCH",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Update-MgEntitlementManagementCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "PATCH",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Update-MgEntitlementManagementCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "PATCH",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Update-MgEntitlementManagementCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "PATCH",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Update-MgEntitlementManagementResourceRequestCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "PATCH",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "PATCH",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "PATCH",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "Update-MgEntitlementManagementResourceRequestCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "New-MgEntitlementManagementCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "New-MgEntitlementManagementCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "New-MgEntitlementManagementCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "New-MgEntitlementManagementCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "New-MgEntitlementManagementResourceRequestCatalogResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "New-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "New-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        "New-MgEntitlementManagementResourceRequestCatalogResourceScope"
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScope"
+  }
+]

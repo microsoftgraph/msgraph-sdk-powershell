@@ -135,7 +135,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
                 // Skip operations the published SDK deliberately does not ship. NamingOverrides
                 // holds the citation for each one.
-                if (NamingOverrides.IsSuppressed(httpMethod, pathTemplate))
+                if (NamingOverrides.IsSuppressed(httpMethod, pathTemplate, config))
                 {
                     LogSuppressedOperation(httpMethod.Method, pathTemplate);
                     continue;
@@ -168,7 +168,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     : null;
                 var collectionValueSchema = responseSchema is not null ? FindProperty(responseSchema, "value") : null;
 
-                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams));
+                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams), config);
 
                 if (httpMethod == HttpMethod.Get && responseSchema is null)
                 {

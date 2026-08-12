@@ -54,6 +54,8 @@ Singularization runs per camel-case word (so `termsAndConditions` → `TermAndCo
 
 A few published names aren't algorithmic, and the spec publishes some routes the SDK never shipped. Both live as data in `NamingOverrides.cs` — renames mirroring the SDK's hand-written AutoRest directives, and suppressions for routes that ship nothing — each entry citing its evidence: the directive when one exists, otherwise the shipped-command inventory. Examples: the `GET /users/{id}/calendar` rename to `…UserDefaultCalendar` (Calendar.md), the `Solution` prefix strip under `/solutions/*` with the BackupRestore exception (Bookings.md), and the self-referential `sites/{id}/sites` rename to `SubSite`/`GroupSubSite` (Sites.md) — without which the sub-sites cmdlets would collide with `Get-MgSite` itself. The generator fails loudly on any such file collision rather than silently overwriting.
 
+On top of the curated entries sits a **derived** layer: `tools/Derive-CollisionResolutions.ps1` replays every route from the checked-in collision inventory (`data/collision-inventory.v1.0.txt`, captured with `--no-collision-data`) against the shipped-command inventory and emits `data/collision-suppressions.v1.0.json` and `data/collision-renames.v1.0.json` — one exact-match entry per contested method+route, each carrying its oracle evidence. The files are embedded into the generator at build time (generation never reads the 22 MB oracle), applied only when `GeneratorConfig.UseCollisionData` is set, and the script's `-Validate` mode fails if the checked-in files drift from a fresh derivation. Two routes in all of v1.0 are **deferred cross-path merges** — the published SDK serves `Get-MgGroupPhoto` from both `/photo` and `/photos`, and `Get-MgShareListItem` from both `/listItem` and `/list/items`, as parameter-set variants of one cmdlet; the generator keeps the singleton side and suppresses the collection side until cross-path parameter sets land (see [edge-cases/crosspath-merge-edge-cases.md](edge-cases/crosspath-merge-edge-cases.md)). With the derived data applied, a full v1.0 generation across all 39 modules produces zero collisions.
+
 ## The one subtle part: list + item GET become one cmdlet
 
 Graph has two GETs for a resource — the collection (`GET …/messages`) and a single item (`GET …/messages/{message-id}`) — but the published SDK exposes **one** cmdlet, `Get-MgUserMessage`, that does both: no `-MessageId` lists them, a `-MessageId` fetches one.
@@ -150,14 +152,14 @@ dotnet run --project tools/WrapperGenerator -- `
   --include-path '/users/{user-id}/messages/{message-id}*#GET,DELETE'
 ```
 
-`-d` is the spec, `-o` the output folder, `-n` the namespace of the step-1 client the wrappers call. Each `--include-path` is a glob with an optional `#METHOD,METHOD` filter; omit them to generate every operation in the document. Output: `Shared.g.cs`, one `*.g.cs` per cmdlet (in namespace `MgPoC`), and a small `kiota-lock.json` noting the source spec.
+`-d` is the spec, `-o` the output folder, `-n` the namespace of the step-1 client the wrappers call. Each `--include-path` is a glob with an optional `#METHOD,METHOD` filter; omit them to generate every operation in the document. Output: `Shared.g.cs`, one `*.g.cs` per cmdlet (in a namespace derived from `-n` by dropping its trailing `.Client`, e.g. `-n Microsoft.Graph.PowerShell.Mail.Client` emits into `Microsoft.Graph.PowerShell.Mail`), and a small `kiota-lock.json` noting the source spec.
 
 **Test** — two layers:
 
 ```powershell
 # 1. Naming rules pinned to published Microsoft.Graph names
 dotnet test tools/WrapperGenerator.Tests
-#    => Passed! - Failed: 0, Passed: 115, Total: 115
+#    => Passed! - Failed: 0, Passed: 120, Total: 120
 
 # 2. Parity gate: generate, then check every cmdlet name against Graph's own command inventory
 .\tools\Compare-WrapperCmdletNames.ps1 -GeneratedPath <output-folder>
@@ -168,7 +170,7 @@ The unit tests guard the naming rules (their expected values are real published 
 
 ## Gaps / not done yet
 
-- **Output isn't committed into `src/{Module}/`.** `tools/Build-WrapperModule.ps1` now turns a module into an importable build under `artifacts/` (kiota client + wrappers + csproj + PSD1; `tools/Test-WrapperModule.ps1` smoke-tests it), with generation reading the Kiota-compatible docs (`openApiDocs_KiotaCompat`) by default. The target design — wrappers committed into `src/{Module}/` with a per-module namespace instead of `MgPoC` — is still open.
+- **Output isn't committed into `src/{Module}/`.** `tools/Build-WrapperModule.ps1` now turns a module into an importable build under `artifacts/` (kiota client + wrappers + csproj + PSD1; `tools/Test-WrapperModule.ps1` smoke-tests it), with generation reading the Kiota-compatible docs (`openApiDocs_KiotaCompat`) by default. Cmdlets now emit into a per-module namespace (not `MgPoC`) and the generated csproj references Authentication by a relative path, so both are ready to move; the exact target folder under `src/{Module}/{v1.0|beta}/` is still open — the existing AutoRest modules' `.gitignore` there excludes a folder literally named `generated`, so the wrapper output needs a different folder name or that pattern needs updating, or a commit there would silently produce an empty diff.
 - **No runtime base classes or real auth flow.** Shared paging, a proper `Connect-MgGraph`/session integration, and base cmdlet classes are a later phase.
 - **Body binding is shallow** — top-level primitive properties only; no nested/complex types beyond the `passwordProfile` special case.
 - **Some operation shapes aren't generated** — `$count`/`$ref`/`$value`, delta, OData actions/functions, and cast endpoints.

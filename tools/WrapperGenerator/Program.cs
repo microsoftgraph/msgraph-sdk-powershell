@@ -20,6 +20,8 @@ internal static class Program
         string? specPath = null;
         string? outputPath = null;
         string? clientNamespace = null;
+        var apiVersion = "v1.0";
+        var useCollisionData = true;
         var includePaths = new List<string>();
 
         for (var i = 0; i < args.Length; i++)
@@ -34,6 +36,14 @@ internal static class Program
                     break;
                 case "-n" or "--namespace" or "--namespace-name":
                     clientNamespace = ArgValue(args, ref i);
+                    break;
+                case "--api-version":
+                    apiVersion = ArgValue(args, ref i);
+                    break;
+                case "--no-collision-data":
+                    // Derivation mode: tools/Derive-CollisionResolutions.ps1 needs the raw
+                    // collision inventory, so the derived resolutions must not mask it.
+                    useCollisionData = false;
                     break;
                 case "--include-path":
                     includePaths.Add(ArgValue(args, ref i));
@@ -52,7 +62,7 @@ internal static class Program
         if (specPath is null || outputPath is null || clientNamespace is null)
         {
             Console.Error.WriteLine(
-                "Usage: WrapperGenerator -d <openapi> -o <output> -n <namespace> [--include-path '<glob>#GET,POST' ...]");
+                "Usage: WrapperGenerator -d <openapi> -o <output> -n <namespace> [--api-version v1.0|beta] [--no-collision-data] [--include-path '<glob>#GET,POST' ...]");
             return 2;
         }
 
@@ -66,7 +76,8 @@ internal static class Program
 
         IncludePathFilter.Apply(document, includePaths);
 
-        var config = new GeneratorConfig(ClientNamespaceName: clientNamespace, OutputPath: outputPath);
+        var config = new GeneratorConfig(ClientNamespaceName: clientNamespace, OutputPath: outputPath,
+            ApiVersion: apiVersion, UseCollisionData: useCollisionData);
         var service = new PowerShellWrapperGenerationService(document, config, new StderrLogger());
         await service.GenerateAsync(CancellationToken.None).ConfigureAwait(false);
 
