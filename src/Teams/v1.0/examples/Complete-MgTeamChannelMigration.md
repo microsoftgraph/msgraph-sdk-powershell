@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Complete the migration when a channel is in migration mode
 
 ```powershell
 
@@ -7,5 +7,16 @@ Import-Module Microsoft.Graph.Teams
 Complete-MgTeamChannelMigration -TeamId $teamId -ChannelId $channelId
 
 ```
-This example shows how to use the Complete-MgTeamChannelMigration Cmdlet.
+This example will complete the migration when a channel is in migration mode
+
+### Example 2: Complete the migration when a channel isn't in migration mode
+
+```powershell
+
+Import-Module Microsoft.Graph.Teams
+
+Complete-MgTeamChannelMigration -TeamId $teamId -ChannelId $channelId
+
+```
+This example will complete the migration when a channel isn't in migration mode
 

@@ -9,7 +9,7 @@ resource: repository
 configuration:
   branchProtectionRules:
 
-  - branchNamePattern: features/[0-9]*
+  - branchNamePattern: powershell-v3
     # This branch pattern applies to the following branches as of approximately 08/25/2023 14:07:25:
     # features/2.0
 

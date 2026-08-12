@@ -27,6 +27,12 @@ directive:
     set:
       subject: MuteAll$1
   - where:
+      verb: Invoke
+      subject: ^Admit(CommunicationCallParticipantFromLobby)$
+      variant: ^Admit1$|^AdmitExpanded1$|^AdmitViaIdentity1$|^AdmitViaIdentityExpanded1$
+    set:
+      subject: AdmitAll$1
+  - where:
       verb: New
       subject: ^(CommunicationOnlineMeeting)$
       variant: ^Create1$|^CreateExpanded1$

@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 2: Create a subscription targeting a Web Push endpoint
 
 ```powershell
 
@@ -16,5 +16,5 @@ $params = @{
 New-MgBetaSubscription -BodyParameter $params
 
 ```
-This example shows how to use the New-MgBetaSubscription Cmdlet.
+This example will create a subscription targeting a web push endpoint
 

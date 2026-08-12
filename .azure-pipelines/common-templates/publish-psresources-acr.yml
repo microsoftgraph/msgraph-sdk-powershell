@@ -1,0 +1,108 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: AzureSubscription
+    type: string
+  - name: Registry
+    type: string
+  - name: RegistryName
+    type: string
+
+steps:
+  - task: AzurePowerShell@5
+    displayName: 'Publish PowerShell packages to ACR'
+    inputs:
+      azureSubscription: ${{ parameters.AzureSubscription }}
+      ScriptType: InlineScript
+      azurePowerShellVersion: LatestVersion
+      pwsh: true
+      Inline: |
+        $ErrorActionPreference = 'Stop'
+        $minimumPsResourceGetVersion = [version]'1.1.1'
+        $installedModule = Get-Module -ListAvailable -Name Microsoft.PowerShell.PSResourceGet |
+          Where-Object Version -GE $minimumPsResourceGetVersion |
+          Sort-Object Version -Descending |
+          Select-Object -First 1
+
+        if ($null -eq $installedModule) {
+          Install-Module -Name Microsoft.PowerShell.PSResourceGet -MinimumVersion $minimumPsResourceGetVersion -Scope CurrentUser -Force -AllowClobber
+        }
+        Import-Module Microsoft.PowerShell.PSResourceGet -MinimumVersion $minimumPsResourceGetVersion -Force
+
+        $repositoryName = '${{ parameters.RegistryName }}'
+        $existingRepository = Get-PSResourceRepository -Name $repositoryName -ErrorAction SilentlyContinue
+        if ($null -ne $existingRepository) {
+          Unregister-PSResourceRepository -Name $repositoryName
+        }
+        Register-PSResourceRepository -Name $repositoryName -Uri 'https://${{ parameters.Registry }}'
+
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        function Get-PackageMetadata {
+          param([Parameter(Mandatory)][string] $PackagePath)
+
+          $archive = [System.IO.Compression.ZipFile]::OpenRead($PackagePath)
+          try {
+            $nuspecEntry = $archive.Entries | Where-Object FullName -Like '*.nuspec' | Select-Object -First 1
+            if ($null -eq $nuspecEntry) {
+              throw "Package '$PackagePath' doesn't contain a nuspec file."
+            }
+
+            $reader = [System.IO.StreamReader]::new($nuspecEntry.Open())
+            try {
+              [xml] $nuspec = $reader.ReadToEnd()
+            }
+            finally {
+              $reader.Dispose()
+            }
+
+            return [pscustomobject]@{
+              Id = [string]$nuspec.package.metadata.id
+              Version = [string]$nuspec.package.metadata.version
+              Path = $PackagePath
+            }
+          }
+          finally {
+            $archive.Dispose()
+          }
+        }
+
+        $artifactPath = '$(System.DefaultWorkingDirectory)/drop'
+        $packages = @(Get-ChildItem -Path $artifactPath -Recurse -File -Filter 'Microsoft.Graph*.nupkg' |
+          ForEach-Object { Get-PackageMetadata -PackagePath $_.FullName })
+        if ($packages.Count -eq 0) {
+          throw "No Microsoft Graph PowerShell packages were found under '$artifactPath'."
+        }
+
+        $packages = $packages | Sort-Object @{
+          Expression = {
+            if ($_.Id -eq 'Microsoft.Graph.Authentication') { 0 }
+            elseif ($_.Id -in @('Microsoft.Graph', 'Microsoft.Graph.Beta')) { 2 }
+            else { 1 }
+          }
+        }, Id
+
+        foreach ($package in $packages) {
+          $existingPackage = Find-PSResource -Name $package.Id -Version $package.Version -Repository $repositoryName -ErrorAction SilentlyContinue
+          if ($null -ne $existingPackage) {
+            Write-Host "$($package.Id) $($package.Version) already exists in $repositoryName; continuing the idempotent deployment."
+            continue
+          }
+
+          Write-Host "Publishing $($package.Id) $($package.Version) to $repositoryName."
+          $prefix = "public/psresource"
+          Publish-PSResource -NupkgPath $package.Path -Repository $repositoryName -ModulePrefix $prefix -ErrorAction Stop
+        }
+
+        foreach ($package in $packages) {
+          $foundPackage = $null
+          for ($attempt = 1; $attempt -le 6 -and $null -eq $foundPackage; $attempt++) {
+            $foundPackage = Find-PSResource -Name $package.Id -Version $package.Version -Repository $repositoryName -ErrorAction SilentlyContinue
+            if ($null -eq $foundPackage -and $attempt -lt 6) {
+              Start-Sleep -Seconds 10
+            }
+          }
+          if ($null -eq $foundPackage) {
+            throw "Published package '$($package.Id)' version '$($package.Version)' couldn't be found in ACR."
+          }
+        }

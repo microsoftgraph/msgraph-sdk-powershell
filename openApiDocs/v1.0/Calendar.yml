@@ -19493,6 +19493,10 @@ components:
               type: string
               description: The phone number of the place.
               nullable: true
+            placeId:
+              type: string
+              description: A stable service-level identifier for the place object used by Places workloads.
+              nullable: true
             tags:
               type: array
               items:
@@ -19653,6 +19657,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.mailboxDetails'
             mode:
               $ref: '#/components/schemas/microsoft.graph.placeMode'
+            servicePlans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.placeServicePlanInfo'
+              description: The service plans associated with the desk.
           additionalProperties:
             type: object
     microsoft.graph.floor:
@@ -19715,10 +19724,6 @@ components:
             nickname:
               type: string
               description: 'Specifies a nickname for the room, for example, ''conf room''.'
-            placeId:
-              type: string
-              description: An alternative immutable unique identifier of the room. Read-only.
-              nullable: true
             teamsEnabledState:
               $ref: '#/components/schemas/microsoft.graph.placeFeatureEnablement'
             videoDeviceName:
@@ -19775,10 +19780,6 @@ components:
             nickname:
               type: string
               description: 'A short, friendly name for the workspace, often used for easier identification or display in the UI.'
-            placeId:
-              type: string
-              description: An alternative immutable unique identifier of the workspace. Read-only.
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.section:
@@ -20251,6 +20252,16 @@ components:
     microsoft.graph.placeMode:
       title: placeMode
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.placeServicePlanInfo:
+      title: placeServicePlanInfo
+      type: object
+      properties:
+        servicePlanId:
+          type: string
+          description: The service plan identifier.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingType:
