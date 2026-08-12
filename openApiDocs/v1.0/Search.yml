@@ -2656,6 +2656,8 @@ components:
               description: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
             content:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItemContent'
+            informationProtectionLabel:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItemInformationProtectionLabel'
             properties:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.properties'
             activities:
@@ -3067,6 +3069,15 @@ components:
         value:
           type: string
           description: The content for the externalItem. Required.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.externalItemInformationProtectionLabel:
+      title: externalItemInformationProtectionLabel
+      type: object
+      properties:
+        sensitivityLabelId:
+          type: string
           nullable: true
       additionalProperties:
         type: object

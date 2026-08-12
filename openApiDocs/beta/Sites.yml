@@ -93691,6 +93691,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
             solutions:
               $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
+            sponsorOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that''s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.'
+              x-ms-navigationProperty: true
             sponsors:
               type: array
               items:
@@ -98278,6 +98284,12 @@ components:
               type: boolean
             lastLoginResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcLoginResult'
+            lastLogoffDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the user last logged off from the Cloud PC session. Returns null if the user has never established a session or if a session is currently active. The timestamp is shown in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only when explicitly selected with $select.'
+              format: date-time
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -98928,12 +98940,6 @@ components:
             personIdentifier:
               type: string
               nullable: true
-            distributionListMembers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.distributionListMember'
-              description: The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.
-              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
@@ -104801,7 +104807,7 @@ components:
           type: object
           properties:
             body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -104856,7 +104862,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
               description: 'References to attached objects like files, tabs, meetings etc.'
             body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
             channelIdentity:
               $ref: '#/components/schemas/microsoft.graph.channelIdentity'
             chatId:
@@ -105784,26 +105790,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.distributionListMember:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: distributionListMember
-          type: object
-          properties:
-            contactId:
-              type: string
-              description: 'The ID of the referenced contact, if applicable. Read-only.'
-              nullable: true
-            displayName:
-              type: string
-              description: The display name of the member. Read-only.
-              nullable: true
-            recipientType:
-              $ref: '#/components/schemas/microsoft.graph.recipientType'
-            contact:
-              $ref: '#/components/schemas/microsoft.graph.contact'
-          additionalProperties:
-            type: object
     microsoft.graph.engagementRole:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -109494,6 +109480,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerHistoryItem'
+              description: Collection of history items for entities in the plan. Read-only. Nullable.
               x-ms-navigationProperty: true
             tasks:
               type: array
@@ -112203,6 +112190,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageBody:
+      title: chatMessageBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the chat message.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+        messageBodyContentType:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageBodyContentType'
+      additionalProperties:
+        type: object
     microsoft.graph.eventMessageDetail:
       title: eventMessageDetail
       type: object
@@ -115106,7 +115107,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
       additionalProperties:
         type: object
@@ -115383,6 +115384,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             entityId:
               type: string
+              description: The ID of the entity that was changed.
             entityType:
               $ref: '#/components/schemas/microsoft.graph.historyEntityType'
             eventType:
@@ -115390,10 +115392,12 @@ components:
             occurredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the change occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             planId:
               type: string
+              description: The ID of the plan that contains the changed entity.
           additionalProperties:
             type: object
     microsoft.graph.plannerAppliedCategories:
@@ -116089,6 +116093,13 @@ components:
             deleted:
               type: number
               format: int64
+              nullable: true
+            familyMembersUsage:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.familyMemberStorageQuota'
+            isPooledStorageEnabled:
+              type: boolean
               nullable: true
             manageWebUrl:
               type: string
@@ -118068,6 +118079,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageBodyContentType:
+      title: chatMessageBodyContentType
+      enum:
+        - text
+        - html
+        - markdown
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -118212,6 +118231,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.contextMetadata'
         deviceMetadata:
           $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        evaluationScope:
+          $ref: '#/components/schemas/microsoft.graph.evaluationScope'
         integratedAppMetadata:
           $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
         protectedAppMetadata:
@@ -119631,6 +119652,20 @@ components:
           description: Start time for the time range.
           format: time
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.familyMemberStorageQuota:
+      title: familyMemberStorageQuota
+      type: object
+      properties:
+        additionalAllocations:
+          $ref: '#/components/schemas/microsoft.graph.additionalStorageAllocations'
+        used:
+          type: number
+          format: int64
+          nullable: true
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
       additionalProperties:
         type: object
     microsoft.graph.serviceStorageQuotaBreakdown:
@@ -122004,6 +122039,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
       additionalProperties:
         type: object
+    microsoft.graph.evaluationScope:
+      title: evaluationScope
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.evaluationScopeType'
+      additionalProperties:
+        type: object
     microsoft.graph.integratedApplicationMetadata:
       title: integratedApplicationMetadata
       type: object
@@ -122025,6 +122068,8 @@ components:
           type: object
           properties:
             applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+            sourceLocation:
               $ref: '#/components/schemas/microsoft.graph.policyLocation'
           additionalProperties:
             type: object
@@ -122216,6 +122261,20 @@ components:
           type: string
           description: 'The date and time when the reaction was added. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.additionalStorageAllocations:
+      title: additionalStorageAllocations
+      type: object
+      properties:
+        bonusQuotaInBytes:
+          type: number
+          format: int64
+          nullable: true
+        subscriptionQuotaInBytes:
+          type: number
+          format: int64
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.storageQuotaBreakdown:
@@ -122982,11 +123041,11 @@ components:
         - uploadFile
         - downloadText
         - downloadFile
+        - unknownFutureValue
         - copyToClipboard
         - pasteFromClipboard
         - print
         - accessDebugTools
-        - unknownFutureValue
       type: string
     microsoft.graph.contentBase:
       title: contentBase
@@ -123019,6 +123078,14 @@ components:
           description: The version string of the operating system.
       additionalProperties:
         type: object
+    microsoft.graph.evaluationScopeType:
+      title: evaluationScopeType
+      enum:
+        - tenant
+        - agent
+        - anonymousUser
+        - unknownFutureValue
+      type: string
     microsoft.graph.policyLocation:
       title: policyLocation
       type: object

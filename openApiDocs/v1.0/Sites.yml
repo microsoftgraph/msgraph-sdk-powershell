@@ -10212,6 +10212,7 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.site.list.item_ListPermission
       parameters:
         - name: group-id
@@ -10350,6 +10351,7 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.site.list.item_GetPermission
       parameters:
         - name: group-id
@@ -12144,6 +12146,7 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.site.list_ListPermission
       parameters:
         - name: group-id
@@ -12266,6 +12269,7 @@ paths:
       tags:
         - groups.site
       summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.site.list_GetPermission
       parameters:
         - name: group-id
@@ -75009,7 +75013,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get permissions from sites
+      summary: List permissions on a listItem
+      description: Get a list of the permission objects associated with a listItem.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/listitem-list-permissions?view=graph-rest-1.0
       operationId: site.list.item_ListPermission
       parameters:
         - name: site-id
@@ -75132,6 +75140,7 @@ paths:
       tags:
         - sites.list
       summary: Get permissions from sites
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: site.list.item_GetPermission
       parameters:
         - name: site-id
@@ -76707,7 +76716,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get permissions from sites
+      summary: List permissions on a list
+      description: Get a list of the permission objects associated with a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/list-list-permissions?view=graph-rest-1.0
       operationId: site.list_ListPermission
       parameters:
         - name: site-id
@@ -76773,7 +76786,11 @@ paths:
     post:
       tags:
         - sites.list
-      summary: Create new navigation property to permissions for sites
+      summary: Create permission on a list
+      description: Create a new permission object on a list.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/list-post-permissions?view=graph-rest-1.0
       operationId: site.list_CreatePermission
       parameters:
         - name: site-id
@@ -76814,6 +76831,7 @@ paths:
       tags:
         - sites.list
       summary: Get permissions from sites
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: site.list_GetPermission
       parameters:
         - name: site-id
@@ -118322,6 +118340,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
             solutions:
               $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
+            sponsorOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that''s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.'
+              x-ms-navigationProperty: true
             sponsors:
               type: array
               items:
@@ -118510,6 +118534,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
             subscriptions:
               type: array
@@ -118547,6 +118572,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
             versions:
               type: array
@@ -125971,6 +125997,9 @@ components:
               type: boolean
               description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
+            organizationId:
+              type: string
+              nullable: true
             preferredDataLocation:
               type: string
               description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned at least one of the following Microsoft Entra roles: User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
@@ -127474,6 +127503,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             chatRestrictions:
               $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            cloudVideoInteropInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudVideoInteropInfo'
             expiryDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -127506,6 +127537,8 @@ components:
               type: string
               description: Specifies the spoken language used during the meeting for recording and transcription purposes.
               nullable: true
+            meetingType:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingType'
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -130563,6 +130596,24 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudVideoInteropInfo:
+      title: cloudVideoInteropInfo
+      type: object
+      properties:
+        moreInfoWebUrl:
+          type: string
+          description: Provides other video teleconferencing (VTC) dial-in options. Read-only.
+          nullable: true
+        tenantKey:
+          type: string
+          description: The tenant key that is used to dial into the interactive voice response (IVR) of the partner CVI service.
+          nullable: true
+        videoTeleconferenceId:
+          type: string
+          description: The video teleconferencing ID. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -130593,6 +130644,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingType:
+      title: onlineMeetingType
+      enum:
+        - adhoc
+        - scheduled
+        - recurring
+        - broadcast
+        - meetnow
+        - unknownFutureValue
+      type: string
     microsoft.graph.onlineMeetingSensitivityLabelAssignment:
       title: onlineMeetingSensitivityLabelAssignment
       type: object
@@ -134662,6 +134723,8 @@ components:
       properties:
         content:
           $ref: '#/components/schemas/microsoft.graph.contentBase'
+        contentCategory:
+          $ref: '#/components/schemas/microsoft.graph.contentCategory'
         correlationId:
           type: string
           description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
@@ -135057,12 +135120,23 @@ components:
         - downloadText
         - downloadFile
         - unknownFutureValue
+        - copyToClipboard
+        - pasteFromClipboard
+        - print
+        - accessDebugTools
       type: string
     microsoft.graph.contentBase:
       title: contentBase
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.contentCategory:
+      title: contentCategory
+      enum:
+        - none
+        - ai
+        - unknownFutureValue
+      type: string
     microsoft.graph.operatingSystemSpecifications:
       title: operatingSystemSpecifications
       type: object
