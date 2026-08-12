@@ -19,6 +19,7 @@ require:
 directive:
 # Remove invalid paths.
   - remove-path-by-operation: ^(team_GetGroup|user\.joinedTeam.*|user_(Get|Update|Delete|Create)JoinedTeam|.*_UpdateInstalledApp)$
+  - remove-path-by-operation: ^teamwork\.teamTemplate\.definition\.teamDefinition\.(channel|primaryChannel)\.planner\.plan\.(bucket\.)?task\.message_(setReaction|unsetReaction)$
 # Remove cmdlets
   - where:
       verb: Remove

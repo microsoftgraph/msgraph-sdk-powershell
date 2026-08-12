@@ -1,11 +1,22 @@
-### Example 1: Code snippet
+### Example 1: Get application template
 
 ```powershell
 
 Import-Module Microsoft.Graph.Applications
 
-Get-MgApplicationTemplate
+Get-MgApplicationTemplate -ApplicationTemplateId $applicationTemplateId
 
 ```
-This example shows how to use the Get-MgApplicationTemplate Cmdlet.
+This example will get application template
+
+### Example 2: Get application template with optional properties
+
+```powershell
+
+Import-Module Microsoft.Graph.Applications
+
+Get-MgApplicationTemplate -ApplicationTemplateId $applicationTemplateId -Property "id,displayName,riskScore,riskFactors" 
+
+```
+This example will get application template with optional properties
 

@@ -22,7 +22,15 @@ Describe 'Connect-MgGraph ParameterSets' {
         $UserParameterSet | Should -Not -BeNull
         $UserParameterSet.IsDefault | Should -BeTrue
         $UserParameterSet.Parameters | Where-Object IsMandatory | Should -HaveCount 0
-        @('ClientId', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $UserParameterSet.Parameters.Name
+        @('ClientId', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout', 'LoginHint') | Should -BeIn $UserParameterSet.Parameters.Name
+    }
+
+    It 'Should have an optional LoginHint parameter only in UserParameterSet' {
+        $LoginHintParameter = $ConnectMgGraphCommand.Parameters['LoginHint']
+        $LoginHintParameter | Should -Not -BeNull
+        $LoginHintParameter.ParameterType | Should -Be ([string])
+        $LoginHintParameter.ParameterSets.Keys | Should -Be 'UserParameterSet'
+        $LoginHintParameter.ParameterSets['UserParameterSet'].IsMandatory | Should -BeFalse
     }
 
     It 'Should have AppCertificateParameterSet' {

@@ -96,3 +96,10 @@ If the authentication popup hangs or times out when connecting to a sovereign cl
 PS C:\> Connect-MgGraph -ContextScope Process
 ```
 To connect as a different identity other than CurrentUser, specify the -ContextScope parameter with the value Process.
+
+### Example 15: Delegated access: Pre-populating the account during interactive sign-in
+```powershell
+PS C:\> Connect-MgGraph -Scopes "User.Read.All" -LoginHint "user@contoso.com"
+```
+Use the -LoginHint parameter to pre-populate the account (login_hint) shown in the interactive browser sign-in prompt.
+On Windows, WAM may still display the account picker on the first sign-in for an account; later sign-ins with the same -LoginHint are silent.

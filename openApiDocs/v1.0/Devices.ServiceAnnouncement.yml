@@ -490,7 +490,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Invoke function incidentReport
-      description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
+      description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document doesn't exist for the issue.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
@@ -647,7 +647,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceHealthIssue
-      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue doesn't exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
@@ -753,7 +753,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Invoke function incidentReport
-      description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document does not exist for the issue.
+      description: Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn't exist for the tenant or if PIR document doesn't exist for the issue.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
@@ -880,7 +880,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceUpdateMessage
-      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
+      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message doesn't exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0
@@ -1699,19 +1699,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealth'
-              description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and read-only.'
               x-ms-navigationProperty: true
             issues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
-              description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and read-only.'
               x-ms-navigationProperty: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
-              description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and read-only.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object

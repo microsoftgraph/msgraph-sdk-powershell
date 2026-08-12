@@ -10,7 +10,7 @@ parameters:
   default: true
 - name: Pack
   type: boolean
-  default: false
+  default: true
 - name: Sign
   type: boolean
   default: true
@@ -27,7 +27,9 @@ variables:
   BuildAgent: ${{ parameters.BuildAgent }}
   GitUserEmail: "GraphTooling@service.microsoft.com"
   GitUserName: "Microsoft Graph DevX Tooling"
+  ACR_SERVICE_CONNECTION: 'ACR Images Push Service Connection'
   REGISTRY: 'msgraphprodregistry.azurecr.io'
+  REGISTRY_NAME: 'msgraphprodregistry'
   IMAGE_NAME: 'public/microsoftgraph/powershell'
 
 trigger:
@@ -74,6 +76,32 @@ extends:
               artifactName: 'drop'
               publishLocation: 'Container'
         steps:
+        - checkout: self
+          fetchDepth: 2
+        - task: PowerShell@2
+          name: DetectAcrChanges
+          displayName: Detect ACR publishing changes
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              . $(System.DefaultWorkingDirectory)/tools/AcrPipelineHelpers.ps1
+              $changedPaths = @(git diff --name-only HEAD^1 HEAD)
+              if ($LASTEXITCODE -ne 0) {
+                throw "Failed to determine changed paths with exit code $LASTEXITCODE."
+              }
+              $shouldPublish = Test-AcrPublishPath -Path $changedPaths
+              Write-Host "Changed paths:`n$($changedPaths -join "`n")"
+              Write-Host "##vso[task.setvariable variable=ShouldPublishToAcr;isOutput=true]$($shouldPublish.ToString().ToLowerInvariant())"
+        - task: PowerShell@2
+          displayName: Set CI module prerelease version
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              . $(System.DefaultWorkingDirectory)/tools/AcrPipelineHelpers.ps1
+              $prerelease = Set-CiModulePrerelease -MetadataPath '$(System.DefaultWorkingDirectory)/config/ModuleMetadata.json' -BuildId '$(Build.BuildId)'
+              Write-Host "Building PowerShell packages with prerelease suffix '$prerelease'."
         - script: |
             git submodule update --init --recursive
         - template: .azure-pipelines/common-templates/install-tools.yml@self
@@ -106,3 +134,22 @@ extends:
               Pattern: "Microsoft.Graph*.nupkg"
 
         - template: .azure-pipelines/common-templates/security-post-checks.yml@self
+    - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+      - stage: Deploy_to_ACR
+        displayName: Deploy PowerShell packages to ACR
+        dependsOn: stage
+        condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), ne(variables['Build.Reason'], 'PullRequest'), eq(dependencies.stage.outputs['MsGraphPsSdkCiBuild.DetectAcrChanges.ShouldPublishToAcr'], 'true'))
+        jobs:
+        - job: DeployPowerShellPackagesToAcr
+          displayName: Deploy PowerShell packages to ACR
+          templateContext:
+            inputs:
+              - input: pipelineArtifact
+                artifactName: drop
+                targetPath: '$(System.DefaultWorkingDirectory)/drop'
+          steps:
+          - template: .azure-pipelines/common-templates/publish-psresources-acr.yml@self
+            parameters:
+              AzureSubscription: $(ACR_SERVICE_CONNECTION)
+              Registry: $(REGISTRY)
+              RegistryName: $(REGISTRY_NAME)
