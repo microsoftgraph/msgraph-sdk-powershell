@@ -12,6 +12,11 @@ Method+Uri -> Command inventory in MgCommandMetadata.json, and reports whether t
 emitted [Cmdlet(...)] name matches what the oracle says the published SDK calls that
 operation.
 
+A small set of published names are known AutoRest defects the generator deliberately
+corrects instead of reproducing (tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md
+is the catalog). Those are matched against the $deliberateCorrections table below and
+reported as [CORRECTED] rather than [MISMATCH]; they do not fail the gate.
+
 Dispatcher cmdlets (the paired-GET public cmdlet that only forwards to its internal
 _List/_Get siblings via InvokeCommand.InvokeScript - see CmdletEmitter.EmitGetDispatcher)
 contain no direct Graph call, so there is nothing to reconstruct from their source; they
@@ -126,6 +131,17 @@ function Get-ModuleApiVersion {
     return $null
 }
 
+# Published names the generator deliberately corrects instead of reproducing. Each entry maps
+# the shipped (wrong) command to the corrected one the generator emits, and must have a matching
+# entry in tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md and a pinned naming test.
+# The gate reports these as [CORRECTED] instead of [MISMATCH] and does not fail on them.
+$deliberateCorrections = @{
+    # AutoRest inflected the trailing /whois segment to "Whoi"; the other 28 whois-family
+    # cmdlets (whoisRecords, whoisHistoryRecords) all keep "Whois".
+    'Get-MgSecurityThreatIntelligenceHostWhoi'     = 'Get-MgSecurityThreatIntelligenceHostWhois'
+    'Get-MgBetaSecurityThreatIntelligenceHostWhoi' = 'Get-MgBetaSecurityThreatIntelligenceHostWhois'
+}
+
 Write-Host "Loading oracle from $OraclePath ..."
 $oracle = Get-Content -Path $OraclePath -Raw | ConvertFrom-Json
 
@@ -174,6 +190,7 @@ $totalMatched = 0
 $totalMismatches = 0
 $totalDispatchers = 0
 $totalUnparseable = 0
+$totalCorrected = 0
 
 foreach ($module in $modules | Sort-Object Name) {
     $files = Get-ChildItem -Path $module.Path -Filter '*.g.cs' -File | Sort-Object Name
@@ -182,7 +199,9 @@ foreach ($module in $modules | Sort-Object Name) {
     $moduleMatched = 0
     $moduleDispatchers = 0
     $moduleUnparseable = 0
+    $moduleCorrected = 0
     $moduleSkips = @()
+    $moduleCorrections = @()
     $moduleProblems = @()
 
     foreach ($file in $files) {
@@ -238,16 +257,25 @@ foreach ($module in $modules | Sort-Object Name) {
             $moduleMatched++
         }
         else {
-            $moduleProblems += "  [MISMATCH] $($file.Name): generated '$expectedCommand', oracle says '$($candidates | Select-Object -First 1)' for $method $normalizedUri."
+            $oracleCommand = $candidates | Select-Object -First 1
+            if ($deliberateCorrections[$oracleCommand] -eq $expectedCommand) {
+                $moduleCorrected++
+                $moduleCorrections += "  [CORRECTED] $($file.Name): oracle ships '$oracleCommand'; generator deliberately emits '$expectedCommand' (see tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md)."
+            }
+            else {
+                $moduleProblems += "  [MISMATCH] $($file.Name): generated '$expectedCommand', oracle says '$oracleCommand' for $method $normalizedUri."
+            }
         }
     }
 
     $status = if ($moduleJoinable -eq 0) { 'n/a' } else { "$moduleMatched of $moduleJoinable" }
     $dispatcherNote = if ($moduleDispatchers -gt 0) { " (+$moduleDispatchers dispatcher cmdlet(s), no direct call to verify)" } else { '' }
     $castNote = if ($moduleUnparseable -gt 0) { " (+$moduleUnparseable cast cmdlet(s) skipped, not generated end to end yet)" } else { '' }
+    $correctedNote = if ($moduleCorrected -gt 0) { " (+$moduleCorrected deliberately corrected name(s))" } else { '' }
     $versionNote = if ($apiVersion) { " [$apiVersion]" } else { ' [ApiVersion unknown - searched all versions]' }
-    Write-Host "$($module.Name)$($versionNote): $status cmdlets match the oracle$dispatcherNote$castNote"
+    Write-Host "$($module.Name)$($versionNote): $status cmdlets match the oracle$dispatcherNote$castNote$correctedNote"
     foreach ($line in $moduleSkips) { Write-Host $line -ForegroundColor DarkYellow }
+    foreach ($line in $moduleCorrections) { Write-Host $line -ForegroundColor DarkCyan }
     foreach ($line in $moduleProblems) { Write-Host $line -ForegroundColor Yellow }
 
     $totalJoinable += $moduleJoinable
@@ -255,10 +283,11 @@ foreach ($module in $modules | Sort-Object Name) {
     $totalMismatches += $moduleProblems.Count
     $totalDispatchers += $moduleDispatchers
     $totalUnparseable += $moduleUnparseable
+    $totalCorrected += $moduleCorrected
 }
 
 Write-Host ''
-Write-Host "TOTAL: $totalMatched of $totalJoinable cmdlets match the oracle across $($modules.Count) module(s) (+$totalDispatchers dispatcher cmdlet(s) skipped, +$totalUnparseable cast cmdlet(s) skipped)."
+Write-Host "TOTAL: $totalMatched of $totalJoinable cmdlets match the oracle across $($modules.Count) module(s) (+$totalDispatchers dispatcher cmdlet(s) skipped, +$totalUnparseable cast cmdlet(s) skipped, +$totalCorrected deliberately corrected)."
 
 if ($totalMismatches -gt 0) {
     exit 1
