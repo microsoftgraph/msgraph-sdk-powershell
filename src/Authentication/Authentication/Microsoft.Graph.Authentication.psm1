@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Loader
 
         private static Assembly Resolve(AssemblyLoadContext context, AssemblyName assemblyName)
         {
-            if (context == null || assemblyName == null)
+            if (context == null || assemblyName == null || string.IsNullOrWhiteSpace(assemblyName.Name))
             {
                 return null;
             }
@@ -91,7 +91,7 @@ function Import-GraphAuthenticationAssembly {
     )
 
     if ($PSEdition -ne 'Core' -or -not ('System.Runtime.Loader.AssemblyLoadContext' -as [type])) {
-        return Import-Module -Name $ModulePath -PassThru
+        return Import-Module -LiteralPath $ModulePath -PassThru
     }
 
     $loadContextName = Get-GraphAuthenticationLoadContextName -ModulePath $ModulePath
