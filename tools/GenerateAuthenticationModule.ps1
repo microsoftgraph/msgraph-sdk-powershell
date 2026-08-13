@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 [CmdletBinding()]
 Param(
-  [string] $RepositoryName = "PSGallery",
+  [string] $RepositoryName = "PowerShell_V2_Build",
   [string] $RepositoryApiKey,
   [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
   [switch] $Build,

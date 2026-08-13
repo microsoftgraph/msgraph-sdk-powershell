@@ -66,7 +66,11 @@ if ($ModuleFullName -ne "Microsoft.Graph.Authentication") {
 }
 
 # Lock module GUID. See https://github.com/Azure/autorest.powershell/issues/981.
-$ExistingModule = Find-Module $ModuleFullName -Repository PSGallery -ErrorAction SilentlyContinue
+# CFSClean: authenticate module queries to the private feed (credential from the build token).
+. (Join-Path $PSScriptRoot 'Get-CfsFeedCredential.ps1')
+$__cfsCred = Get-CfsFeedCredential
+if ($null -ne $__cfsCred) { $PSDefaultParameterValues['Find-Module:Credential'] = $__cfsCred }
+$ExistingModule = Find-Module $ModuleFullName -Repository (Get-CfsFeedName) -ErrorAction SilentlyContinue
 $ModuleGuid = ($null -eq $ExistingModule) ? (New-Guid).Guid : $ExistingModule.AdditionalMetadata.GUID
 
 [HashTable]$ModuleManifestSettings = @{
