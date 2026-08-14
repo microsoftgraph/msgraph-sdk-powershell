@@ -252,6 +252,10 @@ Generated_Code/
 # because we have git ;-)
 _UpgradeReport_Files/
 Backup*/
+# ...but src/BackupRestore is a Graph service module, not a Visual Studio backup folder. The
+# rule above excludes the directory itself, so git never descends into it; re-including the
+# directory is what makes its generated output committable at all.
+!src/BackupRestore/
 UpgradeLog*.XML
 UpgradeLog*.htm
 ServiceFabricBackup/

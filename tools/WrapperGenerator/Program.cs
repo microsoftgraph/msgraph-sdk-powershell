@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 
@@ -22,6 +23,7 @@ internal static class Program
         string? clientNamespace = null;
         var apiVersion = "v1.0";
         var useCollisionData = true;
+        var logLevel = LogLevel.Warning;
         var includePaths = new List<string>();
 
         for (var i = 0; i < args.Length; i++)
@@ -39,6 +41,13 @@ internal static class Program
                     break;
                 case "--api-version":
                     apiVersion = ArgValue(args, ref i);
+                    break;
+                case "--log-level":
+                    if (!Enum.TryParse(ArgValue(args, ref i), ignoreCase: true, out logLevel))
+                    {
+                        Console.Error.WriteLine("--log-level expects one of: Trace, Debug, Information, Warning, Error, Critical, None");
+                        return 2;
+                    }
                     break;
                 case "--no-collision-data":
                     // Derivation mode: tools/Derive-CollisionResolutions.ps1 needs the raw
@@ -62,7 +71,7 @@ internal static class Program
         if (specPath is null || outputPath is null || clientNamespace is null)
         {
             Console.Error.WriteLine(
-                "Usage: WrapperGenerator -d <openapi> -o <output> -n <namespace> [--api-version v1.0|beta] [--no-collision-data] [--include-path '<glob>#GET,POST' ...]");
+                "Usage: WrapperGenerator -d <openapi> -o <output> -n <namespace> [--api-version v1.0|beta] [--no-collision-data] [--log-level Information] [--include-path '<glob>#GET,POST' ...]");
             return 2;
         }
 
@@ -78,7 +87,7 @@ internal static class Program
 
         var config = new GeneratorConfig(ClientNamespaceName: clientNamespace, OutputPath: outputPath,
             ApiVersion: apiVersion, UseCollisionData: useCollisionData);
-        var service = new PowerShellWrapperGenerationService(document, config, new StderrLogger());
+        var service = new PowerShellWrapperGenerationService(document, config, new StderrLogger(logLevel));
         await service.GenerateAsync(CancellationToken.None).ConfigureAwait(false);
 
         // The generation service writes only *.g.cs. Also write a minimal kiota-lock.json recording

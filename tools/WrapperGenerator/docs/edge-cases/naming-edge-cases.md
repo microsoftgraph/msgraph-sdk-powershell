@@ -184,6 +184,28 @@ Entry template (keep the field names exact so the file converts cleanly):
 - **References:** issue #3704 (remainder inventory + resolver evidence); `NamingOverrides.cs`
   "Collision resolutions" section.
 
+## `-Password` / `-ForceChangePasswordNextSignIn` replaced by typed `-PasswordProfile`
+
+- **Class:** wrapper-surface-change
+- **Status:** corrected
+- **Evidence:** while body binding was primitives-only, `passwordProfile` was hard-coded into
+  two invented parameters so `New-MgUser` was usable at all. Neither name is published: the
+  shipped SDK exposes `-PasswordProfile` as a typed parameter taking a hashtable, and
+  `passwordProfile` is an ordinary complex property in the spec
+  (`anyOf[$ref microsoft.graph.passwordProfile, nullable]`), not a special case.
+- **Decision:** typed binding covers every referenced-model property, so the hard-coded pair
+  was deleted along with the flag that emitted it. `New-MgUser -PasswordProfile @{ Password =
+  '...'; ForceChangePasswordNextSignIn = $true }` replaces them and matches the published
+  surface.
+- **Migration impact:** breaking for anyone using the prototype's `-Password` /
+  `-ForceChangePasswordNextSignIn`. This changes only the wrapper prototype's own surface -
+  no published cmdlet had these parameters - and it moves toward parity rather than away.
+  One behaviour note: the removed code defaulted `ForceChangePasswordNextSignIn` to `true`
+  when only `-Password` was supplied; the typed parameter passes through exactly what the
+  caller sets, matching Graph's own default handling.
+- **References:** issue #3707; `SchemaProperties.Classify`; `EmitsComplexPropertyAsTypedModelParameter`
+  in EmitterTests.
+
 ## Watch list
 
 Cases spotted but deliberately not acted on yet, so they aren't lost:

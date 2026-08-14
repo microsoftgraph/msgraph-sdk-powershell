@@ -100,7 +100,7 @@ public static partial class Singularizer
             return word[..^2];                                         // Businesses -> Business, Mailboxes -> Mailbox
         if (word.EndsWith("ss", StringComparison.Ordinal) || word.EndsWith("us", StringComparison.Ordinal) || word.EndsWith("is", StringComparison.Ordinal))
             return word;                                               // Access, Status, Analysis stay put; keeping "Whois" is a deliberate
-                                                                       // fix of shipped ...HostWhoi (edge-cases/naming-edge-cases.md)
+                                                                       // fix of shipped ...HostWhoi (docs/edge-cases/naming-edge-cases.md)
         if (word.EndsWith('s'))
             return word[..^1];                                         // Messages -> Message, Plans -> Plan
         return word;

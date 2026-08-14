@@ -27,7 +27,7 @@ public sealed class SingularizerTests
     // "Whois" also hits the is-guard — a deliberate correction, not a parity pin: the SDK
     // ships Get-MgSecurityThreatIntelligenceHostWhoi (AutoRest inflected the trailing
     // "whois" segment) while its 28 whoisRecords/whoisHistoryRecords siblings keep "Whois".
-    // See edge-cases/naming-edge-cases.md.
+    // See docs/edge-cases/naming-edge-cases.md.
     [InlineData("Whois", "Whois")]
     // plain s
     [InlineData("Messages", "Message")]
@@ -140,7 +140,7 @@ public sealed class NamingTests
     [Theory]
     // Deliberate corrections: the published name is wrong (an AutoRest naming defect) and the
     // generator emits the corrected name instead of reproducing it. Every entry here must have
-    // an edge-cases/naming-edge-cases.md entry and a matching row in
+    // an docs/edge-cases/naming-edge-cases.md entry and a matching row in
     // Compare-WrapperCmdletNames.ps1's $deliberateCorrections table, so the parity gate
     // reports it as [CORRECTED], not a failure.
     // Shipped: Get-MgSecurityThreatIntelligenceHostWhoi — the only whois-family cmdlet (of 30)
