@@ -329,7 +329,12 @@ public sealed partial class PowerShellWrapperGenerationService
 
     private async Task<int> WriteCmdletFileAsync(CmdletNaming naming, string source, CancellationToken cancellationToken)
     {
-        var fileName = naming.ClassName.Replace("Command", "", StringComparison.Ordinal) + ".g.cs";
+        const string cmdletClassSuffix = "Command";
+        var className = naming.ClassName;
+        var fileBaseName = className.EndsWith(cmdletClassSuffix, StringComparison.Ordinal)
+            ? className[..^cmdletClassSuffix.Length]
+            : className;
+        var fileName = fileBaseName + ".g.cs";
         // Both colliding cmdlets usually share the same name, so the builder expression (the
         // request path) is what actually identifies which two operations collided.
         var cmdletName = $"{naming.VerbName}-{naming.Noun} [{naming.BuilderExpression}]";

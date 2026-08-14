@@ -168,7 +168,7 @@ function Build-OneModule {
             $result.FailedAt = 'wrapper-generator'
             $lines = @($wrapperOut | ForEach-Object { "$_" })
             $exception = $lines | Where-Object { $_ -match 'Unhandled exception|Exception:' } | Select-Object -First 1
-            $exceptionIndex = if ($exception) { $lines.IndexOf($exception) } else { -1 }
+            $exceptionIndex = if ($exception) { [Array]::IndexOf($lines, $exception) } else { -1 }
             $result.Error = if ($exceptionIndex -ge 0) {
                 ($lines[$exceptionIndex..([Math]::Min($exceptionIndex + 5, $lines.Count - 1))] | Where-Object { $_ -notmatch '^\s+at ' }) -join ' | '
             } else {

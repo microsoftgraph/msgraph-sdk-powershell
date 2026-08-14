@@ -219,9 +219,7 @@ dotnet test tools/WrapperGenerator.Tests
 
 The unit tests guard the naming and classification rules (their expected values are real published names from `src/Authentication/Authentication/custom/common/MgCommandMetadata.json`). The parity gate checks actual generated output against that same inventory; names on the deliberate-corrections list ([docs/edge-cases/naming-edge-cases.md](docs/edge-cases/naming-edge-cases.md)) are reported as `[CORRECTED]` instead of failing.
 
-The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each module against the kiota client it was generated with, the only authority on whether an emitted parameter's CLR type matches the member it assigns. Compilation cannot see an *omitted* member, so the omission oracle exists separately; neither can see whether PowerShell converts a value at runtime, so the runtime gate exists separately again.
-
-**Known failing gate at this commit:** the naming parity gate reports 5,689 of 7,434 comparable names matching the published SDK. Those mismatches predate this change (this commit's only naming edit is a doc-path comment) and are tracked for a separate oracle-derived naming change; they are disclosed here rather than hidden from the gate list.
+The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each module against the kiota client it was generated with, the only authority on whether an emitted parameter's CLR type matches the member it assigns. Compilation cannot see an *omitted* member, so the omission oracle exists separately; neither can see whether PowerShell converts a value at runtime, so the runtime gate exists separately again. Naming parity is enforced independently by `Compare-WrapperCmdletNames.ps1`.
 
 ## Gaps / not done yet
 
