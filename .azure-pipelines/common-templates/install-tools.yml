@@ -4,11 +4,13 @@
 steps:
   - task: UseDotNet@2
     displayName: Use .NET SDK
+    retryCountOnTaskFailure: 2
     inputs:
       version: 8.x 
 
   - task: UseDotNet@2
     displayName: Use .NET SDK
+    retryCountOnTaskFailure: 2
     inputs:
       version: 6.x 
       
@@ -27,6 +29,7 @@ steps:
 
   - task: NodeTool@0
     displayName: Install NodeJs
+    retryCountOnTaskFailure: 2
     inputs:
       versionSpec: 18.x
 
@@ -63,6 +66,7 @@ steps:
 
   - task: Npm@1
     displayName: Install AutoRest
+    retryCountOnTaskFailure: 2
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
@@ -70,6 +74,7 @@ steps:
 
   - task: Npm@1
     displayName: Install AutorestCore
+    retryCountOnTaskFailure: 2
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
@@ -84,6 +89,7 @@ steps:
 
   - task: Npm@1
     displayName: Install Rush
+    retryCountOnTaskFailure: 2
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
@@ -96,6 +102,21 @@ steps:
       pwsh: true
       workingDirectory: "autorest.powershell"
       script: |
+        # Belt-and-suspenders for 1ES network isolation (CFSClean): force npm_config_registry to
+        # the authenticated private feed so Rush's self-install of its own toolchain (the Rush and
+        # pnpm packages it downloads into ~/.rush via `npm install`) resolves from the private feed
+        # instead of defaulting to registry.npmjs.org. The env var is the highest-precedence npm
+        # config source and is inherited by every child process, so it covers the self-install npm
+        # calls that do not pick up the transformed common/config/rush/.npmrc.
+        if (-not $env:npm_config_registry) {
+            $userNpmrc = Join-Path $env:USERPROFILE ".npmrc"
+            if (Test-Path $userNpmrc) {
+                $regLine = Select-String -Path $userNpmrc -Pattern '^registry=' | Select-Object -First 1
+                if ($regLine) { $env:npm_config_registry = ($regLine.Line -replace '^registry=', '').Trim() }
+            }
+        }
+        Write-Host "npm_config_registry = $env:npm_config_registry"
+
         npx --no-install rush install
         if ($LASTEXITCODE -ne 0) { throw "rush install failed with exit code $LASTEXITCODE" }
         npx --no-install rush link
