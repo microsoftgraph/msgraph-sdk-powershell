@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,9 +17,8 @@ namespace WrapperGenerator;
 // it splits a segment into words and runs the rules on each word.
 public static partial class Singularizer
 {
-    // Irregular plurals the SDK singularizes: Get-MgDriveItemChild, Get-MgUserPerson.
-    // "Cookies" would hit the ies-rule ("Cooky") but ships as Get-MgSecurityThreatIntelligenceHostCookie;
-    // "Skus" would hit the us-guard (stay put) but ships as Get-MgSubscribedSku.
+    // Irregular plurals the ordered rules below would inflect wrongly. Evidence for each
+    // entry lives in the README rule table and docs/edge-cases.
     private static readonly Dictionary<string, string> Irregulars = new(StringComparer.Ordinal)
     {
         ["Children"] = "Child",
@@ -28,12 +27,8 @@ public static partial class Singularizer
         ["Skus"] = "Sku",
     };
 
-    // Words that end in "s" but are not plurals. The SDK keeps them as-is:
-    // /users/{id}/settings/windows ships as Get-MgUserSettingWindows, verificationDnsRecords
-    // as Get-MgDomainVerificationDnsRecord, iosManagedAppProtections as
-    // Get-MgDeviceAppManagementIosManagedAppProtection, lastEstimateStatisticsOperation as
-    // Get-MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation ("Statistics" is
-    // also on the DEVX API's Humanizer exception list in PowershellFormatter.cs).
+    // Words that end in "s" but are not plurals; never singularized. Evidence for each
+    // entry lives in the README rule table and docs/edge-cases.
     private static readonly HashSet<string> Invariants = new(StringComparer.Ordinal)
     {
         "Windows",
@@ -99,8 +94,7 @@ public static partial class Singularizer
         if (EndsWithSibilantEs(word))
             return word[..^2];                                         // Businesses -> Business, Mailboxes -> Mailbox
         if (word.EndsWith("ss", StringComparison.Ordinal) || word.EndsWith("us", StringComparison.Ordinal) || word.EndsWith("is", StringComparison.Ordinal))
-            return word;                                               // Access, Status, Analysis stay put; keeping "Whois" is a deliberate
-                                                                       // fix of shipped ...HostWhoi (edge-cases/naming-edge-cases.md)
+            return word;                                               // Access -> Access, Status -> Status, Analysis -> Analysis
         if (word.EndsWith('s'))
             return word[..^1];                                         // Messages -> Message, Plans -> Plan
         return word;

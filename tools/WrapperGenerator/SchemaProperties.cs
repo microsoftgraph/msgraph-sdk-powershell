@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.OpenApi;
@@ -13,10 +13,9 @@ public sealed record CmdletProperty(string OpenApiName, string PascalName, strin
 }
 
 // Maps a body schema's top-level primitive properties onto cmdlet parameters. Deliberately
-// shallow, per team decision: nested complex properties (assignedLicenses, employeeOrgData,
-// and the like) are skipped rather than modeled. Two special cases: "id" is excluded because
-// the server assigns it, and passwordProfile is flagged separately via HasPasswordProfile
-// because creating a user requires it.
+// shallow, per team decision: nested complex properties are skipped rather than modeled.
+// Server-managed properties are excluded, and passwordProfile is flagged separately via
+// HasPasswordProfile.
 public static class SchemaProperties
 {
     public static IReadOnlyList<CmdletProperty> ExtractPrimitiveProperties(IOpenApiSchema schema)
@@ -67,9 +66,9 @@ public static class SchemaProperties
             .ToList();
     }
 
-    // passwordProfile is a nested complex type, so ExtractPrimitiveProperties skips it, but
-    // Graph requires it to create a user. This flag lets the emitter add the two flattened
-    // parameters (-Password, -ForceChangePasswordNextSignIn) that make New-MgUser usable.
+    // Detects a passwordProfile property (directly or via allOf) so the emitter can flatten
+    // it into parameters; Graph requires it to create a user. Generalizing this pattern is
+    // tracked in #3690.
     public static bool HasPasswordProfile(IOpenApiSchema schema)
     {
         ArgumentNullException.ThrowIfNull(schema);
@@ -89,11 +88,9 @@ public static class SchemaProperties
         _ => false,
     };
 
-    // Numeric mapping: when a format is present it decides the CLR type, mirroring Kiota's
-    // own mapping, so a wrapper parameter always matches the Kiota model property it is
-    // assigned to. Graph's docs declare Edm.Int32 as "type: number, format: int32" — going by
-    // the type alone would emit double? against Kiota's int? and not compile. Without a
-    // format, integer stays int and number stays double (fraction and 64-bit safety).
+    // Numeric mapping: an explicit format decides the CLR type, mirroring Kiota's own
+    // mapping so a wrapper parameter always matches the Kiota model property it is assigned
+    // to. Without a format, integer stays int and number stays double.
     private static string MapPsType(IOpenApiSchema schema) => (schema.Type & ~JsonSchemaType.Null) switch
     {
         JsonSchemaType.String => "string",

@@ -13,7 +13,7 @@ emitted [Cmdlet(...)] name matches what the oracle says the published SDK calls 
 operation.
 
 A small set of published names are known AutoRest defects the generator deliberately
-corrects instead of reproducing (tools/WrapperGenerator/edge-cases/naming-edge-cases.md
+corrects instead of reproducing (tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md
 is the catalog). Those are matched against the $deliberateCorrections table below and
 reported as [CORRECTED] rather than [MISMATCH]; they do not fail the gate.
 
@@ -133,8 +133,8 @@ function Get-ModuleApiVersion {
 
 # Published names the generator deliberately corrects instead of reproducing. Each entry maps
 # the shipped (wrong) command to the corrected one the generator emits, and must have a matching
-# entry in tools/WrapperGenerator/edge-cases/naming-edge-cases.md and a pinned naming test. The
-# gate reports these as [CORRECTED] instead of [MISMATCH] and does not fail on them.
+# entry in tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md and a pinned naming test.
+# The gate reports these as [CORRECTED] instead of [MISMATCH] and does not fail on them.
 $deliberateCorrections = @{
     # AutoRest inflected the trailing /whois segment to "Whoi"; the other 28 whois-family
     # cmdlets (whoisRecords, whoisHistoryRecords) all keep "Whois".
@@ -270,7 +270,7 @@ foreach ($module in $modules | Sort-Object Name) {
             $oracleCommand = $candidates | Select-Object -First 1
             if ($deliberateCorrections[$oracleCommand] -eq $expectedCommand) {
                 $moduleCorrected++
-                $moduleCorrections += "  [CORRECTED] $($file.Name): oracle ships '$oracleCommand'; generator deliberately emits '$expectedCommand' (see tools/WrapperGenerator/edge-cases/naming-edge-cases.md)."
+                $moduleCorrections += "  [CORRECTED] $($file.Name): oracle ships '$oracleCommand'; generator deliberately emits '$expectedCommand' (see tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md)."
             }
             else {
                 $moduleProblems += "  [MISMATCH] $($file.Name): generated '$expectedCommand', oracle says '$oracleCommand' for $method $normalizedUri."

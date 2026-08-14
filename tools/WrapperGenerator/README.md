@@ -6,7 +6,7 @@ Generates the PowerShell **cmdlets** for the Microsoft Graph SDK from Graph's Op
 
 The Microsoft Graph PowerShell SDK is thousands of cmdlets, and customers have scripts that depend on their exact names — `Get-MgUserMessage`, not `Get-MgUsersMessages`. Those names follow conventions, but the conventions are fiddly (singular nouns, a `Mg` prefix, a handful of hand-tuned exceptions), and the SDK's current generator (AutoRest) has quietly dropped cmdlets when names collided.
 
-This tool regenerates those cmdlets from the same OpenAPI description **while reproducing the published names exactly**, so a regenerated module is a drop-in replacement. Because name parity is the hard part, most of the tool is a naming engine; the rest is a straightforward C# code emitter. The one exception to "exactly": a handful of published names are AutoRest naming defects (e.g. `Get-MgSecurityThreatIntelligenceHostWhoi`, where "Whois" lost its `s`) that the generator deliberately corrects — each is pinned by a test, allowlisted in the parity gate, and documented in the edge-case catalog ([edge-cases/naming-edge-cases.md](edge-cases/naming-edge-cases.md), one file per class of issue).
+This tool regenerates those cmdlets from the same OpenAPI description **while reproducing the published names exactly**, so a regenerated module is a drop-in replacement. Because name parity is the hard part, most of the tool is a naming engine; the rest is a straightforward C# code emitter. The one exception to "exactly": a handful of published names are AutoRest naming defects (e.g. `Get-MgSecurityThreatIntelligenceHostWhoi`, where "Whois" lost its `s`) that the generator deliberately corrects — each is pinned by a test, allowlisted in the parity gate, and documented in the edge-case catalog ([docs/edge-cases/naming-edge-cases.md](docs/edge-cases/naming-edge-cases.md), one file per class of issue).
 
 ## What it produces
 
@@ -159,14 +159,14 @@ dotnet run --project tools/WrapperGenerator -- `
 ```powershell
 # 1. Naming rules pinned to published Microsoft.Graph names
 dotnet test tools/WrapperGenerator.Tests
-#    => Passed! - Failed: 0, Passed: 120, Total: 120
+#    => Passed! - Failed: 0, Passed: 121, Total: 121
 
 # 2. Parity gate: generate, then check every cmdlet name against Graph's own command inventory
 .\tools\Compare-WrapperCmdletNames.ps1 -GeneratedPath <output-folder>
 #    => Mail [v1.0]: 4 of 4 cmdlets match the oracle ...  EXIT CODE: 0
 ```
 
-The unit tests guard the naming rules (their expected values are real published names from `src/Authentication/Authentication/custom/common/MgCommandMetadata.json`). The parity gate checks actual generated output against that same inventory; names on the deliberate-corrections list ([edge-cases/naming-edge-cases.md](edge-cases/naming-edge-cases.md)) are reported as `[CORRECTED]` instead of failing. There is **no** test yet that the generated cmdlets *compile* — that needs step 1's client to compile against.
+The unit tests guard the naming rules (their expected values are real published names from `src/Authentication/Authentication/custom/common/MgCommandMetadata.json`). The parity gate checks actual generated output against that same inventory; names on the deliberate-corrections list ([docs/edge-cases/naming-edge-cases.md](docs/edge-cases/naming-edge-cases.md)) are reported as `[CORRECTED]` instead of failing. Build-WrapperModule.ps1 compiles every module against the kiota client it was generated with, and Test-WrapperModule.ps1 imports each build and smoke-tests dispatch in a fresh pwsh.
 
 ## Gaps / not done yet
 
