@@ -20,6 +20,12 @@ public sealed partial class PowerShellWrapperGenerationService
     private readonly GeneratorConfig config;
     private readonly ILogger logger;
     private readonly HashSet<string> modelSubNamespaces;
+
+    // Every file written this run, keyed case-insensitively (Windows file systems are), so a
+    // second cmdlet resolving to an existing file is a detected collision instead of a silent
+    // overwrite.
+    private readonly Dictionary<string, string> writtenCmdletFiles = new(StringComparer.OrdinalIgnoreCase);
+    private readonly List<string> fileCollisions = [];
     private readonly Dictionary<string, string> kiotaReservedRenames;
 
     public PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger)
@@ -96,6 +102,9 @@ public sealed partial class PowerShellWrapperGenerationService
 
         var ctx = new EmitContext(ClientNamespace: config.ClientNamespaceName);
 
+        writtenCmdletFiles.Clear();
+        fileCollisions.Clear();
+
         Directory.CreateDirectory(config.OutputPath);
         foreach (var stale in Directory.GetFiles(config.OutputPath, "*.g.cs"))
             File.Delete(stale);
@@ -126,7 +135,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
                 // Skip operations the published SDK deliberately does not ship. NamingOverrides
                 // holds the citation for each one.
-                if (NamingOverrides.IsSuppressed(httpMethod, pathTemplate))
+                if (NamingOverrides.IsSuppressed(httpMethod, pathTemplate, config))
                 {
                     LogSuppressedOperation(httpMethod.Method, pathTemplate);
                     continue;
@@ -159,7 +168,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     : null;
                 var collectionValueSchema = responseSchema is not null ? FindProperty(responseSchema, "value") : null;
 
-                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams));
+                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams), config);
 
                 if (httpMethod == HttpMethod.Get && responseSchema is null)
                 {
@@ -198,6 +207,15 @@ public sealed partial class PowerShellWrapperGenerationService
 
         written += await EmitGetOperationsAsync(getOperations, ctx, cancellationToken).ConfigureAwait(false);
 
+        // All collisions for the run are reported together so one generation surfaces the
+        // complete list; see edge-cases/naming-edge-cases.md for how each kind is resolved.
+        if (fileCollisions.Count > 0)
+        {
+            throw new InvalidOperationException(
+                $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file. " +
+                $"Resolve each with a NamingOverrides rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
+        }
+
         LogWroteFiles(written + 1, config.OutputPath);
     }
 
@@ -208,9 +226,9 @@ public sealed partial class PowerShellWrapperGenerationService
     // which one to invoke.
     //
     // A pairing is only trusted when it is structurally unambiguous: exactly one collection GET
-    // and one single-entity GET share the noun, and the item's path is the list's path plus one
-    // trailing id (Users[UserId].Messages -> Users[UserId].Messages[MessageId]). Everything
-    // else keeps the standalone shape: singleton navs with no list (GET /users/{id}/calendar),
+    // and one single-entity GET share the noun, and the item's path extends the list's path by
+    // exactly one id, in either of the shapes Naming.IsListItemPair accepts. Everything else
+    // keeps the standalone shape: singleton navs with no list (GET /users/{id}/calendar),
     // list-only endpoints such as delta queries, or an unexpected same-noun collision.
     private async Task<int> EmitGetOperationsAsync(List<GetOperationRecord> getOperations, EmitContext ctx, CancellationToken cancellationToken)
     {
@@ -297,7 +315,21 @@ public sealed partial class PowerShellWrapperGenerationService
 
     private async Task<int> WriteCmdletFileAsync(CmdletNaming naming, string source, CancellationToken cancellationToken)
     {
-        var fileName = naming.ClassName.Replace("Command", "", StringComparison.Ordinal) + ".g.cs";
+        const string cmdletClassSuffix = "Command";
+        var className = naming.ClassName;
+        var fileBaseName = className.EndsWith(cmdletClassSuffix, StringComparison.Ordinal)
+            ? className[..^cmdletClassSuffix.Length]
+            : className;
+        var fileName = fileBaseName + ".g.cs";
+        // Both colliding cmdlets usually share the same name, so the builder expression (the
+        // request path) is what actually identifies which two operations collided.
+        var cmdletName = $"{naming.VerbName}-{naming.Noun} [{naming.BuilderExpression}]";
+        if (writtenCmdletFiles.TryGetValue(fileName, out var existing))
+        {
+            fileCollisions.Add($"{fileName}: '{cmdletName}' collides with already-written '{existing}'");
+            return 0;
+        }
+        writtenCmdletFiles[fileName] = cmdletName;
         await File.WriteAllTextAsync(Path.Combine(config.OutputPath, fileName), source, cancellationToken).ConfigureAwait(false);
         LogWroteCmdletFile(fileName, naming.VerbName, naming.Noun);
         return 1;

@@ -110,6 +110,19 @@ public sealed class NamingTests
     [InlineData("GET", "/solutions/bookingBusinesses/{bookingBusiness-id}", "Get", "MgBookingBusiness")]
     [InlineData("PATCH", "/solutions/bookingBusinesses/{bookingBusiness-id}", "Update", "MgBookingBusiness")]
     [InlineData("GET", "/users/{user-id}/calendar", "Get", "MgUserDefaultCalendar")]
+    // self-referential sites rename to SubSite instead of colliding with the parent noun
+    [InlineData("GET", "/sites/{site-id}/sites", "Get", "MgSubSite")]
+    [InlineData("GET", "/sites/{site-id}/sites/{site-id1}", "Get", "MgSubSite")]
+    [InlineData("GET", "/groups/{group-id}/sites/{site-id}/sites", "Get", "MgGroupSubSite")]
+    [InlineData("GET", "/groups/{group-id}/sites/{site-id}/sites/{site-id1}", "Get", "MgGroupSubSite")]
+    // default-singleton renames (issue #3704 oracle sweep)
+    [InlineData("GET", "/users/{user-id}/drive", "Get", "MgUserDefaultDrive")]
+    [InlineData("GET", "/groups/{group-id}/drive", "Get", "MgGroupDefaultDrive")]
+    [InlineData("GET", "/sites/{site-id}/drive", "Get", "MgSiteDefaultDrive")]
+    [InlineData("GET", "/groups/{group-id}/sites/{site-id}/drive", "Get", "MgGroupSiteDefaultDrive")]
+    [InlineData("GET", "/users/{user-id}/calendar/events", "Get", "MgUserDefaultCalendarEvent")]
+    // nested-collection GET renamed by the Groups.md directive (subject $1ByGroup)
+    [InlineData("GET", "/groups/{group-id}/groupLifecyclePolicies", "Get", "MgGroupLifecyclePolicyByGroup")]
     // boundary word-overlap collapse (Get-MgDomainNameReference)
     [InlineData("GET", "/domains/{domain-id}/domainNameReferences", "Get", "MgDomainNameReference")]
     // adjacent-duplicate collapse (Get-MgUserOnenoteSectionGroup... family)
@@ -177,6 +190,34 @@ public sealed class NamingTests
         Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/solutions"));
         Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Patch, "/solutions"));
         Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/solutions/bookingBusinesses/{bookingBusiness-id}"));
+
+        // The /photos collection ships no distinct cmdlet; only the /photo singleton does.
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photos"));
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photos/{userProfilePhoto-id}"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photo"));
+
+        // Suffix-matched suppressions apply under any root; siblings stay generated
+        // (issue #3704: Info-wrapper navs ship nothing, their siblings ship).
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}/message"));
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{id}/team"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{id}/allowedMembers"));
+
+        // Exact-matched suppressions cover only the named node; descendants with no entry of
+        // their own stay generated (Security nested navs, issue #3704).
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/security/threatIntelligence/hosts/{host-id}/components"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/security/threatIntelligence/hosts/{host-id}/components/$count"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/security/threatIntelligence/hosts/{host-id}/passiveDns"));
+
+        // termStore trees are stitched: /termStores/{id} descendants ship nothing (the 402
+        // descendant command rows come from the /termStore singleton trees), and the singleton
+        // root GET ships no distinct cmdlet (Get-MgSiteTermStore serves both /termStore and
+        // /termStores; GET generates from the collection side only).
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStores/{store-id}"));
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStores/{store-id}/sets/{set-id}"));
+        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStore"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Patch, "/sites/{site-id}/termStore"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStores"));
+        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStore/sets/{set-id}"));
     }
 
     [Theory]
@@ -228,14 +269,29 @@ public sealed class NamingTests
     }
 
     [Fact]
-    public void AmbiguousSameNounDoesNotMerge()
+    public void CastListItemPairMergesLikeAPlainPair()
     {
-        // Self-referential /sites: the collection /sites/{id}/sites and the single /sites/{id}
-        // both resolve to MgSite, but the "item" is the parent, not a child one id deeper, so
-        // the structural check rejects the merge and both stay standalone.
+        // The published SDK ships one Get-MgGroupOwnerAsUser covering both the cast on the
+        // collection and the cast on the item; without pairing, both emit the same file.
+        var list = Resolve("GET", "/groups/{group-id}/owners/graph.user");
+        var item = Resolve("GET", "/groups/{group-id}/owners/{directoryObject-id}/graph.user");
+        Assert.Equal(list.Noun, item.Noun);
+        Assert.True(Naming.IsListItemPair(list, item));
+
+        // Different cast types never pair.
+        var otherCast = Resolve("GET", "/groups/{group-id}/owners/{directoryObject-id}/graph.servicePrincipal");
+        Assert.False(Naming.IsListItemPair(list, otherCast));
+    }
+
+    [Fact]
+    public void SelfReferentialSitesRenameInsteadOfCollidingWithParent()
+    {
+        // Without the SubSite rename, /sites/{id}/sites singularizes to the parent's own noun
+        // and its cmdlet file would collide with Get-MgSite's. The renamed nouns are pinned in
+        // ResolvesPublishedSdkNames; this pins that the pair no longer merges or collides.
         var list = Resolve("GET", "/sites/{site-id}/sites");
         var item = Resolve("GET", "/sites/{site-id}");
-        Assert.Equal(list.Noun, item.Noun);
+        Assert.NotEqual(list.Noun, item.Noun);
         Assert.False(Naming.IsListItemPair(list, item));
     }
 }

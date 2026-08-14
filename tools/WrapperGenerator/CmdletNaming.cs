@@ -41,7 +41,7 @@ public static class Naming
         [HttpMethod.Delete] = PsVerb.Remove,
     };
 
-    public static CmdletNaming Resolve(OperationInfo operation)
+    public static CmdletNaming Resolve(OperationInfo operation, GeneratorConfig? config = null)
     {
         ArgumentNullException.ThrowIfNull(operation);
         if (!VerbMap.TryGetValue(operation.HttpMethod, out var verb))
@@ -51,7 +51,7 @@ public static class Naming
         // plurality the spec author chose, while the published SDK names follow the path:
         // GET /users/{id}/messages is Get-MgUserMessage. The few hand-tuned exceptions the
         // published SDK carries are mirrored as data in NamingOverrides, never as code here.
-        var noun = GeneratorConstants.NounPrefix + NamingOverrides.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path));
+        var noun = GeneratorConstants.NounPrefix + NamingOverrides.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path), config);
 
         // A list GET (/users/{id}/messages) and its item GET (/users/{id}/messages/{message-id})
         // get the same noun on purpose. PowerShellWrapperGenerationService pairs them into one
@@ -197,16 +197,54 @@ public static class Naming
             : segment.ToFirstCharacterUpperCase();
 
     // Whether a list GET and an item GET form a mergeable pair for the public Get-MgX
-    // dispatcher: the item's path must be the list's path plus exactly one trailing id
-    // (Users[UserId].Messages -> Users[UserId].Messages[MessageId]). Callers group by noun
-    // first, so this only decides the structural fit; a same-noun item that does not extend the
-    // list (for example the self-referential /sites/{id} vs /sites/{id}/sites) is rejected.
+    // dispatcher: the item's path must extend the list's path by exactly one id, either
+    // trailing (Users[UserId].Messages -> Users[UserId].Messages[MessageId]) or inserted
+    // before a shared trailing OData cast (Owners.GraphUser -> Owners[Id].GraphUser). Callers
+    // group by noun first, so this only decides the structural fit; a same-noun item that does
+    // not extend the list is rejected.
     public static bool IsListItemPair(CmdletNaming list, CmdletNaming item)
     {
         ArgumentNullException.ThrowIfNull(list);
         ArgumentNullException.ThrowIfNull(item);
-        return item.PathParamNames.Count == list.PathParamNames.Count + 1
-            && item.PathParamNames.Take(list.PathParamNames.Count).SequenceEqual(list.PathParamNames)
-            && item.BuilderExpression.StartsWith(list.BuilderExpression + "[", StringComparison.Ordinal);
+        if (item.PathParamNames.Count != list.PathParamNames.Count + 1
+            || !item.PathParamNames.Take(list.PathParamNames.Count).SequenceEqual(list.PathParamNames))
+            return false;
+
+        if (item.BuilderExpression.StartsWith(list.BuilderExpression + "[", StringComparison.Ordinal))
+            return true;
+
+        // OData cast pair: the id inserts BEFORE the trailing cast member, not at the end
+        // (owners/graph.user vs owners/{id}/graph.user builds Owners.GraphUser vs
+        // Owners[Id].GraphUser). The published SDK ships these as one cmdlet, same as a
+        // plain list/item pair; without this the two emit identical file names and collide.
+        var listCast = TrailingCastMember(list.BuilderExpression);
+        var itemCast = TrailingCastMember(item.BuilderExpression);
+        if (listCast is null || itemCast is null || !string.Equals(listCast, itemCast, StringComparison.Ordinal))
+            return false;
+
+        var listStem = list.BuilderExpression[..^(listCast.Length + 1)];
+        var itemStem = item.BuilderExpression[..^(itemCast.Length + 1)];
+        if (!itemStem.StartsWith(listStem + "[", StringComparison.Ordinal) || !itemStem.EndsWith("]", StringComparison.Ordinal))
+            return false;
+        var indexer = itemStem[(listStem.Length + 1)..^1];
+        return indexer.Length > 0 && !indexer.Contains('[') && !indexer.Contains('.');
+    }
+
+    // The kiota builder member for a trailing OData cast segment (GraphUser from
+    // "graph.user", MicrosoftGraphUser from "microsoft.graph.user"); null when the
+    // expression does not end in a cast.
+    private static string? TrailingCastMember(string builderExpression)
+    {
+        var lastDot = builderExpression.LastIndexOf('.');
+        if (lastDot < 0)
+            return null;
+        var member = builderExpression[(lastDot + 1)..];
+        if (member.Contains('['))
+            return null;
+        if (member.StartsWith("MicrosoftGraph", StringComparison.Ordinal) && member.Length > 14 && char.IsUpper(member[14]))
+            return member;
+        if (member.StartsWith("Graph", StringComparison.Ordinal) && member.Length > 5 && char.IsUpper(member[5]))
+            return member;
+        return null;
     }
 }

@@ -25,7 +25,7 @@ public static class CmdletEmitter
                 }
                 else
                 {
-                    WriteVerbose("[MgPoC] No -AccessToken supplied, using the active Connect-MgGraph session.");
+                    WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
                     try
                     {
                         httpClient = HttpHelpers.GetGraphHttpClient();
@@ -667,7 +667,7 @@ namespace {{ctx.CmdletNamespace}}
 
             if (result is null)
             {
-                WriteVerbose("[MgPoC] PATCH succeeded with no response body, re-fetching the updated resource.");
+                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
                 try
                 {
                     result = client.{{naming.BuilderExpression}}.GetAsync().GetAwaiter().GetResult();
