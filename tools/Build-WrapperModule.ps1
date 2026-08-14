@@ -8,9 +8,10 @@ For each module name, reproduces the pipeline the Mail spike proved:
 
   1. kiota generate      -> <out>/<Module>/src/Client   (ApiClient + models)
   2. WrapperGenerator    -> <out>/<Module>/src/Cmdlets  (one *.g.cs per cmdlet)
-  3. write csproj        -> <out>/<Module>/src/
-  4. dotnet build        -> <out>/<Module>/src/bin/<Configuration>/net10.0/
-  5. New-ModuleManifest  -> <ModuleName>.psd1 next to the dll
+    3. write client project -> <out>/<Module>/src/Client/Client.csproj
+    4. write wrapper project -> <out>/<Module>/src/<ModuleName>.csproj
+    5. dotnet build         -> <out>/<Module>/src/bin/<Configuration>/net10.0/
+    6. New-ModuleManifest   -> <ModuleName>.psd1 next to the dll
 
 Both generators consume the SAME OpenAPI document, so the wrappers always match the client
 they compile against.
@@ -76,26 +77,55 @@ if (-not $SpecRoot) { $SpecRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat' 
 if (-not $OutputRoot) { $OutputRoot = Join-Path $repoRoot 'artifacts\wrapper-modules' }
 $generatorProject = Join-Path $repoRoot 'tools\WrapperGenerator'
 $authCsproj = Join-Path $repoRoot 'src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj'
+$clientProjectTemplate = Join-Path $PSScriptRoot 'Templates\WrapperClient.csproj.template'
+$moduleProjectTemplate = Join-Path $PSScriptRoot 'Templates\WrapperModule.csproj.template'
 
 if (-not (Get-Command kiota -ErrorAction SilentlyContinue)) {
     Write-Error "kiota CLI not found on PATH. Install: dotnet tool install --global Microsoft.OpenApi.Kiota"
     exit 1
 }
 
-# Same extraction the parity gate uses: the emitted [Cmdlet(VerbsX.Verb, "Noun")] attribute
-# is the source of truth for what the dll will export, without having to load the assembly.
-$cmdletAttrPattern = '\[Cmdlet\(Verbs\w+\.(\w+),\s*"((?:\\.|[^"\\])*)"'
-function Get-EmittedCmdletNames {
-    param([string]$CmdletsDir)
-    Get-ChildItem -Path $CmdletsDir -Filter '*.g.cs' -File | ForEach-Object {
-        $match = [regex]::Match((Get-Content -Path $_.FullName -Raw), $cmdletAttrPattern)
-        if ($match.Success) {
-            "$($match.Groups[1].Value)-$([regex]::Unescape($match.Groups[2].Value))"
-        }
+function New-ProjectFromTemplate {
+    param(
+        [Parameter(Mandatory)][string]$TemplatePath,
+        [Parameter(Mandatory)][string]$DestinationPath,
+        [Parameter(Mandatory)][hashtable]$Replacements
+    )
+
+    $content = Get-Content -Path $TemplatePath -Raw
+    foreach ($placeholder in $Replacements.Keys) {
+        $content = $content.Replace("{$placeholder}", $Replacements[$placeholder])
     }
+    $unresolved = [regex]::Matches($content, '\{[A-Za-z][A-Za-z0-9]*\}') | ForEach-Object Value | Sort-Object -Unique
+    if ($unresolved) {
+        throw "unresolved placeholder(s) in $TemplatePath`: $($unresolved -join ', ')"
+    }
+    Set-Content -Path $DestinationPath -Value $content -Encoding utf8
 }
 
-function Build-OneModule {
+function Get-CompiledCmdletNames {
+    param([Parameter(Mandatory)][string]$AssemblyPath)
+
+    # Import in a child process so discovery observes the compiled binary PowerShell will load,
+    # and so assemblies from one module cannot contaminate or lock the next module's build.
+    $escapedAssemblyPath = $AssemblyPath.Replace("'", "''")
+    $discovery = @"
+`$ErrorActionPreference = 'Stop'
+`$module = Import-Module -Name '$escapedAssemblyPath' -PassThru
+[pscustomobject]@{ Cmdlets = @(`$module.ExportedCmdlets.Keys | Sort-Object) } |
+    ConvertTo-Json -Compress
+"@
+    $encodedDiscovery = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($discovery))
+    $output = & pwsh -NoProfile -NonInteractive -EncodedCommand $encodedDiscovery 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        throw "compiled module discovery failed: $(($output | Select-Object -Last 3) -join ' | ')"
+    }
+    $json = $output | Where-Object { $_ -match '^\{' } | Select-Object -Last 1
+    if (-not $json) { throw 'compiled module discovery produced no result' }
+    @((ConvertFrom-Json $json).Cmdlets)
+}
+
+function Build-Module {
     param([string]$Name)
 
     $started = Get-Date
@@ -157,38 +187,22 @@ function Build-OneModule {
             return $result
         }
 
-        # Relative to $srcDir rather than the absolute $authCsproj, so the csproj is portable
-        # across clones and stays correct if a module's output folder ever moves (the eventual
-        # src/<Module>/<ApiVersion>/ commit target sits at a different depth than
-        # artifacts/wrapper-modules/<Module>/src/).
+            $clientAssemblyName = "$moduleName.Client"
+            $clientCsprojPath = Join-Path $clientDir 'Client.csproj'
+            New-ProjectFromTemplate -TemplatePath $clientProjectTemplate -DestinationPath $clientCsprojPath -Replacements @{
+                ClientAssemblyName = $clientAssemblyName
+            }
+
+            # Project references are relative so generated projects remain portable across clones
+            # and across the artifacts and eventual src/<Module>/<ApiVersion>/wrapper layouts.
         $csprojPath = Join-Path $srcDir "$moduleName.csproj"
         $authCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $authCsproj) -replace '/', '\'
-        @"
-<!-- Generated by tools/Build-WrapperModule.ps1 - do not edit or commit. -->
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyName>$moduleName</AssemblyName>
-    <!-- Copy every dependency next to the module dll so Import-Module resolves them. -->
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <NoWarn>`$(NoWarn);CS1591</NoWarn>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Kiota.Bundle" Version="2.0.0" />
-    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="all" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="$authCsprojRelative" />
-  </ItemGroup>
-
-</Project>
-"@ | Set-Content -Path $csprojPath -Encoding utf8
+            $clientCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $clientCsprojPath) -replace '/', '\'
+            New-ProjectFromTemplate -TemplatePath $moduleProjectTemplate -DestinationPath $csprojPath -Replacements @{
+                ModuleAssemblyName = $moduleName
+                ClientProjectPath = $clientCsprojRelative
+                AuthenticationProjectPath = $authCsprojRelative
+            }
 
         $buildOut = & dotnet build $csprojPath -c $Configuration --nologo -v minimal 2>&1
         if ($LASTEXITCODE -ne 0) {
@@ -197,10 +211,11 @@ function Build-OneModule {
             return $result
         }
 
-        $cmdlets = @(Get-EmittedCmdletNames -CmdletsDir $cmdletsDir)
+        $binDir = Join-Path $srcDir "bin\$Configuration\net10.0"
+        $assemblyPath = Join-Path $binDir "$moduleName.dll"
+        $cmdlets = @(Get-CompiledCmdletNames -AssemblyPath $assemblyPath)
         if ($cmdlets.Count -eq 0) { $result.FailedAt = 'manifest'; $result.Error = 'no cmdlets emitted'; return $result }
 
-        $binDir = Join-Path $srcDir "bin\$Configuration\net10.0"
         $psd1Path = Join-Path $binDir "$moduleName.psd1"
         New-ModuleManifest -Path $psd1Path `
             -RootModule "$moduleName.dll" `
@@ -227,7 +242,7 @@ function Build-OneModule {
 
 $results = foreach ($name in $Module) {
     Write-Host "=== $name ===" -ForegroundColor Cyan
-    $r = Build-OneModule -Name $name
+    $r = Build-Module -Name $name
     if ($r.Status -eq 'OK') {
         Write-Host "  OK: $($r.CmdletCount) cmdlets -> $($r.Psd1) ($($r.Seconds)s)" -ForegroundColor Green
     }
