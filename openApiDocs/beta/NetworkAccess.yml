@@ -8339,17 +8339,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.networkaccess.usageProfilingPoint'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.networkaccess.usageProfilingPointCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -19000,6 +18990,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.networkaccess.networkAccessTraffic'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.networkaccess.usageProfilingPointCollectionResponse:
+      title: Collection of usageProfilingPoint
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.networkaccess.usageProfilingPoint'
         '@odata.nextLink':
           type: string
           nullable: true
