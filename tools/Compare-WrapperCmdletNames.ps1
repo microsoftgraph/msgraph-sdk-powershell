@@ -140,6 +140,16 @@ $deliberateCorrections = @{
     # cmdlets (whoisRecords, whoisHistoryRecords) all keep "Whois".
     'Get-MgSecurityThreatIntelligenceHostWhoi'     = 'Get-MgSecurityThreatIntelligenceHostWhois'
     'Get-MgBetaSecurityThreatIntelligenceHostWhoi' = 'Get-MgBetaSecurityThreatIntelligenceHostWhois'
+    # AutoRest truncated /places/{id}/checkIns at the preposition (the #912 defect class):
+    # shipped ...PlaceCheck, while Get-MgPlaceCheckInCount keeps "In" intact.
+    'Get-MgPlaceCheck'        = 'Get-MgPlaceCheckIn'
+    'New-MgPlaceCheck'        = 'New-MgPlaceCheckIn'
+    'Update-MgPlaceCheck'     = 'Update-MgPlaceCheckIn'
+    'Remove-MgPlaceCheck'     = 'Remove-MgPlaceCheckIn'
+    'Get-MgBetaPlaceCheck'    = 'Get-MgBetaPlaceCheckIn'
+    'New-MgBetaPlaceCheck'    = 'New-MgBetaPlaceCheckIn'
+    'Update-MgBetaPlaceCheck' = 'Update-MgBetaPlaceCheckIn'
+    'Remove-MgBetaPlaceCheck' = 'Remove-MgBetaPlaceCheckIn'
 }
 
 Write-Host "Loading oracle from $OraclePath ..."

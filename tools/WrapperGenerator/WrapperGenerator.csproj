@@ -20,4 +20,10 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Oracle-derived collision resolutions (tools/Derive-CollisionResolutions.ps1), embedded
+         so a generation run never depends on a working directory or the 22 MB oracle. -->
+    <EmbeddedResource Include="data\collision-*.json" />
+  </ItemGroup>
+
 </Project>

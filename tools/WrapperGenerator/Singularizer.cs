@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -35,6 +35,9 @@ public static partial class Singularizer
         "Dns",
         "Ios",
         "Statistics",
+        // subjectRightsRequests ships keeping "Rights" (Get-MgPrivacySubjectRightsRequest,
+        // 42 cmdlets across Compliance/Security); usageRights likewise in beta.
+        "Rights",
     };
 
     // Splits Pascal or camel text into words. Handles acronym runs ("OS" in "MacOSDmgApp"),

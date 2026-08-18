@@ -19,6 +19,14 @@ public sealed partial class PowerShellWrapperGenerationService
     private readonly OpenApiDocument document;
     private readonly GeneratorConfig config;
     private readonly ILogger logger;
+    private readonly HashSet<string> modelSubNamespaces;
+
+    // Every file written this run, keyed case-insensitively (Windows file systems are), so a
+    // second cmdlet resolving to an existing file is a detected collision instead of a silent
+    // overwrite.
+    private readonly Dictionary<string, string> writtenCmdletFiles = new(StringComparer.OrdinalIgnoreCase);
+    private readonly List<string> fileCollisions = [];
+    private readonly Dictionary<string, string> kiotaReservedRenames;
 
     public PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger)
     {
@@ -28,7 +36,56 @@ public sealed partial class PowerShellWrapperGenerationService
         this.document = document;
         config = configuration;
         this.logger = logger;
+
+        // Kiota nests each dotted schema-name segment as a sub-namespace under Models
+        // ("security.alert" -> Models.Security.Alert), and when a model's own name matches
+        // such a namespace ("microsoft.graph.security" alongside "microsoft.graph.security.*")
+        // it moves the class INSIDE it: Models.Security.Security. Collect those namespace
+        // roots so ResolveModelTypeName can mirror the move — a bare "Security" would
+        // otherwise resolve to the namespace, not the type, and fail to compile.
+        // Model names grouped by the sub-namespace kiota puts them in ("" = Models root):
+        // needed both for the namespace-move rule and to dedupe reserved-name renames the
+        // way kiota does (against siblings in the same namespace).
+        modelSubNamespaces = new HashSet<string>(StringComparer.Ordinal);
+        var namesByNamespace = new Dictionary<string, HashSet<string>>(StringComparer.Ordinal) { [""] = new(StringComparer.Ordinal) };
+        foreach (var key in document.Components?.Schemas?.Keys ?? Enumerable.Empty<string>())
+        {
+            var segments = StripGraphPrefix(key).Split('.')
+                .Select(static s => char.ToUpperInvariant(s[0]) + s[1..]).ToArray();
+            if (segments.Length > 1)
+                modelSubNamespaces.Add(segments[0]);
+            var ns = string.Join('.', segments[..^1]);
+            if (!namesByNamespace.TryGetValue(ns, out var names))
+                namesByNamespace[ns] = names = new HashSet<string>(StringComparer.Ordinal);
+            names.Add(segments[^1]);
+        }
+
+        // Kiota renames model classes whose name is on its C# reserved list (BCL conflicts:
+        // Directory, File, Task, ...) by appending "Object", then dedupes numerically against
+        // sibling models. Observed and verified: microsoft.graph.directory generates as
+        // DirectoryObject1 (directoryObject already exists at the root) and
+        // microsoft.graph.identityGovernance.task as IdentityGovernance.TaskObject. This
+        // mirrors observed kiota 1.32.2 behavior — a wrong prediction fails the module
+        // compile, it cannot fail silently. Keyed by the full Pascal segment path.
+        kiotaReservedRenames = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var (ns, names) in namesByNamespace)
+        {
+            foreach (var reserved in KiotaReservedModelNames)
+            {
+                if (!names.Contains(reserved))
+                    continue;
+                var renamed = reserved + "Object";
+                while (names.Contains(renamed))
+                    renamed += "1";
+                kiotaReservedRenames[ns.Length == 0 ? reserved : $"{ns}.{reserved}"] = renamed;
+            }
+        }
     }
+
+    // Kiota's C# refiner reserves type names that collide with common BCL types (see
+    // CSharpReservedClassNamesProvider in microsoft/kiota). Only names observed in Graph
+    // docs are listed; a new one surfaces as a compile failure in the affected module.
+    private static readonly string[] KiotaReservedModelNames = ["Directory", "File", "Task", "Type", "Environment"];
 
     // One GET operation from the first pass, held until we know whether it pairs with a
     // list/item partner. CollectionValueSchema is the response's "value" array property when
@@ -44,6 +101,9 @@ public sealed partial class PowerShellWrapperGenerationService
         cancellationToken.ThrowIfCancellationRequested();
 
         var ctx = new EmitContext(ClientNamespace: config.ClientNamespaceName);
+
+        writtenCmdletFiles.Clear();
+        fileCollisions.Clear();
 
         Directory.CreateDirectory(config.OutputPath);
         foreach (var stale in Directory.GetFiles(config.OutputPath, "*.g.cs"))
@@ -75,7 +135,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
                 // Skip operations the published SDK deliberately does not ship. NamingOverrides
                 // holds the citation for each one.
-                if (NamingOverrides.IsSuppressed(httpMethod, pathTemplate))
+                if (NamingOverrides.IsSuppressed(httpMethod, pathTemplate, config))
                 {
                     LogSuppressedOperation(httpMethod.Method, pathTemplate);
                     continue;
@@ -92,12 +152,23 @@ public sealed partial class PowerShellWrapperGenerationService
                 // checks "2XX" first and falls back across 200/201/default and "+json" content
                 // types for the few operations that deviate, rather than doing general content
                 // negotiation the way a generic OpenAPI reader would have to.
+                // A success response that also declares non-JSON content (octet-stream,
+                // image/*) is a media download — kiota generates GetAsync returning Stream
+                // there regardless of any JSON schema the doc also lists (the styled docs
+                // attach an entity schema to /content endpoints; found by compiling Teams).
+                // Stream downloads are not generated yet; see the README gap list.
+                if (httpMethod == HttpMethod.Get && HasNonJsonSuccessContent(operation))
+                {
+                    LogSkippedUnsupportedOperation(httpMethod.Method, pathTemplate, "media/stream content endpoint, not generated yet");
+                    continue;
+                }
+
                 var responseSchema = httpMethod == HttpMethod.Get
                     ? TryGetSuccessJsonSchema(operation)
                     : null;
                 var collectionValueSchema = responseSchema is not null ? FindProperty(responseSchema, "value") : null;
 
-                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams));
+                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams), config);
 
                 if (httpMethod == HttpMethod.Get && responseSchema is null)
                 {
@@ -116,7 +187,8 @@ public sealed partial class PowerShellWrapperGenerationService
                 {
                     _ when httpMethod == HttpMethod.Delete => CmdletEmitter.EmitRemove(cmdletNaming, ctx),
                     _ when httpMethod == HttpMethod.Post => EmitNewFor(cmdletNaming, ctx, operation),
-                    _ when httpMethod == HttpMethod.Patch => EmitUpdateFor(cmdletNaming, ctx, operation),
+                    _ when httpMethod == HttpMethod.Patch => EmitUpdateFor(cmdletNaming, ctx, operation,
+                        canReFetch: pathItem.Operations?.ContainsKey(HttpMethod.Get) == true),
                     _ => null,
                 };
 
@@ -135,6 +207,15 @@ public sealed partial class PowerShellWrapperGenerationService
 
         written += await EmitGetOperationsAsync(getOperations, ctx, cancellationToken).ConfigureAwait(false);
 
+        // All collisions for the run are reported together so one generation surfaces the
+        // complete list; see edge-cases/naming-edge-cases.md for how each kind is resolved.
+        if (fileCollisions.Count > 0)
+        {
+            throw new InvalidOperationException(
+                $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file. " +
+                $"Resolve each with a NamingOverrides rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
+        }
+
         LogWroteFiles(written + 1, config.OutputPath);
     }
 
@@ -145,9 +226,9 @@ public sealed partial class PowerShellWrapperGenerationService
     // which one to invoke.
     //
     // A pairing is only trusted when it is structurally unambiguous: exactly one collection GET
-    // and one single-entity GET share the noun, and the item's path is the list's path plus one
-    // trailing id (Users[UserId].Messages -> Users[UserId].Messages[MessageId]). Everything
-    // else keeps the standalone shape: singleton navs with no list (GET /users/{id}/calendar),
+    // and one single-entity GET share the noun, and the item's path extends the list's path by
+    // exactly one id, in either of the shapes Naming.IsListItemPair accepts. Everything else
+    // keeps the standalone shape: singleton navs with no list (GET /users/{id}/calendar),
     // list-only endpoints such as delta queries, or an unexpected same-noun collision.
     private async Task<int> EmitGetOperationsAsync(List<GetOperationRecord> getOperations, EmitContext ctx, CancellationToken cancellationToken)
     {
@@ -177,18 +258,19 @@ public sealed partial class PowerShellWrapperGenerationService
                 LogSkippedUnsupportedOperation("GET", listOp.Naming.BuilderExpression, "response schema is not a resolvable $ref entity type");
                 continue;
             }
-            var collectionResponseType = listEntityType + "CollectionResponse";
+            var collectionResponseType = ResolveCollectionResponseType(listOp.ResponseSchema, ctx.ModelsNamespace, listEntityType);
 
             // The two real implementations: separate, independently documented cmdlets, unchanged
             // from (and reusing) the standalone shapes used for unpaired GETs.
             var internalListNaming = Naming.WithSuffix(listOp.Naming, "_List");
             var internalItemNaming = Naming.WithSuffix(itemOp.Naming, "_Get");
             var internalListSource = CmdletEmitter.EmitListGet(internalListNaming, ctx, listEntityType, collectionResponseType, listOp.QueryParams.ToHashSet());
-            var internalItemSource = CmdletEmitter.EmitItemGet(internalItemNaming, ctx, entityType);
+            var internalItemSource = CmdletEmitter.EmitItemGet(internalItemNaming, ctx, entityType, itemOp.QueryParams.ToHashSet());
 
             // The thin public dispatcher on top, presenting the merged Get-MgX surface.
             var dispatcherSource = CmdletEmitter.EmitGetDispatcher(listOp.Naming, itemOp.Naming,
-                internalListNaming, internalItemNaming, ctx, entityType, collectionResponseType, listOp.QueryParams.ToHashSet());
+                internalListNaming, internalItemNaming, ctx, entityType, collectionResponseType,
+                listOp.QueryParams.ToHashSet(), itemOp.QueryParams.ToHashSet());
 
             written += await WriteCmdletFileAsync(internalListNaming, internalListSource, cancellationToken).ConfigureAwait(false);
             written += await WriteCmdletFileAsync(internalItemNaming, internalItemSource, cancellationToken).ConfigureAwait(false);
@@ -211,7 +293,8 @@ public sealed partial class PowerShellWrapperGenerationService
                     continue;
                 }
 
-                source = CmdletEmitter.EmitListGet(op.Naming, ctx, listEntityType, listEntityType + "CollectionResponse", op.QueryParams.ToHashSet());
+                source = CmdletEmitter.EmitListGet(op.Naming, ctx, listEntityType,
+                    ResolveCollectionResponseType(op.ResponseSchema, ctx.ModelsNamespace, listEntityType), op.QueryParams.ToHashSet());
             }
             else
             {
@@ -221,7 +304,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     continue;
                 }
 
-                source = CmdletEmitter.EmitItemGet(op.Naming, ctx, entityType);
+                source = CmdletEmitter.EmitItemGet(op.Naming, ctx, entityType, op.QueryParams.ToHashSet());
             }
 
             written += await WriteCmdletFileAsync(op.Naming, source, cancellationToken).ConfigureAwait(false);
@@ -232,7 +315,21 @@ public sealed partial class PowerShellWrapperGenerationService
 
     private async Task<int> WriteCmdletFileAsync(CmdletNaming naming, string source, CancellationToken cancellationToken)
     {
-        var fileName = naming.ClassName.Replace("Command", "", StringComparison.Ordinal) + ".g.cs";
+        const string cmdletClassSuffix = "Command";
+        var className = naming.ClassName;
+        var fileBaseName = className.EndsWith(cmdletClassSuffix, StringComparison.Ordinal)
+            ? className[..^cmdletClassSuffix.Length]
+            : className;
+        var fileName = fileBaseName + ".g.cs";
+        // Both colliding cmdlets usually share the same name, so the builder expression (the
+        // request path) is what actually identifies which two operations collided.
+        var cmdletName = $"{naming.VerbName}-{naming.Noun} [{naming.BuilderExpression}]";
+        if (writtenCmdletFiles.TryGetValue(fileName, out var existing))
+        {
+            fileCollisions.Add($"{fileName}: '{cmdletName}' collides with already-written '{existing}'");
+            return 0;
+        }
+        writtenCmdletFiles[fileName] = cmdletName;
         await File.WriteAllTextAsync(Path.Combine(config.OutputPath, fileName), source, cancellationToken).ConfigureAwait(false);
         LogWroteCmdletFile(fileName, naming.VerbName, naming.Noun);
         return 1;
@@ -260,7 +357,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
     // collectionValueSchema is the already-resolved "value" array property from
     // GetOperationRecord, so nothing is re-walked here.
-    private static bool TryResolveListEntityTypeName(IOpenApiSchema collectionValueSchema, string modelsNamespace, out string entityTypeName)
+    private bool TryResolveListEntityTypeName(IOpenApiSchema collectionValueSchema, string modelsNamespace, out string entityTypeName)
     {
         entityTypeName = string.Empty;
         var itemSchema = collectionValueSchema.Items;
@@ -285,7 +382,7 @@ public sealed partial class PowerShellWrapperGenerationService
         return null;
     }
 
-    private static string? EmitNewFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation)
+    private string? EmitNewFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation)
     {
         // "application/json" is an intentional, Graph-scoped assumption: Graph request bodies are
         // JSON, so the content type is indexed directly rather than negotiated. See the matching
@@ -295,11 +392,12 @@ public sealed partial class PowerShellWrapperGenerationService
             return null;
         if (!TryResolveEntityTypeName(bodySchema, ctx.ModelsNamespace, out var entityType))
             return null;
-        return CmdletEmitter.EmitNew(naming, ctx, entityType,
-            SchemaProperties.ExtractPrimitiveProperties(bodySchema), SchemaProperties.HasPasswordProfile(bodySchema));
+        var properties = SchemaProperties.ResolveParameterNameCollisions(
+            SchemaProperties.ExtractPrimitiveProperties(bodySchema), naming.PathParamNames);
+        return CmdletEmitter.EmitNew(naming, ctx, entityType, properties, SchemaProperties.HasPasswordProfile(bodySchema));
     }
 
-    private static string? EmitUpdateFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation)
+    private string? EmitUpdateFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation, bool canReFetch)
     {
         // "application/json" is an intentional, Graph-scoped assumption (see EmitNewFor).
         var bodySchema = TryGetRequestJsonSchema(operation);
@@ -307,8 +405,27 @@ public sealed partial class PowerShellWrapperGenerationService
             return null;
         if (!TryResolveEntityTypeName(bodySchema, ctx.ModelsNamespace, out var entityType))
             return null;
-        return CmdletEmitter.EmitUpdate(naming, ctx, entityType,
-            SchemaProperties.ExtractPrimitiveProperties(bodySchema), SchemaProperties.HasPasswordProfile(bodySchema));
+        var properties = SchemaProperties.ResolveParameterNameCollisions(
+            SchemaProperties.ExtractPrimitiveProperties(bodySchema), naming.PathParamNames);
+        return CmdletEmitter.EmitUpdate(naming, ctx, entityType, properties, SchemaProperties.HasPasswordProfile(bodySchema), canReFetch);
+    }
+
+    private static bool HasNonJsonSuccessContent(OpenApiOperation operation)
+    {
+        if (operation.Responses is null)
+            return false;
+        foreach (var key in new[] { "2XX", "200", "201" })
+        {
+            if (!operation.Responses.TryGetValue(key, out var response) || response?.Content is null)
+                continue;
+            foreach (var contentType in response.Content.Keys)
+            {
+                if (!contentType.StartsWith("application/json", StringComparison.OrdinalIgnoreCase)
+                    && !contentType.EndsWith("+json", StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+        }
+        return false;
     }
 
     private static IOpenApiSchema? TryGetSuccessJsonSchema(OpenApiOperation operation)
@@ -355,27 +472,56 @@ public sealed partial class PowerShellWrapperGenerationService
         return null;
     }
 
-    private static bool TryResolveEntityTypeName(IOpenApiSchema schema, string modelsNamespace, out string entityTypeName)
+    private bool TryResolveEntityTypeName(IOpenApiSchema schema, string modelsNamespace, out string entityTypeName)
     {
         entityTypeName = string.Empty;
         var id = schema.GetReferenceId();
         if (string.IsNullOrEmpty(id))
             return false;
-        entityTypeName = SchemaNameToTypeName(id, modelsNamespace);
+        entityTypeName = ResolveModelTypeName(id, modelsNamespace, modelSubNamespaces, kiotaReservedRenames);
         return true;
     }
 
-    private static string SchemaNameToTypeName(string schemaName, string modelsNamespace)
-    {
-        var name = schemaName.StartsWith("microsoft.graph.", StringComparison.Ordinal)
+    // The collection response type is resolved from the list response's own $ref, not by
+    // appending "CollectionResponse" to the entity type: kiota's reserved-name rename hits
+    // the entity but not its collection response (identityGovernance.task ->
+    // Models.IdentityGovernance.TaskObject, but taskCollectionResponse -> TaskCollectionResponse
+    // unchanged — found by compiling Identity.Governance). Falls back to the append for
+    // inline response schemas without a $ref.
+    private string ResolveCollectionResponseType(IOpenApiSchema listResponseSchema, string modelsNamespace, string listEntityType) =>
+        TryResolveEntityTypeName(listResponseSchema, modelsNamespace, out var fromRef)
+            ? fromRef
+            : listEntityType + "CollectionResponse";
+
+    private static string StripGraphPrefix(string schemaName) =>
+        schemaName.StartsWith("microsoft.graph.", StringComparison.Ordinal)
             ? schemaName["microsoft.graph.".Length..]
             : schemaName;
 
-        // Kiota nests each dot segment as a sub-namespace under Models ("security.alert"
-        // becomes Models.Security.Alert). A using directive does not reach into nested
-        // namespaces, so multi-segment names are fully qualified; single-segment names,
-        // the common case, stay bare.
-        var segments = name.Split('.').Select(static segment => char.ToUpperInvariant(segment[0]) + segment[1..]).ToArray();
-        return segments.Length == 1 ? segments[0] : $"{modelsNamespace}.{string.Join('.', segments)}";
+    // Maps a schema reference id to the C# type name kiota generates for it. Public and pure
+    // so the mapping rules are directly testable.
+    //
+    // Every reference is fully qualified. Bare names break two ways, both found by compiling
+    // real modules: a name that matches a kiota sub-namespace resolves to the namespace
+    // instead of the type ("Security"), and a name that matches a BCL type in scope resolves
+    // to that ("Directory" vs System.IO.Directory under implicit usings). Kiota itself nests
+    // dotted segments as sub-namespaces ("security.alert" -> Models.Security.Alert), and when
+    // a model's own name matches such a namespace it moves the class inside it
+    // (microsoft.graph.security -> Models.Security.Security, verified against a real client).
+    public static string ResolveModelTypeName(string schemaName, string modelsNamespace, IReadOnlySet<string> modelSubNamespaces,
+        IReadOnlyDictionary<string, string>? kiotaReservedRenames = null)
+    {
+        ArgumentNullException.ThrowIfNull(schemaName);
+        ArgumentNullException.ThrowIfNull(modelsNamespace);
+        ArgumentNullException.ThrowIfNull(modelSubNamespaces);
+
+        var segments = StripGraphPrefix(schemaName).Split('.')
+            .Select(static segment => char.ToUpperInvariant(segment[0]) + segment[1..]).ToArray();
+        if (kiotaReservedRenames is not null && kiotaReservedRenames.TryGetValue(string.Join('.', segments), out var renamed))
+            segments[^1] = renamed;
+        var qualified = $"{modelsNamespace}.{string.Join('.', segments)}";
+        return segments.Length == 1 && modelSubNamespaces.Contains(segments[0])
+            ? $"{qualified}.{segments[0]}"
+            : qualified;
     }
 }
