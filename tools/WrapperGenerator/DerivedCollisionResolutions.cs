@@ -19,9 +19,14 @@ namespace WrapperGenerator;
 // (subtree prunes, cross-path merge picks) is curated in NamingOverrides with a citation.
 internal static class DerivedCollisionResolutions
 {
-    private sealed record DataEntry(string ApiVersion, string Method, string Uri, string Action, string? ReplacementNoun);
+    private sealed record DataEntry(string ApiVersion, string Method, string Uri, string Action, string? ReplacementNoun, string? ReplacementVerb);
 
-    private sealed record Tables(HashSet<string> Suppressions, Dictionary<string, string> Renames);
+    // A rename carries the published noun and, for an action or function, the published verb:
+    // the SDK distinguishes applyHold from removeHold by verb alone (Add- vs Remove-) on the
+    // same noun, so a noun-only rename would name both cmdlets identically.
+    public sealed record DerivedName(string Noun, string? Verb);
+
+    private sealed record Tables(HashSet<string> Suppressions, Dictionary<string, DerivedName> Renames);
 
     private static readonly Lazy<Dictionary<string, Tables>> ByApiVersion = new(Load);
 
@@ -31,11 +36,11 @@ internal static class DerivedCollisionResolutions
         ByApiVersion.Value.TryGetValue(apiVersion, out var tables)
         && tables.Suppressions.Contains(Key(method, normalizedPath));
 
-    public static bool TryReplaceNoun(string apiVersion, HttpMethod method, string normalizedPath, out string noun)
+    public static bool TryReplaceName(string apiVersion, HttpMethod method, string normalizedPath, out DerivedName name)
     {
-        noun = string.Empty;
+        name = null!;
         return ByApiVersion.Value.TryGetValue(apiVersion, out var tables)
-            && tables.Renames.TryGetValue(Key(method, normalizedPath), out noun!);
+            && tables.Renames.TryGetValue(Key(method, normalizedPath), out name!);
     }
 
     private static string Key(HttpMethod method, string normalizedPath) => $"{method.Method.ToUpperInvariant()} {normalizedPath}";
@@ -46,14 +51,19 @@ internal static class DerivedCollisionResolutions
         var assembly = typeof(DerivedCollisionResolutions).Assembly;
         foreach (var resource in assembly.GetManifestResourceNames())
         {
-            if (!resource.Contains(".data.collision-", StringComparison.Ordinal) || !resource.EndsWith(".json", StringComparison.Ordinal))
+            // Two derivations share this reader and schema: collision resolutions
+            // (Derive-CollisionResolutions.ps1) and full-surface parity resolutions
+            // (Derive-ParityResolutions.ps1). Both are oracle-derived, keyed the same way.
+            var isDerivedData = resource.Contains(".data.collision-", StringComparison.Ordinal)
+                || resource.Contains(".data.parity-", StringComparison.Ordinal);
+            if (!isDerivedData || !resource.EndsWith(".json", StringComparison.Ordinal))
                 continue;
             using var stream = assembly.GetManifestResourceStream(resource)!;
             var entries = JsonSerializer.Deserialize<List<DataEntry>>(stream, JsonOptions) ?? [];
             foreach (var entry in entries)
             {
                 if (!result.TryGetValue(entry.ApiVersion, out var tables))
-                    result[entry.ApiVersion] = tables = new Tables(new HashSet<string>(StringComparer.Ordinal), new Dictionary<string, string>(StringComparer.Ordinal));
+                    result[entry.ApiVersion] = tables = new Tables(new HashSet<string>(StringComparer.Ordinal), new Dictionary<string, DerivedName>(StringComparer.Ordinal));
                 var key = $"{entry.Method.ToUpperInvariant()} {entry.Uri}";
                 switch (entry.Action)
                 {
@@ -61,7 +71,7 @@ internal static class DerivedCollisionResolutions
                         tables.Suppressions.Add(key);
                         break;
                     case "rename" when !string.IsNullOrEmpty(entry.ReplacementNoun):
-                        tables.Renames[key] = entry.ReplacementNoun;
+                        tables.Renames[key] = new DerivedName(entry.ReplacementNoun, entry.ReplacementVerb);
                         break;
                     default:
                         // A malformed data file must fail the run, not silently generate the

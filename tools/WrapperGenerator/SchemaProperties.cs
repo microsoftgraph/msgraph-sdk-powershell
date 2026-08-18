@@ -71,7 +71,7 @@ public sealed record UnsupportedProperty(string OpenApiName, UnsupportedShape Sh
 public enum ExclusionPolicy
 {
     ServerAssignedId,     // "id" is assigned by the service
-    ODataControlData,     // "@"-prefixed, e.g. @odata.type; kiota's serializer supplies it
+    ODataControlData,     // an OData annotation carrying protocol metadata, e.g. @odata.type
     KiotaAdditionalData,  // the IAdditionalDataHolder bag every kiota model already exposes
     ReadOnlySchema,       // readOnly: true - the OpenAPI signal for server-managed
     NavigationProperty,   // x-ms-navigationProperty - a relationship with its own request path
@@ -483,9 +483,16 @@ public static class SchemaProperties
     // and the following character upper-cased ("riskEventTypes_v2" -> RiskEventTypesV2,
     // verified against a generated SignIn model). The body assignment targets that member,
     // so this mapping must match kiota's or the emitted code does not compile.
+    private static readonly char[] KiotaPropertyNameSeparators = ['_', '.'];
+
     private static string ToKiotaPropertyName(string openApiName)
     {
-        var parts = openApiName.Split('_', StringSplitOptions.RemoveEmptyEntries);
+        // An OData annotation is a member like any other once kiota has named it: the leading
+        // "@" is dropped and the dotted parts are Pascal-cased and joined, so "@odata.id"
+        // generates as OdataId (verified on microsoft.graph.referenceCreate). Splitting on "."
+        // as well as "_" is what turns the annotation into a legal C# member name instead of
+        // "body.@odata.id", which does not compile.
+        var parts = openApiName.TrimStart('@').Split(KiotaPropertyNameSeparators, StringSplitOptions.RemoveEmptyEntries);
         return string.Concat(parts.Select(static p => char.ToUpperInvariant(p[0]) + p[1..]));
     }
 
@@ -500,12 +507,25 @@ public static class SchemaProperties
     // user.messages), addressed through their own request paths and not settable in a body;
     // Graph marks them with x-ms-navigationProperty and does NOT set readOnly, so that
     // extension is the only signal that keeps them out.
+    // The OData annotations that describe the protocol rather than the resource. @odata.type is
+    // the type discriminator; the other three are paging metadata a service returns. None is
+    // caller input, and the published SDK exposes a parameter for none of them.
+    //
+    // @odata.id is deliberately ABSENT: it is the caller-supplied target of a reference write,
+    // and the only property microsoft.graph.referenceCreate has. Excluding it left every
+    // *-ByRef POST/PUT cmdlet posting an empty body with no way to say what to link. The five
+    // annotations here are the complete set that occurs in the v1.0 documents.
+    private static readonly HashSet<string> MetadataODataAnnotations = new(StringComparer.Ordinal)
+    {
+        "@odata.type", "@odata.count", "@odata.nextLink", "@odata.deltaLink",
+    };
+
     private static ExclusionPolicy? TryGetExclusionPolicy(string name, IOpenApiSchema propSchema) =>
         name switch
         {
             "id" => ExclusionPolicy.ServerAssignedId,
             "additionalData" => ExclusionPolicy.KiotaAdditionalData,
-            _ when name.StartsWith('@') => ExclusionPolicy.ODataControlData,
+            _ when MetadataODataAnnotations.Contains(name) => ExclusionPolicy.ODataControlData,
             _ when propSchema.ReadOnly => ExclusionPolicy.ReadOnlySchema,
             _ when propSchema.Extensions?.ContainsKey("x-ms-navigationProperty") ?? false => ExclusionPolicy.NavigationProperty,
             _ => null,

@@ -87,15 +87,21 @@ internal static class Program
 
         var config = new GeneratorConfig(ClientNamespaceName: clientNamespace, OutputPath: outputPath,
             ApiVersion: apiVersion, UseCollisionData: useCollisionData);
-        var service = new PowerShellWrapperGenerationService(document, config, new StderrLogger(logLevel));
-        await service.GenerateAsync(CancellationToken.None).ConfigureAwait(false);
-
         // The generation service writes only *.g.cs. Also write a minimal kiota-lock.json recording
         // the source spec path, so downstream tooling that keys off it — notably
         // tools/Compare-WrapperCmdletNames.ps1, which reads the v1.0/beta segment out of it to scope
         // its oracle join — can determine the API version.
+        //
+        // Written BEFORE generation, because generation fails loudly on a cmdlet collision and the
+        // output it leaves behind is exactly what the collision and parity derivations are captured
+        // from. Without this marker those captures cannot be scoped to an API version, and every
+        // route silently matches its beta twin as an ambiguous oracle row.
+        Directory.CreateDirectory(outputPath);
         var lockJson = JsonSerializer.Serialize(new { descriptionLocation = specPath }, LockFileJsonOptions);
         await File.WriteAllTextAsync(Path.Combine(outputPath, "kiota-lock.json"), lockJson, CancellationToken.None).ConfigureAwait(false);
+
+        var service = new PowerShellWrapperGenerationService(document, config, new StderrLogger(logLevel));
+        await service.GenerateAsync(CancellationToken.None).ConfigureAwait(false);
 
         var count = Directory.GetFiles(outputPath, "*.g.cs").Length;
         Console.WriteLine($"Generated {count} .g.cs file(s) to {outputPath}");

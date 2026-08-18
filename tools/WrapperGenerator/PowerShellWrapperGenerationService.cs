@@ -95,7 +95,8 @@ public sealed partial class PowerShellWrapperGenerationService
     // Kiota's C# refiner reserves type names that collide with common BCL types (see
     // CSharpReservedClassNamesProvider in microsoft/kiota). Only names observed in Graph
     // docs are listed; a new one surfaces as a compile failure in the affected module.
-    private static readonly string[] KiotaReservedModelNames = ["Directory", "File", "Task", "Type", "Environment"];
+    private static readonly string[] KiotaReservedModelNames =
+        ["Action", "DayOfWeek", "Directory", "Environment", "File", "Task", "Type", "ValueType"];
 
     // One GET operation from the first pass, held until we know whether it pairs with a
     // list/item partner. CollectionValueSchema is the response's "value" array property when
@@ -131,15 +132,28 @@ public sealed partial class PowerShellWrapperGenerationService
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
+                // What the OData metadata says this operation is. Actions and functions are
+                // calls on a resource rather than CRUD over one, which decides the verb, the
+                // request shape and the kiota member the call goes through.
+                var operationKind = ClassifyOperationKind(operation, httpMethod);
+
                 // Operation shapes the emitters cannot produce a valid cmdlet for yet are
                 // skipped up front instead of emitted malformed: OData $-segments would produce
                 // broken names (Get-MgBookingBusinesscount) or invalid builder chains
-                // (client...$value does not compile), and parameterized function segments
-                // ("getByUserIdAndRole(userId='{userId}',...)") mangle into garbage nouns.
-                // The README's gap list tracks these shapes as future work.
-                if (HasUnsupportedPathSegment(pathTemplate))
+                // (client...$value does not compile). The README's gap list tracks these
+                // shapes as future work.
+                if (HasUnsupportedODataSegment(pathTemplate))
                 {
-                    LogSkippedUnsupportedOperation(httpMethod.Method, pathTemplate, "unsupported OData path segment ($-segment or parameterized function), not generated yet");
+                    LogSkippedUnsupportedOperation(httpMethod.Method, pathTemplate, "unsupported OData $-segment, not generated yet");
+                    continue;
+                }
+
+                // A parenthesised segment on an operation the spec does NOT class as an action or
+                // function: the arguments belong to a call the generator has no shape for, and the
+                // segment would mangle into a garbage noun.
+                if (operationKind == OperationKind.Resource && HasCallSegment(pathTemplate))
+                {
+                    LogSkippedUnsupportedOperation(httpMethod.Method, pathTemplate, "call segment on an operation the spec does not class as an action or function");
                     continue;
                 }
 
@@ -166,10 +180,86 @@ public sealed partial class PowerShellWrapperGenerationService
                 // image/*) is a media download — kiota generates GetAsync returning Stream
                 // there regardless of any JSON schema the doc also lists (the styled docs
                 // attach an entity schema to /content endpoints; found by compiling Teams).
-                // Stream downloads are not generated yet; see the README gap list.
-                if (httpMethod == HttpMethod.Get && HasNonJsonSuccessContent(operation))
+                // An action or function returning bytes goes through EmitOperationCall, which binds
+                // the response as a byte array, so the media test below is scoped to resource
+                // operations rather than intercepting every GET.
+
+                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams, operationKind), config);
+
+                // An action or function is emitted from its own shape: it is never half of a
+                // list/item pair, and its request and response types are the per-operation
+                // classes kiota generates beside the request builder.
+                if (operationKind != OperationKind.Resource)
                 {
-                    LogSkippedUnsupportedOperation(httpMethod.Method, pathTemplate, "media/stream content endpoint, not generated yet");
+                    var operationSource = EmitOperationCall(cmdletNaming, ctx, operation, operationKind, queryParams, pathTemplate);
+                    if (operationSource is null)
+                        continue;
+                    written += await WriteCmdletFileAsync(cmdletNaming, operationSource, cancellationToken).ConfigureAwait(false);
+                    continue;
+                }
+
+                // An OData /$value is the raw bytes behind a resource: GET reads them, PUT
+                // replaces them, DELETE clears them. GET and PUT need their own shapes because
+                // kiota types both as Stream; DELETE is an ordinary delete and falls through.
+                //
+                // A GET whose success response declares non-JSON content (octet-stream, image/*)
+                // is the same shape under a different spelling: a literal media segment such as
+                // /content, /logo or /favicon, which kiota also types as Stream. The styled
+                // documents attach an entity schema to those endpoints as well, so the content
+                // type is what identifies them, not the schema. The test excludes the emittable
+                // $-segments because /$count answers text/plain — without that exclusion it would
+                // divert /$count here instead of letting its own branch below run.
+                var isMediaDownload = httpMethod == HttpMethod.Get
+                    && !EndsWithEmittableODataSegment(pathTemplate)
+                    && HasBinarySuccessContent(operation);
+                if ((EndsWithSegment(pathTemplate, "$value") || isMediaDownload) && httpMethod != HttpMethod.Delete)
+                {
+                    if (httpMethod != HttpMethod.Get && httpMethod != HttpMethod.Put)
+                    {
+                        LogSkippedUnsupportedOperation(httpMethod.Method, cmdletNaming.NormalizedPath, "no wrapper emitter for this HTTP method");
+                        continue;
+                    }
+                    // The response is usually the bytes themselves, but several /$value writes
+                    // return the updated entity instead (a driveItem, a onenotePage). The type
+                    // is resolved from the response rather than assumed to be a stream.
+                    if (!TryResolveOperationReturnType(operation, ctx, cmdletNaming, isAction: false,
+                            out var contentType, out _, out var contentIsStream)
+                        || contentType is null)
+                    {
+                        LogSkippedUnsupportedOperation(httpMethod.Method, cmdletNaming.NormalizedPath, "content response is neither a stream nor a resolvable entity");
+                        continue;
+                    }
+                    var contentSource = httpMethod == HttpMethod.Get
+                        ? CmdletEmitter.EmitContentGet(cmdletNaming, ctx, contentType, contentIsStream)
+                        : CmdletEmitter.EmitContentSet(cmdletNaming, ctx, contentType, contentIsStream);
+                    written += await WriteCmdletFileAsync(cmdletNaming, contentSource, cancellationToken).ConfigureAwait(false);
+                    continue;
+                }
+
+                // A /$ref operation manages the references of a relationship rather than the
+                // entities behind it. GET lists reference URLs (kiota: StringCollectionResponse,
+                // not a collection of entities); POST and PUT take a referenceCreate body and
+                // return nothing, so neither the New nor the Set shape fits. DELETE is an
+                // ordinary delete and falls through.
+                if (EndsWithSegment(pathTemplate, "$ref") && httpMethod != HttpMethod.Delete)
+                {
+                    var refSource = EmitReferenceOperation(cmdletNaming, ctx, operation, httpMethod, queryParams);
+                    if (refSource is null)
+                    {
+                        LogSkippedUnsupportedOperation(httpMethod.Method, cmdletNaming.NormalizedPath, "no wrapper emitter for this reference operation");
+                        continue;
+                    }
+                    written += await WriteCmdletFileAsync(cmdletNaming, refSource, cancellationToken).ConfigureAwait(false);
+                    continue;
+                }
+
+                // A /$count GET returns a number, not a resource, so it is emitted directly
+                // rather than being held back for list/item pairing — there is no entity schema
+                // to resolve and no item GET it could pair with.
+                if (httpMethod == HttpMethod.Get && EndsWithSegment(pathTemplate, "$count"))
+                {
+                    written += await WriteCmdletFileAsync(cmdletNaming,
+                        CmdletEmitter.EmitScalarGet(cmdletNaming, ctx, "int", queryParams.ToHashSet()), cancellationToken).ConfigureAwait(false);
                     continue;
                 }
 
@@ -177,8 +267,6 @@ public sealed partial class PowerShellWrapperGenerationService
                     ? TryGetSuccessJsonSchema(operation)
                     : null;
                 var collectionValueSchema = responseSchema is not null ? FindProperty(responseSchema, "value") : null;
-
-                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams), config);
 
                 if (httpMethod == HttpMethod.Get && responseSchema is null)
                 {
@@ -199,6 +287,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     _ when httpMethod == HttpMethod.Post => EmitNewFor(cmdletNaming, ctx, operation),
                     _ when httpMethod == HttpMethod.Patch => EmitUpdateFor(cmdletNaming, ctx, operation,
                         canReFetch: pathItem.Operations?.ContainsKey(HttpMethod.Get) == true),
+                    _ when httpMethod == HttpMethod.Put => EmitSetFor(cmdletNaming, ctx, operation),
                     _ => null,
                 };
 
@@ -329,10 +418,17 @@ public sealed partial class PowerShellWrapperGenerationService
 
     private async Task<int> WriteCmdletFileAsync(CmdletNaming naming, string source, CancellationToken cancellationToken)
     {
-        var fileName = naming.ClassName.Replace("Command", "", StringComparison.Ordinal) + ".g.cs";
-        // Both colliding cmdlets usually share the same name, so the builder expression (the
-        // request path) is what actually identifies which two operations collided.
-        var cmdletName = $"{naming.VerbName}-{naming.Noun} [{naming.BuilderExpression}]";
+        const string cmdletClassSuffix = "Command";
+        var className = naming.ClassName;
+        var fileBaseName = className.EndsWith(cmdletClassSuffix, StringComparison.Ordinal)
+            ? className[..^cmdletClassSuffix.Length]
+            : className;
+        var fileName = fileBaseName + ".g.cs";
+        // Both colliding cmdlets usually share the same name, so the route is what actually
+        // identifies which two operations collided. It is reported directly rather than left to
+        // be reconstructed from the builder expression, which cannot express a function's OData
+        // arguments or an action's namespace qualifier.
+        var cmdletName = $"{naming.VerbName}-{naming.Noun} [{naming.NormalizedPath}]";
         if (writtenCmdletFiles.TryGetValue(fileName, out var existing))
         {
             fileCollisions.Add($"{fileName}: '{cmdletName}' collides with already-written '{existing}'");
@@ -363,14 +459,60 @@ public sealed partial class PowerShellWrapperGenerationService
     [LoggerMessage(Level = LogLevel.Information, Message = "Body properties classified={Classified} = scalar={Scalars} + model={Complex} + untyped={Untyped} + excluded={Excluded} + unsupported={Unsupported}")]
     private partial void LogBodyPropertyReconciliation(int classified, int scalars, int complex, int untyped, int excluded, int unsupported);
 
+    // What the spec says the operation is. x-ms-docs-operation-type is the Graph metadata's own
+    // classification, so actions and functions are identified from the document rather than
+    // guessed from the path — a segment carrying parentheses is a consequence of being a
+    // function, not the definition of one. The HTTP method is checked too: an entry claiming to
+    // be an action on anything but POST (or a function on anything but GET) would be emitted
+    // with the wrong request shape, so it falls back to resource handling.
+    private static OperationKind ClassifyOperationKind(OpenApiOperation operation, HttpMethod httpMethod)
+    {
+        if (operation.Extensions is null
+            || !operation.Extensions.TryGetValue("x-ms-docs-operation-type", out var extension)
+            || extension is not JsonNodeExtension node)
+            return OperationKind.Resource;
+
+        return node.Node?.ToString()?.Trim('"') switch
+        {
+            "action" when httpMethod == HttpMethod.Post => OperationKind.Action,
+            "function" when httpMethod == HttpMethod.Get => OperationKind.Function,
+            _ => OperationKind.Resource,
+        };
+    }
+
     // True when the path contains a segment shape the emitters cannot handle yet: an OData
-    // $-segment ($count/$value/$ref) or a parameterized function/action call (any segment
-    // with parentheses, including delta()). OData cast segments (microsoft.graph.user) are
-    // deliberately NOT excluded here: they emit valid builder chains and the parity gate
-    // tracks them separately.
-    private static bool HasUnsupportedPathSegment(string pathTemplate) =>
+    // $-segment ($count/$value/$ref), or a parenthesised segment on an operation the spec does
+    // NOT class as an action or function — the latter would mangle into a garbage noun, whereas
+    // a declared function's segment is parsed into its name and inline arguments. OData cast
+    // segments (microsoft.graph.user) are deliberately NOT excluded here: they emit valid
+    // builder chains and the parity gate tracks them separately.
+    // True when a segment BEFORE the last one is a function call carrying arguments. A
+    // zero-argument call ("range()") is exempt: kiota exposes it as a plain property, so there
+    // is nothing to bind.
+    private static bool HasParameterizedIntermediateSegment(string pathTemplate)
+    {
+        var fixedSegments = pathTemplate.Split('/', StringSplitOptions.RemoveEmptyEntries)
+            .Where(s => !(s.StartsWith('{') && s.EndsWith('}')))
+            .ToList();
+        return fixedSegments.Take(Math.Max(0, fixedSegments.Count - 1))
+            .Any(s => Naming.ParseOperationSegment(s).Parameters.Count > 0);
+    }
+
+    private static bool EndsWithEmittableODataSegment(string pathTemplate) =>
+        pathTemplate.Split('/', StringSplitOptions.RemoveEmptyEntries) is { Length: > 0 } parts
+        && Naming.IsSupportedODataSegment(parts[^1]);
+
+    private static bool EndsWithSegment(string pathTemplate, string segment) =>
+        pathTemplate.Split('/', StringSplitOptions.RemoveEmptyEntries) is { Length: > 0 } parts
+        && string.Equals(parts[^1], segment, StringComparison.Ordinal);
+
+    private static bool HasUnsupportedODataSegment(string pathTemplate) =>
         pathTemplate.Split('/', StringSplitOptions.RemoveEmptyEntries)
-            .Any(segment => segment.StartsWith('$') || segment.Contains('('));
+            .Any(segment => segment.StartsWith('$') && !Naming.IsSupportedODataSegment(segment));
+
+    private static bool HasCallSegment(string pathTemplate) =>
+        pathTemplate.Split('/', StringSplitOptions.RemoveEmptyEntries)
+            .Any(segment => segment.Contains('(', StringComparison.Ordinal));
 
     // collectionValueSchema is the already-resolved "value" array property from
     // GetOperationRecord, so nothing is re-walked here.
@@ -397,6 +539,197 @@ public sealed partial class PowerShellWrapperGenerationService
         }
 
         return null;
+    }
+
+    // Emits one OData action or function. Both resolve the same three facts — which kiota method
+    // carries the call, what it returns, and whether it takes a generated request body — from
+    // the operation's own schemas; the difference between them is the HTTP verb and that only an
+    // action has a body.
+    private string? EmitOperationCall(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation,
+        OperationKind kind, IReadOnlyList<string> queryParams, string pathTemplate)
+    {
+        var isAction = kind == OperationKind.Action;
+        var httpVerb = isAction ? "POST" : "GET";
+
+        // OData parameter aliases ("doesUserHaveAccess(userId='@userId')") pass their values as
+        // query options rather than in the path, a binding model none of the emitted shapes
+        // cover, and kiota's member name for the quoted form is irregular
+        // (GetAllRecordingsuserIdUserIdWithStartDateTime...). 13 v1.0 operations use them, 5 of
+        // which the published SDK ships; they are reported rather than emitted against a guessed
+        // name. See docs/edge-cases/action-function-edge-cases.md.
+        if (naming.NormalizedPath.Contains('@', StringComparison.Ordinal))
+        {
+            LogSkippedUnsupportedOperation(httpVerb, naming.NormalizedPath, "OData parameter-alias arguments (@name), not generated yet");
+            return null;
+        }
+
+        // Arguments are bound for the operation's own segment. A route that calls a
+        // parameterized function part-way along (".../columns/itemAt(index={index})/dataBodyRange")
+        // would need the intermediate call's arguments too, and emitting it without them leaves
+        // {index} unexpanded in the request URL — a cmdlet that cannot work. Refused rather than
+        // emitted broken; supporting it means binding every intermediate call's arguments.
+        if (HasParameterizedIntermediateSegment(pathTemplate))
+        {
+            LogSkippedUnsupportedOperation(httpVerb, naming.NormalizedPath, "route calls a parameterized function before its final segment, whose arguments cannot be bound");
+            return null;
+        }
+
+        if (!TryResolveOperationReturnType(operation, ctx, naming, isAction, out var returnType, out var methodName, out var returnsStream))
+        {
+            LogSkippedUnsupportedOperation(httpVerb, naming.BuilderExpression, "response schema is neither a resolvable entity nor a value-wrapping response");
+            return null;
+        }
+
+        if (!isAction)
+            return CmdletEmitter.EmitFunction(naming, ctx, new CmdletEmitter.CallPlan(methodName, returnType, BodyTypeName: null, returnsStream), queryParams.ToHashSet());
+
+        // Action parameters live in an inline "action parameters" object that kiota generates as
+        // a per-operation <Member>PostRequestBody class; there is no named entity schema to
+        // resolve, so the type name is predicted from the route the same way kiota builds it.
+        var bodySchema = TryGetRequestJsonSchema(operation);
+        var bodyType = bodySchema is null
+            ? null
+            : $"global::{ctx.ClientNamespace}.{naming.OperationTypeNamespace}.{naming.OperationTypeName}PostRequestBody";
+        var (scalars, complex, untyped) = bodySchema is null
+            ? ([], [], [])
+            : BindBodyProperties(bodySchema, ctx, naming, bodyType!);
+
+        return CmdletEmitter.EmitAction(naming, ctx, new CmdletEmitter.CallPlan(methodName, returnType, bodyType, returnsStream), scalars, complex, untyped);
+    }
+
+    // Resolves what a call returns and which kiota method returns it. Three shapes occur, and
+    // kiota names the method from the shape: a response referencing an entity comes back from
+    // the plain PostAsync/GetAsync; a response wrapping its payload in a "value" property comes
+    // back from a dedicated …As<Member><Verb>ResponseAsync (the plain overload beside it returns
+    // a type kiota marks [Obsolete]); no response body at all means the method returns Task.
+    private bool TryResolveOperationReturnType(OpenApiOperation operation, EmitContext ctx, CmdletNaming naming,
+        bool isAction, out string? returnType, out string methodName, out bool returnsStream)
+    {
+        returnType = null;
+        returnsStream = false;
+        var httpVerb = isAction ? "Post" : "Get";
+        methodName = httpVerb + "Async";
+
+        // A byte response: kiota types a binary schema as Stream from the ordinary Post/GetAsync.
+        // The Intune reporting surface is almost all of this shape.
+        if (HasBinarySuccessContent(operation))
+        {
+            returnType = "System.IO.Stream";
+            returnsStream = true;
+            return true;
+        }
+
+        var responseSchema = TryGetSuccessJsonSchema(operation);
+        if (responseSchema is null)
+            // No response body: kiota emits a plain Task-returning method. Actions that only act
+            // (revoke, send, restart) are the largest single response shape in the corpus.
+            return true;
+
+        responseSchema = UnwrapNullableUnion(responseSchema);
+
+        // A referenced entity is returned as that model, even when the entity itself happens to
+        // have a "value" member — microsoft.graph.workbookFunctionResult does, and treating it
+        // as a wrapper made every workbook function ask kiota for a per-operation response class
+        // it never generates. Only an INLINE object whose payload hangs off "value" gets one.
+        if (TryResolveEntityTypeName(responseSchema, ctx.ModelsNamespace, out var entityType))
+        {
+            returnType = entityType;
+            return true;
+        }
+
+        if (FindProperty(responseSchema, "value") is not null)
+        {
+            returnType = $"global::{ctx.ClientNamespace}.{naming.OperationTypeNamespace}.{naming.OperationTypeName}{httpVerb}Response";
+            methodName = $"{httpVerb}As{naming.OperationTypeName}{httpVerb}ResponseAsync";
+            return true;
+        }
+
+        return false;
+    }
+
+    // The Graph docs express "entity or null" as anyOf[$ref, {type: object, nullable: true}].
+    // That is a nullability annotation, not a choice of types, and kiota resolves it to the
+    // referenced entity; unwrapping keeps a real union (which the classifier reports) distinct
+    // from this encoding.
+    private static IOpenApiSchema UnwrapNullableUnion(IOpenApiSchema schema)
+    {
+        foreach (var union in new[] { schema.AnyOf, schema.OneOf })
+        {
+            if (union is null || union.Count == 0)
+                continue;
+            var referenced = union.Where(branch => branch.GetReferenceId() is not null).ToList();
+            if (referenced.Count == 1)
+                return referenced[0];
+        }
+        return schema;
+    }
+
+    // A /$ref operation other than DELETE. GET returns the reference URLs; POST and PUT send a
+    // referenceCreate body and return nothing, which is the action shape (body in, no output)
+    // rather than the New shape (body in, entity out).
+    private string? EmitReferenceOperation(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation,
+        HttpMethod httpMethod, IReadOnlyList<string> queryParams)
+    {
+        if (httpMethod == HttpMethod.Get)
+        {
+            // A collection navigation's $ref lists reference URLs, which kiota types as a
+            // StringCollectionResponse; a single-valued navigation's $ref returns the one URL as
+            // a plain string. The response schema says which — a "value" array means the former.
+            var refResponse = TryGetSuccessJsonSchema(operation);
+            var isCollection = refResponse is not null && FindProperty(refResponse, "value") is not null;
+            return isCollection
+                ? CmdletEmitter.EmitListGet(naming, ctx, "string",
+                    $"{ctx.ModelsNamespace}.StringCollectionResponse", queryParams.ToHashSet())
+                : CmdletEmitter.EmitScalarGet(naming, ctx, "string", queryParams.ToHashSet());
+        }
+
+        if (httpMethod != HttpMethod.Post && httpMethod != HttpMethod.Put)
+            return null;
+
+        var bodySchema = TryGetRequestJsonSchema(operation);
+        if (bodySchema is null || !TryResolveEntityTypeName(bodySchema, ctx.ModelsNamespace, out var bodyType))
+            return null;
+        var (scalars, complex, untyped) = BindBodyProperties(bodySchema, ctx, naming, bodyType);
+        var method = httpMethod == HttpMethod.Post ? "PostAsync" : "PutAsync";
+        return CmdletEmitter.EmitAction(naming, ctx,
+            new CmdletEmitter.CallPlan(method, ReturnTypeName: null, BodyTypeName: bodyType),
+            scalars, complex, untyped);
+    }
+
+    // PUT replaces a resource outright. Two shapes occur: a JSON body naming an entity (the
+    // synchronization and secrets endpoints), which is the PATCH shape with PutAsync in place of
+    // PatchAsync and no re-fetch, and a binary body (logos, uploaded content), which kiota types
+    // as Stream and which takes -InFile like any other content write.
+    private string? EmitSetFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation)
+    {
+        if (HasNonJsonRequestContent(operation))
+        {
+            return TryResolveOperationReturnType(operation, ctx, naming, isAction: false,
+                    out var uploadReturn, out _, out var uploadIsStream) && uploadReturn is not null
+                ? CmdletEmitter.EmitContentSet(naming, ctx, uploadReturn, uploadIsStream)
+                : null;
+        }
+
+        var bodySchema = TryGetRequestJsonSchema(operation);
+        if (bodySchema is null)
+            return null;
+        if (!TryResolveEntityTypeName(bodySchema, ctx.ModelsNamespace, out var entityType))
+            return null;
+        var (properties, complex, untyped) = BindBodyProperties(bodySchema, ctx, naming, entityType);
+        return CmdletEmitter.EmitUpdate(naming, ctx, entityType, properties, complex, untyped,
+            reFetchAfterUpdate: false, httpMethodName: "PutAsync");
+    }
+
+    // True when the request body is declared only as a non-JSON media type, which kiota types as
+    // a Stream parameter rather than a model.
+    private static bool HasNonJsonRequestContent(OpenApiOperation operation)
+    {
+        var content = operation.RequestBody?.Content;
+        if (content is null || content.Count == 0)
+            return false;
+        return !content.Keys.Any(contentType =>
+            contentType.StartsWith("application/json", StringComparison.OrdinalIgnoreCase)
+            || contentType.EndsWith("+json", StringComparison.OrdinalIgnoreCase));
     }
 
     private string? EmitNewFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation)
@@ -481,7 +814,17 @@ public sealed partial class PowerShellWrapperGenerationService
     private IOpenApiSchema? ResolveComponentSchema(string referenceId) =>
         document.Components?.Schemas?.TryGetValue(referenceId, out var schema) == true ? schema : null;
 
-    private static bool HasNonJsonSuccessContent(OpenApiOperation operation)
+    // A success response kiota types as Stream rather than a model. Two independent signals, both
+    // needed: the documents are not consistent about which they use.
+    //
+    //   * an explicit binary schema (`type: string, format: binary`) — /applications/{id}/logo
+    //   * a media type that carries neither JSON nor text — the reports functions declare
+    //     `application/octet-stream` with a bare `type: object` and no format
+    //
+    // Neither alone suffices. Testing only the format misses the reports surface (which then
+    // emits `typeof()` and fails to compile); testing only "not JSON" wrongly claims a
+    // `text/plain` scalar, which is a string, not a download.
+    private static bool HasBinarySuccessContent(OpenApiOperation operation)
     {
         if (operation.Responses is null)
             return false;
@@ -489,11 +832,15 @@ public sealed partial class PowerShellWrapperGenerationService
         {
             if (!operation.Responses.TryGetValue(key, out var response) || response?.Content is null)
                 continue;
-            foreach (var contentType in response.Content.Keys)
+            foreach (var (contentType, media) in response.Content)
             {
-                if (!contentType.StartsWith("application/json", StringComparison.OrdinalIgnoreCase)
-                    && !contentType.EndsWith("+json", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(media?.Schema?.Format, "binary", StringComparison.OrdinalIgnoreCase))
                     return true;
+                if (contentType.StartsWith("application/json", StringComparison.OrdinalIgnoreCase)
+                    || contentType.EndsWith("+json", StringComparison.OrdinalIgnoreCase)
+                    || contentType.StartsWith("text/", StringComparison.OrdinalIgnoreCase))
+                    continue;
+                return true;
             }
         }
         return false;
