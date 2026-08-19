@@ -117,6 +117,16 @@ steps:
         }
         Write-Host "npm_config_registry = $env:npm_config_registry"
 
+        # Point the .pnpmfile.cjs tarball rewrite at the private feed. The pnpmfile only rewrites
+        # the tarball URLs of its version-override packages (serialize-javascript, js-yaml) when
+        # this env var is present, and uses its value as the replacement registry base. The feed
+        # emits public registry.npmjs.org tarball URLs for those overridden versions, which would
+        # otherwise be fetched directly from public npm (blocked under 1ES/CFSClean isolation).
+        # Setting it to $env:npm_config_registry keeps the destination tied to the same feed the
+        # pipeline authenticated against. Leaving it unset disables the rewrite (local dev).
+        $env:MG_PNPM_TARBALL_REGISTRY = $env:npm_config_registry
+        Write-Host "MG_PNPM_TARBALL_REGISTRY = $env:MG_PNPM_TARBALL_REGISTRY"
+
         npx --no-install rush install
         if ($LASTEXITCODE -ne 0) { throw "rush install failed with exit code $LASTEXITCODE" }
         npx --no-install rush link
