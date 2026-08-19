@@ -21604,7 +21604,7 @@ paths:
     get:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: List m365Capabilities for default policy
+      summary: List Microsoft 365 capabilities for default policy
       description: 'Get a list of Microsoft 365 cross-tenant capabilities configured for the default cross-tenant access policy. The returned collection is a heterogeneous collection of derived types of m365CapabilityBase, differentiated by their @odata.type property.'
       externalDocs:
         description: Find more info here
@@ -21658,7 +21658,7 @@ paths:
     post:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create m365CapabilityBase for default policy
+      summary: Create Microsoft 365 capability for default policy
       description: Create a new Microsoft 365 cross-tenant capability for the default cross-tenant access policy. The @odata.type property in the request body is required to specify which type of capability to create.
       externalDocs:
         description: Find more info here
@@ -21730,7 +21730,11 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update the navigation property m365Capabilities in policies
+      summary: Update Microsoft 365 capability for default policy
+      description: Update an existing Microsoft 365 cross-tenant capability for the default cross-tenant access policy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-update-m365capabilities?view=graph-rest-beta
       operationId: policy.crossTenantAccessPolicy.default_UpdateM365Capability
       parameters:
         - name: m365CapabilityBase-name
@@ -22156,7 +22160,7 @@ paths:
     get:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: List m365Capabilities for partner
+      summary: List Microsoft 365 capabilities for partner
       description: 'Get a list of Microsoft 365 cross-tenant capabilities configured for a partner organization in the cross-tenant access policy. The returned collection is a heterogeneous collection of derived types of m365CapabilityBase, differentiated by their @odata.type property.'
       externalDocs:
         description: Find more info here
@@ -22218,7 +22222,7 @@ paths:
     post:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create m365CapabilityBase for partner
+      summary: Create Microsoft 365 capability for partner
       description: Create a new Microsoft 365 cross-tenant capability for a partner organization in the cross-tenant access policy. The @odata.type property in the request body is required to specify which type of capability to create.
       externalDocs:
         description: Find more info here
@@ -22307,7 +22311,11 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update the navigation property m365Capabilities in policies
+      summary: Update Microsoft 365 capability for partner
+      description: Update an existing Microsoft 365 cross-tenant capability for a partner organization in the cross-tenant access policy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-update-m365capabilities?view=graph-rest-beta
       operationId: policy.crossTenantAccessPolicy.partner_UpdateM365Capability
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -22346,7 +22354,11 @@ paths:
     delete:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Delete navigation property m365Capabilities for policies
+      summary: Delete Microsoft 365 capability for partner
+      description: Delete a Microsoft 365 cross-tenant capability from a partner organization in the cross-tenant access policy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-delete-m365capabilities?view=graph-rest-beta
       operationId: policy.crossTenantAccessPolicy.partner_DeleteM365Capability
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -40089,7 +40101,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.verifiedIdUsageConfiguration'
-              description: 'Collection defining the usage purpose for the profile. The possible values are: recovery, onboarding, all, unknownFutureValue. Required.'
+              description: 'Collection defining the usage purpose for the profile. The possible values are: recovery, onboarding, all, unknownFutureValue, verification. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: verification. Required.'
             verifierDid:
               type: string
               description: Decentralized Identifier (DID) string that represents the verifier in the verifiable credential exchange. Required.
@@ -40153,10 +40165,12 @@ components:
               nullable: true
             agentDisplayName:
               type: string
-              description: 'Name of the agent.  Supports $filter (eq, startsWith).'
+              description: 'Name of the agent. Deprecated. Use displayName instead. This property will be removed after 2027-04-28.  Supports $filter (eq, startsWith).'
+              nullable: true
             agentId:
               type: string
-              description: 'The unique identifier for the agent. This is equivalent to ''id'' to the specific agent type. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).'
+              description: 'The unique identifier for the agent. Deprecated. Use identityId instead. This property will be removed after 2027-04-28. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).'
+              nullable: true
             blueprintId:
               type: string
               description: The identifier of the blueprint associated with the agent. Nullable.
@@ -40174,10 +40188,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskDetectionTimingType'
             displayName:
               type: string
-              nullable: true
+              description: 'Human-readable name of the identity associated with this risk detection.  Supports $filter (eq, startsWith).'
             identityId:
               type: string
-              nullable: true
+              description: 'Unique identifier of the identity associated with this risk detection.  Supports $filter (eq, startsWith).'
             identityType:
               $ref: '#/components/schemas/microsoft.graph.agentIdentityType'
             lastModifiedDateTime:
@@ -41833,6 +41847,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
             solutions:
               $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
+            sponsorOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that''s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.'
+              x-ms-navigationProperty: true
             sponsors:
               type: array
               items:
@@ -44703,10 +44723,10 @@ components:
       properties:
         isEnabled:
           type: boolean
-          description: Defines if Face Check is required. Currently must always be true.
+          description: Indicates whether Face Check is required. Currently must be true.
         sourcePhotoClaimName:
           type: string
-          description: Source of photo to validate Face Check against. Currently must always be portrait
+          description: The source claim name for the photo used to validate Face Check. Currently must be portrait.
       additionalProperties:
         type: object
     microsoft.graph.verifiedIdProfileState:
@@ -44722,19 +44742,19 @@ components:
       properties:
         acceptedIssuer:
           type: string
-          description: Trusted Verified ID issuer.
+          description: Trusted Verified ID issuer. Required.
         claimBindings:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.claimBinding'
-          description: Claim bindings from Verified ID to source attributes.
+          description: Claim bindings from Verified ID to source attributes. Required.
         claimBindingSource:
           $ref: '#/components/schemas/microsoft.graph.claimBindingSource'
         claimValidation:
           $ref: '#/components/schemas/microsoft.graph.claimValidation'
         type:
           type: string
-          description: Verified ID type.
+          description: Verified ID type. Required.
       additionalProperties:
         type: object
     microsoft.graph.verifiedIdUsageConfiguration:
@@ -46681,6 +46701,12 @@ components:
               type: boolean
             lastLoginResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcLoginResult'
+            lastLogoffDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the user last logged off from the Cloud PC session. Returns null if the user has never established a session or if a session is currently active. The timestamp is shown in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only when explicitly selected with $select.'
+              format: date-time
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -47107,12 +47133,6 @@ components:
             personIdentifier:
               type: string
               nullable: true
-            distributionListMembers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.distributionListMember'
-              description: The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.
-              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
@@ -52288,10 +52308,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.matchConfidenceLevel'
         sourceAttribute:
           type: string
-          description: Source attribute value
+          description: The source attribute from the directory or credential.
         verifiedIdClaim:
           type: string
-          description: Entra ID attribute value
+          description: The claim name in the verified ID credential.
       additionalProperties:
         type: object
     microsoft.graph.claimBindingSource:
@@ -53616,7 +53636,7 @@ components:
           type: object
           properties:
             body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -53671,7 +53691,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
               description: 'References to attached objects like files, tabs, meetings etc.'
             body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
             channelIdentity:
               $ref: '#/components/schemas/microsoft.graph.channelIdentity'
             chatId:
@@ -54500,26 +54520,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.distributionListMember:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: distributionListMember
-          type: object
-          properties:
-            contactId:
-              type: string
-              description: 'The ID of the referenced contact, if applicable. Read-only.'
-              nullable: true
-            displayName:
-              type: string
-              description: The display name of the member. Read-only.
-              nullable: true
-            recipientType:
-              $ref: '#/components/schemas/microsoft.graph.recipientType'
-            contact:
-              $ref: '#/components/schemas/microsoft.graph.contact'
-          additionalProperties:
-            type: object
     microsoft.graph.baseItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -59214,6 +59214,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerHistoryItem'
+              description: Collection of history items for entities in the plan. Read-only. Nullable.
               x-ms-navigationProperty: true
             tasks:
               type: array
@@ -61702,6 +61703,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageBody:
+      title: chatMessageBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the chat message.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+        messageBodyContentType:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageBodyContentType'
+      additionalProperties:
+        type: object
     microsoft.graph.eventMessageDetail:
       title: eventMessageDetail
       type: object
@@ -66261,7 +66276,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
       additionalProperties:
         type: object
@@ -66479,6 +66494,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             entityId:
               type: string
+              description: The ID of the entity that was changed.
             entityType:
               $ref: '#/components/schemas/microsoft.graph.historyEntityType'
             eventType:
@@ -66486,10 +66502,12 @@ components:
             occurredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the change occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             planId:
               type: string
+              description: The ID of the plan that contains the changed entity.
           additionalProperties:
             type: object
     microsoft.graph.plannerAppliedCategories:
@@ -67186,6 +67204,13 @@ components:
               type: number
               format: int64
               nullable: true
+            familyMembersUsage:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.familyMemberStorageQuota'
+            isPooledStorageEnabled:
+              type: boolean
+              nullable: true
             manageWebUrl:
               type: string
               description: A URL that can be used in a browser to manage the breakdown. Read-only.
@@ -67731,7 +67756,7 @@ components:
       properties:
         resourceId:
           type: string
-          description: The ID of the resource to modify (a user or group ID).
+          description: 'The ID of the resource to modify. The value is either All, to apply the capability to all resources of the type specified by resourceType (all users or all groups), or the GUID of a specific user or group.'
           nullable: true
         resourceType:
           $ref: '#/components/schemas/microsoft.graph.m365ResourceType'
@@ -68964,6 +68989,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageBodyContentType:
+      title: chatMessageBodyContentType
+      enum:
+        - text
+        - html
+        - markdown
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -69108,6 +69141,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.contextMetadata'
         deviceMetadata:
           $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        evaluationScope:
+          $ref: '#/components/schemas/microsoft.graph.evaluationScope'
         integratedAppMetadata:
           $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
         protectedAppMetadata:
@@ -71433,6 +71468,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.familyMemberStorageQuota:
+      title: familyMemberStorageQuota
+      type: object
+      properties:
+        additionalAllocations:
+          $ref: '#/components/schemas/microsoft.graph.additionalStorageAllocations'
+        used:
+          type: number
+          format: int64
+          nullable: true
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
     microsoft.graph.serviceStorageQuotaBreakdown:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
@@ -73544,6 +73593,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
       additionalProperties:
         type: object
+    microsoft.graph.evaluationScope:
+      title: evaluationScope
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.evaluationScopeType'
+      additionalProperties:
+        type: object
     microsoft.graph.integratedApplicationMetadata:
       title: integratedApplicationMetadata
       type: object
@@ -73565,6 +73622,8 @@ components:
           type: object
           properties:
             applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+            sourceLocation:
               $ref: '#/components/schemas/microsoft.graph.policyLocation'
           additionalProperties:
             type: object
@@ -74199,6 +74258,20 @@ components:
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.additionalStorageAllocations:
+      title: additionalStorageAllocations
+      type: object
+      properties:
+        bonusQuotaInBytes:
+          type: number
+          format: int64
+          nullable: true
+        subscriptionQuotaInBytes:
+          type: number
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.storageQuotaBreakdown:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -74636,11 +74709,11 @@ components:
         - uploadFile
         - downloadText
         - downloadFile
+        - unknownFutureValue
         - copyToClipboard
         - pasteFromClipboard
         - print
         - accessDebugTools
-        - unknownFutureValue
       type: string
     microsoft.graph.contentBase:
       title: contentBase
@@ -74673,6 +74746,14 @@ components:
           description: The version string of the operating system.
       additionalProperties:
         type: object
+    microsoft.graph.evaluationScopeType:
+      title: evaluationScopeType
+      enum:
+        - tenant
+        - agent
+        - anonymousUser
+        - unknownFutureValue
+      type: string
     microsoft.graph.policyLocation:
       title: policyLocation
       type: object

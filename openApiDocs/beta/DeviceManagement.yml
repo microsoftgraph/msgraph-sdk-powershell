@@ -1811,6 +1811,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.createZeroTouchWebToken:
+    post:
+      tags:
+        - deviceManagement.androidManagedStoreAccountEnterpriseSettings
+      summary: Invoke action createZeroTouchWebToken
+      description: Generates a web token scoped to the Zero Touch Enrollment portal. Requires the ManageZeroTouchEnrollment RBAC permission.
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_createZeroTouchWebToken
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parentUri:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/androidManagedStoreAccountEnterpriseSettings/microsoft.graph.requestEnterpriseUpgradeUrl:
     post:
       tags:
@@ -5356,6 +5392,31 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getSyncStatus()':
+    get:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke function getSyncStatus
+      operationId: deviceManagement.comanagedDevice_getSyncStatus
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceSyncStatusResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.initiateDeviceAttestation':
     post:
       tags:
@@ -5667,6 +5728,40 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.removeDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action removeDeviceEsim
+      description: Remove eSIM from the device
+      operationId: deviceManagement.comanagedDevice_removeDeviceEsim
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                iccId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -29568,6 +29663,31 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getSyncStatus()':
+    get:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke function getSyncStatus
+      operationId: deviceManagement.managedDevice_getSyncStatus
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceSyncStatusResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.initiateDeviceAttestation':
     post:
       tags:
@@ -29879,6 +29999,40 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.removeDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action removeDeviceEsim
+      description: Remove eSIM from the device
+      operationId: deviceManagement.managedDevice_removeDeviceEsim
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                iccId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -43080,6 +43234,22 @@ components:
       additionalProperties:
         type: object
       description: Device Compilance Policy Setting State for a given device.
+    microsoft.graph.deviceSyncStatusResponse:
+      title: deviceSyncStatusResponse
+      type: object
+      properties:
+        components:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.syncComponent'
+          description: Indicates the collection of sync component statuses representing infrastructure and policy progress. Each entry represents a component that has started reporting during this sync operation. Components appear in the collection only after they begin executing. Read-only. Not nullable.
+          readOnly: true
+        deviceId:
+          type: string
+          description: 'Indicates the managed device identifier. Used to correlate this sync status snapshot with the device that was synced. This is the same id used in the managedDevice entity. Example: ''d1e2f3a4-b5c6-7890-abcd-ef1234567890''. Read-only. Not nullable.'
+          readOnly: true
+      additionalProperties:
+        type: object
     microsoft.graph.administratorConfiguredDeviceComplianceState:
       title: administratorConfiguredDeviceComplianceState
       enum:
@@ -56622,6 +56792,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
             solutions:
               $ref: '#/components/schemas/microsoft.graph.userSolutionRoot'
+            sponsorOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that''s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.'
+              x-ms-navigationProperty: true
             sponsors:
               type: array
               items:
@@ -57043,6 +57219,29 @@ components:
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.syncComponent:
+      title: syncComponent
+      type: object
+      properties:
+        moreInfo:
+          type: string
+          description: 'Indicates additional information for this sync stage. This is a flexible string that can be null (no additional info), a progress indicator such as ''3/6'' (completed out of total), or a list of individual item names. Read-only. Nullable.'
+          nullable: true
+          readOnly: true
+        name:
+          type: string
+          description: 'Indicates the sync stage name. The backend abstracts internal infrastructure into 6 user-facing stages. Fixed values are: notifyingDevice, deviceConnecting, policies, applications, scripts, compliance. Read-only. Not nullable.'
+          readOnly: true
+        reportedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Indicates the date and time when this stage last reported status. The date and time information is shown using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only. Not nullable.'
+          format: date-time
+          readOnly: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.syncComponentStatus'
       additionalProperties:
         type: object
     microsoft.graph.configurationManagerActionType:
@@ -65446,6 +65645,12 @@ components:
               type: boolean
             lastLoginResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcLoginResult'
+            lastLogoffDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the user last logged off from the Cloud PC session. Returns null if the user has never established a session or if a session is currently active. The timestamp is shown in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only when explicitly selected with $select.'
+              format: date-time
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -66095,7 +66300,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: number
-              description: The size of the OS Disk in GB. Read-only.
+              description: The size of the operating system disk in GB. Read-only.
               format: int32
             supportedSolution:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
@@ -69282,12 +69487,6 @@ components:
             personIdentifier:
               type: string
               nullable: true
-            distributionListMembers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.distributionListMember'
-              description: The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.
-              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
@@ -71342,6 +71541,39 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
+    microsoft.graph.syncComponentStatus:
+      title: syncComponentStatus
+      enum:
+        - none
+        - inProgress
+        - success
+        - failure
+        - partialSuccess
+        - unknownFutureValue
+      type: string
+      description: A list of possible status states for a sync infrastructure component or policy during a device sync operation.
+      x-ms-enum:
+        name: syncComponentStatus
+        modelAsString: false
+        values:
+          - value: none
+            description: 'Default. The component has not yet started reporting status. This is a schema default and will not typically appear in responses, as components only appear once they begin executing.'
+            name: none
+          - value: inProgress
+            description: 'Indicates the component is currently executing. For infrastructure components (PNSv1, DCI, SCGW), this means the notification or check-in is in flight. For policies, this means the policy is being applied to the device.'
+            name: inProgress
+          - value: success
+            description: Indicates the component completed successfully. The component has finished its work and reported a successful outcome.
+            name: success
+          - value: failure
+            description: 'Indicates the stage encountered an error. When this value is set, the moreInfo property on the syncComponent will contain additional diagnostic details about the failure.'
+            name: failure
+          - value: partialSuccess
+            description: 'Indicates the stage completed but not all items succeeded. For example, some policies applied successfully while others failed. The moreInfo property may contain details on the partial outcome.'
+            name: partialSuccess
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.securityBaselinePolicySourceType:
       title: securityBaselinePolicySourceType
       enum:
@@ -76106,7 +76338,7 @@ components:
           type: object
           properties:
             body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -76161,7 +76393,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
               description: 'References to attached objects like files, tabs, meetings etc.'
             body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
             channelIdentity:
               $ref: '#/components/schemas/microsoft.graph.channelIdentity'
             chatId:
@@ -76639,26 +76871,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.distributionListMember:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: distributionListMember
-          type: object
-          properties:
-            contactId:
-              type: string
-              description: 'The ID of the referenced contact, if applicable. Read-only.'
-              nullable: true
-            displayName:
-              type: string
-              description: The display name of the member. Read-only.
-              nullable: true
-            recipientType:
-              $ref: '#/components/schemas/microsoft.graph.recipientType'
-            contact:
-              $ref: '#/components/schemas/microsoft.graph.contact'
-          additionalProperties:
-            type: object
     microsoft.graph.baseItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -79823,6 +80035,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerHistoryItem'
+              description: Collection of history items for entities in the plan. Read-only. Nullable.
               x-ms-navigationProperty: true
             tasks:
               type: array
@@ -82192,6 +82405,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageBody:
+      title: chatMessageBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the chat message.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+        messageBodyContentType:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageBodyContentType'
+      additionalProperties:
+        type: object
     microsoft.graph.eventMessageDetail:
       title: eventMessageDetail
       type: object
@@ -85879,7 +86106,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
       additionalProperties:
         type: object
@@ -86156,6 +86383,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             entityId:
               type: string
+              description: The ID of the entity that was changed.
             entityType:
               $ref: '#/components/schemas/microsoft.graph.historyEntityType'
             eventType:
@@ -86163,10 +86391,12 @@ components:
             occurredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the change occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             planId:
               type: string
+              description: The ID of the plan that contains the changed entity.
           additionalProperties:
             type: object
     microsoft.graph.plannerAppliedCategories:
@@ -86862,6 +87092,13 @@ components:
             deleted:
               type: number
               format: int64
+              nullable: true
+            familyMembersUsage:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.familyMemberStorageQuota'
+            isPooledStorageEnabled:
+              type: boolean
               nullable: true
             manageWebUrl:
               type: string
@@ -88410,6 +88647,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageBodyContentType:
+      title: chatMessageBodyContentType
+      enum:
+        - text
+        - html
+        - markdown
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -88546,6 +88791,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.contextMetadata'
         deviceMetadata:
           $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        evaluationScope:
+          $ref: '#/components/schemas/microsoft.graph.evaluationScope'
         integratedAppMetadata:
           $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
         protectedAppMetadata:
@@ -90526,6 +90773,20 @@ components:
           description: Start time for the time range.
           format: time
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.familyMemberStorageQuota:
+      title: familyMemberStorageQuota
+      type: object
+      properties:
+        additionalAllocations:
+          $ref: '#/components/schemas/microsoft.graph.additionalStorageAllocations'
+        used:
+          type: number
+          format: int64
+          nullable: true
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
       additionalProperties:
         type: object
     microsoft.graph.serviceStorageQuotaBreakdown:
@@ -92639,6 +92900,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.operatingSystemSpecifications'
       additionalProperties:
         type: object
+    microsoft.graph.evaluationScope:
+      title: evaluationScope
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.evaluationScopeType'
+      additionalProperties:
+        type: object
     microsoft.graph.integratedApplicationMetadata:
       title: integratedApplicationMetadata
       type: object
@@ -92660,6 +92929,8 @@ components:
           type: object
           properties:
             applicationLocation:
+              $ref: '#/components/schemas/microsoft.graph.policyLocation'
+            sourceLocation:
               $ref: '#/components/schemas/microsoft.graph.policyLocation'
           additionalProperties:
             type: object
@@ -93279,6 +93550,20 @@ components:
           type: string
           description: 'The date and time when the reaction was added. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.additionalStorageAllocations:
+      title: additionalStorageAllocations
+      type: object
+      properties:
+        bonusQuotaInBytes:
+          type: number
+          format: int64
+          nullable: true
+        subscriptionQuotaInBytes:
+          type: number
+          format: int64
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.storageQuotaBreakdown:
@@ -93946,11 +94231,11 @@ components:
         - uploadFile
         - downloadText
         - downloadFile
+        - unknownFutureValue
         - copyToClipboard
         - pasteFromClipboard
         - print
         - accessDebugTools
-        - unknownFutureValue
       type: string
     microsoft.graph.contentBase:
       title: contentBase
@@ -93983,6 +94268,14 @@ components:
           description: The version string of the operating system.
       additionalProperties:
         type: object
+    microsoft.graph.evaluationScopeType:
+      title: evaluationScopeType
+      enum:
+        - tenant
+        - agent
+        - anonymousUser
+        - unknownFutureValue
+      type: string
     microsoft.graph.policyLocation:
       title: policyLocation
       type: object

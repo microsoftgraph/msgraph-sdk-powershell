@@ -8671,6 +8671,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
               description: 'Provides a list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Permissions for viewing applied conditional access (CA) policies in sign-ins.'
+            authenticationAppDeviceDetails:
+              $ref: '#/components/schemas/microsoft.graph.authenticationAppDeviceDetails'
             clientAppUsed:
               type: string
               description: 'Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).'
@@ -8688,6 +8690,9 @@ components:
               format: date-time
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
+            homeTenantId:
+              type: string
+              nullable: true
             ipAddress:
               type: string
               description: 'IP address of the client used to sign in.  Supports $filter (eq, startsWith).'
@@ -8705,6 +8710,9 @@ components:
             resourceId:
               type: string
               description: ID of the resource that the user signed into.  Supports $filter (eq).
+              nullable: true
+            resourceTenantId:
+              type: string
               nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
@@ -8724,8 +8732,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
             riskState:
               $ref: '#/components/schemas/microsoft.graph.riskState'
+            servicePrincipalId:
+              type: string
+              nullable: true
+            servicePrincipalName:
+              type: string
+              nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.signInStatus'
+            userAgent:
+              type: string
+              nullable: true
             userDisplayName:
               type: string
               description: 'Display name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).'
@@ -9531,6 +9548,24 @@ components:
           nullable: true
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationAppDeviceDetails:
+      title: authenticationAppDeviceDetails
+      type: object
+      properties:
+        appVersion:
+          type: string
+          nullable: true
+        clientApp:
+          type: string
+          nullable: true
+        deviceId:
+          type: string
+          nullable: true
+        operatingSystem:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessStatus:
