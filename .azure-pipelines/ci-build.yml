@@ -56,7 +56,7 @@ extends:
     # non-allowlisted public egress is blocked.
     settings:
       networkIsolationMode: Enforce
-      networkIsolationPolicy: Good,GitHub,Npm,NuGet,PowershellGallery,CFSClean,CFSClean3
+      networkIsolationPolicy: Good,GitHub,NuGet,PowershellGallery,CFSClean,CFSClean3
     sdl:
       binskim:
         enabled: false
