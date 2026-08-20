@@ -131,19 +131,32 @@ steps:
         if ($LASTEXITCODE -ne 0) { throw "rush install failed with exit code $LASTEXITCODE" }
 
         # >>> TEMPORARY CFSClean DIAGNOSTIC (revert before merge) <<<
-        # After rush install, the re-resolved lockfile in common/temp records the tarball URL that
-        # pnpm actually resolved for each package. Print every entry that resolved to public npm so
-        # we can identify exactly which package(s) egress to registry.npmjs.org under 1ES isolation.
+        # The 2x registry.npmjs.org egress are metadata (packument) requests, not tarball
+        # downloads (the re-resolved lockfile has 0 npmjs URLs). pnpm caches packument metadata
+        # under <cacheDir>/metadata(-vN)/<registry-host>/<pkg>, so listing the npmjs host folder
+        # names exactly which package(s) pnpm queried from public npm.
         $tempLock = "common/temp/pnpm-lock.yaml"
         if (Test-Path $tempLock) {
             Write-Host "===== CFSClean diagnostic: npmjs.org tarball resolutions in $tempLock ====="
             $hits = Select-String -Path $tempLock -Pattern 'registry\.npmjs\.(org|com)' -Context 4,0
             if ($hits) { $hits | ForEach-Object { $_.Context.PreContext + $_.Line | ForEach-Object { Write-Host $_ } ; Write-Host "----" } }
             else { Write-Host "No registry.npmjs.org tarball URLs found in the re-resolved temp lockfile." }
-            Write-Host "===== end CFSClean diagnostic ====="
-        } else {
-            Write-Host "CFSClean diagnostic: $tempLock not found"
         }
+        Write-Host "===== CFSClean diagnostic: pnpm metadata cache entries from registry.npmjs.org ====="
+        $cacheDir = (& npx --no-install pnpm config get cacheDir 2>$null | Select-Object -Last 1)
+        Write-Host "pnpm cacheDir = $cacheDir"
+        $roots = @($cacheDir, "$env:LOCALAPPDATA\pnpm\cache", "$env:USERPROFILE\.local\share\pnpm\cache", "$env:USERPROFILE\.pnpm-store", "common/temp/.pnpm-store") | Where-Object { $_ -and (Test-Path $_) } | Select-Object -Unique
+        $found = $false
+        foreach ($root in $roots) {
+            $md = Get-ChildItem -Recurse -Path $root -Directory -ErrorAction SilentlyContinue | Where-Object { $_.FullName -match 'registry\.npmjs\.(org|com)' }
+            foreach ($d in $md) {
+                $found = $true
+                Write-Host "npmjs metadata dir: $($d.FullName)"
+                Get-ChildItem -Recurse -Path $d.FullName -File -ErrorAction SilentlyContinue | Select-Object -First 100 | ForEach-Object { Write-Host "  $($_.FullName.Substring($d.FullName.Length))" }
+            }
+        }
+        if (-not $found) { Write-Host "No registry.npmjs.org metadata cache dirs found under: $($roots -join '; ')" }
+        Write-Host "===== end CFSClean diagnostic ====="
         # >>> END TEMPORARY CFSClean DIAGNOSTIC <<<
 
         npx --no-install rush link
