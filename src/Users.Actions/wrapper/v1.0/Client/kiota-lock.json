@@ -1,0 +1,34 @@
+{
+  "descriptionHash": "48F1D3C8D35BC1A0B26BEA9A9EC49BDC7265407A65647F7917362F008D05FFDBE5038FD1D22E73DEB83D58E50A4C452ABC30F622B3DD817A32FD1BE69E0E347E",
+  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Users.Actions.yml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.32.2",
+  "clientClassName": "ApiClient",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "Microsoft.Graph.PowerShell.Users.Actions.Client",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}

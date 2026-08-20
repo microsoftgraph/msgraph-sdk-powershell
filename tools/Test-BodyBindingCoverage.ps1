@@ -38,7 +38,7 @@ Modules whose spec or build output is absent are reported as skipped and counted
 cannot look complete while silently covering less than it was asked to.
 
 .PARAMETER Module
-Modules to check. Default: every module with generated cmdlets under -OutputRoot.
+Modules to check. Default: every module with committed cmdlets under src/<Module>/wrapper/<ApiVersion>/.
 
 .EXAMPLE
 .\tools\Test-BodyBindingCoverage.ps1 -Module Users
@@ -48,7 +48,7 @@ Modules to check. Default: every module with generated cmdlets under -OutputRoot
 [CmdletBinding()]
 param(
     [string[]]$Module,
-    [string]$OutputRoot,
+
     [ValidateSet('v1.0', 'beta')]
     [string]$ApiVersion = 'v1.0',
     [string]$SpecRoot
@@ -56,17 +56,17 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-if (-not $OutputRoot) { $OutputRoot = Join-Path $repoRoot 'artifacts\wrapper-modules' }
 if (-not $SpecRoot) { $SpecRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat' }
-$OutputRoot = (Resolve-Path -LiteralPath $OutputRoot).Path
 $generator = Join-Path $repoRoot 'tools\WrapperGenerator'
+# The committed output, not a throwaway build root: this gate has to describe what ships.
+$srcRoot = Join-Path $repoRoot 'src'
 
 if (-not $Module) {
-    $Module = @(Get-ChildItem $OutputRoot -Directory |
-        Where-Object { Test-Path (Join-Path $_.FullName 'src\Cmdlets') } |
+    $Module = @(Get-ChildItem $srcRoot -Directory |
+        Where-Object { Test-Path (Join-Path $_.FullName "wrapper\$ApiVersion\Cmdlets") } |
         ForEach-Object { $_.Name } | Sort-Object)
 }
-if (-not $Module) { Write-Error "No modules found under '$OutputRoot'."; exit 2 }
+if (-not $Module) { Write-Error "No modules with generated cmdlets found under '$srcRoot\*\wrapper\$ApiVersion'." -ErrorAction Continue; exit 2 }
 
 # --- kiota model members -----------------------------------------------------------------
 # The deserializer map is the authority for which OpenAPI name feeds which member:
@@ -130,9 +130,10 @@ foreach ($name in $Module) {
     if (-not (Test-Path $spec)) { $spec = Join-Path $repoRoot "openApiDocs\$ApiVersion\$name.yml" }
     if (-not (Test-Path $spec)) { $skipped.Add("$name (no spec)"); continue }
 
-    $cmdletsDir = Join-Path $OutputRoot "$name\src\Cmdlets"
-    $modelsDir = Join-Path $OutputRoot "$name\src\Client\Models"
-    if (-not (Test-Path $cmdletsDir) -or -not (Test-Path $modelsDir)) { $skipped.Add("$name (not built)"); continue }
+    $wrapperDir = Join-Path $srcRoot "$name\wrapper\$ApiVersion"
+    $cmdletsDir = Join-Path $wrapperDir 'Cmdlets'
+    $modelsDir = Join-Path $wrapperDir 'Client\Models'
+    if (-not (Test-Path $cmdletsDir) -or -not (Test-Path $modelsDir)) { $skipped.Add("$name (no committed output)"); continue }
 
     $log = & dotnet run --project $generator -c Release -- `
         -d $spec -o (Join-Path $env:TEMP "binding-oracle-$name") -n "Microsoft.Graph.PowerShell.$name.Client" `
@@ -268,7 +269,7 @@ foreach ($name in $Module) {
         (($results | Where-Object Module -eq $name | Measure-Object Assigned -Sum).Sum))
 }
 
-if ($results.Count -eq 0) { Write-Error 'No New/Update cmdlets were examined; the oracle proved nothing.'; exit 2 }
+if ($results.Count -eq 0) { Write-Error 'No New/Update cmdlets were examined; the oracle proved nothing.' -ErrorAction Continue; exit 2 }
 
 $examinedModules = @($results | Select-Object -ExpandProperty Module -Unique)
 # A module with no New/Update cmdlets has nothing for this oracle to check. Naming those

@@ -30,13 +30,18 @@ others exist.
 ## kiota hangs on specific docs (both flavors)
 
 - **Class:** doc-flavor
-- **Status:** workaround (hard timeout + per-module doc-flavor fallback)
+- **Status:** workaround (hard timeout + retry)
 - **Evidence:** kiota 1.32.2 hangs silently (zero CPU, no output) on the *styled* Sites doc
-  and on the *KiotaCompat* Teams doc — while generating each module fine from the other
-  flavor. Content-dependent, not size-dependent (larger docs complete in seconds).
-- **Decision:** Build-WrapperModule.ps1 kills kiota after 300s and fails the module rather
-  than stalling a fan-out; Teams builds from the styled doc via `-SpecRoot`. Candidate for
-  an upstream kiota report once a minimal repro is extracted.
+  and on the *KiotaCompat* Teams doc. The hang is INTERMITTENT, not a property of the
+  document: v1.0 Teams timed out at 300s in one whole-population run and then generated
+  1,033 cmdlets in 27s from the same KiotaCompat doc on the next attempt, and every
+  committed Teams tree to date was in fact produced from KiotaCompat. An earlier revision of
+  this entry recorded it as doc-specific and prescribed the styled doc for Teams; that is
+  contradicted by the observed retry.
+- **Decision:** Build-WrapperModule.ps1 kills kiota after 300s and retries once before
+  failing the module, so one transient stall does not fail a 38-module run. A non-zero exit
+  is NOT retried — that is deterministic, and retrying would only hide it. Candidate for an
+  upstream kiota report once a minimal repro is extracted.
 - **Migration impact:** none.
 
 ## Reserved model names: Directory → DirectoryObject1
