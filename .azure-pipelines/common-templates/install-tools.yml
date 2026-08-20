@@ -129,36 +129,6 @@ steps:
 
         npx --no-install rush install
         if ($LASTEXITCODE -ne 0) { throw "rush install failed with exit code $LASTEXITCODE" }
-
-        # >>> TEMPORARY CFSClean DIAGNOSTIC (revert before merge) <<<
-        # The 2x registry.npmjs.org egress are metadata (packument) requests, not tarball
-        # downloads (the re-resolved lockfile has 0 npmjs URLs). pnpm caches packument metadata
-        # under <cacheDir>/metadata(-vN)/<registry-host>/<pkg>, so listing the npmjs host folder
-        # names exactly which package(s) pnpm queried from public npm.
-        $tempLock = "common/temp/pnpm-lock.yaml"
-        if (Test-Path $tempLock) {
-            Write-Host "===== CFSClean diagnostic: npmjs.org tarball resolutions in $tempLock ====="
-            $hits = Select-String -Path $tempLock -Pattern 'registry\.npmjs\.(org|com)' -Context 4,0
-            if ($hits) { $hits | ForEach-Object { $_.Context.PreContext + $_.Line | ForEach-Object { Write-Host $_ } ; Write-Host "----" } }
-            else { Write-Host "No registry.npmjs.org tarball URLs found in the re-resolved temp lockfile." }
-        }
-        Write-Host "===== CFSClean diagnostic: pnpm metadata cache entries from registry.npmjs.org ====="
-        Write-Host "--- transformed common/temp/.npmrc registry lines ---"
-        if (Test-Path "common/temp/.npmrc") { Select-String -Path "common/temp/.npmrc" -Pattern 'registry' | ForEach-Object { Write-Host $_.Line } }
-        $searchRoots = @("$env:LOCALAPPDATA", "$env:APPDATA", "$env:USERPROFILE\.rush", "$env:USERPROFILE\.pnpm-store", "$env:USERPROFILE\.cache", "common/temp") | Where-Object { $_ -and (Test-Path $_) } | Select-Object -Unique
-        $found = $false
-        foreach ($root in $searchRoots) {
-            $dirs = Get-ChildItem -Path $root -Recurse -Directory -Filter 'registry.npmjs.org' -ErrorAction SilentlyContinue -Depth 8
-            foreach ($d in $dirs) {
-                $found = $true
-                Write-Host "npmjs metadata/cache dir: $($d.FullName)"
-                Get-ChildItem -Path $d.FullName -Recurse -File -ErrorAction SilentlyContinue | Select-Object -First 80 | ForEach-Object { Write-Host "  $($_.FullName.Substring($d.FullName.Length))" }
-            }
-        }
-        if (-not $found) { Write-Host "No 'registry.npmjs.org' dirs under: $($searchRoots -join '; ')" }
-        Write-Host "===== end CFSClean diagnostic ====="
-        # >>> END TEMPORARY CFSClean DIAGNOSTIC <<<
-
         npx --no-install rush link
         if ($LASTEXITCODE -ne 0) { throw "rush link failed with exit code $LASTEXITCODE" }
         npx --no-install rush rebuild
