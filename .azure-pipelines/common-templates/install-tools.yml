@@ -129,6 +129,23 @@ steps:
 
         npx --no-install rush install
         if ($LASTEXITCODE -ne 0) { throw "rush install failed with exit code $LASTEXITCODE" }
+
+        # >>> TEMPORARY CFSClean DIAGNOSTIC (revert before merge) <<<
+        # After rush install, the re-resolved lockfile in common/temp records the tarball URL that
+        # pnpm actually resolved for each package. Print every entry that resolved to public npm so
+        # we can identify exactly which package(s) egress to registry.npmjs.org under 1ES isolation.
+        $tempLock = "common/temp/pnpm-lock.yaml"
+        if (Test-Path $tempLock) {
+            Write-Host "===== CFSClean diagnostic: npmjs.org tarball resolutions in $tempLock ====="
+            $hits = Select-String -Path $tempLock -Pattern 'registry\.npmjs\.(org|com)' -Context 4,0
+            if ($hits) { $hits | ForEach-Object { $_.Context.PreContext + $_.Line | ForEach-Object { Write-Host $_ } ; Write-Host "----" } }
+            else { Write-Host "No registry.npmjs.org tarball URLs found in the re-resolved temp lockfile." }
+            Write-Host "===== end CFSClean diagnostic ====="
+        } else {
+            Write-Host "CFSClean diagnostic: $tempLock not found"
+        }
+        # >>> END TEMPORARY CFSClean DIAGNOSTIC <<<
+
         npx --no-install rush link
         if ($LASTEXITCODE -ne 0) { throw "rush link failed with exit code $LASTEXITCODE" }
         npx --no-install rush rebuild
