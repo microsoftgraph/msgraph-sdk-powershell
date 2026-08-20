@@ -51,6 +51,11 @@ extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
     pool: $(BuildAgent)
+    # TEMP (CFS npmjs diagnostic): enforce network isolation with the target policy set so we can
+    # see exactly what breaks under enforcement. Revert before merge.
+    settings:
+      networkIsolationMode: Enforce
+      networkIsolationPolicy: Good,GitHub,NuGet,PowershellGallery,CFSClean,CFSClean3
     sdl:
       binskim:
         enabled: false
@@ -106,34 +111,38 @@ extends:
             git submodule update --init --recursive
         - template: .azure-pipelines/common-templates/install-tools.yml@self
         - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
-        
-        - template: .azure-pipelines/generation-templates/authentication-module.yml@self
-          parameters:
-            Test: ${{ parameters.Test }}
-            Pack: ${{ parameters.Pack }}
-            Sign: ${{ parameters.Sign }}
 
-        - template: .azure-pipelines/generation-templates/workload-modules.yml@self
-          parameters:
-            Test: ${{ parameters.Test }}
-            Pack: ${{ parameters.Pack }}
-            Sign: ${{ parameters.Sign }}
-
-        - template: .azure-pipelines/generation-templates/meta-module.yml@self
-          parameters:
-            Test: ${{ parameters.Test }}
-            Pack: ${{ parameters.Pack }}
-            Sign: ${{ parameters.Sign }}
-
-        - template: .azure-pipelines/common-templates/guardian-analyzer.yml@self
-
-        - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-          - template: .azure-pipelines/common-templates/esrp/codesign-nuget.yml@self
-            parameters:
-              FolderPath: "$(Build.ArtifactStagingDirectory)"
-              Pattern: "Microsoft.Graph*.nupkg"
-
-        - template: .azure-pipelines/common-templates/security-post-checks.yml@self
+        # >>> TEMP (CFS npmjs diagnostic): generation + downstream steps disabled to speed up the
+        # exploratory build. The npmjs egress happens in install-tools.yml (Rush Build) above, so we
+        # do not need module generation to reproduce it. Revert before merge. <<<
+        # - template: .azure-pipelines/generation-templates/authentication-module.yml@self
+        #   parameters:
+        #     Test: ${{ parameters.Test }}
+        #     Pack: ${{ parameters.Pack }}
+        #     Sign: ${{ parameters.Sign }}
+        #
+        # - template: .azure-pipelines/generation-templates/workload-modules.yml@self
+        #   parameters:
+        #     Test: ${{ parameters.Test }}
+        #     Pack: ${{ parameters.Pack }}
+        #     Sign: ${{ parameters.Sign }}
+        #
+        # - template: .azure-pipelines/generation-templates/meta-module.yml@self
+        #   parameters:
+        #     Test: ${{ parameters.Test }}
+        #     Pack: ${{ parameters.Pack }}
+        #     Sign: ${{ parameters.Sign }}
+        #
+        # - template: .azure-pipelines/common-templates/guardian-analyzer.yml@self
+        #
+        # - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+        #   - template: .azure-pipelines/common-templates/esrp/codesign-nuget.yml@self
+        #     parameters:
+        #       FolderPath: "$(Build.ArtifactStagingDirectory)"
+        #       Pattern: "Microsoft.Graph*.nupkg"
+        #
+        # - template: .azure-pipelines/common-templates/security-post-checks.yml@self
+        # >>> END TEMP generation disable <<<
     - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
       - stage: Deploy_to_ACR
         displayName: Deploy PowerShell packages to ACR

@@ -143,19 +143,19 @@ steps:
             else { Write-Host "No registry.npmjs.org tarball URLs found in the re-resolved temp lockfile." }
         }
         Write-Host "===== CFSClean diagnostic: pnpm metadata cache entries from registry.npmjs.org ====="
-        $cacheDir = (& npx --no-install pnpm config get cacheDir 2>$null | Select-Object -Last 1)
-        Write-Host "pnpm cacheDir = $cacheDir"
-        $roots = @($cacheDir, "$env:LOCALAPPDATA\pnpm\cache", "$env:USERPROFILE\.local\share\pnpm\cache", "$env:USERPROFILE\.pnpm-store", "common/temp/.pnpm-store") | Where-Object { $_ -and (Test-Path $_) } | Select-Object -Unique
+        Write-Host "--- transformed common/temp/.npmrc registry lines ---"
+        if (Test-Path "common/temp/.npmrc") { Select-String -Path "common/temp/.npmrc" -Pattern 'registry' | ForEach-Object { Write-Host $_.Line } }
+        $searchRoots = @("$env:LOCALAPPDATA", "$env:APPDATA", "$env:USERPROFILE\.rush", "$env:USERPROFILE\.pnpm-store", "$env:USERPROFILE\.cache", "common/temp") | Where-Object { $_ -and (Test-Path $_) } | Select-Object -Unique
         $found = $false
-        foreach ($root in $roots) {
-            $md = Get-ChildItem -Recurse -Path $root -Directory -ErrorAction SilentlyContinue | Where-Object { $_.FullName -match 'registry\.npmjs\.(org|com)' }
-            foreach ($d in $md) {
+        foreach ($root in $searchRoots) {
+            $dirs = Get-ChildItem -Path $root -Recurse -Directory -Filter 'registry.npmjs.org' -ErrorAction SilentlyContinue -Depth 8
+            foreach ($d in $dirs) {
                 $found = $true
-                Write-Host "npmjs metadata dir: $($d.FullName)"
-                Get-ChildItem -Recurse -Path $d.FullName -File -ErrorAction SilentlyContinue | Select-Object -First 100 | ForEach-Object { Write-Host "  $($_.FullName.Substring($d.FullName.Length))" }
+                Write-Host "npmjs metadata/cache dir: $($d.FullName)"
+                Get-ChildItem -Path $d.FullName -Recurse -File -ErrorAction SilentlyContinue | Select-Object -First 80 | ForEach-Object { Write-Host "  $($_.FullName.Substring($d.FullName.Length))" }
             }
         }
-        if (-not $found) { Write-Host "No registry.npmjs.org metadata cache dirs found under: $($roots -join '; ')" }
+        if (-not $found) { Write-Host "No 'registry.npmjs.org' dirs under: $($searchRoots -join '; ')" }
         Write-Host "===== end CFSClean diagnostic ====="
         # >>> END TEMPORARY CFSClean DIAGNOSTIC <<<
 
