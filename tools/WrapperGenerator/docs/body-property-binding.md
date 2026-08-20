@@ -220,13 +220,13 @@ This is the wrapper's own input contract; it is pinned by the runtime gate rathe
 
 ## Residual debt
 
-**None among the operations the generator emits: the oracle reports 0 failures across 2,240
-body-writing cmdlets (24,050 model members seen, 15,872 bound).** The classifications for shapes that do not occur — `Union`,
+**None among the operations the generator emits: the oracle reports 0 failures across 2,235
+body-writing cmdlets (24,003 model members seen, 15,838 bound).** The classifications for shapes that do not occur — `Union`,
 `UnknownFormat`, `InlineObject`, `InlineEnum`, `Dictionary`, `Unresolvable` — are retained
 deliberately so a future corpus change is reported rather than silently mis-bound.
 
 That qualifier is load-bearing. Properties are only counted for operations that generate, and of
-the 14,131 operations in the 38 v1.0 specs **10,401 (73.6%)** do. The rest are 3,173 suppressed
+the 14,115 operations in the 38 v1.0 specs **10,385 (73.6%)** do. The rest are 3,173 suppressed
 because the published SDK ships no cmdlet for them (oracle-derived), and 557 unsupported — 345
 call segments on operations the spec does not class as an action or function, 125 routes calling a
 parameterized function before their final segment, 42 whose content response is neither a stream nor a resolvable entity, and 45 others across four smaller causes. An operation refused upstream contributes
@@ -235,10 +235,10 @@ no properties here, so a zero says nothing about it. `InlineObject` in particula
 objects.
 
 Beware two ways of miscounting this, both made here before the accounting was forced to balance:
-emitted files include GET dispatchers that issue no request (1,336 of the current 11,737), so
+emitted files include GET dispatchers that issue no request (1,334 of the current 11,719), so
 files are not operations; and subtracting only the unsupported from the total silently counts
-every suppressed operation as generated — that error would read 13,574 "generated" against a true
-10,401. A third trap is in the file *names*: `BaseName` of `GetMgApplication_List.g.cs` is
+every suppressed operation as generated — that error would read 13,558 "generated" against a true
+10,385. A third trap is in the file *names*: `BaseName` of `GetMgApplication_List.g.cs` is
 `GetMgApplication_List.g`, since only the last extension is stripped, so an orphan check written
 against `BaseName -match '_(List|Get)$'` examines nothing and passes vacuously.
 
@@ -259,5 +259,5 @@ slices altered which *properties* bind, never which *operations* generate. The s
 parity derivation then changed the inventory deliberately (9,608 → 8,372 files: 1,896 removed as
 suppressions and renames, 660 added as renames, reconciled row-by-row against the derivation
 ledger); the operation shapes added since — actions, functions, `$count`, `$ref`, `$value`, PUT —
-took it to the current 11,737. The committed output under `src/` predates all of this and still
-shows 59 parameters; it has to be regenerated before any figure here applies there.
+took it to the current 11,719. The committed output under `src/` is regenerated from this
+generator, so the figures here describe it directly.

@@ -1,0 +1,102 @@
+#nullable enable
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client;
+using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
+{
+    [GraphRoute("POST", "/users/{user-id}/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/createDownloadUrl")]
+    [Cmdlet(VerbsCommon.New, "MgUserManagedDeviceLogCollectionRequestDownloadUrl", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl.CreateDownloadUrlPostResponse))]
+    public class NewMgUserManagedDeviceLogCollectionRequestDownloadUrlCommand : PSCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string UserId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string ManagedDeviceId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2)]
+        public string DeviceLogCollectionResponseId { get; set; } = string.Empty;
+
+
+
+
+
+
+        [Parameter(Mandatory = false,
+            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
+        public System.Collections.IDictionary? Headers { get; set; }
+
+        [Parameter(Mandatory = false,
+            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
+        public string? AccessToken { get; set; }
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(DeviceLogCollectionResponseId, "New"))
+                return;
+
+
+        // ── Choose HttpClient + auth provider ─────────────────────────────
+        HttpClient httpClient;
+        IAuthenticationProvider authProvider;
+
+        if (this.IsParameterBound(nameof(AccessToken)))
+        {
+            httpClient = new HttpClient();
+            authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
+        }
+        else
+        {
+            WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
+            try
+            {
+                httpClient = HttpHelpers.GetGraphHttpClient();
+            }
+            catch (Exception ex)
+            {
+                ThrowTerminatingError(new ErrorRecord(
+                    new InvalidOperationException(
+                        "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
+                    "NoGraphSession",
+                    ErrorCategory.AuthenticationError,
+                    null));
+                return;
+            }
+            authProvider = new AnonymousAuthenticationProvider();
+        }
+
+        var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+        var client = new ApiClient(requestAdapter);
+
+            global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl.CreateDownloadUrlPostResponse? result;
+            try
+            {
+                result = client.Users[UserId].ManagedDevices[ManagedDeviceId].LogCollectionRequests[DeviceLogCollectionResponseId].CreateDownloadUrl.PostAsCreateDownloadUrlPostResponseAsync(requestConfiguration =>
+                {
+
+                        if (this.IsParameterBound(nameof(Headers)))
+                        {
+                            foreach (System.Collections.DictionaryEntry entry in Headers!)
+                                requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
+                        }
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex)
+            {
+                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, DeviceLogCollectionResponseId));
+                return;
+            }
+
+            WriteObject(result);
+        }
+    }
+}

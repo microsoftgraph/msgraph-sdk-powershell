@@ -2,7 +2,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <!-- Must match the client project's framework and the framework the shipping module
+         manifest can load; see the rationale in WrapperClient.csproj.template. Microsoft.Graph.Authentication,
+         which this project references, is netstandard2.0 for the same reason. -->
+    <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -18,7 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="all" />
+    <!-- This package exists only to compile against the PowerShell SDK contract; the host
+         supplies the real System.Management.Automation at run time, and shipping a second copy
+         would shadow it. The two attributes do different jobs and both are needed:
+         PrivateAssets="all" stops the compile-only dependency flowing to consumers of a packed
+         wrapper; ExcludeAssets="runtime" stops its runtime asset entering this project's own
+         runtime dependency manifest and copy-local output.
+         Neither can be inferred from the restore graph, because the package publishes the same
+         System.Management.Automation.dll as BOTH its compile and its runtime asset - so the
+         intent has to be declared here rather than filtered out later when packaging. -->
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="all" ExcludeAssets="runtime" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,357 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.CloudCommunications.Client;
+using Microsoft.Graph.PowerShell.CloudCommunications.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.CloudCommunications
+{
+    [GraphRoute("PATCH", "/communications/onlineMeetings/{onlineMeeting-id}")]
+    [Cmdlet(VerbsData.Update, "MgCommunicationOnlineMeeting", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.OnlineMeeting))]
+    public class UpdateMgCommunicationOnlineMeetingCommand : PSCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string OnlineMeetingId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowAttendeeToEnableCamera { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowAttendeeToEnableMic { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowBreakoutRooms { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowCopyingAndSharingMeetingContent { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowParticipantsToChangeName { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowPowerPointSharing { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowRecording { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowTeamworkReactions { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowTranscription { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? AllowWhiteboard { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.DateTimeOffset? ExpiryDateTime { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? IsEndToEndEncryptionEnabled { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? IsEntryExitAnnounced { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? JoinWebUrl { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? MeetingOptionsWebUrl { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? MeetingSpokenLanguageTag { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? RecordAutomatically { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? Subject { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? VideoTeleconferenceId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public byte[]? AttendeeReport { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.DateTimeOffset? CreationDateTime { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.DateTimeOffset? EndDateTime { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? ExternalId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? IsBroadcast { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? MeetingTemplateId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.DateTimeOffset? StartDateTime { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.AllowedLobbyAdmitterRoles? AllowedLobbyAdmitters { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.OnlineMeetingPresenters? AllowedPresenters { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.MeetingLiveShareOptions? AllowLiveShare { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.MeetingChatMode? AllowMeetingChat { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.AudioConferencing? AudioConferencing { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.ChatInfo? ChatInfo { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.ChatRestrictions? ChatRestrictions { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.ItemBody? JoinInformation { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.JoinMeetingIdSettings? JoinMeetingIdSettings { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.LobbyBypassSettings? LobbyBypassSettings { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.OnlineMeetingSensitivityLabelAssignment? SensitivityLabelAssignment { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.WatermarkProtectionValues? WatermarkProtection { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.BroadcastMeetingSettings? BroadcastSettings { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.MeetingParticipants? Participants { get; set; }
+
+
+
+
+        [Parameter(Mandatory = false,
+            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
+        public System.Collections.IDictionary? Headers { get; set; }
+
+        [Parameter(Mandatory = false,
+            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
+        public string? AccessToken { get; set; }
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(OnlineMeetingId, "Update"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.OnlineMeeting();
+
+    if (this.IsParameterBound(nameof(AllowAttendeeToEnableCamera)))
+        body.AllowAttendeeToEnableCamera = AllowAttendeeToEnableCamera;
+
+    if (this.IsParameterBound(nameof(AllowAttendeeToEnableMic)))
+        body.AllowAttendeeToEnableMic = AllowAttendeeToEnableMic;
+
+    if (this.IsParameterBound(nameof(AllowBreakoutRooms)))
+        body.AllowBreakoutRooms = AllowBreakoutRooms;
+
+    if (this.IsParameterBound(nameof(AllowCopyingAndSharingMeetingContent)))
+        body.AllowCopyingAndSharingMeetingContent = AllowCopyingAndSharingMeetingContent;
+
+    if (this.IsParameterBound(nameof(AllowParticipantsToChangeName)))
+        body.AllowParticipantsToChangeName = AllowParticipantsToChangeName;
+
+    if (this.IsParameterBound(nameof(AllowPowerPointSharing)))
+        body.AllowPowerPointSharing = AllowPowerPointSharing;
+
+    if (this.IsParameterBound(nameof(AllowRecording)))
+        body.AllowRecording = AllowRecording;
+
+    if (this.IsParameterBound(nameof(AllowTeamworkReactions)))
+        body.AllowTeamworkReactions = AllowTeamworkReactions;
+
+    if (this.IsParameterBound(nameof(AllowTranscription)))
+        body.AllowTranscription = AllowTranscription;
+
+    if (this.IsParameterBound(nameof(AllowWhiteboard)))
+        body.AllowWhiteboard = AllowWhiteboard;
+
+    if (this.IsParameterBound(nameof(ExpiryDateTime)))
+        body.ExpiryDateTime = ExpiryDateTime;
+
+    if (this.IsParameterBound(nameof(IsEndToEndEncryptionEnabled)))
+        body.IsEndToEndEncryptionEnabled = IsEndToEndEncryptionEnabled;
+
+    if (this.IsParameterBound(nameof(IsEntryExitAnnounced)))
+        body.IsEntryExitAnnounced = IsEntryExitAnnounced;
+
+    if (this.IsParameterBound(nameof(JoinWebUrl)))
+        body.JoinWebUrl = JoinWebUrl;
+
+    if (this.IsParameterBound(nameof(MeetingOptionsWebUrl)))
+        body.MeetingOptionsWebUrl = MeetingOptionsWebUrl;
+
+    if (this.IsParameterBound(nameof(MeetingSpokenLanguageTag)))
+        body.MeetingSpokenLanguageTag = MeetingSpokenLanguageTag;
+
+    if (this.IsParameterBound(nameof(RecordAutomatically)))
+        body.RecordAutomatically = RecordAutomatically;
+
+    if (this.IsParameterBound(nameof(Subject)))
+        body.Subject = Subject;
+
+    if (this.IsParameterBound(nameof(VideoTeleconferenceId)))
+        body.VideoTeleconferenceId = VideoTeleconferenceId;
+
+    if (this.IsParameterBound(nameof(AttendeeReport)))
+        body.AttendeeReport = AttendeeReport;
+
+    if (this.IsParameterBound(nameof(CreationDateTime)))
+        body.CreationDateTime = CreationDateTime;
+
+    if (this.IsParameterBound(nameof(EndDateTime)))
+        body.EndDateTime = EndDateTime;
+
+    if (this.IsParameterBound(nameof(ExternalId)))
+        body.ExternalId = ExternalId;
+
+    if (this.IsParameterBound(nameof(IsBroadcast)))
+        body.IsBroadcast = IsBroadcast;
+
+    if (this.IsParameterBound(nameof(MeetingTemplateId)))
+        body.MeetingTemplateId = MeetingTemplateId;
+
+    if (this.IsParameterBound(nameof(StartDateTime)))
+        body.StartDateTime = StartDateTime;
+
+    if (this.IsParameterBound(nameof(AllowedLobbyAdmitters)))
+        body.AllowedLobbyAdmitters = AllowedLobbyAdmitters;
+
+    if (this.IsParameterBound(nameof(AllowedPresenters)))
+        body.AllowedPresenters = AllowedPresenters;
+
+    if (this.IsParameterBound(nameof(AllowLiveShare)))
+        body.AllowLiveShare = AllowLiveShare;
+
+    if (this.IsParameterBound(nameof(AllowMeetingChat)))
+        body.AllowMeetingChat = AllowMeetingChat;
+
+    if (this.IsParameterBound(nameof(AudioConferencing)))
+        body.AudioConferencing = AudioConferencing;
+
+    if (this.IsParameterBound(nameof(ChatInfo)))
+        body.ChatInfo = ChatInfo;
+
+    if (this.IsParameterBound(nameof(ChatRestrictions)))
+        body.ChatRestrictions = ChatRestrictions;
+
+    if (this.IsParameterBound(nameof(JoinInformation)))
+        body.JoinInformation = JoinInformation;
+
+    if (this.IsParameterBound(nameof(JoinMeetingIdSettings)))
+        body.JoinMeetingIdSettings = JoinMeetingIdSettings;
+
+    if (this.IsParameterBound(nameof(LobbyBypassSettings)))
+        body.LobbyBypassSettings = LobbyBypassSettings;
+
+    if (this.IsParameterBound(nameof(SensitivityLabelAssignment)))
+        body.SensitivityLabelAssignment = SensitivityLabelAssignment;
+
+    if (this.IsParameterBound(nameof(ShareMeetingChatHistoryDefault)))
+        body.ShareMeetingChatHistoryDefault = ShareMeetingChatHistoryDefault;
+
+    if (this.IsParameterBound(nameof(WatermarkProtection)))
+        body.WatermarkProtection = WatermarkProtection;
+
+    if (this.IsParameterBound(nameof(BroadcastSettings)))
+        body.BroadcastSettings = BroadcastSettings;
+
+    if (this.IsParameterBound(nameof(Participants)))
+        body.Participants = Participants;
+
+
+        // ── Choose HttpClient + auth provider ─────────────────────────────
+        HttpClient httpClient;
+        IAuthenticationProvider authProvider;
+
+        if (this.IsParameterBound(nameof(AccessToken)))
+        {
+            httpClient = new HttpClient();
+            authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
+        }
+        else
+        {
+            WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
+            try
+            {
+                httpClient = HttpHelpers.GetGraphHttpClient();
+            }
+            catch (Exception ex)
+            {
+                ThrowTerminatingError(new ErrorRecord(
+                    new InvalidOperationException(
+                        "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
+                    "NoGraphSession",
+                    ErrorCategory.AuthenticationError,
+                    null));
+                return;
+            }
+            authProvider = new AnonymousAuthenticationProvider();
+        }
+
+        var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.OnlineMeeting? result;
+            try
+            {
+                result = client.Communications.OnlineMeetings[OnlineMeetingId].PatchAsync(body, requestConfiguration =>
+                {
+
+                        if (this.IsParameterBound(nameof(Headers)))
+                        {
+                            foreach (System.Collections.DictionaryEntry entry in Headers!)
+                                requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
+                        }
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex)
+            {
+                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, OnlineMeetingId));
+                return;
+            }
+
+
+            if (result is null)
+            {
+                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
+                try
+                {
+                    result = client.Communications.OnlineMeetings[OnlineMeetingId].GetAsync().GetAwaiter().GetResult();
+                }
+                catch (Exception ex)
+                {
+                    ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, OnlineMeetingId));
+                    return;
+                }
+            }
+            if (result is not null)
+                WriteObject(result);
+        }
+    }
+}

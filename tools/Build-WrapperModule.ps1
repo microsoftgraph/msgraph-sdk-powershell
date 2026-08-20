@@ -6,12 +6,15 @@ dll + module manifest.
 .DESCRIPTION
 For each module name, reproduces the pipeline the Mail spike proved:
 
-  1. kiota generate      -> <out>/<Module>/src/Client   (ApiClient + models)
-  2. WrapperGenerator    -> <out>/<Module>/src/Cmdlets  (one *.g.cs per cmdlet)
-    3. write client project -> <out>/<Module>/src/Client/Client.csproj
-    4. write wrapper project -> <out>/<Module>/src/<ModuleName>.csproj
-    5. dotnet build         -> <out>/<Module>/src/bin/<Configuration>/net10.0/
-    6. New-ModuleManifest   -> <ModuleName>.psd1 next to the dll
+Writing to src/<Module>/wrapper/<ApiVersion>/:
+
+  1. kiota generate        -> Client/                    (ApiClient + models)
+  2. WrapperGenerator      -> Cmdlets/                   (one *.g.cs per cmdlet)
+  3. write client project  -> Client/Client.csproj
+  4. write wrapper project -> <ModuleName>.csproj        (references the client)
+  5. dotnet build          -> bin/<Configuration>/<TargetFramework>/
+  6. New-ModuleManifest    -> <ModuleName>.psd1 next to the dll
+  7. dotnet pack (-Pack)   -> <ArtifactsLocation>/<Module>/<ModuleName>.<version>.nupkg
 
 Both generators consume the SAME OpenAPI document, so the wrappers always match the client
 they compile against.
@@ -24,15 +27,17 @@ Get-* dispatchers forward to the workers by name via InvokeCommand.InvokeScript,
 manifest that hides the workers breaks dispatch ("term not recognized"). Worker visibility
 needs its own dispatch design and is tracked in the module-wiring issue.
 
-By default everything is written under artifacts/ (gitignored) for throwaway local runs. With
--IntoSource the same pipeline writes the committed layout under src/<Module>/<ApiVersion>/wrapper/,
-where the client, the wrappers and the csproj live together so the folder builds standalone.
+Output is written to the committed layout at src/<Module>/wrapper/<ApiVersion>/, where the
+client project, the wrapper project and their sources live together so the folder builds on its
+own. The API version sits under wrapper/ because AutoRest owns src/<Module>/<ApiVersion>/ and
+clears it on every run.
 To check cmdlet-name parity for a built module, point the parity gate at its cmdlets folder:
-  .\tools\Compare-WrapperCmdletNames.ps1 -GeneratedPath artifacts\wrapper-modules\<Module>\src\Cmdlets
+  .\tools\Compare-WrapperCmdletNames.ps1 -GeneratedPath src\<Module>\wrapper\<ApiVersion>\Cmdlets
 
 .PARAMETER Module
 One or more module names, each matching an OpenAPI doc at <SpecRoot>/<ApiVersion>/<Module>.yml
-(e.g. Mail, Calendar, Users.Actions).
+(e.g. Mail, Calendar). Omit to build every module configured for the API version, derived from
+config/ModulesMapping.jsonc intersected with the specs under <SpecRoot>/<ApiVersion>.
 
 .PARAMETER ApiVersion
 v1.0 (default) or beta.
@@ -44,19 +49,17 @@ openApiDocs flatten types like microsoft.graph.Dictionary into empty schemas, wh
 rejects (Search, Identity.SignIns, Identity.Governance, ConfigurationManagement) or hangs on
 (Sites). A module missing under SpecRoot falls back to <repo>/openApiDocs with a warning.
 
-.PARAMETER OutputRoot
-Root folder for the built modules. Default: <repo>/artifacts/wrapper-modules.
-
 .PARAMETER Configuration
 dotnet build configuration. Default: Debug.
 
 .PARAMETER SkipKiota
 Reuse the previously generated client (fast inner loop when only the wrappers changed).
 
-.PARAMETER IntoSource
-Write the committed layout under src/<Module>/<ApiVersion>/wrapper/ instead of artifacts/:
-Client/ + Cmdlets/ + the csproj, self-contained so the folder builds on its own. This is how
-the generated output is checked in; omit it for throwaway local builds.
+.PARAMETER Pack
+Also produce a package per module under <ArtifactsLocation>/<Module>/.
+
+.PARAMETER ArtifactsLocation
+Where -Pack writes packages. Default: <repo>/artifacts.
 
 .EXAMPLE
 .\tools\Build-WrapperModule.ps1 -Module Mail
@@ -65,30 +68,69 @@ the generated output is checked in; omit it for throwaway local builds.
 .\tools\Build-WrapperModule.ps1 -Module Mail,Calendar -ApiVersion v1.0
 
 .EXAMPLE
-.\tools\Build-WrapperModule.ps1 -Module Mail -IntoSource
+.\tools\Build-WrapperModule.ps1 -ApiVersion v1.0 -Pack
 #>
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory)]
-    [string[]]$Module,
+    [string[]]$Module = @(),
     [ValidateSet('v1.0', 'beta')]
     [string]$ApiVersion = 'v1.0',
     [string]$SpecRoot,
-    [string]$OutputRoot,
     [string]$Configuration = 'Debug',
+    [string]$ModuleMappingConfigPath,
+    [string]$ArtifactsLocation,
     [switch]$SkipKiota,
-    [switch]$IntoSource
+    [switch]$Pack
 )
 
 $ErrorActionPreference = 'Stop'
 
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 if (-not $SpecRoot) { $SpecRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat' }
-if (-not $OutputRoot) { $OutputRoot = Join-Path $repoRoot 'artifacts\wrapper-modules' }
 $generatorProject = Join-Path $repoRoot 'tools\WrapperGenerator'
 $authCsproj = Join-Path $repoRoot 'src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj'
 $clientProjectTemplate = Join-Path $PSScriptRoot 'Templates\WrapperClient.csproj.template'
 $moduleProjectTemplate = Join-Path $PSScriptRoot 'Templates\WrapperModule.csproj.template'
+
+# The framework is declared once, in the template that emits the module project. Reading it back
+# here is what stops this script looking for build output in a folder the compiler stopped
+# writing to: a literal copy silently points at a stale path the moment the template changes.
+$targetFramework = ([xml](Get-Content $moduleProjectTemplate -Raw)).Project.PropertyGroup.TargetFramework |
+    Where-Object { $_ } | Select-Object -First 1
+if (-not $targetFramework) { throw "no TargetFramework in $moduleProjectTemplate" }
+$targetFramework = "$targetFramework".Trim()
+
+if (-not $ModuleMappingConfigPath) { $ModuleMappingConfigPath = Join-Path $repoRoot 'config\ModulesMapping.jsonc' }
+if (-not $ArtifactsLocation) { $ArtifactsLocation = Join-Path $repoRoot 'artifacts' }
+
+# Package metadata comes from the same single source the AutoRest service modules use, so a
+# wrapper package and the module it will eventually replace cannot disagree about version or
+# ownership.
+$moduleMetadataPath = Join-Path $repoRoot 'config\ModuleMetadata.json'
+[hashtable]$moduleMetadata = Get-Content $moduleMetadataPath -Raw | ConvertFrom-Json -AsHashTable
+$versionEntry = $moduleMetadata.versions[$ApiVersion]
+if (-not $versionEntry -or -not $versionEntry.version) { throw "No version configured for '$ApiVersion' in $moduleMetadataPath." }
+$moduleVersion = $versionEntry.version
+$modulePrerelease = $versionEntry.prerelease
+$fullVersion = if ($modulePrerelease) { "$moduleVersion-$modulePrerelease" } else { $moduleVersion }
+
+# The population is the specs this generator can actually read, intersected with the modules the
+# repository is configured to ship - the same two inputs tools/GenerateServiceModule.ps1 uses.
+# Which of them yield CMDLETS is deliberately not decided here: a spec that generates only
+# Shared.g.cs falls out downstream as "no cmdlets emitted", measured per run from the compiled
+# assembly. Encoding those names as an exclusion list would keep excusing a module after the
+# generator learned to handle its shape.
+if (-not $Module -or $Module.Count -eq 0) {
+    if (-not (Test-Path $ModuleMappingConfigPath)) { throw "Module mapping file not found: $ModuleMappingConfigPath." }
+    [hashtable]$moduleMapping = Get-Content $ModuleMappingConfigPath -Raw | ConvertFrom-Json -AsHashTable
+    $specDir = Join-Path $SpecRoot $ApiVersion
+    $Module = @(Get-ChildItem $specDir -File -Filter '*.yml' -ErrorAction SilentlyContinue |
+            ForEach-Object BaseName |
+            Where-Object { $moduleMapping.ContainsKey($_) } |
+            Sort-Object)
+    if ($Module.Count -eq 0) { throw "No configured modules found for '$ApiVersion' under $specDir." }
+    Write-Host "No -Module supplied; building all $($Module.Count) configured module(s) for $ApiVersion." -ForegroundColor DarkGray
+}
 
 if (-not (Get-Command kiota -ErrorAction SilentlyContinue)) {
     Write-Error "kiota CLI not found on PATH. Install: dotnet tool install --global Microsoft.OpenApi.Kiota"
@@ -140,7 +182,7 @@ function Build-Module {
 
     $started = Get-Date
     $result = [pscustomobject]@{
-        Module = $Name; Status = 'FAILED'; FailedAt = ''; CmdletCount = 0; Psd1 = ''; Seconds = 0; Error = ''
+        Module = $Name; Status = 'FAILED'; FailedAt = ''; CmdletCount = 0; Psd1 = ''; Nupkg = ''; Seconds = 0; Error = ''; Detail = ''
     }
 
     try {
@@ -156,17 +198,15 @@ function Build-Module {
 
         $moduleName = "Microsoft.Graph.Wrapper.$Name"
         $clientNs = "Microsoft.Graph.PowerShell.$Name.Client"
-        # -IntoSource writes the committed layout: one self-contained project folder per module
-        # and API version, holding the kiota client, the wrappers, and the csproj that compiles
-        # both into one assembly. Everything under it is committable as-is (the module
-        # .gitignore blocks a csproj at the version-folder root, and still ignores bin/obj at
-        # any depth). Without the switch, output stays in artifacts/ for throwaway local runs.
-        $srcDir = if ($IntoSource) {
-            Join-Path $repoRoot "src\$Name\$ApiVersion\wrapper"
-        }
-        else {
-            Join-Path $OutputRoot "$Name\src"
-        }
+        # src/<Module>/wrapper/<ApiVersion>/ - NOT src/<Module>/<ApiVersion>/wrapper/.
+        # AutoRest is configured with clear-output-folder: true and an output folder of
+        # src/<Module>/<ApiVersion> (src/readme.graph.md:41-42, GenerateServiceModule.ps1:53), so
+        # it wipes that directory on every run. Committed wrapper source placed inside it is
+        # silently deleted the next time anyone regenerates the AutoRest modules - observed:
+        # generating Mail removed its wrapper tree. src/<Module>/ itself is not cleared, so
+        # nesting the API version UNDER wrapper/ keeps the sources safe while both generators
+        # coexist, and still satisfies "a committable project layout under src/{Module}/".
+        $srcDir = Join-Path $repoRoot "src\$Name\wrapper\$ApiVersion"
         $clientDir = Join-Path $srcDir 'Client'
         $cmdletsDir = Join-Path $srcDir 'Cmdlets'
         New-Item -ItemType Directory -Force -Path $srcDir | Out-Null
@@ -177,12 +217,28 @@ function Build-Module {
             # stall the whole fan-out. Successful runs take seconds, so 5 minutes is generous.
             $kiotaErrLog = Join-Path $srcDir 'kiota-stderr.log'
             $kiotaOutLog = Join-Path $srcDir 'kiota-stdout.log'
-            $kiotaProc = Start-Process kiota -PassThru -NoNewWindow -RedirectStandardError $kiotaErrLog -RedirectStandardOutput $kiotaOutLog -ArgumentList @(
-                'generate', '-l', 'CSharp', '-d', $spec, '-c', 'ApiClient', '-n', $clientNs,
-                '-o', $clientDir, '--clean-output', '--log-level', 'Warning')
-            if (-not $kiotaProc.WaitForExit(300000)) {
-                $kiotaProc.Kill()
-                $result.FailedAt = 'kiota'; $result.Error = 'timed out after 300s (hung, killed)'
+
+            # The hang is INTERMITTENT, not spec-specific: v1.0 Teams timed out here at 300s and
+            # then generated in 27s from the same document on the next attempt. A single transient
+            # stall must not fail a whole-population run, so the timeout is retried. A genuine
+            # exit-code failure is not retried - that is deterministic and retrying only hides it.
+            $kiotaAttempts = 2
+            $kiotaTimedOut = $false
+            for ($attempt = 1; $attempt -le $kiotaAttempts; $attempt++) {
+                $kiotaProc = Start-Process kiota -PassThru -NoNewWindow -RedirectStandardError $kiotaErrLog -RedirectStandardOutput $kiotaOutLog -ArgumentList @(
+                    'generate', '-l', 'CSharp', '-d', $spec, '-c', 'ApiClient', '-n', $clientNs,
+                    '-o', $clientDir, '--clean-output', '--log-level', 'Warning')
+                $kiotaTimedOut = -not $kiotaProc.WaitForExit(300000)
+                if ($kiotaTimedOut) {
+                    $kiotaProc.Kill()
+                    Write-Warning "kiota timed out after 300s generating $Name (attempt $attempt of $kiotaAttempts)"
+                    continue
+                }
+                break
+            }
+            if ($kiotaTimedOut) {
+                $result.FailedAt = 'kiota'
+                $result.Error = "timed out after 300s on all $kiotaAttempts attempt(s) (hung, killed)"
                 return $result
             }
             if ($kiotaProc.ExitCode -ne 0) {
@@ -207,22 +263,21 @@ function Build-Module {
             return $result
         }
 
-            $clientAssemblyName = "$moduleName.Client"
-            $clientCsprojPath = Join-Path $clientDir 'Client.csproj'
-            New-ProjectFromTemplate -TemplatePath $clientProjectTemplate -DestinationPath $clientCsprojPath -Replacements @{
-                ClientAssemblyName = $clientAssemblyName
-            }
+        $clientAssemblyName = "$moduleName.Client"
+        $clientCsprojPath = Join-Path $clientDir 'Client.csproj'
+        New-ProjectFromTemplate -TemplatePath $clientProjectTemplate -DestinationPath $clientCsprojPath -Replacements @{
+            ClientAssemblyName = $clientAssemblyName
+        }
 
-            # Project references are relative so generated projects remain portable across clones
-            # and across the artifacts and eventual src/<Module>/<ApiVersion>/wrapper layouts.
+        # Project references are relative so the committed projects build from any clone path.
         $csprojPath = Join-Path $srcDir "$moduleName.csproj"
         $authCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $authCsproj) -replace '/', '\'
-            $clientCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $clientCsprojPath) -replace '/', '\'
-            New-ProjectFromTemplate -TemplatePath $moduleProjectTemplate -DestinationPath $csprojPath -Replacements @{
-                ModuleAssemblyName = $moduleName
-                ClientProjectPath = $clientCsprojRelative
-                AuthenticationProjectPath = $authCsprojRelative
-            }
+        $clientCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $clientCsprojPath) -replace '/', '\'
+        New-ProjectFromTemplate -TemplatePath $moduleProjectTemplate -DestinationPath $csprojPath -Replacements @{
+            ModuleAssemblyName = $moduleName
+            ClientProjectPath = $clientCsprojRelative
+            AuthenticationProjectPath = $authCsprojRelative
+        }
 
         $buildOut = & dotnet build $csprojPath -c $Configuration --nologo -v minimal 2>&1
         if ($LASTEXITCODE -ne 0) {
@@ -231,10 +286,25 @@ function Build-Module {
             return $result
         }
 
-        $binDir = Join-Path $srcDir "bin\$Configuration\net10.0"
+        $binDir = Join-Path $srcDir "bin\$Configuration\$targetFramework"
         $assemblyPath = Join-Path $binDir "$moduleName.dll"
         $cmdlets = @(Get-CompiledCmdletNames -AssemblyPath $assemblyPath)
-        if ($cmdlets.Count -eq 0) { $result.FailedAt = 'manifest'; $result.Error = 'no cmdlets emitted'; return $result }
+        if ($cmdlets.Count -eq 0) {
+            # A terminal SUCCESS, not a failure. Some specs are entirely action/function shaped
+            # and the generator emits only Shared.g.cs for them; the module compiles fine and
+            # simply has nothing to export, so there is no manifest and no package. Which specs
+            # those are is measured here from the compiled assembly on every run rather than
+            # listed anywhere, so a module starts producing a module the moment the generator
+            # learns its shape - and a whole-population run is not turned red by an outcome that
+            # is expected and correct.
+            $result.Status = 'NO-CMDLETS'
+            $result.Detail = 'compiled, but the assembly exports no cmdlets'
+            # Remove what was just generated. A module with nothing to export ships nothing, so
+            # it must own nothing either: leaving the tree behind would commit hundreds of
+            # generated client files that no assembly, manifest or package ever references.
+            Remove-Item -LiteralPath $srcDir -Recurse -Force -ErrorAction SilentlyContinue
+            return $result
+        }
 
         $psd1Path = Join-Path $binDir "$moduleName.psd1"
         New-ModuleManifest -Path $psd1Path `
@@ -244,6 +314,70 @@ function Build-Module {
             -Description "Generated Kiota-based wrapper module for $Name ($ApiVersion). Test build - not for release." `
             -CmdletsToExport $cmdlets `
             -FunctionsToExport @() -AliasesToExport @() -VariablesToExport @()
+
+        if ($Pack) {
+            # The package IS the module folder: manifest, assemblies and their runtime closure.
+            # Nothing is listed by name - a dependency added upstream must ship without anyone
+            # editing a file list - and nothing is excluded by name either, because the
+            # PowerShell SDK reference assembly is kept out of the closure at the project level
+            # (ExcludeAssets="runtime" in the wrapper module template), which is the only place
+            # that intent can be expressed. See tools/Templates/WrapperModule.csproj.template.
+            $nuspecPath = Join-Path $binDir "$moduleName.nuspec"
+            $tags = ($moduleMetadata['tags']) -join ' '
+            # Native runtime payloads only exist when a dependency ships them; dotnet pack fails
+            # outright on a <file> glob whose directory is absent, so the entry is emitted only
+            # when the build actually produced one rather than assumed to be there.
+            $runtimesEntry = if (Test-Path (Join-Path $binDir 'runtimes')) {
+                "`n    <file src=`"runtimes\**\*.*`" target=`"runtimes`" />"
+            } else { '' }
+            @"
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>$moduleName</id>
+    <version>$fullVersion</version>
+    <authors>$($moduleMetadata['authors'])</authors>
+    <owners>$($moduleMetadata['owners'])</owners>
+    <requireLicenseAcceptance>$($moduleMetadata['requireLicenseAcceptance'])</requireLicenseAcceptance>
+    <licenseUrl>$($moduleMetadata['licenseUri'])</licenseUrl>
+    <projectUrl>$($moduleMetadata['projectUri'])</projectUrl>
+    <iconUrl>$($moduleMetadata['iconUri'])</iconUrl>
+    <description>Kiota-based wrapper module for $Name ($ApiVersion).</description>
+    <releaseNotes>$($moduleMetadata['releaseNotes'])</releaseNotes>
+    <copyright>$($moduleMetadata['copyright'])</copyright>
+    <tags>$tags</tags>
+  </metadata>
+  <files>
+    <file src="$moduleName.psd1" />
+    <file src="*.dll" />
+    <file src="*.deps.json" />$runtimesEntry
+  </files>
+</package>
+"@ | Set-Content -Path $nuspecPath -Encoding utf8
+
+            $moduleArtifacts = Join-Path $ArtifactsLocation $Name
+            New-Item -ItemType Directory -Force -Path $moduleArtifacts | Out-Null
+            # NoPackageAnalysis matches the generated service-module csproj: without it NuGet
+            # warns NU5100 once per assembly for not living under lib/, which is meaningless for
+            # a PowerShell module package. NuspecBasePath resolves the globs against the build
+            # output so the nuspec need not know how deep bin/<Config>/<TFM> is.
+            $packArgs = @($csprojPath, '-c', $Configuration, '--no-build', '--nologo', '-v', 'minimal',
+                "-p:NuspecFile=$nuspecPath", "-p:NuspecBasePath=$binDir", "-p:Version=$moduleVersion",
+                '-p:NoPackageAnalysis=true', '-o', $moduleArtifacts)
+            $packOut = & dotnet pack @packArgs 2>&1
+            if ($LASTEXITCODE -ne 0) {
+                $result.FailedAt = 'pack'
+                $result.Error = ($packOut | Where-Object { $_ -match 'error' } | Select-Object -First 3) -join ' | '
+                return $result
+            }
+            $nupkg = Join-Path $moduleArtifacts "$moduleName.$fullVersion.nupkg"
+            if (-not (Test-Path $nupkg)) {
+                $result.FailedAt = 'pack'
+                $result.Error = "dotnet pack reported success but '$nupkg' is missing"
+                return $result
+            }
+            $result.Nupkg = $nupkg
+        }
 
         $result.Status = 'OK'
         $result.CmdletCount = $cmdlets.Count
@@ -257,17 +391,35 @@ function Build-Module {
     }
     finally {
         $result.Seconds = [math]::Round(((Get-Date) - $started).TotalSeconds, 1)
+
+        # A failure part-way through leaves a half-generated tree behind - kiota runs with
+        # --clean-output, so a timeout wipes the previous client and then writes nothing usable.
+        # Committing that is worse than having no tree at all: it looks like source but has no
+        # project to build and no cmdlets to export.
+        #
+        # Only an UNUSABLE tree is removed, judged by what it contains rather than by which step
+        # failed: a module project plus at least one emitted cmdlet is the minimum that can build,
+        # so a tree holding both is left alone even on failure, and a valid committed tree is
+        # never destroyed by an unrelated late-stage error.
+        if ($result.Status -eq 'FAILED' -and $srcDir -and (Test-Path $srcDir)) {
+            $hasProject = @(Get-ChildItem $srcDir -Filter '*.csproj' -File -ErrorAction SilentlyContinue).Count -gt 0
+            $hasCmdlets = @(Get-ChildItem (Join-Path $srcDir 'Cmdlets') -Filter '*.g.cs' -File -ErrorAction SilentlyContinue |
+                Where-Object Name -ne 'Shared.g.cs').Count -gt 0
+            if (-not ($hasProject -and $hasCmdlets)) {
+                Remove-Item -LiteralPath $srcDir -Recurse -Force -ErrorAction SilentlyContinue
+                Write-Warning "removed incomplete wrapper tree for $Name after failure at '$($result.FailedAt)'"
+            }
+        }
     }
 }
 
 $results = foreach ($name in $Module) {
     Write-Host "=== $name ===" -ForegroundColor Cyan
     $r = Build-Module -Name $name
-    if ($r.Status -eq 'OK') {
-        Write-Host "  OK: $($r.CmdletCount) cmdlets -> $($r.Psd1) ($($r.Seconds)s)" -ForegroundColor Green
-    }
-    else {
-        Write-Host "  FAILED at $($r.FailedAt): $($r.Error)" -ForegroundColor Yellow
+    switch ($r.Status) {
+        'OK' { Write-Host "  OK: $($r.CmdletCount) cmdlets -> $($r.Psd1) ($($r.Seconds)s)" -ForegroundColor Green }
+        'NO-CMDLETS' { Write-Host "  NO-CMDLETS: $($r.Detail) ($($r.Seconds)s)" -ForegroundColor DarkYellow }
+        default { Write-Host "  FAILED at $($r.FailedAt): $($r.Error)" -ForegroundColor Yellow }
     }
     $r
 }
@@ -275,5 +427,16 @@ $results = foreach ($name in $Module) {
 Write-Host ''
 $results | Format-Table Module, Status, FailedAt, CmdletCount, Seconds -AutoSize | Out-Host
 
-if ($results.Status -contains 'FAILED') { exit 1 }
+$built = @($results | Where-Object Status -eq 'OK')
+$noCmdlets = @($results | Where-Object Status -eq 'NO-CMDLETS')
+$failed = @($results | Where-Object Status -eq 'FAILED')
+
+Write-Host "$($built.Count) module(s) built, $($noCmdlets.Count) produced no cmdlets, $($failed.Count) failed." -ForegroundColor Cyan
+if ($noCmdlets.Count) {
+    # Named every run so a shrinking population stays visible: "all modules built" must never be
+    # able to hide a module that quietly stopped producing anything.
+    Write-Host "  no cmdlets: $(($noCmdlets.Module) -join ', ')" -ForegroundColor DarkYellow
+}
+
+if ($failed.Count) { exit 1 }
 exit 0
