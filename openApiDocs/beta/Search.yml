@@ -6401,6 +6401,7 @@ components:
       properties:
         sensitivityLabelId:
           type: string
+          description: 'The GUID of the Purview sensitivity label. To get the label GUID, use the Get sensitivityLabel API or the Get-Label PowerShell command.'
           nullable: true
       additionalProperties:
         type: object

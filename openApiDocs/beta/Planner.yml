@@ -2536,6 +2536,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get historyItems from groups
+      description: Collection of history items for entities in the plan. Read-only. Nullable.
       operationId: group.planner.plan_ListHistoryItem
       parameters:
         - name: group-id
@@ -2642,6 +2643,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get historyItems from groups
+      description: Collection of history items for entities in the plan. Read-only. Nullable.
       operationId: group.planner.plan_GetHistoryItem
       parameters:
         - name: group-id
@@ -8271,6 +8273,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get historyItems from planner
+      description: Collection of history items for entities in the plan. Read-only. Nullable.
       operationId: planner.plan_ListHistoryItem
       parameters:
         - name: plannerPlan-id
@@ -8361,6 +8364,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get historyItems from planner
+      description: Collection of history items for entities in the plan. Read-only. Nullable.
       operationId: planner.plan_GetHistoryItem
       parameters:
         - name: plannerPlan-id
@@ -14844,6 +14848,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get historyItems from users
+      description: Collection of history items for entities in the plan. Read-only. Nullable.
       operationId: user.planner.plan_ListHistoryItem
       parameters:
         - name: user-id
@@ -14950,6 +14955,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get historyItems from users
+      description: Collection of history items for entities in the plan. Read-only. Nullable.
       operationId: user.planner.plan_GetHistoryItem
       parameters:
         - name: user-id
@@ -18463,6 +18469,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerHistoryItem'
+              description: Collection of history items for entities in the plan. Read-only. Nullable.
               x-ms-navigationProperty: true
             tasks:
               type: array
@@ -18789,6 +18796,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             entityId:
               type: string
+              description: The ID of the entity that was changed.
             entityType:
               $ref: '#/components/schemas/microsoft.graph.historyEntityType'
             eventType:
@@ -18796,10 +18804,12 @@ components:
             occurredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the change occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             planId:
               type: string
+              description: The ID of the plan that contains the changed entity.
           additionalProperties:
             type: object
     microsoft.graph.planUsageRight:
