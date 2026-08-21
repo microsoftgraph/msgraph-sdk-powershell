@@ -96,8 +96,14 @@ internal static class Program
         // output it leaves behind is exactly what the collision and parity derivations are captured
         // from. Without this marker those captures cannot be scoped to an API version, and every
         // route silently matches its beta twin as an ambiguous oracle row.
+        //
+        // The path is recorded RELATIVE to the output folder, with forward slashes, the way kiota's
+        // own Client/kiota-lock.json records it. This file is committed alongside the generated
+        // sources, so an absolute path would bake the generating machine's layout into the
+        // repository and differ for every clone.
         Directory.CreateDirectory(outputPath);
-        var lockJson = JsonSerializer.Serialize(new { descriptionLocation = specPath }, LockFileJsonOptions);
+        var relativeSpecPath = Path.GetRelativePath(outputPath, specPath).Replace('\\', '/');
+        var lockJson = JsonSerializer.Serialize(new { descriptionLocation = relativeSpecPath }, LockFileJsonOptions);
         await File.WriteAllTextAsync(Path.Combine(outputPath, "kiota-lock.json"), lockJson, CancellationToken.None).ConfigureAwait(false);
 
         var service = new PowerShellWrapperGenerationService(document, config, new StderrLogger(logLevel));

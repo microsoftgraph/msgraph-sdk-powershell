@@ -148,7 +148,8 @@ The wrappers compile and run only alongside step 1's output. Wiring the two into
 
 **Build:**
 
-```powershell dotnet build tools/WrapperGenerator
+```powershell
+dotnet build tools/WrapperGenerator
 ```
 
 **Run** — generate the Mail message cmdlets (the `--include-path` args pick which operations):
@@ -166,30 +167,48 @@ dotnet run --project tools/WrapperGenerator -- `
 
 ## The committed output
 
-The generated modules are checked in under `src/{Module}/{v1.0|beta}/wrapper/`, one
-self-contained project per module and API version:
+The generated modules are checked in under `src/{Module}/wrapper/{v1.0|beta}/`, two projects per
+module and API version:
 
 ```
-src/Mail/v1.0/wrapper/
+src/Mail/wrapper/v1.0/
     Client/                             kiota client (models + request builders)
+        Client.csproj                   -> Microsoft.Graph.Wrapper.Mail.Client.dll
     Cmdlets/                            the wrapper cmdlets, one *.g.cs each, plus Shared.g.cs
-    Microsoft.Graph.Wrapper.Mail.csproj compiles both into one assembly
+    Microsoft.Graph.Wrapper.Mail.csproj -> Microsoft.Graph.Wrapper.Mail.dll, references the client
 ```
 
-Everything needed to build is in that folder, so no generation step is required to try it:
+The API version sits **under** `wrapper/`, not above it. AutoRest owns `src/{Module}/{version}/`
+and is configured with `clear-output-folder`, so anything committed there is deleted the next
+time the AutoRest modules are generated — including, as observed, an entire wrapper tree.
+`src/{Module}/` itself is not cleared, so this layout survives while both generators coexist.
+
+Both projects target `netstandard2.0`. The compatibility contract comes from the module every
+wrapper references — `src/Authentication/Authentication/Microsoft.Graph.Authentication.psd1`
+declares `PowerShellVersion 5.1` and `CompatiblePSEditions Core, Desktop` — and a manifest binds a
+single un-conditioned dll path, so one framework has to satisfy both editions: `net472` covers
+Desktop only, `net6.0`/`net8.0`/`net10.0` cover Core only. `Microsoft.Kiota.Bundle` ships a
+`netstandard2.0` asset, so the generated sources compile against it and the produced package
+imports in both PowerShell 7 and Windows PowerShell 5.1.
+
+Everything needed to build is committed, so a clean checkout builds with only the .NET SDK —
+kiota is needed to regenerate, never to compile:
 
 ```powershell
-dotnet build src/Mail/v1.0/wrapper                       # produces the dll + psd1 under bin/
-Import-Module src/Mail/v1.0/wrapper/bin/Release/net10.0/Microsoft.Graph.Wrapper.Mail.psd1
+dotnet build src/Mail/wrapper/v1.0                       # produces the dll + psd1 under bin/
+Import-Module src/Mail/wrapper/v1.0/bin/Release/netstandard2.0/Microsoft.Graph.Wrapper.Mail.psd1
 ```
 
 To regenerate it after a generator change — this rewrites the committed folder in place, so the
 diff shows exactly what the change did to the output:
 
 ```powershell
-.\tools\Build-WrapperModule.ps1 -Module Mail -IntoSource -Configuration Release
+.\tools\Build-WrapperModule.ps1 -Module Mail -Configuration Release
 .\tools\New-WrapperOutputManifest.ps1        # refresh docs/WrapperCmdlets-V1.0*.csv
 ```
+
+Omit `-Module` to build every module configured for the API version; add `-Pack` to produce a
+package per module under `artifacts/{Module}/`.
 
 `docs/WrapperCmdlets-V1.0.csv` is the reviewable inventory of that output — one row per emitted
 cmdlet with its module, verb, noun and request path — with per-module totals in
@@ -223,11 +242,11 @@ The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each mo
 
 ## Gaps / not done yet
 
-- **Only v1.0 output is committed.** The beta docs exist (`openApiDocs_KiotaCompat/beta`) but no beta output is generated or checked in yet; the layout already accommodates it at `src/{Module}/beta/wrapper/`.
+- **Only v1.0 output is committed.** The beta docs exist (`openApiDocs_KiotaCompat/beta`) but no beta output is generated or checked in yet; the layout already accommodates it at `src/{Module}/wrapper/beta/`.
 - **No runtime base classes or real auth flow.** Shared paging, a proper `Connect-MgGraph`/session integration, and base cmdlet classes are a later phase.
-- **Body binding covers every shape reaching the classifier** — the omission oracle reports 0 failures across 2,240 body-writing cmdlets (24,050 members seen, 15,872 bound). That is a statement about the operations that generate, not about v1.0: see the coverage figure below. Classifications for shapes that do not occur (inline objects and enums, genuine unions, dictionaries, unresolvable references, unknown formats) are retained so a future corpus change is reported rather than silently mis-bound; [docs/edge-cases/body-binding-edge-cases.md](docs/edge-cases/body-binding-edge-cases.md) records each with its exit criteria.
-- **73.6% of v1.0 operations generate, deliberately.** Of 14,131 operations across the 38 specs: 10,401 become cmdlets, 3,173 are suppressed because the published SDK ships no cmdlet for them (oracle-derived), and 557 are unsupported — 345 call segments on operations the spec does not class as an action or function, 125 routes that call a parameterized function before their final segment, 42 whose content response is neither a stream nor a resolvable entity, 24 with no wrapper emitter for the HTTP method, 13 OData parameter aliases, 6 unresolvable collection schemas, 2 missing request schemas. The three populations sum to 14,131 by construction. The rise from 61.3% is the OData `$`-segments — `$count`, `$ref` and `$value` were 2,304 unsupported operations and now have emitters of their own — plus PUT and the media/content downloads.
-- **Naming parity: every generated cmdlet is now compared.** The generator stamps each emitted class with a `[GraphRoute(method, path)]` attribute carrying the operation's route exactly as the spec declares it, and the gate reads that attribute out of the module's **compiled assembly**. Nothing is excluded: of 11,737 cmdlets, 9,564 match, 403 mismatch, 428 have no oracle row, 6 are documented deliberate corrections, and 1,336 are GET dispatchers verified through their `_List`/`_Get` siblings. Before this the gate reconstructed the route from the generated C#, which cannot work for a parameterized function (the builder member keeps the argument names but not the OData argument syntax) or a namespace-qualified action (kiota keeps the qualifier, the route does not) — so it excluded **1,669 cmdlets** from comparison and reported them as skipped. Those names were never wrong-free; they were unexamined. Renames and suppressions are derived from the oracle by `tools/Derive-ParityResolutions.ps1` — data, not rules — alongside a small curated set in `NamingOverrides.cs` and the comparer's deliberate-corrections table, each entry cited. A derived rename carries the published **verb** as well as the noun, because the SDK chooses an action's verb per operation (`sendMail` ships `Send-`, `checkMemberGroups` ships `Confirm-`, and `applyHold`/`removeHold` share one noun and differ only by verb).
-- **Emitted files are not operations.** 11,737 files include 1,336 GET dispatchers that issue no request of their own, leaving 10,401 that correspond to an operation. Any coverage figure derived from file counts, or by subtracting only the unsupported from the total, is wrong in a way that flatters the result. The same trap applies to the file *names*: `BaseName` of `GetMgApplication_List.g.cs` is `GetMgApplication_List.g`, because only the last extension is stripped, so an orphan check written against `BaseName -match '_(List|Get)$'` examines nothing and passes vacuously. Strip `\.g\.cs$` explicitly; the corrected check examines 2,672 workers and finds 0 orphans.
+- **Body binding covers every shape reaching the classifier** — the omission oracle reports 0 failures across 2,235 body-writing cmdlets (24,003 members seen, 15,838 bound). That is a statement about the operations that generate, not about v1.0: see the coverage figure below. Classifications for shapes that do not occur (inline objects and enums, genuine unions, dictionaries, unresolvable references, unknown formats) are retained so a future corpus change is reported rather than silently mis-bound; [docs/edge-cases/body-binding-edge-cases.md](docs/edge-cases/body-binding-edge-cases.md) records each with its exit criteria.
+- **73.6% of v1.0 operations generate, deliberately.** Of 14,115 operations across the 38 specs (the DirectoryObjects re-slice removes the 16 publicKeyInfrastructure operations it double-declared with Identity.DirectoryManagement): 10,385 become cmdlets, 3,173 are suppressed because the published SDK ships no cmdlet for them (oracle-derived), and 557 are unsupported — 345 call segments on operations the spec does not class as an action or function, 125 routes that call a parameterized function before their final segment, 42 whose content response is neither a stream nor a resolvable entity, 24 with no wrapper emitter for the HTTP method, 13 OData parameter aliases, 6 unresolvable collection schemas, 2 missing request schemas. The three populations sum to 14,115 by construction. The rise from 61.3% is the OData `$`-segments — `$count`, `$ref` and `$value` were 2,304 unsupported operations and now have emitters of their own — plus PUT and the media/content downloads.
+- **Naming parity: every generated cmdlet is now compared.** The generator stamps each emitted class with a `[GraphRoute(method, path)]` attribute carrying the operation's route exactly as the spec declares it, and the gate reads that attribute out of the module's **compiled assembly**. Nothing is excluded: of 11,719 cmdlets, 9,548 match, 403 mismatch, 428 have no oracle row, 6 are documented deliberate corrections, and 1,334 are GET dispatchers verified through their `_List`/`_Get` siblings. Before this the gate reconstructed the route from the generated C#, which cannot work for a parameterized function (the builder member keeps the argument names but not the OData argument syntax) or a namespace-qualified action (kiota keeps the qualifier, the route does not) — so it excluded **1,669 cmdlets** from comparison and reported them as skipped. Those names were never wrong-free; they were unexamined. Renames and suppressions are derived from the oracle by `tools/Derive-ParityResolutions.ps1` — data, not rules — alongside a small curated set in `NamingOverrides.cs` and the comparer's deliberate-corrections table, each entry cited. A derived rename carries the published **verb** as well as the noun, because the SDK chooses an action's verb per operation (`sendMail` ships `Send-`, `checkMemberGroups` ships `Confirm-`, and `applyHold`/`removeHold` share one noun and differ only by verb).
+- **Emitted files are not operations.** 11,719 files include 1,334 GET dispatchers that issue no request of their own, leaving 10,385 that correspond to an operation. Any coverage figure derived from file counts, or by subtracting only the unsupported from the total, is wrong in a way that flatters the result. The same trap applies to the file *names*: `BaseName` of `GetMgApplication_List.g.cs` is `GetMgApplication_List.g`, because only the last extension is stripped, so an orphan check written against `BaseName -match '_(List|Get)$'` examines nothing and passes vacuously. Strip `\.g\.cs$` explicitly; the corrected check examines 2,668 workers and finds 0 orphans.
 - **`DeviceManagement.Actions` has no `openApiDocs_KiotaCompat` spec**, so its operations are never read and appear in none of the counts above. It also has no entry in `config/ModulesMapping.jsonc` — the mapping was removed in `659db09e81` ("modules that are causing duplicate cmdlets") — and the published inventory has no `DeviceManagement.Actions` rows for v1.0 at all: those operations ship from four modules that already existed (DeviceManagement, Reports, DeviceManagement.Administration, DeviceManagement.Enrollment), all of which generate them. 38 modules are configured for v1.0, not 39.
 - **OData actions and functions generate**, as a general operation class keyed off `x-ms-docs-operation-type`: bound and unbound, entity/collection/singleton targets, inline request bodies, value-wrapping and no-content responses, and parameterized functions. [docs/edge-cases/action-function-edge-cases.md](docs/edge-cases/action-function-edge-cases.md) records the kiota naming rules each shape depends on and the two shapes still deferred (OData parameter aliases; routes that call a parameterized function part-way along).

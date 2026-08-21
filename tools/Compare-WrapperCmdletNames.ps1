@@ -113,9 +113,12 @@ function ConvertTo-NormalizedOracleUri {
 function Get-GraphRouteMap {
     param([Parameter(Mandatory)][string]$CmdletsPath, [string]$BuildConfiguration = 'Release')
 
-    $binDir = Join-Path (Split-Path $CmdletsPath -Parent) "bin/$BuildConfiguration/net10.0"
+    # The target-framework segment is deliberately not named: the projects declare their TFM in
+    # tools/Templates/*.csproj.template, and a gate that hard-codes the folder goes silently blind
+    # the day the projects retarget - it did exactly that when net10.0 became netstandard2.0.
+    $binDir = Join-Path (Split-Path $CmdletsPath -Parent) "bin/$BuildConfiguration"
     if (-not (Test-Path $binDir)) { return $null }
-    $dll = Get-ChildItem -Path $binDir -Filter 'Microsoft.Graph.Wrapper.*.dll' -File -ErrorAction SilentlyContinue |
+    $dll = Get-ChildItem -Path $binDir -Recurse -Filter 'Microsoft.Graph.Wrapper.*.dll' -File -ErrorAction SilentlyContinue |
         Where-Object { $_.Name -notlike '*.Client.dll' } | Select-Object -First 1
     if (-not $dll) { return $null }
 
