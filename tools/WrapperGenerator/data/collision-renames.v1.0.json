@@ -2,6 +2,468 @@
   {
     "apiVersion": "v1.0",
     "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/applications/{}/appmanagementpolicies/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgApplicationAppManagementPolicyAppManagementPolicyByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/applications/{}/appmanagementpolicies/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "ApplicationAppManagementPolicyAppManagementPolicyByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/applications/{}/owners/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgApplicationOwnerDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/applications/{}/owners/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "ApplicationOwnerDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/applications/{}/tokenissuancepolicies/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgApplicationTokenIssuancePolicyTokenIssuancePolicyByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/applications/{}/tokenissuancepolicies/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "ApplicationTokenIssuancePolicyTokenIssuancePolicyByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/applications/{}/tokenlifetimepolicies/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgApplicationTokenLifetimePolicyTokenLifetimePolicyByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/applications/{}/tokenlifetimepolicies/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "ApplicationTokenLifetimePolicyTokenLifetimePolicyByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.DirectoryManagement"
+    ],
+    "method": "DELETE",
+    "uri": "/devices/{}/registeredowners/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgDeviceRegisteredOwnerDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/devices/{}/registeredowners/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "DeviceRegisteredOwnerDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.DirectoryManagement"
+    ],
+    "method": "DELETE",
+    "uri": "/devices/{}/registeredusers/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgDeviceRegisteredUserDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/devices/{}/registeredusers/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "DeviceRegisteredUserDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.DirectoryManagement"
+    ],
+    "method": "DELETE",
+    "uri": "/directory/administrativeunits/{}/members/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgDirectoryAdministrativeUnitMemberDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/directory/administrativeunits/{}/members/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "DirectoryAdministrativeUnitMemberDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.DirectoryManagement"
+    ],
+    "method": "DELETE",
+    "uri": "/directoryroles/{}/members/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgDirectoryRoleMemberDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/directoryroles/{}/members/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "DirectoryRoleMemberDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/classes/{}/assignments/{}/categories/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEducationClassAssignmentCategoryEducationCategoryByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/education/classes/{}/assignments/{}/categories/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EducationClassAssignmentCategoryEducationCategoryByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/classes/{}/members/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEducationClassMemberEducationUserByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/education/classes/{}/members/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EducationClassMemberEducationUserByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/classes/{}/teachers/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEducationClassTeacherEducationUserByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/education/classes/{}/teachers/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EducationClassTeacherEducationUserByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/me/assignments/{}/categories/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEducationMeAssignmentCategoryEducationCategoryByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/education/me/assignments/{}/categories/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EducationMeAssignmentCategoryEducationCategoryByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/schools/{}/classes/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEducationSchoolClassEducationClassByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/education/schools/{}/classes/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EducationSchoolClassEducationClassByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/schools/{}/users/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEducationSchoolUserEducationUserByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/education/schools/{}/users/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EducationSchoolUserEducationUserByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/users/{}/assignments/{}/categories/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEducationUserAssignmentCategoryEducationCategoryByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/education/users/{}/assignments/{}/categories/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EducationUserAssignmentCategoryEducationCategoryByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "DELETE",
+    "uri": "/groups/{}/acceptedsenders/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgGroupAcceptedSenderDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/groups/{}/acceptedsenders/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "GroupAcceptedSenderDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "DELETE",
+    "uri": "/groups/{}/members/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgGroupMemberDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/groups/{}/members/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "GroupMemberDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "DELETE",
+    "uri": "/groups/{}/owners/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgGroupOwnerDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/groups/{}/owners/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "GroupOwnerDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "DELETE",
+    "uri": "/groups/{}/rejectedsenders/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgGroupRejectedSenderDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/groups/{}/rejectedsenders/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "GroupRejectedSenderDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "DELETE",
+    "uri": "/identity/b2xuserflows/{}/userflowidentityproviders/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgIdentityB2XUserFlowIdentityProviderBaseByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/identity/b2xuserflows/{}/userflowidentityproviders/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "IdentityB2XUserFlowIdentityProviderBaseByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/accesspackages/{}/incompatibleaccesspackages/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/accesspackages/{}/incompatibleaccesspackages/{}/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementAccessPackageIncompatibleAccessPackageByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/accesspackages/{}/incompatiblegroups/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/accesspackages/{}/incompatiblegroups/{}/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementAccessPackageIncompatibleGroupByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
       "Identity.Governance"
     ],
     "method": "DELETE",
@@ -9,7 +471,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementCatalogResourceRole"
+        [
+          "Remove-MgEntitlementManagementCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}"
@@ -28,7 +492,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementCatalogResourceRoleResource"
+        [
+          "Remove-MgEntitlementManagementCatalogResourceRoleResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource"
@@ -47,7 +513,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        [
+          "Remove-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}"
@@ -66,7 +534,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementCatalogResourceRoleResourceScopeResource"
+        [
+          "Remove-MgEntitlementManagementCatalogResourceRoleResourceScopeResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}/resource"
@@ -85,7 +555,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementCatalogResourceScopeResource"
+        [
+          "Remove-MgEntitlementManagementCatalogResourceScopeResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource"
@@ -104,7 +576,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        [
+          "Remove-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}"
@@ -123,7 +597,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementCatalogResourceScopeResourceRoleResource"
+        [
+          "Remove-MgEntitlementManagementCatalogResourceScopeResourceRoleResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}/resource"
@@ -142,7 +618,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementCatalogResourceScope"
+        [
+          "Remove-MgEntitlementManagementCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}"
@@ -157,11 +635,55 @@
       "Identity.Governance"
     ],
     "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/connectedorganizations/{}/externalsponsors/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/connectedorganizations/{}/externalsponsors/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementConnectedOrganizationExternalSponsorDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/connectedorganizations/{}/internalsponsors/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/connectedorganizations/{}/internalsponsors/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementConnectedOrganizationInternalSponsorDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        [
+          "Remove-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}"
@@ -180,7 +702,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResource"
+        [
+          "Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource"
@@ -199,7 +723,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        [
+          "Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}"
@@ -218,7 +744,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+        [
+          "Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}/resource"
@@ -237,7 +765,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResource"
+        [
+          "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource"
@@ -256,7 +786,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        [
+          "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}"
@@ -275,7 +807,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+        [
+          "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}/resource"
@@ -294,7 +828,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Remove-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        [
+          "Remove-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}"
@@ -306,6 +842,182 @@
   {
     "apiVersion": "v1.0",
     "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "DELETE",
+    "uri": "/policies/featurerolloutpolicies/{}/appliesto/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgPolicyFeatureRolloutPolicyApplyToDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/policies/featurerolloutpolicies/{}/appliesto/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "PolicyFeatureRolloutPolicyApplyToDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/serviceprincipals/{}/claimsmappingpolicies/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgServicePrincipalClaimMappingPolicyClaimMappingPolicyByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/claimsmappingpolicies/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "ServicePrincipalClaimMappingPolicyClaimMappingPolicyByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/serviceprincipals/{}/homerealmdiscoverypolicies/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/homerealmdiscoverypolicies/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "ServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/serviceprincipals/{}/owners/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgServicePrincipalOwnerDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/owners/$ref"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "ServicePrincipalOwnerDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/serviceprincipals/{}/tokenissuancepolicies/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgServicePrincipalTokenIssuancePolicyTokenIssuancePolicyByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/tokenissuancepolicies/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgServicePrincipalTokenIssuancePolicyByRef"
+      ]
+    },
+    "replacementNoun": "ServicePrincipalTokenIssuancePolicyTokenIssuancePolicyByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/serviceprincipals/{}/tokenlifetimepolicies/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgServicePrincipalTokenLifetimePolicyTokenLifetimePolicyByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/tokenlifetimepolicies/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgServicePrincipalTokenLifetimePolicyByRef"
+      ]
+    },
+    "replacementNoun": "ServicePrincipalTokenLifetimePolicyTokenLifetimePolicyByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Users"
+    ],
+    "method": "DELETE",
+    "uri": "/users/{}/sponsors/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgUserSponsorDirectoryObjectByRef"
+        ]
+      ],
+      "counterpartUris": [
+        "/users/{}/sponsors/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgUserSponsorByRef"
+      ]
+    },
+    "replacementNoun": "UserSponsorDirectoryObjectByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
+    "uri": "/groups/{}/sites/{}/sites/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgGroupSubSiteCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/groups/{}/sites/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSiteCount"
+      ]
+    },
+    "replacementNoun": "GroupSubSiteCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
       "Identity.Governance"
     ],
     "method": "GET",
@@ -313,7 +1025,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceRole"
+        [
+          "Get-MgEntitlementManagementCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}",
@@ -336,7 +1050,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceRole"
+        [
+          "Get-MgEntitlementManagementCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles"
@@ -357,7 +1073,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceRoleResource"
+        [
+          "Get-MgEntitlementManagementCatalogResourceRoleResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource"
@@ -376,7 +1094,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceRoleResourceEnvironment"
+        [
+          "Get-MgEntitlementManagementCatalogResourceRoleResourceEnvironment"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/environment"
@@ -395,7 +1115,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        [
+          "Get-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}",
@@ -418,7 +1140,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        [
+          "Get-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes"
@@ -439,7 +1163,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResource"
+        [
+          "Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}/resource"
@@ -458,7 +1184,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceEnvironment"
+        [
+          "Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceEnvironment"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}/resource/environment"
@@ -473,11 +1201,55 @@
       "Identity.Governance"
     ],
     "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgEntitlementManagementCatalogResourceRoleResourceScopeCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/$count"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScopeCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgEntitlementManagementCatalogResourceRoleCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/$count"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
     "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceScopeResource"
+        [
+          "Get-MgEntitlementManagementCatalogResourceScopeResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource"
@@ -496,7 +1268,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceScopeResourceEnvironment"
+        [
+          "Get-MgEntitlementManagementCatalogResourceScopeResourceEnvironment"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/environment"
@@ -515,7 +1289,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        [
+          "Get-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}",
@@ -538,7 +1314,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        [
+          "Get-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles"
@@ -559,7 +1337,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResource"
+        [
+          "Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}/resource"
@@ -578,7 +1358,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceEnvironment"
+        [
+          "Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceEnvironment"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}/resource/environment"
@@ -593,11 +1375,55 @@
       "Identity.Governance"
     ],
     "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgEntitlementManagementCatalogResourceScopeResourceRoleCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/$count"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRoleCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgEntitlementManagementCatalogResourceScopeCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/$count"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
     "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceScope"
+        [
+          "Get-MgEntitlementManagementCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes"
@@ -616,7 +1442,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementCatalogResourceScope"
+        [
+          "Get-MgEntitlementManagementCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes"
@@ -635,7 +1463,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}",
@@ -658,7 +1488,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles"
@@ -679,7 +1511,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResource"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource"
@@ -698,7 +1532,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceEnvironment"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceEnvironment"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/environment"
@@ -717,7 +1553,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}",
@@ -740,7 +1578,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes"
@@ -761,7 +1601,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}/resource"
@@ -780,7 +1622,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceEnvironment"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceEnvironment"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}/resource/environment"
@@ -795,11 +1639,55 @@
       "Identity.Governance"
     ],
     "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/$count"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/$count"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResource"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource"
@@ -818,7 +1706,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceEnvironment"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceEnvironment"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/environment"
@@ -837,7 +1727,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}",
@@ -860,7 +1752,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles"
@@ -881,7 +1775,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}/resource"
@@ -900,7 +1796,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceEnvironment"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceEnvironment"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}/resource/environment"
@@ -915,11 +1813,55 @@
       "Identity.Governance"
     ],
     "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/$count"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRoleCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/$count"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes"
@@ -938,7 +1880,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Get-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        [
+          "Get-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes"
@@ -950,6 +1894,51 @@
   {
     "apiVersion": "v1.0",
     "modules": [
+      "Sites"
+    ],
+    "method": "GET",
+    "uri": "/sites/{}/sites/$count",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Get-MgSubSiteCount"
+        ]
+      ],
+      "counterpartUris": [
+        "/sites/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSiteCount"
+      ]
+    },
+    "replacementNoun": "SubSiteCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/calendar/allowedcalendarsharingroles(user='{}')",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles"
+        ]
+      ],
+      "counterpartUris": [
+        "/users/{}/calendars/{}/allowedcalendarsharingroles(user='{}')"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "CalendarUserCalendarAllowedCalendarSharingRoles",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
       "Identity.Governance"
     ],
     "method": "PATCH",
@@ -957,7 +1946,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Update-MgEntitlementManagementCatalogResourceRole"
+        [
+          "Update-MgEntitlementManagementCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}"
@@ -976,7 +1967,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Update-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        [
+          "Update-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}"
@@ -995,7 +1988,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Update-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        [
+          "Update-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}"
@@ -1014,7 +2009,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Update-MgEntitlementManagementCatalogResourceScope"
+        [
+          "Update-MgEntitlementManagementCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}"
@@ -1033,7 +2030,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Update-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        [
+          "Update-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}"
@@ -1052,7 +2051,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        [
+          "Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}"
@@ -1071,7 +2072,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        [
+          "Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}"
@@ -1090,7 +2093,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "Update-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        [
+          "Update-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}"
@@ -1102,6 +2107,72 @@
   {
     "apiVersion": "v1.0",
     "modules": [
+      "Applications"
+    ],
+    "method": "POST",
+    "uri": "/applications/{}/synchronization/jobs/{}/validatecredentials",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Test-MgApplicationSynchronizationJobCredential"
+        ]
+      ],
+      "counterpartUris": [
+        "/applications/{}/synchronization/jobs/validatecredentials"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "ApplicationSynchronizationJobCredential",
+    "replacementVerb": "Test"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "POST",
+    "uri": "/groups/{}/validateproperties",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Test-MgGroupProperty"
+        ]
+      ],
+      "counterpartUris": [
+        "/groups/validateproperties"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "GroupProperty",
+    "replacementVerb": "Test"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "POST",
+    "uri": "/identity/customauthenticationextensions/{}/validateauthenticationconfiguration",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Test-MgIdentityCustomAuthenticationExtensionAuthenticationConfiguration"
+        ]
+      ],
+      "counterpartUris": [
+        "/identity/customauthenticationextensions/validateauthenticationconfiguration"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "IdentityCustomAuthenticationExtensionAuthenticationConfiguration",
+    "replacementVerb": "Test"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
       "Identity.Governance"
     ],
     "method": "POST",
@@ -1109,7 +2180,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "New-MgEntitlementManagementCatalogResourceRole"
+        [
+          "New-MgEntitlementManagementCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles"
@@ -1124,11 +2197,35 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/refresh",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Update-MgEntitlementManagementCatalogResourceRoleResource"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResource",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "New-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        [
+          "New-MgEntitlementManagementCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes"
@@ -1143,11 +2240,57 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}/resource/refresh",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Update-MgEntitlementManagementCatalogResourceRoleResourceScopeResource"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceRoleResourceScopeResource",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/refresh",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Update-MgEntitlementManagementCatalogResourceScopeResource"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResource",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "New-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        [
+          "New-MgEntitlementManagementCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles"
@@ -1162,11 +2305,35 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}/resource/refresh",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Update-MgEntitlementManagementCatalogResourceScopeResourceRoleResource"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementCatalogResourceScopeResourceRoleResource",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "New-MgEntitlementManagementCatalogResourceScope"
+        [
+          "New-MgEntitlementManagementCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes"
@@ -1185,7 +2352,9 @@
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "New-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        [
+          "New-MgEntitlementManagementResourceRequestCatalogResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles"
@@ -1200,11 +2369,35 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/refresh",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResource"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResource",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "New-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        [
+          "New-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes"
@@ -1219,11 +2412,57 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}/resource/refresh",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/refresh",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResource"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResource",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "New-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        [
+          "New-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles"
@@ -1238,11 +2477,35 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}/resource/refresh",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+        ]
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes",
     "action": "rename",
     "evidence": {
       "shipsAs": [
-        "New-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        [
+          "New-MgEntitlementManagementResourceRequestCatalogResourceScope"
+        ]
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes"
@@ -1250,5 +2513,137 @@
       "counterpartShipsAs": []
     },
     "replacementNoun": "EntitlementManagementResourceRequestCatalogResourceScope"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/custodians/{}/microsoft.graph.security.applyhold",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Add-MgSecurityCaseEdiscoveryCaseCustodianHold"
+        ]
+      ],
+      "counterpartUris": [
+        "/security/cases/ediscoverycases/{}/custodians/microsoft.graph.security.applyhold"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseCustodianHold",
+    "replacementVerb": "Add"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/custodians/{}/microsoft.graph.security.removehold",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgSecurityCaseEdiscoveryCaseCustodianHold"
+        ]
+      ],
+      "counterpartUris": [
+        "/security/cases/ediscoverycases/{}/custodians/microsoft.graph.security.removehold"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseCustodianHold",
+    "replacementVerb": "Remove"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/noncustodialdatasources/{}/microsoft.graph.security.applyhold",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold"
+        ]
+      ],
+      "counterpartUris": [
+        "/security/cases/ediscoverycases/{}/noncustodialdatasources/microsoft.graph.security.applyhold"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseNoncustodialDataSourceHold",
+    "replacementVerb": "Add"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/noncustodialdatasources/{}/microsoft.graph.security.removehold",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold"
+        ]
+      ],
+      "counterpartUris": [
+        "/security/cases/ediscoverycases/{}/noncustodialdatasources/microsoft.graph.security.removehold"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseNoncustodialDataSourceHold",
+    "replacementVerb": "Remove"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "POST",
+    "uri": "/serviceprincipals/{}/synchronization/jobs/{}/validatecredentials",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Test-MgServicePrincipalSynchronizationJobCredential"
+        ]
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/synchronization/jobs/validatecredentials"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "ServicePrincipalSynchronizationJobCredential",
+    "replacementVerb": "Test"
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "POST",
+    "uri": "/users/{}/calendar/permanentdelete",
+    "action": "rename",
+    "evidence": {
+      "shipsAs": [
+        [
+          "Remove-MgUserCalendarPermanent"
+        ]
+      ],
+      "counterpartUris": [
+        "/users/{}/calendars/{}/permanentdelete"
+      ],
+      "counterpartShipsAs": []
+    },
+    "replacementNoun": "UserCalendarPermanent",
+    "replacementVerb": "Remove"
   }
 ]

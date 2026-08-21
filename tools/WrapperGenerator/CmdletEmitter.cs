@@ -154,6 +154,454 @@ public static class CmdletEmitter
         return $"{call}{args}requestConfiguration =>\n                {{{bindings}\n                }})";
     }
 
+    // How one action/function call is issued: the kiota method to invoke, the type it returns
+    // (null when the operation has no response body), and the generated request-body type
+    // (null when the operation declares no body). Kiota picks the method name from the response
+    // shape — a response that wraps its payload in "value" gets a dedicated
+    // …As<Member><Verb>ResponseAsync method, and the plain PostAsync/GetAsync overload beside it
+    // is marked [Obsolete] — so the choice is resolved once, where the schema is read, rather
+    // than re-derived in the template.
+    public sealed record CallPlan(string MethodName, string? ReturnTypeName, string? BodyTypeName, bool ReturnsStream = false);
+
+    // -OutFile matches the published surface for stream reads
+    // (Get-MgUserPhotoContent -OutFile <path>). It is optional: the shipped reporting cmdlets
+    // are documented without it, so an unbound -OutFile writes the bytes to the pipeline
+    // instead, and both documented usages work.
+    // The [GraphRoute] attribute line for a cmdlet class. See GraphRouteAttribute in Shared.g.cs.
+    private static string RouteAttr(CmdletNaming naming) =>
+        $"    [GraphRoute(\"{EscapeLiteral(naming.SourceMethod)}\", \"{EscapeLiteral(naming.SourcePath)}\")]";
+
+    private static string OutFileParamDecl() => """
+
+
+                [Parameter(Mandatory = false,
+                    HelpMessage = "Writes the response content to this path instead of returning it as bytes.")]
+                public string? OutFile { get; set; }
+        """;
+
+    // A stream response is read into a byte array before it reaches the pipeline. The raw Stream
+    // is tied to the request that produced it, so emitting it would hand the caller an object
+    // that is empty by the time they use it; the bytes are what the operation actually returns.
+    // The response stream is disposed as well as the buffer: it owns the underlying HTTP
+    // response, and a cmdlet that leaks one per call leaks a connection per call.
+    private const string StreamOutputBlock = """
+
+                if (result is not null)
+                {
+                    using (result)
+                    {
+                        if (this.IsParameterBound(nameof(OutFile)))
+                        {
+                            using var file = System.IO.File.Create(OutFile!);
+                            result.CopyTo(file);
+                        }
+                        else
+                        {
+                            using var buffer = new System.IO.MemoryStream();
+                            result.CopyTo(buffer);
+                            WriteObject(buffer.ToArray());
+                        }
+                    }
+                }
+        """;
+
+    // Kiota keys its path-parameter dictionary by the URL-template placeholder, percent-encoding
+    // every character that is not valid in an identifier: "{user-id}" is stored as "user%2Did".
+    // The emitted dictionary has to use the same key or the template leaves the placeholder
+    // unexpanded and the request goes to a literal "{user-id}" URL.
+    private static string ToTemplateKey(string templateName)
+    {
+        var encoded = new System.Text.StringBuilder(templateName.Length);
+        foreach (var c in templateName)
+        {
+            if (char.IsLetterOrDigit(c) || c == '_')
+                encoded.Append(c);
+            else
+                encoded.Append('%').Append(((int)c).ToString("X2", System.Globalization.CultureInfo.InvariantCulture));
+        }
+        return encoded.ToString();
+    }
+
+    private static string FunctionParamDecls(CmdletNaming naming) =>
+        string.Join("\n", naming.FunctionParameters.Select((p, i) => $$"""
+
+                [Parameter(Mandatory = true, Position = {{naming.PathParamNames.Count + i}},
+                    HelpMessage = "Value for the '{{EscapeLiteral(p.TemplateName)}}' parameter of this OData function.")]
+                public string {{p.PsName}} { get; set; } = string.Empty;
+        """));
+
+    // A parameterized OData function has no fluent accessor that can carry its arguments: these
+    // OpenAPI documents declare no path parameters at all, so kiota emits the accessor with an
+    // empty signature and leaves the placeholders in the URL template. The builder's public
+    // path-parameter constructor takes the same dictionary the accessor would have populated,
+    // so the values are supplied there and kiota expands its own template as usual.
+    private static string FunctionBuilderConstruction(CmdletNaming naming, EmitContext ctx)
+    {
+        var builderType = $"global::{ctx.ClientNamespace}.{naming.OperationTypeNamespace}.{naming.OperationMemberName}RequestBuilder";
+        var entries = new List<string>
+        {
+            // ApiClient assigns the adapter's BaseUrl, so constructing the client above is what
+            // makes this key resolvable, not merely a discarded convenience.
+            "            { \"baseurl\", requestAdapter.BaseUrl! },",
+        };
+        entries.AddRange(naming.PathParamTemplates
+            .Select((template, i) => $"            {{ \"{EscapeLiteral(ToTemplateKey(template))}\", {naming.PathParamNames[i]} }},"));
+        entries.AddRange(naming.FunctionParameters
+            .Select(p => $"            {{ \"{EscapeLiteral(ToTemplateKey(p.TemplateName))}\", {p.PsName} }},"));
+
+        return $$"""
+
+                    var pathParameters = new Dictionary<string, object>
+                    {
+            {{string.Join("\n", entries)}}
+                    };
+                    var requestBuilder = new {{builderType}}(pathParameters, requestAdapter);
+            """;
+    }
+
+    // The receiver the request method is called on: the fluent chain for an ordinary operation,
+    // the explicitly constructed builder for a parameterized function.
+    private static string CallReceiver(CmdletNaming naming) =>
+        naming.FunctionParameters.Count > 0 ? "requestBuilder" : $"client.{naming.BuilderExpression}";
+
+    // queryBindings, when present, is emitted inside the same requestConfiguration lambda as the
+    // header bindings, so a call has exactly one configuration block however many kinds of
+    // option it binds.
+    private static string EmitCallOn(string receiver, CmdletNaming naming, string method, string? bodyArg, string queryBindings = "")
+    {
+        var args = bodyArg is null ? "" : bodyArg + ", ";
+        var query = queryBindings.Length == 0 ? "" : "\n" + queryBindings;
+        var bindings = query + HeaderBindingsFor(naming.HeaderParams, extraIndent: "                ") + GenericHeadersBinding("                ");
+        return $"{receiver}.{method}({args}requestConfiguration =>\n                {{{bindings}\n                }})";
+    }
+
+    // An OData action: a POST that calls an operation on a resource rather than creating one.
+    // Its parameters are the properties of a request body kiota generates per operation, so the
+    // body type is passed in rather than resolved from a named entity schema.
+    public static string EmitAction(CmdletNaming naming, EmitContext ctx, CallPlan call,
+        IReadOnlyList<CmdletProperty> properties, IReadOnlyList<ComplexParameter> complexProperties,
+        IReadOnlyList<UntypedParameter> untypedProperties)
+    {
+        ArgumentNullException.ThrowIfNull(naming);
+        ArgumentNullException.ThrowIfNull(ctx);
+        ArgumentNullException.ThrowIfNull(call);
+        ArgumentNullException.ThrowIfNull(properties);
+        ArgumentNullException.ThrowIfNull(complexProperties);
+        ArgumentNullException.ThrowIfNull(untypedProperties);
+
+        var hasBody = call.BodyTypeName is not null;
+        var bodyConstruction = hasBody
+            ? $"\n            var body = new {call.BodyTypeName}();\n"
+                + EmitPropertyAssignments(properties)
+                + EmitComplexAssignments(complexProperties)
+                + EmitUntypedAssignments(untypedProperties)
+            : "";
+        var callExpression = EmitCallOn(CallReceiver(naming), naming, call.MethodName, hasBody ? "body" : null);
+        var invocation = call.ReturnTypeName is null
+            ? $$"""
+                            {{callExpression}}
+                                .GetAwaiter().GetResult();
+            """
+            : $$"""
+                            result = {{callExpression}}.GetAwaiter().GetResult();
+            """;
+
+        return $$"""
+#nullable enable
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using {{ctx.ClientNamespace}};
+using {{ctx.ModelsNamespace}};
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace {{ctx.CmdletNamespace}}
+{
+{{RouteAttr(naming)}}
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+{{(call.ReturnTypeName is null ? "" : $"    [OutputType(typeof({(call.ReturnsStream ? "byte[]" : call.ReturnTypeName)}))]")}}
+    public class {{naming.ClassName}} : PSCmdlet
+    {
+{{PathParams(naming)}}
+{{EmitPropertyParameters(properties)}}
+{{EmitComplexParameters(complexProperties)}}
+{{EmitUntypedParameters(untypedProperties)}}
+{{HeaderParamDecls(naming)}}
+{{GenericHeadersParamDecl()}}
+{{(call.ReturnsStream ? OutFileParamDecl() : "")}}
+{{AccessTokenParamDecl()}}
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess({{TargetId(naming)}}, "{{naming.VerbName}}"))
+                return;
+{{bodyConstruction}}
+{{AuthBlock}}
+
+{{(call.ReturnTypeName is null ? "" : $"            {call.ReturnTypeName}? result;")}}
+            try
+            {
+{{invocation}}
+            }
+{{CatchBlock(TargetId(naming))}}
+{{(call.ReturnTypeName is null ? "" : call.ReturnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
+        }
+    }
+}
+
+""";
+    }
+
+    // An OData function: a GET that computes a result rather than reading a stored resource.
+    // Inline function arguments become mandatory parameters positioned after the path ids.
+    public static string EmitFunction(CmdletNaming naming, EmitContext ctx, CallPlan call, IReadOnlySet<string> queryParamNames)
+    {
+        ArgumentNullException.ThrowIfNull(naming);
+        ArgumentNullException.ThrowIfNull(ctx);
+        ArgumentNullException.ThrowIfNull(call);
+        ArgumentNullException.ThrowIfNull(queryParamNames);
+
+        // Only options the operation declares: kiota generates a query-parameter property per
+        // declared option, so binding an undeclared one would not compile.
+        var applicable = CollectionQueryOptions.Where(o => queryParamNames.Contains(o.ODataName)).ToList();
+        var queryParamDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl(null)));
+        var queryBindings = string.Join("\n\n", applicable.Select(o => o.Binding));
+        var builderConstruction = naming.FunctionParameters.Count > 0 ? FunctionBuilderConstruction(naming, ctx) : "";
+
+        return $$"""
+#nullable enable
+
+using System;
+using System.Collections.Generic;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using {{ctx.ClientNamespace}};
+using {{ctx.ModelsNamespace}};
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace {{ctx.CmdletNamespace}}
+{
+{{RouteAttr(naming)}}
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
+    [OutputType(typeof({{(call.ReturnsStream ? "byte[]" : call.ReturnTypeName)}}))]
+    public class {{naming.ClassName}} : PSCmdlet
+    {
+{{PathParams(naming)}}
+{{FunctionParamDecls(naming)}}
+
+{{AccessTokenParamDecl()}}
+
+{{queryParamDecls}}
+{{HeaderParamDecls(naming)}}
+{{GenericHeadersParamDecl()}}
+{{(call.ReturnsStream ? OutFileParamDecl() : "")}}
+
+        protected override void ProcessRecord()
+        {
+{{AuthBlock}}
+{{builderConstruction}}
+
+            {{call.ReturnTypeName}}? result;
+            try
+            {
+                result = {{EmitCallOn(CallReceiver(naming), naming, call.MethodName, null, queryBindings)}}.GetAwaiter().GetResult();
+            }
+{{CatchBlock(TargetId(naming))}}
+{{(call.ReturnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
+        }
+    }
+}
+
+""";
+    }
+
+    // An OData /$value read: the raw bytes behind a resource (a photo, an uploaded file). Kiota
+    // types it as Stream from a plain GetAsync on the Content builder. -OutFile matches the
+    // published surface (Get-MgUserPhotoContent -OutFile <path>).
+    public static string EmitContentGet(CmdletNaming naming, EmitContext ctx, string returnTypeName, bool returnsStream)
+    {
+        ArgumentNullException.ThrowIfNull(naming);
+        ArgumentNullException.ThrowIfNull(ctx);
+        ArgumentNullException.ThrowIfNull(returnTypeName);
+
+        return $$"""
+#nullable enable
+
+using System;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using {{ctx.ClientNamespace}};
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace {{ctx.CmdletNamespace}}
+{
+{{RouteAttr(naming)}}
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
+    [OutputType(typeof({{(returnsStream ? "byte[]" : returnTypeName)}}))]
+    public class {{naming.ClassName}} : PSCmdlet
+    {
+{{PathParams(naming)}}
+
+{{AccessTokenParamDecl()}}
+{{HeaderParamDecls(naming)}}
+{{GenericHeadersParamDecl()}}
+{{(returnsStream ? OutFileParamDecl() : "")}}
+
+        protected override void ProcessRecord()
+        {
+{{AuthBlock}}
+
+            {{returnTypeName}}? result;
+            try
+            {
+                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null)}}.GetAwaiter().GetResult();
+            }
+{{CatchBlock(TargetId(naming))}}
+{{(returnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
+        }
+    }
+}
+
+""";
+    }
+
+    // An OData /$value write: uploads the bytes behind a resource. Kiota's PutAsync takes a
+    // Stream, so -InFile is read from disk — matching the published surface
+    // (Set-MgUserPhotoContent -InFile <path>).
+    public static string EmitContentSet(CmdletNaming naming, EmitContext ctx, string returnTypeName, bool returnsStream)
+    {
+        ArgumentNullException.ThrowIfNull(naming);
+        ArgumentNullException.ThrowIfNull(ctx);
+        ArgumentNullException.ThrowIfNull(returnTypeName);
+
+        return $$"""
+#nullable enable
+
+using System;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using {{ctx.ClientNamespace}};
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace {{ctx.CmdletNamespace}}
+{
+{{RouteAttr(naming)}}
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof({{(returnsStream ? "byte[]" : returnTypeName)}}))]
+    public class {{naming.ClassName}} : PSCmdlet
+    {
+{{PathParams(naming)}}
+
+                [Parameter(Mandatory = true,
+                    HelpMessage = "Path to the file whose contents are uploaded.")]
+                public string InFile { get; set; } = string.Empty;
+
+{{AccessTokenParamDecl()}}
+{{HeaderParamDecls(naming)}}
+{{GenericHeadersParamDecl()}}
+{{(returnsStream ? OutFileParamDecl() : "")}}
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess({{TargetId(naming)}}, "{{naming.VerbName}}"))
+                return;
+{{AuthBlock}}
+
+            {{returnTypeName}}? result;
+            try
+            {
+                using var content = System.IO.File.OpenRead(InFile);
+                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "PutAsync", "content")}}.GetAwaiter().GetResult();
+            }
+{{CatchBlock(TargetId(naming))}}
+{{(returnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
+        }
+    }
+}
+
+""";
+    }
+
+    // A GET whose response is a single scalar rather than a resource: /$count returns int, and a
+    // single-valued navigation's /$ref returns the one reference URL as a string. Neither is an
+    // entity read nor half of a list/item pair, so the CLR type is passed in.
+    public static string EmitScalarGet(CmdletNaming naming, EmitContext ctx, string clrType, IReadOnlySet<string> queryParamNames)
+    {
+        ArgumentNullException.ThrowIfNull(naming);
+        ArgumentNullException.ThrowIfNull(ctx);
+        ArgumentNullException.ThrowIfNull(clrType);
+        ArgumentNullException.ThrowIfNull(queryParamNames);
+
+        // $count accepts $filter and $search only; kiota generates a property per declared
+        // option, so binding one the operation does not declare would not compile.
+        var applicable = CollectionQueryOptions
+            .Where(o => o.ODataName is "$filter" or "$search" && queryParamNames.Contains(o.ODataName))
+            .ToList();
+        var queryParamDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl(null)));
+        var queryBindings = string.Join("\n\n", applicable.Select(o => o.Binding));
+
+        return $$"""
+#nullable enable
+
+using System;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using {{ctx.ClientNamespace}};
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace {{ctx.CmdletNamespace}}
+{
+{{RouteAttr(naming)}}
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
+    [OutputType(typeof({{clrType}}))]
+    public class {{naming.ClassName}} : PSCmdlet
+    {
+{{PathParams(naming)}}
+
+{{AccessTokenParamDecl()}}
+
+{{queryParamDecls}}
+{{HeaderParamDecls(naming)}}
+{{GenericHeadersParamDecl()}}
+
+        protected override void ProcessRecord()
+        {
+{{AuthBlock}}
+
+            {{clrType}}? result;
+            try
+            {
+                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null, queryBindings)}}.GetAwaiter().GetResult();
+            }
+{{CatchBlock(TargetId(naming))}}
+
+            if (result is not null)
+                WriteObject(result);
+        }
+    }
+}
+
+""";
+    }
+
     public static string EmitItemGet(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlySet<string> queryParamNames)
     {
         ArgumentNullException.ThrowIfNull(naming);
@@ -184,6 +632,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
+{{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : PSCmdlet
@@ -279,6 +728,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
+{{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : PSCmdlet
@@ -404,6 +854,7 @@ using {{ctx.ModelsNamespace}};
 
 namespace {{ctx.CmdletNamespace}}
 {
+{{RouteAttr(listNaming)}}
     [Cmdlet({{listNaming.VerbsClass}}.{{listNaming.VerbName}}, "{{EscapeLiteral(listNaming.Noun)}}", DefaultParameterSetName = "List")]
     [OutputType(typeof({{collectionResponseType}}), ParameterSetName = new[] { "List" })]
     [OutputType(typeof({{entityType}}), ParameterSetName = new[] { "Get" })]
@@ -475,6 +926,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
+{{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : PSCmdlet
@@ -514,7 +966,7 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
-    public static string EmitUpdate(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, IReadOnlyList<ComplexParameter> complexProperties, IReadOnlyList<UntypedParameter> untypedProperties, bool reFetchAfterUpdate = true)
+    public static string EmitUpdate(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, IReadOnlyList<ComplexParameter> complexProperties, IReadOnlyList<UntypedParameter> untypedProperties, bool reFetchAfterUpdate = true, string httpMethodName = "PatchAsync")
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
@@ -536,6 +988,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
+{{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : PSCmdlet
@@ -563,7 +1016,7 @@ namespace {{ctx.CmdletNamespace}}
             {{entityType}}? result;
             try
             {
-                result = {{EmitCallWithOptionalHeaders(naming, "PatchAsync", "body")}}.GetAwaiter().GetResult();
+                result = {{EmitCallWithOptionalHeaders(naming, httpMethodName, "body")}}.GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}
 
@@ -594,6 +1047,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace {{ctx.CmdletNamespace}}
 {
+{{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class {{naming.ClassName}} : PSCmdlet
     {
@@ -643,6 +1097,25 @@ using Microsoft.Kiota.Abstractions.Serialization;
 
 namespace {{ctx.CmdletNamespace}}
 {
+    // The Graph operation each cmdlet was generated from, carried into the compiled assembly so
+    // verification tooling reads the operation's identity from the build output rather than
+    // reconstructing it from the builder expression. That reconstruction is lossy for a function
+    // (the builder member keeps the argument names but not the OData argument syntax) and wrong
+    // for a namespace-qualified action (kiota keeps the qualifier, the route does not).
+    [AttributeUsage(AttributeTargets.Class)]
+    public sealed class GraphRouteAttribute : Attribute
+    {
+        public GraphRouteAttribute(string method, string path)
+        {
+            Method = method;
+            Path = path;
+        }
+
+        public string Method { get; }
+
+        public string Path { get; }
+    }
+
     internal static class CmdletExtensions
     {
         public static bool IsParameterBound(this PSCmdlet cmdlet, string parameterName)

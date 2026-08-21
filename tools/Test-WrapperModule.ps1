@@ -8,12 +8,13 @@ Each module is tested in a CHILD pwsh process — a fresh process per module, be
 assemblies cannot be unloaded and Import-Module silently no-ops when a same-name module is
 already loaded. Checks, per module:
 
-  0. the binary is not stale                  - the dll is compared against every compiled
-                                                input under src (the kiota client in Client/
-                                                as well as Cmdlets/ and the csproj) and a
-                                                binary older than any of them is refused,
-                                                because every check below would pass against
-                                                a module built before the change under test
+  0. the binary is not stale                  - refused before anything is loaded, because
+                                                every check below would pass against a module
+                                                built before the change under test. The dll is
+                                                compared against EVERY compiled input (the
+                                                kiota client under Client/ as well as
+                                                Cmdlets/), and a missing dll or an empty input
+                                                set is a failure, never a skip
   1. Import-Module <psd1> succeeds            - the user's first experience
   2. exported cmdlet count == manifest count  - nothing silently dropped at load
   3. no orphan workers                        - every *_Get/*_List worker has its public
@@ -33,8 +34,8 @@ already loaded. Checks, per module:
                  by reflection so this gate cannot drift from a copy of the converter: every
                  numeric type, string, boolean, PSObject unwrapping, object, array, nesting,
                  nested-null drop, null-element drop, empty-object omission, and the throw on
-                 an unsupported type. The helper is emitted into every module, so a missing
-                 helper is a failure, never n/a
+                 an unsupported type. The helper is emitted into every module, so there is no
+                 n/a for it
 
 Modules with no paired list+item GETs have no dispatcher; check 4 reports n/a for them.
 A shape a module never binds reports n/a for that part of check 5, except untyped.
@@ -46,10 +47,15 @@ One or more module names previously built by Build-WrapperModule.ps1.
 Root folder the modules were built into. Default: <repo>/artifacts/wrapper-modules.
 
 .PARAMETER Configuration
-Build configuration used. Default: Debug.
+Build configuration used. Default: Debug — the same default as Build-WrapperModule.ps1, so the
+two only agree when neither is overridden. Building with -Configuration Release and testing
+without it leaves this script loading a stale Debug binary; check 0 exists because that happened.
 
 .EXAMPLE
 .\tools\Test-WrapperModule.ps1 -Module Mail
+
+.EXAMPLE
+.\tools\Test-WrapperModule.ps1 -Module Files, Users -Configuration Release
 #>
 [CmdletBinding()]
 param(
@@ -93,17 +99,27 @@ function Test-OneModule {
     # kiota client under Client/, and a regenerated client with an unchanged cmdlet is exactly
     # the case where a parameter's CLR type moves out from under the assignment - so watching
     # Cmdlets/ alone would miss the change most likely to invalidate a runtime result.
-    $dll = Join-Path $OutputRoot "$Name\src\bin\$Configuration\net10.0\$moduleName.dll"
-    $inputs = @(Get-ChildItem -Path (Join-Path $OutputRoot "$Name\src") -Recurse -File -Include *.cs, *.csproj -ErrorAction SilentlyContinue |
+    # Each branch fails closed. A guard that skips itself when it finds nothing to compare is
+    # the same vacuity as a binding check that reports OK having exercised no case: it turns an
+    # unknown into a pass.
+    $srcRoot = Join-Path $OutputRoot "$Name\src"
+    $dll = Join-Path $srcRoot "bin\$Configuration\net10.0\$moduleName.dll"
+    if (-not (Test-Path $dll)) {
+        $result.Detail = "manifest present but $Configuration assembly missing: $dll"
+        return $result
+    }
+    $inputs = @(Get-ChildItem -Path $srcRoot -Recurse -File -Include *.cs, *.csproj -ErrorAction SilentlyContinue |
         Where-Object { $_.FullName -notmatch '\\(bin|obj)\\' })
-    if ((Test-Path $dll) -and $inputs) {
-        $newest = ($inputs | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1)
-        $builtAt = (Get-Item $dll).LastWriteTimeUtc
-        if ($builtAt -lt $newest.LastWriteTimeUtc) {
-            $rel = $newest.FullName.Substring((Join-Path $OutputRoot "$Name\src").Length).TrimStart('\')
-            $result.Detail = "stale binary: $Configuration dll built $($builtAt.ToString('MM-dd HH:mm')) predates $rel ($($newest.LastWriteTimeUtc.ToString('MM-dd HH:mm'))); rebuild with -Configuration $Configuration"
-            return $result
-        }
+    if (-not $inputs) {
+        $result.Detail = "no compile inputs found under $srcRoot; staleness is unknowable and a pass here would prove nothing"
+        return $result
+    }
+    $newest = ($inputs | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1)
+    $builtAt = (Get-Item $dll).LastWriteTimeUtc
+    if ($builtAt -lt $newest.LastWriteTimeUtc) {
+        $rel = $newest.FullName.Substring($srcRoot.Length).TrimStart('\')
+        $result.Detail = "stale binary: $Configuration dll built $($builtAt.ToString('MM-dd HH:mm')) predates $rel ($($newest.LastWriteTimeUtc.ToString('MM-dd HH:mm'))); rebuild with -Configuration $Configuration"
+        return $result
     }
 
     $result.ManifestCount = (Import-PowerShellDataFile -Path $psd1).CmdletsToExport.Count

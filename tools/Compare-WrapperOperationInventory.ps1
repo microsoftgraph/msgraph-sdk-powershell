@@ -22,10 +22,25 @@ param(
     [string]$Path,
     [Parameter(Mandatory)]
     [string]$Baseline,
-    [string]$Compare
+    [string]$Compare,
+    [switch]$AllowSameGenerator
 )
 
 $ErrorActionPreference = 'Stop'
+
+# The comparison answers "did the generator change which operations become cmdlets", which it can
+# only answer if the generator actually changed between the two captures. A baseline taken from the
+# same generator build reports "unchanged" no matter what, so the stamp is recorded alongside it and
+# checked on compare. -AllowSameGenerator is for the legitimate case: proving regeneration is
+# deterministic, where an identical generator is the point.
+function Get-GeneratorStamp {
+    # Code AND embedded data: the derived naming data changes which operations generate without
+    # touching a .cs file, so a code-only stamp would call a data-driven change "same generator".
+    $sources = @(Get-ChildItem -Path (Join-Path $PSScriptRoot 'WrapperGenerator') -Recurse -File -Include *.cs, *.json -ErrorAction SilentlyContinue |
+        Where-Object { $_.FullName -notmatch '\\(bin|obj)\\' })
+    if (-not $sources) { return 'unknown' }
+    ($sources | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1).LastWriteTimeUtc.ToString('o')
+}
 
 $cmdletAttrPattern = '\[Cmdlet\(Verbs\w+\.(\w+),\s*"((?:\\.|[^"\\])*)"'
 $builderPattern = 'client\.([A-Za-z0-9_\[\]\.]+?)\.(?:Get|Post|Patch|Delete|Put)Async'
@@ -65,8 +80,11 @@ if ($inventory.Count -eq 0) {
     exit 2
 }
 
+$stampFile = "$Baseline.generator"
+
 if (-not $Compare) {
     $inventory | Export-Csv $Baseline -NoTypeInformation
+    Set-Content -Path $stampFile -Value (Get-GeneratorStamp) -NoNewline
     "baseline: $($inventory.Count) cmdlets -> $Baseline"
     exit 0
 }
@@ -74,6 +92,21 @@ if (-not $Compare) {
 $inventory | Export-Csv $Compare -NoTypeInformation
 $before = Import-Csv $Baseline
 $after = Import-Csv $Compare
+
+$nowStamp = Get-GeneratorStamp
+if (Test-Path $stampFile) {
+    $thenStamp = (Get-Content $stampFile -Raw).Trim()
+    if ($thenStamp -eq $nowStamp -and -not $AllowSameGenerator) {
+        Write-Host "FAILED: the baseline was captured from this same generator ($nowStamp)." -ForegroundColor Red
+        Write-Host "        'unchanged' would be guaranteed, so the comparison proves nothing." -ForegroundColor Red
+        Write-Host "        Capture the baseline before changing the generator, or pass -AllowSameGenerator" -ForegroundColor Red
+        Write-Host "        if an identical generator is deliberate (a determinism check)." -ForegroundColor Red
+        exit 2
+    }
+}
+else {
+    Write-Warning "No generator stamp beside '$Baseline'; cannot tell whether it predates this generator."
+}
 
 # Identity is the whole tuple, so an operation swapping which cmdlet/file it owns shows up as
 # one removal plus one addition rather than as no change at all.

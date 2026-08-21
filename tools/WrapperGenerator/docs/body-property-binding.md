@@ -158,7 +158,8 @@ meaningless and must not be cited as evidence that nothing important is missing.
 
 ## Verification
 
-Five gates, each proving something the others cannot:
+Five gates, each proving something the others cannot (three are independent of the classifier;
+see below for which):
 
 | Gate | Proves | Cannot prove |
 |---|---|---|
@@ -175,7 +176,7 @@ that binds its model, so occurrences overstate the remaining work.
 Compilation is the authority for type compatibility; the omission oracle is the authority for
 omissions; runtime tests are the authority for PowerShell conversion.
 
-**Only some of these are independent of the classifier, and the distinction matters.**
+**Only three of these are independent of the classifier, and the distinction matters.**
 `Test-BodyBindingCoverage.ps1` builds its expectation from the *generated kiota models* and joins
 it against the *emitted parameters*, so the classifier is the subject rather than the judge — it
 catches a member the classifier never mentioned. `Measure-BodyPropertyCoverage.ps1` is different:
@@ -219,10 +220,27 @@ This is the wrapper's own input contract; it is pinned by the runtime gate rathe
 
 ## Residual debt
 
-**None among the operations the generator emits: the sweep reports 0 unbound properties across all 38 specs, and the oracle 0 failures across 2,633 body-writing cmdlets.** Of the 14,131 operations in those specs only 8,164 (57.8%) generate - 767 are suppressed (the published SDK ships no cmdlet) and 5,200 are unsupported (path segments, actions, PUT, streams) - so a zero here says nothing about an operation refused upstream. The
-classifications for shapes that do not occur — `Union`, `UnknownFormat`, `InlineObject`,
-`InlineEnum`, `Dictionary`, `Unresolvable` — are retained deliberately so a future corpus change
-is reported rather than silently mis-bound.
+**None among the operations the generator emits: the oracle reports 0 failures across 2,240
+body-writing cmdlets (24,050 model members seen, 15,872 bound).** The classifications for shapes that do not occur — `Union`,
+`UnknownFormat`, `InlineObject`, `InlineEnum`, `Dictionary`, `Unresolvable` — are retained
+deliberately so a future corpus change is reported rather than silently mis-bound.
+
+That qualifier is load-bearing. Properties are only counted for operations that generate, and of
+the 14,131 operations in the 38 v1.0 specs **10,401 (73.6%)** do. The rest are 3,173 suppressed
+because the published SDK ships no cmdlet for them (oracle-derived), and 557 unsupported — 345
+call segments on operations the spec does not class as an action or function, 125 routes calling a
+parameterized function before their final segment, 42 whose content response is neither a stream nor a resolvable entity, and 45 others across four smaller causes. An operation refused upstream contributes
+no properties here, so a zero says nothing about it. `InlineObject` in particular reads as zero
+*because* action bodies are refused before classification, not because Graph avoids inline
+objects.
+
+Beware two ways of miscounting this, both made here before the accounting was forced to balance:
+emitted files include GET dispatchers that issue no request (1,336 of the current 11,737), so
+files are not operations; and subtracting only the unsupported from the total silently counts
+every suppressed operation as generated — that error would read 13,574 "generated" against a true
+10,401. A third trap is in the file *names*: `BaseName` of `GetMgApplication_List.g.cs` is
+`GetMgApplication_List.g`, since only the last extension is stripped, so an orphan check written
+against `BaseName -match '_(List|Get)$'` examines nothing and passes vacuously.
 
 See [edge-cases/body-binding-edge-cases.md](edge-cases/body-binding-edge-cases.md) for each
 shape, its population, and its exit criteria.
@@ -236,6 +254,10 @@ shape, its population, and its exit criteria.
 | After schema-less properties | **0** | **0** |
 
 `New-MgUser` went from 59 parameters to 82 over the same change **in a freshly generated tree**,
-and the operation inventory is unchanged at 9,608 cmdlets — these slices altered which
-*properties* bind, never which *operations* generate. The committed output under `src/` predates
-this work and still shows 59; it has to be regenerated before the same figure applies there.
+and across the body-binding slices the operation inventory was unchanged at 9,608 files — those
+slices altered which *properties* bind, never which *operations* generate. The subsequent
+parity derivation then changed the inventory deliberately (9,608 → 8,372 files: 1,896 removed as
+suppressions and renames, 660 added as renames, reconciled row-by-row against the derivation
+ledger); the operation shapes added since — actions, functions, `$count`, `$ref`, `$value`, PUT —
+took it to the current 11,737. The committed output under `src/` predates all of this and still
+shows 59 parameters; it has to be regenerated before any figure here applies there.

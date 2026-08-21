@@ -66,18 +66,17 @@ $ErrorActionPreference = 'Stop'
 
 # ---- parse the inventory -------------------------------------------------------------------
 $lineRx = "^(?<mod>[^:]+?) :: (?<file>\S+): '(?<verb>[A-Za-z]+)-(?<noun>[A-Za-z0-9]+) \[(?<lost>[^\]]*(?:\[[^\]]*\][^\]]*)*)\]' collides with already-written '(?<verb2>[A-Za-z]+)-(?<noun2>[A-Za-z0-9]+) \[(?<kept>[^\]]*(?:\[[^\]]*\][^\]]*)*)\]'$"
-$verbToMethod = @{ Get = 'GET'; New = 'POST'; Update = 'PATCH'; Set = 'PUT'; Remove = 'DELETE' }
+$verbToMethod = @{ Get = 'GET'; New = 'POST'; Update = 'PATCH'; Set = 'PUT'; Remove = 'DELETE'; Invoke = 'POST' }
 
-# Builder expression -> the same normalized URI skeleton NamingOverrides.NormalizePath
-# produces from a path template: lowercase fixed segments, every parameter erased to {}.
-function ConvertTo-UriSkeleton([string]$builder) {
-    $parts = @()
-    foreach ($seg in ($builder -split '\.')) {
-        if ($seg -notmatch '^(?<n>[A-Za-z0-9]+)(\[(?<i>[^\]]+)\])?$') { return $null }
-        $parts += $Matches.n.ToLowerInvariant()
-        if ($Matches.i) { $parts += '{}' }
-    }
-    '/' + ($parts -join '/')
+# The generator reports each colliding operation's route already normalized (lowercase, every
+# parameter erased to {}), so a route is taken from the inventory rather than reconstructed
+# from a builder expression. Reconstruction cannot round-trip a function (the builder member
+# spells the argument NAMES but not the OData argument syntax) or a namespace-qualified action
+# (kiota keeps the "microsoft.graph.security." qualifier that the route does not carry), and a
+# route rebuilt wrongly would be resolved against the wrong oracle row.
+function ConvertTo-UriSkeleton([string]$route) {
+    if ($route -notmatch '^/') { return $null }
+    $route
 }
 
 $lines = @(Get-Content $InventoryPath | Where-Object { $_.Trim() })
@@ -102,13 +101,43 @@ if ($unparsed) {
 Write-Host "inventory: $($parsed.Count) collision lines"
 
 # ---- oracle lookup: METHOD + skeleton -> published commands --------------------------------
+# Normalized exactly as NamingOverrides.NormalizePath normalizes a spec path, so an oracle row
+# and a generated route are the same string for the same operation. Erasing EVERY {...} matters
+# for functions, whose arguments carry placeholders inside the segment
+# ("allowedCalendarSharingRoles(User='{User}')").
+function ConvertTo-OracleSkeleton([string]$uri) {
+    ($uri -replace '\{[^}]*\}', '{}').TrimEnd('/').ToLowerInvariant()
+}
+
+# The shipped inventory records an action's route unqualified ("…/custodians/{}/applyhold")
+# while the spec qualifies it with the namespace that declares the action
+# ("…/custodians/{}/microsoft.graph.security.applyhold"). They are the same operation, so a
+# route that finds no oracle row is retried without the qualifier before being called unshipped
+# — otherwise these actions would derive as "suppress" and prune cmdlets the SDK does ship.
+function Get-UnqualifiedRoute([string]$skel) {
+    $i = $skel.LastIndexOf('/')
+    if ($i -lt 0) { return $null }
+    $last = $skel.Substring($i + 1)
+    $dot = $last.LastIndexOf('.')
+    if ($dot -lt 0) { return $null }
+    $skel.Substring(0, $i + 1) + $last.Substring($dot + 1)
+}
+
 $oracle = @{}
 foreach ($e in (Get-Content $OraclePath -Raw | ConvertFrom-Json)) {
     if ($e.ApiVersion -ne $ApiVersion) { continue }
-    $skel = (($e.Uri -split '/') | ForEach-Object { if ($_ -match '^\{') { '{}' } else { $_.ToLowerInvariant() } }) -join '/'
-    $k = "$($e.Method) $skel"
+    $k = "$($e.Method) $(ConvertTo-OracleSkeleton $e.Uri)"
     if (-not $oracle.ContainsKey($k)) { $oracle[$k] = [System.Collections.Generic.SortedSet[string]]::new() }
     [void]$oracle[$k].Add($e.Command)
+}
+
+# Every published command for a route, qualifier-insensitively.
+function Get-ShippedCommands([string]$method, [string]$skel) {
+    $k = "$method $skel"
+    if ($oracle.ContainsKey($k)) { return @($oracle[$k]) }
+    $bare = Get-UnqualifiedRoute $skel
+    if ($bare -and $oracle.ContainsKey("$method $bare")) { return @($oracle["$method $bare"]) }
+    @()
 }
 
 # ---- derive one action per route ------------------------------------------------------------
@@ -143,7 +172,7 @@ Write-Host "routes contested: $($routes.Count)"
 $failures = @()
 foreach ($key in ($routes.Keys | Sort-Object)) {
     $r = $routes[$key]
-    $ships = if ($oracle.ContainsKey($key)) { @($oracle[$key]) } else { @() }
+    $ships = @(Get-ShippedCommands $r.Method $r.Uri)
     # The comma operator keeps a single-element array an array through Add-Member's binder.
     $r | Add-Member ShipsAs (, $ships)
     $action =
@@ -153,6 +182,16 @@ foreach ($key in ($routes.Keys | Sort-Object)) {
         $shippedNouns = @($ships | ForEach-Object { ($_ -split '-', 2)[1] -replace '^Mg', '' } | Sort-Object -Unique)
         if ($shippedNouns.Count -ne 1) {
             $failures += "ambiguous rename: $key ships as [$($ships -join ', ')] - more than one target noun."
+        }
+        # The published verb travels with the noun. Two actions on one resource routinely share
+        # a noun and differ only by verb (applyHold ships Add-…Hold, removeHold Remove-…Hold),
+        # so a noun-only rename would give both the same name and collide.
+        $shippedVerbs = @($ships | ForEach-Object { ($_ -split '-', 2)[0] } | Sort-Object -Unique)
+        if ($shippedVerbs.Count -ne 1) {
+            $failures += "ambiguous rename: $key ships as [$($ships -join ', ')] - more than one target verb."
+        }
+        elseif ($shippedVerbs[0] -cne ($r.OurName -split '-', 2)[0]) {
+            $r | Add-Member Verb $shippedVerbs[0]
         }
         'rename'
     }
@@ -194,7 +233,12 @@ foreach ($key in ($routes.Keys | Sort-Object)) {
         }
     }
     if ($r.Action -eq 'suppress-deferred') { $entry.deferredCrossPathMerge = $true }
-    if ($r.Action -eq 'rename') { $entry.replacementNoun = (@($r.ShipsAs)[0] -split '-', 2)[1] -replace '^Mg', '' }
+    if ($r.Action -eq 'rename') {
+        $entry.replacementNoun = (@($r.ShipsAs)[0] -split '-', 2)[1] -replace '^Mg', ''
+        # Emitted only where the published verb differs from the one the generator derives, so
+        # the data stays the diff against structural naming rather than a full restatement of it.
+        if ($r.PSObject.Properties['Verb']) { $entry.replacementVerb = $r.Verb }
+    }
     switch ($entry.action) {
         'suppress' { $suppressions += [pscustomobject]$entry }
         'rename'   { $renames += [pscustomobject]$entry }
