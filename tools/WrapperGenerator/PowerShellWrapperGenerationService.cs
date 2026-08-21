@@ -28,6 +28,16 @@ public sealed partial class PowerShellWrapperGenerationService
     private readonly List<string> fileCollisions = [];
     private readonly Dictionary<string, string> kiotaReservedRenames;
 
+    // Body-property classification totals for this run; reported as one reconciliation line.
+    // propertiesSeenCount is accumulated from the classifier's own independent count so the
+    // reported total is not merely the sum of the buckets beside it.
+    private int propertiesSeenCount;
+    private int boundScalarCount;
+    private int boundComplexCount;
+    private int boundUntypedCount;
+    private int unsupportedPropertyCount;
+    private int excludedPropertyCount;
+
     public PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger)
     {
         ArgumentNullException.ThrowIfNull(document);
@@ -208,13 +218,17 @@ public sealed partial class PowerShellWrapperGenerationService
         written += await EmitGetOperationsAsync(getOperations, ctx, cancellationToken).ConfigureAwait(false);
 
         // All collisions for the run are reported together so one generation surfaces the
-        // complete list; see edge-cases/naming-edge-cases.md for how each kind is resolved.
+        // complete list; see docs/edge-cases/naming-edge-cases.md for how each kind is resolved.
         if (fileCollisions.Count > 0)
         {
             throw new InvalidOperationException(
                 $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file. " +
                 $"Resolve each with a NamingOverrides rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
         }
+
+        LogBodyPropertyReconciliation(
+            propertiesSeenCount,
+            boundScalarCount, boundComplexCount, boundUntypedCount, excludedPropertyCount, unsupportedPropertyCount);
 
         LogWroteFiles(written + 1, config.OutputPath);
     }
@@ -345,6 +359,14 @@ public sealed partial class PowerShellWrapperGenerationService
     private partial void LogSuppressedOperation(string method, string pathTemplate);
     [LoggerMessage(Level = LogLevel.Warning, Message = "Skipped {Method} {PathTemplate}: {Reason}")]
     private partial void LogSkippedUnsupportedOperation(string method, string pathTemplate, string reason);
+    // Information, not Warning: an unbindable body property is a known coverage gap per shape,
+    // not a defect in this run, and at Graph scale these would drown the operation warnings.
+    [LoggerMessage(Level = LogLevel.Information, Message = "Unbound body property {Noun}.{Property}: {Shape} (required={IsRequired})")]
+    private partial void LogSkippedBodyProperty(string noun, string property, string shape, bool isRequired);
+    [LoggerMessage(Level = LogLevel.Information, Message = "Excluded body property {Noun}.{Property}: {Policy}")]
+    private partial void LogExcludedBodyProperty(string noun, string property, string policy);
+    [LoggerMessage(Level = LogLevel.Information, Message = "Body properties classified={Classified} = scalar={Scalars} + model={Complex} + untyped={Untyped} + excluded={Excluded} + unsupported={Unsupported}")]
+    private partial void LogBodyPropertyReconciliation(int classified, int scalars, int complex, int untyped, int excluded, int unsupported);
 
     // True when the path contains a segment shape the emitters cannot handle yet: an OData
     // $-segment ($count/$value/$ref) or a parameterized function/action call (any segment
@@ -392,9 +414,8 @@ public sealed partial class PowerShellWrapperGenerationService
             return null;
         if (!TryResolveEntityTypeName(bodySchema, ctx.ModelsNamespace, out var entityType))
             return null;
-        var properties = SchemaProperties.ResolveParameterNameCollisions(
-            SchemaProperties.ExtractPrimitiveProperties(bodySchema), naming.PathParamNames);
-        return CmdletEmitter.EmitNew(naming, ctx, entityType, properties, SchemaProperties.HasPasswordProfile(bodySchema));
+        var (properties, complex, untyped) = BindBodyProperties(bodySchema, ctx, naming, entityType);
+        return CmdletEmitter.EmitNew(naming, ctx, entityType, properties, complex, untyped);
     }
 
     private string? EmitUpdateFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation, bool canReFetch)
@@ -405,10 +426,65 @@ public sealed partial class PowerShellWrapperGenerationService
             return null;
         if (!TryResolveEntityTypeName(bodySchema, ctx.ModelsNamespace, out var entityType))
             return null;
-        var properties = SchemaProperties.ResolveParameterNameCollisions(
-            SchemaProperties.ExtractPrimitiveProperties(bodySchema), naming.PathParamNames);
-        return CmdletEmitter.EmitUpdate(naming, ctx, entityType, properties, SchemaProperties.HasPasswordProfile(bodySchema), canReFetch);
+        var (properties, complex, untyped) = BindBodyProperties(bodySchema, ctx, naming, entityType);
+        return CmdletEmitter.EmitUpdate(naming, ctx, entityType, properties, complex, untyped, canReFetch);
     }
+
+    // Classifies a request body and resolves each complex property's component-schema key to
+    // the kiota CLR type name, reusing ResolveModelTypeName so reserved-name renames and
+    // sub-namespace moves are applied in exactly one place. A property whose reference does not
+    // resolve is dropped with a diagnostic rather than emitted against a guessed type name,
+    // which would fail the module compile.
+    private (IReadOnlyList<CmdletProperty> Scalars, IReadOnlyList<ComplexParameter> Complex, IReadOnlyList<UntypedParameter> Untyped) BindBodyProperties(
+        IOpenApiSchema bodySchema, EmitContext ctx, CmdletNaming naming, string entityType)
+    {
+        var classified = SchemaProperties.Classify(bodySchema, ResolveComponentSchema);
+        var (scalars, complex, untyped) = SchemaProperties.ResolveParameterNameCollisions(
+            classified.Scalars, classified.Complex, classified.Untyped, naming.PathParamNames);
+
+        // C# forbids a member sharing its enclosing type's name, so kiota suffixes such a
+        // property with "Prop": microsoft.graph.list's own "list" property generates as
+        // List.ListProp (verified in a generated Files client). The assignment target has to
+        // match the member kiota emitted, or the module does not compile.
+        var enclosingTypeName = entityType[(entityType.LastIndexOf('.') + 1)..];
+        scalars = [.. scalars.Select(p => p.PascalName == enclosingTypeName ? p with { PascalName = p.PascalName + "Prop" } : p)];
+        complex = [.. complex.Select(p => p.PascalName == enclosingTypeName ? p with { PascalName = p.PascalName + "Prop" } : p)];
+        untyped = [.. untyped.Select(p => p.PascalName == enclosingTypeName ? p with { PascalName = p.PascalName + "Prop" } : p)];
+
+        foreach (var skipped in classified.Unsupported)
+            LogSkippedBodyProperty(naming.Noun, skipped.OpenApiName, skipped.Shape.ToString(), skipped.IsRequired);
+
+        // Named so an external reconciliation can tell a policy exclusion from an omission
+        // without re-deriving the policy from the spec.
+        foreach (var dropped in classified.Excluded)
+            LogExcludedBodyProperty(naming.Noun, dropped.OpenApiName, dropped.Policy.ToString());
+
+        // Totals for the run's reconciliation line: every classified property must end up in
+        // exactly one of these buckets, so a shape that silently fell through the classifier
+        // would show up as a mismatch at Graph scale, not just in the unit test.
+        propertiesSeenCount += classified.PropertiesSeen;
+        boundScalarCount += classified.Scalars.Count;
+        boundComplexCount += classified.Complex.Count;
+        boundUntypedCount += classified.Untyped.Count;
+        unsupportedPropertyCount += classified.Unsupported.Count;
+        excludedPropertyCount += classified.Excluded.Count;
+
+        var parameters = new List<ComplexParameter>(complex.Count);
+        foreach (var property in complex)
+        {
+            parameters.Add(new ComplexParameter(
+                property.PascalName,
+                property.ParameterName,
+                ResolveModelTypeName(property.ReferenceId, ctx.ModelsNamespace, modelSubNamespaces, kiotaReservedRenames),
+                property.IsArray,
+                property.IsEnum));
+        }
+        var untypedParameters = untyped.Select(p => new UntypedParameter(p.PascalName, p.ParameterName)).ToList();
+        return (scalars, parameters, untypedParameters);
+    }
+
+    private IOpenApiSchema? ResolveComponentSchema(string referenceId) =>
+        document.Components?.Schemas?.TryGetValue(referenceId, out var schema) == true ? schema : null;
 
     private static bool HasNonJsonSuccessContent(OpenApiOperation operation)
     {

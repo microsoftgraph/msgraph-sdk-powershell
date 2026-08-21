@@ -32,15 +32,47 @@ public sealed class EmitterTests
     public void EmitsSuffixedParameterButAssignsRealModelProperty()
     {
         var naming = Naming.Resolve(new OperationInfo(HttpMethod.Patch, "/devices/{device-id}"));
-        var properties = SchemaProperties.ResolveParameterNameCollisions(
+        var (properties, _, _) = SchemaProperties.ResolveParameterNameCollisions(
             new[] { new CmdletProperty("deviceId", "DeviceId", "string", IsArray: false) },
+            [], [],
             naming.PathParamNames);
 
-        var source = CmdletEmitter.EmitUpdate(naming, new EmitContext("Test.Client"), "Device", properties, hasPasswordProfile: false);
+        var source = CmdletEmitter.EmitUpdate(naming, new EmitContext("Test.Client"), "Device", properties, [], []);
 
         Assert.Contains("public string? DeviceId1 { get; set; }", source);
         Assert.Contains("body.DeviceId = DeviceId1;", source);
         Assert.Contains("IsParameterBound(nameof(DeviceId1))", source);
+    }
+
+    // A complex body property binds as its kiota model type, fully qualified, and assigns
+    // straight to the model property. This is what lets a caller write
+    // New-MgUser -PasswordProfile @{ Password = '...' } - PowerShell converts the hashtable
+    // to the model on binding. Arrays land as T[] and convert with ToList() like scalar arrays.
+    [Fact]
+    public void EmitsComplexPropertyAsTypedModelParameter()
+    {
+        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Post, "/users"));
+        var complex = new[]
+        {
+            new ComplexParameter("PasswordProfile", "PasswordProfile", "Test.Client.Models.PasswordProfile", IsArray: false, IsEnum: false),
+            new ComplexParameter("AssignedLicenses", "AssignedLicenses", "Test.Client.Models.AssignedLicense", IsArray: true, IsEnum: false),
+            // An enum collection needs nullable elements to assign to kiota's List<TEnum?>.
+            new ComplexParameter("Roles", "Roles", "Test.Client.Models.RoleType", IsArray: true, IsEnum: true),
+        };
+
+        var source = CmdletEmitter.EmitNew(naming, new EmitContext("Test.Client"), "User", [], complex, []);
+
+        Assert.Contains("public Test.Client.Models.PasswordProfile? PasswordProfile { get; set; }", source);
+        Assert.Contains("body.PasswordProfile = PasswordProfile;", source);
+
+        Assert.Contains("public Test.Client.Models.AssignedLicense[]? AssignedLicenses { get; set; }", source);
+        Assert.Contains("body.AssignedLicenses = AssignedLicenses!.ToList();", source);
+
+        Assert.Contains("public Test.Client.Models.RoleType?[]? Roles { get; set; }", source);
+
+        // The removed hard-coded special case must not come back in any form.
+        Assert.DoesNotContain("ForceChangePasswordNextSignIn", source);
+        Assert.DoesNotContain("new PasswordProfile", source);
     }
 
     // PATCH-only resources (/places/{id}) have no GetAsync on their kiota builder, so the
@@ -54,11 +86,11 @@ public sealed class EmitterTests
         var props = new[] { new CmdletProperty("displayName", "DisplayName", "string", IsArray: false) };
         var ctx = new EmitContext("Test.Client");
 
-        var withGet = CmdletEmitter.EmitUpdate(naming, ctx, "Place", props, hasPasswordProfile: false, reFetchAfterUpdate: true);
+        var withGet = CmdletEmitter.EmitUpdate(naming, ctx, "Place", props, [], [], reFetchAfterUpdate: true);
         Assert.Contains("re-fetching the updated resource", withGet);
         Assert.Contains(".GetAsync()", withGet);
 
-        var withoutGet = CmdletEmitter.EmitUpdate(naming, ctx, "Place", props, hasPasswordProfile: false, reFetchAfterUpdate: false);
+        var withoutGet = CmdletEmitter.EmitUpdate(naming, ctx, "Place", props, [], [], reFetchAfterUpdate: false);
         Assert.DoesNotContain("re-fetching the updated resource", withoutGet);
         Assert.DoesNotContain(".GetAsync()", withoutGet);
         Assert.Contains("if (result is not null)", withoutGet);

@@ -34,7 +34,7 @@ Entry template (keep the field names exact so the file converts cleanly):
 ```
 ## <short case name>
 - **Class:** <inflection-defect | operationid-truncation | hand-rename | ...>
-- **Status:** <corrected | reproduced-for-parity | structurally-avoided | not-yet-reachable>
+- **Status:** <corrected | reproduced-for-parity | structurally-avoided | not-yet-reachable | handled | partially-handled | workaround> — optionally followed by a short parenthetical qualifier
 - **Evidence:** <what the oracle/spec shows>
 - **Decision:** <what the generator does and why>
 - **Migration impact:** <what breaks for users, if anything>
@@ -46,9 +46,12 @@ Entry template (keep the field names exact so the file converts cleanly):
 | Case | Class | Status |
 |---|---|---|
 | `HostWhoi` → `HostWhois` | inflection-defect | corrected |
+| `PlaceCheck` → `PlaceCheckIn` | operationid-truncation | corrected |
 | operationId preposition truncation | operationid-truncation | structurally-avoided |
 | `SkypeForBusiness` subject truncation | operationid-truncation | not-yet-reachable |
 | `Cookies`/`Skus`/`Dns`/`Ios`/`Statistics` quirks | inflection-defect | reproduced-for-parity |
+| Self-referential `sites/{id}/sites` → `SubSite` | adjacent-duplicate-segments | handled |
+| Route duplicates (spec paths the SDK never shipped) | duplicate-routes | partially-handled |
 
 ## Whois truncated to Whoi on the host navigation
 
@@ -68,6 +71,22 @@ Entry template (keep the field names exact so the file converts cleanly):
   Security module is generated for real.
 - **References:** pinned in `AppliesDeliberateNameCorrections` (NamingTests.cs); gate rows in
   `$deliberateCorrections` (Compare-WrapperCmdletNames.ps1).
+
+## CheckIns truncated to Check on the places API
+
+- **Class:** operationid-truncation
+- **Status:** corrected
+- **Evidence:** `/places/{place-id}/checkIns` shipped as `{Get,New,Update,Remove}-Mg(Beta)PlaceCheck`
+  (8 commands) — AutoRest truncated "CheckIns" at the preposition "In", the #912 defect
+  class. The SDK is inconsistent with itself: `Get-MgPlaceCheckInCount` (the `$count` path)
+  keeps "In" intact. Found by the parity gate during the full-inventory module fan-out.
+- **Decision:** emit `...PlaceCheckIn` for all four verbs, v1.0 and beta; no alias for the
+  old names. Pinned in `AppliesDeliberateNameCorrections`; gate rows in
+  `$deliberateCorrections`.
+- **Migration impact:** scripts using `*-MgPlaceCheck` must switch to `*-MgPlaceCheckIn`.
+  Belongs in the migration guide when the Calendar module ships for real.
+- **References:** issue [#912](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/912)
+  (the AutoRest defect class).
 
 ## operationId preposition/linking-verb truncation
 
@@ -126,13 +145,73 @@ Entry template (keep the field names exact so the file converts cleanly):
   `data`, `delta`, `quota` (Humanizer-specific mistakes this rule engine never makes) and
   `statistics` (the one that applied here).
 
+## Self-referential paths collide with their parent's cmdlet
+
+- **Class:** adjacent-duplicate-segments
+- **Status:** handled (loud failure + directive-cited renames)
+- **Evidence:** singularizing a self-referencing path collapses it onto its parent's noun:
+  `/sites/{id}/sites` produced `GetMgSite.g.cs`, silently overwriting the get-site-by-id
+  cmdlet — the same silent-drop failure AutoRest had. Nothing could detect it: writes are
+  not logged at console level, the summary counts surviving files, and the parity gate only
+  inspects files that exist.
+- **Decision:** the generator now fails generation loudly on any cmdlet file collision,
+  listing every colliding pair. Shipped cases are renamed via NamingOverrides with their
+  directive cited (`sites/{id}/sites` → `SubSite`/`GroupSubSite`, per Sites.md
+  `subject: SubSite` directives); paths the SDK ships nothing for are suppressed as they
+  surface.
+- **Migration impact:** none — renames match the published names exactly.
+- **References:** issue #3704; `NamingOverrides.cs` SubSite entries; Sites.md lines 32–61.
+
+## Route duplicates: the spec publishes paths the SDK never shipped
+
+- **Class:** duplicate-routes
+- **Status:** partially-handled (oracle-cited suppressions/renames)
+- **Evidence:** the collision guard's first full-inventory sweep found 966 silent collisions
+  (per-module counts on issue #3704). Beyond self-references, the dominant cause is the spec
+  publishing the same data
+  under two routes while the SDK ships exactly one: nested navs duplicating top-level sets
+  (`hosts/{id}/components` vs `hostComponents` — 14 Security paths, ships nothing nested),
+  default-singleton vs collection (`/users/{id}/drive` ships renamed `UserDefaultDrive`;
+  `/users/{id}/calendar/events` ships `UserDefaultCalendarEvent`), Info-wrapper navs that
+  never shipped (`pinnedMessages/{id}/message`), and stitched pairs where GET ships from one
+  route and PATCH/DELETE from the other (termStore, agreement file/files).
+- **Decision:** each resolved family is a `NamingOverrides` entry citing the shipped
+  command or the oracle's absence. Two families remain open on #3704 with full evidence:
+  the Identity.Governance mirrored navigations (the shipped survivor alternates by nesting
+  level, needing a dedupe design decision) and the Sites termStore `children` recursion
+  (resolver and direct oracle probes disagree; needs reconciliation before encoding).
+- **Migration impact:** none — suppressed routes never shipped; renames match shipped names.
+- **References:** issue #3704 (remainder inventory + resolver evidence); `NamingOverrides.cs`
+  "Collision resolutions" section.
+
+## `-Password` / `-ForceChangePasswordNextSignIn` replaced by typed `-PasswordProfile`
+
+- **Class:** wrapper-surface-change
+- **Status:** corrected
+- **Evidence:** while body binding was primitives-only, `passwordProfile` was hard-coded into
+  two invented parameters so `New-MgUser` was usable at all. Neither name is published: the
+  shipped SDK exposes `-PasswordProfile` as a typed parameter taking a hashtable, and
+  `passwordProfile` is an ordinary complex property in the spec
+  (`anyOf[$ref microsoft.graph.passwordProfile, nullable]`), not a special case.
+- **Decision:** typed binding covers every referenced-model property, so the hard-coded pair
+  was deleted along with the flag that emitted it. `New-MgUser -PasswordProfile @{ Password =
+  '...'; ForceChangePasswordNextSignIn = $true }` replaces them and matches the published
+  surface.
+- **Migration impact:** breaking for anyone using the prototype's `-Password` /
+  `-ForceChangePasswordNextSignIn`. This changes only the wrapper prototype's own surface -
+  no published cmdlet had these parameters - and it moves toward parity rather than away.
+  One behaviour note: the removed code defaulted `ForceChangePasswordNextSignIn` to `true`
+  when only `-Password` was supplied; the typed parameter passes through exactly what the
+  caller sets, matching Graph's own default handling.
+- **References:** issue #3707; `SchemaProperties.Classify`; `EmitsComplexPropertyAsTypedModelParameter`
+  in EmitterTests.
+
 ## Watch list
 
 Cases spotted but deliberately not acted on yet, so they aren't lost:
 
-- **`usageRights` vs `rights` (beta-only):** the shipped SDK keeps `usageRights` plural
-  (`Get-MgBetaDeviceUsageRights` for `/devices/{id}/usageRights`) but singularizes bare
-  `rights` (`Get-MgBetaGroupSiteInformationProtectionSensitivityLabelRight` for
-  `.../sensitivityLabels/{id}/rights`). Our rules match the bare-`rights` case and would
-  diverge on `usageRights`. All affected paths are beta; resolve when the beta parity audit
-  runs.
+- **bare `rights` (beta-only):** "Rights" is now an invariant — v1.0 evidence arrived via
+  `subjectRightsRequests` (42 cmdlets ship keeping "Rights"; `usageRights` in beta agrees).
+  The one holdout is beta's bare `.../sensitivityLabels/{id}/rights`, which ships
+  singularized (`...SensitivityLabelRight`) and now diverges from our invariant. Beta-only,
+  4 cmdlets; resolve at the beta parity audit (likely a correction or a path override).
