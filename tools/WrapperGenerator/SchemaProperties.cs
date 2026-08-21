@@ -353,7 +353,12 @@ public static class SchemaProperties
     // A branch that adds nullability and nothing else: no reference, no members, no enum, no
     // items, no format.
     private static bool IsNullabilityPlaceholder(IOpenApiSchema schema) =>
-        (schema.Properties?.Count ?? 0) == 0
+        // A primitive-typed branch is a real union arm, not a nullability marker: collapsing
+        // anyOf[$ref, {type: string}] to the reference would silently drop the string
+        // alternative. The docs spell the placeholder `{ type: object, nullable: true }`, so
+        // only an untyped or Object-typed branch (Null bit masked, as everywhere else) qualifies.
+        ((schema.Type ?? JsonSchemaType.Null) & ~JsonSchemaType.Null) is 0 or JsonSchemaType.Object
+        && (schema.Properties?.Count ?? 0) == 0
         && (schema.Enum?.Count ?? 0) == 0
         && schema.Items is null
         && schema.AdditionalProperties is null
