@@ -89,6 +89,12 @@ $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 if (-not $SpecRoot) { $SpecRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat' }
 $generatorProject = Join-Path $repoRoot 'tools\WrapperGenerator'
 $authCsproj = Join-Path $repoRoot 'src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj'
+# The Authentication version the wrappers compile against, for the manifest's RequiredModules
+# minimum. Read from the project, never written here.
+$authVersion = ([xml](Get-Content $authCsproj -Raw)).Project.PropertyGroup.Version |
+    Where-Object { $_ } | Select-Object -First 1
+if (-not $authVersion) { throw "no Version in $authCsproj" }
+$authVersion = "$authVersion".Trim()
 $clientProjectTemplate = Join-Path $PSScriptRoot 'Templates\WrapperClient.csproj.template'
 $moduleProjectTemplate = Join-Path $PSScriptRoot 'Templates\WrapperModule.csproj.template'
 
@@ -307,13 +313,34 @@ function Build-Module {
         }
 
         $psd1Path = Join-Path $binDir "$moduleName.psd1"
-        New-ModuleManifest -Path $psd1Path `
-            -RootModule "$moduleName.dll" `
-            -ModuleVersion '0.1.0' `
-            -Author 'Microsoft Graph' -CompanyName 'Microsoft' `
-            -Description "Generated Kiota-based wrapper module for $Name ($ApiVersion). Test build - not for release." `
-            -CmdletsToExport $cmdlets `
-            -FunctionsToExport @() -AliasesToExport @() -VariablesToExport @()
+        # RequiredModules makes PowerShell load the REAL Microsoft.Graph.Authentication module
+        # before this one, so the wrapper binds to its already-loaded assemblies and shares its
+        # GraphSession. Without it, Windows PowerShell's version-strict loader lazily loads the
+        # module-local copy of the Authentication dll beside the installed one - two assemblies,
+        # two GraphSession statics - and every cmdlet reports NoGraphSession while the user IS
+        # connected. Proven by a marker-client experiment in both hosts; the module-local copies
+        # are excluded from the package for the same reason (see the nuspec below).
+        # The minimum version is the one this repository compiles against, read from the project
+        # rather than written here, so a bump in the Authentication csproj cannot go stale.
+        # ModuleVersion must equal the package version: installers lay the module out under a
+        # <Name>\<Version> folder, and PowerShell refuses a manifest whose ModuleVersion does not
+        # match that folder name - a hard-coded placeholder made every versioned-folder install
+        # fail to import. Prerelease is carried separately, as manifests require.
+        $manifestArgs = @{
+            Path              = $psd1Path
+            RootModule        = "$moduleName.dll"
+            ModuleVersion     = $moduleVersion
+            RequiredModules   = @(@{ ModuleName = 'Microsoft.Graph.Authentication'; ModuleVersion = $authVersion })
+            Author            = 'Microsoft Graph'
+            CompanyName       = 'Microsoft'
+            Description       = "Generated Kiota-based wrapper module for $Name ($ApiVersion). Test build - not for release."
+            CmdletsToExport   = $cmdlets
+            FunctionsToExport = @()
+            AliasesToExport   = @()
+            VariablesToExport = @()
+        }
+        if ($modulePrerelease) { $manifestArgs.Prerelease = $modulePrerelease }
+        New-ModuleManifest @manifestArgs
 
         if ($Pack) {
             # The package IS the module folder: manifest, assemblies and their runtime closure.
@@ -349,7 +376,11 @@ function Build-Module {
   </metadata>
   <files>
     <file src="$moduleName.psd1" />
-    <file src="*.dll" />
+    <!-- The Authentication assemblies are deliberately NOT shipped: the manifest's
+         RequiredModules loads the real Microsoft.Graph.Authentication module, and a
+         module-local copy at a different version splits the GraphSession static under
+         Windows PowerShell's version-strict loader (NoGraphSession while connected). -->
+    <file src="*.dll" exclude="Microsoft.Graph.Authentication.dll;Microsoft.Graph.Authentication.Core.dll" />
     <file src="*.deps.json" />$runtimesEntry
   </files>
 </package>
