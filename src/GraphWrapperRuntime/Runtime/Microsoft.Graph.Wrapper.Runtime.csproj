@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- netstandard2.0 for the same reason as every wrapper project: the shipped manifests
+         declare CompatiblePSEditions Core and Desktop, and one un-conditioned dll path has to
+         load in both. See tools/Templates/WrapperClient.csproj.template for the full rationale. -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Microsoft.Graph.Wrapper.Runtime</AssemblyName>
+    <RootNamespace>Microsoft.Graph.Wrapper.Runtime</RootNamespace>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Compile-only PowerShell SDK contract; the host supplies the real
+         System.Management.Automation at run time (same shape as the module template). -->
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.Kiota.Bundle" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Authentication\Authentication\Microsoft.Graph.Authentication.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Microsoft.Graph.Wrapper.Runtime.Tests" />
+  </ItemGroup>
+
+</Project>
