@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Sites.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Sites
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Sites
     [Cmdlet(VerbsCommon.Get, "MgSiteTermStoreSet", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Sites.Client.Models.TermStore.SetCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Sites.Client.Models.TermStore.Set), ParameterSetName = new[] { "Get" })]
-    public class GetMgSiteTermStoreSetCommand : PSCmdlet
+    public class GetMgSiteTermStoreSetCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string SiteId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string SetId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Sites
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgSiteTermStoreSet_Get or Get-MgSiteTermStoreSet_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Sites
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? SetId : SiteId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? SetId : SiteId);
                 return;
             }
         }

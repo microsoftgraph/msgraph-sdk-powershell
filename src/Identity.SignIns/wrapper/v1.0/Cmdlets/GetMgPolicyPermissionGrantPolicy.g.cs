@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.SignIns
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
     [Cmdlet(VerbsCommon.Get, "MgPolicyPermissionGrantPolicy", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.PermissionGrantPolicyCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.PermissionGrantPolicy), ParameterSetName = new[] { "Get" })]
-    public class GetMgPolicyPermissionGrantPolicyCommand : PSCmdlet
+    public class GetMgPolicyPermissionGrantPolicyCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string PermissionGrantPolicyId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgPolicyPermissionGrantPolicy_Get or Get-MgPolicyPermissionGrantPolicy_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? PermissionGrantPolicyId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? PermissionGrantPolicyId : null);
                 return;
             }
         }

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Users.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Users
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Users
     [Cmdlet(VerbsCommon.Get, "MgUserOauth2PermissionGrant", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Users.Client.Models.OAuth2PermissionGrantCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Users.Client.Models.OAuth2PermissionGrant), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserOauth2PermissionGrantCommand : PSCmdlet
+    public class GetMgUserOauth2PermissionGrantCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string OAuth2PermissionGrantId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Users
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgUserOauth2PermissionGrant_Get or Get-MgUserOauth2PermissionGrant_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Users
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? OAuth2PermissionGrantId : UserId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? OAuth2PermissionGrantId : UserId);
                 return;
             }
         }

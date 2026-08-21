@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Search.Client;
 using Microsoft.Graph.PowerShell.Search.Client.Models;
 using Microsoft.Kiota.Abstractions.Authentication;
@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Search
     [GraphRoute("PATCH", "/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members/{identity-id}")]
     [Cmdlet(VerbsData.Update, "MgExternalConnectionGroupMember", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.Identity))]
-    public class UpdateMgExternalConnectionGroupMemberCommand : PSCmdlet
+    public class UpdateMgExternalConnectionGroupMemberCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ExternalConnectionId { get; set; } = string.Empty;
@@ -31,13 +31,7 @@ namespace Microsoft.Graph.PowerShell.Search
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -51,36 +45,7 @@ namespace Microsoft.Graph.PowerShell.Search
         body.Type = Type;
 
 
-        // ── Choose HttpClient + auth provider ─────────────────────────────
-        HttpClient httpClient;
-        IAuthenticationProvider authProvider;
-
-        if (this.IsParameterBound(nameof(AccessToken)))
-        {
-            httpClient = new HttpClient();
-            authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
-        }
-        else
-        {
-            WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
-            try
-            {
-                httpClient = HttpHelpers.GetGraphHttpClient();
-            }
-            catch (Exception ex)
-            {
-                ThrowTerminatingError(new ErrorRecord(
-                    new InvalidOperationException(
-                        "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
-                    "NoGraphSession",
-                    ErrorCategory.AuthenticationError,
-                    null));
-                return;
-            }
-            authProvider = new AnonymousAuthenticationProvider();
-        }
-
-        var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+        var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.Identity? result;
@@ -89,16 +54,12 @@ namespace Microsoft.Graph.PowerShell.Search
                 result = client.External.Connections[ExternalConnectionId].Groups[ExternalGroupId].Members[IdentityId].PatchAsync(body, requestConfiguration =>
                 {
 
-                        if (this.IsParameterBound(nameof(Headers)))
-                        {
-                            foreach (System.Collections.DictionaryEntry entry in Headers!)
-                                requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
-                        }
+                        AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, IdentityId));
+                ThrowGraphRequestFailed(ex, IdentityId);
                 return;
             }
 
@@ -112,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Search
                 }
                 catch (Exception ex)
                 {
-                    ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, IdentityId));
+                    ThrowGraphRequestFailed(ex, IdentityId);
                     return;
                 }
             }

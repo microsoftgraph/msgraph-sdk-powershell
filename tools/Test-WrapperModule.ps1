@@ -288,15 +288,16 @@ elseif (`$scalarExercised -gt 0) { `$scalarBinding = "OK(`$scalarExercised)" }
 
 # The schema-less converter is the one piece of emitted logic no compiler can check: every
 # branch produces a UntypedNode, so a wrong branch sends a value the caller never wrote and
-# still builds. The matrix runs the compiled helper inside the module under test - reached by
-# reflection because it is internal - so it cannot drift from a copy kept in this script.
-# UntypedValue is emitted into every module, so a module that cannot produce it is a failure,
-# never N/A.
+# still builds. The matrix runs the compiled helper the module actually calls - it lives once
+# in Microsoft.Graph.Wrapper.Runtime, reached through the module's own cmdlet base type so
+# this script cannot drift onto some other copy. A module whose cmdlets do not lead to the
+# runtime assembly is a failure, never N/A.
 `$untypedBinding = 'NOT-FOUND'
 `$untypedType = `$null
 try {
     `$impl = `$cmds | Where-Object { `$_.CommandType -eq 'Cmdlet' } | Select-Object -First 1
-    `$untypedType = @(`$impl.ImplementingType.Assembly.GetTypes() |
+    `$runtimeAssembly = `$impl.ImplementingType.BaseType.Assembly
+    `$untypedType = @(`$runtimeAssembly.GetTypes() |
         Where-Object { `$_.Name -eq 'UntypedValue' })[0]
 }
 catch { `$untypedType = `$null }

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.Partner.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.Partner
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
     [Cmdlet(VerbsCommon.Get, "MgTenantRelationshipDelegatedAdminCustomerServiceManagementDetail", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminServiceManagementDetailCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminServiceManagementDetail), ParameterSetName = new[] { "Get" })]
-    public class GetMgTenantRelationshipDelegatedAdminCustomerServiceManagementDetailCommand : PSCmdlet
+    public class GetMgTenantRelationshipDelegatedAdminCustomerServiceManagementDetailCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string DelegatedAdminCustomerId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string DelegatedAdminServiceManagementDetailId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgTenantRelationshipDelegatedAdminCustomerServiceManagementDetail_Get or Get-MgTenantRelationshipDelegatedAdminCustomerServiceManagementDetail_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DelegatedAdminServiceManagementDetailId : DelegatedAdminCustomerId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DelegatedAdminServiceManagementDetailId : DelegatedAdminCustomerId);
                 return;
             }
         }

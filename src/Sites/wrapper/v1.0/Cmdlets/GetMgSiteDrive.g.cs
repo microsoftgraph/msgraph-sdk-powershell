@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Sites.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Sites
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Sites
     [Cmdlet(VerbsCommon.Get, "MgSiteDrive", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Sites.Client.Models.DriveCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Sites.Client.Models.Drive), ParameterSetName = new[] { "Get" })]
-    public class GetMgSiteDriveCommand : PSCmdlet
+    public class GetMgSiteDriveCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string SiteId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string DriveId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Sites
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgSiteDrive_Get or Get-MgSiteDrive_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Sites
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DriveId : SiteId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DriveId : SiteId);
                 return;
             }
         }

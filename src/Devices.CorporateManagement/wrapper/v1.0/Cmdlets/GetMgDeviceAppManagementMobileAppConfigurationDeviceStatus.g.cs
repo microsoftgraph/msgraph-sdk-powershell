@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppConfigurationDeviceStatus", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedDeviceMobileAppConfigurationDeviceStatusCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedDeviceMobileAppConfigurationDeviceStatus), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceAppManagementMobileAppConfigurationDeviceStatusCommand : PSCmdlet
+    public class GetMgDeviceAppManagementMobileAppConfigurationDeviceStatusCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ManagedDeviceMobileAppConfigurationId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string ManagedDeviceMobileAppConfigurationDeviceStatusId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatus_Get or Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatus_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ManagedDeviceMobileAppConfigurationDeviceStatusId : ManagedDeviceMobileAppConfigurationId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ManagedDeviceMobileAppConfigurationDeviceStatusId : ManagedDeviceMobileAppConfigurationId);
                 return;
             }
         }

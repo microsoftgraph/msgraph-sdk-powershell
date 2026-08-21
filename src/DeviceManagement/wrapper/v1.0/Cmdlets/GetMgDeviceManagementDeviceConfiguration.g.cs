@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.DeviceManagement
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     [Cmdlet(VerbsCommon.Get, "MgDeviceManagementDeviceConfiguration", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceConfigurationCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceConfiguration), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceManagementDeviceConfigurationCommand : PSCmdlet
+    public class GetMgDeviceManagementDeviceConfigurationCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string DeviceConfigurationId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDeviceManagementDeviceConfiguration_Get or Get-MgDeviceManagementDeviceConfiguration_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DeviceConfigurationId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DeviceConfigurationId : null);
                 return;
             }
         }

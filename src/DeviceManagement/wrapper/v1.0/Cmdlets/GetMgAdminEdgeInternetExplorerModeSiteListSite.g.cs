@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.DeviceManagement
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     [Cmdlet(VerbsCommon.Get, "MgAdminEdgeInternetExplorerModeSiteListSite", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.BrowserSiteCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.BrowserSite), ParameterSetName = new[] { "Get" })]
-    public class GetMgAdminEdgeInternetExplorerModeSiteListSiteCommand : PSCmdlet
+    public class GetMgAdminEdgeInternetExplorerModeSiteListSiteCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string BrowserSiteListId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string BrowserSiteId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgAdminEdgeInternetExplorerModeSiteListSite_Get or Get-MgAdminEdgeInternetExplorerModeSiteListSite_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? BrowserSiteId : BrowserSiteListId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? BrowserSiteId : BrowserSiteListId);
                 return;
             }
         }

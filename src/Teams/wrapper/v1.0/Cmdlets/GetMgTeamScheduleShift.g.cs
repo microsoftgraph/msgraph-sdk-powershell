@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Teams.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Teams
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Teams
     [Cmdlet(VerbsCommon.Get, "MgTeamScheduleShift", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.ShiftCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.Shift), ParameterSetName = new[] { "Get" })]
-    public class GetMgTeamScheduleShiftCommand : PSCmdlet
+    public class GetMgTeamScheduleShiftCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string TeamId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string ShiftId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Teams
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgTeamScheduleShift_Get or Get-MgTeamScheduleShift_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Teams
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ShiftId : TeamId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ShiftId : TeamId);
                 return;
             }
         }

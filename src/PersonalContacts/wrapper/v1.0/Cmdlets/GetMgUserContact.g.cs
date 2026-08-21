@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.PersonalContacts.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.PersonalContacts
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
     [Cmdlet(VerbsCommon.Get, "MgUserContact", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.PersonalContacts.Client.Models.ContactCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.PersonalContacts.Client.Models.Contact), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserContactCommand : PSCmdlet
+    public class GetMgUserContactCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string ContactId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgUserContact_Get or Get-MgUserContact_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ContactId : UserId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ContactId : UserId);
                 return;
             }
         }

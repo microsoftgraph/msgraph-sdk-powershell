@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Teams.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Teams
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Teams
     [Cmdlet(VerbsCommon.Get, "MgChatPinnedMessage", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.PinnedChatMessageInfoCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.PinnedChatMessageInfo), ParameterSetName = new[] { "Get" })]
-    public class GetMgChatPinnedMessageCommand : PSCmdlet
+    public class GetMgChatPinnedMessageCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ChatId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string PinnedChatMessageInfoId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Teams
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgChatPinnedMessage_Get or Get-MgChatPinnedMessage_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Teams
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? PinnedChatMessageInfoId : ChatId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? PinnedChatMessageInfoId : ChatId);
                 return;
             }
         }
