@@ -36,6 +36,7 @@
   <ItemGroup>
     <ProjectReference Include="{ClientProjectPath}" />
     <ProjectReference Include="{AuthenticationProjectPath}" />
+    <ProjectReference Include="{RuntimeProjectPath}" />
   </ItemGroup>
 
 </Project>

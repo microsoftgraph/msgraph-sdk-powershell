@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Notes.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Notes
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Notes
     [Cmdlet(VerbsCommon.Get, "MgGroupOnenoteOperation", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Notes.Client.Models.OnenoteOperationCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Notes.Client.Models.OnenoteOperation), ParameterSetName = new[] { "Get" })]
-    public class GetMgGroupOnenoteOperationCommand : PSCmdlet
+    public class GetMgGroupOnenoteOperationCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string GroupId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string OnenoteOperationId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Notes
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgGroupOnenoteOperation_Get or Get-MgGroupOnenoteOperation_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Notes
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? OnenoteOperationId : GroupId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? OnenoteOperationId : GroupId);
                 return;
             }
         }

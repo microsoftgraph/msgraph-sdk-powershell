@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.Governance
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     [Cmdlet(VerbsCommon.Get, "MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewerCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewer), ParameterSetName = new[] { "Get" })]
-    public class GetMgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewerCommand : PSCmdlet
+    public class GetMgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewerCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string AccessReviewScheduleDefinitionId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string AccessReviewReviewerId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer_Get or Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? AccessReviewReviewerId : AccessReviewInstanceId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? AccessReviewReviewerId : AccessReviewInstanceId);
                 return;
             }
         }

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
     [Cmdlet(VerbsCommon.Get, "MgAdminPeopleProfilePropertySetting", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ProfilePropertySettingCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ProfilePropertySetting), ParameterSetName = new[] { "Get" })]
-    public class GetMgAdminPeopleProfilePropertySettingCommand : PSCmdlet
+    public class GetMgAdminPeopleProfilePropertySettingCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string ProfilePropertySettingId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgAdminPeopleProfilePropertySetting_Get or Get-MgAdminPeopleProfilePropertySetting_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ProfilePropertySettingId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ProfilePropertySettingId : null);
                 return;
             }
         }

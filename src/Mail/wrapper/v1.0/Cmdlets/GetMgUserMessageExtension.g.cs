@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Mail.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Mail
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Mail
     [Cmdlet(VerbsCommon.Get, "MgUserMessageExtension", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Mail.Client.Models.ExtensionCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Mail.Client.Models.Extension), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserMessageExtensionCommand : PSCmdlet
+    public class GetMgUserMessageExtensionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Mail
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string ExtensionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Mail
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgUserMessageExtension_Get or Get-MgUserMessageExtension_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Mail
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ExtensionId : MessageId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ExtensionId : MessageId);
                 return;
             }
         }

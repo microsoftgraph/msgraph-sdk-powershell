@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
     [Cmdlet(VerbsCommon.Get, "MgDeviceRegisteredOwnerAsUser", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.UserCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.User), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceRegisteredOwnerAsUserCommand : PSCmdlet
+    public class GetMgDeviceRegisteredOwnerAsUserCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string DeviceId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string DirectoryObjectId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -57,10 +56,6 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDeviceRegisteredOwnerAsUser_Get or Get-MgDeviceRegisteredOwnerAsUser_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -87,7 +82,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DirectoryObjectId : DeviceId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DirectoryObjectId : DeviceId);
                 return;
             }
         }

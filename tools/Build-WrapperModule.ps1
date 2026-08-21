@@ -89,6 +89,7 @@ $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 if (-not $SpecRoot) { $SpecRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat' }
 $generatorProject = Join-Path $repoRoot 'tools\WrapperGenerator'
 $authCsproj = Join-Path $repoRoot 'src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj'
+$runtimeCsproj = Join-Path $repoRoot 'src\GraphWrapperRuntime\Runtime\Microsoft.Graph.Wrapper.Runtime.csproj'
 # The Authentication version the wrappers compile against, for the manifest's RequiredModules
 # minimum. Read from the project, never written here.
 $authVersion = ([xml](Get-Content $authCsproj -Raw)).Project.PropertyGroup.Version |
@@ -279,10 +280,12 @@ function Build-Module {
         $csprojPath = Join-Path $srcDir "$moduleName.csproj"
         $authCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $authCsproj) -replace '/', '\'
         $clientCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $clientCsprojPath) -replace '/', '\'
+        $runtimeCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $runtimeCsproj) -replace '/', '\'
         New-ProjectFromTemplate -TemplatePath $moduleProjectTemplate -DestinationPath $csprojPath -Replacements @{
             ModuleAssemblyName = $moduleName
             ClientProjectPath = $clientCsprojRelative
             AuthenticationProjectPath = $authCsprojRelative
+            RuntimeProjectPath = $runtimeCsprojRelative
         }
 
         $buildOut = & dotnet build $csprojPath -c $Configuration --nologo -v minimal 2>&1

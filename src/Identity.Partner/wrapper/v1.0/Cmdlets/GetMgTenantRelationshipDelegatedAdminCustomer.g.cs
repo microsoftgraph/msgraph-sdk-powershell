@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.Partner.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.Partner
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
     [Cmdlet(VerbsCommon.Get, "MgTenantRelationshipDelegatedAdminCustomer", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminCustomerCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminCustomer), ParameterSetName = new[] { "Get" })]
-    public class GetMgTenantRelationshipDelegatedAdminCustomerCommand : PSCmdlet
+    public class GetMgTenantRelationshipDelegatedAdminCustomerCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string DelegatedAdminCustomerId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgTenantRelationshipDelegatedAdminCustomer_Get or Get-MgTenantRelationshipDelegatedAdminCustomer_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DelegatedAdminCustomerId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DelegatedAdminCustomerId : null);
                 return;
             }
         }

@@ -36,6 +36,7 @@
   <ItemGroup>
     <ProjectReference Include="Client\Client.csproj" />
     <ProjectReference Include="..\..\..\Authentication\Authentication\Microsoft.Graph.Authentication.csproj" />
+    <ProjectReference Include="..\..\..\GraphWrapperRuntime\Runtime\Microsoft.Graph.Wrapper.Runtime.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Security.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Security
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Security
     [Cmdlet(VerbsCommon.Get, "MgSecurityCaseEdiscoveryCaseCustodianUserSource", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Security.Client.Models.Security.UserSourceCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Security.Client.Models.Security.UserSource), ParameterSetName = new[] { "Get" })]
-    public class GetMgSecurityCaseEdiscoveryCaseCustodianUserSourceCommand : PSCmdlet
+    public class GetMgSecurityCaseEdiscoveryCaseCustodianUserSourceCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string EdiscoveryCaseId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Security
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string UserSourceId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Security
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource_Get or Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Security
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? UserSourceId : EdiscoveryCustodianId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? UserSourceId : EdiscoveryCustodianId);
                 return;
             }
         }

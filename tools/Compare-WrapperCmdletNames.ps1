@@ -118,8 +118,12 @@ function Get-GraphRouteMap {
     # the day the projects retarget - it did exactly that when net10.0 became netstandard2.0.
     $binDir = Join-Path (Split-Path $CmdletsPath -Parent) "bin/$BuildConfiguration"
     if (-not (Test-Path $binDir)) { return $null }
+    # Exclude the shared runtime and client assemblies, which also match the wrapper prefix:
+    # the runtime dll sorts alphabetically before module names S..U, so picking "first match"
+    # without this filter handed those modules an assembly with no cmdlets in it.
     $dll = Get-ChildItem -Path $binDir -Recurse -Filter 'Microsoft.Graph.Wrapper.*.dll' -File -ErrorAction SilentlyContinue |
-        Where-Object { $_.Name -notlike '*.Client.dll' } | Select-Object -First 1
+        Where-Object { $_.Name -notlike '*.Client.dll' -and $_.Name -ne 'Microsoft.Graph.Wrapper.Runtime.dll' } |
+        Select-Object -First 1
     if (-not $dll) { return $null }
 
     $assembly = [System.Reflection.Assembly]::LoadFrom($dll.FullName)

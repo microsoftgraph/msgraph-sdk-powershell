@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Files.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Files
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Files
     [Cmdlet(VerbsCommon.Get, "MgDriveItemAnalyticItemActivityStatActivity", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.ItemActivityCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.ItemActivity), ParameterSetName = new[] { "Get" })]
-    public class GetMgDriveItemAnalyticItemActivityStatActivityCommand : PSCmdlet
+    public class GetMgDriveItemAnalyticItemActivityStatActivityCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string DriveId { get; set; } = string.Empty;
@@ -22,9 +23,7 @@ namespace Microsoft.Graph.PowerShell.Files
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 3)]
         public string ItemActivityId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -57,10 +56,6 @@ namespace Microsoft.Graph.PowerShell.Files
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDriveItemAnalyticItemActivityStatActivity_Get or Get-MgDriveItemAnalyticItemActivityStatActivity_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -87,7 +82,7 @@ namespace Microsoft.Graph.PowerShell.Files
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ItemActivityId : ItemActivityStatId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ItemActivityId : ItemActivityStatId);
                 return;
             }
         }

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Compliance.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Compliance
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Compliance
     [Cmdlet(VerbsCommon.Get, "MgPrivacySubjectRightsRequestApprover", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Compliance.Client.Models.UserCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Compliance.Client.Models.User), ParameterSetName = new[] { "Get" })]
-    public class GetMgPrivacySubjectRightsRequestApproverCommand : PSCmdlet
+    public class GetMgPrivacySubjectRightsRequestApproverCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string SubjectRightsRequestId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string UserId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Compliance
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgPrivacySubjectRightsRequestApprover_Get or Get-MgPrivacySubjectRightsRequestApprover_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Compliance
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? UserId : SubjectRightsRequestId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? UserId : SubjectRightsRequestId);
                 return;
             }
         }

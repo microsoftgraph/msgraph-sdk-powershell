@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.ConfigurationManagement
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
     [Cmdlet(VerbsCommon.Get, "MgAdminConfigurationManagementConfigurationSnapshotJob", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationSnapshotJobCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationSnapshotJob), ParameterSetName = new[] { "Get" })]
-    public class GetMgAdminConfigurationManagementConfigurationSnapshotJobCommand : PSCmdlet
+    public class GetMgAdminConfigurationManagementConfigurationSnapshotJobCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string ConfigurationSnapshotJobId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgAdminConfigurationManagementConfigurationSnapshotJob_Get or Get-MgAdminConfigurationManagementConfigurationSnapshotJob_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ConfigurationSnapshotJobId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ConfigurationSnapshotJobId : null);
                 return;
             }
         }

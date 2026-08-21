@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementManagedAppStatus", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedAppStatusCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedAppStatus), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceAppManagementManagedAppStatusCommand : PSCmdlet
+    public class GetMgDeviceAppManagementManagedAppStatusCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string ManagedAppStatusId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDeviceAppManagementManagedAppStatus_Get or Get-MgDeviceAppManagementManagedAppStatus_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ManagedAppStatusId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ManagedAppStatusId : null);
                 return;
             }
         }

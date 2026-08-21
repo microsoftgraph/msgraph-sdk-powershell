@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Education.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Education
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Education
     [Cmdlet(VerbsCommon.Get, "MgEducationUserAssignmentSubmissionResource", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Education.Client.Models.EducationSubmissionResourceCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Education.Client.Models.EducationSubmissionResource), ParameterSetName = new[] { "Get" })]
-    public class GetMgEducationUserAssignmentSubmissionResourceCommand : PSCmdlet
+    public class GetMgEducationUserAssignmentSubmissionResourceCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string EducationUserId { get; set; } = string.Empty;
@@ -22,9 +23,7 @@ namespace Microsoft.Graph.PowerShell.Education
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 3)]
         public string EducationSubmissionResourceId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -57,10 +56,6 @@ namespace Microsoft.Graph.PowerShell.Education
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgEducationUserAssignmentSubmissionResource_Get or Get-MgEducationUserAssignmentSubmissionResource_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -87,7 +82,7 @@ namespace Microsoft.Graph.PowerShell.Education
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? EducationSubmissionResourceId : EducationSubmissionId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? EducationSubmissionResourceId : EducationSubmissionId);
                 return;
             }
         }

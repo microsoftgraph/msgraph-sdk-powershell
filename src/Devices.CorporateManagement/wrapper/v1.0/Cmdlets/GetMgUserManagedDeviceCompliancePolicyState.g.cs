@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     [Cmdlet(VerbsCommon.Get, "MgUserManagedDeviceCompliancePolicyState", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceCompliancePolicyStateCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceCompliancePolicyState), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserManagedDeviceCompliancePolicyStateCommand : PSCmdlet
+    public class GetMgUserManagedDeviceCompliancePolicyStateCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string DeviceCompliancePolicyStateId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgUserManagedDeviceCompliancePolicyState_Get or Get-MgUserManagedDeviceCompliancePolicyState_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DeviceCompliancePolicyStateId : ManagedDeviceId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DeviceCompliancePolicyStateId : ManagedDeviceId);
                 return;
             }
         }

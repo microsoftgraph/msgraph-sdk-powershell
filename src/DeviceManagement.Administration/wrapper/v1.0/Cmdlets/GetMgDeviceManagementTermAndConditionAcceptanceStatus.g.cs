@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
     [Cmdlet(VerbsCommon.Get, "MgDeviceManagementTermAndConditionAcceptanceStatus", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.TermsAndConditionsAcceptanceStatusCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.TermsAndConditionsAcceptanceStatus), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceManagementTermAndConditionAcceptanceStatusCommand : PSCmdlet
+    public class GetMgDeviceManagementTermAndConditionAcceptanceStatusCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string TermsAndConditionsId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string TermsAndConditionsAcceptanceStatusId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDeviceManagementTermAndConditionAcceptanceStatus_Get or Get-MgDeviceManagementTermAndConditionAcceptanceStatus_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? TermsAndConditionsAcceptanceStatusId : TermsAndConditionsId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? TermsAndConditionsAcceptanceStatusId : TermsAndConditionsId);
                 return;
             }
         }

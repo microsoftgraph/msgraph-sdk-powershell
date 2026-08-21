@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.DeviceManagement
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     [Cmdlet(VerbsCommon.Get, "MgDeviceManagementDeviceConfigurationDeviceStatus", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceConfigurationDeviceStatusCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceConfigurationDeviceStatus), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceManagementDeviceConfigurationDeviceStatusCommand : PSCmdlet
+    public class GetMgDeviceManagementDeviceConfigurationDeviceStatusCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string DeviceConfigurationId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string DeviceConfigurationDeviceStatusId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDeviceManagementDeviceConfigurationDeviceStatus_Get or Get-MgDeviceManagementDeviceConfigurationDeviceStatus_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DeviceConfigurationDeviceStatusId : DeviceConfigurationId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DeviceConfigurationDeviceStatusId : DeviceConfigurationId);
                 return;
             }
         }

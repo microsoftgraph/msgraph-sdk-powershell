@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.ChangeNotifications.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.ChangeNotifications
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.ChangeNotifications
     [Cmdlet(VerbsCommon.Get, "MgSubscription", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.ChangeNotifications.Client.Models.SubscriptionCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.ChangeNotifications.Client.Models.Subscription), ParameterSetName = new[] { "Get" })]
-    public class GetMgSubscriptionCommand : PSCmdlet
+    public class GetMgSubscriptionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string SubscriptionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.ChangeNotifications
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgSubscription_Get or Get-MgSubscription_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.ChangeNotifications
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? SubscriptionId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? SubscriptionId : null);
                 return;
             }
         }

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Groups.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Groups
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Groups
     [Cmdlet(VerbsCommon.Get, "MgGroupConversationThreadPostExtension", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Groups.Client.Models.ExtensionCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Groups.Client.Models.Extension), ParameterSetName = new[] { "Get" })]
-    public class GetMgGroupConversationThreadPostExtensionCommand : PSCmdlet
+    public class GetMgGroupConversationThreadPostExtensionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string GroupId { get; set; } = string.Empty;
@@ -24,9 +25,7 @@ namespace Microsoft.Graph.PowerShell.Groups
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 4)]
         public string ExtensionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -59,10 +58,6 @@ namespace Microsoft.Graph.PowerShell.Groups
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgGroupConversationThreadPostExtension_Get or Get-MgGroupConversationThreadPostExtension_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -89,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Groups
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ExtensionId : PostId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ExtensionId : PostId);
                 return;
             }
         }

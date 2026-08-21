@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.BackupRestore.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.BackupRestore
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
     [Cmdlet(VerbsCommon.Get, "MgSolutionBackupRestoreExchangeRestoreSession", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeRestoreSessionCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeRestoreSession), ParameterSetName = new[] { "Get" })]
-    public class GetMgSolutionBackupRestoreExchangeRestoreSessionCommand : PSCmdlet
+    public class GetMgSolutionBackupRestoreExchangeRestoreSessionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string ExchangeRestoreSessionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgSolutionBackupRestoreExchangeRestoreSession_Get or Get-MgSolutionBackupRestoreExchangeRestoreSession_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ExchangeRestoreSessionId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ExchangeRestoreSessionId : null);
                 return;
             }
         }
