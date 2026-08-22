@@ -31,6 +31,9 @@ variables:
   REGISTRY: 'msgraphprodregistry.azurecr.io'
   REGISTRY_NAME: 'msgraphprodregistry'
   IMAGE_NAME: 'public/microsoftgraph/powershell'
+  # Expose the build identity's token as a process-wide env var so generation scripts (including
+  # ForEach-Object -Parallel runspaces) can authenticate to the private CFS module feed. (CFSClean)
+  SYSTEM_ACCESSTOKEN: $(System.AccessToken)
 
 trigger:
   branches:

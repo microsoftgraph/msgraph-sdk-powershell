@@ -7,11 +7,16 @@ Param(
     [switch] $BumpBetaModule,
     [switch] $BumpAuthModule,
     [string] $PreReleaseTag,
-    [string] $Repository = "PSGallery"
+    [string] $Repository = "PowerShell_V2_Build"
 )
 $ErrorActionPreference = "Stop"
 
 . $PSScriptRoot\SetModuleVersion.ps1
+
+# CFSClean: authenticate module queries to the private feed (credential from the build token).
+. (Join-Path $PSScriptRoot '..\Get-CfsFeedCredential.ps1')
+$__cfsCred = Get-CfsFeedCredential
+if ($null -ne $__cfsCred) { $PSDefaultParameterValues['Find-Module:Credential'] = $__cfsCred }
 
 # Calculate and bump v1.0 module version
 if ($BumpV1Module.IsPresent) {

@@ -64,6 +64,21 @@ steps:
         Copy-Item -Path $src -Destination $dst -Force
         Write-Host "Copied npm config to $dst"
 
+  - task: PowerShell@2
+    displayName: Register private module feed (CFSClean)
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        # Register the private Azure Artifacts feed (PowerShell Gallery upstream) as a Trusted
+        # PSRepository so generation-time Install-Module/Find-Module resolve through it instead of
+        # the public PowerShell Gallery. Persisted for the job (visible to later steps + runspaces).
+        . "$(Build.SourcesDirectory)/tools/Get-CfsFeedCredential.ps1"
+        Register-CfsFeed
+        Get-PSRepository -Name PowerShell_V2_Build | Format-List Name, SourceLocation, InstallationPolicy, Trusted
+    env:
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
   - task: Npm@1
     displayName: Install AutoRest
     retryCountOnTaskFailure: 2
