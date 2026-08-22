@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Calendar.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Calendar
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Calendar
     [Cmdlet(VerbsCommon.Get, "MgUserCalendarPermission", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Calendar.Client.Models.CalendarPermissionCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Calendar.Client.Models.CalendarPermission), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserCalendarPermissionCommand : PSCmdlet
+    public class GetMgUserCalendarPermissionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string CalendarPermissionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Calendar
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgUserCalendarPermission_Get or Get-MgUserCalendarPermission_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? CalendarPermissionId : UserId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? CalendarPermissionId : UserId);
                 return;
             }
         }

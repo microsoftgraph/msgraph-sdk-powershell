@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.Governance
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     [Cmdlet(VerbsCommon.Get, "MgEntitlementManagementCatalogCustomWorkflowExtension", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomCalloutExtensionCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomCalloutExtension), ParameterSetName = new[] { "Get" })]
-    public class GetMgEntitlementManagementCatalogCustomWorkflowExtensionCommand : PSCmdlet
+    public class GetMgEntitlementManagementCatalogCustomWorkflowExtensionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string AccessPackageCatalogId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string CustomCalloutExtensionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgEntitlementManagementCatalogCustomWorkflowExtension_Get or Get-MgEntitlementManagementCatalogCustomWorkflowExtension_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? CustomCalloutExtensionId : AccessPackageCatalogId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? CustomCalloutExtensionId : AccessPackageCatalogId);
                 return;
             }
         }

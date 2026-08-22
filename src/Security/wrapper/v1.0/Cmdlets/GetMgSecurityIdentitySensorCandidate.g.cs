@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Security.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Security
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.Security
     [Cmdlet(VerbsCommon.Get, "MgSecurityIdentitySensorCandidate", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Security.Client.Models.Security.SensorCandidateCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Security.Client.Models.Security.SensorCandidate), ParameterSetName = new[] { "Get" })]
-    public class GetMgSecurityIdentitySensorCandidateCommand : PSCmdlet
+    public class GetMgSecurityIdentitySensorCandidateCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string SensorCandidateId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.Security
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgSecurityIdentitySensorCandidate_Get or Get-MgSecurityIdentitySensorCandidate_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Security
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? SensorCandidateId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? SensorCandidateId : null);
                 return;
             }
         }

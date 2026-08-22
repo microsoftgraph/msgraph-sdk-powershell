@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.DirectoryObjects.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.DirectoryObjects
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
     [Cmdlet(VerbsCommon.Get, "MgDirectoryObject", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DirectoryObjects.Client.Models.DirectoryObjectCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DirectoryObjects.Client.Models.DirectoryObject), ParameterSetName = new[] { "Get" })]
-    public class GetMgDirectoryObjectCommand : PSCmdlet
+    public class GetMgDirectoryObjectCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string DirectoryObjectId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDirectoryObject_Get or Get-MgDirectoryObject_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DirectoryObjectId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DirectoryObjectId : null);
                 return;
             }
         }

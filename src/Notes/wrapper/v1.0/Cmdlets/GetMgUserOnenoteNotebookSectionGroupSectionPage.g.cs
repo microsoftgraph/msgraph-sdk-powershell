@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Notes.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Notes
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Notes
     [Cmdlet(VerbsCommon.Get, "MgUserOnenoteNotebookSectionGroupSectionPage", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Notes.Client.Models.OnenotePageCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Notes.Client.Models.OnenotePage), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserOnenoteNotebookSectionGroupSectionPageCommand : PSCmdlet
+    public class GetMgUserOnenoteNotebookSectionGroupSectionPageCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -24,9 +25,7 @@ namespace Microsoft.Graph.PowerShell.Notes
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 4)]
         public string OnenotePageId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -59,10 +58,6 @@ namespace Microsoft.Graph.PowerShell.Notes
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgUserOnenoteNotebookSectionGroupSectionPage_Get or Get-MgUserOnenoteNotebookSectionGroupSectionPage_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -89,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Notes
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? OnenotePageId : OnenoteSectionId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? OnenotePageId : OnenoteSectionId);
                 return;
             }
         }

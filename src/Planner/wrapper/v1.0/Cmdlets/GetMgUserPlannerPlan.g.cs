@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Planner.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Planner
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Planner
     [Cmdlet(VerbsCommon.Get, "MgUserPlannerPlan", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlanCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserPlannerPlanCommand : PSCmdlet
+    public class GetMgUserPlannerPlanCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string PlannerPlanId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Planner
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgUserPlannerPlan_Get or Get-MgUserPlannerPlan_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Planner
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? PlannerPlanId : UserId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? PlannerPlanId : UserId);
                 return;
             }
         }

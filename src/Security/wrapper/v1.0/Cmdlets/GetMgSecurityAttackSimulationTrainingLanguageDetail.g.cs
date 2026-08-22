@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Security.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Security
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Security
     [Cmdlet(VerbsCommon.Get, "MgSecurityAttackSimulationTrainingLanguageDetail", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Security.Client.Models.TrainingLanguageDetailCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Security.Client.Models.TrainingLanguageDetail), ParameterSetName = new[] { "Get" })]
-    public class GetMgSecurityAttackSimulationTrainingLanguageDetailCommand : PSCmdlet
+    public class GetMgSecurityAttackSimulationTrainingLanguageDetailCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string TrainingId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string TrainingLanguageDetailId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Security
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgSecurityAttackSimulationTrainingLanguageDetail_Get or Get-MgSecurityAttackSimulationTrainingLanguageDetail_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Security
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? TrainingLanguageDetailId : TrainingId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? TrainingLanguageDetailId : TrainingId);
                 return;
             }
         }

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Applications.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Applications
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Applications
     [Cmdlet(VerbsCommon.Get, "MgServicePrincipalSynchronizationJobSchemaDirectory", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.DirectoryDefinitionCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.DirectoryDefinition), ParameterSetName = new[] { "Get" })]
-    public class GetMgServicePrincipalSynchronizationJobSchemaDirectoryCommand : PSCmdlet
+    public class GetMgServicePrincipalSynchronizationJobSchemaDirectoryCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ServicePrincipalId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Applications
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string DirectoryDefinitionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Applications
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgServicePrincipalSynchronizationJobSchemaDirectory_Get or Get-MgServicePrincipalSynchronizationJobSchemaDirectory_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DirectoryDefinitionId : SynchronizationJobId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DirectoryDefinitionId : SynchronizationJobId);
                 return;
             }
         }

@@ -78,8 +78,9 @@ public sealed class GenerationServiceRegressionTests
         var document = BuildDocument(HttpMethod.Get, "/users/{user-id}", operation);
         var files = await RunGeneratorAndListFilesAsync(document);
 
-        Assert.Contains("Shared.g.cs", files);
-        Assert.DoesNotContain(files, f => f != "Shared.g.cs");
+        // No Shared.g.cs anymore - its helpers live in Microsoft.Graph.Wrapper.Runtime -
+        // so a spec with nothing supported emits nothing at all.
+        Assert.Empty(files);
     }
 
     [Fact]
@@ -110,8 +111,9 @@ public sealed class GenerationServiceRegressionTests
         var document = BuildDocument(HttpMethod.Put, "/users/{user-id}/photo/$value", operation);
         var files = await RunGeneratorAndListFilesAsync(document);
 
-        Assert.Contains("Shared.g.cs", files);
-        Assert.DoesNotContain(files, f => f != "Shared.g.cs");
+        // No Shared.g.cs anymore - its helpers live in Microsoft.Graph.Wrapper.Runtime -
+        // so a spec with nothing supported emits nothing at all.
+        Assert.Empty(files);
     }
 
     [Fact]
@@ -143,8 +145,9 @@ public sealed class GenerationServiceRegressionTests
         var document = BuildDocument(HttpMethod.Post, "/users", operation);
         var files = await RunGeneratorAndListFilesAsync(document);
 
-        Assert.Contains("Shared.g.cs", files);
-        Assert.DoesNotContain(files, f => f != "Shared.g.cs");
+        // No Shared.g.cs anymore - its helpers live in Microsoft.Graph.Wrapper.Runtime -
+        // so a spec with nothing supported emits nothing at all.
+        Assert.Empty(files);
     }
 
     [Theory]
@@ -179,8 +182,9 @@ public sealed class GenerationServiceRegressionTests
         var document = BuildDocument(HttpMethod.Get, path, operation);
         var files = await RunGeneratorAndListFilesAsync(document);
 
-        Assert.Contains("Shared.g.cs", files);
-        Assert.DoesNotContain(files, f => f != "Shared.g.cs");
+        // No Shared.g.cs anymore - its helpers live in Microsoft.Graph.Wrapper.Runtime -
+        // so a spec with nothing supported emits nothing at all.
+        Assert.Empty(files);
     }
 
     // Two operations resolving to the same cmdlet file must fail generation loudly,

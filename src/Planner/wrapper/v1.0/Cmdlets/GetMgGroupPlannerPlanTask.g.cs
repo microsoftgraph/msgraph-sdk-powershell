@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Planner.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Planner
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Planner
     [Cmdlet(VerbsCommon.Get, "MgGroupPlannerPlanTask", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerTaskCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerTask), ParameterSetName = new[] { "Get" })]
-    public class GetMgGroupPlannerPlanTaskCommand : PSCmdlet
+    public class GetMgGroupPlannerPlanTaskCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string GroupId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Planner
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string PlannerTaskId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Planner
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgGroupPlannerPlanTask_Get or Get-MgGroupPlannerPlanTask_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Planner
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? PlannerTaskId : PlannerPlanId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? PlannerTaskId : PlannerPlanId);
                 return;
             }
         }

@@ -118,10 +118,21 @@ function Get-GraphRouteMap {
     # the day the projects retarget - it did exactly that when net10.0 became netstandard2.0.
     $binDir = Join-Path (Split-Path $CmdletsPath -Parent) "bin/$BuildConfiguration"
     if (-not (Test-Path $binDir)) { return $null }
+    # Exclude the shared runtime and client assemblies, which also match the wrapper prefix:
+    # the runtime dll sorts alphabetically before module names S..U, so picking "first match"
+    # without this filter handed those modules an assembly with no cmdlets in it.
     $dll = Get-ChildItem -Path $binDir -Recurse -Filter 'Microsoft.Graph.Wrapper.*.dll' -File -ErrorAction SilentlyContinue |
-        Where-Object { $_.Name -notlike '*.Client.dll' } | Select-Object -First 1
+        Where-Object { $_.Name -notlike '*.Client.dll' -and $_.Name -ne 'Microsoft.Graph.Wrapper.Runtime.dll' } |
+        Select-Object -First 1
     if (-not $dll) { return $null }
 
+    # The wrapper bins deliberately carry no kiota assemblies (PruneModuleBin in the module
+    # template): at run time the installed Microsoft.Graph.Authentication serves them through
+    # its AssemblyResolve hook, and this gate needs the same hook for the same reason - a cmdlet
+    # property typed as the kiota Date/Time structs is a value-type field the loader resolves
+    # eagerly at type load, and without the hook GetTypes() drops exactly those cmdlets from the
+    # route map, silently deflating the matched count.
+    Import-Module Microsoft.Graph.Authentication -ErrorAction Stop
     $assembly = [System.Reflection.Assembly]::LoadFrom($dll.FullName)
     # The cmdlet classes derive from PSCmdlet, so a host without the PowerShell SDK loaded cannot
     # realise them; the partial list the exception carries is the usable result.

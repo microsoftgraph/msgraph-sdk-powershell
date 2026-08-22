@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Search.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Search
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Search
     [Cmdlet(VerbsCommon.Get, "MgExternalConnectionItemActivity", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalActivityCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalActivity), ParameterSetName = new[] { "Get" })]
-    public class GetMgExternalConnectionItemActivityCommand : PSCmdlet
+    public class GetMgExternalConnectionItemActivityCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ExternalConnectionId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Search
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string ExternalActivityId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Search
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgExternalConnectionItemActivity_Get or Get-MgExternalConnectionItemActivity_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Search
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ExternalActivityId : ExternalItemId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ExternalActivityId : ExternalItemId);
                 return;
             }
         }

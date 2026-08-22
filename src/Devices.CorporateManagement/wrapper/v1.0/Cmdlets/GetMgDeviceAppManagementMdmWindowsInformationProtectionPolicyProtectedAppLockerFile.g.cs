@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMdmWindowsInformationProtectionPolicyProtectedAppLockerFile", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.WindowsInformationProtectionAppLockerFileCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.WindowsInformationProtectionAppLockerFile), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceAppManagementMdmWindowsInformationProtectionPolicyProtectedAppLockerFileCommand : PSCmdlet
+    public class GetMgDeviceAppManagementMdmWindowsInformationProtectionPolicyProtectedAppLockerFileCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MdmWindowsInformationProtectionPolicyId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string WindowsInformationProtectionAppLockerFileId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyProtectedAppLockerFile_Get or Get-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyProtectedAppLockerFile_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? WindowsInformationProtectionAppLockerFileId : MdmWindowsInformationProtectionPolicyId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? WindowsInformationProtectionAppLockerFileId : MdmWindowsInformationProtectionPolicyId);
                 return;
             }
         }

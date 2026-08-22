@@ -120,9 +120,9 @@ public sealed partial class PowerShellWrapperGenerationService
         foreach (var stale in Directory.GetFiles(config.OutputPath, "*.g.cs"))
             File.Delete(stale);
 
-        await File.WriteAllTextAsync(Path.Combine(config.OutputPath, "Shared.g.cs"), CmdletEmitter.EmitSharedAuth(ctx), cancellationToken).ConfigureAwait(false);
-        LogWroteSharedFile();
-
+        // No per-module Shared.g.cs: the helpers it carried (GraphRouteAttribute, UntypedValue,
+        // the bearer provider) live once in Microsoft.Graph.Wrapper.Runtime, which every module
+        // project references.
         var written = 0;
         var getOperations = new List<GetOperationRecord>();
 
@@ -440,8 +440,6 @@ public sealed partial class PowerShellWrapperGenerationService
         return 1;
     }
 
-    [LoggerMessage(Level = LogLevel.Information, Message = "Wrote Shared.g.cs")]
-    private partial void LogWroteSharedFile();
     [LoggerMessage(Level = LogLevel.Information, Message = "Wrote {FileName} ({Verb}-{Noun})")]
     private partial void LogWroteCmdletFile(string fileName, string verb, string noun);
     [LoggerMessage(Level = LogLevel.Information, Message = "Wrote {Count} file(s) to {OutputPath}")]

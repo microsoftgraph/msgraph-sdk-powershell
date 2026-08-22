@@ -11,8 +11,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <AssemblyName>Microsoft.Graph.Wrapper.Identity.SignIns</AssemblyName>
-    <!-- Copy every dependency next to the module dll so Import-Module resolves them. -->
+    <!-- Copy the dependency closure into bin, then PruneModuleBin (below) cuts it down to
+         exactly what the module folder may carry. -->
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <!-- Without this the SDK follows Client/Runtime through to Microsoft.Graph.Authentication.Core
+         and copies it here as a transitive project output, which no asset attribute on the direct
+         references can stop. The installed Microsoft.Graph.Authentication module must be the only
+         source of the Authentication assemblies at run time (see PruneModuleBin). -->
+    <DisableTransitiveProjectReferences>true</DisableTransitiveProjectReferences>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
 
@@ -35,7 +41,26 @@
 
   <ItemGroup>
     <ProjectReference Include="Client\Client.csproj" />
-    <ProjectReference Include="..\..\..\Authentication\Authentication\Microsoft.Graph.Authentication.csproj" />
+    <!-- Compile against the repo's Authentication project, but never copy it: at run time the
+         manifest's RequiredModules loads the installed Microsoft.Graph.Authentication, and a
+         module-local copy is a second assembly with a second GraphSession static. -->
+    <ProjectReference Include="..\..\..\Authentication\Authentication\Microsoft.Graph.Authentication.csproj" Private="false" />
+    <ProjectReference Include="..\..\..\GraphWrapperRuntime\Runtime\Microsoft.Graph.Wrapper.Runtime.csproj" />
   </ItemGroup>
+
+  <!-- The module folder may carry ONLY the wrapper assemblies plus the kiota dependencies the
+       installed Microsoft.Graph.Authentication module does not ship (Std.UriTemplate,
+       Microsoft.Kiota.Serialization.Multipart). Every other dependency must resolve from that
+       module's isolated load context: a copy here loads a second type identity into the default
+       context, and the first request through the shared session pipeline dies casting between
+       the two (proven live: ObservabilityOptions, kiota middleware vs wrapper adapter).
+       Removal is by package identity, not filename, so the kept assemblies' versions stay
+       derived from the restore graph instead of being pinned here. -->
+  <Target Name="PruneModuleBin" AfterTargets="ResolveReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)"
+          Condition="'%(ReferenceCopyLocalPaths.NuGetPackageId)' != '' And '%(ReferenceCopyLocalPaths.NuGetPackageId)' != 'Std.UriTemplate' And '%(ReferenceCopyLocalPaths.NuGetPackageId)' != 'Microsoft.Kiota.Serialization.Multipart'" />
+    </ItemGroup>
+  </Target>
 
 </Project>
