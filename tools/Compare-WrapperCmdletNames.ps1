@@ -126,6 +126,13 @@ function Get-GraphRouteMap {
         Select-Object -First 1
     if (-not $dll) { return $null }
 
+    # The wrapper bins deliberately carry no kiota assemblies (PruneModuleBin in the module
+    # template): at run time the installed Microsoft.Graph.Authentication serves them through
+    # its AssemblyResolve hook, and this gate needs the same hook for the same reason - a cmdlet
+    # property typed as the kiota Date/Time structs is a value-type field the loader resolves
+    # eagerly at type load, and without the hook GetTypes() drops exactly those cmdlets from the
+    # route map, silently deflating the matched count.
+    Import-Module Microsoft.Graph.Authentication -ErrorAction Stop
     $assembly = [System.Reflection.Assembly]::LoadFrom($dll.FullName)
     # The cmdlet classes derive from PSCmdlet, so a host without the PowerShell SDK loaded cannot
     # realise them; the partial list the exception carries is the usable result.
