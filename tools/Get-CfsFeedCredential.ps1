@@ -35,7 +35,21 @@ function Register-CfsFeed {
     # Registers the private feed as a Trusted PSRepository (idempotent). Persisted under the user's
     # PowerShellGet config, so a single registration per job is visible to later steps and runspaces.
     $cred = Get-CfsFeedCredential
-    if (-not (Get-PSRepository -Name $script:CfsFeedName -ErrorAction SilentlyContinue)) {
-        Register-PSRepository -Name $script:CfsFeedName -SourceLocation $script:CfsFeedUrl -InstallationPolicy Trusted -Credential $cred
+    if (Get-PSRepository -Name $script:CfsFeedName -ErrorAction SilentlyContinue) {
+        return
+    }
+    try {
+        Register-PSRepository -Name $script:CfsFeedName -SourceLocation $script:CfsFeedUrl -InstallationPolicy Trusted -Credential $cred -ErrorAction Stop
+    }
+    catch {
+        # A package source with this name may already exist at the PackageManagement layer (e.g. a
+        # NuGet source, or a registration from an earlier step/runspace) that Get-PSRepository does
+        # not surface. If a usable PSRepository now exists, the registration effectively succeeded, so
+        # swallow the "already added" collision; otherwise rethrow the real failure.
+        if (Get-PSRepository -Name $script:CfsFeedName -ErrorAction SilentlyContinue) {
+            Write-Host "PSRepository '$($script:CfsFeedName)' is already registered; continuing."
+            return
+        }
+        throw
     }
 }
