@@ -61,8 +61,12 @@ extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
     pool: $(BuildAgent)
+    # Onboard to 1ES network isolation enforcement for CFSClean / SFI compliance. Enforce mode with an
+    # allowlist for the package ecosystems this build uses so it resolves from approved feeds while
+    # non-allowlisted public egress is blocked.
     settings:
-      networkIsolationPolicy: Permissive
+      networkIsolationMode: Enforce
+      networkIsolationPolicy: Good,GitHub,NuGet,PowershellGallery,CFSClean,CFSClean3
     sdl:
       binskim:
         enabled: false
