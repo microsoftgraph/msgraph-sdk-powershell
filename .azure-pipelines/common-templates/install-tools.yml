@@ -69,10 +69,14 @@ steps:
     inputs:
       targetType: inline
       pwsh: true
+      errorActionPreference: continue
       script: |
         # Register the private Azure Artifacts feed (PowerShell Gallery upstream) as a Trusted
         # PSRepository so generation-time Install-Module/Find-Module resolve through it instead of
         # the public PowerShell Gallery. Persisted for the job (visible to later steps + runspaces).
+        # errorActionPreference is 'continue' because PackageManagement emits benign non-terminating
+        # errors (e.g. source-already-registered) that would otherwise fail the task; Register-CfsFeed
+        # throws on genuine failure, which still fails the step.
         . "$(Build.SourcesDirectory)/tools/Get-CfsFeedCredential.ps1"
         Register-CfsFeed
         Get-PSRepository -Name PowerShell_V2_Build | Format-List Name, SourceLocation, InstallationPolicy, Trusted
