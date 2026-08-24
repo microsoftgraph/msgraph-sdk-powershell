@@ -52,3 +52,46 @@ function Register-CfsFeed {
     }
     Write-Host "Registered PSRepository '$($script:CfsFeedName)'."
 }
+
+function Get-CfsModuleGuid {
+    # Returns the GUID of the module already published to the private feed, or $null when it is not
+    # published there or the GUID cannot be determined. The Azure Artifacts feed does not surface the
+    # module GUID via Find-Module's AdditionalMetadata (public PS Gallery does), so download the
+    # package (nupkg) from the feed and read the GUID out of its manifest. Callers mint a fresh GUID
+    # when this returns $null, preserving the original "first publish" behaviour without ever querying
+    # the public PowerShell Gallery.
+    param(
+        [Parameter(Mandatory)][string] $Name
+    )
+    $cred = Get-CfsFeedCredential
+    $found = Find-Module -Name $Name -Repository $script:CfsFeedName -Credential $cred -ErrorAction SilentlyContinue
+    if ($null -eq $found) { return $null }
+    $tmp = Join-Path ([System.IO.Path]::GetTempPath()) ("cfsguid_" + [System.Guid]::NewGuid().ToString('N'))
+    try {
+        New-Item -ItemType Directory -Path $tmp -Force | Out-Null
+        # Save-Package (NuGet provider) downloads just this package's nupkg (no dependency resolution),
+        # so it stays cheap even for meta-modules that depend on many sub-modules.
+        Save-Package -Name $Name -RequiredVersion $found.Version -Source $script:CfsFeedUrl -ProviderName NuGet -Credential $cred -Path $tmp -Force -ErrorAction Stop *> $null
+        $nupkg = Get-ChildItem -Path $tmp -Filter '*.nupkg' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+        if ($null -eq $nupkg) { return $null }
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        $zip = [System.IO.Compression.ZipFile]::OpenRead($nupkg.FullName)
+        try {
+            $entry = $zip.Entries | Where-Object { $_.Name -eq "$Name.psd1" } | Select-Object -First 1
+            if ($null -eq $entry) { return $null }
+            $reader = [System.IO.StreamReader]::new($entry.Open())
+            try { $content = $reader.ReadToEnd() } finally { $reader.Dispose() }
+        }
+        finally { $zip.Dispose() }
+        $match = [regex]::Match($content, "(?im)^\s*GUID\s*=\s*['`"]([0-9a-fA-F-]{36})['`"]")
+        if ($match.Success) { return $match.Groups[1].Value }
+        return $null
+    }
+    catch { return $null }
+    finally {
+        Remove-Item -Path $tmp -Recurse -Force -ErrorAction SilentlyContinue
+        # PackageManagement/NuGet can leave a stray non-zero $LASTEXITCODE from an internal native call;
+        # this helper is a side-effect-free read, so do not let that leak into the caller's exit code.
+        $global:LASTEXITCODE = 0
+    }
+}
