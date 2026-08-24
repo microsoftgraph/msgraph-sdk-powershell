@@ -53,6 +53,18 @@ function Register-CfsFeed {
     Write-Host "Registered PSRepository '$($script:CfsFeedName)'."
 }
 
+function Unregister-PublicPSGallery {
+    # Removes the public PowerShell Gallery repository so module installs cannot resolve to it and are
+    # never ambiguous between PSGallery and the private feed (Install-Module errors when a module name
+    # matches more than one registered repository). The private feed has a PS Gallery upstream, so it
+    # can still serve every module. Persisted per-user, so later steps/runspaces inherit the removal.
+    if (Get-PSRepository -Name 'PSGallery' -ErrorAction SilentlyContinue) {
+        Unregister-PSRepository -Name 'PSGallery' -ErrorAction SilentlyContinue *> $null
+        Write-Host "Unregistered public 'PSGallery'; module installs now resolve only through '$($script:CfsFeedName)'."
+    }
+    $global:LASTEXITCODE = 0
+}
+
 function Get-CfsModuleGuid {
     # Returns the GUID of the module already published to the private feed, or $null when it is not
     # published there or the GUID cannot be determined. The Azure Artifacts feed does not surface the
