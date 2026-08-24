@@ -55,6 +55,11 @@ dotnet build configuration. Default: Debug.
 .PARAMETER SkipKiota
 Reuse the previously generated client (fast inner loop when only the wrappers changed).
 
+.PARAMETER Prerelease
+Prerelease label carried by every package (alphanumeric, never empty). Wrapper packages are
+previews by definition; a stable-versioned one would collide with the service-module release
+train, so the label is not optional.
+
 .PARAMETER Pack
 Also produce a package per module under <ArtifactsLocation>/<Module>/.
 
@@ -79,6 +84,13 @@ param(
     [string]$Configuration = 'Debug',
     [string]$ModuleMappingConfigPath,
     [string]$ArtifactsLocation,
+    # Wrapper packages always carry a prerelease label: their ModuleVersion deliberately tracks
+    # the service-module release train (ModuleMetadata.json), so a stable-versioned wrapper
+    # package would collide number-for-number with the real SDK release it will eventually
+    # replace. The label is alphanumeric only - the PowerShellGet prerelease grammar allows
+    # nothing else.
+    [ValidatePattern('^[A-Za-z0-9]+$')]
+    [string]$Prerelease = 'wrapperpreview01',
     [switch]$SkipKiota,
     [switch]$Pack
 )
@@ -91,7 +103,7 @@ $generatorProject = Join-Path $repoRoot 'tools\WrapperGenerator'
 $authCsproj = Join-Path $repoRoot 'src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj'
 $runtimeCsproj = Join-Path $repoRoot 'src\GraphWrapperRuntime\Runtime\Microsoft.Graph.Wrapper.Runtime.csproj'
 # The Authentication version the wrappers compile against, for the manifest's RequiredModules
-# minimum. Read from the project, never written here.
+# minimum and the nuspec dependency floor. Read from the project, never written here.
 $authVersion = ([xml](Get-Content $authCsproj -Raw)).Project.PropertyGroup.Version |
     Where-Object { $_ } | Select-Object -First 1
 if (-not $authVersion) { throw "no Version in $authCsproj" }
@@ -118,8 +130,10 @@ $moduleMetadataPath = Join-Path $repoRoot 'config\ModuleMetadata.json'
 $versionEntry = $moduleMetadata.versions[$ApiVersion]
 if (-not $versionEntry -or -not $versionEntry.version) { throw "No version configured for '$ApiVersion' in $moduleMetadataPath." }
 $moduleVersion = $versionEntry.version
-$modulePrerelease = $versionEntry.prerelease
-$fullVersion = if ($modulePrerelease) { "$moduleVersion-$modulePrerelease" } else { $moduleVersion }
+# The metadata prerelease field belongs to the service-module release train and is deliberately
+# not read; the wrapper label (validated non-empty) is appended unconditionally, because a
+# wrapper package without one cannot exist.
+$fullVersion = "$moduleVersion-$Prerelease"
 
 # The population is the specs this generator can actually read, intersected with the modules the
 # repository is configured to ship - the same two inputs tools/GenerateServiceModule.ps1 uses.
@@ -160,6 +174,32 @@ function New-ProjectFromTemplate {
         throw "unresolved placeholder(s) in $TemplatePath`: $($unresolved -join ', ')"
     }
     Set-Content -Path $DestinationPath -Value $content -Encoding utf8
+}
+
+# The manifest GUID is a module's identity for ModuleSpecification matching (RequiredModules,
+# Import-Module -FullyQualifiedName), so it must be the SAME across builds. The shipped SDK
+# locks GUIDs to the published gallery entry (tools/BuildModule.ps1, autorest.powershell#981);
+# a never-published wrapper has no gallery entry to lock to, so its identity is DERIVED
+# instead: an RFC 4122 name-based (v5) UUID - SHA-1 over a fixed namespace GUID plus the module
+# name - identical on every build with no lookup table to maintain. The namespace constant and
+# the algorithm ARE the identity contract: changing either orphans every previously installed
+# wrapper module.
+function Get-WrapperModuleGuid {
+    param([Parameter(Mandatory)][string]$ModuleName)
+
+    $namespaceBytes = ([guid]'8a11e1b5-95b3-4dbf-b0ba-6d58b0f6f6a4').ToByteArray()
+    # Guid.ToByteArray() emits the first three fields little-endian; RFC 4122 hashes network order.
+    [Array]::Reverse($namespaceBytes, 0, 4); [Array]::Reverse($namespaceBytes, 4, 2); [Array]::Reverse($namespaceBytes, 6, 2)
+    $sha1 = [System.Security.Cryptography.SHA1]::Create()
+    try {
+        $hash = $sha1.ComputeHash([byte[]]($namespaceBytes + [System.Text.Encoding]::UTF8.GetBytes($ModuleName)))
+    }
+    finally { $sha1.Dispose() }
+    $guidBytes = $hash[0..15]
+    $guidBytes[6] = ($guidBytes[6] -band 0x0F) -bor 0x50   # version 5
+    $guidBytes[8] = ($guidBytes[8] -band 0x3F) -bor 0x80   # RFC 4122 variant
+    [Array]::Reverse($guidBytes, 0, 4); [Array]::Reverse($guidBytes, 4, 2); [Array]::Reverse($guidBytes, 6, 2)
+    [guid][byte[]]$guidBytes
 }
 
 function Get-CompiledCmdletNames {
@@ -340,7 +380,9 @@ function Build-Module {
         $manifestArgs = @{
             Path              = $psd1Path
             RootModule        = "$moduleName.dll"
+            Guid              = Get-WrapperModuleGuid -ModuleName $moduleName
             ModuleVersion     = $moduleVersion
+            Prerelease        = $Prerelease
             RequiredModules   = @(@{ ModuleName = 'Microsoft.Graph.Authentication'; ModuleVersion = $authVersion })
             Author            = 'Microsoft Graph'
             CompanyName       = 'Microsoft'
@@ -350,14 +392,15 @@ function Build-Module {
             AliasesToExport   = @()
             VariablesToExport = @()
         }
-        if ($modulePrerelease) { $manifestArgs.Prerelease = $modulePrerelease }
-        # Std.UriTemplate is requested by the kiota HTTP library, which lives in Authentication's
-        # isolated load context - a requester whose directory probing can never reach this module
-        # folder, and whose request Authentication cannot serve because its Dependencies folder
-        # does not ship the assembly. Preloading it here puts it in the default context, where
-        # the isolated context's fallback resolution unifies with it. The Multipart serializer
-        # needs no entry: its requester is the client assembly in this folder, so normal
-        # module-directory probing finds it. Proven live in Test-LiveSmoke on the session path.
+        # Std.UriTemplate is requested by Microsoft.Kiota.Abstractions (measured: the AssemblyRef
+        # lives there, not in the HTTP library). That requester sits in Authentication's isolated
+        # load context, so its directory probing can never reach this module folder - and
+        # Authentication cannot serve the request either, because its Dependencies folder does
+        # not ship the assembly. Preloading it here puts it in the default context, where the
+        # isolated context's fallback resolution unifies with it. The Multipart serializer needs
+        # no entry: its requester is the client assembly in this folder, so normal
+        # module-directory probing finds it. Proven live by tools/Test-WrapperLive.ps1 on the
+        # session path.
         $manifestArgs.RequiredAssemblies = @('Std.UriTemplate.dll')
         New-ModuleManifest @manifestArgs
 
@@ -368,6 +411,12 @@ function Build-Module {
             # and the shared Authentication/kiota closure via the PruneModuleBin target - both at
             # the project level, the only place that intent can be expressed. See
             # tools/Templates/WrapperModule.csproj.template for why the closure must not ship.
+            # The nuspec must declare the Authentication dependency even though the psd1 already
+            # does: Install-Module resolves dependencies from NUGET metadata, not the manifest,
+            # so without this element a clean machine gets the wrapper with no Authentication and
+            # import fails. Declared as an open floor, not the shipped SDK's exact bracket pin -
+            # matching the manifest's RequiredModules minimum and the use-latest ruling (Ramses,
+            # 2026-08-19: pins existed only for AutoRest limitations).
             $nuspecPath = Join-Path $binDir "$moduleName.nuspec"
             $tags = ($moduleMetadata['tags']) -join ' '
             # Native runtime payloads only exist when a dependency ships them; dotnet pack fails
@@ -392,6 +441,9 @@ function Build-Module {
     <releaseNotes>$($moduleMetadata['releaseNotes'])</releaseNotes>
     <copyright>$($moduleMetadata['copyright'])</copyright>
     <tags>$tags</tags>
+    <dependencies>
+      <dependency id="Microsoft.Graph.Authentication" version="$authVersion" />
+    </dependencies>
   </metadata>
   <files>
     <file src="$moduleName.psd1" />
