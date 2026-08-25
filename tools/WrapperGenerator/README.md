@@ -127,7 +127,94 @@ Filtered OpenAPI (Graph)
    └─► [2] WrapperGenerator ─► the cmdlet wrappers        (this tool)
 ```
 
-The wrappers compile and run only alongside step 1's output. Wiring the two into one buildable module is later work (see Gaps).
+The wrappers compile and run only alongside step 1's output. `tools/Build-WrapperModule.ps1` runs both steps and wires the result into one buildable module; the next section is that path end to end.
+
+## Build a module end to end
+
+`tools/Build-WrapperModule.ps1` runs both steps above and everything after them, so one command
+takes a module from an OpenAPI document to something `Import-Module` accepts.
+
+**Prerequisites** — the .NET SDK, PowerShell 7+, and the kiota CLI on `PATH`:
+
+```powershell
+dotnet tool install --global Microsoft.OpenApi.Kiota
+```
+
+**Build one module:**
+
+```powershell
+.\tools\Build-WrapperModule.ps1 -Module Mail
+```
+
+Everything lands in `src/Mail/wrapper/v1.0/`. Per module the script runs:
+
+| Step | Produces |
+|---|---|
+| 1. `kiota generate` | `Client/` — the `ApiClient` and its models |
+| 2. WrapperGenerator | `Cmdlets/` — one `*.g.cs` per cmdlet, plus `Shared.g.cs` |
+| 3–4. project files from `tools/Templates/` | `Client/Client.csproj` and `Microsoft.Graph.Wrapper.Mail.csproj` |
+| 5. `dotnet build` | `bin/{Configuration}/netstandard2.0/Microsoft.Graph.Wrapper.Mail.dll` |
+| 6. `New-ModuleManifest` | `Microsoft.Graph.Wrapper.Mail.psd1`, next to the dll |
+| 7. `dotnet pack` (only with `-Pack`) | `artifacts/Mail/Microsoft.Graph.Wrapper.Mail.{version}.nupkg` |
+
+Steps 1 and 2 read the **same** OpenAPI document, so the wrappers always match the client they
+compile against — that is the reason one script owns both rather than two run in sequence.
+
+**Import what you just built:**
+
+```powershell
+Import-Module .\src\Mail\wrapper\v1.0\bin\Debug\netstandard2.0\Microsoft.Graph.Wrapper.Mail.psd1
+```
+
+The module is named `Microsoft.Graph.Wrapper.{Module}`, so it imports side by side with an
+installed `Microsoft.Graph.{Module}` without colliding.
+
+**The switches you will actually reach for:**
+
+| To | Use |
+|---|---|
+| build every module configured for the API version | omit `-Module` |
+| re-run only the wrappers, reusing the client on disk | `-SkipKiota` |
+| build what the gates build | `-Configuration Release` |
+| read a different spec root | `-SpecRoot` (default `openApiDocs_KiotaCompat`) |
+
+`Get-Help .\tools\Build-WrapperModule.ps1 -Full` documents each parameter and why its default is
+what it is.
+
+**Package it** — `-Pack` writes one nupkg per module under `artifacts/{Module}/`:
+
+```powershell
+.\tools\Build-WrapperModule.ps1 -ApiVersion v1.0 -Pack
+```
+
+Packages are `3.0.0` (`-ModuleVersion`) and always carry a prerelease label (`-Prerelease`,
+defaulting to `alpha{build id}` in CI and `alpha{UTC timestamp}` locally). Neither default is
+cosmetic. The wrappers are the v3 line, not a build of the v2 service-module release train whose
+version lives in `config/ModuleMetadata.json`, so a stable-versioned wrapper package would
+collide number-for-number with a real SDK release; and two packages sharing an id and version but
+not their contents are indistinguishable to a feed and to anyone who already installed one.
+
+Three properties are what make a package installable rather than merely produced, and each is
+there because its absence was observed: the nuspec declares `Microsoft.Graph.Authentication` as a
+dependency, because `Install-Module` resolves from NuGet metadata and not from the manifest, so
+without it a clean machine gets a wrapper that cannot import; the prerelease label is mandatory
+rather than optional; and the manifest GUID is derived from the module name — a name-based RFC
+4122 UUID, identical on every build — so `Update-Module` keeps its identity across handouts
+instead of seeing a new module each time.
+
+**Check it** — the smoke test reads the **package**, not `bin/`, in a fresh pwsh process per
+module. Importing build output proves the compiler ran; it does not prove the artifact a user
+installs carries the assembly, its dependencies and a manifest that agrees with them. So pack
+first:
+
+```powershell
+.\tools\Build-WrapperModule.ps1 -Module Mail -Pack
+.\tools\Test-WrapperModule.ps1 -Module Mail
+```
+
+It refuses a package packed before any of its compile inputs under `src` — a green run cannot be
+a stale one — and reports `n/a` rather than a pass for a shape the module never binds. The full
+gate set, in order and with a population reported per gate, is `.\tools\Invoke-WrapperGates.ps1`.
 
 ## The source files
 
@@ -144,7 +231,10 @@ The wrappers compile and run only alongside step 1's output. Wiring the two into
 | `OperationInfo.cs`, `EmitContext.cs`, `GeneratorConfig.cs` | Small data/config carriers |
 | `GeneratorExtensions.cs` | String + schema helper methods |
 
-## Build, run, test
+## Run the generator on its own
+
+Step 2 by itself — for changing the generator, or emitting a handful of operations without
+building a whole module.
 
 **Build:**
 
@@ -207,8 +297,7 @@ diff shows exactly what the change did to the output:
 .\tools\New-WrapperOutputManifest.ps1        # refresh docs/WrapperCmdlets-V1.0*.csv
 ```
 
-Omit `-Module` to build every module configured for the API version; add `-Pack` to produce a
-package per module under `artifacts/{Module}/`.
+The switches are the same ones described under [Build a module end to end](#build-a-module-end-to-end).
 
 `docs/WrapperCmdlets-V1.0.csv` is the reviewable inventory of that output — one row per emitted
 cmdlet with its module, verb, noun and request path — with per-module totals in
@@ -233,12 +322,12 @@ dotnet test tools/WrapperGenerator.Tests
 .\tools\Test-BodyBindingCoverage.ps1
 
 # 5. Runtime gate: the module imports and each bound shape accepts what a person would type
-.\tools\Test-WrapperModule.ps1 -Module <names> -Configuration Release
+.\tools\Test-WrapperModule.ps1 -Module <names>          # needs -Pack output; see above
 ```
 
 The unit tests guard the naming and classification rules (their expected values are real published names from `src/Authentication/Authentication/custom/common/MgCommandMetadata.json`). The parity gate checks actual generated output against that same inventory; names on the deliberate-corrections list ([docs/edge-cases/naming-edge-cases.md](docs/edge-cases/naming-edge-cases.md)) are reported as `[CORRECTED]` instead of failing.
 
-The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each module against the kiota client it was generated with, the only authority on whether an emitted parameter's CLR type matches the member it assigns. Compilation cannot see an *omitted* member, so the omission oracle exists separately; neither can see whether PowerShell converts a value at runtime, so the runtime gate exists separately again. Naming parity is enforced independently by `Compare-WrapperCmdletNames.ps1`. The runtime gate refuses a binary older than any of its compiled inputs — `Build-` and `Test-` both default to `Debug`, so a Release-only build once left it validating a three-day-old assembly and reporting green.
+The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each module against the kiota client it was generated with, the only authority on whether an emitted parameter's CLR type matches the member it assigns. Compilation cannot see an *omitted* member, so the omission oracle exists separately; neither can see whether PowerShell converts a value at runtime, so the runtime gate exists separately again. Naming parity is enforced independently by `Compare-WrapperCmdletNames.ps1`. The runtime gate reads the packed artifact rather than `bin/`, and refuses one packed before any of its compile inputs under `src`, so it cannot validate a stale build and report green.
 
 ## Gaps / not done yet
 
