@@ -10,40 +10,6 @@ parameters:
     type: string
 
 steps:
-  - task: PowerShell@2
-    displayName: 'Diagnose ACR network access'
-    continueOnError: true
-    inputs:
-      targetType: Inline
-      pwsh: true
-      script: |
-        $ErrorActionPreference = 'Stop'
-        $registryHost = '${{ parameters.Registry }}'
-        $registryUri = "https://$registryHost/v2/"
-
-        Write-Host "Resolving $registryHost."
-        $dnsRecords = Resolve-DnsName -Name $registryHost
-        $dnsOutput = $dnsRecords |
-          Select-Object Name, Type, IPAddress, NameHost |
-          Format-Table -AutoSize |
-          Out-String
-        Write-Host $dnsOutput
-
-        Write-Host "Testing TCP connectivity to ${registryHost}:443."
-        $connection = Test-NetConnection -ComputerName $registryHost -Port 443 -InformationLevel Detailed
-        $connectionOutput = $connection |
-          Select-Object ComputerName, RemoteAddress, RemotePort, InterfaceAlias, SourceAddress, TcpTestSucceeded |
-          Format-List |
-          Out-String
-        Write-Host $connectionOutput
-        if (-not $connection.TcpTestSucceeded) {
-          throw "The build agent can't establish a TCP connection to ${registryHost}:443."
-        }
-
-        Write-Host "Requesting $registryUri. An HTTP 401 response confirms that the ACR endpoint is reachable."
-        $response = Invoke-WebRequest -Uri $registryUri -Method Get -SkipHttpErrorCheck -TimeoutSec 30
-        Write-Host "ACR endpoint returned HTTP $([int]$response.StatusCode) $($response.StatusDescription)."
-
   - task: AzurePowerShell@5
     displayName: 'Publish PowerShell packages to ACR'
     inputs:
