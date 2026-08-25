@@ -65,6 +65,33 @@ function Unregister-PublicPSGallery {
     $global:LASTEXITCODE = 0
 }
 
+function Install-CfsToolingModules {
+    # Pre-installs the generation-time tooling modules from the private feed once, in this controlled
+    # credential context, so the lazy Install-Module calls during generation are skipped by their
+    # Get-Module -ListAvailable guards. This avoids repeating authenticated private-feed installs across
+    # many generation steps and parallel runspaces (where credential/source resolution is fragile).
+    $cred = Get-CfsFeedCredential
+    $tooling = @(
+        @{ Name = 'PlatyPS' },
+        @{ Name = 'Pester'; SkipPublisherCheck = $true },
+        @{ Name = 'powershell-yaml'; AcceptLicense = $true },
+        @{ Name = 'PowerHTML' }
+    )
+    foreach ($t in $tooling) {
+        if (Get-Module -Name $t.Name -ListAvailable) {
+            Write-Host "Tooling module '$($t.Name)' already available; skipping."
+            continue
+        }
+        $params = @{ Name = $t.Name; Repository = $script:CfsFeedName; Scope = 'AllUsers'; Force = $true; AllowClobber = $true }
+        if ($null -ne $cred) { $params.Credential = $cred }
+        if ($t.SkipPublisherCheck) { $params.SkipPublisherCheck = $true }
+        if ($t.AcceptLicense) { $params.AcceptLicense = $true }
+        Install-Module @params
+        Write-Host "Installed tooling module '$($t.Name)' from '$($script:CfsFeedName)'."
+    }
+    $global:LASTEXITCODE = 0
+}
+
 function Get-CfsModuleGuid {
     # Returns the GUID of the module already published to the private feed, or $null when it is not
     # published there or the GUID cannot be determined. The Azure Artifacts feed does not surface the
