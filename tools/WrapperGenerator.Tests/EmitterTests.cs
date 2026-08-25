@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using WrapperGenerator;
 using Xunit;
@@ -117,6 +118,103 @@ public sealed class EmitterTests
         Assert.Contains("public SwitchParameter All { get; set; }", source);
         Assert.Contains("catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)", source);
         Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException)", source);
+    }
+
+    // Delta pins (#3742). A change-tracking read is a function by classification but a paged
+    // collection in practice, so it gets its own shape. The contract and its evidence live in
+    // tools/WrapperGenerator/docs/edge-cases/delta-edge-cases.md.
+    private static string EmitDeltaSource(IReadOnlySet<string>? queryParams = null)
+    {
+        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/users/delta()"));
+        return CmdletEmitter.EmitDelta(naming, new EmitContext("Test.Client"),
+            new CmdletEmitter.CallPlan("GetAsDeltaGetResponseAsync", "DeltaGetResponse", BodyTypeName: null),
+            queryParams ?? new HashSet<string> { "$top", "$filter" });
+    }
+
+    // Initial sync and resume are one command with two parameter sets: the published SDK folds
+    // the token form into the canonical delta command rather than shipping it separately.
+    // -DeltaLink is universal, where a token argument exists on only a few routes.
+    [Fact]
+    public void DeltaEmitsSyncAndResumeParameterSets()
+    {
+        var source = EmitDeltaSource();
+
+        Assert.Contains("DefaultParameterSetName = \"DeltaSync\"", source);
+        Assert.Contains("[Parameter(Mandatory = true, ParameterSetName = \"Resume\")]", source);
+        Assert.Contains("public string DeltaLink { get; set; }", source);
+        Assert.Contains("ParameterSetName == \"Resume\"", source);
+        Assert.Contains(".WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(", source);
+
+        // Query options belong to the initial sync only.
+        Assert.Contains("[Parameter(Mandatory = false, ParameterSetName = \"DeltaSync\")]", source);
+
+        // The token form must never appear as a parameter or a command of its own.
+        Assert.DoesNotContain("Token", source);
+    }
+
+    // Resuming from a link must not demand the path ids the link already carries - the raw-URL
+    // builder discards them anyway. Found by the delta gate: with the ids mandatory in every set,
+    // -DeltaLink failed binding with "missing mandatory parameters".
+    [Fact]
+    public void DeltaScopesPathIdsToTheInitialSyncSet()
+    {
+        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/delta()"));
+        var source = CmdletEmitter.EmitDelta(naming, new EmitContext("Test.Client"),
+            new CmdletEmitter.CallPlan("GetAsDeltaGetResponseAsync", "DeltaGetResponse", BodyTypeName: null),
+            new HashSet<string>());
+
+        Assert.Contains("[Parameter(Mandatory = true, Position = 0, ParameterSetName = \"DeltaSync\")]", source);
+        Assert.DoesNotContain("[Parameter(Mandatory = true, Position = 0)]", source);
+    }
+
+    // The terminal link is published to a caller-named variable, the idiom this SDK already uses
+    // for returning a scalar beside a pipeline, and cleared first so a failed run cannot leave
+    // the previous run's link readable.
+    [Fact]
+    public void DeltaPublishesTerminalLinkAndClearsItFirst()
+    {
+        var source = EmitDeltaSource();
+
+        Assert.Contains("[Alias(\"DLV\")]", source);
+        Assert.Contains("public string? DeltaLinkVariable { get; set; }", source);
+        Assert.Contains("SessionState.PSVariable.Set(DeltaLinkVariable, null);", source);
+        Assert.Contains("SessionState.PSVariable.Set(DeltaLinkVariable, deltaLink);", source);
+
+        // Clearing must precede the request, or a failure leaves a stale link behind.
+        Assert.True(source.IndexOf("SessionState.PSVariable.Set(DeltaLinkVariable, null);", StringComparison.Ordinal)
+            < source.IndexOf("result = ParameterSetName", StringComparison.Ordinal));
+    }
+
+    // Every terminal state is decided explicitly; a response carrying both links is refused
+    // rather than guessed at.
+    [Fact]
+    public void DeltaHandlesEveryTerminalState()
+    {
+        var source = EmitDeltaSource();
+
+        Assert.Contains("if (!string.IsNullOrEmpty(nextLink) && !string.IsNullOrEmpty(deltaLink))", source);
+        Assert.Contains("\"InvalidDeltaResponse\"", source);
+        Assert.Contains("if (string.IsNullOrEmpty(nextLink)) break;", source);
+        Assert.Contains("WriteWarning(\"More results are available. Use -All to return all pages.\");", source);
+        Assert.Contains("if (Stopping) break;", source);
+        Assert.Contains("if (this.IsParameterBound(nameof(Top)) && fetched >= Top) break;", source);
+        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException)", source);
+
+        // Continuation re-applies headers only: the link already carries the query state.
+        var continuation = source[source.IndexOf(".WithUrl(nextLink)", StringComparison.Ordinal)..];
+        Assert.DoesNotContain("QueryParameters", continuation);
+    }
+
+    // Without a declared $top there is no cap to enforce, so no counter is emitted either -
+    // an unused variable would not compile cleanly and would be dead weight in every file.
+    [Fact]
+    public void DeltaWithoutTopEmitsNoCounter()
+    {
+        var source = EmitDeltaSource(new HashSet<string>());
+
+        Assert.Contains("if (Stopping) break;", source);
+        Assert.DoesNotContain("fetched", source);
+        Assert.DoesNotContain("public int Top", source);
     }
 
     // Control: non-list shapes must not grow paging machinery.

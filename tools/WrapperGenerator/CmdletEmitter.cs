@@ -26,11 +26,17 @@ public static class CmdletEmitter
     private static string EscapeLiteral(string value) =>
         value.Replace("\\", "\\\\", StringComparison.Ordinal).Replace("\"", "\\\"", StringComparison.Ordinal);
 
-    private static string PathParams(CmdletNaming naming) =>
-        string.Join("\n", naming.PathParamNames.Select((name, i) => $$"""
-                [Parameter(Mandatory = true, Position = {{i}})]
+    // parameterSetName scopes the ids to one set. Only the delta shape needs it: resuming from a
+    // link must not demand path ids the link already carries, and which the raw-URL builder
+    // discards. Everywhere else the ids belong to every set, which is what null produces.
+    private static string PathParams(CmdletNaming naming, string? parameterSetName = null)
+    {
+        var setAttr = parameterSetName is null ? "" : $", ParameterSetName = \"{parameterSetName}\"";
+        return string.Join("\n", naming.PathParamNames.Select((name, i) => $$"""
+                [Parameter(Mandatory = true, Position = {{i}}{{setAttr}})]
                 public string {{name}} { get; set; } = string.Empty;
         """));
+    }
 
     private static string TargetId(CmdletNaming naming) =>
         naming.PathParamNames.Count > 0 ? naming.PathParamNames[^1] : "null";
@@ -382,6 +388,154 @@ namespace {{ctx.CmdletNamespace}}
             }
 {{CatchBlock(TargetId(naming))}}
 {{(call.ReturnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
+        }
+    }
+}
+
+""";
+    }
+
+    // A delta (change-tracking) read. It is a function by classification, but its response is a
+    // change set spread over nextLink pages and terminated by a deltaLink, so it gets its own
+    // shape rather than the function template: items are enumerated like a list, and the
+    // terminal link is published to a caller-named variable. The token form of the same
+    // operation (delta(token='{token}')) is NOT a separate command - it is this command's
+    // Resume parameter set, reached through -DeltaLink, which works for every delta route
+    // rather than only the five whose spec declares a token argument.
+    // Contract and evidence: docs/edge-cases/delta-edge-cases.md.
+    public static string EmitDelta(CmdletNaming naming, EmitContext ctx, CallPlan call, IReadOnlySet<string> queryParamNames)
+    {
+        ArgumentNullException.ThrowIfNull(naming);
+        ArgumentNullException.ThrowIfNull(ctx);
+        ArgumentNullException.ThrowIfNull(call);
+        ArgumentNullException.ThrowIfNull(queryParamNames);
+
+        // Query options belong to the initial sync only: a resume or continuation starts from a
+        // link that already encodes them, and a raw-URL builder ignores them anyway.
+        var applicable = CollectionQueryOptions.Where(o => queryParamNames.Contains(o.ODataName)).ToList();
+        var queryParamDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl("DeltaSync")));
+        var queryBindings = string.Join("\n\n", applicable.Select(o => o.Binding));
+
+        // -Top caps the total at whole-page granularity, as it does for list cmdlets; the counter
+        // exists only when the operation declares $top.
+        var hasTop = queryParamNames.Contains("$top");
+        var fetchedDecl = hasTop ? "\n                var fetched = 0;" : "";
+        var fetchedAdd = hasTop ? "\n                        fetched += items.Count;" : "";
+        var capGuard = hasTop
+            ? "\n                    if (this.IsParameterBound(nameof(Top)) && fetched >= Top) break;"
+            : "";
+        var receiver = $"client.{naming.BuilderExpression}";
+        var continuationConfig = HeaderBindingsFor(naming.HeaderParams, extraIndent: "        ") + GenericHeadersBinding("        ");
+
+        return $$"""
+#nullable enable
+
+using System;
+using System.Collections.Generic;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using {{ctx.ClientNamespace}};
+using {{ctx.ModelsNamespace}};
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace {{ctx.CmdletNamespace}}
+{
+{{RouteAttr(naming)}}
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", DefaultParameterSetName = "DeltaSync")]
+    [OutputType(typeof({{call.ReturnTypeName}}))]
+    public class {{naming.ClassName}} : GraphClientCmdlet
+    {
+{{PathParams(naming, "DeltaSync")}}
+
+{{AccessTokenParamDecl()}}
+
+{{queryParamDecls}}
+
+        // Resumes a previous sync from the link that run published. Universal: every delta
+        // request builder accepts a raw URL, whereas a token argument exists on only a few.
+        [Parameter(Mandatory = true, ParameterSetName = "Resume")]
+        public string DeltaLink { get; set; } = string.Empty;
+
+        // Follows @odata.nextLink through the change set. Without it only the first page returns,
+        // plus a warning when more pages exist.
+        [Parameter(Mandatory = false)]
+        public SwitchParameter All { get; set; }
+
+        // Receives the @odata.deltaLink that terminates the change set, for the next sync round.
+        // A named variable is how this SDK already returns a scalar alongside a pipeline
+        // (-CountVariable on the published list cmdlets).
+        [Parameter(Mandatory = false)]
+        [Alias("DLV")]
+        public string? DeltaLinkVariable { get; set; }
+{{HeaderParamDecls(naming)}}
+{{GenericHeadersParamDecl()}}
+
+        protected override void ProcessRecord()
+        {
+{{AuthBlock}}
+
+            // Cleared before the request so a failed or interrupted run cannot leave the previous
+            // run's link readable, which would silently resume from the wrong point.
+            if (this.IsParameterBound(nameof(DeltaLinkVariable)))
+                SessionState.PSVariable.Set(DeltaLinkVariable, null);
+
+            {{call.ReturnTypeName}}? result;
+            try
+            {
+                result = ParameterSetName == "Resume"
+                    ? {{receiver}}.WithUrl(DeltaLink).{{call.MethodName}}(requestConfiguration =>
+                        {{{continuationConfig}}
+                        }).GetAwaiter().GetResult()
+                    : {{EmitCallOn(receiver, naming, call.MethodName, null, queryBindings)}}.GetAwaiter().GetResult();
+{{fetchedDecl}}
+                while (true)
+                {
+                    if (result?.Value is { } items)
+                    {
+                        WriteObject(items, enumerateCollection: true);{{fetchedAdd}}
+                    }
+
+                    var nextLink = result?.OdataNextLink;
+                    var deltaLink = result?.OdataDeltaLink;
+
+                    // A response cannot be both continued and terminated; treating one as
+                    // authoritative would silently drop pages or resume from a partial set.
+                    if (!string.IsNullOrEmpty(nextLink) && !string.IsNullOrEmpty(deltaLink))
+                    {
+                        ThrowTerminatingError(new ErrorRecord(
+                            new InvalidOperationException("The response carries both @odata.nextLink and @odata.deltaLink, which is not a valid delta response."),
+                            "InvalidDeltaResponse", ErrorCategory.InvalidData, targetObject: null));
+                        return;
+                    }
+
+                    if (!string.IsNullOrEmpty(deltaLink))
+                    {
+                        if (this.IsParameterBound(nameof(DeltaLinkVariable)))
+                            SessionState.PSVariable.Set(DeltaLinkVariable, deltaLink);
+                        break;
+                    }
+
+                    // No link of either kind: the change set ends here and there is nothing to
+                    // publish for a next round.
+                    if (string.IsNullOrEmpty(nextLink)) break;
+
+                    if (!All.IsPresent)
+                    {
+                        WriteWarning("More results are available. Use -All to return all pages.");
+                        break;
+                    }
+
+                    if (Stopping) break;{{capGuard}}
+
+                    result = {{receiver}}.WithUrl(nextLink).{{call.MethodName}}(requestConfiguration =>
+                    {{{continuationConfig}}
+                    }).GetAwaiter().GetResult();
+                }
+            }
+{{CatchBlock(TargetId(naming))}}
         }
     }
 }
