@@ -14,45 +14,60 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Teams
 {
     [GraphRoute("GET", "/chats/{chat-id}/targetedMessages/{targetedChatMessage-id}/replies/delta()")]
-    [Cmdlet(VerbsCommon.Get, "MgChatTargetedMessageReplyDelta")]
+    [Cmdlet(VerbsCommon.Get, "MgChatTargetedMessageReplyDelta", DefaultParameterSetName = "DeltaSync")]
     [OutputType(typeof(global::Microsoft.Graph.PowerShell.Teams.Client.Chats.Item.TargetedMessages.Item.Replies.Delta.DeltaGetResponse))]
     public class GetMgChatTargetedMessageReplyDeltaCommand : GraphClientCmdlet
     {
-        [Parameter(Mandatory = true, Position = 0)]
+        [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
         public string ChatId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 1)]
+        [Parameter(Mandatory = true, Position = 1, ParameterSetName = "DeltaSync")]
         public string TargetedChatMessageId { get; set; } = string.Empty;
 
 
 
-
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public string? Filter { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         [Alias("Select")]
         public string[]? Property { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         [Alias("Expand")]
         public string[]? ExpandProperty { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         [Alias("OrderBy")]
         public string[]? Sort { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public string? Search { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public int Top { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public int Skip { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public SwitchParameter Count { get; set; }
 
+        // Resumes a previous sync from the link that run published. Universal: every delta
+        // request builder accepts a raw URL, whereas a token argument exists on only a few.
+        [Parameter(Mandatory = true, ParameterSetName = "Resume")]
+        public string DeltaLink { get; set; } = string.Empty;
+
+        // Follows @odata.nextLink through the change set. Without it only the first page returns,
+        // plus a warning when more pages exist.
+        [Parameter(Mandatory = false)]
+        public SwitchParameter All { get; set; }
+
+        // Receives the @odata.deltaLink that terminates the change set, for the next sync round.
+        // A named variable is how this SDK already returns a scalar alongside a pipeline
+        // (-CountVariable on the published list cmdlets).
+        [Parameter(Mandatory = false)]
+        [Alias("DLV")]
+        public string? DeltaLinkVariable { get; set; }
 
 
 
@@ -62,11 +77,21 @@ namespace Microsoft.Graph.PowerShell.Teams
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
+            // Cleared before the request so a failed or interrupted run cannot leave the previous
+            // run's link readable, which would silently resume from the wrong point.
+            if (this.IsParameterBound(nameof(DeltaLinkVariable)))
+                SessionState.PSVariable.Set(DeltaLinkVariable, null);
 
             global::Microsoft.Graph.PowerShell.Teams.Client.Chats.Item.TargetedMessages.Item.Replies.Delta.DeltaGetResponse? result;
             try
             {
-                result = client.Chats[ChatId].TargetedMessages[TargetedChatMessageId].Replies.Delta.GetAsDeltaGetResponseAsync(requestConfiguration =>
+                result = ParameterSetName == "Resume"
+                    ? client.Chats[ChatId].TargetedMessages[TargetedChatMessageId].Replies.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                        {
+
+                AddRequestHeaders(requestConfiguration.Headers);
+                        }).GetAwaiter().GetResult()
+                    : client.Chats[ChatId].TargetedMessages[TargetedChatMessageId].Replies.Delta.GetAsDeltaGetResponseAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Filter)))
                         requestConfiguration.QueryParameters.Filter = Filter;
@@ -94,14 +119,61 @@ namespace Microsoft.Graph.PowerShell.Teams
 
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
+
+                var fetched = 0;
+                while (true)
+                {
+                    if (result?.Value is { } items)
+                    {
+                        WriteObject(items, enumerateCollection: true);
+                        fetched += items.Count;
+                    }
+
+                    var nextLink = result?.OdataNextLink;
+                    var deltaLink = result?.OdataDeltaLink;
+
+                    // A response cannot be both continued and terminated; treating one as
+                    // authoritative would silently drop pages or resume from a partial set.
+                    if (!string.IsNullOrEmpty(nextLink) && !string.IsNullOrEmpty(deltaLink))
+                    {
+                        ThrowTerminatingError(new ErrorRecord(
+                            new InvalidOperationException("The response carries both @odata.nextLink and @odata.deltaLink, which is not a valid delta response."),
+                            "InvalidDeltaResponse", ErrorCategory.InvalidData, targetObject: null));
+                        return;
+                    }
+
+                    if (!string.IsNullOrEmpty(deltaLink))
+                    {
+                        if (this.IsParameterBound(nameof(DeltaLinkVariable)))
+                            SessionState.PSVariable.Set(DeltaLinkVariable, deltaLink);
+                        break;
+                    }
+
+                    // No link of either kind: the change set ends here and there is nothing to
+                    // publish for a next round.
+                    if (string.IsNullOrEmpty(nextLink)) break;
+
+                    if (!All.IsPresent)
+                    {
+                        WriteWarning("More results are available. Use -All to return all pages.");
+                        break;
+                    }
+
+                    if (Stopping) break;
+                    if (this.IsParameterBound(nameof(Top)) && fetched >= Top) break;
+
+                    result = client.Chats[ChatId].TargetedMessages[TargetedChatMessageId].Replies.Delta.WithUrl(nextLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    {
+
+                AddRequestHeaders(requestConfiguration.Headers);
+                    }).GetAwaiter().GetResult();
+                }
             }
             catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, TargetedChatMessageId);
                 return;
             }
-
-            WriteObject(result);
         }
     }
 }
