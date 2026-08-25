@@ -55,6 +55,14 @@ dotnet build configuration. Default: Debug.
 .PARAMETER SkipKiota
 Reuse the previously generated client (fast inner loop when only the wrappers changed).
 
+.PARAMETER NoCollisionData
+Generate the unresolved command surface used to derive collision and parity data. This output
+is not shippable and should be generated only in an isolated worktree.
+
+.PARAMETER GenerateOnly
+Stop after wrapper source generation. Intended for source-based inventory and parity capture;
+cannot be combined with -Pack.
+
 .PARAMETER Prerelease
 Prerelease label carried by every package (alphanumeric, never empty). Wrapper packages are
 previews by definition; a stable-versioned one would collide with the service-module release
@@ -92,10 +100,13 @@ param(
     [ValidatePattern('^[A-Za-z0-9]+$')]
     [string]$Prerelease = 'wrapperpreview01',
     [switch]$SkipKiota,
+    [switch]$NoCollisionData,
+    [switch]$GenerateOnly,
     [switch]$Pack
 )
 
 $ErrorActionPreference = 'Stop'
+if ($GenerateOnly -and $Pack) { throw '-GenerateOnly cannot be combined with -Pack.' }
 
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 if (-not $SpecRoot) { $SpecRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat' }
@@ -302,7 +313,11 @@ function Build-Module {
             }
         }
 
-        $wrapperOut = & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --api-version $ApiVersion 2>&1
+        $wrapperOut = if ($NoCollisionData) {
+            & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --api-version $ApiVersion --no-collision-data 2>&1
+        } else {
+            & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --api-version $ApiVersion 2>&1
+        }
         if ($LASTEXITCODE -ne 0) {
             # Skip warnings precede the failure; the exception message is what identifies it.
             $result.FailedAt = 'wrapper-generator'
@@ -314,6 +329,16 @@ function Build-Module {
             } else {
                 ($lines | Where-Object { $_ -notmatch '^\s+at ' } | Select-Object -First 6) -join ' | '
             }
+            return $result
+        }
+
+        if ($GenerateOnly) {
+            $cmdletCount = @(Get-ChildItem $cmdletsDir -Filter '*.g.cs' -File |
+                    Where-Object Name -ne 'Shared.g.cs').Count
+            $result.Status = if ($cmdletCount -gt 0) { 'OK' } else { 'NO-CMDLETS' }
+            $result.CmdletCount = $cmdletCount
+            $result.Psd1 = $cmdletsDir
+            $result.Detail = 'source generation only'
             return $result
         }
 

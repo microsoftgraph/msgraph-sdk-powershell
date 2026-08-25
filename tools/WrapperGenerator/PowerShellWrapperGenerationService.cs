@@ -341,11 +341,23 @@ public sealed partial class PowerShellWrapperGenerationService
 
         // All collisions for the run are reported together so one generation surfaces the
         // complete list; see docs/edge-cases/naming-edge-cases.md for how each kind is resolved.
+        //
+        // Fatal only when the derived collision data is IN USE: there a collision means the data
+        // no longer covers the spec, and generating over it would silently drop an operation.
+        // With --no-collision-data the collisions ARE the intended output - that mode exists so
+        // tools/Derive-ParityResolutions.ps1 can inventory the raw, unresolved names - so they
+        // are reported and generation completes. Throwing there made the documented capture
+        // procedure impossible: the derivation asks for a tree the generator refused to produce.
         if (fileCollisions.Count > 0)
         {
-            throw new InvalidOperationException(
-                $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file. " +
-                $"Resolve each with a NamingOverrides rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
+            var summary = $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file.";
+            if (config.UseCollisionData)
+            {
+                throw new InvalidOperationException(
+                    $"{summary} Resolve each with a NamingOverrides rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
+            }
+
+            LogRawCollisionInventory(summary, string.Join("\n  ", fileCollisions));
         }
 
         LogBodyPropertyReconciliation(
@@ -522,6 +534,10 @@ public sealed partial class PowerShellWrapperGenerationService
     private partial void LogSuppressedOperation(string method, string pathTemplate);
     [LoggerMessage(Level = LogLevel.Warning, Message = "Skipped {Method} {PathTemplate}: {Reason}")]
     private partial void LogSkippedUnsupportedOperation(string method, string pathTemplate, string reason);
+    // Only reachable with collision data disabled, where colliding names are the intended output
+    // rather than a defect: the derivation reads them to produce the resolutions.
+    [LoggerMessage(Level = LogLevel.Warning, Message = "{Summary} Collision data is disabled, so these are the raw inventory this run exists to produce.\n  {Collisions}")]
+    private partial void LogRawCollisionInventory(string summary, string collisions);
     // Information, not Warning: an unbindable body property is a known coverage gap per shape,
     // not a defect in this run, and at Graph scale these would drown the operation warnings.
     [LoggerMessage(Level = LogLevel.Information, Message = "Unbound body property {Noun}.{Property}: {Shape} (required={IsRequired})")]
