@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Search
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ExternalConnectionId);
                 return;
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Search
                 {
                     result = client.External.Connections[ExternalConnectionId].Schema.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ExternalConnectionId);
                     return;

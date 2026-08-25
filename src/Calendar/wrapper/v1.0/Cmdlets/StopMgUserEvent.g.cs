@@ -56,7 +56,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, EventId);
                 return;

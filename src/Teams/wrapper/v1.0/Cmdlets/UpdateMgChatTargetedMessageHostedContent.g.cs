@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Teams
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ChatMessageHostedContentId);
                 return;
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.Teams
                 {
                     result = client.Chats[ChatId].TargetedMessages[TargetedChatMessageId].HostedContents[ChatMessageHostedContentId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ChatMessageHostedContentId);
                     return;

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ArticleIndicatorId);
                 return;
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Security
                 {
                     result = client.Security.ThreatIntelligence.ArticleIndicators[ArticleIndicatorId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ArticleIndicatorId);
                     return;

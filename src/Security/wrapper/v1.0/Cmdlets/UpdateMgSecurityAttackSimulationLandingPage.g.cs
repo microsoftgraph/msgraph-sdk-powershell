@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, LandingPageId);
                 return;
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.PowerShell.Security
                 {
                     result = client.Security.AttackSimulation.LandingPages[LandingPageId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, LandingPageId);
                     return;

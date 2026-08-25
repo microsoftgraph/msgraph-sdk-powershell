@@ -293,7 +293,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, EventId);
                 return;
@@ -307,7 +307,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
                 {
                     result = client.Users[UserId].Events[EventId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, EventId);
                     return;

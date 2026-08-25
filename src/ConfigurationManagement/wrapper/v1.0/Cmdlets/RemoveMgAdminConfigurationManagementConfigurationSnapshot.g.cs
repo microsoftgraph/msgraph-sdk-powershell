@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ConfigurationBaselineId);
                 return;

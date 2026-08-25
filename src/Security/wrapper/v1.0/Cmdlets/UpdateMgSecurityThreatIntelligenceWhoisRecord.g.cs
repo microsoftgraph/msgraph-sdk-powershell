@@ -153,7 +153,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, WhoisRecordId);
                 return;
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.PowerShell.Security
                 {
                     result = client.Security.ThreatIntelligence.WhoisRecords[WhoisRecordId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, WhoisRecordId);
                     return;

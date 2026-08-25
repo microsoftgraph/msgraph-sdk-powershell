@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, EngagementConversationMessageReactionId);
                 return;
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                 {
                     result = client.Communications.OnlineMeetingConversations[OnlineMeetingEngagementConversationId].Starter.Reactions[EngagementConversationMessageReactionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, EngagementConversationMessageReactionId);
                     return;

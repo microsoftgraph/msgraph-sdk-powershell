@@ -97,7 +97,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, DeviceInstallStateId);
                 return;
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
                 {
                     result = client.DeviceAppManagement.ManagedEBooks[ManagedEBookId].UserStateSummary[UserInstallStateSummaryId].DeviceStates[DeviceInstallStateId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, DeviceInstallStateId);
                     return;

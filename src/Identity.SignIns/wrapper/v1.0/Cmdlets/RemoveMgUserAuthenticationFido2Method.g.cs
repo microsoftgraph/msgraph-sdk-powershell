@@ -48,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, Fido2AuthenticationMethodId);
                 return;

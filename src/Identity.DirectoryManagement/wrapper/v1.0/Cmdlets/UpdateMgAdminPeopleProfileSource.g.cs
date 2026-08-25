@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ProfileSourceId);
                 return;
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                 {
                     result = client.Admin.People.ProfileSources[ProfileSourceId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ProfileSourceId);
                     return;

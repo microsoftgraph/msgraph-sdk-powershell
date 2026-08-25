@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, RestorePointId);
                 return;
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                 {
                     result = client.Solutions.BackupRestore.RestorePoints[RestorePointId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, RestorePointId);
                     return;

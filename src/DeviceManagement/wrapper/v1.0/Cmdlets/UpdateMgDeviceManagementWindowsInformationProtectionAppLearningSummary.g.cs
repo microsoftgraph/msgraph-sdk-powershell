@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, WindowsInformationProtectionAppLearningSummaryId);
                 return;
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 {
                     result = client.DeviceManagement.WindowsInformationProtectionAppLearningSummaries[WindowsInformationProtectionAppLearningSummaryId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, WindowsInformationProtectionAppLearningSummaryId);
                     return;

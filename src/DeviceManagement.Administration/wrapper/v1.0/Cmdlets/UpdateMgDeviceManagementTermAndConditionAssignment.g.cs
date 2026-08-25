@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, TermsAndConditionsAssignmentId);
                 return;
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
                 {
                     result = client.DeviceManagement.TermsAndConditions[TermsAndConditionsId].Assignments[TermsAndConditionsAssignmentId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, TermsAndConditionsAssignmentId);
                     return;

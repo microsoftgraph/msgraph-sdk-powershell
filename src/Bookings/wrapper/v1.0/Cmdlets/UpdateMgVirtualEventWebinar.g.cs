@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, VirtualEventWebinarId);
                 return;
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 {
                     result = client.Solutions.VirtualEvents.Webinars[VirtualEventWebinarId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, VirtualEventWebinarId);
                     return;

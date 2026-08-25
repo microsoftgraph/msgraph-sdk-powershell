@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, UserId);
                 return;
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.PowerShell.Security
                 {
                     result = client.Security.SubjectRightsRequests[SubjectRightsRequestId].Approvers[UserId].MailboxSettings.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, UserId);
                     return;

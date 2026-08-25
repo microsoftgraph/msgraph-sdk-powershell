@@ -99,7 +99,7 @@ namespace Microsoft.Graph.PowerShell.Education
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ReadingCoachPassageId);
                 return;
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.PowerShell.Education
                 {
                     result = client.Education.Reports.ReadingCoachPassages[ReadingCoachPassageId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ReadingCoachPassageId);
                     return;

@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, DriveProtectionUnitId);
                 return;

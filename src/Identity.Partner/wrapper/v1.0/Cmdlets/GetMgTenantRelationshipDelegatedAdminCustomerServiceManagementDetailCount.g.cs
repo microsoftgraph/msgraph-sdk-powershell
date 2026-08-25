@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, DelegatedAdminCustomerId);
                 return;

@@ -103,7 +103,7 @@ namespace Microsoft.Graph.PowerShell.Files
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ItemActivityStatId);
                 return;
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.PowerShell.Files
                 {
                     result = client.Drives[DriveId].Items[DriveItemId].Analytics.ItemActivityStats[ItemActivityStatId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ItemActivityStatId);
                     return;

@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, SecureScoreId);
                 return;
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.PowerShell.Security
                 {
                     result = client.Security.SecureScores[SecureScoreId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, SecureScoreId);
                     return;

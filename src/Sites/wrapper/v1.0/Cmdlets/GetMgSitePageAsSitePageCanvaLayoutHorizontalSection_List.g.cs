@@ -51,6 +51,12 @@ namespace Microsoft.Graph.PowerShell.Sites
         [Parameter(Mandatory = false)]
         public SwitchParameter Count { get; set; }
 
+        // Follows every @odata.nextLink until the collection is exhausted (a bound -Top caps
+        // the total). Without it only the first page returns, plus a truncation warning when
+        // more pages existed.
+        [Parameter(Mandatory = false)]
+        public SwitchParameter All { get; set; }
+
 
 
         protected override void ProcessRecord()
@@ -92,17 +98,47 @@ namespace Microsoft.Graph.PowerShell.Sites
 
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
+
+                // A collection response and its Value are both nullable on the kiota client; an
+                // empty page writes nothing rather than dereferencing null. Each page streams to
+                // the pipeline before the next request is issued, matching the published SDK.
+                if (result?.Value is { } items)
+                    WriteObject(items, enumerateCollection: true);
+
+                if (All.IsPresent)
+                {
+                    var fetched = result?.Value?.Count ?? 0;
+                    var nextLink = result?.OdataNextLink;
+                    while (!string.IsNullOrEmpty(nextLink) && !Stopping && (!this.IsParameterBound(nameof(Top)) || fetched < Top))
+                    {
+                        // The nextLink already carries the original query state, and a raw-URL
+                        // builder ignores templated query parameters anyway - so the continuation
+                        // re-applies headers only; query bindings here would be dead code.
+                        result = client.Sites[SiteId].Pages[BaseSitePageId].GraphSitePage.CanvasLayout.HorizontalSections.WithUrl(nextLink).GetAsync(requestConfiguration =>
+                        {
+
+                AddRequestHeaders(requestConfiguration.Headers);
+                        }).GetAwaiter().GetResult();
+                        if (result?.Value is { } page)
+                        {
+                            WriteObject(page, enumerateCollection: true);
+                            fetched += page.Count;
+                        }
+                        nextLink = result?.OdataNextLink;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(result?.OdataNextLink))
+                {
+                    // Deliberately stronger than the published SDK, which truncates silently;
+                    // approved in the design spec. One line, no extra request.
+                    WriteWarning("More results are available. Use -All to return all pages.");
+                }
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, BaseSitePageId);
                 return;
             }
-
-            // A collection response and its Value are both nullable on the kiota client; an
-            // empty page writes nothing rather than dereferencing null.
-            if (result?.Value is { } items)
-                WriteObject(items, enumerateCollection: true);
         }
     }
 }

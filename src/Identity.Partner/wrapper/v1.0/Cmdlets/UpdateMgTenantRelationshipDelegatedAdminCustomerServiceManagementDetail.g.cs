@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, DelegatedAdminServiceManagementDetailId);
                 return;
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
                 {
                     result = client.TenantRelationships.DelegatedAdminCustomers[DelegatedAdminCustomerId].ServiceManagementDetails[DelegatedAdminServiceManagementDetailId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, DelegatedAdminServiceManagementDetailId);
                     return;

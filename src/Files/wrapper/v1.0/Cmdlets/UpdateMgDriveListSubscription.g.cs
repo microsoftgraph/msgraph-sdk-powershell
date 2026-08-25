@@ -133,7 +133,7 @@ namespace Microsoft.Graph.PowerShell.Files
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, SubscriptionId);
                 return;
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.PowerShell.Files
                 {
                     result = client.Drives[DriveId].List.Subscriptions[SubscriptionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, SubscriptionId);
                     return;

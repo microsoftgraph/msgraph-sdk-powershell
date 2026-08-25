@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, LevelMapId);
                 return;
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
                 {
                     result = client.Places[PlaceId].GraphBuilding.Map.Levels[LevelMapId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, LevelMapId);
                     return;

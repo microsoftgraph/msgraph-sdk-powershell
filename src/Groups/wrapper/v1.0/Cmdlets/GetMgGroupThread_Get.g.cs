@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Groups
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ConversationThreadId);
                 return;

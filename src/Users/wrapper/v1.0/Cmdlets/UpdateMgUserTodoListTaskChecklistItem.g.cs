@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.Users
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ChecklistItemId);
                 return;
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.PowerShell.Users
                 {
                     result = client.Users[UserId].Todo.Lists[TodoTaskListId].Tasks[TodoTaskId].ChecklistItems[ChecklistItemId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ChecklistItemId);
                     return;

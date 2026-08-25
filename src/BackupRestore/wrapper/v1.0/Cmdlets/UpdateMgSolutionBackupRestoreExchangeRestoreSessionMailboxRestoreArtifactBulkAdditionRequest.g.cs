@@ -131,7 +131,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, MailboxRestoreArtifactsBulkAdditionRequestId);
                 return;
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                 {
                     result = client.Solutions.BackupRestore.ExchangeRestoreSessions[ExchangeRestoreSessionId].MailboxRestoreArtifactsBulkAdditionRequests[MailboxRestoreArtifactsBulkAdditionRequestId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, MailboxRestoreArtifactsBulkAdditionRequestId);
                     return;

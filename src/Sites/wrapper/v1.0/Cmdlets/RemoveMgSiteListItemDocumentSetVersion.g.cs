@@ -52,7 +52,7 @@ namespace Microsoft.Graph.PowerShell.Sites
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, DocumentSetVersionId);
                 return;

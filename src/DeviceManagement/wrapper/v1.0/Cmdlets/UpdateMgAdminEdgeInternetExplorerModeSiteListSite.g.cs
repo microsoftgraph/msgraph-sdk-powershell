@@ -119,7 +119,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, BrowserSiteId);
                 return;
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 {
                     result = client.Admin.Edge.InternetExplorerMode.SiteLists[BrowserSiteListId].Sites[BrowserSiteId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, BrowserSiteId);
                     return;

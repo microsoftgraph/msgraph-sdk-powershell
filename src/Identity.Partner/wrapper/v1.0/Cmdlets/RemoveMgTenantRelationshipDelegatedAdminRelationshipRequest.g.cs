@@ -48,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, DelegatedAdminRelationshipRequestId);
                 return;
