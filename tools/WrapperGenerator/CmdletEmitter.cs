@@ -200,7 +200,7 @@ namespace {{ctx.CmdletNamespace}}
         {
 {{AuthBlock}}
 
-            {{entityType}} result;
+            {{entityType}}? result;
             try
             {
                 result = client.{{naming.BuilderExpression}}.GetAsync(requestConfiguration =>
@@ -295,7 +295,7 @@ namespace {{ctx.CmdletNamespace}}
         {
 {{AuthBlock}}
 
-            {{collectionResponseType}} result;
+            {{collectionResponseType}}? result;
             try
             {
                 result = client.{{naming.BuilderExpression}}.GetAsync(requestConfiguration =>
@@ -307,7 +307,10 @@ namespace {{ctx.CmdletNamespace}}
             }
 {{CatchBlock(TargetId(naming))}}
 
-            WriteObject(result.Value, enumerateCollection: true);
+            // A collection response and its Value are both nullable on the kiota client; an
+            // empty page writes nothing rather than dereferencing null.
+            if (result?.Value is { } items)
+                WriteObject(items, enumerateCollection: true);
         }
     }
 }
@@ -450,11 +453,13 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
-    public static string EmitNew(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, bool hasPasswordProfile)
+    public static string EmitNew(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, IReadOnlyList<ComplexParameter> complexProperties, IReadOnlyList<UntypedParameter> untypedProperties)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
         ArgumentNullException.ThrowIfNull(properties);
+        ArgumentNullException.ThrowIfNull(complexProperties);
+        ArgumentNullException.ThrowIfNull(untypedProperties);
         return $$"""
 #nullable enable
 
@@ -476,7 +481,8 @@ namespace {{ctx.CmdletNamespace}}
     {
 {{PathParams(naming)}}
 {{EmitPropertyParameters(properties)}}
-{{(hasPasswordProfile ? EmitPasswordProfileParameters() : "")}}
+{{EmitComplexParameters(complexProperties)}}
+{{EmitUntypedParameters(untypedProperties)}}
 {{HeaderParamDecls(naming)}}
 {{GenericHeadersParamDecl()}}
 
@@ -489,7 +495,8 @@ namespace {{ctx.CmdletNamespace}}
 
             var body = new {{entityType}}();
 {{EmitPropertyAssignments(properties)}}
-{{(hasPasswordProfile ? EmitPasswordProfileAssignment() : "")}}
+{{EmitComplexAssignments(complexProperties)}}
+{{EmitUntypedAssignments(untypedProperties)}}
 {{AuthBlock}}
 
             {{entityType}}? result;
@@ -507,11 +514,13 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
-    public static string EmitUpdate(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, bool hasPasswordProfile, bool reFetchAfterUpdate = true)
+    public static string EmitUpdate(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, IReadOnlyList<ComplexParameter> complexProperties, IReadOnlyList<UntypedParameter> untypedProperties, bool reFetchAfterUpdate = true)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
         ArgumentNullException.ThrowIfNull(properties);
+        ArgumentNullException.ThrowIfNull(complexProperties);
+        ArgumentNullException.ThrowIfNull(untypedProperties);
         return $$"""
 #nullable enable
 
@@ -533,7 +542,8 @@ namespace {{ctx.CmdletNamespace}}
     {
 {{PathParams(naming)}}
 {{EmitPropertyParameters(properties)}}
-{{(hasPasswordProfile ? EmitPasswordProfileParameters() : "")}}
+{{EmitComplexParameters(complexProperties)}}
+{{EmitUntypedParameters(untypedProperties)}}
 {{HeaderParamDecls(naming)}}
 {{GenericHeadersParamDecl()}}
 
@@ -546,7 +556,8 @@ namespace {{ctx.CmdletNamespace}}
 
             var body = new {{entityType}}();
 {{EmitPropertyAssignments(properties)}}
-{{(hasPasswordProfile ? EmitPasswordProfileAssignment() : "")}}
+{{EmitComplexAssignments(complexProperties)}}
+{{EmitUntypedAssignments(untypedProperties)}}
 {{AuthBlock}}
 
             {{entityType}}? result;
@@ -621,12 +632,14 @@ namespace {{ctx.CmdletNamespace}}
 #nullable enable
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Management.Automation;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Abstractions.Serialization;
 
 namespace {{ctx.CmdletNamespace}}
 {
@@ -653,6 +666,80 @@ namespace {{ctx.CmdletNamespace}}
         {
             request.Headers.TryAdd("Authorization", $"Bearer {_token}");
             return Task.CompletedTask;
+        }
+    }
+
+    // Converts a PowerShell value to the kiota UntypedNode a schema-less property expects.
+    // Such a property has no type in the spec, so there is nothing to bind against; taking
+    // object and converting here lets the caller write -Maximum 100 or
+    // -ContentInfo @{ a = 1 } instead of constructing an UntypedNode subclass by hand.
+    //
+    // Null and empty objects yield null, meaning "omit this property", matching the published
+    // SDK: its AddIf helper adds a value only when it is non-null and not an empty JSON object,
+    // so a null was never sent on the wire and clearing a field this way was never possible.
+    internal static class UntypedValue
+    {
+        public static UntypedNode? From(object? value)
+        {
+            // PowerShell hands parameters over wrapped; the wrapper is not the value.
+            if (value is PSObject psObject)
+                value = psObject.BaseObject;
+
+            switch (value)
+            {
+                case null:
+                    return null;
+                case string s:
+                    return new UntypedString(s);
+                case bool b:
+                    return new UntypedBoolean(b);
+                case int i:
+                    return new UntypedInteger(i);
+                case long l:
+                    return new UntypedLong(l);
+                case float f:
+                    return new UntypedFloat(f);
+                case double d:
+                    return new UntypedDouble(d);
+                case decimal m:
+                    return new UntypedDecimal(m);
+                case byte or sbyte or short or ushort or uint:
+                    return new UntypedInteger(Convert.ToInt32(value));
+                case ulong ul:
+                    return new UntypedLong(checked((long)ul));
+                case IDictionary dictionary:
+                    {
+                        var members = new Dictionary<string, UntypedNode>(StringComparer.Ordinal);
+                        foreach (DictionaryEntry entry in dictionary)
+                        {
+                            var key = entry.Key?.ToString();
+                            if (key is null)
+                                continue;
+                            // Dropped, not sent. The published SDK has no untyped bag to copy
+                            // here, so this extends its top-level rule rather than inheriting it.
+                            var member = From(entry.Value);
+                            if (member is not null)
+                                members[key] = member;
+                        }
+                        return members.Count == 0 ? null : new UntypedObject(members);
+                    }
+                case IEnumerable sequence:
+                    {
+                        var items = new List<UntypedNode>();
+                        foreach (var item in sequence)
+                        {
+                            var node = From(item);
+                            if (node is not null)
+                                items.Add(node);
+                        }
+                        return items.Count == 0 ? null : new UntypedArray(items);
+                    }
+                default:
+                    // Stringifying an unrecognised type would send a value the caller never
+                    // wrote; failing names the type so the gap is fixable.
+                    throw new ArgumentException(
+                        $"Cannot convert a value of type '{value.GetType().FullName}' to an untyped Graph value. Supported: string, boolean, number, hashtable, array.");
+            }
         }
     }
 }
@@ -693,25 +780,43 @@ namespace {{ctx.CmdletNamespace}}
                 body.{{p.PascalName}} = {{(p.IsArray ? $"{p.ParameterName}!.ToList()" : p.ParameterName)}};
         """));
 
-    private static string EmitPasswordProfileParameters() => """
-
-                [Parameter(Mandatory = false,
-                    HelpMessage = "Required by Graph to create a user. Ignored if the resource has no passwordProfile.")]
-                public string? Password { get; set; }
+    // A complex property binds as its kiota model type. PowerShell converts a hashtable to that
+    // type on binding (the models have a parameterless constructor and settable properties), so
+    // the caller writes -PasswordProfile @{ Password = '...' } without constructing the type.
+    // TypeName is fully qualified: the models namespace is imported, but a model whose name
+    // matches a cmdlet parameter or BCL type would otherwise bind to the wrong symbol.
+    private static string EmitComplexParameters(IReadOnlyList<ComplexParameter> properties) =>
+        string.Join("\n", properties.Select(p => $$"""
 
                 [Parameter(Mandatory = false)]
-                public bool? ForceChangePasswordNextSignIn { get; set; }
-        """;
+                public {{p.ElementNullableTypeName}}? {{p.ParameterName}} { get; set; }
+        """));
 
-    private static string EmitPasswordProfileAssignment() => """
+    private static string EmitComplexAssignments(IReadOnlyList<ComplexParameter> properties) =>
+        string.Join("\n", properties.Select(p => $$"""
 
-            if (this.IsParameterBound(nameof(Password)) || this.IsParameterBound(nameof(ForceChangePasswordNextSignIn)))
+            if (this.IsParameterBound(nameof({{p.ParameterName}})))
+                body.{{p.PascalName}} = {{(p.IsArray ? $"{p.ParameterName}!.ToList()" : p.ParameterName)}};
+        """));
+
+    // A schema-less property takes object and converts, so the caller can pass an ordinary
+    // PowerShell value. A conversion result of null means "omit", which is why the assignment
+    // is guarded on the converted value and not merely on the parameter being bound.
+    private static string EmitUntypedParameters(IReadOnlyList<UntypedParameter> properties) =>
+        string.Join("\n", properties.Select(p => $$"""
+
+                [Parameter(Mandatory = false)]
+                public object? {{p.ParameterName}} { get; set; }
+        """));
+
+    private static string EmitUntypedAssignments(IReadOnlyList<UntypedParameter> properties) =>
+        string.Join("\n", properties.Select(p => $$"""
+
+            if (this.IsParameterBound(nameof({{p.ParameterName}})))
             {
-                body.PasswordProfile = new PasswordProfile
-                {
-                    Password = Password,
-                    ForceChangePasswordNextSignIn = ForceChangePasswordNextSignIn ?? true,
-                };
+                var {{p.LocalName}} = UntypedValue.From({{p.ParameterName}});
+                if ({{p.LocalName}} is not null)
+                    body.{{p.PascalName}} = {{p.LocalName}};
             }
-        """;
+        """));
 }

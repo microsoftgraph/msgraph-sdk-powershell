@@ -54,7 +54,7 @@ Singularization runs per camel-case word (so `termsAndConditions` → `TermAndCo
 
 A few published names aren't algorithmic, and the spec publishes some routes the SDK never shipped. Both live as data in `NamingOverrides.cs` — renames mirroring the SDK's hand-written AutoRest directives, and suppressions for routes that ship nothing — each entry citing its evidence: the directive when one exists, otherwise the shipped-command inventory. Examples: the `GET /users/{id}/calendar` rename to `…UserDefaultCalendar` (Calendar.md), the `Solution` prefix strip under `/solutions/*` with the BackupRestore exception (Bookings.md), and the self-referential `sites/{id}/sites` rename to `SubSite`/`GroupSubSite` (Sites.md) — without which the sub-sites cmdlets would collide with `Get-MgSite` itself. The generator fails loudly on any such file collision rather than silently overwriting.
 
-On top of the curated entries sits a **derived** layer: `tools/Derive-CollisionResolutions.ps1` replays every route from the checked-in collision inventory (`data/collision-inventory.v1.0.txt`, captured with `--no-collision-data`) against the shipped-command inventory and emits `data/collision-suppressions.v1.0.json` and `data/collision-renames.v1.0.json` — one exact-match entry per contested method+route, each carrying its oracle evidence. The files are embedded into the generator at build time (generation never reads the 22 MB oracle), applied only when `GeneratorConfig.UseCollisionData` is set, and the script's `-Validate` mode fails if the checked-in files drift from a fresh derivation. Two routes in all of v1.0 are **deferred cross-path merges** — the published SDK serves `Get-MgGroupPhoto` from both `/photo` and `/photos`, and `Get-MgShareListItem` from both `/listItem` and `/list/items`, as parameter-set variants of one cmdlet; the generator keeps the singleton side and suppresses the collection side until cross-path parameter sets land (see [edge-cases/crosspath-merge-edge-cases.md](edge-cases/crosspath-merge-edge-cases.md)). With the derived data applied, a full v1.0 generation across all 39 modules produces zero collisions.
+On top of the curated entries sits a **derived** layer: `tools/Derive-CollisionResolutions.ps1` replays every route from the checked-in collision inventory (`data/collision-inventory.v1.0.txt`, captured with `--no-collision-data`) against the shipped-command inventory and emits `data/collision-suppressions.v1.0.json` and `data/collision-renames.v1.0.json` — one exact-match entry per contested method+route, each carrying its oracle evidence. The files are embedded into the generator at build time (generation never reads the 22 MB oracle), applied only when `GeneratorConfig.UseCollisionData` is set, and the script's `-Validate` mode fails if the checked-in files drift from a fresh derivation. Two routes in all of v1.0 are **deferred cross-path merges** — the published SDK serves `Get-MgGroupPhoto` from both `/photo` and `/photos`, and `Get-MgShareListItem` from both `/listItem` and `/list/items`, as parameter-set variants of one cmdlet; the generator keeps the singleton side and suppresses the collection side until cross-path parameter sets land (see [docs/edge-cases/crosspath-merge-edge-cases.md](docs/edge-cases/crosspath-merge-edge-cases.md)). With the derived data applied, a full v1.0 generation across all 39 modules produces zero collisions.
 
 ## The one subtle part: list + item GET become one cmdlet
 
@@ -100,8 +100,18 @@ Whatever the shape, a generated cmdlet has the same skeleton:
 - **Auth**: every cmdlet takes an optional `-AccessToken`; without it, the cmdlet uses the active
   `Connect-MgGraph` session. (The shared auth helpers are written once per module into `Shared.g.cs`.)
 - **GETs** expose the OData query options the operation supports — `-Filter`, `-Property` (alias`-Select`), `-Sort` (alias `-OrderBy`), `-Top`, `-Skip`, `-Count`.
-- **`New`/`Update`** flatten the request body's top-level primitive properties into parameters (`-Subject`, `-IsRead`, …). Nested/complex properties are skipped, with one special case:
-  `passwordProfile` is exposed as `-Password`/`-ForceChangePasswordNextSignIn` because creating a user requires it. `Update` also re-fetches after a `204 No Content` so it still returns the updated object.
+- **`New`/`Update`** bind the request body's properties as parameters. Primitives flatten directly
+  (`-Subject`, `-IsRead`, …); a referenced model binds as its kiota type, so
+  `New-MgUser -PasswordProfile @{ Password = '...' }` works — PowerShell converts the hashtable on
+  binding. Referenced enums bind as the generated enum (`-Importance high`), and formatted strings
+  bind as the CLR type kiota uses (`date-time` → `DateTimeOffset`, `uuid` → `Guid`, `base64url` →
+  `byte[]`). A property the spec gives no type at all — which kiota emits as `UntypedNode` — takes
+  an ordinary PowerShell value (`-Maximum 100`, `-ContentInfo @{ … }`) and is converted on
+  assignment. Navigation properties, `id`, `additionalData` and `readOnly` properties are
+  deliberately excluded: they are relationships or serializer infrastructure, not body fields.
+  `Update` also re-fetches after a `204 No Content` so it still returns the updated object.
+  See [docs/body-property-binding.md](docs/body-property-binding.md) for the full mapping, the
+  `date`/`time` input contract, and what remains unbound.
 - **`New`/`Update`/`Remove`** are gated by `ShouldProcess`, so `-WhatIf` and `-Confirm` work.
 - **The actual request** is the Kiota client's fluent chain built from the path:
   `client.Users[UserId].Messages[MessageId].GetAsync(...)`.
@@ -154,23 +164,66 @@ dotnet run --project tools/WrapperGenerator -- `
 
 `-d` is the spec, `-o` the output folder, `-n` the namespace of the step-1 client the wrappers call. Each `--include-path` is a glob with an optional `#METHOD,METHOD` filter; omit them to generate every operation in the document. Output: `Shared.g.cs`, one `*.g.cs` per cmdlet (in a namespace derived from `-n` by dropping its trailing `.Client`, e.g. `-n Microsoft.Graph.PowerShell.Mail.Client` emits into `Microsoft.Graph.PowerShell.Mail`), and a small `kiota-lock.json` noting the source spec.
 
-**Test** — two layers:
+## The committed output
+
+The generated modules are checked in under `src/{Module}/{v1.0|beta}/wrapper/`, one
+self-contained project per module and API version:
+
+```
+src/Mail/v1.0/wrapper/
+    Client/                             kiota client (models + request builders)
+    Cmdlets/                            the wrapper cmdlets, one *.g.cs each, plus Shared.g.cs
+    Microsoft.Graph.Wrapper.Mail.csproj compiles both into one assembly
+```
+
+Everything needed to build is in that folder, so no generation step is required to try it:
 
 ```powershell
-# 1. Naming rules pinned to published Microsoft.Graph names
+dotnet build src/Mail/v1.0/wrapper                       # produces the dll + psd1 under bin/
+Import-Module src/Mail/v1.0/wrapper/bin/Release/net10.0/Microsoft.Graph.Wrapper.Mail.psd1
+```
+
+To regenerate it after a generator change — this rewrites the committed folder in place, so the
+diff shows exactly what the change did to the output:
+
+```powershell
+.\tools\Build-WrapperModule.ps1 -Module Mail -IntoSource -Configuration Release
+.\tools\New-WrapperOutputManifest.ps1        # refresh docs/WrapperCmdlets-V1.0*.csv
+```
+
+`docs/WrapperCmdlets-V1.0.csv` is the reviewable inventory of that output — one row per emitted
+cmdlet with its module, verb, noun and request path — with per-module totals in
+`docs/WrapperCmdlets-V1.0-Summary.csv`. The generated tree is far larger than GitHub renders in
+a diff, so those two files, not the tree, are what a reviewer reads.
+
+**Test** — several layers, each proving something the others cannot:
+
+```powershell
+# 1. Naming and classification rules pinned to published Microsoft.Graph names
 dotnet test tools/WrapperGenerator.Tests
-#    => Passed! - Failed: 0, Passed: 121, Total: 121
+#    => Passed! - Failed: 0, Passed: 148, Total: 148
 
 # 2. Parity gate: generate, then check every cmdlet name against Graph's own command inventory
 .\tools\Compare-WrapperCmdletNames.ps1 -GeneratedPath <output-folder>
 #    => Mail [v1.0]: 4 of 4 cmdlets match the oracle ...  EXIT CODE: 0
+
+# 3. Compile gate: every module builds against the kiota client it was generated with
+.\tools\Build-WrapperModule.ps1 -Module <names> -Configuration Release
+
+# 4. Omission oracle: every settable kiota body member is bound or cited by a named policy
+.\tools\Test-BodyBindingCoverage.ps1
+
+# 5. Runtime gate: the module imports and each bound shape accepts what a person would type
+.\tools\Test-WrapperModule.ps1 -Module <names> -Configuration Release
 ```
 
-The unit tests guard the naming rules (their expected values are real published names from `src/Authentication/Authentication/custom/common/MgCommandMetadata.json`). The parity gate checks actual generated output against that same inventory; names on the deliberate-corrections list ([docs/edge-cases/naming-edge-cases.md](docs/edge-cases/naming-edge-cases.md)) are reported as `[CORRECTED]` instead of failing. Build-WrapperModule.ps1 compiles every module against the kiota client it was generated with, and Test-WrapperModule.ps1 imports each build and smoke-tests dispatch in a fresh pwsh.
+The unit tests guard the naming and classification rules (their expected values are real published names from `src/Authentication/Authentication/custom/common/MgCommandMetadata.json`). The parity gate checks actual generated output against that same inventory; names on the deliberate-corrections list ([docs/edge-cases/naming-edge-cases.md](docs/edge-cases/naming-edge-cases.md)) are reported as `[CORRECTED]` instead of failing.
+
+The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each module against the kiota client it was generated with, the only authority on whether an emitted parameter's CLR type matches the member it assigns. Compilation cannot see an *omitted* member, so the omission oracle exists separately; neither can see whether PowerShell converts a value at runtime, so the runtime gate exists separately again. Naming parity is enforced independently by `Compare-WrapperCmdletNames.ps1`.
 
 ## Gaps / not done yet
 
-- **Output isn't committed into `src/{Module}/`.** `tools/Build-WrapperModule.ps1` now turns a module into an importable build under `artifacts/` (kiota client + wrappers + csproj + PSD1; `tools/Test-WrapperModule.ps1` smoke-tests it), with generation reading the Kiota-compatible docs (`openApiDocs_KiotaCompat`) by default. Cmdlets now emit into a per-module namespace (not `MgPoC`) and the generated csproj references Authentication by a relative path, so both are ready to move; the exact target folder under `src/{Module}/{v1.0|beta}/` is still open — the existing AutoRest modules' `.gitignore` there excludes a folder literally named `generated`, so the wrapper output needs a different folder name or that pattern needs updating, or a commit there would silently produce an empty diff.
+- **Only v1.0 output is committed.** The beta docs exist (`openApiDocs_KiotaCompat/beta`) but no beta output is generated or checked in yet; the layout already accommodates it at `src/{Module}/beta/wrapper/`.
 - **No runtime base classes or real auth flow.** Shared paging, a proper `Connect-MgGraph`/session integration, and base cmdlet classes are a later phase.
-- **Body binding is shallow** — top-level primitive properties only; no nested/complex types beyond the `passwordProfile` special case.
-- **Some operation shapes aren't generated** — `$count`/`$ref`/`$value`, delta, OData actions/functions, and cast endpoints.
+- **Body binding covers every shape reaching the classifier** — the sweep reports 0 unbound properties across all 38 specs, and the omission oracle reports 0 failures across 2,633 body-writing cmdlets. That is a statement about the operations that generate, not about v1.0 (see the next bullet). Classifications for shapes that do not occur (inline objects and enums, genuine unions, dictionaries, unresolvable references, unknown formats) are retained so a future corpus change is reported rather than silently mis-bound. `tools/Measure-BodyPropertyCoverage.ps1` counts them; [docs/edge-cases/body-binding-edge-cases.md](docs/edge-cases/body-binding-edge-cases.md) records each with its exit criteria.
+- **Only 57.8% of v1.0 operations generate.** Of 14,131 operations across the 38 specs: 8,164 become cmdlets, 767 are suppressed because the published SDK ships no cmdlet for them, and 5,200 are unsupported — 3,495 OData path segments (`$count`/`$ref`/`$value`, delta, cast, and parameterized functions), 1,528 POST actions whose request schema is not a named entity, 93 PUT, 78 media/stream, 6 unresolvable responses. The three populations sum to 14,131 by construction; emitted files are not operations (9,608 files include 1,444 GET dispatchers that issue no request of their own).
