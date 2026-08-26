@@ -92,7 +92,8 @@ function Install-CfsToolingModules {
         @{ Name = 'PlatyPS' },
         @{ Name = 'Pester'; SkipPublisherCheck = $true },
         @{ Name = 'powershell-yaml'; AcceptLicense = $true },
-        @{ Name = 'PowerHTML' }
+        @{ Name = 'PowerHTML' },
+        @{ Name = 'Az.Accounts' }
     )
     foreach ($t in $tooling) {
         if (Get-Module -Name $t.Name -ListAvailable) {

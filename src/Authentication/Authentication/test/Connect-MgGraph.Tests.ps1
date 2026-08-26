@@ -7,7 +7,11 @@ BeforeAll {
     $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
     Import-Module $ModulePath -Force
     $RandomClientId = (New-Guid).Guid
-    Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
+    # CFSClean: Az.Accounts is pre-installed from the private feed in install-tools (public PSGallery is
+    # unregistered under network isolation), so only install here if it is somehow not already present.
+    if (-not (Get-Module -Name Az.Accounts -ListAvailable)) {
+        Install-Module Az.Accounts -Scope CurrentUser -Force -AllowClobber
+    }
 }
 Describe 'Connect-MgGraph ParameterSets' {
     BeforeAll {
