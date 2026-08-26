@@ -82,27 +82,29 @@ steps:
           }
         }, Id
 
+        $prefix = 'public/psresource'
         foreach ($package in $packages) {
-          $existingPackage = Find-PSResource -Name $package.Id -Version $package.Version -Repository $repositoryName -ErrorAction SilentlyContinue
-          if ($null -ne $existingPackage) {
+          $acrRepository = "$prefix/$($package.Id.ToLowerInvariant())"
+          $existingTag = Get-AzContainerRegistryTag -RegistryName $repositoryName -RepositoryName $acrRepository -Name $package.Version -ErrorAction SilentlyContinue
+          if ($null -ne $existingTag) {
             Write-Host "$($package.Id) $($package.Version) already exists in $repositoryName; continuing the idempotent deployment."
             continue
           }
 
           Write-Host "Publishing $($package.Id) $($package.Version) to $repositoryName."
-          $prefix = "public/psresource"
           Publish-PSResource -NupkgPath $package.Path -Repository $repositoryName -ModulePrefix $prefix -ErrorAction Stop
         }
 
         foreach ($package in $packages) {
-          $foundPackage = $null
-          for ($attempt = 1; $attempt -le 6 -and $null -eq $foundPackage; $attempt++) {
-            $foundPackage = Find-PSResource -Name $package.Id -Version $package.Version -Repository $repositoryName -ErrorAction SilentlyContinue
-            if ($null -eq $foundPackage -and $attempt -lt 6) {
+          $acrRepository = "$prefix/$($package.Id.ToLowerInvariant())"
+          $publishedTag = $null
+          for ($attempt = 1; $attempt -le 6 -and $null -eq $publishedTag; $attempt++) {
+            $publishedTag = Get-AzContainerRegistryTag -RegistryName $repositoryName -RepositoryName $acrRepository -Name $package.Version -ErrorAction SilentlyContinue
+            if ($null -eq $publishedTag -and $attempt -lt 6) {
               Start-Sleep -Seconds 10
             }
           }
-          if ($null -eq $foundPackage) {
-            throw "Published package '$($package.Id)' version '$($package.Version)' couldn't be found in ACR."
+          if ($null -eq $publishedTag) {
+            throw "Published package '$($package.Id)' version '$($package.Version)' couldn't be found at '$acrRepository' in ACR."
           }
         }

@@ -14,6 +14,10 @@ parameters:
 - name: Sign
   type: boolean
   default: true
+- name: ForceAcrPublish
+  displayName: Force ACR publication (manual runs only)
+  type: boolean
+  default: false
 - name: InternalFeed
   type: string
   default: '0985d294-5762-4bc2-a565-161ef349ca3e/PowerShell_V2_Build'
@@ -56,7 +60,7 @@ extends:
     # non-allowlisted public egress is blocked.
     settings:
       networkIsolationMode: Enforce
-      networkIsolationPolicy: Good,GitHub,NuGet,PowershellGallery,CFSClean,CFSClean3
+      networkIsolationPolicy: Good,GitHub,NuGet,PowershellGallery,AzureContainerRegistry,CFSClean,CFSClean3
     sdl:
       binskim:
         enabled: false
@@ -144,7 +148,7 @@ extends:
       - stage: Deploy_to_ACR
         displayName: Deploy PowerShell packages to ACR
         dependsOn: stage
-        condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), ne(variables['Build.Reason'], 'PullRequest'), eq(dependencies.stage.outputs['MsGraphPsSdkCiBuild.DetectAcrChanges.ShouldPublishToAcr'], 'true'))
+        condition: and(succeeded(), or(and(eq(variables['Build.SourceBranch'], 'refs/heads/main'), ne(variables['Build.Reason'], 'PullRequest'), eq(dependencies.stage.outputs['MsGraphPsSdkCiBuild.DetectAcrChanges.ShouldPublishToAcr'], 'true')), and(eq(variables['Build.Reason'], 'Manual'), ${{ eq(parameters.ForceAcrPublish, true) }})))
         jobs:
         - job: DeployPowerShellPackagesToAcr
           displayName: Deploy PowerShell packages to ACR
