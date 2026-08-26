@@ -332,6 +332,16 @@ function Build-Module {
             return $result
         }
 
+        # With -NoCollisionData the generator REPORTS each cmdlet collision instead of throwing on
+        # it, and that report is the collision inventory: data/collision-inventory.<version>.txt is
+        # captured from this output, and Derive-CollisionResolutions.ps1 reads it. The output is
+        # only inspected above on failure and otherwise discarded, so the one run whose purpose is
+        # to produce the inventory printed nothing. Written to the host rather than the pipeline
+        # because this function returns $result, and emitted output would be merged into it.
+        if ($NoCollisionData) {
+            $wrapperOut | ForEach-Object { Write-Host "$_" }
+        }
+
         if ($GenerateOnly) {
             $cmdletCount = @(Get-ChildItem $cmdletsDir -Filter '*.g.cs' -File |
                     Where-Object Name -ne 'Shared.g.cs').Count
