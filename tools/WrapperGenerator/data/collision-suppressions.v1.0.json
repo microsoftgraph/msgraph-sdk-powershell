@@ -2,6 +2,406 @@
   {
     "apiVersion": "v1.0",
     "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/applications/{}/appmanagementpolicies/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/applications/{}/appmanagementpolicies/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgApplicationAppManagementPolicyAppManagementPolicyByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/applications/{}/owners/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/applications/{}/owners/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgApplicationOwnerDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/applications/{}/tokenissuancepolicies/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/applications/{}/tokenissuancepolicies/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgApplicationTokenIssuancePolicyTokenIssuancePolicyByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/applications/{}/tokenlifetimepolicies/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/applications/{}/tokenlifetimepolicies/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgApplicationTokenLifetimePolicyTokenLifetimePolicyByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.DirectoryManagement"
+    ],
+    "method": "DELETE",
+    "uri": "/devices/{}/registeredowners/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/devices/{}/registeredowners/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgDeviceRegisteredOwnerDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.DirectoryManagement"
+    ],
+    "method": "DELETE",
+    "uri": "/devices/{}/registeredusers/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/devices/{}/registeredusers/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgDeviceRegisteredUserDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.DirectoryManagement"
+    ],
+    "method": "DELETE",
+    "uri": "/directory/administrativeunits/{}/members/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/directory/administrativeunits/{}/members/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgDirectoryAdministrativeUnitMemberDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.DirectoryManagement"
+    ],
+    "method": "DELETE",
+    "uri": "/directoryroles/{}/members/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/directoryroles/{}/members/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgDirectoryRoleMemberDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/classes/{}/assignments/{}/categories/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/education/classes/{}/assignments/{}/categories/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEducationClassAssignmentCategoryEducationCategoryByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/classes/{}/members/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/education/classes/{}/members/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEducationClassMemberEducationUserByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/classes/{}/teachers/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/education/classes/{}/teachers/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEducationClassTeacherEducationUserByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/me/assignments/{}/categories/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/education/me/assignments/{}/categories/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEducationMeAssignmentCategoryEducationCategoryByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/schools/{}/classes/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/education/schools/{}/classes/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEducationSchoolClassEducationClassByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/schools/{}/users/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/education/schools/{}/users/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEducationSchoolUserEducationUserByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "DELETE",
+    "uri": "/education/users/{}/assignments/{}/categories/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/education/users/{}/assignments/{}/categories/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEducationUserAssignmentCategoryEducationCategoryByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "DELETE",
+    "uri": "/groups/{}/acceptedsenders/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/acceptedsenders/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgGroupAcceptedSenderDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "DELETE",
+    "uri": "/groups/{}/members/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/members/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgGroupMemberDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "DELETE",
+    "uri": "/groups/{}/owners/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/owners/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgGroupOwnerDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "DELETE",
+    "uri": "/groups/{}/photos/{}/$value",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/photo/$value"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgGroupPhotoContent"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "DELETE",
+    "uri": "/groups/{}/rejectedsenders/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/rejectedsenders/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgGroupRejectedSenderDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
       "Sites"
     ],
     "method": "DELETE",
@@ -9,7 +409,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}"
@@ -29,7 +429,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}"
@@ -49,7 +449,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}"
@@ -69,7 +469,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}"
@@ -89,7 +489,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}"
@@ -109,7 +509,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}"
@@ -129,13 +529,145 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/settings/{}"
       ],
       "counterpartShipsAs": [
         "Remove-MgGroupSetting"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "DELETE",
+    "uri": "/identity/authenticationeventsflows/{}/graph.externalusersselfservicesignupeventsflow/onattributecollection/graph.onattributecollectionexternalusersselfservicesignup/attributes/{}/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identity/authenticationeventsflows/{}/graph.externalusersselfservicesignupeventsflow/onattributecollection/graph.onattributecollectionexternalusersselfservicesignup/attributes/$ref"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "DELETE",
+    "uri": "/identity/authenticationeventsflows/{}/graph.externalusersselfservicesignupeventsflow/onattributecollection/graph.onattributecollectionexternalusersselfservicesignup/attributes/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identity/authenticationeventsflows/{}/graph.externalusersselfservicesignupeventsflow/onattributecollection/graph.onattributecollectionexternalusersselfservicesignup/attributes/{}/$ref"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "DELETE",
+    "uri": "/identity/authenticationeventsflows/{}/graph.externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/graph.onauthenticationmethodloadstartexternalusersselfservicesignup/identityproviders/{}/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identity/authenticationeventsflows/{}/graph.externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/graph.onauthenticationmethodloadstartexternalusersselfservicesignup/identityproviders/$ref"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "DELETE",
+    "uri": "/identity/authenticationeventsflows/{}/graph.externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/graph.onauthenticationmethodloadstartexternalusersselfservicesignup/identityproviders/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identity/authenticationeventsflows/{}/graph.externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/graph.onauthenticationmethodloadstartexternalusersselfservicesignup/identityproviders/{}/$ref"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "DELETE",
+    "uri": "/identity/b2xuserflows/{}/userflowidentityproviders/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identity/b2xuserflows/{}/userflowidentityproviders/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgIdentityB2XUserFlowIdentityProviderBaseByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/accesspackages/{}/incompatibleaccesspackages/{}/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/accesspackages/{}/incompatibleaccesspackages/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/accesspackages/{}/incompatiblegroups/{}/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/accesspackages/{}/incompatiblegroups/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef"
       ]
     }
   },
@@ -149,7 +681,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}"
@@ -169,7 +701,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource"
@@ -189,7 +721,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}"
@@ -209,7 +741,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}/resource"
@@ -229,7 +761,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}"
@@ -249,7 +781,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource"
@@ -269,7 +801,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}"
@@ -289,7 +821,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}/resource"
@@ -305,11 +837,51 @@
       "Identity.Governance"
     ],
     "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/connectedorganizations/{}/externalsponsors/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/connectedorganizations/{}/externalsponsors/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
+    "uri": "/identitygovernance/entitlementmanagement/connectedorganizations/{}/internalsponsors/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/connectedorganizations/{}/internalsponsors/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "DELETE",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}"
@@ -329,7 +901,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource"
@@ -349,7 +921,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}"
@@ -369,7 +941,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}/resource"
@@ -389,7 +961,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}"
@@ -409,7 +981,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource"
@@ -429,7 +1001,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}"
@@ -449,13 +1021,133 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}/resource"
       ],
       "counterpartShipsAs": [
         "Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "DELETE",
+    "uri": "/policies/featurerolloutpolicies/{}/appliesto/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/policies/featurerolloutpolicies/{}/appliesto/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgPolicyFeatureRolloutPolicyApplyToDirectoryObjectByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Devices.CloudPrint"
+    ],
+    "method": "DELETE",
+    "uri": "/print/shares/{}/allowedgroups/{}/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/print/shares/{}/allowedgroups/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgPrintShareAllowedGroupByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Devices.CloudPrint"
+    ],
+    "method": "DELETE",
+    "uri": "/print/shares/{}/allowedusers/{}/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/print/shares/{}/allowedusers/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgPrintShareAllowedUserByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/serviceprincipals/{}/claimsmappingpolicies/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/claimsmappingpolicies/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgServicePrincipalClaimMappingPolicyClaimMappingPolicyByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/serviceprincipals/{}/homerealmdiscoverypolicies/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/homerealmdiscoverypolicies/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "DELETE",
+    "uri": "/serviceprincipals/{}/owners/$ref",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/owners/{}/$ref"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgServicePrincipalOwnerDirectoryObjectByRef"
       ]
     }
   },
@@ -469,7 +1161,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}"
@@ -489,7 +1181,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}"
@@ -509,7 +1201,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}"
@@ -529,7 +1221,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}"
@@ -549,7 +1241,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}"
@@ -569,7 +1261,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}"
@@ -582,6 +1274,84 @@
   {
     "apiVersion": "v1.0",
     "modules": [
+      "Users"
+    ],
+    "method": "DELETE",
+    "uri": "/users/{}/photos/{}/$value",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/photo/$value"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgUserPhotoContent"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "GET",
+    "uri": "/education/classes/{}/assignments/{}/categories/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/education/classes/{}/assignmentcategories/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEducationClassAssignmentCategoryCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Education"
+    ],
+    "method": "GET",
+    "uri": "/education/classes/{}/assignments/{}/categories/delta",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/education/classes/{}/assignmentcategories/delta"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEducationClassAssignmentCategoryDelta"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/groups/{}/calendar/calendarview/delta",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/calendarview/delta"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
       "Calendar"
     ],
     "method": "GET",
@@ -589,7 +1359,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/calendar/calendarview"
@@ -602,6 +1372,24 @@
   {
     "apiVersion": "v1.0",
     "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/groups/{}/calendarview/delta",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/calendar/calendarview/delta"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
       "Notes"
     ],
     "method": "GET",
@@ -609,7 +1397,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/onenote/notebooks/{}/sectiongroups"
@@ -629,7 +1417,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/onenote/notebooks/{}/sectiongroups"
@@ -645,11 +1433,31 @@
       "Notes"
     ],
     "method": "GET",
+    "uri": "/groups/{}/onenote/notebooks/{}/sectiongroups/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/onenote/notebooks/{}/sectiongroups/{}/sectiongroups/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupOnenoteNotebookSectionGroupCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Notes"
+    ],
+    "method": "GET",
     "uri": "/groups/{}/onenote/sectiongroups/{}/sectiongroups",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/onenote/sectiongroups"
@@ -669,13 +1477,33 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/onenote/sectiongroups"
       ],
       "counterpartShipsAs": [
         "Get-MgGroupOnenoteSectionGroup"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Notes"
+    ],
+    "method": "GET",
+    "uri": "/groups/{}/onenote/sectiongroups/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/onenote/sectiongroups/{}/sectiongroups/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupOnenoteSectionGroupCount"
       ]
     }
   },
@@ -689,7 +1517,9 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        "Get-MgGroupPhoto"
+        [
+          "Get-MgGroupPhoto"
+        ]
       ],
       "counterpartUris": [
         "/groups/{}/photo"
@@ -703,6 +1533,26 @@
   {
     "apiVersion": "v1.0",
     "modules": [
+      "Groups"
+    ],
+    "method": "GET",
+    "uri": "/groups/{}/photos/{}/$value",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/photo/$value"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupPhotoContent"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
       "Sites"
     ],
     "method": "GET",
@@ -710,7 +1560,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/onenote/notebooks/{}/sectiongroups"
@@ -730,7 +1580,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/onenote/notebooks/{}/sectiongroups"
@@ -746,11 +1596,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/groups/{}/sites/{}/onenote/notebooks/{}/sectiongroups/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/sites/{}/onenote/notebooks/{}/sectiongroups/{}/sectiongroups/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSiteOnenoteNotebookSectionGroupCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/groups/{}/sites/{}/onenote/sectiongroups/{}/sectiongroups",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/onenote/sectiongroups"
@@ -770,7 +1640,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/onenote/sectiongroups"
@@ -786,11 +1656,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/groups/{}/sites/{}/onenote/sectiongroups/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/sites/{}/onenote/sectiongroups/{}/sectiongroups/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSiteOnenoteSectionGroupCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children"
@@ -810,7 +1700,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children"
@@ -830,7 +1720,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations"
@@ -850,7 +1740,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations"
@@ -870,7 +1760,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}/fromterm"
@@ -890,7 +1780,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}/set"
@@ -910,7 +1800,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}/toterm"
@@ -926,11 +1816,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/relations/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSiteTermStoreGroupSetChildRelationCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/set",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/set"
@@ -946,11 +1856,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSiteTermStoreGroupSetChildCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children"
@@ -970,7 +1900,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children"
@@ -990,7 +1920,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/relations"
@@ -1010,7 +1940,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/relations"
@@ -1030,7 +1960,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}/fromterm"
@@ -1050,7 +1980,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}/set"
@@ -1070,7 +2000,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}/toterm"
@@ -1086,11 +2016,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/groups/{}/sites/{}/termstore/sets/{}/children/{}/relations/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSiteTermStoreSetChildRelationCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/groups/{}/sites/{}/termstore/sets/{}/children/{}/set",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/set"
@@ -1106,11 +2056,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/groups/{}/sites/{}/termstore/sets/{}/children/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSiteTermStoreSetChildCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children"
@@ -1130,7 +2100,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children"
@@ -1150,7 +2120,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations"
@@ -1170,7 +2140,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations"
@@ -1190,7 +2160,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}/fromterm"
@@ -1210,7 +2180,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}/set"
@@ -1230,7 +2200,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}/toterm"
@@ -1246,17 +2216,57 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/relations/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/set",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/set"
       ],
       "counterpartShipsAs": [
         "Get-MgGroupSiteTermStoreSetParentGroupSetChildSet"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
+    "uri": "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSiteTermStoreSetParentGroupSetChildCount"
       ]
     }
   },
@@ -1270,7 +2280,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/settings"
@@ -1290,13 +2300,33 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/settings"
       ],
       "counterpartShipsAs": [
         "Get-MgGroupSetting"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "GET",
+    "uri": "/groupsettings/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/settings/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgGroupSettingCount"
       ]
     }
   },
@@ -1310,7 +2340,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles"
@@ -1330,7 +2360,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles"
@@ -1350,7 +2380,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource"
@@ -1370,7 +2400,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/environment"
@@ -1390,7 +2420,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes"
@@ -1410,7 +2440,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes"
@@ -1430,7 +2460,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}/resource"
@@ -1450,7 +2480,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}/resource/environment"
@@ -1466,11 +2496,51 @@
       "Identity.Governance"
     ],
     "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleResourceScopeCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceRoleCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
     "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}",
@@ -1492,7 +2562,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes"
@@ -1510,7 +2580,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource"
@@ -1530,7 +2600,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/environment"
@@ -1550,7 +2620,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles"
@@ -1570,7 +2640,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles"
@@ -1590,7 +2660,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}/resource"
@@ -1610,7 +2680,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}/resource/environment"
@@ -1626,11 +2696,51 @@
       "Identity.Governance"
     ],
     "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeResourceRoleCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementCatalogResourceScopeCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles"
@@ -1650,7 +2760,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles"
@@ -1670,7 +2780,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource"
@@ -1690,7 +2800,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/environment"
@@ -1710,7 +2820,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes"
@@ -1730,7 +2840,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes"
@@ -1750,7 +2860,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}/resource"
@@ -1770,7 +2880,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}/resource/environment"
@@ -1786,11 +2896,51 @@
       "Identity.Governance"
     ],
     "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceRoleCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}",
@@ -1812,7 +2962,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes"
@@ -1830,7 +2980,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource"
@@ -1850,7 +3000,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/environment"
@@ -1870,7 +3020,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles"
@@ -1890,7 +3040,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles"
@@ -1910,7 +3060,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}/resource"
@@ -1930,13 +3080,193 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}/resource/environment"
       ],
       "counterpartShipsAs": [
         "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceEnvironment"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgEntitlementManagementResourceRequestCatalogResourceScopeCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "GET",
+    "uri": "/security/threatintelligence/articles/{}/indicators/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/threatintelligence/articleindicators/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSecurityThreatIntelligenceArticleIndicatorCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "GET",
+    "uri": "/security/threatintelligence/hosts/{}/components/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/threatintelligence/hostcomponents/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSecurityThreatIntelligenceHostComponentCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "GET",
+    "uri": "/security/threatintelligence/hosts/{}/cookies/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/threatintelligence/hostcookies/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSecurityThreatIntelligenceHostCookieCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "GET",
+    "uri": "/security/threatintelligence/hosts/{}/hostpairs/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/threatintelligence/hostpairs/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSecurityThreatIntelligenceHostPairCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "GET",
+    "uri": "/security/threatintelligence/hosts/{}/ports/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/threatintelligence/hostports/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSecurityThreatIntelligenceHostPortCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "GET",
+    "uri": "/security/threatintelligence/hostsslcertificates/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/threatintelligence/hosts/{}/sslcertificates/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSecurityThreatIntelligenceHostSslCertificateCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "GET",
+    "uri": "/security/threatintelligence/hosttrackers/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/threatintelligence/hosts/{}/trackers/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSecurityThreatIntelligenceHostTrackerCount"
       ]
     }
   },
@@ -1950,7 +3280,9 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        "Get-MgShareListItem"
+        [
+          "Get-MgShareListItem"
+        ]
       ],
       "counterpartUris": [
         "/shares/{}/listitem"
@@ -1971,7 +3303,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/onenote/notebooks/{}/sectiongroups"
@@ -1991,7 +3323,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/onenote/notebooks/{}/sectiongroups"
@@ -2007,11 +3339,31 @@
       "Notes"
     ],
     "method": "GET",
+    "uri": "/sites/{}/onenote/notebooks/{}/sectiongroups/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/sites/{}/onenote/notebooks/{}/sectiongroups/{}/sectiongroups/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSiteOnenoteNotebookSectionGroupCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Notes"
+    ],
+    "method": "GET",
     "uri": "/sites/{}/onenote/sectiongroups/{}/sectiongroups",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/onenote/sectiongroups"
@@ -2031,13 +3383,33 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/onenote/sectiongroups"
       ],
       "counterpartShipsAs": [
         "Get-MgSiteOnenoteSectionGroup"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Notes"
+    ],
+    "method": "GET",
+    "uri": "/sites/{}/onenote/sectiongroups/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/sites/{}/onenote/sectiongroups/{}/sectiongroups/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSiteOnenoteSectionGroupCount"
       ]
     }
   },
@@ -2051,7 +3423,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children"
@@ -2071,7 +3443,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children"
@@ -2091,7 +3463,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations"
@@ -2111,7 +3483,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations"
@@ -2131,7 +3503,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}/fromterm"
@@ -2151,7 +3523,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}/set"
@@ -2171,7 +3543,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}/toterm"
@@ -2187,11 +3559,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/sites/{}/termstore/groups/{}/sets/{}/children/{}/relations/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSiteTermStoreGroupSetChildRelationCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/sites/{}/termstore/groups/{}/sets/{}/children/{}/set",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/set"
@@ -2207,11 +3599,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/sites/{}/termstore/groups/{}/sets/{}/children/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSiteTermStoreGroupSetChildCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/sites/{}/termstore/sets/{}/children/{}/children",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children"
@@ -2231,7 +3643,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children"
@@ -2251,7 +3663,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}/children/{}/relations"
@@ -2271,7 +3683,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}/children/{}/relations"
@@ -2291,7 +3703,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}/fromterm"
@@ -2311,7 +3723,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}/set"
@@ -2331,7 +3743,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}/toterm"
@@ -2347,11 +3759,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/sites/{}/termstore/sets/{}/children/{}/relations/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSiteTermStoreSetChildRelationCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/sites/{}/termstore/sets/{}/children/{}/set",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}/children/{}/set"
@@ -2367,11 +3799,31 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/sites/{}/termstore/sets/{}/children/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/sites/{}/termstore/sets/{}/children/{}/children/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSiteTermStoreSetChildCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children"
@@ -2391,7 +3843,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children"
@@ -2411,7 +3863,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations"
@@ -2431,7 +3883,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations"
@@ -2451,7 +3903,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}/fromterm"
@@ -2471,7 +3923,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}/set"
@@ -2491,7 +3943,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}/toterm"
@@ -2507,17 +3959,132 @@
       "Sites"
     ],
     "method": "GET",
+    "uri": "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/relations/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSiteTermStoreSetParentGroupSetChildRelationCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
     "uri": "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/set",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/set"
       ],
       "counterpartShipsAs": [
         "Get-MgSiteTermStoreSetParentGroupSetChildSet"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Sites"
+    ],
+    "method": "GET",
+    "uri": "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgSiteTermStoreSetParentGroupSetChildCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/calendar/calendarview/delta",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendars/{}/calendarview/delta",
+        "/users/{}/calendarview/delta"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/calendar/events/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendars/{}/events/$count"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/calendar/events/delta",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendars/{}/events/delta"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/calendars/{}/allowedcalendarsharingroles(user='{}')",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendar/allowedcalendarsharingroles(user='{}')"
+      ],
+      "counterpartShipsAs": [
+        "Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles"
       ]
     }
   },
@@ -2531,7 +4098,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/users/{}/calendar/calendarview"
@@ -2547,11 +4114,65 @@
       "Calendar"
     ],
     "method": "GET",
+    "uri": "/users/{}/calendars/{}/calendarview/delta",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendar/calendarview/delta"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/calendars/{}/events/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendar/events/$count"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/calendars/{}/events/delta",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendar/events/delta"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
     "uri": "/users/{}/calendarview",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/users/{}/calendar/calendarview"
@@ -2564,6 +4185,24 @@
   {
     "apiVersion": "v1.0",
     "modules": [
+      "Calendar"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/calendarview/delta",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendar/calendarview/delta"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
       "Notes"
     ],
     "method": "GET",
@@ -2571,7 +4210,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/users/{}/onenote/notebooks/{}/sectiongroups"
@@ -2591,7 +4230,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/users/{}/onenote/notebooks/{}/sectiongroups"
@@ -2607,11 +4246,31 @@
       "Notes"
     ],
     "method": "GET",
+    "uri": "/users/{}/onenote/notebooks/{}/sectiongroups/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/onenote/notebooks/{}/sectiongroups/{}/sectiongroups/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgUserOnenoteNotebookSectionGroupCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Notes"
+    ],
+    "method": "GET",
     "uri": "/users/{}/onenote/sectiongroups/{}/sectiongroups",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/users/{}/onenote/sectiongroups"
@@ -2631,13 +4290,53 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/users/{}/onenote/sectiongroups"
       ],
       "counterpartShipsAs": [
         "Get-MgUserOnenoteSectionGroup"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Notes"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/onenote/sectiongroups/$count",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/onenote/sectiongroups/{}/sectiongroups/$count"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgUserOnenoteSectionGroupCount"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Users"
+    ],
+    "method": "GET",
+    "uri": "/users/{}/photos/{}/$value",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/photo/$value"
+      ],
+      "counterpartShipsAs": [
+        "Get-MgUserPhotoContent"
       ]
     }
   },
@@ -2651,7 +4350,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}"
@@ -2671,7 +4370,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}"
@@ -2691,7 +4390,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}"
@@ -2711,7 +4410,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}"
@@ -2731,7 +4430,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}"
@@ -2751,7 +4450,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}"
@@ -2771,7 +4470,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/settings/{}"
@@ -2791,7 +4490,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource"
@@ -2809,7 +4508,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}/resource"
@@ -2827,7 +4526,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}"
@@ -2847,7 +4546,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource"
@@ -2865,7 +4564,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}"
@@ -2885,7 +4584,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}/resource"
@@ -2903,7 +4602,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}"
@@ -2923,7 +4622,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource"
@@ -2941,7 +4640,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}/resource"
@@ -2959,7 +4658,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource"
@@ -2977,7 +4676,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}"
@@ -2997,7 +4696,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}/resource"
@@ -3015,7 +4714,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource"
@@ -3033,7 +4732,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}/resource"
@@ -3051,7 +4750,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}"
@@ -3071,7 +4770,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource"
@@ -3089,7 +4788,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}"
@@ -3109,7 +4808,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}/resource"
@@ -3127,7 +4826,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}"
@@ -3147,7 +4846,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource"
@@ -3165,7 +4864,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}/resource"
@@ -3183,7 +4882,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource"
@@ -3201,7 +4900,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}"
@@ -3221,7 +4920,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}/resource"
@@ -3239,7 +4938,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}"
@@ -3259,7 +4958,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations/{}"
@@ -3279,7 +4978,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}"
@@ -3299,7 +4998,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}/children/{}/relations/{}"
@@ -3319,7 +5018,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}"
@@ -3339,13 +5038,33 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations/{}"
       ],
       "counterpartShipsAs": [
         "Update-MgSiteTermStoreSetParentGroupSetChildRelation"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "POST",
+    "uri": "/applications/{}/synchronization/jobs/validatecredentials",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/applications/{}/synchronization/jobs/{}/validatecredentials"
+      ],
+      "counterpartShipsAs": [
+        "Test-MgApplicationSynchronizationJobCredential"
       ]
     }
   },
@@ -3359,7 +5078,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/grouplifecyclepolicies"
@@ -3379,7 +5098,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children"
@@ -3399,7 +5118,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations"
@@ -3419,7 +5138,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children"
@@ -3439,7 +5158,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/children/{}/children/{}/relations"
@@ -3459,7 +5178,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children"
@@ -3479,7 +5198,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations"
@@ -3495,17 +5214,57 @@
       "Groups"
     ],
     "method": "POST",
+    "uri": "/groups/validateproperties",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/groups/{}/validateproperties"
+      ],
+      "counterpartShipsAs": [
+        "Test-MgGroupProperty"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Groups"
+    ],
+    "method": "POST",
     "uri": "/groupsettings",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/groups/{}/settings"
       ],
       "counterpartShipsAs": [
         "New-MgGroupSetting"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.SignIns"
+    ],
+    "method": "POST",
+    "uri": "/identity/customauthenticationextensions/validateauthenticationconfiguration",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identity/customauthenticationextensions/{}/validateauthenticationconfiguration"
+      ],
+      "counterpartShipsAs": [
+        "Test-MgIdentityCustomAuthenticationExtensionAuthenticationConfiguration"
       ]
     }
   },
@@ -3519,7 +5278,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles"
@@ -3535,11 +5294,31 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/refresh",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": [
+        "Update-MgEntitlementManagementCatalogResourceRoleResource"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes"
@@ -3555,11 +5334,31 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/roles/{}/resource/scopes/{}/resource/refresh",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resourceroles/{}/resource/scopes/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": [
+        "Update-MgEntitlementManagementCatalogResourceRoleResourceScopeResource"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes"
@@ -3575,11 +5374,31 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/refresh",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": [
+        "Update-MgEntitlementManagementCatalogResourceScopeResource"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles"
@@ -3595,11 +5414,31 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/catalogs/{}/resourcescopes/{}/resource/roles/{}/resource/refresh",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/catalogs/{}/resources/{}/scopes/{}/resource/roles/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": [
+        "Update-MgEntitlementManagementCatalogResourceScopeResourceRoleResource"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles"
@@ -3615,11 +5454,31 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/refresh",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": [
+        "Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResource"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes"
@@ -3635,11 +5494,31 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/roles/{}/resource/scopes/{}/resource/refresh",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourceroles/{}/resource/scopes/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": [
+        "Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes"
@@ -3655,17 +5534,149 @@
       "Identity.Governance"
     ],
     "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/refresh",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": [
+        "Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResource"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
     "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles",
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles"
       ],
       "counterpartShipsAs": [
         "New-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Identity.Governance"
+    ],
+    "method": "POST",
+    "uri": "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resourcescopes/{}/resource/roles/{}/resource/refresh",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/identitygovernance/entitlementmanagement/resourcerequests/{}/catalog/resources/{}/scopes/{}/resource/roles/{}/resource/refresh"
+      ],
+      "counterpartShipsAs": [
+        "Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/custodians/microsoft.graph.security.applyhold",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/cases/ediscoverycases/{}/custodians/{}/microsoft.graph.security.applyhold"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/custodians/microsoft.graph.security.removehold",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/cases/ediscoverycases/{}/custodians/{}/microsoft.graph.security.removehold"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/noncustodialdatasources/microsoft.graph.security.applyhold",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/cases/ediscoverycases/{}/noncustodialdatasources/{}/microsoft.graph.security.applyhold"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Security"
+    ],
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/noncustodialdatasources/microsoft.graph.security.removehold",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/security/cases/ediscoverycases/{}/noncustodialdatasources/{}/microsoft.graph.security.removehold"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Applications"
+    ],
+    "method": "POST",
+    "uri": "/serviceprincipals/{}/synchronization/jobs/validatecredentials",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/serviceprincipals/{}/synchronization/jobs/{}/validatecredentials"
+      ],
+      "counterpartShipsAs": [
+        "Test-MgServicePrincipalSynchronizationJobCredential"
       ]
     }
   },
@@ -3679,7 +5690,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children"
@@ -3699,7 +5710,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/groups/{}/sets/{}/children/{}/children/{}/relations"
@@ -3719,7 +5730,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children"
@@ -3739,7 +5750,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/children/{}/children/{}/relations"
@@ -3759,7 +5770,7 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children"
@@ -3779,13 +5790,69 @@
     "action": "suppress",
     "evidence": {
       "shipsAs": [
-        null
+        []
       ],
       "counterpartUris": [
         "/sites/{}/termstore/sets/{}/parentgroup/sets/{}/children/{}/children/{}/relations"
       ],
       "counterpartShipsAs": [
         "New-MgSiteTermStoreSetParentGroupSetChildRelation"
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "POST",
+    "uri": "/users/{}/calendar/getschedule",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendars/{}/getschedule"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "POST",
+    "uri": "/users/{}/calendars/{}/getschedule",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendar/getschedule"
+      ],
+      "counterpartShipsAs": []
+    }
+  },
+  {
+    "apiVersion": "v1.0",
+    "modules": [
+      "Calendar"
+    ],
+    "method": "POST",
+    "uri": "/users/{}/calendars/{}/permanentdelete",
+    "action": "suppress",
+    "evidence": {
+      "shipsAs": [
+        []
+      ],
+      "counterpartUris": [
+        "/users/{}/calendar/permanentdelete"
+      ],
+      "counterpartShipsAs": [
+        "Remove-MgUserCalendarPermanent"
       ]
     }
   }

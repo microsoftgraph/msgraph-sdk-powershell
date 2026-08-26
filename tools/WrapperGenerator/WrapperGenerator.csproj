@@ -24,6 +24,9 @@
     <!-- Oracle-derived collision resolutions (tools/Derive-CollisionResolutions.ps1), embedded
          so a generation run never depends on a working directory or the 22 MB oracle. -->
     <EmbeddedResource Include="data\collision-*.json" />
+    <!-- Oracle-derived parity resolutions (tools/Derive-ParityResolutions.ps1): full-surface
+         renames and suppressions, same schema and reader as the collision data. -->
+    <EmbeddedResource Include="data\parity-*.json" />
   </ItemGroup>
 
 </Project>

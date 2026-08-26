@@ -57,7 +57,10 @@ Path to MgCommandMetadata.json.
 [CmdletBinding()]
 param(
     [string]$GeneratedPath = (Join-Path $PSScriptRoot '..\generated'),
-    [string]$OraclePath = (Join-Path $PSScriptRoot '..\src\Authentication\Authentication\custom\common\MgCommandMetadata.json')
+    [string]$OraclePath = (Join-Path $PSScriptRoot '..\src\Authentication\Authentication\custom\common\MgCommandMetadata.json'),
+    # Machine-readable copy of every per-file disposition, so downstream tooling (the parity
+    # derivation) consumes this gate's oracle join instead of re-implementing it and drifting.
+    [string]$OutLedger
 )
 
 $ErrorActionPreference = 'Stop'
@@ -98,28 +101,56 @@ function ConvertTo-NormalizedOracleUri {
     '/' + ($norm -join '/')
 }
 
-function ConvertTo-NormalizedGeneratedUri {
-    param([string]$BuilderExpression)
-    $segments = @()
-    foreach ($token in ($BuilderExpression -split '\.')) {
-        if ($token -notmatch '^([A-Za-z0-9]+)(\[([A-Za-z0-9]+)\])?$') {
-            return $null
-        }
-        $prop = $Matches[1]
-        # Kiota cast builder members (MicrosoftGraphUser, or GraphUser from the KiotaCompat
-        # specs' "graph.user" form) cannot be translated back to the oracle's URI spelling
-        # ("microsoft.graph.user"), so cast chains are unparseable here and get reported as
-        # skipped at the call site until cast endpoints are supported end to end.
-        if ($prop -match '^(MicrosoftGraph|Graph)[A-Z]') { return $null }
-        $segments += ($prop.Substring(0, 1).ToLowerInvariant() + $prop.Substring(1))
-        if ($Matches[3]) { $segments += '{param}' }
-    }
-    '/' + ($segments -join '/')
-}
-
 # Reads the v1.0/beta segment out of a module's kiota-lock.json ("descriptionLocation":
 # "../../openApiDocs/v1.0/Mail.yml"), so the oracle join can be scoped to the ApiVersion
 # the module was actually generated from instead of guessing.
+# The [GraphRoute] attribute the generator stamps on every emitted cmdlet, read from the module's
+# COMPILED assembly rather than from the source text. The route is the operation's identity exactly
+# as the spec declares it, so the oracle join needs no reconstruction: deriving the route from the
+# builder expression is lossy for a parameterized function (the member keeps the argument names but
+# not the OData argument syntax) and wrong for a namespace-qualified action (kiota keeps the
+# qualifier, the route does not) — which is why those two shapes could not be verified at all.
+function Get-GraphRouteMap {
+    param([Parameter(Mandatory)][string]$CmdletsPath, [string]$BuildConfiguration = 'Release')
+
+    $binDir = Join-Path (Split-Path $CmdletsPath -Parent) "bin/$BuildConfiguration/net10.0"
+    if (-not (Test-Path $binDir)) { return $null }
+    $dll = Get-ChildItem -Path $binDir -Filter 'Microsoft.Graph.Wrapper.*.dll' -File -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -notlike '*.Client.dll' } | Select-Object -First 1
+    if (-not $dll) { return $null }
+
+    $assembly = [System.Reflection.Assembly]::LoadFrom($dll.FullName)
+    # The cmdlet classes derive from PSCmdlet, so a host without the PowerShell SDK loaded cannot
+    # realise them; the partial list the exception carries is the usable result.
+    try { $types = $assembly.GetTypes() }
+    catch [System.Reflection.ReflectionTypeLoadException] { $types = $_.Exception.Types | Where-Object { $_ } }
+
+    $map = @{}
+    foreach ($type in $types) {
+        $attr = $type.GetCustomAttributesData() | Where-Object { $_.AttributeType.Name -eq 'GraphRouteAttribute' }
+        if ($attr) {
+            $map[$type.Name] = [pscustomobject]@{
+                Method = [string]$attr.ConstructorArguments[0].Value
+                Path   = [string]$attr.ConstructorArguments[1].Value
+            }
+        }
+    }
+    return $map
+}
+
+# The route as the oracle spells it. Two differences are systematic: the oracle drops a cast or
+# namespace qualifier from a segment ("graph.room" and "microsoft.graph.security.moveAlerts" ship
+# as "room" and "moveAlerts"), and it records a zero-argument function without its parentheses.
+function ConvertTo-OracleJoinKey {
+    param([Parameter(Mandatory)][string]$Path)
+
+    $withoutEmptyArgs = $Path -replace '\(\)', ''
+    $unqualified = ($withoutEmptyArgs -split '/' | ForEach-Object {
+        if ($_ -match '^(microsoft\.)?graph\.') { ($_ -split '\.')[-1] } else { $_ }
+    }) -join '/'
+    ConvertTo-NormalizedOracleUri -Uri $unqualified
+}
+
 function Get-ModuleApiVersion {
     param([string]$ModulePath)
     $lockPath = Join-Path $ModulePath 'kiota-lock.json'
@@ -172,27 +203,47 @@ Write-Host ''
 # determined, so an unresolvable version shows up as a real ambiguity, not a false match.
 function Find-OracleCommands {
     param([hashtable]$Index, [string]$ApiVersion, [string]$Method, [string]$NormalizedUri)
-    if ($ApiVersion) {
-        return $Index["$ApiVersion|$Method|$NormalizedUri"]
+
+    # A media download is reached by two spellings — the OData /$value segment and a literal
+    # /content segment — and the oracle does not always use the one the spec declares. Both are
+    # tried so neither shape silently reads as "the SDK ships nothing for this route".
+    $candidates = @($NormalizedUri)
+    if ($NormalizedUri.Contains('$value')) { $candidates += $NormalizedUri.Replace('$value', 'content') }
+
+    foreach ($uri in $candidates) {
+        if ($ApiVersion) {
+            $hit = $Index["$ApiVersion|$Method|$uri"]
+            if ($hit) { return $hit }
+            continue
+        }
+        $merged = [System.Collections.Generic.HashSet[string]]::new()
+        foreach ($v in 'v1.0', 'beta') {
+            $found = $Index["$v|$Method|$uri"]
+            if ($found) { [void]$merged.UnionWith($found) }
+        }
+        if ($merged.Count -gt 0) { return $merged }
     }
-    $merged = [System.Collections.Generic.HashSet[string]]::new()
-    foreach ($v in 'v1.0', 'beta') {
-        $found = $Index["$v|$Method|$NormalizedUri"]
-        if ($found) { [void]$merged.UnionWith($found) }
-    }
-    if ($merged.Count -eq 0) { return $null }
-    return $merged
+    return $null
 }
 
 # The emitter escapes spec-derived nouns for C# string literals (CmdletEmitter.EscapeLiteral),
 # so the pattern accepts escaped sequences and the noun is unescaped after matching.
 $cmdletAttrPattern = '\[Cmdlet\(Verbs\w+\.(\w+),\s*"((?:\\.|[^"\\])*)"'
-$callChainPattern = 'client\.([A-Za-z0-9_.\[\]]+)\.(Get|Post|Patch|Put|Delete)Async\('
 
 $modules = @(Get-WrapperModuleFolders -Root $GeneratedPath)
 if ($modules.Count -eq 0) {
     Write-Error "No *.g.cs files found under $GeneratedPath"
     exit 1
+}
+
+$ledger = [System.Collections.Generic.List[object]]::new()
+function Add-LedgerRow {
+    param($Module, $File, $ApiVersion, $Command, $Method, $Uri, $Disposition, $OracleCommands)
+    $ledger.Add([pscustomobject]@{
+        Module = $Module; File = $File; ApiVersion = $ApiVersion; Command = $Command
+        Method = $Method; Uri = $Uri; Disposition = $Disposition
+        OracleCommands = (@($OracleCommands) -join ';')
+    })
 }
 
 $totalJoinable = 0
@@ -205,6 +256,15 @@ $totalCorrected = 0
 foreach ($module in $modules | Sort-Object Name) {
     $files = Get-ChildItem -Path $module.Path -Filter '*.g.cs' -File | Sort-Object Name
     $apiVersion = Get-ModuleApiVersion -ModulePath $module.Path
+
+    # Ground truth comes from the compiled assembly. Without it there is nothing to verify against,
+    # and a gate that quietly falls back to guessing the route is how 1,585 cmdlets came to pass by
+    # never being examined — so this fails loudly instead.
+    $routeMap = Get-GraphRouteMap -CmdletsPath $module.Path
+    if (-not $routeMap -or $routeMap.Count -eq 0) {
+        Write-Error "No compiled assembly with [GraphRoute] metadata for '$($module.Name)'. Build the module before running the parity gate."
+        exit 1
+    }
     $moduleJoinable = 0
     $moduleMatched = 0
     $moduleDispatchers = 0
@@ -227,31 +287,24 @@ foreach ($module in $modules | Sort-Object Name) {
         $generatedCommand = "$verb-$generatedNoun"
         $expectedCommand = "$verb-$publishedNoun"
 
-        $callMatch = [regex]::Match($content, $callChainPattern)
-        if (-not $callMatch.Success) {
-            # Only a real dispatcher (forwards via InvokeScript) legitimately has no Graph
-            # call. Anything else with no reconstructable call is a malformed emission and
-            # must fail the gate instead of hiding in the dispatcher bucket.
-            if ($content -match 'InvokeCommand\.InvokeScript') {
-                $moduleDispatchers++
-                continue # dispatcher: delegates to internal cmdlets, nothing to reconstruct here
-            }
+        # A dispatcher issues no request of its own; it forwards to the _List/_Get pair, whose
+        # names carry the same published noun and are verified in their own right.
+        if ($content -match 'InvokeCommand\.InvokeScript') {
+            $moduleDispatchers++
+            Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand '' '' 'dispatcher' @()
+            continue
+        }
+
+        $route = $routeMap[(($file.Name -replace '\.g\.cs$', '') + 'Command')]
+        if (-not $route) {
             $moduleJoinable++
-            $moduleProblems += "  [NO CALL] $($file.Name): contains no reconstructable Graph call and is not a dispatcher - likely a malformed emission."
+            $moduleProblems += "  [NO ROUTE] $($file.Name): the compiled assembly carries no [GraphRoute] for this cmdlet - it was not emitted by this generator, or the build is stale."
+            Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand '' '' 'no-route' @()
             continue
         }
 
-        $builderExpr = $callMatch.Groups[1].Value
-        $method = $callMatch.Groups[2].Value.ToUpperInvariant()
-        $normalizedUri = ConvertTo-NormalizedGeneratedUri -BuilderExpression $builderExpr
-
-        if (-not $normalizedUri) {
-            # Known-unsupported shapes (OData cast chains) are reported but excluded from the
-            # match ratio and do not fail the gate, mirroring how dispatchers are handled.
-            $moduleUnparseable++
-            $moduleSkips += "  [UNPARSEABLE] $($file.Name): builder expression '$builderExpr' contains an OData cast segment - cast endpoints aren't generated end to end yet, so there is nothing to verify."
-            continue
-        }
+        $method = $route.Method.ToUpperInvariant()
+        $normalizedUri = ConvertTo-OracleJoinKey -Path $route.Path
 
         $moduleJoinable++
 
@@ -259,21 +312,26 @@ foreach ($module in $modules | Sort-Object Name) {
 
         if (-not $candidates -or $candidates.Count -eq 0) {
             $moduleProblems += "  [NO ORACLE ENTRY] $($file.Name): '$generatedCommand' -> reconstructed $method $normalizedUri, no oracle row for that Method+URI."
+            Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'no-oracle' @()
         }
         elseif ($candidates.Count -gt 1) {
             $moduleProblems += "  [AMBIGUOUS] $($file.Name): $method $normalizedUri matches multiple oracle commands: $($candidates -join ', ')."
+            Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'ambiguous' $candidates
         }
         elseif ($candidates.Contains($expectedCommand)) {
             $moduleMatched++
+            Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'matched' $candidates
         }
         else {
             $oracleCommand = $candidates | Select-Object -First 1
             if ($deliberateCorrections[$oracleCommand] -eq $expectedCommand) {
                 $moduleCorrected++
                 $moduleCorrections += "  [CORRECTED] $($file.Name): oracle ships '$oracleCommand'; generator deliberately emits '$expectedCommand' (see tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md)."
+                Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'corrected' $candidates
             }
             else {
                 $moduleProblems += "  [MISMATCH] $($file.Name): generated '$expectedCommand', oracle says '$oracleCommand' for $method $normalizedUri."
+                Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'mismatch' $candidates
             }
         }
     }
@@ -299,7 +357,21 @@ foreach ($module in $modules | Sort-Object Name) {
 Write-Host ''
 Write-Host "TOTAL: $totalMatched of $totalJoinable cmdlets match the oracle across $($modules.Count) module(s) (+$totalDispatchers dispatcher cmdlet(s) skipped, +$totalUnparseable cast cmdlet(s) skipped, +$totalCorrected deliberately corrected)."
 
+if ($OutLedger) {
+    $ledger | Export-Csv -Path $OutLedger -NoTypeInformation
+    Write-Host "ledger: $($ledger.Count) row(s) -> $OutLedger"
+}
+
 if ($totalMismatches -gt 0) {
+    exit 1
+}
+
+# Only mismatches failed above, so a run that joined nothing reported "0 of 0" and exited clean -
+# a pass earned by comparing no cmdlet to no oracle entry. That is indistinguishable from success
+# in CI, and it is the shape a wrong -GeneratedPath or an empty output tree produces.
+if ($totalJoinable -eq 0) {
+    Write-Host "FAILED: no generated cmdlet could be joined to the oracle, so nothing was verified." -ForegroundColor Red
+    Write-Host "        Check -GeneratedPath points at a folder of emitted *.g.cs cmdlets." -ForegroundColor Red
     exit 1
 }
 exit 0

@@ -35,6 +35,21 @@ public static partial class NamingOverrides
 
     private sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason);
 
+    // NormalizePath lowercases before matching, so a Pattern containing an uppercase letter can
+    // never match anything: the entry is silently dead and the override looks applied but is not.
+    // Every pre-existing entry happened to be single-word lowercase, so nothing surfaced this
+    // until a camelCase path was added. Failing at startup beats debugging a missing rename.
+    static NamingOverrides()
+    {
+        var dead = Entries.FindAll(e => e.Pattern != e.Pattern.ToLowerInvariant());
+        if (dead.Count > 0)
+        {
+            throw new InvalidOperationException(
+                "NamingOverrides pattern(s) contain uppercase and can never match, because paths are " +
+                "lowercased before comparison: " + string.Join(", ", dead.ConvertAll(e => e.Pattern)));
+        }
+    }
+
     private static readonly List<Entry> Entries =
     [
         // The SDK ships no Update cmdlet for /users/{id}/calendar. Its pipeline removes the
@@ -93,6 +108,42 @@ public static partial class NamingOverrides
             Reason: "Sites.md directive; oracle ships Get-MgGroupSubSite"),
         new(OverrideKind.ReplaceNoun, Method: null, "/groups/{}/sites/{}/sites/{}", Match: PathMatch.Exact, Value: "GroupSubSite",
             Reason: "Sites.md directive; oracle ships Get-MgGroupSubSite"),
+
+        // ---- Naming-parity sweep (2026-08-13): the two rules the sweep proved safe. ----
+        //
+        // Both were measured against the whole corpus first: each fixes real mismatches and
+        // rewrites no currently-matching name. Every other candidate rule from that sweep broke
+        // more names than it fixed (dropping "IdentityGovernance" would have fixed 297 and broken
+        // 417), which is why only these two are here and the rest await oracle-derived naming.
+
+        // "people" is singularized everywhere else and correctly so - /users/{}/people ships as
+        // Get-MgUserPerson. Under /admin/people the published SDK keeps the plural, so this is
+        // scoped per path rather than by making "people" invariant, which would break UserPerson.
+        new(OverrideKind.ReplaceNoun, Method: null, "/admin/people", Match: PathMatch.Exact, Value: "AdminPeople",
+            Reason: "oracle ships Get-MgAdminPeople; /admin/people keeps the plural"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/admin/people/iteminsights", Match: PathMatch.Exact, Value: "AdminPeopleItemInsight",
+            Reason: "oracle ships Get-MgAdminPeopleItemInsight"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/admin/people/profilecardproperties", Match: PathMatch.Exact, Value: "AdminPeopleProfileCardProperty",
+            Reason: "oracle ships Get-MgAdminPeopleProfileCardProperty"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/admin/people/profilecardproperties/{}", Match: PathMatch.Exact, Value: "AdminPeopleProfileCardProperty",
+            Reason: "oracle ships Get-MgAdminPeopleProfileCardProperty"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/admin/people/profilepropertysettings", Match: PathMatch.Exact, Value: "AdminPeopleProfilePropertySetting",
+            Reason: "oracle ships Get-MgAdminPeopleProfilePropertySetting"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/admin/people/profilepropertysettings/{}", Match: PathMatch.Exact, Value: "AdminPeopleProfilePropertySetting",
+            Reason: "oracle ships Get-MgAdminPeopleProfilePropertySetting"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/admin/people/profilesources", Match: PathMatch.Exact, Value: "AdminPeopleProfileSource",
+            Reason: "oracle ships Get-MgAdminPeopleProfileSource"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/admin/people/profilesources/{}", Match: PathMatch.Exact, Value: "AdminPeopleProfileSource",
+            Reason: "oracle ships Get-MgAdminPeopleProfileSource"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/admin/people/pronouns", Match: PathMatch.Exact, Value: "AdminPeoplePronoun",
+            Reason: "oracle ships Get-MgAdminPeoplePronoun"),
+
+        // The resource repeats its parent's name, so segment-joining yields
+        // DeviceManagementDeviceManagementPartner. The published SDK collapses the repetition.
+        new(OverrideKind.ReplaceNoun, Method: null, "/devicemanagement/devicemanagementpartners", Match: PathMatch.Exact, Value: "DeviceManagementPartner",
+            Reason: "oracle ships Get-MgDeviceManagementPartner, not ...DeviceManagementDeviceManagementPartner"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/devicemanagement/devicemanagementpartners/{}", Match: PathMatch.Exact, Value: "DeviceManagementPartner",
+            Reason: "oracle ships Get-MgDeviceManagementPartner"),
 
         // ---- Collision resolutions from the full-inventory oracle sweep (issue #3704). ----
 
@@ -210,8 +261,23 @@ public static partial class NamingOverrides
     // Parameter names are erased before comparing, so "/users/{user-id}/calendar" and
     // "/users/{id}/calendar" both match the "/users/{}/calendar" entries above. A spec-side
     // parameter rename must not silently disable an override.
+    // An empty argument list is dropped: the spec spells a zero-argument function
+    // "filterOperators()", while the published inventory records the same operation as
+    // "/schema/filterOperators" and kiota exposes it as a plain property. Keeping the parentheses
+    // made a route key that could never match an oracle-derived entry, so every such function
+    // silently kept its structural name instead of its published one.
     private static string NormalizePath(string pathTemplate) =>
-        PathParamRegex().Replace(pathTemplate, "{}").TrimEnd('/').ToLowerInvariant();
+        PathParamRegex().Replace(pathTemplate, "{}").Replace("()", "", StringComparison.Ordinal)
+            .TrimEnd('/').ToLowerInvariant();
+
+    // The same normalization, for callers that need to report or key by a route rather than
+    // match one — the derived data files and the collision diagnostics both use this form, so
+    // there is one definition of what a route looks like.
+    public static string NormalizePathTemplate(string pathTemplate)
+    {
+        ArgumentNullException.ThrowIfNull(pathTemplate);
+        return NormalizePath(pathTemplate);
+    }
 
     // config carries the API version the derived collision data is keyed by; null (the unit
     // tests' default) applies only the curated entries below, so a data-file change can never
@@ -231,6 +297,19 @@ public static partial class NamingOverrides
         return false;
     }
 
+    // The published verb for an operation, when the oracle-derived data carries one. Only an
+    // action or function needs it: CRUD verbs follow from the HTTP method, but an action's verb
+    // is the SDK's own choice per operation (applyHold ships as Add-, removeHold as Remove-).
+    public static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config)
+    {
+        ArgumentNullException.ThrowIfNull(httpMethod);
+        ArgumentNullException.ThrowIfNull(pathTemplate);
+        return config is { UseCollisionData: true }
+            && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, NormalizePath(pathTemplate), out var derived)
+            ? derived.Verb
+            : null;
+    }
+
     public static string ApplyNounOverrides(HttpMethod httpMethod, string pathTemplate, string noun, GeneratorConfig? config = null)
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
@@ -239,8 +318,8 @@ public static partial class NamingOverrides
         var path = NormalizePath(pathTemplate);
 
         // A derived rename is the published noun verbatim; nothing curated may rewrite it.
-        if (config is { UseCollisionData: true } && DerivedCollisionResolutions.TryReplaceNoun(config.ApiVersion, httpMethod, path, out var derivedNoun))
-            return derivedNoun;
+        if (config is { UseCollisionData: true } && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, path, out var derived))
+            return derived.Noun;
 
         // Published BackupRestore cmdlets retain the Solution prefix (for example,
         // Get-MgSolutionBackupRestore). Do not apply /solutions/* strip rules here.

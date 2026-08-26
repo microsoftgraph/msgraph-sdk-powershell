@@ -129,6 +129,15 @@ public sealed class NamingTests
     [InlineData("GET", "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups", "Get", "MgUserOnenoteSectionGroup")]
     // OData cast segments (Get-MgGroupOwnerAsUser)
     [InlineData("GET", "/groups/{group-id}/owners/{directoryObject-id}/graph.user", "Get", "MgGroupOwnerAsUser")]
+    // A /$count directly after a cast counts the cast-filtered collection, and the published name
+    // puts Count before the cast suffix: 131 v1.0 routes have this shape and all ship this way
+    // (Get-MgUserMemberOfCountAsGroup, Get-MgDeviceRegisteredUserCountAsEndpoint).
+    [InlineData("GET", "/users/{user-id}/memberOf/graph.group/$count", "Get", "MgUserMemberOfCountAsGroup")]
+    [InlineData("GET", "/deviceAppManagement/mobileApps/graph.win32LobApp/$count", "Get", "MgDeviceAppManagementMobileAppCountAsWin32LobApp")]
+    // ...but only a DIRECTLY adjacent cast moves. With a segment in between, the cast keeps its
+    // position and Count stays last (Get-MgDeviceAppManagementMobileAppAsAndroidLobAppCategoryCount).
+    // This pair is the boundary: reordering unconditionally would break this name.
+    [InlineData("GET", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.androidLobApp/categories/$count", "Get", "MgDeviceAppManagementMobileAppAsAndroidLobAppCategoryCount")]
     public void ResolvesPublishedSdkNames(string method, string path, string expectedVerb, string expectedNoun)
     {
         var naming = Resolve(method, path);
@@ -140,7 +149,7 @@ public sealed class NamingTests
     [Theory]
     // Deliberate corrections: the published name is wrong (an AutoRest naming defect) and the
     // generator emits the corrected name instead of reproducing it. Every entry here must have
-    // a docs/edge-cases/naming-edge-cases.md entry and a matching row in
+    // an docs/edge-cases/naming-edge-cases.md entry and a matching row in
     // Compare-WrapperCmdletNames.ps1's $deliberateCorrections table, so the parity gate
     // reports it as [CORRECTED], not a failure.
     // Shipped: Get-MgSecurityThreatIntelligenceHostWhoi — the only whois-family cmdlet (of 30)

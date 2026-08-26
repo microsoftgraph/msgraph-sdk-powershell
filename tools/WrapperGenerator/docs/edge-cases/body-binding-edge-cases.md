@@ -1,14 +1,42 @@
 # Body-binding edge cases
 
 Request-body property shapes the generator classifies but does not bind. **Every shape reaching
-the classifier now binds — the sweep reports 0 unbound properties across all 38 specs.** That is
-a statement about the 8,164 operations (57.8% of 14,131) that generate: an operation refused
-upstream — 767 suppressed because the published SDK ships no cmdlet, 5,200 unsupported shapes —
-contributes no properties to any count in this file. What
+the classifier now binds — the sweep reports 0 unbound properties across all 38 specs.** What
 remains here is one closed entry recording how the last gap was shut, and several classifications
 with zero population that are retained deliberately: they exist so a future corpus change is
 reported accurately instead of being silently mis-bound, and each is reported per property at
 `--log-level Information` and counted by `tools/Measure-BodyPropertyCoverage.ps1`.
+
+**Scope of every count in this file.** These populations cover the bodies of operations the
+generator emits. An operation skipped earlier — for an unsupported path segment or an
+unresolvable request schema — contributes no properties to any count here, so a zero is evidence
+about what we generate, never about what Graph declares.
+
+That boundary is large. Across the 38 v1.0 specs the generator reads **14,131** operations and
+accounts for every one of them (current tree, parity data applied):
+
+| Population | Count | |
+|---|---:|---|
+| operation-backed cmdlets | 10,401 | **73.6%** — what actually generates |
+| suppressed | 3,173 | the published SDK ships no cmdlet (oracle-derived) |
+| unsupported | 557 | 345 call segments on non-action/function operations, 125 parameterized functions mid-route, 42 whose content response is neither a stream nor a resolvable entity, 45 other |
+| **total** | **14,131** | |
+
+The first row rose from 49.8% as the operation shapes landed: actions and functions first, then the
+OData `$`-segments (`$count`, `$ref`, `$value`) and PUT, which together had accounted for the bulk
+of the unsupported bucket.
+
+A further 1,336 emitted files are GET dispatchers, which issue no request of their own — 11,737
+files, 10,401 operations. Counting files as operations, or deriving "generated" by subtracting only
+the unsupported, overstates coverage: the first double-counts dispatchers, the second silently
+folds every suppressed operation into the generated bucket. Both errors were made here before the
+accounting was made to balance.
+
+`DeviceManagement.Actions` has no `openApiDocs_KiotaCompat` spec at all, so none of its operations
+appear even in the 14,131. Every "0 unbound" in this file therefore describes the 73.6% that
+generates — not the whole v1.0 surface — and must be quoted that way. Restating it against a
+different denominator is the error this paragraph exists to prevent, so the figure has to be
+updated here whenever the generated population moves.
 
 The type evidence and the policies behind what is bound live in
 [../body-property-binding.md](../body-property-binding.md).
@@ -91,17 +119,11 @@ Entry template (keep field names exact so the file converts cleanly):
 ## Inline objects and inline enums
 
 - **Class:** unsupported-shape
-- **Status:** deferred — zero population **among the operations that generate**, which is not
-  the same as zero in v1.0.
+- **Status:** deferred — zero population in v1.0
 - **Counts:** 0 occurrences (`Measure-BodyPropertyCoverage.ps1`, 2026-08-12, all 38 specs).
-- **Evidence:** the sweep produced no `InlineObject` or `InlineEnum` classification. For entity
-  CRUD bodies that is a real property of the corpus: Graph declares those objects and enums as
-  component `$ref`s, which is why referenced-type binding covers them.
-- **Why the count is conditional:** action bodies are where Graph *does* write inline objects,
-  and they never reach the property classifier — an action's `requestBody` is a `$ref` to a
-  **requestBodies** component whose schema is an inline `type: object`, and the generator skips
-  the whole operation first (1,528 POSTs corpus-wide, logged as `missing supported request JSON
-  schema`). This population becomes non-zero the moment action generation lands.
+  Graph declares every object and enum as a component `$ref`, which is why referenced-type
+  binding covers the corpus.
+- **Evidence:** the sweep produced no `InlineObject` or `InlineEnum` classification.
 - **Why unsafe today:** kiota synthesises a type name for an anonymous schema from its parent
   and property, and that name cannot be derived from the spec alone. Guessing it is the failure
   mode that produced 39 compile errors when numeric formats were first mapped.

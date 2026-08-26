@@ -148,11 +148,13 @@ public sealed class GenerationServiceRegressionTests
     }
 
     [Theory]
-    // $count would produce a mangled noun (Get-MgUsercount); $value an invalid builder chain
-    // (client...$value does not compile); parameterized function segments mangle into garbage
-    // nouns. All are skipped up front until those shapes are supported.
-    [InlineData("/users/$count")]
-    [InlineData("/users/{user-id}/photo/$value")]
+    // A parameterized call segment on a plain resource operation mangles into a garbage noun, so
+    // it is skipped up front.
+    //
+    // $count, $ref and $value are NO LONGER here: all three are emitted now — see
+    // EmitsCountCmdletForTheCountSegment, EmitsReferenceListForACollectionRefSegment and
+    // EmitsContentReadAndWriteForTheValueSegment in ActionFunctionTests. They moved out of this
+    // list deliberately, not because the assertions became inconvenient.
     [InlineData("/solutions/virtualEvents/townhalls/getByUserIdAndRole(userId='{userId}',role='{role}')")]
     public async Task GenerateAsync_SkipsUnsupportedODataPathSegments_DoesNotEmitMalformedCmdlets(string path)
     {
@@ -246,10 +248,14 @@ public sealed class GenerationServiceRegressionTests
 
             Assert.Contains("GetMgWidget.g.cs", ex.Message);
             Assert.Contains("collision", ex.Message);
-            // Both colliding cmdlets are named Get-MgWidget, so only their builder expressions
-            // prove the message identifies both operations.
-            Assert.Contains("[Widgets[WidgetId]]", ex.Message);
-            Assert.Contains("Widgets[WidgetId].Widgets[WidgetId1]", ex.Message);
+            // Both colliding cmdlets are named Get-MgWidget, so only their routes prove the
+            // message identifies both operations. The route is reported directly rather than as
+            // the builder expression it used to carry: Derive-CollisionResolutions.ps1 resolves
+            // each colliding route against the oracle, and a builder expression cannot express a
+            // function's OData arguments or an action's namespace qualifier, so rebuilding a
+            // route from one silently resolved those operations against the wrong oracle row.
+            Assert.Contains("[/widgets/{}]", ex.Message);
+            Assert.Contains("[/widgets/{}/widgets/{}]", ex.Message);
         }
         finally
         {
