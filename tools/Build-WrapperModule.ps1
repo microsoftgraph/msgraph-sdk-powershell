@@ -99,10 +99,12 @@ param(
     # two packages that share an id and version but not their contents are indistinguishable to
     # a feed and to anyone who already installed one. The build id supplies that distinctness in
     # CI; a UTC timestamp does locally, where no build id exists.
-    # The pattern is the documented PowerShellGet grammar, not a preference: the prerelease
-    # string may contain only ASCII alphanumerics and a hyphen, the hyphen only as the FIRST
-    # character, and never a period - so 'alpha-4472' and 'alpha.4472' are both invalid, while
-    # 'alpha4472' is the shape the documentation's own examples use (-update20171020).
+    # The pattern is DELIBERATELY narrower than the PowerShellGet prerelease grammar rather than a
+    # restatement of it: PowerShellGet also accepts a hyphen, which this rejects. A label is joined
+    # to the version by a hyphen already, so one that itself begins with a hyphen reads as
+    # '3.0.0--label', and one containing a hyphen splits the label when a version string is parsed
+    # by eye. Alphanumeric-only keeps every generated label unambiguous, and both defaults above
+    # ('alpha' plus a build id or a UTC timestamp) satisfy it by construction.
     [ValidatePattern('^[A-Za-z0-9]+$')]
     [string]$Prerelease = "alpha$(if ($env:BUILD_BUILDID) { $env:BUILD_BUILDID } else { (Get-Date).ToUniversalTime().ToString('yyyyMMddHHmm') })",
     [switch]$SkipKiota,
