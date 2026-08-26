@@ -78,6 +78,7 @@ steps:
         # errors (e.g. source-already-registered) that would otherwise fail the task; Register-CfsFeed
         # throws on genuine failure, which still fails the step.
         . "$(Build.SourcesDirectory)/tools/Get-CfsFeedCredential.ps1"
+        Initialize-CfsPackageProvider
         Register-CfsFeed
         Unregister-PublicPSGallery
         Get-PSRepository | Format-List Name, SourceLocation, InstallationPolicy, Trusted

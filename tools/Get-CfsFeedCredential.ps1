@@ -31,6 +31,22 @@ function Get-CfsFeedCredential {
     return [System.Management.Automation.PSCredential]::new('azure', $token)
 }
 
+function Initialize-CfsPackageProvider {
+    # Pre-seed the NuGet package provider so PowerShellGet uses it directly rather than bootstrapping /
+    # resolving a public source on first use, which egresses to www.powershellgallery.com (a CFSClean2
+    # violation). Prefer the private feed; otherwise import the provider already bundled on the agent.
+    $cred = Get-CfsFeedCredential
+    try {
+        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Source $script:CfsFeedUrl -Credential $cred -Scope AllUsers -Force -ErrorAction Stop *> $null
+        Write-Host "Pre-seeded NuGet package provider from the private feed."
+    }
+    catch {
+        Import-PackageProvider -Name NuGet -Force -ErrorAction SilentlyContinue *> $null
+        Write-Host "Imported the agent's existing NuGet package provider (private-feed seed unavailable)."
+    }
+    $global:LASTEXITCODE = 0
+}
+
 function Register-CfsFeed {
     # Registers the private feed as a Trusted PSRepository (idempotent). Persisted under the user's
     # PowerShellGet config, so a single registration per job is visible to later steps and runspaces.
