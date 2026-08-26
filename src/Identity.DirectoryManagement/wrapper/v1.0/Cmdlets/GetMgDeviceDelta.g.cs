@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 {
     [GraphRoute("GET", "/devices/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgDeviceDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Device))]
     public class GetMgDeviceDeltaCommand : GraphClientCmdlet
     {
 

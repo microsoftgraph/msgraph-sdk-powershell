@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 {
     [GraphRoute("GET", "/communications/onlineMeetings/{onlineMeeting-id}/recordings/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgCommunicationOnlineMeetingRecordingDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.CloudCommunications.Client.Communications.OnlineMeetings.Item.Recordings.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.CallRecording))]
     public class GetMgCommunicationOnlineMeetingRecordingDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

@@ -398,9 +398,21 @@ public sealed partial class PowerShellWrapperGenerationService
                 continue;
             }
 
+            // A delta cmdlet writes the envelope's items to the pipeline and never the envelope
+            // itself, so OutputType has to name the item model. Advertising the response type
+            // describes an object the cmdlet never emits, which is what help, IntelliSense and
+            // anything reading OutputType would then report.
+            string? deltaItemType = null;
+            if (TryGetSuccessJsonSchema(op.Operation) is { } deltaResponseSchema
+                && FindProperty(deltaResponseSchema, "value") is { } deltaValueSchema
+                && TryResolveListEntityTypeName(deltaValueSchema, ctx.ModelsNamespace, out var resolvedItemType))
+            {
+                deltaItemType = resolvedItemType;
+            }
+
             var source = CmdletEmitter.EmitDelta(op.Naming, ctx,
                 new CmdletEmitter.CallPlan(methodName, returnType, BodyTypeName: null, returnsStream),
-                op.QueryParams.ToHashSet());
+                op.QueryParams.ToHashSet(), deltaItemType);
             written += await WriteCmdletFileAsync(op.Naming, source, cancellationToken).ConfigureAwait(false);
         }
 

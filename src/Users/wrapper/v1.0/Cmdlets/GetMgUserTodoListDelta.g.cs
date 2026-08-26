@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Users
 {
     [GraphRoute("GET", "/users/{user-id}/todo/lists/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserTodoListDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Todo.Lists.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Users.Client.Models.TodoTaskList))]
     public class GetMgUserTodoListDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

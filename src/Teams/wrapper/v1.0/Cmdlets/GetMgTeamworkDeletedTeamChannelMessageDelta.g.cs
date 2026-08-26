@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Teams
 {
     [GraphRoute("GET", "/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/messages/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgTeamworkDeletedTeamChannelMessageDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.ChatMessage))]
     public class GetMgTeamworkDeletedTeamChannelMessageDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

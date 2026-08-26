@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 {
     [GraphRoute("GET", "/contracts/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgContractDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Contracts.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.DirectoryObject))]
     public class GetMgContractDeltaCommand : GraphClientCmdlet
     {
 

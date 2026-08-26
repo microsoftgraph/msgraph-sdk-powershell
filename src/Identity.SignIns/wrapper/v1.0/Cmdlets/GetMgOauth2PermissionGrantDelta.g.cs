@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
 {
     [GraphRoute("GET", "/oauth2PermissionGrants/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgOauth2PermissionGrantDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Oauth2PermissionGrants.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.OAuth2PermissionGrant))]
     public class GetMgOauth2PermissionGrantDeltaCommand : GraphClientCmdlet
     {
 

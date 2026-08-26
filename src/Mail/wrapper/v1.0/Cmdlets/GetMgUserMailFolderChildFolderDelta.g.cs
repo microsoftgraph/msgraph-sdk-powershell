@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Mail
 {
     [GraphRoute("GET", "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserMailFolderChildFolderDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Mail.Client.Users.Item.MailFolders.Item.ChildFolders.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Mail.Client.Models.MailFolder))]
     public class GetMgUserMailFolderChildFolderDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Sites
 {
     [GraphRoute("GET", "/sites/{site-id}/lists/{list-id}/items/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgSiteListItemDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Items.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Sites.Client.Models.ListItem))]
     public class GetMgSiteListItemDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

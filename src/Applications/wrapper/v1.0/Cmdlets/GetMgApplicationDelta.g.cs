@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Applications
 {
     [GraphRoute("GET", "/applications/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgApplicationDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Applications.Client.Applications.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.Application))]
     public class GetMgApplicationDeltaCommand : GraphClientCmdlet
     {
 

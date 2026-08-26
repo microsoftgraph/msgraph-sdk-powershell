@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 {
     [GraphRoute("GET", "/directoryRoleTemplates/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgDirectoryRoleTemplateDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryRoleTemplates.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.DirectoryObject))]
     public class GetMgDirectoryRoleTemplateDeltaCommand : GraphClientCmdlet
     {
 

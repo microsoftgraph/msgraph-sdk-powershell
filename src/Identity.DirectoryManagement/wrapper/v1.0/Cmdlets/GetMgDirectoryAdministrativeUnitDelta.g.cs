@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 {
     [GraphRoute("GET", "/directory/administrativeUnits/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgDirectoryAdministrativeUnitDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.AdministrativeUnits.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.AdministrativeUnit))]
     public class GetMgDirectoryAdministrativeUnitDeltaCommand : GraphClientCmdlet
     {
 

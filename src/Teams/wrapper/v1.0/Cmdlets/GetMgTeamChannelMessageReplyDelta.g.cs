@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Teams
 {
     [GraphRoute("GET", "/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgTeamChannelMessageReplyDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Teams.Client.Teams.Item.Channels.Item.Messages.Item.Replies.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.ChatMessage))]
     public class GetMgTeamChannelMessageReplyDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

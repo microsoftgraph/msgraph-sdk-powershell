@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Users.Functions
 {
     [GraphRoute("GET", "/users/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Users.Functions.Client.Users.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Users.Functions.Client.Models.User))]
     public class GetMgUserDeltaCommand : GraphClientCmdlet
     {
 

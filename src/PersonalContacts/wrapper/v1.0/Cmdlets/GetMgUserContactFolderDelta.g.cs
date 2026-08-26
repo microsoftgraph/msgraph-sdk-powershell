@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
 {
     [GraphRoute("GET", "/users/{user-id}/contactFolders/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserContactFolderDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.PersonalContacts.Client.Users.Item.ContactFolders.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.PersonalContacts.Client.Models.ContactFolder))]
     public class GetMgUserContactFolderDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

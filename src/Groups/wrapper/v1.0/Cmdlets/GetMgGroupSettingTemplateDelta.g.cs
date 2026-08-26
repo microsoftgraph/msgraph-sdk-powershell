@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Groups
 {
     [GraphRoute("GET", "/groupSettingTemplates/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgGroupSettingTemplateDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Groups.Client.GroupSettingTemplates.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Groups.Client.Models.DirectoryObject))]
     public class GetMgGroupSettingTemplateDeltaCommand : GraphClientCmdlet
     {
 

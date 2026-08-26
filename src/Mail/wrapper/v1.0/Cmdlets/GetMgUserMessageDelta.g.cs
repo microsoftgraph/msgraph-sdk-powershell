@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Mail
 {
     [GraphRoute("GET", "/users/{user-id}/messages/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserMessageDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Mail.Client.Users.Item.Messages.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Mail.Client.Models.Message))]
     public class GetMgUserMessageDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

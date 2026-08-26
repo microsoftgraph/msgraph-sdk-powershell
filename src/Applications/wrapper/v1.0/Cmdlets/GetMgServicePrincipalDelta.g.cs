@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Applications
 {
     [GraphRoute("GET", "/servicePrincipals/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgServicePrincipalDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.ServicePrincipal))]
     public class GetMgServicePrincipalDeltaCommand : GraphClientCmdlet
     {
 

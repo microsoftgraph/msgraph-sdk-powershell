@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Education
 {
     [GraphRoute("GET", "/education/me/assignments/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgEducationMeAssignmentDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Education.Client.Education.Me.Assignments.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Education.Client.Models.EducationAssignment))]
     public class GetMgEducationMeAssignmentDeltaCommand : GraphClientCmdlet
     {
 

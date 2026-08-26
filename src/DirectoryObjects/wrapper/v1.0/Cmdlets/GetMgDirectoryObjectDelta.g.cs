@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
 {
     [GraphRoute("GET", "/directoryObjects/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgDirectoryObjectDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.DirectoryObjects.Client.DirectoryObjects.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.DirectoryObjects.Client.Models.DirectoryObject))]
     public class GetMgDirectoryObjectDeltaCommand : GraphClientCmdlet
     {
 

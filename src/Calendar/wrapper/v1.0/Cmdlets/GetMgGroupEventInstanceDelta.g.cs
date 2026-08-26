@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
 {
     [GraphRoute("GET", "/groups/{group-id}/events/{event-id}/instances/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgGroupEventInstanceDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Calendar.Client.Groups.Item.Events.Item.Instances.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Calendar.Client.Models.Event))]
     public class GetMgGroupEventInstanceDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

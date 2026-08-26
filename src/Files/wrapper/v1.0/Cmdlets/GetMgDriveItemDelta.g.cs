@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Files
 {
     [GraphRoute("GET", "/drives/{drive-id}/items/{driveItem-id}/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgDriveItemDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Files.Client.Drives.Item.Items.Item.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.DriveItem))]
     public class GetMgDriveItemDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]

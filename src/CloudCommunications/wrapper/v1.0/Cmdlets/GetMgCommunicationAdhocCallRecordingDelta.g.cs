@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 {
     [GraphRoute("GET", "/communications/adhocCalls/{adhocCall-id}/recordings/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgCommunicationAdhocCallRecordingDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.CloudCommunications.Client.Communications.AdhocCalls.Item.Recordings.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.CallRecording))]
     public class GetMgCommunicationAdhocCallRecordingDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
