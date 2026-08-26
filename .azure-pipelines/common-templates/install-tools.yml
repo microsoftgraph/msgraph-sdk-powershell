@@ -78,9 +78,9 @@ steps:
         # errors (e.g. source-already-registered) that would otherwise fail the task; Register-CfsFeed
         # throws on genuine failure, which still fails the step.
         . "$(Build.SourcesDirectory)/tools/Get-CfsFeedCredential.ps1"
+        Unregister-PublicPSGallery
         Initialize-CfsPackageProvider
         Register-CfsFeed
-        Unregister-PublicPSGallery
         Get-PSRepository | Format-List Name, SourceLocation, InstallationPolicy, Trusted
         # PowerShellGet bootstraps the NuGet provider via a native tool during registration, which can
         # leave a stray non-zero $LASTEXITCODE that fails the task even though registration succeeded.

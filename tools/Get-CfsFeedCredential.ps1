@@ -70,14 +70,15 @@ function Register-CfsFeed {
 }
 
 function Unregister-PublicPSGallery {
-    # Removes the public PowerShell Gallery repository so module installs cannot resolve to it and are
-    # never ambiguous between PSGallery and the private feed (Install-Module errors when a module name
-    # matches more than one registered repository). The private feed has a PS Gallery upstream, so it
-    # can still serve every module. Persisted per-user, so later steps/runspaces inherit the removal.
+    # Remove the public PowerShell Gallery. Call this FIRST, before any other PowerShellGet operation,
+    # so PSGallery is gone before an enumeration resolves its source location (which egresses to
+    # www.powershellgallery.com - a CFSClean2 violation). Unregister-PackageSource removes the source
+    # entry without resolving its location; the PSRepository fallback covers the PowerShellGet view.
+    Unregister-PackageSource -Name 'PSGallery' -Force -ErrorAction SilentlyContinue *> $null
     if (Get-PSRepository -Name 'PSGallery' -ErrorAction SilentlyContinue) {
         Unregister-PSRepository -Name 'PSGallery' -ErrorAction SilentlyContinue *> $null
-        Write-Host "Unregistered public 'PSGallery'; module installs now resolve only through '$($script:CfsFeedName)'."
     }
+    Write-Host "Removed public 'PSGallery'; module installs now resolve only through '$($script:CfsFeedName)'."
     $global:LASTEXITCODE = 0
 }
 
@@ -110,35 +111,34 @@ function Install-CfsToolingModules {
 
 function Get-CfsModuleGuid {
     # Returns the GUID of the module already published to the private feed, or $null when it is not
-    # published there or the GUID cannot be determined. The Azure Artifacts feed does not surface the
-    # module GUID via Find-Module's AdditionalMetadata (public PS Gallery does), so download the
-    # package (nupkg) from the feed and read the GUID out of its manifest. Callers mint a fresh GUID
-    # when this returns $null, preserving the original "first publish" behaviour without ever querying
-    # the public PowerShell Gallery.
+    # published there or the GUID cannot be determined (callers then mint a fresh GUID, preserving the
+    # original "first publish" behaviour). The Azure Artifacts feed does not surface the GUID via
+    # Find-Module's AdditionalMetadata (public PS Gallery does), so this downloads the published package
+    # directly over HTTP from the feed's NuGet v2 OData endpoint and reads the GUID from its manifest.
+    # Using raw HTTP (not Find-Module/Save-Package) avoids PowerShellGet/PackageManagement source
+    # resolution, which is unreliable in the generation runspaces, and never touches public PS Gallery.
+    # The module GUID is version-independent (locked), so any published version's manifest is fine.
     param(
         [Parameter(Mandatory)][string] $Name
     )
-    $cred = Get-CfsFeedCredential
+    if ([string]::IsNullOrWhiteSpace($env:SYSTEM_ACCESSTOKEN)) { return $null }
+    $headers = @{ Authorization = 'Basic ' + [Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes("azure:$($env:SYSTEM_ACCESSTOKEN)")) }
     $tmp = Join-Path ([System.IO.Path]::GetTempPath()) ("cfsguid_" + [System.Guid]::NewGuid().ToString('N'))
     try {
         New-Item -ItemType Directory -Path $tmp -Force | Out-Null
-        # Download the latest published package straight from the feed URL via the NuGet provider. This
-        # deliberately avoids a Find-Module -Repository lookup, which is unreliable across steps and
-        # parallel generation runspaces where the PSRepository registration may not be visible (that is
-        # why the earlier implementation returned $null and a random GUID was minted). The module GUID
-        # is version-independent (locked), so the latest package's manifest GUID is authoritative.
-        # Save-Package throws when the module is not yet published (caught below -> $null), so callers
-        # still mint a fresh GUID on first publish.
-        Save-Package -Name $Name -Source $script:CfsFeedUrl -ProviderName NuGet -Credential $cred -Path $tmp -Force -ErrorAction Stop *> $null
-        $nupkg = Get-ChildItem -Path $tmp -Filter '*.nupkg' -Recurse -ErrorAction SilentlyContinue |
-            Where-Object { $_.Name -match ('^' + [regex]::Escape($Name) + '\.\d') } | Select-Object -First 1
-        if ($null -eq $nupkg) { return $null }
+        $findUri = "$($script:CfsFeedUrl)/FindPackagesById()?id='$Name'"
+        $resp = Invoke-WebRequest -Uri $findUri -Headers $headers -UseBasicParsing -ErrorAction Stop
+        [xml]$xml = $resp.Content
+        $entry = @($xml.feed.entry) | Where-Object { $_.content.src } | Select-Object -Last 1
+        if ($null -eq $entry) { return $null }
+        $nupkgPath = Join-Path $tmp "$Name.nupkg"
+        Invoke-WebRequest -Uri $entry.content.src -Headers $headers -OutFile $nupkgPath -UseBasicParsing -ErrorAction Stop
         Add-Type -AssemblyName System.IO.Compression.FileSystem
-        $zip = [System.IO.Compression.ZipFile]::OpenRead($nupkg.FullName)
+        $zip = [System.IO.Compression.ZipFile]::OpenRead($nupkgPath)
         try {
-            $entry = $zip.Entries | Where-Object { $_.Name -eq "$Name.psd1" } | Select-Object -First 1
-            if ($null -eq $entry) { return $null }
-            $reader = [System.IO.StreamReader]::new($entry.Open())
+            $psd1 = $zip.Entries | Where-Object { $_.Name -eq "$Name.psd1" } | Select-Object -First 1
+            if ($null -eq $psd1) { return $null }
+            $reader = [System.IO.StreamReader]::new($psd1.Open())
             try { $content = $reader.ReadToEnd() } finally { $reader.Dispose() }
         }
         finally { $zip.Dispose() }
@@ -149,8 +149,5 @@ function Get-CfsModuleGuid {
     catch { return $null }
     finally {
         Remove-Item -Path $tmp -Recurse -Force -ErrorAction SilentlyContinue
-        # PackageManagement/NuGet can leave a stray non-zero $LASTEXITCODE from an internal native call;
-        # this helper is a side-effect-free read, so do not let that leak into the caller's exit code.
-        $global:LASTEXITCODE = 0
     }
 }
