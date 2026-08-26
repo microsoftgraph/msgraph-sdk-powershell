@@ -1,0 +1,63 @@
+<!--
+  Build policy shared by every generated Kiota wrapper module project
+  (src/<Module>/<ApiVersion>/wrapper/Microsoft.Graph.Wrapper.<Module>.csproj).
+
+  These values were previously repeated in the csproj template inside
+  tools/Build-WrapperModule.ps1 and again, as literals, in every emitted csproj and in the
+  PowerShell gates that locate build output by path. One module's project cannot disagree
+  with another's, and a framework or dependency bump must not mean rewriting every committed
+  csproj file, so the policy lives here and the projects import it.
+
+  Module IDENTITY is deliberately NOT here. AssemblyName varies per module and stays in the
+  project; Version, Authors, Copyright and the rest of the package metadata come from
+  config/ModuleMetadata.json at build time, the same single source the AutoRest service
+  modules use (tools/GenerateServiceModule.ps1). Nothing version-bearing is written into a
+  committed csproj.
+
+  Consumers that need the framework outside MSBuild read WrapperTargetFramework out of this
+  file rather than repeating the literal.
+-->
+<Project>
+
+  <PropertyGroup>
+    <!-- The wrapper modules are net10.0 because the generated cmdlets and the Kiota client use
+         language and BCL features unavailable in the netstandard2.0 the AutoRest service
+         modules target. Microsoft.Graph.Authentication is netstandard2.0 and is referenced
+         across that boundary, which is supported in this direction only. -->
+    <WrapperTargetFramework>net10.0</WrapperTargetFramework>
+    <WrapperKiotaBundleVersion>2.0.0</WrapperKiotaBundleVersion>
+    <!-- Matches the version Microsoft.Graph.Authentication already references, so the wrapper
+         projects cannot drag a second PowerShellStandard into the module output. -->
+    <WrapperPowerShellStandardVersion>5.1.1</WrapperPowerShellStandardVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>$(WrapperTargetFramework)</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Copy every dependency next to the module dll so Import-Module resolves them. -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <!-- CS1591: the generated cmdlets carry PowerShell help attributes, not XML doc comments. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Kiota.Bundle" Version="$(WrapperKiotaBundleVersion)" />
+    <PackageReference Include="PowerShellStandard.Library" Version="$(WrapperPowerShellStandardVersion)" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- GlobalPropertiesToRemove strips the wrapper's Version before Authentication is built.
+         MSBuild propagates global properties across a ProjectReference, so `-p:Version=x` on a
+         wrapper build otherwise re-enters Authentication and Authentication.Core under a
+         different property set, regenerates their AssemblyInfo and recompiles them into the
+         shared obj/. Several wrapper modules building at once then collide on those outputs
+         (CS2012/MSB3713 on whichever pair happens to overlap). Removing it also keeps the
+         wrapper's package version out of the Authentication assembly, where it does not belong. -->
+    <ProjectReference Include="$(RepoSrc)Authentication/Authentication/Microsoft.Graph.Authentication.csproj">
+      <GlobalPropertiesToRemove>Version</GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+
+</Project>
