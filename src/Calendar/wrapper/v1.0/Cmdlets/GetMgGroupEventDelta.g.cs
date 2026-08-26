@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Groups[GroupId].Events.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Groups[GroupId].Events.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

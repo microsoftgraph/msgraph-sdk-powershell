@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Users[UserId].Contacts.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Users[UserId].Contacts.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

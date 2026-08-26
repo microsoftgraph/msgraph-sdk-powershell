@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Education
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Education.Me.Assignments[EducationAssignmentId].Categories.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Education.Me.Assignments[EducationAssignmentId].Categories.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Mail
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Users[UserId].MailFolders.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Users[UserId].MailFolders.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

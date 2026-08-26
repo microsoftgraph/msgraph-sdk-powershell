@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Communications.AdhocCalls[AdhocCallId].Transcripts.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Communications.AdhocCalls[AdhocCallId].Transcripts.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

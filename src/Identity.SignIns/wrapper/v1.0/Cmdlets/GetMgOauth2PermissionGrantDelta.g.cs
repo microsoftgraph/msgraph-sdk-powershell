@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Oauth2PermissionGrants.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Oauth2PermissionGrants.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

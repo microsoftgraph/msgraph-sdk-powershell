@@ -486,7 +486,7 @@ namespace {{ctx.CmdletNamespace}}
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? {{receiver}}.WithUrl(DeltaLink).{{call.MethodName}}(requestConfiguration =>
+                    ? {{receiver}}.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).{{call.MethodName}}(requestConfiguration =>
                         {{{continuationConfig}}
                         }).GetAwaiter().GetResult()
                     : {{EmitCallOn(receiver, naming, call.MethodName, null, queryBindings)}}.GetAwaiter().GetResult();

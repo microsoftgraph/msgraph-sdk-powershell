@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.DirectoryObjects.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.DirectoryObjects.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

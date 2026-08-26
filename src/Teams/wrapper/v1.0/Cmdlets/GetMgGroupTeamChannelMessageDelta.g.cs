@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.Teams
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Groups[GroupId].Team.Channels[ChannelId].Messages.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Groups[GroupId].Team.Channels[ChannelId].Messages.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

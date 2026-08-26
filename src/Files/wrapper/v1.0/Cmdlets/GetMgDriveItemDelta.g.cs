@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.Files
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Drives[DriveId].Items[DriveItemId].Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Drives[DriveId].Items[DriveItemId].Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

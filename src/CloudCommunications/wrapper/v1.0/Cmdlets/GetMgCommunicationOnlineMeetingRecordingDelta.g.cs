@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Communications.OnlineMeetings[OnlineMeetingId].Recordings.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Communications.OnlineMeetings[OnlineMeetingId].Recordings.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);
