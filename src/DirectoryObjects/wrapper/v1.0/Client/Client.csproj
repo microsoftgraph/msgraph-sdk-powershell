@@ -20,6 +20,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Kiota.Bundle" Version="2.0.0" />
+    <!-- Pinned above the version Microsoft.Kiota.Bundle pulls in transitively (8.0.0), which
+         carries CVE-2024-30105 and CVE-2024-43485. Same version Authentication.Core pins. -->
+    <PackageReference Include="System.Text.Json" Version="10.0.3" />
   </ItemGroup>
 
 </Project>
