@@ -103,15 +103,19 @@ function Get-CfsModuleGuid {
         [Parameter(Mandatory)][string] $Name
     )
     $cred = Get-CfsFeedCredential
-    $found = Find-Module -Name $Name -Repository $script:CfsFeedName -Credential $cred -ErrorAction SilentlyContinue
-    if ($null -eq $found) { return $null }
     $tmp = Join-Path ([System.IO.Path]::GetTempPath()) ("cfsguid_" + [System.Guid]::NewGuid().ToString('N'))
     try {
         New-Item -ItemType Directory -Path $tmp -Force | Out-Null
-        # Save-Package (NuGet provider) downloads just this package's nupkg (no dependency resolution),
-        # so it stays cheap even for meta-modules that depend on many sub-modules.
-        Save-Package -Name $Name -RequiredVersion $found.Version -Source $script:CfsFeedUrl -ProviderName NuGet -Credential $cred -Path $tmp -Force -ErrorAction Stop *> $null
-        $nupkg = Get-ChildItem -Path $tmp -Filter '*.nupkg' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+        # Download the latest published package straight from the feed URL via the NuGet provider. This
+        # deliberately avoids a Find-Module -Repository lookup, which is unreliable across steps and
+        # parallel generation runspaces where the PSRepository registration may not be visible (that is
+        # why the earlier implementation returned $null and a random GUID was minted). The module GUID
+        # is version-independent (locked), so the latest package's manifest GUID is authoritative.
+        # Save-Package throws when the module is not yet published (caught below -> $null), so callers
+        # still mint a fresh GUID on first publish.
+        Save-Package -Name $Name -Source $script:CfsFeedUrl -ProviderName NuGet -Credential $cred -Path $tmp -Force -ErrorAction Stop *> $null
+        $nupkg = Get-ChildItem -Path $tmp -Filter '*.nupkg' -Recurse -ErrorAction SilentlyContinue |
+            Where-Object { $_.Name -match ('^' + [regex]::Escape($Name) + '\.\d') } | Select-Object -First 1
         if ($null -eq $nupkg) { return $null }
         Add-Type -AssemblyName System.IO.Compression.FileSystem
         $zip = [System.IO.Compression.ZipFile]::OpenRead($nupkg.FullName)
