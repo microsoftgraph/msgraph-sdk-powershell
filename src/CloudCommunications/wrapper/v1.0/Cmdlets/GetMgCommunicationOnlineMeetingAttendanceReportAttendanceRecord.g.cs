@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.CloudCommunications.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.CloudCommunications
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
     [Cmdlet(VerbsCommon.Get, "MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.AttendanceRecordCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.AttendanceRecord), ParameterSetName = new[] { "Get" })]
-    public class GetMgCommunicationOnlineMeetingAttendanceReportAttendanceRecordCommand : PSCmdlet
+    public class GetMgCommunicationOnlineMeetingAttendanceReportAttendanceRecordCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string OnlineMeetingId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string AttendanceRecordId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord_Get or Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? AttendanceRecordId : MeetingAttendanceReportId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? AttendanceRecordId : MeetingAttendanceReportId);
                 return;
             }
         }

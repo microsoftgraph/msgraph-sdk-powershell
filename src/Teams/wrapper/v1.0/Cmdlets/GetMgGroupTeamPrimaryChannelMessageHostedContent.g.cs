@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Teams.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Teams
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Teams
     [Cmdlet(VerbsCommon.Get, "MgGroupTeamPrimaryChannelMessageHostedContent", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.ChatMessageHostedContentCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.ChatMessageHostedContent), ParameterSetName = new[] { "Get" })]
-    public class GetMgGroupTeamPrimaryChannelMessageHostedContentCommand : PSCmdlet
+    public class GetMgGroupTeamPrimaryChannelMessageHostedContentCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string GroupId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string ChatMessageHostedContentId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Teams
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgGroupTeamPrimaryChannelMessageHostedContent_Get or Get-MgGroupTeamPrimaryChannelMessageHostedContent_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Teams
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ChatMessageHostedContentId : ChatMessageId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ChatMessageHostedContentId : ChatMessageId);
                 return;
             }
         }

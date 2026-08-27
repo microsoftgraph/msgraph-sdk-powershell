@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Calendar.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Calendar
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
     [Cmdlet(VerbsCommon.Get, "MgPlaceAsBuildingMapLevelUnit", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Calendar.Client.Models.UnitMapCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Calendar.Client.Models.UnitMap), ParameterSetName = new[] { "Get" })]
-    public class GetMgPlaceAsBuildingMapLevelUnitCommand : PSCmdlet
+    public class GetMgPlaceAsBuildingMapLevelUnitCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string PlaceId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string UnitMapId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Calendar
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgPlaceAsBuildingMapLevelUnit_Get or Get-MgPlaceAsBuildingMapLevelUnit_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? UnitMapId : LevelMapId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? UnitMapId : LevelMapId);
                 return;
             }
         }

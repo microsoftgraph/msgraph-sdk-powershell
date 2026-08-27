@@ -3,7 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Sites.Client;
 using Microsoft.Graph.PowerShell.Sites.Client.Models;
 using Microsoft.Kiota.Abstractions;
@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Sites
     [GraphRoute("GET", "/groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/parentGroup/sets/{set-id1}/terms/{term-id}/children/{term-id1}/relations")]
     [Cmdlet(VerbsCommon.Get, "MgGroupSiteTermStoreSetParentGroupSetTermChildRelation_List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Sites.Client.Models.TermStore.Relation))]
-    public class GetMgGroupSiteTermStoreSetParentGroupSetTermChildRelation_ListCommand : PSCmdlet
+    public class GetMgGroupSiteTermStoreSetParentGroupSetTermChildRelation_ListCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string GroupId { get; set; } = string.Empty;
@@ -30,9 +30,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         [Parameter(Mandatory = true, Position = 5)]
         public string TermId1 { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         public string? Filter { get; set; }
@@ -63,43 +61,10 @@ namespace Microsoft.Graph.PowerShell.Sites
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         protected override void ProcessRecord()
         {
 
-        // ── Choose HttpClient + auth provider ─────────────────────────────
-        HttpClient httpClient;
-        IAuthenticationProvider authProvider;
-
-        if (this.IsParameterBound(nameof(AccessToken)))
-        {
-            httpClient = new HttpClient();
-            authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
-        }
-        else
-        {
-            WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
-            try
-            {
-                httpClient = HttpHelpers.GetGraphHttpClient();
-            }
-            catch (Exception ex)
-            {
-                ThrowTerminatingError(new ErrorRecord(
-                    new InvalidOperationException(
-                        "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
-                    "NoGraphSession",
-                    ErrorCategory.AuthenticationError,
-                    null));
-                return;
-            }
-            authProvider = new AnonymousAuthenticationProvider();
-        }
-
-        var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+        var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.TermStore.RelationCollectionResponse? result;
@@ -133,16 +98,12 @@ namespace Microsoft.Graph.PowerShell.Sites
 
 
 
-        if (this.IsParameterBound(nameof(Headers)))
-        {
-            foreach (System.Collections.DictionaryEntry entry in Headers!)
-                requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
-        }
+        AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, TermId1));
+                ThrowGraphRequestFailed(ex, TermId1);
                 return;
             }
 

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
     [Cmdlet(VerbsCommon.Get, "MgDeviceManagementDeviceEnrollmentConfigurationAssignment", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.EnrollmentConfigurationAssignmentCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.EnrollmentConfigurationAssignment), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceManagementDeviceEnrollmentConfigurationAssignmentCommand : PSCmdlet
+    public class GetMgDeviceManagementDeviceEnrollmentConfigurationAssignmentCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string DeviceEnrollmentConfigurationId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string EnrollmentConfigurationAssignmentId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment_Get or Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? EnrollmentConfigurationAssignmentId : DeviceEnrollmentConfigurationId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? EnrollmentConfigurationAssignmentId : DeviceEnrollmentConfigurationId);
                 return;
             }
         }

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
     [Cmdlet(VerbsCommon.Get, "MgUserActivityHistoryItem", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.ActivityHistoryItemCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.ActivityHistoryItem), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserActivityHistoryItemCommand : PSCmdlet
+    public class GetMgUserActivityHistoryItemCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string ActivityHistoryItemId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgUserActivityHistoryItem_Get or Get-MgUserActivityHistoryItem_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? ActivityHistoryItemId : UserActivityId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ActivityHistoryItemId : UserActivityId);
                 return;
             }
         }

@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.SignIns
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
     [Cmdlet(VerbsCommon.Get, "MgPolicyAuthenticationStrengthPolicyCombinationConfiguration", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.AuthenticationCombinationConfigurationCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.AuthenticationCombinationConfiguration), ParameterSetName = new[] { "Get" })]
-    public class GetMgPolicyAuthenticationStrengthPolicyCombinationConfigurationCommand : PSCmdlet
+    public class GetMgPolicyAuthenticationStrengthPolicyCombinationConfigurationCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string AuthenticationStrengthPolicyId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string AuthenticationCombinationConfigurationId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration_Get or Get-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? AuthenticationCombinationConfigurationId : AuthenticationStrengthPolicyId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? AuthenticationCombinationConfigurationId : AuthenticationStrengthPolicyId);
                 return;
             }
         }

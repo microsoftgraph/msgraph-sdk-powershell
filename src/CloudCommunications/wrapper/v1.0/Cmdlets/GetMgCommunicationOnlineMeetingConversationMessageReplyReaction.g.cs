@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.CloudCommunications.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.CloudCommunications
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
     [Cmdlet(VerbsCommon.Get, "MgCommunicationOnlineMeetingConversationMessageReplyReaction", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.EngagementConversationMessageReactionCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.EngagementConversationMessageReaction), ParameterSetName = new[] { "Get" })]
-    public class GetMgCommunicationOnlineMeetingConversationMessageReplyReactionCommand : PSCmdlet
+    public class GetMgCommunicationOnlineMeetingConversationMessageReplyReactionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string OnlineMeetingEngagementConversationId { get; set; } = string.Empty;
@@ -22,9 +23,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 3)]
         public string EngagementConversationMessageReactionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -57,10 +56,6 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgCommunicationOnlineMeetingConversationMessageReplyReaction_Get or Get-MgCommunicationOnlineMeetingConversationMessageReplyReaction_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -87,7 +82,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? EngagementConversationMessageReactionId : EngagementConversationMessageId1));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? EngagementConversationMessageReactionId : EngagementConversationMessageId1);
                 return;
             }
         }

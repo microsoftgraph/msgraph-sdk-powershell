@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Files.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Files
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Files
     [Cmdlet(VerbsCommon.Get, "MgDriveItemVersion", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.DriveItemVersionCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.DriveItemVersion), ParameterSetName = new[] { "Get" })]
-    public class GetMgDriveItemVersionCommand : PSCmdlet
+    public class GetMgDriveItemVersionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string DriveId { get; set; } = string.Empty;
@@ -20,9 +21,7 @@ namespace Microsoft.Graph.PowerShell.Files
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
         public string DriveItemVersionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -55,10 +54,6 @@ namespace Microsoft.Graph.PowerShell.Files
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgDriveItemVersion_Get or Get-MgDriveItemVersion_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -85,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Files
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DriveItemVersionId : DriveItemId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DriveItemVersionId : DriveItemId);
                 return;
             }
         }

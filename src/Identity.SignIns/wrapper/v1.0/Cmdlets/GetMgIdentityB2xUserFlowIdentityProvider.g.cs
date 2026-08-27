@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.SignIns
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
     [Cmdlet(VerbsCommon.Get, "MgIdentityB2XUserFlowIdentityProvider", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.IdentityProviderCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.IdentityProvider), ParameterSetName = new[] { "Get" })]
-    public class GetMgIdentityB2XUserFlowIdentityProviderCommand : PSCmdlet
+    public class GetMgIdentityB2XUserFlowIdentityProviderCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string B2xIdentityUserFlowId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string IdentityProviderId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgIdentityB2XUserFlowIdentityProvider_Get or Get-MgIdentityB2XUserFlowIdentityProvider_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? IdentityProviderId : B2xIdentityUserFlowId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? IdentityProviderId : B2xIdentityUserFlowId);
                 return;
             }
         }

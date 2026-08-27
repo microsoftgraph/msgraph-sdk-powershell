@@ -89,6 +89,7 @@ $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 if (-not $SpecRoot) { $SpecRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat' }
 $generatorProject = Join-Path $repoRoot 'tools\WrapperGenerator'
 $authCsproj = Join-Path $repoRoot 'src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj'
+$runtimeCsproj = Join-Path $repoRoot 'src\GraphWrapperRuntime\Runtime\Microsoft.Graph.Wrapper.Runtime.csproj'
 # The Authentication version the wrappers compile against, for the manifest's RequiredModules
 # minimum. Read from the project, never written here.
 $authVersion = ([xml](Get-Content $authCsproj -Raw)).Project.PropertyGroup.Version |
@@ -166,9 +167,16 @@ function Get-CompiledCmdletNames {
 
     # Import in a child process so discovery observes the compiled binary PowerShell will load,
     # and so assemblies from one module cannot contaminate or lock the next module's build.
+    # Microsoft.Graph.Authentication comes first for the same reason it is in RequiredModules:
+    # the module folder deliberately carries no shared dependencies (PruneModuleBin), so kiota
+    # assemblies resolve through Authentication's AssemblyResolve hook. Import-Module forces
+    # some of those loads immediately - a cmdlet property typed as the Date/Time structs from
+    # Microsoft.Kiota.Abstractions is a value-type field, which the loader resolves eagerly at
+    # class load, before any cmdlet runs.
     $escapedAssemblyPath = $AssemblyPath.Replace("'", "''")
     $discovery = @"
 `$ErrorActionPreference = 'Stop'
+Import-Module Microsoft.Graph.Authentication
 `$module = Import-Module -Name '$escapedAssemblyPath' -PassThru
 [pscustomobject]@{ Cmdlets = @(`$module.ExportedCmdlets.Keys | Sort-Object) } |
     ConvertTo-Json -Compress
@@ -279,10 +287,12 @@ function Build-Module {
         $csprojPath = Join-Path $srcDir "$moduleName.csproj"
         $authCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $authCsproj) -replace '/', '\'
         $clientCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $clientCsprojPath) -replace '/', '\'
+        $runtimeCsprojRelative = [System.IO.Path]::GetRelativePath($srcDir, $runtimeCsproj) -replace '/', '\'
         New-ProjectFromTemplate -TemplatePath $moduleProjectTemplate -DestinationPath $csprojPath -Replacements @{
             ModuleAssemblyName = $moduleName
             ClientProjectPath = $clientCsprojRelative
             AuthenticationProjectPath = $authCsprojRelative
+            RuntimeProjectPath = $runtimeCsprojRelative
         }
 
         $buildOut = & dotnet build $csprojPath -c $Configuration --nologo -v minimal 2>&1
@@ -319,7 +329,8 @@ function Build-Module {
         # module-local copy of the Authentication dll beside the installed one - two assemblies,
         # two GraphSession statics - and every cmdlet reports NoGraphSession while the user IS
         # connected. Proven by a marker-client experiment in both hosts; the module-local copies
-        # are excluded from the package for the same reason (see the nuspec below).
+        # are kept out of bin entirely for the same reason (PruneModuleBin in the module
+        # project template), so neither the folder nor the package ever carries them.
         # The minimum version is the one this repository compiles against, read from the project
         # rather than written here, so a bump in the Authentication csproj cannot go stale.
         # ModuleVersion must equal the package version: installers lay the module out under a
@@ -340,15 +351,23 @@ function Build-Module {
             VariablesToExport = @()
         }
         if ($modulePrerelease) { $manifestArgs.Prerelease = $modulePrerelease }
+        # Std.UriTemplate is requested by the kiota HTTP library, which lives in Authentication's
+        # isolated load context - a requester whose directory probing can never reach this module
+        # folder, and whose request Authentication cannot serve because its Dependencies folder
+        # does not ship the assembly. Preloading it here puts it in the default context, where
+        # the isolated context's fallback resolution unifies with it. The Multipart serializer
+        # needs no entry: its requester is the client assembly in this folder, so normal
+        # module-directory probing finds it. Proven live in Test-LiveSmoke on the session path.
+        $manifestArgs.RequiredAssemblies = @('Std.UriTemplate.dll')
         New-ModuleManifest @manifestArgs
 
         if ($Pack) {
-            # The package IS the module folder: manifest, assemblies and their runtime closure.
-            # Nothing is listed by name - a dependency added upstream must ship without anyone
-            # editing a file list - and nothing is excluded by name either, because the
-            # PowerShell SDK reference assembly is kept out of the closure at the project level
-            # (ExcludeAssets="runtime" in the wrapper module template), which is the only place
-            # that intent can be expressed. See tools/Templates/WrapperModule.csproj.template.
+            # The package IS the module folder: manifest plus every assembly in bin. Nothing is
+            # listed or excluded by name here, because bin already contains exactly what may
+            # ship: the PowerShell SDK reference assembly is kept out via ExcludeAssets="runtime"
+            # and the shared Authentication/kiota closure via the PruneModuleBin target - both at
+            # the project level, the only place that intent can be expressed. See
+            # tools/Templates/WrapperModule.csproj.template for why the closure must not ship.
             $nuspecPath = Join-Path $binDir "$moduleName.nuspec"
             $tags = ($moduleMetadata['tags']) -join ' '
             # Native runtime payloads only exist when a dependency ships them; dotnet pack fails
@@ -376,11 +395,7 @@ function Build-Module {
   </metadata>
   <files>
     <file src="$moduleName.psd1" />
-    <!-- The Authentication assemblies are deliberately NOT shipped: the manifest's
-         RequiredModules loads the real Microsoft.Graph.Authentication module, and a
-         module-local copy at a different version splits the GraphSession static under
-         Windows PowerShell's version-strict loader (NoGraphSession while connected). -->
-    <file src="*.dll" exclude="Microsoft.Graph.Authentication.dll;Microsoft.Graph.Authentication.Core.dll" />
+    <file src="*.dll" />
     <file src="*.deps.json" />$runtimesEntry
   </files>
 </package>

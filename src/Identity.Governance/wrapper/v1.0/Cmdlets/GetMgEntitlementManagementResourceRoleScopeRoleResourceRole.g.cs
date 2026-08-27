@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.Governance
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     [Cmdlet(VerbsCommon.Get, "MgEntitlementManagementResourceRoleScopeRoleResourceRole", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRoleCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRole), ParameterSetName = new[] { "Get" })]
-    public class GetMgEntitlementManagementResourceRoleScopeRoleResourceRoleCommand : PSCmdlet
+    public class GetMgEntitlementManagementResourceRoleScopeRoleResourceRoleCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string AccessPackageResourceRoleScopeId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string AccessPackageResourceRoleId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -53,10 +52,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgEntitlementManagementResourceRoleScopeRoleResourceRole_Get or Get-MgEntitlementManagementResourceRoleScopeRoleResourceRole_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -83,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? AccessPackageResourceRoleId : AccessPackageResourceRoleScopeId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? AccessPackageResourceRoleId : AccessPackageResourceRoleScopeId);
                 return;
             }
         }

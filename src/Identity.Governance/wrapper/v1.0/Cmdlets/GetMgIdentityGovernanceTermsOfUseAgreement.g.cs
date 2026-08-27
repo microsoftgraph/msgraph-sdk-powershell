@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Identity.Governance
@@ -11,14 +12,12 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     [Cmdlet(VerbsCommon.Get, "MgIdentityGovernanceTermsOfUseAgreement", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AgreementCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.Agreement), ParameterSetName = new[] { "Get" })]
-    public class GetMgIdentityGovernanceTermsOfUseAgreementCommand : PSCmdlet
+    public class GetMgIdentityGovernanceTermsOfUseAgreementCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string AgreementId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -51,10 +50,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
-
         // Delegates to Get-MgIdentityGovernanceTermsOfUseAgreement_Get or Get-MgIdentityGovernanceTermsOfUseAgreement_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
@@ -81,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
             }
             catch (Exception ex)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? AgreementId : null));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? AgreementId : null);
                 return;
             }
         }
