@@ -143,7 +143,7 @@ public sealed class EmitterTests
         Assert.Contains("[Parameter(Mandatory = true, ParameterSetName = \"Resume\")]", source);
         Assert.Contains("public string DeltaLink { get; set; }", source);
         Assert.Contains("ParameterSetName == \"Resume\"", source);
-        Assert.Contains(".WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(", source);
+        Assert.Contains(".WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(", source);
 
         // Query options belong to the initial sync only.
         Assert.Contains("[Parameter(Mandatory = false, ParameterSetName = \"DeltaSync\")]", source);
@@ -198,7 +198,7 @@ public sealed class EmitterTests
         Assert.Contains("WriteWarning(\"More results are available. Use -All to return all pages.\");", source);
         Assert.Contains("if (Stopping) break;", source);
         Assert.Contains("if (this.IsParameterBound(nameof(Top)) && fetched >= Top) break;", source);
-        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException)", source);
+        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)", source);
 
         // Continuation re-applies headers only: the link already carries the query state.
         var continuation = source[source.IndexOf(".WithUrl(nextLink)", StringComparison.Ordinal)..];
