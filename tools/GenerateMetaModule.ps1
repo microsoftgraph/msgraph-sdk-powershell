@@ -6,7 +6,7 @@ Param(
     [ValidateSet("v1.0", "beta")]
     $ApiVersion = @("v1.0", "beta"),
     [string] $RepositoryApiKey,
-    [string] $RepositoryName = "PSGallery",
+    [string] $RepositoryName = "PowerShell_V2_Build",
     [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
     [switch] $Pack,
     [switch] $Publish,

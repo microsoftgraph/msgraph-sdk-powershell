@@ -64,6 +64,48 @@ steps:
         Copy-Item -Path $src -Destination $dst -Force
         Write-Host "Copied npm config to $dst"
 
+  - task: PowerShell@2
+    displayName: Register private module feed (CFSClean)
+    inputs:
+      targetType: inline
+      pwsh: true
+      errorActionPreference: continue
+      script: |
+        # Register the private Azure Artifacts feed (PowerShell Gallery upstream) as a Trusted
+        # PSRepository so generation-time Install-Module/Find-Module resolve through it instead of
+        # the public PowerShell Gallery. Persisted for the job (visible to later steps + runspaces).
+        # errorActionPreference is 'continue' because PackageManagement emits benign non-terminating
+        # errors (e.g. source-already-registered) that would otherwise fail the task; Register-CfsFeed
+        # throws on genuine failure, which still fails the step.
+        . "$(Build.SourcesDirectory)/tools/Get-CfsFeedCredential.ps1"
+        Unregister-PublicPSGallery
+        Register-CfsFeed
+        Get-PSRepository | Format-List Name, SourceLocation, InstallationPolicy, Trusted
+        # PowerShellGet bootstraps the NuGet provider via a native tool during registration, which can
+        # leave a stray non-zero $LASTEXITCODE that fails the task even though registration succeeded.
+        # Register-CfsFeed throws on genuine failure (halting before this line), so reset it here.
+        $global:LASTEXITCODE = 0
+    env:
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
+  - task: PowerShell@2
+    displayName: Pre-install generation tooling modules (CFSClean)
+    inputs:
+      targetType: inline
+      pwsh: true
+      errorActionPreference: continue
+      script: |
+        # Install PlatyPS / Pester / powershell-yaml / PowerHTML from the private feed up-front, in this
+        # controlled credential context, so the lazy Install-Module calls during generation are skipped
+        # by their Get-Module -ListAvailable guards (authenticated private-feed installs are fragile in
+        # the parallel generation runspaces).
+        . "$(Build.SourcesDirectory)/tools/Get-CfsFeedCredential.ps1"
+        Install-CfsToolingModules
+        Get-Module -ListAvailable -Name PlatyPS, Pester, powershell-yaml, PowerHTML | Format-Table Name, Version, Path -AutoSize
+        $global:LASTEXITCODE = 0
+    env:
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
   - task: Npm@1
     displayName: Install AutoRest
     retryCountOnTaskFailure: 2

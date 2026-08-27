@@ -4,7 +4,7 @@
 param(
     [Parameter()][ValidateNotNullOrEmpty()][string] $ModuleName,
     [Parameter()][ValidateNotNullOrEmpty()][string] $NextVersion,
-    [Parameter()][string] $PSRepository = "PSGallery",
+    [Parameter()][string] $PSRepository = "PowerShell_V2_Build",
     [int] $ModulePreviewNumber = -1
 )
 enum VersionState {
@@ -17,6 +17,15 @@ enum VersionState {
 # Module import.
 Import-Module PackageManagement
 Import-Module PowerShellGet
+
+# CFSClean: authenticate module queries to the private feed (credential from the build token).
+. (Join-Path $PSScriptRoot 'Get-CfsFeedCredential.ps1')
+$__cfsCred = Get-CfsFeedCredential
+if ($null -ne $__cfsCred) {
+    $PSDefaultParameterValues['Find-Module:Credential']    = $__cfsCred
+    $PSDefaultParameterValues['Install-Module:Credential'] = $__cfsCred
+    $PSDefaultParameterValues['Save-Module:Credential']    = $__cfsCred
+}
 
 $AllowPreRelease = $true
 if($ModulePreviewNumber -eq -1) {
