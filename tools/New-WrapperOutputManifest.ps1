@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Writes a reviewable inventory of the committed wrapper output under src/<Module>/<ApiVersion>/wrapper/.
+Writes a reviewable inventory of the committed wrapper output under src/<Module>/wrapper/<ApiVersion>/.
 
 .DESCRIPTION
 The committed output is tens of thousands of generated files - far past what GitHub renders in
@@ -44,7 +44,7 @@ $builderPattern = 'client\.([A-Za-z0-9_\[\]\.]+?)\.(?:Get|Post|Patch|Delete|Put)
 
 $rows = [System.Collections.Generic.List[object]]::new()
 $moduleDirs = Get-ChildItem (Join-Path $repoRoot 'src') -Directory |
-    ForEach-Object { Join-Path $_.FullName "$ApiVersion\wrapper\Cmdlets" } |
+    ForEach-Object { Join-Path $_.FullName "wrapper\$ApiVersion\Cmdlets" } |
     Where-Object { Test-Path $_ }
 
 foreach ($dir in $moduleDirs) {
@@ -71,7 +71,7 @@ foreach ($dir in $moduleDirs) {
     }
 }
 
-if ($rows.Count -eq 0) { throw "No committed wrapper output found for $ApiVersion under src/*/$ApiVersion/wrapper/Cmdlets." }
+if ($rows.Count -eq 0) { throw "No committed wrapper output found for $ApiVersion under src/*/wrapper/$ApiVersion/Cmdlets." }
 
 $manifestPath = Join-Path $OutDir "WrapperCmdlets-$versionTag.csv"
 $rows | Sort-Object Module, Cmdlet, File | Export-Csv $manifestPath -NoTypeInformation

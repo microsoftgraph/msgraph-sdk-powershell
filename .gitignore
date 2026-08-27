@@ -382,3 +382,19 @@ CodeSignSummary-*.md
 !src/Authentication/Authentication/Microsoft.Graph.Authentication.psd1
 !src/Graph/beta/Microsoft.Graph.Beta.psd1
 !src/Graph/v1.0/Microsoft.Graph.psd1
+
+# Kiota wrapper modules. src/<Module>/wrapper/<ApiVersion>/ is repository-owned generated
+# source - the kiota client and the generated cmdlets are committed so a clean checkout builds
+# with only the .NET SDK. The Visual Studio rules above match a directory NAME at any depth,
+# and kiota derives its directory names from the Graph URL path, so segments like Publish/,
+# Log/ and BackupRestore/ collide with publish/, [Ll]og/ and Backup*/ and silently drop real
+# source. Re-include the tree, then re-exclude only what the build produces.
+#
+# The API version sits UNDER wrapper/, not above it: AutoRest owns src/<Module>/<ApiVersion>/
+# and clears it on every run (src/readme.graph.md clear-output-folder), so wrapper source nested
+# there is deleted whenever the AutoRest modules are regenerated.
+!src/*/wrapper/
+!src/*/wrapper/**
+src/*/wrapper/**/bin/
+src/*/wrapper/**/obj/
+src/*/wrapper/**/*.log

@@ -12,28 +12,28 @@ generator emits. An operation skipped earlier — for an unsupported path segmen
 unresolvable request schema — contributes no properties to any count here, so a zero is evidence
 about what we generate, never about what Graph declares.
 
-That boundary is large. Across the 38 v1.0 specs the generator reads **14,131** operations and
+That boundary is large. Across the 38 v1.0 specs the generator reads **14,115** operations and
 accounts for every one of them (current tree, parity data applied):
 
 | Population | Count | |
 |---|---:|---|
-| operation-backed cmdlets | 10,401 | **73.6%** — what actually generates |
+| operation-backed cmdlets | 10,385 | **73.6%** — what actually generates |
 | suppressed | 3,173 | the published SDK ships no cmdlet (oracle-derived) |
 | unsupported | 557 | 345 call segments on non-action/function operations, 125 parameterized functions mid-route, 42 whose content response is neither a stream nor a resolvable entity, 45 other |
-| **total** | **14,131** | |
+| **total** | **14,115** | |
 
 The first row rose from 49.8% as the operation shapes landed: actions and functions first, then the
 OData `$`-segments (`$count`, `$ref`, `$value`) and PUT, which together had accounted for the bulk
 of the unsupported bucket.
 
-A further 1,336 emitted files are GET dispatchers, which issue no request of their own — 11,737
-files, 10,401 operations. Counting files as operations, or deriving "generated" by subtracting only
+A further 1,334 emitted files are GET dispatchers, which issue no request of their own — 11,719
+files, 10,385 operations. Counting files as operations, or deriving "generated" by subtracting only
 the unsupported, overstates coverage: the first double-counts dispatchers, the second silently
 folds every suppressed operation into the generated bucket. Both errors were made here before the
 accounting was made to balance.
 
 `DeviceManagement.Actions` has no `openApiDocs_KiotaCompat` spec at all, so none of its operations
-appear even in the 14,131. Every "0 unbound" in this file therefore describes the 73.6% that
+appear even in the 14,115. The 16 publicKeyInfrastructure operations DirectoryObjects used to double-declare are re-sliced out of its spec (the family ships from Identity.DirectoryManagement, which keeps them), so every operation is counted once. Every "0 unbound" in this file therefore describes the 73.6% that
 generates — not the whole v1.0 surface — and must be quoted that way. Restating it against a
 different denominator is the error this paragraph exists to prevent, so the figure has to be
 updated here whenever the generated population moves.
