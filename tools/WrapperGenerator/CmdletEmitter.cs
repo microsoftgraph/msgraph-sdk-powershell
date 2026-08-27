@@ -82,9 +82,13 @@ public static class CmdletEmitter
 
     // The shared try/catch tail around every Graph call. Only the ErrorRecord's target object
     // varies, and sometimes the nesting depth (EmitUpdate's re-fetch sits one block deeper).
-    // The error surface itself (id, category) lives on GraphClientCmdlet.
+    // The error surface itself (id, category) lives on GraphClientCmdlet. A pipeline stop
+    // (downstream Select-Object -First, Ctrl+C) passes through untouched: it is the engine's
+    // stop signal, not a Graph failure. The filter is load-bearing only where WriteObject runs
+    // inside the try - list workers and dispatchers - and is emitted uniformly so every catch
+    // tail in the corpus stays identical.
     private static string CatchBlock(string targetIdExpr, string extraIndent = "") => $$"""
-            {{extraIndent}}catch (Exception ex)
+            {{extraIndent}}catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {{extraIndent}}{
                 {{extraIndent}}ThrowGraphRequestFailed(ex, {{targetIdExpr}});
                 {{extraIndent}}return;
@@ -674,6 +678,18 @@ namespace {{ctx.CmdletNamespace}}
         var paramDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl(null)));
         var bindings = string.Join("\n\n", applicable.Select(o => o.Binding));
 
+        // -Top is a TOTAL cap under -All, at whole-page granularity - the published ListCmdlet's
+        // semantics: limit = Top, iterate while fetched < limit, and whole final pages ship
+        // because the overflow trimmer has zero call sites in current generated output (its
+        // injection directive anchors on a callback name autorest no longer emits; evidence in
+        // docs/pagination.md). The counter exists only when the operation declares $top; without
+        // it the loop is uncapped and only nextLink exhaustion or a pipeline stop ends it.
+        var hasTop = queryParamNames.Contains("$top");
+        var fetchedInit = hasTop ? "\n                    var fetched = result?.Value?.Count ?? 0;" : "";
+        var capCondition = hasTop ? " && (!this.IsParameterBound(nameof(Top)) || fetched < Top)" : "";
+        var fetchedAdd = hasTop ? "\n                            fetched += page.Count;" : "";
+        var continuationHeaders = HeaderBindingsFor(naming.HeaderParams, extraIndent: "        ") + GenericHeadersBinding("        ");
+
         return $$"""
 #nullable enable
 
@@ -699,6 +715,12 @@ namespace {{ctx.CmdletNamespace}}
 {{AccessTokenParamDecl()}}
 
 {{paramDecls}}
+
+        // Follows every @odata.nextLink until the collection is exhausted (a bound -Top caps
+        // the total). Without it only the first page returns, plus a truncation warning when
+        // more pages existed.
+        [Parameter(Mandatory = false)]
+        public SwitchParameter All { get; set; }
 {{HeaderParamDecls(naming)}}
 {{GenericHeadersParamDecl()}}
 
@@ -715,13 +737,39 @@ namespace {{ctx.CmdletNamespace}}
 {{HeaderBindings(naming)}}
 {{GenericHeadersBinding()}}
                 }).GetAwaiter().GetResult();
+
+                // A collection response and its Value are both nullable on the kiota client; an
+                // empty page writes nothing rather than dereferencing null. Each page streams to
+                // the pipeline before the next request is issued, matching the published SDK.
+                if (result?.Value is { } items)
+                    WriteObject(items, enumerateCollection: true);
+
+                if (All.IsPresent)
+                {{{fetchedInit}}
+                    var nextLink = result?.OdataNextLink;
+                    while (!string.IsNullOrEmpty(nextLink) && !Stopping{{capCondition}})
+                    {
+                        // The nextLink already carries the original query state, and a raw-URL
+                        // builder ignores templated query parameters anyway - so the continuation
+                        // re-applies headers only; query bindings here would be dead code.
+                        result = client.{{naming.BuilderExpression}}.WithUrl(nextLink).GetAsync(requestConfiguration =>
+                        {{{continuationHeaders}}
+                        }, StoppingToken).GetAwaiter().GetResult();
+                        if (result?.Value is { } page)
+                        {
+                            WriteObject(page, enumerateCollection: true);{{fetchedAdd}}
+                        }
+                        nextLink = result?.OdataNextLink;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(result?.OdataNextLink))
+                {
+                    // Deliberately stronger than the published SDK, which truncates silently;
+                    // approved in the design spec. One line, no extra request.
+                    WriteWarning("More results are available. Use -All to return all pages.");
+                }
             }
 {{CatchBlock(TargetId(naming))}}
-
-            // A collection response and its Value are both nullable on the kiota client; an
-            // empty page writes nothing rather than dereferencing null.
-            if (result?.Value is { } items)
-                WriteObject(items, enumerateCollection: true);
         }
     }
 }
@@ -829,6 +877,12 @@ namespace {{ctx.CmdletNamespace}}
 {{selectExpandDecls}}
 
 {{listOnlyParamDecls}}
+
+        // Declared here because the binder rejects a parameter the dispatcher does not accept
+        // before ProcessRecord ever runs; once declared, the wholesale BoundParameters splat
+        // forwards it to the list worker with no further plumbing.
+        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        public SwitchParameter All { get; set; }
 {{HeaderParamDeclsFor(sharedHeaders, parameterSetName: null)}}
 {{HeaderParamDeclsFor(listOnlyHeaders, parameterSetName: "List")}}
 {{HeaderParamDeclsFor(getOnlyHeaders, parameterSetName: "Get")}}
@@ -852,8 +906,9 @@ namespace {{ctx.CmdletNamespace}}
             // as a RuntimeException carrying the worker's ErrorRecord. Rethrow that record
             // unchanged so the caller sees the worker's error identity (NoGraphSession,
             // GraphRequestFailed, ...) instead of every failure collapsing into a generic
-            // dispatcher error.
-            catch (RuntimeException rex) when (rex.ErrorRecord is not null)
+            // dispatcher error. A pipeline stop is a RuntimeException too and must NOT be
+            // rethrown as a terminating error - both filters here let it pass to the engine.
+            catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)
             {
                 ThrowTerminatingError(rex.ErrorRecord);
                 return;
