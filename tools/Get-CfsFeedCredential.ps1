@@ -31,22 +31,6 @@ function Get-CfsFeedCredential {
     return [System.Management.Automation.PSCredential]::new('azure', $token)
 }
 
-function Initialize-CfsPackageProvider {
-    # Pre-seed the NuGet package provider so PowerShellGet uses it directly rather than bootstrapping /
-    # resolving a public source on first use, which egresses to www.powershellgallery.com (a CFSClean2
-    # violation). Prefer the private feed; otherwise import the provider already bundled on the agent.
-    $cred = Get-CfsFeedCredential
-    try {
-        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Source $script:CfsFeedUrl -Credential $cred -Scope AllUsers -Force -ErrorAction Stop *> $null
-        Write-Host "Pre-seeded NuGet package provider from the private feed."
-    }
-    catch {
-        Import-PackageProvider -Name NuGet -Force -ErrorAction SilentlyContinue *> $null
-        Write-Host "Imported the agent's existing NuGet package provider (private-feed seed unavailable)."
-    }
-    $global:LASTEXITCODE = 0
-}
-
 function Register-CfsFeed {
     # Registers the private feed as a Trusted PSRepository (idempotent). Persisted under the user's
     # PowerShellGet config, so a single registration per job is visible to later steps and runspaces.
@@ -122,11 +106,7 @@ function Get-CfsModuleGuid {
     param(
         [Parameter(Mandatory)][string] $Name
     )
-    if ([string]::IsNullOrWhiteSpace($env:SYSTEM_ACCESSTOKEN)) {
-        Write-Host "[CfsGuid] ${Name}: SYSTEM_ACCESSTOKEN is empty in this step - returning null."
-        return $null
-    }
-    Write-Host "[CfsGuid] ${Name}: SYSTEM_ACCESSTOKEN present (len=$($env:SYSTEM_ACCESSTOKEN.Length))."
+    if ([string]::IsNullOrWhiteSpace($env:SYSTEM_ACCESSTOKEN)) { return $null }
     $headers = @{ Authorization = 'Basic ' + [Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes("azure:$($env:SYSTEM_ACCESSTOKEN)")) }
     $tmp = Join-Path ([System.IO.Path]::GetTempPath()) ("cfsguid_" + [System.Guid]::NewGuid().ToString('N'))
     try {
@@ -135,7 +115,6 @@ function Get-CfsModuleGuid {
         $resp = Invoke-WebRequest -Uri $findUri -Headers $headers -UseBasicParsing -ErrorAction Stop
         [xml]$xml = $resp.Content
         $entry = @($xml.feed.entry) | Where-Object { $_.content.src } | Select-Object -Last 1
-        Write-Host "[CfsGuid] ${Name}: OData status=$($resp.StatusCode) version=$($entry.properties.Version)"
         if ($null -eq $entry) { return $null }
         $nupkgPath = Join-Path $tmp "$Name.nupkg"
         Invoke-WebRequest -Uri $entry.content.src -Headers $headers -OutFile $nupkgPath -UseBasicParsing -ErrorAction Stop
@@ -149,11 +128,10 @@ function Get-CfsModuleGuid {
         }
         finally { $zip.Dispose() }
         $match = [regex]::Match($content, "(?im)^\s*GUID\s*=\s*['`"]([0-9a-fA-F-]{36})['`"]")
-        Write-Host "[CfsGuid] ${Name}: GUID match=$($match.Success) value=$($match.Groups[1].Value)"
         if ($match.Success) { return $match.Groups[1].Value }
         return $null
     }
-    catch { Write-Host "[CfsGuid] $Name FAILED: $($_.Exception.Message)"; return $null }
+    catch { return $null }
     finally {
         Remove-Item -Path $tmp -Recurse -Force -ErrorAction SilentlyContinue
     }

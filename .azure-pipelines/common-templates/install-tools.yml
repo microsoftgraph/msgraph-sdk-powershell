@@ -79,7 +79,6 @@ steps:
         # throws on genuine failure, which still fails the step.
         . "$(Build.SourcesDirectory)/tools/Get-CfsFeedCredential.ps1"
         Unregister-PublicPSGallery
-        Initialize-CfsPackageProvider
         Register-CfsFeed
         Get-PSRepository | Format-List Name, SourceLocation, InstallationPolicy, Trusted
         # PowerShellGet bootstraps the NuGet provider via a native tool during registration, which can
