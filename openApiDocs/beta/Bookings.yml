@@ -2095,6 +2095,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2117,6 +2122,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/bookingBusinesses:
     get:
@@ -2166,6 +2176,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.bookingBusinessCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2191,6 +2206,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}':
     get:
@@ -2237,6 +2257,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2268,6 +2293,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2298,6 +2328,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/appointments':
     get:
@@ -2355,6 +2390,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2389,6 +2429,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}':
     get:
@@ -2446,6 +2491,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2489,6 +2539,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2527,6 +2582,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/microsoft.graph.cancel':
     post:
@@ -2573,6 +2633,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/$count':
     get:
@@ -2596,6 +2661,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView':
     get:
       tags:
@@ -2668,6 +2738,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2702,6 +2777,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}':
     get:
@@ -2772,6 +2852,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2811,6 +2896,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2845,6 +2935,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/microsoft.graph.cancel':
     post:
@@ -2891,6 +2986,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/$count':
     get:
@@ -2914,6 +3014,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customers':
     get:
       tags:
@@ -2970,6 +3075,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.bookingCustomerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3004,6 +3114,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}':
     get:
@@ -3058,6 +3173,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3097,6 +3217,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3131,6 +3256,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customers/$count':
     get:
@@ -3154,6 +3284,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions':
     get:
       tags:
@@ -3210,6 +3345,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.bookingCustomQuestionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3244,6 +3384,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}':
     get:
@@ -3298,6 +3443,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3337,6 +3487,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3371,6 +3526,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/$count':
     get:
@@ -3394,6 +3554,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.getStaffAvailability':
     post:
       tags:
@@ -3450,6 +3615,11 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3478,6 +3648,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.unpublish':
     post:
@@ -3503,6 +3678,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/bookingBusinesses/{bookingBusiness-id}/services':
     get:
@@ -3560,6 +3740,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.bookingServiceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3594,6 +3779,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}':
     get:
@@ -3648,6 +3838,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3687,6 +3882,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3721,6 +3921,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/services/$count':
     get:
@@ -3744,6 +3949,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers':
     get:
       tags:
@@ -3800,6 +4010,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.bookingStaffMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3834,6 +4049,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}':
     get:
@@ -3888,6 +4108,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3927,6 +4152,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3961,6 +4191,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/$count':
     get:
@@ -3984,6 +4219,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   /solutions/bookingBusinesses/$count:
     get:
       tags:
@@ -3998,6 +4238,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   /solutions/bookingCurrencies:
     get:
       tags:
@@ -4049,6 +4294,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.bookingCurrencyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4074,6 +4324,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/bookingCurrencies/{bookingCurrency-id}':
     get:
@@ -4123,6 +4378,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4154,6 +4414,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4180,6 +4445,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/bookingCurrencies/$count:
     get:
@@ -4195,6 +4465,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   /solutions/virtualEvents:
     get:
       tags:
@@ -4232,6 +4507,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventsRoot'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4254,6 +4534,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventsRoot'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4272,6 +4557,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/virtualEvents/events:
     get:
@@ -4320,6 +4610,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4345,6 +4640,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEvent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}':
     get:
@@ -4390,6 +4690,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEvent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4421,6 +4726,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEvent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4447,6 +4757,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/microsoft.graph.cancel':
     post:
@@ -4468,6 +4783,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/virtualEvents/events/{virtualEvent-id}/microsoft.graph.publish':
     post:
@@ -4489,6 +4809,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/virtualEvents/events/{virtualEvent-id}/microsoft.graph.setExternalEventInformation':
     post:
@@ -4523,6 +4848,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/virtualEvents/events/{virtualEvent-id}/presenters':
     get:
@@ -4580,6 +4910,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventPresenterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4614,6 +4949,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}':
     get:
@@ -4668,6 +5008,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4707,6 +5052,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4741,6 +5091,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}/sessions':
     get:
@@ -4805,6 +5160,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4869,6 +5229,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
     get:
@@ -4930,6 +5295,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}/sessions/$count':
     get:
@@ -4961,6 +5331,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/events/{virtualEvent-id}/presenters/$count':
     get:
       tags:
@@ -4983,6 +5358,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions':
     get:
       tags:
@@ -5039,6 +5419,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5073,6 +5458,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}':
     get:
@@ -5127,6 +5517,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5166,6 +5561,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5200,6 +5600,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports':
     get:
@@ -5265,6 +5670,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5307,6 +5717,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}':
     get:
@@ -5369,6 +5784,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5416,6 +5836,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5458,6 +5883,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords':
     get:
@@ -5531,6 +5961,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5581,6 +6016,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}':
     get:
@@ -5651,6 +6091,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5706,6 +6151,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5756,6 +6206,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count':
     get:
@@ -5795,6 +6250,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/$count':
     get:
       tags:
@@ -5825,6 +6285,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/presenters':
     get:
       tags:
@@ -5888,6 +6353,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventPresenterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5952,6 +6422,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/presenters/$count':
     get:
@@ -5983,6 +6458,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations':
     get:
       tags:
@@ -6046,6 +6526,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6110,6 +6595,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations(email=''{email}'')':
     get:
@@ -6171,6 +6661,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations(userId=''{userId}'')':
     get:
@@ -6232,6 +6727,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations/$count':
     get:
@@ -6263,6 +6763,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
     get:
       tags:
@@ -6316,6 +6821,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6355,6 +6865,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6389,6 +6904,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/$count':
     get:
@@ -6412,6 +6932,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   /solutions/virtualEvents/events/$count:
     get:
       tags:
@@ -6426,6 +6951,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   /solutions/virtualEvents/townhalls:
     get:
       tags:
@@ -6474,6 +7004,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventTownhallCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6503,6 +7038,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventTownhall'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}':
     get:
@@ -6552,6 +7092,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventTownhall'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6587,6 +7132,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventTownhall'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6613,6 +7163,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters':
     get:
@@ -6673,6 +7228,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventPresenterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6711,6 +7271,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}':
     get:
@@ -6768,6 +7333,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6807,6 +7377,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6845,6 +7420,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}/sessions':
     get:
@@ -6909,6 +7489,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6973,6 +7558,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
     get:
@@ -7034,6 +7624,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}/sessions/$count':
     get:
@@ -7065,6 +7660,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/$count':
     get:
       tags:
@@ -7087,6 +7687,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration':
     get:
       tags:
@@ -7135,6 +7740,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7166,6 +7776,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7192,6 +7807,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions':
     get:
@@ -7249,6 +7869,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationQuestionBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7283,6 +7908,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}':
     get:
@@ -7337,6 +7967,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7376,6 +8011,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7410,6 +8050,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/$count':
     get:
@@ -7433,6 +8078,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations':
     get:
       tags:
@@ -7489,6 +8139,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7523,6 +8178,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}':
     get:
@@ -7577,6 +8237,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7616,6 +8281,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7650,6 +8320,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/microsoft.graph.cancel':
     post:
@@ -7679,6 +8354,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions':
     get:
@@ -7744,6 +8424,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7809,6 +8494,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
     get:
@@ -7871,6 +8561,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions/$count':
     get:
@@ -7902,6 +8597,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email=''{email}'')':
     get:
       tags:
@@ -7955,6 +8655,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7994,6 +8699,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8028,6 +8738,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email=''{email}'')/microsoft.graph.cancel':
     post:
@@ -8057,6 +8772,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId=''{userId}'')':
     get:
@@ -8111,6 +8831,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8150,6 +8875,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8184,6 +8914,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId=''{userId}'')/microsoft.graph.cancel':
     post:
@@ -8213,6 +8948,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/$count':
     get:
@@ -8236,6 +8976,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions':
     get:
       tags:
@@ -8292,6 +9037,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8326,6 +9076,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}':
     get:
@@ -8380,6 +9135,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8419,6 +9179,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8453,6 +9218,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports':
     get:
@@ -8521,6 +9291,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8563,6 +9338,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}':
     get:
@@ -8628,6 +9408,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8675,6 +9460,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8717,6 +9507,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords':
     get:
@@ -8790,6 +9585,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8840,6 +9640,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}':
     get:
@@ -8910,6 +9715,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8965,6 +9775,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9015,6 +9830,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count':
     get:
@@ -9054,6 +9874,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/$count':
     get:
       tags:
@@ -9084,6 +9909,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/presenters':
     get:
       tags:
@@ -9147,6 +9977,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventPresenterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9211,6 +10046,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/presenters/$count':
     get:
@@ -9242,6 +10082,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/registrations':
     get:
       tags:
@@ -9305,6 +10150,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9369,6 +10219,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/registrations(email=''{email}'')':
     get:
@@ -9430,6 +10285,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/registrations(userId=''{userId}'')':
     get:
@@ -9491,6 +10351,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/registrations/$count':
     get:
@@ -9522,6 +10387,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
     get:
       tags:
@@ -9575,6 +10445,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9614,6 +10489,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9648,6 +10528,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/$count':
     get:
@@ -9671,6 +10556,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   /solutions/virtualEvents/townhalls/$count:
     get:
       tags:
@@ -9685,6 +10575,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/townhalls/microsoft.graph.getByUserIdAndRole(userId=''{userId}'',role=''{role}'')':
     get:
       tags:
@@ -9765,6 +10660,11 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -9842,6 +10742,11 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -9897,6 +10802,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventWebinarCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9926,6 +10836,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}':
     get:
@@ -9975,6 +10890,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10010,6 +10930,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10036,6 +10961,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters':
     get:
@@ -10093,6 +11023,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventPresenterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10127,6 +11062,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}':
     get:
@@ -10181,6 +11121,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10224,6 +11169,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10258,6 +11208,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/sessions':
     get:
@@ -10322,6 +11277,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10386,6 +11346,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
     get:
@@ -10447,6 +11412,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/sessions/$count':
     get:
@@ -10478,6 +11448,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/$count':
     get:
       tags:
@@ -10500,6 +11475,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration':
     get:
       tags:
@@ -10548,6 +11528,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarRegistrationConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10579,6 +11564,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarRegistrationConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10605,6 +11595,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions':
     get:
@@ -10665,6 +11660,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationQuestionBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10703,6 +11703,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}':
     get:
@@ -10757,6 +11762,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10796,6 +11806,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10834,6 +11849,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/$count':
     get:
@@ -10857,6 +11877,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations':
     get:
       tags:
@@ -10916,6 +11941,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10954,6 +11984,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}':
     get:
@@ -11011,6 +12046,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11050,6 +12090,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11084,6 +12129,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/microsoft.graph.cancel':
     post:
@@ -11114,6 +12164,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions':
     get:
@@ -11182,6 +12237,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11247,6 +12307,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
     get:
@@ -11309,6 +12374,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/$count':
     get:
@@ -11340,6 +12410,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email=''{email}'')':
     get:
       tags:
@@ -11396,6 +12471,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11435,6 +12515,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11469,6 +12554,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email=''{email}'')/microsoft.graph.cancel':
     post:
@@ -11499,6 +12589,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId=''{userId}'')':
     get:
@@ -11556,6 +12651,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11595,6 +12695,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11629,6 +12734,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId=''{userId}'')/microsoft.graph.cancel':
     post:
@@ -11659,6 +12769,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/$count':
     get:
@@ -11682,6 +12797,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions':
     get:
       tags:
@@ -11741,6 +12861,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11775,6 +12900,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}':
     get:
@@ -11832,6 +12962,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11871,6 +13006,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11905,6 +13045,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports':
     get:
@@ -11973,6 +13118,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12015,6 +13165,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}':
     get:
@@ -12080,6 +13235,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12127,6 +13287,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12169,6 +13334,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords':
     get:
@@ -12242,6 +13412,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12292,6 +13467,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}':
     get:
@@ -12362,6 +13542,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12417,6 +13602,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12467,6 +13657,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count':
     get:
@@ -12506,6 +13701,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/$count':
     get:
       tags:
@@ -12536,6 +13736,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/presenters':
     get:
       tags:
@@ -12599,6 +13804,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventPresenterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12663,6 +13873,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/presenters/$count':
     get:
@@ -12694,6 +13909,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations':
     get:
       tags:
@@ -12757,6 +13977,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12821,6 +14046,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations(email=''{email}'')':
     get:
@@ -12882,6 +14112,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations(userId=''{userId}'')':
     get:
@@ -12943,6 +14178,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations/$count':
     get:
@@ -12974,6 +14214,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
     get:
       tags:
@@ -13030,6 +14275,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13069,6 +14319,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13103,6 +14358,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/$count':
     get:
@@ -13126,6 +14386,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   /solutions/virtualEvents/webinars/$count:
     get:
       tags:
@@ -13140,6 +14405,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/virtualEvents/webinars/microsoft.graph.getByUserIdAndRole(userId=''{userId}'',role=''{role}'')':
     get:
       tags:
@@ -13220,6 +14490,11 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -13297,6 +14572,11 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -18153,6 +19433,11 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            goalIds:
+              type: array
+              items:
+                type: string
+              description: Read-only. The IDs of the goals associated with the task.
             hasChat:
               type: boolean
               description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
