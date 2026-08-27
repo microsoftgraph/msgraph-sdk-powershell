@@ -2961,6 +2961,7 @@ paths:
       tags:
         - security.auditCoreRoot
       summary: Get auditLog from security
+      description: The entry point for the audit log query API.
       operationId: security.GetAuditLog
       parameters:
         - name: $select
@@ -3192,7 +3193,7 @@ paths:
       tags:
         - security.auditCoreRoot
       summary: Get records from security
-      description: An individual audit log record.
+      description: The collection of audit log records retrieved by the query.
       operationId: security.auditLog.queries.ListRecords
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3246,7 +3247,7 @@ paths:
       tags:
         - security.auditCoreRoot
       summary: Get records from security
-      description: An individual audit log record.
+      description: The collection of audit log records retrieved by the query.
       operationId: security.auditLog.queries.GetRecords
       parameters:
         - name: $select
@@ -12343,6 +12344,11 @@ paths:
                 timespan:
                   type: string
                   nullable: true
+                workspaceId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
         required: true
       responses:
         2XX:
@@ -20288,6 +20294,7 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.security.auditCoreRoot'
                 - type: object
                   nullable: true
+              description: The entry point for the audit log query API.
               x-ms-navigationProperty: true
             cases:
               anyOf:
@@ -21674,6 +21681,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+              description: The collection of audit log queries.
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -21692,21 +21700,21 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The administrative units tagged to an audit log record.
+              description: The collection of administrative unit IDs to filter on.
             displayName:
               type: string
-              description: The display name of the saved audit log query.
+              description: The display name of the audit log query.
               nullable: true
             filterEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The end date of the date range in the query.
+              description: The end date and time of the audit log query filter.
               format: date-time
               nullable: true
             filterStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The start date of the date range in the query.
+              description: The start date and time of the audit log query filter.
               format: date-time
               nullable: true
             ipAddressFilters:
@@ -21714,23 +21722,23 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The IP address of the device that was used when the activity was logged.
+              description: The collection of IP addresses to filter on.
             keywordFilter:
               type: string
-              description: Free text field to search non-indexed properties of the audit log.
+              description: The keyword to filter on.
               nullable: true
             objectIdFilters:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'For SharePoint and OneDrive for Business activity, the full path name of the file or folder accessed by the user. For Exchange admin audit logging, the name of the object that was modified by the cmdlet.'
+              description: The collection of object IDs to filter on.
             operationFilters:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.'
+              description: The collection of operations to filter on.
             recordTypeFilters:
               type: array
               items:
@@ -21738,29 +21746,30 @@ components:
                   - $ref: '#/components/schemas/microsoft.graph.security.auditLogRecordType'
                   - type: object
                     nullable: true
-              description: 'The type of operation indicated by the record. For the list of member values, see auditLogRecordType.'
+              description: The collection of record types to filter on.
             serviceFilters:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The collection of services to filter on.
             status:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.security.auditLogQueryStatus'
                 - type: object
                   nullable: true
-              description: 'Describes the current status of the query. The possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.'
+              description: 'The status of the audit log query. Possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.'
             userPrincipalNameFilters:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, myname@mydomain_name.'
+              description: The collection of user principal names to filter on.
             records:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
-              description: An individual audit log record.
+              description: The collection of audit log records retrieved by the query.
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -21779,40 +21788,40 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The administrative units tagged to an audit log record.
+              description: The collection of administrative units associated with the record.
             auditData:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.security.auditData'
                 - type: object
                   nullable: true
-              description: A JSON object that contains the actual audit log data.
+              description: The audit data associated with the record.
             auditLogRecordType:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.security.auditLogRecordType'
                 - type: object
                   nullable: true
-              description: 'The type of operation indicated by the record. For the list of member values, see auditLogRecordType.'
+              description: The type of the audit log record.
             clientIp:
               type: string
-              description: The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.
+              description: The IP address of the client that performed the activity.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time in UTC when the user performed the activity.
+              description: The date and time when the activity was performed.
               format: date-time
               nullable: true
             objectId:
               type: string
-              description: 'For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.'
+              description: The identifier of the object that was affected by the activity.
               nullable: true
             operation:
               type: string
-              description: The name of the user or admin activity.
+              description: The name of the activity that was performed.
               nullable: true
             organizationId:
               type: string
-              description: The GUID for your organization.
+              description: The GUID of the organization's Microsoft 365 tenant.
               nullable: true
             service:
               type: string
@@ -21820,18 +21829,18 @@ components:
               nullable: true
             userId:
               type: string
-              description: 'The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the ''user'' who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.'
+              description: 'The identifier of the user, system account, service, or application that performed the activity.'
               nullable: true
             userPrincipalName:
               type: string
-              description: UPN of the user who performed the action.
+              description: The user principal name of the user who performed the activity.
               nullable: true
             userType:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.security.auditLogUserType'
                 - type: object
                   nullable: true
-              description: 'The type of user that performed the operation. The possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.'
+              description: 'The type of user who performed the activity. Possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.'
             '@odata.type':
               type: string
           description: Represents an individual audit log record.
@@ -22340,6 +22349,9 @@ components:
             onPremisesSyncEnabled:
               type: boolean
               description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              nullable: true
+            organizationId:
+              type: string
               nullable: true
             preferredDataLocation:
               type: string
@@ -23452,6 +23464,10 @@ components:
         - downloadText
         - downloadFile
         - unknownFutureValue
+        - copyToClipboard
+        - pasteFromClipboard
+        - print
+        - accessDebugTools
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -25527,6 +25543,12 @@ components:
                   nullable: true
               description: The identifier that relates the user to the working time schedule triggers. Read-Only. Nullable
               x-ms-navigationProperty: true
+            sponsorOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that''s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.'
+              x-ms-navigationProperty: true
             sponsors:
               type: array
               items:
@@ -26839,6 +26861,7 @@ components:
           '#microsoft.graph.accessPackageMultipleChoiceQuestion': '#/components/schemas/microsoft.graph.accessPackageMultipleChoiceQuestion'
           '#microsoft.graph.accessPackageTextInputQuestion': '#/components/schemas/microsoft.graph.accessPackageTextInputQuestion'
           '#microsoft.graph.accessPackageResource': '#/components/schemas/microsoft.graph.accessPackageResource'
+          '#microsoft.graph.customDataProvidedResource': '#/components/schemas/microsoft.graph.customDataProvidedResource'
           '#microsoft.graph.accessPackageResourceEnvironment': '#/components/schemas/microsoft.graph.accessPackageResourceEnvironment'
           '#microsoft.graph.accessPackageResourceRequest': '#/components/schemas/microsoft.graph.accessPackageResourceRequest'
           '#microsoft.graph.accessPackageResourceRole': '#/components/schemas/microsoft.graph.accessPackageResourceRole'
@@ -27101,6 +27124,9 @@ components:
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
+          '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
+          '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
+          '#microsoft.graph.customDataProvidedResourceAccessReviewUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceAccessReviewUploadSession'
           '#microsoft.graph.customExtensionStageSetting': '#/components/schemas/microsoft.graph.customExtensionStageSetting'
           '#microsoft.graph.customSecurityAttributeDefinition': '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
           '#microsoft.graph.dataPolicyOperation': '#/components/schemas/microsoft.graph.dataPolicyOperation'
@@ -27120,7 +27146,6 @@ components:
           '#microsoft.graph.deletedTeam': '#/components/schemas/microsoft.graph.deletedTeam'
           '#microsoft.graph.deltaParticipants': '#/components/schemas/microsoft.graph.deltaParticipants'
           '#microsoft.graph.detectedApp': '#/components/schemas/microsoft.graph.detectedApp'
-          '#microsoft.graph.deviceAppManagement': '#/components/schemas/microsoft.graph.deviceAppManagement'
           '#microsoft.graph.deviceCategory': '#/components/schemas/microsoft.graph.deviceCategory'
           '#microsoft.graph.deviceComplianceActionItem': '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
           '#microsoft.graph.deviceComplianceDeviceOverview': '#/components/schemas/microsoft.graph.deviceComplianceDeviceOverview'
@@ -27230,6 +27255,7 @@ components:
           '#microsoft.graph.tokenIssuancePolicy': '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
           '#microsoft.graph.tokenLifetimePolicy': '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
           '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
+          '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
           '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
           '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
           '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -27290,6 +27316,7 @@ components:
           '#microsoft.graph.extension': '#/components/schemas/microsoft.graph.extension'
           '#microsoft.graph.openTypeExtension': '#/components/schemas/microsoft.graph.openTypeExtension'
           '#microsoft.graph.externalDomainName': '#/components/schemas/microsoft.graph.externalDomainName'
+          '#microsoft.graph.externalOriginResourceConnector': '#/components/schemas/microsoft.graph.externalOriginResourceConnector'
           '#microsoft.graph.featureRolloutPolicy': '#/components/schemas/microsoft.graph.featureRolloutPolicy'
           '#microsoft.graph.federatedIdentityCredential': '#/components/schemas/microsoft.graph.federatedIdentityCredential'
           '#microsoft.graph.fieldValueSet': '#/components/schemas/microsoft.graph.fieldValueSet'
@@ -27359,6 +27386,18 @@ components:
           '#microsoft.graph.engagementAsyncOperation': '#/components/schemas/microsoft.graph.engagementAsyncOperation'
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
+          '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
+          '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
+          '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.crossTenantCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.crossTenantCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusySimple'
+          '#microsoft.graph.crossTenantMailTipsAll': '#/components/schemas/microsoft.graph.crossTenantMailTipsAll'
+          '#microsoft.graph.crossTenantMailTipsLimited': '#/components/schemas/microsoft.graph.crossTenantMailTipsLimited'
+          '#microsoft.graph.crossTenantMigration': '#/components/schemas/microsoft.graph.crossTenantMigration'
+          '#microsoft.graph.crossTenantOpenProfileCard': '#/components/schemas/microsoft.graph.crossTenantOpenProfileCard'
+          '#microsoft.graph.crossTenantPlacesDeskBooking': '#/components/schemas/microsoft.graph.crossTenantPlacesDeskBooking'
+          '#microsoft.graph.crossTenantPlacesRoomBooking': '#/components/schemas/microsoft.graph.crossTenantPlacesRoomBooking'
           '#microsoft.graph.mailboxFolder': '#/components/schemas/microsoft.graph.mailboxFolder'
           '#microsoft.graph.mailFolder': '#/components/schemas/microsoft.graph.mailFolder'
           '#microsoft.graph.mailSearchFolder': '#/components/schemas/microsoft.graph.mailSearchFolder'
@@ -27614,6 +27653,8 @@ components:
           '#microsoft.graph.serviceApp': '#/components/schemas/microsoft.graph.serviceApp'
           '#microsoft.graph.serviceHealth': '#/components/schemas/microsoft.graph.serviceHealth'
           '#microsoft.graph.servicePrincipalRiskDetection': '#/components/schemas/microsoft.graph.servicePrincipalRiskDetection'
+          '#microsoft.graph.serviceProviderConstraints': '#/components/schemas/microsoft.graph.serviceProviderConstraints'
+          '#microsoft.graph.delegatedAdminServiceProviderConstraints': '#/components/schemas/microsoft.graph.delegatedAdminServiceProviderConstraints'
           '#microsoft.graph.settingStateDeviceSummary': '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
           '#microsoft.graph.sharedInsight': '#/components/schemas/microsoft.graph.sharedInsight'
           '#microsoft.graph.sharepoint': '#/components/schemas/microsoft.graph.sharepoint'
@@ -27703,6 +27744,7 @@ components:
           '#microsoft.graph.unifiedRoleScheduleInstanceBase': '#/components/schemas/microsoft.graph.unifiedRoleScheduleInstanceBase'
           '#microsoft.graph.unifiedRoleAssignmentScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
           '#microsoft.graph.unifiedRoleEligibilityScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+          '#microsoft.graph.unifiedRoot': '#/components/schemas/microsoft.graph.unifiedRoot'
           '#microsoft.graph.unifiedStorageQuota': '#/components/schemas/microsoft.graph.unifiedStorageQuota'
           '#microsoft.graph.usageRightsIncluded': '#/components/schemas/microsoft.graph.usageRightsIncluded'
           '#microsoft.graph.usedInsight': '#/components/schemas/microsoft.graph.usedInsight'
@@ -27750,6 +27792,7 @@ components:
           '#microsoft.graph.virtualEventPresenter': '#/components/schemas/microsoft.graph.virtualEventPresenter'
           '#microsoft.graph.virtualEventRegistration': '#/components/schemas/microsoft.graph.virtualEventRegistration'
           '#microsoft.graph.virtualEventRegistrationConfiguration': '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
+          '#microsoft.graph.virtualEventTownhallRegistrationConfiguration': '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
           '#microsoft.graph.virtualEventWebinarRegistrationConfiguration': '#/components/schemas/microsoft.graph.virtualEventWebinarRegistrationConfiguration'
           '#microsoft.graph.virtualEventRegistrationQuestionBase': '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
           '#microsoft.graph.virtualEventRegistrationCustomQuestion': '#/components/schemas/microsoft.graph.virtualEventRegistrationCustomQuestion'
@@ -27848,6 +27891,7 @@ components:
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
+          '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
           '#microsoft.graph.identityGovernance.task': '#/components/schemas/microsoft.graph.identityGovernance.task'
           '#microsoft.graph.identityGovernance.taskDefinition': '#/components/schemas/microsoft.graph.identityGovernance.taskDefinition'
           '#microsoft.graph.identityGovernance.taskProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.taskProcessingResult'
@@ -29767,6 +29811,7 @@ components:
             - $ref: '#/components/schemas/microsoft.graph.security.auditRecordTypeDictionary'
             - type: object
               nullable: true
+          description: An open-type dictionary that contains dynamic audit event properties as name-value pairs.
         '@odata.type':
           type: string
       description: Abstract base type for audit event data.
@@ -30956,6 +31001,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
             subscriptions:
               type: array
@@ -31241,6 +31287,7 @@ components:
               '#microsoft.graph.tokenIssuancePolicy': '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
               '#microsoft.graph.tokenLifetimePolicy': '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
               '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
+              '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
               '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
               '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -34087,6 +34134,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -38908,6 +38956,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
             versions:
               type: array
@@ -40166,6 +40215,11 @@ components:
             - type: object
               nullable: true
           description: 'Represents the actual content, either as text (textContent) or binary data (binaryContent). Optional if metadata alone is sufficient for policy evaluation. Do not use for contentActivities.'
+        contentCategory:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.contentCategory'
+            - type: object
+              nullable: true
         correlationId:
           type: string
           description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
@@ -41237,6 +41291,7 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.identity'
                 - type: object
                   nullable: true
+              description: The intended recipient of the targeted message.
             '@odata.type':
               type: string
               default: '#microsoft.graph.targetedChatMessage'
@@ -42679,6 +42734,12 @@ components:
                 - type: object
                   nullable: true
               description: Specifies the configuration settings for meeting chat restrictions.
+            cloudVideoInteropInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.cloudVideoInteropInfo'
+                - type: object
+                  nullable: true
+              description: Conferencing device integration settings for Cloud Video Interop (CVI). Read-only.
             expiryDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -42723,6 +42784,12 @@ components:
               type: string
               description: Specifies the spoken language used during the meeting for recording and transcription purposes.
               nullable: true
+            meetingType:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.onlineMeetingType'
+                - type: object
+                  nullable: true
+              description: 'The type of the online meeting. The possible values are: adhoc, scheduled, recurring, broadcast, meetnow, unknownFutureValue. Read-only.'
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -46060,6 +46127,10 @@ components:
         - downloadText
         - downloadFile
         - unknownFutureValue
+        - copyToClipboard
+        - pasteFromClipboard
+        - print
+        - accessDebugTools
       type: string
     microsoft.graph.contentBase:
       title: contentBase
@@ -46074,6 +46145,13 @@ components:
         mapping:
           '#microsoft.graph.binaryContent': '#/components/schemas/microsoft.graph.binaryContent'
           '#microsoft.graph.textContent': '#/components/schemas/microsoft.graph.textContent'
+    microsoft.graph.contentCategory:
+      title: contentCategory
+      enum:
+        - none
+        - ai
+        - unknownFutureValue
+      type: string
     microsoft.graph.dlpAction:
       title: dlpAction
       enum:
@@ -47760,6 +47838,26 @@ components:
           nullable: true
         '@odata.type':
           type: string
+    microsoft.graph.cloudVideoInteropInfo:
+      title: cloudVideoInteropInfo
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        moreInfoWebUrl:
+          type: string
+          description: Provides other video teleconferencing (VTC) dial-in options. Read-only.
+          nullable: true
+        tenantKey:
+          type: string
+          description: The tenant key that is used to dial into the interactive voice response (IVR) of the partner CVI service.
+          nullable: true
+        videoTeleconferenceId:
+          type: string
+          description: The video teleconferencing ID. Read-only.
+          nullable: true
+        '@odata.type':
+          type: string
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       required:
@@ -47798,6 +47896,16 @@ components:
           description: 'Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.'
         '@odata.type':
           type: string
+    microsoft.graph.onlineMeetingType:
+      title: onlineMeetingType
+      enum:
+        - adhoc
+        - scheduled
+        - recurring
+        - broadcast
+        - meetnow
+        - unknownFutureValue
+      type: string
     microsoft.graph.onlineMeetingSensitivityLabelAssignment:
       title: onlineMeetingSensitivityLabelAssignment
       required:

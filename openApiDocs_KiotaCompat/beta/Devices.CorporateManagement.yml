@@ -37222,6 +37222,21 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/cancelEnhancedLogCollection':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action cancelEnhancedLogCollection
+      description: Cancels an in-progress enhanced log collection session on a supervised Apple device.
+      operationId: users.user.managedDevices.managedDevice.cancelEnhancedLogCollection
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/managedDevices/{managedDevice-id}/changeAssignments':
     post:
       tags:
@@ -38103,6 +38118,31 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/triggerEnhancedLogCollection':
+    post:
+      tags:
+        - users.managedDevice
+      summary: Invoke action triggerEnhancedLogCollection
+      description: Triggers an AppleCare-authorized enhanced log collection session on a supervised Apple device.
+      operationId: users.user.managedDevices.managedDevice.triggerEnhancedLogCollection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appleCareToken:
+                  type: string
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/managedDevices/{managedDevice-id}/updateWindowsDeviceAccount':
     post:
       tags:
@@ -38266,6 +38306,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -38293,6 +38339,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/managedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}':
     get:
@@ -38333,6 +38385,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -38357,6 +38415,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -38377,6 +38441,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/managedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}/settingStates':
     get:
@@ -38428,6 +38498,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -38455,6 +38531,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/managedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}/settingStates/{securityBaselineSettingState-id}':
     get:
@@ -38495,6 +38577,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -38519,6 +38607,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -38539,6 +38633,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/managedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}/settingStates/$count':
     get:
@@ -38556,6 +38656,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
   '/users/{user-id}/managedDevices/{managedDevice-id}/securityBaselineStates/$count':
     get:
       tags:
@@ -38572,6 +38678,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
   '/users/{user-id}/managedDevices/{managedDevice-id}/users':
     get:
       tags:
@@ -39811,200 +39923,197 @@ paths:
 components:
   schemas:
     microsoft.graph.deviceAppManagement:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: deviceAppManagement
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            isEnabledForMicrosoftStoreForBusiness:
-              type: boolean
-              description: Whether the account is enabled for syncing applications from the Microsoft Store for Business.
-            microsoftStoreForBusinessLanguage:
-              type: string
-              description: 'The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.'
+      title: deviceAppManagement
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        isEnabledForMicrosoftStoreForBusiness:
+          type: boolean
+          description: Whether the account is enabled for syncing applications from the Microsoft Store for Business.
+        microsoftStoreForBusinessLanguage:
+          type: string
+          description: 'The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.'
+          nullable: true
+        microsoftStoreForBusinessLastCompletedApplicationSyncTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The last time an application sync from the Microsoft Store for Business was completed.
+          format: date-time
+        microsoftStoreForBusinessLastSuccessfulSyncDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The last time the apps from the Microsoft Store for Business were synced successfully for the account.
+          format: date-time
+        microsoftStoreForBusinessPortalSelection:
+          $ref: '#/components/schemas/microsoft.graph.microsoftStoreForBusinessPortalSelectionOptions'
+        androidManagedAppProtections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
+          description: Android managed app policies.
+          x-ms-navigationProperty: true
+        defaultManagedAppProtections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
+          description: Default managed app policies.
+          x-ms-navigationProperty: true
+        deviceAppManagementTasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
+          description: Device app management tasks.
+          x-ms-navigationProperty: true
+        enterpriseCodeSigningCertificates:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.enterpriseCodeSigningCertificate'
+          description: The Windows Enterprise Code Signing Certificate.
+          x-ms-navigationProperty: true
+        iosLobAppProvisioningConfigurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfiguration'
+          description: The IOS Lob App Provisioning Configurations.
+          x-ms-navigationProperty: true
+        iosManagedAppProtections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
+          description: iOS managed app policies.
+          x-ms-navigationProperty: true
+        managedAppPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+          description: Managed app policies.
+          x-ms-navigationProperty: true
+        managedAppRegistrations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+          description: The managed app registrations.
+          x-ms-navigationProperty: true
+        managedAppStatuses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
+          description: The managed app statuses.
+          x-ms-navigationProperty: true
+        managedEBookCategories:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
+          description: The mobile eBook categories.
+          x-ms-navigationProperty: true
+        managedEBooks:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedEBook'
+          description: The Managed eBook.
+          x-ms-navigationProperty: true
+        mdmWindowsInformationProtectionPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
+          description: Windows information protection for apps running on devices which are MDM enrolled.
+          x-ms-navigationProperty: true
+        mobileAppCatalogPackages:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileAppCatalogPackage'
+          description: MobileAppCatalogPackage entities.
+          x-ms-navigationProperty: true
+        mobileAppCategories:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
+          description: The mobile app categories.
+          x-ms-navigationProperty: true
+        mobileAppConfigurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
+          description: The Managed Device Mobile Application Configurations.
+          x-ms-navigationProperty: true
+        mobileAppRelationships:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
+          description: The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
+          x-ms-navigationProperty: true
+        mobileApps:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileApp'
+          description: The mobile apps.
+          x-ms-navigationProperty: true
+        policySets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.policySet'
+          description: The PolicySet of Policies and Applications
+          x-ms-navigationProperty: true
+        symantecCodeSigningCertificate:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.symantecCodeSigningCertificate'
+            - type: object
               nullable: true
-            microsoftStoreForBusinessLastCompletedApplicationSyncTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The last time an application sync from the Microsoft Store for Business was completed.
-              format: date-time
-            microsoftStoreForBusinessLastSuccessfulSyncDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The last time the apps from the Microsoft Store for Business were synced successfully for the account.
-              format: date-time
-            microsoftStoreForBusinessPortalSelection:
-              $ref: '#/components/schemas/microsoft.graph.microsoftStoreForBusinessPortalSelectionOptions'
-            androidManagedAppProtections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
-              description: Android managed app policies.
-              x-ms-navigationProperty: true
-            defaultManagedAppProtections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
-              description: Default managed app policies.
-              x-ms-navigationProperty: true
-            deviceAppManagementTasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
-              description: Device app management tasks.
-              x-ms-navigationProperty: true
-            enterpriseCodeSigningCertificates:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.enterpriseCodeSigningCertificate'
-              description: The Windows Enterprise Code Signing Certificate.
-              x-ms-navigationProperty: true
-            iosLobAppProvisioningConfigurations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfiguration'
-              description: The IOS Lob App Provisioning Configurations.
-              x-ms-navigationProperty: true
-            iosManagedAppProtections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
-              description: iOS managed app policies.
-              x-ms-navigationProperty: true
-            managedAppPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-              description: Managed app policies.
-              x-ms-navigationProperty: true
-            managedAppRegistrations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
-              description: The managed app registrations.
-              x-ms-navigationProperty: true
-            managedAppStatuses:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
-              description: The managed app statuses.
-              x-ms-navigationProperty: true
-            managedEBookCategories:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
-              description: The mobile eBook categories.
-              x-ms-navigationProperty: true
-            managedEBooks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedEBook'
-              description: The Managed eBook.
-              x-ms-navigationProperty: true
-            mdmWindowsInformationProtectionPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
-              description: Windows information protection for apps running on devices which are MDM enrolled.
-              x-ms-navigationProperty: true
-            mobileAppCatalogPackages:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppCatalogPackage'
-              description: MobileAppCatalogPackage entities.
-              x-ms-navigationProperty: true
-            mobileAppCategories:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
-              description: The mobile app categories.
-              x-ms-navigationProperty: true
-            mobileAppConfigurations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
-              description: The Managed Device Mobile Application Configurations.
-              x-ms-navigationProperty: true
-            mobileAppRelationships:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
-              description: The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
-              x-ms-navigationProperty: true
-            mobileApps:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileApp'
-              description: The mobile apps.
-              x-ms-navigationProperty: true
-            policySets:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.policySet'
-              description: The PolicySet of Policies and Applications
-              x-ms-navigationProperty: true
-            symantecCodeSigningCertificate:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.symantecCodeSigningCertificate'
-                - type: object
-                  nullable: true
-              description: The WinPhone Symantec Code Signing Certificate.
-              x-ms-navigationProperty: true
-            targetedManagedAppConfigurations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
-              description: Targeted managed app configurations.
-              x-ms-navigationProperty: true
-            vppTokens:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.vppToken'
-              description: List of Vpp tokens for this organization.
-              x-ms-navigationProperty: true
-            wdacSupplementalPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
-              description: The collection of Windows Defender Application Control Supplemental Policies.
-              x-ms-navigationProperty: true
-            windowsInformationProtectionDeviceRegistrations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
-              description: Windows information protection device registrations that are not MDM enrolled.
-              x-ms-navigationProperty: true
-            windowsInformationProtectionPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
-              description: Windows information protection for apps running on devices which are not MDM enrolled.
-              x-ms-navigationProperty: true
-            windowsInformationProtectionWipeActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionWipeAction'
-              description: Windows information protection wipe actions.
-              x-ms-navigationProperty: true
-            windowsManagedAppProtections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsManagedAppProtection'
-              description: Windows managed app policies.
-              x-ms-navigationProperty: true
-            windowsManagementApp:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.windowsManagementApp'
-                - type: object
-                  nullable: true
-              description: Windows management app.
-              x-ms-navigationProperty: true
-            '@odata.type':
-              type: string
-          description: Singleton entity that acts as a container for all device app management functionality.
-      x-ms-discriminator-value: '#microsoft.graph.deviceAppManagement'
+          description: The WinPhone Symantec Code Signing Certificate.
+          x-ms-navigationProperty: true
+        targetedManagedAppConfigurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
+          description: Targeted managed app configurations.
+          x-ms-navigationProperty: true
+        vppTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.vppToken'
+          description: List of Vpp tokens for this organization.
+          x-ms-navigationProperty: true
+        wdacSupplementalPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
+          description: The collection of Windows Defender Application Control Supplemental Policies.
+          x-ms-navigationProperty: true
+        windowsInformationProtectionDeviceRegistrations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
+          description: Windows information protection device registrations that are not MDM enrolled.
+          x-ms-navigationProperty: true
+        windowsInformationProtectionPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
+          description: Windows information protection for apps running on devices which are not MDM enrolled.
+          x-ms-navigationProperty: true
+        windowsInformationProtectionWipeActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionWipeAction'
+          description: Windows information protection wipe actions.
+          x-ms-navigationProperty: true
+        windowsManagedAppProtections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsManagedAppProtection'
+          description: Windows managed app policies.
+          x-ms-navigationProperty: true
+        windowsManagementApp:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.windowsManagementApp'
+            - type: object
+              nullable: true
+          description: Windows management app.
+          x-ms-navigationProperty: true
+        '@odata.type':
+          type: string
+      description: Singleton entity that acts as a container for all device app management functionality.
     microsoft.graph.androidManagedAppProtection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.targetedManagedAppProtection'
@@ -40037,6 +40146,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             appActionIfAndroidSafetyNetDeviceAttestationFailed:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
+            appActionIfDeveloperOptionsEnabled:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
+                - type: object
+                  nullable: true
+              description: 'Defines a managed app behavior, either warn, block, or wipe, if Developer Options are enabled on the Android device. If the admin does not set this action, the default is null, which indicates this setting is not configured.'
             appActionIfDeviceLockNotSet:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             appActionIfDevicePasscodeComplexityLessThanHigh:
@@ -42275,6 +42390,13 @@ components:
               type: number
               description: 'Indicates the size of the file after encryption, in bytes.'
               format: int64
+            uploadErrorCode:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.mobileAppContentFileUploadErrorCode'
+                - type: object
+                  nullable: true
+              description: 'Indicates optional error details when uploadState is indicating an error. For example, when uploadState has commitFileFailed value, this field may have the error code of apkIsInvalid. Read-only.'
+              readOnly: true
             uploadState:
               $ref: '#/components/schemas/microsoft.graph.mobileAppContentFileUploadState'
             '@odata.type':
@@ -44013,10 +44135,14 @@ components:
             - '@odata.type'
           type: object
           properties:
+            allowedInboundDataTransferSourceApps:
+              $ref: '#/components/schemas/microsoft.graph.windowsManagedAppDataTransferLocations'
             allowedInboundDataTransferSources:
               $ref: '#/components/schemas/microsoft.graph.windowsManagedAppDataTransferLevel'
             allowedOutboundClipboardSharingLevel:
               $ref: '#/components/schemas/microsoft.graph.windowsManagedAppClipboardSharingLevel'
+            allowedOutboundDataTransferDestinationApps:
+              $ref: '#/components/schemas/microsoft.graph.windowsManagedAppDataTransferLocations'
             allowedOutboundDataTransferDestinations:
               $ref: '#/components/schemas/microsoft.graph.windowsManagedAppDataTransferLevel'
             appActionIfUnableToAuthenticateUser:
@@ -45985,6 +46111,154 @@ components:
           nullable: true
         '@odata.type':
           type: string
+    microsoft.graph.microsoftStoreForBusinessPortalSelectionOptions:
+      title: microsoftStoreForBusinessPortalSelectionOptions
+      enum:
+        - none
+        - companyPortal
+        - privateStore
+      type: string
+      description: Portal to which admin syncs available Microsoft Store for Business apps. This is available in the Intune Admin Console.
+      x-ms-enum-flags:
+        isFlags: true
+      x-ms-enum:
+        name: microsoftStoreForBusinessPortalSelectionOptions
+        modelAsString: false
+        values:
+          - value: none
+            description: This option is not available for the account
+            name: none
+          - value: companyPortal
+            description: Intune Company Portal only.
+            name: companyPortal
+          - value: privateStore
+            description: MSFB Private store only.
+            name: privateStore
+    microsoft.graph.targetedManagedAppProtection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.managedAppProtection'
+        - title: targetedManagedAppProtection
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            appGroupType:
+              $ref: '#/components/schemas/microsoft.graph.targetedManagedAppGroupType'
+            isAssigned:
+              type: boolean
+              description: Indicates if the policy is deployed to any inclusion groups or not.
+            targetedAppManagementLevels:
+              $ref: '#/components/schemas/microsoft.graph.appManagementLevel'
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
+              description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.targetedManagedAppProtection'
+          description: Policy used to configure detailed management settings targeted to specific security groups
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.androidManagedAppProtection': '#/components/schemas/microsoft.graph.androidManagedAppProtection'
+              '#microsoft.graph.iosManagedAppProtection': '#/components/schemas/microsoft.graph.iosManagedAppProtection'
+    microsoft.graph.managedAppRemediationAction:
+      title: managedAppRemediationAction
+      enum:
+        - block
+        - wipe
+        - warn
+        - blockWhenSettingIsSupported
+      type: string
+      description: An admin initiated action to be applied on a managed app.
+      x-ms-enum:
+        name: managedAppRemediationAction
+        modelAsString: false
+        values:
+          - value: block
+            description: Indicates the user will be blocked from accessing the app and corporate data
+            name: block
+          - value: wipe
+            description: Indicates the corporate data will be removed from the app
+            name: wipe
+          - value: warn
+            description: Indicates user will be warned the when accessing the app
+            name: warn
+          - value: blockWhenSettingIsSupported
+            description: Indicates user will be blocked from accessing the app and corporate data if devices supports this setting
+            name: blockWhenSettingIsSupported
+    microsoft.graph.keyValuePair:
+      title: keyValuePair
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name for this key-value pair
+        value:
+          type: string
+          description: Value for this key-value pair
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.androidManagedAppSafetyNetAppsVerificationType:
+      title: androidManagedAppSafetyNetAppsVerificationType
+      enum:
+        - none
+        - enabled
+      type: string
+      description: An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
+      x-ms-enum:
+        name: androidManagedAppSafetyNetAppsVerificationType
+        modelAsString: false
+        values:
+          - value: none
+            description: no requirement set
+            name: none
+          - value: enabled
+            description: require that Android device has SafetyNet Apps Verification enabled
+            name: enabled
+    microsoft.graph.androidManagedAppSafetyNetDeviceAttestationType:
+      title: androidManagedAppSafetyNetDeviceAttestationType
+      enum:
+        - none
+        - basicIntegrity
+        - basicIntegrityAndDeviceCertification
+      type: string
+      description: An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
+      x-ms-enum:
+        name: androidManagedAppSafetyNetDeviceAttestationType
+        modelAsString: false
+        values:
+          - value: none
+            description: no requirement set
+            name: none
+          - value: basicIntegrity
+            description: require that Android device passes SafetyNet Basic Integrity validation
+            name: basicIntegrity
+          - value: basicIntegrityAndDeviceCertification
+            description: require that Android device passes SafetyNet Basic Integrity and Device Certification validations
+            name: basicIntegrityAndDeviceCertification
+    microsoft.graph.androidManagedAppSafetyNetEvaluationType:
+      title: androidManagedAppSafetyNetEvaluationType
+      enum:
+        - basic
+        - hardwareBacked
+      type: string
+      description: An admin enforced Android SafetyNet evaluation type requirement on a managed app.
+      x-ms-enum:
+        name: androidManagedAppSafetyNetEvaluationType
+        modelAsString: false
+        values:
+          - value: basic
+            description: Require basic evaluation
+            name: basic
+          - value: hardwareBacked
+            description: Require hardware backed evaluation
+            name: hardwareBacked
     microsoft.graph.entity:
       title: entity
       required:
@@ -46054,6 +46328,7 @@ components:
           '#microsoft.graph.agent': '#/components/schemas/microsoft.graph.agent'
           '#microsoft.graph.agentCardManifest': '#/components/schemas/microsoft.graph.agentCardManifest'
           '#microsoft.graph.agentCollection': '#/components/schemas/microsoft.graph.agentCollection'
+          '#microsoft.graph.agentCommunicationConfiguration': '#/components/schemas/microsoft.graph.agentCommunicationConfiguration'
           '#microsoft.graph.agentInstance': '#/components/schemas/microsoft.graph.agentInstance'
           '#microsoft.graph.agentRegistration': '#/components/schemas/microsoft.graph.agentRegistration'
           '#microsoft.graph.agentRiskDetection': '#/components/schemas/microsoft.graph.agentRiskDetection'
@@ -46158,6 +46433,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -46226,6 +46502,14 @@ components:
           '#microsoft.graph.azureADAuthentication': '#/components/schemas/microsoft.graph.azureADAuthentication'
           '#microsoft.graph.azureADPremiumLicenseInsight': '#/components/schemas/microsoft.graph.azureADPremiumLicenseInsight'
           '#microsoft.graph.azureRoleDefinition': '#/components/schemas/microsoft.graph.azureRoleDefinition'
+          '#microsoft.graph.b2bRegistrationMetrics': '#/components/schemas/microsoft.graph.b2bRegistrationMetrics'
+          '#microsoft.graph.b2BRegistrationMetricsBase': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsBase'
+          '#microsoft.graph.b2BRegistrationMetricsInitial': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsInitial'
+          '#microsoft.graph.b2BRegistrationMetricsRecent': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsRecent'
+          '#microsoft.graph.b2BSignInActivityMetrics': '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
+          '#microsoft.graph.b2BSignInActivityMetricsBase': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsBase'
+          '#microsoft.graph.b2BSignInActivityMetricsInitial': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsInitial'
+          '#microsoft.graph.b2BSignInActivityMetricsRecent': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsRecent'
           '#microsoft.graph.b2cAuthenticationMethodsPolicy': '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
           '#microsoft.graph.backupReport': '#/components/schemas/microsoft.graph.backupReport'
           '#microsoft.graph.backupRestoreRoot': '#/components/schemas/microsoft.graph.backupRestoreRoot'
@@ -46254,6 +46538,10 @@ components:
           '#microsoft.graph.levelMap': '#/components/schemas/microsoft.graph.levelMap'
           '#microsoft.graph.sectionMap': '#/components/schemas/microsoft.graph.sectionMap'
           '#microsoft.graph.unitMap': '#/components/schemas/microsoft.graph.unitMap'
+          '#microsoft.graph.billingMetrics': '#/components/schemas/microsoft.graph.billingMetrics'
+          '#microsoft.graph.billingMetricsBase': '#/components/schemas/microsoft.graph.billingMetricsBase'
+          '#microsoft.graph.billingMetricsInitial': '#/components/schemas/microsoft.graph.billingMetricsInitial'
+          '#microsoft.graph.billingMetricsRecent': '#/components/schemas/microsoft.graph.billingMetricsRecent'
           '#microsoft.graph.bitlocker': '#/components/schemas/microsoft.graph.bitlocker'
           '#microsoft.graph.bitlockerRecoveryKey': '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
           '#microsoft.graph.bookingAppointment': '#/components/schemas/microsoft.graph.bookingAppointment'
@@ -46498,7 +46786,6 @@ components:
           '#microsoft.graph.detectedApp': '#/components/schemas/microsoft.graph.detectedApp'
           '#microsoft.graph.deviceAndAppManagementAssignmentFilter': '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilter'
           '#microsoft.graph.payloadCompatibleAssignmentFilter': '#/components/schemas/microsoft.graph.payloadCompatibleAssignmentFilter'
-          '#microsoft.graph.deviceAppManagement': '#/components/schemas/microsoft.graph.deviceAppManagement'
           '#microsoft.graph.deviceAppManagementTask': '#/components/schemas/microsoft.graph.deviceAppManagementTask'
           '#microsoft.graph.appVulnerabilityTask': '#/components/schemas/microsoft.graph.appVulnerabilityTask'
           '#microsoft.graph.securityConfigurationTask': '#/components/schemas/microsoft.graph.securityConfigurationTask'
@@ -46820,6 +47107,7 @@ components:
           '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
           '#microsoft.graph.tenantRelationshipAccessPolicyBase': '#/components/schemas/microsoft.graph.tenantRelationshipAccessPolicyBase'
           '#microsoft.graph.crossTenantAccessPolicy': '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+          '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
           '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
           '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
           '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -46994,7 +47282,10 @@ components:
           '#microsoft.graph.governanceInsight': '#/components/schemas/microsoft.graph.governanceInsight'
           '#microsoft.graph.membershipOutlierInsight': '#/components/schemas/microsoft.graph.membershipOutlierInsight'
           '#microsoft.graph.userSignInInsight': '#/components/schemas/microsoft.graph.userSignInInsight'
+          '#microsoft.graph.governanceInvitation': '#/components/schemas/microsoft.graph.governanceInvitation'
           '#microsoft.graph.governancePolicyTemplate': '#/components/schemas/microsoft.graph.governancePolicyTemplate'
+          '#microsoft.graph.governanceRelationship': '#/components/schemas/microsoft.graph.governanceRelationship'
+          '#microsoft.graph.governanceRequest': '#/components/schemas/microsoft.graph.governanceRequest'
           '#microsoft.graph.governanceResource': '#/components/schemas/microsoft.graph.governanceResource'
           '#microsoft.graph.governanceRoleAssignment': '#/components/schemas/microsoft.graph.governanceRoleAssignment'
           '#microsoft.graph.governanceRoleAssignmentRequest': '#/components/schemas/microsoft.graph.governanceRoleAssignmentRequest'
@@ -47235,6 +47526,7 @@ components:
           '#microsoft.graph.mfaTelecomFraudMetric': '#/components/schemas/microsoft.graph.mfaTelecomFraudMetric'
           '#microsoft.graph.mfaUserCountMetric': '#/components/schemas/microsoft.graph.mfaUserCountMetric'
           '#microsoft.graph.microsoftApplicationDataAccessSettings': '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
+          '#microsoft.graph.microsoftAppsFileStorageContainerUsage': '#/components/schemas/microsoft.graph.microsoftAppsFileStorageContainerUsage'
           '#microsoft.graph.microsoftTunnelConfiguration': '#/components/schemas/microsoft.graph.microsoftTunnelConfiguration'
           '#microsoft.graph.microsoftTunnelHealthThreshold': '#/components/schemas/microsoft.graph.microsoftTunnelHealthThreshold'
           '#microsoft.graph.microsoftTunnelServer': '#/components/schemas/microsoft.graph.microsoftTunnelServer'
@@ -47309,6 +47601,10 @@ components:
           '#microsoft.graph.mobileDeviceManagementPolicy': '#/components/schemas/microsoft.graph.mobileDeviceManagementPolicy'
           '#microsoft.graph.monthlyUserInsightMetricsRoot': '#/components/schemas/microsoft.graph.monthlyUserInsightMetricsRoot'
           '#microsoft.graph.multiActivitySubscription': '#/components/schemas/microsoft.graph.multiActivitySubscription'
+          '#microsoft.graph.multiTenantApplicationMetrics': '#/components/schemas/microsoft.graph.multiTenantApplicationMetrics'
+          '#microsoft.graph.multiTenantApplicationMetricsBase': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsBase'
+          '#microsoft.graph.multiTenantApplicationMetricsInitial': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsInitial'
+          '#microsoft.graph.multiTenantApplicationMetricsRecent': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsRecent'
           '#microsoft.graph.multiTenantOrganization': '#/components/schemas/microsoft.graph.multiTenantOrganization'
           '#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate': '#/components/schemas/microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate'
           '#microsoft.graph.multiTenantOrganizationJoinRequestRecord': '#/components/schemas/microsoft.graph.multiTenantOrganizationJoinRequestRecord'
@@ -47409,6 +47705,7 @@ components:
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
           '#microsoft.graph.plannerPlan': '#/components/schemas/microsoft.graph.plannerPlan'
@@ -47527,8 +47824,11 @@ components:
           '#microsoft.graph.recommendationBase': '#/components/schemas/microsoft.graph.recommendationBase'
           '#microsoft.graph.recommendation': '#/components/schemas/microsoft.graph.recommendation'
           '#microsoft.graph.recommendationConfiguration': '#/components/schemas/microsoft.graph.recommendationConfiguration'
+          '#microsoft.graph.recommendationTag': '#/components/schemas/microsoft.graph.recommendationTag'
           '#microsoft.graph.reflectCheckInResponse': '#/components/schemas/microsoft.graph.reflectCheckInResponse'
           '#microsoft.graph.regionalAndLanguageSettings': '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
+          '#microsoft.graph.relatedTenant': '#/components/schemas/microsoft.graph.relatedTenant'
+          '#microsoft.graph.relatedTenantsRefreshRequest': '#/components/schemas/microsoft.graph.relatedTenantsRefreshRequest'
           '#microsoft.graph.relyingPartyDetailedSummary': '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
           '#microsoft.graph.remoteActionAudit': '#/components/schemas/microsoft.graph.remoteActionAudit'
           '#microsoft.graph.remoteAssistancePartner': '#/components/schemas/microsoft.graph.remoteAssistancePartner'
@@ -47561,6 +47861,7 @@ components:
           '#microsoft.graph.restrictedAppsViolation': '#/components/schemas/microsoft.graph.restrictedAppsViolation'
           '#microsoft.graph.riskDetection': '#/components/schemas/microsoft.graph.riskDetection'
           '#microsoft.graph.riskyAgent': '#/components/schemas/microsoft.graph.riskyAgent'
+          '#microsoft.graph.riskyAgentDiscoveredAgentIdentity': '#/components/schemas/microsoft.graph.riskyAgentDiscoveredAgentIdentity'
           '#microsoft.graph.riskyAgentIdentity': '#/components/schemas/microsoft.graph.riskyAgentIdentity'
           '#microsoft.graph.riskyAgentIdentityBlueprintPrincipal': '#/components/schemas/microsoft.graph.riskyAgentIdentityBlueprintPrincipal'
           '#microsoft.graph.riskyAgentUser': '#/components/schemas/microsoft.graph.riskyAgentUser'
@@ -47701,6 +48002,9 @@ components:
           '#microsoft.graph.teamworkTagMember': '#/components/schemas/microsoft.graph.teamworkTagMember'
           '#microsoft.graph.template': '#/components/schemas/microsoft.graph.template'
           '#microsoft.graph.tenantAttachRBAC': '#/components/schemas/microsoft.graph.tenantAttachRBAC'
+          '#microsoft.graph.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernance'
+          '#microsoft.graph.tenantGovernancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+          '#microsoft.graph.tenantGovernanceSetting': '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
           '#microsoft.graph.tenantProtectionScopeContainer': '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
           '#microsoft.graph.tenantSetupInfo': '#/components/schemas/microsoft.graph.tenantSetupInfo'
           '#microsoft.graph.termsAndConditions': '#/components/schemas/microsoft.graph.termsAndConditions'
@@ -47765,6 +48069,7 @@ components:
           '#microsoft.graph.unifiedRoleScheduleInstanceBase': '#/components/schemas/microsoft.graph.unifiedRoleScheduleInstanceBase'
           '#microsoft.graph.unifiedRoleAssignmentScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
           '#microsoft.graph.unifiedRoleEligibilityScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+          '#microsoft.graph.unifiedRoot': '#/components/schemas/microsoft.graph.unifiedRoot'
           '#microsoft.graph.unifiedStorageQuota': '#/components/schemas/microsoft.graph.unifiedStorageQuota'
           '#microsoft.graph.unsupportedGroupPolicyExtension': '#/components/schemas/microsoft.graph.unsupportedGroupPolicyExtension'
           '#microsoft.graph.usageRight': '#/components/schemas/microsoft.graph.usageRight'
@@ -48016,8 +48321,19 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -48296,6 +48612,13 @@ components:
           '#microsoft.graph.security.caseManagement.recommendationRelation': '#/components/schemas/microsoft.graph.security.caseManagement.recommendationRelation'
           '#microsoft.graph.security.caseManagement.workspaceIndicatorRelation': '#/components/schemas/microsoft.graph.security.caseManagement.workspaceIndicatorRelation'
           '#microsoft.graph.security.caseManagement.task': '#/components/schemas/microsoft.graph.security.caseManagement.task'
+          '#microsoft.graph.security.caseManagement.caseTypeConfiguration': '#/components/schemas/microsoft.graph.security.caseManagement.caseTypeConfiguration'
+          '#microsoft.graph.security.caseManagement.customFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.customFieldDefinition'
+          '#microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.numberCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.numberCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.optionsCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.optionsCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.stringCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.stringCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.statusDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.statusDefinition'
           '#microsoft.graph.security.dlp.baseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.baseAuditRecord'
           '#microsoft.graph.security.dlp.complianceBaseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.complianceBaseAuditRecord'
           '#microsoft.graph.security.dlp.complianceDLPBaseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.complianceDLPBaseAuditRecord'
@@ -48314,31 +48637,6 @@ components:
           '#microsoft.graph.teamsAdministration.teamsUserConfiguration': '#/components/schemas/microsoft.graph.teamsAdministration.teamsUserConfiguration'
           '#microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation': '#/components/schemas/microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation'
           '#microsoft.graph.teamsAdministration.telephoneNumberManagementRoot': '#/components/schemas/microsoft.graph.teamsAdministration.telephoneNumberManagementRoot'
-          '#microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.billingMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetrics'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.governanceInvitation': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
-          '#microsoft.graph.tenantGovernanceServices.governancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
-          '#microsoft.graph.tenantGovernanceServices.governanceRelationship': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
-          '#microsoft.graph.tenantGovernanceServices.governanceRequest': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
-          '#microsoft.graph.tenantGovernanceServices.longRunningOperation': '#/components/schemas/microsoft.graph.tenantGovernanceServices.longRunningOperation'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.relatedTenant': '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
-          '#microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshRequest': '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshRequest'
-          '#microsoft.graph.tenantGovernanceServices.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernance'
-          '#microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting': '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting'
           '#microsoft.graph.termStore.group': '#/components/schemas/microsoft.graph.termStore.group'
           '#microsoft.graph.termStore.relation': '#/components/schemas/microsoft.graph.termStore.relation'
           '#microsoft.graph.termStore.set': '#/components/schemas/microsoft.graph.termStore.set'
@@ -48371,154 +48669,6 @@ components:
           '#microsoft.graph.windowsUpdates.azureADDevice': '#/components/schemas/microsoft.graph.windowsUpdates.azureADDevice'
           '#microsoft.graph.windowsUpdates.updatableAssetGroup': '#/components/schemas/microsoft.graph.windowsUpdates.updatableAssetGroup'
           '#microsoft.graph.windowsUpdates.updatePolicy': '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
-    microsoft.graph.microsoftStoreForBusinessPortalSelectionOptions:
-      title: microsoftStoreForBusinessPortalSelectionOptions
-      enum:
-        - none
-        - companyPortal
-        - privateStore
-      type: string
-      description: Portal to which admin syncs available Microsoft Store for Business apps. This is available in the Intune Admin Console.
-      x-ms-enum-flags:
-        isFlags: true
-      x-ms-enum:
-        name: microsoftStoreForBusinessPortalSelectionOptions
-        modelAsString: false
-        values:
-          - value: none
-            description: This option is not available for the account
-            name: none
-          - value: companyPortal
-            description: Intune Company Portal only.
-            name: companyPortal
-          - value: privateStore
-            description: MSFB Private store only.
-            name: privateStore
-    microsoft.graph.targetedManagedAppProtection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.managedAppProtection'
-        - title: targetedManagedAppProtection
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            appGroupType:
-              $ref: '#/components/schemas/microsoft.graph.targetedManagedAppGroupType'
-            isAssigned:
-              type: boolean
-              description: Indicates if the policy is deployed to any inclusion groups or not.
-            targetedAppManagementLevels:
-              $ref: '#/components/schemas/microsoft.graph.appManagementLevel'
-            assignments:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
-              description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-              x-ms-navigationProperty: true
-            '@odata.type':
-              type: string
-              default: '#microsoft.graph.targetedManagedAppProtection'
-          description: Policy used to configure detailed management settings targeted to specific security groups
-          discriminator:
-            propertyName: '@odata.type'
-            mapping:
-              '#microsoft.graph.androidManagedAppProtection': '#/components/schemas/microsoft.graph.androidManagedAppProtection'
-              '#microsoft.graph.iosManagedAppProtection': '#/components/schemas/microsoft.graph.iosManagedAppProtection'
-    microsoft.graph.managedAppRemediationAction:
-      title: managedAppRemediationAction
-      enum:
-        - block
-        - wipe
-        - warn
-        - blockWhenSettingIsSupported
-      type: string
-      description: An admin initiated action to be applied on a managed app.
-      x-ms-enum:
-        name: managedAppRemediationAction
-        modelAsString: false
-        values:
-          - value: block
-            description: Indicates the user will be blocked from accessing the app and corporate data
-            name: block
-          - value: wipe
-            description: Indicates the corporate data will be removed from the app
-            name: wipe
-          - value: warn
-            description: Indicates user will be warned the when accessing the app
-            name: warn
-          - value: blockWhenSettingIsSupported
-            description: Indicates user will be blocked from accessing the app and corporate data if devices supports this setting
-            name: blockWhenSettingIsSupported
-    microsoft.graph.keyValuePair:
-      title: keyValuePair
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name for this key-value pair
-        value:
-          type: string
-          description: Value for this key-value pair
-          nullable: true
-        '@odata.type':
-          type: string
-    microsoft.graph.androidManagedAppSafetyNetAppsVerificationType:
-      title: androidManagedAppSafetyNetAppsVerificationType
-      enum:
-        - none
-        - enabled
-      type: string
-      description: An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
-      x-ms-enum:
-        name: androidManagedAppSafetyNetAppsVerificationType
-        modelAsString: false
-        values:
-          - value: none
-            description: no requirement set
-            name: none
-          - value: enabled
-            description: require that Android device has SafetyNet Apps Verification enabled
-            name: enabled
-    microsoft.graph.androidManagedAppSafetyNetDeviceAttestationType:
-      title: androidManagedAppSafetyNetDeviceAttestationType
-      enum:
-        - none
-        - basicIntegrity
-        - basicIntegrityAndDeviceCertification
-      type: string
-      description: An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
-      x-ms-enum:
-        name: androidManagedAppSafetyNetDeviceAttestationType
-        modelAsString: false
-        values:
-          - value: none
-            description: no requirement set
-            name: none
-          - value: basicIntegrity
-            description: require that Android device passes SafetyNet Basic Integrity validation
-            name: basicIntegrity
-          - value: basicIntegrityAndDeviceCertification
-            description: require that Android device passes SafetyNet Basic Integrity and Device Certification validations
-            name: basicIntegrityAndDeviceCertification
-    microsoft.graph.androidManagedAppSafetyNetEvaluationType:
-      title: androidManagedAppSafetyNetEvaluationType
-      enum:
-        - basic
-        - hardwareBacked
-      type: string
-      description: An admin enforced Android SafetyNet evaluation type requirement on a managed app.
-      x-ms-enum:
-        name: androidManagedAppSafetyNetEvaluationType
-        modelAsString: false
-        values:
-          - value: basic
-            description: Require basic evaluation
-            name: basic
-          - value: hardwareBacked
-            description: Require hardware backed evaluation
-            name: hardwareBacked
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       required:
@@ -49417,6 +49567,21 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+    microsoft.graph.mobileAppContentFileUploadErrorCode:
+      title: mobileAppContentFileUploadErrorCode
+      enum:
+        - apkIsInvalid
+        - apkIsMissingSignerCertificates
+        - apkHasInvalidPackageName
+        - apkPackageNameMismatch
+        - apkHasInvalidVersionCode
+        - apkHasVersionCodeMismatch
+        - apkHasInvalidMinSdk
+        - apkMinSdkMismatch
+        - apkVersionNameMismatch
+        - unknownFutureValue
+      type: string
+      description: Optional error codes that can be provided when uploadState of mobileAppContentFile is indicating an error.
     microsoft.graph.mobileAppContentFileUploadState:
       title: mobileAppContentFileUploadState
       enum:
@@ -50563,11 +50728,36 @@ components:
         - failed
         - notSupported
       type: string
+    microsoft.graph.windowsManagedAppDataTransferLocations:
+      title: windowsManagedAppDataTransferLocations
+      enum:
+        - none
+        - oneDriveForBusiness
+        - unknownFutureValue
+      type: string
+      description: Windows MAM data transfer locations
+      x-ms-enum-flags:
+        isFlags: true
+      x-ms-enum:
+        name: windowsManagedAppDataTransferLocations
+        modelAsString: false
+        values:
+          - value: none
+            description: No locations selected.
+            name: none
+          - value: oneDriveForBusiness
+            description: OneDrive for Business. Data transferred to or from this location is subject to app protection policy.
+            name: oneDriveForBusiness
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.windowsManagedAppDataTransferLevel:
       title: windowsManagedAppDataTransferLevel
       enum:
         - allApps
         - none
+        - selectedApps
+        - unknownFutureValue
       type: string
       description: Data can be transferred from/to these classes of apps
       x-ms-enum:
@@ -50580,6 +50770,12 @@ components:
           - value: none
             description: No apps.
             name: none
+          - value: selectedApps
+            description: Selected apps only. Allowed locations are specified by the child property.
+            name: selectedApps
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.windowsManagedAppClipboardSharingLevel:
       title: windowsManagedAppClipboardSharingLevel
       enum:
@@ -52904,6 +53100,12 @@ components:
                 - type: object
                   nullable: true
               description: Represents a user's custom solution entity. Read-Only. Nullable.
+              x-ms-navigationProperty: true
+            sponsorOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that''s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.'
               x-ms-navigationProperty: true
             sponsors:
               type: array
@@ -55928,6 +56130,7 @@ components:
         - unknownFutureValue
         - windowsOsRecovery
         - android
+        - intuneOpenExtensibility
       type: string
       description: Describes which technology this setting can be deployed with
       x-ms-enum-flags:
@@ -55987,6 +56190,9 @@ components:
           - value: android
             description: Indicates the settings that can be deployed through the Android channel.
             name: android
+          - value: intuneOpenExtensibility
+            description: Setting can be deployed through the Intune Open Extensibility channel for scenarios such as Windows Recovery Environment (WinRE) configuration policies.
+            name: intuneOpenExtensibility
     microsoft.graph.healthState:
       title: healthState
       enum:
@@ -56434,6 +56640,7 @@ components:
               '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
               '#microsoft.graph.tenantRelationshipAccessPolicyBase': '#/components/schemas/microsoft.graph.tenantRelationshipAccessPolicyBase'
               '#microsoft.graph.crossTenantAccessPolicy': '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+              '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
               '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
               '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -57431,6 +57638,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               x-ms-navigationProperty: true
+            lifecycle:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
             memberOf:
               type: array
               items:
@@ -57655,6 +57868,12 @@ components:
                 - type: object
                   nullable: true
               description: Represents a QR code authentication method registered to a user for authentication.
+              x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
               x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
@@ -58189,7 +58408,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
-              description: A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -58396,6 +58615,11 @@ components:
               description: 'The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            provisioningConfiguration:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningConfiguration'
+                - type: object
+                  nullable: true
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -59009,27 +59233,25 @@ components:
               type: string
               description: The display name of the distribution list.
               nullable: true
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.member'
-              description: The list of members in the distribution list. Not returned by default; use $select=members to include.
             notes:
               type: string
+              description: Notes about the distribution list.
               nullable: true
             personIdentifier:
               type: string
+              description: The unique identifier of the distribution list in the mailbox. Read-only.
               nullable: true
-            distributionListMembers:
+            members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.distributionListMember'
-              description: The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.
+              description: The members of the distribution list. Not returned by default; use $expand=members to include. Read-only.
               x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the distribution list. Read-only.
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -59059,6 +59281,12 @@ components:
                 - type: object
                   nullable: true
               description: Optional. Information about the drive's storage space quota. Read-only.
+            settings:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.driveSettings'
+                - type: object
+                  nullable: true
+              description: The settings associated with the drive. Read-only. This property isn't returned by default and must be selected using the $select query parameter.
             sharePointIds:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.sharepointIds'
@@ -61523,7 +61751,6 @@ components:
       properties:
         '@odata.type':
           type: string
-      description: 'IP range base class for representing IPV4, IPV6 address ranges'
       discriminator:
         propertyName: '@odata.type'
         mapping:
@@ -62597,6 +62824,36 @@ components:
               type: string
               default: '#microsoft.graph.homeRealmDiscoveryPolicy'
       x-ms-discriminator-value: '#microsoft.graph.homeRealmDiscoveryPolicy'
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
     microsoft.graph.permissionGrantPreApprovalPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -62903,6 +63160,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -63129,6 +63387,29 @@ components:
               type: string
               default: '#microsoft.graph.qrCodePinAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.qrCodePinAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -63786,7 +64067,7 @@ components:
           properties:
             body:
               anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.itemBody'
+                - $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
                 - type: object
                   nullable: true
               description: Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn't return @mentions and attachments.
@@ -63867,7 +64148,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
               description: 'References to attached objects like files, tabs, meetings etc.'
             body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
             channelIdentity:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.channelIdentity'
@@ -63878,6 +64159,11 @@ components:
               type: string
               description: 'If the message was sent in a chat, represents the identity of the chat.'
               nullable: true
+            citations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageCitation'
+              description: Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -63906,6 +64192,8 @@ components:
                 - type: object
                   nullable: true
               description: Details of the sender of the chat message. Can only be set during migration.
+            hasReplies:
+              type: boolean
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
             lastEditedDateTime:
@@ -64379,6 +64667,16 @@ components:
         - business
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcProvisioningConfiguration:
+      title: cloudPcProvisioningConfiguration
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        domainJoinType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
+        '@odata.type':
+          type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -64785,32 +65083,6 @@ components:
               type: string
               default: '#microsoft.graph.deviceTemplate'
       x-ms-discriminator-value: '#microsoft.graph.deviceTemplate'
-    microsoft.graph.member:
-      title: member
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        contactId:
-          type: string
-          description: 'The ID of the referenced contact, if applicable. Optional.'
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the member. Optional.
-          nullable: true
-        key:
-          type: string
-          description: The email address or routing key of the member. Required.
-          nullable: true
-        recipientType:
-          $ref: '#/components/schemas/microsoft.graph.recipientType'
-        routingType:
-          type: string
-          description: 'The routing type for the member, for example, SMTP. Optional.'
-          nullable: true
-        '@odata.type':
-          type: string
     microsoft.graph.distributionListMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -64819,21 +65091,22 @@ components:
             - '@odata.type'
           type: object
           properties:
-            contactId:
-              type: string
-              description: 'The ID of the referenced contact, if applicable. Read-only.'
-              nullable: true
             displayName:
               type: string
               description: The display name of the member. Read-only.
               nullable: true
-            recipientType:
+            memberId:
+              type: string
+              description: 'A system generated unique identifier. Non-empty for contact, privateDL and mailbox members. ReadOnly.'
+              nullable: true
+            type:
               $ref: '#/components/schemas/microsoft.graph.recipientType'
             contact:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.contact'
                 - type: object
                   nullable: true
+              description: The contact associated with the distribution list member. Read-only.
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -64955,6 +65228,18 @@ components:
           type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.driveSettings:
+      title: driveSettings
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        itemDefaultSensitivityLabelId:
+          type: string
+          description: The ID of the default sensitivity label for items in the drive. Read-only.
           nullable: true
         '@odata.type':
           type: string
@@ -68811,6 +69096,7 @@ components:
               '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
               '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
               '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+              '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
               '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
               '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
               '#microsoft.graph.plannerPlan': '#/components/schemas/microsoft.graph.plannerPlan'
@@ -68915,6 +69201,12 @@ components:
                   nullable: true
               description: Extra details about the plan. Read-only. Nullable.
               x-ms-navigationProperty: true
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+              description: Collection of goals in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
             historyItems:
               type: array
               items:
@@ -69018,6 +69310,11 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            goalIds:
+              type: array
+              items:
+                type: string
+              description: Read-only. The IDs of the goals associated with the task.
             hasChat:
               type: boolean
               description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
@@ -70961,6 +71258,105 @@ components:
           description: Indicates the configured expression. Required.
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            description:
+              type: string
+            governingPolicyReferenceId:
+              type: string
+            issueCode:
+              type: string
+            ruleType:
+              type: string
+              nullable: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            notificationSchedule:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+                - type: object
+                  nullable: true
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.subjectSet'
+                - type: object
+                  nullable: true
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+            createdBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
     microsoft.graph.preApprovalDetail:
       title: preApprovalDetail
       required:
@@ -71753,6 +72149,30 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.teamsAppDefinition'
+    microsoft.graph.chatMessageBody:
+      title: chatMessageBody
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the chat message.
+          nullable: true
+        contentType:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.bodyType'
+            - type: object
+              nullable: true
+          description: 'The type of the content. The possible values are: text, html. The contentType property is deprecated. Going forward, use the messageBodyContentType property.'
+        messageBodyContentType:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.chatMessageBodyContentType'
+            - type: object
+              nullable: true
+          description: 'The type of the content, including support for additional Teams content types. The possible values are: text, html, markdown, unknownFutureValue.'
+        '@odata.type':
+          type: string
     microsoft.graph.eventMessageDetail:
       title: eventMessageDetail
       required:
@@ -71865,6 +72285,43 @@ components:
         teamId:
           type: string
           description: The identity of the team in which the message was posted.
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.chatMessageCitation:
+      title: chatMessageCitation
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        excerpt:
+          type: string
+          description: Read-only. Text snippet from the cited source.
+          nullable: true
+        iconType:
+          type: string
+          description: 'Read-only. Icon type identifier for the cited source, for example, ExcelIcon or WordIcon.'
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Read-only. Citation identifier that''s unique within the message. The message body references this identifier inline, for example, [1].'
+          format: int32
+          nullable: true
+        sensitivityLabel:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.chatMessageCitationSensitivityLabel'
+            - type: object
+              nullable: true
+          description: Read-only. Sensitivity label applied to the cited source.
+        title:
+          type: string
+          description: Read-only. Display title of the cited source.
+          nullable: true
+        webUrl:
+          type: string
+          description: Read-only. URL to the cited source.
           nullable: true
         '@odata.type':
           type: string
@@ -72149,6 +72606,13 @@ components:
         - unknownFutureValue
         - vMware
         - hp
+      type: string
+    microsoft.graph.cloudPcDomainJoinType:
+      title: cloudPcDomainJoinType
+      enum:
+        - azureADJoin
+        - hybridAzureADJoin
+        - unknownFutureValue
       type: string
     microsoft.graph.delegationSettings:
       allOf:
@@ -76483,7 +76947,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
         '@odata.type':
           type: string
@@ -76491,6 +76955,7 @@ components:
         propertyName: '@odata.type'
         mapping:
           '#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource'
+          '#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource'
           '#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource'
           '#microsoft.graph.accessReviewInstanceDecisionItemCustomDataProvidedResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemCustomDataProvidedResource'
           '#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource'
@@ -76847,6 +77312,56 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.plannerPlanDetails'
+    microsoft.graph.plannerGoal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerGoal
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Required. The display name of the goal.
+            finishDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to finish.
+              format: date
+              nullable: true
+            notes:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.itemBody'
+                - type: object
+                  nullable: true
+              description: Nullable. The notes associated with the goal.
+            planId:
+              type: string
+              description: Required. The ID of the plan that contains the goal.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Optional. The relative priority of the goal. Valid values range from 0 to 10, inclusive. The default value is 5.'
+              format: int32
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to start.
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoalStatus'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.plannerGoal'
     microsoft.graph.plannerHistoryItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -79123,6 +79638,82 @@ components:
           description: An ordered list of transformations that are applied in sequence.
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.identityGovernance.deleteOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.deleteOnlyEnforcementAction'
+          '#microsoft.graph.identityGovernance.disableOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableOnlyEnforcementAction'
+          '#microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction'
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        additionalRecipients:
+          type: array
+          items:
+            type: string
+        isEnabled:
+          type: boolean
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+        '@odata.type':
+          type: string
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet'
+          '#microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet'
+          '#microsoft.graph.identityGovernance.groupBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.groupBasedSubjectSet'
+          '#microsoft.graph.identityGovernance.ruleBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.ruleBasedSubjectSet'
+          '#microsoft.graph.identityGovernance.selectedObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.selectedObjectsSubjectSet'
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+              '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+              '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
     microsoft.graph.preApprovedPermissions:
       title: preApprovedPermissions
       required:
@@ -79644,6 +80235,30 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.teamsAppDashboardCardDefinition'
+    microsoft.graph.chatMessageBodyContentType:
+      title: chatMessageBodyContentType
+      enum:
+        - text
+        - html
+        - markdown
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessageCitationSensitivityLabel:
+      title: chatMessageCitationSensitivityLabel
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        description:
+          type: string
+          description: Read-only. User-facing description of the sensitivity restriction.
+          nullable: true
+        displayName:
+          type: string
+          description: Read-only. Display name of the sensitivity label.
+          nullable: true
+        '@odata.type':
+          type: string
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -79820,6 +80435,11 @@ components:
               nullable: true
         deviceMetadata:
           $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        evaluationScope:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.evaluationScope'
+            - type: object
+              nullable: true
         integratedAppMetadata:
           $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
         protectedAppMetadata:
@@ -81943,6 +82563,16 @@ components:
       properties:
         '@odata.type':
           type: string
+    microsoft.graph.plannerGoalStatus:
+      title: plannerGoalStatus
+      enum:
+        - notStarted
+        - onTrack
+        - behind
+        - atRisk
+        - closed
+        - unknownFutureValue
+      type: string
     microsoft.graph.historyEntityType:
       title: historyEntityType
       enum:
@@ -84748,6 +85378,16 @@ components:
           description: Details about the operating system platform and version.
         '@odata.type':
           type: string
+    microsoft.graph.evaluationScope:
+      title: evaluationScope
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.evaluationScopeType'
+        '@odata.type':
+          type: string
     microsoft.graph.integratedApplicationMetadata:
       title: integratedApplicationMetadata
       required:
@@ -84782,6 +85422,11 @@ components:
                 - type: object
                   nullable: true
               description: The client (application) ID of the Microsoft Entra application. Required.
+            sourceLocation:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.policyLocation'
+                - type: object
+                  nullable: true
             '@odata.type':
               type: string
               default: '#microsoft.graph.protectedApplicationMetadata'
@@ -86463,11 +87108,11 @@ components:
         - uploadFile
         - downloadText
         - downloadFile
+        - unknownFutureValue
         - copyToClipboard
         - pasteFromClipboard
         - print
         - accessDebugTools
-        - unknownFutureValue
       type: string
     microsoft.graph.contentBase:
       title: contentBase
@@ -86515,6 +87160,14 @@ components:
           description: The version string of the operating system.
         '@odata.type':
           type: string
+    microsoft.graph.evaluationScopeType:
+      title: evaluationScopeType
+      enum:
+        - tenant
+        - agent
+        - anonymousUser
+        - unknownFutureValue
+      type: string
     microsoft.graph.policyLocation:
       title: policyLocation
       required:
@@ -86531,6 +87184,7 @@ components:
         mapping:
           '#microsoft.graph.policyLocationApplication': '#/components/schemas/microsoft.graph.policyLocationApplication'
           '#microsoft.graph.policyLocationDomain': '#/components/schemas/microsoft.graph.policyLocationDomain'
+          '#microsoft.graph.policyLocationTool': '#/components/schemas/microsoft.graph.policyLocationTool'
           '#microsoft.graph.policyLocationUrl': '#/components/schemas/microsoft.graph.policyLocationUrl'
     microsoft.graph.sharingRole:
       title: sharingRole

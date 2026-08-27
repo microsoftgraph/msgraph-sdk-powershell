@@ -6,512 +6,6 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /directory/publicKeyInfrastructure:
-    get:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Get publicKeyInfrastructure from directory
-      description: The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
-      operationId: directory.GetPublicKeyInfrastructure
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Update the navigation property publicKeyInfrastructure in directory
-      operationId: directory.UpdatePublicKeyInfrastructure
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.publicKeyInfrastructureRoot'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Delete navigation property publicKeyInfrastructure for directory
-      operationId: directory.DeletePublicKeyInfrastructure
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /directory/publicKeyInfrastructure/certificateBasedAuthConfigurations:
-    get:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: List certificateBasedAuthPki objects
-      description: Get a list of the certificateBasedAuthPki objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-list-certificatebasedauthconfigurations?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.ListCertificateBasedAuthConfigurations
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.certificateBasedAuthPkiCollectionResponse'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Create certificateBasedAuthPki
-      description: Create a new certificateBasedAuthPki object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-post-certificatebasedauthconfigurations?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.CreateCertificateBasedAuthConfigurations
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}':
-    get:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Get certificateBasedAuthPki
-      description: Read the properties and relationships of a certificateBasedAuthPki object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-get?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.GetCertificateBasedAuthConfigurations
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Update certificateBasedAuthPki
-      description: Update the properties of a certificateBasedAuthPki object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-update?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.UpdateCertificateBasedAuthConfigurations
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Delete certificateBasedAuthPki
-      description: Delete a certificateBasedAuthPki object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-delete-certificatebasedauthconfigurations?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.DeleteCertificateBasedAuthConfigurations
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities':
-    get:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: List certificateAuthorityDetail objects
-      description: Get a list of the certificateAuthorityDetail objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-list-certificateauthorities?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfigurations.ListCertificateAuthorities
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.certificateAuthorityDetailCollectionResponse'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Create certificateAuthorityDetail
-      description: Create a new certificateAuthorityDetail object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-post-certificateauthorities?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfigurations.CreateCertificateAuthorities
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/{certificateAuthorityDetail-id}':
-    get:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Get certificateAuthorityDetail
-      description: Read the properties and relationships of a certificateAuthorityDetail object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/certificateauthoritydetail-get?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfigurations.GetCertificateAuthorities
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Update certificateAuthorityDetail
-      description: Update the properties of a certificateAuthorityDetail object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/certificateauthoritydetail-update?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfigurations.UpdateCertificateAuthorities
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Delete certificateAuthorityDetail
-      description: Delete a certificateAuthorityDetail object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-delete-certificateauthorities?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfigurations.DeleteCertificateAuthorities
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/$count':
-    get:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Get the number of the resource
-      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfigurations.certificateAuthorities.GetCount-8126
-      parameters:
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-  '/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/upload':
-    post:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Invoke action upload
-      description: 'Append additional certificate authority details to a certificateBasedAuthPki resource. Only one operation can run at a time and this operation can take up to 30 minutes to complete. To know whether another upload is in progress, call the Get certificateBasedAuthPki. The status property will have the value running.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/certificatebasedauthpki-upload?view=graph-rest-beta
-      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfigurations.certificateBasedAuthPki.upload
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                uploadUrl:
-                  type: string
-                sha256FileHash:
-                  type: string
-        required: true
-      responses:
-        '204':
-          description: Success
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  /directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/$count:
-    get:
-      tags:
-        - directory.publicKeyInfrastructureRoot
-      summary: Get the number of the resource
-      operationId: directory.publicKeyInfrastructure.certificateBasedAuthConfigurations.GetCount-4154
-      parameters:
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        4XX:
-          $ref: '#/components/responses/error'
-        5XX:
-          $ref: '#/components/responses/error'
   /directoryObjects:
     get:
       tags:
@@ -1115,117 +609,6 @@ paths:
       x-ms-docs-operation-type: action
 components:
   schemas:
-    microsoft.graph.publicKeyInfrastructureRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: publicKeyInfrastructureRoot
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            certificateBasedAuthConfigurations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
-              description: The collection of public key infrastructure instances for the certificate-based authentication feature for users.
-              x-ms-navigationProperty: true
-            '@odata.type':
-              type: string
-      x-ms-discriminator-value: '#microsoft.graph.publicKeyInfrastructureRoot'
-    microsoft.graph.certificateBasedAuthPki:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: certificateBasedAuthPki
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The name of the object. Maximum length is 256 characters.
-              nullable: true
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the object was created or last modified.
-              format: date-time
-            status:
-              type: string
-              description: The status of any asynchronous jobs runs on the object which can be upload or delete.
-              nullable: true
-            statusDetails:
-              type: string
-              description: The status details of the upload/deleted operation of PKI (Public Key Infrastructure).
-              nullable: true
-            certificateAuthorities:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
-              description: The collection of certificate authorities contained in this public key infrastructure resource.
-              x-ms-navigationProperty: true
-            '@odata.type':
-              type: string
-              default: '#microsoft.graph.certificateBasedAuthPki'
-      x-ms-discriminator-value: '#microsoft.graph.certificateBasedAuthPki'
-    microsoft.graph.certificateAuthorityDetail:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: certificateAuthorityDetail
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            certificate:
-              type: string
-              description: The public key of the certificate authority.
-              format: base64url
-            certificateAuthorityType:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.certificateAuthorityType'
-                - type: object
-                  nullable: true
-              description: 'The type of certificate authority. The possible values are: root, intermediate, unknownFutureValue. Supports $filter (eq).'
-            certificateRevocationListUrl:
-              type: string
-              description: The URL to check if the certificate is revoked.
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the certificate authority was created.
-              format: date-time
-              nullable: true
-            deltaCertificateRevocationListUrl:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              description: The display name of the certificate authority.
-              nullable: true
-            expirationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the certificate authority expires. Supports $filter (eq) and $orderby.
-              format: date-time
-            isIssuerHintEnabled:
-              type: boolean
-              description: Indicates whether the certificate picker presents the certificate authority to the user to use for authentication. Default value is false. Optional.
-              nullable: true
-            issuer:
-              type: string
-              description: The issuer of the certificate authority.
-              nullable: true
-            issuerSubjectKeyIdentifier:
-              type: string
-              description: The subject key identifier of certificate authority.
-              nullable: true
-            thumbprint:
-              type: string
-              description: 'The thumbprint of certificate authority certificate. Supports $filter (eq, startswith).'
-            '@odata.type':
-              type: string
-              default: '#microsoft.graph.certificateAuthorityDetail'
-      x-ms-discriminator-value: '#microsoft.graph.certificateAuthorityDetail'
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1289,6 +672,7 @@ components:
               '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
               '#microsoft.graph.tenantRelationshipAccessPolicyBase': '#/components/schemas/microsoft.graph.tenantRelationshipAccessPolicyBase'
               '#microsoft.graph.crossTenantAccessPolicy': '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+              '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
               '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
               '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -1389,6 +773,7 @@ components:
           '#microsoft.graph.agent': '#/components/schemas/microsoft.graph.agent'
           '#microsoft.graph.agentCardManifest': '#/components/schemas/microsoft.graph.agentCardManifest'
           '#microsoft.graph.agentCollection': '#/components/schemas/microsoft.graph.agentCollection'
+          '#microsoft.graph.agentCommunicationConfiguration': '#/components/schemas/microsoft.graph.agentCommunicationConfiguration'
           '#microsoft.graph.agentInstance': '#/components/schemas/microsoft.graph.agentInstance'
           '#microsoft.graph.agentRegistration': '#/components/schemas/microsoft.graph.agentRegistration'
           '#microsoft.graph.agentRiskDetection': '#/components/schemas/microsoft.graph.agentRiskDetection'
@@ -1493,6 +878,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -1561,6 +947,14 @@ components:
           '#microsoft.graph.azureADAuthentication': '#/components/schemas/microsoft.graph.azureADAuthentication'
           '#microsoft.graph.azureADPremiumLicenseInsight': '#/components/schemas/microsoft.graph.azureADPremiumLicenseInsight'
           '#microsoft.graph.azureRoleDefinition': '#/components/schemas/microsoft.graph.azureRoleDefinition'
+          '#microsoft.graph.b2bRegistrationMetrics': '#/components/schemas/microsoft.graph.b2bRegistrationMetrics'
+          '#microsoft.graph.b2BRegistrationMetricsBase': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsBase'
+          '#microsoft.graph.b2BRegistrationMetricsInitial': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsInitial'
+          '#microsoft.graph.b2BRegistrationMetricsRecent': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsRecent'
+          '#microsoft.graph.b2BSignInActivityMetrics': '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
+          '#microsoft.graph.b2BSignInActivityMetricsBase': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsBase'
+          '#microsoft.graph.b2BSignInActivityMetricsInitial': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsInitial'
+          '#microsoft.graph.b2BSignInActivityMetricsRecent': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsRecent'
           '#microsoft.graph.b2cAuthenticationMethodsPolicy': '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
           '#microsoft.graph.backupReport': '#/components/schemas/microsoft.graph.backupReport'
           '#microsoft.graph.backupRestoreRoot': '#/components/schemas/microsoft.graph.backupRestoreRoot'
@@ -1589,6 +983,10 @@ components:
           '#microsoft.graph.levelMap': '#/components/schemas/microsoft.graph.levelMap'
           '#microsoft.graph.sectionMap': '#/components/schemas/microsoft.graph.sectionMap'
           '#microsoft.graph.unitMap': '#/components/schemas/microsoft.graph.unitMap'
+          '#microsoft.graph.billingMetrics': '#/components/schemas/microsoft.graph.billingMetrics'
+          '#microsoft.graph.billingMetricsBase': '#/components/schemas/microsoft.graph.billingMetricsBase'
+          '#microsoft.graph.billingMetricsInitial': '#/components/schemas/microsoft.graph.billingMetricsInitial'
+          '#microsoft.graph.billingMetricsRecent': '#/components/schemas/microsoft.graph.billingMetricsRecent'
           '#microsoft.graph.bitlocker': '#/components/schemas/microsoft.graph.bitlocker'
           '#microsoft.graph.bitlockerRecoveryKey': '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
           '#microsoft.graph.bookingAppointment': '#/components/schemas/microsoft.graph.bookingAppointment'
@@ -1833,7 +1231,6 @@ components:
           '#microsoft.graph.detectedApp': '#/components/schemas/microsoft.graph.detectedApp'
           '#microsoft.graph.deviceAndAppManagementAssignmentFilter': '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilter'
           '#microsoft.graph.payloadCompatibleAssignmentFilter': '#/components/schemas/microsoft.graph.payloadCompatibleAssignmentFilter'
-          '#microsoft.graph.deviceAppManagement': '#/components/schemas/microsoft.graph.deviceAppManagement'
           '#microsoft.graph.deviceAppManagementTask': '#/components/schemas/microsoft.graph.deviceAppManagementTask'
           '#microsoft.graph.appVulnerabilityTask': '#/components/schemas/microsoft.graph.appVulnerabilityTask'
           '#microsoft.graph.securityConfigurationTask': '#/components/schemas/microsoft.graph.securityConfigurationTask'
@@ -2155,6 +1552,7 @@ components:
           '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
           '#microsoft.graph.tenantRelationshipAccessPolicyBase': '#/components/schemas/microsoft.graph.tenantRelationshipAccessPolicyBase'
           '#microsoft.graph.crossTenantAccessPolicy': '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+          '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
           '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
           '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
           '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -2329,7 +1727,10 @@ components:
           '#microsoft.graph.governanceInsight': '#/components/schemas/microsoft.graph.governanceInsight'
           '#microsoft.graph.membershipOutlierInsight': '#/components/schemas/microsoft.graph.membershipOutlierInsight'
           '#microsoft.graph.userSignInInsight': '#/components/schemas/microsoft.graph.userSignInInsight'
+          '#microsoft.graph.governanceInvitation': '#/components/schemas/microsoft.graph.governanceInvitation'
           '#microsoft.graph.governancePolicyTemplate': '#/components/schemas/microsoft.graph.governancePolicyTemplate'
+          '#microsoft.graph.governanceRelationship': '#/components/schemas/microsoft.graph.governanceRelationship'
+          '#microsoft.graph.governanceRequest': '#/components/schemas/microsoft.graph.governanceRequest'
           '#microsoft.graph.governanceResource': '#/components/schemas/microsoft.graph.governanceResource'
           '#microsoft.graph.governanceRoleAssignment': '#/components/schemas/microsoft.graph.governanceRoleAssignment'
           '#microsoft.graph.governanceRoleAssignmentRequest': '#/components/schemas/microsoft.graph.governanceRoleAssignmentRequest'
@@ -2570,6 +1971,7 @@ components:
           '#microsoft.graph.mfaTelecomFraudMetric': '#/components/schemas/microsoft.graph.mfaTelecomFraudMetric'
           '#microsoft.graph.mfaUserCountMetric': '#/components/schemas/microsoft.graph.mfaUserCountMetric'
           '#microsoft.graph.microsoftApplicationDataAccessSettings': '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
+          '#microsoft.graph.microsoftAppsFileStorageContainerUsage': '#/components/schemas/microsoft.graph.microsoftAppsFileStorageContainerUsage'
           '#microsoft.graph.microsoftTunnelConfiguration': '#/components/schemas/microsoft.graph.microsoftTunnelConfiguration'
           '#microsoft.graph.microsoftTunnelHealthThreshold': '#/components/schemas/microsoft.graph.microsoftTunnelHealthThreshold'
           '#microsoft.graph.microsoftTunnelServer': '#/components/schemas/microsoft.graph.microsoftTunnelServer'
@@ -2644,6 +2046,10 @@ components:
           '#microsoft.graph.mobileDeviceManagementPolicy': '#/components/schemas/microsoft.graph.mobileDeviceManagementPolicy'
           '#microsoft.graph.monthlyUserInsightMetricsRoot': '#/components/schemas/microsoft.graph.monthlyUserInsightMetricsRoot'
           '#microsoft.graph.multiActivitySubscription': '#/components/schemas/microsoft.graph.multiActivitySubscription'
+          '#microsoft.graph.multiTenantApplicationMetrics': '#/components/schemas/microsoft.graph.multiTenantApplicationMetrics'
+          '#microsoft.graph.multiTenantApplicationMetricsBase': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsBase'
+          '#microsoft.graph.multiTenantApplicationMetricsInitial': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsInitial'
+          '#microsoft.graph.multiTenantApplicationMetricsRecent': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsRecent'
           '#microsoft.graph.multiTenantOrganization': '#/components/schemas/microsoft.graph.multiTenantOrganization'
           '#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate': '#/components/schemas/microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate'
           '#microsoft.graph.multiTenantOrganizationJoinRequestRecord': '#/components/schemas/microsoft.graph.multiTenantOrganizationJoinRequestRecord'
@@ -2744,6 +2150,7 @@ components:
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
           '#microsoft.graph.plannerPlan': '#/components/schemas/microsoft.graph.plannerPlan'
@@ -2862,8 +2269,11 @@ components:
           '#microsoft.graph.recommendationBase': '#/components/schemas/microsoft.graph.recommendationBase'
           '#microsoft.graph.recommendation': '#/components/schemas/microsoft.graph.recommendation'
           '#microsoft.graph.recommendationConfiguration': '#/components/schemas/microsoft.graph.recommendationConfiguration'
+          '#microsoft.graph.recommendationTag': '#/components/schemas/microsoft.graph.recommendationTag'
           '#microsoft.graph.reflectCheckInResponse': '#/components/schemas/microsoft.graph.reflectCheckInResponse'
           '#microsoft.graph.regionalAndLanguageSettings': '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
+          '#microsoft.graph.relatedTenant': '#/components/schemas/microsoft.graph.relatedTenant'
+          '#microsoft.graph.relatedTenantsRefreshRequest': '#/components/schemas/microsoft.graph.relatedTenantsRefreshRequest'
           '#microsoft.graph.relyingPartyDetailedSummary': '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
           '#microsoft.graph.remoteActionAudit': '#/components/schemas/microsoft.graph.remoteActionAudit'
           '#microsoft.graph.remoteAssistancePartner': '#/components/schemas/microsoft.graph.remoteAssistancePartner'
@@ -2896,6 +2306,7 @@ components:
           '#microsoft.graph.restrictedAppsViolation': '#/components/schemas/microsoft.graph.restrictedAppsViolation'
           '#microsoft.graph.riskDetection': '#/components/schemas/microsoft.graph.riskDetection'
           '#microsoft.graph.riskyAgent': '#/components/schemas/microsoft.graph.riskyAgent'
+          '#microsoft.graph.riskyAgentDiscoveredAgentIdentity': '#/components/schemas/microsoft.graph.riskyAgentDiscoveredAgentIdentity'
           '#microsoft.graph.riskyAgentIdentity': '#/components/schemas/microsoft.graph.riskyAgentIdentity'
           '#microsoft.graph.riskyAgentIdentityBlueprintPrincipal': '#/components/schemas/microsoft.graph.riskyAgentIdentityBlueprintPrincipal'
           '#microsoft.graph.riskyAgentUser': '#/components/schemas/microsoft.graph.riskyAgentUser'
@@ -3036,6 +2447,9 @@ components:
           '#microsoft.graph.teamworkTagMember': '#/components/schemas/microsoft.graph.teamworkTagMember'
           '#microsoft.graph.template': '#/components/schemas/microsoft.graph.template'
           '#microsoft.graph.tenantAttachRBAC': '#/components/schemas/microsoft.graph.tenantAttachRBAC'
+          '#microsoft.graph.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernance'
+          '#microsoft.graph.tenantGovernancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+          '#microsoft.graph.tenantGovernanceSetting': '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
           '#microsoft.graph.tenantProtectionScopeContainer': '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
           '#microsoft.graph.tenantSetupInfo': '#/components/schemas/microsoft.graph.tenantSetupInfo'
           '#microsoft.graph.termsAndConditions': '#/components/schemas/microsoft.graph.termsAndConditions'
@@ -3100,6 +2514,7 @@ components:
           '#microsoft.graph.unifiedRoleScheduleInstanceBase': '#/components/schemas/microsoft.graph.unifiedRoleScheduleInstanceBase'
           '#microsoft.graph.unifiedRoleAssignmentScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
           '#microsoft.graph.unifiedRoleEligibilityScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+          '#microsoft.graph.unifiedRoot': '#/components/schemas/microsoft.graph.unifiedRoot'
           '#microsoft.graph.unifiedStorageQuota': '#/components/schemas/microsoft.graph.unifiedStorageQuota'
           '#microsoft.graph.unsupportedGroupPolicyExtension': '#/components/schemas/microsoft.graph.unsupportedGroupPolicyExtension'
           '#microsoft.graph.usageRight': '#/components/schemas/microsoft.graph.usageRight'
@@ -3351,8 +2766,19 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -3631,6 +3057,13 @@ components:
           '#microsoft.graph.security.caseManagement.recommendationRelation': '#/components/schemas/microsoft.graph.security.caseManagement.recommendationRelation'
           '#microsoft.graph.security.caseManagement.workspaceIndicatorRelation': '#/components/schemas/microsoft.graph.security.caseManagement.workspaceIndicatorRelation'
           '#microsoft.graph.security.caseManagement.task': '#/components/schemas/microsoft.graph.security.caseManagement.task'
+          '#microsoft.graph.security.caseManagement.caseTypeConfiguration': '#/components/schemas/microsoft.graph.security.caseManagement.caseTypeConfiguration'
+          '#microsoft.graph.security.caseManagement.customFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.customFieldDefinition'
+          '#microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.numberCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.numberCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.optionsCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.optionsCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.stringCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.stringCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.statusDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.statusDefinition'
           '#microsoft.graph.security.dlp.baseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.baseAuditRecord'
           '#microsoft.graph.security.dlp.complianceBaseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.complianceBaseAuditRecord'
           '#microsoft.graph.security.dlp.complianceDLPBaseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.complianceDLPBaseAuditRecord'
@@ -3649,31 +3082,6 @@ components:
           '#microsoft.graph.teamsAdministration.teamsUserConfiguration': '#/components/schemas/microsoft.graph.teamsAdministration.teamsUserConfiguration'
           '#microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation': '#/components/schemas/microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation'
           '#microsoft.graph.teamsAdministration.telephoneNumberManagementRoot': '#/components/schemas/microsoft.graph.teamsAdministration.telephoneNumberManagementRoot'
-          '#microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.billingMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetrics'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.governanceInvitation': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
-          '#microsoft.graph.tenantGovernanceServices.governancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
-          '#microsoft.graph.tenantGovernanceServices.governanceRelationship': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
-          '#microsoft.graph.tenantGovernanceServices.governanceRequest': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
-          '#microsoft.graph.tenantGovernanceServices.longRunningOperation': '#/components/schemas/microsoft.graph.tenantGovernanceServices.longRunningOperation'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.relatedTenant': '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
-          '#microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshRequest': '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshRequest'
-          '#microsoft.graph.tenantGovernanceServices.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernance'
-          '#microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting': '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting'
           '#microsoft.graph.termStore.group': '#/components/schemas/microsoft.graph.termStore.group'
           '#microsoft.graph.termStore.relation': '#/components/schemas/microsoft.graph.termStore.relation'
           '#microsoft.graph.termStore.set': '#/components/schemas/microsoft.graph.termStore.set'
@@ -3706,45 +3114,6 @@ components:
           '#microsoft.graph.windowsUpdates.azureADDevice': '#/components/schemas/microsoft.graph.windowsUpdates.azureADDevice'
           '#microsoft.graph.windowsUpdates.updatableAssetGroup': '#/components/schemas/microsoft.graph.windowsUpdates.updatableAssetGroup'
           '#microsoft.graph.windowsUpdates.updatePolicy': '#/components/schemas/microsoft.graph.windowsUpdates.updatePolicy'
-    microsoft.graph.certificateAuthorityType:
-      title: certificateAuthorityType
-      enum:
-        - root
-        - intermediate
-        - unknownFutureValue
-      type: string
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-    microsoft.graph.certificateBasedAuthPkiCollectionResponse:
-      title: Collection of certificateBasedAuthPki
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPki'
-    microsoft.graph.certificateAuthorityDetailCollectionResponse:
-      title: Collection of certificateAuthorityDetail
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetail'
-    ODataCountResponse:
-      type: integer
-      format: int32
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
@@ -3756,6 +3125,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -3812,36 +3191,24 @@ components:
         '@odata.type':
           type: string
   responses:
-    error:
-      description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
-    microsoft.graph.certificateBasedAuthPkiCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthPkiCollectionResponse'
-    microsoft.graph.certificateAuthorityDetailCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.certificateAuthorityDetailCollectionResponse'
-    ODataCountResponse:
-      description: The count of the resource
-      content:
-        text/plain:
-          schema:
-            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.directoryObjectCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
   parameters:
     top:
       name: $top
