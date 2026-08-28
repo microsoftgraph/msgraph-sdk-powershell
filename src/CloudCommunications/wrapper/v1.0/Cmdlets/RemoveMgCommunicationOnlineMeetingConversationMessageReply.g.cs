@@ -3,7 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.CloudCommunications.Client;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 {
     [GraphRoute("DELETE", "/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation-id}/messages/{engagementConversationMessage-id}/replies/{engagementConversationMessage-id1}")]
     [Cmdlet(VerbsCommon.Remove, "MgCommunicationOnlineMeetingConversationMessageReply", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgCommunicationOnlineMeetingConversationMessageReplyCommand : PSCmdlet
+    public class RemoveMgCommunicationOnlineMeetingConversationMessageReplyCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string OnlineMeetingEngagementConversationId { get; set; } = string.Empty;
@@ -27,49 +27,14 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         public string? IfMatch { get; set; }
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
 
         protected override void ProcessRecord()
         {
             if (!ShouldProcess(EngagementConversationMessageId1, "Remove"))
                 return;
 
-        // ── Choose HttpClient + auth provider ─────────────────────────────
-        HttpClient httpClient;
-        IAuthenticationProvider authProvider;
-
-        if (this.IsParameterBound(nameof(AccessToken)))
-        {
-            httpClient = new HttpClient();
-            authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
-        }
-        else
-        {
-            WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
-            try
-            {
-                httpClient = HttpHelpers.GetGraphHttpClient();
-            }
-            catch (Exception ex)
-            {
-                ThrowTerminatingError(new ErrorRecord(
-                    new InvalidOperationException(
-                        "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
-                    "NoGraphSession",
-                    ErrorCategory.AuthenticationError,
-                    null));
-                return;
-            }
-            authProvider = new AnonymousAuthenticationProvider();
-        }
-
-        var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+        var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.
@@ -81,17 +46,13 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                         if (this.IsParameterBound(nameof(IfMatch)))
                             requestConfiguration.Headers.Add("If-Match", IfMatch!);
 
-                        if (this.IsParameterBound(nameof(Headers)))
-                        {
-                            foreach (System.Collections.DictionaryEntry entry in Headers!)
-                                requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
-                        }
+                        AddRequestHeaders(requestConfiguration.Headers);
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, EngagementConversationMessageId1));
+                ThrowGraphRequestFailed(ex, EngagementConversationMessageId1);
                 return;
             }
         }

@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Teams.Client;
 using Microsoft.Graph.PowerShell.Teams.Client.Models;
 using Microsoft.Kiota.Abstractions.Authentication;
@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Teams
     [GraphRoute("PATCH", "/users/{user-id}/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}")]
     [Cmdlet(VerbsData.Update, "MgUserChatMessageReply", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.ChatMessage))]
-    public class UpdateMgUserChatMessageReplyCommand : PSCmdlet
+    public class UpdateMgUserChatMessageReplyCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -95,13 +95,7 @@ namespace Microsoft.Graph.PowerShell.Teams
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -177,36 +171,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.Reactions = Reactions!.ToList();
 
 
-        // ── Choose HttpClient + auth provider ─────────────────────────────
-        HttpClient httpClient;
-        IAuthenticationProvider authProvider;
-
-        if (this.IsParameterBound(nameof(AccessToken)))
-        {
-            httpClient = new HttpClient();
-            authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
-        }
-        else
-        {
-            WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
-            try
-            {
-                httpClient = HttpHelpers.GetGraphHttpClient();
-            }
-            catch (Exception ex)
-            {
-                ThrowTerminatingError(new ErrorRecord(
-                    new InvalidOperationException(
-                        "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
-                    "NoGraphSession",
-                    ErrorCategory.AuthenticationError,
-                    null));
-                return;
-            }
-            authProvider = new AnonymousAuthenticationProvider();
-        }
-
-        var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+        var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.ChatMessage? result;
@@ -215,16 +180,12 @@ namespace Microsoft.Graph.PowerShell.Teams
                 result = client.Users[UserId].Chats[ChatId].Messages[ChatMessageId].Replies[ChatMessageId1].PatchAsync(body, requestConfiguration =>
                 {
 
-                        if (this.IsParameterBound(nameof(Headers)))
-                        {
-                            foreach (System.Collections.DictionaryEntry entry in Headers!)
-                                requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
-                        }
+                        AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ChatMessageId1));
+                ThrowGraphRequestFailed(ex, ChatMessageId1);
                 return;
             }
 
@@ -236,9 +197,9 @@ namespace Microsoft.Graph.PowerShell.Teams
                 {
                     result = client.Users[UserId].Chats[ChatId].Messages[ChatMessageId].Replies[ChatMessageId1].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
-                    ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ChatMessageId1));
+                    ThrowGraphRequestFailed(ex, ChatMessageId1);
                     return;
                 }
             }

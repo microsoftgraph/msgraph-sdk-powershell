@@ -3,7 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Notes.Client;
 using Microsoft.Graph.PowerShell.Notes.Client.Models;
 using Microsoft.Kiota.Abstractions;
@@ -15,16 +15,14 @@ namespace Microsoft.Graph.PowerShell.Notes
     [GraphRoute("GET", "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages")]
     [Cmdlet(VerbsCommon.Get, "MgGroupOnenoteSectionPage_List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Notes.Client.Models.OnenotePage))]
-    public class GetMgGroupOnenoteSectionPage_ListCommand : PSCmdlet
+    public class GetMgGroupOnenoteSectionPage_ListCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string GroupId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 1)]
         public string OnenoteSectionId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         public string? Filter { get; set; }
@@ -53,45 +51,18 @@ namespace Microsoft.Graph.PowerShell.Notes
         [Parameter(Mandatory = false)]
         public SwitchParameter Count { get; set; }
 
+        // Follows every @odata.nextLink until the collection is exhausted (a bound -Top caps
+        // the total). Without it only the first page returns, plus a truncation warning when
+        // more pages existed.
+        [Parameter(Mandatory = false)]
+        public SwitchParameter All { get; set; }
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
 
         protected override void ProcessRecord()
         {
 
-        // ── Choose HttpClient + auth provider ─────────────────────────────
-        HttpClient httpClient;
-        IAuthenticationProvider authProvider;
-
-        if (this.IsParameterBound(nameof(AccessToken)))
-        {
-            httpClient = new HttpClient();
-            authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
-        }
-        else
-        {
-            WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
-            try
-            {
-                httpClient = HttpHelpers.GetGraphHttpClient();
-            }
-            catch (Exception ex)
-            {
-                ThrowTerminatingError(new ErrorRecord(
-                    new InvalidOperationException(
-                        "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
-                    "NoGraphSession",
-                    ErrorCategory.AuthenticationError,
-                    null));
-                return;
-            }
-            authProvider = new AnonymousAuthenticationProvider();
-        }
-
-        var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+        var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Notes.Client.Models.OnenotePageCollectionResponse? result;
@@ -125,23 +96,49 @@ namespace Microsoft.Graph.PowerShell.Notes
 
 
 
-        if (this.IsParameterBound(nameof(Headers)))
-        {
-            foreach (System.Collections.DictionaryEntry entry in Headers!)
-                requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
-        }
+        AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
+
+                // A collection response and its Value are both nullable on the kiota client; an
+                // empty page writes nothing rather than dereferencing null. Each page streams to
+                // the pipeline before the next request is issued, matching the published SDK.
+                if (result?.Value is { } items)
+                    WriteObject(items, enumerateCollection: true);
+
+                if (All.IsPresent)
+                {
+                    var fetched = result?.Value?.Count ?? 0;
+                    var nextLink = result?.OdataNextLink;
+                    while (!string.IsNullOrEmpty(nextLink) && !Stopping && (!this.IsParameterBound(nameof(Top)) || fetched < Top))
+                    {
+                        // The nextLink already carries the original query state, and a raw-URL
+                        // builder ignores templated query parameters anyway - so the continuation
+                        // re-applies headers only; query bindings here would be dead code.
+                        result = client.Groups[GroupId].Onenote.Sections[OnenoteSectionId].Pages.WithUrl(nextLink).GetAsync(requestConfiguration =>
+                        {
+
+                AddRequestHeaders(requestConfiguration.Headers);
+                        }).GetAwaiter().GetResult();
+                        if (result?.Value is { } page)
+                        {
+                            WriteObject(page, enumerateCollection: true);
+                            fetched += page.Count;
+                        }
+                        nextLink = result?.OdataNextLink;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(result?.OdataNextLink))
+                {
+                    // Deliberately stronger than the published SDK, which truncates silently;
+                    // approved in the design spec. One line, no extra request.
+                    WriteWarning("More results are available. Use -All to return all pages.");
+                }
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, OnenoteSectionId));
+                ThrowGraphRequestFailed(ex, OnenoteSectionId);
                 return;
             }
-
-            // A collection response and its Value are both nullable on the kiota client; an
-            // empty page writes nothing rather than dereferencing null.
-            if (result?.Value is { } items)
-                WriteObject(items, enumerateCollection: true);
         }
     }
 }

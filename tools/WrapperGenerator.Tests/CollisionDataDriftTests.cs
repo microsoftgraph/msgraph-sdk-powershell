@@ -41,8 +41,12 @@ public sealed class CollisionDataDriftTests
 
     private static string FindRepoRoot()
     {
+        // .git is a directory in a normal checkout and a FILE (a gitdir pointer) in a linked
+        // worktree; accepting only the directory made this test fail in every worktree.
         var dir = new DirectoryInfo(AppContext.BaseDirectory);
-        while (dir is not null && !Directory.Exists(Path.Combine(dir.FullName, ".git")))
+        while (dir is not null
+            && !Directory.Exists(Path.Combine(dir.FullName, ".git"))
+            && !File.Exists(Path.Combine(dir.FullName, ".git")))
             dir = dir.Parent;
         return dir?.FullName ?? throw new InvalidOperationException("Could not locate repo root (.git) from " + AppContext.BaseDirectory);
     }

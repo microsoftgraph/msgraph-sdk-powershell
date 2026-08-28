@@ -90,6 +90,160 @@
   {
     "apiVersion": "v1.0",
     "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsIosLobAppAssignment",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsIosLobAppContentVersion",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/containedapps/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/files/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFile",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosstoreapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsIosStoreAppAssignment",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsIoStoreAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoStoreAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosvppapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsIosVppAppAssignment",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsIoVppAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoVppAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersion",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/containedapps/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionContainedApp",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/files/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionFile",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsWindowsMobileMSIAssignment",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersion",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/containedapps/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionContainedApp",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/files/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionFile",
+      "oracle": "Remove-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
     "uri": "/devicemanagement/iosupdatestatuses/{}",
     "action": "rename",
     "evidence": {
@@ -306,6 +460,39 @@
       "oracle": "Remove-MgIdentityAuthenticationEventFlowIncludeApplication"
     },
     "replacementNoun": "IdentityAuthenticationEventFlowIncludeApplication"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/conditions/applications/includeapplications/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowConditionApplicationIncludeApplication",
+      "oracle": "Remove-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onattributecollection/onattributecollectionexternalusersselfservicesignup/attributes/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUpAttributeByRef",
+      "oracle": "Remove-MgIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeIdentityUserFlowAttributeByRef"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeIdentityUserFlowAttributeByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/onauthenticationmethodloadstartexternalusersselfservicesignup/identityproviders/{}/$ref",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef",
+      "oracle": "Remove-MgIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderBaseByRef"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderBaseByRef"
   },
   {
     "apiVersion": "v1.0",
@@ -1542,6 +1729,105 @@
   {
     "apiVersion": "v1.0",
     "method": "DELETE",
+    "uri": "/places/{}/building/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgPlaceAsBuildingCheckIn",
+      "oracle": "Remove-MgPlaceAsBuildingCheck"
+    },
+    "replacementNoun": "PlaceAsBuildingCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/places/{}/desk/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgPlaceAsDeskCheckIn",
+      "oracle": "Remove-MgPlaceAsDeskCheck"
+    },
+    "replacementNoun": "PlaceAsDeskCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/places/{}/floor/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgPlaceAsFloorCheckIn",
+      "oracle": "Remove-MgPlaceAsFloorCheck"
+    },
+    "replacementNoun": "PlaceAsFloorCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/places/{}/room/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgPlaceAsRoomCheckIn",
+      "oracle": "Remove-MgPlaceAsRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/places/{}/roomlist/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgPlaceAsRoomListCheckIn",
+      "oracle": "Remove-MgPlaceAsRoomListCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/places/{}/roomlist/rooms/{}/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgPlaceAsRoomListRoomCheckIn",
+      "oracle": "Remove-MgPlaceAsRoomListRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/places/{}/roomlist/workspaces/{}/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgPlaceAsRoomListWorkspaceCheckIn",
+      "oracle": "Remove-MgPlaceAsRoomListWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListWorkspaceCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/places/{}/section/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgPlaceAsSectionCheckIn",
+      "oracle": "Remove-MgPlaceAsSectionCheck"
+    },
+    "replacementNoun": "PlaceAsSectionCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
+    "uri": "/places/{}/workspace/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Remove-MgPlaceAsWorkspaceCheckIn",
+      "oracle": "Remove-MgPlaceAsWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsWorkspaceCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "DELETE",
     "uri": "/policies/featurerolloutpolicies/{}/appliesto/{}/$ref",
     "action": "rename",
     "evidence": {
@@ -1929,6 +2215,17 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/admin/serviceannouncement/messages/{}/attachments/{}/content",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgAdminServiceAnnouncementMessageAttachmentContent",
+      "oracle": "Get-MgServiceAnnouncementMessageAttachmentContent"
+    },
+    "replacementNoun": "ServiceAnnouncementMessageAttachmentContent"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/admin/serviceannouncement/messages/{}/attachments/$count",
     "action": "rename",
     "evidence": {
@@ -1936,6 +2233,17 @@
       "oracle": "Get-MgServiceAnnouncementMessageAttachmentCount"
     },
     "replacementNoun": "ServiceAnnouncementMessageAttachmentCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/admin/serviceannouncement/messages/{}/attachmentsarchive",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgAdminServiceAnnouncementMessageAttachmentArchive",
+      "oracle": "Get-MgServiceAnnouncementMessageAttachmentArchive"
+    },
+    "replacementNoun": "ServiceAnnouncementMessageAttachmentArchive"
   },
   {
     "apiVersion": "v1.0",
@@ -2006,6 +2314,17 @@
       "oracle": "Get-MgChatRetainedMessage"
     },
     "replacementNoun": "ChatRetainedMessage"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/communications/callrecords/{}/participants_v2/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgCommunicationCallRecordParticipantV2Count",
+      "oracle": "Get-MgCommunicationCallRecordParticipant"
+    },
+    "replacementNoun": "CommunicationCallRecordParticipant"
   },
   {
     "apiVersion": "v1.0",
@@ -2153,6 +2472,688 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/assignments/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppAssignmentCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignmentCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppAssignmentCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/categories",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppCategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/categories/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppCategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/categories/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppCategoryCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategoryCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppCategoryCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersion",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersion",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/containedapps",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/containedapps/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/containedapps/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedAppCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedAppCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedAppCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/files",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFile",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/files/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFile",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/files/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFileCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionFileCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosstoreapp/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosStoreAppAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoStoreAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoStoreAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosstoreapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosStoreAppAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoStoreAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoStoreAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosstoreapp/assignments/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosStoreAppAssignmentCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoStoreAppAssignmentCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoStoreAppAssignmentCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosstoreapp/categories",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosStoreAppCategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoStoreAppCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoStoreAppCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosstoreapp/categories/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosStoreAppCategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoStoreAppCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoStoreAppCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosstoreapp/categories/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosStoreAppCategoryCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoStoreAppCategoryCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoStoreAppCategoryCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosvppapp/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosVppAppAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoVppAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoVppAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosvppapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosVppAppAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoVppAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoVppAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosvppapp/assignments/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosVppAppAssignmentCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoVppAppAssignmentCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoVppAppAssignmentCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosvppapp/categories",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosVppAppCategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoVppAppCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoVppAppCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosvppapp/categories/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosVppAppCategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoVppAppCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoVppAppCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosvppapp/categories/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsIosVppAppCategoryCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsIoVppAppCategoryCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoVppAppCategoryCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/assignments/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignmentCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignmentCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppAssignmentCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/categories",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppCategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/categories/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppCategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/categories/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppCategoryCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppCategoryCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppCategoryCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersion",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersion",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/containedapps",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionContainedApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/containedapps/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionContainedApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/containedapps/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionContainedAppCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedAppCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedAppCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/files",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionFile",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/files/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionFile",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/files/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionFileCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFileCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFileCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIAssignment",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/assignments/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIAssignmentCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignmentCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiAssignmentCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/categories",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSICategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/categories/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSICategory",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiCategory"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiCategory"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/categories/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSICategoryCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiCategoryCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiCategoryCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersion",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersion",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/containedapps",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionContainedApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/containedapps/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionContainedApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/containedapps/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionContainedAppCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedAppCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedAppCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/files",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionFile",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/files/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionFile",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/files/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionFileCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFileCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFileCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionCount",
+      "oracle": "Get-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionCount"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/ioslobapp/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppCountAsIosLobApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppCountAsiOSLobApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppCountAsiOSLobApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/iosstoreapp/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppCountAsIosStoreApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppCountAsIoStoreApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppCountAsIoStoreApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/iosvppapp/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppCountAsIosVppApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppCountAsIoVppApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppCountAsIoVppApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/managedioslobapp/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppCountAsManagedIOSLobApp",
+      "oracle": "Get-MgDeviceAppManagementMobileAppCountAsManagediOSLobApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppCountAsManagediOSLobApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/deviceappmanagement/mobileapps/windowsmobilemsi/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceAppManagementMobileAppCountAsWindowsMobileMSI",
+      "oracle": "Get-MgDeviceAppManagementMobileAppCountAsWindowsMobileMsi"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppCountAsWindowsMobileMsi"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/devicemanagement/applepushnotificationcertificate/downloadapplepushnotificationcertificatesigningrequest",
     "action": "rename",
     "evidence": {
@@ -2161,6 +3162,17 @@
     },
     "replacementNoun": "DownloadDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest",
     "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/devicemanagement/auditevents/getauditactivitytypes(category='{category}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceManagementAuditEventGetAuditActivityTypesWithCategory",
+      "oracle": "Get-MgDeviceManagementAuditEventAuditActivityType"
+    },
+    "replacementNoun": "DeviceManagementAuditEventAuditActivityType"
   },
   {
     "apiVersion": "v1.0",
@@ -2176,6 +3188,17 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/devicemanagement/deviceconfigurations/{}/getomasettingplaintextvalue(secretreferencevalueid='{secretreferencevalueid}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceManagementDeviceConfigurationGetOmaSettingPlainTextValueWithSecretReferenceValueId",
+      "oracle": "Get-MgDeviceManagementDeviceConfigurationOmaSettingPlainTextValue"
+    },
+    "replacementNoun": "DeviceManagementDeviceConfigurationOmaSettingPlainTextValue"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/devicemanagement/devicemanagementpartners/$count",
     "action": "rename",
     "evidence": {
@@ -2183,6 +3206,17 @@
       "oracle": "Get-MgDeviceManagementPartnerCount"
     },
     "replacementNoun": "DeviceManagementPartnerCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/devicemanagement/geteffectivepermissions(scope='{scope}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceManagementGetEffectivePermissionsWithScope",
+      "oracle": "Get-MgDeviceManagementEffectivePermission"
+    },
+    "replacementNoun": "DeviceManagementEffectivePermission"
   },
   {
     "apiVersion": "v1.0",
@@ -2228,6 +3262,18 @@
     },
     "replacementNoun": "ExperienceDeviceManagement",
     "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/devicemanagement/verifywindowsenrollmentautodiscovery(domainname='{domainname}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDeviceManagementVerifyWindowsEnrollmentAutoDiscoveryWithDomainName",
+      "oracle": "Confirm-MgDeviceManagementWindowsEnrollmentAutoDiscovery"
+    },
+    "replacementNoun": "DeviceManagementWindowsEnrollmentAutoDiscovery",
+    "replacementVerb": "Confirm"
   },
   {
     "apiVersion": "v1.0",
@@ -2332,6 +3378,18 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/drives/{}/items/{}/search(q='{q}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDriveItemSearchWithQ",
+      "oracle": "Search-MgDriveItem"
+    },
+    "replacementNoun": "DriveItem",
+    "replacementVerb": "Search"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/drives/{}/list/contenttypes/{}/base",
     "action": "rename",
     "evidence": {
@@ -2422,6 +3480,18 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/drives/{}/search(q='{q}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgDriveSearchWithQ",
+      "oracle": "Search-MgDrive"
+    },
+    "replacementNoun": "Drive",
+    "replacementVerb": "Search"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/drives/{}/sharedwithme",
     "action": "rename",
     "evidence": {
@@ -2467,6 +3537,18 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/groups/{}/calendar/allowedcalendarsharingroles(user='{user}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgGroupCalendarAllowedCalendarSharingRolesWithUser",
+      "oracle": "Invoke-MgCalendarGroupCalendar"
+    },
+    "replacementNoun": "CalendarGroupCalendar",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/groups/{}/onenote/notebooks/{}/sectiongroups/{}/sections/{}/pages/{}/preview",
     "action": "rename",
     "evidence": {
@@ -2487,6 +3569,17 @@
     },
     "replacementNoun": "PreviewGroupOnenoteNotebookSectionPage",
     "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/groups/{}/onenote/notebooks/getrecentnotebooks(includepersonalnotebooks={includepersonalnotebooks})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgGroupOnenoteNotebookGetRecentNotebooksWithIncludePersonalNotebooks",
+      "oracle": "Get-MgGroupOnenoteRecentNotebook"
+    },
+    "replacementNoun": "GroupOnenoteRecentNotebook"
   },
   {
     "apiVersion": "v1.0",
@@ -2568,6 +3661,28 @@
       "oracle": "Get-MgGroupSiteActivityByInterval"
     },
     "replacementNoun": "GroupSiteActivityByInterval"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/groups/{}/sites/{}/getapplicablecontenttypesforlist(listid='{listid}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgGroupSiteGetApplicableContentTypesForListWithListId",
+      "oracle": "Get-MgGroupSiteApplicableContentTypeForList"
+    },
+    "replacementNoun": "GroupSiteApplicableContentTypeForList"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/groups/{}/sites/{}/getbypath(path='{path}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgGroupSiteGetByPathWithPath",
+      "oracle": "Get-MgGroupSiteByPath"
+    },
+    "replacementNoun": "GroupSiteByPath"
   },
   {
     "apiVersion": "v1.0",
@@ -2670,6 +3785,17 @@
     },
     "replacementNoun": "PreviewGroupSiteOnenoteNotebookSectionPage",
     "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/groups/{}/sites/{}/onenote/notebooks/getrecentnotebooks(includepersonalnotebooks={includepersonalnotebooks})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgGroupSiteOnenoteNotebookGetRecentNotebooksWithIncludePersonalNotebooks",
+      "oracle": "Get-MgGroupSiteOnenoteNotebookRecentNotebook"
+    },
+    "replacementNoun": "GroupSiteOnenoteNotebookRecentNotebook"
   },
   {
     "apiVersion": "v1.0",
@@ -2838,6 +3964,127 @@
       "oracle": "Get-MgIdentityAuthenticationEventFlowIncludeApplicationCount"
     },
     "replacementNoun": "IdentityAuthenticationEventFlowIncludeApplicationCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/conditions/applications/includeapplications",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowConditionApplicationIncludeApplication",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/conditions/applications/includeapplications/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowConditionApplicationIncludeApplication",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/conditions/applications/includeapplications/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowConditionApplicationIncludeApplicationCount",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplicationCount"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplicationCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onattributecollection/onattributecollectionexternalusersselfservicesignup",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUp",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUp"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onattributecollection/onattributecollectionexternalusersselfservicesignup/attributes",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUpAttribute",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowAsOnAttributeCollectionExternalUserSelfServiceSignUpAttribute"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnAttributeCollectionExternalUserSelfServiceSignUpAttribute"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onattributecollection/onattributecollectionexternalusersselfservicesignup/attributes/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUpAttributeCount",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowAsOnAttributeCollectionExternalUserSelfServiceSignUpAttributeCount"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnAttributeCollectionExternalUserSelfServiceSignUpAttributeCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onattributecollection/onattributecollectionexternalusersselfservicesignup/attributes/$ref",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUpAttributeByRef",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/onauthenticationmethodloadstartexternalusersselfservicesignup",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUp",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUp"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/onauthenticationmethodloadstartexternalusersselfservicesignup/identityproviders",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/onauthenticationmethodloadstartexternalusersselfservicesignup/identityproviders/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderCount",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderCount"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/onauthenticationmethodloadstartexternalusersselfservicesignup/identityproviders/$ref",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef",
+      "oracle": "Get-MgIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef"
   },
   {
     "apiVersion": "v1.0",
@@ -3174,6 +4421,66 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/identitygovernance/accessreviews/definitions/{}/instances/{}/decisions/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceDecisionByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernanceAccessReviewDefinitionInstanceDecisionByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/accessreviews/definitions/{}/instances/{}/stages/{}/decisions/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/accessreviews/definitions/{}/instances/{}/stages/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceStageByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernanceAccessReviewDefinitionInstanceStageByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/accessreviews/definitions/{}/instances/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceAccessReviewDefinitionInstanceFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionInstanceByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernanceAccessReviewDefinitionInstanceByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/accessreviews/definitions/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceAccessReviewDefinitionFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernanceAccessReviewDefinitionByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernanceAccessReviewDefinitionByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/identitygovernance/appconsent/appconsentrequests",
     "action": "rename",
     "evidence": {
@@ -3273,6 +4580,18 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/identitygovernance/appconsent/appconsentrequests/{}/userconsentrequests/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceAppConsentAppConsentRequestUserConsentRequestFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/identitygovernance/appconsent/appconsentrequests/$count",
     "action": "rename",
     "evidence": {
@@ -3280,6 +4599,18 @@
       "oracle": "Get-MgIdentityGovernanceAppConsentRequestCount"
     },
     "replacementNoun": "IdentityGovernanceAppConsentRequestCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/appconsent/appconsentrequests/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceAppConsentAppConsentRequestFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernanceAppConsentRequestByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernanceAppConsentRequestByCurrentUser",
+    "replacementVerb": "Invoke"
   },
   {
     "apiVersion": "v1.0",
@@ -3324,6 +4655,18 @@
       "oracle": "Get-MgEntitlementManagementAccessPackageAssignmentApprovalCount"
     },
     "replacementNoun": "EntitlementManagementAccessPackageAssignmentApprovalCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/accesspackageassignmentapprovals/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceEntitlementManagementAccessPackageAssignmentApprovalFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser"
+    },
+    "replacementNoun": "FilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser",
+    "replacementVerb": "Invoke"
   },
   {
     "apiVersion": "v1.0",
@@ -3460,6 +4803,18 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/accesspackages/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceEntitlementManagementAccessPackageFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterEntitlementManagementAccessPackageByCurrentUser"
+    },
+    "replacementNoun": "FilterEntitlementManagementAccessPackageByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/identitygovernance/entitlementmanagement/accesspackagesuggestions",
     "action": "rename",
     "evidence": {
@@ -3500,6 +4855,18 @@
       "oracle": "Get-MgEntitlementManagementAccessPackageSuggestionCount"
     },
     "replacementNoun": "EntitlementManagementAccessPackageSuggestionCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/accesspackagesuggestions/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceEntitlementManagementAccessPackageSuggestionFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterEntitlementManagementAccessPackageSuggestionByCurrentUser"
+    },
+    "replacementNoun": "FilterEntitlementManagementAccessPackageSuggestionByCurrentUser",
+    "replacementVerb": "Invoke"
   },
   {
     "apiVersion": "v1.0",
@@ -3669,6 +5036,18 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/assignmentrequests/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceEntitlementManagementAssignmentRequestFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterEntitlementManagementAssignmentRequestByCurrentUser"
+    },
+    "replacementNoun": "FilterEntitlementManagementAssignmentRequestByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/identitygovernance/entitlementmanagement/assignments",
     "action": "rename",
     "evidence": {
@@ -3709,6 +5088,18 @@
       "oracle": "Get-MgEntitlementManagementAssignmentAdditional"
     },
     "replacementNoun": "EntitlementManagementAssignmentAdditional"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/entitlementmanagement/assignments/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceEntitlementManagementAssignmentFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterEntitlementManagementAssignmentByCurrentUser"
+    },
+    "replacementNoun": "FilterEntitlementManagementAssignmentByCurrentUser",
+    "replacementVerb": "Invoke"
   },
   {
     "apiVersion": "v1.0",
@@ -5814,6 +7205,186 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/identitygovernance/lifecycleworkflows/insights/toptasksprocessedsummary(startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceLifecycleWorkflowInsightTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgTopIdentityGovernanceLifecycleWorkflowInsightTaskProcessedSummary"
+    },
+    "replacementNoun": "TopIdentityGovernanceLifecycleWorkflowInsightTaskProcessedSummary",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/lifecycleworkflows/insights/topworkflowsprocessedsummary(startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceLifecycleWorkflowInsightTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgTopIdentityGovernanceLifecycleWorkflowInsightWorkflowProcessedSummary"
+    },
+    "replacementNoun": "TopIdentityGovernanceLifecycleWorkflowInsightWorkflowProcessedSummary",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/lifecycleworkflows/insights/workflowsprocessedbycategory(startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceLifecycleWorkflowInsightWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgGraphIdentityGovernanceLifecycleWorkflowInsight"
+    },
+    "replacementNoun": "GraphIdentityGovernanceLifecycleWorkflowInsight",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/lifecycleworkflows/insights/workflowsprocessedsummary(startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceLifecycleWorkflowInsightWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgWorkflowIdentityGovernanceLifecycleWorkflowInsightProcessedSummary"
+    },
+    "replacementNoun": "WorkflowIdentityGovernanceLifecycleWorkflowInsightProcessedSummary",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/runs/{}/userprocessingresults/summary(startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSummaryWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowRunUserProcessingResult"
+    },
+    "replacementNoun": "SummaryIdentityGovernanceLifecycleWorkflowRunUserProcessingResult",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/runs/summary(startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceLifecycleWorkflowRunSummaryWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowRun"
+    },
+    "replacementNoun": "SummaryIdentityGovernanceLifecycleWorkflowRun",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/taskreports/summary(startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceLifecycleWorkflowTaskReportSummaryWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowTaskReport"
+    },
+    "replacementNoun": "SummaryIdentityGovernanceLifecycleWorkflowTaskReport",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/userprocessingresults/summary(startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSummaryWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowUserProcessingResult"
+    },
+    "replacementNoun": "SummaryIdentityGovernanceLifecycleWorkflowUserProcessingResult",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/privilegedaccess/group/assignmentapprovals/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentApprovalByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernancePrivilegedAccessGroupAssignmentApprovalByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/privilegedaccess/group/assignmentscheduleinstances/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/privilegedaccess/group/assignmentschedulerequests/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/privilegedaccess/group/assignmentschedules/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/privilegedaccess/group/eligibilityscheduleinstances/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/privilegedaccess/group/eligibilityschedulerequests/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/identitygovernance/privilegedaccess/group/eligibilityschedules/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleByCurrentUser"
+    },
+    "replacementNoun": "FilterIdentityGovernancePrivilegedAccessGroupEligibilityScheduleByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/identitygovernance/termsofuse/agreementacceptances",
     "action": "rename",
     "evidence": {
@@ -6199,6 +7770,50 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/organization/{}/branding/customcss",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgOrganizationBrandingCustomCSS",
+      "oracle": "Get-MgOrganizationBrandingCustomCss"
+    },
+    "replacementNoun": "OrganizationBrandingCustomCss"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/organization/{}/branding/localizations/{}/customcss",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgOrganizationBrandingLocalizationCustomCSS",
+      "oracle": "Get-MgOrganizationBrandingLocalizationCustomCss"
+    },
+    "replacementNoun": "OrganizationBrandingLocalizationCustomCss"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/building/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsBuildingCheckIn",
+      "oracle": "Get-MgPlaceAsBuildingCheck"
+    },
+    "replacementNoun": "PlaceAsBuildingCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/building/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsBuildingCheckIn",
+      "oracle": "Get-MgPlaceAsBuildingCheck"
+    },
+    "replacementNoun": "PlaceAsBuildingCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/places/{}/descendants",
     "action": "rename",
     "evidence": {
@@ -6207,6 +7822,182 @@
     },
     "replacementNoun": "DescendantPlace",
     "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/desk/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsDeskCheckIn",
+      "oracle": "Get-MgPlaceAsDeskCheck"
+    },
+    "replacementNoun": "PlaceAsDeskCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/desk/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsDeskCheckIn",
+      "oracle": "Get-MgPlaceAsDeskCheck"
+    },
+    "replacementNoun": "PlaceAsDeskCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/floor/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsFloorCheckIn",
+      "oracle": "Get-MgPlaceAsFloorCheck"
+    },
+    "replacementNoun": "PlaceAsFloorCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/floor/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsFloorCheckIn",
+      "oracle": "Get-MgPlaceAsFloorCheck"
+    },
+    "replacementNoun": "PlaceAsFloorCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/room/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsRoomCheckIn",
+      "oracle": "Get-MgPlaceAsRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/room/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsRoomCheckIn",
+      "oracle": "Get-MgPlaceAsRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/roomlist/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsRoomListCheckIn",
+      "oracle": "Get-MgPlaceAsRoomListCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/roomlist/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsRoomListCheckIn",
+      "oracle": "Get-MgPlaceAsRoomListCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/roomlist/rooms/{}/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsRoomListRoomCheckIn",
+      "oracle": "Get-MgPlaceAsRoomListRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/roomlist/rooms/{}/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsRoomListRoomCheckIn",
+      "oracle": "Get-MgPlaceAsRoomListRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/roomlist/workspaces/{}/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsRoomListWorkspaceCheckIn",
+      "oracle": "Get-MgPlaceAsRoomListWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListWorkspaceCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/roomlist/workspaces/{}/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsRoomListWorkspaceCheckIn",
+      "oracle": "Get-MgPlaceAsRoomListWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListWorkspaceCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/section/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsSectionCheckIn",
+      "oracle": "Get-MgPlaceAsSectionCheck"
+    },
+    "replacementNoun": "PlaceAsSectionCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/section/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsSectionCheckIn",
+      "oracle": "Get-MgPlaceAsSectionCheck"
+    },
+    "replacementNoun": "PlaceAsSectionCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/workspace/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsWorkspaceCheckIn",
+      "oracle": "Get-MgPlaceAsWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsWorkspaceCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/places/{}/workspace/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgPlaceAsWorkspaceCheckIn",
+      "oracle": "Get-MgPlaceAsWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsWorkspaceCheck"
   },
   {
     "apiVersion": "v1.0",
@@ -6532,6 +8323,171 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/reports/getemailactivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetEmailActivityCountsWithPeriod",
+      "oracle": "Get-MgReportEmailActivityCount"
+    },
+    "replacementNoun": "ReportEmailActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getemailactivityusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetEmailActivityUserCountsWithPeriod",
+      "oracle": "Get-MgReportEmailActivityUserCount"
+    },
+    "replacementNoun": "ReportEmailActivityUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getemailactivityuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetEmailActivityUserDetailWithDate",
+      "oracle": "Get-MgReportEmailActivityUserDetail"
+    },
+    "replacementNoun": "ReportEmailActivityUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getemailappusageappsusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetEmailAppUsageAppsUserCountsWithPeriod",
+      "oracle": "Get-MgReportEmailAppUsageAppUserCount"
+    },
+    "replacementNoun": "ReportEmailAppUsageAppUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getemailappusageusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetEmailAppUsageUserCountsWithPeriod",
+      "oracle": "Get-MgReportEmailAppUsageUserCount"
+    },
+    "replacementNoun": "ReportEmailAppUsageUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getemailappusageuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetEmailAppUsageUserDetailWithDate",
+      "oracle": "Get-MgReportEmailAppUsageUserDetail"
+    },
+    "replacementNoun": "ReportEmailAppUsageUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getemailappusageversionsusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetEmailAppUsageVersionsUserCountsWithPeriod",
+      "oracle": "Get-MgReportEmailAppUsageVersionUserCount"
+    },
+    "replacementNoun": "ReportEmailAppUsageVersionUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getgrouparchivedprintjobs(groupid='{groupid}',startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime",
+      "oracle": "Get-MgReportGroupArchivedPrintJob"
+    },
+    "replacementNoun": "ReportGroupArchivedPrintJob"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getm365appplatformusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetM365AppPlatformUserCountsWithPeriod",
+      "oracle": "Get-MgReportM365AppPlatformUserCount"
+    },
+    "replacementNoun": "ReportM365AppPlatformUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getm365appusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetM365AppUserCountsWithPeriod",
+      "oracle": "Get-MgReportM365AppUserCount"
+    },
+    "replacementNoun": "ReportM365AppUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getm365appuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetM365AppUserDetailWithDate",
+      "oracle": "Get-MgReportM365AppUserDetail"
+    },
+    "replacementNoun": "ReportM365AppUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getmailboxusagedetail(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetMailboxUsageDetailWithPeriod",
+      "oracle": "Get-MgReportMailboxUsageDetail"
+    },
+    "replacementNoun": "ReportMailboxUsageDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getmailboxusagemailboxcounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetMailboxUsageMailboxCountsWithPeriod",
+      "oracle": "Get-MgReportMailboxUsageMailboxCount"
+    },
+    "replacementNoun": "ReportMailboxUsageMailboxCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getmailboxusagequotastatusmailboxcounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetMailboxUsageQuotaStatusMailboxCountsWithPeriod",
+      "oracle": "Get-MgReportMailboxUsageQuotaStatusMailboxCount"
+    },
+    "replacementNoun": "ReportMailboxUsageQuotaStatusMailboxCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getmailboxusagestorage(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetMailboxUsageStorageWithPeriod",
+      "oracle": "Get-MgReportMailboxUsageStorage"
+    },
+    "replacementNoun": "ReportMailboxUsageStorage"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/reports/getoffice365activationcounts",
     "action": "rename",
     "evidence": {
@@ -6561,6 +8517,677 @@
       "oracle": "Get-MgReportOffice365ActivationUserDetail"
     },
     "replacementNoun": "ReportOffice365ActivationUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getoffice365activeusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOffice365ActiveUserCountsWithPeriod",
+      "oracle": "Get-MgReportOffice365ActiveUserCount"
+    },
+    "replacementNoun": "ReportOffice365ActiveUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getoffice365activeuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOffice365ActiveUserDetailWithDate",
+      "oracle": "Get-MgReportOffice365ActiveUserDetail"
+    },
+    "replacementNoun": "ReportOffice365ActiveUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getoffice365groupsactivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOffice365GroupsActivityCountsWithPeriod",
+      "oracle": "Get-MgReportOffice365GroupActivityCount"
+    },
+    "replacementNoun": "ReportOffice365GroupActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getoffice365groupsactivitydetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOffice365GroupsActivityDetailWithDate",
+      "oracle": "Get-MgReportOffice365GroupActivityDetail"
+    },
+    "replacementNoun": "ReportOffice365GroupActivityDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getoffice365groupsactivityfilecounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOffice365GroupsActivityFileCountsWithPeriod",
+      "oracle": "Get-MgReportOffice365GroupActivityFileCount"
+    },
+    "replacementNoun": "ReportOffice365GroupActivityFileCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getoffice365groupsactivitygroupcounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOffice365GroupsActivityGroupCountsWithPeriod",
+      "oracle": "Get-MgReportOffice365GroupActivityGroupCount"
+    },
+    "replacementNoun": "ReportOffice365GroupActivityGroupCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getoffice365groupsactivitystorage(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOffice365GroupsActivityStorageWithPeriod",
+      "oracle": "Get-MgReportOffice365GroupActivityStorage"
+    },
+    "replacementNoun": "ReportOffice365GroupActivityStorage"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getoffice365servicesusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOffice365ServicesUserCountsWithPeriod",
+      "oracle": "Get-MgReportOffice365ServiceUserCount"
+    },
+    "replacementNoun": "ReportOffice365ServiceUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getonedriveactivityfilecounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOneDriveActivityFileCountsWithPeriod",
+      "oracle": "Get-MgReportOneDriveActivityFileCount"
+    },
+    "replacementNoun": "ReportOneDriveActivityFileCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getonedriveactivityusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOneDriveActivityUserCountsWithPeriod",
+      "oracle": "Get-MgReportOneDriveActivityUserCount"
+    },
+    "replacementNoun": "ReportOneDriveActivityUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getonedriveactivityuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOneDriveActivityUserDetailWithDate",
+      "oracle": "Get-MgReportOneDriveActivityUserDetail"
+    },
+    "replacementNoun": "ReportOneDriveActivityUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getonedriveusageaccountcounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOneDriveUsageAccountCountsWithPeriod",
+      "oracle": "Get-MgReportOneDriveUsageAccountCount"
+    },
+    "replacementNoun": "ReportOneDriveUsageAccountCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getonedriveusageaccountdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOneDriveUsageAccountDetailWithDate",
+      "oracle": "Get-MgReportOneDriveUsageAccountDetail"
+    },
+    "replacementNoun": "ReportOneDriveUsageAccountDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getonedriveusagefilecounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOneDriveUsageFileCountsWithPeriod",
+      "oracle": "Get-MgReportOneDriveUsageFileCount"
+    },
+    "replacementNoun": "ReportOneDriveUsageFileCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getonedriveusagestorage(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetOneDriveUsageStorageWithPeriod",
+      "oracle": "Get-MgReportOneDriveUsageStorage"
+    },
+    "replacementNoun": "ReportOneDriveUsageStorage"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getprinterarchivedprintjobs(printerid='{printerid}',startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime",
+      "oracle": "Get-MgReportPrinterArchivedPrintJob"
+    },
+    "replacementNoun": "ReportPrinterArchivedPrintJob"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getrelyingpartydetailedsummary(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetRelyingPartyDetailedSummaryWithPeriod",
+      "oracle": "Get-MgReportRelyingPartyDetailedSummary"
+    },
+    "replacementNoun": "ReportRelyingPartyDetailedSummary"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getsharepointactivityfilecounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSharePointActivityFileCountsWithPeriod",
+      "oracle": "Get-MgReportSharePointActivityFileCount"
+    },
+    "replacementNoun": "ReportSharePointActivityFileCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getsharepointactivitypages(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSharePointActivityPagesWithPeriod",
+      "oracle": "Get-MgReportSharePointActivityPage"
+    },
+    "replacementNoun": "ReportSharePointActivityPage"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getsharepointactivityusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSharePointActivityUserCountsWithPeriod",
+      "oracle": "Get-MgReportSharePointActivityUserCount"
+    },
+    "replacementNoun": "ReportSharePointActivityUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getsharepointactivityuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSharePointActivityUserDetailWithDate",
+      "oracle": "Get-MgReportSharePointActivityUserDetail"
+    },
+    "replacementNoun": "ReportSharePointActivityUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getsharepointsiteusagedetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSharePointSiteUsageDetailWithDate",
+      "oracle": "Get-MgReportSharePointSiteUsageDetail"
+    },
+    "replacementNoun": "ReportSharePointSiteUsageDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getsharepointsiteusagefilecounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSharePointSiteUsageFileCountsWithPeriod",
+      "oracle": "Get-MgReportSharePointSiteUsageFileCount"
+    },
+    "replacementNoun": "ReportSharePointSiteUsageFileCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getsharepointsiteusagepages(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSharePointSiteUsagePagesWithPeriod",
+      "oracle": "Get-MgReportSharePointSiteUsagePage"
+    },
+    "replacementNoun": "ReportSharePointSiteUsagePage"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getsharepointsiteusagesitecounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSharePointSiteUsageSiteCountsWithPeriod",
+      "oracle": "Get-MgReportSharePointSiteUsageSiteCount"
+    },
+    "replacementNoun": "ReportSharePointSiteUsageSiteCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getsharepointsiteusagestorage(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSharePointSiteUsageStorageWithPeriod",
+      "oracle": "Get-MgReportSharePointSiteUsageStorage"
+    },
+    "replacementNoun": "ReportSharePointSiteUsageStorage"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessactivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessActivityCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessActivityCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessactivityusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessActivityUserCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessActivityUserCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessActivityUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessactivityuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessActivityUserDetailWithDate",
+      "oracle": "Get-MgReportSkypeForBusinessActivityUserDetail"
+    },
+    "replacementNoun": "ReportSkypeForBusinessActivityUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessdeviceusagedistributionusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessDeviceUsageDistributionUserCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessDeviceUsageDistributionUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessdeviceusageusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessDeviceUsageUserCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessDeviceUsageUserCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessDeviceUsageUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessdeviceusageuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessDeviceUsageUserDetailWithDate",
+      "oracle": "Get-MgReportSkypeForBusinessDeviceUsageUserDetail"
+    },
+    "replacementNoun": "ReportSkypeForBusinessDeviceUsageUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessorganizeractivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessOrganizerActivityCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessOrganizerActivityCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessOrganizerActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessorganizeractivityminutecounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessOrganizerActivityMinuteCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessOrganizerActivityMinuteCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessorganizeractivityusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessOrganizerActivityUserCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessOrganizerActivityUserCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessOrganizerActivityUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessparticipantactivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessParticipantActivityCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessParticipantActivityCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessParticipantActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessparticipantactivityminutecounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessParticipantActivityMinuteCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessParticipantActivityMinuteCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessParticipantActivityMinuteCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinessparticipantactivityusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessParticipantActivityUserCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessParticipantActivityUserCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessParticipantActivityUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinesspeertopeeractivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessPeerToPeerActivityCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessPeerToPeerActivityCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessPeerToPeerActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinesspeertopeeractivityminutecounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessPeerToPeerActivityMinuteCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessPeerToPeerActivityMinuteCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getskypeforbusinesspeertopeeractivityusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriod",
+      "oracle": "Get-MgReportSkypeForBusinessPeerToPeerActivityUserCount"
+    },
+    "replacementNoun": "ReportSkypeForBusinessPeerToPeerActivityUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsdeviceusagedistributionusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsDeviceUsageDistributionUserCountsWithPeriod",
+      "oracle": "Get-MgReportTeamDeviceUsageDistributionUserCount"
+    },
+    "replacementNoun": "ReportTeamDeviceUsageDistributionUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsdeviceusageusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsDeviceUsageUserCountsWithPeriod",
+      "oracle": "Get-MgReportTeamDeviceUsageUserCount"
+    },
+    "replacementNoun": "ReportTeamDeviceUsageUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsdeviceusageuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsDeviceUsageUserDetailWithDate",
+      "oracle": "Get-MgReportTeamDeviceUsageUserDetail"
+    },
+    "replacementNoun": "ReportTeamDeviceUsageUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsteamactivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsTeamActivityCountsWithPeriod",
+      "oracle": "Get-MgReportTeamActivityCount"
+    },
+    "replacementNoun": "ReportTeamActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsteamactivitydetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsTeamActivityDetailWithDate",
+      "oracle": "Get-MgReportTeamActivityDetail"
+    },
+    "replacementNoun": "ReportTeamActivityDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsteamactivitydistributioncounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsTeamActivityDistributionCountsWithPeriod",
+      "oracle": "Get-MgReportTeamActivityDistributionCount"
+    },
+    "replacementNoun": "ReportTeamActivityDistributionCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsteamcounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsTeamCountsWithPeriod",
+      "oracle": "Get-MgReportTeamCount"
+    },
+    "replacementNoun": "ReportTeamCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsuseractivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsUserActivityCountsWithPeriod",
+      "oracle": "Get-MgReportTeamUserActivityCount"
+    },
+    "replacementNoun": "ReportTeamUserActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsuseractivityusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsUserActivityUserCountsWithPeriod",
+      "oracle": "Get-MgReportTeamUserActivityUserCount"
+    },
+    "replacementNoun": "ReportTeamUserActivityUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getteamsuseractivityuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetTeamsUserActivityUserDetailWithDate",
+      "oracle": "Get-MgReportTeamUserActivityUserDetail"
+    },
+    "replacementNoun": "ReportTeamUserActivityUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getuserarchivedprintjobs(userid='{userid}',startdatetime={startdatetime},enddatetime={enddatetime})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime",
+      "oracle": "Get-MgReportUserArchivedPrintJob"
+    },
+    "replacementNoun": "ReportUserArchivedPrintJob"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getyammeractivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetYammerActivityCountsWithPeriod",
+      "oracle": "Get-MgReportYammerActivityCount"
+    },
+    "replacementNoun": "ReportYammerActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getyammeractivityusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetYammerActivityUserCountsWithPeriod",
+      "oracle": "Get-MgReportYammerActivityUserCount"
+    },
+    "replacementNoun": "ReportYammerActivityUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getyammeractivityuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetYammerActivityUserDetailWithDate",
+      "oracle": "Get-MgReportYammerActivityUserDetail"
+    },
+    "replacementNoun": "ReportYammerActivityUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getyammerdeviceusagedistributionusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetYammerDeviceUsageDistributionUserCountsWithPeriod",
+      "oracle": "Get-MgReportYammerDeviceUsageDistributionUserCount"
+    },
+    "replacementNoun": "ReportYammerDeviceUsageDistributionUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getyammerdeviceusageusercounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetYammerDeviceUsageUserCountsWithPeriod",
+      "oracle": "Get-MgReportYammerDeviceUsageUserCount"
+    },
+    "replacementNoun": "ReportYammerDeviceUsageUserCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getyammerdeviceusageuserdetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetYammerDeviceUsageUserDetailWithDate",
+      "oracle": "Get-MgReportYammerDeviceUsageUserDetail"
+    },
+    "replacementNoun": "ReportYammerDeviceUsageUserDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getyammergroupsactivitycounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetYammerGroupsActivityCountsWithPeriod",
+      "oracle": "Get-MgReportYammerGroupActivityCount"
+    },
+    "replacementNoun": "ReportYammerGroupActivityCount"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getyammergroupsactivitydetail(date={date})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetYammerGroupsActivityDetailWithDate",
+      "oracle": "Get-MgReportYammerGroupActivityDetail"
+    },
+    "replacementNoun": "ReportYammerGroupActivityDetail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/reports/getyammergroupsactivitygroupcounts(period='{period}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgReportGetYammerGroupsActivityGroupCountsWithPeriod",
+      "oracle": "Get-MgReportYammerGroupActivityGroupCount"
+    },
+    "replacementNoun": "ReportYammerGroupActivityGroupCount"
   },
   {
     "apiVersion": "v1.0",
@@ -6616,6 +9243,220 @@
       "oracle": "Get-MgReportSecurityAttackSimulationTrainingUserCoverage"
     },
     "replacementNoun": "ReportSecurityAttackSimulationTrainingUserCoverage"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/directory/roleassignmentscheduleinstances/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstanceFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleInstanceByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementDirectoryRoleAssignmentScheduleInstanceByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/directory/roleassignmentschedulerequests/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleRequestByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementDirectoryRoleAssignmentScheduleRequestByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/directory/roleassignmentschedules/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementDirectoryRoleAssignmentScheduleFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementDirectoryRoleAssignmentScheduleByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementDirectoryRoleAssignmentScheduleByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/directory/roleeligibilityscheduleinstances/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstanceFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementDirectoryRoleEligibilityScheduleInstanceByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementDirectoryRoleEligibilityScheduleInstanceByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/directory/roleeligibilityschedulerequests/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementDirectoryRoleEligibilityScheduleRequestByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementDirectoryRoleEligibilityScheduleRequestByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/directory/roleeligibilityschedules/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementDirectoryRoleEligibilityScheduleFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementDirectoryRoleEligibilityScheduleByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementDirectoryRoleEligibilityScheduleByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/entitlementmanagement/roleassignmentscheduleinstances/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/entitlementmanagement/roleassignmentschedulerequests/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementEntitlementManagementRoleAssignmentScheduleRequestByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementEntitlementManagementRoleAssignmentScheduleRequestByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/entitlementmanagement/roleassignmentschedules/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementEntitlementManagementRoleAssignmentScheduleByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementEntitlementManagementRoleAssignmentScheduleByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/entitlementmanagement/roleeligibilityscheduleinstances/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstanceFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementEntitlementManagementRoleEligibilityScheduleInstanceByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementEntitlementManagementRoleEligibilityScheduleInstanceByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/entitlementmanagement/roleeligibilityschedulerequests/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementEntitlementManagementRoleEligibilityScheduleRequestByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementEntitlementManagementRoleEligibilityScheduleRequestByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/rolemanagement/entitlementmanagement/roleeligibilityschedules/filterbycurrentuser(on='{on}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleFilterByCurrentUserWithOn",
+      "oracle": "Invoke-MgFilterRoleManagementEntitlementManagementRoleEligibilityScheduleByCurrentUser"
+    },
+    "replacementNoun": "FilterRoleManagementEntitlementManagementRoleEligibilityScheduleByCurrentUser",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/security/alerts_v2/{}/comments/$count",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgSecurityAlertV2CommentCount",
+      "oracle": "Invoke-MgCommentSecurityAlert"
+    },
+    "replacementNoun": "CommentSecurityAlert",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/security/cases/ediscoverycases/{}/tags/ashierarchy",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgSecurityCaseEdiscoveryCaseTagAsHierarchy",
+      "oracle": "Invoke-MgAsSecurityCaseEdiscoveryCaseTagHierarchy"
+    },
+    "replacementNoun": "AsSecurityCaseEdiscoveryCaseTagHierarchy",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/security/datasecurityandgovernance/sensitivitylabels/{}/sublabels/computeinheritance(labelids={labelids},locale='{locale}',contentformats={contentformats})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgSecurityDataSecurityAndGovernanceSensitivityLabelSublabelComputeInheritanceWithLabelIdsWithLocaleWithContentFormats",
+      "oracle": "Invoke-MgComputeSecurityDataSecurityAndGovernanceSensitivityLabelSublabelInheritance"
+    },
+    "replacementNoun": "ComputeSecurityDataSecurityAndGovernanceSensitivityLabelSublabelInheritance",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/security/datasecurityandgovernance/sensitivitylabels/computeinheritance(labelids={labelids},locale='{locale}',contentformats={contentformats})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgSecurityDataSecurityAndGovernanceSensitivityLabelComputeInheritanceWithLabelIdsWithLocaleWithContentFormats",
+      "oracle": "Invoke-MgComputeSecurityDataSecurityAndGovernanceSensitivityLabelInheritance"
+    },
+    "replacementNoun": "ComputeSecurityDataSecurityAndGovernanceSensitivityLabelInheritance",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/security/identities/sensors/getdeploymentaccesskey",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgSecurityIdentitySensorGetDeploymentAccessKey",
+      "oracle": "Get-MgSecurityIdentitySensorDeploymentAccessKey"
+    },
+    "replacementNoun": "SecurityIdentitySensorDeploymentAccessKey"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/security/identities/sensors/getdeploymentpackageuri",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgSecurityIdentitySensorGetDeploymentPackageUri",
+      "oracle": "Get-MgSecurityIdentitySensorDeploymentPackageUri"
+    },
+    "replacementNoun": "SecurityIdentitySensorDeploymentPackageUri"
   },
   {
     "apiVersion": "v1.0",
@@ -6879,6 +9720,28 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/sites/{}/getapplicablecontenttypesforlist(listid='{listid}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgSiteGetApplicableContentTypesForListWithListId",
+      "oracle": "Get-MgSiteApplicableContentTypeForList"
+    },
+    "replacementNoun": "SiteApplicableContentTypeForList"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/sites/{}/getbypath(path='{path}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgSiteGetByPathWithPath",
+      "oracle": "Get-MgSiteByPath"
+    },
+    "replacementNoun": "SiteByPath"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/sites/{}/lists/{}/contenttypes/{}/ispublished",
     "action": "rename",
     "evidence": {
@@ -7025,6 +9888,17 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/sites/{}/onenote/notebooks/getrecentnotebooks(includepersonalnotebooks={includepersonalnotebooks})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgSiteOnenoteNotebookGetRecentNotebooksWithIncludePersonalNotebooks",
+      "oracle": "Get-MgSiteOnenoteNotebookRecentNotebook"
+    },
+    "replacementNoun": "SiteOnenoteNotebookRecentNotebook"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/sites/{}/onenote/pages/{}/preview",
     "action": "rename",
     "evidence": {
@@ -7079,6 +9953,50 @@
       "oracle": "Get-MgAllSite"
     },
     "replacementNoun": "AllSite"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/solutions/virtualevents/townhalls/getbyuseridandrole(userid='{userid}',role='{role}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgVirtualEventTownhallGetByUserIdAndRoleWithUserIdWithRole",
+      "oracle": "Get-MgVirtualEventTownhallByUserIdAndRole"
+    },
+    "replacementNoun": "VirtualEventTownhallByUserIdAndRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/solutions/virtualevents/townhalls/getbyuserrole(role='{role}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgVirtualEventTownhallGetByUserRoleWithRole",
+      "oracle": "Get-MgVirtualEventTownhallByUserRole"
+    },
+    "replacementNoun": "VirtualEventTownhallByUserRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/solutions/virtualevents/webinars/getbyuseridandrole(userid='{userid}',role='{role}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgVirtualEventWebinarGetByUserIdAndRoleWithUserIdWithRole",
+      "oracle": "Get-MgVirtualEventWebinarByUserIdAndRole"
+    },
+    "replacementNoun": "VirtualEventWebinarByUserIdAndRole"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/solutions/virtualevents/webinars/getbyuserrole(role='{role}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgVirtualEventWebinarGetByUserRoleWithRole",
+      "oracle": "Get-MgVirtualEventWebinarByUserRole"
+    },
+    "replacementNoun": "VirtualEventWebinarByUserRole"
   },
   {
     "apiVersion": "v1.0",
@@ -7226,6 +10144,30 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/tenantrelationships/findtenantinformationbydomainname(domainname='{domainname}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgTenantRelationshipFindTenantInformationByDomainNameWithDomainName",
+      "oracle": "Find-MgTenantRelationshipTenantInformationByDomainName"
+    },
+    "replacementNoun": "TenantRelationshipTenantInformationByDomainName",
+    "replacementVerb": "Find"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/tenantrelationships/findtenantinformationbytenantid(tenantid='{tenantid}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgTenantRelationshipFindTenantInformationByTenantIdWithTenantId",
+      "oracle": "Find-MgTenantRelationshipTenantInformationByTenantId"
+    },
+    "replacementNoun": "TenantRelationshipTenantInformationByTenantId",
+    "replacementVerb": "Find"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/users/{}/activities/recent",
     "action": "rename",
     "evidence": {
@@ -7245,6 +10187,18 @@
       "oracle": "Invoke-MgCreationUserAuthenticationFido2MethodOption"
     },
     "replacementNoun": "CreationUserAuthenticationFido2MethodOption",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/users/{}/calendar/allowedcalendarsharingroles(user='{user}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgUserCalendarAllowedCalendarSharingRolesWithUser",
+      "oracle": "Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles"
+    },
+    "replacementNoun": "CalendarUserCalendarAllowedCalendarSharingRoles",
     "replacementVerb": "Invoke"
   },
   {
@@ -7385,6 +10339,17 @@
   {
     "apiVersion": "v1.0",
     "method": "GET",
+    "uri": "/users/{}/onenote/notebooks/getrecentnotebooks(includepersonalnotebooks={includepersonalnotebooks})",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgUserOnenoteNotebookGetRecentNotebooksWithIncludePersonalNotebooks",
+      "oracle": "Get-MgUserOnenoteNotebookRecentNotebook"
+    },
+    "replacementNoun": "UserOnenoteNotebookRecentNotebook"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
     "uri": "/users/{}/onenote/pages/{}/preview",
     "action": "rename",
     "evidence": {
@@ -7451,6 +10416,30 @@
       "oracle": "Invoke-MgTimeUserOutlook"
     },
     "replacementNoun": "TimeUserOutlook",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/users/{}/reminderview(startdatetime='{startdatetime}',enddatetime='{enddatetime}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgUserReminderViewWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgViewUserReminder"
+    },
+    "replacementNoun": "ViewUserReminder",
+    "replacementVerb": "Invoke"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/users/{}/settings/workhoursandlocations/occurrencesview(startdatetime='{startdatetime}',enddatetime='{enddatetime}')",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgUserSettingWorkHourAndLocationOccurrencesViewWithStartDateTimeWithEndDateTime",
+      "oracle": "Invoke-MgViewUserSettingWorkHourAndLocationOccurrence"
+    },
+    "replacementNoun": "ViewUserSettingWorkHourAndLocationOccurrence",
     "replacementVerb": "Invoke"
   },
   {
@@ -7562,6 +10551,17 @@
       "oracle": "Get-MgUserTodoTaskAttachmentSession"
     },
     "replacementNoun": "UserTodoTaskAttachmentSession"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "GET",
+    "uri": "/users/{}/todo/lists/{}/tasks/{}/attachmentsessions/{}/content",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Get-MgUserTodoListTaskAttachmentSessionContent",
+      "oracle": "Get-MgUserTodoTaskAttachmentSessionContent"
+    },
+    "replacementNoun": "UserTodoTaskAttachmentSessionContent"
   },
   {
     "apiVersion": "v1.0",
@@ -7753,6 +10753,160 @@
   {
     "apiVersion": "v1.0",
     "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsIosLobAppAssignment",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsIosLobAppContentVersion",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/containedapps/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/files/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFile",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosstoreapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsIosStoreAppAssignment",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsIoStoreAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoStoreAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosvppapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsIosVppAppAssignment",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsIoVppAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoVppAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersion",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/containedapps/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionContainedApp",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/files/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionFile",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/assignments/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsWindowsMobileMSIAssignment",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersion",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/containedapps/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionContainedApp",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/files/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionFile",
+      "oracle": "Update-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
     "uri": "/devicemanagement/iosupdatestatuses/{}",
     "action": "rename",
     "evidence": {
@@ -7804,6 +10958,17 @@
       "oracle": "Update-MgIdentityAuthenticationEventFlowIncludeApplication"
     },
     "replacementNoun": "IdentityAuthenticationEventFlowIncludeApplication"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/conditions/applications/includeapplications/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowConditionApplicationIncludeApplication",
+      "oracle": "Update-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
   },
   {
     "apiVersion": "v1.0",
@@ -8585,6 +11750,105 @@
       "oracle": "Update-MgServicePrincipalRiskDetection"
     },
     "replacementNoun": "ServicePrincipalRiskDetection"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/places/{}/building/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgPlaceAsBuildingCheckIn",
+      "oracle": "Update-MgPlaceAsBuildingCheck"
+    },
+    "replacementNoun": "PlaceAsBuildingCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/places/{}/desk/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgPlaceAsDeskCheckIn",
+      "oracle": "Update-MgPlaceAsDeskCheck"
+    },
+    "replacementNoun": "PlaceAsDeskCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/places/{}/floor/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgPlaceAsFloorCheckIn",
+      "oracle": "Update-MgPlaceAsFloorCheck"
+    },
+    "replacementNoun": "PlaceAsFloorCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/places/{}/room/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgPlaceAsRoomCheckIn",
+      "oracle": "Update-MgPlaceAsRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/places/{}/roomlist/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgPlaceAsRoomListCheckIn",
+      "oracle": "Update-MgPlaceAsRoomListCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/places/{}/roomlist/rooms/{}/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgPlaceAsRoomListRoomCheckIn",
+      "oracle": "Update-MgPlaceAsRoomListRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/places/{}/roomlist/workspaces/{}/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgPlaceAsRoomListWorkspaceCheckIn",
+      "oracle": "Update-MgPlaceAsRoomListWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListWorkspaceCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/places/{}/section/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgPlaceAsSectionCheckIn",
+      "oracle": "Update-MgPlaceAsSectionCheck"
+    },
+    "replacementNoun": "PlaceAsSectionCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "PATCH",
+    "uri": "/places/{}/workspace/checkins/{}",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Update-MgPlaceAsWorkspaceCheckIn",
+      "oracle": "Update-MgPlaceAsWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsWorkspaceCheck"
   },
   {
     "apiVersion": "v1.0",
@@ -9993,6 +13257,28 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/androidlobapp/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/androidlobapp/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
     "uri": "/deviceappmanagement/mobileapps/{}/assign",
     "action": "rename",
     "evidence": {
@@ -10001,6 +13287,380 @@
     },
     "replacementNoun": "DeviceAppManagementMobileApp",
     "replacementVerb": "Set"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsIosLobAppAssignment",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsIosLobAppContentVersion",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/containedapps",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/files",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFile",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsiOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/ioslobapp/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosstoreapp/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsIosStoreAppAssignment",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsIoStoreAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoStoreAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/iosvppapp/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsIosVppAppAssignment",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsIoVppAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsIoVppAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/macosdmgapp/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/macosdmgapp/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/macoslobapp/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/macoslobapp/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedandroidlobapp/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedandroidlobapp/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersion",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/containedapps",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionContainedApp",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/files",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionFile",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedioslobapp/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedmobilelobapp/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/managedmobilelobapp/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/win32lobapp/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/win32lobapp/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsWin32LobAppContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsappx/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsappx/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/assignments",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsWindowsMobileMSIAssignment",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiAssignment"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersion",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/containedapps",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionContainedApp",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/files",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionFile",
+      "oracle": "New-MgDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+    },
+    "replacementNoun": "DeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsmobilemsi/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsWindowsMobileMSIContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFileUpload"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsuniversalappx/contentversions/{}/files/{}/commit",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFileCommit",
+      "oracle": "Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFile"
+    },
+    "replacementNoun": "CommitDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFile"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/deviceappmanagement/mobileapps/{}/windowsuniversalappx/contentversions/{}/files/{}/renewupload",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFileRenewUpload",
+      "oracle": "Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFileUpload"
+    },
+    "replacementNoun": "RenewDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFileUpload"
   },
   {
     "apiVersion": "v1.0",
@@ -10983,6 +14643,18 @@
       "oracle": "Invoke-MgUploadDirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration"
     },
     "replacementNoun": "UploadDirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/directory/recovery/jobs/{}/cancel",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgDirectoryRecoveryJobCancel",
+      "oracle": "Stop-MgDirectoryRecoveryJob"
+    },
+    "replacementNoun": "DirectoryRecoveryJob",
+    "replacementVerb": "Stop"
   },
   {
     "apiVersion": "v1.0",
@@ -12014,6 +15686,18 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
+    "uri": "/external/connections/{}/items/{}/addactivities",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgExternalConnectionItemAddActivities",
+      "oracle": "Add-MgExternalConnectionItemActivity"
+    },
+    "replacementNoun": "ExternalConnectionItemActivity",
+    "replacementVerb": "Add"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
     "uri": "/grouplifecyclepolicies/{}/addgroup",
     "action": "rename",
     "evidence": {
@@ -13008,6 +16692,42 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
+    "uri": "/groups/{}/sites/{}/pages/{}/sitepage/canvaslayout/horizontalsections/{}/columns/{}/webparts/{}/getpositionofwebpart",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartGetPositionOfWebPart",
+      "oracle": "Get-MgGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart"
+    },
+    "replacementNoun": "GroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart",
+    "replacementVerb": "Get"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/groups/{}/sites/{}/pages/{}/sitepage/canvaslayout/verticalsection/webparts/{}/getpositionofwebpart",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpartGetPositionOfWebPart",
+      "oracle": "Get-MgGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart"
+    },
+    "replacementNoun": "GroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart",
+    "replacementVerb": "Get"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/groups/{}/sites/{}/pages/{}/sitepage/webparts/{}/getpositionofwebpart",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgGroupSitePageAsSitePageWebPartGetPositionOfWebPart",
+      "oracle": "Get-MgGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart"
+    },
+    "replacementNoun": "GroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart",
+    "replacementVerb": "Get"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
     "uri": "/groups/{}/sites/{}/permissions/{}/grant",
     "action": "rename",
     "evidence": {
@@ -13888,6 +17608,39 @@
       "oracle": "New-MgIdentityAuthenticationEventFlowIncludeApplication"
     },
     "replacementNoun": "IdentityAuthenticationEventFlowIncludeApplication"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/conditions/applications/includeapplications",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowConditionApplicationIncludeApplication",
+      "oracle": "New-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onattributecollection/onattributecollectionexternalusersselfservicesignup/attributes/$ref",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUpAttributeByRef",
+      "oracle": "New-MgIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identity/authenticationeventsflows/{}/externalusersselfservicesignupeventsflow/onauthenticationmethodloadstart/onauthenticationmethodloadstartexternalusersselfservicesignup/identityproviders/$ref",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef",
+      "oracle": "New-MgIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef"
+    },
+    "replacementNoun": "IdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef"
   },
   {
     "apiVersion": "v1.0",
@@ -15239,6 +18992,254 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/deleteditems/workflows/{}/activate",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowActivate",
+      "oracle": "Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowDeletedItemWorkflow",
+    "replacementVerb": "Initialize"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/deleteditems/workflows/{}/activatewithscope",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowActivateWithScope",
+      "oracle": "Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowWithScope"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowDeletedItemWorkflowWithScope",
+    "replacementVerb": "Initialize"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/deleteditems/workflows/{}/cancelprocessing",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowCancelProcessing",
+      "oracle": "Stop-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowProcessing"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowDeletedItemWorkflowProcessing",
+    "replacementVerb": "Stop"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/deleteditems/workflows/{}/clearquarantine",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowClearQuarantine",
+      "oracle": "Clear-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowQuarantine"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowDeletedItemWorkflowQuarantine",
+    "replacementVerb": "Clear"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/deleteditems/workflows/{}/createnewversion",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowCreateNewVersion",
+      "oracle": "New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion",
+    "replacementVerb": "New"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/deleteditems/workflows/{}/previewtaskfailures",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowPreviewTaskFailures",
+      "oracle": "Invoke-MgPreviewIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskFailure"
+    },
+    "replacementNoun": "PreviewIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTaskFailure"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/deleteditems/workflows/{}/previewworkflow",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowPreviewWorkflow",
+      "oracle": "Invoke-MgPreviewIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow"
+    },
+    "replacementNoun": "PreviewIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/deleteditems/workflows/{}/restore",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRestore",
+      "oracle": "Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowDeletedItemWorkflow",
+    "replacementVerb": "Restore"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/activate",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowActivate",
+      "oracle": "Initialize-MgIdentityGovernanceLifecycleWorkflow"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflow",
+    "replacementVerb": "Initialize"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/activatewithscope",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowActivateWithScope",
+      "oracle": "Initialize-MgIdentityGovernanceLifecycleWorkflowWithScope"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowWithScope",
+    "replacementVerb": "Initialize"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/cancelprocessing",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowCancelProcessing",
+      "oracle": "Stop-MgIdentityGovernanceLifecycleWorkflowProcessing"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowProcessing",
+    "replacementVerb": "Stop"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/clearquarantine",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowClearQuarantine",
+      "oracle": "Clear-MgIdentityGovernanceLifecycleWorkflowQuarantine"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowQuarantine",
+    "replacementVerb": "Clear"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/createnewversion",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowCreateNewVersion",
+      "oracle": "New-MgIdentityGovernanceLifecycleWorkflowNewVersion"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowNewVersion",
+    "replacementVerb": "New"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/previewtaskfailures",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowPreviewTaskFailures",
+      "oracle": "Invoke-MgPreviewIdentityGovernanceLifecycleWorkflowTaskFailure"
+    },
+    "replacementNoun": "PreviewIdentityGovernanceLifecycleWorkflowTaskFailure"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/previewworkflow",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowPreviewWorkflow",
+      "oracle": "Invoke-MgPreviewIdentityGovernanceLifecycleWorkflow"
+    },
+    "replacementNoun": "PreviewIdentityGovernanceLifecycleWorkflow"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/restore",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowRestore",
+      "oracle": "Restore-MgIdentityGovernanceLifecycleWorkflow"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflow",
+    "replacementVerb": "Restore"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/runs/{}/taskprocessingresults/{}/resume",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultResume",
+      "oracle": "Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowRunTaskProcessingResult",
+    "replacementVerb": "Resume"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/taskreports/{}/taskprocessingresults/{}/resume",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultResume",
+      "oracle": "Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult",
+    "replacementVerb": "Resume"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/tasks/{}/taskprocessingresults/{}/resume",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResultResume",
+      "oracle": "Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowTaskProcessingResult",
+    "replacementVerb": "Resume"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflows/{}/versions/{}/tasks/{}/taskprocessingresults/{}/resume",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultResume",
+      "oracle": "Resume-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult",
+    "replacementVerb": "Resume"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/identitygovernance/lifecycleworkflows/workflowtemplates/{}/tasks/{}/taskprocessingresults/{}/resume",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultResume",
+      "oracle": "Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult"
+    },
+    "replacementNoun": "IdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult",
+    "replacementVerb": "Resume"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
     "uri": "/identitygovernance/privilegedaccess/group/assignmentschedulerequests/{}/cancel",
     "action": "rename",
     "evidence": {
@@ -15537,6 +19538,105 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
+    "uri": "/places/{}/building/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgPlaceAsBuildingCheckIn",
+      "oracle": "New-MgPlaceAsBuildingCheck"
+    },
+    "replacementNoun": "PlaceAsBuildingCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/places/{}/desk/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgPlaceAsDeskCheckIn",
+      "oracle": "New-MgPlaceAsDeskCheck"
+    },
+    "replacementNoun": "PlaceAsDeskCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/places/{}/floor/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgPlaceAsFloorCheckIn",
+      "oracle": "New-MgPlaceAsFloorCheck"
+    },
+    "replacementNoun": "PlaceAsFloorCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/places/{}/room/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgPlaceAsRoomCheckIn",
+      "oracle": "New-MgPlaceAsRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/places/{}/roomlist/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgPlaceAsRoomListCheckIn",
+      "oracle": "New-MgPlaceAsRoomListCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/places/{}/roomlist/rooms/{}/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgPlaceAsRoomListRoomCheckIn",
+      "oracle": "New-MgPlaceAsRoomListRoomCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListRoomCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/places/{}/roomlist/workspaces/{}/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgPlaceAsRoomListWorkspaceCheckIn",
+      "oracle": "New-MgPlaceAsRoomListWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsRoomListWorkspaceCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/places/{}/section/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgPlaceAsSectionCheckIn",
+      "oracle": "New-MgPlaceAsSectionCheck"
+    },
+    "replacementNoun": "PlaceAsSectionCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/places/{}/workspace/checkins",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "New-MgPlaceAsWorkspaceCheckIn",
+      "oracle": "New-MgPlaceAsWorkspaceCheck"
+    },
+    "replacementNoun": "PlaceAsWorkspaceCheck"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
     "uri": "/policies/authenticationstrengthpolicies/{}/updateallowedcombinations",
     "action": "rename",
     "evidence": {
@@ -15757,6 +19857,54 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
+    "uri": "/reports/partners/billing/reconciliation/billed/export",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgReportPartnerBillingReconciliationBilledExport",
+      "oracle": "Export-MgReportPartnerBillingReconciliationBilled"
+    },
+    "replacementNoun": "ReportPartnerBillingReconciliationBilled",
+    "replacementVerb": "Export"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/reports/partners/billing/reconciliation/unbilled/export",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgReportPartnerBillingReconciliationUnbilledExport",
+      "oracle": "Export-MgReportPartnerBillingReconciliationUnbilled"
+    },
+    "replacementNoun": "ReportPartnerBillingReconciliationUnbilled",
+    "replacementVerb": "Export"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/reports/partners/billing/usage/billed/export",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgReportPartnerBillingUsageBilledExport",
+      "oracle": "Export-MgReportPartnerBillingUsageBilled"
+    },
+    "replacementNoun": "ReportPartnerBillingUsageBilled",
+    "replacementVerb": "Export"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/reports/partners/billing/usage/unbilled/export",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgReportPartnerBillingUsageUnbilledExport",
+      "oracle": "Export-MgReportPartnerBillingUsageUnbilled"
+    },
+    "replacementNoun": "ReportPartnerBillingUsageUnbilled",
+    "replacementVerb": "Export"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
     "uri": "/rolemanagement/directory/roleassignmentschedulerequests/{}/cancel",
     "action": "rename",
     "evidence": {
@@ -15816,6 +19964,267 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
+    "uri": "/security/alerts_v2/movealerts",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityAlertV2MoveAlerts",
+      "oracle": "Move-MgSecurityAlert"
+    },
+    "replacementNoun": "SecurityAlert",
+    "replacementVerb": "Move"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/close",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseClose",
+      "oracle": "Close-MgSecurityCaseEdiscoveryCase"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCase",
+    "replacementVerb": "Close"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/custodians/{}/activate",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseCustodianActivate",
+      "oracle": "Initialize-MgSecurityCaseEdiscoveryCaseCustodian"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseCustodian",
+    "replacementVerb": "Initialize"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/custodians/{}/applyhold",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseCustodianApplyHold",
+      "oracle": "Add-MgSecurityCaseEdiscoveryCaseCustodianHold"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseCustodianHold",
+    "replacementVerb": "Add"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/custodians/{}/release",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseCustodianRelease",
+      "oracle": "Publish-MgSecurityCaseEdiscoveryCaseCustodian"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseCustodian",
+    "replacementVerb": "Publish"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/custodians/{}/removehold",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseCustodianRemoveHold",
+      "oracle": "Remove-MgSecurityCaseEdiscoveryCaseCustodianHold"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseCustodianHold",
+    "replacementVerb": "Remove"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/custodians/{}/updateindex",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseCustodianUpdateIndex",
+      "oracle": "Update-MgSecurityCaseEdiscoveryCaseCustodianIndex"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseCustodianIndex",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/noncustodialdatasources/{}/applyhold",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceApplyHold",
+      "oracle": "Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseNoncustodialDataSourceHold",
+    "replacementVerb": "Add"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/noncustodialdatasources/{}/release",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceRelease",
+      "oracle": "Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseNoncustodialDataSource",
+    "replacementVerb": "Publish"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/noncustodialdatasources/{}/removehold",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceRemoveHold",
+      "oracle": "Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseNoncustodialDataSourceHold",
+    "replacementVerb": "Remove"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/noncustodialdatasources/{}/updateindex",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceUpdateIndex",
+      "oracle": "Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex",
+    "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/reopen",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseReopen",
+      "oracle": "Invoke-MgReopenSecurityCaseEdiscoveryCase"
+    },
+    "replacementNoun": "ReopenSecurityCaseEdiscoveryCase"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/reviewsets/{}/addtoreviewset",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseReviewSetAddToReviewSet",
+      "oracle": "Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseReviewSetToReviewSet",
+    "replacementVerb": "Add"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/reviewsets/{}/export",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseReviewSetExport",
+      "oracle": "Export-MgSecurityCaseEdiscoveryCaseReviewSet"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseReviewSet",
+    "replacementVerb": "Export"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/reviewsets/{}/queries/{}/applytags",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseReviewSetQueryApplyTags",
+      "oracle": "Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseReviewSetQueryTag",
+    "replacementVerb": "Add"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/reviewsets/{}/queries/{}/export",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseReviewSetQueryExport",
+      "oracle": "Export-MgSecurityCaseEdiscoveryCaseReviewSetQuery"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseReviewSetQuery",
+    "replacementVerb": "Export"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/searches/{}/estimatestatistics",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseSearchEstimateStatistics",
+      "oracle": "Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics"
+    },
+    "replacementNoun": "EstimateSecurityCaseEdiscoveryCaseSearchStatistics"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/searches/{}/exportreport",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseSearchExportReport",
+      "oracle": "Export-MgSecurityCaseEdiscoveryCaseSearchReport"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseSearchReport",
+    "replacementVerb": "Export"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/searches/{}/exportresult",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseSearchExportResult",
+      "oracle": "Export-MgSecurityCaseEdiscoveryCaseSearchResult"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseSearchResult",
+    "replacementVerb": "Export"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/searches/{}/purgedata",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseSearchPurgeData",
+      "oracle": "Clear-MgSecurityCaseEdiscoveryCaseSearchData"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseSearchData",
+    "replacementVerb": "Clear"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/cases/ediscoverycases/{}/settings/resettodefault",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCaseEdiscoveryCaseSettingResetToDefault",
+      "oracle": "Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault"
+    },
+    "replacementNoun": "SecurityCaseEdiscoveryCaseSettingToDefault",
+    "replacementVerb": "Reset"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/collaboration/analyzedemails/remediate",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityCollaborationAnalyzedEmailRemediate",
+      "oracle": "Invoke-MgRemediateSecurityCollaborationAnalyzedEmail"
+    },
+    "replacementNoun": "RemediateSecurityCollaborationAnalyzedEmail"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
     "uri": "/security/datasecurityandgovernance/processcontentasync",
     "action": "rename",
     "evidence": {
@@ -15856,6 +20265,65 @@
       "oracle": "Invoke-MgAndSecurityDataSecurityAndGovernanceSensitivityLabel"
     },
     "replacementNoun": "AndSecurityDataSecurityAndGovernanceSensitivityLabel"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/identities/identityaccounts/{}/invokeaction",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityIdentityAccountInvokeAction",
+      "oracle": "Invoke-MgInvokeSecurityIdentityAccountAction"
+    },
+    "replacementNoun": "InvokeSecurityIdentityAccountAction"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/identities/sensorcandidates/activate",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityIdentitySensorCandidateActivate",
+      "oracle": "Initialize-MgSecurityIdentitySensorCandidate"
+    },
+    "replacementNoun": "SecurityIdentitySensorCandidate",
+    "replacementVerb": "Initialize"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/identities/sensors/regeneratedeploymentaccesskey",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityIdentitySensorRegenerateDeploymentAccessKey",
+      "oracle": "New-MgSecurityIdentitySensorDeploymentAccessKey"
+    },
+    "replacementNoun": "SecurityIdentitySensorDeploymentAccessKey",
+    "replacementVerb": "New"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/incidents/mergeincidents",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityIncidentMergeIncidents",
+      "oracle": "Merge-MgSecurityIncident"
+    },
+    "replacementNoun": "SecurityIncident",
+    "replacementVerb": "Merge"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/security/runhuntingquery",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSecurityRunHuntingQuery",
+      "oracle": "Start-MgSecurityHuntingQuery"
+    },
+    "replacementNoun": "SecurityHuntingQuery",
+    "replacementVerb": "Start"
   },
   {
     "apiVersion": "v1.0",
@@ -16680,6 +21148,42 @@
     },
     "replacementNoun": "SiteOnenoteSectionPageContent",
     "replacementVerb": "Update"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/sites/{}/pages/{}/sitepage/canvaslayout/horizontalsections/{}/columns/{}/webparts/{}/getpositionofwebpart",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartGetPositionOfWebPart",
+      "oracle": "Get-MgSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart"
+    },
+    "replacementNoun": "SitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart",
+    "replacementVerb": "Get"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/sites/{}/pages/{}/sitepage/canvaslayout/verticalsection/webparts/{}/getpositionofwebpart",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpartGetPositionOfWebPart",
+      "oracle": "Get-MgSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart"
+    },
+    "replacementNoun": "SitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart",
+    "replacementVerb": "Get"
+  },
+  {
+    "apiVersion": "v1.0",
+    "method": "POST",
+    "uri": "/sites/{}/pages/{}/sitepage/webparts/{}/getpositionofwebpart",
+    "action": "rename",
+    "evidence": {
+      "ourCommand": "Invoke-MgSitePageAsSitePageWebPartGetPositionOfWebPart",
+      "oracle": "Get-MgSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart"
+    },
+    "replacementNoun": "SitePageMicrosoftGraphSitePageWebPartPositionOfWebPart",
+    "replacementVerb": "Get"
   },
   {
     "apiVersion": "v1.0",

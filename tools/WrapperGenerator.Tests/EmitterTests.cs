@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using WrapperGenerator;
 using Xunit;
@@ -22,8 +23,211 @@ public sealed class EmitterTests
             new EmitContext("Test.Client"), "Message", "MessageCollectionResponse",
             new HashSet<string>(), new HashSet<string>());
 
-        Assert.Contains("catch (RuntimeException rex) when (rex.ErrorRecord is not null)", source);
+        Assert.Contains("catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)", source);
         Assert.Contains("ThrowTerminatingError(rex.ErrorRecord);", source);
+    }
+
+    // Pagination pins (#3706). EmitListGet is the single template behind every list-shaped
+    // cmdlet, so these pins govern all of them. The contract, with its evidence, lives in
+    // tools/WrapperGenerator/docs/pagination.md: -All follows every non-empty @odata.nextLink;
+    // -Top is a TOTAL cap under -All at whole-page granularity; one short truncation warning
+    // fires when a nextLink survives without -All, costing no extra request; a pipeline stop
+    // is never re-branded as a Graph failure.
+    [Fact]
+    public void ListEmitsAllSwitchNextLinkLoopAndTruncationWarning()
+    {
+        var naming = Naming.WithSuffix(Naming.Resolve(new OperationInfo(HttpMethod.Get, "/users")), "_List");
+
+        var source = CmdletEmitter.EmitListGet(naming, new EmitContext("Test.Client"), "User",
+            "UserCollectionResponse", new HashSet<string> { "$top", "$filter" });
+
+        // -All declared on the worker; the loop runs only under it and Ctrl+C ends it.
+        Assert.Contains("public SwitchParameter All { get; set; }", source);
+        Assert.Contains("if (All.IsPresent)", source);
+        Assert.Contains(".WithUrl(nextLink).GetAsync(", source);
+        Assert.Contains("!string.IsNullOrEmpty(nextLink) && !Stopping", source);
+
+        // -Top caps the total; unbound -Top leaves the loop uncapped.
+        Assert.Contains("!this.IsParameterBound(nameof(Top)) || fetched < Top", source);
+
+        // Warning: only on a surviving non-empty nextLink, no extra call, short text.
+        Assert.Contains("WriteWarning(\"More results are available. Use -All to return all pages.\");", source);
+        Assert.Contains("else if (!string.IsNullOrEmpty(result?.OdataNextLink))", source);
+
+        // Pipeline stop passes through the shared catch untouched.
+        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)", source);
+
+        // The FIRST request keeps the direct builder call the operation-inventory regex keys on.
+        Assert.Contains(".GetAsync(requestConfiguration =>", source);
+    }
+
+    // A list operation whose spec declares no $top has no -Top parameter, so the loop must be
+    // uncapped and emit no counter - a fetched variable without a cap would be dead code.
+    [Fact]
+    public void ListWithoutTopEmitsUncappedLoopAndNoCounter()
+    {
+        var naming = Naming.WithSuffix(Naming.Resolve(new OperationInfo(HttpMethod.Get, "/users")), "_List");
+
+        var source = CmdletEmitter.EmitListGet(naming, new EmitContext("Test.Client"), "User",
+            "UserCollectionResponse", new HashSet<string>());
+
+        Assert.Contains("if (All.IsPresent)", source);
+        Assert.DoesNotContain("public int Top", source);
+        Assert.DoesNotContain("fetched", source);
+    }
+
+    // The continuation request re-applies headers (ConsistencyLevel on page 2+ of a $search
+    // query, caller -Headers) but never query bindings: the nextLink already carries the
+    // original query state, and a raw-URL builder ignores templated query parameters, so
+    // re-binding them would be dead code.
+    [Fact]
+    public void ContinuationReappliesHeadersButNeverQueryBindings()
+    {
+        var naming = new CmdletNaming(
+            VerbsClass: "VerbsCommon",
+            VerbName: "Get",
+            Noun: "MgUser_List",
+            ClassName: "GetMgUser_ListCommand",
+            PathParamNames: [],
+            BuilderExpression: "Users",
+            HeaderParams: new[] { new HeaderParam("ConsistencyLevel", "ConsistencyLevel") });
+
+        var source = CmdletEmitter.EmitListGet(naming, new EmitContext("Test.Client"), "User",
+            "UserCollectionResponse", new HashSet<string> { "$filter", "$search" });
+
+        var continuation = source[source.IndexOf(".WithUrl(")..];
+        Assert.Contains("requestConfiguration.Headers.Add(\"ConsistencyLevel\", ConsistencyLevel!);", continuation);
+        Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", continuation);
+        Assert.DoesNotContain("QueryParameters", continuation);
+    }
+
+    // The public dispatcher must declare -All on its List set (the binder rejects an undeclared
+    // parameter before ProcessRecord, so an -All the dispatcher lacks never reaches forwarding),
+    // and both of its catch layers must pass a pipeline stop through rather than re-branding it.
+    [Fact]
+    public void DispatcherDeclaresAllOnListSetAndPassesPipelineStopThrough()
+    {
+        var list = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/users"));
+        var item = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/users/{user-id}"));
+
+        var source = CmdletEmitter.EmitGetDispatcher(
+            list, item, Naming.WithSuffix(list, "_List"), Naming.WithSuffix(item, "_Get"),
+            new EmitContext("Test.Client"), "User", "UserCollectionResponse",
+            new HashSet<string> { "$top" }, new HashSet<string>());
+
+        Assert.Contains("public SwitchParameter All { get; set; }", source);
+        Assert.Contains("catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)", source);
+        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)", source);
+    }
+
+    // Delta pins (#3742). A change-tracking read is a function by classification but a paged
+    // collection in practice, so it gets its own shape. The contract and its evidence live in
+    // tools/WrapperGenerator/docs/edge-cases/delta-edge-cases.md.
+    private static string EmitDeltaSource(IReadOnlySet<string>? queryParams = null)
+    {
+        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/users/delta()"));
+        return CmdletEmitter.EmitDelta(naming, new EmitContext("Test.Client"),
+            new CmdletEmitter.CallPlan("GetAsDeltaGetResponseAsync", "DeltaGetResponse", BodyTypeName: null),
+            queryParams ?? new HashSet<string> { "$top", "$filter" });
+    }
+
+    // Initial sync and resume are one command with two parameter sets: the published SDK folds
+    // the token form into the canonical delta command rather than shipping it separately.
+    // -DeltaLink is universal, where a token argument exists on only a few routes.
+    [Fact]
+    public void DeltaEmitsSyncAndResumeParameterSets()
+    {
+        var source = EmitDeltaSource();
+
+        Assert.Contains("DefaultParameterSetName = \"DeltaSync\"", source);
+        Assert.Contains("[Parameter(Mandatory = true, ParameterSetName = \"Resume\")]", source);
+        Assert.Contains("public string DeltaLink { get; set; }", source);
+        Assert.Contains("ParameterSetName == \"Resume\"", source);
+        Assert.Contains(".WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(", source);
+
+        // Query options belong to the initial sync only.
+        Assert.Contains("[Parameter(Mandatory = false, ParameterSetName = \"DeltaSync\")]", source);
+
+        // The token form must never appear as a parameter or a command of its own.
+        Assert.DoesNotContain("Token", source);
+    }
+
+    // Resuming from a link must not demand the path ids the link already carries - the raw-URL
+    // builder discards them anyway. Found by the delta gate: with the ids mandatory in every set,
+    // -DeltaLink failed binding with "missing mandatory parameters".
+    [Fact]
+    public void DeltaScopesPathIdsToTheInitialSyncSet()
+    {
+        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/delta()"));
+        var source = CmdletEmitter.EmitDelta(naming, new EmitContext("Test.Client"),
+            new CmdletEmitter.CallPlan("GetAsDeltaGetResponseAsync", "DeltaGetResponse", BodyTypeName: null),
+            new HashSet<string>());
+
+        Assert.Contains("[Parameter(Mandatory = true, Position = 0, ParameterSetName = \"DeltaSync\")]", source);
+        Assert.DoesNotContain("[Parameter(Mandatory = true, Position = 0)]", source);
+    }
+
+    // The terminal link is published to a caller-named variable, the idiom this SDK already uses
+    // for returning a scalar beside a pipeline, and cleared first so a failed run cannot leave
+    // the previous run's link readable.
+    [Fact]
+    public void DeltaPublishesTerminalLinkAndClearsItFirst()
+    {
+        var source = EmitDeltaSource();
+
+        Assert.Contains("[Alias(\"DLV\")]", source);
+        Assert.Contains("public string? DeltaLinkVariable { get; set; }", source);
+        Assert.Contains("SessionState.PSVariable.Set(DeltaLinkVariable, null);", source);
+        Assert.Contains("SessionState.PSVariable.Set(DeltaLinkVariable, deltaLink);", source);
+
+        // Clearing must precede the request, or a failure leaves a stale link behind.
+        Assert.True(source.IndexOf("SessionState.PSVariable.Set(DeltaLinkVariable, null);", StringComparison.Ordinal)
+            < source.IndexOf("result = ParameterSetName", StringComparison.Ordinal));
+    }
+
+    // Every terminal state is decided explicitly; a response carrying both links is refused
+    // rather than guessed at.
+    [Fact]
+    public void DeltaHandlesEveryTerminalState()
+    {
+        var source = EmitDeltaSource();
+
+        Assert.Contains("if (!string.IsNullOrEmpty(nextLink) && !string.IsNullOrEmpty(deltaLink))", source);
+        Assert.Contains("\"InvalidDeltaResponse\"", source);
+        Assert.Contains("if (string.IsNullOrEmpty(nextLink)) break;", source);
+        Assert.Contains("WriteWarning(\"More results are available. Use -All to return all pages.\");", source);
+        Assert.Contains("if (Stopping) break;", source);
+        Assert.Contains("if (this.IsParameterBound(nameof(Top)) && fetched >= Top) break;", source);
+        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)", source);
+
+        // Continuation re-applies headers only: the link already carries the query state.
+        var continuation = source[source.IndexOf(".WithUrl(nextLink)", StringComparison.Ordinal)..];
+        Assert.DoesNotContain("QueryParameters", continuation);
+    }
+
+    // Without a declared $top there is no cap to enforce, so no counter is emitted either -
+    // an unused variable would not compile cleanly and would be dead weight in every file.
+    [Fact]
+    public void DeltaWithoutTopEmitsNoCounter()
+    {
+        var source = EmitDeltaSource(new HashSet<string>());
+
+        Assert.Contains("if (Stopping) break;", source);
+        Assert.DoesNotContain("fetched", source);
+        Assert.DoesNotContain("public int Top", source);
+    }
+
+    // Control: non-list shapes must not grow paging machinery.
+    [Fact]
+    public void NonListShapesEmitNoPagingMachinery()
+    {
+        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Delete, "/users/{user-id}"));
+
+        var source = CmdletEmitter.EmitRemove(naming, new EmitContext("Test.Client"));
+
+        Assert.DoesNotContain("WithUrl", source);
+        Assert.DoesNotContain("SwitchParameter All", source);
+        Assert.DoesNotContain("WriteWarning", source);
     }
 
     // A collision-renamed property must emit the suffixed PARAMETER but assign the model's

@@ -4,59 +4,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Management.Automation;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Kiota.Abstractions;
-using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Abstractions.Serialization;
 
-namespace Microsoft.Graph.PowerShell.Search
+namespace Microsoft.Graph.Wrapper.Runtime
 {
-    // The Graph operation each cmdlet was generated from, carried into the compiled assembly so
-    // verification tooling reads the operation's identity from the build output rather than
-    // reconstructing it from the builder expression. That reconstruction is lossy for a function
-    // (the builder member keeps the argument names but not the OData argument syntax) and wrong
-    // for a namespace-qualified action (kiota keeps the qualifier, the route does not).
-    [AttributeUsage(AttributeTargets.Class)]
-    public sealed class GraphRouteAttribute : Attribute
-    {
-        public GraphRouteAttribute(string method, string path)
-        {
-            Method = method;
-            Path = path;
-        }
-
-        public string Method { get; }
-
-        public string Path { get; }
-    }
-
-    internal static class CmdletExtensions
-    {
-        public static bool IsParameterBound(this PSCmdlet cmdlet, string parameterName)
-            => cmdlet.MyInvocation?.BoundParameters.ContainsKey(parameterName) ?? false;
-    }
-
-    // Minimal IAuthenticationProvider for the -AccessToken path: just stamps the bearer header
-    // Kiota's own request-adapter pipeline expects, no token acquisition/refresh.
-    internal sealed class StaticBearerTokenAuthenticationProvider : IAuthenticationProvider
-    {
-        private readonly string _token;
-
-        public StaticBearerTokenAuthenticationProvider(string token)
-        {
-            _token = token.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase)
-                ? token.Substring(7)
-                : token;
-        }
-
-        public Task AuthenticateRequestAsync(RequestInformation request, Dictionary<string, object>? additionalAuthenticationContext = null, CancellationToken cancellationToken = default)
-        {
-            request.Headers.TryAdd("Authorization", $"Bearer {_token}");
-            return Task.CompletedTask;
-        }
-    }
-
     // Converts a PowerShell value to the kiota UntypedNode a schema-less property expects.
     // Such a property has no type in the spec, so there is nothing to bind against; taking
     // object and converting here lets the caller write -Maximum 100 or
@@ -65,7 +16,7 @@ namespace Microsoft.Graph.PowerShell.Search
     // Null and empty objects yield null, meaning "omit this property", matching the published
     // SDK: its AddIf helper adds a value only when it is non-null and not an empty JSON object,
     // so a null was never sent on the wire and clearing a field this way was never possible.
-    internal static class UntypedValue
+    public static class UntypedValue
     {
         public static UntypedNode? From(object? value)
         {

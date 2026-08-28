@@ -107,6 +107,29 @@ public sealed partial class PowerShellWrapperGenerationService
         public bool IsCollection => CollectionValueSchema is not null;
     }
 
+    private sealed record DeltaOperationRecord(CmdletNaming Naming, OpenApiOperation Operation, IReadOnlyList<string> QueryParams, string PathTemplate)
+    {
+        // The parameterless form is the canonical command; the argument form is its resume path.
+        public bool IsResumeForm => !LastSegment(PathTemplate).Equals("delta()", StringComparison.Ordinal);
+
+        // Both forms of one operation normalise to the same key, which is what pairs them.
+        public string PairKey => PathTemplate[..^LastSegment(PathTemplate).Length] + "delta()";
+    }
+
+    private static string LastSegment(string pathTemplate)
+    {
+        var i = pathTemplate.LastIndexOf('/');
+        return i < 0 ? pathTemplate : pathTemplate[(i + 1)..];
+    }
+
+    // A change-tracking call, identified by shape rather than by a list of routes: the final
+    // segment is a call whose name is delta, in either its parameterless or argument form.
+    private static bool IsDeltaCall(string pathTemplate)
+    {
+        var last = LastSegment(pathTemplate);
+        return last.StartsWith("delta(", StringComparison.Ordinal) && last.EndsWith(')');
+    }
+
     public async Task GenerateAsync(CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
@@ -120,11 +143,14 @@ public sealed partial class PowerShellWrapperGenerationService
         foreach (var stale in Directory.GetFiles(config.OutputPath, "*.g.cs"))
             File.Delete(stale);
 
-        await File.WriteAllTextAsync(Path.Combine(config.OutputPath, "Shared.g.cs"), CmdletEmitter.EmitSharedAuth(ctx), cancellationToken).ConfigureAwait(false);
-        LogWroteSharedFile();
-
+        // No per-module Shared.g.cs: the helpers it carried (GraphRouteAttribute, UntypedValue,
+        // the bearer provider) live once in Microsoft.Graph.Wrapper.Runtime, which every module
+        // project references.
         var written = 0;
         var getOperations = new List<GetOperationRecord>();
+        // Delta operations are held back for the same reason GETs are: the parameterless form and
+        // its token form are one command, so the decision needs both before either is emitted.
+        var deltaOperations = new List<DeltaOperationRecord>();
 
         foreach (var (pathTemplate, pathItem) in document.Paths)
         {
@@ -191,6 +217,12 @@ public sealed partial class PowerShellWrapperGenerationService
                 // classes kiota generates beside the request builder.
                 if (operationKind != OperationKind.Resource)
                 {
+                    if (operationKind == OperationKind.Function && IsDeltaCall(pathTemplate))
+                    {
+                        deltaOperations.Add(new DeltaOperationRecord(cmdletNaming, operation, queryParams, pathTemplate));
+                        continue;
+                    }
+
                     var operationSource = EmitOperationCall(cmdletNaming, ctx, operation, operationKind, queryParams, pathTemplate);
                     if (operationSource is null)
                         continue;
@@ -305,14 +337,27 @@ public sealed partial class PowerShellWrapperGenerationService
         }
 
         written += await EmitGetOperationsAsync(getOperations, ctx, cancellationToken).ConfigureAwait(false);
+        written += await EmitDeltaOperationsAsync(deltaOperations, ctx, cancellationToken).ConfigureAwait(false);
 
         // All collisions for the run are reported together so one generation surfaces the
         // complete list; see docs/edge-cases/naming-edge-cases.md for how each kind is resolved.
+        //
+        // Fatal only when the derived collision data is IN USE: there a collision means the data
+        // no longer covers the spec, and generating over it would silently drop an operation.
+        // With --no-collision-data the collisions ARE the intended output - that mode exists so
+        // tools/Derive-ParityResolutions.ps1 can inventory the raw, unresolved names - so they
+        // are reported and generation completes. Throwing there made the documented capture
+        // procedure impossible: the derivation asks for a tree the generator refused to produce.
         if (fileCollisions.Count > 0)
         {
-            throw new InvalidOperationException(
-                $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file. " +
-                $"Resolve each with a NamingOverrides rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
+            var summary = $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file.";
+            if (config.UseCollisionData)
+            {
+                throw new InvalidOperationException(
+                    $"{summary} Resolve each with a NamingOverrides rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
+            }
+
+            LogRawCollisionInventory(summary, string.Join("\n  ", fileCollisions));
         }
 
         LogBodyPropertyReconciliation(
@@ -333,6 +378,59 @@ public sealed partial class PowerShellWrapperGenerationService
     // exactly one id, in either of the shapes Naming.IsListItemPair accepts. Everything else
     // keeps the standalone shape: singleton navs with no list (GET /users/{id}/calendar),
     // list-only endpoints such as delta queries, or an unexpected same-noun collision.
+    // One command per change-tracking operation. The published SDK does not ship the argument
+    // form as its own command - it folds it into the canonical delta command - so the argument
+    // form is emitted as this command's Resume parameter set and produces no file of its own.
+    // The pairing is DERIVED from route shape, never from a list of cmdlet names, and anything
+    // the rule cannot resolve fails generation rather than being silently kept or dropped:
+    // a wrong guess here would either invent a command the SDK does not ship or lose an
+    // operation, and both are worse than a build that stops and names the route.
+    private async Task<int> EmitDeltaOperationsAsync(List<DeltaOperationRecord> deltaOperations, EmitContext ctx, CancellationToken cancellationToken)
+    {
+        var written = 0;
+        foreach (var pair in deltaOperations.GroupBy(d => d.PairKey, StringComparer.Ordinal))
+        {
+            var canonical = pair.Where(d => !d.IsResumeForm).ToList();
+            var resume = pair.Where(d => d.IsResumeForm).ToList();
+
+            if (canonical.Count == 0)
+                throw new InvalidOperationException(
+                    $"delta resume form has no parameterless sibling to merge into: {string.Join(", ", resume.Select(r => r.PathTemplate))}");
+            if (canonical.Count > 1)
+                throw new InvalidOperationException(
+                    $"delta operation has {canonical.Count} parameterless forms, so the resume form cannot be attached unambiguously: {string.Join(", ", canonical.Select(c => c.PathTemplate))}");
+            if (resume.Count > 1)
+                throw new InvalidOperationException(
+                    $"delta operation has {resume.Count} resume forms: {string.Join(", ", resume.Select(r => r.PathTemplate))}");
+
+            var op = canonical[0];
+            if (!TryResolveOperationReturnType(op.Operation, ctx, op.Naming, isAction: false, out var returnType, out var methodName, out var returnsStream))
+            {
+                LogSkippedUnsupportedOperation("GET", op.Naming.BuilderExpression, "delta response schema is neither a resolvable entity nor a value-wrapping response");
+                continue;
+            }
+
+            // A delta cmdlet writes the envelope's items to the pipeline and never the envelope
+            // itself, so OutputType has to name the item model. Advertising the response type
+            // describes an object the cmdlet never emits, which is what help, IntelliSense and
+            // anything reading OutputType would then report.
+            string? deltaItemType = null;
+            if (TryGetSuccessJsonSchema(op.Operation) is { } deltaResponseSchema
+                && FindProperty(deltaResponseSchema, "value") is { } deltaValueSchema
+                && TryResolveListEntityTypeName(deltaValueSchema, ctx.ModelsNamespace, out var resolvedItemType))
+            {
+                deltaItemType = resolvedItemType;
+            }
+
+            var source = CmdletEmitter.EmitDelta(op.Naming, ctx,
+                new CmdletEmitter.CallPlan(methodName, returnType, BodyTypeName: null, returnsStream),
+                op.QueryParams.ToHashSet(), deltaItemType);
+            written += await WriteCmdletFileAsync(op.Naming, source, cancellationToken).ConfigureAwait(false);
+        }
+
+        return written;
+    }
+
     private async Task<int> EmitGetOperationsAsync(List<GetOperationRecord> getOperations, EmitContext ctx, CancellationToken cancellationToken)
     {
         var written = 0;
@@ -440,8 +538,6 @@ public sealed partial class PowerShellWrapperGenerationService
         return 1;
     }
 
-    [LoggerMessage(Level = LogLevel.Information, Message = "Wrote Shared.g.cs")]
-    private partial void LogWroteSharedFile();
     [LoggerMessage(Level = LogLevel.Information, Message = "Wrote {FileName} ({Verb}-{Noun})")]
     private partial void LogWroteCmdletFile(string fileName, string verb, string noun);
     [LoggerMessage(Level = LogLevel.Information, Message = "Wrote {Count} file(s) to {OutputPath}")]
@@ -450,6 +546,10 @@ public sealed partial class PowerShellWrapperGenerationService
     private partial void LogSuppressedOperation(string method, string pathTemplate);
     [LoggerMessage(Level = LogLevel.Warning, Message = "Skipped {Method} {PathTemplate}: {Reason}")]
     private partial void LogSkippedUnsupportedOperation(string method, string pathTemplate, string reason);
+    // Only reachable with collision data disabled, where colliding names are the intended output
+    // rather than a defect: the derivation reads them to produce the resolutions.
+    [LoggerMessage(Level = LogLevel.Warning, Message = "{Summary} Collision data is disabled, so these are the raw inventory this run exists to produce.\n  {Collisions}")]
+    private partial void LogRawCollisionInventory(string summary, string collisions);
     // Information, not Warning: an unbindable body property is a known coverage gap per shape,
     // not a defect in this run, and at Graph scale these would drown the operation warnings.
     [LoggerMessage(Level = LogLevel.Information, Message = "Unbound body property {Noun}.{Property}: {Shape} (required={IsRequired})")]

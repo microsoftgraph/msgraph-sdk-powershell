@@ -19,19 +19,26 @@ Three rules the runner enforces on itself:
 Gate order matters: the generator is built first, then the corpus is generated and compiled, and
 the remaining gates read that output.
 
-.PARAMETER OutputRoot
-Where modules are generated and built. Default: <repo>/artifacts/wrapper-modules.
+.PARAMETER CorpusRoot
+Root of the committed wrapper corpus, whose modules live at
+<CorpusRoot>/<Module>/wrapper/<ApiVersion>/. Default: <repo>/src - the same root
+Compare-WrapperOperationInventory.ps1 walks. Build-WrapperModule.ps1 writes there and nowhere
+else, so this is a root to READ, not a destination to choose.
+
+.PARAMETER ApiVersion
+Which generated API version the gates read. Default: v1.0.
 
 .PARAMETER Configuration
-Build configuration. Default: Release. Build and test use the SAME value here, which is the
-mismatch that once left the runtime gate validating a stale Debug assembly.
+Build configuration for the gates that compile and read build output. Default: Release. The
+runtime gate is not one of them - it validates the packed module, and refuses a package older
+than the project that produced it.
 
 .PARAMETER InventoryBaseline
 CSV captured from a PREVIOUS generator, for the operation-inventory diff. Without it that gate
 reports NOT-RUN: comparing a tree against itself proves nothing.
 
 .PARAMETER SkipBuild
-Reuse the modules already under -OutputRoot instead of regenerating. Faster, but the result then
+Reuse the modules already under -CorpusRoot instead of regenerating. Faster, but the result then
 describes whatever is on disk; the runtime gate's staleness check is what stops that being a lie.
 
 .EXAMPLE
@@ -42,7 +49,9 @@ describes whatever is on disk; the runtime gate's staleness check is what stops 
 #>
 [CmdletBinding()]
 param(
-    [string]$OutputRoot,
+    [string]$CorpusRoot,
+    [ValidateSet('v1.0', 'beta')]
+    [string]$ApiVersion = 'v1.0',
     [string]$Configuration = 'Release',
     [string]$InventoryBaseline,
     [switch]$SkipBuild
@@ -50,7 +59,17 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-if (-not $OutputRoot) { $OutputRoot = Join-Path $repoRoot 'artifacts\wrapper-modules' }
+if (-not $CorpusRoot) { $CorpusRoot = Join-Path $repoRoot 'src' }
+
+# Every gate reads modules from the same place and by the same shape, so a layout change lands
+# in one helper rather than in four globs that can drift apart - which is exactly how this
+# runner came to be pointing at a directory nothing had written to since the corpus moved.
+function Get-ModuleCmdletDirs {
+    Get-ChildItem $CorpusRoot -Directory -ErrorAction SilentlyContinue | ForEach-Object {
+        $c = Join-Path $_.FullName "wrapper\$ApiVersion\Cmdlets"
+        if (Test-Path $c) { [pscustomobject]@{ Module = $_.Name; Cmdlets = $c } }
+    }
+}
 
 $results = [System.Collections.Generic.List[object]]::new()
 
@@ -97,14 +116,14 @@ Add-Gate 'unit-tests' 'classification and emission rules' {
     }
 }
 
-# --- 3. generate + compile every module ----------------------------------------------------
+# --- 3. generate + compile + pack every module ---------------------------------------------
 Add-Gate 'module-compile' 'emitted CLR types match the generated kiota members' {
     if ($SkipBuild) {
         return [pscustomobject]@{ Status = 'NOT-RUN'; Population = '-SkipBuild'; Detail = 'reusing modules already on disk' }
     }
-    $mods = @(Get-ChildItem $OutputRoot -Directory -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Name)
-    if (-not $mods) { return [pscustomobject]@{ Status = 'FAIL'; Population = 'no modules'; Detail = "nothing under $OutputRoot" } }
-    $o = & (Join-Path $PSScriptRoot 'Build-WrapperModule.ps1') -Module $mods -Configuration $Configuration -SkipKiota *>&1 | Out-String
+    $mods = @(Get-ModuleCmdletDirs | Select-Object -ExpandProperty Module)
+    if (-not $mods) { return [pscustomobject]@{ Status = 'FAIL'; Population = 'no modules'; Detail = "no <Module>/wrapper/$ApiVersion/Cmdlets under $CorpusRoot" } }
+    $o = & (Join-Path $PSScriptRoot 'Build-WrapperModule.ps1') -Module $mods -ApiVersion $ApiVersion -Configuration $Configuration -SkipKiota -Pack *>&1 | Out-String
     # The summary table goes through Out-Host, which writes to the console directly and cannot
     # be captured - counting its rows here silently yields zero. The per-module "OK: n cmdlets
     # -> ...psd1" lines are Write-Host (stream 6), which *>&1 does capture, so count those.
@@ -125,22 +144,23 @@ Add-Gate 'naming-parity' 'generated cmdlet names match the published SDK invento
     # A module that emitted no cmdlets has nothing to compare; the parity script errors on an
     # empty folder, which would otherwise be tallied as a naming failure it is not.
     $empty = [System.Collections.Generic.List[string]]::new()
-    $dirs = @(Get-ChildItem $OutputRoot -Directory -ErrorAction SilentlyContinue | ForEach-Object {
-        $c = Join-Path $_.FullName 'src\Cmdlets'
-        if (-not (Test-Path $c)) { return }
-        if (-not @(Get-ChildItem $c -Filter *.g.cs -File | Where-Object Name -ne 'Shared.g.cs')) {
-            $empty.Add($_.Name); return
+    $dirs = @(Get-ModuleCmdletDirs | ForEach-Object {
+        if (-not @(Get-ChildItem $_.Cmdlets -Filter *.g.cs -File | Where-Object Name -ne 'Shared.g.cs')) {
+            $empty.Add($_.Module); return
         }
-        $c
+        $_
     })
     if (-not $dirs) { return [pscustomobject]@{ Status = 'FAIL'; Population = 'no cmdlet folders'; Detail = '' } }
     $matched = 0; $joinable = 0; $failing = [System.Collections.Generic.List[string]]::new()
-    foreach ($d in $dirs) {
-        $o = & (Join-Path $PSScriptRoot 'Compare-WrapperCmdletNames.ps1') -GeneratedPath $d *>&1 | Out-String
+    # The module name travels WITH its path rather than being reconstructed by counting
+    # Split-Path levels: that count was silently wrong the moment the layout gained a level,
+    # and reported every module as "wrapper".
+    foreach ($entry in $dirs) {
+        $o = & (Join-Path $PSScriptRoot 'Compare-WrapperCmdletNames.ps1') -GeneratedPath $entry.Cmdlets *>&1 | Out-String
         $code = $LASTEXITCODE
         $m = [regex]::Match($o, 'TOTAL:\s+(\d+) of (\d+)')
         if ($m.Success) { $matched += [int]$m.Groups[1].Value; $joinable += [int]$m.Groups[2].Value }
-        if ($code -ne 0) { $failing.Add((Split-Path (Split-Path $d -Parent) -Parent | Split-Path -Leaf)) }
+        if ($code -ne 0) { $failing.Add($entry.Module) }
     }
     $emptyNote = if ($empty.Count) { "; $($empty.Count) module(s) emitted no cmdlets and were not compared: $($empty -join ', ')" } else { '' }
     [pscustomobject]@{
@@ -180,10 +200,17 @@ Add-Gate 'coverage-sweep' 'what the classifier itself reports as unbound' {
 
 # --- 7. runtime binding ---------------------------------------------------------------------
 Add-Gate 'runtime-binding' 'PowerShell converts each bound shape at runtime' {
-    $psd1s = @(Get-ChildItem (Join-Path $OutputRoot "*\src\bin\$Configuration\net10.0\Microsoft.Graph.Wrapper.*.psd1") -ErrorAction SilentlyContinue)
-    $mods = @($psd1s | ForEach-Object { $_.FullName -replace [regex]::Escape($OutputRoot + '\'), '' -replace '\\src.*', '' } | Sort-Object -Unique)
+    # The target framework is not named here: the module projects declare it in their template,
+    # and a hard-coded folder went silently blind the day that value changed.
+    $mods = @(Get-ModuleCmdletDirs | Where-Object {
+        $bin = Join-Path (Split-Path $_.Cmdlets -Parent) "bin\$Configuration"
+        (Test-Path $bin) -and @(Get-ChildItem $bin -Recurse -Filter 'Microsoft.Graph.Wrapper.*.psd1' -File -ErrorAction SilentlyContinue)
+    } | Select-Object -ExpandProperty Module | Sort-Object -Unique)
     if (-not $mods) { return [pscustomobject]@{ Status = 'FAIL'; Population = 'no manifests'; Detail = 'nothing built to test' } }
-    $o = & (Join-Path $PSScriptRoot 'Test-WrapperModule.ps1') -Module $mods -Configuration $Configuration *>&1 | Out-String
+    # No -Configuration: this gate validates the PACKED module, not build output, and
+    # Test-WrapperModule.ps1 has no such parameter - passing it threw before the call ran.
+    # Staleness is that script's own concern; it refuses a package older than its project.
+    $o = & (Join-Path $PSScriptRoot 'Test-WrapperModule.ps1') -Module $mods -ApiVersion $ApiVersion *>&1 | Out-String
     $code = $LASTEXITCODE
     $pass = [regex]::Matches($o, '(?m)^\s+PASS: ').Count
     $fail = [regex]::Matches($o, '(?m)^\s+FAIL: ').Count
@@ -211,7 +238,7 @@ Add-Gate 'operation-inventory' 'a parameter change did not alter which operation
             Detail = "no $([System.IO.Path]::GetFileName($InventoryBaseline)).generator stamp - cannot prove the baseline predates this generator" }
     }
     $after = Join-Path ([System.IO.Path]::GetTempPath()) "wrapper-inventory-after.csv"
-    $o = & (Join-Path $PSScriptRoot 'Compare-WrapperOperationInventory.ps1') -Path $OutputRoot -Baseline $InventoryBaseline -Compare $after *>&1 | Out-String
+    $o = & (Join-Path $PSScriptRoot 'Compare-WrapperOperationInventory.ps1') -Path $CorpusRoot -Baseline $InventoryBaseline -Compare $after *>&1 | Out-String
     $code = $LASTEXITCODE
     $added = [regex]::Match($o, 'added:\s+(\d+)').Groups[1].Value
     $removed = [regex]::Match($o, 'removed:\s+(\d+)').Groups[1].Value

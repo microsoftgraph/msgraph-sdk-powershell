@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,40 +10,12 @@ namespace WrapperGenerator;
 // property/indexer chain for the actual request.
 public static class CmdletEmitter
 {
-    // Repeated verbatim in every emitted cmdlet. EmitSharedAuth provides the two helpers this
-    // block depends on: IsParameterBound and StaticBearerTokenAuthenticationProvider.
+    // Transport acquisition lives on GraphClientCmdlet in Microsoft.Graph.Wrapper.Runtime: the
+    // session path reuses one adapter keyed to the session HttpClient's identity, the token
+    // path shares one HttpClient with per-request auth. Only the client construction is emitted.
     private const string AuthBlock = """
 
-                // ── Choose HttpClient + auth provider ─────────────────────────────
-                HttpClient httpClient;
-                IAuthenticationProvider authProvider;
-
-                if (this.IsParameterBound(nameof(AccessToken)))
-                {
-                    httpClient = new HttpClient();
-                    authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
-                }
-                else
-                {
-                    WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
-                    try
-                    {
-                        httpClient = HttpHelpers.GetGraphHttpClient();
-                    }
-                    catch (Exception ex)
-                    {
-                        ThrowTerminatingError(new ErrorRecord(
-                            new InvalidOperationException(
-                                "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
-                            "NoGraphSession",
-                            ErrorCategory.AuthenticationError,
-                            null));
-                        return;
-                    }
-                    authProvider = new AnonymousAuthenticationProvider();
-                }
-
-                var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+                var requestAdapter = GetRequestAdapter();
                 var client = new ApiClient(requestAdapter);
         """;
 
@@ -54,11 +26,17 @@ public static class CmdletEmitter
     private static string EscapeLiteral(string value) =>
         value.Replace("\\", "\\\\", StringComparison.Ordinal).Replace("\"", "\\\"", StringComparison.Ordinal);
 
-    private static string PathParams(CmdletNaming naming) =>
-        string.Join("\n", naming.PathParamNames.Select((name, i) => $$"""
-                [Parameter(Mandatory = true, Position = {{i}})]
+    // parameterSetName scopes the ids to one set. Only the delta shape needs it: resuming from a
+    // link must not demand path ids the link already carries, and which the raw-URL builder
+    // discards. Everywhere else the ids belong to every set, which is what null produces.
+    private static string PathParams(CmdletNaming naming, string? parameterSetName = null)
+    {
+        var setAttr = parameterSetName is null ? "" : $", ParameterSetName = \"{parameterSetName}\"";
+        return string.Join("\n", naming.PathParamNames.Select((name, i) => $$"""
+                [Parameter(Mandatory = true, Position = {{i}}{{setAttr}})]
                 public string {{name}} { get; set; } = string.Empty;
         """));
+    }
 
     private static string TargetId(CmdletNaming naming) =>
         naming.PathParamNames.Count > 0 ? naming.PathParamNames[^1] : "null";
@@ -105,42 +83,35 @@ public static class CmdletEmitter
         return (shared, listOnly, getOnly);
     }
 
-    // Every emitted cmdlet accepts -AccessToken as an alternative to an active Connect-MgGraph
-    // session. See AuthBlock.
-    private static string AccessTokenParamDecl() => """
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
-""";
+    // -AccessToken is declared once on GraphClientCmdlet and inherited; nothing is emitted.
+    private static string AccessTokenParamDecl() => "";
 
     // The shared try/catch tail around every Graph call. Only the ErrorRecord's target object
     // varies, and sometimes the nesting depth (EmitUpdate's re-fetch sits one block deeper).
+    // The error surface itself (id, category) lives on GraphClientCmdlet. A pipeline stop
+    // (downstream Select-Object -First, Ctrl+C) passes through untouched: it is the engine's
+    // stop signal, not a Graph failure. The filter is load-bearing only where WriteObject runs
+    // inside the try - list workers and dispatchers - and is emitted uniformly so every catch
+    // tail in the corpus stays identical.
     private static string CatchBlock(string targetIdExpr, string extraIndent = "") => $$"""
-            {{extraIndent}}catch (Exception ex)
+            {{extraIndent}}catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {{extraIndent}}{
-                {{extraIndent}}ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, {{targetIdExpr}}));
+                {{extraIndent}}ThrowGraphRequestFailed(ex, {{targetIdExpr}});
                 {{extraIndent}}return;
             {{extraIndent}}}
 """;
 
     // The -Headers dictionary, matching the published SDK's parameter of the same name. It
     // lets a caller set any header, not just the ones the spec declares.
-    private static string GenericHeadersParamDecl() => $$"""
+    // -Headers is declared once on GraphClientCmdlet and inherited; nothing is emitted.
+    private static string GenericHeadersParamDecl() => "";
 
-
-                [Parameter(Mandatory = false,
-                    HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-                public System.Collections.IDictionary? Headers { get; set; }
-        """;
-
+    // Copying -Headers onto the outgoing request lives on GraphClientCmdlet; the call stays in
+    // the per-request configuration lambda so the headers apply per request.
     private static string GenericHeadersBinding(string extraIndent = "") => $$"""
 
 
-                {{extraIndent}}if (this.IsParameterBound(nameof(Headers)))
-                {{extraIndent}}{
-                {{extraIndent}}    foreach (System.Collections.DictionaryEntry entry in Headers!)
-                {{extraIndent}}        requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
-                {{extraIndent}}}
+                {{extraIndent}}AddRequestHeaders(requestConfiguration.Headers);
         """;
 
     // Post/Patch/DeleteAsync always take a requestConfiguration lambda, because -Headers exists
@@ -167,7 +138,7 @@ public static class CmdletEmitter
     // (Get-MgUserPhotoContent -OutFile <path>). It is optional: the shipped reporting cmdlets
     // are documented without it, so an unbound -OutFile writes the bytes to the pipeline
     // instead, and both documented usages work.
-    // The [GraphRoute] attribute line for a cmdlet class. See GraphRouteAttribute in Shared.g.cs.
+    // The [GraphRoute] attribute line for a cmdlet class. See GraphRouteAttribute in Microsoft.Graph.Wrapper.Runtime.
     private static string RouteAttr(CmdletNaming naming) =>
         $"    [GraphRoute(\"{EscapeLiteral(naming.SourceMethod)}\", \"{EscapeLiteral(naming.SourcePath)}\")]";
 
@@ -314,7 +285,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using {{ctx.ModelsNamespace}};
 using Microsoft.Kiota.Abstractions;
@@ -326,7 +297,7 @@ namespace {{ctx.CmdletNamespace}}
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
 {{(call.ReturnTypeName is null ? "" : $"    [OutputType(typeof({(call.ReturnsStream ? "byte[]" : call.ReturnTypeName)}))]")}}
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 {{EmitPropertyParameters(properties)}}
@@ -381,7 +352,7 @@ using System;
 using System.Collections.Generic;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using {{ctx.ModelsNamespace}};
 using Microsoft.Kiota.Abstractions;
@@ -393,7 +364,7 @@ namespace {{ctx.CmdletNamespace}}
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
     [OutputType(typeof({{(call.ReturnsStream ? "byte[]" : call.ReturnTypeName)}}))]
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 {{FunctionParamDecls(naming)}}
@@ -424,6 +395,156 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
+    // A delta (change-tracking) read. It is a function by classification, but its response is a
+    // change set spread over nextLink pages and terminated by a deltaLink, so it gets its own
+    // shape rather than the function template: items are enumerated like a list, and the
+    // terminal link is published to a caller-named variable. The token form of the same
+    // operation (delta(token='{token}')) is NOT a separate command - it is this command's
+    // Resume parameter set, reached through -DeltaLink, which works for every delta route
+    // rather than only the five whose spec declares a token argument.
+    // Contract and evidence: docs/edge-cases/delta-edge-cases.md.
+    // itemTypeName is the model the cmdlet actually writes; it falls back to the response type only
+    // when the item cannot be resolved, so OutputType is never left describing nothing.
+    public static string EmitDelta(CmdletNaming naming, EmitContext ctx, CallPlan call, IReadOnlySet<string> queryParamNames, string? itemTypeName = null)
+    {
+        ArgumentNullException.ThrowIfNull(naming);
+        ArgumentNullException.ThrowIfNull(ctx);
+        ArgumentNullException.ThrowIfNull(call);
+        ArgumentNullException.ThrowIfNull(queryParamNames);
+
+        // Query options belong to the initial sync only: a resume or continuation starts from a
+        // link that already encodes them, and a raw-URL builder ignores them anyway.
+        var applicable = CollectionQueryOptions.Where(o => queryParamNames.Contains(o.ODataName)).ToList();
+        var queryParamDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl("DeltaSync")));
+        var queryBindings = string.Join("\n\n", applicable.Select(o => o.Binding));
+
+        // -Top caps the total at whole-page granularity, as it does for list cmdlets; the counter
+        // exists only when the operation declares $top.
+        var hasTop = queryParamNames.Contains("$top");
+        var fetchedDecl = hasTop ? "\n                var fetched = 0;" : "";
+        var fetchedAdd = hasTop ? "\n                        fetched += items.Count;" : "";
+        var capGuard = hasTop
+            ? "\n                    if (this.IsParameterBound(nameof(Top)) && fetched >= Top) break;"
+            : "";
+        var receiver = $"client.{naming.BuilderExpression}";
+        var continuationConfig = HeaderBindingsFor(naming.HeaderParams, extraIndent: "        ") + GenericHeadersBinding("        ");
+
+        return $$"""
+#nullable enable
+
+using System;
+using System.Collections.Generic;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using {{ctx.ClientNamespace}};
+using {{ctx.ModelsNamespace}};
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace {{ctx.CmdletNamespace}}
+{
+{{RouteAttr(naming)}}
+    [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", DefaultParameterSetName = "DeltaSync")]
+    [OutputType(typeof({{itemTypeName ?? call.ReturnTypeName}}))]
+    public class {{naming.ClassName}} : GraphClientCmdlet
+    {
+{{PathParams(naming, "DeltaSync")}}
+
+{{AccessTokenParamDecl()}}
+
+{{queryParamDecls}}
+
+        // Resumes a previous sync from the link that run published. Universal: every delta
+        // request builder accepts a raw URL, whereas a token argument exists on only a few.
+        [Parameter(Mandatory = true, ParameterSetName = "Resume")]
+        public string DeltaLink { get; set; } = string.Empty;
+
+        // Follows @odata.nextLink through the change set. Without it only the first page returns,
+        // plus a warning when more pages exist.
+        [Parameter(Mandatory = false)]
+        public SwitchParameter All { get; set; }
+
+        // Receives the @odata.deltaLink that terminates the change set, for the next sync round.
+        // A named variable is how this SDK already returns a scalar alongside a pipeline
+        // (-CountVariable on the published list cmdlets).
+        [Parameter(Mandatory = false)]
+        [Alias("DLV")]
+        public string? DeltaLinkVariable { get; set; }
+{{HeaderParamDecls(naming)}}
+{{GenericHeadersParamDecl()}}
+
+        protected override void ProcessRecord()
+        {
+{{AuthBlock}}
+
+            // Cleared before the request so a failed or interrupted run cannot leave the previous
+            // run's link readable, which would silently resume from the wrong point.
+            if (this.IsParameterBound(nameof(DeltaLinkVariable)))
+                SessionState.PSVariable.Set(DeltaLinkVariable, null);
+
+            {{call.ReturnTypeName}}? result;
+            try
+            {
+                result = ParameterSetName == "Resume"
+                    ? {{receiver}}.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).{{call.MethodName}}(requestConfiguration =>
+                        {{{continuationConfig}}
+                        }).GetAwaiter().GetResult()
+                    : {{EmitCallOn(receiver, naming, call.MethodName, null, queryBindings)}}.GetAwaiter().GetResult();
+{{fetchedDecl}}
+                while (true)
+                {
+                    if (result?.Value is { } items)
+                    {
+                        WriteObject(items, enumerateCollection: true);{{fetchedAdd}}
+                    }
+
+                    var nextLink = result?.OdataNextLink;
+                    var deltaLink = result?.OdataDeltaLink;
+
+                    // A response cannot be both continued and terminated; treating one as
+                    // authoritative would silently drop pages or resume from a partial set.
+                    if (!string.IsNullOrEmpty(nextLink) && !string.IsNullOrEmpty(deltaLink))
+                    {
+                        ThrowTerminatingError(new ErrorRecord(
+                            new InvalidOperationException("The response carries both @odata.nextLink and @odata.deltaLink, which is not a valid delta response."),
+                            "InvalidDeltaResponse", ErrorCategory.InvalidData, targetObject: null));
+                        return;
+                    }
+
+                    if (!string.IsNullOrEmpty(deltaLink))
+                    {
+                        if (this.IsParameterBound(nameof(DeltaLinkVariable)))
+                            SessionState.PSVariable.Set(DeltaLinkVariable, deltaLink);
+                        break;
+                    }
+
+                    // No link of either kind: the change set ends here and there is nothing to
+                    // publish for a next round.
+                    if (string.IsNullOrEmpty(nextLink)) break;
+
+                    if (!All.IsPresent)
+                    {
+                        WriteWarning("More results are available. Use -All to return all pages.");
+                        break;
+                    }
+
+                    if (Stopping) break;{{capGuard}}
+
+                    result = {{receiver}}.WithUrl(nextLink).{{call.MethodName}}(requestConfiguration =>
+                    {{{continuationConfig}}
+                    }).GetAwaiter().GetResult();
+                }
+            }
+{{CatchBlock(TargetId(naming))}}
+        }
+    }
+}
+
+""";
+    }
+
     // An OData /$value read: the raw bytes behind a resource (a photo, an uploaded file). Kiota
     // types it as Stream from a plain GetAsync on the Content builder. -OutFile matches the
     // published surface (Get-MgUserPhotoContent -OutFile <path>).
@@ -439,7 +560,7 @@ namespace {{ctx.CmdletNamespace}}
 using System;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
@@ -450,7 +571,7 @@ namespace {{ctx.CmdletNamespace}}
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
     [OutputType(typeof({{(returnsStream ? "byte[]" : returnTypeName)}}))]
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 
@@ -492,7 +613,7 @@ namespace {{ctx.CmdletNamespace}}
 using System;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
@@ -503,7 +624,7 @@ namespace {{ctx.CmdletNamespace}}
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof({{(returnsStream ? "byte[]" : returnTypeName)}}))]
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 
@@ -561,7 +682,7 @@ namespace {{ctx.CmdletNamespace}}
 using System;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
@@ -572,7 +693,7 @@ namespace {{ctx.CmdletNamespace}}
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
     [OutputType(typeof({{clrType}}))]
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 
@@ -623,7 +744,7 @@ namespace {{ctx.CmdletNamespace}}
 using System;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using {{ctx.ModelsNamespace}};
 using Microsoft.Kiota.Abstractions;
@@ -635,7 +756,7 @@ namespace {{ctx.CmdletNamespace}}
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
     [OutputType(typeof({{entityType}}))]
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 
@@ -713,13 +834,25 @@ namespace {{ctx.CmdletNamespace}}
         var paramDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl(null)));
         var bindings = string.Join("\n\n", applicable.Select(o => o.Binding));
 
+        // -Top is a TOTAL cap under -All, at whole-page granularity - the published ListCmdlet's
+        // semantics: limit = Top, iterate while fetched < limit, and whole final pages ship
+        // because the overflow trimmer has zero call sites in current generated output (its
+        // injection directive anchors on a callback name autorest no longer emits; evidence in
+        // docs/pagination.md). The counter exists only when the operation declares $top; without
+        // it the loop is uncapped and only nextLink exhaustion or a pipeline stop ends it.
+        var hasTop = queryParamNames.Contains("$top");
+        var fetchedInit = hasTop ? "\n                    var fetched = result?.Value?.Count ?? 0;" : "";
+        var capCondition = hasTop ? " && (!this.IsParameterBound(nameof(Top)) || fetched < Top)" : "";
+        var fetchedAdd = hasTop ? "\n                            fetched += page.Count;" : "";
+        var continuationHeaders = HeaderBindingsFor(naming.HeaderParams, extraIndent: "        ") + GenericHeadersBinding("        ");
+
         return $$"""
 #nullable enable
 
 using System;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using {{ctx.ModelsNamespace}};
 using Microsoft.Kiota.Abstractions;
@@ -731,13 +864,19 @@ namespace {{ctx.CmdletNamespace}}
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}")]
     [OutputType(typeof({{entityType}}))]
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 
 {{AccessTokenParamDecl()}}
 
 {{paramDecls}}
+
+        // Follows every @odata.nextLink until the collection is exhausted (a bound -Top caps
+        // the total). Without it only the first page returns, plus a truncation warning when
+        // more pages existed.
+        [Parameter(Mandatory = false)]
+        public SwitchParameter All { get; set; }
 {{HeaderParamDecls(naming)}}
 {{GenericHeadersParamDecl()}}
 
@@ -754,13 +893,39 @@ namespace {{ctx.CmdletNamespace}}
 {{HeaderBindings(naming)}}
 {{GenericHeadersBinding()}}
                 }).GetAwaiter().GetResult();
+
+                // A collection response and its Value are both nullable on the kiota client; an
+                // empty page writes nothing rather than dereferencing null. Each page streams to
+                // the pipeline before the next request is issued, matching the published SDK.
+                if (result?.Value is { } items)
+                    WriteObject(items, enumerateCollection: true);
+
+                if (All.IsPresent)
+                {{{fetchedInit}}
+                    var nextLink = result?.OdataNextLink;
+                    while (!string.IsNullOrEmpty(nextLink) && !Stopping{{capCondition}})
+                    {
+                        // The nextLink already carries the original query state, and a raw-URL
+                        // builder ignores templated query parameters anyway - so the continuation
+                        // re-applies headers only; query bindings here would be dead code.
+                        result = client.{{naming.BuilderExpression}}.WithUrl(nextLink).GetAsync(requestConfiguration =>
+                        {{{continuationHeaders}}
+                        }, StoppingToken).GetAwaiter().GetResult();
+                        if (result?.Value is { } page)
+                        {
+                            WriteObject(page, enumerateCollection: true);{{fetchedAdd}}
+                        }
+                        nextLink = result?.OdataNextLink;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(result?.OdataNextLink))
+                {
+                    // Deliberately stronger than the published SDK, which truncates silently;
+                    // approved in the design spec. One line, no extra request.
+                    WriteWarning("More results are available. Use -All to return all pages.");
+                }
             }
 {{CatchBlock(TargetId(naming))}}
-
-            // A collection response and its Value are both nullable on the kiota client; an
-            // empty page writes nothing rather than dereferencing null.
-            if (result?.Value is { } items)
-                WriteObject(items, enumerateCollection: true);
         }
     }
 }
@@ -850,6 +1015,7 @@ namespace {{ctx.CmdletNamespace}}
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ModelsNamespace}};
 
 namespace {{ctx.CmdletNamespace}}
@@ -858,7 +1024,7 @@ namespace {{ctx.CmdletNamespace}}
     [Cmdlet({{listNaming.VerbsClass}}.{{listNaming.VerbName}}, "{{EscapeLiteral(listNaming.Noun)}}", DefaultParameterSetName = "List")]
     [OutputType(typeof({{collectionResponseType}}), ParameterSetName = new[] { "List" })]
     [OutputType(typeof({{entityType}}), ParameterSetName = new[] { "Get" })]
-    public class {{listNaming.ClassName}} : PSCmdlet
+    public class {{listNaming.ClassName}} : GraphClientCmdlet
     {
 {{PairedPathParams(sharedPathParams, getOnlyPathParams)}}
 
@@ -867,6 +1033,12 @@ namespace {{ctx.CmdletNamespace}}
 {{selectExpandDecls}}
 
 {{listOnlyParamDecls}}
+
+        // Declared here because the binder rejects a parameter the dispatcher does not accept
+        // before ProcessRecord ever runs; once declared, the wholesale BoundParameters splat
+        // forwards it to the list worker with no further plumbing.
+        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        public SwitchParameter All { get; set; }
 {{HeaderParamDeclsFor(sharedHeaders, parameterSetName: null)}}
 {{HeaderParamDeclsFor(listOnlyHeaders, parameterSetName: "List")}}
 {{HeaderParamDeclsFor(getOnlyHeaders, parameterSetName: "Get")}}
@@ -890,8 +1062,9 @@ namespace {{ctx.CmdletNamespace}}
             // as a RuntimeException carrying the worker's ErrorRecord. Rethrow that record
             // unchanged so the caller sees the worker's error identity (NoGraphSession,
             // GraphRequestFailed, ...) instead of every failure collapsing into a generic
-            // dispatcher error.
-            catch (RuntimeException rex) when (rex.ErrorRecord is not null)
+            // dispatcher error. A pipeline stop is a RuntimeException too and must NOT be
+            // rethrown as a terminating error - both filters here let it pass to the engine.
+            catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)
             {
                 ThrowTerminatingError(rex.ErrorRecord);
                 return;
@@ -918,7 +1091,7 @@ using System;
 using System.Linq;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using {{ctx.ModelsNamespace}};
 using Microsoft.Kiota.Abstractions.Authentication;
@@ -929,7 +1102,7 @@ namespace {{ctx.CmdletNamespace}}
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof({{entityType}}))]
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 {{EmitPropertyParameters(properties)}}
@@ -980,7 +1153,7 @@ using System;
 using System.Linq;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using {{ctx.ModelsNamespace}};
 using Microsoft.Kiota.Abstractions.Authentication;
@@ -991,7 +1164,7 @@ namespace {{ctx.CmdletNamespace}}
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof({{entityType}}))]
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 {{EmitPropertyParameters(properties)}}
@@ -1040,7 +1213,7 @@ namespace {{ctx.CmdletNamespace}}
 using System;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using {{ctx.ClientNamespace}};
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
@@ -1049,7 +1222,7 @@ namespace {{ctx.CmdletNamespace}}
 {
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class {{naming.ClassName}} : PSCmdlet
+    public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming)}}
 {{HeaderParamDecls(naming)}}
@@ -1074,148 +1247,6 @@ namespace {{ctx.CmdletNamespace}}
     }
 }
 
-""";
-    }
-
-    // Written once per module. Every cmdlet file relies on same-namespace visibility for these
-    // helpers instead of carrying its own copy.
-    public static string EmitSharedAuth(EmitContext ctx)
-    {
-        ArgumentNullException.ThrowIfNull(ctx);
-        return $$"""
-#nullable enable
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Management.Automation;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Kiota.Abstractions;
-using Microsoft.Kiota.Abstractions.Authentication;
-using Microsoft.Kiota.Abstractions.Serialization;
-
-namespace {{ctx.CmdletNamespace}}
-{
-    // The Graph operation each cmdlet was generated from, carried into the compiled assembly so
-    // verification tooling reads the operation's identity from the build output rather than
-    // reconstructing it from the builder expression. That reconstruction is lossy for a function
-    // (the builder member keeps the argument names but not the OData argument syntax) and wrong
-    // for a namespace-qualified action (kiota keeps the qualifier, the route does not).
-    [AttributeUsage(AttributeTargets.Class)]
-    public sealed class GraphRouteAttribute : Attribute
-    {
-        public GraphRouteAttribute(string method, string path)
-        {
-            Method = method;
-            Path = path;
-        }
-
-        public string Method { get; }
-
-        public string Path { get; }
-    }
-
-    internal static class CmdletExtensions
-    {
-        public static bool IsParameterBound(this PSCmdlet cmdlet, string parameterName)
-            => cmdlet.MyInvocation?.BoundParameters.ContainsKey(parameterName) ?? false;
-    }
-
-    // Minimal IAuthenticationProvider for the -AccessToken path: just stamps the bearer header
-    // Kiota's own request-adapter pipeline expects, no token acquisition/refresh.
-    internal sealed class StaticBearerTokenAuthenticationProvider : IAuthenticationProvider
-    {
-        private readonly string _token;
-
-        public StaticBearerTokenAuthenticationProvider(string token)
-        {
-            _token = token.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase)
-                ? token.Substring(7)
-                : token;
-        }
-
-        public Task AuthenticateRequestAsync(RequestInformation request, Dictionary<string, object>? additionalAuthenticationContext = null, CancellationToken cancellationToken = default)
-        {
-            request.Headers.TryAdd("Authorization", $"Bearer {_token}");
-            return Task.CompletedTask;
-        }
-    }
-
-    // Converts a PowerShell value to the kiota UntypedNode a schema-less property expects.
-    // Such a property has no type in the spec, so there is nothing to bind against; taking
-    // object and converting here lets the caller write -Maximum 100 or
-    // -ContentInfo @{ a = 1 } instead of constructing an UntypedNode subclass by hand.
-    //
-    // Null and empty objects yield null, meaning "omit this property", matching the published
-    // SDK: its AddIf helper adds a value only when it is non-null and not an empty JSON object,
-    // so a null was never sent on the wire and clearing a field this way was never possible.
-    internal static class UntypedValue
-    {
-        public static UntypedNode? From(object? value)
-        {
-            // PowerShell hands parameters over wrapped; the wrapper is not the value.
-            if (value is PSObject psObject)
-                value = psObject.BaseObject;
-
-            switch (value)
-            {
-                case null:
-                    return null;
-                case string s:
-                    return new UntypedString(s);
-                case bool b:
-                    return new UntypedBoolean(b);
-                case int i:
-                    return new UntypedInteger(i);
-                case long l:
-                    return new UntypedLong(l);
-                case float f:
-                    return new UntypedFloat(f);
-                case double d:
-                    return new UntypedDouble(d);
-                case decimal m:
-                    return new UntypedDecimal(m);
-                case byte or sbyte or short or ushort or uint:
-                    return new UntypedInteger(Convert.ToInt32(value));
-                case ulong ul:
-                    return new UntypedLong(checked((long)ul));
-                case IDictionary dictionary:
-                    {
-                        var members = new Dictionary<string, UntypedNode>(StringComparer.Ordinal);
-                        foreach (DictionaryEntry entry in dictionary)
-                        {
-                            var key = entry.Key?.ToString();
-                            if (key is null)
-                                continue;
-                            // Dropped, not sent. The published SDK has no untyped bag to copy
-                            // here, so this extends its top-level rule rather than inheriting it.
-                            var member = From(entry.Value);
-                            if (member is not null)
-                                members[key] = member;
-                        }
-                        return members.Count == 0 ? null : new UntypedObject(members);
-                    }
-                case IEnumerable sequence:
-                    {
-                        var items = new List<UntypedNode>();
-                        foreach (var item in sequence)
-                        {
-                            var node = From(item);
-                            if (node is not null)
-                                items.Add(node);
-                        }
-                        return items.Count == 0 ? null : new UntypedArray(items);
-                    }
-                default:
-                    // Stringifying an unrecognised type would send a value the caller never
-                    // wrote; failing names the type so the gap is fixable.
-                    throw new ArgumentException(
-                        $"Cannot convert a value of type '{value.GetType().FullName}' to an untyped Graph value. Supported: string, boolean, number, hashtable, array.");
-            }
-        }
-    }
-}
 """;
     }
 

@@ -537,7 +537,7 @@ public sealed class ActionFunctionTests
             """;
 
         var (files, _) = Generate(yaml, "unused");
-        Assert.Equal(["Shared.g.cs"], files);
+        Assert.Empty(files);   // no Shared.g.cs anymore - helpers live in Microsoft.Graph.Wrapper.Runtime
     }
 
     // ---- OData $-segments -------------------------------------------------------------------
@@ -757,7 +757,7 @@ public sealed class ActionFunctionTests
             """;
 
         var (files, _) = Generate(yaml, "unused");
-        Assert.Equal(["Shared.g.cs"], files);
+        Assert.Empty(files);   // no Shared.g.cs anymore - helpers live in Microsoft.Graph.Wrapper.Runtime
     }
 
     // Only x-ms-docs-operation-type makes an operation an action or a function. Without it a
@@ -784,7 +784,7 @@ public sealed class ActionFunctionTests
             """;
 
         var (files, _) = Generate(yaml, "unused");
-        Assert.Equal(["Shared.g.cs"], files);
+        Assert.Empty(files);   // no Shared.g.cs anymore - helpers live in Microsoft.Graph.Wrapper.Runtime
     }
 
     // An action declared on a method other than POST (or a function on other than GET) would be

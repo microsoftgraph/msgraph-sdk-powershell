@@ -3,6 +3,7 @@
 using System;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Users.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Users
@@ -11,16 +12,14 @@ namespace Microsoft.Graph.PowerShell.Users
     [Cmdlet(VerbsCommon.Get, "MgUserOwnedObjectAsApplication", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Users.Client.Models.ApplicationCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Users.Client.Models.Application), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserOwnedObjectAsApplicationCommand : PSCmdlet
+    public class GetMgUserOwnedObjectAsApplicationCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string DirectoryObjectId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
+
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -49,6 +48,12 @@ namespace Microsoft.Graph.PowerShell.Users
         [Parameter(Mandatory = false, ParameterSetName = "List")]
         public SwitchParameter Count { get; set; }
 
+        // Declared here because the binder rejects a parameter the dispatcher does not accept
+        // before ProcessRecord ever runs; once declared, the wholesale BoundParameters splat
+        // forwards it to the list worker with no further plumbing.
+        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        public SwitchParameter All { get; set; }
+
 
         [Parameter(Mandatory = false,
             HelpMessage = "Sets the 'ConsistencyLevel' request header (for example an ETag for optimistic concurrency; some Graph APIs require it even where the spec marks it optional).")]
@@ -56,10 +61,6 @@ namespace Microsoft.Graph.PowerShell.Users
 
 
 
-
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
 
         // Delegates to Get-MgUserOwnedObjectAsApplication_Get or Get-MgUserOwnedObjectAsApplication_List, the two cmdlets
         // that actually call Graph.
@@ -79,15 +80,16 @@ namespace Microsoft.Graph.PowerShell.Users
             // as a RuntimeException carrying the worker's ErrorRecord. Rethrow that record
             // unchanged so the caller sees the worker's error identity (NoGraphSession,
             // GraphRequestFailed, ...) instead of every failure collapsing into a generic
-            // dispatcher error.
-            catch (RuntimeException rex) when (rex.ErrorRecord is not null)
+            // dispatcher error. A pipeline stop is a RuntimeException too and must NOT be
+            // rethrown as a terminating error - both filters here let it pass to the engine.
+            catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)
             {
                 ThrowTerminatingError(rex.ErrorRecord);
                 return;
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, ParameterSetName == "Get" ? DirectoryObjectId : UserId));
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DirectoryObjectId : UserId);
                 return;
             }
         }

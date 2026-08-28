@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Files.Client;
 using Microsoft.Graph.PowerShell.Files.Client.Models;
 using Microsoft.Kiota.Abstractions;
@@ -14,94 +14,84 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Files
 {
     [GraphRoute("GET", "/drives/{drive-id}/items/{driveItem-id}/delta()")]
-    [Cmdlet(VerbsCommon.Get, "MgDriveItemDelta")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Files.Client.Drives.Item.Items.Item.Delta.DeltaGetResponse))]
-    public class GetMgDriveItemDeltaCommand : PSCmdlet
+    [Cmdlet(VerbsCommon.Get, "MgDriveItemDelta", DefaultParameterSetName = "DeltaSync")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.DriveItem))]
+    public class GetMgDriveItemDeltaCommand : GraphClientCmdlet
     {
-        [Parameter(Mandatory = true, Position = 0)]
+        [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
         public string DriveId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 1)]
+        [Parameter(Mandatory = true, Position = 1, ParameterSetName = "DeltaSync")]
         public string DriveItemId { get; set; } = string.Empty;
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public string? Filter { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         [Alias("Select")]
         public string[]? Property { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         [Alias("Expand")]
         public string[]? ExpandProperty { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         [Alias("OrderBy")]
         public string[]? Sort { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public string? Search { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public int Top { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public int Skip { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "DeltaSync")]
         public SwitchParameter Count { get; set; }
 
+        // Resumes a previous sync from the link that run published. Universal: every delta
+        // request builder accepts a raw URL, whereas a token argument exists on only a few.
+        [Parameter(Mandatory = true, ParameterSetName = "Resume")]
+        public string DeltaLink { get; set; } = string.Empty;
 
+        // Follows @odata.nextLink through the change set. Without it only the first page returns,
+        // plus a warning when more pages exist.
+        [Parameter(Mandatory = false)]
+        public SwitchParameter All { get; set; }
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
+        // Receives the @odata.deltaLink that terminates the change set, for the next sync round.
+        // A named variable is how this SDK already returns a scalar alongside a pipeline
+        // (-CountVariable on the published list cmdlets).
+        [Parameter(Mandatory = false)]
+        [Alias("DLV")]
+        public string? DeltaLinkVariable { get; set; }
+
 
 
         protected override void ProcessRecord()
         {
 
-        // ── Choose HttpClient + auth provider ─────────────────────────────
-        HttpClient httpClient;
-        IAuthenticationProvider authProvider;
-
-        if (this.IsParameterBound(nameof(AccessToken)))
-        {
-            httpClient = new HttpClient();
-            authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
-        }
-        else
-        {
-            WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
-            try
-            {
-                httpClient = HttpHelpers.GetGraphHttpClient();
-            }
-            catch (Exception ex)
-            {
-                ThrowTerminatingError(new ErrorRecord(
-                    new InvalidOperationException(
-                        "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
-                    "NoGraphSession",
-                    ErrorCategory.AuthenticationError,
-                    null));
-                return;
-            }
-            authProvider = new AnonymousAuthenticationProvider();
-        }
-
-        var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+        var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
+            // Cleared before the request so a failed or interrupted run cannot leave the previous
+            // run's link readable, which would silently resume from the wrong point.
+            if (this.IsParameterBound(nameof(DeltaLinkVariable)))
+                SessionState.PSVariable.Set(DeltaLinkVariable, null);
 
             global::Microsoft.Graph.PowerShell.Files.Client.Drives.Item.Items.Item.Delta.DeltaGetResponse? result;
             try
             {
-                result = client.Drives[DriveId].Items[DriveItemId].Delta.GetAsDeltaGetResponseAsync(requestConfiguration =>
+                result = ParameterSetName == "Resume"
+                    ? client.Drives[DriveId].Items[DriveItemId].Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                        {
+
+                AddRequestHeaders(requestConfiguration.Headers);
+                        }).GetAwaiter().GetResult()
+                    : client.Drives[DriveId].Items[DriveItemId].Delta.GetAsDeltaGetResponseAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Filter)))
                         requestConfiguration.QueryParameters.Filter = Filter;
@@ -127,20 +117,63 @@ namespace Microsoft.Graph.PowerShell.Files
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
 
-                        if (this.IsParameterBound(nameof(Headers)))
-                        {
-                            foreach (System.Collections.DictionaryEntry entry in Headers!)
-                                requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
-                        }
+                        AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
+
+                var fetched = 0;
+                while (true)
+                {
+                    if (result?.Value is { } items)
+                    {
+                        WriteObject(items, enumerateCollection: true);
+                        fetched += items.Count;
+                    }
+
+                    var nextLink = result?.OdataNextLink;
+                    var deltaLink = result?.OdataDeltaLink;
+
+                    // A response cannot be both continued and terminated; treating one as
+                    // authoritative would silently drop pages or resume from a partial set.
+                    if (!string.IsNullOrEmpty(nextLink) && !string.IsNullOrEmpty(deltaLink))
+                    {
+                        ThrowTerminatingError(new ErrorRecord(
+                            new InvalidOperationException("The response carries both @odata.nextLink and @odata.deltaLink, which is not a valid delta response."),
+                            "InvalidDeltaResponse", ErrorCategory.InvalidData, targetObject: null));
+                        return;
+                    }
+
+                    if (!string.IsNullOrEmpty(deltaLink))
+                    {
+                        if (this.IsParameterBound(nameof(DeltaLinkVariable)))
+                            SessionState.PSVariable.Set(DeltaLinkVariable, deltaLink);
+                        break;
+                    }
+
+                    // No link of either kind: the change set ends here and there is nothing to
+                    // publish for a next round.
+                    if (string.IsNullOrEmpty(nextLink)) break;
+
+                    if (!All.IsPresent)
+                    {
+                        WriteWarning("More results are available. Use -All to return all pages.");
+                        break;
+                    }
+
+                    if (Stopping) break;
+                    if (this.IsParameterBound(nameof(Top)) && fetched >= Top) break;
+
+                    result = client.Drives[DriveId].Items[DriveItemId].Delta.WithUrl(nextLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    {
+
+                AddRequestHeaders(requestConfiguration.Headers);
+                    }).GetAwaiter().GetResult();
+                }
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, DriveItemId));
+                ThrowGraphRequestFailed(ex, DriveItemId);
                 return;
             }
-
-            WriteObject(result);
         }
     }
 }

@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using System.Management.Automation;
 using System.Net.Http;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Identity.Partner.Client;
 using Microsoft.Graph.PowerShell.Identity.Partner.Client.Models;
 using Microsoft.Kiota.Abstractions.Authentication;
@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
     [GraphRoute("PATCH", "/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer-id}/serviceManagementDetails/{delegatedAdminServiceManagementDetail-id}")]
     [Cmdlet(VerbsData.Update, "MgTenantRelationshipDelegatedAdminCustomerServiceManagementDetail", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminServiceManagementDetail))]
-    public class UpdateMgTenantRelationshipDelegatedAdminCustomerServiceManagementDetailCommand : PSCmdlet
+    public class UpdateMgTenantRelationshipDelegatedAdminCustomerServiceManagementDetailCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string DelegatedAdminCustomerId { get; set; } = string.Empty;
@@ -32,13 +32,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
 
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Additional HTTP request headers to send, keyed by header name.")]
-        public System.Collections.IDictionary? Headers { get; set; }
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Bearer access token. Omit if you have already run Connect-MgGraph.")]
-        public string? AccessToken { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -55,36 +49,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
 
 
 
-        // ── Choose HttpClient + auth provider ─────────────────────────────
-        HttpClient httpClient;
-        IAuthenticationProvider authProvider;
-
-        if (this.IsParameterBound(nameof(AccessToken)))
-        {
-            httpClient = new HttpClient();
-            authProvider = new StaticBearerTokenAuthenticationProvider(AccessToken!);
-        }
-        else
-        {
-            WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
-            try
-            {
-                httpClient = HttpHelpers.GetGraphHttpClient();
-            }
-            catch (Exception ex)
-            {
-                ThrowTerminatingError(new ErrorRecord(
-                    new InvalidOperationException(
-                        "No active Graph session. Run Connect-MgGraph first, or supply -AccessToken.", ex),
-                    "NoGraphSession",
-                    ErrorCategory.AuthenticationError,
-                    null));
-                return;
-            }
-            authProvider = new AnonymousAuthenticationProvider();
-        }
-
-        var requestAdapter = new HttpClientRequestAdapter(authProvider, httpClient: httpClient);
+        var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminServiceManagementDetail? result;
@@ -93,16 +58,12 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
                 result = client.TenantRelationships.DelegatedAdminCustomers[DelegatedAdminCustomerId].ServiceManagementDetails[DelegatedAdminServiceManagementDetailId].PatchAsync(body, requestConfiguration =>
                 {
 
-                        if (this.IsParameterBound(nameof(Headers)))
-                        {
-                            foreach (System.Collections.DictionaryEntry entry in Headers!)
-                                requestConfiguration.Headers.Add(entry.Key.ToString()!, entry.Value?.ToString() ?? string.Empty);
-                        }
+                        AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
-                ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, DelegatedAdminServiceManagementDetailId));
+                ThrowGraphRequestFailed(ex, DelegatedAdminServiceManagementDetailId);
                 return;
             }
 
@@ -114,9 +75,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
                 {
                     result = client.TenantRelationships.DelegatedAdminCustomers[DelegatedAdminCustomerId].ServiceManagementDetails[DelegatedAdminServiceManagementDetailId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
-                    ThrowTerminatingError(new ErrorRecord(ex, "GraphRequestFailed", ErrorCategory.InvalidOperation, DelegatedAdminServiceManagementDetailId));
+                    ThrowGraphRequestFailed(ex, DelegatedAdminServiceManagementDetailId);
                     return;
                 }
             }
