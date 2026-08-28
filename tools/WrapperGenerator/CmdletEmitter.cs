@@ -403,7 +403,9 @@ namespace {{ctx.CmdletNamespace}}
     // Resume parameter set, reached through -DeltaLink, which works for every delta route
     // rather than only the five whose spec declares a token argument.
     // Contract and evidence: docs/edge-cases/delta-edge-cases.md.
-    public static string EmitDelta(CmdletNaming naming, EmitContext ctx, CallPlan call, IReadOnlySet<string> queryParamNames)
+    // itemTypeName is the model the cmdlet actually writes; it falls back to the response type only
+    // when the item cannot be resolved, so OutputType is never left describing nothing.
+    public static string EmitDelta(CmdletNaming naming, EmitContext ctx, CallPlan call, IReadOnlySet<string> queryParamNames, string? itemTypeName = null)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
@@ -445,7 +447,7 @@ namespace {{ctx.CmdletNamespace}}
 {
 {{RouteAttr(naming)}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof({{call.ReturnTypeName}}))]
+    [OutputType(typeof({{itemTypeName ?? call.ReturnTypeName}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
 {{PathParams(naming, "DeltaSync")}}
@@ -486,7 +488,7 @@ namespace {{ctx.CmdletNamespace}}
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? {{receiver}}.WithUrl(DeltaLink).{{call.MethodName}}(requestConfiguration =>
+                    ? {{receiver}}.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).{{call.MethodName}}(requestConfiguration =>
                         {{{continuationConfig}}
                         }).GetAwaiter().GetResult()
                     : {{EmitCallOn(receiver, naming, call.MethodName, null, queryBindings)}}.GetAwaiter().GetResult();
