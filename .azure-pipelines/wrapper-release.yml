@@ -101,7 +101,6 @@ extends:
                 <packageSources>
                   <clear />
                   <add key="MSGraphV3" value="https://pkgs.dev.azure.com/microsoftgraph/Graph%20Developer%20Experiences/_packaging/MSGraph_PowerShell_V3_Build/nuget/v3/index.json" />
-                  <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
                 </packageSources>
               </configuration>
               '@
@@ -117,7 +116,7 @@ extends:
             pwsh: true
             workingDirectory: $(Build.SourcesDirectory)
             script: |
-              dotnet tool install --global Microsoft.OpenApi.Kiota --configfile '$(Build.SourcesDirectory)/nuget.config'
+              dotnet tool install --global Microsoft.OpenApi.Kiota --configfile '$(Build.SourcesDirectory)/nuget.config' --ignore-failed-sources
               if ($LASTEXITCODE -ne 0) { throw "kiota install failed with exit code $LASTEXITCODE" }
               Write-Host "##vso[task.prependpath]$env:USERPROFILE\.dotnet\tools"
         - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
