@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Education
 {
     [GraphRoute("GET", "/education/me/assignments/{educationAssignment-id}/categories/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgEducationMeAssignmentCategoryDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Education.Client.Education.Me.Assignments.Item.Categories.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Education.Client.Models.EducationCategory))]
     public class GetMgEducationMeAssignmentCategoryDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Education
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Education.Me.Assignments[EducationAssignmentId].Categories.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Education.Me.Assignments[EducationAssignmentId].Categories.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

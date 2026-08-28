@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 {
     [GraphRoute("GET", "/communications/adhocCalls/{adhocCall-id}/transcripts/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgCommunicationAdhocCallTranscriptDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.CloudCommunications.Client.Communications.AdhocCalls.Item.Transcripts.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.CallTranscript))]
     public class GetMgCommunicationAdhocCallTranscriptDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Communications.AdhocCalls[AdhocCallId].Transcripts.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Communications.AdhocCalls[AdhocCallId].Transcripts.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

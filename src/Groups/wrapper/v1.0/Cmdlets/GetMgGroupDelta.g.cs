@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Groups
 {
     [GraphRoute("GET", "/groups/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgGroupDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Groups.Client.Groups.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Groups.Client.Models.Group))]
     public class GetMgGroupDeltaCommand : GraphClientCmdlet
     {
 
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Groups
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Groups.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Groups.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

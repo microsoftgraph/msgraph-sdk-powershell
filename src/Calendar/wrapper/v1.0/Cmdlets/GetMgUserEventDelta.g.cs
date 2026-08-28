@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
 {
     [GraphRoute("GET", "/users/{user-id}/events/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserEventDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Events.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Calendar.Client.Models.Event))]
     public class GetMgUserEventDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Users[UserId].Events.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Users[UserId].Events.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

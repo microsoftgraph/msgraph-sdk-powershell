@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Mail
 {
     [GraphRoute("GET", "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserMailFolderChildFolderDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Mail.Client.Users.Item.MailFolders.Item.ChildFolders.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Mail.Client.Models.MailFolder))]
     public class GetMgUserMailFolderChildFolderDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.Mail
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Users[UserId].MailFolders[MailFolderId].ChildFolders.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Users[UserId].MailFolders[MailFolderId].ChildFolders.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 {
     [GraphRoute("GET", "/contacts/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgContactDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Contacts.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.OrgContact))]
     public class GetMgContactDeltaCommand : GraphClientCmdlet
     {
 
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Contacts.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Contacts.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

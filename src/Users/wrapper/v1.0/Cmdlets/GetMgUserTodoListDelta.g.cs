@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Users
 {
     [GraphRoute("GET", "/users/{user-id}/todo/lists/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserTodoListDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Todo.Lists.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Users.Client.Models.TodoTaskList))]
     public class GetMgUserTodoListDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Users
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Users[UserId].Todo.Lists.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Users[UserId].Todo.Lists.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

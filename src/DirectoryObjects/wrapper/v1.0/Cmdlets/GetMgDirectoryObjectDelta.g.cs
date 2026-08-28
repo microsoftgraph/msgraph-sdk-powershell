@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
 {
     [GraphRoute("GET", "/directoryObjects/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgDirectoryObjectDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.DirectoryObjects.Client.DirectoryObjects.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.DirectoryObjects.Client.Models.DirectoryObject))]
     public class GetMgDirectoryObjectDeltaCommand : GraphClientCmdlet
     {
 
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.DirectoryObjects.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.DirectoryObjects.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

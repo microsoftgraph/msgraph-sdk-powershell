@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 {
     [GraphRoute("GET", "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserOnlineMeetingTranscriptDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.CloudCommunications.Client.Users.Item.OnlineMeetings.Item.Transcripts.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.CallTranscript))]
     public class GetMgUserOnlineMeetingTranscriptDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Users[UserId].OnlineMeetings[OnlineMeetingId].Transcripts.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Users[UserId].OnlineMeetings[OnlineMeetingId].Transcripts.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

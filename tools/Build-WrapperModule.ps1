@@ -62,11 +62,16 @@ is not shippable and should be generated only in an isolated worktree.
 .PARAMETER GenerateOnly
 Stop after wrapper source generation. Intended for source-based inventory and parity capture;
 cannot be combined with -Pack.
+.PARAMETER ModuleVersion
+Three-part version for the wrapper packages. Default 3.0.0 - the wrapper modules are the v3
+line, not a build of the v2 service-module release train whose version lives in
+config/ModuleMetadata.json.
 
 .PARAMETER Prerelease
-Prerelease label carried by every package (alphanumeric, never empty). Wrapper packages are
-previews by definition; a stable-versioned one would collide with the service-module release
-train, so the label is not optional.
+Prerelease label carried by every package (alphanumeric, never empty). Defaults to
+alpha<BuildId> in CI and alpha<UTC timestamp> locally, so no two builds ever publish the same
+id and version with different contents. Wrapper packages stay prereleases until the quality
+bar for public distribution is agreed.
 
 .PARAMETER Pack
 Also produce a package per module under <ArtifactsLocation>/<Module>/.
@@ -92,13 +97,23 @@ param(
     [string]$Configuration = 'Debug',
     [string]$ModuleMappingConfigPath,
     [string]$ArtifactsLocation,
-    # Wrapper packages always carry a prerelease label: their ModuleVersion deliberately tracks
-    # the service-module release train (ModuleMetadata.json), so a stable-versioned wrapper
-    # package would collide number-for-number with the real SDK release it will eventually
-    # replace. The label is alphanumeric only - the PowerShellGet prerelease grammar allows
-    # nothing else.
+    # The wrapper modules are the v3 line, not a build of the v2 service-module release train,
+    # so their version is their own rather than ModuleMetadata.json's (which belongs to v2 and
+    # is still read here for authors, tags and the rest of the package identity).
+    [ValidatePattern('^\d+\.\d+\.\d+$')]
+    [string]$ModuleVersion = '3.0.0',
+    # Wrapper packages always carry a prerelease label, and every build gets a DISTINCT one:
+    # two packages that share an id and version but not their contents are indistinguishable to
+    # a feed and to anyone who already installed one. The build id supplies that distinctness in
+    # CI; a UTC timestamp does locally, where no build id exists.
+    # The pattern is DELIBERATELY narrower than the PowerShellGet prerelease grammar rather than a
+    # restatement of it: PowerShellGet also accepts a hyphen, which this rejects. A label is joined
+    # to the version by a hyphen already, so one that itself begins with a hyphen reads as
+    # '3.0.0--label', and one containing a hyphen splits the label when a version string is parsed
+    # by eye. Alphanumeric-only keeps every generated label unambiguous, and both defaults above
+    # ('alpha' plus a build id or a UTC timestamp) satisfy it by construction.
     [ValidatePattern('^[A-Za-z0-9]+$')]
-    [string]$Prerelease = 'wrapperpreview01',
+    [string]$Prerelease = "alpha$(if ($env:BUILD_BUILDID) { $env:BUILD_BUILDID } else { (Get-Date).ToUniversalTime().ToString('yyyyMMddHHmm') })",
     [switch]$SkipKiota,
     [switch]$NoCollisionData,
     [switch]$GenerateOnly,
@@ -133,18 +148,17 @@ $targetFramework = "$targetFramework".Trim()
 if (-not $ModuleMappingConfigPath) { $ModuleMappingConfigPath = Join-Path $repoRoot 'config\ModulesMapping.jsonc' }
 if (-not $ArtifactsLocation) { $ArtifactsLocation = Join-Path $repoRoot 'artifacts' }
 
-# Package metadata comes from the same single source the AutoRest service modules use, so a
-# wrapper package and the module it will eventually replace cannot disagree about version or
-# ownership.
+# Package identity (authors, owners, licence, tags) comes from the same single source the
+# AutoRest service modules use, so a wrapper package and the module it will eventually replace
+# cannot disagree about ownership. The VERSION is deliberately not taken from there: that
+# entry tracks the v2 release train, and a wrapper package stamped with it would claim a
+# version the real SDK is about to publish.
 $moduleMetadataPath = Join-Path $repoRoot 'config\ModuleMetadata.json'
 [hashtable]$moduleMetadata = Get-Content $moduleMetadataPath -Raw | ConvertFrom-Json -AsHashTable
-$versionEntry = $moduleMetadata.versions[$ApiVersion]
-if (-not $versionEntry -or -not $versionEntry.version) { throw "No version configured for '$ApiVersion' in $moduleMetadataPath." }
-$moduleVersion = $versionEntry.version
 # The metadata prerelease field belongs to the service-module release train and is deliberately
 # not read; the wrapper label (validated non-empty) is appended unconditionally, because a
 # wrapper package without one cannot exist.
-$fullVersion = "$moduleVersion-$Prerelease"
+$fullVersion = "$ModuleVersion-$Prerelease"
 
 # The population is the specs this generator can actually read, intersected with the modules the
 # repository is configured to ship - the same two inputs tools/GenerateServiceModule.ps1 uses.
@@ -416,7 +430,7 @@ function Build-Module {
             Path              = $psd1Path
             RootModule        = "$moduleName.dll"
             Guid              = Get-WrapperModuleGuid -ModuleName $moduleName
-            ModuleVersion     = $moduleVersion
+            ModuleVersion     = $ModuleVersion
             Prerelease        = $Prerelease
             RequiredModules   = @(@{ ModuleName = 'Microsoft.Graph.Authentication'; ModuleVersion = $authVersion })
             Author            = 'Microsoft Graph'
@@ -495,7 +509,7 @@ function Build-Module {
             # a PowerShell module package. NuspecBasePath resolves the globs against the build
             # output so the nuspec need not know how deep bin/<Config>/<TFM> is.
             $packArgs = @($csprojPath, '-c', $Configuration, '--no-build', '--nologo', '-v', 'minimal',
-                "-p:NuspecFile=$nuspecPath", "-p:NuspecBasePath=$binDir", "-p:Version=$moduleVersion",
+                "-p:NuspecFile=$nuspecPath", "-p:NuspecBasePath=$binDir", "-p:Version=$ModuleVersion",
                 '-p:NoPackageAnalysis=true', '-o', $moduleArtifacts)
             $packOut = & dotnet pack @packArgs 2>&1
             if ($LASTEXITCODE -ne 0) {

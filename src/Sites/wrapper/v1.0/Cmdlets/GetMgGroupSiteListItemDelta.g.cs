@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Sites
 {
     [GraphRoute("GET", "/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgGroupSiteListItemDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Sites.Client.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Sites.Client.Models.ListItem))]
     public class GetMgGroupSiteListItemDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.PowerShell.Sites
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Groups[GroupId].Sites[SiteId].Lists[ListId].Items.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Groups[GroupId].Sites[SiteId].Lists[ListId].Items.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

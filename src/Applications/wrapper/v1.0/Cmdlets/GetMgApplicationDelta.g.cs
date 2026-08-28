@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Applications
 {
     [GraphRoute("GET", "/applications/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgApplicationDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Applications.Client.Applications.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.Application))]
     public class GetMgApplicationDeltaCommand : GraphClientCmdlet
     {
 
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Applications.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Applications.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

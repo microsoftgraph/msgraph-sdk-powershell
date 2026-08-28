@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Files
 {
     [GraphRoute("GET", "/shares/{sharedDriveItem-id}/list/items/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgShareListItemDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Items.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.ListItem))]
     public class GetMgShareListItemDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Files
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Shares[SharedDriveItemId].List.Items.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Shares[SharedDriveItemId].List.Items.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

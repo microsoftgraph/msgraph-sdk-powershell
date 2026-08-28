@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
 {
     [GraphRoute("GET", "/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/delta()")]
     [Cmdlet(VerbsCommon.Get, "MgUserContactFolderChildFolderDelta", DefaultParameterSetName = "DeltaSync")]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.PersonalContacts.Client.Users.Item.ContactFolders.Item.ChildFolders.Delta.DeltaGetResponse))]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.PersonalContacts.Client.Models.ContactFolder))]
     public class GetMgUserContactFolderChildFolderDeltaCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = "DeltaSync")]
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
             try
             {
                 result = ParameterSetName == "Resume"
-                    ? client.Users[UserId].ContactFolders[ContactFolderId].ChildFolders.Delta.WithUrl(DeltaLink).GetAsDeltaGetResponseAsync(requestConfiguration =>
+                    ? client.Users[UserId].ContactFolders[ContactFolderId].ChildFolders.Delta.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).GetAsDeltaGetResponseAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);

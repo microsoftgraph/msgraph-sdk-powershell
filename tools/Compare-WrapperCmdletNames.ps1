@@ -178,8 +178,8 @@ function Get-ModuleApiVersion {
 
 # Published names the generator deliberately corrects instead of reproducing. Each entry maps
 # the shipped (wrong) command to the corrected one the generator emits, and must have a matching
-# entry in tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md and a pinned naming test.
-# The gate reports these as [CORRECTED] instead of [MISMATCH] and does not fail on them.
+# entry in tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md and a pinned naming test. The
+# gate reports these as [CORRECTED] instead of [MISMATCH] and does not fail on them.
 $deliberateCorrections = @{
     # AutoRest inflected the trailing /whois segment to "Whoi"; the other 28 whois-family
     # cmdlets (whoisRecords, whoisHistoryRecords) all keep "Whois".

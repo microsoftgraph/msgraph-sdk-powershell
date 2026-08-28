@@ -8420,6 +8420,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8451,6 +8457,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}':
     get:
@@ -8494,6 +8506,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8522,6 +8540,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8546,6 +8570,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/appManagementPolicies':
     get:
@@ -8597,6 +8627,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8640,6 +8676,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/appManagementPolicies/$count':
     get:
@@ -8657,6 +8699,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo':
     get:
       tags:
@@ -8710,6 +8758,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8741,6 +8795,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo/{appRoleAssignment-id}':
     get:
@@ -8784,6 +8844,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8808,6 +8874,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8832,6 +8904,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo/$count':
     get:
@@ -8849,6 +8927,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/appRoleAssignments':
     get:
       tags:
@@ -8912,6 +8996,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8943,6 +9033,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/appRoleAssignments/{appRoleAssignment-id}':
     get:
@@ -8986,6 +9082,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9010,6 +9112,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9034,6 +9142,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/appRoleAssignments/$count':
     get:
@@ -9061,6 +9175,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies':
     get:
       tags:
@@ -9114,6 +9234,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9142,6 +9268,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$count':
     get:
@@ -9159,6 +9291,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref':
     get:
       tags:
@@ -9192,6 +9330,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9214,6 +9358,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9246,6 +9396,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/claimsPolicy':
     get:
@@ -9289,6 +9445,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -9317,6 +9479,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9345,6 +9513,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/createdObjects':
     get:
@@ -9399,6 +9573,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9442,6 +9622,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}/graph.servicePrincipal':
     get:
@@ -9481,6 +9667,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/createdObjects/$count':
     get:
       tags:
@@ -9497,6 +9689,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/createdObjects/graph.servicePrincipal':
     get:
       tags:
@@ -9546,6 +9744,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9565,6 +9769,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications':
     get:
       tags:
@@ -9618,6 +9828,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9649,6 +9865,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications/{delegatedPermissionClassification-id}':
     get:
@@ -9689,6 +9911,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9713,6 +9941,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9737,6 +9971,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/delegatedPermissionClassifications/$count':
     get:
@@ -9754,6 +9994,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/endpoints':
     get:
       tags:
@@ -9804,6 +10050,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9831,6 +10083,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/endpoints/{endpoint-id}':
     get:
@@ -9871,6 +10129,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9895,6 +10159,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9915,6 +10185,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/endpoints/$count':
     get:
@@ -9932,6 +10208,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials':
     get:
       tags:
@@ -9981,6 +10263,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10008,6 +10296,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}':
     get:
@@ -10047,6 +10341,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10071,6 +10371,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10091,6 +10397,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials(name=''{name}'')':
     get:
@@ -10130,6 +10442,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10154,6 +10472,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10174,6 +10498,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/$count':
     get:
@@ -10191,6 +10521,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies':
     get:
       tags:
@@ -10244,6 +10580,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10272,6 +10614,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$count':
     get:
@@ -10289,6 +10637,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref':
     get:
       tags:
@@ -10322,6 +10676,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10344,6 +10704,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10376,6 +10742,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/licenseDetails':
     get:
@@ -10426,6 +10798,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10453,6 +10831,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/licenseDetails/{licenseDetails-id}':
     get:
@@ -10492,6 +10876,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10516,6 +10906,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10536,6 +10932,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/licenseDetails/$count':
     get:
@@ -10553,6 +10955,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/licenseDetails/getTeamsLicensingDetails()':
     get:
       tags:
@@ -10577,7 +10985,285 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: function
+  '/servicePrincipals/{servicePrincipal-id}/lifecycle':
+    get:
+      tags:
+        - servicePrincipals.identityLifecycle
+      summary: Get lifecycle from servicePrincipals
+      operationId: servicePrincipals.GetLifecycle
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - servicePrincipals.identityLifecycle
+      summary: Update the navigation property lifecycle in servicePrincipals
+      operationId: servicePrincipals.UpdateLifecycle
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.identityLifecycle
+      summary: Delete navigation property lifecycle for servicePrincipals
+      operationId: servicePrincipals.DeleteLifecycle
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/lifecycle/complianceIssues':
+    get:
+      tags:
+        - servicePrincipals.identityLifecycle
+      summary: Get complianceIssues from servicePrincipals
+      operationId: servicePrincipals.lifecycle.ListComplianceIssues
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.identityGovernance.complianceIssueCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/lifecycle/complianceIssues/{complianceIssue-id}':
+    get:
+      tags:
+        - servicePrincipals.identityLifecycle
+      summary: Get complianceIssues from servicePrincipals
+      operationId: servicePrincipals.lifecycle.GetComplianceIssues
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/lifecycle/complianceIssues/$count':
+    get:
+      tags:
+        - servicePrincipals.identityLifecycle
+      summary: Get the number of the resource
+      operationId: servicePrincipals.lifecycle.complianceIssues.GetCount-b94c
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
+  '/servicePrincipals/{servicePrincipal-id}/lifecycle/effectiveGoverningPolicy':
+    get:
+      tags:
+        - servicePrincipals.identityLifecycle
+      summary: Get effectiveGoverningPolicy from servicePrincipals
+      operationId: servicePrincipals.lifecycle.GetEffectiveGoverningPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/memberOf':
     get:
       tags:
@@ -10641,6 +11327,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10694,6 +11386,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/graph.administrativeUnit':
     get:
@@ -10743,6 +11441,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/graph.directoryRole':
     get:
       tags:
@@ -10791,6 +11495,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/graph.group':
     get:
       tags:
@@ -10839,6 +11549,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/memberOf/$count':
     get:
       tags:
@@ -10865,6 +11581,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/memberOf/graph.administrativeUnit':
     get:
       tags:
@@ -10924,6 +11646,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10953,6 +11681,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/memberOf/graph.directoryRole':
     get:
       tags:
@@ -11012,6 +11746,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11041,6 +11781,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/memberOf/graph.group':
     get:
       tags:
@@ -11100,6 +11846,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11129,6 +11881,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/addTokenSigningCertificate':
     post:
       tags:
@@ -11166,6 +11924,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/checkMemberGroups':
     post:
@@ -11208,6 +11972,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -11249,6 +12019,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -11291,6 +12067,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/deletePasswordSingleSignOnCredentials':
     post:
@@ -11319,6 +12101,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/getMemberGroups':
     post:
@@ -11361,6 +12149,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -11402,6 +12196,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -11440,6 +12240,32 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
+      x-ms-docs-operation-type: action
+  '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.identityGovernance.attest':
+    post:
+      tags:
+        - servicePrincipals.servicePrincipal.Actions
+      summary: Invoke action attest
+      operationId: servicePrincipals.servicePrincipal.attest
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/restore':
     post:
@@ -11465,6 +12291,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/updatePasswordSingleSignOnCredentials':
     post:
@@ -11497,6 +12329,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants':
     get:
@@ -11551,6 +12389,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11594,6 +12438,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/$count':
     get:
@@ -11611,6 +12461,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects':
     get:
       tags:
@@ -11664,6 +12520,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11707,6 +12569,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/graph.application':
     get:
@@ -11746,6 +12614,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/graph.appRoleAssignment':
     get:
       tags:
@@ -11784,6 +12658,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/graph.endpoint':
     get:
       tags:
@@ -11822,6 +12702,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/graph.group':
     get:
       tags:
@@ -11860,6 +12746,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}/graph.servicePrincipal':
     get:
       tags:
@@ -11898,6 +12790,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/$count':
     get:
       tags:
@@ -11914,6 +12812,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/graph.application':
     get:
       tags:
@@ -11963,6 +12867,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11982,6 +12892,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/graph.appRoleAssignment':
     get:
       tags:
@@ -12031,6 +12947,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12050,6 +12972,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/graph.endpoint':
     get:
       tags:
@@ -12099,6 +13027,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12118,6 +13052,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/graph.group':
     get:
       tags:
@@ -12167,6 +13107,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12186,6 +13132,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/graph.servicePrincipal':
     get:
       tags:
@@ -12235,6 +13187,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12254,6 +13212,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/owners':
     get:
       tags:
@@ -12314,6 +13278,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12342,6 +13312,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}/graph.appRoleAssignment':
     get:
@@ -12391,6 +13367,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}/graph.endpoint':
     get:
       tags:
@@ -12439,6 +13421,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}/graph.servicePrincipal':
     get:
       tags:
@@ -12487,6 +13475,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}/graph.user':
     get:
       tags:
@@ -12535,6 +13529,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/owners/$count':
     get:
       tags:
@@ -12561,6 +13561,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/owners/$ref':
     get:
       tags:
@@ -12601,6 +13607,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12623,6 +13635,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12655,6 +13673,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/owners/graph.appRoleAssignment':
     get:
@@ -12715,6 +13739,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12744,6 +13774,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/owners/graph.endpoint':
     get:
       tags:
@@ -12803,6 +13839,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12832,6 +13874,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/owners/graph.servicePrincipal':
     get:
       tags:
@@ -12891,6 +13939,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12920,6 +13974,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/owners/graph.user':
     get:
       tags:
@@ -12979,6 +14039,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13008,6 +14074,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/permissionGrantPreApprovalPolicies':
     get:
       tags:
@@ -13058,6 +14130,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13104,6 +14182,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/permissionGrantPreApprovalPolicies/$count':
     get:
@@ -13121,6 +14205,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/remoteDesktopSecurityConfiguration':
     get:
       tags:
@@ -13163,6 +14253,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13191,6 +14287,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13215,6 +14317,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/remoteDesktopSecurityConfiguration/approvedClientApps':
     get:
@@ -13269,6 +14377,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13300,6 +14414,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/remoteDesktopSecurityConfiguration/approvedClientApps/{approvedClientApp-id}':
     get:
@@ -13343,6 +14463,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13371,6 +14497,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13395,6 +14527,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/remoteDesktopSecurityConfiguration/approvedClientApps/$count':
     get:
@@ -13412,6 +14550,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/remoteDesktopSecurityConfiguration/targetDeviceGroups':
     get:
       tags:
@@ -13465,6 +14609,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13496,6 +14646,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/{targetDeviceGroup-id}':
     get:
@@ -13539,6 +14695,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13567,6 +14729,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13591,6 +14759,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/remoteDesktopSecurityConfiguration/targetDeviceGroups/$count':
     get:
@@ -13608,6 +14782,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/synchronization':
     get:
       tags:
@@ -13647,6 +14827,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -13671,6 +14857,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13691,6 +14883,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs':
     get:
@@ -13745,6 +14943,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -13776,6 +14980,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}':
     get:
@@ -13819,6 +15029,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13843,6 +15059,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13867,6 +15089,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload':
     get:
@@ -13907,6 +15135,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -13931,6 +15165,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13951,6 +15191,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload/$value':
     get:
@@ -13971,6 +15217,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
     put:
       tags:
         - servicePrincipals.synchronization
@@ -13992,6 +15244,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
     delete:
       tags:
         - servicePrincipals.synchronization
@@ -14012,6 +15270,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/pause':
     post:
       tags:
@@ -14029,6 +15293,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/provisionOnDemand':
     post:
@@ -14063,6 +15333,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/restart':
     post:
@@ -14094,6 +15370,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/start':
     post:
@@ -14112,6 +15394,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/validateCredentials':
     post:
@@ -14201,6 +15489,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -14229,6 +15523,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -14249,6 +15549,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories':
     get:
@@ -14300,6 +15606,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -14327,6 +15639,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}':
     get:
@@ -14367,6 +15685,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -14391,6 +15715,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -14411,6 +15741,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/discover':
     post:
@@ -14436,6 +15772,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/$count':
     get:
@@ -14453,6 +15795,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/filterOperators()':
     get:
       tags:
@@ -14519,6 +15867,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -14589,6 +15943,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -14638,6 +15998,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/$count':
     get:
@@ -14655,6 +16021,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/validateCredentials':
     post:
       tags:
@@ -14754,6 +16126,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: function
   '/servicePrincipals/{servicePrincipal-id}/synchronization/secrets':
     put:
@@ -14874,6 +16252,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -14901,6 +16285,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}':
     get:
@@ -14941,6 +16331,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -14965,6 +16361,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -14985,6 +16387,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema':
     get:
@@ -15025,6 +16433,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -15049,6 +16463,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -15069,6 +16489,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories':
     get:
@@ -15120,6 +16546,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15147,6 +16579,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}':
     get:
@@ -15187,6 +16625,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -15211,6 +16655,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -15231,6 +16681,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/discover':
     post:
@@ -15256,6 +16712,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/$count':
     get:
@@ -15273,6 +16735,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/filterOperators()':
     get:
       tags:
@@ -15339,6 +16807,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -15409,6 +16883,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -15458,6 +16938,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/$count':
     get:
@@ -15475,6 +16961,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies':
     get:
       tags:
@@ -15525,6 +17017,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15549,6 +17047,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$count':
     get:
@@ -15566,6 +17070,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$ref':
     get:
       tags:
@@ -15596,6 +17106,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15614,6 +17130,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -15642,6 +17164,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies':
     get:
@@ -15696,6 +17224,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15724,6 +17258,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$count':
     get:
@@ -15741,6 +17281,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$ref':
     get:
       tags:
@@ -15774,6 +17320,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15796,6 +17348,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -15828,6 +17386,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf':
     get:
@@ -15892,6 +17456,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15944,6 +17514,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/graph.administrativeUnit':
     get:
@@ -15993,6 +17569,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/graph.directoryRole':
     get:
       tags:
@@ -16041,6 +17623,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/graph.group':
     get:
       tags:
@@ -16089,6 +17677,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/$count':
     get:
       tags:
@@ -16115,6 +17709,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/graph.administrativeUnit':
     get:
       tags:
@@ -16174,6 +17774,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -16203,6 +17809,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/graph.directoryRole':
     get:
       tags:
@@ -16262,6 +17874,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -16291,6 +17909,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/graph.group':
     get:
       tags:
@@ -16350,6 +17974,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -16379,6 +18009,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   '/servicePrincipals(appId=''{appId}'')':
     get:
       tags:
@@ -16421,6 +18057,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -16449,6 +18091,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -16473,6 +18121,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: operation
   /servicePrincipals/$count:
     get:
@@ -16500,6 +18154,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
   /servicePrincipals/delta():
     get:
       tags:
@@ -16566,6 +18226,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -16617,6 +18283,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -16659,6 +18331,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   /servicePrincipals/validateProperties:
     post:
@@ -16699,6 +18377,12 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-08-01'
+        date: '2025-08-01'
+        version: 2025-08/correlations
+        description: Private preview for correlations report
       x-ms-docs-operation-type: action
   '/users/{user-id}/appRoleAssignments':
     get:
@@ -17304,6 +18988,7 @@ components:
               '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
               '#microsoft.graph.tenantRelationshipAccessPolicyBase': '#/components/schemas/microsoft.graph.tenantRelationshipAccessPolicyBase'
               '#microsoft.graph.crossTenantAccessPolicy': '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+              '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
               '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
               '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -17832,6 +19517,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
+              x-ms-navigationProperty: true
+            lifecycle:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+                - type: object
+                  nullable: true
               x-ms-navigationProperty: true
             memberOf:
               type: array
@@ -18746,6 +20437,12 @@ components:
                 - type: object
                   nullable: true
               description: Represents a user's custom solution entity. Read-Only. Nullable.
+              x-ms-navigationProperty: true
+            sponsorOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that''s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.'
               x-ms-navigationProperty: true
             sponsors:
               type: array
@@ -19713,6 +21410,135 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.teamsLicensingDetails'
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            description:
+              type: string
+            governingPolicyReferenceId:
+              type: string
+            issueCode:
+              type: string
+            ruleType:
+              type: string
+              nullable: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            notificationSchedule:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+                - type: object
+                  nullable: true
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.subjectSet'
+                - type: object
+                  nullable: true
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+            createdBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
     microsoft.graph.administrativeUnit:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -20541,6 +22367,10 @@ components:
           type: boolean
           description: 'If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.'
           nullable: true
+        coopEnforcement:
+          type: boolean
+          description: 'Indicates whether Cross-Origin-Opener-Policy (COOP) headers are enforced on browser-based authentication responses for the application. Set to true to enable enforcement, false to temporarily suppress enforcement, or null to use the service default. For how-to guidance, see Control Cross-Origin-Opener-Policy enforcement.'
+          nullable: true
         removeUnverifiedEmailClaim:
           type: boolean
           description: 'If true, removes the email claim from tokens sent to an application when the email address''s domain can''t be verified.'
@@ -20666,6 +22496,8 @@ components:
           type: boolean
           description: 'Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.'
           nullable: true
+        isDeviceAccessEnabled:
+          type: boolean
         isDnsResolutionEnabled:
           type: boolean
           description: Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.
@@ -21064,6 +22896,7 @@ components:
           '#microsoft.graph.agent': '#/components/schemas/microsoft.graph.agent'
           '#microsoft.graph.agentCardManifest': '#/components/schemas/microsoft.graph.agentCardManifest'
           '#microsoft.graph.agentCollection': '#/components/schemas/microsoft.graph.agentCollection'
+          '#microsoft.graph.agentCommunicationConfiguration': '#/components/schemas/microsoft.graph.agentCommunicationConfiguration'
           '#microsoft.graph.agentInstance': '#/components/schemas/microsoft.graph.agentInstance'
           '#microsoft.graph.agentRegistration': '#/components/schemas/microsoft.graph.agentRegistration'
           '#microsoft.graph.agentRiskDetection': '#/components/schemas/microsoft.graph.agentRiskDetection'
@@ -21168,6 +23001,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -21236,6 +23070,14 @@ components:
           '#microsoft.graph.azureADAuthentication': '#/components/schemas/microsoft.graph.azureADAuthentication'
           '#microsoft.graph.azureADPremiumLicenseInsight': '#/components/schemas/microsoft.graph.azureADPremiumLicenseInsight'
           '#microsoft.graph.azureRoleDefinition': '#/components/schemas/microsoft.graph.azureRoleDefinition'
+          '#microsoft.graph.b2bRegistrationMetrics': '#/components/schemas/microsoft.graph.b2bRegistrationMetrics'
+          '#microsoft.graph.b2BRegistrationMetricsBase': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsBase'
+          '#microsoft.graph.b2BRegistrationMetricsInitial': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsInitial'
+          '#microsoft.graph.b2BRegistrationMetricsRecent': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsRecent'
+          '#microsoft.graph.b2BSignInActivityMetrics': '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
+          '#microsoft.graph.b2BSignInActivityMetricsBase': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsBase'
+          '#microsoft.graph.b2BSignInActivityMetricsInitial': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsInitial'
+          '#microsoft.graph.b2BSignInActivityMetricsRecent': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsRecent'
           '#microsoft.graph.b2cAuthenticationMethodsPolicy': '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
           '#microsoft.graph.backupReport': '#/components/schemas/microsoft.graph.backupReport'
           '#microsoft.graph.backupRestoreRoot': '#/components/schemas/microsoft.graph.backupRestoreRoot'
@@ -21264,6 +23106,10 @@ components:
           '#microsoft.graph.levelMap': '#/components/schemas/microsoft.graph.levelMap'
           '#microsoft.graph.sectionMap': '#/components/schemas/microsoft.graph.sectionMap'
           '#microsoft.graph.unitMap': '#/components/schemas/microsoft.graph.unitMap'
+          '#microsoft.graph.billingMetrics': '#/components/schemas/microsoft.graph.billingMetrics'
+          '#microsoft.graph.billingMetricsBase': '#/components/schemas/microsoft.graph.billingMetricsBase'
+          '#microsoft.graph.billingMetricsInitial': '#/components/schemas/microsoft.graph.billingMetricsInitial'
+          '#microsoft.graph.billingMetricsRecent': '#/components/schemas/microsoft.graph.billingMetricsRecent'
           '#microsoft.graph.bitlocker': '#/components/schemas/microsoft.graph.bitlocker'
           '#microsoft.graph.bitlockerRecoveryKey': '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
           '#microsoft.graph.bookingAppointment': '#/components/schemas/microsoft.graph.bookingAppointment'
@@ -21508,7 +23354,6 @@ components:
           '#microsoft.graph.detectedApp': '#/components/schemas/microsoft.graph.detectedApp'
           '#microsoft.graph.deviceAndAppManagementAssignmentFilter': '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilter'
           '#microsoft.graph.payloadCompatibleAssignmentFilter': '#/components/schemas/microsoft.graph.payloadCompatibleAssignmentFilter'
-          '#microsoft.graph.deviceAppManagement': '#/components/schemas/microsoft.graph.deviceAppManagement'
           '#microsoft.graph.deviceAppManagementTask': '#/components/schemas/microsoft.graph.deviceAppManagementTask'
           '#microsoft.graph.appVulnerabilityTask': '#/components/schemas/microsoft.graph.appVulnerabilityTask'
           '#microsoft.graph.securityConfigurationTask': '#/components/schemas/microsoft.graph.securityConfigurationTask'
@@ -21830,6 +23675,7 @@ components:
           '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
           '#microsoft.graph.tenantRelationshipAccessPolicyBase': '#/components/schemas/microsoft.graph.tenantRelationshipAccessPolicyBase'
           '#microsoft.graph.crossTenantAccessPolicy': '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+          '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
           '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
           '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
           '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -22004,7 +23850,10 @@ components:
           '#microsoft.graph.governanceInsight': '#/components/schemas/microsoft.graph.governanceInsight'
           '#microsoft.graph.membershipOutlierInsight': '#/components/schemas/microsoft.graph.membershipOutlierInsight'
           '#microsoft.graph.userSignInInsight': '#/components/schemas/microsoft.graph.userSignInInsight'
+          '#microsoft.graph.governanceInvitation': '#/components/schemas/microsoft.graph.governanceInvitation'
           '#microsoft.graph.governancePolicyTemplate': '#/components/schemas/microsoft.graph.governancePolicyTemplate'
+          '#microsoft.graph.governanceRelationship': '#/components/schemas/microsoft.graph.governanceRelationship'
+          '#microsoft.graph.governanceRequest': '#/components/schemas/microsoft.graph.governanceRequest'
           '#microsoft.graph.governanceResource': '#/components/schemas/microsoft.graph.governanceResource'
           '#microsoft.graph.governanceRoleAssignment': '#/components/schemas/microsoft.graph.governanceRoleAssignment'
           '#microsoft.graph.governanceRoleAssignmentRequest': '#/components/schemas/microsoft.graph.governanceRoleAssignmentRequest'
@@ -22245,6 +24094,7 @@ components:
           '#microsoft.graph.mfaTelecomFraudMetric': '#/components/schemas/microsoft.graph.mfaTelecomFraudMetric'
           '#microsoft.graph.mfaUserCountMetric': '#/components/schemas/microsoft.graph.mfaUserCountMetric'
           '#microsoft.graph.microsoftApplicationDataAccessSettings': '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
+          '#microsoft.graph.microsoftAppsFileStorageContainerUsage': '#/components/schemas/microsoft.graph.microsoftAppsFileStorageContainerUsage'
           '#microsoft.graph.microsoftTunnelConfiguration': '#/components/schemas/microsoft.graph.microsoftTunnelConfiguration'
           '#microsoft.graph.microsoftTunnelHealthThreshold': '#/components/schemas/microsoft.graph.microsoftTunnelHealthThreshold'
           '#microsoft.graph.microsoftTunnelServer': '#/components/schemas/microsoft.graph.microsoftTunnelServer'
@@ -22319,6 +24169,10 @@ components:
           '#microsoft.graph.mobileDeviceManagementPolicy': '#/components/schemas/microsoft.graph.mobileDeviceManagementPolicy'
           '#microsoft.graph.monthlyUserInsightMetricsRoot': '#/components/schemas/microsoft.graph.monthlyUserInsightMetricsRoot'
           '#microsoft.graph.multiActivitySubscription': '#/components/schemas/microsoft.graph.multiActivitySubscription'
+          '#microsoft.graph.multiTenantApplicationMetrics': '#/components/schemas/microsoft.graph.multiTenantApplicationMetrics'
+          '#microsoft.graph.multiTenantApplicationMetricsBase': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsBase'
+          '#microsoft.graph.multiTenantApplicationMetricsInitial': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsInitial'
+          '#microsoft.graph.multiTenantApplicationMetricsRecent': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsRecent'
           '#microsoft.graph.multiTenantOrganization': '#/components/schemas/microsoft.graph.multiTenantOrganization'
           '#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate': '#/components/schemas/microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate'
           '#microsoft.graph.multiTenantOrganizationJoinRequestRecord': '#/components/schemas/microsoft.graph.multiTenantOrganizationJoinRequestRecord'
@@ -22419,6 +24273,7 @@ components:
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
           '#microsoft.graph.plannerPlan': '#/components/schemas/microsoft.graph.plannerPlan'
@@ -22537,8 +24392,11 @@ components:
           '#microsoft.graph.recommendationBase': '#/components/schemas/microsoft.graph.recommendationBase'
           '#microsoft.graph.recommendation': '#/components/schemas/microsoft.graph.recommendation'
           '#microsoft.graph.recommendationConfiguration': '#/components/schemas/microsoft.graph.recommendationConfiguration'
+          '#microsoft.graph.recommendationTag': '#/components/schemas/microsoft.graph.recommendationTag'
           '#microsoft.graph.reflectCheckInResponse': '#/components/schemas/microsoft.graph.reflectCheckInResponse'
           '#microsoft.graph.regionalAndLanguageSettings': '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
+          '#microsoft.graph.relatedTenant': '#/components/schemas/microsoft.graph.relatedTenant'
+          '#microsoft.graph.relatedTenantsRefreshRequest': '#/components/schemas/microsoft.graph.relatedTenantsRefreshRequest'
           '#microsoft.graph.relyingPartyDetailedSummary': '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
           '#microsoft.graph.remoteActionAudit': '#/components/schemas/microsoft.graph.remoteActionAudit'
           '#microsoft.graph.remoteAssistancePartner': '#/components/schemas/microsoft.graph.remoteAssistancePartner'
@@ -22571,6 +24429,7 @@ components:
           '#microsoft.graph.restrictedAppsViolation': '#/components/schemas/microsoft.graph.restrictedAppsViolation'
           '#microsoft.graph.riskDetection': '#/components/schemas/microsoft.graph.riskDetection'
           '#microsoft.graph.riskyAgent': '#/components/schemas/microsoft.graph.riskyAgent'
+          '#microsoft.graph.riskyAgentDiscoveredAgentIdentity': '#/components/schemas/microsoft.graph.riskyAgentDiscoveredAgentIdentity'
           '#microsoft.graph.riskyAgentIdentity': '#/components/schemas/microsoft.graph.riskyAgentIdentity'
           '#microsoft.graph.riskyAgentIdentityBlueprintPrincipal': '#/components/schemas/microsoft.graph.riskyAgentIdentityBlueprintPrincipal'
           '#microsoft.graph.riskyAgentUser': '#/components/schemas/microsoft.graph.riskyAgentUser'
@@ -22711,6 +24570,9 @@ components:
           '#microsoft.graph.teamworkTagMember': '#/components/schemas/microsoft.graph.teamworkTagMember'
           '#microsoft.graph.template': '#/components/schemas/microsoft.graph.template'
           '#microsoft.graph.tenantAttachRBAC': '#/components/schemas/microsoft.graph.tenantAttachRBAC'
+          '#microsoft.graph.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernance'
+          '#microsoft.graph.tenantGovernancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+          '#microsoft.graph.tenantGovernanceSetting': '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
           '#microsoft.graph.tenantProtectionScopeContainer': '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
           '#microsoft.graph.tenantSetupInfo': '#/components/schemas/microsoft.graph.tenantSetupInfo'
           '#microsoft.graph.termsAndConditions': '#/components/schemas/microsoft.graph.termsAndConditions'
@@ -22775,6 +24637,7 @@ components:
           '#microsoft.graph.unifiedRoleScheduleInstanceBase': '#/components/schemas/microsoft.graph.unifiedRoleScheduleInstanceBase'
           '#microsoft.graph.unifiedRoleAssignmentScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
           '#microsoft.graph.unifiedRoleEligibilityScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+          '#microsoft.graph.unifiedRoot': '#/components/schemas/microsoft.graph.unifiedRoot'
           '#microsoft.graph.unifiedStorageQuota': '#/components/schemas/microsoft.graph.unifiedStorageQuota'
           '#microsoft.graph.unsupportedGroupPolicyExtension': '#/components/schemas/microsoft.graph.unsupportedGroupPolicyExtension'
           '#microsoft.graph.usageRight': '#/components/schemas/microsoft.graph.usageRight'
@@ -23026,8 +24889,19 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -23306,6 +25180,13 @@ components:
           '#microsoft.graph.security.caseManagement.recommendationRelation': '#/components/schemas/microsoft.graph.security.caseManagement.recommendationRelation'
           '#microsoft.graph.security.caseManagement.workspaceIndicatorRelation': '#/components/schemas/microsoft.graph.security.caseManagement.workspaceIndicatorRelation'
           '#microsoft.graph.security.caseManagement.task': '#/components/schemas/microsoft.graph.security.caseManagement.task'
+          '#microsoft.graph.security.caseManagement.caseTypeConfiguration': '#/components/schemas/microsoft.graph.security.caseManagement.caseTypeConfiguration'
+          '#microsoft.graph.security.caseManagement.customFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.customFieldDefinition'
+          '#microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.numberCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.numberCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.optionsCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.optionsCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.stringCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.stringCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.statusDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.statusDefinition'
           '#microsoft.graph.security.dlp.baseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.baseAuditRecord'
           '#microsoft.graph.security.dlp.complianceBaseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.complianceBaseAuditRecord'
           '#microsoft.graph.security.dlp.complianceDLPBaseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.complianceDLPBaseAuditRecord'
@@ -23324,31 +25205,6 @@ components:
           '#microsoft.graph.teamsAdministration.teamsUserConfiguration': '#/components/schemas/microsoft.graph.teamsAdministration.teamsUserConfiguration'
           '#microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation': '#/components/schemas/microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation'
           '#microsoft.graph.teamsAdministration.telephoneNumberManagementRoot': '#/components/schemas/microsoft.graph.teamsAdministration.telephoneNumberManagementRoot'
-          '#microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.billingMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetrics'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.governanceInvitation': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
-          '#microsoft.graph.tenantGovernanceServices.governancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
-          '#microsoft.graph.tenantGovernanceServices.governanceRelationship': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
-          '#microsoft.graph.tenantGovernanceServices.governanceRequest': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
-          '#microsoft.graph.tenantGovernanceServices.longRunningOperation': '#/components/schemas/microsoft.graph.tenantGovernanceServices.longRunningOperation'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.relatedTenant': '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
-          '#microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshRequest': '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshRequest'
-          '#microsoft.graph.tenantGovernanceServices.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernance'
-          '#microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting': '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting'
           '#microsoft.graph.termStore.group': '#/components/schemas/microsoft.graph.termStore.group'
           '#microsoft.graph.termStore.relation': '#/components/schemas/microsoft.graph.termStore.relation'
           '#microsoft.graph.termStore.set': '#/components/schemas/microsoft.graph.termStore.set'
@@ -24389,6 +26245,12 @@ components:
                   nullable: true
               description: Represents a QR code authentication method registered to a user for authentication.
               x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -24922,7 +26784,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
-              description: A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -25129,6 +26991,11 @@ components:
               description: 'The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            provisioningConfiguration:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningConfiguration'
+                - type: object
+                  nullable: true
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -25849,27 +27716,25 @@ components:
               type: string
               description: The display name of the distribution list.
               nullable: true
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.member'
-              description: The list of members in the distribution list. Not returned by default; use $select=members to include.
             notes:
               type: string
+              description: Notes about the distribution list.
               nullable: true
             personIdentifier:
               type: string
+              description: The unique identifier of the distribution list in the mailbox. Read-only.
               nullable: true
-            distributionListMembers:
+            members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.distributionListMember'
-              description: The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.
+              description: The members of the distribution list. Not returned by default; use $expand=members to include. Read-only.
               x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the distribution list. Read-only.
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -25899,6 +27764,12 @@ components:
                 - type: object
                   nullable: true
               description: Optional. Information about the drive's storage space quota. Read-only.
+            settings:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.driveSettings'
+                - type: object
+                  nullable: true
+              description: The settings associated with the drive. Read-only. This property isn't returned by default and must be selected using the $select query parameter.
             sharePointIds:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.sharepointIds'
@@ -29185,6 +31056,82 @@ components:
           nullable: true
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.identityGovernance.deleteOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.deleteOnlyEnforcementAction'
+          '#microsoft.graph.identityGovernance.disableOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableOnlyEnforcementAction'
+          '#microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction'
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        additionalRecipients:
+          type: array
+          items:
+            type: string
+        isEnabled:
+          type: boolean
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+        '@odata.type':
+          type: string
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet'
+          '#microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet'
+          '#microsoft.graph.identityGovernance.groupBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.groupBasedSubjectSet'
+          '#microsoft.graph.identityGovernance.ruleBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.ruleBasedSubjectSet'
+          '#microsoft.graph.identityGovernance.selectedObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.selectedObjectsSubjectSet'
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+              '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+              '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
     microsoft.graph.groupAccessType:
       title: groupAccessType
       enum:
@@ -29776,6 +31723,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
+    microsoft.graph.identityGovernance.complianceIssueCollectionResponse:
+      title: Collection of complianceIssue
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
     microsoft.graph.administrativeUnitCollectionResponse:
       title: Collection of administrativeUnit
       type: object
@@ -29995,7 +31953,6 @@ components:
       properties:
         '@odata.type':
           type: string
-      description: 'IP range base class for representing IPV4, IPV6 address ranges'
       discriminator:
         propertyName: '@odata.type'
         mapping:
@@ -30965,6 +32922,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -31191,6 +33149,29 @@ components:
               type: string
               default: '#microsoft.graph.qrCodePinAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.qrCodePinAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -31848,7 +33829,7 @@ components:
           properties:
             body:
               anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.itemBody'
+                - $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
                 - type: object
                   nullable: true
               description: Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn't return @mentions and attachments.
@@ -31929,7 +33910,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
               description: 'References to attached objects like files, tabs, meetings etc.'
             body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
             channelIdentity:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.channelIdentity'
@@ -31940,6 +33921,11 @@ components:
               type: string
               description: 'If the message was sent in a chat, represents the identity of the chat.'
               nullable: true
+            citations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageCitation'
+              description: Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -31968,6 +33954,8 @@ components:
                 - type: object
                   nullable: true
               description: Details of the sender of the chat message. Can only be set during migration.
+            hasReplies:
+              type: boolean
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
             lastEditedDateTime:
@@ -32491,6 +34479,16 @@ components:
         - business
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcProvisioningConfiguration:
+      title: cloudPcProvisioningConfiguration
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        domainJoinType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
+        '@odata.type':
+          type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -33056,32 +35054,6 @@ components:
               type: string
               default: '#microsoft.graph.deviceTemplate'
       x-ms-discriminator-value: '#microsoft.graph.deviceTemplate'
-    microsoft.graph.member:
-      title: member
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        contactId:
-          type: string
-          description: 'The ID of the referenced contact, if applicable. Optional.'
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the member. Optional.
-          nullable: true
-        key:
-          type: string
-          description: The email address or routing key of the member. Required.
-          nullable: true
-        recipientType:
-          $ref: '#/components/schemas/microsoft.graph.recipientType'
-        routingType:
-          type: string
-          description: 'The routing type for the member, for example, SMTP. Optional.'
-          nullable: true
-        '@odata.type':
-          type: string
     microsoft.graph.distributionListMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -33090,21 +35062,22 @@ components:
             - '@odata.type'
           type: object
           properties:
-            contactId:
-              type: string
-              description: 'The ID of the referenced contact, if applicable. Read-only.'
-              nullable: true
             displayName:
               type: string
               description: The display name of the member. Read-only.
               nullable: true
-            recipientType:
+            memberId:
+              type: string
+              description: 'A system generated unique identifier. Non-empty for contact, privateDL and mailbox members. ReadOnly.'
+              nullable: true
+            type:
               $ref: '#/components/schemas/microsoft.graph.recipientType'
             contact:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.contact'
                 - type: object
                   nullable: true
+              description: The contact associated with the distribution list member. Read-only.
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -33226,6 +35199,18 @@ components:
           type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.driveSettings:
+      title: driveSettings
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        itemDefaultSensitivityLabelId:
+          type: string
+          description: The ID of the default sensitivity label for items in the drive. Read-only.
           nullable: true
         '@odata.type':
           type: string
@@ -38810,6 +40795,7 @@ components:
               '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
               '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
               '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+              '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
               '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
               '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
               '#microsoft.graph.plannerPlan': '#/components/schemas/microsoft.graph.plannerPlan'
@@ -38914,6 +40900,12 @@ components:
                   nullable: true
               description: Extra details about the plan. Read-only. Nullable.
               x-ms-navigationProperty: true
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+              description: Collection of goals in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
             historyItems:
               type: array
               items:
@@ -39017,6 +41009,11 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            goalIds:
+              type: array
+              items:
+                type: string
+              description: Read-only. The IDs of the goals associated with the task.
             hasChat:
               type: boolean
               description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
@@ -42474,6 +44471,30 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.teamsAppDefinition'
+    microsoft.graph.chatMessageBody:
+      title: chatMessageBody
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the chat message.
+          nullable: true
+        contentType:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.bodyType'
+            - type: object
+              nullable: true
+          description: 'The type of the content. The possible values are: text, html. The contentType property is deprecated. Going forward, use the messageBodyContentType property.'
+        messageBodyContentType:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.chatMessageBodyContentType'
+            - type: object
+              nullable: true
+          description: 'The type of the content, including support for additional Teams content types. The possible values are: text, html, markdown, unknownFutureValue.'
+        '@odata.type':
+          type: string
     microsoft.graph.eventMessageDetail:
       title: eventMessageDetail
       required:
@@ -42586,6 +44607,43 @@ components:
         teamId:
           type: string
           description: The identity of the team in which the message was posted.
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.chatMessageCitation:
+      title: chatMessageCitation
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        excerpt:
+          type: string
+          description: Read-only. Text snippet from the cited source.
+          nullable: true
+        iconType:
+          type: string
+          description: 'Read-only. Icon type identifier for the cited source, for example, ExcelIcon or WordIcon.'
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Read-only. Citation identifier that''s unique within the message. The message body references this identifier inline, for example, [1].'
+          format: int32
+          nullable: true
+        sensitivityLabel:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.chatMessageCitationSensitivityLabel'
+            - type: object
+              nullable: true
+          description: Read-only. Sensitivity label applied to the cited source.
+        title:
+          type: string
+          description: Read-only. Display title of the cited source.
+          nullable: true
+        webUrl:
+          type: string
+          description: Read-only. URL to the cited source.
           nullable: true
         '@odata.type':
           type: string
@@ -42881,6 +44939,13 @@ components:
         - unknownFutureValue
         - vMware
         - hp
+      type: string
+    microsoft.graph.cloudPcDomainJoinType:
+      title: cloudPcDomainJoinType
+      enum:
+        - azureADJoin
+        - hybridAzureADJoin
+        - unknownFutureValue
       type: string
     microsoft.graph.delegationSettings:
       allOf:
@@ -48233,7 +50298,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
         '@odata.type':
           type: string
@@ -48241,6 +50306,7 @@ components:
         propertyName: '@odata.type'
         mapping:
           '#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource'
+          '#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource'
           '#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource'
           '#microsoft.graph.accessReviewInstanceDecisionItemCustomDataProvidedResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemCustomDataProvidedResource'
           '#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource'
@@ -48597,6 +50663,56 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.plannerPlanDetails'
+    microsoft.graph.plannerGoal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerGoal
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Required. The display name of the goal.
+            finishDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to finish.
+              format: date
+              nullable: true
+            notes:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.itemBody'
+                - type: object
+                  nullable: true
+              description: Nullable. The notes associated with the goal.
+            planId:
+              type: string
+              description: Required. The ID of the plan that contains the goal.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Optional. The relative priority of the goal. Valid values range from 0 to 10, inclusive. The default value is 5.'
+              format: int32
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to start.
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoalStatus'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.plannerGoal'
     microsoft.graph.plannerHistoryItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -51680,6 +53796,30 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.teamsAppDashboardCardDefinition'
+    microsoft.graph.chatMessageBodyContentType:
+      title: chatMessageBodyContentType
+      enum:
+        - text
+        - html
+        - markdown
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessageCitationSensitivityLabel:
+      title: chatMessageCitationSensitivityLabel
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        description:
+          type: string
+          description: Read-only. User-facing description of the sensitivity restriction.
+          nullable: true
+        displayName:
+          type: string
+          description: Read-only. Display name of the sensitivity label.
+          nullable: true
+        '@odata.type':
+          type: string
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -51856,6 +53996,11 @@ components:
               nullable: true
         deviceMetadata:
           $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        evaluationScope:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.evaluationScope'
+            - type: object
+              nullable: true
         integratedAppMetadata:
           $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
         protectedAppMetadata:
@@ -54371,6 +56516,16 @@ components:
       properties:
         '@odata.type':
           type: string
+    microsoft.graph.plannerGoalStatus:
+      title: plannerGoalStatus
+      enum:
+        - notStarted
+        - onTrack
+        - behind
+        - atRisk
+        - closed
+        - unknownFutureValue
+      type: string
     microsoft.graph.historyEntityType:
       title: historyEntityType
       enum:
@@ -57104,6 +59259,16 @@ components:
           description: Details about the operating system platform and version.
         '@odata.type':
           type: string
+    microsoft.graph.evaluationScope:
+      title: evaluationScope
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.evaluationScopeType'
+        '@odata.type':
+          type: string
     microsoft.graph.integratedApplicationMetadata:
       title: integratedApplicationMetadata
       required:
@@ -57138,6 +59303,11 @@ components:
                 - type: object
                   nullable: true
               description: The client (application) ID of the Microsoft Entra application. Required.
+            sourceLocation:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.policyLocation'
+                - type: object
+                  nullable: true
             '@odata.type':
               type: string
               default: '#microsoft.graph.protectedApplicationMetadata'
@@ -58403,11 +60573,11 @@ components:
         - uploadFile
         - downloadText
         - downloadFile
+        - unknownFutureValue
         - copyToClipboard
         - pasteFromClipboard
         - print
         - accessDebugTools
-        - unknownFutureValue
       type: string
     microsoft.graph.contentBase:
       title: contentBase
@@ -58455,6 +60625,14 @@ components:
           description: The version string of the operating system.
         '@odata.type':
           type: string
+    microsoft.graph.evaluationScopeType:
+      title: evaluationScopeType
+      enum:
+        - tenant
+        - agent
+        - anonymousUser
+        - unknownFutureValue
+      type: string
     microsoft.graph.policyLocation:
       title: policyLocation
       required:
@@ -58471,6 +60649,7 @@ components:
         mapping:
           '#microsoft.graph.policyLocationApplication': '#/components/schemas/microsoft.graph.policyLocationApplication'
           '#microsoft.graph.policyLocationDomain': '#/components/schemas/microsoft.graph.policyLocationDomain'
+          '#microsoft.graph.policyLocationTool': '#/components/schemas/microsoft.graph.policyLocationTool'
           '#microsoft.graph.policyLocationUrl': '#/components/schemas/microsoft.graph.policyLocationUrl'
     microsoft.graph.sharingRole:
       title: sharingRole
@@ -59746,6 +61925,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.licenseDetailsCollectionResponse'
+    microsoft.graph.identityGovernance.complianceIssueCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssueCollectionResponse'
     microsoft.graph.administrativeUnitCollectionResponse:
       description: Retrieved collection
       content:
