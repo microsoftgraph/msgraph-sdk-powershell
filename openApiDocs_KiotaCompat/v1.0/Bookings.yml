@@ -3190,6 +3190,769 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get virtualEventTownhallRegistrationConfiguration
+      description: Read the properties and relationships of a virtualEventTownhallRegistrationConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventtownhallregistrationconfiguration-get?view=graph-rest-1.0
+      operationId: solutions.virtualEvents.townhalls.GetRegistrationConfiguration
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property registrationConfiguration in solutions
+      operationId: solutions.virtualEvents.townhalls.UpdateRegistrationConfiguration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrationConfiguration for solutions
+      operationId: solutions.virtualEvents.townhalls.DeleteRegistrationConfiguration
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get questions from solutions
+      description: Registration questions.
+      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.ListQuestions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationQuestionBaseCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Create new navigation property to questions for solutions
+      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.CreateQuestions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get questions from solutions
+      description: Registration questions.
+      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.GetQuestions
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property questions in solutions
+      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.UpdateQuestions
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property questions for solutions
+      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.DeleteQuestions
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.questions.GetCount-540e
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      description: Registration records of the town hall.
+      operationId: solutions.virtualEvents.townhalls.ListRegistrations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Create new navigation property to registrations for solutions
+      operationId: solutions.virtualEvents.townhalls.CreateRegistrations
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      description: Registration records of the town hall.
+      operationId: solutions.virtualEvents.townhalls.GetRegistrations
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property registrations in solutions
+      operationId: solutions.virtualEvents.townhalls.UpdateRegistrations
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrations for solutions
+      operationId: solutions.virtualEvents.townhalls.DeleteRegistrations
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/cancel':
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Invoke action cancel
+      operationId: solutions.virtualEvents.townhalls.virtualEventTownhall.registrations.virtualEventRegistration.cancel
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      description: Sessions for a registration.
+      operationId: solutions.virtualEvents.townhalls.registrations.ListSessions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      description: Sessions for a registration.
+      operationId: solutions.virtualEvents.townhalls.registrations.GetSessions
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solutions.virtualEvents.townhalls.registrations.sessions.GetCount-b133
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email=''{email}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      description: Registration records of the town hall.
+      operationId: solutions.virtualEvents.townhalls.registrations.GetByEmail
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property registrations in solutions
+      operationId: solutions.virtualEvents.townhalls.registrations.UpdateByEmail
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrations for solutions
+      operationId: solutions.virtualEvents.townhalls.registrations.DeleteByEmail
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email=''{email}'')/cancel':
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Invoke action cancel
+      operationId: solutions.virtualEvents.townhalls.virtualEventTownhall.registrations.email.cancel
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId=''{userId}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      description: Registration records of the town hall.
+      operationId: solutions.virtualEvents.townhalls.registrations.GetByUserId
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property registrations in solutions
+      operationId: solutions.virtualEvents.townhalls.registrations.UpdateByUserId
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrations for solutions
+      operationId: solutions.virtualEvents.townhalls.registrations.DeleteByUserId
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId=''{userId}'')/cancel':
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Invoke action cancel
+      operationId: solutions.virtualEvents.townhalls.virtualEventTownhall.registrations.userId.cancel
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solutions.virtualEvents.townhalls.registrations.GetCount-02ff
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions':
     get:
       tags:
@@ -4343,7 +5106,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List questions
-      description: Get a list of all registration questions for a webinar. The list can include either predefined registration questions or custom registration questions.
+      description: Get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-list-questions?view=graph-rest-1.0
@@ -4399,7 +5162,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create virtualEventRegistrationCustomQuestion
-      description: Create a registration question for a webinar. You can create either a predefined registration question or a custom registration question.
+      description: Create a registration question for a webinar or town hall. You can create either a predefined registration question or a custom registration question.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-post-questions?view=graph-rest-1.0
@@ -4491,7 +5254,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete virtualEventRegistrationQuestionBase
-      description: 'Delete a registration question from a webinar. The question can either be a predefined registration question or a custom registration question. '
+      description: 'Delete a registration question from a webinar or town hall. The question can either be a predefined registration question or a custom registration question. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistrationquestionbase-delete?view=graph-rest-1.0
@@ -4532,7 +5295,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List virtualEventRegistrations
-      description: Get a list of all registration records of a webinar.
+      description: Get a list of all registration records of a webinar or town hall.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-1.0
@@ -4588,7 +5351,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create virtualEventRegistration
-      description: 'Create a registration record for a registrant of a webinar. This method registers the person for the webinar. '
+      description: 'Create a registration record for a registrant of a webinar or town hall. This method registers the person for the webinar or town hall. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-post-registrations?view=graph-rest-1.0
@@ -4704,7 +5467,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      description: 'Cancel a registrant''s registration record for a webinar. '
+      description: 'Cancel a registrant''s registration record for a webinar or town hall. '
       operationId: solutions.virtualEvents.webinars.virtualEventWebinar.registrations.virtualEventRegistration.cancel
       responses:
         '204':
@@ -4719,7 +5482,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List sessions for a virtual event registration
-      description: 'Get a list of sessions summaries that a registrant registered for in a webinar. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The remaining session properties are null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. '
+      description: 'Get a list of sessions summaries that a registrant registered for in a webinar or town hall. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The remaining session properties are null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistration-list-sessions?view=graph-rest-1.0
@@ -4919,7 +5682,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      description: 'Cancel a registrant''s registration record for a webinar. '
+      description: 'Cancel a registrant''s registration record for a webinar or town hall. '
       operationId: solutions.virtualEvents.webinars.virtualEventWebinar.registrations.email.cancel
       responses:
         '204':
@@ -5021,7 +5784,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      description: 'Cancel a registrant''s registration record for a webinar. '
+      description: 'Cancel a registrant''s registration record for a webinar or town hall. '
       operationId: solutions.virtualEvents.webinars.virtualEventWebinar.registrations.userId.cancel
       responses:
         '204':
@@ -6370,6 +7133,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
               description: 'The external information of a virtual event. Returned only for event organizers or coorganizers; otherwise, null.'
+            isRegistrationRequired:
+              type: boolean
+              description: Indicates whether attendee registration is enabled for the virtual event.
+              nullable: true
             settings:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.virtualEventSettings'
@@ -6442,6 +7209,13 @@ components:
             - '@odata.type'
           type: object
           properties:
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Represents the expected number of attendees for the virtual event session.
+              format: int32
+              nullable: true
             endDateTime:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -6564,6 +7338,13 @@ components:
                 - type: object
                   nullable: true
               description: 'The audience to whom the town hall is visible. The possible values are: everyone, organization, and unknownFutureValue.'
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Represents the expected number of attendees for the town hall.
+              format: int32
+              nullable: true
             coOrganizers:
               type: array
               items:
@@ -6578,63 +7359,34 @@ components:
               type: boolean
               description: Indicates whether the town hall is only open to invited people and groups within your organization. The isInviteOnly property can only be true if the value of the audience property is set to organization.
               nullable: true
-            '@odata.type':
-              type: string
-              default: '#microsoft.graph.virtualEventTownhall'
-      x-ms-discriminator-value: '#microsoft.graph.virtualEventTownhall'
-    microsoft.graph.virtualEventWebinar:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.virtualEvent'
-        - title: virtualEventWebinar
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            audience:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.meetingAudience'
-                - type: object
-                  nullable: true
-              description: 'To whom the webinar is visible. The possible values are: everyone, organization, and unknownFutureValue.'
-            coOrganizers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
-              description: Identity information of coorganizers of the webinar.
             registrationConfiguration:
               anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarRegistrationConfiguration'
+                - $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
                 - type: object
                   nullable: true
-              description: Registration configuration of the webinar.
+              description: Registration configuration of the town hall.
               x-ms-navigationProperty: true
             registrations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
-              description: Registration records of the webinar.
+              description: Registration records of the town hall.
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
-              default: '#microsoft.graph.virtualEventWebinar'
-      x-ms-discriminator-value: '#microsoft.graph.virtualEventWebinar'
-    microsoft.graph.virtualEventWebinarRegistrationConfiguration:
+              default: '#microsoft.graph.virtualEventTownhall'
+      x-ms-discriminator-value: '#microsoft.graph.virtualEventTownhall'
+    microsoft.graph.virtualEventTownhallRegistrationConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
-        - title: virtualEventWebinarRegistrationConfiguration
+        - title: virtualEventTownhallRegistrationConfiguration
           required:
             - '@odata.type'
           type: object
           properties:
-            isManualApprovalEnabled:
-              type: boolean
-              nullable: true
-            isWaitlistEnabled:
-              type: boolean
-              nullable: true
             '@odata.type':
               type: string
-      x-ms-discriminator-value: '#microsoft.graph.virtualEventWebinarRegistrationConfiguration'
+      x-ms-discriminator-value: '#microsoft.graph.virtualEventTownhallRegistrationConfiguration'
     microsoft.graph.virtualEventRegistrationQuestionBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6728,6 +7480,53 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.virtualEventRegistration'
+    microsoft.graph.virtualEventWebinar:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.virtualEvent'
+        - title: virtualEventWebinar
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            audience:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.meetingAudience'
+                - type: object
+                  nullable: true
+              description: 'To whom the webinar is visible. The possible values are: everyone, organization, and unknownFutureValue.'
+            coOrganizers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              description: Identity information of coorganizers of the webinar.
+            registrationConfiguration:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarRegistrationConfiguration'
+                - type: object
+                  nullable: true
+              description: Registration configuration of the webinar.
+              x-ms-navigationProperty: true
+            registrations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              description: Registration records of the webinar.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.virtualEventWebinar'
+      x-ms-discriminator-value: '#microsoft.graph.virtualEventWebinar'
+    microsoft.graph.virtualEventWebinarRegistrationConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
+        - title: virtualEventWebinarRegistrationConfiguration
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.virtualEventWebinarRegistrationConfiguration'
     microsoft.graph.backupRestoreRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6910,6 +7709,7 @@ components:
           '#microsoft.graph.accessPackageMultipleChoiceQuestion': '#/components/schemas/microsoft.graph.accessPackageMultipleChoiceQuestion'
           '#microsoft.graph.accessPackageTextInputQuestion': '#/components/schemas/microsoft.graph.accessPackageTextInputQuestion'
           '#microsoft.graph.accessPackageResource': '#/components/schemas/microsoft.graph.accessPackageResource'
+          '#microsoft.graph.customDataProvidedResource': '#/components/schemas/microsoft.graph.customDataProvidedResource'
           '#microsoft.graph.accessPackageResourceEnvironment': '#/components/schemas/microsoft.graph.accessPackageResourceEnvironment'
           '#microsoft.graph.accessPackageResourceRequest': '#/components/schemas/microsoft.graph.accessPackageResourceRequest'
           '#microsoft.graph.accessPackageResourceRole': '#/components/schemas/microsoft.graph.accessPackageResourceRole'
@@ -7172,6 +7972,9 @@ components:
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
+          '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
+          '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
+          '#microsoft.graph.customDataProvidedResourceAccessReviewUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceAccessReviewUploadSession'
           '#microsoft.graph.customExtensionStageSetting': '#/components/schemas/microsoft.graph.customExtensionStageSetting'
           '#microsoft.graph.customSecurityAttributeDefinition': '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
           '#microsoft.graph.dataPolicyOperation': '#/components/schemas/microsoft.graph.dataPolicyOperation'
@@ -7191,7 +7994,6 @@ components:
           '#microsoft.graph.deletedTeam': '#/components/schemas/microsoft.graph.deletedTeam'
           '#microsoft.graph.deltaParticipants': '#/components/schemas/microsoft.graph.deltaParticipants'
           '#microsoft.graph.detectedApp': '#/components/schemas/microsoft.graph.detectedApp'
-          '#microsoft.graph.deviceAppManagement': '#/components/schemas/microsoft.graph.deviceAppManagement'
           '#microsoft.graph.deviceCategory': '#/components/schemas/microsoft.graph.deviceCategory'
           '#microsoft.graph.deviceComplianceActionItem': '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
           '#microsoft.graph.deviceComplianceDeviceOverview': '#/components/schemas/microsoft.graph.deviceComplianceDeviceOverview'
@@ -7301,6 +8103,7 @@ components:
           '#microsoft.graph.tokenIssuancePolicy': '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
           '#microsoft.graph.tokenLifetimePolicy': '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
           '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
+          '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
           '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
           '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
           '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -7361,6 +8164,7 @@ components:
           '#microsoft.graph.extension': '#/components/schemas/microsoft.graph.extension'
           '#microsoft.graph.openTypeExtension': '#/components/schemas/microsoft.graph.openTypeExtension'
           '#microsoft.graph.externalDomainName': '#/components/schemas/microsoft.graph.externalDomainName'
+          '#microsoft.graph.externalOriginResourceConnector': '#/components/schemas/microsoft.graph.externalOriginResourceConnector'
           '#microsoft.graph.featureRolloutPolicy': '#/components/schemas/microsoft.graph.featureRolloutPolicy'
           '#microsoft.graph.federatedIdentityCredential': '#/components/schemas/microsoft.graph.federatedIdentityCredential'
           '#microsoft.graph.fieldValueSet': '#/components/schemas/microsoft.graph.fieldValueSet'
@@ -7430,6 +8234,18 @@ components:
           '#microsoft.graph.engagementAsyncOperation': '#/components/schemas/microsoft.graph.engagementAsyncOperation'
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
+          '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
+          '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
+          '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.crossTenantCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.crossTenantCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusySimple'
+          '#microsoft.graph.crossTenantMailTipsAll': '#/components/schemas/microsoft.graph.crossTenantMailTipsAll'
+          '#microsoft.graph.crossTenantMailTipsLimited': '#/components/schemas/microsoft.graph.crossTenantMailTipsLimited'
+          '#microsoft.graph.crossTenantMigration': '#/components/schemas/microsoft.graph.crossTenantMigration'
+          '#microsoft.graph.crossTenantOpenProfileCard': '#/components/schemas/microsoft.graph.crossTenantOpenProfileCard'
+          '#microsoft.graph.crossTenantPlacesDeskBooking': '#/components/schemas/microsoft.graph.crossTenantPlacesDeskBooking'
+          '#microsoft.graph.crossTenantPlacesRoomBooking': '#/components/schemas/microsoft.graph.crossTenantPlacesRoomBooking'
           '#microsoft.graph.mailboxFolder': '#/components/schemas/microsoft.graph.mailboxFolder'
           '#microsoft.graph.mailFolder': '#/components/schemas/microsoft.graph.mailFolder'
           '#microsoft.graph.mailSearchFolder': '#/components/schemas/microsoft.graph.mailSearchFolder'
@@ -7685,6 +8501,8 @@ components:
           '#microsoft.graph.serviceApp': '#/components/schemas/microsoft.graph.serviceApp'
           '#microsoft.graph.serviceHealth': '#/components/schemas/microsoft.graph.serviceHealth'
           '#microsoft.graph.servicePrincipalRiskDetection': '#/components/schemas/microsoft.graph.servicePrincipalRiskDetection'
+          '#microsoft.graph.serviceProviderConstraints': '#/components/schemas/microsoft.graph.serviceProviderConstraints'
+          '#microsoft.graph.delegatedAdminServiceProviderConstraints': '#/components/schemas/microsoft.graph.delegatedAdminServiceProviderConstraints'
           '#microsoft.graph.settingStateDeviceSummary': '#/components/schemas/microsoft.graph.settingStateDeviceSummary'
           '#microsoft.graph.sharedInsight': '#/components/schemas/microsoft.graph.sharedInsight'
           '#microsoft.graph.sharepoint': '#/components/schemas/microsoft.graph.sharepoint'
@@ -7774,6 +8592,7 @@ components:
           '#microsoft.graph.unifiedRoleScheduleInstanceBase': '#/components/schemas/microsoft.graph.unifiedRoleScheduleInstanceBase'
           '#microsoft.graph.unifiedRoleAssignmentScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
           '#microsoft.graph.unifiedRoleEligibilityScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+          '#microsoft.graph.unifiedRoot': '#/components/schemas/microsoft.graph.unifiedRoot'
           '#microsoft.graph.unifiedStorageQuota': '#/components/schemas/microsoft.graph.unifiedStorageQuota'
           '#microsoft.graph.usageRightsIncluded': '#/components/schemas/microsoft.graph.usageRightsIncluded'
           '#microsoft.graph.usedInsight': '#/components/schemas/microsoft.graph.usedInsight'
@@ -7821,6 +8640,7 @@ components:
           '#microsoft.graph.virtualEventPresenter': '#/components/schemas/microsoft.graph.virtualEventPresenter'
           '#microsoft.graph.virtualEventRegistration': '#/components/schemas/microsoft.graph.virtualEventRegistration'
           '#microsoft.graph.virtualEventRegistrationConfiguration': '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
+          '#microsoft.graph.virtualEventTownhallRegistrationConfiguration': '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
           '#microsoft.graph.virtualEventWebinarRegistrationConfiguration': '#/components/schemas/microsoft.graph.virtualEventWebinarRegistrationConfiguration'
           '#microsoft.graph.virtualEventRegistrationQuestionBase': '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
           '#microsoft.graph.virtualEventRegistrationCustomQuestion': '#/components/schemas/microsoft.graph.virtualEventRegistrationCustomQuestion'
@@ -7919,6 +8739,7 @@ components:
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
+          '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
           '#microsoft.graph.identityGovernance.task': '#/components/schemas/microsoft.graph.identityGovernance.task'
           '#microsoft.graph.identityGovernance.taskDefinition': '#/components/schemas/microsoft.graph.identityGovernance.taskDefinition'
           '#microsoft.graph.identityGovernance.taskProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.taskProcessingResult'
@@ -8628,6 +9449,12 @@ components:
                 - type: object
                   nullable: true
               description: Specifies the configuration settings for meeting chat restrictions.
+            cloudVideoInteropInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.cloudVideoInteropInfo'
+                - type: object
+                  nullable: true
+              description: Conferencing device integration settings for Cloud Video Interop (CVI). Read-only.
             expiryDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -8672,6 +9499,12 @@ components:
               type: string
               description: Specifies the spoken language used during the meeting for recording and transcription purposes.
               nullable: true
+            meetingType:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.onlineMeetingType'
+                - type: object
+                  nullable: true
+              description: 'The type of the online meeting. The possible values are: adhoc, scheduled, recurring, broadcast, meetnow, unknownFutureValue. Read-only.'
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
@@ -8796,6 +9629,14 @@ components:
               description: Total capacity of the virtual event.
               format: int32
               nullable: true
+            isManualApprovalEnabled:
+              type: boolean
+              description: Indicates whether registrations require organizer approval before a participant is confirmed.
+              nullable: true
+            isWaitlistEnabled:
+              type: boolean
+              description: Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.
+              nullable: true
             registrationWebUrl:
               type: string
               description: Registration URL of the virtual event.
@@ -8811,6 +9652,7 @@ components:
           discriminator:
             propertyName: '@odata.type'
             mapping:
+              '#microsoft.graph.virtualEventTownhallRegistrationConfiguration': '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
               '#microsoft.graph.virtualEventWebinarRegistrationConfiguration': '#/components/schemas/microsoft.graph.virtualEventWebinarRegistrationConfiguration'
     microsoft.graph.virtualEventRegistrationQuestionAnswer:
       title: virtualEventRegistrationQuestionAnswer
@@ -9005,17 +9847,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventTownhall'
-    microsoft.graph.virtualEventWebinarCollectionResponse:
-      title: Collection of virtualEventWebinar
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
-        - type: object
-          properties:
-            value:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
     microsoft.graph.virtualEventRegistrationQuestionBaseCollectionResponse:
       title: Collection of virtualEventRegistrationQuestionBase
       type: object
@@ -9038,6 +9869,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+    microsoft.graph.virtualEventWebinarCollectionResponse:
+      title: Collection of virtualEventWebinar
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
     microsoft.graph.serviceStatus:
       title: serviceStatus
       required:
@@ -10161,6 +11003,26 @@ components:
           nullable: true
         '@odata.type':
           type: string
+    microsoft.graph.cloudVideoInteropInfo:
+      title: cloudVideoInteropInfo
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        moreInfoWebUrl:
+          type: string
+          description: Provides other video teleconferencing (VTC) dial-in options. Read-only.
+          nullable: true
+        tenantKey:
+          type: string
+          description: The tenant key that is used to dial into the interactive voice response (IVR) of the partner CVI service.
+          nullable: true
+        videoTeleconferenceId:
+          type: string
+          description: The video teleconferencing ID. Read-only.
+          nullable: true
+        '@odata.type':
+          type: string
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       required:
@@ -10199,6 +11061,16 @@ components:
           description: 'Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.'
         '@odata.type':
           type: string
+    microsoft.graph.onlineMeetingType:
+      title: onlineMeetingType
+      enum:
+        - adhoc
+        - scheduled
+        - recurring
+        - broadcast
+        - meetnow
+        - unknownFutureValue
+      type: string
     microsoft.graph.onlineMeetingSensitivityLabelAssignment:
       title: onlineMeetingSensitivityLabelAssignment
       required:
@@ -11288,12 +12160,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallCollectionResponse'
-    microsoft.graph.virtualEventWebinarCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarCollectionResponse'
     microsoft.graph.virtualEventRegistrationQuestionBaseCollectionResponse:
       description: Retrieved collection
       content:
@@ -11306,6 +12172,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationCollectionResponse'
+    microsoft.graph.virtualEventWebinarCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarCollectionResponse'
   parameters:
     top:
       name: $top

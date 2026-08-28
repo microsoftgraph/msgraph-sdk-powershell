@@ -409,6 +409,41 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+  /security/alerts_v2/microsoft.graph.security.createAlert:
+    post:
+      tags:
+        - security.alert
+      summary: Invoke action createAlert
+      description: Create a Microsoft 365 Defender alert by invoking a bound action on the alerts_v2 collection and returning the created alert resource. The action accepts a createAlertInput complex type that combines alert metadata and creation-specific options in one request object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-alert-createalert?view=graph-rest-beta
+      operationId: security.alerts_v2.createAlert
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                createAlertInput:
+                  $ref: '#/components/schemas/microsoft.graph.security.createAlertInput'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.security.alert'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/alerts_v2/microsoft.graph.security.moveAlerts:
     post:
       tags:
@@ -4079,7 +4114,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: Create case attachment
-      description: Create an attachment for a case.
+      description: 'Create attachment metadata for a case. This method doesn''t upload the file content. After creating the attachment, use Upload attachment content.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casemanagement-case-post-attachments?view=graph-rest-beta
@@ -4198,8 +4233,11 @@ paths:
     get:
       tags:
         - security.caseManagementRoot
-      summary: Get content for the navigation property attachments from security
-      description: The binary content stream for the attachment.
+      summary: Download attachment content
+      description: 'Download the binary content of an attachment. After an upload completes, the service asynchronously scans the attachment for malware. Poll the attachment metadata by using Get attachment. If scanResult is unscanned, wait and try again later. Download the content only when scanResult is noThreatsFound. Don''t download content when scanResult is malicious.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-attachment-download-content?view=graph-rest-beta
       operationId: security.caseManagement.cases.GetAttachmentsContent
       responses:
         2XX:
@@ -4216,8 +4254,11 @@ paths:
     put:
       tags:
         - security.caseManagementRoot
-      summary: Update content for the navigation property attachments in security
-      description: The binary content stream for the attachment.
+      summary: Upload attachment content
+      description: 'Upload binary content for an attachment. Create the attachment metadata first by using Create case attachment. The maximum file size is 100 MB. Upload files in chunks of no more than 1 MB. For files larger than 1 MB, send one PUT request for each chunk until all byte ranges are uploaded.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-attachment-upload-content?view=graph-rest-beta
       operationId: security.caseManagement.cases.UpdateAttachmentsContent
       requestBody:
         description: New media content.
@@ -4242,7 +4283,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: Delete content for the navigation property attachments in security
-      description: The binary content stream for the attachment.
+      description: The binary content stream for the attachment. Use the Upload content and Download content methods to access it.
       operationId: security.caseManagement.cases.DeleteAttachmentsContent
       parameters:
         - name: If-Match
@@ -4279,7 +4320,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: List case relations
-      description: Get a list of external resource relation objects for a case.
+      description: 'Get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casemanagement-case-list-relations?view=graph-rest-beta
@@ -4335,7 +4376,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: Create case relation
-      description: Create an external resource relation for a case.
+      description: Create a concrete external resource relation for a case.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casemanagement-case-post-relations?view=graph-rest-beta
@@ -4363,8 +4404,11 @@ paths:
     get:
       tags:
         - security.caseManagementRoot
-      summary: Get relations from security
-      description: Links from the case to related security resources. Supports $expand.
+      summary: Get relation
+      description: 'Read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-relation-get?view=graph-rest-beta
       operationId: security.caseManagement.cases.GetRelations
       parameters:
         - name: $select
@@ -4403,7 +4447,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: Update relation
-      description: Update the properties of a relation object.
+      description: Update the properties of a concrete relation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casemanagement-relation-update?view=graph-rest-beta
@@ -4430,7 +4474,11 @@ paths:
     delete:
       tags:
         - security.caseManagementRoot
-      summary: Delete navigation property relations for security
+      summary: Delete relation
+      description: Delete a concrete relation from a case.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-relation-delete?view=graph-rest-beta
       operationId: security.caseManagement.cases.DeleteRelations
       parameters:
         - name: If-Match
@@ -4622,7 +4670,11 @@ paths:
     delete:
       tags:
         - security.caseManagementRoot
-      summary: Delete navigation property tasks for security
+      summary: Delete task
+      description: Delete a task from a case.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-task-delete?view=graph-rest-beta
       operationId: security.caseManagement.cases.DeleteTasks
       parameters:
         - name: If-Match
@@ -4661,6 +4713,339 @@ paths:
         - security.caseManagementRoot
       summary: Get the number of the resource
       operationId: security.caseManagement.cases.GetCount-80a9
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+  /security/caseManagement/caseTypeConfigurations:
+    get:
+      tags:
+        - security.caseManagementRoot
+      summary: List caseTypeConfigurations
+      description: 'Get a list of the caseTypeConfiguration objects and their properties. Each object describes the allowed status tree and the custom-field schema for one case type (genericCase, incidentCase, or exposureCase).'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagementroot-list-casetypeconfigurations?view=graph-rest-beta
+      operationId: security.caseManagement.ListCaseTypeConfigurations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.caseManagement.caseTypeConfigurationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/security/caseManagement/caseTypeConfigurations/{caseTypeConfiguration-id}':
+    get:
+      tags:
+        - security.caseManagementRoot
+      summary: Get caseTypeConfigurations from security
+      description: 'The collection of case type configurations that define the statuses and custom fields available for each case type. Read-only. Supports $select, $count, and $expand of the statuses and customFields relationships.'
+      operationId: security.caseManagement.GetCaseTypeConfigurations
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.caseTypeConfiguration'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/caseManagement/caseTypeConfigurations/{caseTypeConfiguration-id}/customFields':
+    get:
+      tags:
+        - security.caseManagementRoot
+      summary: Get customFields from security
+      description: 'The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.'
+      operationId: security.caseManagement.caseTypeConfigurations.ListCustomFields
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.caseManagement.customFieldDefinitionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/security/caseManagement/caseTypeConfigurations/{caseTypeConfiguration-id}/customFields/{customFieldDefinition-id}':
+    get:
+      tags:
+        - security.caseManagementRoot
+      summary: Get customFields from security
+      description: 'The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.'
+      operationId: security.caseManagement.caseTypeConfigurations.GetCustomFields
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.customFieldDefinition'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/caseManagement/caseTypeConfigurations/{caseTypeConfiguration-id}/customFields/$count':
+    get:
+      tags:
+        - security.caseManagementRoot
+      summary: Get the number of the resource
+      operationId: security.caseManagement.caseTypeConfigurations.customFields.GetCount-020d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+  '/security/caseManagement/caseTypeConfigurations/{caseTypeConfiguration-id}/statuses':
+    get:
+      tags:
+        - security.caseManagementRoot
+      summary: Get statuses from security
+      description: 'The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.'
+      operationId: security.caseManagement.caseTypeConfigurations.ListStatuses
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.caseManagement.statusDefinitionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/security/caseManagement/caseTypeConfigurations/{caseTypeConfiguration-id}/statuses/{statusDefinition-id}':
+    get:
+      tags:
+        - security.caseManagementRoot
+      summary: Get statuses from security
+      description: 'The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.'
+      operationId: security.caseManagement.caseTypeConfigurations.GetStatuses
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.statusDefinition'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/caseManagement/caseTypeConfigurations/{caseTypeConfiguration-id}/statuses/$count':
+    get:
+      tags:
+        - security.caseManagementRoot
+      summary: Get the number of the resource
+      operationId: security.caseManagement.caseTypeConfigurations.statuses.GetCount-6c22
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+  /security/caseManagement/caseTypeConfigurations/$count:
+    get:
+      tags:
+        - security.caseManagementRoot
+      summary: Get the number of the resource
+      operationId: security.caseManagement.caseTypeConfigurations.GetCount-6390
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6424,6 +6809,10 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action disablePolicy
+      description: 'Disable an eDiscovery hold policy (legal hold) to release the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-disablepolicy?view=graph-rest-beta
       operationId: security.cases.ediscoveryCases.ediscoveryCase.legalHolds.ediscoveryHoldPolicy.disablePolicy
       responses:
         '204':
@@ -6438,6 +6827,10 @@ paths:
       tags:
         - security.casesRoot
       summary: Invoke action enablePolicy
+      description: 'Enable an eDiscovery hold policy (legal hold) to apply the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-enablepolicy?view=graph-rest-beta
       operationId: security.cases.ediscoveryCases.ediscoveryCase.legalHolds.ediscoveryHoldPolicy.enablePolicy
       responses:
         '204':
@@ -11097,6 +11490,40 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/dataSecurityAndGovernance/processContent:
+    post:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Invoke action processContent
+      operationId: security.dataSecurityAndGovernance.processContent
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contentToProcess:
+                  anyOf:
+                    - $ref: '#/components/schemas/microsoft.graph.processContentRequest'
+                    - type: object
+                      nullable: true
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.processContentResponse'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/dataSecurityAndGovernance/processContentAsync:
     post:
       tags:
@@ -11433,6 +11860,11 @@ paths:
                 integratedAppMetadata:
                   anyOf:
                     - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+                    - type: object
+                      nullable: true
+                evaluationScope:
+                  anyOf:
+                    - $ref: '#/components/schemas/microsoft.graph.evaluationScope'
                     - type: object
                       nullable: true
         required: true
@@ -31473,6 +31905,51 @@ components:
           format: date-time
         '@odata.type':
           type: string
+    microsoft.graph.security.createAlertInput:
+      title: createAlertInput
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        category:
+          type: string
+          description: MITRE ATT&CK category for the alert.
+        description:
+          type: string
+          description: Free-text explanation of the suspicious activity or policy violation.
+        entityDefinitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.entityDefinition'
+          description: Inline entity definitions that associate entities with the alert.
+        isExcludedFromCorrelation:
+          type: boolean
+          description: Whether the alert is excluded from automatic correlation. Defaults to false.
+        linkToIncident:
+          type: number
+          description: Incident ID to link the alert to. Use 0 or omit the value to create a new incident.
+          format: int64
+          nullable: true
+        mitreTechniques:
+          type: array
+          items:
+            type: string
+          description: MITRE ATT&CK technique identifiers associated with the alert.
+        recommendedActions:
+          type: string
+          description: Recommended remediation actions for the alert.
+          nullable: true
+        sentinelWorkspace:
+          type: string
+          description: Microsoft Sentinel workspace identifier used for workspace routing.
+          nullable: true
+        severity:
+          $ref: '#/components/schemas/microsoft.graph.security.alertSeverity'
+        title:
+          type: string
+          description: Short display name shown for the alert in the Defender portal.
+        '@odata.type':
+          type: string
     microsoft.graph.security.correlationReason:
       title: correlationReason
       enum:
@@ -32672,7 +33149,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.caseManagement.case'
-              description: 'The collection of security cases managed through the case management entry point. Supports $filter, $orderby, $select, $top, $skip, and $count.'
+              description: 'The collection of security cases managed through the case management entry point. Supports $filter, $orderby, $select, $top, and $skip.'
+              x-ms-navigationProperty: true
+            caseTypeConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.caseTypeConfiguration'
+              description: 'The collection of case type configurations that define the statuses and custom fields available for each case type. Read-only. Supports $select, $count, and $expand of the statuses and customFields relationships.'
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -32690,13 +33173,13 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.security.caseManagement.customFieldValues'
                 - type: object
                   nullable: true
-              description: Tenant-defined custom field values keyed by custom field identifier.
+              description: Tenant-defined custom field values keyed by the exact displayName of each custom field definition. The property and its dynamic fields don't support $filter.
             displayName:
               type: string
-              description: 'The display name of the case. Supports $filter (eq, ne) and $orderby.'
+              description: The display name of the case. Supports $filter and $orderby.
             status:
               type: string
-              description: 'The lifecycle status of the case, such as open, in progress, or closed. Supports $filter (eq, ne) and $orderby.'
+              description: 'The tenant-defined lifecycle status of the case. Use a displayName value returned in the status tree by List statuses from /security/caseManagement/caseTypeConfigurations/genericCase/statuses or /security/caseManagement/caseTypeConfigurations/incidentCase/statuses, depending on the case type. Supports $filter (eq).'
             activities:
               type: array
               items:
@@ -32756,7 +33239,7 @@ components:
           properties:
             content:
               type: string
-              description: The binary content stream for the attachment.
+              description: The binary content stream for the attachment. Use the Upload content and Download content methods to access it.
               format: base64url
               nullable: true
             description:
@@ -32768,11 +33251,11 @@ components:
               description: The display name of the attachment.
             fileExtension:
               type: string
-              description: The file extension of the attachment.
+              description: The file extension of the attachment. The service normalizes the value to include a leading period.
               nullable: true
             fileSize:
               type: number
-              description: The size of the attachment in bytes.
+              description: The size of the attachment in bytes. The maximum file size is 100 MB.
               format: int64
               nullable: true
             origin:
@@ -32818,25 +33301,25 @@ components:
           properties:
             assignedTo:
               type: string
-              description: The user assigned to the task.
+              description: The user assigned to the task. Supports $filter.
               nullable: true
             category:
               $ref: '#/components/schemas/microsoft.graph.security.caseManagement.caseTaskCategory'
             closingNotes:
               type: string
-              description: Notes recorded when the task is completed.
+              description: Notes recorded when the task is completed. Supports $filter.
               nullable: true
             description:
               type: string
-              description: The description of the task.
+              description: The description of the task. Supports $filter.
               nullable: true
             displayName:
               type: string
-              description: The title of the task.
+              description: The title of the task. Supports $filter.
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The target completion date and time for the task.
+              description: The target completion date and time for the task. Supports $filter.
               format: date-time
               nullable: true
             priority:
@@ -32847,6 +33330,90 @@ components:
               type: string
               default: '#microsoft.graph.security.caseManagement.task'
       x-ms-discriminator-value: '#microsoft.graph.security.caseManagement.task'
+    microsoft.graph.security.caseManagement.caseTypeConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: caseTypeConfiguration
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            defaultStatusId:
+              type: string
+              description: The id of the top-level status that a new case of this type starts in.
+            displayName:
+              type: string
+              description: The human-readable label of the case type.
+            customFields:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.customFieldDefinition'
+              description: 'The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.'
+              x-ms-navigationProperty: true
+            statuses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.statusDefinition'
+              description: 'The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.'
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.security.caseManagement.caseTypeConfiguration'
+    microsoft.graph.security.caseManagement.customFieldDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customFieldDefinition
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            description:
+              type: string
+              description: The field description. Supports $filter and $orderby.
+              nullable: true
+            displayName:
+              type: string
+              description: The field label shown on the case form. Supports $filter and $orderby.
+            isDisabled:
+              type: boolean
+              description: 'true if the field is disabled; otherwise, false. Supports $filter and $orderby.'
+            isRequired:
+              type: boolean
+              description: 'true if a value is required for this field; otherwise, false. Supports $filter and $orderby.'
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition'
+              '#microsoft.graph.security.caseManagement.numberCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.numberCustomFieldDefinition'
+              '#microsoft.graph.security.caseManagement.optionsCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.optionsCustomFieldDefinition'
+              '#microsoft.graph.security.caseManagement.stringCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.stringCustomFieldDefinition'
+    microsoft.graph.security.caseManagement.statusDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: statusDefinition
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            customStatuses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.customStatusDefinition'
+              description: The custom statuses returned inline within this top-level status. These aren't separately addressable.
+            displayName:
+              type: string
+              description: The human-readable label of the status. Supports $filter and $orderby.
+            sortOrder:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The display order of the status relative to other statuses of the same case type. Supports $filter and $orderby.
+              format: int32
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.security.caseManagement.statusDefinition'
     microsoft.graph.security.casesRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -34843,6 +35410,61 @@ components:
               type: string
               default: '#microsoft.graph.tenantDataSecurityAndGovernance'
       x-ms-discriminator-value: '#microsoft.graph.tenantDataSecurityAndGovernance'
+    microsoft.graph.processContentRequest:
+      title: processContentRequest
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        activityMetadata:
+          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
+        contentEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
+          description: 'A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses, file metadata for files, and content activity metadata for enforcement result status entries. Required.'
+        contextMetadata:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.contextMetadata'
+            - type: object
+              nullable: true
+        deviceMetadata:
+          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
+        evaluationScope:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.evaluationScope'
+            - type: object
+              nullable: true
+        integratedAppMetadata:
+          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        protectedAppMetadata:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
+            - type: object
+              nullable: true
+          description: Metadata about the protected application making the request. Required.
+        '@odata.type':
+          type: string
+    microsoft.graph.processContentResponse:
+      title: processContentResponse
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        policyActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dlpActionInfo'
+          description: 'A collection of policy actions (like DLP actions) triggered by the processed content. NOTE: Currently, the only policy action supported in for this resource type is restrictAccess.'
+        processingErrors:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.processingError'
+          description: A collection of errors encountered during the content processing.
+        protectionScopeState:
+          $ref: '#/components/schemas/microsoft.graph.protectionScopeState'
+        '@odata.type':
+          type: string
     microsoft.graph.processContentBatchRequest:
       title: processContentBatchRequest
       required:
@@ -34915,11 +35537,12 @@ components:
         - uploadFile
         - downloadText
         - downloadFile
+        - unknownFutureValue
         - copyToClipboard
         - pasteFromClipboard
         - print
         - accessDebugTools
-        - unknownFutureValue
+        - contentFiltering
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -34939,6 +35562,7 @@ components:
         mapping:
           '#microsoft.graph.policyLocationApplication': '#/components/schemas/microsoft.graph.policyLocationApplication'
           '#microsoft.graph.policyLocationDomain': '#/components/schemas/microsoft.graph.policyLocationDomain'
+          '#microsoft.graph.policyLocationTool': '#/components/schemas/microsoft.graph.policyLocationTool'
           '#microsoft.graph.policyLocationUrl': '#/components/schemas/microsoft.graph.policyLocationUrl'
     microsoft.graph.policyPivotProperty:
       title: policyPivotProperty
@@ -34990,6 +35614,16 @@ components:
         propertyName: '@odata.type'
         mapping:
           '#microsoft.graph.protectedApplicationMetadata': '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
+    microsoft.graph.evaluationScope:
+      title: evaluationScope
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.evaluationScopeType'
+        '@odata.type':
+          type: string
     microsoft.graph.policyTenantScope:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.policyScopeBase'
@@ -38554,6 +39188,12 @@ components:
                   nullable: true
               description: Represents a user's custom solution entity. Read-Only. Nullable.
               x-ms-navigationProperty: true
+            sponsorOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that''s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.'
+              x-ms-navigationProperty: true
             sponsors:
               type: array
               items:
@@ -40552,6 +41192,7 @@ components:
           '#microsoft.graph.agent': '#/components/schemas/microsoft.graph.agent'
           '#microsoft.graph.agentCardManifest': '#/components/schemas/microsoft.graph.agentCardManifest'
           '#microsoft.graph.agentCollection': '#/components/schemas/microsoft.graph.agentCollection'
+          '#microsoft.graph.agentCommunicationConfiguration': '#/components/schemas/microsoft.graph.agentCommunicationConfiguration'
           '#microsoft.graph.agentInstance': '#/components/schemas/microsoft.graph.agentInstance'
           '#microsoft.graph.agentRegistration': '#/components/schemas/microsoft.graph.agentRegistration'
           '#microsoft.graph.agentRiskDetection': '#/components/schemas/microsoft.graph.agentRiskDetection'
@@ -40656,6 +41297,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -40724,6 +41366,14 @@ components:
           '#microsoft.graph.azureADAuthentication': '#/components/schemas/microsoft.graph.azureADAuthentication'
           '#microsoft.graph.azureADPremiumLicenseInsight': '#/components/schemas/microsoft.graph.azureADPremiumLicenseInsight'
           '#microsoft.graph.azureRoleDefinition': '#/components/schemas/microsoft.graph.azureRoleDefinition'
+          '#microsoft.graph.b2bRegistrationMetrics': '#/components/schemas/microsoft.graph.b2bRegistrationMetrics'
+          '#microsoft.graph.b2BRegistrationMetricsBase': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsBase'
+          '#microsoft.graph.b2BRegistrationMetricsInitial': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsInitial'
+          '#microsoft.graph.b2BRegistrationMetricsRecent': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsRecent'
+          '#microsoft.graph.b2BSignInActivityMetrics': '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
+          '#microsoft.graph.b2BSignInActivityMetricsBase': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsBase'
+          '#microsoft.graph.b2BSignInActivityMetricsInitial': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsInitial'
+          '#microsoft.graph.b2BSignInActivityMetricsRecent': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsRecent'
           '#microsoft.graph.b2cAuthenticationMethodsPolicy': '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
           '#microsoft.graph.backupReport': '#/components/schemas/microsoft.graph.backupReport'
           '#microsoft.graph.backupRestoreRoot': '#/components/schemas/microsoft.graph.backupRestoreRoot'
@@ -40752,6 +41402,10 @@ components:
           '#microsoft.graph.levelMap': '#/components/schemas/microsoft.graph.levelMap'
           '#microsoft.graph.sectionMap': '#/components/schemas/microsoft.graph.sectionMap'
           '#microsoft.graph.unitMap': '#/components/schemas/microsoft.graph.unitMap'
+          '#microsoft.graph.billingMetrics': '#/components/schemas/microsoft.graph.billingMetrics'
+          '#microsoft.graph.billingMetricsBase': '#/components/schemas/microsoft.graph.billingMetricsBase'
+          '#microsoft.graph.billingMetricsInitial': '#/components/schemas/microsoft.graph.billingMetricsInitial'
+          '#microsoft.graph.billingMetricsRecent': '#/components/schemas/microsoft.graph.billingMetricsRecent'
           '#microsoft.graph.bitlocker': '#/components/schemas/microsoft.graph.bitlocker'
           '#microsoft.graph.bitlockerRecoveryKey': '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
           '#microsoft.graph.bookingAppointment': '#/components/schemas/microsoft.graph.bookingAppointment'
@@ -40996,7 +41650,6 @@ components:
           '#microsoft.graph.detectedApp': '#/components/schemas/microsoft.graph.detectedApp'
           '#microsoft.graph.deviceAndAppManagementAssignmentFilter': '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilter'
           '#microsoft.graph.payloadCompatibleAssignmentFilter': '#/components/schemas/microsoft.graph.payloadCompatibleAssignmentFilter'
-          '#microsoft.graph.deviceAppManagement': '#/components/schemas/microsoft.graph.deviceAppManagement'
           '#microsoft.graph.deviceAppManagementTask': '#/components/schemas/microsoft.graph.deviceAppManagementTask'
           '#microsoft.graph.appVulnerabilityTask': '#/components/schemas/microsoft.graph.appVulnerabilityTask'
           '#microsoft.graph.securityConfigurationTask': '#/components/schemas/microsoft.graph.securityConfigurationTask'
@@ -41318,6 +41971,7 @@ components:
           '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
           '#microsoft.graph.tenantRelationshipAccessPolicyBase': '#/components/schemas/microsoft.graph.tenantRelationshipAccessPolicyBase'
           '#microsoft.graph.crossTenantAccessPolicy': '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+          '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
           '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
           '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
           '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -41492,7 +42146,10 @@ components:
           '#microsoft.graph.governanceInsight': '#/components/schemas/microsoft.graph.governanceInsight'
           '#microsoft.graph.membershipOutlierInsight': '#/components/schemas/microsoft.graph.membershipOutlierInsight'
           '#microsoft.graph.userSignInInsight': '#/components/schemas/microsoft.graph.userSignInInsight'
+          '#microsoft.graph.governanceInvitation': '#/components/schemas/microsoft.graph.governanceInvitation'
           '#microsoft.graph.governancePolicyTemplate': '#/components/schemas/microsoft.graph.governancePolicyTemplate'
+          '#microsoft.graph.governanceRelationship': '#/components/schemas/microsoft.graph.governanceRelationship'
+          '#microsoft.graph.governanceRequest': '#/components/schemas/microsoft.graph.governanceRequest'
           '#microsoft.graph.governanceResource': '#/components/schemas/microsoft.graph.governanceResource'
           '#microsoft.graph.governanceRoleAssignment': '#/components/schemas/microsoft.graph.governanceRoleAssignment'
           '#microsoft.graph.governanceRoleAssignmentRequest': '#/components/schemas/microsoft.graph.governanceRoleAssignmentRequest'
@@ -41733,6 +42390,7 @@ components:
           '#microsoft.graph.mfaTelecomFraudMetric': '#/components/schemas/microsoft.graph.mfaTelecomFraudMetric'
           '#microsoft.graph.mfaUserCountMetric': '#/components/schemas/microsoft.graph.mfaUserCountMetric'
           '#microsoft.graph.microsoftApplicationDataAccessSettings': '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
+          '#microsoft.graph.microsoftAppsFileStorageContainerUsage': '#/components/schemas/microsoft.graph.microsoftAppsFileStorageContainerUsage'
           '#microsoft.graph.microsoftTunnelConfiguration': '#/components/schemas/microsoft.graph.microsoftTunnelConfiguration'
           '#microsoft.graph.microsoftTunnelHealthThreshold': '#/components/schemas/microsoft.graph.microsoftTunnelHealthThreshold'
           '#microsoft.graph.microsoftTunnelServer': '#/components/schemas/microsoft.graph.microsoftTunnelServer'
@@ -41807,6 +42465,10 @@ components:
           '#microsoft.graph.mobileDeviceManagementPolicy': '#/components/schemas/microsoft.graph.mobileDeviceManagementPolicy'
           '#microsoft.graph.monthlyUserInsightMetricsRoot': '#/components/schemas/microsoft.graph.monthlyUserInsightMetricsRoot'
           '#microsoft.graph.multiActivitySubscription': '#/components/schemas/microsoft.graph.multiActivitySubscription'
+          '#microsoft.graph.multiTenantApplicationMetrics': '#/components/schemas/microsoft.graph.multiTenantApplicationMetrics'
+          '#microsoft.graph.multiTenantApplicationMetricsBase': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsBase'
+          '#microsoft.graph.multiTenantApplicationMetricsInitial': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsInitial'
+          '#microsoft.graph.multiTenantApplicationMetricsRecent': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsRecent'
           '#microsoft.graph.multiTenantOrganization': '#/components/schemas/microsoft.graph.multiTenantOrganization'
           '#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate': '#/components/schemas/microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate'
           '#microsoft.graph.multiTenantOrganizationJoinRequestRecord': '#/components/schemas/microsoft.graph.multiTenantOrganizationJoinRequestRecord'
@@ -41907,6 +42569,7 @@ components:
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
           '#microsoft.graph.plannerPlan': '#/components/schemas/microsoft.graph.plannerPlan'
@@ -42025,8 +42688,11 @@ components:
           '#microsoft.graph.recommendationBase': '#/components/schemas/microsoft.graph.recommendationBase'
           '#microsoft.graph.recommendation': '#/components/schemas/microsoft.graph.recommendation'
           '#microsoft.graph.recommendationConfiguration': '#/components/schemas/microsoft.graph.recommendationConfiguration'
+          '#microsoft.graph.recommendationTag': '#/components/schemas/microsoft.graph.recommendationTag'
           '#microsoft.graph.reflectCheckInResponse': '#/components/schemas/microsoft.graph.reflectCheckInResponse'
           '#microsoft.graph.regionalAndLanguageSettings': '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
+          '#microsoft.graph.relatedTenant': '#/components/schemas/microsoft.graph.relatedTenant'
+          '#microsoft.graph.relatedTenantsRefreshRequest': '#/components/schemas/microsoft.graph.relatedTenantsRefreshRequest'
           '#microsoft.graph.relyingPartyDetailedSummary': '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
           '#microsoft.graph.remoteActionAudit': '#/components/schemas/microsoft.graph.remoteActionAudit'
           '#microsoft.graph.remoteAssistancePartner': '#/components/schemas/microsoft.graph.remoteAssistancePartner'
@@ -42059,6 +42725,7 @@ components:
           '#microsoft.graph.restrictedAppsViolation': '#/components/schemas/microsoft.graph.restrictedAppsViolation'
           '#microsoft.graph.riskDetection': '#/components/schemas/microsoft.graph.riskDetection'
           '#microsoft.graph.riskyAgent': '#/components/schemas/microsoft.graph.riskyAgent'
+          '#microsoft.graph.riskyAgentDiscoveredAgentIdentity': '#/components/schemas/microsoft.graph.riskyAgentDiscoveredAgentIdentity'
           '#microsoft.graph.riskyAgentIdentity': '#/components/schemas/microsoft.graph.riskyAgentIdentity'
           '#microsoft.graph.riskyAgentIdentityBlueprintPrincipal': '#/components/schemas/microsoft.graph.riskyAgentIdentityBlueprintPrincipal'
           '#microsoft.graph.riskyAgentUser': '#/components/schemas/microsoft.graph.riskyAgentUser'
@@ -42199,6 +42866,9 @@ components:
           '#microsoft.graph.teamworkTagMember': '#/components/schemas/microsoft.graph.teamworkTagMember'
           '#microsoft.graph.template': '#/components/schemas/microsoft.graph.template'
           '#microsoft.graph.tenantAttachRBAC': '#/components/schemas/microsoft.graph.tenantAttachRBAC'
+          '#microsoft.graph.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernance'
+          '#microsoft.graph.tenantGovernancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+          '#microsoft.graph.tenantGovernanceSetting': '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
           '#microsoft.graph.tenantProtectionScopeContainer': '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
           '#microsoft.graph.tenantSetupInfo': '#/components/schemas/microsoft.graph.tenantSetupInfo'
           '#microsoft.graph.termsAndConditions': '#/components/schemas/microsoft.graph.termsAndConditions'
@@ -42263,6 +42933,7 @@ components:
           '#microsoft.graph.unifiedRoleScheduleInstanceBase': '#/components/schemas/microsoft.graph.unifiedRoleScheduleInstanceBase'
           '#microsoft.graph.unifiedRoleAssignmentScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
           '#microsoft.graph.unifiedRoleEligibilityScheduleInstance': '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
+          '#microsoft.graph.unifiedRoot': '#/components/schemas/microsoft.graph.unifiedRoot'
           '#microsoft.graph.unifiedStorageQuota': '#/components/schemas/microsoft.graph.unifiedStorageQuota'
           '#microsoft.graph.unsupportedGroupPolicyExtension': '#/components/schemas/microsoft.graph.unsupportedGroupPolicyExtension'
           '#microsoft.graph.usageRight': '#/components/schemas/microsoft.graph.usageRight'
@@ -42514,8 +43185,19 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -42794,6 +43476,13 @@ components:
           '#microsoft.graph.security.caseManagement.recommendationRelation': '#/components/schemas/microsoft.graph.security.caseManagement.recommendationRelation'
           '#microsoft.graph.security.caseManagement.workspaceIndicatorRelation': '#/components/schemas/microsoft.graph.security.caseManagement.workspaceIndicatorRelation'
           '#microsoft.graph.security.caseManagement.task': '#/components/schemas/microsoft.graph.security.caseManagement.task'
+          '#microsoft.graph.security.caseManagement.caseTypeConfiguration': '#/components/schemas/microsoft.graph.security.caseManagement.caseTypeConfiguration'
+          '#microsoft.graph.security.caseManagement.customFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.customFieldDefinition'
+          '#microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.numberCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.numberCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.optionsCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.optionsCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.stringCustomFieldDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.stringCustomFieldDefinition'
+          '#microsoft.graph.security.caseManagement.statusDefinition': '#/components/schemas/microsoft.graph.security.caseManagement.statusDefinition'
           '#microsoft.graph.security.dlp.baseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.baseAuditRecord'
           '#microsoft.graph.security.dlp.complianceBaseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.complianceBaseAuditRecord'
           '#microsoft.graph.security.dlp.complianceDLPBaseAuditRecord': '#/components/schemas/microsoft.graph.security.dlp.complianceDLPBaseAuditRecord'
@@ -42812,31 +43501,6 @@ components:
           '#microsoft.graph.teamsAdministration.teamsUserConfiguration': '#/components/schemas/microsoft.graph.teamsAdministration.teamsUserConfiguration'
           '#microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation': '#/components/schemas/microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation'
           '#microsoft.graph.teamsAdministration.telephoneNumberManagementRoot': '#/components/schemas/microsoft.graph.teamsAdministration.telephoneNumberManagementRoot'
-          '#microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.billingMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetrics'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.billingMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.governanceInvitation': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
-          '#microsoft.graph.tenantGovernanceServices.governancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
-          '#microsoft.graph.tenantGovernanceServices.governanceRelationship': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
-          '#microsoft.graph.tenantGovernanceServices.governanceRequest': '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
-          '#microsoft.graph.tenantGovernanceServices.longRunningOperation': '#/components/schemas/microsoft.graph.tenantGovernanceServices.longRunningOperation'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial'
-          '#microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent': '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent'
-          '#microsoft.graph.tenantGovernanceServices.relatedTenant': '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
-          '#microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshRequest': '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshRequest'
-          '#microsoft.graph.tenantGovernanceServices.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernance'
-          '#microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting': '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting'
           '#microsoft.graph.termStore.group': '#/components/schemas/microsoft.graph.termStore.group'
           '#microsoft.graph.termStore.relation': '#/components/schemas/microsoft.graph.termStore.relation'
           '#microsoft.graph.termStore.set': '#/components/schemas/microsoft.graph.termStore.set'
@@ -43765,6 +44429,24 @@ components:
         - resolved
         - unknownFutureValue
       type: string
+    microsoft.graph.security.entityDefinition:
+      title: entityDefinition
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        entityIdentifier:
+          type: string
+          description: 'The identifier kind for the selected entity type, such as userPrincipalName, deviceId, or address.'
+        entityType:
+          $ref: '#/components/schemas/microsoft.graph.security.manualAlertEntityType'
+        identifierValue:
+          type: string
+          description: The value for the selected entity identifier.
+        role:
+          $ref: '#/components/schemas/microsoft.graph.security.entityDefinitionInputRole'
+        '@odata.type':
+          type: string
     microsoft.graph.emailIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -44723,6 +45405,7 @@ components:
             - $ref: '#/components/schemas/microsoft.graph.security.auditRecordTypeDictionary'
             - type: object
               nullable: true
+          description: An open-type dictionary that contains dynamic audit event properties as name-value pairs.
         '@odata.type':
           type: string
       description: Abstract base type for audit event data.
@@ -45248,6 +45931,29 @@ components:
         - completed
         - unknownFutureValue
       type: string
+    microsoft.graph.security.caseManagement.customStatusDefinition:
+      title: customStatusDefinition
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        customStatusId:
+          type: string
+          description: The immutable identifier of the custom status.
+        displayName:
+          type: string
+          description: The human-readable label of the custom status.
+        isFinal:
+          type: boolean
+          description: 'true if this is a terminal status; a case in a final status can''t transition to another status. Otherwise, false.'
+        sortOrder:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The display order of the custom status within its parent status.
+          format: int32
+        '@odata.type':
+          type: string
     microsoft.graph.security.case:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -46021,6 +46727,12 @@ components:
                 - type: object
                   nullable: true
               description: Optional. Information about the drive's storage space quota. Read-only.
+            settings:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.driveSettings'
+                - type: object
+                  nullable: true
+              description: The settings associated with the drive. Read-only. This property isn't returned by default and must be selected using the $select query parameter.
             sharePointIds:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.sharepointIds'
@@ -46571,6 +47283,7 @@ components:
               '#microsoft.graph.tenantAppManagementPolicy': '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
               '#microsoft.graph.tenantRelationshipAccessPolicyBase': '#/components/schemas/microsoft.graph.tenantRelationshipAccessPolicyBase'
               '#microsoft.graph.crossTenantAccessPolicy': '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+              '#microsoft.graph.remoteTenantGroup': '#/components/schemas/microsoft.graph.remoteTenantGroup'
               '#microsoft.graph.resourceSpecificPermissionGrant': '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               '#microsoft.graph.servicePrincipal': '#/components/schemas/microsoft.graph.servicePrincipal'
               '#microsoft.graph.agentIdentity': '#/components/schemas/microsoft.graph.agentIdentity'
@@ -48585,56 +49298,151 @@ components:
             mapping:
               '#microsoft.graph.tenantDataSecurityAndGovernance': '#/components/schemas/microsoft.graph.tenantDataSecurityAndGovernance'
               '#microsoft.graph.userDataSecurityAndGovernance': '#/components/schemas/microsoft.graph.userDataSecurityAndGovernance'
-    microsoft.graph.processContentRequest:
-      title: processContentRequest
+    microsoft.graph.activityMetadata:
+      title: activityMetadata
       required:
         - '@odata.type'
       type: object
       properties:
-        activityMetadata:
-          $ref: '#/components/schemas/microsoft.graph.activityMetadata'
-        contentEntries:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
-          description: 'A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses, file metadata for files, and content activity metadata for enforcement result status entries. Required.'
-        contextMetadata:
-          anyOf:
-            - $ref: '#/components/schemas/microsoft.graph.contextMetadata'
-            - type: object
-              nullable: true
-        deviceMetadata:
-          $ref: '#/components/schemas/microsoft.graph.deviceMetadata'
-        integratedAppMetadata:
-          $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
-        protectedAppMetadata:
-          anyOf:
-            - $ref: '#/components/schemas/microsoft.graph.protectedApplicationMetadata'
-            - type: object
-              nullable: true
-          description: Metadata about the protected application making the request. Required.
+        activity:
+          $ref: '#/components/schemas/microsoft.graph.userActivityType'
         '@odata.type':
           type: string
-    microsoft.graph.processContentResponse:
-      title: processContentResponse
+    microsoft.graph.processContentMetadataBase:
+      title: processContentMetadataBase
       required:
         - '@odata.type'
       type: object
       properties:
-        policyActions:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.dlpActionInfo'
-          description: 'A collection of policy actions (like DLP actions) triggered by the processed content. NOTE: Currently, the only policy action supported in for this resource type is restrictAccess.'
-        processingErrors:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.processingError'
-          description: A collection of errors encountered during the content processing.
-        protectionScopeState:
-          $ref: '#/components/schemas/microsoft.graph.protectionScopeState'
+        content:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.contentBase'
+            - type: object
+              nullable: true
+          description: 'Represents the actual content, either as text (textContent) or binary data (binaryContent). Optional if metadata alone is sufficient for policy evaluation. Do not use for contentActivities.'
+        contentCategory:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.contentCategory'
+            - type: object
+              nullable: true
+          description: 'The type of content. The possible values are: none, ai, unknownFutureValue.  The default value is ai, which refers to AI generated content.'
+        correlationId:
+          type: string
+          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
+          format: date-time
+        identifier:
+          type: string
+          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
+        isTruncated:
+          type: boolean
+          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
+        length:
+          type: number
+          description: The length of the original content in bytes.
+          format: int64
+          nullable: true
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
+          format: date-time
+        name:
+          type: string
+          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
+        sequenceNumber:
+          type: number
+          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
+          format: int64
+          nullable: true
         '@odata.type':
           type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.contentActivityMetadata': '#/components/schemas/microsoft.graph.contentActivityMetadata'
+          '#microsoft.graph.processConversationMetadata': '#/components/schemas/microsoft.graph.processConversationMetadata'
+          '#microsoft.graph.processFileMetadata': '#/components/schemas/microsoft.graph.processFileMetadata'
+    microsoft.graph.contextMetadata:
+      title: contextMetadata
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        metadataProperties:
+          $ref: '#/components/schemas/microsoft.graph.customMetadataDictionary'
+        '@odata.type':
+          type: string
+    microsoft.graph.protectedApplicationMetadata:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
+        - title: protectedApplicationMetadata
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            applicationLocation:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.policyLocation'
+                - type: object
+                  nullable: true
+              description: The client (application) ID of the Microsoft Entra application. Required.
+            sourceLocation:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.policyLocation'
+                - type: object
+                  nullable: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.protectedApplicationMetadata'
+      x-ms-discriminator-value: '#microsoft.graph.protectedApplicationMetadata'
+    microsoft.graph.dlpActionInfo:
+      title: dlpActionInfo
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        action:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.dlpAction'
+            - type: object
+              nullable: true
+          description: The type of DLP action. Possible value is restrictAccessAction.
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.blockAccessAction': '#/components/schemas/microsoft.graph.blockAccessAction'
+          '#microsoft.graph.policyTipAction': '#/components/schemas/microsoft.graph.policyTipAction'
+          '#microsoft.graph.notifyUserAction': '#/components/schemas/microsoft.graph.notifyUserAction'
+          '#microsoft.graph.restrictAccessActionBase': '#/components/schemas/microsoft.graph.restrictAccessActionBase'
+          '#microsoft.graph.restrictAccessAction': '#/components/schemas/microsoft.graph.restrictAccessAction'
+    microsoft.graph.processingError:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.classificationError'
+        - title: processingError
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            errorType:
+              $ref: '#/components/schemas/microsoft.graph.contentProcessingErrorType'
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.processingError'
+      x-ms-discriminator-value: '#microsoft.graph.processingError'
+    microsoft.graph.protectionScopeState:
+      title: protectionScopeState
+      enum:
+        - notModified
+        - modified
+        - unknownFutureValue
+      type: string
     microsoft.graph.policyFileType:
       title: policyFileType
       enum:
@@ -48665,6 +49473,14 @@ components:
           description: The version string of the operating system.
         '@odata.type':
           type: string
+    microsoft.graph.evaluationScopeType:
+      title: evaluationScopeType
+      enum:
+        - tenant
+        - agent
+        - anonymousUser
+        - unknownFutureValue
+      type: string
     microsoft.graph.policyScopeBase:
       title: policyScopeBase
       required:
@@ -48675,6 +49491,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userActivityTypes'
         executionMode:
           $ref: '#/components/schemas/microsoft.graph.executionMode'
+        locationExclusions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.policyLocation'
         locations:
           type: array
           items:
@@ -51110,6 +51930,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               x-ms-navigationProperty: true
+            lifecycle:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
             memberOf:
               type: array
               items:
@@ -51288,6 +52114,12 @@ components:
                   nullable: true
               description: Represents a QR code authentication method registered to a user for authentication.
               x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -51461,7 +52293,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
-              description: A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -51668,6 +52500,11 @@ components:
               description: 'The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            provisioningConfiguration:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningConfiguration'
+                - type: object
+                  nullable: true
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -52388,27 +53225,25 @@ components:
               type: string
               description: The display name of the distribution list.
               nullable: true
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.member'
-              description: The list of members in the distribution list. Not returned by default; use $select=members to include.
             notes:
               type: string
+              description: Notes about the distribution list.
               nullable: true
             personIdentifier:
               type: string
+              description: The unique identifier of the distribution list in the mailbox. Read-only.
               nullable: true
-            distributionListMembers:
+            members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.distributionListMember'
-              description: The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.
+              description: The members of the distribution list. Not returned by default; use $expand=members to include. Read-only.
               x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the distribution list. Read-only.
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -56132,6 +56967,39 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.caseManagement.task'
+    microsoft.graph.security.caseManagement.caseTypeConfigurationCollectionResponse:
+      title: Collection of caseTypeConfiguration
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.caseTypeConfiguration'
+    microsoft.graph.security.caseManagement.customFieldDefinitionCollectionResponse:
+      title: Collection of customFieldDefinition
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.customFieldDefinition'
+    microsoft.graph.security.caseManagement.statusDefinitionCollectionResponse:
+      title: Collection of statusDefinition
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.statusDefinition'
     microsoft.graph.security.ediscoveryCaseCollectionResponse:
       title: Collection of ediscoveryCase
       type: object
@@ -57255,6 +58123,35 @@ components:
         - noThreatsFound
         - unknownFutureValue
       type: string
+    microsoft.graph.security.manualAlertEntityType:
+      title: manualAlertEntityType
+      enum:
+        - user
+        - device
+        - file
+        - ip
+        - url
+        - cloudApplication
+        - mailbox
+        - securityGroup
+        - azureResource
+        - amazonResource
+        - googleCloudResource
+        - oAuthApplication
+        - emailMessage
+        - emailCluster
+        - process
+        - registryKey
+        - registryValue
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.entityDefinitionInputRole:
+      title: entityDefinitionInputRole
+      enum:
+        - impacted
+        - related
+        - unknownFutureValue
+      type: string
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
       enum:
@@ -58163,6 +59060,18 @@ components:
           type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.driveSettings:
+      title: driveSettings
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        itemDefaultSensitivityLabelId:
+          type: string
+          description: The ID of the default sensitivity label for items in the drive. Read-only.
           nullable: true
         '@odata.type':
           type: string
@@ -60011,6 +60920,12 @@ components:
                   nullable: true
               description: Extra details about the plan. Read-only. Nullable.
               x-ms-navigationProperty: true
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+              description: Collection of goals in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
             historyItems:
               type: array
               items:
@@ -60388,144 +61303,93 @@ components:
         - unknownFutureValue
         - v4
       type: string
-    microsoft.graph.activityMetadata:
-      title: activityMetadata
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        activity:
-          $ref: '#/components/schemas/microsoft.graph.userActivityType'
-        '@odata.type':
-          type: string
-    microsoft.graph.processContentMetadataBase:
-      title: processContentMetadataBase
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        content:
-          anyOf:
-            - $ref: '#/components/schemas/microsoft.graph.contentBase'
-            - type: object
-              nullable: true
-          description: 'Represents the actual content, either as text (textContent) or binary data (binaryContent). Optional if metadata alone is sufficient for policy evaluation. Do not use for contentActivities.'
-        contentCategory:
-          anyOf:
-            - $ref: '#/components/schemas/microsoft.graph.contentCategory'
-            - type: object
-              nullable: true
-          description: 'The type of content. The possible values are: none, ai, unknownFutureValue.  The default value is ai, which refers to AI generated content.'
-        correlationId:
-          type: string
-          description: 'An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).'
-          nullable: true
-        createdDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).'
-          format: date-time
-        identifier:
-          type: string
-          description: 'Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).'
-        isTruncated:
-          type: boolean
-          description: 'Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).'
-        length:
-          type: number
-          description: The length of the original content in bytes.
-          format: int64
-          nullable: true
-        modifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.'
-          format: date-time
-        name:
-          type: string
-          description: 'Required. A descriptive name for the content (for example, file name, web page title, ''Chat Message'').'
-        sequenceNumber:
-          type: number
-          description: 'A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.'
-          format: int64
-          nullable: true
-        '@odata.type':
-          type: string
-      discriminator:
-        propertyName: '@odata.type'
-        mapping:
-          '#microsoft.graph.contentActivityMetadata': '#/components/schemas/microsoft.graph.contentActivityMetadata'
-          '#microsoft.graph.processConversationMetadata': '#/components/schemas/microsoft.graph.processConversationMetadata'
-          '#microsoft.graph.processFileMetadata': '#/components/schemas/microsoft.graph.processFileMetadata'
-    microsoft.graph.contextMetadata:
-      title: contextMetadata
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        metadataProperties:
-          $ref: '#/components/schemas/microsoft.graph.customMetadataDictionary'
-        '@odata.type':
-          type: string
-    microsoft.graph.protectedApplicationMetadata:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
-        - title: protectedApplicationMetadata
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            applicationLocation:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.policyLocation'
-                - type: object
-                  nullable: true
-              description: The client (application) ID of the Microsoft Entra application. Required.
-            '@odata.type':
-              type: string
-              default: '#microsoft.graph.protectedApplicationMetadata'
-      x-ms-discriminator-value: '#microsoft.graph.protectedApplicationMetadata'
-    microsoft.graph.dlpActionInfo:
-      title: dlpActionInfo
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        action:
-          anyOf:
-            - $ref: '#/components/schemas/microsoft.graph.dlpAction'
-            - type: object
-              nullable: true
-          description: The type of DLP action. Possible value is restrictAccessAction.
-        '@odata.type':
-          type: string
-      discriminator:
-        propertyName: '@odata.type'
-        mapping:
-          '#microsoft.graph.blockAccessAction': '#/components/schemas/microsoft.graph.blockAccessAction'
-          '#microsoft.graph.policyTipAction': '#/components/schemas/microsoft.graph.policyTipAction'
-          '#microsoft.graph.notifyUserAction': '#/components/schemas/microsoft.graph.notifyUserAction'
-          '#microsoft.graph.restrictAccessActionBase': '#/components/schemas/microsoft.graph.restrictAccessActionBase'
-          '#microsoft.graph.restrictAccessAction': '#/components/schemas/microsoft.graph.restrictAccessAction'
-    microsoft.graph.processingError:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.classificationError'
-        - title: processingError
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            errorType:
-              $ref: '#/components/schemas/microsoft.graph.contentProcessingErrorType'
-            '@odata.type':
-              type: string
-              default: '#microsoft.graph.processingError'
-      x-ms-discriminator-value: '#microsoft.graph.processingError'
-    microsoft.graph.protectionScopeState:
-      title: protectionScopeState
+    microsoft.graph.userActivityType:
+      title: userActivityType
       enum:
-        - notModified
-        - modified
+        - uploadText
+        - uploadFile
+        - downloadText
+        - downloadFile
+        - unknownFutureValue
+        - copyToClipboard
+        - pasteFromClipboard
+        - print
+        - accessDebugTools
+      type: string
+    microsoft.graph.contentBase:
+      title: contentBase
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.binaryContent': '#/components/schemas/microsoft.graph.binaryContent'
+          '#microsoft.graph.textContent': '#/components/schemas/microsoft.graph.textContent'
+    microsoft.graph.contentCategory:
+      title: contentCategory
+      enum:
+        - none
+        - ai
+        - unknownFutureValue
+      type: string
+    microsoft.graph.customMetadataDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: customMetadataDictionary
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.customMetadataDictionary'
+      x-ms-discriminator-value: '#microsoft.graph.customMetadataDictionary'
+    microsoft.graph.dlpAction:
+      title: dlpAction
+      enum:
+        - notifyUser
+        - blockAccess
+        - deviceRestriction
+        - browserRestriction
+        - unknownFutureValue
+        - restrictAccess
+        - generateAlert
+        - generateIncidentReportAction
+        - sPBlockAnonymousAccess
+        - sPRuntimeAccessControl
+        - sPSharingNotifyUser
+        - sPSharingGenerateIncidentReport
+        - restrictWebGrounding
+        - policyTip
+      type: string
+    microsoft.graph.classificationError:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
+        - title: classificationError
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            details:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
+              description: A collection of more specific errors contributing to the overall error.
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.processingError': '#/components/schemas/microsoft.graph.processingError'
+    microsoft.graph.contentProcessingErrorType:
+      title: contentProcessingErrorType
+      enum:
+        - transient
+        - permanent
         - unknownFutureValue
       type: string
     microsoft.graph.executionMode:
@@ -60553,25 +61417,6 @@ components:
           '#microsoft.graph.groupScope': '#/components/schemas/microsoft.graph.groupScope'
           '#microsoft.graph.tenantScope': '#/components/schemas/microsoft.graph.tenantScope'
           '#microsoft.graph.userScope': '#/components/schemas/microsoft.graph.userScope'
-    microsoft.graph.classificationError:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
-        - title: classificationError
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            details:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.classifcationErrorBase'
-              description: A collection of more specific errors contributing to the overall error.
-            '@odata.type':
-              type: string
-          discriminator:
-            propertyName: '@odata.type'
-            mapping:
-              '#microsoft.graph.processingError': '#/components/schemas/microsoft.graph.processingError'
     microsoft.graph.evaluateLabelJobResult:
       title: evaluateLabelJobResult
       required:
@@ -61904,6 +62749,36 @@ components:
               type: string
               default: '#microsoft.graph.homeRealmDiscoveryPolicy'
       x-ms-discriminator-value: '#microsoft.graph.homeRealmDiscoveryPolicy'
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
     microsoft.graph.permissionGrantPreApprovalPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -62210,6 +63085,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -62390,6 +63266,29 @@ components:
               type: string
               default: '#microsoft.graph.qrCodePinAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.qrCodePinAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -62533,7 +63432,7 @@ components:
           properties:
             body:
               anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.itemBody'
+                - $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
                 - type: object
                   nullable: true
               description: Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn't return @mentions and attachments.
@@ -62578,7 +63477,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
               description: 'References to attached objects like files, tabs, meetings etc.'
             body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+              $ref: '#/components/schemas/microsoft.graph.chatMessageBody'
             channelIdentity:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.channelIdentity'
@@ -62589,6 +63488,11 @@ components:
               type: string
               description: 'If the message was sent in a chat, represents the identity of the chat.'
               nullable: true
+            citations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageCitation'
+              description: Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -62617,6 +63521,8 @@ components:
                 - type: object
                   nullable: true
               description: Details of the sender of the chat message. Can only be set during migration.
+            hasReplies:
+              type: boolean
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
             lastEditedDateTime:
@@ -63095,6 +64001,16 @@ components:
         - business
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcProvisioningConfiguration:
+      title: cloudPcProvisioningConfiguration
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        domainJoinType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
+        '@odata.type':
+          type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -63640,32 +64556,6 @@ components:
               type: string
               default: '#microsoft.graph.deviceTemplate'
       x-ms-discriminator-value: '#microsoft.graph.deviceTemplate'
-    microsoft.graph.member:
-      title: member
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        contactId:
-          type: string
-          description: 'The ID of the referenced contact, if applicable. Optional.'
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the member. Optional.
-          nullable: true
-        key:
-          type: string
-          description: The email address or routing key of the member. Required.
-          nullable: true
-        recipientType:
-          $ref: '#/components/schemas/microsoft.graph.recipientType'
-        routingType:
-          type: string
-          description: 'The routing type for the member, for example, SMTP. Optional.'
-          nullable: true
-        '@odata.type':
-          type: string
     microsoft.graph.distributionListMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -63674,21 +64564,22 @@ components:
             - '@odata.type'
           type: object
           properties:
-            contactId:
-              type: string
-              description: 'The ID of the referenced contact, if applicable. Read-only.'
-              nullable: true
             displayName:
               type: string
               description: The display name of the member. Read-only.
               nullable: true
-            recipientType:
+            memberId:
+              type: string
+              description: 'A system generated unique identifier. Non-empty for contact, privateDL and mailbox members. ReadOnly.'
+              nullable: true
+            type:
               $ref: '#/components/schemas/microsoft.graph.recipientType'
             contact:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.contact'
                 - type: object
                   nullable: true
+              description: The contact associated with the distribution list member. Read-only.
               x-ms-navigationProperty: true
             '@odata.type':
               type: string
@@ -67107,6 +67998,7 @@ components:
               '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
               '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
               '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+              '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
               '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
               '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
               '#microsoft.graph.plannerPlan': '#/components/schemas/microsoft.graph.plannerPlan'
@@ -67220,6 +68112,11 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            goalIds:
+              type: array
+              items:
+                type: string
+              description: Read-only. The IDs of the goals associated with the task.
             hasChat:
               type: boolean
               description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
@@ -72141,6 +73038,56 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.plannerPlanDetails'
+    microsoft.graph.plannerGoal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerGoal
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Required. The display name of the goal.
+            finishDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to finish.
+              format: date
+              nullable: true
+            notes:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.itemBody'
+                - type: object
+                  nullable: true
+              description: Nullable. The notes associated with the goal.
+            planId:
+              type: string
+              description: Required. The ID of the plan that contains the goal.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Optional. The relative priority of the goal. Valid values range from 0 to 10, inclusive. The default value is 5.'
+              format: int32
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to start.
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoalStatus'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.plannerGoal'
     microsoft.graph.plannerHistoryItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -72284,76 +73231,6 @@ components:
           description: The list of all dropped files in the detonation.
         '@odata.type':
           type: string
-    microsoft.graph.userActivityType:
-      title: userActivityType
-      enum:
-        - uploadText
-        - uploadFile
-        - downloadText
-        - downloadFile
-        - copyToClipboard
-        - pasteFromClipboard
-        - print
-        - accessDebugTools
-        - unknownFutureValue
-      type: string
-    microsoft.graph.contentBase:
-      title: contentBase
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        '@odata.type':
-          type: string
-      discriminator:
-        propertyName: '@odata.type'
-        mapping:
-          '#microsoft.graph.binaryContent': '#/components/schemas/microsoft.graph.binaryContent'
-          '#microsoft.graph.textContent': '#/components/schemas/microsoft.graph.textContent'
-    microsoft.graph.contentCategory:
-      title: contentCategory
-      enum:
-        - none
-        - ai
-        - unknownFutureValue
-      type: string
-    microsoft.graph.customMetadataDictionary:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
-        - title: customMetadataDictionary
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            '@odata.type':
-              type: string
-              default: '#microsoft.graph.customMetadataDictionary'
-      x-ms-discriminator-value: '#microsoft.graph.customMetadataDictionary'
-    microsoft.graph.dlpAction:
-      title: dlpAction
-      enum:
-        - notifyUser
-        - blockAccess
-        - deviceRestriction
-        - browserRestriction
-        - unknownFutureValue
-        - restrictAccess
-        - generateAlert
-        - generateIncidentReportAction
-        - sPBlockAnonymousAccess
-        - sPRuntimeAccessControl
-        - sPSharingNotifyUser
-        - sPSharingGenerateIncidentReport
-        - restrictWebGrounding
-        - policyTip
-      type: string
-    microsoft.graph.contentProcessingErrorType:
-      title: contentProcessingErrorType
-      enum:
-        - transient
-        - permanent
-        - unknownFutureValue
-      type: string
     microsoft.graph.classifcationErrorBase:
       title: classifcationErrorBase
       required:
@@ -73179,6 +74056,105 @@ components:
           description: Indicates the configured expression. Required.
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            description:
+              type: string
+            governingPolicyReferenceId:
+              type: string
+            issueCode:
+              type: string
+            ruleType:
+              type: string
+              nullable: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            notificationSchedule:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+                - type: object
+                  nullable: true
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.subjectSet'
+                - type: object
+                  nullable: true
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+            createdBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
     microsoft.graph.preApprovalDetail:
       title: preApprovalDetail
       required:
@@ -73581,6 +74557,30 @@ components:
               type: string
               default: '#microsoft.graph.teamworkUserIdentity'
       x-ms-discriminator-value: '#microsoft.graph.teamworkUserIdentity'
+    microsoft.graph.chatMessageBody:
+      title: chatMessageBody
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the chat message.
+          nullable: true
+        contentType:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.bodyType'
+            - type: object
+              nullable: true
+          description: 'The type of the content. The possible values are: text, html. The contentType property is deprecated. Going forward, use the messageBodyContentType property.'
+        messageBodyContentType:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.chatMessageBodyContentType'
+            - type: object
+              nullable: true
+          description: 'The type of the content, including support for additional Teams content types. The possible values are: text, html, markdown, unknownFutureValue.'
+        '@odata.type':
+          type: string
     microsoft.graph.eventMessageDetail:
       title: eventMessageDetail
       required:
@@ -73693,6 +74693,43 @@ components:
         teamId:
           type: string
           description: The identity of the team in which the message was posted.
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.chatMessageCitation:
+      title: chatMessageCitation
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        excerpt:
+          type: string
+          description: Read-only. Text snippet from the cited source.
+          nullable: true
+        iconType:
+          type: string
+          description: 'Read-only. Icon type identifier for the cited source, for example, ExcelIcon or WordIcon.'
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Read-only. Citation identifier that''s unique within the message. The message body references this identifier inline, for example, [1].'
+          format: int32
+          nullable: true
+        sensitivityLabel:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.chatMessageCitationSensitivityLabel'
+            - type: object
+              nullable: true
+          description: Read-only. Sensitivity label applied to the cited source.
+        title:
+          type: string
+          description: Read-only. Display title of the cited source.
+          nullable: true
+        webUrl:
+          type: string
+          description: Read-only. URL to the cited source.
           nullable: true
         '@odata.type':
           type: string
@@ -73947,6 +74984,13 @@ components:
         - unknownFutureValue
         - vMware
         - hp
+      type: string
+    microsoft.graph.cloudPcDomainJoinType:
+      title: cloudPcDomainJoinType
+      enum:
+        - azureADJoin
+        - hybridAzureADJoin
+        - unknownFutureValue
       type: string
     microsoft.graph.delegationSettings:
       allOf:
@@ -76284,7 +77328,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
+          description: 'Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.'
           nullable: true
         '@odata.type':
           type: string
@@ -76292,6 +77336,7 @@ components:
         propertyName: '@odata.type'
         mapping:
           '#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource'
+          '#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource'
           '#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource'
           '#microsoft.graph.accessReviewInstanceDecisionItemCustomDataProvidedResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemCustomDataProvidedResource'
           '#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource': '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource'
@@ -79740,6 +80785,16 @@ components:
       properties:
         '@odata.type':
           type: string
+    microsoft.graph.plannerGoalStatus:
+      title: plannerGoalStatus
+      enum:
+        - notStarted
+        - onTrack
+        - behind
+        - atRisk
+        - closed
+        - unknownFutureValue
+      type: string
     microsoft.graph.historyEntityType:
       title: historyEntityType
       enum:
@@ -80950,6 +82005,82 @@ components:
           description: An ordered list of transformations that are applied in sequence.
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.identityGovernance.deleteOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.deleteOnlyEnforcementAction'
+          '#microsoft.graph.identityGovernance.disableOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableOnlyEnforcementAction'
+          '#microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction'
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        additionalRecipients:
+          type: array
+          items:
+            type: string
+        isEnabled:
+          type: boolean
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+        '@odata.type':
+          type: string
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet'
+          '#microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet'
+          '#microsoft.graph.identityGovernance.groupBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.groupBasedSubjectSet'
+          '#microsoft.graph.identityGovernance.ruleBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.ruleBasedSubjectSet'
+          '#microsoft.graph.identityGovernance.selectedObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.selectedObjectsSubjectSet'
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+              '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+              '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
     microsoft.graph.preApprovedPermissions:
       title: preApprovedPermissions
       required:
@@ -81302,6 +82433,30 @@ components:
         - emailUser
         - azureCommunicationServicesUser
       type: string
+    microsoft.graph.chatMessageBodyContentType:
+      title: chatMessageBodyContentType
+      enum:
+        - text
+        - html
+        - markdown
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessageCitationSensitivityLabel:
+      title: chatMessageCitationSensitivityLabel
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        description:
+          type: string
+          description: Read-only. User-facing description of the sensitivity restriction.
+          nullable: true
+        displayName:
+          type: string
+          description: Read-only. Display name of the sensitivity label.
+          nullable: true
+        '@odata.type':
+          type: string
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -88165,6 +89320,24 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.caseManagement.taskCollectionResponse'
+    microsoft.graph.security.caseManagement.caseTypeConfigurationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.caseManagement.caseTypeConfigurationCollectionResponse'
+    microsoft.graph.security.caseManagement.customFieldDefinitionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.caseManagement.customFieldDefinitionCollectionResponse'
+    microsoft.graph.security.caseManagement.statusDefinitionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.caseManagement.statusDefinitionCollectionResponse'
     microsoft.graph.security.ediscoveryCaseCollectionResponse:
       description: Retrieved collection
       content:
