@@ -55,6 +55,24 @@ dotnet build configuration. Default: Debug.
 .PARAMETER SkipKiota
 Reuse the previously generated client (fast inner loop when only the wrappers changed).
 
+.PARAMETER NoCollisionData
+Generate the unresolved command surface used to derive collision and parity data. This output
+is not shippable and should be generated only in an isolated worktree.
+
+.PARAMETER GenerateOnly
+Stop after wrapper source generation. Intended for source-based inventory and parity capture;
+cannot be combined with -Pack.
+.PARAMETER ModuleVersion
+Three-part version for the wrapper packages. Default 3.0.0 - the wrapper modules are the v3
+line, not a build of the v2 service-module release train whose version lives in
+config/ModuleMetadata.json.
+
+.PARAMETER Prerelease
+Prerelease label carried by every package (alphanumeric, never empty). Defaults to
+alpha<BuildId> in CI and alpha<UTC timestamp> locally, so no two builds ever publish the same
+id and version with different contents. Wrapper packages stay prereleases until the quality
+bar for public distribution is agreed.
+
 .PARAMETER Pack
 Also produce a package per module under <ArtifactsLocation>/<Module>/.
 
@@ -79,11 +97,31 @@ param(
     [string]$Configuration = 'Debug',
     [string]$ModuleMappingConfigPath,
     [string]$ArtifactsLocation,
+    # The wrapper modules are the v3 line, not a build of the v2 service-module release train,
+    # so their version is their own rather than ModuleMetadata.json's (which belongs to v2 and
+    # is still read here for authors, tags and the rest of the package identity).
+    [ValidatePattern('^\d+\.\d+\.\d+$')]
+    [string]$ModuleVersion = '3.0.0',
+    # Wrapper packages always carry a prerelease label, and every build gets a DISTINCT one:
+    # two packages that share an id and version but not their contents are indistinguishable to
+    # a feed and to anyone who already installed one. The build id supplies that distinctness in
+    # CI; a UTC timestamp does locally, where no build id exists.
+    # The pattern is DELIBERATELY narrower than the PowerShellGet prerelease grammar rather than a
+    # restatement of it: PowerShellGet also accepts a hyphen, which this rejects. A label is joined
+    # to the version by a hyphen already, so one that itself begins with a hyphen reads as
+    # '3.0.0--label', and one containing a hyphen splits the label when a version string is parsed
+    # by eye. Alphanumeric-only keeps every generated label unambiguous, and both defaults above
+    # ('alpha' plus a build id or a UTC timestamp) satisfy it by construction.
+    [ValidatePattern('^[A-Za-z0-9]+$')]
+    [string]$Prerelease = "alpha$(if ($env:BUILD_BUILDID) { $env:BUILD_BUILDID } else { (Get-Date).ToUniversalTime().ToString('yyyyMMddHHmm') })",
     [switch]$SkipKiota,
+    [switch]$NoCollisionData,
+    [switch]$GenerateOnly,
     [switch]$Pack
 )
 
 $ErrorActionPreference = 'Stop'
+if ($GenerateOnly -and $Pack) { throw '-GenerateOnly cannot be combined with -Pack.' }
 
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 if (-not $SpecRoot) { $SpecRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat' }
@@ -91,7 +129,7 @@ $generatorProject = Join-Path $repoRoot 'tools\WrapperGenerator'
 $authCsproj = Join-Path $repoRoot 'src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj'
 $runtimeCsproj = Join-Path $repoRoot 'src\GraphWrapperRuntime\Runtime\Microsoft.Graph.Wrapper.Runtime.csproj'
 # The Authentication version the wrappers compile against, for the manifest's RequiredModules
-# minimum. Read from the project, never written here.
+# minimum and the nuspec dependency floor. Read from the project, never written here.
 $authVersion = ([xml](Get-Content $authCsproj -Raw)).Project.PropertyGroup.Version |
     Where-Object { $_ } | Select-Object -First 1
 if (-not $authVersion) { throw "no Version in $authCsproj" }
@@ -110,16 +148,17 @@ $targetFramework = "$targetFramework".Trim()
 if (-not $ModuleMappingConfigPath) { $ModuleMappingConfigPath = Join-Path $repoRoot 'config\ModulesMapping.jsonc' }
 if (-not $ArtifactsLocation) { $ArtifactsLocation = Join-Path $repoRoot 'artifacts' }
 
-# Package metadata comes from the same single source the AutoRest service modules use, so a
-# wrapper package and the module it will eventually replace cannot disagree about version or
-# ownership.
+# Package identity (authors, owners, licence, tags) comes from the same single source the
+# AutoRest service modules use, so a wrapper package and the module it will eventually replace
+# cannot disagree about ownership. The VERSION is deliberately not taken from there: that
+# entry tracks the v2 release train, and a wrapper package stamped with it would claim a
+# version the real SDK is about to publish.
 $moduleMetadataPath = Join-Path $repoRoot 'config\ModuleMetadata.json'
 [hashtable]$moduleMetadata = Get-Content $moduleMetadataPath -Raw | ConvertFrom-Json -AsHashTable
-$versionEntry = $moduleMetadata.versions[$ApiVersion]
-if (-not $versionEntry -or -not $versionEntry.version) { throw "No version configured for '$ApiVersion' in $moduleMetadataPath." }
-$moduleVersion = $versionEntry.version
-$modulePrerelease = $versionEntry.prerelease
-$fullVersion = if ($modulePrerelease) { "$moduleVersion-$modulePrerelease" } else { $moduleVersion }
+# The metadata prerelease field belongs to the service-module release train and is deliberately
+# not read; the wrapper label (validated non-empty) is appended unconditionally, because a
+# wrapper package without one cannot exist.
+$fullVersion = "$ModuleVersion-$Prerelease"
 
 # The population is the specs this generator can actually read, intersected with the modules the
 # repository is configured to ship - the same two inputs tools/GenerateServiceModule.ps1 uses.
@@ -160,6 +199,32 @@ function New-ProjectFromTemplate {
         throw "unresolved placeholder(s) in $TemplatePath`: $($unresolved -join ', ')"
     }
     Set-Content -Path $DestinationPath -Value $content -Encoding utf8
+}
+
+# The manifest GUID is a module's identity for ModuleSpecification matching (RequiredModules,
+# Import-Module -FullyQualifiedName), so it must be the SAME across builds. The shipped SDK
+# locks GUIDs to the published gallery entry (tools/BuildModule.ps1, autorest.powershell#981);
+# a never-published wrapper has no gallery entry to lock to, so its identity is DERIVED
+# instead: an RFC 4122 name-based (v5) UUID - SHA-1 over a fixed namespace GUID plus the module
+# name - identical on every build with no lookup table to maintain. The namespace constant and
+# the algorithm ARE the identity contract: changing either orphans every previously installed
+# wrapper module.
+function Get-WrapperModuleGuid {
+    param([Parameter(Mandatory)][string]$ModuleName)
+
+    $namespaceBytes = ([guid]'8a11e1b5-95b3-4dbf-b0ba-6d58b0f6f6a4').ToByteArray()
+    # Guid.ToByteArray() emits the first three fields little-endian; RFC 4122 hashes network order.
+    [Array]::Reverse($namespaceBytes, 0, 4); [Array]::Reverse($namespaceBytes, 4, 2); [Array]::Reverse($namespaceBytes, 6, 2)
+    $sha1 = [System.Security.Cryptography.SHA1]::Create()
+    try {
+        $hash = $sha1.ComputeHash([byte[]]($namespaceBytes + [System.Text.Encoding]::UTF8.GetBytes($ModuleName)))
+    }
+    finally { $sha1.Dispose() }
+    $guidBytes = $hash[0..15]
+    $guidBytes[6] = ($guidBytes[6] -band 0x0F) -bor 0x50   # version 5
+    $guidBytes[8] = ($guidBytes[8] -band 0x3F) -bor 0x80   # RFC 4122 variant
+    [Array]::Reverse($guidBytes, 0, 4); [Array]::Reverse($guidBytes, 4, 2); [Array]::Reverse($guidBytes, 6, 2)
+    [guid][byte[]]$guidBytes
 }
 
 function Get-CompiledCmdletNames {
@@ -262,7 +327,11 @@ function Build-Module {
             }
         }
 
-        $wrapperOut = & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --api-version $ApiVersion 2>&1
+        $wrapperOut = if ($NoCollisionData) {
+            & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --api-version $ApiVersion --no-collision-data 2>&1
+        } else {
+            & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --api-version $ApiVersion 2>&1
+        }
         if ($LASTEXITCODE -ne 0) {
             # Skip warnings precede the failure; the exception message is what identifies it.
             $result.FailedAt = 'wrapper-generator'
@@ -274,6 +343,26 @@ function Build-Module {
             } else {
                 ($lines | Where-Object { $_ -notmatch '^\s+at ' } | Select-Object -First 6) -join ' | '
             }
+            return $result
+        }
+
+        # With -NoCollisionData the generator REPORTS each cmdlet collision instead of throwing on
+        # it, and that report is the collision inventory: data/collision-inventory.<version>.txt is
+        # captured from this output, and Derive-CollisionResolutions.ps1 reads it. The output is
+        # only inspected above on failure and otherwise discarded, so the one run whose purpose is
+        # to produce the inventory printed nothing. Written to the host rather than the pipeline
+        # because this function returns $result, and emitted output would be merged into it.
+        if ($NoCollisionData) {
+            $wrapperOut | ForEach-Object { Write-Host "$_" }
+        }
+
+        if ($GenerateOnly) {
+            $cmdletCount = @(Get-ChildItem $cmdletsDir -Filter '*.g.cs' -File |
+                    Where-Object Name -ne 'Shared.g.cs').Count
+            $result.Status = if ($cmdletCount -gt 0) { 'OK' } else { 'NO-CMDLETS' }
+            $result.CmdletCount = $cmdletCount
+            $result.Psd1 = $cmdletsDir
+            $result.Detail = 'source generation only'
             return $result
         }
 
@@ -340,7 +429,9 @@ function Build-Module {
         $manifestArgs = @{
             Path              = $psd1Path
             RootModule        = "$moduleName.dll"
-            ModuleVersion     = $moduleVersion
+            Guid              = Get-WrapperModuleGuid -ModuleName $moduleName
+            ModuleVersion     = $ModuleVersion
+            Prerelease        = $Prerelease
             RequiredModules   = @(@{ ModuleName = 'Microsoft.Graph.Authentication'; ModuleVersion = $authVersion })
             Author            = 'Microsoft Graph'
             CompanyName       = 'Microsoft'
@@ -350,14 +441,15 @@ function Build-Module {
             AliasesToExport   = @()
             VariablesToExport = @()
         }
-        if ($modulePrerelease) { $manifestArgs.Prerelease = $modulePrerelease }
-        # Std.UriTemplate is requested by the kiota HTTP library, which lives in Authentication's
-        # isolated load context - a requester whose directory probing can never reach this module
-        # folder, and whose request Authentication cannot serve because its Dependencies folder
-        # does not ship the assembly. Preloading it here puts it in the default context, where
-        # the isolated context's fallback resolution unifies with it. The Multipart serializer
-        # needs no entry: its requester is the client assembly in this folder, so normal
-        # module-directory probing finds it. Proven live in Test-LiveSmoke on the session path.
+        # Std.UriTemplate is requested by Microsoft.Kiota.Abstractions (measured: the AssemblyRef
+        # lives there, not in the HTTP library). That requester sits in Authentication's isolated
+        # load context, so its directory probing can never reach this module folder - and
+        # Authentication cannot serve the request either, because its Dependencies folder does
+        # not ship the assembly. Preloading it here puts it in the default context, where the
+        # isolated context's fallback resolution unifies with it. The Multipart serializer needs
+        # no entry: its requester is the client assembly in this folder, so normal
+        # module-directory probing finds it. Proven live by tools/Test-WrapperLive.ps1 on the
+        # session path.
         $manifestArgs.RequiredAssemblies = @('Std.UriTemplate.dll')
         New-ModuleManifest @manifestArgs
 
@@ -368,6 +460,12 @@ function Build-Module {
             # and the shared Authentication/kiota closure via the PruneModuleBin target - both at
             # the project level, the only place that intent can be expressed. See
             # tools/Templates/WrapperModule.csproj.template for why the closure must not ship.
+            # The nuspec must declare the Authentication dependency even though the psd1 already
+            # does: Install-Module resolves dependencies from NUGET metadata, not the manifest,
+            # so without this element a clean machine gets the wrapper with no Authentication and
+            # import fails. Declared as an open floor, not the shipped SDK's exact bracket pin -
+            # matching the manifest's RequiredModules minimum and the use-latest ruling (Ramses,
+            # 2026-08-19: pins existed only for AutoRest limitations).
             $nuspecPath = Join-Path $binDir "$moduleName.nuspec"
             $tags = ($moduleMetadata['tags']) -join ' '
             # Native runtime payloads only exist when a dependency ships them; dotnet pack fails
@@ -392,6 +490,9 @@ function Build-Module {
     <releaseNotes>$($moduleMetadata['releaseNotes'])</releaseNotes>
     <copyright>$($moduleMetadata['copyright'])</copyright>
     <tags>$tags</tags>
+    <dependencies>
+      <dependency id="Microsoft.Graph.Authentication" version="$authVersion" />
+    </dependencies>
   </metadata>
   <files>
     <file src="$moduleName.psd1" />
@@ -408,7 +509,7 @@ function Build-Module {
             # a PowerShell module package. NuspecBasePath resolves the globs against the build
             # output so the nuspec need not know how deep bin/<Config>/<TFM> is.
             $packArgs = @($csprojPath, '-c', $Configuration, '--no-build', '--nologo', '-v', 'minimal',
-                "-p:NuspecFile=$nuspecPath", "-p:NuspecBasePath=$binDir", "-p:Version=$moduleVersion",
+                "-p:NuspecFile=$nuspecPath", "-p:NuspecBasePath=$binDir", "-p:Version=$ModuleVersion",
                 '-p:NoPackageAnalysis=true', '-o', $moduleArtifacts)
             $packOut = & dotnet pack @packArgs 2>&1
             if ($LASTEXITCODE -ne 0) {

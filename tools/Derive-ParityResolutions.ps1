@@ -42,7 +42,9 @@ Re-derive and byte-compare against the checked-in data files instead of writing 
 #>
 [CmdletBinding()]
 param(
-    [string]$GeneratedRoot = "$PSScriptRoot\..\artifacts\wrapper-modules",
+    # The committed corpus root. Modules live at <root>/<Module>/wrapper/<ApiVersion>/Cmdlets,
+    # the same shape Compare-WrapperOperationInventory.ps1 walks from -Path src.
+    [string]$GeneratedRoot = "$PSScriptRoot\..\src",
     [string]$OraclePath = "$PSScriptRoot\..\src\Authentication\Authentication\custom\common\MgCommandMetadata.json",
     [string]$OutDir = "$PSScriptRoot\WrapperGenerator\data",
     [ValidateSet('v1.0', 'beta')]
@@ -72,7 +74,7 @@ if (-not $CaptureInput) {
 else {
     # ---- 1. collect the gate's ledger over every module -------------------------------------
     $moduleDirs = @(Get-ChildItem $GeneratedRoot -Directory | ForEach-Object {
-            $c = Join-Path $_.FullName 'src\Cmdlets'
+            $c = Join-Path $_.FullName "wrapper\$ApiVersion\Cmdlets"
             if ((Test-Path $c) -and @(Get-ChildItem $c -Filter *.g.cs -File | Where-Object Name -ne 'Shared.g.cs')) { $c }
         })
     if (-not $moduleDirs) { Write-Error "no generated cmdlet folders under $GeneratedRoot"; exit 1 }
