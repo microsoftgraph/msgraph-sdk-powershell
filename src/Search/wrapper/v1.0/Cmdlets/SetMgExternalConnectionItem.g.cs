@@ -30,6 +30,9 @@ namespace Microsoft.Graph.PowerShell.Search
         public Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemContent? Content { get; set; }
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemInformationProtectionLabel? InformationProtectionLabel { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.Properties? Properties { get; set; }
 
 
@@ -51,6 +54,9 @@ namespace Microsoft.Graph.PowerShell.Search
     if (this.IsParameterBound(nameof(Content)))
         body.Content = Content;
 
+    if (this.IsParameterBound(nameof(InformationProtectionLabel)))
+        body.InformationProtectionLabel = InformationProtectionLabel;
+
     if (this.IsParameterBound(nameof(Properties)))
         body.Properties = Properties;
 
@@ -67,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Search
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ExternalItemId);
                 return;

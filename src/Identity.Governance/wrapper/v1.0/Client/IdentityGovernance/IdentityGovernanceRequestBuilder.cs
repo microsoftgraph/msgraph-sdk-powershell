@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AppConsent;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.Catalogs;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.LifecycleWorkflows;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess;
@@ -33,6 +34,11 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernan
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AppConsent.AppConsentRequestBuilder AppConsent
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AppConsent.AppConsentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The catalogs property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.Catalogs.CatalogsRequestBuilder Catalogs
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.Catalogs.CatalogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The entitlementManagement property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder EntitlementManagement

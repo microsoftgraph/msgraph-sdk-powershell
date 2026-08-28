@@ -10,6 +10,7 @@ using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.E
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.Catalogs;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ControlConfigurations;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ResourceEnvironments;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ResourceRequests;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ResourceRoleScopes;
@@ -84,6 +85,11 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernan
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder ControlConfigurations
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The externalOriginResourceConnectors property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors.ExternalOriginResourceConnectorsRequestBuilder ExternalOriginResourceConnectors
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors.ExternalOriginResourceConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resourceEnvironments property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.EntitlementManagement.ResourceEnvironments.ResourceEnvironmentsRequestBuilder ResourceEnvironments

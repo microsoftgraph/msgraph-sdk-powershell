@@ -120,7 +120,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);
-                        }).GetAwaiter().GetResult();
+                        }, StoppingToken).GetAwaiter().GetResult();
                         if (result?.Value is { } page)
                         {
                             WriteObject(page, enumerateCollection: true);
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.PowerShell.Security
                     WriteWarning("More results are available. Use -All to return all pages.");
                 }
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, UnifiedGroupSourceId);
                 return;

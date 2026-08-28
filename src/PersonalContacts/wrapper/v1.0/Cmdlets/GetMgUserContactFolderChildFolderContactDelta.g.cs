@@ -171,7 +171,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
                     }).GetAwaiter().GetResult();
                 }
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ContactFolderId1);
                 return;

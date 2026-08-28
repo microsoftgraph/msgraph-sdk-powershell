@@ -34,7 +34,8 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllReta
         {
         }
         /// <summary>
-        /// Invoke function getAllRetainedTargetedMessages
+        /// Get all retained targeted messages sent to a specific user in group chats and channels.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-getallretainedtargetedmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllReta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesGetResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllRetainedTargetedMessages
+        /// Get all retained targeted messages sent to a specific user in group chats and channels.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-getallretainedtargetedmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllReta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllRetainedTargetedMessages
+        /// Get all retained targeted messages sent to a specific user in group chats and channels.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +111,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllReta
             return new global::Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAllRetainedTargetedMessages
+        /// Get all retained targeted messages sent to a specific user in group chats and channels.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GetAllRetainedTargetedMessagesRequestBuilderGetQueryParameters 

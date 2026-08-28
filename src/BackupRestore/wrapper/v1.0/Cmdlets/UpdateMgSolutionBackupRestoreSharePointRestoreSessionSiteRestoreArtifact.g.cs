@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, SiteRestoreArtifactId);
                 return;
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                 {
                     result = client.Solutions.BackupRestore.SharePointRestoreSessions[SharePointRestoreSessionId].SiteRestoreArtifacts[SiteRestoreArtifactId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, SiteRestoreArtifactId);
                     return;

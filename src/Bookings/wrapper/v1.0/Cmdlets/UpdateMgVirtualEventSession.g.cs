@@ -80,6 +80,9 @@ namespace Microsoft.Graph.PowerShell.Bookings
         public string? VideoTeleconferenceId { get; set; }
 
         [Parameter(Mandatory = false)]
+        public int? Capacity { get; set; }
+
+        [Parameter(Mandatory = false)]
         public string? VideoOnDemandWebUrl { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -104,6 +107,9 @@ namespace Microsoft.Graph.PowerShell.Bookings
         public Microsoft.Graph.PowerShell.Bookings.Client.Models.ChatRestrictions? ChatRestrictions { get; set; }
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Bookings.Client.Models.CloudVideoInteropInfo? CloudVideoInteropInfo { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Bookings.Client.Models.ItemBody? JoinInformation { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -111,6 +117,9 @@ namespace Microsoft.Graph.PowerShell.Bookings
 
         [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Bookings.Client.Models.LobbyBypassSettings? LobbyBypassSettings { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Bookings.Client.Models.OnlineMeetingType? MeetingType { get; set; }
 
         [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Bookings.Client.Models.OnlineMeetingSensitivityLabelAssignment? SensitivityLabelAssignment { get; set; }
@@ -196,6 +205,9 @@ namespace Microsoft.Graph.PowerShell.Bookings
     if (this.IsParameterBound(nameof(VideoTeleconferenceId)))
         body.VideoTeleconferenceId = VideoTeleconferenceId;
 
+    if (this.IsParameterBound(nameof(Capacity)))
+        body.Capacity = Capacity;
+
     if (this.IsParameterBound(nameof(VideoOnDemandWebUrl)))
         body.VideoOnDemandWebUrl = VideoOnDemandWebUrl;
 
@@ -220,6 +232,9 @@ namespace Microsoft.Graph.PowerShell.Bookings
     if (this.IsParameterBound(nameof(ChatRestrictions)))
         body.ChatRestrictions = ChatRestrictions;
 
+    if (this.IsParameterBound(nameof(CloudVideoInteropInfo)))
+        body.CloudVideoInteropInfo = CloudVideoInteropInfo;
+
     if (this.IsParameterBound(nameof(JoinInformation)))
         body.JoinInformation = JoinInformation;
 
@@ -228,6 +243,9 @@ namespace Microsoft.Graph.PowerShell.Bookings
 
     if (this.IsParameterBound(nameof(LobbyBypassSettings)))
         body.LobbyBypassSettings = LobbyBypassSettings;
+
+    if (this.IsParameterBound(nameof(MeetingType)))
+        body.MeetingType = MeetingType;
 
     if (this.IsParameterBound(nameof(SensitivityLabelAssignment)))
         body.SensitivityLabelAssignment = SensitivityLabelAssignment;
@@ -257,7 +275,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, VirtualEventSessionId);
                 return;
@@ -271,7 +289,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 {
                     result = client.Solutions.VirtualEvents.Events[VirtualEventId].Sessions[VirtualEventSessionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, VirtualEventSessionId);
                     return;

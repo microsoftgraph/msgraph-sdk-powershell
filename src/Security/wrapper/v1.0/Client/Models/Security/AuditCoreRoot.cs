@@ -13,7 +13,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuditCoreRoot : global::Microsoft.Graph.PowerShell.Security.Client.Models.Entity, IParsable
     {
-        /// <summary>The queries property</summary>
+        /// <summary>The collection of audit log queries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogQuery>? Queries { get; set; }

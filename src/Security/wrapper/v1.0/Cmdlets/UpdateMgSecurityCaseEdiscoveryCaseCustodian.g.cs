@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, EdiscoveryCustodianId);
                 return;
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.PowerShell.Security
                 {
                     result = client.Security.Cases.EdiscoveryCases[EdiscoveryCaseId].Custodians[EdiscoveryCustodianId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, EdiscoveryCustodianId);
                     return;

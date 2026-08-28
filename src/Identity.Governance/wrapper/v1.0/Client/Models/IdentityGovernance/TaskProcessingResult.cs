@@ -52,6 +52,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
 #else
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskObject Task { get; set; }
 #endif
+        /// <summary>The workflow subject associated with this task processing result. Populated for extensibility and provisioning workflows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowSubject? WorkflowSubject { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowSubject WorkflowSubject { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,6 +86,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "subject", n => { Subject = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User.CreateFromDiscriminatorValue); } },
                 { "task", n => { Task = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskObject>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue); } },
+                { "workflowSubject", n => { WorkflowSubject = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowSubject>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowSubject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,6 +105,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User>("subject", Subject);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskObject>("task", Task);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowSubject>("workflowSubject", WorkflowSubject);
         }
     }
 }

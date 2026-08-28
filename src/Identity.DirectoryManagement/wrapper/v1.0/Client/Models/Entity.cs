@@ -236,6 +236,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
                 "#microsoft.graph.pronounsSettings" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.PronounsSettings(),
                 "#microsoft.graph.publicKeyInfrastructureRoot" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.PublicKeyInfrastructureRoot(),
                 "#microsoft.graph.remoteDesktopSecurityConfiguration" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteDesktopSecurityConfiguration(),
+                "#microsoft.graph.remoteTenantGroup" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.richLongRunningOperation" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RichLongRunningOperation(),
                 "#microsoft.graph.samlOrWsFedProvider" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SamlOrWsFedProvider(),

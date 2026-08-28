@@ -14,6 +14,10 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
     {
         /// <summary>Total capacity of the virtual event.</summary>
         public int? Capacity { get; set; }
+        /// <summary>Indicates whether registrations require organizer approval before a participant is confirmed.</summary>
+        public bool? IsManualApprovalEnabled { get; set; }
+        /// <summary>Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.</summary>
+        public bool? IsWaitlistEnabled { get; set; }
         /// <summary>Registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,6 +45,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.virtualEventTownhallRegistrationConfiguration" => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration(),
                 "#microsoft.graph.virtualEventWebinarRegistrationConfiguration" => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventWebinarRegistrationConfiguration(),
                 _ => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationConfiguration(),
             };
@@ -54,6 +59,8 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "capacity", n => { Capacity = n.GetIntValue(); } },
+                { "isManualApprovalEnabled", n => { IsManualApprovalEnabled = n.GetBoolValue(); } },
+                { "isWaitlistEnabled", n => { IsWaitlistEnabled = n.GetBoolValue(); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBase>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "registrationWebUrl", n => { RegistrationWebUrl = n.GetStringValue(); } },
             };
@@ -67,6 +74,8 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("capacity", Capacity);
+            writer.WriteBoolValue("isManualApprovalEnabled", IsManualApprovalEnabled);
+            writer.WriteBoolValue("isWaitlistEnabled", IsWaitlistEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBase>("questions", Questions);
             writer.WriteStringValue("registrationWebUrl", RegistrationWebUrl);
         }

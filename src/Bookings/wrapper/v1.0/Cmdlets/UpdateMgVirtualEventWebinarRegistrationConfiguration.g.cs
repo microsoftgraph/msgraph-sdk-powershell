@@ -24,13 +24,13 @@ namespace Microsoft.Graph.PowerShell.Bookings
         public int? Capacity { get; set; }
 
         [Parameter(Mandatory = false)]
-        public string? RegistrationWebUrl { get; set; }
-
-        [Parameter(Mandatory = false)]
         public bool? IsManualApprovalEnabled { get; set; }
 
         [Parameter(Mandatory = false)]
         public bool? IsWaitlistEnabled { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? RegistrationWebUrl { get; set; }
 
 
 
@@ -48,14 +48,14 @@ namespace Microsoft.Graph.PowerShell.Bookings
     if (this.IsParameterBound(nameof(Capacity)))
         body.Capacity = Capacity;
 
-    if (this.IsParameterBound(nameof(RegistrationWebUrl)))
-        body.RegistrationWebUrl = RegistrationWebUrl;
-
     if (this.IsParameterBound(nameof(IsManualApprovalEnabled)))
         body.IsManualApprovalEnabled = IsManualApprovalEnabled;
 
     if (this.IsParameterBound(nameof(IsWaitlistEnabled)))
         body.IsWaitlistEnabled = IsWaitlistEnabled;
+
+    if (this.IsParameterBound(nameof(RegistrationWebUrl)))
+        body.RegistrationWebUrl = RegistrationWebUrl;
 
 
 
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, VirtualEventWebinarId);
                 return;
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 {
                     result = client.Solutions.VirtualEvents.Webinars[VirtualEventWebinarId].RegistrationConfiguration.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, VirtualEventWebinarId);
                     return;

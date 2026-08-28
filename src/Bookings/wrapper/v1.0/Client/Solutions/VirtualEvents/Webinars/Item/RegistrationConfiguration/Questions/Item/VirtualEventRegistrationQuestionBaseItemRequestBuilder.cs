@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
         {
         }
         /// <summary>
-        /// Delete a registration question from a webinar. The question can either be a predefined registration question or a custom registration question. 
+        /// Delete a registration question from a webinar or town hall. The question can either be a predefined registration question or a custom registration question. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventregistrationquestionbase-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBase>(requestInfo, global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a registration question from a webinar. The question can either be a predefined registration question or a custom registration question. 
+        /// Delete a registration question from a webinar or town hall. The question can either be a predefined registration question or a custom registration question. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

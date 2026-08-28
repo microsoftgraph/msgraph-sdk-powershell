@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Users
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, UsedInsightId);
                 return;
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.Users
                 {
                     result = client.Users[UserId].Insights.Used[UsedInsightId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, UsedInsightId);
                     return;

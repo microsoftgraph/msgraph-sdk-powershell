@@ -54,7 +54,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
         {
         }
         /// <summary>
-        /// Get a list of all registration records of a webinar.
+        /// Get a list of all registration records of a webinar or town hall.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationCollectionResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a registration record for a registrant of a webinar. This method registers the person for the webinar. 
+        /// Create a registration record for a registrant of a webinar or town hall. This method registers the person for the webinar or town hall. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-post-registrations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistration"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistration>(requestInfo, global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all registration records of a webinar.
+        /// Get a list of all registration records of a webinar or town hall.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return requestInfo;
         }
         /// <summary>
-        /// Create a registration record for a registrant of a webinar. This method registers the person for the webinar. 
+        /// Create a registration record for a registrant of a webinar or town hall. This method registers the person for the webinar or town hall. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return new global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Webinars.Item.Registrations.RegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all registration records of a webinar.
+        /// Get a list of all registration records of a webinar or town hall.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationsRequestBuilderGetQueryParameters 

@@ -11,8 +11,10 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
     /// Singleton entity that acts as a container for all device app management functionality.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DeviceAppManagement : global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.Entity, IParsable
+    public partial class DeviceAppManagement : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Android managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +125,14 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileApp> MobileApps { get; set; }
 #endif
+        /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OdataType { get; set; }
+#nullable restore
+#else
+        public string OdataType { get; set; }
+#endif
         /// <summary>Targeted managed app configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,11 +158,18 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
         public List<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.WindowsInformationProtectionPolicy> WindowsInformationProtectionPolicies { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceAppManagement"/> and sets the default values.
+        /// </summary>
+        public DeviceAppManagement()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceAppManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceAppManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceAppManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceAppManagement();
@@ -161,9 +178,9 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
                 { "androidManagedAppProtections", n => { AndroidManagedAppProtections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.AndroidManagedAppProtection>(global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.AndroidManagedAppProtection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "defaultManagedAppProtections", n => { DefaultManagedAppProtections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DefaultManagedAppProtection>(global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DefaultManagedAppProtection.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -181,6 +198,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
                 { "mobileAppConfigurations", n => { MobileAppConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedDeviceMobileAppConfiguration>(global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileAppRelationships", n => { MobileAppRelationships = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppRelationship>(global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppRelationship.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileApps", n => { MobileApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileApp>(global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileApp.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "targetedManagedAppConfigurations", n => { TargetedManagedAppConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.TargetedManagedAppConfiguration>(global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "vppTokens", n => { VppTokens = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.VppToken>(global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.VppToken.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "windowsInformationProtectionPolicies", n => { WindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.WindowsInformationProtectionPolicy>(global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.WindowsInformationProtectionPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -190,10 +208,9 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.AndroidManagedAppProtection>("androidManagedAppProtections", AndroidManagedAppProtections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DefaultManagedAppProtection>("defaultManagedAppProtections", DefaultManagedAppProtections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.IosManagedAppProtection>("iosManagedAppProtections", IosManagedAppProtections);
@@ -210,9 +227,11 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedDeviceMobileAppConfiguration>("mobileAppConfigurations", MobileAppConfigurations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppRelationship>("mobileAppRelationships", MobileAppRelationships);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileApp>("mobileApps", MobileApps);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.TargetedManagedAppConfiguration>("targetedManagedAppConfigurations", TargetedManagedAppConfigurations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.VppToken>("vppTokens", VppTokens);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.WindowsInformationProtectionPolicy>("windowsInformationProtectionPolicies", WindowsInformationProtectionPolicies);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

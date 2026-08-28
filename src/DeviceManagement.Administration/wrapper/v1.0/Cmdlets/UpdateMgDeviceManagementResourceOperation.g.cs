@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ResourceOperationId);
                 return;
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
                 {
                     result = client.DeviceManagement.ResourceOperations[ResourceOperationId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, ResourceOperationId);
                     return;

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models;
+using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Templates.MultiTenantOrganizationPartnerConfiguration.ResetToDefaultSettings;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +19,11 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenan
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MultiTenantOrganizationPartnerConfigurationRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The resetToDefaultSettings property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Templates.MultiTenantOrganizationPartnerConfiguration.ResetToDefaultSettings.ResetToDefaultSettingsRequestBuilder ResetToDefaultSettings
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Templates.MultiTenantOrganizationPartnerConfiguration.ResetToDefaultSettings.ResetToDefaultSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Templates.MultiTenantOrganizationPartnerConfiguration.MultiTenantOrganizationPartnerConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>

@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, TrainingLanguageDetailId);
                 return;
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.PowerShell.Security
                 {
                     result = client.Security.AttackSimulation.Trainings[TrainingId].LanguageDetails[TrainingLanguageDetailId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, TrainingLanguageDetailId);
                     return;

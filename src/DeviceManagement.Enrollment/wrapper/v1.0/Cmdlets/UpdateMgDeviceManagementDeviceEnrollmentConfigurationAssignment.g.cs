@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, EnrollmentConfigurationAssignmentId);
                 return;
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
                 {
                     result = client.DeviceManagement.DeviceEnrollmentConfigurations[DeviceEnrollmentConfigurationId].Assignments[EnrollmentConfigurationAssignmentId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, EnrollmentConfigurationAssignmentId);
                     return;

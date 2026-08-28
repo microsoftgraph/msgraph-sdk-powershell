@@ -36,6 +36,14 @@ namespace Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors
 #else
         public global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemContent Content { get; set; }
 #endif
+        /// <summary>The informationProtectionLabel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemInformationProtectionLabel? InformationProtectionLabel { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemInformationProtectionLabel InformationProtectionLabel { get; set; }
+#endif
         /// <summary>A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +73,7 @@ namespace Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors
                 { "acl", n => { Acl = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.Acl>(global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.Acl.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "activities", n => { Activities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalActivity>(global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalActivity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "content", n => { Content = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemContent>(global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemContent.CreateFromDiscriminatorValue); } },
+                { "informationProtectionLabel", n => { InformationProtectionLabel = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemInformationProtectionLabel>(global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemInformationProtectionLabel.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.Properties>(global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.Properties.CreateFromDiscriminatorValue); } },
             };
         }
@@ -79,6 +88,7 @@ namespace Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.Acl>("acl", Acl);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalActivity>("activities", Activities);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemContent>("content", Content);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItemInformationProtectionLabel>("informationProtectionLabel", InformationProtectionLabel);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.Properties>("properties", Properties);
         }
     }

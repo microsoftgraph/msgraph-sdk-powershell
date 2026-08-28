@@ -36,6 +36,14 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Reports.Client.Models.AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies { get; set; }
 #endif
+        /// <summary>The authenticationAppDeviceDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Reports.Client.Models.AuthenticationAppDeviceDetails? AuthenticationAppDeviceDetails { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Reports.Client.Models.AuthenticationAppDeviceDetails AuthenticationAppDeviceDetails { get; set; }
+#endif
         /// <summary>Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +71,14 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models
 #nullable restore
 #else
         public global::Microsoft.Graph.PowerShell.Reports.Client.Models.DeviceDetail DeviceDetail { get; set; }
+#endif
+        /// <summary>The homeTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HomeTenantId { get; set; }
+#nullable restore
+#else
+        public string HomeTenantId { get; set; }
 #endif
         /// <summary>IP address of the client used to sign in.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,6 +114,14 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models
 #else
         public string ResourceId { get; set; }
 #endif
+        /// <summary>The resourceTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceTenantId { get; set; }
+#nullable restore
+#else
+        public string ResourceTenantId { get; set; }
+#endif
         /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. The value none means that Microsoft Entra risk detection did not flag the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
         public global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskDetail? RiskDetail { get; set; }
         /// <summary>The riskEventTypes property</summary>
@@ -122,6 +146,22 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models
         public global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskLevel? RiskLevelDuringSignIn { get; set; }
         /// <summary>Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).</summary>
         public global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskState? RiskState { get; set; }
+        /// <summary>The servicePrincipalId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServicePrincipalId { get; set; }
+#nullable restore
+#else
+        public string ServicePrincipalId { get; set; }
+#endif
+        /// <summary>The servicePrincipalName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServicePrincipalName { get; set; }
+#nullable restore
+#else
+        public string ServicePrincipalName { get; set; }
+#endif
         /// <summary>Sign-in status. Includes the error code and description of the error (if a sign-in failure occurs).  Supports $filter (eq) on errorCode property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +169,14 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models
 #nullable restore
 #else
         public global::Microsoft.Graph.PowerShell.Reports.Client.Models.SignInStatus Status { get; set; }
+#endif
+        /// <summary>The userAgent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserAgent { get; set; }
+#nullable restore
+#else
+        public string UserAgent { get; set; }
 #endif
         /// <summary>Display name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -175,23 +223,29 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models
                 { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Reports.Client.Models.AppliedConditionalAccessPolicy>(global::Microsoft.Graph.PowerShell.Reports.Client.Models.AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "authenticationAppDeviceDetails", n => { AuthenticationAppDeviceDetails = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.AuthenticationAppDeviceDetails>(global::Microsoft.Graph.PowerShell.Reports.Client.Models.AuthenticationAppDeviceDetails.CreateFromDiscriminatorValue); } },
                 { "clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
                 { "conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.ConditionalAccessStatus>(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deviceDetail", n => { DeviceDetail = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.DeviceDetail>(global::Microsoft.Graph.PowerShell.Reports.Client.Models.DeviceDetail.CreateFromDiscriminatorValue); } },
+                { "homeTenantId", n => { HomeTenantId = n.GetStringValue(); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "isInteractive", n => { IsInteractive = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.SignInLocation>(global::Microsoft.Graph.PowerShell.Reports.Client.Models.SignInLocation.CreateFromDiscriminatorValue); } },
                 { "resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
                 { "riskDetail", n => { RiskDetail = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskDetail>(); } },
                 { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskEventType>()?.AsList(); } },
                 { "riskEventTypes_v2", n => { RiskEventTypesV2 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskLevel>(); } },
                 { "riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskLevel>(); } },
                 { "riskState", n => { RiskState = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskState>(); } },
+                { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
+                { "servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.SignInStatus>(global::Microsoft.Graph.PowerShell.Reports.Client.Models.SignInStatus.CreateFromDiscriminatorValue); } },
+                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -208,23 +262,29 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models
             writer.WriteStringValue("appDisplayName", AppDisplayName);
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Reports.Client.Models.AppliedConditionalAccessPolicy>("appliedConditionalAccessPolicies", AppliedConditionalAccessPolicies);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails", AuthenticationAppDeviceDetails);
             writer.WriteStringValue("clientAppUsed", ClientAppUsed);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.ConditionalAccessStatus>("conditionalAccessStatus", ConditionalAccessStatus);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.DeviceDetail>("deviceDetail", DeviceDetail);
+            writer.WriteStringValue("homeTenantId", HomeTenantId);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteBoolValue("isInteractive", IsInteractive);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.SignInLocation>("location", Location);
             writer.WriteStringValue("resourceDisplayName", ResourceDisplayName);
             writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteStringValue("resourceTenantId", ResourceTenantId);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskDetail>("riskDetail", RiskDetail);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskEventType>("riskEventTypes", RiskEventTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes_v2", RiskEventTypesV2);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskLevel>("riskLevelAggregated", RiskLevelAggregated);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskLevel>("riskLevelDuringSignIn", RiskLevelDuringSignIn);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.RiskState>("riskState", RiskState);
+            writer.WriteStringValue("servicePrincipalId", ServicePrincipalId);
+            writer.WriteStringValue("servicePrincipalName", ServicePrincipalName);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.SignInStatus>("status", Status);
+            writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

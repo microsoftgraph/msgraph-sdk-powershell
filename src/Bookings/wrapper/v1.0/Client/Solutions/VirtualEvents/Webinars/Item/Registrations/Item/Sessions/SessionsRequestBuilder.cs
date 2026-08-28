@@ -54,7 +54,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
         {
         }
         /// <summary>
-        /// Get a list of sessions summaries that a registrant registered for in a webinar. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The remaining session properties are null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. 
+        /// Get a list of sessions summaries that a registrant registered for in a webinar or town hall. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The remaining session properties are null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventregistration-list-sessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSessionCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSessionCollectionResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of sessions summaries that a registrant registered for in a webinar. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The remaining session properties are null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. 
+        /// Get a list of sessions summaries that a registrant registered for in a webinar or town hall. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The remaining session properties are null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return new global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Webinars.Item.Registrations.Item.Sessions.SessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of sessions summaries that a registrant registered for in a webinar. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The remaining session properties are null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. 
+        /// Get a list of sessions summaries that a registrant registered for in a webinar or town hall. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The remaining session properties are null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. 
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SessionsRequestBuilderGetQueryParameters 

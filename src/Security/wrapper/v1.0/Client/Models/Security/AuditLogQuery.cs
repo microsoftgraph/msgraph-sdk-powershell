@@ -13,7 +13,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuditLogQuery : global::Microsoft.Graph.PowerShell.Security.Client.Models.Entity, IParsable
     {
-        /// <summary>The administrative units tagged to an audit log record.</summary>
+        /// <summary>The collection of administrative unit IDs to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AdministrativeUnitIdFilters { get; set; }
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<string> AdministrativeUnitIdFilters { get; set; }
 #endif
-        /// <summary>The display name of the saved audit log query.</summary>
+        /// <summary>The display name of the audit log query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -29,11 +29,11 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The end date of the date range in the query.</summary>
+        /// <summary>The end date and time of the audit log query filter.</summary>
         public DateTimeOffset? FilterEndDateTime { get; set; }
-        /// <summary>The start date of the date range in the query.</summary>
+        /// <summary>The start date and time of the audit log query filter.</summary>
         public DateTimeOffset? FilterStartDateTime { get; set; }
-        /// <summary>The IP address of the device that was used when the activity was logged.</summary>
+        /// <summary>The collection of IP addresses to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IpAddressFilters { get; set; }
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<string> IpAddressFilters { get; set; }
 #endif
-        /// <summary>Free text field to search non-indexed properties of the audit log.</summary>
+        /// <summary>The keyword to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? KeywordFilter { get; set; }
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public string KeywordFilter { get; set; }
 #endif
-        /// <summary>For SharePoint and OneDrive for Business activity, the full path name of the file or folder accessed by the user. For Exchange admin audit logging, the name of the object that was modified by the cmdlet.</summary>
+        /// <summary>The collection of object IDs to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ObjectIdFilters { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<string> ObjectIdFilters { get; set; }
 #endif
-        /// <summary>The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.</summary>
+        /// <summary>The collection of operations to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OperationFilters { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<string> OperationFilters { get; set; }
 #endif
-        /// <summary>An individual audit log record.</summary>
+        /// <summary>The collection of audit log records retrieved by the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogRecord>? Records { get; set; }
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogRecord> Records { get; set; }
 #endif
-        /// <summary>The type of operation indicated by the record. For the list of member values, see auditLogRecordType.</summary>
+        /// <summary>The collection of record types to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogRecordType?>? RecordTypeFilters { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogRecordType?> RecordTypeFilters { get; set; }
 #endif
-        /// <summary>The serviceFilters property</summary>
+        /// <summary>The collection of services to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ServiceFilters { get; set; }
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<string> ServiceFilters { get; set; }
 #endif
-        /// <summary>Describes the current status of the query. The possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.</summary>
+        /// <summary>The status of the audit log query. Possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.</summary>
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogQueryStatus? Status { get; set; }
-        /// <summary>The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, myname@mydomain_name.</summary>
+        /// <summary>The collection of user principal names to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? UserPrincipalNameFilters { get; set; }

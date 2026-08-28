@@ -91,7 +91,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, AgreementFileVersionId);
                 return;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 {
                     result = client.Agreements[AgreementId].File.Localizations[AgreementFileLocalizationId].Versions[AgreementFileVersionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, AgreementFileVersionId);
                     return;

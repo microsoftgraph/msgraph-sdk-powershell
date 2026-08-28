@@ -44,6 +44,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomExtensionCallbackConfiguration? CallbackConfiguration { get; set; }
 
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.CustomTaskExtensionReplyMode? ReplyMode { get; set; }
+
 
 
 
@@ -80,6 +83,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     if (this.IsParameterBound(nameof(CallbackConfiguration)))
         body.CallbackConfiguration = CallbackConfiguration;
 
+    if (this.IsParameterBound(nameof(ReplyMode)))
+        body.ReplyMode = ReplyMode;
+
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
@@ -93,7 +99,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, CustomTaskExtensionId);
                 return;
@@ -107,7 +113,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 {
                     result = client.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions[CustomTaskExtensionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, CustomTaskExtensionId);
                     return;

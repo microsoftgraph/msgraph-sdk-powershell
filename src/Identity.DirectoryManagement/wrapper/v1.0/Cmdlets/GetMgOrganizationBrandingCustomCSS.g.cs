@@ -12,9 +12,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 {
     [GraphRoute("GET", "/organization/{organization-id}/branding/customCSS")]
-    [Cmdlet(VerbsCommon.Get, "MgOrganizationBrandingCustomCSS")]
+    [Cmdlet(VerbsCommon.Get, "MgOrganizationBrandingCustomCss")]
     [OutputType(typeof(byte[]))]
-    public class GetMgOrganizationBrandingCustomCSSCommand : GraphClientCmdlet
+    public class GetMgOrganizationBrandingCustomCssCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string OrganizationId { get; set; } = string.Empty;
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, OrganizationId);
                 return;

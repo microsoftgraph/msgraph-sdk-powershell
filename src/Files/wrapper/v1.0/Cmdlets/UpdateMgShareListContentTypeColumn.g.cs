@@ -235,7 +235,7 @@ namespace Microsoft.Graph.PowerShell.Files
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ColumnDefinitionId);
                 return;
@@ -249,7 +249,7 @@ namespace Microsoft.Graph.PowerShell.Files
                 {
                     result = client.Shares[SharedDriveItemId].List.ContentTypes[ContentTypeId].Columns[ColumnDefinitionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, ColumnDefinitionId);
                     return;

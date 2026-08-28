@@ -42,6 +42,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
         public DateTimeOffset? ScheduledDateTime { get; set; }
         /// <summary>The date time that the run execution started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? StartedDateTime { get; set; }
+        /// <summary>The processing results for each subject in this workflow run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult>? SubjectProcessingResults { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult> SubjectProcessingResults { get; set; }
+#endif
         /// <summary>The number of successfully completed users in the run.</summary>
         public int? SuccessfulUsersCount { get; set; }
         /// <summary>The related taskProcessingResults.</summary>
@@ -95,6 +103,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
                 { "reprocessedRuns", n => { ReprocessedRuns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.Run>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "subjectProcessingResults", n => { SubjectProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
                 { "taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskProcessingResult>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totalTasksCount", n => { TotalTasksCount = n.GetIntValue(); } },
@@ -121,6 +130,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.Run>("reprocessedRuns", ReprocessedRuns);
             writer.WriteDateTimeOffsetValue("scheduledDateTime", ScheduledDateTime);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult>("subjectProcessingResults", SubjectProcessingResults);
             writer.WriteIntValue("successfulUsersCount", SuccessfulUsersCount);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingResults", TaskProcessingResults);
             writer.WriteIntValue("totalTasksCount", TotalTasksCount);

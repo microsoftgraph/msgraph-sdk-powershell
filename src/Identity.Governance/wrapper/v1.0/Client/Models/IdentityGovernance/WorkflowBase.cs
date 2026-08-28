@@ -80,6 +80,8 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
 #else
         public string OdataType { get; set; }
 #endif
+        /// <summary>The targetSubjectType property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectType? TargetSubjectType { get; set; }
         /// <summary>The tasks in the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +133,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "targetSubjectType", n => { TargetSubjectType = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectType>(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskObject>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -153,6 +156,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectType>("targetSubjectType", TargetSubjectType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskObject>("tasks", Tasks);
             writer.WriteAdditionalData(AdditionalData);
         }

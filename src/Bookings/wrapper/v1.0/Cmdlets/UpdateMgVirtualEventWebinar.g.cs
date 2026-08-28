@@ -24,6 +24,9 @@ namespace Microsoft.Graph.PowerShell.Bookings
         public string? DisplayName { get; set; }
 
         [Parameter(Mandatory = false)]
+        public bool? IsRegistrationRequired { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Bookings.Client.Models.CommunicationsIdentitySet? CreatedBy { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -65,6 +68,9 @@ namespace Microsoft.Graph.PowerShell.Bookings
     if (this.IsParameterBound(nameof(DisplayName)))
         body.DisplayName = DisplayName;
 
+    if (this.IsParameterBound(nameof(IsRegistrationRequired)))
+        body.IsRegistrationRequired = IsRegistrationRequired;
+
     if (this.IsParameterBound(nameof(CreatedBy)))
         body.CreatedBy = CreatedBy;
 
@@ -105,7 +111,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, VirtualEventWebinarId);
                 return;
@@ -119,7 +125,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 {
                     result = client.Solutions.VirtualEvents.Webinars[VirtualEventWebinarId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, VirtualEventWebinarId);
                     return;

@@ -46,6 +46,16 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
 #else
         public string QueryType { get; set; }
 #endif
+        /// <summary>The identifier of the reviewer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReviewerId { get; set; }
+#nullable restore
+#else
+        public string ReviewerId { get; set; }
+#endif
+        /// <summary>The scopeType property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.AccessReviewReviewerScopeType? ScopeType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.AccessReviewReviewerScope"/> and sets the default values.
         /// </summary>
@@ -75,6 +85,8 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "queryRoot", n => { QueryRoot = n.GetStringValue(); } },
                 { "queryType", n => { QueryType = n.GetStringValue(); } },
+                { "reviewerId", n => { ReviewerId = n.GetStringValue(); } },
+                { "scopeType", n => { ScopeType = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.AccessReviewReviewerScopeType>(); } },
             };
         }
         /// <summary>
@@ -88,6 +100,8 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
             writer.WriteStringValue("query", Query);
             writer.WriteStringValue("queryRoot", QueryRoot);
             writer.WriteStringValue("queryType", QueryType);
+            writer.WriteStringValue("reviewerId", ReviewerId);
+            writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.AccessReviewReviewerScopeType>("scopeType", ScopeType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

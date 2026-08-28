@@ -93,7 +93,7 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ConfigurationMonitorId);
                 return;
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
                 {
                     result = client.Admin.ConfigurationManagement.ConfigurationMonitors[ConfigurationMonitorId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, ConfigurationMonitorId);
                     return;

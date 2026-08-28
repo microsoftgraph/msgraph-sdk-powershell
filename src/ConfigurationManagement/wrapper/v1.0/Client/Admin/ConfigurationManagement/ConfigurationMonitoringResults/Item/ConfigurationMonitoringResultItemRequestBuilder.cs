@@ -35,28 +35,6 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Admin.Config
         {
         }
         /// <summary>
-        /// Delete navigation property configurationMonitoringResults for admin
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "XXX", global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
         /// Read the properties and relationships of a configurationMonitoringResult object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/configurationmonitoringresult-get?view=graph-rest-1.0" />
         /// </summary>
@@ -81,50 +59,6 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Admin.Config
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult>(requestInfo, global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property configurationMonitoringResults in admin
-        /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult?> PatchAsync(global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult> PatchAsync(global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "XXX", global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult>(requestInfo, global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Delete navigation property configurationMonitoringResults for admin
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
-        }
-        /// <summary>
         /// Read the properties and relationships of a configurationMonitoringResult object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -144,28 +78,6 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Admin.Config
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property configurationMonitoringResults in admin
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            return requestInfo;
-        }
-        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Admin.ConfigurationManagement.ConfigurationMonitoringResults.Item.ConfigurationMonitoringResultItemRequestBuilder"/></returns>
@@ -173,14 +85,6 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Admin.Config
         public global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Admin.ConfigurationManagement.ConfigurationMonitoringResults.Item.ConfigurationMonitoringResultItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Admin.ConfigurationManagement.ConfigurationMonitoringResults.Item.ConfigurationMonitoringResultItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ConfigurationMonitoringResultItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
         /// <summary>
         /// Read the properties and relationships of a configurationMonitoringResult object.
@@ -215,14 +119,6 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Admin.Config
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationMonitoringResultItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Admin.ConfigurationManagement.ConfigurationMonitoringResults.Item.ConfigurationMonitoringResultItemRequestBuilder.ConfigurationMonitoringResultItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ConfigurationMonitoringResultItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

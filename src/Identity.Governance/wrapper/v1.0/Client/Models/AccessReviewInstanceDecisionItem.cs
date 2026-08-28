@@ -30,6 +30,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #endif
         /// <summary>The timestamp when the approval decision was applied.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t applied the decision or it was automatically applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.</summary>
         public DateTimeOffset? AppliedDateTime { get; set; }
+        /// <summary>The description of the apply result. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApplyDescription { get; set; }
+#nullable restore
+#else
+        public string ApplyDescription { get; set; }
+#endif
         /// <summary>The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +141,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
                 { "accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
                 { "appliedBy", n => { AppliedBy = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UserIdentity>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "applyDescription", n => { ApplyDescription = n.GetStringValue(); } },
                 { "applyResult", n => { ApplyResult = n.GetStringValue(); } },
                 { "decision", n => { Decision = n.GetStringValue(); } },
                 { "insights", n => { Insights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GovernanceInsight>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GovernanceInsight.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -157,6 +166,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             writer.WriteStringValue("accessReviewId", AccessReviewId);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UserIdentity>("appliedBy", AppliedBy);
             writer.WriteDateTimeOffsetValue("appliedDateTime", AppliedDateTime);
+            writer.WriteStringValue("applyDescription", ApplyDescription);
             writer.WriteStringValue("applyResult", ApplyResult);
             writer.WriteStringValue("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GovernanceInsight>("insights", Insights);

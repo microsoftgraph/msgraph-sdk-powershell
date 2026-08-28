@@ -28,6 +28,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewHistoryDefinition> HistoryDefinitions { get; set; }
 #endif
+        /// <summary>Entry point for the unified (vNext) access reviews API surface. Requests under this path are routed to the vNext service through the dedicated accessReviews/unified path segment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoot? Unified { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoot Unified { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +56,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             {
                 { "definitions", n => { Definitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewScheduleDefinition>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewScheduleDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "historyDefinitions", n => { HistoryDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewHistoryDefinition>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewHistoryDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unified", n => { Unified = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoot>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -60,6 +69,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewScheduleDefinition>("definitions", Definitions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewHistoryDefinition>("historyDefinitions", HistoryDefinitions);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoot>("unified", Unified);
         }
     }
 }

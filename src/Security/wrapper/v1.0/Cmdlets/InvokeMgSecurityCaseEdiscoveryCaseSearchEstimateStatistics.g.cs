@@ -50,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.Security
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, EdiscoverySearchId);
                 return;

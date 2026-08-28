@@ -29,6 +29,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         public global::System.DateTimeOffset? AppliedDateTime { get; set; }
 
         [Parameter(Mandatory = false)]
+        public string? ApplyDescription { get; set; }
+
+        [Parameter(Mandatory = false)]
         public string? ApplyResult { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -79,6 +82,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     if (this.IsParameterBound(nameof(AppliedDateTime)))
         body.AppliedDateTime = AppliedDateTime;
 
+    if (this.IsParameterBound(nameof(ApplyDescription)))
+        body.ApplyDescription = ApplyDescription;
+
     if (this.IsParameterBound(nameof(ApplyResult)))
         body.ApplyResult = ApplyResult;
 
@@ -125,7 +131,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, body);
                 return;

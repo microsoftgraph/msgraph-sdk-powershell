@@ -108,6 +108,9 @@ namespace Microsoft.Graph.PowerShell.Groups
         public bool? OnPremisesSyncEnabled { get; set; }
 
         [Parameter(Mandatory = false)]
+        public string? OrganizationId { get; set; }
+
+        [Parameter(Mandatory = false)]
         public string? PreferredDataLocation { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -272,6 +275,9 @@ namespace Microsoft.Graph.PowerShell.Groups
     if (this.IsParameterBound(nameof(OnPremisesSyncEnabled)))
         body.OnPremisesSyncEnabled = OnPremisesSyncEnabled;
 
+    if (this.IsParameterBound(nameof(OrganizationId)))
+        body.OrganizationId = OrganizationId;
+
     if (this.IsParameterBound(nameof(PreferredDataLocation)))
         body.PreferredDataLocation = PreferredDataLocation;
 
@@ -351,7 +357,7 @@ namespace Microsoft.Graph.PowerShell.Groups
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, GroupId);
                 return;
@@ -365,7 +371,7 @@ namespace Microsoft.Graph.PowerShell.Groups
                 {
                     result = client.Groups[GroupId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, GroupId);
                     return;

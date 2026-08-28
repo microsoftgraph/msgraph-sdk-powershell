@@ -105,6 +105,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
                 "#microsoft.graph.virtualEventSession" => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSession(),
                 "#microsoft.graph.virtualEventsRoot" => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventsRoot(),
                 "#microsoft.graph.virtualEventTownhall" => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhall(),
+                "#microsoft.graph.virtualEventTownhallRegistrationConfiguration" => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration(),
                 "#microsoft.graph.virtualEventWebinar" => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventWebinar(),
                 "#microsoft.graph.virtualEventWebinarRegistrationConfiguration" => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventWebinarRegistrationConfiguration(),
                 _ => new global::Microsoft.Graph.PowerShell.Bookings.Client.Models.Entity(),

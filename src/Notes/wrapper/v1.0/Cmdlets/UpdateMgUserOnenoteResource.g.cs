@@ -67,7 +67,7 @@ namespace Microsoft.Graph.PowerShell.Notes
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, OnenoteResourceId);
                 return;
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.Notes
                 {
                     result = client.Users[UserId].Onenote.Resources[OnenoteResourceId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, OnenoteResourceId);
                     return;

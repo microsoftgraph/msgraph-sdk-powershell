@@ -30,6 +30,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #endif
         /// <summary>DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.</summary>
         public DateTimeOffset? EndDateTime { get; set; }
+        /// <summary>Collection of errors in an access review instance lifecycle. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewError>? Errors { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewError> Errors { get; set; }
+#endif
         /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user&apos;s manager does not exist. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +101,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
                 { "contactedReviewers", n => { ContactedReviewers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewer>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItem>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewError>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewerScope>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewerScope>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scope", n => { Scope = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewScope>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewScope.CreateFromDiscriminatorValue); } },
@@ -112,6 +121,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewer>("contactedReviewers", ContactedReviewers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItem>("decisions", Decisions);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewError>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewerScope>("fallbackReviewers", FallbackReviewers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewerScope>("reviewers", Reviewers);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewScope>("scope", Scope);
