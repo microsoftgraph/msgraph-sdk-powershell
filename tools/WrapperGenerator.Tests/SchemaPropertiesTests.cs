@@ -159,6 +159,28 @@ public sealed class SchemaPropertiesTests
         Assert.False(complex.IsArray);
     }
 
+    // A primitive-typed branch is a real union arm, not a nullability placeholder:
+    // anyOf[$ref, {type: string}] must not collapse to the reference and silently drop the
+    // string alternative.
+    [Fact]
+    public void ReportsUnionOfAModelAndAPlainString()
+    {
+        var classified = ClassifyBody(new Dictionary<string, IOpenApiSchema>
+        {
+            ["identity"] = new OpenApiSchema
+            {
+                AnyOf =
+                [
+                    new OpenApiSchemaReference("graph.identity"),
+                    new OpenApiSchema { Type = JsonSchemaType.String },
+                ],
+            },
+        });
+
+        Assert.Empty(classified.Complex);
+        Assert.Equal(UnsupportedShape.Union, Assert.Single(classified.Unsupported).Shape);
+    }
+
     [Fact]
     public void BindsDirectReferenceAndReferenceArray()
     {

@@ -55,7 +55,7 @@ public sealed class EmitterTests
         Assert.Contains("else if (!string.IsNullOrEmpty(result?.OdataNextLink))", source);
 
         // Pipeline stop passes through the shared catch untouched.
-        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException)", source);
+        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)", source);
 
         // The FIRST request keeps the direct builder call the operation-inventory regex keys on.
         Assert.Contains(".GetAsync(requestConfiguration =>", source);
@@ -117,7 +117,7 @@ public sealed class EmitterTests
 
         Assert.Contains("public SwitchParameter All { get; set; }", source);
         Assert.Contains("catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)", source);
-        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException)", source);
+        Assert.Contains("catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)", source);
     }
 
     // Delta pins (#3742). A change-tracking read is a function by classification but a paged

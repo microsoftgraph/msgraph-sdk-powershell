@@ -94,7 +94,7 @@ public static class CmdletEmitter
     // inside the try - list workers and dispatchers - and is emitted uniformly so every catch
     // tail in the corpus stays identical.
     private static string CatchBlock(string targetIdExpr, string extraIndent = "") => $$"""
-            {{extraIndent}}catch (Exception ex) when (ex is not PipelineStoppedException)
+            {{extraIndent}}catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {{extraIndent}}{
                 {{extraIndent}}ThrowGraphRequestFailed(ex, {{targetIdExpr}});
                 {{extraIndent}}return;
@@ -908,7 +908,7 @@ namespace {{ctx.CmdletNamespace}}
                         // re-applies headers only; query bindings here would be dead code.
                         result = client.{{naming.BuilderExpression}}.WithUrl(nextLink).GetAsync(requestConfiguration =>
                         {{{continuationHeaders}}
-                        }).GetAwaiter().GetResult();
+                        }, StoppingToken).GetAwaiter().GetResult();
                         if (result?.Value is { } page)
                         {
                             WriteObject(page, enumerateCollection: true);{{fetchedAdd}}
