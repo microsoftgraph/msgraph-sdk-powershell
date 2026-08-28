@@ -74,7 +74,26 @@ extends:
         - script: git submodule update --init --recursive
           displayName: Initialize submodules
 
-        - template: .azure-pipelines/common-templates/install-tools.yml@self
+        # Deliberately NOT install-tools.yml: that template is the AutoRest toolchain - Node,
+        # the private npm feed, AutoRest, Rush and a full rush rebuild - none of which this
+        # pipeline uses. The wrapper modules compile from committed sources, so the whole
+        # toolchain is the .NET SDK, feed auth for restore, and the kiota CLI.
+        - task: UseDotNet@2
+          displayName: Use .NET SDK 10
+          retryCountOnTaskFailure: 2
+          inputs:
+            version: 10.x
+        - task: NuGetAuthenticate@1
+        # Build-WrapperModule.ps1 refuses to run without kiota on PATH even under -SkipKiota
+        # (the guard is unconditional), and future -Generate runs need it anyway.
+        - task: PowerShell@2
+          displayName: Install kiota CLI
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              dotnet tool install --global Microsoft.OpenApi.Kiota
+              Write-Host "##vso[task.prependpath]$env:USERPROFILE\.dotnet\tools"
         - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
 
         # Version and prerelease go to the script directly (-ModuleVersion/-Prerelease); the
