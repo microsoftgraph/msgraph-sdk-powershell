@@ -136,7 +136,11 @@ extends:
                 ArtifactsLocation = '$(Build.ArtifactStagingDirectory)'
                 ModuleVersion     = '${{ parameters.PackageVersion }}'
                 Prerelease        = '$(WrapperPrerelease)'
-                SkipKiota         = $true
+                # Deliberately NOT -SkipKiota: the pipeline runs the whole chain - kiota client
+                # generation from the committed OpenAPI docs, wrapper generation on top, then
+                # compile - so a change in any step is built and tested end to end, and the run
+                # can never fail on committed clients lagging the docs. Clients are still
+                # committed to the repo for reviewable diffs and clean local checkouts.
                 Pack              = $true
               }
               & '$(Build.SourcesDirectory)/tools/Build-WrapperModule.ps1' @params
