@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Security
 
-Get-MgBetaSecurityRuleDetectionRule -Top 3 
+Get-MgBetaSecurityRuleDetectionRule
 
 ```
 This example shows how to use the Get-MgBetaSecurityRuleDetectionRule Cmdlet.
