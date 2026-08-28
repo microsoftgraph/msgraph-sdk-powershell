@@ -113,7 +113,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, DeviceComplianceSettingStateId);
                 return;
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 {
                     result = client.DeviceManagement.DeviceCompliancePolicySettingStateSummaries[DeviceCompliancePolicySettingStateSummaryId].DeviceComplianceSettingStates[DeviceComplianceSettingStateId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, DeviceComplianceSettingStateId);
                     return;

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Reports
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, null);
                 return;

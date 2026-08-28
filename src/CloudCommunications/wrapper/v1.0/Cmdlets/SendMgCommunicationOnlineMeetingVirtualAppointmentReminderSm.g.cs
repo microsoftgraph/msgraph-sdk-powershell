@@ -60,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, OnlineMeetingId);
                 return;

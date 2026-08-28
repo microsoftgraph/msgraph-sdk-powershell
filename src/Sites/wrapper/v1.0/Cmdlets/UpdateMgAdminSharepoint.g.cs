@@ -48,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Sites
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, null);
                 return;
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Sites
                 {
                     result = client.Admin.Sharepoint.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, null);
                     return;

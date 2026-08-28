@@ -103,7 +103,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, TaskProcessingResultId);
                 return;
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 {
                     result = client.IdentityGovernance.LifecycleWorkflows.Workflows[WorkflowId].Runs[RunId].TaskProcessingResults[TaskProcessingResultId].Subject.MailboxSettings.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, TaskProcessingResultId);
                     return;

@@ -99,7 +99,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ProtectionPolicyBaseId);
                 return;
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                 {
                     result = client.Solutions.BackupRestore.ProtectionPolicies[ProtectionPolicyBaseId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ProtectionPolicyBaseId);
                     return;

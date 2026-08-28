@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, PresenceId);
                 return;
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                 {
                     result = client.Communications.Presences[PresenceId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, PresenceId);
                     return;

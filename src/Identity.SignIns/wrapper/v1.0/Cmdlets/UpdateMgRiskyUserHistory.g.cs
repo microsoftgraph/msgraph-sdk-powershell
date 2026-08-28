@@ -113,7 +113,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, RiskyUserHistoryItemId);
                 return;
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 {
                     result = client.IdentityProtection.RiskyUsers[RiskyUserId].History[RiskyUserHistoryItemId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, RiskyUserHistoryItemId);
                     return;

@@ -131,7 +131,7 @@ namespace Microsoft.Graph.PowerShell.ChangeNotifications
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, SubscriptionId);
                 return;
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.PowerShell.ChangeNotifications
                 {
                     result = client.Subscriptions[SubscriptionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, SubscriptionId);
                     return;

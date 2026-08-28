@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, BookingCustomQuestionId);
                 return;
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 {
                     result = client.Solutions.BookingBusinesses[BookingBusinessId].CustomQuestions[BookingCustomQuestionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, BookingCustomQuestionId);
                     return;

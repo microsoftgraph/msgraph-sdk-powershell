@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, UserFlowLanguagePageId);
                 return;
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 {
                     result = client.Identity.B2xUserFlows[B2xIdentityUserFlowId].Languages[UserFlowLanguageConfigurationId].OverridesPages[UserFlowLanguagePageId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, UserFlowLanguagePageId);
                     return;

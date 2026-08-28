@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Sites
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, SiteId);
                 return;
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Sites
                 {
                     result = client.Sites[SiteId].Analytics.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, SiteId);
                     return;

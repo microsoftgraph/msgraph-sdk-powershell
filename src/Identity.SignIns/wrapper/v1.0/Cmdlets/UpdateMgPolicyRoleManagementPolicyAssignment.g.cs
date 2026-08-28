@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, UnifiedRoleManagementPolicyAssignmentId);
                 return;
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 {
                     result = client.Policies.RoleManagementPolicyAssignments[UnifiedRoleManagementPolicyAssignmentId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, UnifiedRoleManagementPolicyAssignmentId);
                     return;

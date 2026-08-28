@@ -131,7 +131,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, WorkspaceId);
                 return;
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
                 {
                     result = client.Places[PlaceId].GraphRoomList.Workspaces[WorkspaceId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, WorkspaceId);
                     return;

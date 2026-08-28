@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Users
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ExtensionId);
                 return;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.Users
                 {
                     result = client.Users[UserId].Extensions[ExtensionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ExtensionId);
                     return;

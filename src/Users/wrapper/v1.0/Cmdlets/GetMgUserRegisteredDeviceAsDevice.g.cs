@@ -48,6 +48,12 @@ namespace Microsoft.Graph.PowerShell.Users
         [Parameter(Mandatory = false, ParameterSetName = "List")]
         public SwitchParameter Count { get; set; }
 
+        // Declared here because the binder rejects a parameter the dispatcher does not accept
+        // before ProcessRecord ever runs; once declared, the wholesale BoundParameters splat
+        // forwards it to the list worker with no further plumbing.
+        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        public SwitchParameter All { get; set; }
+
 
         [Parameter(Mandatory = false,
             HelpMessage = "Sets the 'ConsistencyLevel' request header (for example an ETag for optimistic concurrency; some Graph APIs require it even where the spec marks it optional).")]
@@ -74,13 +80,14 @@ namespace Microsoft.Graph.PowerShell.Users
             // as a RuntimeException carrying the worker's ErrorRecord. Rethrow that record
             // unchanged so the caller sees the worker's error identity (NoGraphSession,
             // GraphRequestFailed, ...) instead of every failure collapsing into a generic
-            // dispatcher error.
-            catch (RuntimeException rex) when (rex.ErrorRecord is not null)
+            // dispatcher error. A pipeline stop is a RuntimeException too and must NOT be
+            // rethrown as a terminating error - both filters here let it pass to the engine.
+            catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)
             {
                 ThrowTerminatingError(rex.ErrorRecord);
                 return;
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DirectoryObjectId : UserId);
                 return;

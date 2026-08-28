@@ -48,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Reports
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, null);
                 return;
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Reports
                 {
                     result = client.DeviceManagement.Reports.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, null);
                     return;

@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.SchemaExtensions
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, SchemaExtensionId);
                 return;
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.SchemaExtensions
                 {
                     result = client.SchemaExtensions[SchemaExtensionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, SchemaExtensionId);
                     return;

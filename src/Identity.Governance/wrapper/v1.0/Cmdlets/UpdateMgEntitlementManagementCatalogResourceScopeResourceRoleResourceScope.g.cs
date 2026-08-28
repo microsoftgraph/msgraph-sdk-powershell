@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, AccessPackageResourceScopeId1);
                 return;
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 {
                     result = client.IdentityGovernance.EntitlementManagement.Catalogs[AccessPackageCatalogId].ResourceScopes[AccessPackageResourceScopeId].Resource.Roles[AccessPackageResourceRoleId].Resource.Scopes[AccessPackageResourceScopeId1].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, AccessPackageResourceScopeId1);
                     return;

@@ -229,7 +229,7 @@ namespace Microsoft.Graph.PowerShell.Mail
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, MessageId);
                 return;
@@ -243,7 +243,7 @@ namespace Microsoft.Graph.PowerShell.Mail
                 {
                     result = client.Users[UserId].MailFolders[MailFolderId].Messages[MessageId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, MessageId);
                     return;

@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, AuthenticationConditionApplicationAppId);
                 return;
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 {
                     result = client.Identity.AuthenticationEventsFlows[AuthenticationEventsFlowId].Conditions.Applications.IncludeApplications[AuthenticationConditionApplicationAppId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, AuthenticationConditionApplicationAppId);
                     return;

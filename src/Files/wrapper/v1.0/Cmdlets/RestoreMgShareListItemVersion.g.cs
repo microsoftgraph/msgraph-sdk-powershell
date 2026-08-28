@@ -52,7 +52,7 @@ namespace Microsoft.Graph.PowerShell.Files
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ListItemVersionId);
                 return;

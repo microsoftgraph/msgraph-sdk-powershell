@@ -189,7 +189,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, SubjectRightsRequestId);
                 return;
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.PowerShell.Security
                 {
                     result = client.Security.SubjectRightsRequests[SubjectRightsRequestId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, SubjectRightsRequestId);
                     return;

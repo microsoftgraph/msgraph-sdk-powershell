@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, CalendarPermissionId);
                 return;
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
                 {
                     result = client.Groups[GroupId].Calendar.CalendarPermissions[CalendarPermissionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, CalendarPermissionId);
                     return;

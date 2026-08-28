@@ -127,7 +127,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, UserActivityId);
                 return;
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
                 {
                     result = client.Users[UserId].Activities[UserActivityId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, UserActivityId);
                     return;

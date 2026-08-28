@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Applications
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, SynchronizationJobId);
                 return;
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.Applications
                 {
                     result = client.Applications[ApplicationId].Synchronization.Jobs[SynchronizationJobId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, SynchronizationJobId);
                     return;

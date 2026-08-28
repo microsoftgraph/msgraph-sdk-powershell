@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, DirectoryObjectId);
                 return;
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
                 {
                     result = client.DirectoryObjects[DirectoryObjectId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, DirectoryObjectId);
                     return;

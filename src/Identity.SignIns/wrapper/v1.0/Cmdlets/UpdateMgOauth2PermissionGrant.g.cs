@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, OAuth2PermissionGrantId);
                 return;
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 {
                     result = client.Oauth2PermissionGrants[OAuth2PermissionGrantId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, OAuth2PermissionGrantId);
                     return;

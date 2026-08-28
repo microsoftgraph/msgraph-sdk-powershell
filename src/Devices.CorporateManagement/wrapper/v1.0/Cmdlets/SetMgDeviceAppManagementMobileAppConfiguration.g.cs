@@ -54,7 +54,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ManagedDeviceMobileAppConfigurationId);
                 return;

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Files
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, DriveItemId);
                 return;

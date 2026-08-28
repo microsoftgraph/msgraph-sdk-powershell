@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Groups
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ConversationThreadId);
                 return;
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.PowerShell.Groups
                 {
                     result = client.Groups[GroupId].Threads[ConversationThreadId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ConversationThreadId);
                     return;

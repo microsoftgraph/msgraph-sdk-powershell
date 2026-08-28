@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Teams
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, TimeOffRequestId);
                 return;
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.PowerShell.Teams
                 {
                     result = client.Groups[GroupId].Team.Schedule.TimeOffRequests[TimeOffRequestId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, TimeOffRequestId);
                     return;

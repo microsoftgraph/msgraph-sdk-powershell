@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, ConfigurationBaselineId);
                 return;
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
                 {
                     result = client.Admin.ConfigurationManagement.ConfigurationSnapshots[ConfigurationBaselineId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, ConfigurationBaselineId);
                     return;

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is not PipelineStoppedException)
             {
                 ThrowGraphRequestFailed(ex, AuthenticationMethodConfigurationId);
                 return;
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 {
                     result = client.Policies.AuthenticationMethodsPolicy.AuthenticationMethodConfigurations[AuthenticationMethodConfigurationId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex)
+                catch (Exception ex) when (ex is not PipelineStoppedException)
                 {
                     ThrowGraphRequestFailed(ex, AuthenticationMethodConfigurationId);
                     return;
