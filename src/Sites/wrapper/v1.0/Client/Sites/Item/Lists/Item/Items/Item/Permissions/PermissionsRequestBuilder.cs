@@ -54,7 +54,8 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Items.It
         {
         }
         /// <summary>
-        /// Get permissions from sites
+        /// Get a list of the permission objects associated with a listItem.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-list-permissions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Sites.Client.Models.PermissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Items.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Sites.Client.Models.Permission>(requestInfo, global::Microsoft.Graph.PowerShell.Sites.Client.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get permissions from sites
+        /// Get a list of the permission objects associated with a listItem.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Items.It
             return new global::Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Items.Item.Permissions.PermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get permissions from sites
+        /// Get a list of the permission objects associated with a listItem.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionsRequestBuilderGetQueryParameters 

@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dynamicProperties property</summary>
+        /// <summary>An open-type dictionary that contains dynamic audit event properties as name-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditRecordTypeDictionary? DynamicProperties { get; set; }

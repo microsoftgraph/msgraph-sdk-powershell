@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Teams
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, GroupId);
                 return;
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Teams
                 {
                     result = client.Groups[GroupId].Team.Photo.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, GroupId);
                     return;

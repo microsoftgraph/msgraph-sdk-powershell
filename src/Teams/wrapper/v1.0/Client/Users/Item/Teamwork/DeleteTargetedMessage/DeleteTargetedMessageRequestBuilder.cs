@@ -34,7 +34,8 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.DeleteTarg
         {
         }
         /// <summary>
-        /// Invoke action deleteTargetedMessage
+        /// Delete a specific targeted message from a channel context. Teams administrators can use this API to remove targeted messages by providing the message ID, team ID, and channel ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-deletetargetedmessage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.DeleteTarg
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action deleteTargetedMessage
+        /// Delete a specific targeted message from a channel context. Teams administrators can use this API to remove targeted messages by providing the message ID, team ID, and channel ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

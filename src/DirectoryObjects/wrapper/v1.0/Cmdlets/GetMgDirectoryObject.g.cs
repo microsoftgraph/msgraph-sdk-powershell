@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
                 ThrowTerminatingError(rex.ErrorRecord);
                 return;
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? DirectoryObjectId : null);
                 return;

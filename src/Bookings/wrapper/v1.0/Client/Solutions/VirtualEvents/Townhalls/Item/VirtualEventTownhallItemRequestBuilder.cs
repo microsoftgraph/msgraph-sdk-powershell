@@ -3,6 +3,10 @@
 using Microsoft.Graph.PowerShell.Bookings.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Bookings.Client.Models;
 using Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.Presenters;
+using Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationConfiguration;
+using Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.Registrations;
+using Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithEmail;
+using Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithUserId;
 using Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.Sessions;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +28,16 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Tow
         public global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.Presenters.PresentersRequestBuilder Presenters
         {
             get => new global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.Presenters.PresentersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The registrationConfiguration property</summary>
+        public global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationConfiguration.RegistrationConfigurationRequestBuilder RegistrationConfiguration
+        {
+            get => new global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationConfiguration.RegistrationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The registrations property</summary>
+        public global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.Registrations.RegistrationsRequestBuilder Registrations
+        {
+            get => new global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.Registrations.RegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sessions property</summary>
         public global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.Sessions.SessionsRequestBuilder Sessions
@@ -117,6 +131,22 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Tow
                 { "XXX", global::Microsoft.Graph.PowerShell.Bookings.Client.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhall>(requestInfo, global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhall.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \solutions\virtualEvents\townhalls\{virtualEventTownhall-id}\registrations(email=&apos;{email}&apos;)
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder"/></returns>
+        public global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder RegistrationsWithEmail()
+        {
+            return new global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \solutions\virtualEvents\townhalls\{virtualEventTownhall-id}\registrations(userId=&apos;{userId}&apos;)
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder"/></returns>
+        public global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder RegistrationsWithUserId()
+        {
+            return new global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Townhalls.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Delete navigation property townhalls for solutions

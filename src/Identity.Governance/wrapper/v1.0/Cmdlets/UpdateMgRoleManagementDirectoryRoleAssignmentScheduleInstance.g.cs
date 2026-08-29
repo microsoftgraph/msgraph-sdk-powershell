@@ -107,7 +107,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, UnifiedRoleAssignmentScheduleInstanceId);
                 return;
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 {
                     result = client.RoleManagement.Directory.RoleAssignmentScheduleInstances[UnifiedRoleAssignmentScheduleInstanceId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, UnifiedRoleAssignmentScheduleInstanceId);
                     return;

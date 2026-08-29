@@ -54,7 +54,8 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Permissi
         {
         }
         /// <summary>
-        /// Get permissions from sites
+        /// Get a list of the permission objects associated with a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list-permissions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Sites.Client.Models.PermissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Permissi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Sites.Client.Models.PermissionCollectionResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Sites.Client.Models.PermissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to permissions for sites
+        /// Create a new permission object on a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-post-permissions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Sites.Client.Models.Permission"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Permissi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Sites.Client.Models.Permission>(requestInfo, global::Microsoft.Graph.PowerShell.Sites.Client.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get permissions from sites
+        /// Get a list of the permission objects associated with a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Permissi
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to permissions for sites
+        /// Create a new permission object on a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Permissi
             return new global::Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Permissions.PermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get permissions from sites
+        /// Get a list of the permission objects associated with a list.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionsRequestBuilderGetQueryParameters 

@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ThreatAssessmentResultId);
                 return;
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 {
                     result = client.InformationProtection.ThreatAssessmentRequests[ThreatAssessmentRequestId].Results[ThreatAssessmentResultId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, ThreatAssessmentResultId);
                     return;

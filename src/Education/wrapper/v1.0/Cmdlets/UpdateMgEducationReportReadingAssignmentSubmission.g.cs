@@ -171,7 +171,7 @@ namespace Microsoft.Graph.PowerShell.Education
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ReadingAssignmentSubmissionId);
                 return;
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.PowerShell.Education
                 {
                     result = client.Education.Reports.ReadingAssignmentSubmissions[ReadingAssignmentSubmissionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, ReadingAssignmentSubmissionId);
                     return;

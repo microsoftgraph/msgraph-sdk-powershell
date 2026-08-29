@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Sites
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ListItemVersionId);
                 return;
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.Sites
                 {
                     result = client.Groups[GroupId].Sites[SiteId].Lists[ListId].Items[ListItemId].Versions[ListItemVersionId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, ListItemVersionId);
                     return;

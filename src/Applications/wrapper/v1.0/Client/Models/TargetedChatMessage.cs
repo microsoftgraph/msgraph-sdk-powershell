@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Applications.Client.Models
     public partial class TargetedChatMessage : global::Microsoft.Graph.PowerShell.Applications.Client.Models.ChatMessage, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The recipient property</summary>
+        /// <summary>The intended recipient of the targeted message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Applications.Client.Models.Identity? Recipient { get; set; }

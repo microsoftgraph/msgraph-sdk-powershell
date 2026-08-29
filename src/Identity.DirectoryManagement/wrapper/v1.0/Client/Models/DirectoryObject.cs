@@ -43,6 +43,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
                 "#microsoft.graph.organization" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Organization(),
                 "#microsoft.graph.orgContact" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.OrgContact(),
                 "#microsoft.graph.policyBase" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.PolicyBase(),
+                "#microsoft.graph.remoteTenantGroup" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.servicePrincipal" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ServicePrincipal(),
                 "#microsoft.graph.stsPolicy" => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.StsPolicy(),

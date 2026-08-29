@@ -30,6 +30,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
 #else
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AppConsentApprovalRoute AppConsent { get; set; }
 #endif
+        /// <summary>The catalogs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageCatalog>? Catalogs { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageCatalog> Catalogs { get; set; }
+#endif
         /// <summary>The entitlementManagement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +105,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
             {
                 { "accessReviews", n => { AccessReviews = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewSet>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewSet.CreateFromDiscriminatorValue); } },
                 { "appConsent", n => { AppConsent = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AppConsentApprovalRoute>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AppConsentApprovalRoute.CreateFromDiscriminatorValue); } },
+                { "catalogs", n => { Catalogs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageCatalog>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageCatalog.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.EntitlementManagement>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
                 { "lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.LifecycleWorkflowsContainer>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -113,6 +122,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewSet>("accessReviews", AccessReviews);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AppConsentApprovalRoute>("appConsent", AppConsent);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageCatalog>("catalogs", Catalogs);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.EntitlementManagement>("entitlementManagement", EntitlementManagement);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.LifecycleWorkflowsContainer>("lifecycleWorkflows", LifecycleWorkflows);
             writer.WriteStringValue("@odata.type", OdataType);

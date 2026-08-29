@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.Groups
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ResourceSpecificPermissionGrantId);
                 return;
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.PowerShell.Groups
                 {
                     result = client.Groups[GroupId].PermissionGrants[ResourceSpecificPermissionGrantId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, ResourceSpecificPermissionGrantId);
                     return;

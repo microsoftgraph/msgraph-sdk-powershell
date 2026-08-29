@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models;
+using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Default.M365Capabilities;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Default.ResetToSystemDefault;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -19,6 +20,11 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenan
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DefaultRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The m365Capabilities property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Default.M365Capabilities.M365CapabilitiesRequestBuilder M365Capabilities
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Default.M365Capabilities.M365CapabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The resetToSystemDefault property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Default.ResetToSystemDefault.ResetToSystemDefaultRequestBuilder ResetToSystemDefault
         {

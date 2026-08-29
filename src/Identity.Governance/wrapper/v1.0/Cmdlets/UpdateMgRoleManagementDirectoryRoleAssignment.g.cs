@@ -33,6 +33,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         public string? PrincipalId { get; set; }
 
         [Parameter(Mandatory = false)]
+        public string? PrincipalOrganizationId { get; set; }
+
+        [Parameter(Mandatory = false)]
         public string? RoleDefinitionId { get; set; }
 
 
@@ -60,6 +63,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     if (this.IsParameterBound(nameof(PrincipalId)))
         body.PrincipalId = PrincipalId;
 
+    if (this.IsParameterBound(nameof(PrincipalOrganizationId)))
+        body.PrincipalOrganizationId = PrincipalOrganizationId;
+
     if (this.IsParameterBound(nameof(RoleDefinitionId)))
         body.RoleDefinitionId = RoleDefinitionId;
 
@@ -77,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, UnifiedRoleAssignmentId);
                 return;
@@ -91,7 +97,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 {
                     result = client.RoleManagement.Directory.RoleAssignments[UnifiedRoleAssignmentId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, UnifiedRoleAssignmentId);
                     return;

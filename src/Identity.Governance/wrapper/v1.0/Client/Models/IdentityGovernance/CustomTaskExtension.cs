@@ -40,6 +40,8 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
 #endif
         /// <summary>When the custom extension was last modified.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The replyMode property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.CustomTaskExtensionReplyMode? ReplyMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.CustomTaskExtension"/> and sets the default values.
         /// </summary>
@@ -70,6 +72,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "replyMode", n => { ReplyMode = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.CustomTaskExtensionReplyMode>(); } },
             };
         }
         /// <summary>
@@ -85,6 +88,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.CustomTaskExtensionReplyMode>("replyMode", ReplyMode);
         }
     }
 }

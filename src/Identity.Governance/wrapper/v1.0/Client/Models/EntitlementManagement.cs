@@ -92,6 +92,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ControlConfiguration> ControlConfigurations { get; set; }
 #endif
+        /// <summary>Represents the connectors used to communicate with external resource systems.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector>? ExternalOriginResourceConnectors { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector> ExternalOriginResourceConnectors { get; set; }
+#endif
         /// <summary>A reference to the geolocation environments in which a resource is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -168,6 +176,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
                 { "catalogs", n => { Catalogs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageCatalog>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageCatalog.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "connectedOrganizations", n => { ConnectedOrganizations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ConnectedOrganization>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ConnectedOrganization.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "controlConfigurations", n => { ControlConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ControlConfiguration>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ControlConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalOriginResourceConnectors", n => { ExternalOriginResourceConnectors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceEnvironments", n => { ResourceEnvironments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceEnvironment>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceRequests", n => { ResourceRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRequest>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceRoleScopes", n => { ResourceRoleScopes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRoleScope>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -194,6 +203,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageCatalog>("catalogs", Catalogs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ConnectedOrganization>("connectedOrganizations", ConnectedOrganizations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ControlConfiguration>("controlConfigurations", ControlConfigurations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector>("externalOriginResourceConnectors", ExternalOriginResourceConnectors);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceEnvironment>("resourceEnvironments", ResourceEnvironments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRequest>("resourceRequests", ResourceRequests);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRoleScope>("resourceRoleScopes", ResourceRoleScopes);

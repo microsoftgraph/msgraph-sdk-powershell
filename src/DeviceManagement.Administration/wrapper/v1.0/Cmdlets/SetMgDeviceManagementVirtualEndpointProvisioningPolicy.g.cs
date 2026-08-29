@@ -54,7 +54,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
                 })
                     .GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, CloudPcProvisioningPolicyId);
                 return;

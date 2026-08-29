@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, CloudPcUserSettingAssignmentId);
                 return;
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
                 {
                     result = client.DeviceManagement.VirtualEndpoint.UserSettings[CloudPcUserSettingId].Assignments[CloudPcUserSettingAssignmentId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, CloudPcUserSettingAssignmentId);
                     return;

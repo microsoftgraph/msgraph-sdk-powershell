@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ContactId);
                 return;
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
                 {
                     result = client.Users[UserId].Contacts[ContactId].Photo.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, ContactId);
                     return;

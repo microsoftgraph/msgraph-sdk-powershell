@@ -58,6 +58,8 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string SignOutUri { get; set; }
 #endif
+        /// <summary>The systemBrowserEnabledOn property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SystemBrowserEnabledOn? SystemBrowserEnabledOn { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.InternalDomainFederation"/> and sets the default values.
         /// </summary>
@@ -91,6 +93,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
                 { "promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.PromptLoginBehavior>(); } },
                 { "signOutUri", n => { SignOutUri = n.GetStringValue(); } },
                 { "signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SigningCertificateUpdateStatus>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
+                { "systemBrowserEnabledOn", n => { SystemBrowserEnabledOn = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SystemBrowserEnabledOn>(); } },
             };
         }
         /// <summary>
@@ -109,6 +112,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.PromptLoginBehavior>("promptLoginBehavior", PromptLoginBehavior);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SigningCertificateUpdateStatus>("signingCertificateUpdateStatus", SigningCertificateUpdateStatus);
             writer.WriteStringValue("signOutUri", SignOutUri);
+            writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SystemBrowserEnabledOn>("systemBrowserEnabledOn", SystemBrowserEnabledOn);
         }
     }
 }

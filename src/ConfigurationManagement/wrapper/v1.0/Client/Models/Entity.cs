@@ -50,7 +50,6 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models
             {
                 "#microsoft.graph.configurationBaseline" => new global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationBaseline(),
                 "#microsoft.graph.configurationDrift" => new global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationDrift(),
-                "#microsoft.graph.configurationManagement" => new global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationManagement(),
                 "#microsoft.graph.configurationMonitor" => new global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitor(),
                 "#microsoft.graph.configurationMonitoringResult" => new global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitoringResult(),
                 "#microsoft.graph.configurationSnapshotJob" => new global::Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationSnapshotJob(),

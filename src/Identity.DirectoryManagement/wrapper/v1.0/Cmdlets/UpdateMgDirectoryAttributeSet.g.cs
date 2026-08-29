@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, AttributeSetId);
                 return;
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                 {
                     result = client.Directory.AttributeSets[AttributeSetId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, AttributeSetId);
                     return;

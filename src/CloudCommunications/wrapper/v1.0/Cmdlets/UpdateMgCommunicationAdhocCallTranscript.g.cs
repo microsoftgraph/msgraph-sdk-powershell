@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, CallTranscriptId);
                 return;
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                 {
                     result = client.Communications.AdhocCalls[AdhocCallId].Transcripts[CallTranscriptId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, CallTranscriptId);
                     return;

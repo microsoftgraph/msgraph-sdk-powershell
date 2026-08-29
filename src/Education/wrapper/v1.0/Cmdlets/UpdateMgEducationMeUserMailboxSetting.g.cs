@@ -98,7 +98,7 @@ namespace Microsoft.Graph.PowerShell.Education
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, null);
                 return;
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.PowerShell.Education
                 {
                     result = client.Education.Me.User.MailboxSettings.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, null);
                     return;

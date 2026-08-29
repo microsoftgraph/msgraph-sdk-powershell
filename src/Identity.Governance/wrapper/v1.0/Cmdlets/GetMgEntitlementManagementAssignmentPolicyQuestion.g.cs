@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 ThrowTerminatingError(rex.ErrorRecord);
                 return;
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? AccessPackageQuestionId : AccessPackageAssignmentPolicyId);
                 return;

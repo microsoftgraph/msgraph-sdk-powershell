@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Search
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, IdentityId);
                 return;
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Search
                 {
                     result = client.External.Connections[ExternalConnectionId].Groups[ExternalGroupId].Members[IdentityId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, IdentityId);
                     return;

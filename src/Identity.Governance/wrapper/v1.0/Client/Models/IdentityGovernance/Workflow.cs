@@ -64,6 +64,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
 #else
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowSetting Settings { get; set; }
 #endif
+        /// <summary>Per-subject workflow execution results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult>? SubjectProcessingResults { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult> SubjectProcessingResults { get; set; }
+#endif
         /// <summary>Represents the aggregation of task execution data for tasks within a workflow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +131,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
                 { "quarantineDetails", n => { QuarantineDetails = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.QuarantineDetails>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.QuarantineDetails.CreateFromDiscriminatorValue); } },
                 { "runs", n => { Runs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.Run>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowSetting>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowSetting.CreateFromDiscriminatorValue); } },
+                { "subjectProcessingResults", n => { SubjectProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "taskReports", n => { TaskReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskReport>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.UserProcessingResult>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
@@ -145,6 +154,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.QuarantineDetails>("quarantineDetails", QuarantineDetails);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.Run>("runs", Runs);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowSetting>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectProcessingResult>("subjectProcessingResults", SubjectProcessingResults);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.TaskReport>("taskReports", TaskReports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.UserProcessingResult>("userProcessingResults", UserProcessingResults);
             writer.WriteIntValue("version", Version);

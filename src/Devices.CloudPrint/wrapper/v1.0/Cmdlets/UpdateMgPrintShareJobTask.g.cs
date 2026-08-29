@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, PrintTaskId);
                 return;
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
                 {
                     result = client.Print.Shares[PrinterShareId].Jobs[PrintJobId].Tasks[PrintTaskId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, PrintTaskId);
                     return;

@@ -12,11 +12,11 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.
     public partial class RecoveryJob : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.RecoveryJobBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The totalFailedChanges property</summary>
+        /// <summary>The count of changes (including both objects and links) that failed to apply during recovery.</summary>
         public int? TotalFailedChanges { get; set; }
-        /// <summary>The totalLinksModified property</summary>
+        /// <summary>The count of directory object links (relationships) that were successfully modified during recovery. This value may be less than totalChangedLinksCalculated if some link changes failed.</summary>
         public int? TotalLinksModified { get; set; }
-        /// <summary>The totalObjectsModified property</summary>
+        /// <summary>The count of directory objects that were successfully modified during recovery. This value may be less than totalChangedObjectsCalculated if some object changes failed.</summary>
         public int? TotalObjectsModified { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.RecoveryJob"/> and sets the default values.

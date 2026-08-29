@@ -78,6 +78,14 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
 #endif
         /// <summary>If true, the default configuration is set to the system default configuration. If false, the default settings are customized.</summary>
         public bool? IsServiceDefault { get; set; }
+        /// <summary>Defines the default Microsoft 365 cross-tenant capabilities for inbound access from external organizations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.M365CapabilityBase>? M365Capabilities { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.M365CapabilityBase> M365Capabilities { get; set; }
+#endif
         /// <summary>Defines your default configuration for inbound Microsoft 365 collaboration settings that determine which users from other organizations can collaborate with your organization using Microsoft 365 apps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +137,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
                 { "inboundTrust", n => { InboundTrust = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyInboundTrust>(global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
                 { "invitationRedemptionIdentityProviderConfiguration", n => { InvitationRedemptionIdentityProviderConfiguration = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.DefaultInvitationRedemptionIdentityProviderConfiguration>(global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.DefaultInvitationRedemptionIdentityProviderConfiguration.CreateFromDiscriminatorValue); } },
                 { "isServiceDefault", n => { IsServiceDefault = n.GetBoolValue(); } },
+                { "m365Capabilities", n => { M365Capabilities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.M365CapabilityBase>(global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.M365CapabilityBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "m365CollaborationInbound", n => { M365CollaborationInbound = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>(global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting.CreateFromDiscriminatorValue); } },
                 { "m365CollaborationOutbound", n => { M365CollaborationOutbound = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>(global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting.CreateFromDiscriminatorValue); } },
                 { "tenantRestrictions", n => { TenantRestrictions = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyTenantRestrictions>(global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyTenantRestrictions.CreateFromDiscriminatorValue); } },
@@ -151,6 +160,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyInboundTrust>("inboundTrust", InboundTrust);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.DefaultInvitationRedemptionIdentityProviderConfiguration>("invitationRedemptionIdentityProviderConfiguration", InvitationRedemptionIdentityProviderConfiguration);
             writer.WriteBoolValue("isServiceDefault", IsServiceDefault);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.M365CapabilityBase>("m365Capabilities", M365Capabilities);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>("m365CollaborationInbound", M365CollaborationInbound);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>("m365CollaborationOutbound", M365CollaborationOutbound);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions", TenantRestrictions);

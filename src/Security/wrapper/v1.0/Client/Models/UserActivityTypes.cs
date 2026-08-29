@@ -33,5 +33,21 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models
         #pragma warning disable CS1591
         UnknownFutureValue = 32,
         #pragma warning restore CS1591
+        [EnumMember(Value = "copyToClipboard")]
+        #pragma warning disable CS1591
+        CopyToClipboard = 64,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pasteFromClipboard")]
+        #pragma warning disable CS1591
+        PasteFromClipboard = 128,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "print")]
+        #pragma warning disable CS1591
+        Print = 256,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accessDebugTools")]
+        #pragma warning disable CS1591
+        AccessDebugTools = 512,
+        #pragma warning restore CS1591
     }
 }

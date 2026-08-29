@@ -9,6 +9,7 @@ using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNa
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.OnPremisesSynchronization;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.PublicKeyInfrastructure;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.Recovery;
+using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.RemoteTenantGroups;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ODataErrors;
@@ -73,6 +74,11 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.Recovery.RecoveryRequestBuilder Recovery
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.Recovery.RecoveryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The remoteTenantGroups property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.RemoteTenantGroups.RemoteTenantGroupsRequestBuilder RemoteTenantGroups
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.RemoteTenantGroups.RemoteTenantGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subscriptions property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder Subscriptions

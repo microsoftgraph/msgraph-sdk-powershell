@@ -3,6 +3,8 @@
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization;
+using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.M365Capabilities;
+using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.ServiceProviderConstraints;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +25,16 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenan
         public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization.IdentitySynchronizationRequestBuilder IdentitySynchronization
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization.IdentitySynchronizationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The m365Capabilities property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.M365Capabilities.M365CapabilitiesRequestBuilder M365Capabilities
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.M365Capabilities.M365CapabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The serviceProviderConstraints property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.ServiceProviderConstraints.ServiceProviderConstraintsRequestBuilder ServiceProviderConstraints
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.ServiceProviderConstraints.ServiceProviderConstraintsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Policies.CrossTenantAccessPolicy.Partners.Item.CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder"/> and sets the default values.

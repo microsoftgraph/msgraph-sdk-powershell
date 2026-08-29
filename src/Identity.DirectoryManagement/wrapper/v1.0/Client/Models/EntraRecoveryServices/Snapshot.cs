@@ -12,9 +12,9 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.
     public partial class Snapshot : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the snapshot was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>The recoveryJobs property</summary>
+        /// <summary>Collection of recovery jobs created for this snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.RecoveryJob>? RecoveryJobs { get; set; }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.RecoveryJob> RecoveryJobs { get; set; }
 #endif
-        /// <summary>The recoveryPreviewJobs property</summary>
+        /// <summary>Collection of preview jobs created for this snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.RecoveryPreviewJob>? RecoveryPreviewJobs { get; set; }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.RecoveryPreviewJob> RecoveryPreviewJobs { get; set; }
 #endif
-        /// <summary>The totalChangedObjects property</summary>
+        /// <summary>The total number of changed objects identified in this snapshot.</summary>
         public int? TotalChangedObjects { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -85,6 +85,14 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.Recovery Recovery { get; set; }
 #endif
+        /// <summary>Collection of groups in remote Microsoft Entra tenants that are available in the directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup>? RemoteTenantGroups { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup> RemoteTenantGroups { get; set; }
+#endif
         /// <summary>List of commercial subscriptions that an organization acquired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +128,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
                 { "onPremisesSynchronization", n => { OnPremisesSynchronization = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.OnPremisesDirectorySynchronization>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "publicKeyInfrastructure", n => { PublicKeyInfrastructure = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.PublicKeyInfrastructureRoot>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.PublicKeyInfrastructureRoot.CreateFromDiscriminatorValue); } },
                 { "recovery", n => { Recovery = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.Recovery>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.Recovery.CreateFromDiscriminatorValue); } },
+                { "remoteTenantGroups", n => { RemoteTenantGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.CompanySubscription>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.CompanySubscription.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -140,6 +149,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.OnPremisesDirectorySynchronization>("onPremisesSynchronization", OnPremisesSynchronization);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.PublicKeyInfrastructureRoot>("publicKeyInfrastructure", PublicKeyInfrastructure);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.Recovery>("recovery", Recovery);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup>("remoteTenantGroups", RemoteTenantGroups);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.CompanySubscription>("subscriptions", Subscriptions);
         }
     }

@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Items.Item.Pe
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get permissions from shares
+        /// The set of permissions for the item. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Files.Client.Models.Permission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Items.Item.Pe
             return requestInfo;
         }
         /// <summary>
-        /// Get permissions from shares
+        /// The set of permissions for the item. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Items.Item.Pe
         {
         }
         /// <summary>
-        /// Get permissions from shares
+        /// The set of permissions for the item. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionItemRequestBuilderGetQueryParameters 

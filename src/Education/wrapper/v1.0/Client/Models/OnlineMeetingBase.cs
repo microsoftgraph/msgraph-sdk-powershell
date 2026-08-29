@@ -72,6 +72,14 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatRestrictions ChatRestrictions { get; set; }
 #endif
+        /// <summary>Conferencing device integration settings for Cloud Video Interop (CVI). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Education.Client.Models.CloudVideoInteropInfo? CloudVideoInteropInfo { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Education.Client.Models.CloudVideoInteropInfo CloudVideoInteropInfo { get; set; }
+#endif
         /// <summary>Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpiryDateTime { get; set; }
         /// <summary>Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.</summary>
@@ -126,6 +134,8 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
 #else
         public string MeetingSpokenLanguageTag { get; set; }
 #endif
+        /// <summary>The type of the online meeting. The possible values are: adhoc, scheduled, recurring, broadcast, meetnow, unknownFutureValue. Read-only.</summary>
+        public global::Microsoft.Graph.PowerShell.Education.Client.Models.OnlineMeetingType? MeetingType { get; set; }
         /// <summary>Indicates whether to record the meeting automatically.</summary>
         public bool? RecordAutomatically { get; set; }
         /// <summary>Specifies the sensitivity label applied to the Teams meeting.</summary>
@@ -203,6 +213,7 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.AudioConferencing>(global::Microsoft.Graph.PowerShell.Education.Client.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatInfo>(global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 { "chatRestrictions", n => { ChatRestrictions = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatRestrictions>(global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatRestrictions.CreateFromDiscriminatorValue); } },
+                { "cloudVideoInteropInfo", n => { CloudVideoInteropInfo = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.CloudVideoInteropInfo>(global::Microsoft.Graph.PowerShell.Education.Client.Models.CloudVideoInteropInfo.CreateFromDiscriminatorValue); } },
                 { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isEndToEndEncryptionEnabled", n => { IsEndToEndEncryptionEnabled = n.GetBoolValue(); } },
                 { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
@@ -212,6 +223,7 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
                 { "lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.LobbyBypassSettings>(global::Microsoft.Graph.PowerShell.Education.Client.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
                 { "meetingOptionsWebUrl", n => { MeetingOptionsWebUrl = n.GetStringValue(); } },
                 { "meetingSpokenLanguageTag", n => { MeetingSpokenLanguageTag = n.GetStringValue(); } },
+                { "meetingType", n => { MeetingType = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.OnlineMeetingType>(); } },
                 { "recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
                 { "sensitivityLabelAssignment", n => { SensitivityLabelAssignment = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.OnlineMeetingSensitivityLabelAssignment>(global::Microsoft.Graph.PowerShell.Education.Client.Models.OnlineMeetingSensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
                 { "shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.MeetingChatHistoryDefaultMode>(); } },
@@ -246,6 +258,7 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatRestrictions>("chatRestrictions", ChatRestrictions);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.CloudVideoInteropInfo>("cloudVideoInteropInfo", CloudVideoInteropInfo);
             writer.WriteDateTimeOffsetValue("expiryDateTime", ExpiryDateTime);
             writer.WriteBoolValue("isEndToEndEncryptionEnabled", IsEndToEndEncryptionEnabled);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
@@ -255,6 +268,7 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.LobbyBypassSettings>("lobbyBypassSettings", LobbyBypassSettings);
             writer.WriteStringValue("meetingOptionsWebUrl", MeetingOptionsWebUrl);
             writer.WriteStringValue("meetingSpokenLanguageTag", MeetingSpokenLanguageTag);
+            writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.OnlineMeetingType>("meetingType", MeetingType);
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.OnlineMeetingSensitivityLabelAssignment>("sensitivityLabelAssignment", SensitivityLabelAssignment);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);

@@ -27,6 +27,9 @@ namespace Microsoft.Graph.PowerShell.Security
         [Parameter(Mandatory = false)]
         public string? Timespan { get; set; }
 
+        [Parameter(Mandatory = false)]
+        public global::System.Guid? WorkspaceId { get; set; }
+
 
 
 
@@ -46,6 +49,9 @@ namespace Microsoft.Graph.PowerShell.Security
     if (this.IsParameterBound(nameof(Timespan)))
         body.Timespan = Timespan;
 
+    if (this.IsParameterBound(nameof(WorkspaceId)))
+        body.WorkspaceId = WorkspaceId;
+
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
@@ -58,7 +64,7 @@ namespace Microsoft.Graph.PowerShell.Security
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, null);
                 return;

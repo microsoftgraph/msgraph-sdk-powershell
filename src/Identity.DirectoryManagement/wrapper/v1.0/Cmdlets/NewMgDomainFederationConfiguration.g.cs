@@ -62,6 +62,9 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
         [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SigningCertificateUpdateStatus? SigningCertificateUpdateStatus { get; set; }
 
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SystemBrowserEnabledOn? SystemBrowserEnabledOn { get; set; }
+
 
 
 
@@ -116,6 +119,9 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
     if (this.IsParameterBound(nameof(SigningCertificateUpdateStatus)))
         body.SigningCertificateUpdateStatus = SigningCertificateUpdateStatus;
 
+    if (this.IsParameterBound(nameof(SystemBrowserEnabledOn)))
+        body.SystemBrowserEnabledOn = SystemBrowserEnabledOn;
+
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
@@ -129,7 +135,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, body);
                 return;
