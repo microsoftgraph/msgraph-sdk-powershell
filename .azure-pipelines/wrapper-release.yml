@@ -74,7 +74,51 @@ extends:
         - script: git submodule update --init --recursive
           displayName: Initialize submodules
 
-        - template: .azure-pipelines/common-templates/install-tools.yml@self
+        # Deliberately NOT install-tools.yml: that template is the AutoRest toolchain - Node,
+        # the private npm feed, AutoRest, Rush and a full rush rebuild - none of which this
+        # pipeline uses. The wrapper modules compile from committed sources, so the whole
+        # toolchain is the .NET SDK, feed auth for restore, and the kiota CLI.
+        - task: UseDotNet@2
+          displayName: Use .NET SDK 10
+          retryCountOnTaskFailure: 2
+          inputs:
+            version: 10.x
+        - task: NuGetAuthenticate@1
+        # Under 1ES network isolation api.nuget.org is not reliably reachable, so every restore
+        # on this pipeline - the kiota tool below and the module build after it - resolves
+        # through the team's own feed first, whose upstream proxies nuget.org. The config is
+        # written at the sources root so dotnet picks it up everywhere; NuGetAuthenticate above
+        # supplies the credentials.
+        - task: PowerShell@2
+          displayName: Route NuGet through the internal feed
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              $cfg = @'
+              <?xml version="1.0" encoding="utf-8"?>
+              <configuration>
+                <packageSources>
+                  <clear />
+                  <add key="MSGraphV3" value="https://pkgs.dev.azure.com/microsoftgraph/Graph%20Developer%20Experiences/_packaging/MSGraph_PowerShell_V3_Build/nuget/v3/index.json" />
+                </packageSources>
+              </configuration>
+              '@
+              Set-Content -Path '$(Build.SourcesDirectory)/nuget.config' -Value $cfg -Encoding utf8
+              Write-Host "wrote $(Build.SourcesDirectory)/nuget.config"
+        # Build-WrapperModule.ps1 refuses to run without kiota on PATH even under -SkipKiota
+        # (the guard is unconditional), and future -Generate runs need it anyway.
+        - task: PowerShell@2
+          displayName: Install kiota CLI
+          retryCountOnTaskFailure: 2
+          inputs:
+            targetType: inline
+            pwsh: true
+            workingDirectory: $(Build.SourcesDirectory)
+            script: |
+              dotnet tool install --global Microsoft.OpenApi.Kiota --configfile '$(Build.SourcesDirectory)/nuget.config' --ignore-failed-sources
+              if ($LASTEXITCODE -ne 0) { throw "kiota install failed with exit code $LASTEXITCODE" }
+              Write-Host "##vso[task.prependpath]$env:USERPROFILE\.dotnet\tools"
         - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
 
         # Version and prerelease go to the script directly (-ModuleVersion/-Prerelease); the
@@ -92,7 +136,11 @@ extends:
                 ArtifactsLocation = '$(Build.ArtifactStagingDirectory)'
                 ModuleVersion     = '${{ parameters.PackageVersion }}'
                 Prerelease        = '$(WrapperPrerelease)'
-                SkipKiota         = $true
+                # Deliberately NOT -SkipKiota: the pipeline runs the whole chain - kiota client
+                # generation from the committed OpenAPI docs, wrapper generation on top, then
+                # compile - so a change in any step is built and tested end to end, and the run
+                # can never fail on committed clients lagging the docs. Clients are still
+                # committed to the repo for reviewable diffs and clean local checkouts.
                 Pack              = $true
               }
               & '$(Build.SourcesDirectory)/tools/Build-WrapperModule.ps1' @params
