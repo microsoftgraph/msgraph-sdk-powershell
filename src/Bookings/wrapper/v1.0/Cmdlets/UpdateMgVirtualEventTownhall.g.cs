@@ -24,6 +24,12 @@ namespace Microsoft.Graph.PowerShell.Bookings
         public string? DisplayName { get; set; }
 
         [Parameter(Mandatory = false)]
+        public bool? IsRegistrationRequired { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public int? Capacity { get; set; }
+
+        [Parameter(Mandatory = false)]
         public bool? IsInviteOnly { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -71,6 +77,12 @@ namespace Microsoft.Graph.PowerShell.Bookings
     if (this.IsParameterBound(nameof(DisplayName)))
         body.DisplayName = DisplayName;
 
+    if (this.IsParameterBound(nameof(IsRegistrationRequired)))
+        body.IsRegistrationRequired = IsRegistrationRequired;
+
+    if (this.IsParameterBound(nameof(Capacity)))
+        body.Capacity = Capacity;
+
     if (this.IsParameterBound(nameof(IsInviteOnly)))
         body.IsInviteOnly = IsInviteOnly;
 
@@ -117,7 +129,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, VirtualEventTownhallId);
                 return;
@@ -131,7 +143,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 {
                     result = client.Solutions.VirtualEvents.Townhalls[VirtualEventTownhallId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, VirtualEventTownhallId);
                     return;

@@ -60,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.FieldValueSet Fields { get; set; }
 #endif
-        /// <summary>The permissions property</summary>
+        /// <summary>The set of permissions for the item. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Security.Client.Models.Permission>? Permissions { get; set; }

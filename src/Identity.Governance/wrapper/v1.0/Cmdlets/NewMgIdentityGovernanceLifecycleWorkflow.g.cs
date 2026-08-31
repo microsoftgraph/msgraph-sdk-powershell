@@ -53,6 +53,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.WorkflowExecutionConditions? ExecutionConditions { get; set; }
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.SubjectType? TargetSubjectType { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.QuarantineDetails? QuarantineDetails { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -103,6 +106,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     if (this.IsParameterBound(nameof(ExecutionConditions)))
         body.ExecutionConditions = ExecutionConditions;
 
+    if (this.IsParameterBound(nameof(TargetSubjectType)))
+        body.TargetSubjectType = TargetSubjectType;
+
     if (this.IsParameterBound(nameof(QuarantineDetails)))
         body.QuarantineDetails = QuarantineDetails;
 
@@ -122,7 +128,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, body);
                 return;

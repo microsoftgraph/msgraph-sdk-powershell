@@ -97,7 +97,7 @@ namespace Microsoft.Graph.PowerShell.Applications
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, AppRoleAssignmentId);
                 return;
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.PowerShell.Applications
                 {
                     result = client.Groups[GroupId].AppRoleAssignments[AppRoleAssignmentId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, AppRoleAssignmentId);
                     return;

@@ -14,6 +14,8 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
     {
         /// <summary>The audience to whom the town hall is visible. The possible values are: everyone, organization, and unknownFutureValue.</summary>
         public global::Microsoft.Graph.PowerShell.Bookings.Client.Models.MeetingAudience? Audience { get; set; }
+        /// <summary>Represents the expected number of attendees for the town hall.</summary>
+        public int? Capacity { get; set; }
         /// <summary>Identity information of the coorganizers of the town hall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +34,22 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
 #endif
         /// <summary>Indicates whether the town hall is only open to invited people and groups within your organization. The isInviteOnly property can only be true if the value of the audience property is set to organization.</summary>
         public bool? IsInviteOnly { get; set; }
+        /// <summary>Registration configuration of the town hall.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration? RegistrationConfiguration { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration RegistrationConfiguration { get; set; }
+#endif
+        /// <summary>Registration records of the town hall.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistration>? Registrations { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistration> Registrations { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhall"/> and sets the default values.
         /// </summary>
@@ -58,9 +76,12 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "audience", n => { Audience = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.MeetingAudience>(); } },
+                { "capacity", n => { Capacity = n.GetIntValue(); } },
                 { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.CommunicationsUserIdentity>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.Identity>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.Identity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isInviteOnly", n => { IsInviteOnly = n.GetBoolValue(); } },
+                { "registrationConfiguration", n => { RegistrationConfiguration = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration.CreateFromDiscriminatorValue); } },
+                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistration>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,9 +93,12 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.MeetingAudience>("audience", Audience);
+            writer.WriteIntValue("capacity", Capacity);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.Identity>("invitedAttendees", InvitedAttendees);
             writer.WriteBoolValue("isInviteOnly", IsInviteOnly);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration>("registrationConfiguration", RegistrationConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistration>("registrations", Registrations);
         }
     }
 }

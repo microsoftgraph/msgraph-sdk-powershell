@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 ThrowTerminatingError(rex.ErrorRecord);
                 return;
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? WindowsInformationProtectionAppLearningSummaryId : null);
                 return;

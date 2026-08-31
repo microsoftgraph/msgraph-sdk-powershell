@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
         {
         }
         /// <summary>
-        /// Cancel a registrant&apos;s registration record for a webinar. 
+        /// Cancel a registrant&apos;s registration record for a webinar or town hall. 
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cancel a registrant&apos;s registration record for a webinar. 
+        /// Cancel a registrant&apos;s registration record for a webinar or town hall. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

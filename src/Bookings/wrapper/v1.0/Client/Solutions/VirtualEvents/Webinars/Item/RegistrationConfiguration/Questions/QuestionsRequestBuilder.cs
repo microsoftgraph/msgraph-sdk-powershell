@@ -54,7 +54,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
         {
         }
         /// <summary>
-        /// Get a list of all registration questions for a webinar. The list can include either predefined registration questions or custom registration questions.
+        /// Get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-list-questions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBaseCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBaseCollectionResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a registration question for a webinar. You can create either a predefined registration question or a custom registration question.
+        /// Create a registration question for a webinar or town hall. You can create either a predefined registration question or a custom registration question.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-post-questions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBase"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBase>(requestInfo, global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all registration questions for a webinar. The list can include either predefined registration questions or custom registration questions.
+        /// Get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return requestInfo;
         }
         /// <summary>
-        /// Create a registration question for a webinar. You can create either a predefined registration question or a custom registration question.
+        /// Create a registration question for a webinar or town hall. You can create either a predefined registration question or a custom registration question.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Web
             return new global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.VirtualEvents.Webinars.Item.RegistrationConfiguration.Questions.QuestionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all registration questions for a webinar. The list can include either predefined registration questions or custom registration questions.
+        /// Get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class QuestionsRequestBuilderGetQueryParameters 

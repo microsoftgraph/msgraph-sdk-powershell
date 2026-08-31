@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, MobileAppContentFileId);
                 return;
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
                 {
                     result = client.DeviceAppManagement.MobileApps[MobileAppId].GraphMacOSLobApp.ContentVersions[MobileAppContentId].Files[MobileAppContentFileId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, MobileAppContentFileId);
                     return;

@@ -187,7 +187,7 @@ namespace Microsoft.Graph.PowerShell.Teams
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, TargetedChatMessageId);
                 return;
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.PowerShell.Teams
                 {
                     result = client.Users[UserId].Chats[ChatId].TargetedMessages[TargetedChatMessageId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, TargetedChatMessageId);
                     return;

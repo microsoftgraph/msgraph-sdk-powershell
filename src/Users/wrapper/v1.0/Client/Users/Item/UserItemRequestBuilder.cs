@@ -19,6 +19,7 @@ using Microsoft.Graph.PowerShell.Users.Client.Users.Item.Photo;
 using Microsoft.Graph.PowerShell.Users.Client.Users.Item.Photos;
 using Microsoft.Graph.PowerShell.Users.Client.Users.Item.RegisteredDevices;
 using Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings;
+using Microsoft.Graph.PowerShell.Users.Client.Users.Item.SponsorOf;
 using Microsoft.Graph.PowerShell.Users.Client.Users.Item.Sponsors;
 using Microsoft.Graph.PowerShell.Users.Client.Users.Item.Todo;
 using Microsoft.Graph.PowerShell.Users.Client.Users.Item.TransitiveMemberOf;
@@ -122,6 +123,11 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Users.Item
         public global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.SettingsRequestBuilder Settings
         {
             get => new global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sponsorOf property</summary>
+        public global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.SponsorOf.SponsorOfRequestBuilder SponsorOf
+        {
+            get => new global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.SponsorOf.SponsorOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sponsors property</summary>
         public global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Sponsors.SponsorsRequestBuilder Sponsors

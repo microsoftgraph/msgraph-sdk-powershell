@@ -28,5 +28,21 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Mode
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "copyToClipboard")]
+        #pragma warning disable CS1591
+        CopyToClipboard,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pasteFromClipboard")]
+        #pragma warning disable CS1591
+        PasteFromClipboard,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "print")]
+        #pragma warning disable CS1591
+        Print,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "accessDebugTools")]
+        #pragma warning disable CS1591
+        AccessDebugTools,
+        #pragma warning restore CS1591
     }
 }

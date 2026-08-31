@@ -119,6 +119,9 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.ChatRestrictions? ChatRestrictions { get; set; }
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.CloudVideoInteropInfo? CloudVideoInteropInfo { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.ItemBody? JoinInformation { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -126,6 +129,9 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 
         [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.LobbyBypassSettings? LobbyBypassSettings { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.OnlineMeetingType? MeetingType { get; set; }
 
         [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.OnlineMeetingSensitivityLabelAssignment? SensitivityLabelAssignment { get; set; }
@@ -253,6 +259,9 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
     if (this.IsParameterBound(nameof(ChatRestrictions)))
         body.ChatRestrictions = ChatRestrictions;
 
+    if (this.IsParameterBound(nameof(CloudVideoInteropInfo)))
+        body.CloudVideoInteropInfo = CloudVideoInteropInfo;
+
     if (this.IsParameterBound(nameof(JoinInformation)))
         body.JoinInformation = JoinInformation;
 
@@ -261,6 +270,9 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 
     if (this.IsParameterBound(nameof(LobbyBypassSettings)))
         body.LobbyBypassSettings = LobbyBypassSettings;
+
+    if (this.IsParameterBound(nameof(MeetingType)))
+        body.MeetingType = MeetingType;
 
     if (this.IsParameterBound(nameof(SensitivityLabelAssignment)))
         body.SensitivityLabelAssignment = SensitivityLabelAssignment;
@@ -290,7 +302,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, body);
                 return;

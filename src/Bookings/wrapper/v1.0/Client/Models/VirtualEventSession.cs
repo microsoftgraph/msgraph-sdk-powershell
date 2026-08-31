@@ -12,6 +12,8 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
     public partial class VirtualEventSession : global::Microsoft.Graph.PowerShell.Bookings.Client.Models.OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Represents the expected number of attendees for the virtual event session.</summary>
+        public int? Capacity { get; set; }
         /// <summary>The virtual event session end time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "capacity", n => { Capacity = n.GetIntValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.DateTimeTimeZone>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "startDateTime", n => { StartDateTime = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.DateTimeTimeZone>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "videoOnDemandWebUrl", n => { VideoOnDemandWebUrl = n.GetStringValue(); } },
@@ -74,6 +77,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteIntValue("capacity", Capacity);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
             writer.WriteStringValue("videoOnDemandWebUrl", VideoOnDemandWebUrl);

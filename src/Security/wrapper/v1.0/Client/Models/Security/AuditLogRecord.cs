@@ -13,7 +13,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuditLogRecord : global::Microsoft.Graph.PowerShell.Security.Client.Models.Entity, IParsable
     {
-        /// <summary>The administrative units tagged to an audit log record.</summary>
+        /// <summary>The collection of administrative units associated with the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AdministrativeUnits { get; set; }
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<string> AdministrativeUnits { get; set; }
 #endif
-        /// <summary>A JSON object that contains the actual audit log data.</summary>
+        /// <summary>The audit data associated with the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditData? AuditData { get; set; }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditData AuditData { get; set; }
 #endif
-        /// <summary>The type of operation indicated by the record. For the list of member values, see auditLogRecordType.</summary>
+        /// <summary>The type of the audit log record.</summary>
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogRecordType? AuditLogRecordType { get; set; }
-        /// <summary>The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.</summary>
+        /// <summary>The IP address of the client that performed the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientIp { get; set; }
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public string ClientIp { get; set; }
 #endif
-        /// <summary>The date and time in UTC when the user performed the activity.</summary>
+        /// <summary>The date and time when the activity was performed.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.</summary>
+        /// <summary>The identifier of the object that was affected by the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId { get; set; }
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public string ObjectId { get; set; }
 #endif
-        /// <summary>The name of the user or admin activity.</summary>
+        /// <summary>The name of the activity that was performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operation { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public string Operation { get; set; }
 #endif
-        /// <summary>The GUID for your organization.</summary>
+        /// <summary>The GUID of the organization&apos;s Microsoft 365 tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public string Service { get; set; }
 #endif
-        /// <summary>The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the &apos;user&apos; who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.</summary>
+        /// <summary>The identifier of the user, system account, service, or application that performed the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>UPN of the user who performed the action.</summary>
+        /// <summary>The user principal name of the user who performed the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName { get; set; }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public string UserPrincipalName { get; set; }
 #endif
-        /// <summary>The type of user that performed the operation. The possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.</summary>
+        /// <summary>The type of user who performed the activity. Possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.</summary>
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogUserType? UserType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -25,5 +25,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityG
         #pragma warning disable CS1591
         Mover = 8,
         #pragma warning restore CS1591
+        [EnumMember(Value = "extensibility")]
+        #pragma warning disable CS1591
+        Extensibility = 16,
+        #pragma warning restore CS1591
     }
 }

@@ -60,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.Planner
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, PlannerTaskId);
                 return;
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.PowerShell.Planner
                 {
                     result = client.Planner.Tasks[PlannerTaskId].ProgressTaskBoardFormat.GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, PlannerTaskId);
                     return;

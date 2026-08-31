@@ -68,6 +68,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public string PrincipalId { get; set; }
 #endif
+        /// <summary>The principalOrganizationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrincipalOrganizationId { get; set; }
+#nullable restore
+#else
+        public string PrincipalOrganizationId { get; set; }
+#endif
         /// <summary>The roleDefinition the assignment is for. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +117,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
                 { "directoryScopeId", n => { DirectoryScopeId = n.GetStringValue(); } },
                 { "principal", n => { Principal = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.DirectoryObject>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "principalId", n => { PrincipalId = n.GetStringValue(); } },
+                { "principalOrganizationId", n => { PrincipalOrganizationId = n.GetStringValue(); } },
                 { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoleDefinition>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
                 { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
             };
@@ -128,6 +137,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             writer.WriteStringValue("directoryScopeId", DirectoryScopeId);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.DirectoryObject>("principal", Principal);
             writer.WriteStringValue("principalId", PrincipalId);
+            writer.WriteStringValue("principalOrganizationId", PrincipalOrganizationId);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteStringValue("roleDefinitionId", RoleDefinitionId);
         }

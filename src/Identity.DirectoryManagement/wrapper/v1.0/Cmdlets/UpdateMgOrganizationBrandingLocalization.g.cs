@@ -233,7 +233,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, OrganizationalBrandingLocalizationId);
                 return;
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                 {
                     result = client.Organization[OrganizationId].Branding.Localizations[OrganizationalBrandingLocalizationId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, OrganizationalBrandingLocalizationId);
                     return;

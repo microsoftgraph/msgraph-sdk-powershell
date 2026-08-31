@@ -46,6 +46,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceEnvironment Environment { get; set; }
 #endif
+        /// <summary>The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector? ExternalOriginResourceConnector { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector ExternalOriginResourceConnector { get; set; }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ModifiedDateTime { get; set; }
         /// <summary>The unique identifier of the resource in the origin system. For a Microsoft Entra group, this is the identifier of the group.</summary>
@@ -80,6 +88,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceScope> Scopes { get; set; }
 #endif
+        /// <summary>The upload sessions for uploading external access data to this resource through the Bring Your Own Data (BYOD) flow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomDataProvidedResourceUploadSession>? UploadSessions { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomDataProvidedResourceUploadSession> UploadSessions { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -103,11 +119,13 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceEnvironment>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
+                { "externalOriginResourceConnector", n => { ExternalOriginResourceConnector = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "originId", n => { OriginId = n.GetStringValue(); } },
                 { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRole>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceScope>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "uploadSessions", n => { UploadSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomDataProvidedResourceUploadSession>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomDataProvidedResourceUploadSession.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -123,11 +141,13 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceEnvironment>("environment", Environment);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector>("externalOriginResourceConnector", ExternalOriginResourceConnector);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteStringValue("originId", OriginId);
             writer.WriteStringValue("originSystem", OriginSystem);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceRole>("roles", Roles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageResourceScope>("scopes", Scopes);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomDataProvidedResourceUploadSession>("uploadSessions", UploadSessions);
         }
     }
 }

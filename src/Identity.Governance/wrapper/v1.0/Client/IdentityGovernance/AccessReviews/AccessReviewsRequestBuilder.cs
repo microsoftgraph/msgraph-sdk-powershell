@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Definitions;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.HistoryDefinitions;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernan
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder HistoryDefinitions
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The unified property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.UnifiedRequestBuilder Unified
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.UnifiedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.AccessReviewsRequestBuilder"/> and sets the default values.

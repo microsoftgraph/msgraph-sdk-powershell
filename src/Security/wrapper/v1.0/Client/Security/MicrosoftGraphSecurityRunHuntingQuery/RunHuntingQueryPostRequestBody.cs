@@ -30,6 +30,8 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Security.MicrosoftGraphSecu
 #else
         public string Timespan { get; set; }
 #endif
+        /// <summary>The workspaceId property</summary>
+        public Guid? WorkspaceId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Security.Client.Security.MicrosoftGraphSecurityRunHuntingQuery.RunHuntingQueryPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -57,6 +59,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Security.MicrosoftGraphSecu
             {
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "timespan", n => { Timespan = n.GetStringValue(); } },
+                { "workspaceId", n => { WorkspaceId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -68,6 +71,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Security.MicrosoftGraphSecu
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("query", Query);
             writer.WriteStringValue("timespan", Timespan);
+            writer.WriteGuidValue("workspaceId", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

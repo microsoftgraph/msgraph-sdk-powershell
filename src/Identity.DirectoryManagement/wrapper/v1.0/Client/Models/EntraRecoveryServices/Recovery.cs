@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.
     public partial class Recovery : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The jobs property</summary>
+        /// <summary>Collection of all recovery jobs (both preview and recovery) for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.RecoveryJobBase>? Jobs { get; set; }
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.RecoveryJobBase> Jobs { get; set; }
 #endif
-        /// <summary>The snapshots property</summary>
+        /// <summary>Collection of backup snapshots available for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.Snapshot>? Snapshots { get; set; }

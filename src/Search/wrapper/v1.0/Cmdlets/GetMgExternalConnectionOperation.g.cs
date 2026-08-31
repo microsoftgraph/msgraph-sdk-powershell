@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Search
                 ThrowTerminatingError(rex.ErrorRecord);
                 return;
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ConnectionOperationId : ExternalConnectionId);
                 return;

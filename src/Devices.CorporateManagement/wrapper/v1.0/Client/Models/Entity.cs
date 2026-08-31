@@ -95,7 +95,6 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
                 "#microsoft.graph.dayNote" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DayNote(),
                 "#microsoft.graph.defaultManagedAppProtection" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DefaultManagedAppProtection(),
                 "#microsoft.graph.device" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.Device(),
-                "#microsoft.graph.deviceAppManagement" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceAppManagement(),
                 "#microsoft.graph.deviceCategory" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceCategory(),
                 "#microsoft.graph.deviceCompliancePolicyState" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceCompliancePolicyState(),
                 "#microsoft.graph.deviceConfigurationState" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceConfigurationState(),

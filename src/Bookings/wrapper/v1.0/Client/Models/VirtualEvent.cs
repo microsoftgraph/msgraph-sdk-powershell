@@ -52,6 +52,8 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventExternalInformation> ExternalEventInformation { get; set; }
 #endif
+        /// <summary>Indicates whether attendee registration is enabled for the virtual event.</summary>
+        public bool? IsRegistrationRequired { get; set; }
         /// <summary>The virtual event presenters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,6 +117,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.DateTimeTimeZone>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "externalEventInformation", n => { ExternalEventInformation = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventExternalInformation>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventExternalInformation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "isRegistrationRequired", n => { IsRegistrationRequired = n.GetBoolValue(); } },
                 { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventPresenter>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventPresenter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSession>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSettings>(global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSettings.CreateFromDiscriminatorValue); } },
@@ -135,6 +138,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventExternalInformation>("externalEventInformation", ExternalEventInformation);
+            writer.WriteBoolValue("isRegistrationRequired", IsRegistrationRequired);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventPresenter>("presenters", Presenters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSession>("sessions", Sessions);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSettings>("settings", Settings);

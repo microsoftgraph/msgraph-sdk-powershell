@@ -37,7 +37,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.AttackSimulationRoot AttackSimulation { get; set; }
 #endif
-        /// <summary>The auditLog property</summary>
+        /// <summary>The entry point for the audit log query API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditCoreRoot? AuditLog { get; set; }

@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, DeviceAndAppManagementRoleAssignmentId);
                 return;
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
                 {
                     result = client.DeviceManagement.RoleAssignments[DeviceAndAppManagementRoleAssignmentId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, DeviceAndAppManagementRoleAssignmentId);
                     return;

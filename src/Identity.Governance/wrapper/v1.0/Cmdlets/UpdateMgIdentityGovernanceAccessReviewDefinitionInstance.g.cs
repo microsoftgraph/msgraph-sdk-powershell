@@ -32,6 +32,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         public string? Status { get; set; }
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewError[]? Errors { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewReviewerScope[]? FallbackReviewers { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -61,6 +64,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     if (this.IsParameterBound(nameof(Status)))
         body.Status = Status;
 
+    if (this.IsParameterBound(nameof(Errors)))
+        body.Errors = Errors!.ToList();
+
     if (this.IsParameterBound(nameof(FallbackReviewers)))
         body.FallbackReviewers = FallbackReviewers!.ToList();
 
@@ -83,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
-            catch (Exception ex) when (ex is not PipelineStoppedException)
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, AccessReviewInstanceId);
                 return;
@@ -97,7 +103,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 {
                     result = client.IdentityGovernance.AccessReviews.Definitions[AccessReviewScheduleDefinitionId].Instances[AccessReviewInstanceId].GetAsync().GetAwaiter().GetResult();
                 }
-                catch (Exception ex) when (ex is not PipelineStoppedException)
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
                     ThrowGraphRequestFailed(ex, AccessReviewInstanceId);
                     return;
