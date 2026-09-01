@@ -31,7 +31,7 @@ steps:
     displayName: Install NodeJs
     retryCountOnTaskFailure: 2
     inputs:
-      version: 22.x
+      version: 18.x
 
   - task: PowerShell@2
     displayName: Configure private npm feed
