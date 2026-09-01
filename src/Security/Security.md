@@ -37,6 +37,13 @@ directive:
     remove: true
 # Rename cmdlets
   - where:
+      verb: New
+      subject: ^(SecurityAlert)$
+      variant: ^Create1$|^CreateExpanded1$
+    set:
+      verb: Invoke
+      subject: Create$1
+  - where:
       verb: Remove
       subject: ^(SecurityTiIndicator)$
       variant: Delete1|^DeleteExpanded$
