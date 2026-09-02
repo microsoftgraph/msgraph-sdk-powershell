@@ -426,6 +426,38 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/alerts_v2/microsoft.graph.security.createAlert:
+    post:
+      tags:
+        - security.alert
+      summary: Invoke action createAlert
+      description: Create a Microsoft 365 Defender alert by invoking a bound action on the alerts_v2 collection and returning the created alert resource. The action accepts a createAlertInput complex type that combines alert metadata and creation-specific options in one request object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-alert-createalert?view=graph-rest-beta
+      operationId: security.alerts_v2_createAlert
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                createAlertInput:
+                  $ref: '#/components/schemas/microsoft.graph.security.createAlertInput'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.alert'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/alerts_v2/microsoft.graph.security.moveAlerts:
     post:
       tags:
@@ -4583,7 +4615,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: Create case attachment
-      description: Create an attachment for a case.
+      description: 'Create attachment metadata for a case. This method doesn''t upload the file content. After creating the attachment, use Upload attachment content.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casemanagement-case-post-attachments?view=graph-rest-beta
@@ -4752,8 +4784,11 @@ paths:
     get:
       tags:
         - security.caseManagementRoot
-      summary: Get content for the navigation property attachments from security
-      description: The binary content stream for the attachment.
+      summary: Download attachment content
+      description: 'Download the binary content of an attachment. After an upload completes, the service asynchronously scans the attachment for malware. Poll the attachment metadata by using Get attachment. If scanResult is unscanned, wait and try again later. Download the content only when scanResult is noThreatsFound. Don''t download content when scanResult is malicious.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-attachment-download-content?view=graph-rest-beta
       operationId: security.caseManagement.case_GetAttachmentsContent
       parameters:
         - name: case-id
@@ -4785,8 +4820,11 @@ paths:
     put:
       tags:
         - security.caseManagementRoot
-      summary: Update content for the navigation property attachments in security
-      description: The binary content stream for the attachment.
+      summary: Upload attachment content
+      description: 'Upload binary content for an attachment. Create the attachment metadata first by using Create case attachment. The maximum file size is 100 MB. Upload files in chunks of no more than 1 MB. For files larger than 1 MB, send one PUT request for each chunk until all byte ranges are uploaded.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-attachment-upload-content?view=graph-rest-beta
       operationId: security.caseManagement.case_SetAttachmentsContent
       parameters:
         - name: case-id
@@ -4826,7 +4864,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: Delete content for the navigation property attachments in security
-      description: The binary content stream for the attachment.
+      description: The binary content stream for the attachment. Use the Upload content and Download content methods to access it.
       operationId: security.caseManagement.case_DeleteAttachmentsContent
       parameters:
         - name: case-id
@@ -4883,7 +4921,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: List case relations
-      description: Get a list of external resource relation objects for a case.
+      description: 'Get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casemanagement-case-list-relations?view=graph-rest-beta
@@ -4945,7 +4983,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: Create case relation
-      description: Create an external resource relation for a case.
+      description: Create a concrete external resource relation for a case.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casemanagement-case-post-relations?view=graph-rest-beta
@@ -4980,8 +5018,11 @@ paths:
     get:
       tags:
         - security.caseManagementRoot
-      summary: Get relations from security
-      description: Links from the case to related security resources. Supports $expand.
+      summary: Get relation
+      description: 'Read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-relation-get?view=graph-rest-beta
       operationId: security.caseManagement.case_GetRelation
       parameters:
         - name: case-id
@@ -5034,7 +5075,7 @@ paths:
       tags:
         - security.caseManagementRoot
       summary: Update relation
-      description: Update the properties of a relation object.
+      description: Update the properties of a concrete relation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casemanagement-relation-update?view=graph-rest-beta
@@ -5076,7 +5117,11 @@ paths:
     delete:
       tags:
         - security.caseManagementRoot
-      summary: Delete navigation property relations for security
+      summary: Delete relation
+      description: Delete a concrete relation from a case.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-relation-delete?view=graph-rest-beta
       operationId: security.caseManagement.case_DeleteRelation
       parameters:
         - name: case-id
@@ -5330,7 +5375,11 @@ paths:
     delete:
       tags:
         - security.caseManagementRoot
-      summary: Delete navigation property tasks for security
+      summary: Delete task
+      description: Delete a task from a case.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-casemanagement-task-delete?view=graph-rest-beta
       operationId: security.caseManagement.case_DeleteTask
       parameters:
         - name: case-id
@@ -37516,6 +37565,49 @@ components:
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.security.createAlertInput:
+      title: createAlertInput
+      type: object
+      properties:
+        category:
+          type: string
+          description: MITRE ATT&CK category for the alert.
+        description:
+          type: string
+          description: Free-text explanation of the suspicious activity or policy violation.
+        entityDefinitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.entityDefinition'
+          description: Inline entity definitions that associate entities with the alert.
+        isExcludedFromCorrelation:
+          type: boolean
+          description: Whether the alert is excluded from automatic correlation. Defaults to false.
+        linkToIncident:
+          type: number
+          description: Incident ID to link the alert to. Use 0 or omit the value to create a new incident.
+          format: int64
+          nullable: true
+        mitreTechniques:
+          type: array
+          items:
+            type: string
+          description: MITRE ATT&CK technique identifiers associated with the alert.
+        recommendedActions:
+          type: string
+          description: Recommended remediation actions for the alert.
+          nullable: true
+        sentinelWorkspace:
+          type: string
+          description: Microsoft Sentinel workspace identifier used for workspace routing.
+          nullable: true
+        severity:
+          $ref: '#/components/schemas/microsoft.graph.security.alertSeverity'
+        title:
+          type: string
+          description: Short display name shown for the alert in the Defender portal.
+      additionalProperties:
+        type: object
     microsoft.graph.security.correlationReason:
       title: correlationReason
       enum:
@@ -38383,7 +38475,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.caseManagement.case'
-              description: 'The collection of security cases managed through the case management entry point. Supports $filter, $orderby, $select, $top, $skip, and $count.'
+              description: 'The collection of security cases managed through the case management entry point. Supports $filter, $orderby, $select, $top, and $skip.'
               x-ms-navigationProperty: true
             caseTypeConfigurations:
               type: array
@@ -38403,10 +38495,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.caseManagement.customFieldValues'
             displayName:
               type: string
-              description: 'The display name of the case. Supports $filter (eq, ne) and $orderby.'
+              description: The display name of the case. Supports $filter and $orderby.
             status:
               type: string
-              description: 'The lifecycle status of the case, such as open, in progress, or closed. Supports $filter (eq, ne) and $orderby.'
+              description: 'The tenant-defined lifecycle status of the case. Use a displayName value returned in the status tree by List statuses from /security/caseManagement/caseTypeConfigurations/genericCase/statuses or /security/caseManagement/caseTypeConfigurations/incidentCase/statuses, depending on the case type. Supports $filter (eq).'
             activities:
               type: array
               items:
@@ -38448,7 +38540,7 @@ components:
           properties:
             content:
               type: string
-              description: The binary content stream for the attachment.
+              description: The binary content stream for the attachment. Use the Upload content and Download content methods to access it.
               format: base64url
               nullable: true
             description:
@@ -38460,11 +38552,11 @@ components:
               description: The display name of the attachment.
             fileExtension:
               type: string
-              description: The file extension of the attachment.
+              description: The file extension of the attachment. The service normalizes the value to include a leading period.
               nullable: true
             fileSize:
               type: number
-              description: The size of the attachment in bytes.
+              description: The size of the attachment in bytes. The maximum file size is 100 MB.
               format: int64
               nullable: true
             origin:
@@ -38493,25 +38585,25 @@ components:
           properties:
             assignedTo:
               type: string
-              description: The user assigned to the task.
+              description: The user assigned to the task. Supports $filter.
               nullable: true
             category:
               $ref: '#/components/schemas/microsoft.graph.security.caseManagement.caseTaskCategory'
             closingNotes:
               type: string
-              description: Notes recorded when the task is completed.
+              description: Notes recorded when the task is completed. Supports $filter.
               nullable: true
             description:
               type: string
-              description: The description of the task.
+              description: The description of the task. Supports $filter.
               nullable: true
             displayName:
               type: string
-              description: The title of the task.
+              description: The title of the task. Supports $filter.
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The target completion date and time for the task.
+              description: The target completion date and time for the task. Supports $filter.
               format: date-time
               nullable: true
             priority:
@@ -40255,6 +40347,7 @@ components:
         - pasteFromClipboard
         - print
         - accessDebugTools
+        - contentFiltering
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -45503,6 +45596,22 @@ components:
         - resolved
         - unknownFutureValue
       type: string
+    microsoft.graph.security.entityDefinition:
+      title: entityDefinition
+      type: object
+      properties:
+        entityIdentifier:
+          type: string
+          description: 'The identifier kind for the selected entity type, such as userPrincipalName, deviceId, or address.'
+        entityType:
+          $ref: '#/components/schemas/microsoft.graph.security.manualAlertEntityType'
+        identifierValue:
+          type: string
+          description: The value for the selected entity identifier.
+        role:
+          $ref: '#/components/schemas/microsoft.graph.security.entityDefinitionInputRole'
+      additionalProperties:
+        type: object
     microsoft.graph.emailIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -47005,6 +47114,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             quota:
               $ref: '#/components/schemas/microsoft.graph.quota'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.driveSettings'
             sharePointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             system:
@@ -51285,6 +51396,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               x-ms-navigationProperty: true
+            lifecycle:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
             memberOf:
               type: array
               items:
@@ -51429,6 +51542,12 @@ components:
               x-ms-navigationProperty: true
             qrCodePinMethod:
               $ref: '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -51575,7 +51694,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
-              description: A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -51722,6 +51841,8 @@ components:
               description: 'The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            provisioningConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningConfiguration'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -52325,21 +52446,25 @@ components:
               type: string
               description: The display name of the distribution list.
               nullable: true
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.member'
-              description: The list of members in the distribution list. Not returned by default; use $select=members to include.
             notes:
               type: string
+              description: Notes about the distribution list.
               nullable: true
             personIdentifier:
               type: string
+              description: The unique identifier of the distribution list in the mailbox. Read-only.
               nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.distributionListMember'
+              description: The members of the distribution list. Not returned by default; use $expand=members to include. Read-only.
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the distribution list. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -56840,6 +56965,35 @@ components:
         - noThreatsFound
         - unknownFutureValue
       type: string
+    microsoft.graph.security.manualAlertEntityType:
+      title: manualAlertEntityType
+      enum:
+        - user
+        - device
+        - file
+        - ip
+        - url
+        - cloudApplication
+        - mailbox
+        - securityGroup
+        - azureResource
+        - amazonResource
+        - googleCloudResource
+        - oAuthApplication
+        - emailMessage
+        - emailCluster
+        - process
+        - registryKey
+        - registryValue
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.entityDefinitionInputRole:
+      title: entityDefinitionInputRole
+      enum:
+        - impacted
+        - related
+        - unknownFutureValue
+      type: string
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
       enum:
@@ -57585,6 +57739,16 @@ components:
           type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.driveSettings:
+      title: driveSettings
+      type: object
+      properties:
+        itemDefaultSensitivityLabelId:
+          type: string
+          description: The ID of the default sensitivity label for items in the drive. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -58888,6 +59052,12 @@ components:
               x-ms-navigationProperty: true
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+              description: Collection of goals in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
             historyItems:
               type: array
               items:
@@ -60421,6 +60591,26 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          additionalProperties:
+            type: object
     microsoft.graph.permissionGrantPreApprovalPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -60744,6 +60934,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.qrCode'
           additionalProperties:
             type: object
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -60893,6 +61097,11 @@ components:
               type: string
               description: 'If the message was sent in a chat, represents the identity of the chat.'
               nullable: true
+            citations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageCitation'
+              description: Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -60913,6 +61122,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            hasReplies:
+              type: boolean
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
             lastEditedDateTime:
@@ -61281,6 +61492,14 @@ components:
         - business
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcProvisioningConfiguration:
+      title: cloudPcProvisioningConfiguration
+      type: object
+      properties:
+        domainJoinType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -61739,30 +61958,26 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.member:
-      title: member
-      type: object
-      properties:
-        contactId:
-          type: string
-          description: 'The ID of the referenced contact, if applicable. Optional.'
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the member. Optional.
-          nullable: true
-        key:
-          type: string
-          description: The email address or routing key of the member. Required.
-          nullable: true
-        recipientType:
-          $ref: '#/components/schemas/microsoft.graph.recipientType'
-        routingType:
-          type: string
-          description: 'The routing type for the member, for example, SMTP. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.distributionListMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: distributionListMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the member. Read-only.
+              nullable: true
+            memberId:
+              type: string
+              description: 'A system generated unique identifier. Non-empty for contact, privateDL and mailbox members. ReadOnly.'
+              nullable: true
+            type:
+              $ref: '#/components/schemas/microsoft.graph.recipientType'
+            contact:
+              $ref: '#/components/schemas/microsoft.graph.contact'
+          additionalProperties:
+            type: object
     microsoft.graph.engagementRole:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -64779,6 +64994,11 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            goalIds:
+              type: array
+              items:
+                type: string
+              description: Read-only. The IDs of the goals associated with the task.
             hasChat:
               type: boolean
               description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
@@ -68465,6 +68685,49 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
+    microsoft.graph.plannerGoal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerGoal
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Required. The display name of the goal.
+            finishDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to finish.
+              format: date
+              nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            planId:
+              type: string
+              description: Required. The ID of the plan that contains the goal.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Optional. The relative priority of the goal. Valid values range from 0 to 10, inclusive. The default value is 5.'
+              format: int32
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to start.
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoalStatus'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerHistoryItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -69214,6 +69477,79 @@ components:
           description: Indicates the configured expression. Required.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          type: object
+          properties:
+            description:
+              type: string
+            governingPolicyReferenceId:
+              type: string
+            issueCode:
+              type: string
+            ruleType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            notificationSchedule:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.subjectSet'
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovalDetail:
       title: preApprovalDetail
       type: object
@@ -69611,6 +69947,37 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatMessageCitation:
+      title: chatMessageCitation
+      type: object
+      properties:
+        excerpt:
+          type: string
+          description: Read-only. Text snippet from the cited source.
+          nullable: true
+        iconType:
+          type: string
+          description: 'Read-only. Icon type identifier for the cited source, for example, ExcelIcon or WordIcon.'
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Read-only. Citation identifier that''s unique within the message. The message body references this identifier inline, for example, [1].'
+          format: int32
+          nullable: true
+        sensitivityLabel:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageCitationSensitivityLabel'
+        title:
+          type: string
+          description: Read-only. Display title of the cited source.
+          nullable: true
+        webUrl:
+          type: string
+          description: Read-only. URL to the cited source.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -69819,6 +70186,13 @@ components:
         - unknownFutureValue
         - vMware
         - hp
+      type: string
+    microsoft.graph.cloudPcDomainJoinType:
+      title: cloudPcDomainJoinType
+      enum:
+        - azureADJoin
+        - hybridAzureADJoin
+        - unknownFutureValue
       type: string
     microsoft.graph.delegationSettings:
       allOf:
@@ -74697,6 +75071,16 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerGoalStatus:
+      title: plannerGoalStatus
+      enum:
+        - notStarted
+        - onTrack
+        - behind
+        - atRisk
+        - closed
+        - unknownFutureValue
+      type: string
     microsoft.graph.historyEntityType:
       title: historyEntityType
       enum:
@@ -75657,6 +76041,52 @@ components:
           description: An ordered list of transformations that are applied in sequence.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      type: object
+      properties:
+        additionalRecipients:
+          type: array
+          items:
+            type: string
+        isEnabled:
+          type: boolean
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovedPermissions:
       title: preApprovedPermissions
       type: object
@@ -75940,6 +76370,20 @@ components:
         - markdown
         - unknownFutureValue
       type: string
+    microsoft.graph.chatMessageCitationSensitivityLabel:
+      title: chatMessageCitationSensitivityLabel
+      type: object
+      properties:
+        description:
+          type: string
+          description: Read-only. User-facing description of the sensitivity restriction.
+          nullable: true
+        displayName:
+          type: string
+          description: Read-only. Display name of the sensitivity label.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'

@@ -5720,6 +5720,10 @@ paths:
       tags:
         - drives.driveItem
       summary: Invoke action assignSensitivityLabel
+      description: 'Asynchronously assign a sensitivity label to a driveItem. This API is part of the Microsoft SharePoint and OneDrive APIs that perform advanced premium administrative functions, and is considered as protected. Protected APIs require you to have more validations, beyond permission and consent, before you can use them. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive. This API applies sensitivity labels to files at rest. Office clients don''t apply watermarks, headers, or footers to files that contain the label information. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-assignsensitivitylabel?view=graph-rest-1.0
       operationId: drive.item_assignSensitivityLabel
       parameters:
         - name: drive-id
@@ -18966,6 +18970,10 @@ paths:
       tags:
         - drives.driveItem
       summary: Invoke action assignSensitivityLabel
+      description: 'Asynchronously assign a sensitivity label to a driveItem. This API is part of the Microsoft SharePoint and OneDrive APIs that perform advanced premium administrative functions, and is considered as protected. Protected APIs require you to have more validations, beyond permission and consent, before you can use them. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive. This API applies sensitivity labels to files at rest. Office clients don''t apply watermarks, headers, or footers to files that contain the label information. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-assignsensitivitylabel?view=graph-rest-1.0
       operationId: drive.root_assignSensitivityLabel
       parameters:
         - name: drive-id
@@ -28249,6 +28257,10 @@ paths:
       tags:
         - groups.drive
       summary: Invoke action assignSensitivityLabel
+      description: 'Asynchronously assign a sensitivity label to a driveItem. This API is part of the Microsoft SharePoint and OneDrive APIs that perform advanced premium administrative functions, and is considered as protected. Protected APIs require you to have more validations, beyond permission and consent, before you can use them. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive. This API applies sensitivity labels to files at rest. Office clients don''t apply watermarks, headers, or footers to files that contain the label information. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-assignsensitivitylabel?view=graph-rest-1.0
       operationId: group.drive.item_assignSensitivityLabel
       parameters:
         - name: group-id
@@ -43758,6 +43770,10 @@ paths:
       tags:
         - groups.drive
       summary: Invoke action assignSensitivityLabel
+      description: 'Asynchronously assign a sensitivity label to a driveItem. This API is part of the Microsoft SharePoint and OneDrive APIs that perform advanced premium administrative functions, and is considered as protected. Protected APIs require you to have more validations, beyond permission and consent, before you can use them. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive. This API applies sensitivity labels to files at rest. Office clients don''t apply watermarks, headers, or footers to files that contain the label information. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-assignsensitivitylabel?view=graph-rest-1.0
       operationId: group.drive.root_assignSensitivityLabel
       parameters:
         - name: group-id
@@ -63115,6 +63131,10 @@ paths:
       tags:
         - users.drive
       summary: Invoke action assignSensitivityLabel
+      description: 'Asynchronously assign a sensitivity label to a driveItem. This API is part of the Microsoft SharePoint and OneDrive APIs that perform advanced premium administrative functions, and is considered as protected. Protected APIs require you to have more validations, beyond permission and consent, before you can use them. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive. This API applies sensitivity labels to files at rest. Office clients don''t apply watermarks, headers, or footers to files that contain the label information. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-assignsensitivitylabel?view=graph-rest-1.0
       operationId: user.drive.item_assignSensitivityLabel
       parameters:
         - name: user-id
@@ -78624,6 +78644,10 @@ paths:
       tags:
         - users.drive
       summary: Invoke action assignSensitivityLabel
+      description: 'Asynchronously assign a sensitivity label to a driveItem. This API is part of the Microsoft SharePoint and OneDrive APIs that perform advanced premium administrative functions, and is considered as protected. Protected APIs require you to have more validations, beyond permission and consent, before you can use them. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive. This API applies sensitivity labels to files at rest. Office clients don''t apply watermarks, headers, or footers to files that contain the label information. For more information about sensitivity labels from an administrator''s perspective, see Enable sensitivity labels for Office files in SharePoint and OneDrive.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/driveitem-assignsensitivitylabel?view=graph-rest-1.0
       operationId: user.drive.root_assignSensitivityLabel
       parameters:
         - name: user-id
@@ -84984,6 +85008,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object

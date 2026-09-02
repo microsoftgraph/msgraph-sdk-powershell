@@ -5037,6 +5037,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.cancelEnhancedLogCollection':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action cancelEnhancedLogCollection
+      description: Cancels an in-progress enhanced log collection session on a supervised Apple device.
+      operationId: deviceManagement.comanagedDevice_cancelEnhancedLogCollection
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.changeAssignments':
     post:
       tags:
@@ -6249,6 +6271,40 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.triggerEnhancedLogCollection':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action triggerEnhancedLogCollection
+      description: Triggers an AppleCare-authorized enhanced log collection session on a supervised Apple device.
+      operationId: deviceManagement.comanagedDevice_triggerEnhancedLogCollection
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appleCareToken:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.updateWindowsDeviceAccount':
     post:
       tags:
@@ -6446,6 +6502,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.securityBaselineStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6480,6 +6542,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/comanagedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}':
     get:
@@ -6534,6 +6602,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6573,6 +6647,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6607,6 +6687,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/comanagedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}/settingStates':
     get:
@@ -6672,6 +6758,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.securityBaselineSettingStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6714,6 +6806,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/comanagedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}/settingStates/{securityBaselineSettingState-id}':
     get:
@@ -6776,6 +6874,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6823,6 +6927,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6865,6 +6975,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/comanagedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}/settingStates/$count':
     get:
@@ -6896,6 +7012,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
   '/deviceManagement/comanagedDevices/{managedDevice-id}/securityBaselineStates/$count':
     get:
       tags:
@@ -6918,6 +7040,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
   '/deviceManagement/comanagedDevices/{managedDevice-id}/users':
     get:
       tags:
@@ -14292,6 +14420,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This action is deprecated and will be removed on July 7, 2026. This API is obsolete and should be removed from client code; no replacement is needed as the current reporting architecture continuously aggregates compliance data.'
       x-ms-docs-operation-type: action
   /deviceManagement/deviceCompliancePolicies/microsoft.graph.setScheduledRetireState:
     post:
@@ -17107,6 +17241,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStateSummary'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(''{policyId}'')/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -17129,6 +17269,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationUserStateSummary'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(''{policyId}'')/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -17147,6 +17293,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(''{policyId}'')/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead.'
       x-ms-docs-operation-type: operation
   /deviceManagement/deviceHealthScripts:
     get:
@@ -29308,6 +29460,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.cancelEnhancedLogCollection':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action cancelEnhancedLogCollection
+      description: Cancels an in-progress enhanced log collection session on a supervised Apple device.
+      operationId: deviceManagement.managedDevice_cancelEnhancedLogCollection
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.changeAssignments':
     post:
       tags:
@@ -30520,6 +30694,40 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.triggerEnhancedLogCollection':
+    post:
+      tags:
+        - deviceManagement.managedDevice
+      summary: Invoke action triggerEnhancedLogCollection
+      description: Triggers an AppleCare-authorized enhanced log collection session on a supervised Apple device.
+      operationId: deviceManagement.managedDevice_triggerEnhancedLogCollection
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                appleCareToken:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.updateWindowsDeviceAccount':
     post:
       tags:
@@ -30717,6 +30925,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.securityBaselineStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -30751,6 +30965,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/managedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}':
     get:
@@ -30805,6 +31025,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -30844,6 +31070,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -30878,6 +31110,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/managedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}/settingStates':
     get:
@@ -30943,6 +31181,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.securityBaselineSettingStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -30985,6 +31229,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/managedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}/settingStates/{securityBaselineSettingState-id}':
     get:
@@ -31047,6 +31297,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -31094,6 +31350,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -31136,6 +31398,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
       x-ms-docs-operation-type: operation
   '/deviceManagement/managedDevices/{managedDevice-id}/securityBaselineStates/{securityBaselineState-id}/settingStates/$count':
     get:
@@ -31167,6 +31435,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
   '/deviceManagement/managedDevices/{managedDevice-id}/securityBaselineStates/$count':
     get:
       tags:
@@ -31189,6 +31463,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-07'
+        date: '2026-04-03'
+        version: 2026-04/Rv1MigrationDeprecation
+        description: 'This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead.'
   '/deviceManagement/managedDevices/{managedDevice-id}/users':
     get:
       tags:
@@ -51311,6 +51591,14 @@ components:
               type: string
               description: Timestamp when on-prem certificate connector was enrolled in Intune.
               format: date-time
+            healthChecks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.connectorHealthCheck'
+              description: The collection of individual health check results for this connector. Each entry represents an independent health metric with its current status. Empty when the connector is disconnected or when health has not been evaluated yet. Read-only.
+              readOnly: true
+            healthStatus:
+              $ref: '#/components/schemas/microsoft.graph.ndesConnectorHealthStatus'
             lastConnectionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -57950,6 +58238,7 @@ components:
         - unknownFutureValue
         - windowsOsRecovery
         - android
+        - intuneOpenExtensibility
       type: string
       description: Describes which technology this setting can be deployed with
       x-ms-enum-flags:
@@ -58009,6 +58298,9 @@ components:
           - value: android
             description: Indicates the settings that can be deployed through the Android channel.
             name: android
+          - value: intuneOpenExtensibility
+            description: Setting can be deployed through the Intune Open Extensibility channel for scenarios such as Windows Recovery Environment (WinRE) configuration policies.
+            name: intuneOpenExtensibility
     microsoft.graph.deviceAndAppManagementAssignmentSource:
       title: deviceAndAppManagementAssignmentSource
       enum:
@@ -59970,6 +60262,8 @@ components:
         - delete
         - suspendManagedHomeScreen
         - restoreManagedHomeScreen
+        - triggerEnhancedLogCollection
+        - cancelEnhancedLogCollection
       type: string
       description: Remote actions Intune supports.
       x-ms-enum:
@@ -60099,6 +60393,12 @@ components:
           - value: restoreManagedHomeScreen
             description: Indicates remote device action to restore the Managed Home Screen kiosk app.
             name: restoreManagedHomeScreen
+          - value: triggerEnhancedLogCollection
+            description: Indicates remote device action to trigger an AppleCare-authorized enhanced log collection session on a supervised Apple device.
+            name: triggerEnhancedLogCollection
+          - value: cancelEnhancedLogCollection
+            description: Indicates remote device action to cancel an in-progress enhanced log collection session on a supervised Apple device.
+            name: cancelEnhancedLogCollection
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -64219,6 +64519,50 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+    microsoft.graph.connectorHealthCheck:
+      title: connectorHealthCheck
+      type: object
+      properties:
+        metricName:
+          $ref: '#/components/schemas/microsoft.graph.connectorHealthCheckMetricName'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.ndesConnectorHealthStatus'
+      additionalProperties:
+        type: object
+      description: 'Represents an individual health check result for an NDES connector, containing the metric name and its current status.'
+    microsoft.graph.ndesConnectorHealthStatus:
+      title: ndesConnectorHealthStatus
+      enum:
+        - unknown
+        - noActionRequired
+        - attentionRequired
+        - actionRequired
+        - disconnected
+        - unknownFutureValue
+      type: string
+      description: The health status of an NDES connector or individual health check metric.
+      x-ms-enum:
+        name: ndesConnectorHealthStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Health has not been evaluated yet for this connector.
+            name: unknown
+          - value: noActionRequired
+            description: All health checks are passing. Error rates are below the attention threshold for all metrics.
+            name: noActionRequired
+          - value: attentionRequired
+            description: One or more health checks have error rates between the attention and action thresholds.
+            name: attentionRequired
+          - value: actionRequired
+            description: One or more health checks have error rates above the action threshold. Investigation is required.
+            name: actionRequired
+          - value: disconnected
+            description: The connector has not connected within the staleness threshold. Applied at read time based on lastConnectionDateTime.
+            name: disconnected
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.ndesConnectorState:
       title: ndesConnectorState
       enum:
@@ -65687,6 +66031,8 @@ components:
               description: 'The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            provisioningConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningConfiguration'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -68369,6 +68715,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               x-ms-navigationProperty: true
+            lifecycle:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
             memberOf:
               type: array
               items:
@@ -68556,6 +68904,12 @@ components:
               x-ms-navigationProperty: true
             qrCodePinMethod:
               $ref: '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -68983,7 +69337,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
-              description: A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -69476,21 +69830,25 @@ components:
               type: string
               description: The display name of the distribution list.
               nullable: true
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.member'
-              description: The list of members in the distribution list. Not returned by default; use $select=members to include.
             notes:
               type: string
+              description: Notes about the distribution list.
               nullable: true
             personIdentifier:
               type: string
+              description: The unique identifier of the distribution list in the mailbox. Read-only.
               nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.distributionListMember'
+              description: The members of the distribution list. Not returned by default; use $expand=members to include. Read-only.
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the distribution list. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -69508,6 +69866,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             quota:
               $ref: '#/components/schemas/microsoft.graph.quota'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.driveSettings'
             sharePointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             system:
@@ -73098,6 +73458,35 @@ components:
           - value: error
             description: Error status.
             name: error
+    microsoft.graph.connectorHealthCheckMetricName:
+      title: connectorHealthCheckMetricName
+      enum:
+        - caConnectivity
+        - caIssuancePermissions
+        - caRevocationPermissions
+        - certificateTemplate
+        - unknownFutureValue
+      type: string
+      description: The name of the health check metric being evaluated for an NDES connector.
+      x-ms-enum:
+        name: connectorHealthCheckMetricName
+        modelAsString: false
+        values:
+          - value: caConnectivity
+            description: Measures connectivity between the connector and the Certificate Authority.
+            name: caConnectivity
+          - value: caIssuancePermissions
+            description: Measures whether the connector has the required Enroll permission on the certificate template for issuance.
+            name: caIssuancePermissions
+          - value: caRevocationPermissions
+            description: Measures whether the connector has the required permissions to revoke certificates on the CA.
+            name: caRevocationPermissions
+          - value: certificateTemplate
+            description: Measures whether the configured certificate template is valid and accessible.
+            name: certificateTemplate
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementReportStatus:
       title: deviceManagementReportStatus
       enum:
@@ -73691,6 +74080,14 @@ components:
         - business
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcProvisioningConfiguration:
+      title: cloudPcProvisioningConfiguration
+      type: object
+      properties:
+        domainJoinType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -75543,6 +75940,26 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          additionalProperties:
+            type: object
     microsoft.graph.permissionGrantPreApprovalPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -75895,6 +76312,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.qrCode'
             temporaryQRCode:
               $ref: '#/components/schemas/microsoft.graph.qrCode'
+          additionalProperties:
+            type: object
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
     microsoft.graph.softwareOathAuthenticationMethod:
@@ -76400,6 +76831,11 @@ components:
               type: string
               description: 'If the message was sent in a chat, represents the identity of the chat.'
               nullable: true
+            citations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageCitation'
+              description: Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -76420,6 +76856,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            hasReplies:
+              type: boolean
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
             lastEditedDateTime:
@@ -76847,30 +77285,26 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.member:
-      title: member
-      type: object
-      properties:
-        contactId:
-          type: string
-          description: 'The ID of the referenced contact, if applicable. Optional.'
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the member. Optional.
-          nullable: true
-        key:
-          type: string
-          description: The email address or routing key of the member. Required.
-          nullable: true
-        recipientType:
-          $ref: '#/components/schemas/microsoft.graph.recipientType'
-        routingType:
-          type: string
-          description: 'The routing type for the member, for example, SMTP. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.distributionListMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: distributionListMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the member. Read-only.
+              nullable: true
+            memberId:
+              type: string
+              description: 'A system generated unique identifier. Non-empty for contact, privateDL and mailbox members. ReadOnly.'
+              nullable: true
+            type:
+              $ref: '#/components/schemas/microsoft.graph.recipientType'
+            contact:
+              $ref: '#/components/schemas/microsoft.graph.contact'
+          additionalProperties:
+            type: object
     microsoft.graph.baseItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -76944,6 +77378,16 @@ components:
           type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.driveSettings:
+      title: driveSettings
+      type: object
+      properties:
+        itemDefaultSensitivityLabelId:
+          type: string
+          description: The ID of the default sensitivity label for items in the drive. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -80031,6 +80475,12 @@ components:
               x-ms-navigationProperty: true
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+              description: Collection of goals in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
             historyItems:
               type: array
               items:
@@ -80107,6 +80557,11 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            goalIds:
+              type: array
+              items:
+                type: string
+              description: Read-only. The IDs of the goals associated with the task.
             hasChat:
               type: boolean
               description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
@@ -81252,6 +81707,13 @@ components:
         - vMware
         - hp
       type: string
+    microsoft.graph.cloudPcDomainJoinType:
+      title: cloudPcDomainJoinType
+      enum:
+        - azureADJoin
+        - hybridAzureADJoin
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcOnPremisesConnectionHealthCheck:
       title: cloudPcOnPremisesConnectionHealthCheck
       type: object
@@ -81292,13 +81754,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionStatus'
       additionalProperties:
         type: object
-    microsoft.graph.cloudPcDomainJoinType:
-      title: cloudPcDomainJoinType
-      enum:
-        - azureADJoin
-        - hybridAzureADJoin
-        - unknownFutureValue
-      type: string
     microsoft.graph.microsoftManagedDesktopType:
       title: microsoftManagedDesktopType
       enum:
@@ -81817,6 +82272,79 @@ components:
           description: Indicates the configured expression. Required.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          type: object
+          properties:
+            description:
+              type: string
+            governingPolicyReferenceId:
+              type: string
+            issueCode:
+              type: string
+            ruleType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            notificationSchedule:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.subjectSet'
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovalDetail:
       title: preApprovalDetail
       type: object
@@ -82485,6 +83013,37 @@ components:
         teamId:
           type: string
           description: The identity of the team in which the message was posted.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageCitation:
+      title: chatMessageCitation
+      type: object
+      properties:
+        excerpt:
+          type: string
+          description: Read-only. Text snippet from the cited source.
+          nullable: true
+        iconType:
+          type: string
+          description: 'Read-only. Icon type identifier for the cited source, for example, ExcelIcon or WordIcon.'
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Read-only. Citation identifier that''s unique within the message. The message body references this identifier inline, for example, [1].'
+          format: int32
+          nullable: true
+        sensitivityLabel:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageCitationSensitivityLabel'
+        title:
+          type: string
+          description: Read-only. Display title of the cited source.
+          nullable: true
+        webUrl:
+          type: string
+          description: Read-only. URL to the cited source.
           nullable: true
       additionalProperties:
         type: object
@@ -86373,6 +86932,49 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
+    microsoft.graph.plannerGoal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerGoal
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Required. The display name of the goal.
+            finishDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to finish.
+              format: date
+              nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            planId:
+              type: string
+              description: Required. The ID of the plan that contains the goal.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Optional. The relative priority of the goal. Valid values range from 0 to 10, inclusive. The default value is 5.'
+              format: int32
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to start.
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoalStatus'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerHistoryItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -88242,6 +88844,52 @@ components:
           description: An ordered list of transformations that are applied in sequence.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      type: object
+      properties:
+        additionalRecipients:
+          type: array
+          items:
+            type: string
+        isEnabled:
+          type: boolean
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovedPermissions:
       title: preApprovedPermissions
       type: object
@@ -88655,6 +89303,20 @@ components:
         - markdown
         - unknownFutureValue
       type: string
+    microsoft.graph.chatMessageCitationSensitivityLabel:
+      title: chatMessageCitationSensitivityLabel
+      type: object
+      properties:
+        description:
+          type: string
+          description: Read-only. User-facing description of the sensitivity restriction.
+          nullable: true
+        displayName:
+          type: string
+          description: Read-only. Display name of the sensitivity label.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -90508,6 +91170,16 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerGoalStatus:
+      title: plannerGoalStatus
+      enum:
+        - notStarted
+        - onTrack
+        - behind
+        - atRisk
+        - closed
+        - unknownFutureValue
+      type: string
     microsoft.graph.historyEntityType:
       title: historyEntityType
       enum:
