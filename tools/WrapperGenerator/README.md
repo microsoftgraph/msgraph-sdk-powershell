@@ -230,6 +230,31 @@ gate set, in order and with a population reported per gate, is `.\tools\Invoke-W
 | `SchemaProperties.cs` | Which body properties become `New`/`Update` parameters |
 | `OperationInfo.cs`, `EmitContext.cs`, `GeneratorConfig.cs` | Small data/config carriers |
 | `GeneratorExtensions.cs` | String + schema helper methods |
+| `DerivedCollisionResolutions.cs` | Loads the derived rename/suppression data files embedded at build time |
+| `GeneratorConstants.cs`, `StderrLogger.cs` | Noun prefix and other fixed values; diagnostics writer |
+| `data/` | The derived naming data the generator consumes — see [The derived data files](#the-derived-data-files) |
+
+## The derived data files
+
+`data/` holds the naming answers that are neither hand-written nor generated: they are derived
+from the shipped SDK's own command inventory
+(`src/Authentication/Authentication/custom/common/MgCommandMetadata.json`, the oracle) and
+checked in as reviewable JSON/CSV. The generator embeds them at build time, so a generation run
+never reads the 22 MB oracle itself.
+
+| File | Produced by | What it is |
+|---|---|---|
+| `collision-inventory.v1.0.txt` | `Build-WrapperModule.ps1 -NoCollisionData` | Every route pair that collides on a name when no resolution data is applied |
+| `collision-renames.v1.0.json`, `collision-suppressions.v1.0.json` | `tools/Derive-CollisionResolutions.ps1` | The oracle's answer for each collision: the published name, or nothing shipped |
+| `collision-resolution-ledger.v1.0.csv` | same | Audit trail: one row per resolved route with its evidence |
+| `parity-renames.v1.0.json`, `parity-suppressions.v1.0.json` | `tools/Derive-ParityResolutions.ps1` | Full-surface oracle-derived renames beyond the collision set; a rename carries the published verb as well as the noun |
+| `parity-input-ledger.v1.0.csv`, `parity-resolution-ledger.v1.0.csv` | same | The gate ledger the derivation consumed, and what it resolved |
+
+Both derivation scripts have a `-Validate` mode that fails when the checked-in files drift from
+a fresh derivation; `tools/Update-WrapperParityData.ps1` re-runs the parity derivation end to
+end after a docs or oracle refresh. When the shipped SDK's inventory changes, these files are
+**regenerated, not edited** — a hand edit is indistinguishable from drift and the validate mode
+will flag it.
 
 ## Run the generator on its own
 
@@ -304,7 +329,17 @@ cmdlet with its module, verb, noun and request path — with per-module totals i
 `docs/WrapperCmdlets-V1.0-Summary.csv`. The generated tree is far larger than GitHub renders in
 a diff, so those two files, not the tree, are what a reviewer reads.
 
-**Test** — several layers, each proving something the others cannot:
+**Test** — the front door is the gate runner: it runs every layer below plus the
+operation-inventory diff, reports each with the population it examined, and prints a validation
+block to paste into a PR. A gate that could not run reports NOT-RUN, never PASS, and the overall
+verdict is then INCOMPLETE — distinct from FAILED.
+
+```powershell
+.\tools\Invoke-WrapperGates.ps1                                 # all gates, one verdict
+.\tools\Invoke-WrapperGates.ps1 -InventoryBaseline before.csv   # include the inventory diff
+```
+
+The individual layers, for running one at a time — each proves something the others cannot:
 
 ```powershell
 # 1. Naming and classification rules pinned to published Microsoft.Graph names
@@ -332,10 +367,20 @@ The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each mo
 ## Gaps / not done yet
 
 - **Only v1.0 output is committed.** The beta docs exist (`openApiDocs_KiotaCompat/beta`) but no beta output is generated or checked in yet; the layout already accommodates it at `src/{Module}/wrapper/beta/`.
-- **No runtime base classes or real auth flow.** Shared paging, a proper `Connect-MgGraph`/session integration, and base cmdlet classes are a later phase.
+- **The runtime base exists; the polish around it does not.** `src/GraphWrapperRuntime/` ships `GraphClientCmdlet` with session-keyed request adapters over the shipped Authentication module's session, `-AccessToken` support, paging with a truncation warning and `-All`, delta-link validation against the session's service root, Ctrl+C cancellation, and one `GraphRequestFailed` error shape. Still open: per-cmdlet help and examples, a `SupportsShouldProcess` audit on destructive cmdlets, and an automated Windows PowerShell 5.1 gate leg (the dll targets it; the gates run on PowerShell 7 only).
 - **Body binding covers every shape reaching the classifier** — the omission oracle reports 0 failures across 2,235 body-writing cmdlets (24,003 members seen, 15,838 bound). That is a statement about the operations that generate, not about v1.0: see the coverage figure below. Classifications for shapes that do not occur (inline objects and enums, genuine unions, dictionaries, unresolvable references, unknown formats) are retained so a future corpus change is reported rather than silently mis-bound; [docs/edge-cases/body-binding-edge-cases.md](docs/edge-cases/body-binding-edge-cases.md) records each with its exit criteria.
 - **73.6% of v1.0 operations generate, deliberately.** Of 14,115 operations across the 38 specs (the DirectoryObjects re-slice removes the 16 publicKeyInfrastructure operations it double-declared with Identity.DirectoryManagement): 10,385 become cmdlets, 3,173 are suppressed because the published SDK ships no cmdlet for them (oracle-derived), and 557 are unsupported — 345 call segments on operations the spec does not class as an action or function, 125 routes that call a parameterized function before their final segment, 42 whose content response is neither a stream nor a resolvable entity, 24 with no wrapper emitter for the HTTP method, 13 OData parameter aliases, 6 unresolvable collection schemas, 2 missing request schemas. The three populations sum to 14,115 by construction. The rise from 61.3% is the OData `$`-segments — `$count`, `$ref` and `$value` were 2,304 unsupported operations and now have emitters of their own — plus PUT and the media/content downloads.
-- **Naming parity: every generated cmdlet is now compared.** The generator stamps each emitted class with a `[GraphRoute(method, path)]` attribute carrying the operation's route exactly as the spec declares it, and the gate reads that attribute out of the module's **compiled assembly**. Nothing is excluded: of 11,719 cmdlets, 9,548 match, 403 mismatch, 428 have no oracle row, 6 are documented deliberate corrections, and 1,334 are GET dispatchers verified through their `_List`/`_Get` siblings. Before this the gate reconstructed the route from the generated C#, which cannot work for a parameterized function (the builder member keeps the argument names but not the OData argument syntax) or a namespace-qualified action (kiota keeps the qualifier, the route does not) — so it excluded **1,669 cmdlets** from comparison and reported them as skipped. Those names were never wrong-free; they were unexamined. Renames and suppressions are derived from the oracle by `tools/Derive-ParityResolutions.ps1` — data, not rules — alongside a small curated set in `NamingOverrides.cs` and the comparer's deliberate-corrections table, each entry cited. A derived rename carries the published **verb** as well as the noun, because the SDK chooses an action's verb per operation (`sendMail` ships `Send-`, `checkMemberGroups` ships `Confirm-`, and `applyHold`/`removeHold` share one noun and differ only by verb).
+- **Naming parity: every generated cmdlet is now compared.** The generator stamps each emitted class with a `[GraphRoute(method, path)]` attribute carrying the operation's route exactly as the spec declares it, and the gate reads that attribute out of the module's **compiled assembly**. Nothing is excluded: of 12,355 cmdlet files on the refreshed corpus, 9,537 match, 1,431 are GET dispatchers verified through their `_List`/`_Get` workers, 396 mismatch, 985 have no oracle row (new surface from the late-August docs refresh), and 6 are documented deliberate corrections. Numbers in this file are snapshots; the ledger is the authority — regenerate it any time with `Compare-WrapperCmdletNames.ps1 -GeneratedPath src\<Module>\wrapper\v1.0\Cmdlets -OutLedger <csv>` per module. Before this the gate reconstructed the route from the generated C#, which cannot work for a parameterized function (the builder member keeps the argument names but not the OData argument syntax) or a namespace-qualified action (kiota keeps the qualifier, the route does not) — so it excluded **1,669 cmdlets** from comparison and reported them as skipped. Those names were never wrong-free; they were unexamined. Renames and suppressions are derived from the oracle by `tools/Derive-ParityResolutions.ps1` — data, not rules — alongside a small curated set in `NamingOverrides.cs` and the comparer's deliberate-corrections table, each entry cited. A derived rename carries the published **verb** as well as the noun, because the SDK chooses an action's verb per operation (`sendMail` ships `Send-`, `checkMemberGroups` ships `Confirm-`, and `applyHold`/`removeHold` share one noun and differ only by verb).
+- **The 362 unresolved name mismatches fall into six families**, measured from the ledger on the refreshed corpus. Five resolve as derived-data updates (extend the parity derivation to cover the pattern); none require generator code changes; the last is a decision to make, not a bug to fix.
+
+  | Family | Count | Example (generated vs published) | Resolution path |
+  |---|---|---|---|
+  | Function-with-params | 142 | `…GetAuditActivityTypesWithCategory` vs `…AuditActivityType` — published collapses `GetX…WithY` decorations | derived rename |
+  | Cast-shape | 80 | published drops intermediate segments in cast chains (`…EventFlowConditionApplicationIncludeApplication` vs `…EventFlowIncludeApplication`) | derived rename |
+  | Case-only | 72 | `AsIosLobApp` vs `AsiOSLobApp` | derived rename or casing invariant |
+  | Embedded-Get | 27 | `…SensorGetDeploymentAccessKey` vs `…SensorDeploymentAccessKey` — published strips a `Get` inside function names | derived rename (cousin of family 1) |
+  | Verb remap | 23 | `Invoke-…RecoveryJobCancel` vs `Stop-…RecoveryJob` | derived rename (verb carried) |
+  | Io-defect | 18 | `AsIosStoreApp` vs shipped `AsIoStoreApp` — the **shipped** name is truncated | maintainer decision: adopt for compatibility, or correct like the existing five documented corrections |
 - **Emitted files are not operations.** 11,719 files include 1,334 GET dispatchers that issue no request of their own, leaving 10,385 that correspond to an operation. Any coverage figure derived from file counts, or by subtracting only the unsupported from the total, is wrong in a way that flatters the result. The same trap applies to the file *names*: `BaseName` of `GetMgApplication_List.g.cs` is `GetMgApplication_List.g`, because only the last extension is stripped, so an orphan check written against `BaseName -match '_(List|Get)$'` examines nothing and passes vacuously. Strip `\.g\.cs$` explicitly; the corrected check examines 2,668 workers and finds 0 orphans.
 - **`DeviceManagement.Actions` has no `openApiDocs_KiotaCompat` spec**, so its operations are never read and appear in none of the counts above. It also has no entry in `config/ModulesMapping.jsonc` — the mapping was removed in `659db09e81` ("modules that are causing duplicate cmdlets") — and the published inventory has no `DeviceManagement.Actions` rows for v1.0 at all: those operations ship from four modules that already existed (DeviceManagement, Reports, DeviceManagement.Administration, DeviceManagement.Enrollment), all of which generate them. 38 modules are configured for v1.0, not 39.
 - **OData actions and functions generate**, as a general operation class keyed off `x-ms-docs-operation-type`: bound and unbound, entity/collection/singleton targets, inline request bodies, value-wrapping and no-content responses, and parameterized functions. [docs/edge-cases/action-function-edge-cases.md](docs/edge-cases/action-function-edge-cases.md) records the kiota naming rules each shape depends on and the two shapes still deferred (OData parameter aliases; routes that call a parameterized function part-way along).
