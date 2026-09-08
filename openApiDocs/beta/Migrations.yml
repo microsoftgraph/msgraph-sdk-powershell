@@ -44,9 +44,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -71,9 +71,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -94,9 +94,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/migrations/crossTenantMigrationJobs:
     get:
@@ -151,9 +151,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -185,9 +185,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}':
     get:
@@ -239,9 +239,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -279,9 +279,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -310,9 +310,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/microsoft.graph.cancel':
     post:
@@ -344,9 +344,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/microsoft.graph.migrate':
     post:
@@ -378,9 +378,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/microsoft.graph.validate':
     post:
@@ -412,9 +412,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users':
     get:
@@ -477,9 +477,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -516,9 +516,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}':
     get:
@@ -578,9 +578,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -622,9 +622,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -661,9 +661,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}/microsoft.graph.cancel':
     post:
@@ -703,9 +703,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/$count':
     get:
@@ -731,9 +731,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
   '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')':
     get:
       tags:
@@ -783,9 +783,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -822,9 +822,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -852,9 +852,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/microsoft.graph.cancel':
     post:
@@ -885,9 +885,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/microsoft.graph.migrate':
     post:
@@ -918,9 +918,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/microsoft.graph.validate':
     post:
@@ -951,9 +951,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   /solutions/migrations/crossTenantMigrationJobs/$count:
     get:
@@ -971,9 +971,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2026-07-09'
-        date: '2023-11-15'
-        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+        removalDate: '2025-12-17'
+        date: '2025-06-17'
+        version: 2023-03/PrivatePreview:responderForm
 components:
   schemas:
     microsoft.graph.migrationsRoot:
