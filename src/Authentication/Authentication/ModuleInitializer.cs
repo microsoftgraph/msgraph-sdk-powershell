@@ -13,7 +13,7 @@ using System.Reflection;
 namespace Microsoft.Graph.PowerShell.Authentication
 {
     /// <summary>
-    /// This class is used to load the dependencies of the module into the current AppDomain.
+    /// This class is used to load the dependencies of the module into an isolated assembly load context.
     /// </summary>
     public class ModuleInitializer : IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
@@ -63,27 +63,41 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <inheritDoc/>
         public void OnImport()
         {
-            AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler;
+            if (s_proxy != null)
+            {
+                s_proxy.AddResolvingHandler(LoadContextResolvingHandler);
+
+                // The module entry assemblies are loaded into the default context by PowerShell.
+                // Bridge only their initial dependency requests into the isolated context.
+                AppDomain.CurrentDomain.AssemblyResolve += GraphAssemblyResolvingHandler;
+            }
+            else
+            {
+                AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler;
+            }
         }
 
         /// <inheritDoc/>
         public void OnRemove(PSModuleInfo psModuleInfo)
         {
-            AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler;
+            if (s_proxy != null)
+            {
+                AppDomain.CurrentDomain.AssemblyResolve -= GraphAssemblyResolvingHandler;
+                s_proxy.RemoveResolvingHandler();
+            }
+            else
+            {
+                AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler;
+            }
         }
 
         /// <summary>
-        /// Checks to see if the requested assembly matches the assemblies in our dependencies folder.
-        /// The requesting assembly is always available in .NET, but could be null in .NET Framework.
-        /// - When the requesting assembly is available, we check whether the loading request came from this
-        ///   module (the 'Microsoft.*', Azure.Identity, or Azure.Core assemblies in this case), so as to make sure we only act on the request
-        ///   from this module.
-        /// - When the requesting assembly is not available, we just have to depend on the assembly name only.
+        /// Preserves the legacy .NET Framework matching behavior where custom load contexts are unavailable.
         /// </summary>
         /// <param name="assemblyName"><see cref="AssemblyName"/> being requested.</param>
         /// <param name="requestingAssembly">The requesting <see cref="Assembly"/>.</param>
-        /// <returns>True if assembly is present and matches in dependencies folder; otherwise False.</returns>
-        private static bool IsAssemblyMatching(AssemblyName assemblyName, Assembly requestingAssembly)
+        /// <returns>True if the dependency should be resolved; otherwise False.</returns>
+        private static bool IsLegacyAssemblyMatching(AssemblyName assemblyName, Assembly requestingAssembly)
         {
             return requestingAssembly != null
                 ? (requestingAssembly.FullName.StartsWith("Microsoft")
@@ -132,18 +146,40 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal static Assembly ResolvingHandler(object sender, ResolveEventArgs args)
         {
             var assemblyName = new AssemblyName(args.Name);
-            if (IsAssemblyMatching(assemblyName, args.RequestingAssembly))
+            return IsLegacyAssemblyMatching(assemblyName, args.RequestingAssembly)
+                ? LoadDependency(assemblyName, useLoadContext: false)
+                : null;
+        }
+
+        /// <summary>
+        /// Bridges dependency requests from Graph assemblies loaded by PowerShell into the custom load context.
+        /// </summary>
+        internal static Assembly GraphAssemblyResolvingHandler(object sender, ResolveEventArgs args)
+        {
+            var assemblyName = new AssemblyName(args.Name);
+            return AssemblyResolutionHelpers.IsGraphAssembly(args.RequestingAssembly) && IsAssemblyPresent(assemblyName)
+                ? LoadDependency(assemblyName, useLoadContext: true)
+                : null;
+        }
+
+        /// <summary>
+        /// Resolves transitive dependencies requested from within the custom load context.
+        /// </summary>
+        internal static Assembly LoadContextResolvingHandler(object sender, AssemblyName assemblyName)
+        {
+            return IsAssemblyPresent(assemblyName)
+                ? LoadDependency(assemblyName, useLoadContext: true)
+                : null;
+        }
+
+        private static Assembly LoadDependency(AssemblyName assemblyName, bool useLoadContext)
+        {
+            string filePath = GetRequiredAssemblyPath(assemblyName);
+            if (!string.IsNullOrEmpty(filePath))
             {
-                string filePath = GetRequiredAssemblyPath(assemblyName);
-                if (!string.IsNullOrEmpty(filePath))
-                {
-                    // - In .NET, load the assembly into the custom assembly load context.
-                    // - In .NET Framework, assembly conflict is not a problem, so we load the assembly
-                    //   by 'Assembly.LoadFrom', the same as what powershell.exe would do.
-                    return s_proxy != null
-                        ? s_proxy.LoadFromAssemblyPath(filePath)
-                        : Assembly.LoadFrom(filePath);
-                }
+                return useLoadContext
+                    ? s_proxy.LoadFromAssemblyPath(filePath)
+                    : Assembly.LoadFrom(filePath);
             }
             return null;
         }
@@ -156,17 +192,47 @@ namespace Microsoft.Graph.PowerShell.Authentication
     {
         private readonly object _customContext;
         private readonly MethodInfo _loadFromAssemblyPath;
+        private readonly MethodInfo _loadFromAssemblyName;
+        private readonly EventInfo _resolving;
+        private Delegate _resolvingHandler;
 
         private AssemblyLoadContextProxy(Type alc, string loadContextName)
         {
             var ctor = alc.GetConstructor(new[] { typeof(string), typeof(bool) });
             _loadFromAssemblyPath = alc.GetMethod("LoadFromAssemblyPath", new[] { typeof(string) });
+            _loadFromAssemblyName = alc.GetMethod("LoadFromAssemblyName", new[] { typeof(AssemblyName) });
+            _resolving = alc.GetEvent("Resolving");
             _customContext = ctor.Invoke(new object[] { loadContextName, false });
+        }
+
+        internal void AddResolvingHandler(Func<object, AssemblyName, Assembly> handler)
+        {
+            if (_resolvingHandler != null)
+                return;
+
+            _resolvingHandler = handler.Target == null
+                ? Delegate.CreateDelegate(_resolving.EventHandlerType, handler.Method)
+                : Delegate.CreateDelegate(_resolving.EventHandlerType, handler.Target, handler.Method);
+            _resolving.AddEventHandler(_customContext, _resolvingHandler);
+        }
+
+        internal void RemoveResolvingHandler()
+        {
+            if (_resolvingHandler == null)
+                return;
+
+            _resolving.RemoveEventHandler(_customContext, _resolvingHandler);
+            _resolvingHandler = null;
         }
 
         internal Assembly LoadFromAssemblyPath(string assemblyPath)
         {
             return (Assembly)_loadFromAssemblyPath.Invoke(_customContext, new[] { assemblyPath });
+        }
+
+        internal Assembly LoadFromAssemblyName(AssemblyName assemblyName)
+        {
+            return (Assembly)_loadFromAssemblyName.Invoke(_customContext, new object[] { assemblyName });
         }
 
         internal static AssemblyLoadContextProxy CreateLoadContext(string name)
@@ -180,6 +246,17 @@ namespace Microsoft.Graph.PowerShell.Authentication
             return alc != null
                 ? new AssemblyLoadContextProxy(alc, name)
                 : null;
+        }
+    }
+
+    internal static class AssemblyResolutionHelpers
+    {
+        internal static bool IsGraphAssembly(Assembly requestingAssembly)
+        {
+            string assemblyName = requestingAssembly?.GetName().Name;
+            return assemblyName != null
+                && (assemblyName.Equals("Microsoft.Graph", StringComparison.Ordinal)
+                    || assemblyName.StartsWith("Microsoft.Graph.", StringComparison.Ordinal));
         }
     }
 }
