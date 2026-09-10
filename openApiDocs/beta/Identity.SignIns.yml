@@ -22416,7 +22416,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Invoke action restore
-      description: 'Restore a deleted crossTenantAccessPolicyConfigurationPartner object. '
+      description: Restore a deleted crossTenantAccessPolicyConfigurationPartner object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-restore?view=graph-rest-beta
@@ -23588,7 +23588,7 @@ paths:
       tags:
         - policies.policyDeletableRoot
       summary: Invoke action restore
-      description: 'Restore a deleted crossTenantAccessPolicyConfigurationPartner object. '
+      description: Restore a deleted crossTenantAccessPolicyConfigurationPartner object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-restore?view=graph-rest-beta
@@ -35421,6 +35421,240 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.strongAuthenticationRequirements'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/authentication/resourceAccountKeyAuthenticationMethods':
+    get:
+      tags:
+        - users.authentication
+      summary: List resourceAccountKeyAuthenticationMethods
+      description: Retrieve a list of the resourceAccountKeyAuthenticationMethod objects and their properties for a resource account.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/authentication-list-resourceaccountkeyauthenticationmethods?view=graph-rest-beta
+      operationId: user.authentication_ListResourceAccountKeyAuthenticationMethod
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.resourceAccountKeyAuthenticationMethodCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/resourceAccountKeyAuthenticationMethods/{resourceAccountKeyAuthenticationMethod-id}':
+    get:
+      tags:
+        - users.authentication
+      summary: Get resourceAccountKeyAuthenticationMethod
+      description: Read the properties and relationships of a resourceAccountKeyAuthenticationMethod object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/resourceaccountkeyauthenticationmethod-get?view=graph-rest-beta
+      operationId: user.authentication_GetResourceAccountKeyAuthenticationMethod
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: resourceAccountKeyAuthenticationMethod-id
+          in: path
+          description: The unique identifier of resourceAccountKeyAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceAccountKeyAuthenticationMethod
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.authentication
+      summary: Delete resourceAccountKeyAuthenticationMethod
+      description: Delete a resourceAccountKeyAuthenticationMethod object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/resourceaccountkeyauthenticationmethod-delete?view=graph-rest-beta
+      operationId: user.authentication_DeleteResourceAccountKeyAuthenticationMethod
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: resourceAccountKeyAuthenticationMethod-id
+          in: path
+          description: The unique identifier of resourceAccountKeyAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceAccountKeyAuthenticationMethod
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/resourceAccountKeyAuthenticationMethods/{resourceAccountKeyAuthenticationMethod-id}/device':
+    get:
+      tags:
+        - users.authentication
+      summary: Get device from users
+      description: The registered device on which this resource account key resides. Supports $expand.
+      operationId: user.authentication.resourceAccountKeyAuthenticationMethod_GetDevice
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: resourceAccountKeyAuthenticationMethod-id
+          in: path
+          description: The unique identifier of resourceAccountKeyAuthenticationMethod
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceAccountKeyAuthenticationMethod
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/authentication/resourceAccountKeyAuthenticationMethods/$count':
+    get:
+      tags:
+        - users.authentication
+      summary: Get the number of the resource
+      operationId: user.authentication.resourceAccountKeyAuthenticationMethod_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/authentication/signInPreferences':
     get:
       tags:
@@ -40083,6 +40317,8 @@ components:
               description: DateTime the profile was last modified. Optional.
               format: date-time
               nullable: true
+            mobileDriversLicenseConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.mobileDriversLicenseConfiguration'
             name:
               type: string
               description: Display name for the verified ID profile. Required.
@@ -40093,6 +40329,8 @@ components:
               description: Defines profile processing priority if multiple profiles are configured. Optional.
               format: int32
               nullable: true
+            selfServiceIssuance:
+              $ref: '#/components/schemas/microsoft.graph.verifiedIdSelfServiceIssuance'
             state:
               $ref: '#/components/schemas/microsoft.graph.verifiedIdProfileState'
             verifiedIdProfileConfiguration:
@@ -40664,8 +40902,14 @@ components:
           properties:
             contentMetaData:
               $ref: '#/components/schemas/microsoft.graph.classificationRequestContentMetaData'
+            embeddings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.embeddingInput'
+              description: 'Optional caller-supplied precomputed embeddings for the text, so the service can skip recomputing them. Embeddings for models outside the allow-list are rejected with a 400.'
             fileExtension:
               type: string
+              description: The file extension of the content being classified.
               nullable: true
             matchTolerancesToInclude:
               $ref: '#/components/schemas/microsoft.graph.mlClassificationMatchTolerance'
@@ -40676,8 +40920,10 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The identifiers of the sensitive information types to evaluate against the text.
             text:
               type: string
+              description: The text to classify.
               nullable: true
           additionalProperties:
             type: object
@@ -42549,6 +42795,8 @@ components:
               nullable: true
             groupSyncInbound:
               $ref: '#/components/schemas/microsoft.graph.crossTenantGroupSyncInbound'
+            roleEnabledGroupSyncInbound:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantRoleEnabledGroupSyncInbound'
             tenantId:
               type: string
               description: Tenant identifier for the partner Microsoft Entra organization. Key. Read-only.
@@ -43407,6 +43655,12 @@ components:
               x-ms-navigationProperty: true
             qrCodePinMethod:
               $ref: '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -44008,6 +44262,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.perUserMfaState'
       additionalProperties:
         type: object
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
     microsoft.graph.signInPreferences:
       title: signInPreferences
       type: object
@@ -44729,6 +44997,34 @@ components:
           description: The source claim name for the photo used to validate Face Check. Currently must be portrait.
       additionalProperties:
         type: object
+    microsoft.graph.mobileDriversLicenseConfiguration:
+      title: mobileDriversLicenseConfiguration
+      type: object
+      properties:
+        acceptedRegions:
+          type: array
+          items:
+            type: string
+          description: The ISO 3166-2 region codes accepted for mobile driver's licenses. An empty collection indicates all regions are accepted.
+        documentStandard:
+          type: string
+          description: 'The document standard that accepted mobile driver''s licenses must use, such as ISO18013-5.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.verifiedIdSelfServiceIssuance:
+      title: verifiedIdSelfServiceIssuance
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          description: Indicates whether self-service issuance is enabled.
+        issuanceUrl:
+          type: string
+          description: The HTTPS URL where users can start self-service issuance to obtain the credential when required by the credential type.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.verifiedIdProfileState:
       title: verifiedIdProfileState
       enum:
@@ -44752,6 +45048,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.claimBindingSource'
         claimValidation:
           $ref: '#/components/schemas/microsoft.graph.claimValidation'
+        manifestUrl:
+          type: string
+          description: The URL where the credential issuer's manifest can be found. The manifest defines the credential schema and issuer details. Optional.
+          nullable: true
+        methodType:
+          $ref: '#/components/schemas/microsoft.graph.verifiedIdMethodType'
         type:
           type: string
           description: Verified ID type. Required.
@@ -44785,6 +45087,7 @@ components:
         - unknownFutureValue
         - agentIdentityBlueprintPrincipal
         - user
+        - discoveredAgentIdentity
       type: string
     microsoft.graph.riskDetail:
       title: riskDetail
@@ -44927,7 +45230,20 @@ components:
       properties:
         sourceId:
           type: string
+          description: An identifier for the source of the content being classified.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.embeddingInput:
+      title: embeddingInput
+      type: object
+      properties:
+        data:
+          type: string
+          description: 'The embedding vectors the model produced for the text, encoded as a base64 string of little-endian 32-bit floats. Every vector the model emitted (for example, one per text chunk) is concatenated in order; each contributes exactly the modelType''s embedding dimension worth of float components, so the decoded length must be a whole multiple of that dimension.'
+        modelType:
+          type: string
+          description: 'The embedding model identifier drawn from the service allow-list (for example: text-embedding-3-small-512). Unique (case-insensitive) within the embeddings collection; entries whose modelType is outside the allow-list are rejected with a 400.'
       additionalProperties:
         type: object
     microsoft.graph.mlClassificationMatchTolerance:
@@ -46080,6 +46396,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               x-ms-navigationProperty: true
+            lifecycle:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
             memberOf:
               type: array
               items:
@@ -46596,7 +46914,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
-              description: A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -46743,6 +47061,8 @@ components:
               description: 'The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            provisioningConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningConfiguration'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -47122,21 +47442,25 @@ components:
               type: string
               description: The display name of the distribution list.
               nullable: true
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.member'
-              description: The list of members in the distribution list. Not returned by default; use $select=members to include.
             notes:
               type: string
+              description: Notes about the distribution list.
               nullable: true
             personIdentifier:
               type: string
+              description: The unique identifier of the distribution list in the mailbox. Read-only.
               nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.distributionListMember'
+              description: The members of the distribution list. Not returned by default; use $expand=members to include. Read-only.
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the distribution list. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -47154,6 +47478,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             quota:
               $ref: '#/components/schemas/microsoft.graph.quota'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.driveSettings'
             sharePointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             system:
@@ -50018,6 +50344,14 @@ components:
           description: Defines whether group objects should be synchronized from the partner tenant. false stops any current group synchronization from the source tenant to the target tenant. This property has no impact on existing groups that were synchronized.
       additionalProperties:
         type: object
+    microsoft.graph.crossTenantRoleEnabledGroupSyncInbound:
+      title: crossTenantRoleEnabledGroupSyncInbound
+      type: object
+      properties:
+        isSyncAllowed:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.crossTenantUserSyncInbound:
       title: crossTenantUserSyncInbound
       type: object
@@ -51889,6 +52223,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.resourceAccountKeyAuthenticationMethodCollectionResponse:
+      title: Collection of resourceAccountKeyAuthenticationMethod
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.softwareOathAuthenticationMethodCollectionResponse:
       title: Collection of softwareOathAuthenticationMethod
       type: object
@@ -52332,6 +52679,15 @@ components:
           description: Indicates whether claim validation is enabled.
       additionalProperties:
         type: object
+    microsoft.graph.verifiedIdMethodType:
+      title: verifiedIdMethodType
+      enum:
+        - identityVerificationPartner
+        - tenantCustomCredential
+        - verifiedEmployee
+        - unknownFutureValue
+        - notConfigured
+      type: string
     microsoft.graph.verifiedIdUsageConfigurationPurpose:
       title: verifiedIdUsageConfigurationPurpose
       enum:
@@ -52339,6 +52695,7 @@ components:
         - onboarding
         - all
         - unknownFutureValue
+        - verification
       type: string
     microsoft.graph.geoCoordinates:
       title: geoCoordinates
@@ -53176,6 +53533,26 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          additionalProperties:
+            type: object
     microsoft.graph.remoteDesktopSecurityConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -53698,6 +54075,11 @@ components:
               type: string
               description: 'If the message was sent in a chat, represents the identity of the chat.'
               nullable: true
+            citations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageCitation'
+              description: Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -53718,6 +54100,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            hasReplies:
+              type: boolean
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
             lastEditedDateTime:
@@ -54124,6 +54508,14 @@ components:
         - business
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcProvisioningConfiguration:
+      title: cloudPcProvisioningConfiguration
+      type: object
+      properties:
+        domainJoinType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -54496,30 +54888,26 @@ components:
       additionalProperties:
         type: object
       description: Object containing detailed information about the error and its remediation.
-    microsoft.graph.member:
-      title: member
-      type: object
-      properties:
-        contactId:
-          type: string
-          description: 'The ID of the referenced contact, if applicable. Optional.'
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the member. Optional.
-          nullable: true
-        key:
-          type: string
-          description: The email address or routing key of the member. Required.
-          nullable: true
-        recipientType:
-          $ref: '#/components/schemas/microsoft.graph.recipientType'
-        routingType:
-          type: string
-          description: 'The routing type for the member, for example, SMTP. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.distributionListMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: distributionListMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the member. Read-only.
+              nullable: true
+            memberId:
+              type: string
+              description: 'A system generated unique identifier. Non-empty for contact, privateDL and mailbox members. ReadOnly.'
+              nullable: true
+            type:
+              $ref: '#/components/schemas/microsoft.graph.recipientType'
+            contact:
+              $ref: '#/components/schemas/microsoft.graph.contact'
+          additionalProperties:
+            type: object
     microsoft.graph.baseItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -54593,6 +54981,16 @@ components:
           type: number
           description: 'Total space used, in bytes. Read-only.'
           format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.driveSettings:
+      title: driveSettings
+      type: object
+      properties:
+        itemDefaultSensitivityLabelId:
+          type: string
+          description: The ID of the default sensitivity label for items in the drive. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -59210,6 +59608,12 @@ components:
               x-ms-navigationProperty: true
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+              description: Collection of goals in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
             historyItems:
               type: array
               items:
@@ -59286,6 +59690,11 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            goalIds:
+              type: array
+              items:
+                type: string
+              description: Read-only. The IDs of the goals associated with the task.
             hasChat:
               type: boolean
               description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
@@ -61329,6 +61738,79 @@ components:
           description: Indicates the configured expression. Required.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          type: object
+          properties:
+            description:
+              type: string
+            governingPolicyReferenceId:
+              type: string
+            issueCode:
+              type: string
+            ruleType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            notificationSchedule:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.subjectSet'
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.approvedClientApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -61786,6 +62268,37 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatMessageCitation:
+      title: chatMessageCitation
+      type: object
+      properties:
+        excerpt:
+          type: string
+          description: Read-only. Text snippet from the cited source.
+          nullable: true
+        iconType:
+          type: string
+          description: 'Read-only. Icon type identifier for the cited source, for example, ExcelIcon or WordIcon.'
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Read-only. Citation identifier that''s unique within the message. The message body references this identifier inline, for example, [1].'
+          format: int32
+          nullable: true
+        sensitivityLabel:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageCitationSensitivityLabel'
+        title:
+          type: string
+          description: Read-only. Display title of the cited source.
+          nullable: true
+        webUrl:
+          type: string
+          description: Read-only. URL to the cited source.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -62033,6 +62546,13 @@ components:
         - unknownFutureValue
         - vMware
         - hp
+      type: string
+    microsoft.graph.cloudPcDomainJoinType:
+      title: cloudPcDomainJoinType
+      enum:
+        - azureADJoin
+        - hybridAzureADJoin
+        - unknownFutureValue
       type: string
     microsoft.graph.delegationSettings:
       allOf:
@@ -66484,6 +67004,49 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
+    microsoft.graph.plannerGoal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerGoal
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Required. The display name of the goal.
+            finishDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to finish.
+              format: date
+              nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            planId:
+              type: string
+              description: Required. The ID of the plan that contains the goal.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Optional. The relative priority of the goal. Valid values range from 0 to 10, inclusive. The default value is 5.'
+              format: int32
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to start.
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoalStatus'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerHistoryItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -68688,6 +69251,52 @@ components:
           description: An ordered list of transformations that are applied in sequence.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      type: object
+      properties:
+        additionalRecipients:
+          type: array
+          items:
+            type: string
+        isEnabled:
+          type: boolean
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSecret:
       title: synchronizationSecret
       enum:
@@ -68997,6 +69606,20 @@ components:
         - markdown
         - unknownFutureValue
       type: string
+    microsoft.graph.chatMessageCitationSensitivityLabel:
+      title: chatMessageCitationSensitivityLabel
+      type: object
+      properties:
+        description:
+          type: string
+          description: Read-only. User-facing description of the sensitivity restriction.
+          nullable: true
+        displayName:
+          type: string
+          description: Read-only. Display name of the sensitivity label.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -71201,6 +71824,16 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerGoalStatus:
+      title: plannerGoalStatus
+      enum:
+        - notStarted
+        - onTrack
+        - behind
+        - atRisk
+        - closed
+        - unknownFutureValue
+      type: string
     microsoft.graph.historyEntityType:
       title: historyEntityType
       enum:
@@ -76361,6 +76994,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethodCollectionResponse'
+    microsoft.graph.resourceAccountKeyAuthenticationMethodCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethodCollectionResponse'
     microsoft.graph.softwareOathAuthenticationMethodCollectionResponse:
       description: Retrieved collection
       content:

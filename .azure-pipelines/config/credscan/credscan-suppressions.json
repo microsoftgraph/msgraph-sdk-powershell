@@ -73,6 +73,15 @@
         "tools\\Tests\\loadEnv.md"
       ],
       "_justification": "[ToolsTest] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "src\\Applications\\wrapper\\v1.0\\Client\\Models\\SynchronizationSecret.cs",
+        "src\\Groups\\wrapper\\v1.0\\Client\\Models\\SynchronizationSecret.cs",
+        "src\\Identity.DirectoryManagement\\wrapper\\v1.0\\Client\\Models\\SynchronizationSecret.cs",
+        "src\\Users\\wrapper\\v1.0\\Client\\Models\\SynchronizationSecret.cs"
+      ],
+      "_justification": "[Wrapper] Kiota-generated model for Graph's synchronizationSecret entity enumerates the API's secret-key names (Oauth2ClientSecret and similar) as enum member strings; these are schema vocabulary from the OpenAPI document, not secret values"
     }
   ]
 }
