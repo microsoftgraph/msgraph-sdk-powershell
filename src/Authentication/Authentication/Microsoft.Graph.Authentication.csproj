@@ -25,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Authentication.Core\Microsoft.Graph.Authentication.Core.csproj" />
+    <ProjectReference Include="..\Authentication.Identity\Microsoft.Graph.Authentication.Identity.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

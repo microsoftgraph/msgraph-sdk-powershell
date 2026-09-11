@@ -14,6 +14,7 @@ $copyExtensions = @('.dll', '.pdb')
 
 # Source code locations
 $coreSrc = Join-Path $PSScriptRoot "../$ModuleName.Core"
+$identitySrc = Join-Path $PSScriptRoot "../$ModuleName.Identity"
 $cmdletsSrc = Join-Path $PSScriptRoot "../$ModuleName"
 
 # Generated output locations
@@ -54,6 +55,7 @@ if (-not $Isolated) {
 # Clean build folders.
 Write-Host -ForegroundColor Green 'Cleaning build folders...'
 $null = Remove-Item -Path "$coreSrc/bin", "$coreSrc/obj" -Recurse -ErrorAction Ignore
+$null = Remove-Item -Path "$identitySrc/bin", "$identitySrc/obj" -Recurse -ErrorAction Ignore
 $null = Remove-Item -Path "$cmdletsSrc/bin", "$cmdletsSrc/obj" -Recurse -ErrorAction Ignore
 
 if ((Test-Path "$cmdletsSrc/bin") -or (Test-Path "$cmdletsSrc/obj")) {
@@ -64,6 +66,13 @@ if ((Test-Path "$cmdletsSrc/bin") -or (Test-Path "$cmdletsSrc/obj")) {
 Write-Host -ForegroundColor Green 'Compiling module...'
 # Build authentication.core for each framework.
 Push-Location $coreSrc
+dotnet publish -c $Configuration -f $netStandard --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netApp --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netFx --verbosity quiet /nologo
+Pop-Location
+
+# Build authentication.identity for each framework.
+Push-Location $identitySrc
 dotnet publish -c $Configuration -f $netStandard --verbosity quiet /nologo
 dotnet publish -c $Configuration -f $netApp --verbosity quiet /nologo
 dotnet publish -c $Configuration -f $netFx --verbosity quiet /nologo
@@ -94,16 +103,26 @@ Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psd1" -Destination $outDi
 Copy-Item -Path "$cmdletsSrc/StartupScripts" -Filter *.ps1 -Recurse -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/custom" -Recurse -Destination $outDir
 
-# Copy each authentication.core asset to out directory and remember it.
-$Deps = [System.Collections.Generic.HashSet[string]]::new()
+# Authentication.Core contains the shared session contract used by service modules.
+$CoreAssemblyNames = @('Microsoft.Graph.Authentication.Core.dll', 'Microsoft.Graph.Authentication.Core.pdb')
 Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netStandard/publish/" |
-Where-Object { $_.Extension -in $copyExtensions } |
+Where-Object { $_.Name -in $CoreAssemblyNames } |
+ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir -Recurse }
+
+# Copy each authentication.identity asset to the isolated dependency folders.
+$Deps = [System.Collections.Generic.HashSet[string]]::new()
+[void]$Deps.Add('Microsoft.Graph.Authentication.Core.dll')
+[void]$Deps.Add('Microsoft.Graph.Authentication.Core.pdb')
+Get-ChildItem -Path "$identitySrc/bin/$Configuration/$netStandard/publish/" |
+Where-Object { $_.Extension -in $copyExtensions -and $_.Name -notin $CoreAssemblyNames } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDeps -Recurse }
 
-Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netApp/publish/" |
+Get-ChildItem -Path "$identitySrc/bin/$Configuration/$netApp/publish/" |
+Where-Object { $_.Name -notin $CoreAssemblyNames } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outCore -Recurse }
 
-Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netFx/publish/" |
+Get-ChildItem -Path "$identitySrc/bin/$Configuration/$netFx/publish/" |
+Where-Object { $_.Name -notin $CoreAssemblyNames } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDesktop -Recurse }
 
 # Now copy each authentication asset, not taking any found in authentication.core.

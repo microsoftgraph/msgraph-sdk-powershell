@@ -15,19 +15,8 @@
   <PropertyGroup Condition="'$(SignAssembly)' == 'true'">
     <DefineConstants>$(DefineConstants);SIGNED_BUILD</DefineConstants>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.18.0" />
-    <PackageReference Include="Azure.Identity.Broker" Version="1.4.0" />
-    <!-- Explicitly reference Microsoft.Identity.Client to ensure form_post support -->
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.82.1" />
-    <!-- Explicitly reference the MSAL broker to clear WAM/broker cached accounts on disconnect -->
-    <PackageReference Include="Microsoft.Identity.Client.Broker" Version="4.82.1" />
-    <!-- Explicitly reference MSAL Extensions to clear persisted token cache on disconnect -->
-    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="4.78.0" />
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.3" />
-    <PackageReference Include="Microsoft.Graph.Core" Version="4.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="System.Text.Json" Version="10.0.3" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <Target Name="CopyFiles" AfterTargets="Build">
     <Copy SourceFiles="@(PreLoadAssemblies)" DestinationFolder="$(OutputPath)/publish" />

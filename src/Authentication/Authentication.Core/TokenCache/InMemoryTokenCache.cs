@@ -2,22 +2,23 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Azure.Identity;
+using System;
+using System.Linq;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
 {
     public class InMemoryTokenCache
     {
-        private InMemoryTokenCacheOptions InMemoryTokenCacheOptions { get; set; }
+        private byte[] _tokenCache;
         protected byte[] _tokenCacheDataToFlush;
 
         public InMemoryTokenCache()
         {
-            InMemoryTokenCacheOptions = new InMemoryTokenCacheOptions();
+            _tokenCache = Array.Empty<byte>();
         }
         public InMemoryTokenCache(byte[] tokenCache)
         {
-            InMemoryTokenCacheOptions = new InMemoryTokenCacheOptions(tokenCache);
+            _tokenCache = tokenCache ?? Array.Empty<byte>();
         }
 
         internal void UpdateTokenDataWithoutFlush(byte[] data)
@@ -27,27 +28,21 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
 
         internal byte[] ReadTokenData()
         {
-            return InMemoryTokenCacheOptions.TokenCache.ToArray();
+            return _tokenCache.ToArray();
         }
 
         internal void FlushTokenData()
         {
             if (_tokenCacheDataToFlush != null)
             {
-                InMemoryTokenCacheOptions = new InMemoryTokenCacheOptions(_tokenCacheDataToFlush);
+                _tokenCache = _tokenCacheDataToFlush;
                 _tokenCacheDataToFlush = null;
             }
         }
 
         internal void ClearCache()
         {
-            InMemoryTokenCacheOptions = new InMemoryTokenCacheOptions();
+            _tokenCache = Array.Empty<byte>();
         }
-
-        internal TokenCachePersistenceOptions GetTokenCachePersistenceOptions()
-        {
-            return InMemoryTokenCacheOptions;
-        }
-
     }
 }

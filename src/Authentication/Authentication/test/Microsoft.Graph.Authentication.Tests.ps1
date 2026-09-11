@@ -26,18 +26,20 @@ Describe "Microsoft.Graph.Authentication module" {
             } | Should -Not -Throw
         }
 
-        It 'Should isolate authentication core dependencies on PowerShell Core' -Skip:($PSEdition -ne 'Core') {
+        It 'Should share authentication core and isolate identity dependencies on PowerShell Core' -Skip:($PSEdition -ne 'Core') {
             $authenticationAssembly = [System.AppDomain]::CurrentDomain.GetAssemblies() |
                 Where-Object { $_.GetName().Name -eq 'Microsoft.Graph.Authentication' } |
                 Select-Object -First 1
             $authenticationCoreAssembly = [System.AppDomain]::CurrentDomain.GetAssemblies() |
                 Where-Object { $_.GetName().Name -eq 'Microsoft.Graph.Authentication.Core' } |
                 Select-Object -First 1
+            $authenticationIdentityAssembly = [System.AppDomain]::CurrentDomain.GetAssemblies() |
+                Where-Object { $_.GetName().Name -eq 'Microsoft.Graph.Authentication.Identity' } |
+                Select-Object -First 1
             $isolatedIdentityAssemblies = [System.AppDomain]::CurrentDomain.GetAssemblies() |
                 Where-Object {
                     $_.GetName().Name -in @(
                         'Microsoft.Identity.Client',
-                        'Microsoft.Identity.Client.Broker',
                         'Microsoft.IdentityModel.Abstractions'
                     ) -and
                     [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($_).Name -eq 'msgraph-load-context'
@@ -45,11 +47,14 @@ Describe "Microsoft.Graph.Authentication module" {
 
             $authenticationAssembly | Should -Not -BeNullOrEmpty
             $authenticationCoreAssembly | Should -Not -BeNullOrEmpty
+            $authenticationIdentityAssembly | Should -Not -BeNullOrEmpty
             [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($authenticationAssembly).Name | Should -Be 'Default'
-            [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($authenticationCoreAssembly).Name | Should -Be 'msgraph-load-context'
+            [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($authenticationCoreAssembly).Name | Should -Be 'Default'
+            [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($authenticationIdentityAssembly).Name | Should -Be 'msgraph-load-context'
             $isolatedIdentityAssemblies.GetName().Name | Should -Contain 'Microsoft.Identity.Client'
-            $isolatedIdentityAssemblies.GetName().Name | Should -Contain 'Microsoft.Identity.Client.Broker'
             $isolatedIdentityAssemblies.GetName().Name | Should -Contain 'Microsoft.IdentityModel.Abstractions'
+            [System.AppDomain]::CurrentDomain.GetAssemblies().GetName().Name | Should -Not -Contain 'Microsoft.Identity.Client.Broker'
+            [System.AppDomain]::CurrentDomain.GetAssemblies().GetName().Name | Should -Not -Contain 'Microsoft.Identity.Client.NativeInterop'
         }
 
         It 'Should isolate identity assemblies already loaded in the default context' -Skip:($PSEdition -ne 'Core') {
@@ -93,11 +98,7 @@ Describe "Microsoft.Graph.Authentication module" {
                 $job | Remove-Job -Force -ErrorAction Ignore
             }
 
-            foreach ($assemblyName in @(
-                'Microsoft.Identity.Client',
-                'Microsoft.Identity.Client.Broker',
-                'Microsoft.IdentityModel.Abstractions'
-            )) {
+            foreach ($assemblyName in @('Microsoft.Identity.Client', 'Microsoft.IdentityModel.Abstractions')) {
                 $identityAssemblies |
                     Where-Object { $_.Name -eq $assemblyName } |
                     Select-Object -ExpandProperty Context |
@@ -107,6 +108,11 @@ Describe "Microsoft.Graph.Authentication module" {
                     Select-Object -ExpandProperty Context |
                     Should -Contain 'msgraph-load-context'
             }
+
+            $identityAssemblies |
+                Where-Object { $_.Name -eq 'Microsoft.Identity.Client.Broker' } |
+                Select-Object -ExpandProperty Context |
+                Should -Be 'Default'
         }
 
         It 'Should have a definition' {

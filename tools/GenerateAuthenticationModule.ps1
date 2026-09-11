@@ -44,13 +44,16 @@ if ($null -eq $ModuleMetadata.versions.authentication.version) {
 # Build and pack generated module.
 if ($Build -or $Run) {
   $AuthCoreCSProj = Join-Path $AuthSrcPath "$ModuleName.Core" "$ModuleFullName.Core.csproj"
+  $AuthIdentityCSProj = Join-Path $AuthSrcPath "$ModuleName.Identity" "$ModuleFullName.Identity.csproj"
   $AuthTestCSProj = Join-Path $AuthSrcPath "$ModuleName.Test" "$ModuleFullName.Test.csproj"
   if ($EnableSigning) {
     Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -AssemblyOriginatorKeyFile $ModuleMetadata.assemblyOriginatorKeyFile -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
+    Set-CSProjValues -ModuleCsProj $AuthIdentityCSProj -AssemblyOriginatorKeyFile $ModuleMetadata.assemblyOriginatorKeyFile -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
     Set-CSProjValues -ModuleCsProj $AuthTestCSProj -AssemblyOriginatorKeyFile $ModuleMetadata.assemblyOriginatorKeyFile -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
   }
   else {
     Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
+    Set-CSProjValues -ModuleCsProj $AuthIdentityCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
     Set-CSProjValues -ModuleCsProj $AuthTestCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
   }
   & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -EnableSigning:$EnableSigning -Version $ModuleMetadata.versions.authentication.version -Prerelease $ModuleMetadata.versions.authentication.prerelease -ModuleMetadata $ModuleMetadata.Clone()

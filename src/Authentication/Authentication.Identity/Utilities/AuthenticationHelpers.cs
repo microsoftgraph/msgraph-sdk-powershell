@@ -7,6 +7,7 @@ using Azure.Identity;
 using Azure.Identity.Broker;
 using Microsoft.Graph.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
+using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Identity.Client;
 using Microsoft.Identity.Client.Broker;
 using Microsoft.Identity.Client.Extensions.Msal;
@@ -15,6 +16,7 @@ using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -87,7 +89,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         private static bool ShouldUseWam(IAuthContext authContext)
         {
-            return SharedUtilities.IsWindowsPlatform() && authContext.WamEnabled;
+            return SharedUtilities.IsWindowsPlatform()
+                && authContext.WamEnabled
+                && !IsLoadedInCustomContext();
+        }
+
+        private static bool IsLoadedInCustomContext()
+        {
+            Type loadContextType = typeof(object).Assembly.GetType("System.Runtime.Loader.AssemblyLoadContext");
+            MethodInfo getLoadContext = loadContextType?.GetMethod("GetLoadContext", BindingFlags.Public | BindingFlags.Static);
+            object currentContext = getLoadContext?.Invoke(null, new object[] { typeof(AuthenticationHelpers).Assembly });
+            object defaultContext = loadContextType?.GetProperty("Default", BindingFlags.Public | BindingFlags.Static)?.GetValue(null);
+            return currentContext != null && !ReferenceEquals(currentContext, defaultContext);
         }
 
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
@@ -306,7 +319,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         private static TokenCachePersistenceOptions GetTokenCachePersistenceOptions(IAuthContext authContext)
         {
             return authContext.ContextScope == ContextScope.Process
-                ? GraphSession.Instance.InMemoryTokenCache.GetTokenCachePersistenceOptions()
+                ? new InMemoryTokenCacheOptions(GraphSession.Instance.InMemoryTokenCache)
                 : new TokenCachePersistenceOptions { Name = Constants.CacheName };
         }
 

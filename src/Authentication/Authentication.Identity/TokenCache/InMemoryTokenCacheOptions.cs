@@ -13,11 +13,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
     internal class InMemoryTokenCacheOptions : UnsafeTokenCacheOptions
     {
         private readonly ReaderWriterLockSlim _sessionLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
-        internal ReadOnlyMemory<byte> TokenCache { get; private set; }
-        public InMemoryTokenCacheOptions() : this(ReadOnlyMemory<byte>.Empty) { }
-        public InMemoryTokenCacheOptions(ReadOnlyMemory<byte> token)
+        private readonly InMemoryTokenCache _tokenCache;
+
+        public InMemoryTokenCacheOptions(InMemoryTokenCache tokenCache)
         {
-            TokenCache = token;
+            _tokenCache = tokenCache;
         }
 
         protected override async Task<TokenCacheData> RefreshCacheAsync(TokenCacheRefreshArgs args, CancellationToken cancellationToken = default)
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
             _sessionLock.EnterReadLock();
             try
             {
-                return await Task.FromResult(new TokenCacheData(TokenCache)).ConfigureAwait(false);
+                return await Task.FromResult(new TokenCacheData(_tokenCache.ReadTokenData())).ConfigureAwait(false);
             }
             finally
             {
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
             _sessionLock.EnterReadLock();
             try
             {
-                return await Task.FromResult(TokenCache).ConfigureAwait(false);
+                return await Task.FromResult<ReadOnlyMemory<byte>>(_tokenCache.ReadTokenData()).ConfigureAwait(false);
             }
             finally
             {
@@ -51,7 +51,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
             _sessionLock.EnterWriteLock();
             try
             {
-                TokenCache = tokenCacheUpdatedArgs.UnsafeCacheData;
+                _tokenCache.UpdateTokenDataWithoutFlush(tokenCacheUpdatedArgs.UnsafeCacheData.ToArray());
+                _tokenCache.FlushTokenData();
             }
             finally
             {
@@ -65,10 +66,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
             _sessionLock.EnterReadLock();
             try
             {
-                if (!TokenCache.IsEmpty)
+                byte[] tokenCache = _tokenCache.ReadTokenData();
+                if (tokenCache.Length > 0)
                 {
-                    var bytes = TokenCache.ToArray();
-                    stream.Write(bytes, 0, bytes.Length);
+                    stream.Write(tokenCache, 0, tokenCache.Length);
                 }
             }
             finally
@@ -77,14 +78,5 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
             }
         }
 
-        internal static InMemoryTokenCacheOptions Deserialize(Stream stream)
-        {
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                stream.CopyTo(memoryStream);
-                var token = memoryStream.ToArray();
-                return new InMemoryTokenCacheOptions(token);
-            }
-        }
     }
 }

@@ -131,11 +131,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 dependencies[assemblyName.Name] = assemblyName;
             }
 
-            // Load Authentication.Core last so its complete dependency set is already cached.
+            // Load Authentication.Identity last so its complete dependency set is already cached.
             foreach (AssemblyName assemblyName in dependencies.Values
                 .Where(ShouldPreloadDependency)
                 .OrderBy(
-                dependency => dependency.Name.Equals("Microsoft.Graph.Authentication.Core", StringComparison.OrdinalIgnoreCase)))
+                dependency => dependency.Name.Equals("Microsoft.Graph.Authentication.Identity", StringComparison.OrdinalIgnoreCase)))
             {
                 LoadDependency(assemblyName, useLoadContext: true);
             }
@@ -145,7 +145,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             return !assemblyName.Name.StartsWith("System.", StringComparison.Ordinal)
                 && !assemblyName.Name.StartsWith("Microsoft.Bcl.", StringComparison.Ordinal)
-                && !assemblyName.Name.StartsWith("Microsoft.Win32.", StringComparison.Ordinal);
+                && !assemblyName.Name.StartsWith("Microsoft.Win32.", StringComparison.Ordinal)
+                && !assemblyName.Name.Equals("Azure.Identity.Broker", StringComparison.Ordinal)
+                && !assemblyName.Name.Equals("Microsoft.Identity.Client.Broker", StringComparison.Ordinal)
+                && !assemblyName.Name.Equals("Microsoft.Identity.Client.NativeInterop", StringComparison.Ordinal);
         }
 
         /// <summary>

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
+    <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Identity</RootNamespace>
+    <Version>2.40.0</Version>
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SignAssembly)' == 'true'">
+    <DefineConstants>$(DefineConstants);SIGNED_BUILD</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Authentication.Core\Microsoft.Graph.Authentication.Core.csproj" />
+    <PackageReference Include="Azure.Identity" Version="1.18.0" />
+    <PackageReference Include="Azure.Identity.Broker" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.82.1" />
+    <PackageReference Include="Microsoft.Identity.Client.Broker" Version="4.82.1" />
+    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="4.78.0" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.3" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="4.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Text.Json" Version="10.0.3" />
+  </ItemGroup>
+</Project>

@@ -1,6 +1,8 @@
 
 # Load the module dll
+$CoreAssemblyPath = (Join-Path $PSScriptRoot 'Microsoft.Graph.Authentication.Core.dll')
 $ModulePath = (Join-Path $PSScriptRoot 'Microsoft.Graph.Authentication.dll')
+[void][System.Reflection.Assembly]::LoadFrom($CoreAssemblyPath)
 $ModuleAssembly = [System.Reflection.Assembly]::LoadFrom($ModulePath)
 $ModuleInitializer = $ModuleAssembly.CreateInstance('Microsoft.Graph.PowerShell.Authentication.ModuleInitializer')
 
@@ -14,7 +16,7 @@ catch {
     throw
 }
 finally {
-    Remove-Variable ModuleAssembly, ModuleInitializer -ErrorAction Ignore
+    Remove-Variable CoreAssemblyPath, ModuleAssembly, ModuleInitializer -ErrorAction Ignore
 }
 
 # Export nothing to clear implicit exports.
