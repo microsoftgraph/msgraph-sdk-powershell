@@ -62,7 +62,7 @@ function Import-Examples {
         }else{
             $text = $text.Replace($Extracted, $FinalOutput)
         }
-          $text | Out-File $File -Encoding UTF8
+          [System.IO.File]::WriteAllText($File, $text, [System.Text.UTF8Encoding]::new($false))
      }
      if($DestinationContent -match $Re2){
         $Extracted2 = $Matches[0]
@@ -75,21 +75,10 @@ function Import-Examples {
             Write-Host "Does not have snippet $DescriptionCommand"
             $text2 = $text2.Replace($Description1, $null)
             $text2 = $text2.Replace($Description2, $null)
-            $text2 | Out-File $File -Encoding UTF8
+            [System.IO.File]::WriteAllText($File, $text2, [System.Text.UTF8Encoding]::new($false))
 
         }
      }
-     $Stream = [IO.File]::OpenWrite($File)
-     try
-     {
-         $Stream.SetLength($stream.Length - 2)
-         $Stream.Close()
-     }
-     catch
-     {
-         
-     }
-     $Stream.Dispose()
      $RetainedExamples.Clear()
     }
     

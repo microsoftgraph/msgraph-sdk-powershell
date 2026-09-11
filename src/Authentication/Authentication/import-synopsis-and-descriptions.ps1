@@ -64,18 +64,9 @@ function Import-Content {
             $Extracted = $Matches[0]
             $text = $DestinationContent.ToString()
             $text = $text.Replace($Extracted, $FinalOutput)
+            [System.IO.File]::WriteAllText($File, $text, [System.Text.UTF8Encoding]::new($false))
         }
-        $text | Out-File $File -Encoding UTF8
     }
-    $Stream = [IO.File]::OpenWrite($File)
-    try {
-        $Stream.SetLength($stream.Length - 2)
-        $Stream.Close()
-    }
-    catch {
-         
-    }
-    $Stream.Dispose()
 }
 function UpdateMetaDataHeader {
     Param (
@@ -105,7 +96,7 @@ function UpdateMetaDataHeader {
             $text = $text.Replace($Extracted, $HelpVersion) 
         }
         $text = $text.Replace("{{ Fill in the Description }}", "Microsoft Graph PowerShell Authentication Cmdlets")
-        $text | Out-File $CmdletsList -Encoding UTF8
+        [System.IO.File]::WriteAllText($CmdletsList, $text, [System.Text.UTF8Encoding]::new($false))
     }
 }
 

@@ -87,6 +87,32 @@ New-Item -Path $outDeps -ItemType Directory | out-null
 New-Item -Path $outCore -ItemType Directory | out-null
 New-Item -Path $outDesktop -ItemType Directory | out-null
 
+# Assemble and import the module before PlatyPS inspects its exported commands.
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.format.ps1xml" -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psm1" -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psd1" -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/StartupScripts" -Filter *.ps1 -Recurse -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/custom" -Recurse -Destination $outDir
+
+# Copy each authentication.core asset to out directory and remember it.
+$Deps = [System.Collections.Generic.HashSet[string]]::new()
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netStandard/publish/" |
+Where-Object { $_.Extension -in $copyExtensions } |
+ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDeps -Recurse }
+
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netApp/publish/" |
+ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outCore -Recurse }
+
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netFx/publish/" |
+ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDesktop -Recurse }
+
+# Now copy each authentication asset, not taking any found in authentication.core.
+Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netStandard/publish/" |
+Where-Object { -not $Deps.Contains($_.Name) -and $_.Extension -in $copyExtensions } |
+ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir -Recurse }
+
+Import-Module (Join-Path $outDir "$ModulePrefix.$ModuleName.psd1") -Force -ErrorAction Stop
+
 #Process markdown xml help
 Write-Host -ForegroundColor Green 'Generate doc files ...'
 $GenerateDocFilesS1 = (Join-Path $PSScriptRoot "generate-doc-files.ps1")
@@ -151,33 +177,8 @@ $CommandDescription = "The name of a command. e.g., Get-MgUser."
 
 # Update Find-MgGraphCommand markdown file by replacing place holders with actual value.
 (Get-Content "$DocsPath/Find-MgGraphCommand.md") -replace "{{ Fill ApiVersion Description }}", $ApiVersionDescription -replace "{{ Fill Command Description }", $CommandDescription -replace "{{ Fill InputObject Description }}", "Pipeline input object" -replace "{{ Fill Uri Description }}", $UriDescription -replace "{{ Fill Method Description }}", $MethodDescription -replace "{{ Fill Command Description }}", $CommandDescription -replace "{{ Fill ProgressAction Description }}", "Treat this as a common parameter."| Set-Content "$DocsPath/Find-MgGraphCommand.md"
-# Copy manifest.
-Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.format.ps1xml" -Destination $outDir
-Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psm1" -Destination $outDir
-Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psd1" -Destination $outDir
-Copy-Item -Path "$cmdletsSrc/StartupScripts" -Filter *.ps1 -Recurse -Destination $outDir
-
 #Copy markdown xml help
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.dll-Help.xml" -Recurse -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName-Help.xml" -Recurse -Destination $outDir
-# Copy custom commands.
-Copy-Item -Path "$cmdletsSrc/custom" -Recurse -Destination $outDir
-
-# Copy each authentication.core asset to out directory and remember it.
-$Deps = [System.Collections.Generic.HashSet[string]]::new()
-Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netStandard/publish/" |
-Where-Object { $_.Extension -in $copyExtensions } |
-ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDeps -Recurse }
-
-Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netApp/publish/" |
-ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outCore -Recurse }
-
-Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netFx/publish/" |
-ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDesktop -Recurse }
-
-# Now copy each authentication asset, not taking any found in authentication.core.
-Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netStandard/publish/" |
-Where-Object { -not $Deps.Contains($_.Name) -and $_.Extension -in $copyExtensions } |
-ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir -Recurse }
 
 Write-Host -ForegroundColor Green '-------------Done-------------'
