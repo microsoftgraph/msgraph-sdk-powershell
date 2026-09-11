@@ -27,11 +27,11 @@ steps:
       script: |
         Write-Output $PSVersionTable
 
-  - task: NodeTool@0
+  - task: UseNode@1
     displayName: Install NodeJs
     retryCountOnTaskFailure: 2
     inputs:
-      versionSpec: 18.x
+      version: 22.x
 
   - task: PowerShell@2
     displayName: Configure private npm feed
@@ -93,7 +93,7 @@ steps:
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install --no-package-lock @microsoft/rush
+      customCommand: install --no-package-lock @microsoft/rush@5.170.1
   
   - task: PowerShell@2
     displayName: Rush Build
