@@ -22,6 +22,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
         private static readonly HashSet<string> s_dependencies;
         private static readonly HashSet<string> s_psEditionDependencies;
         private static readonly AssemblyLoadContextProxy s_proxy;
+        private static readonly object s_initializationLock = new object();
+        private static bool s_initialized;
 
         static ModuleInitializer()
         {
@@ -63,32 +65,87 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <inheritDoc/>
         public void OnImport()
         {
-            if (s_proxy != null)
+            lock (s_initializationLock)
             {
-                s_proxy.AddResolvingHandler(LoadContextResolvingHandler);
+                if (s_initialized)
+                    return;
 
-                // The module entry assemblies are loaded into the default context by PowerShell.
-                // Bridge only their initial dependency requests into the isolated context.
-                AppDomain.CurrentDomain.AssemblyResolve += GraphAssemblyResolvingHandler;
-            }
-            else
-            {
-                AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler;
+                if (s_proxy != null)
+                {
+                    s_proxy.AddResolvingHandler(LoadContextResolvingHandler);
+                    PreloadDependencies();
+
+                    // The module entry assembly is loaded into the default context by PowerShell.
+                    // Bridge only its initial dependency requests into the isolated context.
+                    AppDomain.CurrentDomain.AssemblyResolve += GraphAssemblyResolvingHandler;
+                }
+                else
+                {
+                    AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler;
+                }
+
+                s_initialized = true;
             }
         }
 
         /// <inheritDoc/>
         public void OnRemove(PSModuleInfo psModuleInfo)
         {
-            if (s_proxy != null)
+            lock (s_initializationLock)
             {
-                AppDomain.CurrentDomain.AssemblyResolve -= GraphAssemblyResolvingHandler;
-                s_proxy.RemoveResolvingHandler();
+                if (!s_initialized)
+                    return;
+
+                if (s_proxy != null)
+                {
+                    AppDomain.CurrentDomain.AssemblyResolve -= GraphAssemblyResolvingHandler;
+                    s_proxy.RemoveResolvingHandler();
+                }
+                else
+                {
+                    AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler;
+                }
+
+                s_initialized = false;
             }
-            else
+        }
+
+        /// <summary>
+        /// Loads Graph dependencies before the custom context can fall back to a compatible
+        /// assembly that another module has already loaded into the default context.
+        /// </summary>
+        private static void PreloadDependencies()
+        {
+            var dependencies = new Dictionary<string, AssemblyName>(StringComparer.OrdinalIgnoreCase);
+
+            foreach (string dependency in s_dependencies)
             {
-                AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler;
+                var assemblyName = new AssemblyName(dependency);
+                dependencies[assemblyName.Name] = assemblyName;
             }
+
+            // Prefer the current PowerShell edition's dependency when both folders contain one.
+            foreach (string dependency in s_psEditionDependencies)
+            {
+                var assemblyName = new AssemblyName(dependency);
+                dependencies[assemblyName.Name] = assemblyName;
+            }
+
+            // Load Authentication.Core last so its complete dependency set is already cached.
+            foreach (AssemblyName assemblyName in dependencies.Values
+                .Where(ShouldPreloadDependency)
+                .OrderBy(
+                dependency => dependency.Name.Equals("Microsoft.Graph.Authentication.Core", StringComparison.OrdinalIgnoreCase)))
+            {
+                LoadDependency(assemblyName, useLoadContext: true);
+            }
+        }
+
+        private static bool ShouldPreloadDependency(AssemblyName assemblyName)
+        {
+            return !assemblyName.Name.StartsWith("System.", StringComparison.Ordinal)
+                && !assemblyName.Name.StartsWith("Microsoft.Bcl.", StringComparison.Ordinal)
+                && !assemblyName.Name.StartsWith("Microsoft.Win32.", StringComparison.Ordinal);
         }
 
         /// <summary>

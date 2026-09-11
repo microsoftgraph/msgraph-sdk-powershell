@@ -26,6 +26,89 @@ Describe "Microsoft.Graph.Authentication module" {
             } | Should -Not -Throw
         }
 
+        It 'Should isolate authentication core dependencies on PowerShell Core' -Skip:($PSEdition -ne 'Core') {
+            $authenticationAssembly = [System.AppDomain]::CurrentDomain.GetAssemblies() |
+                Where-Object { $_.GetName().Name -eq 'Microsoft.Graph.Authentication' } |
+                Select-Object -First 1
+            $authenticationCoreAssembly = [System.AppDomain]::CurrentDomain.GetAssemblies() |
+                Where-Object { $_.GetName().Name -eq 'Microsoft.Graph.Authentication.Core' } |
+                Select-Object -First 1
+            $isolatedIdentityAssemblies = [System.AppDomain]::CurrentDomain.GetAssemblies() |
+                Where-Object {
+                    $_.GetName().Name -in @(
+                        'Microsoft.Identity.Client',
+                        'Microsoft.Identity.Client.Broker',
+                        'Microsoft.IdentityModel.Abstractions'
+                    ) -and
+                    [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($_).Name -eq 'msgraph-load-context'
+                }
+
+            $authenticationAssembly | Should -Not -BeNullOrEmpty
+            $authenticationCoreAssembly | Should -Not -BeNullOrEmpty
+            [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($authenticationAssembly).Name | Should -Be 'Default'
+            [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($authenticationCoreAssembly).Name | Should -Be 'msgraph-load-context'
+            $isolatedIdentityAssemblies.GetName().Name | Should -Contain 'Microsoft.Identity.Client'
+            $isolatedIdentityAssemblies.GetName().Name | Should -Contain 'Microsoft.Identity.Client.Broker'
+            $isolatedIdentityAssemblies.GetName().Name | Should -Contain 'Microsoft.IdentityModel.Abstractions'
+        }
+
+        It 'Should isolate identity assemblies already loaded in the default context' -Skip:($PSEdition -ne 'Core') {
+            $job = Start-Job -ScriptBlock {
+                param($ModulePath)
+
+                Add-Type -AssemblyName System.Runtime.Loader
+                $moduleRoot = Split-Path $ModulePath
+                $dependencies = Join-Path $moduleRoot 'Dependencies'
+                $coreDependencies = Join-Path $dependencies 'Core'
+
+                [void][System.Runtime.Loader.AssemblyLoadContext]::Default.LoadFromAssemblyPath(
+                    (Join-Path $dependencies 'Microsoft.IdentityModel.Abstractions.dll'))
+                [void][System.Runtime.Loader.AssemblyLoadContext]::Default.LoadFromAssemblyPath(
+                    (Join-Path $coreDependencies 'Microsoft.Identity.Client.dll'))
+                [void][System.Runtime.Loader.AssemblyLoadContext]::Default.LoadFromAssemblyPath(
+                    (Join-Path $dependencies 'Microsoft.Identity.Client.Broker.dll'))
+
+                Import-Module $ModulePath -Force
+
+                [System.AppDomain]::CurrentDomain.GetAssemblies() |
+                    Where-Object {
+                        $_.GetName().Name -in @(
+                            'Microsoft.Identity.Client',
+                            'Microsoft.Identity.Client.Broker',
+                            'Microsoft.IdentityModel.Abstractions'
+                        )
+                    } |
+                    ForEach-Object {
+                        [pscustomobject]@{
+                            Name = $_.GetName().Name
+                            Context = [System.Runtime.Loader.AssemblyLoadContext]::GetLoadContext($_).Name
+                        }
+                    }
+            } -ArgumentList $ModulePath
+
+            try {
+                $identityAssemblies = $job | Wait-Job | Receive-Job
+            }
+            finally {
+                $job | Remove-Job -Force -ErrorAction Ignore
+            }
+
+            foreach ($assemblyName in @(
+                'Microsoft.Identity.Client',
+                'Microsoft.Identity.Client.Broker',
+                'Microsoft.IdentityModel.Abstractions'
+            )) {
+                $identityAssemblies |
+                    Where-Object { $_.Name -eq $assemblyName } |
+                    Select-Object -ExpandProperty Context |
+                    Should -Contain 'Default'
+                $identityAssemblies |
+                    Where-Object { $_.Name -eq $assemblyName } |
+                    Select-Object -ExpandProperty Context |
+                    Should -Contain 'msgraph-load-context'
+            }
+        }
+
         It 'Should have a definition' {
             {
                 $PSModuleInfo.Definition | Should -Not -BeNullOrEmpty

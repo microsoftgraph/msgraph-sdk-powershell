@@ -21,7 +21,6 @@
     <file src="artifacts\Microsoft.Graph.Authentication.psm1" />
     <file src="artifacts\Microsoft.Graph.Authentication.psd1" />
     <file src="artifacts\Microsoft.Graph.Authentication.dll" />
-    <file src="artifacts\Microsoft.Graph.Authentication.Core.dll" />
     <file src="artifacts\Microsoft.Graph.Authentication.dll-Help.xml" />
     <file src="artifacts\Microsoft.Graph.Authentication-help.xml" />
     <file src="artifacts\StartupScripts\" target="StartupScripts" />
@@ -32,6 +31,7 @@
     <file src="artifacts\Dependencies\Azure.Identity.Broker.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Identity.Client.Broker.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Identity.Client.NativeInterop.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Graph.Authentication.Core.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Bcl.AsyncInterfaces.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.IdentityModel.Abstractions.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Buffers.dll" target="Dependencies" />
@@ -55,12 +55,14 @@
     <!-- Core-->
     <file src="artifacts\Dependencies\Core\Azure.Core.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Graph.Core.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Core\Microsoft.Graph.Authentication.Core.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.Extensions.Msal.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Newtonsoft.Json.dll" target="Dependencies\Core" />
     <!-- Desktop -->
     <file src="artifacts\Dependencies\Desktop\Azure.Core.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Microsoft.Graph.Core.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\Microsoft.Graph.Authentication.Core.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.Extensions.Msal.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Newtonsoft.Json.dll" target="Dependencies\Desktop" />

@@ -1,7 +1,21 @@
 
 # Load the module dll
 $ModulePath = (Join-Path $PSScriptRoot 'Microsoft.Graph.Authentication.dll')
-$null = Import-Module -Name $ModulePath
+$ModuleAssembly = [System.Reflection.Assembly]::LoadFrom($ModulePath)
+$ModuleInitializer = $ModuleAssembly.CreateInstance('Microsoft.Graph.PowerShell.Authentication.ModuleInitializer')
+
+try {
+    # Register dependency isolation before PowerShell scans the binary module's cmdlet types.
+    $ModuleInitializer.OnImport()
+    $null = Import-Module -Name $ModulePath -ErrorAction Stop
+}
+catch {
+    $ModuleInitializer.OnRemove($null)
+    throw
+}
+finally {
+    Remove-Variable ModuleAssembly, ModuleInitializer -ErrorAction Ignore
+}
 
 # Export nothing to clear implicit exports.
 Export-ModuleMember
