@@ -18,6 +18,25 @@ require:
 ``` yaml
 directive:
   - remove-path-by-operation: ^tenantRelationship\.managedTenant\.managementTemplateStepVersion\.deployment_changeDeploymentStatus$
+  - where:
+      verb: New
+      subject: ^(Device)$
+      variant: ^Provision$|^ProvisionExpanded$
+    set:
+      verb: Invoke
+      subject: Provision$1
+  - where:
+      verb: Add
+      subject: ^(DirectoryImpactedResourceTag|DirectoryRecommendationImpactedResourceTag)$
+      variant: ^Add1$|^AddExpanded1$|^AddViaIdentity1$|^AddViaIdentityExpanded1$
+    set:
+      subject: Bulk$1
+  - where:
+      verb: Remove
+      subject: ^(DirectoryImpactedResourceTag|DirectoryRecommendationImpactedResourceTag)$
+      variant: ^Remove1$|^RemoveExpanded1$|^RemoveViaIdentity1$|^RemoveViaIdentityExpanded1$
+    set:
+      subject: Bulk$1
 # Remove cmdlets.
   - where:
       verb: Get

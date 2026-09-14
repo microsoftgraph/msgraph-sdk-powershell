@@ -4885,6 +4885,7 @@ paths:
       tags:
         - chats.targetedChatMessage
       summary: Get targetedMessages from chats
+      description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
       operationId: chat_ListTargetedMessage
       parameters:
         - name: chat-id
@@ -4975,6 +4976,7 @@ paths:
       tags:
         - chats.targetedChatMessage
       summary: Get targetedMessages from chats
+      description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
       operationId: chat_GetTargetedMessage
       parameters:
         - name: chat-id
@@ -48093,6 +48095,7 @@ paths:
       tags:
         - users.chat
       summary: Get targetedMessages from users
+      description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
       operationId: user.chat_ListTargetedMessage
       parameters:
         - name: user-id
@@ -48199,6 +48202,7 @@ paths:
       tags:
         - users.chat
       summary: Get targetedMessages from users
+      description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
       operationId: user.chat_GetTargetedMessage
       parameters:
         - name: user-id
@@ -68847,6 +68851,10 @@ paths:
       tags:
         - users.userTeamwork
       summary: Invoke action deleteTargetedMessage
+      description: 'Delete a specific targeted message from a channel context. Teams administrators can use this API to remove targeted messages by providing the message ID, team ID, and channel ID.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/userteamwork-deletetargetedmessage?view=graph-rest-1.0
       operationId: user.teamwork_deleteTargetedMessage
       parameters:
         - name: user-id
@@ -68884,6 +68892,10 @@ paths:
       tags:
         - users.userTeamwork
       summary: Invoke function getAllRetainedTargetedMessages
+      description: Get all retained targeted messages sent to a specific user in group chats and channels.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/userteamwork-getallretainedtargetedmessages?view=graph-rest-1.0
       operationId: user.teamwork_getAllRetainedTargetedMessage
       parameters:
         - name: user-id
@@ -68958,6 +68970,10 @@ paths:
       tags:
         - users.userTeamwork
       summary: Invoke function getAllTargetedMessages
+      description: Get all targeted messages sent to a specific user in group chats and channels.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/userteamwork-getalltargetedmessages?view=graph-rest-1.0
       operationId: user.teamwork_getAllTargetedMessage
       parameters:
         - name: user-id
@@ -69247,6 +69263,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object

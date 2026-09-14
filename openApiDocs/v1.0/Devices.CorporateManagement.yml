@@ -30754,121 +30754,119 @@ paths:
 components:
   schemas:
     microsoft.graph.deviceAppManagement:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: deviceAppManagement
-          type: object
-          properties:
-            isEnabledForMicrosoftStoreForBusiness:
-              type: boolean
-              description: Whether the account is enabled for syncing applications from the Microsoft Store for Business.
-            microsoftStoreForBusinessLanguage:
-              type: string
-              description: 'The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.'
-              nullable: true
-            microsoftStoreForBusinessLastCompletedApplicationSyncTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The last time an application sync from the Microsoft Store for Business was completed.
-              format: date-time
-            microsoftStoreForBusinessLastSuccessfulSyncDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The last time the apps from the Microsoft Store for Business were synced successfully for the account.
-              format: date-time
-            androidManagedAppProtections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
-              description: Android managed app policies.
-              x-ms-navigationProperty: true
-            defaultManagedAppProtections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
-              description: Default managed app policies.
-              x-ms-navigationProperty: true
-            iosManagedAppProtections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
-              description: iOS managed app policies.
-              x-ms-navigationProperty: true
-            managedAppPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-              description: Managed app policies.
-              x-ms-navigationProperty: true
-            managedAppRegistrations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
-              description: The managed app registrations.
-              x-ms-navigationProperty: true
-            managedAppStatuses:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
-              description: The managed app statuses.
-              x-ms-navigationProperty: true
-            managedEBooks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedEBook'
-              description: The Managed eBook.
-              x-ms-navigationProperty: true
-            mdmWindowsInformationProtectionPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
-              description: Windows information protection for apps running on devices which are MDM enrolled.
-              x-ms-navigationProperty: true
-            mobileAppCategories:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
-              description: The mobile app categories.
-              x-ms-navigationProperty: true
-            mobileAppConfigurations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
-              description: The Managed Device Mobile Application Configurations.
-              x-ms-navigationProperty: true
-            mobileAppRelationships:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
-              description: The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
-              x-ms-navigationProperty: true
-            mobileApps:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileApp'
-              description: The mobile apps.
-              x-ms-navigationProperty: true
-            targetedManagedAppConfigurations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
-              description: Targeted managed app configurations.
-              x-ms-navigationProperty: true
-            vppTokens:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.vppToken'
-              description: List of Vpp tokens for this organization.
-              x-ms-navigationProperty: true
-            windowsInformationProtectionPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
-              description: Windows information protection for apps running on devices which are not MDM enrolled.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-          description: Singleton entity that acts as a container for all device app management functionality.
+      title: deviceAppManagement
+      type: object
+      properties:
+        isEnabledForMicrosoftStoreForBusiness:
+          type: boolean
+          description: Whether the account is enabled for syncing applications from the Microsoft Store for Business.
+        microsoftStoreForBusinessLanguage:
+          type: string
+          description: 'The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.'
+          nullable: true
+        microsoftStoreForBusinessLastCompletedApplicationSyncTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The last time an application sync from the Microsoft Store for Business was completed.
+          format: date-time
+        microsoftStoreForBusinessLastSuccessfulSyncDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The last time the apps from the Microsoft Store for Business were synced successfully for the account.
+          format: date-time
+        androidManagedAppProtections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
+          description: Android managed app policies.
+          x-ms-navigationProperty: true
+        defaultManagedAppProtections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
+          description: Default managed app policies.
+          x-ms-navigationProperty: true
+        iosManagedAppProtections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
+          description: iOS managed app policies.
+          x-ms-navigationProperty: true
+        managedAppPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+          description: Managed app policies.
+          x-ms-navigationProperty: true
+        managedAppRegistrations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+          description: The managed app registrations.
+          x-ms-navigationProperty: true
+        managedAppStatuses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
+          description: The managed app statuses.
+          x-ms-navigationProperty: true
+        managedEBooks:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedEBook'
+          description: The Managed eBook.
+          x-ms-navigationProperty: true
+        mdmWindowsInformationProtectionPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
+          description: Windows information protection for apps running on devices which are MDM enrolled.
+          x-ms-navigationProperty: true
+        mobileAppCategories:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
+          description: The mobile app categories.
+          x-ms-navigationProperty: true
+        mobileAppConfigurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
+          description: The Managed Device Mobile Application Configurations.
+          x-ms-navigationProperty: true
+        mobileAppRelationships:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
+          description: The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
+          x-ms-navigationProperty: true
+        mobileApps:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileApp'
+          description: The mobile apps.
+          x-ms-navigationProperty: true
+        targetedManagedAppConfigurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
+          description: Targeted managed app configurations.
+          x-ms-navigationProperty: true
+        vppTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.vppToken'
+          description: List of Vpp tokens for this organization.
+          x-ms-navigationProperty: true
+        windowsInformationProtectionPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
+          description: Windows information protection for apps running on devices which are not MDM enrolled.
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
+      description: Singleton entity that acts as a container for all device app management functionality.
     microsoft.graph.androidManagedAppProtection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.targetedManagedAppProtection'
@@ -33231,15 +33229,6 @@ components:
           additionalProperties:
             type: object
           description: Malware detection entity.
-    microsoft.graph.entity:
-      title: entity
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier for an entity. Read-only.
-      additionalProperties:
-        type: object
     microsoft.graph.targetedManagedAppProtection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.managedAppProtection'
@@ -33258,6 +33247,15 @@ components:
           additionalProperties:
             type: object
           description: Policy used to configure detailed management settings targeted to specific security groups
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
+      additionalProperties:
+        type: object
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
@@ -38234,6 +38232,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object

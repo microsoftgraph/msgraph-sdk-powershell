@@ -27849,6 +27849,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               x-ms-navigationProperty: true
+            lifecycle:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
             memberOf:
               type: array
               items:
@@ -30272,6 +30274,10 @@ components:
           type: boolean
           description: 'If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.'
           nullable: true
+        coopEnforcement:
+          type: boolean
+          description: 'Indicates whether Cross-Origin-Opener-Policy (COOP) headers are enforced on browser-based authentication responses for the application. Set to true to enable enforcement, false to temporarily suppress enforcement, or null to use the service default. For how-to guidance, see Control Cross-Origin-Opener-Policy enforcement.'
+          nullable: true
         removeUnverifiedEmailClaim:
           type: boolean
           description: 'If true, removes the email claim from tokens sent to an application when the email address''s domain can''t be verified.'
@@ -30433,6 +30439,8 @@ components:
           type: boolean
           description: 'Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.'
           nullable: true
+        isDeviceAccessEnabled:
+          type: boolean
         isDnsResolutionEnabled:
           type: boolean
           description: Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.
@@ -31907,6 +31915,26 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          additionalProperties:
+            type: object
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32018,6 +32046,10 @@ components:
         - unknownFutureValue
         - conditionalAccessBlockedSignIn
         - samlSignInFailure
+        - internetAppBlockedByPolicy
+        - privateAppBlockedByConnector
+        - remoteNetworkTunnelConnectivity
+        - remoteNetworkBgpConnectivity
       type: string
     microsoft.graph.healthMonitoring.category:
       title: category
@@ -32057,6 +32089,7 @@ components:
         - unknownFutureValue
         - conditionalAccess
         - saml
+        - gsa
       type: string
     microsoft.graph.healthMonitoring.signals:
       allOf:
@@ -33769,6 +33802,79 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          type: object
+          properties:
+            description:
+              type: string
+            governingPolicyReferenceId:
+              type: string
+            issueCode:
+              type: string
+            ruleType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            notificationSchedule:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.subjectSet'
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovalDetail:
       title: preApprovalDetail
       type: object
@@ -34253,6 +34359,52 @@ components:
           description: An ordered list of transformations that are applied in sequence.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      type: object
+      properties:
+        additionalRecipients:
+          type: array
+          items:
+            type: string
+        isEnabled:
+          type: boolean
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovedPermissions:
       title: preApprovedPermissions
       type: object

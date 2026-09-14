@@ -4969,6 +4969,10 @@ paths:
       tags:
         - communications.call
       summary: Invoke action reportSyntheticMedia
+      description: 'Report synthetic media detections for a participant in a meeting call. This action is intended for certified third-party audio and video synthetic media detection bots admitted to the meeting call. The detection bot calls this action to flag a participant whose stream it identifies as AI-generated or synthetic media. The detection result is propagated to all participants via roster updates. After a successful request, the service stores the detection on the participant as a syntheticMediaDetectionInfo object in the participant''s syntheticMediaDetection property and delivers it to all participants in a roster update notification. Each request with a new id creates a separate detection record; the service doesn''t deduplicate or merge reports. When a participant has multiple detection records, the syntheticMediaDetection property reflects the most recent report. Third-party bots can invoke this action only when the meeting tenant administrator grants the app the Calls.ReportSyntheticMedia.All application permission. The detection bot must be admitted to the call before it can call this action. For more information about registering a calling bot and joining calls, see Calls and online meetings. The bot obtains the call ID and participant ID from the call roster and subsequent participant roster update notifications, and uses the call''s id as {call-id} and the participant''s id as {participant-id} in the request URL.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/participant-reportsyntheticmedia?view=graph-rest-beta
       operationId: communication.call.participant_reportSyntheticMedium
       parameters:
         - name: call-id
@@ -18775,46 +18779,53 @@ components:
       title: mediaMetadata
       type: object
       properties:
-        modality:
-          $ref: '#/components/schemas/microsoft.graph.contentModality'
-        isRealTime:
-          type: boolean
-        mimeType:
-          type: string
+        audioMetadata:
+          $ref: '#/components/schemas/microsoft.graph.audioMetadata'
         byteSize:
           type: number
+          description: 'Size of the content in bytes. Set this value to 0 for live streams where the total size is unknown; for recorded files, specify the actual size.'
           format: int64
         duration:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'Duration of the analyzed content in whole seconds. Sub-second or millisecond windows are rounded to the nearest second. For a continuous live stream, set this value to the length of the analysis window.'
           format: int32
-        videoMetadata:
-          $ref: '#/components/schemas/microsoft.graph.videoMetadata'
-        audioMetadata:
-          $ref: '#/components/schemas/microsoft.graph.audioMetadata'
+        isRealTime:
+          type: boolean
+          description: Indicates whether the analysis was performed in real time on a live stream.
+        mimeType:
+          type: string
+          description: 'MIME type of the analyzed content. Common values for Teams media include audio/pcm, video/mp4, and video/h264.'
+        modality:
+          $ref: '#/components/schemas/microsoft.graph.contentModality'
         streamingMetadata:
           $ref: '#/components/schemas/microsoft.graph.streamingMetadata'
+        videoMetadata:
+          $ref: '#/components/schemas/microsoft.graph.videoMetadata'
       additionalProperties:
         type: object
     microsoft.graph.syntheticMediaDetectionDetail:
       title: syntheticMediaDetectionDetail
       type: object
       properties:
-        modelName:
-          type: string
+        confidence:
+          type: number
+          description: 'Confidence score for this specific detection, expressed as a value between 0.0 and 1.0.'
+          format: double
+          nullable: true
         modality:
           $ref: '#/components/schemas/microsoft.graph.contentModality'
+        modelName:
+          type: string
+          description: 'Name of the detection model used (for example, DeepfakeDetector-v2, VoiceAuthenticator-v1).'
         modelTasks:
           type: array
           items:
             type: string
+          description: 'Detection tasks that the model performed. This value is free-form text. The bot can specify any task names that describe its analysis. Common examples include faceSwap, lipSync, and voiceClone.'
         segment:
           $ref: '#/components/schemas/microsoft.graph.mediaSegment'
-        confidence:
-          type: number
-          format: double
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.startHoldMusicOperation:
@@ -19842,15 +19853,43 @@ components:
         detectionId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
+          description: Unique identifier for the detection event. This property correlates with the id parameter that the detection bot passed to reportSyntheticMedia.
           format: uuid
-        syntheticConfidence:
-          type: number
-          format: double
-          nullable: true
         detectorBot:
           type: string
+          description: Identifier of the detection bot that produced this result.
         isParticipantTrusted:
           type: boolean
+          description: 'Set to true if the participant is classified as trusted or reliable (for example, a known internal user); otherwise, false.'
+        syntheticConfidence:
+          type: number
+          description: Confidence score (0.0 to 1.0) that the participant's media is synthetic.
+          format: double
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.audioMetadata:
+      title: audioMetadata
+      type: object
+      properties:
+        bitDepth:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Bit depth of the audio samples (for example, 16, 24).'
+          format: int32
+        channels:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Number of audio channels (for example, 1 for mono, 2 for stereo).'
+          format: int32
+        sampleRateHz:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Sample rate in Hertz (for example, 16000, 48000).'
+          format: int32
       additionalProperties:
         type: object
     microsoft.graph.contentModality:
@@ -19863,77 +19902,58 @@ components:
         - multimodal
         - unknownFutureValue
       type: string
-    microsoft.graph.videoMetadata:
-      title: videoMetadata
-      type: object
-      properties:
-        codec:
-          type: string
-        frameRate:
-          type: number
-          format: double
-          nullable: true
-        bitrateKbps:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: number
-          format: int32
-      additionalProperties:
-        type: object
-    microsoft.graph.audioMetadata:
-      title: audioMetadata
-      type: object
-      properties:
-        sampleRateHz:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: number
-          format: int32
-        bitDepth:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: number
-          format: int32
-        channels:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: number
-          format: int32
-      additionalProperties:
-        type: object
     microsoft.graph.streamingMetadata:
       title: streamingMetadata
       type: object
       properties:
+        frameDropRate:
+          type: number
+          description: 'Percentage of frames dropped during streaming, expressed as a value between 0.0 and 1.0.'
+          format: double
+          nullable: true
         latencyMs:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: Network latency in milliseconds.
           format: int32
-        frameDropRate:
-          type: number
-          format: double
-          nullable: true
         networkJitterMs:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: Network jitter in milliseconds.
           format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.videoMetadata:
+      title: videoMetadata
+      type: object
+      properties:
+        bitrateKbps:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Video bitrate in kilobits per second.
+          format: int32
+        codec:
+          type: string
+          description: 'The video codec used (for example, H.264 or VP9).'
+        frameRate:
+          type: number
+          description: Frame rate in frames per second.
+          format: double
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.mediaSegment:
       title: mediaSegment
       type: object
       properties:
-        startTimeSec:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: number
-          format: int32
         endTimeSec:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'End time of the segment, in seconds from the start of the analyzed live stream. Set to 0 for recorded or offline analysis, where a stream-relative time base doesn''t apply.'
           format: int32
         frameIndices:
           type: array
@@ -19942,6 +19962,13 @@ components:
             minimum: -2147483648
             type: number
             format: int32
+          description: Frame indices that identify the video frames in the segment. Applies only to video analysis; pass an empty array for audio-only segments.
+        startTimeSec:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Start time of the segment, in seconds from the start of the analyzed live stream. Set to 0 for recorded or offline analysis, where a stream-relative time base doesn''t apply.'
+          format: int32
       additionalProperties:
         type: object
     microsoft.graph.teleconferenceDeviceMediaQuality:

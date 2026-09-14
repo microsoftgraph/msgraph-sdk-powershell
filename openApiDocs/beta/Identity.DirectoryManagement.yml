@@ -11373,6 +11373,34 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /devices/microsoft.graph.provision:
+    post:
+      tags:
+        - devices.device.Actions
+      summary: Invoke action provision
+      operationId: device_provision
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                provisioningBlob:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.provisionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /devices/microsoft.graph.validateProperties:
     post:
       tags:
@@ -17961,6 +17989,93 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directory/impactedResources/{impactedResource-id}/microsoft.graph.acceptRisk':
+    post:
+      tags:
+        - directory.impactedResource
+      summary: Invoke action acceptRisk
+      operationId: directory.impactedResource_acceptRisk
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/impactedResources/{impactedResource-id}/microsoft.graph.addTag':
+    post:
+      tags:
+        - directory.impactedResource
+      summary: Invoke action addTag
+      operationId: directory.impactedResource_addTag
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/impactedResources/{impactedResource-id}/microsoft.graph.applyAlternateMitigation':
+    post:
+      tags:
+        - directory.impactedResource
+      summary: Invoke action applyAlternateMitigation
+      operationId: directory.impactedResource_applyAlternateMitigation
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/directory/impactedResources/{impactedResource-id}/microsoft.graph.complete':
     post:
       tags:
@@ -18022,6 +18137,31 @@ paths:
               additionalProperties:
                 type: object
         required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/impactedResources/{impactedResource-id}/microsoft.graph.markPlanned':
+    post:
+      tags:
+        - directory.impactedResource
+      summary: Invoke action markPlanned
+      operationId: directory.impactedResource_markPlanned
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
       responses:
         2XX:
           description: Success
@@ -18104,6 +18244,281 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/directory/impactedResources/{impactedResource-id}/microsoft.graph.removeTag':
+    post:
+      tags:
+        - directory.impactedResource
+      summary: Invoke action removeTag
+      operationId: directory.impactedResource_removeTag
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tagId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/impactedResources/{impactedResource-id}/tags':
+    get:
+      tags:
+        - directory.impactedResource
+      summary: Get tags from directory
+      operationId: directory.impactedResource_ListTag
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.recommendationTagCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.impactedResource
+      summary: Create new navigation property to tags for directory
+      operationId: directory.impactedResource_CreateTag
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/impactedResources/{impactedResource-id}/tags/{recommendationTag-id}':
+    get:
+      tags:
+        - directory.impactedResource
+      summary: Get tags from directory
+      operationId: directory.impactedResource_GetTag
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - name: recommendationTag-id
+          in: path
+          description: The unique identifier of recommendationTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationTag
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.impactedResource
+      summary: Update the navigation property tags in directory
+      operationId: directory.impactedResource_UpdateTag
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - name: recommendationTag-id
+          in: path
+          description: The unique identifier of recommendationTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationTag
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.impactedResource
+      summary: Delete navigation property tags for directory
+      operationId: directory.impactedResource_DeleteTag
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - name: recommendationTag-id
+          in: path
+          description: The unique identifier of recommendationTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationTag
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/impactedResources/{impactedResource-id}/tags/$count':
+    get:
+      tags:
+        - directory.impactedResource
+      summary: Get the number of the resource
+      operationId: directory.impactedResource.tag_GetCount
+      parameters:
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/impactedResources/$count:
     get:
       tags:
@@ -18118,6 +18533,98 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /directory/impactedResources/microsoft.graph.addTag:
+    post:
+      tags:
+        - directory.impactedResource
+      summary: Invoke action addTag
+      operationId: directory.impactedResource_addTag
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                resourceIds:
+                  type: array
+                  items:
+                    type: string
+                displayName:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of impactedResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.impactedResource'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /directory/impactedResources/microsoft.graph.removeTag:
+    post:
+      tags:
+        - directory.impactedResource
+      summary: Invoke action removeTag
+      operationId: directory.impactedResource_removeTag
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                resourceIds:
+                  type: array
+                  items:
+                    type: string
+                displayName:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of impactedResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.impactedResource'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /directory/inboundSharedUserProfiles:
     get:
       tags:
@@ -20334,6 +20841,117 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directory/recommendations/{recommendation-id}/impactedResources/{impactedResource-id}/microsoft.graph.acceptRisk':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action acceptRisk
+      operationId: directory.recommendation.impactedResource_acceptRisk
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/impactedResources/{impactedResource-id}/microsoft.graph.addTag':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action addTag
+      operationId: directory.recommendation.impactedResource_addTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/impactedResources/{impactedResource-id}/microsoft.graph.applyAlternateMitigation':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action applyAlternateMitigation
+      operationId: directory.recommendation.impactedResource_applyAlternateMitigation
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/directory/recommendations/{recommendation-id}/impactedResources/{impactedResource-id}/microsoft.graph.complete':
     post:
       tags:
@@ -20411,6 +21029,39 @@ paths:
               additionalProperties:
                 type: object
         required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/impactedResources/{impactedResource-id}/microsoft.graph.markPlanned':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action markPlanned
+      operationId: directory.recommendation.impactedResource_markPlanned
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
       responses:
         2XX:
           description: Success
@@ -20509,6 +21160,337 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/impactedResources/{impactedResource-id}/microsoft.graph.removeTag':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action removeTag
+      operationId: directory.recommendation.impactedResource_removeTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tagId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.impactedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/impactedResources/{impactedResource-id}/tags':
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get tags from directory
+      operationId: directory.recommendation.impactedResource_ListTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.recommendationTagCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.recommendation
+      summary: Create new navigation property to tags for directory
+      operationId: directory.recommendation.impactedResource_CreateTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/recommendations/{recommendation-id}/impactedResources/{impactedResource-id}/tags/{recommendationTag-id}':
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get tags from directory
+      operationId: directory.recommendation.impactedResource_GetTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - name: recommendationTag-id
+          in: path
+          description: The unique identifier of recommendationTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationTag
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.recommendation
+      summary: Update the navigation property tags in directory
+      operationId: directory.recommendation.impactedResource_UpdateTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - name: recommendationTag-id
+          in: path
+          description: The unique identifier of recommendationTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationTag
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.recommendation
+      summary: Delete navigation property tags for directory
+      operationId: directory.recommendation.impactedResource_DeleteTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - name: recommendationTag-id
+          in: path
+          description: The unique identifier of recommendationTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationTag
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/recommendations/{recommendation-id}/impactedResources/{impactedResource-id}/tags/$count':
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get the number of the resource
+      operationId: directory.recommendation.impactedResource.tag_GetCount
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: impactedResource-id
+          in: path
+          description: The unique identifier of impactedResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: impactedResource
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/directory/recommendations/{recommendation-id}/impactedResources/$count':
     get:
       tags:
@@ -20531,6 +21513,203 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/directory/recommendations/{recommendation-id}/impactedResources/microsoft.graph.addTag':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action addTag
+      operationId: directory.recommendation.impactedResource_addTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                resourceIds:
+                  type: array
+                  items:
+                    type: string
+                displayName:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of impactedResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.impactedResource'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/directory/recommendations/{recommendation-id}/impactedResources/microsoft.graph.removeTag':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action removeTag
+      operationId: directory.recommendation.impactedResource_removeTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                resourceIds:
+                  type: array
+                  items:
+                    type: string
+                displayName:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of impactedResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.impactedResource'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/directory/recommendations/{recommendation-id}/microsoft.graph.acceptRisk':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action acceptRisk
+      operationId: directory.recommendation_acceptRisk
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/microsoft.graph.addTag':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action addTag
+      operationId: directory.recommendation_addTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/microsoft.graph.applyAlternateMitigation':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action applyAlternateMitigation
+      operationId: directory.recommendation_applyAlternateMitigation
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/directory/recommendations/{recommendation-id}/microsoft.graph.complete':
     post:
       tags:
@@ -20592,6 +21771,31 @@ paths:
               additionalProperties:
                 type: object
         required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/microsoft.graph.markPlanned':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action markPlanned
+      operationId: directory.recommendation_markPlanned
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
       responses:
         2XX:
           description: Success
@@ -20674,6 +21878,281 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/microsoft.graph.removeTag':
+    post:
+      tags:
+        - directory.recommendation
+      summary: Invoke action removeTag
+      operationId: directory.recommendation_removeTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tagId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/tags':
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get tags from directory
+      operationId: directory.recommendation_ListTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.recommendationTagCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.recommendation
+      summary: Create new navigation property to tags for directory
+      operationId: directory.recommendation_CreateTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/recommendations/{recommendation-id}/tags/{recommendationTag-id}':
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get tags from directory
+      operationId: directory.recommendation_GetTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationTag-id
+          in: path
+          description: The unique identifier of recommendationTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationTag
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.recommendation
+      summary: Update the navigation property tags in directory
+      operationId: directory.recommendation_UpdateTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationTag-id
+          in: path
+          description: The unique identifier of recommendationTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationTag
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.recommendation
+      summary: Delete navigation property tags for directory
+      operationId: directory.recommendation_DeleteTag
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationTag-id
+          in: path
+          description: The unique identifier of recommendationTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationTag
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/recommendations/{recommendation-id}/tags/$count':
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get the number of the resource
+      operationId: directory.recommendation.tag_GetCount
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: The unique identifier of recommendation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directory/recommendations/$count:
     get:
       tags:
@@ -22980,7 +24459,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernance'
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22994,7 +24473,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernance'
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernance'
         required: true
       responses:
         2XX:
@@ -23002,7 +24481,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernance'
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23072,7 +24551,7 @@ paths:
               type: string
       responses:
         2XX:
-          $ref: '#/components/responses/microsoft.graph.tenantGovernanceServices.governanceInvitationCollectionResponse'
+          $ref: '#/components/responses/microsoft.graph.governanceInvitationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -23093,7 +24572,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
+              $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
         required: true
       responses:
         2XX:
@@ -23101,7 +24580,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
+                $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23150,7 +24629,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
+                $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23173,7 +24652,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
+              $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
         required: true
       responses:
         2XX:
@@ -23181,7 +24660,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
+                $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23277,7 +24756,7 @@ paths:
               type: string
       responses:
         2XX:
-          $ref: '#/components/responses/microsoft.graph.tenantGovernanceServices.governancePolicyTemplateCollectionResponse'
+          $ref: '#/components/responses/microsoft.graph.tenantGovernancePolicyTemplateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -23298,7 +24777,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
         required: true
       responses:
         2XX:
@@ -23306,11 +24785,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/directory/tenantGovernance/governancePolicyTemplates/{governancePolicyTemplate-id}':
+  '/directory/tenantGovernance/governancePolicyTemplates/{tenantGovernancePolicyTemplate-id}':
     get:
       tags:
         - directory.tenantGovernance
@@ -23321,14 +24800,14 @@ paths:
         url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-get?view=graph-rest-beta
       operationId: directory.tenantGovernance_GetGovernancePolicyTemplate
       parameters:
-        - name: governancePolicyTemplate-id
+        - name: tenantGovernancePolicyTemplate-id
           in: path
-          description: The unique identifier of governancePolicyTemplate
+          description: The unique identifier of tenantGovernancePolicyTemplate
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: governancePolicyTemplate
+          x-ms-docs-key-type: tenantGovernancePolicyTemplate
         - name: $select
           in: query
           description: Select properties to be returned
@@ -23355,7 +24834,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23369,20 +24848,20 @@ paths:
         url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-update?view=graph-rest-beta
       operationId: directory.tenantGovernance_UpdateGovernancePolicyTemplate
       parameters:
-        - name: governancePolicyTemplate-id
+        - name: tenantGovernancePolicyTemplate-id
           in: path
-          description: The unique identifier of governancePolicyTemplate
+          description: The unique identifier of tenantGovernancePolicyTemplate
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: governancePolicyTemplate
+          x-ms-docs-key-type: tenantGovernancePolicyTemplate
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
         required: true
       responses:
         2XX:
@@ -23390,7 +24869,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23404,14 +24883,14 @@ paths:
         url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-delete-governancepolicytemplates?view=graph-rest-beta
       operationId: directory.tenantGovernance_DeleteGovernancePolicyTemplate
       parameters:
-        - name: governancePolicyTemplate-id
+        - name: tenantGovernancePolicyTemplate-id
           in: path
-          description: The unique identifier of governancePolicyTemplate
+          description: The unique identifier of tenantGovernancePolicyTemplate
           required: true
           style: simple
           schema:
             type: string
-          x-ms-docs-key-type: governancePolicyTemplate
+          x-ms-docs-key-type: tenantGovernancePolicyTemplate
         - name: If-Match
           in: header
           description: ETag
@@ -23486,7 +24965,7 @@ paths:
               type: string
       responses:
         2XX:
-          $ref: '#/components/responses/microsoft.graph.tenantGovernanceServices.governanceRelationshipCollectionResponse'
+          $ref: '#/components/responses/microsoft.graph.governanceRelationshipCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -23503,7 +24982,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
+              $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
         required: true
       responses:
         2XX:
@@ -23511,7 +24990,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
+                $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23560,7 +25039,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
+                $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23587,7 +25066,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
+              $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
         required: true
       responses:
         2XX:
@@ -23595,7 +25074,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
+                $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23687,7 +25166,7 @@ paths:
               type: string
       responses:
         2XX:
-          $ref: '#/components/responses/microsoft.graph.tenantGovernanceServices.governanceRequestCollectionResponse'
+          $ref: '#/components/responses/microsoft.graph.governanceRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -23708,7 +25187,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
+              $ref: '#/components/schemas/microsoft.graph.governanceRequest'
         required: true
       responses:
         2XX:
@@ -23716,7 +25195,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
+                $ref: '#/components/schemas/microsoft.graph.governanceRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23765,7 +25244,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
+                $ref: '#/components/schemas/microsoft.graph.governanceRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23792,7 +25271,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
+              $ref: '#/components/schemas/microsoft.graph.governanceRequest'
         required: true
       responses:
         2XX:
@@ -23800,7 +25279,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
+                $ref: '#/components/schemas/microsoft.graph.governanceRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23835,7 +25314,6 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get governancePolicyTemplate from directory
-      description: The governance policy template associated with this request.
       operationId: directory.tenantGovernance.governanceRequest_GetGovernancePolicyTemplate
       parameters:
         - name: governanceRequest-id
@@ -23872,7 +25350,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23938,7 +25416,7 @@ paths:
               type: string
       responses:
         2XX:
-          $ref: '#/components/responses/microsoft.graph.tenantGovernanceServices.relatedTenantCollectionResponse'
+          $ref: '#/components/responses/microsoft.graph.relatedTenantCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -23955,7 +25433,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
+              $ref: '#/components/schemas/microsoft.graph.relatedTenant'
         required: true
       responses:
         2XX:
@@ -23963,7 +25441,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
+                $ref: '#/components/schemas/microsoft.graph.relatedTenant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24012,7 +25490,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
+                $ref: '#/components/schemas/microsoft.graph.relatedTenant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24035,7 +25513,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
+              $ref: '#/components/schemas/microsoft.graph.relatedTenant'
         required: true
       responses:
         2XX:
@@ -24043,7 +25521,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
+                $ref: '#/components/schemas/microsoft.graph.relatedTenant'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24078,7 +25556,6 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get appB2BSignInActivityMetrics from directory
-      description: B2B sign-in activity metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetAppB2BSignInActivityMetric
       parameters:
         - name: relatedTenant-id
@@ -24115,7 +25592,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics'
+                $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24124,7 +25601,6 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get b2BRegistrationMetrics from directory
-      description: B2B registration metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetB2BRegistrationMetric
       parameters:
         - name: relatedTenant-id
@@ -24161,7 +25637,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics'
+                $ref: '#/components/schemas/microsoft.graph.b2bRegistrationMetrics'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24170,7 +25646,6 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get b2BSignInActivityMetrics from directory
-      description: B2B sign-in activity metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetB2BSignInActivityMetric
       parameters:
         - name: relatedTenant-id
@@ -24207,7 +25682,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics'
+                $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24216,7 +25691,6 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get billingMetrics from directory
-      description: Billing metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetBillingMetric
       parameters:
         - name: relatedTenant-id
@@ -24253,7 +25727,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetrics'
+                $ref: '#/components/schemas/microsoft.graph.billingMetrics'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24262,7 +25736,6 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get multiTenantApplicationMetrics from directory
-      description: Multi-tenant application usage metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetMultiTenantApplicationMetric
       parameters:
         - name: relatedTenant-id
@@ -24299,7 +25772,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics'
+                $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetrics'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24317,7 +25790,7 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /directory/tenantGovernance/relatedTenants/microsoft.graph.tenantGovernanceServices.refresh:
+  /directory/tenantGovernance/relatedTenants/microsoft.graph.refresh:
     post:
       tags:
         - directory.tenantGovernance
@@ -24333,7 +25806,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /directory/tenantGovernance/relatedTenants/microsoft.graph.tenantGovernanceServices.refreshStatus():
+  /directory/tenantGovernance/relatedTenants/microsoft.graph.refreshStatus():
     get:
       tags:
         - directory.tenantGovernance
@@ -24349,7 +25822,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshStatus'
+                $ref: '#/components/schemas/microsoft.graph.relatedTenantsRefreshStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -24390,7 +25863,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting'
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24408,7 +25881,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting'
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
         required: true
       responses:
         2XX:
@@ -24416,7 +25889,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting'
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24438,7 +25911,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /directory/tenantGovernance/settings/microsoft.graph.tenantGovernanceServices.enableRelatedTenants:
+  /directory/tenantGovernance/settings/microsoft.graph.enableRelatedTenants:
     post:
       tags:
         - directory.tenantGovernance
@@ -36823,6 +38296,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               x-ms-navigationProperty: true
+            lifecycle:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
             memberOf:
               type: array
               items:
@@ -37830,6 +39305,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.usageRightState'
           additionalProperties:
             type: object
+    microsoft.graph.provisionResponse:
+      title: provisionResponse
+      type: object
+      properties:
+        challenge:
+          type: string
+        deviceId:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.directory:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -37947,7 +39432,7 @@ components:
             templates:
               $ref: '#/components/schemas/microsoft.graph.template'
             tenantGovernance:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernance'
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernance'
           additionalProperties:
             type: object
     microsoft.graph.attributeSet:
@@ -38323,6 +39808,21 @@ components:
             subjectId:
               type: string
               description: 'The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.'
+            tags:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.recommendationTag:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: recommendationTag
+          type: object
+          properties:
+            displayName:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.inboundSharedUserProfile:
@@ -38491,6 +39991,12 @@ components:
             isNotificationEnabled:
               type: boolean
               description: Indicates whether notifications for recommendations are enabled.
+            lastRefreshedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.recommendation:
@@ -38800,7 +40306,7 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.tenantGovernance:
+    microsoft.graph.tenantGovernance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: tenantGovernance
@@ -38809,38 +40315,33 @@ components:
             governanceInvitations:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
-              description: Collection of governance invitations associated with the tenant.
+                $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
               x-ms-navigationProperty: true
             governancePolicyTemplates:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
-              description: Collection of governance policy templates associated with the tenant.
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
               x-ms-navigationProperty: true
             governanceRelationships:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
-              description: Collection of governance relationships associated with the tenant.
+                $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
               x-ms-navigationProperty: true
             governanceRequests:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
-              description: Collection of governance requests associated with the tenant.
+                $ref: '#/components/schemas/microsoft.graph.governanceRequest'
               x-ms-navigationProperty: true
             relatedTenants:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
-              description: Collection of related tenants associated with the tenant.
+                $ref: '#/components/schemas/microsoft.graph.relatedTenant'
               x-ms-navigationProperty: true
             settings:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting'
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.governanceInvitation:
+    microsoft.graph.governanceInvitation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: governanceInvitation
@@ -38849,99 +40350,80 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the invitation was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the invitation expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             governedTenantId:
               type: string
-              description: 'The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governedTenantName:
               type: string
-              description: 'The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantId:
               type: string
-              description: 'The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantName:
               type: string
-              description: 'The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.governancePolicyTemplate:
+    microsoft.graph.tenantGovernancePolicyTemplate:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: governancePolicyTemplate
+        - title: tenantGovernancePolicyTemplate
           type: object
           properties:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the template was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             delegatedAdministrationRoleAssignments:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.delegatedAdministrationRoleAssignment'
-              description: A collection of delegated administration role assignments to be applied in the governed tenant when the governance relationship is established.
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdministrationRoleAssignment'
             description:
               type: string
-              description: 'A description of the policy template. Supports $filter (eq, ne) and $orderBy.'
             displayName:
               type: string
-              description: 'The display name of the policy template. Supports $filter (eq, ne) and $orderBy.'
             governedTenantCanTerminate:
               type: boolean
-              description: Not implemented.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the template was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             multiTenantApplicationsToProvision:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationsToProvision'
-              description: A collection of multi-tenant applications to be provisioned in the governed tenant when the governance relationship is established.
+                $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationsToProvision'
             version:
               type: string
-              description: 'The version of the policy template. Version count increased by 1 when updated. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.governanceRelationship:
+    microsoft.graph.governanceRelationship:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: governanceRelationship
           type: object
           properties:
             createdType:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relationshipCreationType'
+              $ref: '#/components/schemas/microsoft.graph.relationshipCreationType'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the relationship was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             governedTenantId:
               type: string
-              description: 'The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governedTenantName:
               type: string
-              description: 'The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantId:
               type: string
-              description: 'The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantName:
               type: string
-              description: 'The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             policySnapshot:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relationshipPolicy'
+              $ref: '#/components/schemas/microsoft.graph.relationshipPolicy'
             status:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relationshipStatus'
+              $ref: '#/components/schemas/microsoft.graph.relationshipStatus'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.governanceRequest:
+    microsoft.graph.governanceRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: governanceRequest
@@ -38950,34 +40432,28 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the request expires if not accepted or rejected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             governedTenantId:
               type: string
-              description: 'The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governedTenantName:
               type: string
-              description: 'The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantId:
               type: string
-              description: 'The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantName:
               type: string
-              description: 'The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             policySnapshot:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relationshipPolicy'
+              $ref: '#/components/schemas/microsoft.graph.relationshipPolicy'
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             status:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.requestStatus'
+              $ref: '#/components/schemas/microsoft.graph.requestStatus'
             governancePolicyTemplate:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.relatedTenant:
+    microsoft.graph.relatedTenant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: relatedTenant
@@ -38986,112 +40462,104 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the related tenant was discovered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
               format: date-time
             isMicrosoftInfrastructure:
               type: boolean
-              description: Indicates whether the related tenant is a Microsoft infrastructure tenant. Read-only.
+              description: Indicates whether this tenant is a Microsoft infrastructure tenant.
               readOnly: true
             appB2BSignInActivityMetrics:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics'
+              $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
             b2BRegistrationMetrics:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics'
+              $ref: '#/components/schemas/microsoft.graph.b2bRegistrationMetrics'
             b2BSignInActivityMetrics:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics'
+              $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
             billingMetrics:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetrics'
+              $ref: '#/components/schemas/microsoft.graph.billingMetrics'
             multiTenantApplicationMetrics:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics'
+              $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetrics'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetrics:
+    microsoft.graph.b2BSignInActivityMetrics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: b2BSignInActivityMetrics
           type: object
           properties:
             initial:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial'
+              $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsInitial'
             investigationHints:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.actionStep'
-              description: 'Ordered drill-in guidance for investigating sign-in user and application counts. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=b2BSignInActivityMetrics($expand=investigationHints).'
+                $ref: '#/components/schemas/microsoft.graph.investigationActionStep'
               x-ms-navigationProperty: true
             recent:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent'
+              $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsRecent'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.b2bRegistrationMetrics:
+    microsoft.graph.b2bRegistrationMetrics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: b2bRegistrationMetrics
           type: object
           properties:
             initial:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial'
+              $ref: '#/components/schemas/microsoft.graph.b2BRegistrationMetricsInitial'
             investigationHints:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.actionStep'
-              description: 'Ordered drill-in guidance for investigating B2B registration metrics. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=b2BRegistrationMetrics($expand=investigationHints).'
+                $ref: '#/components/schemas/microsoft.graph.investigationActionStep'
               x-ms-navigationProperty: true
             recent:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent'
+              $ref: '#/components/schemas/microsoft.graph.b2BRegistrationMetricsRecent'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.billingMetrics:
+    microsoft.graph.billingMetrics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: billingMetrics
           type: object
           properties:
             initial:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsInitial'
+              $ref: '#/components/schemas/microsoft.graph.billingMetricsInitial'
             investigationHints:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.actionStep'
-              description: 'Ordered drill-in guidance for investigating billing relationship counts. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=billingMetrics($expand=investigationHints).'
+                $ref: '#/components/schemas/microsoft.graph.investigationActionStep'
               x-ms-navigationProperty: true
             recent:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsRecent'
+              $ref: '#/components/schemas/microsoft.graph.billingMetricsRecent'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetrics:
+    microsoft.graph.multiTenantApplicationMetrics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: multiTenantApplicationMetrics
           type: object
           properties:
             initial:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial'
+              $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsInitial'
             investigationHints:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.actionStep'
-              description: 'Ordered drill-in guidance for investigating multitenant application counts. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=multiTenantApplicationMetrics($expand=investigationHints).'
+                $ref: '#/components/schemas/microsoft.graph.investigationActionStep'
               x-ms-navigationProperty: true
             recent:
-              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent'
+              $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsRecent'
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.relatedTenantsRefreshStatus:
+    microsoft.graph.relatedTenantsRefreshStatus:
       title: relatedTenantsRefreshStatus
       type: object
       properties:
         isFirstRefresh:
           type: boolean
-          description: Describes whether the related tenants refresh was the initial aggregation done by our service or not.
         mostRecentRefreshRequestStatus:
           type: string
-          description: The status of the refresh operation
         mostRecentRefreshTime:
           type: string
-          description: Timestamp of the respective refresh request.
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.tenantGovernanceSetting:
+    microsoft.graph.tenantGovernanceSetting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: tenantGovernanceSetting
@@ -39099,10 +40567,8 @@ components:
           properties:
             canReceiveInvitations:
               type: boolean
-              description: 'Indicates whether the tenant can receive governance invitations. When set to false, the tenant cannot receive new governance invitations. When set to true, other tenants can send your tenant invitations by providing your tenant id or domain name. Default value is false.'
             isRelatedTenantsEnabled:
               type: boolean
-              description: 'Indicates whether the related tenants feature is enabled for tenant discovery. When set to false, related tenant APIs don''t work. This property can be enabled by calling the enableRelatedTenants action. Default value is false.'
           additionalProperties:
             type: object
     microsoft.graph.directoryRole:
@@ -39925,6 +41391,10 @@ components:
           type: boolean
           description: 'If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.'
           nullable: true
+        coopEnforcement:
+          type: boolean
+          description: 'Indicates whether Cross-Origin-Opener-Policy (COOP) headers are enforced on browser-based authentication responses for the application. Set to true to enable enforcement, false to temporarily suppress enforcement, or null to use the service default. For how-to guidance, see Control Cross-Origin-Opener-Policy enforcement.'
+          nullable: true
         removeUnverifiedEmailClaim:
           type: boolean
           description: 'If true, removes the email claim from tokens sent to an application when the email address''s domain can''t be verified.'
@@ -40040,6 +41510,8 @@ components:
           type: boolean
           description: 'Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.'
           nullable: true
+        isDeviceAccessEnabled:
+          type: boolean
         isDnsResolutionEnabled:
           type: boolean
           description: Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.
@@ -41037,6 +42509,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             quota:
               $ref: '#/components/schemas/microsoft.graph.quota'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.driveSettings'
             sharePointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             system:
@@ -41722,6 +43196,26 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          additionalProperties:
+            type: object
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -42349,6 +43843,12 @@ components:
               x-ms-navigationProperty: true
             qrCodePinMethod:
               $ref: '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -42495,7 +43995,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedChatMessage'
-              description: A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+              description: 'A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can''t expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -42642,6 +44142,8 @@ components:
               description: 'The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
+            provisioningConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningConfiguration'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -43021,21 +44523,25 @@ components:
               type: string
               description: The display name of the distribution list.
               nullable: true
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.member'
-              description: The list of members in the distribution list. Not returned by default; use $select=members to include.
             notes:
               type: string
+              description: Notes about the distribution list.
               nullable: true
             personIdentifier:
               type: string
+              description: The unique identifier of the distribution list in the mailbox. Read-only.
               nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.distributionListMember'
+              description: The members of the distribution list. Not returned by default; use $expand=members to include. Read-only.
+              x-ms-navigationProperty: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the distribution list. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -44914,6 +46420,7 @@ components:
         - thirdParty
         - planned
         - alternateMitigation
+        - needsMoreAction
       type: string
     microsoft.graph.onPremisesDirectorySynchronizationConfiguration:
       title: onPremisesDirectorySynchronizationConfiguration
@@ -45061,6 +46568,18 @@ components:
               nullable: true
             category:
               $ref: '#/components/schemas/microsoft.graph.recommendationCategory'
+            categoryGroup:
+              $ref: '#/components/schemas/microsoft.graph.recommendationCategoryGroup'
+            completedBySystemDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            completedByUserDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -45074,6 +46593,11 @@ components:
             displayName:
               type: string
               description: The title of the recommendation.
+            failedReviewDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             featureAreas:
               type: array
               items:
@@ -45114,6 +46638,16 @@ components:
               description: The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.
               format: double
               nullable: true
+            needsMoreActionResourceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            nistClassifications:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.nistClassification'
             postponeUntilDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -45128,6 +46662,11 @@ components:
               type: string
               description: 'The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.'
               nullable: true
+            remediatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             remediationImpact:
               type: string
               description: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
@@ -45136,11 +46675,21 @@ components:
               $ref: '#/components/schemas/microsoft.graph.requiredLicenses'
             status:
               $ref: '#/components/schemas/microsoft.graph.recommendationStatus'
+            statusModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             impactedResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.impactedResource'
               description: The list of directory objects associated with the recommendation.
+              x-ms-navigationProperty: true
+            tags:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recommendationTag'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -45213,44 +46762,38 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.delegatedAdministrationRoleAssignment:
+    microsoft.graph.delegatedAdministrationRoleAssignment:
       title: delegatedAdministrationRoleAssignment
       type: object
       properties:
         groupDisplayName:
           type: string
-          description: The display name of the security group referenced by the group navigation property. Server-populated and read-only; returns null if the referenced group has been deleted.
           nullable: true
         roleTemplates:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.roleTemplate'
-          description: A collection of role templates that define the roles to be assigned to the group in the governed tenant.
+            $ref: '#/components/schemas/microsoft.graph.roleTemplate'
         group:
           $ref: '#/components/schemas/microsoft.graph.group'
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.multiTenantApplicationsToProvision:
+    microsoft.graph.multiTenantApplicationsToProvision:
       title: multiTenantApplicationsToProvision
       type: object
       properties:
         appId:
           type: string
-          description: The appId (client ID) of the multi-tenant application.
         displayName:
           type: string
-          description: The display name of the application.
         objectId:
           type: string
-          description: The object ID of the service principal in the governing tenant.
         requiredResourceAccesses:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.requiredResourceAccess'
-          description: The collection of resource accesses (permissions) required by the application.
+            $ref: '#/components/schemas/microsoft.graph.applicationsRequiredResourceAccess'
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.relationshipCreationType:
+    microsoft.graph.relationshipCreationType:
       title: relationshipCreationType
       enum:
         - approvedByAdmin
@@ -45270,26 +46813,22 @@ components:
           - value: unknownFutureValue
             description: This will help in making this enum evolvable and adding more values in the future-
             name: unknownFutureValue
-    microsoft.graph.tenantGovernanceServices.relationshipPolicy:
+    microsoft.graph.relationshipPolicy:
       title: relationshipPolicy
       type: object
       properties:
         delegatedAdministrationRoleAssignments:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.delegatedAdministrationRoleAssignmentSnapshot'
-          description: A snapshot of the delegated administration role assignments configured in this policy.
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdministrationRoleAssignmentSnapshot'
         governedTenantCanTerminate:
           type: boolean
-          description: Indicates whether the governed tenant can terminate the relationship.
         multiTenantApplicationsToProvision:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationsToProvisionSnapshot'
-          description: A snapshot of the multi-tenant applications to be provisioned in the governed tenant.
+            $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationsToProvisionSnapshot'
         policyId:
           type: string
-          description: The identifier of the source policy template from which this snapshot was created.
         version:
           maximum: 2147483647
           minimum: -2147483648
@@ -45299,7 +46838,7 @@ components:
           readOnly: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.relationshipStatus:
+    microsoft.graph.relationshipStatus:
       title: relationshipStatus
       enum:
         - active
@@ -45323,7 +46862,7 @@ components:
           - value: unknownFutureValue
             description: This will help in making this enum evolable and adding more values in the future-
             name: unknownFutureValue
-    microsoft.graph.tenantGovernanceServices.requestStatus:
+    microsoft.graph.requestStatus:
       title: requestStatus
       enum:
         - pending
@@ -45347,122 +46886,112 @@ components:
           - value: unknownFutureValue
             description: This will help in making this enum evolable and adding more values in the future-
             name: unknownFutureValue
-    microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsInitial:
+    microsoft.graph.b2BSignInActivityMetricsInitial:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase'
+        - $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsBase'
         - title: b2BSignInActivityMetricsInitial
           type: object
           properties:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp that represents when the time B2B sign-in activity content was initially aggregated for the related tenant.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.actionStep:
-      title: actionStep
+    microsoft.graph.investigationActionStep:
+      title: investigationActionStep
       type: object
       properties:
         actionUrl:
-          $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.actionUrl'
+          $ref: '#/components/schemas/microsoft.graph.investigationActionUrl'
         stepNumber:
           type: string
-          description: 'The one-based order, as a string, in which the step should be evaluated by a client. Steps are intended to be run in ascending stepNumber order because later steps can depend on the output of earlier steps. This value is the key of the resource.'
         text:
           type: string
-          description: Human-readable guidance that explains what the step does and why it's useful for investigating the related metric.
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsRecent:
+    microsoft.graph.b2BSignInActivityMetricsRecent:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase'
+        - $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsBase'
         - title: b2BSignInActivityMetricsRecent
           type: object
           properties:
             updateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp that represents the most recent time B2B registration data was aggregated and have sufficiently changed for the related tenant.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsInitial:
+    microsoft.graph.b2BRegistrationMetricsInitial:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase'
+        - $ref: '#/components/schemas/microsoft.graph.b2BRegistrationMetricsBase'
         - title: b2BRegistrationMetricsInitial
           type: object
           properties:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp that represents the date time that B2B registration data was initially aggregated.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsRecent:
+    microsoft.graph.b2BRegistrationMetricsRecent:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase'
+        - $ref: '#/components/schemas/microsoft.graph.b2BRegistrationMetricsBase'
         - title: b2BRegistrationMetricsRecent
           type: object
           properties:
             updateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp that represents the most recent time B2B registration data was aggregated and have sufficiently changed for the related tenant.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.billingMetricsInitial:
+    microsoft.graph.billingMetricsInitial:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsBase'
+        - $ref: '#/components/schemas/microsoft.graph.billingMetricsBase'
         - title: billingMetricsInitial
           type: object
           properties:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp that represents when billing metrics are initially aggregated for the related tenant.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.billingMetricsRecent:
+    microsoft.graph.billingMetricsRecent:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.billingMetricsBase'
+        - $ref: '#/components/schemas/microsoft.graph.billingMetricsBase'
         - title: billingMetricsRecent
           type: object
           properties:
             updateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp that represents when billing metrics are aggregated and have sufficiently changed for the related tenant.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsInitial:
+    microsoft.graph.multiTenantApplicationMetricsInitial:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase'
+        - $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsBase'
         - title: multiTenantApplicationMetricsInitial
           type: object
           properties:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp that represents when multitenant application metrics are initially aggregated for the related tenant.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsRecent:
+    microsoft.graph.multiTenantApplicationMetricsRecent:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase'
+        - $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsBase'
         - title: multiTenantApplicationMetricsRecent
           type: object
           properties:
             updateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp that represents when multitenant application metrics are aggregated and have sufficiently changed for the related tenant.
               format: date-time
           additionalProperties:
             type: object
@@ -46399,6 +47928,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.recommendationTagCollectionResponse:
+      title: Collection of recommendationTag
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.recommendationTag'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.inboundSharedUserProfileCollectionResponse:
       title: Collection of inboundSharedUserProfile
       type: object
@@ -46594,66 +48136,66 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.governanceInvitationCollectionResponse:
+    microsoft.graph.governanceInvitationCollectionResponse:
       title: Collection of governanceInvitation
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitation'
+            $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
         '@odata.nextLink':
           type: string
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.governancePolicyTemplateCollectionResponse:
-      title: Collection of governancePolicyTemplate
+    microsoft.graph.tenantGovernancePolicyTemplateCollectionResponse:
+      title: Collection of tenantGovernancePolicyTemplate
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplate'
+            $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
         '@odata.nextLink':
           type: string
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.governanceRelationshipCollectionResponse:
+    microsoft.graph.governanceRelationshipCollectionResponse:
       title: Collection of governanceRelationship
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationship'
+            $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
         '@odata.nextLink':
           type: string
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.governanceRequestCollectionResponse:
+    microsoft.graph.governanceRequestCollectionResponse:
       title: Collection of governanceRequest
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequest'
+            $ref: '#/components/schemas/microsoft.graph.governanceRequest'
         '@odata.nextLink':
           type: string
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.relatedTenantCollectionResponse:
+    microsoft.graph.relatedTenantCollectionResponse:
       title: Collection of relatedTenant
       type: object
       properties:
         value:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenant'
+            $ref: '#/components/schemas/microsoft.graph.relatedTenant'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -47693,6 +49235,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.driveSettings:
+      title: driveSettings
+      type: object
+      properties:
+        itemDefaultSensitivityLabelId:
+          type: string
+          description: The ID of the default sensitivity label for items in the drive. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sharepointIds:
       title: sharepointIds
       type: object
@@ -48191,6 +49743,12 @@ components:
               x-ms-navigationProperty: true
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+              description: Collection of goals in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
             historyItems:
               type: array
               items:
@@ -49379,6 +50937,79 @@ components:
         - high
         - unknownFutureValue
       type: string
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          type: object
+          properties:
+            description:
+              type: string
+            governingPolicyReferenceId:
+              type: string
+            issueCode:
+              type: string
+            ruleType:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            notificationSchedule:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.subjectSet'
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovalDetail:
       title: preApprovalDetail
       type: object
@@ -50036,6 +51667,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.qrCode'
           additionalProperties:
             type: object
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -50185,6 +51830,11 @@ components:
               type: string
               description: 'If the message was sent in a chat, represents the identity of the chat.'
               nullable: true
+            citations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageCitation'
+              description: Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -50205,6 +51855,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            hasReplies:
+              type: boolean
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
             lastEditedDateTime:
@@ -50573,6 +52225,14 @@ components:
         - business
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcProvisioningConfiguration:
+      title: cloudPcProvisioningConfiguration
+      type: object
+      properties:
+        domainJoinType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -50946,30 +52606,26 @@ components:
       additionalProperties:
         type: object
       description: Object containing detailed information about the error and its remediation.
-    microsoft.graph.member:
-      title: member
-      type: object
-      properties:
-        contactId:
-          type: string
-          description: 'The ID of the referenced contact, if applicable. Optional.'
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the member. Optional.
-          nullable: true
-        key:
-          type: string
-          description: The email address or routing key of the member. Required.
-          nullable: true
-        recipientType:
-          $ref: '#/components/schemas/microsoft.graph.recipientType'
-        routingType:
-          type: string
-          description: 'The routing type for the member, for example, SMTP. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.distributionListMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: distributionListMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the member. Read-only.
+              nullable: true
+            memberId:
+              type: string
+              description: 'A system generated unique identifier. Non-empty for contact, privateDL and mailbox members. ReadOnly.'
+              nullable: true
+            type:
+              $ref: '#/components/schemas/microsoft.graph.recipientType'
+            contact:
+              $ref: '#/components/schemas/microsoft.graph.contact'
+          additionalProperties:
+            type: object
     microsoft.graph.engagementRole:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -54114,6 +55770,11 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            goalIds:
+              type: array
+              items:
+                type: string
+              description: Read-only. The IDs of the goals associated with the task.
             hasChat:
               type: boolean
               description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
@@ -55267,6 +56928,17 @@ components:
         - unknownFutureValue
         - mdiSecureScore
       type: string
+    microsoft.graph.recommendationCategoryGroup:
+      title: recommendationCategoryGroup
+      enum:
+        - strengthenAuthentication
+        - detectAndRespondToThreats
+        - enforceLeastPrivilege
+        - governAppsCredentialsAndAgents
+        - hardenInfrastructure
+        - defenderForIdentity
+        - unknownFutureValue
+      type: string
     ReferenceNumeric:
       enum:
         - '-INF'
@@ -55286,12 +56958,30 @@ components:
         - governance
         - unknownFutureValue
       type: string
+    microsoft.graph.nistClassification:
+      title: nistClassification
+      type: object
+      properties:
+        category:
+          type: string
+        description:
+          type: string
+          nullable: true
+        function:
+          type: string
+          nullable: true
+        name:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.recommendationPriority:
       title: recommendationPriority
       enum:
         - low
         - medium
         - high
+        - critical
+        - unknownFutureValue
       type: string
     microsoft.graph.recommendationType:
       title: recommendationType
@@ -55348,72 +57038,62 @@ components:
         - microsoftEntraWorkloadId
         - unknownFutureValue
         - aatp
+        - microsoftEntraSuite
       type: string
-    microsoft.graph.tenantGovernanceServices.roleTemplate:
+    microsoft.graph.roleTemplate:
       title: roleTemplate
       type: object
       properties:
         id:
           type: string
-          description: 'The template ID of the Microsoft Entra role (e.g., 62e90394-69f5-4237-9190-012177145e10 for Global Administrator).'
         name:
           type: string
-          description: 'The display name of the role (e.g., ''Global Administrator'', ''Helpdesk Administrator'').'
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.requiredResourceAccess:
-      title: requiredResourceAccess
+    microsoft.graph.applicationsRequiredResourceAccess:
+      title: applicationsRequiredResourceAccess
       type: object
       properties:
         permissions:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.resourcePermission'
-          description: The collection of resource permissions required by the application.
+            $ref: '#/components/schemas/microsoft.graph.applicationResourcePermission'
         resourceAppId:
           type: string
-          description: The appId (client ID) of the resource that the application needs to access.
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.delegatedAdministrationRoleAssignmentSnapshot:
+    microsoft.graph.delegatedAdministrationRoleAssignmentSnapshot:
       title: delegatedAdministrationRoleAssignmentSnapshot
       type: object
       properties:
         groupDisplayName:
           type: string
-          description: The display name of the security group identified by groupId at the time the snapshot was created. Read-only.
           nullable: true
         groupId:
           type: string
-          description: The object ID of the role-assignable security group in the governing tenant that will be assigned the specified roles.
         roleTemplates:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.roleTemplate'
-          description: The collection of role templates that define the Microsoft Entra roles to be assigned.
+            $ref: '#/components/schemas/microsoft.graph.roleTemplate'
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.multiTenantApplicationsToProvisionSnapshot:
+    microsoft.graph.multiTenantApplicationsToProvisionSnapshot:
       title: multiTenantApplicationsToProvisionSnapshot
       type: object
       properties:
         appId:
           type: string
-          description: The appId (client ID) of the multi-tenant application.
         displayName:
           type: string
-          description: The display name of the application.
         objectId:
           type: string
-          description: The object ID of the service principal in the governing tenant.
         requiredResourceAccesses:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.requiredResourceAccess'
-          description: The collection of resource accesses (permissions) required by the application.
+            $ref: '#/components/schemas/microsoft.graph.applicationsRequiredResourceAccess'
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.b2BSignInActivityMetricsBase:
+    microsoft.graph.b2BSignInActivityMetricsBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: b2BSignInActivityMetricsBase
@@ -55421,41 +57101,34 @@ components:
           properties:
             inboundMonthlyTotalApplications:
               type: number
-              description: The total number of applications accessed by inbound users in the last month.
               format: decimal
             inboundMonthlyTotalUsers:
               type: number
-              description: The total number of unique inbound users with sign-in activity in the last month.
               format: decimal
             outboundMonthlyTotalApplications:
               type: number
-              description: The total number of applications accessed by outbound users in the last month.
               format: decimal
             outboundMonthlyTotalUsers:
               type: number
-              description: The total number of unique outbound users with sign-in activity in the last month.
               format: decimal
             watermarkDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the metrics snapshot was taken.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.actionUrl:
-      title: actionUrl
+    microsoft.graph.investigationActionUrl:
+      title: investigationActionUrl
       type: object
       properties:
         displayName:
           type: string
-          description: 'A machine-readable directive that describes how a client should run the step, in the form metricPath§operation§input§output (for example, b2BRegistrationMetrics.recent.inboundTotalUsers§single§§$verifiedDomains). Clients use this value to chain steps together and to interpret the output of the associated url.'
         url:
           type: string
-          description: 'A Microsoft Graph or Azure Resource Manager (ARM) URL template that the client invokes to retrieve the drill-in data for the step. The template can include placeholders such as {@id}, {startDate}, {endDate}, or {sourceDomain} that the client resolves from the related tenant, the caller context, or the output of earlier steps. This value can be empty for steps that only transform data returned by a previous step.'
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.b2BRegistrationMetricsBase:
+    microsoft.graph.b2BRegistrationMetricsBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: b2BRegistrationMetricsBase
@@ -55463,20 +57136,17 @@ components:
           properties:
             inboundTotalUsers:
               type: number
-              description: The total number of inbound B2B guest users registered.
               format: decimal
             outboundTotalUsers:
               type: number
-              description: The total number of outbound B2B users from this tenant registered in other tenants.
               format: decimal
             watermarkDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the metrics snapshot was taken.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.billingMetricsBase:
+    microsoft.graph.billingMetricsBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: billingMetricsBase
@@ -55484,41 +57154,33 @@ components:
           properties:
             foreignAssociatedTenantBillingManagementActiveCount:
               type: number
-              description: The number of foreign associated tenants with active billing management.
               format: decimal
             foreignAssociatedTenantCount:
               type: number
-              description: The total number of foreign associated tenants.
               format: decimal
             foreignAssociatedTenantProvisioningActiveCount:
               type: number
-              description: The number of foreign associated tenants with active provisioning.
               format: decimal
             localAssociatedTenantBillingManagementActiveCount:
               type: number
-              description: The number of local associated tenants with active billing management.
               format: decimal
             localAssociatedTenantCount:
               type: number
-              description: The total number of local associated tenants.
               format: decimal
             localAssociatedTenantIds:
               type: array
               items:
                 type: string
-              description: The list of local associated tenant IDs.
             localAssociatedTenantProvisioningActiveCount:
               type: number
-              description: The number of local associated tenants with active provisioning.
               format: decimal
             watermarkDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the metrics snapshot was taken.
               format: date-time
           additionalProperties:
             type: object
-    microsoft.graph.tenantGovernanceServices.multiTenantApplicationMetricsBase:
+    microsoft.graph.multiTenantApplicationMetricsBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: multiTenantApplicationMetricsBase
@@ -55526,16 +57188,13 @@ components:
           properties:
             inboundMonthlyTotalApplications:
               type: number
-              description: The total number of inbound multi-tenant applications in the last month.
               format: decimal
             outboundMonthlyTotalApplications:
               type: number
-              description: The total number of outbound multi-tenant applications in the last month.
               format: decimal
             watermarkDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the metrics snapshot was taken.
               format: date-time
           additionalProperties:
             type: object
@@ -57202,6 +58861,49 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
+    microsoft.graph.plannerGoal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerGoal
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Required. The display name of the goal.
+            finishDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to finish.
+              format: date
+              nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            planId:
+              type: string
+              description: Required. The ID of the plan that contains the goal.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Optional. The relative priority of the goal. Valid values range from 0 to 10, inclusive. The default value is 5.'
+              format: int32
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to start.
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoalStatus'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerHistoryItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -58530,6 +60232,52 @@ components:
           description: An ordered list of transformations that are applied in sequence.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      type: object
+      properties:
+        additionalRecipients:
+          type: array
+          items:
+            type: string
+        isEnabled:
+          type: boolean
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovedPermissions:
       title: preApprovedPermissions
       type: object
@@ -59004,6 +60752,37 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatMessageCitation:
+      title: chatMessageCitation
+      type: object
+      properties:
+        excerpt:
+          type: string
+          description: Read-only. Text snippet from the cited source.
+          nullable: true
+        iconType:
+          type: string
+          description: 'Read-only. Icon type identifier for the cited source, for example, ExcelIcon or WordIcon.'
+          nullable: true
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: 'Read-only. Citation identifier that''s unique within the message. The message body references this identifier inline, for example, [1].'
+          format: int32
+          nullable: true
+        sensitivityLabel:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageCitationSensitivityLabel'
+        title:
+          type: string
+          description: Read-only. Display title of the cited source.
+          nullable: true
+        webUrl:
+          type: string
+          description: Read-only. URL to the cited source.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageImportance:
       title: chatMessageImportance
       enum:
@@ -59212,6 +60991,13 @@ components:
         - unknownFutureValue
         - vMware
         - hp
+      type: string
+    microsoft.graph.cloudPcDomainJoinType:
+      title: cloudPcDomainJoinType
+      enum:
+        - azureADJoin
+        - hybridAzureADJoin
+        - unknownFutureValue
       type: string
     microsoft.graph.delegationSettings:
       allOf:
@@ -62721,19 +64507,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tenantGovernanceServices.resourcePermission:
-      title: resourcePermission
+    microsoft.graph.applicationResourcePermission:
+      title: applicationResourcePermission
       type: object
       properties:
         id:
           type: string
-          description: The unique identifier of the permission.
         name:
           type: string
-          description: The name of the permission.
           nullable: true
         type:
-          $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.permissionType'
+          $ref: '#/components/schemas/microsoft.graph.applicationPermissionType'
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ErrorDetails:
@@ -63911,6 +65695,16 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerGoalStatus:
+      title: plannerGoalStatus
+      enum:
+        - notStarted
+        - onTrack
+        - behind
+        - atRisk
+        - closed
+        - unknownFutureValue
+      type: string
     microsoft.graph.historyEntityType:
       title: historyEntityType
       enum:
@@ -65235,6 +67029,20 @@ components:
         - markdown
         - unknownFutureValue
       type: string
+    microsoft.graph.chatMessageCitationSensitivityLabel:
+      title: chatMessageCitationSensitivityLabel
+      type: object
+      properties:
+        description:
+          type: string
+          description: Read-only. User-facing description of the sensitivity restriction.
+          nullable: true
+        displayName:
+          type: string
+          description: Read-only. Display name of the sensitivity label.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -66770,15 +68578,15 @@ components:
         - rejectedByOrganizer
         - unknownFutureValue
       type: string
-    microsoft.graph.tenantGovernanceServices.permissionType:
-      title: permissionType
+    microsoft.graph.applicationPermissionType:
+      title: applicationPermissionType
       enum:
         - role
         - scope
         - unknownFutureValue
       type: string
       x-ms-enum:
-        name: permissionType
+        name: applicationPermissionType
         modelAsString: false
         values:
           - value: role
@@ -70953,6 +72761,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.impactedResourceCollectionResponse'
+    microsoft.graph.recommendationTagCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.recommendationTagCollectionResponse'
     microsoft.graph.inboundSharedUserProfileCollectionResponse:
       description: Retrieved collection
       content:
@@ -71043,36 +72857,36 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.companySubscriptionCollectionResponse'
-    microsoft.graph.tenantGovernanceServices.governanceInvitationCollectionResponse:
+    microsoft.graph.governanceInvitationCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceInvitationCollectionResponse'
-    microsoft.graph.tenantGovernanceServices.governancePolicyTemplateCollectionResponse:
+            $ref: '#/components/schemas/microsoft.graph.governanceInvitationCollectionResponse'
+    microsoft.graph.tenantGovernancePolicyTemplateCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governancePolicyTemplateCollectionResponse'
-    microsoft.graph.tenantGovernanceServices.governanceRelationshipCollectionResponse:
+            $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplateCollectionResponse'
+    microsoft.graph.governanceRelationshipCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRelationshipCollectionResponse'
-    microsoft.graph.tenantGovernanceServices.governanceRequestCollectionResponse:
+            $ref: '#/components/schemas/microsoft.graph.governanceRelationshipCollectionResponse'
+    microsoft.graph.governanceRequestCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.governanceRequestCollectionResponse'
-    microsoft.graph.tenantGovernanceServices.relatedTenantCollectionResponse:
+            $ref: '#/components/schemas/microsoft.graph.governanceRequestCollectionResponse'
+    microsoft.graph.relatedTenantCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.tenantGovernanceServices.relatedTenantCollectionResponse'
+            $ref: '#/components/schemas/microsoft.graph.relatedTenantCollectionResponse'
     microsoft.graph.directoryRoleCollectionResponse:
       description: Retrieved collection
       content:

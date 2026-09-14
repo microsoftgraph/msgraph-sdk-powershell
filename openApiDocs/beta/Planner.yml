@@ -2531,6 +2531,184 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/goals':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get goals from groups
+      description: Collection of goals in the plan. Read-only. Nullable.
+      operationId: group.planner.plan_ListGoal
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.plannerGoalCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/goals/{plannerGoal-id}':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get goals from groups
+      description: Collection of goals in the plan. Read-only. Nullable.
+      operationId: group.planner.plan_GetGoal
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerGoal-id
+          in: path
+          description: The unique identifier of plannerGoal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerGoal
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/goals/$count':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get the number of the resource
+      operationId: group.planner.plan.goal_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
   '/groups/{group-id}/planner/plans/{plannerPlan-id}/historyItems':
     get:
       tags:
@@ -6165,6 +6343,390 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /planner/goals:
+    get:
+      tags:
+        - planner.plannerGoal
+      summary: Get plannerGoal
+      description: Retrieve the properties and relationships of a plannerGoal object.
+      operationId: planner_ListGoal
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.plannerGoalCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - planner.plannerGoal
+      summary: Create new navigation property to goals for planner
+      operationId: planner_CreateGoal
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-docs-operation-type: operation
+  '/planner/goals/{plannerGoal-id}':
+    get:
+      tags:
+        - planner.plannerGoal
+      summary: Get plannerGoal
+      description: Retrieve the properties and relationships of a plannerGoal object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannergoal-get?view=graph-rest-beta
+      operationId: planner_GetGoal
+      parameters:
+        - name: plannerGoal-id
+          in: path
+          description: The unique identifier of plannerGoal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerGoal
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - planner.plannerGoal
+      summary: Update the navigation property goals in planner
+      operationId: planner_UpdateGoal
+      parameters:
+        - name: plannerGoal-id
+          in: path
+          description: The unique identifier of plannerGoal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerGoal
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerGoal
+      summary: Delete navigation property goals for planner
+      operationId: planner_DeleteGoal
+      parameters:
+        - name: plannerGoal-id
+          in: path
+          description: The unique identifier of plannerGoal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerGoal
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-docs-operation-type: operation
+  '/planner/goals/{plannerGoal-id}/tasks':
+    get:
+      tags:
+        - planner.plannerGoal
+      summary: Get tasks from planner
+      description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+      operationId: planner.goal_ListTask
+      parameters:
+        - name: plannerGoal-id
+          in: path
+          description: The unique identifier of plannerGoal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerGoal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.plannerTaskCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/planner/goals/{plannerGoal-id}/tasks/{plannerTask-id}':
+    get:
+      tags:
+        - planner.plannerGoal
+      summary: Get tasks from planner
+      description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+      operationId: planner.goal_GetTask
+      parameters:
+        - name: plannerGoal-id
+          in: path
+          description: The unique identifier of plannerGoal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerGoal
+        - name: plannerTask-id
+          in: path
+          description: The unique identifier of plannerTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-docs-operation-type: operation
+  '/planner/goals/{plannerGoal-id}/tasks/$count':
+    get:
+      tags:
+        - planner.plannerGoal
+      summary: Get the number of the resource
+      operationId: planner.goal.task_GetCount
+      parameters:
+        - name: plannerGoal-id
+          in: path
+          description: The unique identifier of plannerGoal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerGoal
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+  /planner/goals/$count:
+    get:
+      tags:
+        - planner.plannerGoal
+      summary: Get the number of the resource
+      operationId: planner.goal_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
   /planner/plans:
     get:
       tags:
@@ -8268,6 +8830,163 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/planner/plans/{plannerPlan-id}/goals':
+    get:
+      tags:
+        - planner.plannerPlan
+      summary: List goals
+      description: Retrieve the plannerGoal objects associated with a plannerPlan object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerplan-list-goals?view=graph-rest-beta
+      operationId: planner.plan_ListGoal
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.plannerGoalCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/planner/plans/{plannerPlan-id}/goals/{plannerGoal-id}':
+    get:
+      tags:
+        - planner.plannerPlan
+      summary: Get goals from planner
+      description: Collection of goals in the plan. Read-only. Nullable.
+      operationId: planner.plan_GetGoal
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerGoal-id
+          in: path
+          description: The unique identifier of plannerGoal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerGoal
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-docs-operation-type: operation
+  '/planner/plans/{plannerPlan-id}/goals/$count':
+    get:
+      tags:
+        - planner.plannerPlan
+      summary: Get the number of the resource
+      operationId: planner.plan.goal_GetCount
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
   '/planner/plans/{plannerPlan-id}/historyItems':
     get:
       tags:
@@ -14843,6 +15562,184 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/goals':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get goals from users
+      description: Collection of goals in the plan. Read-only. Nullable.
+      operationId: user.planner.plan_ListGoal
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.plannerGoalCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/goals/{plannerGoal-id}':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get goals from users
+      description: Collection of goals in the plan. Read-only. Nullable.
+      operationId: user.planner.plan_GetGoal
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerGoal-id
+          in: path
+          description: The unique identifier of plannerGoal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerGoal
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/goals/$count':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get the number of the resource
+      operationId: user.planner.plan.goal_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-03-26'
+        date: '2025-03-26'
+        version: 2025-03/Tasks_And_Plans
+        description: private preview elements are required to be marked as deprecated
   '/users/{user-id}/planner/plans/{plannerPlan-id}/historyItems':
     get:
       tags:
@@ -18465,6 +19362,12 @@ components:
               x-ms-navigationProperty: true
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+              description: Collection of goals in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
             historyItems:
               type: array
               items:
@@ -18574,6 +19477,11 @@ components:
               description: 'The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            goalIds:
+              type: array
+              items:
+                type: string
+              description: Read-only. The IDs of the goals associated with the task.
             hasChat:
               type: boolean
               description: 'Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.'
@@ -18786,6 +19694,49 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
+    microsoft.graph.plannerGoal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerGoal
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Required. The display name of the goal.
+            finishDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to finish.
+              format: date
+              nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            planId:
+              type: string
+              description: Required. The ID of the plan that contains the goal.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Optional. The relative priority of the goal. Valid values range from 0 to 10, inclusive. The default value is 5.'
+              format: int32
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Nullable. The date on which the goal is scheduled to start.
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.plannerGoalStatus'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: 'Read-only. Nullable. The tasks associated with the goal. This relationship doesn''t support direct retrieval or $expand. To identify the goals associated with a task, read the goalIds property of the plannerTask resource.'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerHistoryItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -18853,6 +19804,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
               description: Read-only. Nullable. Returns a collection of the specified buckets
+              x-ms-navigationProperty: true
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+              description: Read-only. Nullable. Returns a collection of the specified goals
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -19355,6 +20312,16 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerGoalStatus:
+      title: plannerGoalStatus
+      enum:
+        - notStarted
+        - onTrack
+        - behind
+        - atRisk
+        - closed
+        - unknownFutureValue
+      type: string
     microsoft.graph.historyEntityType:
       title: historyEntityType
       enum:
@@ -19493,6 +20460,19 @@ components:
     ODataCountResponse:
       type: integer
       format: int32
+    microsoft.graph.plannerGoalCollectionResponse:
+      title: Collection of plannerGoal
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerGoal'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerHistoryItemCollectionResponse:
       title: Collection of plannerHistoryItem
       type: object
@@ -19847,6 +20827,12 @@ components:
         text/plain:
           schema:
             $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.plannerGoalCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.plannerGoalCollectionResponse'
     microsoft.graph.plannerHistoryItemCollectionResponse:
       description: Retrieved collection
       content:

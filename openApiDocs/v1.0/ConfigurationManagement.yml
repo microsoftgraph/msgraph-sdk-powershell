@@ -6,84 +6,6 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
-  /admin/configurationManagement:
-    get:
-      tags:
-        - admin.configurationManagement
-      summary: Get configurationManagement from admin
-      description: A container for Tenant Configuration Management (TCM) resources. Read-only.
-      operationId: admin_GetConfigurationManagement
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationManagement'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - admin.configurationManagement
-      summary: Update the navigation property configurationManagement in admin
-      operationId: admin_UpdateConfigurationManagement
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationManagement'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationManagement'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - admin.configurationManagement
-      summary: Delete navigation property configurationManagement for admin
-      operationId: admin_DeleteConfigurationManagement
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /admin/configurationManagement/configurationDrifts:
     get:
       tags:
@@ -139,28 +61,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - admin.configurationManagement
-      summary: Create new navigation property to configurationDrifts for admin
-      operationId: admin.configurationManagement_CreateConfigurationDrift
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationDrift'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationDrift'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/admin/configurationManagement/configurationDrifts/{configurationDrift-id}':
     get:
       tags:
@@ -207,63 +107,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.configurationDrift'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - admin.configurationManagement
-      summary: Update the navigation property configurationDrifts in admin
-      operationId: admin.configurationManagement_UpdateConfigurationDrift
-      parameters:
-        - name: configurationDrift-id
-          in: path
-          description: The unique identifier of configurationDrift
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: configurationDrift
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationDrift'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationDrift'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - admin.configurationManagement
-      summary: Delete navigation property configurationDrifts for admin
-      operationId: admin.configurationManagement_DeleteConfigurationDrift
-      parameters:
-        - name: configurationDrift-id
-          in: path
-          description: The unique identifier of configurationDrift
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: configurationDrift
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -336,28 +179,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - admin.configurationManagement
-      summary: Create new navigation property to configurationMonitoringResults for admin
-      operationId: admin.configurationManagement_CreateConfigurationMonitoringResult
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/admin/configurationManagement/configurationMonitoringResults/{configurationMonitoringResult-id}':
     get:
       tags:
@@ -404,63 +225,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - admin.configurationManagement
-      summary: Update the navigation property configurationMonitoringResults in admin
-      operationId: admin.configurationManagement_UpdateConfigurationMonitoringResult
-      parameters:
-        - name: configurationMonitoringResult-id
-          in: path
-          description: The unique identifier of configurationMonitoringResult
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: configurationMonitoringResult
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - admin.configurationManagement
-      summary: Delete navigation property configurationMonitoringResults for admin
-      operationId: admin.configurationManagement_DeleteConfigurationMonitoringResult
-      parameters:
-        - name: configurationMonitoringResult-id
-          in: path
-          description: The unique identifier of configurationMonitoringResult
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: configurationMonitoringResult
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -722,63 +486,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - admin.configurationManagement
-      summary: Update the navigation property baseline in admin
-      operationId: admin.configurationManagement.configurationMonitor_UpdateBaseline
-      parameters:
-        - name: configurationMonitor-id
-          in: path
-          description: The unique identifier of configurationMonitor
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: configurationMonitor
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - admin.configurationManagement
-      summary: Delete navigation property baseline for admin
-      operationId: admin.configurationManagement.configurationMonitor_DeleteBaseline
-      parameters:
-        - name: configurationMonitor-id
-          in: path
-          description: The unique identifier of configurationMonitor
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: configurationMonitor
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /admin/configurationManagement/configurationMonitors/$count:
     get:
       tags:
@@ -848,28 +555,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - admin.configurationManagement
-      summary: Create new navigation property to configurationSnapshotJobs for admin
-      operationId: admin.configurationManagement_CreateConfigurationSnapshotJob
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/admin/configurationManagement/configurationSnapshotJobs/{configurationSnapshotJob-id}':
     get:
       tags:
@@ -919,37 +604,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - admin.configurationManagement
-      summary: Update the navigation property configurationSnapshotJobs in admin
-      operationId: admin.configurationManagement_UpdateConfigurationSnapshotJob
-      parameters:
-        - name: configurationSnapshotJob-id
-          in: path
-          description: The unique identifier of configurationSnapshotJob
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: configurationSnapshotJob
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     delete:
       tags:
         - admin.configurationManagement
@@ -980,20 +634,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /admin/configurationManagement/configurationSnapshotJobs/$count:
-    get:
-      tags:
-        - admin.configurationManagement
-      summary: Get the number of the resource
-      operationId: admin.configurationManagement.configurationSnapshotJob_GetCount
-      parameters:
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
   /admin/configurationManagement/configurationSnapshots:
     get:
       tags:
@@ -1049,28 +689,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - admin.configurationManagement
-      summary: Create new navigation property to configurationSnapshots for admin
-      operationId: admin.configurationManagement_CreateConfigurationSnapshot
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/admin/configurationManagement/configurationSnapshots/{configurationBaseline-id}':
     get:
       tags:
@@ -1117,117 +735,8 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - admin.configurationManagement
-      summary: Update the navigation property configurationSnapshots in admin
-      operationId: admin.configurationManagement_UpdateConfigurationSnapshot
-      parameters:
-        - name: configurationBaseline-id
-          in: path
-          description: The unique identifier of configurationBaseline
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: configurationBaseline
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - admin.configurationManagement
-      summary: Delete navigation property configurationSnapshots for admin
-      operationId: admin.configurationManagement_DeleteConfigurationSnapshot
-      parameters:
-        - name: configurationBaseline-id
-          in: path
-          description: The unique identifier of configurationBaseline
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: configurationBaseline
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /admin/configurationManagement/configurationSnapshots/$count:
-    get:
-      tags:
-        - admin.configurationManagement
-      summary: Get the number of the resource
-      operationId: admin.configurationManagement.configurationSnapshot_GetCount
-      parameters:
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
 components:
   schemas:
-    microsoft.graph.configurationManagement:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: configurationManagement
-          type: object
-          properties:
-            configurationDrifts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.configurationDrift'
-              description: A container for configuration drift resources.
-              x-ms-navigationProperty: true
-            configurationMonitoringResults:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.configurationMonitoringResult'
-              description: A container for configuration monitoring results resources.
-              x-ms-navigationProperty: true
-            configurationMonitors:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.configurationMonitor'
-              description: A container for configuration monitor resources.
-              x-ms-navigationProperty: true
-            configurationSnapshotJobs:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.configurationSnapshotJob'
-              description: A container for snapshot job resources.
-              x-ms-navigationProperty: true
-            configurationSnapshots:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.configurationBaseline'
-              description: A container for configuration snapshot baselines.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.configurationDrift:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1600,15 +1109,6 @@ components:
           - value: unknownFutureValue
             description: A marker value for members added after the release of this API.
             name: unknownFutureValue
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
-      additionalProperties:
-        type: object
     microsoft.graph.configurationDriftCollectionResponse:
       title: Collection of configurationDrift
       type: object
@@ -1620,6 +1120,15 @@ components:
         '@odata.nextLink':
           type: string
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
     ODataCountResponse:
@@ -1760,18 +1269,18 @@ components:
         type: object
       description: The structure of this object is service-specific
   responses:
-    error:
-      description: error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     microsoft.graph.configurationDriftCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.configurationDriftCollectionResponse'
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
     ODataCountResponse:
       description: The count of the resource
       content:
