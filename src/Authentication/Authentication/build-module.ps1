@@ -186,11 +186,8 @@ Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netStandard/publish/" |
 Where-Object { -not $Deps.Contains($_.Name) -and $_.Extension -in $copyExtensions } |
 ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir -Recurse }
 
-# Update module manifest with nested assemblies.
-$RequiredAssemblies = @(
-  'Microsoft.Graph.Authentication.dll', 
-  'Microsoft.Graph.Authentication.Core.dll'
-)
-Update-ModuleManifest -Path (Join-Path $outDir "$ModulePrefix.$ModuleName.psd1") -NestedModules $RequiredAssemblies
+# Keep the script module in charge of loading the binary module. Adding the DLLs
+# as NestedModules causes PowerShell to load them before the script can choose
+# the AssemblyLoadContext used by Microsoft.Graph.Authentication.psm1.
 
 Write-Host -ForegroundColor Green '-------------Done-------------'
