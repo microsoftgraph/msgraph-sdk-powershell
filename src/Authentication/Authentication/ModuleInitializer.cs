@@ -24,10 +24,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
         private static readonly Dictionary<string, AssemblyDependency> s_dependencies;
         private static readonly AssemblyLoadContextProxy s_proxy;
         // AssemblyResolve is process-wide, even though PowerShell modules are imported into
-        // module or runspace scopes. Serialize registration so repeated imports do not attach
-        // the same static handler more than once.
-        private static readonly object s_resolverLock = new object();
-        private static bool s_resolverRegistered;
+        // module or runspace scopes. Keep it attached until the last active import is removed.
+        private static readonly AssemblyResolverRegistration s_resolverRegistration =
+            new AssemblyResolverRegistration();
 
         static ModuleInitializer()
         {
@@ -46,27 +45,15 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <inheritDoc/>
         public void OnImport()
         {
-            lock (s_resolverLock)
-            {
-                if (!s_resolverRegistered)
-                {
-                    AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler;
-                    s_resolverRegistered = true;
-                }
-            }
+            s_resolverRegistration.Register(
+                () => AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler);
         }
 
         /// <inheritDoc/>
         public void OnRemove(PSModuleInfo psModuleInfo)
         {
-            lock (s_resolverLock)
-            {
-                if (s_resolverRegistered)
-                {
-                    AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler;
-                    s_resolverRegistered = false;
-                }
-            }
+            s_resolverRegistration.Unregister(
+                () => AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler);
         }
 
         /// <summary>
@@ -172,6 +159,52 @@ namespace Microsoft.Graph.PowerShell.Authentication
         }
     }
 
+    internal sealed class AssemblyResolverRegistration
+    {
+        private readonly object _lock = new object();
+        private int _importCount;
+
+        internal void Register(Action attach)
+        {
+            if (attach == null)
+            {
+                throw new ArgumentNullException(nameof(attach));
+            }
+
+            lock (_lock)
+            {
+                if (_importCount == 0)
+                {
+                    attach();
+                }
+
+                _importCount++;
+            }
+        }
+
+        internal void Unregister(Action detach)
+        {
+            if (detach == null)
+            {
+                throw new ArgumentNullException(nameof(detach));
+            }
+
+            lock (_lock)
+            {
+                if (_importCount == 0)
+                {
+                    return;
+                }
+
+                _importCount--;
+                if (_importCount == 0)
+                {
+                    detach();
+                }
+            }
+        }
+    }
+
     internal static class AssemblyDependencyPolicy
     {
         // These assemblies form one managed/native broker unit. They must share the process
@@ -259,8 +292,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
             byte[] requestedToken = requested.GetPublicKeyToken();
             byte[] packagedToken = packaged.GetPublicKeyToken();
-            return requestedToken == null || requestedToken.Length == 0
-                || (packagedToken != null && requestedToken.SequenceEqual(packagedToken));
+            bool requestedIsWeakNamed = requestedToken == null || requestedToken.Length == 0;
+            bool packagedIsWeakNamed = packagedToken == null || packagedToken.Length == 0;
+            return requestedIsWeakNamed
+                ? packagedIsWeakNamed
+                : !packagedIsWeakNamed && requestedToken.SequenceEqual(packagedToken);
         }
 
         private static string NormalizeCulture(string culture)

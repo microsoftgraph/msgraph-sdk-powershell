@@ -143,6 +143,33 @@ namespace Microsoft.Graph.Authentication.Test
         }
 
         [Fact]
+        public void ShouldAcceptWeakNamedAssemblyWithWeakNamedPackage()
+        {
+            var requested = CreateAssemblyName("Dependency", new Version(1, 0, 0, 0), null);
+            var packaged = CreateAssemblyName("Dependency", new Version(1, 0, 0, 0), null);
+
+            Assert.True(AssemblyIdentity.IsCompatible(requested, packaged));
+        }
+
+        [Fact]
+        public void ShouldRejectStrongNamedPackageForWeakNamedRequest()
+        {
+            var requested = CreateAssemblyName("Dependency", new Version(1, 0, 0, 0), null);
+            var packaged = CreateAssemblyName("Dependency", new Version(1, 0, 0, 0), MicrosoftPublicKeyToken);
+
+            Assert.False(AssemblyIdentity.IsCompatible(requested, packaged));
+        }
+
+        [Fact]
+        public void ShouldRejectWeakNamedPackageForStrongNamedRequest()
+        {
+            var requested = CreateAssemblyName("Dependency", new Version(1, 0, 0, 0), MicrosoftPublicKeyToken);
+            var packaged = CreateAssemblyName("Dependency", new Version(1, 0, 0, 0), null);
+
+            Assert.False(AssemblyIdentity.IsCompatible(requested, packaged));
+        }
+
+        [Fact]
         public void ShouldRejectDifferentCulture()
         {
             var requested = CreateAssemblyName("Dependency", new Version(1, 0, 0, 0), MicrosoftPublicKeyToken);
@@ -196,6 +223,26 @@ namespace Microsoft.Graph.Authentication.Test
             Assert.False(AssemblyDependencyPolicy.IsProcessShared(
                 "Microsoft.IdentityModel.Abstractions",
                 requestingAssemblyName));
+        }
+
+        [Fact]
+        public void ShouldDetachResolverOnlyAfterLastImportIsRemoved()
+        {
+            var registration = new AssemblyResolverRegistration();
+            int attachCount = 0;
+            int detachCount = 0;
+
+            registration.Register(() => attachCount++);
+            registration.Register(() => attachCount++);
+            registration.Unregister(() => detachCount++);
+
+            Assert.Equal(1, attachCount);
+            Assert.Equal(0, detachCount);
+
+            registration.Unregister(() => detachCount++);
+            registration.Unregister(() => detachCount++);
+
+            Assert.Equal(1, detachCount);
         }
 
         private static Assembly CreateAssembly(string name)
