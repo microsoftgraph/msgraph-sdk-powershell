@@ -19,8 +19,13 @@ namespace Microsoft.Graph.PowerShell.Authentication
     {
         private static readonly string s_dependencyFolder;
         private static readonly string s_psEditionDependencyFolder;
+        // Keep one entry per simple assembly name. The map records the packaged identity as
+        // well as its path so a request is validated before a file is selected for loading.
         private static readonly Dictionary<string, AssemblyDependency> s_dependencies;
         private static readonly AssemblyLoadContextProxy s_proxy;
+        // AssemblyResolve is process-wide, even though PowerShell modules are imported into
+        // module or runspace scopes. Serialize registration so repeated imports do not attach
+        // the same static handler more than once.
         private static readonly object s_resolverLock = new object();
         private static bool s_resolverRegistered;
 
@@ -31,8 +36,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
             s_dependencies = new Dictionary<string, AssemblyDependency>(StringComparer.OrdinalIgnoreCase);
             s_proxy = AssemblyLoadContextProxy.CreateLoadContext("msgraph-load-context");
 
+            // Shared assets provide the baseline. Adding the PowerShell-edition folder second
+            // intentionally replaces entries with the same simple name, ensuring that Core or
+            // Desktop assets win without relying on filesystem enumeration order.
             AddDependencies(s_dependencyFolder);
-            // PowerShell edition-specific assets take precedence over shared assets with the same name.
             AddDependencies(s_psEditionDependencyFolder);
         }
 
@@ -114,6 +121,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 try
                 {
                     var assemblyName = AssemblyName.GetAssemblyName(filePath);
+                    // Assignment, rather than Add, implements the edition-specific override
+                    // described in the static constructor.
                     s_dependencies[assemblyName.Name] = new AssemblyDependency(assemblyName, filePath);
                 }
                 catch (BadImageFormatException)
@@ -140,6 +149,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
                     // - MSAL's WAM stack is process-shared because its native runtime supports one
                     //   global initialization. Loading matching MSAL stacks into separate contexts
                     //   creates independent RuntimeBroker statics that compete for that native state.
+                    // - If EXO loaded a compatible shared dependency first, return that exact
+                    //   default-context instance. Attempting to load Graph's copy would create a
+                    //   second identity in Default or fail because Default already owns the name.
                     // - In .NET Framework, assembly conflict is not a problem, so we load the assembly
                     //   by 'Assembly.LoadFrom', the same as what powershell.exe would do.
                     if (s_proxy != null
@@ -162,6 +174,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
     internal static class AssemblyDependencyPolicy
     {
+        // These assemblies form one managed/native broker unit. They must share the process
+        // default context so Graph and EXO reach the same RuntimeBroker static state and native
+        // msalruntime initialization.
         private static readonly HashSet<string> s_processSharedDependencies =
             new HashSet<string>(StringComparer.OrdinalIgnoreCase)
             {
@@ -170,6 +185,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 "Microsoft.Identity.Client.NativeInterop"
             };
 
+        // Microsoft.IdentityModel.Abstractions cannot be globally classified as either shared
+        // or private. MSAL exposes IIdentityLogger in public method signatures, so Azure.Identity
+        // and the broker must see the same type identity as default-context MSAL. Graph's separate
+        // IdentityModel stack, however, must retain its packaged version in msgraph-load-context.
         private static readonly HashSet<string> s_identityLoggerConsumers =
             new HashSet<string>(StringComparer.OrdinalIgnoreCase)
             {
@@ -187,6 +206,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
             }
 
             return s_processSharedDependencies.Contains(assemblyName)
+                // Share the logging contract only when the request crosses the private
+                // Azure.Identity to process-wide MSAL boundary.
                 || (string.Equals(
                         assemblyName,
                         "Microsoft.IdentityModel.Abstractions",
@@ -211,6 +232,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
     internal static class AssemblyIdentity
     {
+        /// <summary>
+        /// Determines whether a packaged or already loaded assembly can satisfy a request.
+        /// A newer assembly version is accepted only when its name, culture, and signing token
+        /// match; this supports compatible roll-forward while rejecting unrelated same-name DLLs.
+        /// </summary>
         internal static bool IsCompatible(AssemblyName requested, AssemblyName packaged)
         {
             if (requested == null || packaged == null
@@ -245,6 +271,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
     internal static class AssemblyRequestOwnership
     {
+        // Graph service assemblies are installed outside Authentication's dependency directory,
+        // so their product namespace is the bootstrap signal. Transitive dependencies are owned
+        // by their load context or by their physical location under Dependencies.
         private const string GraphAssemblyPrefix = "Microsoft.Graph.";
 
         internal static bool IsOwned(
@@ -345,6 +374,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
         internal Assembly FindDefaultAssembly(AssemblyName requestedAssembly)
         {
+            // Query assemblies already materialized in Default rather than asking Default to load
+            // by name. This makes import order explicit: EXO-first reuses EXO's compatible copy,
+            // while Graph-first loads the packaged Graph copy through the resolver.
             return AppDomain.CurrentDomain.GetAssemblies()
                 .FirstOrDefault(assembly =>
                     ReferenceEquals(
