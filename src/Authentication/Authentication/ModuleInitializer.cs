@@ -159,11 +159,18 @@ namespace Microsoft.Graph.PowerShell.Authentication
         }
     }
 
+    /// <summary>
+    /// Coordinates process-wide assembly resolver registration across multiple active module imports.
+    /// </summary>
     internal sealed class AssemblyResolverRegistration
     {
         private readonly object _lock = new object();
         private int _importCount;
 
+        /// <summary>
+        /// Records a module import and attaches the resolver for the first active import.
+        /// </summary>
+        /// <param name="attach">The action that attaches the resolver.</param>
         internal void Register(Action attach)
         {
             if (attach == null)
@@ -182,6 +189,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
             }
         }
 
+        /// <summary>
+        /// Records a module removal and detaches the resolver after the last active import is removed.
+        /// Additional removals after the count reaches zero have no effect.
+        /// </summary>
+        /// <param name="detach">The action that detaches the resolver.</param>
         internal void Unregister(Action detach)
         {
             if (detach == null)
