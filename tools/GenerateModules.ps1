@@ -65,7 +65,7 @@ if (-not ($RushInstalled -and $AutoRestInstalled)) {
     Write-Host "Node build tools not found at '$RepoRoot'. Installing rush and autorest..."
     Push-Location $RepoRoot
     try {
-        npm install --no-package-lock '@microsoft/rush' 'autorest@3.7.2' '@autorest/core@3.10.4'
+        npm install --no-package-lock '@microsoft/rush@5.170.1' 'autorest@3.7.2' '@autorest/core@3.10.4'
         if ($LASTEXITCODE -ne 0) {
             throw "Command 'npm install' for Node build tools (rush, autorest) failed with exit code $LASTEXITCODE."
         }
@@ -159,8 +159,7 @@ $AutoRestTempFolder | ForEach-Object {
 }
 
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
-$CpuCount = (Get-CimInstance Win32_Processor | Measure-Object -Property NumberOfLogicalProcessors -Sum).Sum
-$Throttle = [int][math]::Max(1, [math]::Min(4, $CpuCount / 2))  # Use half the CPU count but max 4, min 1
+$Throttle = 1
 $Results = $ModuleToGenerate | ForEach-Object -Parallel {
     $Module = $_
     Write-Host -ForegroundColor Green "-------------'Generating $Module'-------------"
