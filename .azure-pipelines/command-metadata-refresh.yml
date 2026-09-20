@@ -31,6 +31,9 @@ variables:
   BuildAgent: ${{ parameters.BuildAgent }}
   Branch: "ModuleCommandMetadataRefresh"
   BaseBranch: ${{ parameters.BaseBranch }}
+  # Expose the build identity's token as a process-wide env var so generation scripts (including
+  # ForEach-Object -Parallel runspaces) can authenticate to the private CFS module feed. (CFSClean)
+  SYSTEM_ACCESSTOKEN: $(System.AccessToken)
 
 trigger:
   branches:
