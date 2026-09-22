@@ -1,4 +1,4 @@
-﻿# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
 Set-StrictMode -Version 2
@@ -33,12 +33,11 @@ Function Find-MgGraphCommand {
         . "$PSScriptRoot/common/GraphUri.ps1" | Out-Null
 
         # Read content of metadata file and cache in session object.
-        if ($null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance -and
-            $null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata) {
+        if ($null -ne [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommandCache]::MgCommandMetadata) {
             Write-Debug "Reading MgCommandMetadata from session object."
         }
         else {
-            [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata = GraphCommand_ReadGraphCommandMetadata
+            [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommandCache]::MgCommandMetadata = GraphCommand_ReadGraphCommandMetadata
         }
 
         function ResolveCommand {
@@ -50,16 +49,15 @@ Function Find-MgGraphCommand {
             Write-Debug "Received Command: $Command"
 
             # Read content of mapping file and cache in session object.
-            if ($null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance -and
-                $null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping) {
+            if ($null -ne [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommandCache]::MgLegacyCommandMapping) {
                 Write-Debug "Reading MgLegacyCommandMapping from session object."
             }
             else {
-                [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping = GraphCommand_ReadLegacyGraphCommandMapping
+                [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommandCache]::MgLegacyCommandMapping = GraphCommand_ReadLegacyGraphCommandMapping
             }
 
             # Resolve legacy commands.
-            [array]$ResolvedCommands = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgLegacyCommandMapping | Where-Object LegacyMapping -Contains $Command
+            [array]$ResolvedCommands = [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommandCache]::MgLegacyCommandMapping | Where-Object LegacyMapping -Contains $Command
             if ($ResolvedCommands) {
                 $ResolvedCommands = $ResolvedCommands.Command
             }
@@ -80,7 +78,7 @@ Function Find-MgGraphCommand {
                 $Result = @()
                 Write-Debug "Matching Command: $c"
                 Write-Debug "Matching ApiVersion: $ApiVersion"
-                [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
+                [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommandCache]::MgCommandMetadata | ForEach-Object {
                     if ($_.ApiVersion -match $ApiVersion -and
                         $_.Command -match "^$c$" -or $_.CommandAlias -match "^$c$") {
                         $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
@@ -141,7 +139,7 @@ Function Find-MgGraphCommand {
             Write-Debug "Matching URI: $ResourceSegmentRegex"
             Write-Debug "Matching Method: $Method"
             Write-Debug "Matching ApiVersion: $ApiVersion"
-            [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
+            [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommandCache]::MgCommandMetadata | ForEach-Object {
                 if ($_.Method -match $Method -and
                     $_.ApiVersion -match $ApiVersion -and
                     $_.Uri -match $ResourceSegmentRegex) {

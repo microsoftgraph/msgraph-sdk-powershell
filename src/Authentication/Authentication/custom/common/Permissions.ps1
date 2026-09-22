@@ -54,8 +54,14 @@ function Permissions_GetPermissionsData([bool] $online) {
                 $_permissions.isFromInvokeMgGraphRequest = $true
             }
         }
-        catch [System.Management.Automation.ValidationMetadataException], [System.Net.Http.HttpRequestException], [Microsoft.Graph.PowerShell.AuthenticationException] {
-            if ( $online ) {
+        catch {
+            # [Microsoft.Graph.PowerShell.AuthenticationException] lives in the isolated AssemblyLoadContext and cannot be
+            # used as a type literal here, so match on the type name instead.
+            $exceptionType = $_.Exception.GetType()
+            $isExpected = $exceptionType.FullName -eq 'Microsoft.Graph.PowerShell.AuthenticationException' -or
+                $_.Exception -is [System.Management.Automation.ValidationMetadataException] -or
+                $_.Exception -is [System.Net.Http.HttpRequestException]
+            if ( -not $isExpected -or $online ) {
                 throw
             }
             # We can't get the data from MS Graph, so just use a local static (possibly stale) copy
