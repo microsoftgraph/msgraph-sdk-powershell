@@ -13,63 +13,112 @@ using System.Reflection;
 namespace Microsoft.Graph.PowerShell.Authentication
 {
     /// <summary>
-    /// This class is used to load the dependencies of the module into the current AppDomain.
+    /// Bootstraps dependency loading for the module.
+    /// <list type="bullet">
+    /// <item>
+    /// On PowerShell 7+ (.NET) the <c>Microsoft.Graph.Authentication.Loader</c> assembly is loaded from <c>Dependencies/Core</c>
+    /// and asked to create a private <c>AssemblyLoadContext</c>. Only <c>Microsoft.Graph.Authentication.Core</c> is bridged into
+    /// the default context; Azure.Identity, MSAL, Kiota, Microsoft.Graph.Core, etc. stay invisible to other modules.
+    /// </item>
+    /// <item>
+    /// On Windows PowerShell 5.1 (.NET Framework) there is no <c>AssemblyLoadContext</c>, so the historical
+    /// <see cref="AppDomain.AssemblyResolve"/> + <see cref="Assembly.LoadFrom(string)"/> approach is kept.
+    /// </item>
+    /// </list>
+    /// IMPORTANT: this type must not reference any type from <c>Microsoft.Graph.Authentication.Core</c> (directly or via
+    /// field/parameter/local types) because its static constructor runs before the load-context redirect is in place.
     /// </summary>
     public class ModuleInitializer : IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
+        private const string LoaderAssemblyFileName = "Microsoft.Graph.Authentication.Loader.dll";
+        private const string LoaderInitializerTypeName = "Microsoft.Graph.PowerShell.Authentication.Loader.GraphLoadContextInitializer";
+
         private static readonly string s_dependencyFolder;
         private static readonly string s_psEditionDependencyFolder;
         private static readonly HashSet<string> s_dependencies;
         private static readonly HashSet<string> s_psEditionDependencies;
-        private static readonly AssemblyLoadContextProxy s_proxy;
+        private static readonly bool s_isPsCore;
+        private static readonly Type s_loaderInitializer;
 
         static ModuleInitializer()
         {
+            s_isPsCore = RuntimeUtils.IsPsCore();
             s_dependencyFolder = Path.Combine(Path.GetDirectoryName(typeof(ModuleInitializer).Assembly.Location), "Dependencies");
-            s_psEditionDependencyFolder = Path.Combine(s_dependencyFolder, RuntimeUtils.IsPsCore() ? "Core" : "Desktop");
+            s_psEditionDependencyFolder = Path.Combine(s_dependencyFolder, s_isPsCore ? "Core" : "Desktop");
             s_dependencies = new HashSet<string>(StringComparer.Ordinal);
             s_psEditionDependencies = new HashSet<string>(StringComparer.Ordinal);
-            s_proxy = AssemblyLoadContextProxy.CreateLoadContext("msgraph-load-context");
 
-            // Add shared dependencies.
-            foreach (string filePath in Directory.EnumerateFiles(s_dependencyFolder, "*.dll"))
+            if (s_isPsCore)
             {
-                try
-                {
-                    s_dependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
-                }
-                catch (BadImageFormatException)
-                {
-                    // Skip files without metadata.
-                    continue;
-                }
+                // Register the isolated load context as early as possible: before any method that references
+                // Microsoft.Graph.Authentication.Core is JIT-compiled.
+                s_loaderInitializer = InitializeIsolatedLoadContext();
+                return;
             }
 
-            // Add the dependencies for the current PowerShell edition. Can be either Desktop (PS 5.1) or Core (PS 7+).
-            foreach (string filePath in Directory.EnumerateFiles(s_psEditionDependencyFolder, "*.dll"))
-            {
-                try
-                {
-                    s_psEditionDependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
-                }
-                catch (BadImageFormatException)
-                {
-                    // Skip files without metadata.
-                    continue;
-                }
-            }
+            // .NET Framework: index the dependency folders for the AssemblyResolve handler.
+            IndexDependencyFolder(s_dependencyFolder, s_dependencies);
+            IndexDependencyFolder(s_psEditionDependencyFolder, s_psEditionDependencies);
         }
 
         /// <inheritDoc/>
         public void OnImport()
         {
+            if (s_isPsCore)
+                return;
+
             AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler;
         }
 
         /// <inheritDoc/>
         public void OnRemove(PSModuleInfo psModuleInfo)
         {
+            if (s_isPsCore)
+            {
+                s_loaderInitializer?.GetMethod("Shutdown", BindingFlags.Public | BindingFlags.Static)?.Invoke(null, null);
+                return;
+            }
+
             AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler;
+        }
+
+        /// <summary>
+        /// Loads the Loader assembly into the default context and calls <c>GraphLoadContextInitializer.Initialize</c>.
+        /// </summary>
+        /// <returns>The initializer type, or null when the loader could not be found.</returns>
+        private static Type InitializeIsolatedLoadContext()
+        {
+            string loaderPath = Path.Combine(s_psEditionDependencyFolder, LoaderAssemblyFileName);
+            if (!File.Exists(loaderPath))
+            {
+                throw new FileNotFoundException(
+                    $"The Microsoft.Graph.Authentication module is incomplete: '{loaderPath}' was not found.", loaderPath);
+            }
+
+            Assembly loader = Assembly.LoadFrom(loaderPath);
+            Type initializer = loader.GetType(LoaderInitializerTypeName, throwOnError: true);
+            MethodInfo initialize = initializer.GetMethod("Initialize", BindingFlags.Public | BindingFlags.Static, null, new[] { typeof(string), typeof(string) }, null);
+            initialize.Invoke(null, new object[] { s_dependencyFolder, s_psEditionDependencyFolder });
+            return initializer;
+        }
+
+        private static void IndexDependencyFolder(string folder, HashSet<string> target)
+        {
+            if (!Directory.Exists(folder))
+                return;
+
+            foreach (string filePath in Directory.EnumerateFiles(folder, "*.dll"))
+            {
+                try
+                {
+                    target.Add(AssemblyName.GetAssemblyName(filePath).FullName);
+                }
+                catch (BadImageFormatException)
+                {
+                    // Skip files without metadata.
+                    continue;
+                }
+            }
         }
 
         /// <summary>
@@ -125,7 +174,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
 
         /// <summary>
-        /// Resolves the assembly reference from the dependencies folder.
+        /// Resolves the assembly reference from the dependencies folder (.NET Framework only).
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="args">The event data.</param>
@@ -137,49 +186,12 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 string filePath = GetRequiredAssemblyPath(assemblyName);
                 if (!string.IsNullOrEmpty(filePath))
                 {
-                    // - In .NET, load the assembly into the custom assembly load context.
-                    // - In .NET Framework, assembly conflict is not a problem, so we load the assembly
-                    //   by 'Assembly.LoadFrom', the same as what powershell.exe would do.
-                    return s_proxy != null
-                        ? s_proxy.LoadFromAssemblyPath(filePath)
-                        : Assembly.LoadFrom(filePath);
+                    // In .NET Framework, assembly conflict is not a problem, so we load the assembly
+                    // by 'Assembly.LoadFrom', the same as what powershell.exe would do.
+                    return Assembly.LoadFrom(filePath);
                 }
             }
             return null;
-        }
-    }
-
-    /// <summary>
-    /// An encapsulation of reflection API calls to create a custom AssemblyLoadContext. <see cref="AssemblyLoadContext"/> type is not available when targeting netstandard2.0 .NET Framework.
-    /// </summary>
-    internal class AssemblyLoadContextProxy
-    {
-        private readonly object _customContext;
-        private readonly MethodInfo _loadFromAssemblyPath;
-
-        private AssemblyLoadContextProxy(Type alc, string loadContextName)
-        {
-            var ctor = alc.GetConstructor(new[] { typeof(string), typeof(bool) });
-            _loadFromAssemblyPath = alc.GetMethod("LoadFromAssemblyPath", new[] { typeof(string) });
-            _customContext = ctor.Invoke(new object[] { loadContextName, false });
-        }
-
-        internal Assembly LoadFromAssemblyPath(string assemblyPath)
-        {
-            return (Assembly)_loadFromAssemblyPath.Invoke(_customContext, new[] { assemblyPath });
-        }
-
-        internal static AssemblyLoadContextProxy CreateLoadContext(string name)
-        {
-            if (string.IsNullOrEmpty(name))
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            var alc = typeof(object).Assembly.GetType("System.Runtime.Loader.AssemblyLoadContext");
-            return alc != null
-                ? new AssemblyLoadContextProxy(alc, name)
-                : null;
         }
     }
 }

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Microsoft.Graph.Authentication.Loader</AssemblyName>
+    <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Loader</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+    <Version>2.38.1</Version>
+    <!-- Suppress .NET Target Framework Moniker (TFM) Support Build Warnings -->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(SignAssembly)' == 'true'">
+    <DefineConstants>$(DefineConstants);SIGNED_BUILD</DefineConstants>
+  </PropertyGroup>
+  <!-- This assembly is loaded into the default AssemblyLoadContext; it must have no package dependencies. -->
+</Project>

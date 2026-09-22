@@ -227,7 +227,7 @@ Describe "The Find-MgGraphPermission Command" {
         BeforeEach {
             _Permissions_Initialize
             Mock Invoke-MgGraphRequest {
-                Throw [Microsoft.Graph.PowerShell.AuthenticationException]::new('mock connection error message')
+                Throw [Activator]::CreateInstance((Get-MgCoreType 'Microsoft.Graph.PowerShell.AuthenticationException'), @('mock connection error message', $null))
             }
         }
 
