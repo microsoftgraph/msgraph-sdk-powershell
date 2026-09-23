@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using Headers = Microsoft.Graph.PowerShell.Authentication.Core.Constants.Headers;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Handlers
 {
@@ -27,20 +28,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
         {
             string psSdkVersionHeader = string.Format(request.RequestUri.AbsolutePath.StartsWith("/beta") ? Constants.PSSDKHeaderValueBeta
                 : Constants.PSSDKHeaderValueV1, _assemblyInfo.Version.Major, _assemblyInfo.Version.Minor, _assemblyInfo.Version.Build);
-            if (request.Headers.TryGetValues(CoreConstants.Headers.SdkVersionHeaderName, out IEnumerable<string> previousSDKHeaders))
+            if (request.Headers.TryGetValues(Headers.SdkVersionHeaderName, out IEnumerable<string> previousSDKHeaders))
             {
                 var dotNetSdkHeader = previousSDKHeaders.Where(h => h.StartsWith(Constants.DotNetSDKHeaderValue, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
-                request.Headers.Remove(CoreConstants.Headers.SdkVersionHeaderName);
-                request.Headers.Add(CoreConstants.Headers.SdkVersionHeaderName, new[] { psSdkVersionHeader, dotNetSdkHeader });
+                request.Headers.Remove(Headers.SdkVersionHeaderName);
+                request.Headers.Add(Headers.SdkVersionHeaderName, new[] { psSdkVersionHeader, dotNetSdkHeader });
             }
             else
             {
-                request.Headers.Add(CoreConstants.Headers.SdkVersionHeaderName, psSdkVersionHeader);
+                request.Headers.Add(Headers.SdkVersionHeaderName, psSdkVersionHeader);
             }
 
-            if (request.Headers.Contains(CoreConstants.Headers.ClientRequestId))
-                request.Headers.Remove(CoreConstants.Headers.ClientRequestId);
-            request.Headers.Add(CoreConstants.Headers.ClientRequestId, Guid.NewGuid().ToString());
+            if (request.Headers.Contains(Headers.ClientRequestId))
+                request.Headers.Remove(Headers.ClientRequestId);
+            request.Headers.Add(Headers.ClientRequestId, Guid.NewGuid().ToString());
 
             return base.SendAsync(request, cancellationToken);
         }

@@ -26,5 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Authentication\Microsoft.Graph.Authentication.csproj" />
+    <!-- Tests exercise Core internals (Azure.Identity / MSAL types) directly; reference it explicitly now that the cmdlet assembly no longer exposes them. -->
+    <ProjectReference Include="..\Authentication.Core\Microsoft.Graph.Authentication.Core.csproj" />
   </ItemGroup>
 </Project>
