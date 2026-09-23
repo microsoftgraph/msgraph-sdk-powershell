@@ -46,9 +46,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -75,9 +75,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -100,9 +100,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
   /solutions/migrations/crossTenantMigrationJobs:
     get:
@@ -159,9 +159,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -195,9 +195,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}':
     get:
@@ -243,9 +243,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -276,9 +276,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -301,9 +301,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/cancel':
     post:
@@ -331,9 +331,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/migrate':
     post:
@@ -361,9 +361,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/validate':
     post:
@@ -391,9 +391,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users':
     get:
@@ -450,9 +450,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -482,9 +482,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}':
     get:
@@ -530,9 +530,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -559,9 +559,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -584,9 +584,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}/cancel':
     post:
@@ -614,9 +614,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/$count':
     get:
@@ -636,9 +636,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
   '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')':
     get:
       tags:
@@ -683,9 +683,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -716,9 +716,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -741,9 +741,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: operation
   '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/cancel':
     post:
@@ -771,9 +771,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/migrate':
     post:
@@ -801,9 +801,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: action
   '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/validate':
     post:
@@ -831,9 +831,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
       x-ms-docs-operation-type: action
   /solutions/migrations/crossTenantMigrationJobs/$count:
     get:
@@ -853,9 +853,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
 components:
   schemas:
     microsoft.graph.migrationsRoot:
@@ -1000,6 +1000,10 @@ components:
       discriminator:
         propertyName: '@odata.type'
         mapping:
+          '#microsoft.graph.accessDriftDetail': '#/components/schemas/microsoft.graph.accessDriftDetail'
+          '#microsoft.graph.entraAccessDriftDetail': '#/components/schemas/microsoft.graph.entraAccessDriftDetail'
+          '#microsoft.graph.accessDriftReport': '#/components/schemas/microsoft.graph.accessDriftReport'
+          '#microsoft.graph.accessDriftSummary': '#/components/schemas/microsoft.graph.accessDriftSummary'
           '#microsoft.graph.accessPackage': '#/components/schemas/microsoft.graph.accessPackage'
           '#microsoft.graph.accessPackageAssignment': '#/components/schemas/microsoft.graph.accessPackageAssignment'
           '#microsoft.graph.accessPackageAssignmentPolicy': '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
@@ -1180,7 +1184,6 @@ components:
           '#microsoft.graph.authenticationMethodDevice': '#/components/schemas/microsoft.graph.authenticationMethodDevice'
           '#microsoft.graph.hardwareOathTokenAuthenticationMethodDevice': '#/components/schemas/microsoft.graph.hardwareOathTokenAuthenticationMethodDevice'
           '#microsoft.graph.authenticationMethodModeDetail': '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
-          '#microsoft.graph.authenticationMethodsPolicy': '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
           '#microsoft.graph.authenticationMethodsRoot': '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
           '#microsoft.graph.authenticationMethodTarget': '#/components/schemas/microsoft.graph.authenticationMethodTarget'
           '#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget': '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget'
@@ -1189,7 +1192,6 @@ components:
           '#microsoft.graph.verifiableCredentialAuthenticationMethodTarget': '#/components/schemas/microsoft.graph.verifiableCredentialAuthenticationMethodTarget'
           '#microsoft.graph.voiceAuthenticationMethodTarget': '#/components/schemas/microsoft.graph.voiceAuthenticationMethodTarget'
           '#microsoft.graph.authenticationsMetric': '#/components/schemas/microsoft.graph.authenticationsMetric'
-          '#microsoft.graph.authenticationStrengthPolicy': '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
           '#microsoft.graph.authenticationStrengthRoot': '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
           '#microsoft.graph.authoredNote': '#/components/schemas/microsoft.graph.authoredNote'
           '#microsoft.graph.authorizationSystem': '#/components/schemas/microsoft.graph.authorizationSystem'
@@ -1387,15 +1389,12 @@ components:
           '#microsoft.graph.command': '#/components/schemas/microsoft.graph.command'
           '#microsoft.graph.commsOperation': '#/components/schemas/microsoft.graph.commsOperation'
           '#microsoft.graph.addLargeGalleryViewOperation': '#/components/schemas/microsoft.graph.addLargeGalleryViewOperation'
-          '#microsoft.graph.admitAllFromLobbyOperation': '#/components/schemas/microsoft.graph.admitAllFromLobbyOperation'
-          '#microsoft.graph.admitFromLobbyOperation': '#/components/schemas/microsoft.graph.admitFromLobbyOperation'
           '#microsoft.graph.cancelMediaProcessingOperation': '#/components/schemas/microsoft.graph.cancelMediaProcessingOperation'
           '#microsoft.graph.inviteParticipantsOperation': '#/components/schemas/microsoft.graph.inviteParticipantsOperation'
           '#microsoft.graph.muteParticipantOperation': '#/components/schemas/microsoft.graph.muteParticipantOperation'
           '#microsoft.graph.muteParticipantsOperation': '#/components/schemas/microsoft.graph.muteParticipantsOperation'
           '#microsoft.graph.playPromptOperation': '#/components/schemas/microsoft.graph.playPromptOperation'
           '#microsoft.graph.recordOperation': '#/components/schemas/microsoft.graph.recordOperation'
-          '#microsoft.graph.removeFromLobbyOperation': '#/components/schemas/microsoft.graph.removeFromLobbyOperation'
           '#microsoft.graph.sendDtmfTonesOperation': '#/components/schemas/microsoft.graph.sendDtmfTonesOperation'
           '#microsoft.graph.startHoldMusicOperation': '#/components/schemas/microsoft.graph.startHoldMusicOperation'
           '#microsoft.graph.startRecordingOperation': '#/components/schemas/microsoft.graph.startRecordingOperation'
@@ -2168,6 +2167,9 @@ components:
           '#microsoft.graph.lookupResultRow': '#/components/schemas/microsoft.graph.lookupResultRow'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -2261,6 +2263,7 @@ components:
           '#microsoft.graph.microsoftTunnelSite': '#/components/schemas/microsoft.graph.microsoftTunnelSite'
           '#microsoft.graph.migrationsRoot': '#/components/schemas/microsoft.graph.migrationsRoot'
           '#microsoft.graph.mobileApp': '#/components/schemas/microsoft.graph.mobileApp'
+          '#microsoft.graph.androidAospReferencedApp': '#/components/schemas/microsoft.graph.androidAospReferencedApp'
           '#microsoft.graph.androidForWorkApp': '#/components/schemas/microsoft.graph.androidForWorkApp'
           '#microsoft.graph.androidManagedStoreApp': '#/components/schemas/microsoft.graph.androidManagedStoreApp'
           '#microsoft.graph.androidManagedStoreWebApp': '#/components/schemas/microsoft.graph.androidManagedStoreWebApp'
@@ -2728,6 +2731,7 @@ components:
           '#microsoft.graph.teamworkTag': '#/components/schemas/microsoft.graph.teamworkTag'
           '#microsoft.graph.teamworkTagMember': '#/components/schemas/microsoft.graph.teamworkTagMember'
           '#microsoft.graph.template': '#/components/schemas/microsoft.graph.template'
+          '#microsoft.graph.tenantActivitiesContainer': '#/components/schemas/microsoft.graph.tenantActivitiesContainer'
           '#microsoft.graph.tenantAttachRBAC': '#/components/schemas/microsoft.graph.tenantAttachRBAC'
           '#microsoft.graph.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernance'
           '#microsoft.graph.tenantGovernancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
@@ -3048,19 +3052,8 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
-          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
-          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
-          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
-          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
-          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
-          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
-          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
-          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
-          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
-          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
-          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
