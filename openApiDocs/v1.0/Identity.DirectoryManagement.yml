@@ -14316,6 +14316,1399 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /directory/tenantGovernance:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get tenantGovernance from directory
+      operationId: directory_GetTenantGovernance
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.tenantGovernance
+      summary: Update the navigation property tenantGovernance in directory
+      operationId: directory_UpdateTenantGovernance
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernance'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.tenantGovernance
+      summary: Delete navigation property tenantGovernance for directory
+      operationId: directory_DeleteTenantGovernance
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/tenantGovernance/governanceInvitations:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get governanceInvitations from directory
+      operationId: directory.tenantGovernance_ListGovernanceInvitation
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.governanceInvitationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.tenantGovernance
+      summary: Create new navigation property to governanceInvitations for directory
+      operationId: directory.tenantGovernance_CreateGovernanceInvitation
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/governanceInvitations/{governanceInvitation-id}':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get governanceInvitations from directory
+      operationId: directory.tenantGovernance_GetGovernanceInvitation
+      parameters:
+        - name: governanceInvitation-id
+          in: path
+          description: The unique identifier of governanceInvitation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceInvitation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.tenantGovernance
+      summary: Update the navigation property governanceInvitations in directory
+      operationId: directory.tenantGovernance_UpdateGovernanceInvitation
+      parameters:
+        - name: governanceInvitation-id
+          in: path
+          description: The unique identifier of governanceInvitation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceInvitation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.tenantGovernance
+      summary: Delete navigation property governanceInvitations for directory
+      operationId: directory.tenantGovernance_DeleteGovernanceInvitation
+      parameters:
+        - name: governanceInvitation-id
+          in: path
+          description: The unique identifier of governanceInvitation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceInvitation
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/tenantGovernance/governanceInvitations/$count:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get the number of the resource
+      operationId: directory.tenantGovernance.governanceInvitation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directory/tenantGovernance/governancePolicyTemplates:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get governancePolicyTemplates from directory
+      operationId: directory.tenantGovernance_ListGovernancePolicyTemplate
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.tenantGovernancePolicyTemplateCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.tenantGovernance
+      summary: Create new navigation property to governancePolicyTemplates for directory
+      operationId: directory.tenantGovernance_CreateGovernancePolicyTemplate
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/governancePolicyTemplates/{tenantGovernancePolicyTemplate-id}':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get governancePolicyTemplates from directory
+      operationId: directory.tenantGovernance_GetGovernancePolicyTemplate
+      parameters:
+        - name: tenantGovernancePolicyTemplate-id
+          in: path
+          description: The unique identifier of tenantGovernancePolicyTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantGovernancePolicyTemplate
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.tenantGovernance
+      summary: Update the navigation property governancePolicyTemplates in directory
+      operationId: directory.tenantGovernance_UpdateGovernancePolicyTemplate
+      parameters:
+        - name: tenantGovernancePolicyTemplate-id
+          in: path
+          description: The unique identifier of tenantGovernancePolicyTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantGovernancePolicyTemplate
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.tenantGovernance
+      summary: Delete navigation property governancePolicyTemplates for directory
+      operationId: directory.tenantGovernance_DeleteGovernancePolicyTemplate
+      parameters:
+        - name: tenantGovernancePolicyTemplate-id
+          in: path
+          description: The unique identifier of tenantGovernancePolicyTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantGovernancePolicyTemplate
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/tenantGovernance/governancePolicyTemplates/$count:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get the number of the resource
+      operationId: directory.tenantGovernance.governancePolicyTemplate_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directory/tenantGovernance/governanceRelationships:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get governanceRelationships from directory
+      operationId: directory.tenantGovernance_ListGovernanceRelationship
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.governanceRelationshipCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.tenantGovernance
+      summary: Create new navigation property to governanceRelationships for directory
+      operationId: directory.tenantGovernance_CreateGovernanceRelationship
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/governanceRelationships/{governanceRelationship-id}':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get governanceRelationships from directory
+      operationId: directory.tenantGovernance_GetGovernanceRelationship
+      parameters:
+        - name: governanceRelationship-id
+          in: path
+          description: The unique identifier of governanceRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRelationship
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.tenantGovernance
+      summary: Update the navigation property governanceRelationships in directory
+      operationId: directory.tenantGovernance_UpdateGovernanceRelationship
+      parameters:
+        - name: governanceRelationship-id
+          in: path
+          description: The unique identifier of governanceRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRelationship
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.tenantGovernance
+      summary: Delete navigation property governanceRelationships for directory
+      operationId: directory.tenantGovernance_DeleteGovernanceRelationship
+      parameters:
+        - name: governanceRelationship-id
+          in: path
+          description: The unique identifier of governanceRelationship
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRelationship
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/tenantGovernance/governanceRelationships/$count:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get the number of the resource
+      operationId: directory.tenantGovernance.governanceRelationship_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directory/tenantGovernance/governanceRequests:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get governanceRequests from directory
+      operationId: directory.tenantGovernance_ListGovernanceRequest
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.governanceRequestCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.tenantGovernance
+      summary: Create new navigation property to governanceRequests for directory
+      operationId: directory.tenantGovernance_CreateGovernanceRequest
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.governanceRequest'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/governanceRequests/{governanceRequest-id}':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get governanceRequests from directory
+      operationId: directory.tenantGovernance_GetGovernanceRequest
+      parameters:
+        - name: governanceRequest-id
+          in: path
+          description: The unique identifier of governanceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.tenantGovernance
+      summary: Update the navigation property governanceRequests in directory
+      operationId: directory.tenantGovernance_UpdateGovernanceRequest
+      parameters:
+        - name: governanceRequest-id
+          in: path
+          description: The unique identifier of governanceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.governanceRequest'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.governanceRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.tenantGovernance
+      summary: Delete navigation property governanceRequests for directory
+      operationId: directory.tenantGovernance_DeleteGovernanceRequest
+      parameters:
+        - name: governanceRequest-id
+          in: path
+          description: The unique identifier of governanceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/governanceRequests/{governanceRequest-id}/governancePolicyTemplate':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get governancePolicyTemplate from directory
+      operationId: directory.tenantGovernance.governanceRequest_GetGovernancePolicyTemplate
+      parameters:
+        - name: governanceRequest-id
+          in: path
+          description: The unique identifier of governanceRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: governanceRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/tenantGovernance/governanceRequests/$count:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get the number of the resource
+      operationId: directory.tenantGovernance.governanceRequest_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directory/tenantGovernance/relatedTenants:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get relatedTenants from directory
+      operationId: directory.tenantGovernance_ListRelatedTenant
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.relatedTenantCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.tenantGovernance
+      summary: Create new navigation property to relatedTenants for directory
+      operationId: directory.tenantGovernance_CreateRelatedTenant
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.relatedTenant'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.relatedTenant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/relatedTenants/{relatedTenant-id}':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get relatedTenants from directory
+      operationId: directory.tenantGovernance_GetRelatedTenant
+      parameters:
+        - name: relatedTenant-id
+          in: path
+          description: The unique identifier of relatedTenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: relatedTenant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.relatedTenant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.tenantGovernance
+      summary: Update the navigation property relatedTenants in directory
+      operationId: directory.tenantGovernance_UpdateRelatedTenant
+      parameters:
+        - name: relatedTenant-id
+          in: path
+          description: The unique identifier of relatedTenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: relatedTenant
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.relatedTenant'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.relatedTenant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.tenantGovernance
+      summary: Delete navigation property relatedTenants for directory
+      operationId: directory.tenantGovernance_DeleteRelatedTenant
+      parameters:
+        - name: relatedTenant-id
+          in: path
+          description: The unique identifier of relatedTenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: relatedTenant
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/relatedTenants/{relatedTenant-id}/appB2BSignInActivityMetrics':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get appB2BSignInActivityMetrics from directory
+      operationId: directory.tenantGovernance.relatedTenant_GetAppB2BSignInActivityMetric
+      parameters:
+        - name: relatedTenant-id
+          in: path
+          description: The unique identifier of relatedTenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: relatedTenant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/relatedTenants/{relatedTenant-id}/b2BRegistrationMetrics':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get b2BRegistrationMetrics from directory
+      operationId: directory.tenantGovernance.relatedTenant_GetB2BRegistrationMetric
+      parameters:
+        - name: relatedTenant-id
+          in: path
+          description: The unique identifier of relatedTenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: relatedTenant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2bRegistrationMetrics'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/relatedTenants/{relatedTenant-id}/b2BSignInActivityMetrics':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get b2BSignInActivityMetrics from directory
+      operationId: directory.tenantGovernance.relatedTenant_GetB2BSignInActivityMetric
+      parameters:
+        - name: relatedTenant-id
+          in: path
+          description: The unique identifier of relatedTenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: relatedTenant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/relatedTenants/{relatedTenant-id}/billingMetrics':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get billingMetrics from directory
+      operationId: directory.tenantGovernance.relatedTenant_GetBillingMetric
+      parameters:
+        - name: relatedTenant-id
+          in: path
+          description: The unique identifier of relatedTenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: relatedTenant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.billingMetrics'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/tenantGovernance/relatedTenants/{relatedTenant-id}/multiTenantApplicationMetrics':
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get multiTenantApplicationMetrics from directory
+      operationId: directory.tenantGovernance.relatedTenant_GetMultiTenantApplicationMetric
+      parameters:
+        - name: relatedTenant-id
+          in: path
+          description: The unique identifier of relatedTenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: relatedTenant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetrics'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/tenantGovernance/relatedTenants/$count:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get the number of the resource
+      operationId: directory.tenantGovernance.relatedTenant_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /directory/tenantGovernance/relatedTenants/microsoft.graph.refresh:
+    post:
+      tags:
+        - directory.tenantGovernance
+      summary: Invoke action refresh
+      operationId: directory.tenantGovernance.relatedTenant_refresh
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directory/tenantGovernance/settings:
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Get settings from directory
+      operationId: directory.tenantGovernance_GetSetting
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.tenantGovernance
+      summary: Update the navigation property settings in directory
+      operationId: directory.tenantGovernance_UpdateSetting
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.tenantGovernance
+      summary: Delete navigation property settings for directory
+      operationId: directory.tenantGovernance_DeleteSetting
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/tenantGovernance/settings/microsoft.graph.enableRelatedTenants:
+    post:
+      tags:
+        - directory.tenantGovernance
+      summary: Invoke action enableRelatedTenants
+      operationId: directory.tenantGovernance.setting_enableRelatedTenant
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /directoryRoles:
     get:
       tags:
@@ -22889,6 +24282,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The messages in a mailbox or folder. Read-only. Nullable.
               x-ms-navigationProperty: true
+            notes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.note'
+              description: The notes in the user's Notes folder. Read-only. Nullable.
+              x-ms-navigationProperty: true
             oauth2PermissionGrants:
               type: array
               items:
@@ -24026,6 +25425,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.companySubscription'
               description: List of commercial subscriptions that an organization acquired.
               x-ms-navigationProperty: true
+            tenantGovernance:
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernance'
           additionalProperties:
             type: object
     microsoft.graph.application:
@@ -24689,6 +26090,239 @@ components:
               description: The number of licenses included in this subscription.
               format: int32
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.tenantGovernance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tenantGovernance
+          type: object
+          properties:
+            governanceInvitations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
+              x-ms-navigationProperty: true
+            governancePolicyTemplates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+              x-ms-navigationProperty: true
+            governanceRelationships:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
+              x-ms-navigationProperty: true
+            governanceRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.governanceRequest'
+              x-ms-navigationProperty: true
+            relatedTenants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.relatedTenant'
+              x-ms-navigationProperty: true
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
+          additionalProperties:
+            type: object
+    microsoft.graph.governanceInvitation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: governanceInvitation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            governedTenantId:
+              type: string
+            governedTenantName:
+              type: string
+            governingTenantId:
+              type: string
+            governingTenantName:
+              type: string
+          additionalProperties:
+            type: object
+    microsoft.graph.tenantGovernancePolicyTemplate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tenantGovernancePolicyTemplate
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            delegatedAdministrationRoleAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.delegatedAdministrationRoleAssignment'
+            description:
+              type: string
+            displayName:
+              type: string
+            governedTenantCanTerminate:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            multiTenantApplicationsToProvision:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationsToProvision'
+            version:
+              type: string
+          additionalProperties:
+            type: object
+    microsoft.graph.governanceRelationship:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: governanceRelationship
+          type: object
+          properties:
+            createdType:
+              $ref: '#/components/schemas/microsoft.graph.relationshipCreationType'
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            governedTenantId:
+              type: string
+            governedTenantName:
+              type: string
+            governingTenantId:
+              type: string
+            governingTenantName:
+              type: string
+            policySnapshot:
+              $ref: '#/components/schemas/microsoft.graph.relationshipPolicy'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.relationshipStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.governanceRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: governanceRequest
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            governedTenantId:
+              type: string
+            governedTenantName:
+              type: string
+            governingTenantId:
+              type: string
+            governingTenantName:
+              type: string
+            policySnapshot:
+              $ref: '#/components/schemas/microsoft.graph.relationshipPolicy'
+            requestDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            status:
+              $ref: '#/components/schemas/microsoft.graph.requestStatus'
+            governancePolicyTemplate:
+              $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+          additionalProperties:
+            type: object
+    microsoft.graph.relatedTenant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: relatedTenant
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            isMicrosoftInfrastructure:
+              type: boolean
+              description: Indicates whether this tenant is a Microsoft infrastructure tenant.
+              readOnly: true
+            appB2BSignInActivityMetrics:
+              $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
+            b2BRegistrationMetrics:
+              $ref: '#/components/schemas/microsoft.graph.b2bRegistrationMetrics'
+            b2BSignInActivityMetrics:
+              $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
+            billingMetrics:
+              $ref: '#/components/schemas/microsoft.graph.billingMetrics'
+            multiTenantApplicationMetrics:
+              $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetrics'
+          additionalProperties:
+            type: object
+    microsoft.graph.b2BSignInActivityMetrics:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: b2BSignInActivityMetrics
+          type: object
+          properties:
+            initial:
+              $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsInitial'
+            recent:
+              $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsRecent'
+          additionalProperties:
+            type: object
+    microsoft.graph.b2bRegistrationMetrics:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: b2bRegistrationMetrics
+          type: object
+          properties:
+            initial:
+              $ref: '#/components/schemas/microsoft.graph.b2BRegistrationMetricsInitial'
+            recent:
+              $ref: '#/components/schemas/microsoft.graph.b2BRegistrationMetricsRecent'
+          additionalProperties:
+            type: object
+    microsoft.graph.billingMetrics:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: billingMetrics
+          type: object
+          properties:
+            initial:
+              $ref: '#/components/schemas/microsoft.graph.billingMetricsInitial'
+            recent:
+              $ref: '#/components/schemas/microsoft.graph.billingMetricsRecent'
+          additionalProperties:
+            type: object
+    microsoft.graph.multiTenantApplicationMetrics:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: multiTenantApplicationMetrics
+          type: object
+          properties:
+            initial:
+              $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsInitial'
+            recent:
+              $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsRecent'
+          additionalProperties:
+            type: object
+    microsoft.graph.tenantGovernanceSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tenantGovernanceSetting
+          type: object
+          properties:
+            canReceiveInvitations:
+              type: boolean
+            isRelatedTenantsEnabled:
+              type: boolean
           additionalProperties:
             type: object
     microsoft.graph.directoryRole:
@@ -27364,6 +28998,59 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.note:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
+        - title: note
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyPreview:
+              type: string
+              description: 'Auto-generated preview of the note body content (first ~255 characters, plain text). Read-only.'
+              nullable: true
+              readOnly: true
+            hasAttachments:
+              type: boolean
+              description: Indicates whether the note has file attachments. Supports $filter (eq). Read-only.
+              nullable: true
+              readOnly: true
+            isDeleted:
+              type: boolean
+              description: Indicates whether the note is soft-deleted. Read-only.
+              nullable: true
+              readOnly: true
+            subject:
+              type: string
+              description: 'The title of the note. Supports $filter (eq, ne, startsWith) and $orderby.'
+              nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: 'The file attachments for the note. Only inline image attachments (image/png, image/jpeg, image/gif, or image/bmp) are supported, with a maximum size of 3 MB per attachment. Use $expand to retrieve attachments.'
+              x-ms-navigationProperty: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the note.
+              x-ms-navigationProperty: true
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the note.
+              x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the note.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28408,12 +30095,19 @@ components:
       properties:
         blockAzureADGraphAccess:
           type: boolean
+          description: 'If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.'
+          nullable: true
+        coopEnforcement:
+          type: boolean
+          description: 'Indicates whether Cross-Origin-Opener-Policy (COOP) headers are enforced on browser-based authentication responses for the application. Set to true to enable enforcement, false to temporarily suppress enforcement, or null to use the service default. For how-to guidance, see Control Cross-Origin-Opener-Policy enforcement.'
           nullable: true
         removeUnverifiedEmailClaim:
           type: boolean
+          description: 'If true, removes the email claim from tokens sent to an application when the email address''s domain can''t be verified.'
           nullable: true
         requireClientServicePrincipal:
           type: boolean
+          description: 'If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they''re granted access tokens. This property is only modifiable for multitenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.'
           nullable: true
       additionalProperties:
         type: object
@@ -28798,6 +30492,226 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.delegatedAdministrationRoleAssignment:
+      title: delegatedAdministrationRoleAssignment
+      type: object
+      properties:
+        groupDisplayName:
+          type: string
+          nullable: true
+        roleTemplates:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roleTemplate'
+        group:
+          $ref: '#/components/schemas/microsoft.graph.group'
+      additionalProperties:
+        type: object
+    microsoft.graph.multiTenantApplicationsToProvision:
+      title: multiTenantApplicationsToProvision
+      type: object
+      properties:
+        appId:
+          type: string
+        displayName:
+          type: string
+        objectId:
+          type: string
+        requiredResourceAccesses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.applicationsRequiredResourceAccess'
+      additionalProperties:
+        type: object
+    microsoft.graph.relationshipCreationType:
+      title: relationshipCreationType
+      enum:
+        - approvedByAdmin
+        - addOnTenant
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: relationshipCreationType
+        modelAsString: false
+        values:
+          - value: approvedByAdmin
+            description: Represents a relationship between two tenants that was created by an explicit approval from the governed tenant admin.
+            name: approvedByAdmin
+          - value: addOnTenant
+            description: Represents a relationship between the add-on tenant and the tenant from which it was created.
+            name: addOnTenant
+          - value: unknownFutureValue
+            description: This will help in making this enum evolvable and adding more values in the future-
+            name: unknownFutureValue
+    microsoft.graph.relationshipPolicy:
+      title: relationshipPolicy
+      type: object
+      properties:
+        delegatedAdministrationRoleAssignments:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.delegatedAdministrationRoleAssignmentSnapshot'
+        governedTenantCanTerminate:
+          type: boolean
+        multiTenantApplicationsToProvision:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationsToProvisionSnapshot'
+        policyId:
+          type: string
+        version:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+          readOnly: true
+      additionalProperties:
+        type: object
+    microsoft.graph.relationshipStatus:
+      title: relationshipStatus
+      enum:
+        - active
+        - terminated
+        - terminationRequestedByGoverningTenant
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: relationshipStatus
+        modelAsString: false
+        values:
+          - value: active
+            description: Represents a relationship that is currently active.
+            name: active
+          - value: terminated
+            description: Represents a relationship that has been terminated.
+            name: terminated
+          - value: terminationRequestedByGoverningTenant
+            description: Represents a relationship that has been requested to be terminated by governing tenant.
+            name: terminationRequestedByGoverningTenant
+          - value: unknownFutureValue
+            description: This will help in making this enum evolable and adding more values in the future-
+            name: unknownFutureValue
+    microsoft.graph.requestStatus:
+      title: requestStatus
+      enum:
+        - pending
+        - accepted
+        - rejected
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: requestStatus
+        modelAsString: false
+        values:
+          - value: pending
+            description: Represents a governance request that is pending
+            name: pending
+          - value: accepted
+            description: Represents a governance request that was accepted
+            name: accepted
+          - value: rejected
+            description: Represents a governance request that was rejected
+            name: rejected
+          - value: unknownFutureValue
+            description: This will help in making this enum evolable and adding more values in the future-
+            name: unknownFutureValue
+    microsoft.graph.b2BSignInActivityMetricsInitial:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsBase'
+        - title: b2BSignInActivityMetricsInitial
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.b2BSignInActivityMetricsRecent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsBase'
+        - title: b2BSignInActivityMetricsRecent
+          type: object
+          properties:
+            updateDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.b2BRegistrationMetricsInitial:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.b2BRegistrationMetricsBase'
+        - title: b2BRegistrationMetricsInitial
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.b2BRegistrationMetricsRecent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.b2BRegistrationMetricsBase'
+        - title: b2BRegistrationMetricsRecent
+          type: object
+          properties:
+            updateDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.billingMetricsInitial:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.billingMetricsBase'
+        - title: billingMetricsInitial
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.billingMetricsRecent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.billingMetricsBase'
+        - title: billingMetricsRecent
+          type: object
+          properties:
+            updateDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.multiTenantApplicationMetricsInitial:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsBase'
+        - title: multiTenantApplicationMetricsInitial
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.multiTenantApplicationMetricsRecent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsBase'
+        - title: multiTenantApplicationMetricsRecent
+          type: object
+          properties:
+            updateDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
     microsoft.graph.domainState:
       title: domainState
       type: object
@@ -29575,6 +31489,71 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.companySubscription'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.governanceInvitationCollectionResponse:
+      title: Collection of governanceInvitation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.tenantGovernancePolicyTemplateCollectionResponse:
+      title: Collection of tenantGovernancePolicyTemplate
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.governanceRelationshipCollectionResponse:
+      title: Collection of governanceRelationship
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.governanceRequestCollectionResponse:
+      title: Collection of governanceRequest
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.governanceRequest'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.relatedTenantCollectionResponse:
+      title: Collection of relatedTenant
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.relatedTenant'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -34196,6 +36175,153 @@ components:
           $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationDeletionPreventionType'
       additionalProperties:
         type: object
+    microsoft.graph.roleTemplate:
+      title: roleTemplate
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationsRequiredResourceAccess:
+      title: applicationsRequiredResourceAccess
+      type: object
+      properties:
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.applicationResourcePermission'
+        resourceAppId:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.delegatedAdministrationRoleAssignmentSnapshot:
+      title: delegatedAdministrationRoleAssignmentSnapshot
+      type: object
+      properties:
+        groupDisplayName:
+          type: string
+          nullable: true
+        groupId:
+          type: string
+        roleTemplates:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roleTemplate'
+      additionalProperties:
+        type: object
+    microsoft.graph.multiTenantApplicationsToProvisionSnapshot:
+      title: multiTenantApplicationsToProvisionSnapshot
+      type: object
+      properties:
+        appId:
+          type: string
+        displayName:
+          type: string
+        objectId:
+          type: string
+        requiredResourceAccesses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.applicationsRequiredResourceAccess'
+      additionalProperties:
+        type: object
+    microsoft.graph.b2BSignInActivityMetricsBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: b2BSignInActivityMetricsBase
+          type: object
+          properties:
+            inboundMonthlyTotalApplications:
+              type: number
+              format: decimal
+            inboundMonthlyTotalUsers:
+              type: number
+              format: decimal
+            outboundMonthlyTotalApplications:
+              type: number
+              format: decimal
+            outboundMonthlyTotalUsers:
+              type: number
+              format: decimal
+            watermarkDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.b2BRegistrationMetricsBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: b2BRegistrationMetricsBase
+          type: object
+          properties:
+            inboundTotalUsers:
+              type: number
+              format: decimal
+            outboundTotalUsers:
+              type: number
+              format: decimal
+            watermarkDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.billingMetricsBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: billingMetricsBase
+          type: object
+          properties:
+            foreignAssociatedTenantBillingManagementActiveCount:
+              type: number
+              format: decimal
+            foreignAssociatedTenantCount:
+              type: number
+              format: decimal
+            foreignAssociatedTenantProvisioningActiveCount:
+              type: number
+              format: decimal
+            localAssociatedTenantBillingManagementActiveCount:
+              type: number
+              format: decimal
+            localAssociatedTenantCount:
+              type: number
+              format: decimal
+            localAssociatedTenantIds:
+              type: array
+              items:
+                type: string
+            localAssociatedTenantProvisioningActiveCount:
+              type: number
+              format: decimal
+            watermarkDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.multiTenantApplicationMetricsBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: multiTenantApplicationMetricsBase
+          type: object
+          properties:
+            inboundMonthlyTotalApplications:
+              type: number
+              format: decimal
+            outboundMonthlyTotalApplications:
+              type: number
+              format: decimal
+            watermarkDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+          additionalProperties:
+            type: object
     microsoft.graph.authenticationProtocol:
       title: authenticationProtocol
       enum:
@@ -38561,6 +40687,19 @@ components:
         - enabledForPercentage
         - unknownFutureValue
       type: string
+    microsoft.graph.applicationResourcePermission:
+      title: applicationResourcePermission
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.applicationPermissionType'
+      additionalProperties:
+        type: object
     microsoft.graph.layoutTemplateType:
       title: layoutTemplateType
       enum:
@@ -41179,6 +43318,26 @@ components:
         - SynchronizationLearnMoreIbizaFwLink
         - ConfigurationFields
       type: string
+    microsoft.graph.applicationPermissionType:
+      title: applicationPermissionType
+      enum:
+        - role
+        - scope
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: applicationPermissionType
+        modelAsString: false
+        values:
+          - value: role
+            description: Represents a type of permission that is for an app only scenario. No user is involved.
+            name: role
+          - value: scope
+            description: Represents a type of permission that is for an app and user scenario.
+            name: scope
+          - value: unknownFutureValue
+            description: This will help in making this enum evolable and adding more values in the future-
+            name: unknownFutureValue
     microsoft.graph.printColorMode:
       title: printColorMode
       enum:
@@ -44275,6 +46434,36 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.companySubscriptionCollectionResponse'
+    microsoft.graph.governanceInvitationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.governanceInvitationCollectionResponse'
+    microsoft.graph.tenantGovernancePolicyTemplateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplateCollectionResponse'
+    microsoft.graph.governanceRelationshipCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.governanceRelationshipCollectionResponse'
+    microsoft.graph.governanceRequestCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.governanceRequestCollectionResponse'
+    microsoft.graph.relatedTenantCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.relatedTenantCollectionResponse'
     microsoft.graph.directoryRoleCollectionResponse:
       description: Retrieved collection
       content:

@@ -24019,7 +24019,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
           additionalProperties:
             type: object
-          description: Security singleton providing access to audit log resources.
     microsoft.graph.alert:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28012,6 +28011,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The messages in a mailbox or folder. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            notes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.note'
+              description: The notes in the user's Notes folder. Read-only. Nullable.
               x-ms-navigationProperty: true
             oauth2PermissionGrants:
               type: array
@@ -34720,6 +34725,59 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the message. Nullable.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.note:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
+        - title: note
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyPreview:
+              type: string
+              description: 'Auto-generated preview of the note body content (first ~255 characters, plain text). Read-only.'
+              nullable: true
+              readOnly: true
+            hasAttachments:
+              type: boolean
+              description: Indicates whether the note has file attachments. Supports $filter (eq). Read-only.
+              nullable: true
+              readOnly: true
+            isDeleted:
+              type: boolean
+              description: Indicates whether the note is soft-deleted. Read-only.
+              nullable: true
+              readOnly: true
+            subject:
+              type: string
+              description: 'The title of the note. Supports $filter (eq, ne, startsWith) and $orderby.'
+              nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: 'The file attachments for the note. Only inline image attachments (image/png, image/jpeg, image/gif, or image/bmp) are supported, with a maximum size of 3 MB per attachment. Use $expand to retrieve attachments.'
+              x-ms-navigationProperty: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the note.
+              x-ms-navigationProperty: true
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the note.
+              x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the note.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -43575,6 +43633,7 @@ components:
         - sPSharingNotifyUser
         - sPSharingGenerateIncidentReport
         - restrictWebGrounding
+        - policyTip
       type: string
     microsoft.graph.classificationError:
       allOf:
