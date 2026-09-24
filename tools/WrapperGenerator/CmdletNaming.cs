@@ -123,7 +123,7 @@ public sealed record CmdletNaming(
     // PathParamNames. A parameterized function is built by populating kiota's path-parameter
     // dictionary, which is keyed by these template names, not by the cmdlet parameter names.
     IReadOnlyList<string>? PathParamTemplateNames = null,
-    // The operation's route, normalized the way NamingOverrides keys its data. Diagnostics
+    // The operation's route, normalized the way CmdletConfigurator keys its data. Diagnostics
     // report it rather than leaving the route to be reconstructed from the builder expression:
     // that reconstruction is lossy for a function (the builder member keeps the argument names
     // but not the OData argument syntax) and wrong for a namespace-qualified action (kiota
@@ -131,7 +131,7 @@ public sealed record CmdletNaming(
     // against the wrong oracle row.
     string NormalizedPath = "",
     // The operation's route and method exactly as the spec declares them, qualifier and {id}
-    // template names intact. NormalizedPath cannot serve here: it is the key NamingOverrides
+    // template names intact. NormalizedPath cannot serve here: it is the key CmdletConfigurator
     // indexes by, so it is lower-cased and collapses every {id} to {}. These are emitted as a
     // [GraphRoute] attribute so verification tooling reads the operation's identity out of the
     // compiled assembly instead of reconstructing it from the builder expression.
@@ -172,14 +172,14 @@ public static class Naming
 
         // The published SDK picks an action's verb per operation rather than from the method, so
         // where the oracle-derived data records one it replaces the structural default.
-        if (NamingOverrides.TryGetOverriddenVerb(operation.HttpMethod, operation.Path, config) is { } publishedVerb)
+        if (CmdletConfigurator.TryGetOverriddenVerb(operation.HttpMethod, operation.Path, config) is { } publishedVerb)
             verb = PsVerb.FromApprovedName(publishedVerb);
 
         // The noun comes from the URL path, not the operationId. OperationIds keep whatever
         // plurality the spec author chose, while the published SDK names follow the path:
         // GET /users/{id}/messages is Get-MgUserMessage. The few hand-tuned exceptions the
-        // published SDK carries are mirrored as data in NamingOverrides, never as code here.
-        var noun = GeneratorConstants.NounPrefix + NamingOverrides.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path, operation.Kind), config);
+        // published SDK carries are mirrored as data in CmdletConfigurator, never as code here.
+        var noun = GeneratorConstants.NounPrefix + CmdletConfigurator.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path, operation.Kind), config);
 
         // A list GET (/users/{id}/messages) and its item GET (/users/{id}/messages/{message-id})
         // get the same noun on purpose. PowerShellWrapperGenerationService pairs them into one
@@ -198,7 +198,7 @@ public static class Naming
             .Select(raw => new HeaderParam(raw, raw.ToPascalCase('-')))
             .ToList();
 
-        var normalizedPath = NamingOverrides.NormalizePathTemplate(operation.Path);
+        var normalizedPath = CmdletConfigurator.NormalizePathTemplate(operation.Path);
         if (operation.Kind == OperationKind.Resource)
             return new CmdletNaming(verb.AttributeClass, verb.Name, noun, className, pathParamNames, builderExpression, headerParams,
                 NormalizedPath: normalizedPath, SourcePath: operation.Path, SourceMethod: operation.HttpMethod.Method);

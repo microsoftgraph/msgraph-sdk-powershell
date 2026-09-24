@@ -189,7 +189,7 @@ public sealed class GenerationServiceRegressionTests
 
     // Two operations resolving to the same cmdlet file must fail generation loudly,
     // identifying both operations — never silently overwrite. The real shipped collision
-    // (/sites/{id}/sites) is renamed via NamingOverrides, so a synthetic self-referential
+    // (/sites/{id}/sites) is renamed via CmdletConfigurator, so a synthetic self-referential
     // path keeps the guard itself exercised.
     [Fact]
     public async Task GenerateAsync_FailsLoudlyWhenTwoCmdletsResolveToTheSameFile()
