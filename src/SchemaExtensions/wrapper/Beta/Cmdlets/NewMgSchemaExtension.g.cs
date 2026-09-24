@@ -1,0 +1,86 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.SchemaExtensions.Client;
+using Microsoft.Graph.PowerShell.SchemaExtensions.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.SchemaExtensions
+{
+    [GraphRoute("POST", "/schemaExtensions")]
+    [Cmdlet(VerbsCommon.New, "MgSchemaExtension", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.SchemaExtensions.Client.Models.SchemaExtension))]
+    public class NewMgSchemaExtensionCommand : GraphClientCmdlet
+    {
+
+
+        [Parameter(Mandatory = false)]
+        public string? Description { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? Owner { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? Status { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string[]? TargetTypes { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.SchemaExtensions.Client.Models.ExtensionSchemaProperty[]? Properties { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(null, "New"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.SchemaExtensions.Client.Models.SchemaExtension();
+
+    if (this.IsParameterBound(nameof(Description)))
+        body.Description = Description;
+
+    if (this.IsParameterBound(nameof(Owner)))
+        body.Owner = Owner;
+
+    if (this.IsParameterBound(nameof(Status)))
+        body.Status = Status;
+
+    if (this.IsParameterBound(nameof(TargetTypes)))
+        body.TargetTypes = TargetTypes!.ToList();
+
+    if (this.IsParameterBound(nameof(Properties)))
+        body.Properties = Properties!.ToList();
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.SchemaExtensions.Client.Models.SchemaExtension? result;
+            try
+            {
+                result = client.SchemaExtensions.PostAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, body);
+                return;
+            }
+
+            WriteObject(result);
+        }
+    }
+}

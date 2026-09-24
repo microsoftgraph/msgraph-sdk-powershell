@@ -15248,6 +15248,12 @@ components:
                 - type: object
                   nullable: true
               description: 'The physical address of the place, including the street, city, state, country or region, and postal code.'
+            customProperties:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.stringDictionary'
+                - type: object
+                  nullable: true
+              description: Custom properties for the place. Each property has a string key and a string value. Nullable.
             displayName:
               type: string
               description: The name that is associated with the place.
@@ -15264,6 +15270,13 @@ components:
               type: string
               description: User-defined description of the place.
               nullable: true
+            lastUpdatedTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the place was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable.
+              format: date-time
+              nullable: true
+              readOnly: true
             parentId:
               type: string
               description: The ID of a parent place.
@@ -15751,6 +15764,10 @@ components:
       discriminator:
         propertyName: '@odata.type'
         mapping:
+          '#microsoft.graph.accessDriftDetail': '#/components/schemas/microsoft.graph.accessDriftDetail'
+          '#microsoft.graph.entraAccessDriftDetail': '#/components/schemas/microsoft.graph.entraAccessDriftDetail'
+          '#microsoft.graph.accessDriftReport': '#/components/schemas/microsoft.graph.accessDriftReport'
+          '#microsoft.graph.accessDriftSummary': '#/components/schemas/microsoft.graph.accessDriftSummary'
           '#microsoft.graph.accessPackage': '#/components/schemas/microsoft.graph.accessPackage'
           '#microsoft.graph.accessPackageAssignment': '#/components/schemas/microsoft.graph.accessPackageAssignment'
           '#microsoft.graph.accessPackageAssignmentPolicy': '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
@@ -15931,7 +15948,6 @@ components:
           '#microsoft.graph.authenticationMethodDevice': '#/components/schemas/microsoft.graph.authenticationMethodDevice'
           '#microsoft.graph.hardwareOathTokenAuthenticationMethodDevice': '#/components/schemas/microsoft.graph.hardwareOathTokenAuthenticationMethodDevice'
           '#microsoft.graph.authenticationMethodModeDetail': '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
-          '#microsoft.graph.authenticationMethodsPolicy': '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
           '#microsoft.graph.authenticationMethodsRoot': '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
           '#microsoft.graph.authenticationMethodTarget': '#/components/schemas/microsoft.graph.authenticationMethodTarget'
           '#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget': '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget'
@@ -15940,7 +15956,6 @@ components:
           '#microsoft.graph.verifiableCredentialAuthenticationMethodTarget': '#/components/schemas/microsoft.graph.verifiableCredentialAuthenticationMethodTarget'
           '#microsoft.graph.voiceAuthenticationMethodTarget': '#/components/schemas/microsoft.graph.voiceAuthenticationMethodTarget'
           '#microsoft.graph.authenticationsMetric': '#/components/schemas/microsoft.graph.authenticationsMetric'
-          '#microsoft.graph.authenticationStrengthPolicy': '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
           '#microsoft.graph.authenticationStrengthRoot': '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
           '#microsoft.graph.authoredNote': '#/components/schemas/microsoft.graph.authoredNote'
           '#microsoft.graph.authorizationSystem': '#/components/schemas/microsoft.graph.authorizationSystem'
@@ -16138,15 +16153,12 @@ components:
           '#microsoft.graph.command': '#/components/schemas/microsoft.graph.command'
           '#microsoft.graph.commsOperation': '#/components/schemas/microsoft.graph.commsOperation'
           '#microsoft.graph.addLargeGalleryViewOperation': '#/components/schemas/microsoft.graph.addLargeGalleryViewOperation'
-          '#microsoft.graph.admitAllFromLobbyOperation': '#/components/schemas/microsoft.graph.admitAllFromLobbyOperation'
-          '#microsoft.graph.admitFromLobbyOperation': '#/components/schemas/microsoft.graph.admitFromLobbyOperation'
           '#microsoft.graph.cancelMediaProcessingOperation': '#/components/schemas/microsoft.graph.cancelMediaProcessingOperation'
           '#microsoft.graph.inviteParticipantsOperation': '#/components/schemas/microsoft.graph.inviteParticipantsOperation'
           '#microsoft.graph.muteParticipantOperation': '#/components/schemas/microsoft.graph.muteParticipantOperation'
           '#microsoft.graph.muteParticipantsOperation': '#/components/schemas/microsoft.graph.muteParticipantsOperation'
           '#microsoft.graph.playPromptOperation': '#/components/schemas/microsoft.graph.playPromptOperation'
           '#microsoft.graph.recordOperation': '#/components/schemas/microsoft.graph.recordOperation'
-          '#microsoft.graph.removeFromLobbyOperation': '#/components/schemas/microsoft.graph.removeFromLobbyOperation'
           '#microsoft.graph.sendDtmfTonesOperation': '#/components/schemas/microsoft.graph.sendDtmfTonesOperation'
           '#microsoft.graph.startHoldMusicOperation': '#/components/schemas/microsoft.graph.startHoldMusicOperation'
           '#microsoft.graph.startRecordingOperation': '#/components/schemas/microsoft.graph.startRecordingOperation'
@@ -16919,6 +16931,9 @@ components:
           '#microsoft.graph.lookupResultRow': '#/components/schemas/microsoft.graph.lookupResultRow'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -17012,6 +17027,7 @@ components:
           '#microsoft.graph.microsoftTunnelSite': '#/components/schemas/microsoft.graph.microsoftTunnelSite'
           '#microsoft.graph.migrationsRoot': '#/components/schemas/microsoft.graph.migrationsRoot'
           '#microsoft.graph.mobileApp': '#/components/schemas/microsoft.graph.mobileApp'
+          '#microsoft.graph.androidAospReferencedApp': '#/components/schemas/microsoft.graph.androidAospReferencedApp'
           '#microsoft.graph.androidForWorkApp': '#/components/schemas/microsoft.graph.androidForWorkApp'
           '#microsoft.graph.androidManagedStoreApp': '#/components/schemas/microsoft.graph.androidManagedStoreApp'
           '#microsoft.graph.androidManagedStoreWebApp': '#/components/schemas/microsoft.graph.androidManagedStoreWebApp'
@@ -17479,6 +17495,7 @@ components:
           '#microsoft.graph.teamworkTag': '#/components/schemas/microsoft.graph.teamworkTag'
           '#microsoft.graph.teamworkTagMember': '#/components/schemas/microsoft.graph.teamworkTagMember'
           '#microsoft.graph.template': '#/components/schemas/microsoft.graph.template'
+          '#microsoft.graph.tenantActivitiesContainer': '#/components/schemas/microsoft.graph.tenantActivitiesContainer'
           '#microsoft.graph.tenantAttachRBAC': '#/components/schemas/microsoft.graph.tenantAttachRBAC'
           '#microsoft.graph.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernance'
           '#microsoft.graph.tenantGovernancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
@@ -17799,19 +17816,8 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
-          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
-          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
-          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
-          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
-          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
-          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
-          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
-          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
-          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
-          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
-          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -18604,6 +18610,18 @@ components:
           description: 'The type of address. The possible values are: unknown, home, business, other.'
         '@odata.type':
           type: string
+    microsoft.graph.stringDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: stringDictionary
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.stringDictionary'
+      x-ms-discriminator-value: '#microsoft.graph.stringDictionary'
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       required:
@@ -19261,6 +19279,27 @@ components:
         - business
         - other
       type: string
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.customAppScopeAttributesDictionary': '#/components/schemas/microsoft.graph.customAppScopeAttributesDictionary'
+          '#microsoft.graph.customMetadataDictionary': '#/components/schemas/microsoft.graph.customMetadataDictionary'
+          '#microsoft.graph.fileStorageContainerCustomPropertyDictionary': '#/components/schemas/microsoft.graph.fileStorageContainerCustomPropertyDictionary'
+          '#microsoft.graph.openComplexDictionaryType': '#/components/schemas/microsoft.graph.openComplexDictionaryType'
+          '#microsoft.graph.plannerFormsDictionary': '#/components/schemas/microsoft.graph.plannerFormsDictionary'
+          '#microsoft.graph.resultTemplateDictionary': '#/components/schemas/microsoft.graph.resultTemplateDictionary'
+          '#microsoft.graph.stringDictionary': '#/components/schemas/microsoft.graph.stringDictionary'
+          '#microsoft.graph.wafAllowedHeadersDictionary': '#/components/schemas/microsoft.graph.wafAllowedHeadersDictionary'
+          '#microsoft.graph.networkaccess.extendedProperties': '#/components/schemas/microsoft.graph.networkaccess.extendedProperties'
+          '#microsoft.graph.partner.security.additionalDataDictionary': '#/components/schemas/microsoft.graph.partner.security.additionalDataDictionary'
     ReferenceNumeric:
       enum:
         - '-INF'

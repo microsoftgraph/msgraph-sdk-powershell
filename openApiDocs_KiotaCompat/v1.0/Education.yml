@@ -13880,6 +13880,7 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
                 - type: object
                   nullable: true
+              description: 'Complex type containing extension attributes 1-15 for the group, synchronized from on-premises Active Directory. Returned only on $select. Supports $filter (eq, ne, not, in).'
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15122,6 +15123,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The messages in a mailbox or folder. Read-only. Nullable.
               x-ms-navigationProperty: true
+            notes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.note'
+              description: The notes in the user's Notes folder. Read-only. Nullable.
+              x-ms-navigationProperty: true
             oauth2PermissionGrants:
               type: array
               items:
@@ -15869,6 +15876,14 @@ components:
           '#microsoft.graph.authenticationStrengthRoot': '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
           '#microsoft.graph.authoredNote': '#/components/schemas/microsoft.graph.authoredNote'
           '#microsoft.graph.availableAccessPackage': '#/components/schemas/microsoft.graph.availableAccessPackage'
+          '#microsoft.graph.b2bRegistrationMetrics': '#/components/schemas/microsoft.graph.b2bRegistrationMetrics'
+          '#microsoft.graph.b2BRegistrationMetricsBase': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsBase'
+          '#microsoft.graph.b2BRegistrationMetricsInitial': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsInitial'
+          '#microsoft.graph.b2BRegistrationMetricsRecent': '#/components/schemas/microsoft.graph.b2BRegistrationMetricsRecent'
+          '#microsoft.graph.b2BSignInActivityMetrics': '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
+          '#microsoft.graph.b2BSignInActivityMetricsBase': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsBase'
+          '#microsoft.graph.b2BSignInActivityMetricsInitial': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsInitial'
+          '#microsoft.graph.b2BSignInActivityMetricsRecent': '#/components/schemas/microsoft.graph.b2BSignInActivityMetricsRecent'
           '#microsoft.graph.backupRestoreRoot': '#/components/schemas/microsoft.graph.backupRestoreRoot'
           '#microsoft.graph.baseItem': '#/components/schemas/microsoft.graph.baseItem'
           '#microsoft.graph.baseSitePage': '#/components/schemas/microsoft.graph.baseSitePage'
@@ -15892,6 +15907,10 @@ components:
           '#microsoft.graph.levelMap': '#/components/schemas/microsoft.graph.levelMap'
           '#microsoft.graph.sectionMap': '#/components/schemas/microsoft.graph.sectionMap'
           '#microsoft.graph.unitMap': '#/components/schemas/microsoft.graph.unitMap'
+          '#microsoft.graph.billingMetrics': '#/components/schemas/microsoft.graph.billingMetrics'
+          '#microsoft.graph.billingMetricsBase': '#/components/schemas/microsoft.graph.billingMetricsBase'
+          '#microsoft.graph.billingMetricsInitial': '#/components/schemas/microsoft.graph.billingMetricsInitial'
+          '#microsoft.graph.billingMetricsRecent': '#/components/schemas/microsoft.graph.billingMetricsRecent'
           '#microsoft.graph.bitlocker': '#/components/schemas/microsoft.graph.bitlocker'
           '#microsoft.graph.bitlockerRecoveryKey': '#/components/schemas/microsoft.graph.bitlockerRecoveryKey'
           '#microsoft.graph.bookingAppointment': '#/components/schemas/microsoft.graph.bookingAppointment'
@@ -16131,6 +16150,7 @@ components:
           '#microsoft.graph.extensionProperty': '#/components/schemas/microsoft.graph.extensionProperty'
           '#microsoft.graph.federatedTokenValidationPolicy': '#/components/schemas/microsoft.graph.federatedTokenValidationPolicy'
           '#microsoft.graph.group': '#/components/schemas/microsoft.graph.group'
+          '#microsoft.graph.groupResource': '#/components/schemas/microsoft.graph.groupResource'
           '#microsoft.graph.groupSettingTemplate': '#/components/schemas/microsoft.graph.groupSettingTemplate'
           '#microsoft.graph.mailbox': '#/components/schemas/microsoft.graph.mailbox'
           '#microsoft.graph.multiTenantOrganizationMember': '#/components/schemas/microsoft.graph.multiTenantOrganizationMember'
@@ -16225,6 +16245,9 @@ components:
           '#microsoft.graph.governanceInsight': '#/components/schemas/microsoft.graph.governanceInsight'
           '#microsoft.graph.membershipOutlierInsight': '#/components/schemas/microsoft.graph.membershipOutlierInsight'
           '#microsoft.graph.userSignInInsight': '#/components/schemas/microsoft.graph.userSignInInsight'
+          '#microsoft.graph.governanceInvitation': '#/components/schemas/microsoft.graph.governanceInvitation'
+          '#microsoft.graph.governanceRelationship': '#/components/schemas/microsoft.graph.governanceRelationship'
+          '#microsoft.graph.governanceRequest': '#/components/schemas/microsoft.graph.governanceRequest'
           '#microsoft.graph.granularRestoreArtifactBase': '#/components/schemas/microsoft.graph.granularRestoreArtifactBase'
           '#microsoft.graph.granularDriveRestoreArtifact': '#/components/schemas/microsoft.graph.granularDriveRestoreArtifact'
           '#microsoft.graph.granularSiteRestoreArtifact': '#/components/schemas/microsoft.graph.granularSiteRestoreArtifact'
@@ -16367,6 +16390,10 @@ components:
           '#microsoft.graph.mobileContainedApp': '#/components/schemas/microsoft.graph.mobileContainedApp'
           '#microsoft.graph.windowsUniversalAppXContainedApp': '#/components/schemas/microsoft.graph.windowsUniversalAppXContainedApp'
           '#microsoft.graph.mobileThreatDefenseConnector': '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
+          '#microsoft.graph.multiTenantApplicationMetrics': '#/components/schemas/microsoft.graph.multiTenantApplicationMetrics'
+          '#microsoft.graph.multiTenantApplicationMetricsBase': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsBase'
+          '#microsoft.graph.multiTenantApplicationMetricsInitial': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsInitial'
+          '#microsoft.graph.multiTenantApplicationMetricsRecent': '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsRecent'
           '#microsoft.graph.multiTenantOrganization': '#/components/schemas/microsoft.graph.multiTenantOrganization'
           '#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate': '#/components/schemas/microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate'
           '#microsoft.graph.multiTenantOrganizationJoinRequestRecord': '#/components/schemas/microsoft.graph.multiTenantOrganizationJoinRequestRecord'
@@ -16406,6 +16433,7 @@ components:
           '#microsoft.graph.eventMessage': '#/components/schemas/microsoft.graph.eventMessage'
           '#microsoft.graph.eventMessageRequest': '#/components/schemas/microsoft.graph.eventMessageRequest'
           '#microsoft.graph.eventMessageResponse': '#/components/schemas/microsoft.graph.eventMessageResponse'
+          '#microsoft.graph.note': '#/components/schemas/microsoft.graph.note'
           '#microsoft.graph.post': '#/components/schemas/microsoft.graph.post'
           '#microsoft.graph.outlookUser': '#/components/schemas/microsoft.graph.outlookUser'
           '#microsoft.graph.ownerlessGroupPolicy': '#/components/schemas/microsoft.graph.ownerlessGroupPolicy'
@@ -16495,6 +16523,8 @@ components:
           '#microsoft.graph.readingAssignmentSubmission': '#/components/schemas/microsoft.graph.readingAssignmentSubmission'
           '#microsoft.graph.readingCoachPassage': '#/components/schemas/microsoft.graph.readingCoachPassage'
           '#microsoft.graph.reflectCheckInResponse': '#/components/schemas/microsoft.graph.reflectCheckInResponse'
+          '#microsoft.graph.relatedTenant': '#/components/schemas/microsoft.graph.relatedTenant'
+          '#microsoft.graph.relatedTenantsRefreshRequest': '#/components/schemas/microsoft.graph.relatedTenantsRefreshRequest'
           '#microsoft.graph.relyingPartyDetailedSummary': '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
           '#microsoft.graph.remoteAssistancePartner': '#/components/schemas/microsoft.graph.remoteAssistancePartner'
           '#microsoft.graph.remoteDesktopSecurityConfiguration': '#/components/schemas/microsoft.graph.remoteDesktopSecurityConfiguration'
@@ -16602,6 +16632,9 @@ components:
           '#microsoft.graph.chatMessageHostedContent': '#/components/schemas/microsoft.graph.chatMessageHostedContent'
           '#microsoft.graph.teamworkTag': '#/components/schemas/microsoft.graph.teamworkTag'
           '#microsoft.graph.teamworkTagMember': '#/components/schemas/microsoft.graph.teamworkTagMember'
+          '#microsoft.graph.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernance'
+          '#microsoft.graph.tenantGovernancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+          '#microsoft.graph.tenantGovernanceSetting': '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
           '#microsoft.graph.tenantProtectionScopeContainer': '#/components/schemas/microsoft.graph.tenantProtectionScopeContainer'
           '#microsoft.graph.termsAndConditions': '#/components/schemas/microsoft.graph.termsAndConditions'
           '#microsoft.graph.termsAndConditionsAcceptanceStatus': '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
@@ -17278,6 +17311,7 @@ components:
               '#microsoft.graph.extensionProperty': '#/components/schemas/microsoft.graph.extensionProperty'
               '#microsoft.graph.federatedTokenValidationPolicy': '#/components/schemas/microsoft.graph.federatedTokenValidationPolicy'
               '#microsoft.graph.group': '#/components/schemas/microsoft.graph.group'
+              '#microsoft.graph.groupResource': '#/components/schemas/microsoft.graph.groupResource'
               '#microsoft.graph.groupSettingTemplate': '#/components/schemas/microsoft.graph.groupSettingTemplate'
               '#microsoft.graph.mailbox': '#/components/schemas/microsoft.graph.mailbox'
               '#microsoft.graph.multiTenantOrganizationMember': '#/components/schemas/microsoft.graph.multiTenantOrganizationMember'
@@ -20402,6 +20436,67 @@ components:
               '#microsoft.graph.eventMessage': '#/components/schemas/microsoft.graph.eventMessage'
               '#microsoft.graph.eventMessageRequest': '#/components/schemas/microsoft.graph.eventMessageRequest'
               '#microsoft.graph.eventMessageResponse': '#/components/schemas/microsoft.graph.eventMessageResponse'
+    microsoft.graph.note:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
+        - title: note
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            body:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.itemBody'
+                - type: object
+                  nullable: true
+              description: The content of the note. Supports text or html content types.
+            bodyPreview:
+              type: string
+              description: 'Auto-generated preview of the note body content (first ~255 characters, plain text). Read-only.'
+              nullable: true
+              readOnly: true
+            hasAttachments:
+              type: boolean
+              description: Indicates whether the note has file attachments. Supports $filter (eq). Read-only.
+              nullable: true
+              readOnly: true
+            isDeleted:
+              type: boolean
+              description: Indicates whether the note is soft-deleted. Read-only.
+              nullable: true
+              readOnly: true
+            subject:
+              type: string
+              description: 'The title of the note. Supports $filter (eq, ne, startsWith) and $orderby.'
+              nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: 'The file attachments for the note. Only inline image attachments (image/png, image/jpeg, image/gif, or image/bmp) are supported, with a maximum size of 3 MB per attachment. Use $expand to retrieve attachments.'
+              x-ms-navigationProperty: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the note.
+              x-ms-navigationProperty: true
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the note.
+              x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the note.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.note'
+      x-ms-discriminator-value: '#microsoft.graph.note'
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21488,6 +21583,7 @@ components:
               '#microsoft.graph.eventMessage': '#/components/schemas/microsoft.graph.eventMessage'
               '#microsoft.graph.eventMessageRequest': '#/components/schemas/microsoft.graph.eventMessageRequest'
               '#microsoft.graph.eventMessageResponse': '#/components/schemas/microsoft.graph.eventMessageResponse'
+              '#microsoft.graph.note': '#/components/schemas/microsoft.graph.note'
               '#microsoft.graph.post': '#/components/schemas/microsoft.graph.post'
     microsoft.graph.attendee:
       allOf:

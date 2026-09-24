@@ -11490,11 +11490,98 @@ paths:
         5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/dataSecurityAndGovernance/activities:
+    get:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Get activities from security
+      operationId: security.dataSecurityAndGovernance.GetActivities
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantActivitiesContainer'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Update the navigation property activities in security
+      operationId: security.dataSecurityAndGovernance.UpdateActivities
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantActivitiesContainer'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantActivitiesContainer'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.tenantDataSecurityAndGovernance
+      summary: Delete navigation property activities for security
+      operationId: security.dataSecurityAndGovernance.DeleteActivities
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /security/dataSecurityAndGovernance/processContent:
     post:
       tags:
         - security.tenantDataSecurityAndGovernance
       summary: Invoke action processContent
+      description: 'Evaluate content against Microsoft Purview Data Loss Prevention (DLP) policies and return the policy actions that apply to the supplied content. Use this API when an application needs to evaluate content before or during data movement. In Agent-to-Tool (A2T) scenarios, the agent runtime calls this API before invoking an external tool to determine whether the content should be allowed, blocked, or audited according to Microsoft Purview policies. For A2T scenarios: The response contains any applicable policy actions together with the protection scope state, allowing callers to determine whether cached protection scopes should be refreshed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantdatasecurityandgovernance-processcontent?view=graph-rest-beta
       operationId: security.dataSecurityAndGovernance.processContent
       requestBody:
         description: Action parameters
@@ -31503,7 +31590,6 @@ components:
           x-ms-navigationProperty: true
         '@odata.type':
           type: string
-      description: Security singleton providing access to audit log resources.
     microsoft.graph.alert:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31788,7 +31874,7 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.security.alertDetermination'
                 - type: object
                   nullable: true
-              description: 'Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.'
+              description: 'Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedActivity, lineOfBusinessApplication, unknownFutureValue.'
             evidence:
               type: array
               items:
@@ -33177,6 +33263,12 @@ components:
             displayName:
               type: string
               description: The display name of the case. Supports $filter and $orderby.
+            slaPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.caseManagement.caseSlaPolicyEntry'
+              description: 'A denormalized, read-only collection of SLA (service level agreement) policy status entries for the case. Each entry represents one SLA policy applied to the case, including its current status and breach target time. Computed by the service; any value supplied in a create or update request is silently ignored. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq ''breached''). The all() lambda operator and other collection functions aren''t supported. Doesn''t support $orderby.'
+              readOnly: true
             status:
               type: string
               description: 'The tenant-defined lifecycle status of the case. Use a displayName value returned in the status tree by List statuses from /security/caseManagement/caseTypeConfigurations/genericCase/statuses or /security/caseManagement/caseTypeConfigurations/incidentCase/statuses, depending on the case type. Supports $filter (eq).'
@@ -35399,6 +35491,12 @@ components:
             - '@odata.type'
           type: object
           properties:
+            activities:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.tenantActivitiesContainer'
+                - type: object
+                  nullable: true
+              x-ms-navigationProperty: true
             policyFiles:
               type: array
               items:
@@ -35410,6 +35508,17 @@ components:
               type: string
               default: '#microsoft.graph.tenantDataSecurityAndGovernance'
       x-ms-discriminator-value: '#microsoft.graph.tenantDataSecurityAndGovernance'
+    microsoft.graph.tenantActivitiesContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tenantActivitiesContainer
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.tenantActivitiesContainer'
     microsoft.graph.processContentRequest:
       title: processContentRequest
       required:
@@ -35435,6 +35544,7 @@ components:
             - $ref: '#/components/schemas/microsoft.graph.evaluationScope'
             - type: object
               nullable: true
+          description: 'Specifies the evaluation context for the request. Optional generally; required for the tenant-scoped processContent action, where type must be agent. When omitted from other actions, the request uses the default tenant evaluation context.'
         integratedAppMetadata:
           $ref: '#/components/schemas/microsoft.graph.integratedApplicationMetadata'
         protectedAppMetadata:
@@ -35561,8 +35671,8 @@ components:
         propertyName: '@odata.type'
         mapping:
           '#microsoft.graph.policyLocationApplication': '#/components/schemas/microsoft.graph.policyLocationApplication'
+          '#microsoft.graph.policyLocationAgent': '#/components/schemas/microsoft.graph.policyLocationAgent'
           '#microsoft.graph.policyLocationDomain': '#/components/schemas/microsoft.graph.policyLocationDomain'
-          '#microsoft.graph.policyLocationTool': '#/components/schemas/microsoft.graph.policyLocationTool'
           '#microsoft.graph.policyLocationUrl': '#/components/schemas/microsoft.graph.policyLocationUrl'
     microsoft.graph.policyPivotProperty:
       title: policyPivotProperty
@@ -36515,7 +36625,7 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.security.alertDetermination'
                 - type: object
                   nullable: true
-              description: 'Specifies the determination of the incident. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.'
+              description: 'Specifies the determination of the incident. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedActivity, lineOfBusinessApplication, unknownFutureValue.'
             displayName:
               type: string
               description: The incident name.
@@ -41137,6 +41247,10 @@ components:
       discriminator:
         propertyName: '@odata.type'
         mapping:
+          '#microsoft.graph.accessDriftDetail': '#/components/schemas/microsoft.graph.accessDriftDetail'
+          '#microsoft.graph.entraAccessDriftDetail': '#/components/schemas/microsoft.graph.entraAccessDriftDetail'
+          '#microsoft.graph.accessDriftReport': '#/components/schemas/microsoft.graph.accessDriftReport'
+          '#microsoft.graph.accessDriftSummary': '#/components/schemas/microsoft.graph.accessDriftSummary'
           '#microsoft.graph.accessPackage': '#/components/schemas/microsoft.graph.accessPackage'
           '#microsoft.graph.accessPackageAssignment': '#/components/schemas/microsoft.graph.accessPackageAssignment'
           '#microsoft.graph.accessPackageAssignmentPolicy': '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
@@ -41317,7 +41431,6 @@ components:
           '#microsoft.graph.authenticationMethodDevice': '#/components/schemas/microsoft.graph.authenticationMethodDevice'
           '#microsoft.graph.hardwareOathTokenAuthenticationMethodDevice': '#/components/schemas/microsoft.graph.hardwareOathTokenAuthenticationMethodDevice'
           '#microsoft.graph.authenticationMethodModeDetail': '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
-          '#microsoft.graph.authenticationMethodsPolicy': '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
           '#microsoft.graph.authenticationMethodsRoot': '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
           '#microsoft.graph.authenticationMethodTarget': '#/components/schemas/microsoft.graph.authenticationMethodTarget'
           '#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget': '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget'
@@ -41326,7 +41439,6 @@ components:
           '#microsoft.graph.verifiableCredentialAuthenticationMethodTarget': '#/components/schemas/microsoft.graph.verifiableCredentialAuthenticationMethodTarget'
           '#microsoft.graph.voiceAuthenticationMethodTarget': '#/components/schemas/microsoft.graph.voiceAuthenticationMethodTarget'
           '#microsoft.graph.authenticationsMetric': '#/components/schemas/microsoft.graph.authenticationsMetric'
-          '#microsoft.graph.authenticationStrengthPolicy': '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
           '#microsoft.graph.authenticationStrengthRoot': '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
           '#microsoft.graph.authoredNote': '#/components/schemas/microsoft.graph.authoredNote'
           '#microsoft.graph.authorizationSystem': '#/components/schemas/microsoft.graph.authorizationSystem'
@@ -41524,15 +41636,12 @@ components:
           '#microsoft.graph.command': '#/components/schemas/microsoft.graph.command'
           '#microsoft.graph.commsOperation': '#/components/schemas/microsoft.graph.commsOperation'
           '#microsoft.graph.addLargeGalleryViewOperation': '#/components/schemas/microsoft.graph.addLargeGalleryViewOperation'
-          '#microsoft.graph.admitAllFromLobbyOperation': '#/components/schemas/microsoft.graph.admitAllFromLobbyOperation'
-          '#microsoft.graph.admitFromLobbyOperation': '#/components/schemas/microsoft.graph.admitFromLobbyOperation'
           '#microsoft.graph.cancelMediaProcessingOperation': '#/components/schemas/microsoft.graph.cancelMediaProcessingOperation'
           '#microsoft.graph.inviteParticipantsOperation': '#/components/schemas/microsoft.graph.inviteParticipantsOperation'
           '#microsoft.graph.muteParticipantOperation': '#/components/schemas/microsoft.graph.muteParticipantOperation'
           '#microsoft.graph.muteParticipantsOperation': '#/components/schemas/microsoft.graph.muteParticipantsOperation'
           '#microsoft.graph.playPromptOperation': '#/components/schemas/microsoft.graph.playPromptOperation'
           '#microsoft.graph.recordOperation': '#/components/schemas/microsoft.graph.recordOperation'
-          '#microsoft.graph.removeFromLobbyOperation': '#/components/schemas/microsoft.graph.removeFromLobbyOperation'
           '#microsoft.graph.sendDtmfTonesOperation': '#/components/schemas/microsoft.graph.sendDtmfTonesOperation'
           '#microsoft.graph.startHoldMusicOperation': '#/components/schemas/microsoft.graph.startHoldMusicOperation'
           '#microsoft.graph.startRecordingOperation': '#/components/schemas/microsoft.graph.startRecordingOperation'
@@ -42305,6 +42414,9 @@ components:
           '#microsoft.graph.lookupResultRow': '#/components/schemas/microsoft.graph.lookupResultRow'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -42398,6 +42510,7 @@ components:
           '#microsoft.graph.microsoftTunnelSite': '#/components/schemas/microsoft.graph.microsoftTunnelSite'
           '#microsoft.graph.migrationsRoot': '#/components/schemas/microsoft.graph.migrationsRoot'
           '#microsoft.graph.mobileApp': '#/components/schemas/microsoft.graph.mobileApp'
+          '#microsoft.graph.androidAospReferencedApp': '#/components/schemas/microsoft.graph.androidAospReferencedApp'
           '#microsoft.graph.androidForWorkApp': '#/components/schemas/microsoft.graph.androidForWorkApp'
           '#microsoft.graph.androidManagedStoreApp': '#/components/schemas/microsoft.graph.androidManagedStoreApp'
           '#microsoft.graph.androidManagedStoreWebApp': '#/components/schemas/microsoft.graph.androidManagedStoreWebApp'
@@ -42865,6 +42978,7 @@ components:
           '#microsoft.graph.teamworkTag': '#/components/schemas/microsoft.graph.teamworkTag'
           '#microsoft.graph.teamworkTagMember': '#/components/schemas/microsoft.graph.teamworkTagMember'
           '#microsoft.graph.template': '#/components/schemas/microsoft.graph.template'
+          '#microsoft.graph.tenantActivitiesContainer': '#/components/schemas/microsoft.graph.tenantActivitiesContainer'
           '#microsoft.graph.tenantAttachRBAC': '#/components/schemas/microsoft.graph.tenantAttachRBAC'
           '#microsoft.graph.tenantGovernance': '#/components/schemas/microsoft.graph.tenantGovernance'
           '#microsoft.graph.tenantGovernancePolicyTemplate': '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
@@ -43185,19 +43299,8 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
-          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
-          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
-          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
-          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
-          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
-          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
-          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
-          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
-          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
-          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
-          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -45873,6 +45976,31 @@ components:
         - '@odata.type'
       type: object
       properties:
+        '@odata.type':
+          type: string
+    microsoft.graph.security.caseManagement.caseSlaPolicyEntry:
+      title: caseSlaPolicyEntry
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        breachTargetDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time the SLA policy is targeted to breach, if applicable. null when the policy is paused or completed. Computed by the service.'
+          format: date-time
+          nullable: true
+          readOnly: true
+        policyDisplayName:
+          type: string
+          description: The display name of the SLA policy. Computed by the service.
+          readOnly: true
+        policyId:
+          type: string
+          description: 'The unique identifier of the SLA policy, assigned by the SLA policy engine. Computed by the service.'
+          readOnly: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.security.caseManagement.caseSlaPolicyStatus'
         '@odata.type':
           type: string
     microsoft.graph.security.caseManagement.attachmentOrigin:
@@ -49306,6 +49434,10 @@ components:
       properties:
         activity:
           $ref: '#/components/schemas/microsoft.graph.userActivityType'
+        participants:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.interactionParticipant'
         '@odata.type':
           type: string
     microsoft.graph.processContentMetadataBase:
@@ -49390,12 +49522,7 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.policyLocation'
                 - type: object
                   nullable: true
-              description: The client (application) ID of the Microsoft Entra application. Required.
-            sourceLocation:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.policyLocation'
-                - type: object
-                  nullable: true
+              description: 'The location of the application being protected. For Agent-to-Tool (A2T) scenarios, this represents the tool receiving the content. Required.'
             '@odata.type':
               type: string
               default: '#microsoft.graph.protectedApplicationMetadata'
@@ -49495,6 +49622,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.policyLocation'
+          description: 'Locations excluded from the policy scope. When specified, the effective scope is the set of locations in locations minus the locations in locationExclusions. Required.'
         locations:
           type: array
           items:
@@ -51930,12 +52058,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               x-ms-navigationProperty: true
-            lifecycle:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
             memberOf:
               type: array
               items:
@@ -52436,6 +52558,7 @@ components:
               nullable: true
             isDisasterRecoveryActive:
               type: boolean
+              description: 'Indicates whether the Cloud PC currently runs in its disaster recovery region after a failover event. true if the Cloud PC is currently running in its disaster recovery region; otherwise, false. Read-only.'
             lastLoginResult:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.cloudPcLoginResult'
@@ -52505,6 +52628,7 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningConfiguration'
                 - type: object
                   nullable: true
+              description: The policy-derived configuration of the Cloud PC. Contains properties inherited from the provisioning policy that were applied during the most recent provisioning or reprovisioning. Returned only when explicitly selected with $select. Read-only.
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -58406,6 +58530,17 @@ components:
         '@odata.type':
           type: string
       description: A dictionary of name-value pairs for dynamic audit event properties.
+    microsoft.graph.security.caseManagement.caseSlaPolicyStatus:
+      title: caseSlaPolicyStatus
+      enum:
+        - active
+        - atRisk
+        - breached
+        - paused
+        - completedMet
+        - completedBreached
+        - unknownFutureValue
+      type: string
     microsoft.graph.security.caseManagement.attachmentOriginType:
       title: attachmentOriginType
       enum:
@@ -61316,6 +61451,22 @@ components:
         - print
         - accessDebugTools
       type: string
+    microsoft.graph.interactionParticipant:
+      title: interactionParticipant
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        value:
+          type: string
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.agentParticipant': '#/components/schemas/microsoft.graph.agentParticipant'
+          '#microsoft.graph.toolParticipant': '#/components/schemas/microsoft.graph.toolParticipant'
+          '#microsoft.graph.userParticipant': '#/components/schemas/microsoft.graph.userParticipant'
     microsoft.graph.contentBase:
       title: contentBase
       required:
@@ -62749,36 +62900,6 @@ components:
               type: string
               default: '#microsoft.graph.homeRealmDiscoveryPolicy'
       x-ms-discriminator-value: '#microsoft.graph.homeRealmDiscoveryPolicy'
-    microsoft.graph.identityGovernance.identityLifecycle:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: identityLifecycle
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            lastAttestationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            complianceIssues:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
-              x-ms-navigationProperty: true
-            effectiveGoverningPolicy:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
-            '@odata.type':
-              type: string
-          discriminator:
-            propertyName: '@odata.type'
-            mapping:
-              '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
     microsoft.graph.permissionGrantPreApprovalPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -74056,105 +74177,6 @@ components:
           description: Indicates the configured expression. Required.
         '@odata.type':
           type: string
-    microsoft.graph.identityGovernance.complianceIssue:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: complianceIssue
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            description:
-              type: string
-            governingPolicyReferenceId:
-              type: string
-            issueCode:
-              type: string
-            ruleType:
-              type: string
-              nullable: true
-            '@odata.type':
-              type: string
-          discriminator:
-            propertyName: '@odata.type'
-            mapping:
-              '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
-    microsoft.graph.identityGovernance.lifecyclePolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: lifecyclePolicy
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            description:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-            enforcementAction:
-              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
-            gracePeriodInDays:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: number
-              format: int32
-              nullable: true
-            isEnabled:
-              type: boolean
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            notificationSchedule:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
-                - type: object
-                  nullable: true
-            policySource:
-              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
-            scope:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.subjectSet'
-                - type: object
-                  nullable: true
-            versionNumber:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: number
-              format: int32
-            createdBy:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
-            lastModifiedBy:
-              anyOf:
-                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                - type: object
-                  nullable: true
-              x-ms-navigationProperty: true
-            rules:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
-              x-ms-navigationProperty: true
-            versions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
-              x-ms-navigationProperty: true
-            '@odata.type':
-              type: string
-          discriminator:
-            propertyName: '@odata.type'
-            mapping:
-              '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
     microsoft.graph.preApprovalDetail:
       title: preApprovalDetail
       required:
@@ -82005,82 +82027,6 @@ components:
           description: An ordered list of transformations that are applied in sequence.
         '@odata.type':
           type: string
-    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
-      title: lifecyclePolicyEnforcementAction
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        '@odata.type':
-          type: string
-      discriminator:
-        propertyName: '@odata.type'
-        mapping:
-          '#microsoft.graph.identityGovernance.deleteOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.deleteOnlyEnforcementAction'
-          '#microsoft.graph.identityGovernance.disableOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableOnlyEnforcementAction'
-          '#microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction'
-    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
-      title: lifecyclePolicyNotificationSettings
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        additionalRecipients:
-          type: array
-          items:
-            type: string
-        isEnabled:
-          type: boolean
-        offsetsAfterNonComplianceInDays:
-          type: array
-          items:
-            maximum: 2147483647
-            minimum: -2147483648
-            type: number
-            format: int32
-        '@odata.type':
-          type: string
-    microsoft.graph.identityGovernance.lifecyclePolicySource:
-      title: lifecyclePolicySource
-      enum:
-        - userCreated
-        - systemDefault
-        - unknownFutureValue
-      type: string
-    microsoft.graph.subjectSet:
-      title: subjectSet
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        '@odata.type':
-          type: string
-      discriminator:
-        propertyName: '@odata.type'
-        mapping:
-          '#microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet'
-          '#microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet'
-          '#microsoft.graph.identityGovernance.groupBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.groupBasedSubjectSet'
-          '#microsoft.graph.identityGovernance.ruleBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.ruleBasedSubjectSet'
-          '#microsoft.graph.identityGovernance.selectedObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.selectedObjectsSubjectSet'
-    microsoft.graph.identityGovernance.lifecyclePolicyRule:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: lifecyclePolicyRule
-          required:
-            - '@odata.type'
-          type: object
-          properties:
-            isEnabled:
-              type: boolean
-            '@odata.type':
-              type: string
-          discriminator:
-            propertyName: '@odata.type'
-            mapping:
-              '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
-              '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
-              '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
     microsoft.graph.preApprovedPermissions:
       title: preApprovedPermissions
       required:
