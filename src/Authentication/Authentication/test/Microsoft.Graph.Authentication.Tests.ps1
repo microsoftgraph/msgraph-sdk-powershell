@@ -9,10 +9,6 @@ Describe "Microsoft.Graph.Authentication module" {
         $PSModuleInfo = Import-Module $ModulePath -Force -PassThru
     }
 
-    AfterAll {
-        Remove-Module $ModuleName -Force -ErrorAction Ignore
-    }
-
     Context "On module import" {
         It 'Should be compatible with PS core and desktop' {
             {
