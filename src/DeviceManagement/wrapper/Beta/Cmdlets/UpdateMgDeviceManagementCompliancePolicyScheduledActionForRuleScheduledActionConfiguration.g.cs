@@ -1,0 +1,100 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.DeviceManagement.Client;
+using Microsoft.Graph.PowerShell.DeviceManagement.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.DeviceManagement
+{
+    [GraphRoute("PATCH", "/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy-id}/scheduledActionsForRule/{deviceManagementComplianceScheduledActionForRule-id}/scheduledActionConfigurations/{deviceManagementComplianceActionItem-id}")]
+    [Cmdlet(VerbsData.Update, "MgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceManagementComplianceActionItem))]
+    public class UpdateMgDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfigurationCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string DeviceManagementCompliancePolicyId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string DeviceManagementComplianceScheduledActionForRuleId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2)]
+        public string DeviceManagementComplianceActionItemId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public int? GracePeriodHours { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string[]? NotificationMessageCCList { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? NotificationTemplateId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceManagementComplianceActionType? ActionType { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(DeviceManagementComplianceActionItemId, "Update"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceManagementComplianceActionItem();
+
+    if (this.IsParameterBound(nameof(GracePeriodHours)))
+        body.GracePeriodHours = GracePeriodHours;
+
+    if (this.IsParameterBound(nameof(NotificationMessageCCList)))
+        body.NotificationMessageCCList = NotificationMessageCCList!.ToList();
+
+    if (this.IsParameterBound(nameof(NotificationTemplateId)))
+        body.NotificationTemplateId = NotificationTemplateId;
+
+    if (this.IsParameterBound(nameof(ActionType)))
+        body.ActionType = ActionType;
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceManagementComplianceActionItem? result;
+            try
+            {
+                result = client.DeviceManagement.CompliancePolicies[DeviceManagementCompliancePolicyId].ScheduledActionsForRule[DeviceManagementComplianceScheduledActionForRuleId].ScheduledActionConfigurations[DeviceManagementComplianceActionItemId].PatchAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, DeviceManagementComplianceActionItemId);
+                return;
+            }
+
+
+            if (result is null)
+            {
+                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
+                try
+                {
+                    result = client.DeviceManagement.CompliancePolicies[DeviceManagementCompliancePolicyId].ScheduledActionsForRule[DeviceManagementComplianceScheduledActionForRuleId].ScheduledActionConfigurations[DeviceManagementComplianceActionItemId].GetAsync().GetAwaiter().GetResult();
+                }
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+                {
+                    ThrowGraphRequestFailed(ex, DeviceManagementComplianceActionItemId);
+                    return;
+                }
+            }
+            if (result is not null)
+                WriteObject(result);
+        }
+    }
+}

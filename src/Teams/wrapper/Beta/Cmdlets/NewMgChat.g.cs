@@ -1,0 +1,128 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Teams.Client;
+using Microsoft.Graph.PowerShell.Teams.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Teams
+{
+    [GraphRoute("POST", "/chats")]
+    [Cmdlet(VerbsCommon.New, "MgChat", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.Chat))]
+    public class NewMgChatCommand : GraphClientCmdlet
+    {
+
+
+        [Parameter(Mandatory = false)]
+        public global::System.DateTimeOffset? CreatedDateTime { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? IsHiddenForAllMembers { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.DateTimeOffset? LastUpdatedDateTime { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.DateTimeOffset? OriginalCreatedDateTime { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? TenantId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? Topic { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? WebUrl { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Teams.Client.Models.ChatType? ChatType { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Teams.Client.Models.IdentitySet? CreatedBy { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Teams.Client.Models.MigrationMode? MigrationMode { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkOnlineMeetingInfo? OnlineMeetingInfo { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Teams.Client.Models.ChatViewpoint? Viewpoint { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(null, "New"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Teams.Client.Models.Chat();
+
+    if (this.IsParameterBound(nameof(CreatedDateTime)))
+        body.CreatedDateTime = CreatedDateTime;
+
+    if (this.IsParameterBound(nameof(IsHiddenForAllMembers)))
+        body.IsHiddenForAllMembers = IsHiddenForAllMembers;
+
+    if (this.IsParameterBound(nameof(LastUpdatedDateTime)))
+        body.LastUpdatedDateTime = LastUpdatedDateTime;
+
+    if (this.IsParameterBound(nameof(OriginalCreatedDateTime)))
+        body.OriginalCreatedDateTime = OriginalCreatedDateTime;
+
+    if (this.IsParameterBound(nameof(TenantId)))
+        body.TenantId = TenantId;
+
+    if (this.IsParameterBound(nameof(Topic)))
+        body.Topic = Topic;
+
+    if (this.IsParameterBound(nameof(WebUrl)))
+        body.WebUrl = WebUrl;
+
+    if (this.IsParameterBound(nameof(ChatType)))
+        body.ChatType = ChatType;
+
+    if (this.IsParameterBound(nameof(CreatedBy)))
+        body.CreatedBy = CreatedBy;
+
+    if (this.IsParameterBound(nameof(MigrationMode)))
+        body.MigrationMode = MigrationMode;
+
+    if (this.IsParameterBound(nameof(OnlineMeetingInfo)))
+        body.OnlineMeetingInfo = OnlineMeetingInfo;
+
+    if (this.IsParameterBound(nameof(Viewpoint)))
+        body.Viewpoint = Viewpoint;
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Teams.Client.Models.Chat? result;
+            try
+            {
+                result = client.Chats.PostAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, body);
+                return;
+            }
+
+            WriteObject(result);
+        }
+    }
+}

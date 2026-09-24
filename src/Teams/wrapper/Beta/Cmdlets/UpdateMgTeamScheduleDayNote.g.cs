@@ -1,0 +1,98 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Teams.Client;
+using Microsoft.Graph.PowerShell.Teams.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Teams
+{
+    [GraphRoute("PATCH", "/teams/{team-id}/schedule/dayNotes/{dayNote-id}")]
+    [Cmdlet(VerbsData.Update, "MgTeamScheduleDayNote", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.DayNote))]
+    public class UpdateMgTeamScheduleDayNoteCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string TeamId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string DayNoteId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public global::Microsoft.Kiota.Abstractions.Date? DayNoteDate { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Teams.Client.Models.IdentitySet? CreatedBy { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Teams.Client.Models.ItemBody? DraftDayNote { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Teams.Client.Models.ItemBody? SharedDayNote { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(DayNoteId, "Update"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Teams.Client.Models.DayNote();
+
+    if (this.IsParameterBound(nameof(DayNoteDate)))
+        body.DayNoteDate = DayNoteDate;
+
+    if (this.IsParameterBound(nameof(CreatedBy)))
+        body.CreatedBy = CreatedBy;
+
+    if (this.IsParameterBound(nameof(DraftDayNote)))
+        body.DraftDayNote = DraftDayNote;
+
+    if (this.IsParameterBound(nameof(SharedDayNote)))
+        body.SharedDayNote = SharedDayNote;
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Teams.Client.Models.DayNote? result;
+            try
+            {
+                result = client.Teams[TeamId].Schedule.DayNotes[DayNoteId].PatchAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, DayNoteId);
+                return;
+            }
+
+
+            if (result is null)
+            {
+                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
+                try
+                {
+                    result = client.Teams[TeamId].Schedule.DayNotes[DayNoteId].GetAsync().GetAwaiter().GetResult();
+                }
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+                {
+                    ThrowGraphRequestFailed(ex, DayNoteId);
+                    return;
+                }
+            }
+            if (result is not null)
+                WriteObject(result);
+        }
+    }
+}

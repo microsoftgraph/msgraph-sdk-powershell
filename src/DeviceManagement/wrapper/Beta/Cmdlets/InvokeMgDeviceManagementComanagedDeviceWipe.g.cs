@@ -1,0 +1,93 @@
+#nullable enable
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.DeviceManagement.Client;
+using Microsoft.Graph.PowerShell.DeviceManagement.Client.Models;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.DeviceManagement
+{
+    [GraphRoute("POST", "/deviceManagement/comanagedDevices/{managedDevice-id}/wipe")]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgDeviceManagementComanagedDeviceWipe", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+
+    public class InvokeMgDeviceManagementComanagedDeviceWipeCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string ManagedDeviceId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public bool? KeepEnrollmentData { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? KeepUserData { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? MacOsUnlockCode { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? PersistEsimDataPlan { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? UseProtectedWipe { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.ObliterationBehavior? ObliterationBehavior { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(ManagedDeviceId, "Invoke"))
+                return;
+
+            var body = new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.Wipe.WipePostRequestBody();
+
+    if (this.IsParameterBound(nameof(KeepEnrollmentData)))
+        body.KeepEnrollmentData = KeepEnrollmentData;
+
+    if (this.IsParameterBound(nameof(KeepUserData)))
+        body.KeepUserData = KeepUserData;
+
+    if (this.IsParameterBound(nameof(MacOsUnlockCode)))
+        body.MacOsUnlockCode = MacOsUnlockCode;
+
+    if (this.IsParameterBound(nameof(PersistEsimDataPlan)))
+        body.PersistEsimDataPlan = PersistEsimDataPlan;
+
+    if (this.IsParameterBound(nameof(UseProtectedWipe)))
+        body.UseProtectedWipe = UseProtectedWipe;
+    if (this.IsParameterBound(nameof(ObliterationBehavior)))
+        body.ObliterationBehavior = ObliterationBehavior;
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+
+            try
+            {
+                client.DeviceManagement.ComanagedDevices[ManagedDeviceId].Wipe.PostAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                })
+                    .GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, ManagedDeviceId);
+                return;
+            }
+
+        }
+    }
+}
