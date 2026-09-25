@@ -562,6 +562,14 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
 #else
         public string MySite { get; set; }
 #endif
+        /// <summary>The notes in the user&apos;s Notes folder. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Education.Client.Models.Note>? Notes { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Education.Client.Models.Note> Notes { get; set; }
+#endif
         /// <summary>The oauth2PermissionGrants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1104,6 +1112,7 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Education.Client.Models.Message>(global::Microsoft.Graph.PowerShell.Education.Client.Models.Message.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
                 { "mySite", n => { MySite = n.GetStringValue(); } },
+                { "notes", n => { Notes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Education.Client.Models.Note>(global::Microsoft.Graph.PowerShell.Education.Client.Models.Note.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "oauth2PermissionGrants", n => { Oauth2PermissionGrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Education.Client.Models.OAuth2PermissionGrant>(global::Microsoft.Graph.PowerShell.Education.Client.Models.OAuth2PermissionGrant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
                 { "onPremisesDistinguishedName", n => { OnPremisesDistinguishedName = n.GetStringValue(); } },
@@ -1249,6 +1258,7 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Education.Client.Models.Message>("messages", Messages);
             writer.WriteStringValue("mobilePhone", MobilePhone);
             writer.WriteStringValue("mySite", MySite);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Education.Client.Models.Note>("notes", Notes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Education.Client.Models.OAuth2PermissionGrant>("oauth2PermissionGrants", Oauth2PermissionGrants);
             writer.WriteStringValue("officeLocation", OfficeLocation);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.Onenote>("onenote", Onenote);

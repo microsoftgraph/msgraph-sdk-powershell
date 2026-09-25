@@ -60,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.AppRole> AppRoles { get; set; }
 #endif
-        /// <summary>The authenticationBehaviors property</summary>
+        /// <summary>The set of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Returned only on $select. Requires $select to retrieve.  For more information about authentication behaviors, see Manage application authenticationBehaviors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.AuthenticationBehaviors? AuthenticationBehaviors { get; set; }

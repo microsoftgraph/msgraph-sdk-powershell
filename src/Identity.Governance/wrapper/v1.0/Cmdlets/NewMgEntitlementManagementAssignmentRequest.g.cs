@@ -38,6 +38,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomExtensionCalloutInstance[]? CustomExtensionCalloutInstances { get; set; }
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageAssignmentRequestParameters? Parameters { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageRequestType? RequestType { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -75,6 +78,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
 
     if (this.IsParameterBound(nameof(CustomExtensionCalloutInstances)))
         body.CustomExtensionCalloutInstances = CustomExtensionCalloutInstances!.ToList();
+
+    if (this.IsParameterBound(nameof(Parameters)))
+        body.Parameters = Parameters;
 
     if (this.IsParameterBound(nameof(RequestType)))
         body.RequestType = RequestType;

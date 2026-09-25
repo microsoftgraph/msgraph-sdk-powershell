@@ -139,6 +139,7 @@ namespace Microsoft.Graph.PowerShell.Compliance.Client.Models
                 "#microsoft.graph.messageRule" => new global::Microsoft.Graph.PowerShell.Compliance.Client.Models.MessageRule(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Compliance.Client.Models.MicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.multiValueLegacyExtendedProperty" => new global::Microsoft.Graph.PowerShell.Compliance.Client.Models.MultiValueLegacyExtendedProperty(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.PowerShell.Compliance.Client.Models.Note(),
                 "#microsoft.graph.notebook" => new global::Microsoft.Graph.PowerShell.Compliance.Client.Models.Notebook(),
                 "#microsoft.graph.oAuth2PermissionGrant" => new global::Microsoft.Graph.PowerShell.Compliance.Client.Models.OAuth2PermissionGrant(),
                 "#microsoft.graph.offerShiftRequest" => new global::Microsoft.Graph.PowerShell.Compliance.Client.Models.OfferShiftRequest(),

@@ -101,6 +101,14 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.CompanySubscription> Subscriptions { get; set; }
 #endif
+        /// <summary>The tenantGovernance property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernance? TenantGovernance { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernance TenantGovernance { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -130,6 +138,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
                 { "recovery", n => { Recovery = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.Recovery>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.Recovery.CreateFromDiscriminatorValue); } },
                 { "remoteTenantGroups", n => { RemoteTenantGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.CompanySubscription>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.CompanySubscription.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tenantGovernance", n => { TenantGovernance = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernance>(global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernance.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -151,6 +160,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.EntraRecoveryServices.Recovery>("recovery", Recovery);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RemoteTenantGroup>("remoteTenantGroups", RemoteTenantGroups);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.CompanySubscription>("subscriptions", Subscriptions);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernance>("tenantGovernance", TenantGovernance);
         }
     }
 }

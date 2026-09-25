@@ -46,6 +46,7 @@ namespace Microsoft.Graph.PowerShell.Groups.Client.Models
                 "#microsoft.graph.contact" => new global::Microsoft.Graph.PowerShell.Groups.Client.Models.Contact(),
                 "#microsoft.graph.event" => new global::Microsoft.Graph.PowerShell.Groups.Client.Models.Event(),
                 "#microsoft.graph.message" => new global::Microsoft.Graph.PowerShell.Groups.Client.Models.Message(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.PowerShell.Groups.Client.Models.Note(),
                 "#microsoft.graph.post" => new global::Microsoft.Graph.PowerShell.Groups.Client.Models.Post(),
                 _ => new global::Microsoft.Graph.PowerShell.Groups.Client.Models.OutlookItem(),
             };

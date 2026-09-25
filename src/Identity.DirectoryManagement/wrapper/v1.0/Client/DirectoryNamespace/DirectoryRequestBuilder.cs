@@ -12,6 +12,7 @@ using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNa
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.RemoteTenantGroups;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
+using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -84,6 +85,11 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tenantGovernance property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.TenantGovernanceRequestBuilder TenantGovernance
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.TenantGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.DirectoryRequestBuilder"/> and sets the default values.

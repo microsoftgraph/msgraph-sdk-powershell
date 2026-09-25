@@ -156,6 +156,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Mode
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.MicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.mobileThreatDefenseConnector" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.MobileThreatDefenseConnector(),
                 "#microsoft.graph.multiValueLegacyExtendedProperty" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.MultiValueLegacyExtendedProperty(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.Note(),
                 "#microsoft.graph.notebook" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.Notebook(),
                 "#microsoft.graph.oAuth2PermissionGrant" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.OAuth2PermissionGrant(),
                 "#microsoft.graph.offerShiftRequest" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.OfferShiftRequest(),

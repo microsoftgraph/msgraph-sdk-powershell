@@ -56,7 +56,7 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Specifies the determination of the incident. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
+        /// <summary>Specifies the determination of the incident. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AlertDetermination? Determination { get; set; }
         /// <summary>The incident name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

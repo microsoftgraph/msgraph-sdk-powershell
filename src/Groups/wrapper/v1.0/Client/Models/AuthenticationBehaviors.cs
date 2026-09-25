@@ -14,8 +14,10 @@ namespace Microsoft.Graph.PowerShell.Groups.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blockAzureADGraphAccess property</summary>
+        /// <summary>If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.</summary>
         public bool? BlockAzureADGraphAccess { get; set; }
+        /// <summary>Indicates whether Cross-Origin-Opener-Policy (COOP) headers are enforced on browser-based authentication responses for the application. Set to true to enable enforcement, false to temporarily suppress enforcement, or null to use the service default. For how-to guidance, see Control Cross-Origin-Opener-Policy enforcement.</summary>
+        public bool? CoopEnforcement { get; set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,9 +26,9 @@ namespace Microsoft.Graph.PowerShell.Groups.Client.Models
 #else
         public string OdataType { get; set; }
 #endif
-        /// <summary>The removeUnverifiedEmailClaim property</summary>
+        /// <summary>If true, removes the email claim from tokens sent to an application when the email address&apos;s domain can&apos;t be verified.</summary>
         public bool? RemoveUnverifiedEmailClaim { get; set; }
-        /// <summary>The requireClientServicePrincipal property</summary>
+        /// <summary>If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they&apos;re granted access tokens. This property is only modifiable for multitenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.</summary>
         public bool? RequireClientServicePrincipal { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Groups.Client.Models.AuthenticationBehaviors"/> and sets the default values.
@@ -54,6 +56,7 @@ namespace Microsoft.Graph.PowerShell.Groups.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "blockAzureADGraphAccess", n => { BlockAzureADGraphAccess = n.GetBoolValue(); } },
+                { "coopEnforcement", n => { CoopEnforcement = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "removeUnverifiedEmailClaim", n => { RemoveUnverifiedEmailClaim = n.GetBoolValue(); } },
                 { "requireClientServicePrincipal", n => { RequireClientServicePrincipal = n.GetBoolValue(); } },
@@ -67,6 +70,7 @@ namespace Microsoft.Graph.PowerShell.Groups.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("blockAzureADGraphAccess", BlockAzureADGraphAccess);
+            writer.WriteBoolValue("coopEnforcement", CoopEnforcement);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("removeUnverifiedEmailClaim", RemoveUnverifiedEmailClaim);
             writer.WriteBoolValue("requireClientServicePrincipal", RequireClientServicePrincipal);

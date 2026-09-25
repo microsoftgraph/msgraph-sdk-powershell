@@ -28,6 +28,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
                 "#microsoft.graph.appRoleAssignment" => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AppRoleAssignment(),
                 "#microsoft.graph.device" => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.Device(),
                 "#microsoft.graph.group" => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.Group(),
+                "#microsoft.graph.groupResource" => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GroupResource(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.user" => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.User(),
                 _ => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.DirectoryObject(),

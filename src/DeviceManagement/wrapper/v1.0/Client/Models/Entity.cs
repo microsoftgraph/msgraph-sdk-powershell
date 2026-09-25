@@ -191,6 +191,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
                 "#microsoft.graph.mobileAppTroubleshootingEvent" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MobileAppTroubleshootingEvent(),
                 "#microsoft.graph.mobileThreatDefenseConnector" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MobileThreatDefenseConnector(),
                 "#microsoft.graph.multiValueLegacyExtendedProperty" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MultiValueLegacyExtendedProperty(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.Note(),
                 "#microsoft.graph.notebook" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.Notebook(),
                 "#microsoft.graph.notificationMessageTemplate" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.NotificationMessageTemplate(),
                 "#microsoft.graph.oAuth2PermissionGrant" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.OAuth2PermissionGrant(),

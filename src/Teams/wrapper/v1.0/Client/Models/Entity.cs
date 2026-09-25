@@ -140,6 +140,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
                 "#microsoft.graph.messageRule" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.MessageRule(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.MicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.multiValueLegacyExtendedProperty" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.MultiValueLegacyExtendedProperty(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.Note(),
                 "#microsoft.graph.notebook" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.Notebook(),
                 "#microsoft.graph.oAuth2PermissionGrant" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.OAuth2PermissionGrant(),
                 "#microsoft.graph.offerShiftRequest" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.OfferShiftRequest(),
