@@ -21,6 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Curated cmdlet naming and suppression data lives beside each module. These files are
+         compiled into the generator only; wrapper module projects include generated cmdlets
+         explicitly and do not compile this root-level configuration source. -->
+    <Compile Include="..\..\src\*\wrapper\*_cmdletConfigurations.cs"
+             Link="ModuleConfigurations\%(Filename)%(Extension)" />
     <!-- Oracle-derived collision resolutions (tools/Derive-CollisionResolutions.ps1), embedded
          so a generation run never depends on a working directory or the 22 MB oracle. -->
     <EmbeddedResource Include="data\collision-*.json" />

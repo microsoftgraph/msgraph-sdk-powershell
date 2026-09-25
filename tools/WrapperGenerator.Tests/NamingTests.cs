@@ -106,7 +106,7 @@ public sealed class NamingTests
     [InlineData("GET", "/domains/{domain-id}", "Get", "MgDomain")]
     [InlineData("GET", "/groups/{group-id}", "Get", "MgGroup")]
     [InlineData("GET", "/teams/{team-id}", "Get", "MgTeam")]
-    // overrides mirroring the SDK's own AutoRest directives (see NamingOverrides)
+    // configurations mirroring the SDK's own AutoRest directives (see CmdletConfigurator)
     [InlineData("GET", "/solutions/bookingBusinesses/{bookingBusiness-id}", "Get", "MgBookingBusiness")]
     [InlineData("PATCH", "/solutions/bookingBusinesses/{bookingBusiness-id}", "Update", "MgBookingBusiness")]
     [InlineData("GET", "/users/{user-id}/calendar", "Get", "MgUserDefaultCalendar")]
@@ -190,43 +190,43 @@ public sealed class NamingTests
     {
         // Calendar.md remove-path-by-operation user_UpdateCalendar: no Update cmdlet ships for
         // the default-calendar singleton.
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/calendar"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/users/{user-id}/calendar"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/messages/{message-id}"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/calendar"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/calendar"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/messages/{message-id}"));
 
         // Bookings.md remove-path-by-operation ^solution\.solutionsRoot.*$: the /solutions root
         // singleton ships no cmdlets, but its children are untouched.
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/solutions"));
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Patch, "/solutions"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/solutions/bookingBusinesses/{bookingBusiness-id}"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/solutions"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/solutions"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/solutions/bookingBusinesses/{bookingBusiness-id}"));
 
         // The /photos collection ships no distinct cmdlet; only the /photo singleton does.
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photos"));
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photos/{userProfilePhoto-id}"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photo"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photos"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photos/{userProfilePhoto-id}"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photo"));
 
         // Suffix-matched suppressions apply under any root; siblings stay generated
         // (issue #3704: Info-wrapper navs ship nothing, their siblings ship).
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}/message"));
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{id}/team"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{id}/allowedMembers"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/chats/{chat-id}/pinnedMessages/{pinnedChatMessageInfo-id}/message"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{id}/team"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{id}/allowedMembers"));
 
         // Exact-matched suppressions cover only the named node; descendants with no entry of
         // their own stay generated (Security nested navs, issue #3704).
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/security/threatIntelligence/hosts/{host-id}/components"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/security/threatIntelligence/hosts/{host-id}/components/$count"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/security/threatIntelligence/hosts/{host-id}/passiveDns"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/security/threatIntelligence/hosts/{host-id}/components"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/security/threatIntelligence/hosts/{host-id}/components/$count"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/security/threatIntelligence/hosts/{host-id}/passiveDns"));
 
         // termStore trees are stitched: /termStores/{id} descendants ship nothing (the 402
         // descendant command rows come from the /termStore singleton trees), and the singleton
         // root GET ships no distinct cmdlet (Get-MgSiteTermStore serves both /termStore and
         // /termStores; GET generates from the collection side only).
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStores/{store-id}"));
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStores/{store-id}/sets/{set-id}"));
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStore"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Patch, "/sites/{site-id}/termStore"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStores"));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStore/sets/{set-id}"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStores/{store-id}"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStores/{store-id}/sets/{set-id}"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStore"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/sites/{site-id}/termStore"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStores"));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/sites/{site-id}/termStore/sets/{set-id}"));
     }
 
     [Theory]

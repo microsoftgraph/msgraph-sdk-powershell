@@ -155,12 +155,12 @@ Entry template (keep the field names exact so the file converts cleanly):
   not logged at console level, the summary counts surviving files, and the parity gate only
   inspects files that exist.
 - **Decision:** the generator now fails generation loudly on any cmdlet file collision,
-  listing every colliding pair. Shipped cases are renamed via NamingOverrides with their
+  listing every colliding pair. Shipped cases are renamed via CmdletConfigurator with their
   directive cited (`sites/{id}/sites` → `SubSite`/`GroupSubSite`, per Sites.md
   `subject: SubSite` directives); paths the SDK ships nothing for are suppressed as they
   surface.
 - **Migration impact:** none — renames match the published names exactly.
-- **References:** issue #3704; `NamingOverrides.cs` SubSite entries; Sites.md lines 32–61.
+- **References:** issue #3704; `src\Sites\wrapper\Sites_cmdletConfigurations.cs` SubSite entries; Sites.md lines 32–61.
 
 ## Route duplicates: the spec publishes paths the SDK never shipped
 
@@ -175,13 +175,14 @@ Entry template (keep the field names exact so the file converts cleanly):
   `/users/{id}/calendar/events` ships `UserDefaultCalendarEvent`), Info-wrapper navs that
   never shipped (`pinnedMessages/{id}/message`), and stitched pairs where GET ships from one
   route and PATCH/DELETE from the other (termStore, agreement file/files).
-- **Decision:** each resolved family is a `NamingOverrides` entry citing the shipped
+- **Decision:** each resolved family is a `CmdletConfigurator` entry citing the shipped
   command or the oracle's absence. Two families remain open on #3704 with full evidence:
   the Identity.Governance mirrored navigations (the shipped survivor alternates by nesting
   level, needing a dedupe design decision) and the Sites termStore `children` recursion
   (resolver and direct oracle probes disagree; needs reconciliation before encoding).
 - **Migration impact:** none — suppressed routes never shipped; renames match shipped names.
-- **References:** issue #3704 (remainder inventory + resolver evidence); `NamingOverrides.cs`
+- **References:** issue #3704 (remainder inventory + resolver evidence); per-module
+  `src\<Module>\wrapper\<Module>_cmdletConfigurations.cs` files
   "Collision resolutions" section.
 
 ## `-Password` / `-ForceChangePasswordNextSignIn` replaced by typed `-PasswordProfile`

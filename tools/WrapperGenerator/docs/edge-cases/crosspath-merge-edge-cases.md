@@ -19,7 +19,7 @@ shapes / parameter-set work).
 - **Status:** workaround (singleton kept, collection deferred)
 - **Evidence:** oracle ships `Get-MgGroupPhoto` for both `GET /groups/{id}/photo` and
   `GET /groups/{id}/photos`; `/photos/{id}` ships nothing. Mirrors the `/users/{id}/photo(s)`
-  pair already curated in `NamingOverrides.cs`.
+  pair already curated through `CmdletConfigurator`.
 - **Decision:** generate from the `/photo` singleton (the primary published variant); defer
   `/photos` (the all-sizes collection) until parameter sets can put both URIs behind one
   cmdlet.
@@ -34,7 +34,7 @@ shapes / parameter-set work).
 - **Status:** workaround (singleton kept, collection deferred)
 - **Evidence:** oracle ships `Get-MgShareListItem` for both `GET /shares/{id}/listItem` and
   `GET /shares/{id}/list/items`; the bare `/list/items/{id}` item GET ships nothing (curated
-  suppression, `NamingOverrides.cs`).
+  suppression, `CmdletConfigurator`).
 - **Decision:** generate from the `/listItem` singleton; defer the `/list/items` collection.
 - **Migration impact:** `Get-MgShareListItem` exists with identical name; enumerating a
   shared list's items through this cmdlet is not available until the deferral lifts.

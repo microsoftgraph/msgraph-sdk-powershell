@@ -183,9 +183,9 @@ public sealed partial class PowerShellWrapperGenerationService
                     continue;
                 }
 
-                // Skip operations the published SDK deliberately does not ship. NamingOverrides
+                // Skip operations the published SDK deliberately does not ship. CmdletConfigurator
                 // holds the citation for each one.
-                if (NamingOverrides.IsSuppressed(httpMethod, pathTemplate, config))
+                if (CmdletConfigurator.IsSuppressed(httpMethod, pathTemplate, config))
                 {
                     LogSuppressedOperation(httpMethod.Method, pathTemplate);
                     continue;
@@ -354,7 +354,7 @@ public sealed partial class PowerShellWrapperGenerationService
             if (config.UseCollisionData)
             {
                 throw new InvalidOperationException(
-                    $"{summary} Resolve each with a NamingOverrides rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
+                    $"{summary} Resolve each with a CmdletConfigurator rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
             }
 
             LogRawCollisionInventory(summary, string.Join("\n  ", fileCollisions));
@@ -542,7 +542,7 @@ public sealed partial class PowerShellWrapperGenerationService
     private partial void LogWroteCmdletFile(string fileName, string verb, string noun);
     [LoggerMessage(Level = LogLevel.Information, Message = "Wrote {Count} file(s) to {OutputPath}")]
     private partial void LogWroteFiles(int count, string outputPath);
-    [LoggerMessage(Level = LogLevel.Information, Message = "Suppressed {Method} {PathTemplate}: the published SDK ships no cmdlet for it (see NamingOverrides)")]
+    [LoggerMessage(Level = LogLevel.Information, Message = "Suppressed {Method} {PathTemplate}: the published SDK ships no cmdlet for it (see CmdletConfigurator)")]
     private partial void LogSuppressedOperation(string method, string pathTemplate);
     [LoggerMessage(Level = LogLevel.Warning, Message = "Skipped {Method} {PathTemplate}: {Reason}")]
     private partial void LogSkippedUnsupportedOperation(string method, string pathTemplate, string reason);

@@ -19,9 +19,9 @@ public sealed class DerivedCollisionResolutionsTests
     [Fact]
     public void DerivedSuppressionAppliesOnlyWithDataEnabled()
     {
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, "/groupSettings", DataOn));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/groupSettings", DataOff));
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/groupSettings"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/groupSettings", DataOn));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/groupSettings", DataOff));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/groupSettings"));
     }
 
     // Oracle: the nested catalog resourceRoles route ships as
@@ -44,7 +44,7 @@ public sealed class DerivedCollisionResolutionsTests
     [Fact]
     public void DerivedEntriesAreExactMatchOnly()
     {
-        Assert.False(NamingOverrides.IsSuppressed(HttpMethod.Get, "/groupSettings/extra/segment", DataOn));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/groupSettings/extra/segment", DataOn));
     }
 
     // The two deferred cross-path merges (the only ones in all of v1.0): the published SDK
@@ -55,6 +55,6 @@ public sealed class DerivedCollisionResolutionsTests
     [InlineData("/shares/{sharedDriveItem-id}/list/items")]
     public void DeferredCrossPathRoutesAreSuppressed(string pathTemplate)
     {
-        Assert.True(NamingOverrides.IsSuppressed(HttpMethod.Get, pathTemplate, DataOn));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, pathTemplate, DataOn));
     }
 }

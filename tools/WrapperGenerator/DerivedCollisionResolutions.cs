@@ -9,14 +9,14 @@ using System.Text.Json;
 namespace WrapperGenerator;
 
 // Collision resolutions DERIVED from the published-command oracle, as opposed to the curated
-// judgment entries in NamingOverrides. tools/Derive-CollisionResolutions.ps1 writes the
+// judgment entries in CmdletConfigurator. tools/Derive-CollisionResolutions.ps1 writes the
 // data/collision-*.json files from (collision inventory x MgCommandMetadata.json) and its
 // -Validate mode fails when the checked-in files drift from a fresh derivation; the files are
 // embedded at build time so a generation run never reads the 22 MB oracle itself.
 //
 // Entries are exact-match only, keyed by API version + HTTP method + normalized URI, and
 // exist solely for operations that appeared in the collision inventory. Anything broader
-// (subtree prunes, cross-path merge picks) is curated in NamingOverrides with a citation.
+// (subtree prunes, cross-path merge picks) is curated in CmdletConfigurator with a citation.
 internal static class DerivedCollisionResolutions
 {
     private sealed record DataEntry(string ApiVersion, string Method, string Uri, string Action, string? ReplacementNoun, string? ReplacementVerb);
