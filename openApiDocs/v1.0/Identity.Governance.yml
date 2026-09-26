@@ -3215,6 +3215,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.batchApplyCustomDataProvidedResourceDecisions':
+    post:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Invoke action batchApplyCustomDataProvidedResourceDecisions
+      operationId: identityGovernance.accessReview.definition.instance_batchApplyCustomDataProvidedResourceDecision
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: The unique identifier of accessReviewScheduleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: The unique identifier of accessReviewInstance
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                applyResult:
+                  $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemApplyResult'
+                applyDescription:
+                  type: string
+                  nullable: true
+                customDataProvidedResourceId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.batchRecordDecisions':
     post:
       tags:
@@ -7495,6 +7541,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/unified/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.batchApplyCustomDataProvidedResourceDecisions':
+    post:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Invoke action batchApplyCustomDataProvidedResourceDecisions
+      operationId: identityGovernance.accessReview.unified.definition.instance_batchApplyCustomDataProvidedResourceDecision
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: The unique identifier of accessReviewScheduleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: The unique identifier of accessReviewInstance
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                applyResult:
+                  $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemApplyResult'
+                applyDescription:
+                  type: string
+                  nullable: true
+                customDataProvidedResourceId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/identityGovernance/accessReviews/unified/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/microsoft.graph.batchRecordDecisions':
     post:
       tags:
@@ -10289,6 +10381,44 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: accessReviewInstance
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/accessReviews/unified/instances/{accessReviewInstance-id}/microsoft.graph.batchApplyCustomDataProvidedResourceDecisions':
+    post:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Invoke action batchApplyCustomDataProvidedResourceDecisions
+      operationId: identityGovernance.accessReview.unified.instance_batchApplyCustomDataProvidedResourceDecision
+      parameters:
+        - name: accessReviewInstance-id
+          in: path
+          description: The unique identifier of accessReviewInstance
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                applyResult:
+                  $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemApplyResult'
+                applyDescription:
+                  type: string
+                  nullable: true
+                customDataProvidedResourceId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -117694,6 +117824,195 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /identityGovernance/privilegedAccess/group/resources:
+    get:
+      tags:
+        - identityGovernance.privilegedAccessRoot
+      summary: Get resources from identityGovernance
+      operationId: identityGovernance.privilegedAccess.group_ListResource
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.groupResourceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.privilegedAccessRoot
+      summary: Create new navigation property to resources for identityGovernance
+      operationId: identityGovernance.privilegedAccess.group_CreateResource
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupResource'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/privilegedAccess/group/resources/{groupResource-id}':
+    get:
+      tags:
+        - identityGovernance.privilegedAccessRoot
+      summary: Get resources from identityGovernance
+      operationId: identityGovernance.privilegedAccess.group_GetResource
+      parameters:
+        - name: groupResource-id
+          in: path
+          description: The unique identifier of groupResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupResource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.privilegedAccessRoot
+      summary: Update the navigation property resources in identityGovernance
+      operationId: identityGovernance.privilegedAccess.group_UpdateResource
+      parameters:
+        - name: groupResource-id
+          in: path
+          description: The unique identifier of groupResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupResource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupResource'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.privilegedAccessRoot
+      summary: Delete navigation property resources for identityGovernance
+      operationId: identityGovernance.privilegedAccess.group_DeleteResource
+      parameters:
+        - name: groupResource-id
+          in: path
+          description: The unique identifier of groupResource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupResource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/privilegedAccess/group/resources/$count:
+    get:
+      tags:
+        - identityGovernance.privilegedAccessRoot
+      summary: Get the number of the resource
+      operationId: identityGovernance.privilegedAccess.group.resource_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /identityGovernance/termsOfUse:
     get:
       tags:
@@ -128891,6 +129210,8 @@ components:
               type: string
               description: Justification left by the reviewer when they made the decision.
               nullable: true
+            permission:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemPermission'
             principal:
               $ref: '#/components/schemas/microsoft.graph.identity'
             principalLink:
@@ -128941,6 +129262,16 @@ components:
       title: accessReviewInstanceDecisionItemFilterByCurrentUserOptions
       enum:
         - reviewer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessReviewInstanceDecisionItemApplyResult:
+      title: accessReviewInstanceDecisionItemApplyResult
+      enum:
+        - new
+        - appliedSuccessfully
+        - appliedWithUnknownFailure
+        - appliedSuccessfullyButObjectNotFound
+        - applyNotSupported
         - unknownFutureValue
       type: string
     microsoft.graph.accessReviewStage:
@@ -130000,6 +130331,8 @@ components:
               type: string
               description: The requestor's supplied justification.
               nullable: true
+            parameters:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequestParameters'
             requestType:
               $ref: '#/components/schemas/microsoft.graph.accessPackageRequestType'
             schedule:
@@ -130800,6 +131133,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The messages in a mailbox or folder. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            notes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.note'
+              description: The notes in the user's Notes folder. Read-only. Nullable.
               x-ms-navigationProperty: true
             oauth2PermissionGrants:
               type: array
@@ -131990,6 +132329,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilitySchedule'
               description: The eligibility schedules to activate a just-in-time access.
               x-ms-navigationProperty: true
+            resources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.groupResource'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance:
@@ -132566,6 +132910,13 @@ components:
         - principal
         - unknownFutureValue
       type: string
+    microsoft.graph.groupResource:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: groupResource
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.termsOfUseContainer:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -133268,6 +133619,24 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewInstanceDecisionItemPermission:
+      title: accessReviewInstanceDecisionItemPermission
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -133286,6 +133655,9 @@ components:
       title: accessReviewInstanceDecisionItemResource
       type: object
       properties:
+        description:
+          type: string
+          nullable: true
         displayName:
           type: string
           description: Display name of the resource
@@ -133738,6 +134110,14 @@ components:
           nullable: true
         status:
           $ref: '#/components/schemas/microsoft.graph.customExtensionCalloutInstanceStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.accessPackageAssignmentRequestParameters:
+      title: accessPackageAssignmentRequestParameters
+      type: object
+      properties:
+        bypassApproval:
+          type: boolean
       additionalProperties:
         type: object
     microsoft.graph.accessPackageRequestType:
@@ -135963,6 +136343,59 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.note:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
+        - title: note
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyPreview:
+              type: string
+              description: 'Auto-generated preview of the note body content (first ~255 characters, plain text). Read-only.'
+              nullable: true
+              readOnly: true
+            hasAttachments:
+              type: boolean
+              description: Indicates whether the note has file attachments. Supports $filter (eq). Read-only.
+              nullable: true
+              readOnly: true
+            isDeleted:
+              type: boolean
+              description: Indicates whether the note is soft-deleted. Read-only.
+              nullable: true
+              readOnly: true
+            subject:
+              type: string
+              description: 'The title of the note. Supports $filter (eq, ne, startsWith) and $orderby.'
+              nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: 'The file attachments for the note. Only inline image attachments (image/png, image/jpeg, image/gif, or image/bmp) are supported, with a maximum size of 3 MB per attachment. Use $expand to retrieve attachments.'
+              x-ms-navigationProperty: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the note.
+              x-ms-navigationProperty: true
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the note.
+              x-ms-navigationProperty: true
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the note.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -137865,6 +138298,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilitySchedule'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupResourceCollectionResponse:
+      title: Collection of groupResource
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupResource'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -151684,6 +152130,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilityScheduleCollectionResponse'
+    microsoft.graph.groupResourceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.groupResourceCollectionResponse'
     microsoft.graph.unifiedRbacResourceNamespaceCollectionResponse:
       description: Retrieved collection
       content:
