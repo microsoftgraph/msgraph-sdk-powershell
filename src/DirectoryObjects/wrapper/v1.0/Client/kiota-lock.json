@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "248DAC6D898344D97A001532B36F055D8CDA92B2D1F10BD52178E89DA142C54E39523DEF3E1797CAFF2FB7BE51BA901962C8B57EA1EC30D38A7814709490936D",
+  "descriptionHash": "AF25131E2BB975E19A26F4BD8E5C4107F9AE894C88EA32662D91DC9CA0DF54CA4B0664B0C5D9097BFED289736AB17B772CA09E1AB351B05303A0E39D6B8F79B3",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/DirectoryObjects.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.32.2",
+  "kiotaVersion": "1.34.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.DirectoryObjects.Client",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

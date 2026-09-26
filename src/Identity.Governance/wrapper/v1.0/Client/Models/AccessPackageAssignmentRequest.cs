@@ -56,6 +56,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public string Justification { get; set; }
 #endif
+        /// <summary>The parameters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageAssignmentRequestParameters? Parameters { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageAssignmentRequestParameters Parameters { get; set; }
+#endif
         /// <summary>The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +117,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomExtensionCalloutInstance>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageAssignmentRequestParameters>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageAssignmentRequestParameters.CreateFromDiscriminatorValue); } },
                 { "requestType", n => { RequestType = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageRequestType>(); } },
                 { "requestor", n => { Requestor = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageSubject>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageSubject.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.EntitlementManagementSchedule>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
@@ -131,6 +140,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
             writer.WriteStringValue("justification", Justification);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageAssignmentRequestParameters>("parameters", Parameters);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageSubject>("requestor", Requestor);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageRequestType>("requestType", RequestType);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.EntitlementManagementSchedule>("schedule", Schedule);

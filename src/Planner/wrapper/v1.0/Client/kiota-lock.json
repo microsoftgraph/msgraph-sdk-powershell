@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "ADE0F5305AFDB45C1974E4D9030EA7304EF95B0931D533E84685CBD9C1E1C976DBDF71BE2CF47177FE8155C1A6A0FFC8E692271F2B8AFE44FF9B1452D061D629",
+  "descriptionHash": "43B2D3350DAFD4D6AEB2CAAE3ECFD4DD16C609B1FBB20336DEAC9225AB195BC1CF1E6B333EC8D9BAC34089BC778EBD260749C08BF85471660385FCCA21587DEC",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Planner.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.32.2",
+  "kiotaVersion": "1.34.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Planner.Client",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

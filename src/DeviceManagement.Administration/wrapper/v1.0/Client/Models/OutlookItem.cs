@@ -46,6 +46,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Mode
                 "#microsoft.graph.contact" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.Contact(),
                 "#microsoft.graph.event" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.Event(),
                 "#microsoft.graph.message" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.Message(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.Note(),
                 "#microsoft.graph.post" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.Post(),
                 _ => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.OutlookItem(),
             };

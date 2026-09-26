@@ -187,6 +187,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
                 "#microsoft.graph.multiTenantOrganizationMember" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.MultiTenantOrganizationMember(),
                 "#microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.MultiTenantOrganizationPartnerConfigurationTemplate(),
                 "#microsoft.graph.multiValueLegacyExtendedProperty" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.MultiValueLegacyExtendedProperty(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.Note(),
                 "#microsoft.graph.notebook" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.Notebook(),
                 "#microsoft.graph.oAuth2PermissionGrant" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.OAuth2PermissionGrant(),
                 "#microsoft.graph.offerShiftRequest" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.OfferShiftRequest(),

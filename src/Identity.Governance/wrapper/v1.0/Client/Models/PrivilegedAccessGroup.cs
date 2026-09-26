@@ -68,6 +68,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilitySchedule> EligibilitySchedules { get; set; }
 #endif
+        /// <summary>The resources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GroupResource>? Resources { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GroupResource> Resources { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -93,6 +101,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
                 { "eligibilityScheduleInstances", n => { EligibilityScheduleInstances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilityScheduleInstance>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilityScheduleInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eligibilityScheduleRequests", n => { EligibilityScheduleRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilityScheduleRequest>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eligibilitySchedules", n => { EligibilitySchedules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilitySchedule>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilitySchedule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GroupResource>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GroupResource.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -110,6 +119,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilityScheduleInstance>("eligibilityScheduleInstances", EligibilityScheduleInstances);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilityScheduleRequest>("eligibilityScheduleRequests", EligibilityScheduleRequests);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilitySchedule>("eligibilitySchedules", EligibilitySchedules);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GroupResource>("resources", Resources);
         }
     }
 }

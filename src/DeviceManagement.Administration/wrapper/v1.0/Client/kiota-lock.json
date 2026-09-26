@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "60B145A342903D4AC2081F1C25A8DAEFCEC38EFE24CD3FB12D341333C6BF17ECDD8FCF611C0F2D16C92F9D5CD16B16C69D2A6E08B2362C0F10035974C29256FD",
+  "descriptionHash": "102A2DB0524A1EA1AB441866BC4E7DD6FFEA12EA9D8965C39C8A55CC4A74760D7E1985BA8FA20FCB5ED5D28E53E2DAB3C22604FBF1BC4BCC6A146F1639F41B6A",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/DeviceManagement.Administration.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.32.2",
+  "kiotaVersion": "1.34.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

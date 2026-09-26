@@ -7,6 +7,7 @@ using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.P
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleInstances;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.Resources;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -59,6 +60,11 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernan
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.EligibilitySchedulesRequestBuilder EligibilitySchedules
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.EligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The resources property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.Resources.ResourcesRequestBuilder Resources
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.GroupRequestBuilder"/> and sets the default values.

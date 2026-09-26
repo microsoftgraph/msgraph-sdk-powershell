@@ -46,6 +46,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
                 "#microsoft.graph.contact" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.Contact(),
                 "#microsoft.graph.event" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.Event(),
                 "#microsoft.graph.message" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.Message(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.Note(),
                 "#microsoft.graph.post" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.Post(),
                 _ => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.OutlookItem(),
             };

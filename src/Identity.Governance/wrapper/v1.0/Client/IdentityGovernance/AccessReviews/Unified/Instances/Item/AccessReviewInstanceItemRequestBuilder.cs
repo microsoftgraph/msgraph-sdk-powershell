@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.AcceptRecommendations;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.ApplyDecisions;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.BatchApplyCustomDataProvidedResourceDecisions;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.BatchRecordDecisions;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.ContactedReviewers;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.Decisions;
@@ -36,6 +37,11 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernan
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.ApplyDecisions.ApplyDecisionsRequestBuilder ApplyDecisions
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.ApplyDecisions.ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The batchApplyCustomDataProvidedResourceDecisions property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder BatchApplyCustomDataProvidedResourceDecisions
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.BatchApplyCustomDataProvidedResourceDecisions.BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The batchRecordDecisions property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.AccessReviews.Unified.Instances.Item.BatchRecordDecisions.BatchRecordDecisionsRequestBuilder BatchRecordDecisions

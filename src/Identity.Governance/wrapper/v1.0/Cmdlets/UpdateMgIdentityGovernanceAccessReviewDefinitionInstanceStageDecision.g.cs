@@ -60,6 +60,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UserIdentity? AppliedBy { get; set; }
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItemPermission? Permission { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.Identity? Principal { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -112,6 +115,9 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
 
     if (this.IsParameterBound(nameof(AppliedBy)))
         body.AppliedBy = AppliedBy;
+
+    if (this.IsParameterBound(nameof(Permission)))
+        body.Permission = Permission;
 
     if (this.IsParameterBound(nameof(Principal)))
         body.Principal = Principal;

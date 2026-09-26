@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "E55DF812E11B376B7BDBD700131553EB89C8AFA50149B1122EAF9F4765598A4879B2141112784F95A099162276FBA6AACB899CF63369870396D9389D1E4CFFE2",
+  "descriptionHash": "57AE4BD68C8D011269808EF99B3C51A24FF6492C40F987BD291DB6A9359D3B0B70BA3D176BE4D6B9ADDF846958FF50F4311FC046A33F7630A6A4F95DB3E8E122",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Identity.SignIns.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.32.2",
+  "kiotaVersion": "1.34.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Identity.SignIns.Client",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

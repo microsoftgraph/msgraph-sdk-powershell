@@ -177,6 +177,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models
                 "#microsoft.graph.mobileContainedApp" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileContainedApp(),
                 "#microsoft.graph.mobileLobApp" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileLobApp(),
                 "#microsoft.graph.multiValueLegacyExtendedProperty" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MultiValueLegacyExtendedProperty(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.Note(),
                 "#microsoft.graph.notebook" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.Notebook(),
                 "#microsoft.graph.oAuth2PermissionGrant" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.OAuth2PermissionGrant(),
                 "#microsoft.graph.offerShiftRequest" => new global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.OfferShiftRequest(),

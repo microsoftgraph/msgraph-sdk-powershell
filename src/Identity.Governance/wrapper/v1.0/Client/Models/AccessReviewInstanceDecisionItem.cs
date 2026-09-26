@@ -70,6 +70,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public string Justification { get; set; }
 #endif
+        /// <summary>The permission property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItemPermission? Permission { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItemPermission Permission { get; set; }
+#endif
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the principal. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is &apos;Bob&apos; and the resource is &apos;Sales&apos;. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +154,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
                 { "decision", n => { Decision = n.GetStringValue(); } },
                 { "insights", n => { Insights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GovernanceInsight>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GovernanceInsight.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
+                { "permission", n => { Permission = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItemPermission>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItemPermission.CreateFromDiscriminatorValue); } },
                 { "principal", n => { Principal = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.Identity>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "principalLink", n => { PrincipalLink = n.GetStringValue(); } },
                 { "recommendation", n => { Recommendation = n.GetStringValue(); } },
@@ -171,6 +180,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             writer.WriteStringValue("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GovernanceInsight>("insights", Insights);
             writer.WriteStringValue("justification", Justification);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItemPermission>("permission", Permission);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.Identity>("principal", Principal);
             writer.WriteStringValue("principalLink", PrincipalLink);
             writer.WriteStringValue("recommendation", Recommendation);
