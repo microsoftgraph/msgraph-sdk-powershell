@@ -5,8 +5,12 @@ param([string] $ModulePath, [string] $ModuleName, [string] $ModuleTestsPath, [sw
 $ErrorActionPreference = 'Stop'
 
 # Install Pester
+# CFSClean: install tooling modules from the private feed (PowerShell Gallery upstream).
+. (Join-Path $PSScriptRoot 'Get-CfsFeedCredential.ps1')
+$__cfsCred = Get-CfsFeedCredential
+if ($null -ne $__cfsCred) { $PSDefaultParameterValues['Install-Module:Credential'] = $__cfsCred }
 if (!(Get-Module -Name Pester -ListAvailable)) {
-    Install-Module -Name Pester -Force -SkipPublisherCheck
+    Install-Module -Name Pester -Repository (Get-CfsFeedName) -Force -SkipPublisherCheck
 }
 
 if(-not $Isolated) {
