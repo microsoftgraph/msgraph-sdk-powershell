@@ -13083,7 +13083,6 @@ components:
           x-ms-navigationProperty: true
       additionalProperties:
         type: object
-      description: Represents a container that exposes navigation properties for cloud communications resources.
     microsoft.graph.adhocCall:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

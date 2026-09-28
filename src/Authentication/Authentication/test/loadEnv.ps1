@@ -11,38 +11,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ----------------------------------------------------------------------------------
-$envFile = 'env.json'
-if ($TestMode -eq 'live') {
-    $envFile = 'localEnv.json'
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingConvertToSecureStringWithPlainText', '', Justification='Just an example for testing purposes.')]
+param()
+if ($TestMode -eq 'live' -or $TestMode -eq 'record') {
+    Connect-MgGraph -ClientId $env:testApp_clientId -TenantId $env:testApp_tenantId -CertificateThumbprint $env:testApp_certThumbprint
 }
-
-if (Test-Path -Path (Join-Path $PSScriptRoot $envFile)) {
-    $envFilePath = Join-Path $PSScriptRoot $envFile
-} else {
-    $envFilePath = Join-Path $PSScriptRoot '..\$envFile'
-}
-# Microsoft.Graph.Authentication.Core is loaded into a private AssemblyLoadContext on PowerShell 7+, so its types cannot be
-# referenced with type literals like [Microsoft.Graph.PowerShell.Authentication.GraphSession]. Resolve them from the
-# already-loaded assembly instead.
-function Get-MgCoreType {
-    param([Parameter(Mandatory)][string]$TypeName)
-    $asm = [AppDomain]::CurrentDomain.GetAssemblies() | Where-Object { $_.GetName().Name -eq 'Microsoft.Graph.Authentication.Core' } | Select-Object -First 1
-    if ($null -eq $asm) { throw 'Microsoft.Graph.Authentication.Core is not loaded. Import the module first.' }
-    return $asm.GetType($TypeName, $true)
-}
-
-function Get-MgGraphSessionInstance {
-    return (Get-MgCoreType 'Microsoft.Graph.PowerShell.Authentication.GraphSession').GetProperty('Instance').GetValue($null)
-}
-
-$env = @{}
-if (Test-Path -Path $envFilePath) {
-    # Load dummy auth configuration. This is used to run Pester tests.
-    $env = Get-Content (Join-Path $PSScriptRoot $envFile) | ConvertFrom-Json -AsHashTable
-    $authContext = [Activator]::CreateInstance((Get-MgCoreType 'Microsoft.Graph.PowerShell.Authentication.AuthContext'))
-    $authContext.ClientId = $env.ClientId
-    $authContext.TenantId = $env.TenantId
-    $authContext.AuthType = [Enum]::Parse((Get-MgCoreType 'Microsoft.Graph.PowerShell.Authentication.AuthenticationType'), 'UserProvidedAccessToken')
-    $authContext.TokenCredentialType = [Enum]::Parse((Get-MgCoreType 'Microsoft.Graph.PowerShell.Authentication.TokenCredentialType'), 'UserProvidedAccessToken')
-    (Get-MgGraphSessionInstance).AuthContext = $authContext
+else {
+    # Use dummy access token to run Pester tests.
+    # Provide the dummy access token to $env:testApp_dummyAccessToken in your environment variable.
+    Connect-MgGraph -AccessToken (ConvertTo-SecureString -String $env:testApp_dummyAccessToken -AsPlainText)
 }

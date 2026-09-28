@@ -57,7 +57,7 @@ if ($Build -or $Run) {
 }
 
 if ($Test) {
-  dotnet test $AuthSrcPath --no-build --verbosity quiet
+  dotnet test $AuthSrcPath --verbosity quiet
   if (-not $?) {
     Write-Error "Failed to execute: dotnet test $AuthSrcPath"
   }

@@ -5,6 +5,7 @@
 Describe "The Find-MgGraphPermission Command" {
 
     BeforeAll {
+        . (Join-Path $PSScriptRoot '.\TypeHelpers.ps1')
         . (join-path $PSScriptRoot  ..\custom\Find-MgGraphPermission.ps1)
         . (Join-Path $PSScriptRoot  .\Find-MgGraphPermissionTestfile.ps1)
     }
@@ -227,7 +228,8 @@ Describe "The Find-MgGraphPermission Command" {
         BeforeEach {
             _Permissions_Initialize
             Mock Invoke-MgGraphRequest {
-                Throw [Activator]::CreateInstance((Get-MgCoreType 'Microsoft.Graph.PowerShell.AuthenticationException'), @('mock connection error message', $null))
+                $exceptionType = Get-MgAssemblyType -AssemblyName 'Microsoft.Graph.Authentication.Core' -TypeName 'Microsoft.Graph.PowerShell.AuthenticationException'
+                Throw [Activator]::CreateInstance($exceptionType, @('mock connection error message', $null))
             }
         }
 

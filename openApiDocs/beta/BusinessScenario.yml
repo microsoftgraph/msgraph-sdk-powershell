@@ -57,11 +57,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.businessScenarioCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -91,11 +86,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenario'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}':
     get:
@@ -145,11 +135,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenario'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -185,11 +170,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenario'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -220,11 +200,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner':
     get:
@@ -274,11 +249,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -310,11 +280,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -341,11 +306,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/microsoft.graph.getPlan':
     post:
@@ -387,11 +347,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanReference'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration':
     get:
@@ -441,11 +396,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -481,11 +431,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -512,11 +457,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations':
     get:
@@ -577,11 +517,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -616,11 +551,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations/{plannerPlanConfigurationLocalization-id}':
     get:
@@ -675,11 +605,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -719,11 +644,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -758,11 +678,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations/$count':
     get:
@@ -786,11 +701,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/businessScenarios/{businessScenario-id}/planner/taskConfiguration':
     get:
       tags:
@@ -839,11 +749,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -879,11 +784,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -910,11 +810,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks':
     get:
@@ -975,11 +870,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.businessScenarioTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1018,11 +908,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}':
     get:
@@ -1080,11 +965,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1128,11 +1008,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1171,11 +1046,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/assignedToTaskBoardFormat':
     get:
@@ -1230,11 +1100,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1281,11 +1146,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1320,11 +1180,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/bucketTaskBoardFormat':
     get:
@@ -1379,11 +1234,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1430,11 +1280,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1469,11 +1314,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/details':
     get:
@@ -1528,11 +1368,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1579,11 +1414,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1618,11 +1448,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/messages':
     get:
@@ -1688,11 +1513,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.plannerTaskChatMessageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1735,11 +1555,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskChatMessage'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/messages/{plannerTaskChatMessage-id}':
     get:
@@ -1802,11 +1617,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskChatMessage'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1854,11 +1664,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskChatMessage'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1901,11 +1706,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.setReaction':
     post:
@@ -1959,11 +1759,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.unsetReaction':
     post:
@@ -2017,11 +1812,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/messages/$count':
     get:
@@ -2053,11 +1843,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/progressTaskBoardFormat':
     get:
       tags:
@@ -2111,11 +1896,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2162,11 +1942,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2201,11 +1976,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/$count':
     get:
@@ -2229,11 +1999,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/businessScenarios(uniqueName=''{uniqueName}'')':
     get:
       tags:
@@ -2282,11 +2047,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenario'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2322,11 +2082,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.businessScenario'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2357,11 +2112,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/businessScenarios/$count:
     get:
@@ -2377,11 +2127,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
 components:
   schemas:
     microsoft.graph.businessScenario:

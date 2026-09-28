@@ -46,11 +46,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.backupRestoreRoot'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -73,11 +68,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.backupRestoreRoot'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -96,11 +86,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/activityLogs:
     get:
@@ -149,11 +134,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.activityLogBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -179,11 +159,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityLogBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/activityLogs/{activityLogBase-id}':
     get:
@@ -229,11 +204,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityLogBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -265,11 +235,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityLogBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -296,11 +261,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/activityLogs/$count:
     get:
@@ -316,11 +276,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/browseSessions:
     get:
       tags:
@@ -372,11 +327,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.browseSessionBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -402,11 +352,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.browseSessionBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/browseSessions/{browseSessionBase-id}':
     get:
@@ -453,11 +398,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.browseSessionBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -489,11 +429,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.browseSessionBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -520,11 +455,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/browseSessions/{browseSessionBase-id}/microsoft.graph.browse':
     post:
@@ -584,11 +514,6 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -639,11 +564,6 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -662,11 +582,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/driveExclusionUnits:
     get:
       tags:
@@ -715,11 +630,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveExclusionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -745,11 +655,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/driveExclusionUnits/{driveExclusionUnit-id}':
     get:
@@ -796,11 +701,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -832,11 +732,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -863,11 +758,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/driveExclusionUnits/$count:
     get:
@@ -883,11 +773,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs:
     get:
       tags:
@@ -936,11 +821,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveExclusionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -966,11 +846,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs/{driveExclusionUnitsBulkAdditionJob-id}':
     get:
@@ -1017,11 +892,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1053,11 +923,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1084,11 +949,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs/$count:
     get:
@@ -1104,11 +964,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/driveInclusionRules:
     get:
       tags:
@@ -1157,11 +1012,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveProtectionRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1187,11 +1037,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/driveInclusionRules/{driveProtectionRule-id}':
     get:
@@ -1238,11 +1083,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1274,11 +1114,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1305,11 +1140,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/driveInclusionRules/$count:
     get:
@@ -1325,11 +1155,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/driveProtectionUnits:
     get:
       tags:
@@ -1378,11 +1203,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveProtectionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1408,11 +1228,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/driveProtectionUnits/{driveProtectionUnit-id}':
     get:
@@ -1459,11 +1274,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1495,11 +1305,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1526,11 +1331,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/driveProtectionUnits/$count:
     get:
@@ -1546,11 +1346,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/driveProtectionUnitsBulkAdditionJobs:
     get:
       tags:
@@ -1598,11 +1393,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveProtectionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1628,11 +1418,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/driveProtectionUnitsBulkAdditionJobs/{driveProtectionUnitsBulkAdditionJob-id}':
     get:
@@ -1678,11 +1463,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1714,11 +1494,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1745,11 +1520,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/driveProtectionUnitsBulkAdditionJobs/$count:
     get:
@@ -1765,11 +1535,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/emailNotificationsSetting:
     get:
       tags:
@@ -1810,11 +1575,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.emailNotificationsSetting'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1841,11 +1601,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.emailNotificationsSetting'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1864,11 +1619,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/exchangeProtectionPolicies:
     get:
@@ -1918,11 +1668,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.exchangeProtectionPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1952,11 +1697,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}':
     get:
@@ -2003,11 +1743,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2043,11 +1778,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2074,11 +1804,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxExclusionUnits':
     get:
@@ -2139,11 +1864,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxExclusionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2204,11 +1924,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxExclusionUnits/$count':
     get:
@@ -2232,11 +1947,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxExclusionUnitsBulkAdditionJobs':
     get:
       tags:
@@ -2296,11 +2006,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxExclusionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2361,11 +2066,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxExclusionUnitsBulkAdditionJobs/$count':
     get:
@@ -2389,11 +2089,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxInclusionRules':
     get:
       tags:
@@ -2453,11 +2148,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxProtectionRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2518,11 +2208,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxInclusionRules/$count':
     get:
@@ -2546,11 +2231,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxProtectionUnits':
     get:
       tags:
@@ -2607,11 +2287,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxProtectionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2669,11 +2344,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxProtectionUnits/$count':
     get:
@@ -2697,11 +2367,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxProtectionUnitsBulkAdditionJobs':
     get:
       tags:
@@ -2761,11 +2426,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxProtectionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2826,11 +2486,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxProtectionUnitsBulkAdditionJobs/$count':
     get:
@@ -2854,11 +2509,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/exchangeProtectionPolicies/$count:
     get:
       tags:
@@ -2873,11 +2523,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/exchangeRestoreSessions:
     get:
       tags:
@@ -2926,11 +2571,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.exchangeRestoreSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2956,11 +2596,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.exchangeRestoreSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}':
     get:
@@ -3007,11 +2642,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.exchangeRestoreSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3047,11 +2677,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.exchangeRestoreSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3078,11 +2703,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/granularMailboxRestoreArtifacts':
     get:
@@ -3139,11 +2759,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.granularMailboxRestoreArtifactCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3178,11 +2793,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/granularMailboxRestoreArtifacts/{granularMailboxRestoreArtifact-id}':
     get:
@@ -3236,11 +2846,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3280,11 +2885,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.granularMailboxRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3319,11 +2919,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/granularMailboxRestoreArtifacts/{granularMailboxRestoreArtifact-id}/restorePoint':
     get:
@@ -3378,11 +2973,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restorePoint'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/granularMailboxRestoreArtifacts/$count':
     get:
@@ -3406,11 +2996,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifacts':
     get:
       tags:
@@ -3470,11 +3055,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxRestoreArtifactCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3509,11 +3089,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifacts/{mailboxRestoreArtifact-id}':
     get:
@@ -3568,11 +3143,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3612,11 +3182,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3651,11 +3216,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifacts/{mailboxRestoreArtifact-id}/restorePoint':
     get:
@@ -3710,11 +3270,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restorePoint'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifacts/$count':
     get:
@@ -3738,11 +3293,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifactsBulkAdditionRequests':
     get:
       tags:
@@ -3802,11 +3352,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3845,11 +3390,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifactsBulkAdditionRequests/{mailboxRestoreArtifactsBulkAdditionRequest-id}':
     get:
@@ -3907,11 +3447,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3951,11 +3486,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3994,11 +3524,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/exchangeRestoreSessions/{exchangeRestoreSession-id}/mailboxRestoreArtifactsBulkAdditionRequests/$count':
     get:
@@ -4022,11 +3547,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/exchangeRestoreSessions/$count:
     get:
       tags:
@@ -4041,11 +3561,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/exclusionUnits:
     get:
       tags:
@@ -4094,11 +3609,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.exclusionUnitBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4148,11 +3658,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.exclusionUnitBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/exclusionUnits/$count:
     get:
@@ -4168,11 +3673,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/mailboxExclusionUnits:
     get:
       tags:
@@ -4221,11 +3721,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxExclusionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4251,11 +3746,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/mailboxExclusionUnits/{mailboxExclusionUnit-id}':
     get:
@@ -4302,11 +3792,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4338,11 +3823,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4369,11 +3849,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/mailboxExclusionUnits/$count:
     get:
@@ -4389,11 +3864,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/mailboxExclusionUnitsBulkAdditionJobs:
     get:
       tags:
@@ -4442,11 +3912,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxExclusionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4472,11 +3937,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/mailboxExclusionUnitsBulkAdditionJobs/{mailboxExclusionUnitsBulkAdditionJob-id}':
     get:
@@ -4523,11 +3983,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4559,11 +4014,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4590,11 +4040,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/mailboxExclusionUnitsBulkAdditionJobs/$count:
     get:
@@ -4610,11 +4055,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/mailboxInclusionRules:
     get:
       tags:
@@ -4663,11 +4103,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxProtectionRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4693,11 +4128,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/mailboxInclusionRules/{mailboxProtectionRule-id}':
     get:
@@ -4744,11 +4174,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4780,11 +4205,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4811,11 +4231,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/mailboxInclusionRules/$count:
     get:
@@ -4831,11 +4246,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/mailboxProtectionUnits:
     get:
       tags:
@@ -4884,11 +4294,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxProtectionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4914,11 +4319,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/mailboxProtectionUnits/{mailboxProtectionUnit-id}':
     get:
@@ -4965,11 +4365,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5001,11 +4396,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5032,11 +4422,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/mailboxProtectionUnits/$count:
     get:
@@ -5052,11 +4437,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/mailboxProtectionUnitsBulkAdditionJobs:
     get:
       tags:
@@ -5104,11 +4484,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxProtectionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5134,11 +4509,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/mailboxProtectionUnitsBulkAdditionJobs/{mailboxProtectionUnitsBulkAdditionJob-id}':
     get:
@@ -5184,11 +4554,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5220,11 +4585,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5251,11 +4611,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/mailboxProtectionUnitsBulkAdditionJobs/$count:
     get:
@@ -5271,11 +4626,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/microsoft.graph.enable:
     post:
       tags:
@@ -5307,11 +4657,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.serviceStatus'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   /solutions/backupRestore/oneDriveForBusinessBrowseSessions:
     get:
@@ -5364,11 +4709,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.oneDriveForBusinessBrowseSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5398,11 +4738,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessBrowseSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessBrowseSessions/{oneDriveForBusinessBrowseSession-id}':
     get:
@@ -5452,11 +4787,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessBrowseSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5488,11 +4818,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessBrowseSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5519,11 +4844,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/oneDriveForBusinessBrowseSessions/$count:
     get:
@@ -5539,11 +4859,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/oneDriveForBusinessProtectionPolicies:
     get:
       tags:
@@ -5592,11 +4907,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.oneDriveForBusinessProtectionPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5626,11 +4936,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}':
     get:
@@ -5677,11 +4982,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5717,11 +5017,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5748,11 +5043,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveExclusionUnits':
     get:
@@ -5813,11 +5103,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveExclusionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5878,11 +5163,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveExclusionUnits/$count':
     get:
@@ -5906,11 +5186,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveExclusionUnitsBulkAdditionJobs':
     get:
       tags:
@@ -5970,11 +5245,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveExclusionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6035,11 +5305,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveExclusionUnitsBulkAdditionJobs/$count':
     get:
@@ -6063,11 +5328,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveInclusionRules':
     get:
       tags:
@@ -6127,11 +5387,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveProtectionRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6192,11 +5447,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveInclusionRules/$count':
     get:
@@ -6220,11 +5470,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveProtectionUnits':
     get:
       tags:
@@ -6284,11 +5529,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveProtectionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6346,11 +5586,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveProtectionUnits/$count':
     get:
@@ -6374,11 +5609,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveProtectionUnitsBulkAdditionJobs':
     get:
       tags:
@@ -6438,11 +5668,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveProtectionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6503,11 +5728,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessProtectionPolicies/{oneDriveForBusinessProtectionPolicy-id}/driveProtectionUnitsBulkAdditionJobs/$count':
     get:
@@ -6531,11 +5751,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/oneDriveForBusinessProtectionPolicies/$count:
     get:
       tags:
@@ -6550,11 +5765,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/oneDriveForBusinessRestoreSessions:
     get:
       tags:
@@ -6603,11 +5813,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.oneDriveForBusinessRestoreSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6633,11 +5838,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessRestoreSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}':
     get:
@@ -6684,11 +5884,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessRestoreSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6724,11 +5919,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessRestoreSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6755,11 +5945,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifacts':
     get:
@@ -6820,11 +6005,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveRestoreArtifactCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6859,11 +6039,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifacts/{driveRestoreArtifact-id}':
     get:
@@ -6918,11 +6093,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6962,11 +6132,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7001,11 +6166,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifacts/{driveRestoreArtifact-id}/restorePoint':
     get:
@@ -7060,11 +6220,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restorePoint'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifacts/$count':
     get:
@@ -7088,11 +6243,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifactsBulkAdditionRequests':
     get:
       tags:
@@ -7152,11 +6302,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveRestoreArtifactsBulkAdditionRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7195,11 +6340,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifactsBulkAdditionRequests/{driveRestoreArtifactsBulkAdditionRequest-id}':
     get:
@@ -7257,11 +6397,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7301,11 +6436,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7344,11 +6474,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/driveRestoreArtifactsBulkAdditionRequests/$count':
     get:
@@ -7372,11 +6497,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/granularDriveRestoreArtifacts':
     get:
       tags:
@@ -7436,11 +6556,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.granularDriveRestoreArtifactCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7475,11 +6590,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.granularDriveRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/granularDriveRestoreArtifacts/{granularDriveRestoreArtifact-id}':
     get:
@@ -7534,11 +6644,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.granularDriveRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7578,11 +6683,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.granularDriveRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7617,11 +6717,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/oneDriveForBusinessRestoreSessions/{oneDriveForBusinessRestoreSession-id}/granularDriveRestoreArtifacts/$count':
     get:
@@ -7645,11 +6740,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/oneDriveForBusinessRestoreSessions/$count:
     get:
       tags:
@@ -7664,11 +6754,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/protectionPolicies:
     get:
       tags:
@@ -7717,11 +6802,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.protectionPolicyBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7747,11 +6827,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}':
     get:
@@ -7798,11 +6873,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7834,11 +6904,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7869,11 +6934,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}/microsoft.graph.activate':
     post:
@@ -7903,11 +6963,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}/microsoft.graph.deactivate':
     post:
@@ -7937,11 +6992,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   /solutions/backupRestore/protectionPolicies/$count:
     get:
@@ -7957,11 +7007,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/protectionUnits:
     get:
       tags:
@@ -8010,11 +7055,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.protectionUnitBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8067,11 +7107,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.cancelOffboard':
     post:
@@ -8101,11 +7136,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.driveProtectionUnit':
     get:
@@ -8155,11 +7185,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.mailboxProtectionUnit':
     get:
       tags:
@@ -8208,11 +7233,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.offboard':
     post:
       tags:
@@ -8241,11 +7261,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/backupRestore/protectionUnits/{protectionUnitBase-id}/microsoft.graph.siteProtectionUnit':
     get:
@@ -8295,11 +7310,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/protectionUnits/$count:
     get:
       tags:
@@ -8314,11 +7324,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/protectionUnits/microsoft.graph.driveProtectionUnit:
     get:
       tags:
@@ -8370,11 +7375,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.driveProtectionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8392,11 +7392,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/protectionUnits/microsoft.graph.mailboxProtectionUnit:
     get:
       tags:
@@ -8448,11 +7443,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.mailboxProtectionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8470,11 +7460,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/protectionUnits/microsoft.graph.siteProtectionUnit:
     get:
       tags:
@@ -8526,11 +7511,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteProtectionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8548,16 +7528,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/reports:
     get:
       tags:
         - solutions.backupRestoreRoot
       summary: Get reports from solutions
+      description: Report corresponding to a protection policy.
       operationId: solution.backupRestore_GetReport
       parameters:
         - name: $select
@@ -8589,11 +7565,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.backupReport'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8616,11 +7587,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.backupReport'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8639,17 +7605,16 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/reports/microsoft.graph.getStatisticsByPolicy(policyId=''{policyId}'')':
     get:
       tags:
         - solutions.backupRestoreRoot
       summary: Invoke function getStatisticsByPolicy
+      description: Get the statistics that correspond to the specified policy ID of a backupPolicyReport.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/backupreport-getstatisticsbypolicy?view=graph-rest-beta
       operationId: solution.backupRestore.report_getStatisticsGraphBPrePolicy
       parameters:
         - name: policyId
@@ -8668,11 +7633,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.backupPolicyReport'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: function
   /solutions/backupRestore/restorePoints:
     get:
@@ -8722,11 +7682,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.restorePointCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8752,11 +7707,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restorePoint'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/restorePoints/{restorePoint-id}':
     get:
@@ -8803,11 +7753,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restorePoint'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8839,11 +7784,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restorePoint'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8870,18 +7810,13 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/restorePoints/{restorePoint-id}/protectionUnit':
     get:
       tags:
         - solutions.backupRestoreRoot
       summary: Get protectionUnit from solutions
-      description: 'The site, drive, or mailbox units that are protected under a protection policy.'
+      description: 'The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.'
       operationId: solution.backupRestore.restorePoint_GetProtectionUnit
       parameters:
         - name: restorePoint-id
@@ -8921,11 +7856,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/restorePoints/$count:
     get:
@@ -8941,17 +7871,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/restorePoints/microsoft.graph.search:
     post:
       tags:
         - solutions.backupRestoreRoot
       summary: Invoke action search
-      description: Search for the restorePoint objects associated with a protectionUnit.
+      description: Search for the restorePoint objects associated with a protectionUnit. Optionally provide policyId to scope the search to a protection policy and validate that the specified protection units belong to that policy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-beta
@@ -8976,6 +7901,9 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.restorePointTags'
                 artifactQuery:
                   $ref: '#/components/schemas/microsoft.graph.artifactQuery'
+                policyId:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -8988,11 +7916,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restorePointSearchResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   /solutions/backupRestore/restoreSessions:
     get:
@@ -9045,11 +7968,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.restoreSessionBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9075,11 +7993,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/restoreSessions/{restoreSessionBase-id}':
     get:
@@ -9129,11 +8042,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9165,11 +8073,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9200,11 +8103,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/restoreSessions/{restoreSessionBase-id}/microsoft.graph.activate':
     post:
@@ -9234,11 +8132,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   /solutions/backupRestore/restoreSessions/$count:
     get:
@@ -9254,11 +8147,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/serviceApps:
     get:
       tags:
@@ -9310,11 +8198,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.serviceAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9344,11 +8227,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.serviceApp'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/serviceApps/{serviceApp-id}':
     get:
@@ -9398,11 +8276,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.serviceApp'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9434,11 +8307,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.serviceApp'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9469,11 +8337,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/serviceApps/{serviceApp-id}/microsoft.graph.activate':
     post:
@@ -9517,11 +8380,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.serviceApp'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   '/solutions/backupRestore/serviceApps/{serviceApp-id}/microsoft.graph.deactivate':
     post:
@@ -9551,11 +8409,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.serviceApp'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: action
   /solutions/backupRestore/serviceApps/$count:
     get:
@@ -9571,11 +8424,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/sharePointBrowseSessions:
     get:
       tags:
@@ -9627,11 +8475,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.sharePointBrowseSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9661,11 +8504,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharePointBrowseSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointBrowseSessions/{sharePointBrowseSession-id}':
     get:
@@ -9715,11 +8553,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharePointBrowseSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9751,11 +8584,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharePointBrowseSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9782,11 +8610,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/sharePointBrowseSessions/$count:
     get:
@@ -9802,11 +8625,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/sharePointProtectionPolicies:
     get:
       tags:
@@ -9855,11 +8673,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.sharePointProtectionPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9889,11 +8702,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}':
     get:
@@ -9940,11 +8748,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9980,11 +8783,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10011,11 +8809,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteExclusionUnits':
     get:
@@ -10076,11 +8869,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteExclusionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10141,11 +8929,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteExclusionUnits/$count':
     get:
@@ -10169,11 +8952,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteExclusionUnitsBulkAdditionJobs':
     get:
       tags:
@@ -10233,11 +9011,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteExclusionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10298,11 +9071,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteExclusionUnitsBulkAdditionJobs/$count':
     get:
@@ -10326,11 +9094,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteInclusionRules':
     get:
       tags:
@@ -10390,11 +9153,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteProtectionRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10455,11 +9213,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteInclusionRules/$count':
     get:
@@ -10483,11 +9236,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteProtectionUnits':
     get:
       tags:
@@ -10547,11 +9295,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteProtectionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10609,11 +9352,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteProtectionUnits/$count':
     get:
@@ -10637,11 +9375,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteProtectionUnitsBulkAdditionJobs':
     get:
       tags:
@@ -10701,11 +9434,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteProtectionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10766,11 +9494,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointProtectionPolicies/{sharePointProtectionPolicy-id}/siteProtectionUnitsBulkAdditionJobs/$count':
     get:
@@ -10794,11 +9517,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/sharePointProtectionPolicies/$count:
     get:
       tags:
@@ -10813,11 +9531,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/sharePointRestoreSessions:
     get:
       tags:
@@ -10866,11 +9579,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.sharePointRestoreSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10900,11 +9608,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharePointRestoreSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}':
     get:
@@ -10951,11 +9654,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharePointRestoreSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10991,11 +9689,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharePointRestoreSession'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11022,11 +9715,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/granularSiteRestoreArtifacts':
     get:
@@ -11087,11 +9775,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.granularSiteRestoreArtifactCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11126,11 +9809,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.granularSiteRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/granularSiteRestoreArtifacts/{granularSiteRestoreArtifact-id}':
     get:
@@ -11185,11 +9863,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.granularSiteRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11229,11 +9902,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.granularSiteRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11268,11 +9936,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/granularSiteRestoreArtifacts/$count':
     get:
@@ -11296,11 +9959,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifacts':
     get:
       tags:
@@ -11360,11 +10018,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteRestoreArtifactCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11399,11 +10052,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifacts/{siteRestoreArtifact-id}':
     get:
@@ -11458,11 +10106,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11502,11 +10145,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifact'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11541,11 +10179,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifacts/{siteRestoreArtifact-id}/restorePoint':
     get:
@@ -11600,11 +10233,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restorePoint'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifacts/$count':
     get:
@@ -11628,11 +10256,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifactsBulkAdditionRequests':
     get:
       tags:
@@ -11692,11 +10315,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteRestoreArtifactsBulkAdditionRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11735,11 +10353,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifactsBulkAdditionRequests/{siteRestoreArtifactsBulkAdditionRequest-id}':
     get:
@@ -11797,11 +10410,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11841,11 +10449,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11884,11 +10487,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/sharePointRestoreSessions/{sharePointRestoreSession-id}/siteRestoreArtifactsBulkAdditionRequests/$count':
     get:
@@ -11912,11 +10510,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/sharePointRestoreSessions/$count:
     get:
       tags:
@@ -11931,11 +10524,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/siteExclusionUnits:
     get:
       tags:
@@ -11984,11 +10572,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteExclusionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12014,11 +10597,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/siteExclusionUnits/{siteExclusionUnit-id}':
     get:
@@ -12065,11 +10643,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12101,11 +10674,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteExclusionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12132,11 +10700,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/siteExclusionUnits/$count:
     get:
@@ -12152,11 +10715,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs:
     get:
       tags:
@@ -12205,11 +10763,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteExclusionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12235,11 +10788,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs/{siteExclusionUnitsBulkAdditionJob-id}':
     get:
@@ -12286,11 +10834,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12322,11 +10865,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteExclusionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12353,11 +10891,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs/$count:
     get:
@@ -12373,11 +10906,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/siteInclusionRules:
     get:
       tags:
@@ -12426,11 +10954,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteProtectionRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12456,11 +10979,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/siteInclusionRules/{siteProtectionRule-id}':
     get:
@@ -12507,11 +11025,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12543,11 +11056,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionRule'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12574,11 +11082,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/siteInclusionRules/$count:
     get:
@@ -12594,11 +11097,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/siteProtectionUnits:
     get:
       tags:
@@ -12647,11 +11145,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteProtectionUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12677,11 +11170,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/siteProtectionUnits/{siteProtectionUnit-id}':
     get:
@@ -12728,11 +11216,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12764,11 +11247,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -12795,11 +11273,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/siteProtectionUnits/$count:
     get:
@@ -12815,11 +11288,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
   /solutions/backupRestore/siteProtectionUnitsBulkAdditionJobs:
     get:
       tags:
@@ -12867,11 +11335,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.siteProtectionUnitsBulkAdditionJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12897,11 +11360,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   '/solutions/backupRestore/siteProtectionUnitsBulkAdditionJobs/{siteProtectionUnitsBulkAdditionJob-id}':
     get:
@@ -12947,11 +11405,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -12983,11 +11436,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -13014,11 +11462,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
       x-ms-docs-operation-type: operation
   /solutions/backupRestore/siteProtectionUnitsBulkAdditionJobs/$count:
     get:
@@ -13034,11 +11477,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2025-12-17'
-        date: '2025-06-17'
-        version: 2023-03/PrivatePreview:responderForm
 components:
   schemas:
     microsoft.graph.backupRestoreRoot:
@@ -14040,10 +12478,12 @@ components:
       properties:
         backupPolicyId:
           type: string
+          description: The ID of the backup policy.
         countStatistics:
           $ref: '#/components/schemas/microsoft.graph.backupCountStatistics'
         displayName:
           type: string
+          description: The display name of the backup policy.
           nullable: true
       additionalProperties:
         type: object
@@ -14146,6 +12586,10 @@ components:
               type: string
               description: Timestamp of the last modification of the restore session.
               format: date-time
+              nullable: true
+            policyId:
+              type: string
+              description: 'The identifier of the protection policy that scopes the restore session. When supplied during create or update, the service validates that the referenced protection units belong to the specified policy.'
               nullable: true
             restoreJobType:
               $ref: '#/components/schemas/microsoft.graph.restoreJobType'
@@ -14884,53 +13328,63 @@ components:
         lastComputedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time when this metric was calculated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         offboardRequested:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of artifacts in offboardRequested state. This metric captures artifacts in protection‑unit–level offboarding and artifacts offboarded due to an unhealthy billing profile.
           format: int32
           nullable: true
         protectedCompleted:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of artifacts in protected state.
           format: int32
         protectedFailed:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of artifacts whose protection was attempted but failed. These artifacts typically have unprotected as their status.
           format: int32
         protectedInProgress:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of artifacts whose protection attempt is currently in progress. This metric applies to artifacts for which the process to start or resume taking backups is still required.
           format: int32
         removed:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of artifacts not associated with any policy. This property is always null for a policy-level report. Nullable.
           format: int32
           nullable: true
         total:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of artifacts in the specified entity. The currently supported entity is a backup policy.
           format: int32
         unprotectedCompleted:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are being taken.'
           format: int32
         unprotectedFailed:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of artifacts for which unprotection was attempted but didn't complete. These artifacts are typically in the protected state.
           format: int32
         unprotectedInProgress:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The count of artifacts for which unprotection is currently in progress.
           format: int32
       additionalProperties:
         type: object

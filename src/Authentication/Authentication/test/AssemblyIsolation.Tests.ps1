@@ -80,20 +80,15 @@ Describe 'AssemblyLoadContext isolation' -Skip:($PSEdition -ne 'Core') {
 
 	It 'Should keep working when a conflicting Microsoft.Identity.Client is already loaded in the default context' {
 		# Simulate another module (e.g. Az.Accounts / ExchangeOnlineManagement) that has already loaded a *different*
-		# Microsoft.Identity.Client into the default context by loading a stub assembly with that name first.
-		$stubSource = @'
-using System.Reflection;
-[assembly: AssemblyVersion("1.0.0.0")]
-namespace Microsoft.Identity.Client { public static class Stub { } }
-'@
-		$stubDir = Join-Path ([IO.Path]::GetTempPath()) ("mg-alc-" + [Guid]::NewGuid().ToString('N'))
-		New-Item -ItemType Directory -Path $stubDir | Out-Null
-		$stubPath = Join-Path $stubDir 'Microsoft.Identity.Client.dll'
-		Add-Type -TypeDefinition $stubSource -OutputAssembly $stubPath -OutputType Library | Out-Null
-
+		# Microsoft.Identity.Client into the default context by defining a dynamic stub assembly with that name first.
 		$script = @"
 `$ErrorActionPreference = 'Stop'
-`$null = [System.Reflection.Assembly]::LoadFrom('$stubPath')
+`$stubAssemblyName = [System.Reflection.AssemblyName]::new('Microsoft.Identity.Client')
+`$stubAssemblyName.Version = [Version]'1.0.0.0'
+`$stubAssembly = [System.Reflection.Emit.AssemblyBuilder]::DefineDynamicAssembly(`$stubAssemblyName, [System.Reflection.Emit.AssemblyBuilderAccess]::Run)
+`$stubModule = `$stubAssembly.DefineDynamicModule('Microsoft.Identity.Client')
+`$stubType = `$stubModule.DefineType('Microsoft.Identity.Client.Stub', [System.Reflection.TypeAttributes]::Public)
+`$null = `$stubType.CreateType()
 $ProbeScript
 "@
 		$contexts = Invoke-InFreshPwsh -Script $script
@@ -103,7 +98,5 @@ $ProbeScript
 		$msal.Count | Should -Be 2
 		($msal.Value | Sort-Object) | Should -Be @('Default', 'Microsoft.Graph.Authentication')
 		$contexts.'Microsoft.Graph.Authentication.Core' | Should -Be 'Microsoft.Graph.Authentication'
-
-		Remove-Item $stubDir -Recurse -Force -ErrorAction Ignore
 	}
 }
