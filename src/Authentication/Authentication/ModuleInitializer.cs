@@ -65,7 +65,16 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public void OnImport()
         {
             if (s_isPsCore)
+            {
+                // The static constructor only runs on the first load of this assembly (it stays in the default
+                // AssemblyLoadContext for the process lifetime). On a remove/re-import cycle OnRemove -> Shutdown
+                // unhooks the default-context redirect, so re-run Initialize here to re-establish it against the
+                // already-created isolated context.
+                s_loaderInitializer?
+                    .GetMethod("Initialize", BindingFlags.Public | BindingFlags.Static, null, new[] { typeof(string), typeof(string) }, null)?
+                    .Invoke(null, new object[] { s_dependencyFolder, s_psEditionDependencyFolder });
                 return;
+            }
 
             AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler;
         }
