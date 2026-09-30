@@ -22,6 +22,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Loader
 
         private static readonly object s_lock = new object();
         private static GraphAssemblyLoadContext s_context;
+        private static bool s_resolvingHooked;
 
         /// <summary>
         /// The isolated context; null until <see cref="Initialize"/> has been called.
@@ -29,36 +30,43 @@ namespace Microsoft.Graph.PowerShell.Authentication.Loader
         public static GraphAssemblyLoadContext Context => s_context;
 
         /// <summary>
-        /// Creates the isolated context and registers the default-context redirect. Safe to call multiple times.
+        /// Creates the isolated context (once) and ensures the default-context redirect is registered. Safe to call
+        /// multiple times, including after a <see cref="Shutdown"/> triggered by a module remove: the isolated context is
+        /// reused while the <see cref="AssemblyLoadContext.Resolving"/> hook is re-established so a remove/re-import cycle
+        /// keeps resolving Microsoft.Graph.Authentication.Core.
         /// </summary>
         /// <param name="dependencyFolder">Path to the module's <c>Dependencies</c> folder.</param>
         /// <param name="psEditionDependencyFolder">Path to the module's <c>Dependencies/Core</c> folder.</param>
         public static void Initialize(string dependencyFolder, string psEditionDependencyFolder)
         {
-            if (s_context != null)
-                return;
-
             lock (s_lock)
             {
-                if (s_context != null)
-                    return;
+                if (s_context == null)
+                {
+                    s_context = new GraphAssemblyLoadContext(dependencyFolder, psEditionDependencyFolder);
+                }
 
-                s_context = new GraphAssemblyLoadContext(dependencyFolder, psEditionDependencyFolder);
-                AssemblyLoadContext.Default.Resolving += OnDefaultResolving;
+                if (!s_resolvingHooked)
+                {
+                    AssemblyLoadContext.Default.Resolving += OnDefaultResolving;
+                    s_resolvingHooked = true;
+                }
             }
         }
 
         /// <summary>
         /// Unregisters the default-context redirect. The isolated context itself is not collectible and remains alive
-        /// for the lifetime of the process, which matches PowerShell's own behaviour for binary modules.
+        /// for the lifetime of the process, which matches PowerShell's own behaviour for binary modules; a later
+        /// <see cref="Initialize"/> call re-registers the redirect against the existing context.
         /// </summary>
         public static void Shutdown()
         {
             lock (s_lock)
             {
-                if (s_context == null)
+                if (!s_resolvingHooked)
                     return;
                 AssemblyLoadContext.Default.Resolving -= OnDefaultResolving;
+                s_resolvingHooked = false;
             }
         }
 
