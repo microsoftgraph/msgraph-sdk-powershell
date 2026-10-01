@@ -72,4 +72,36 @@ Describe "Microsoft.Graph.Authentication module" {
             $PSModuleInfo.Guid.Guid | Should -Be "883916f2-9184-46ee-b1f8-b6a2fb784cee"
         }
     }
+
+    Context "On module re-import" {
+        # Regression guard for the switch to a private AssemblyLoadContext on PowerShell 7+.
+        # Importing, removing and re-importing the module must succeed: the second import must not fail
+        # because the isolated load context (and its already-loaded dependencies) is being initialized again.
+        It 'Should import, remove and re-import without error' {
+            {
+                Import-Module $ModulePath -Force
+                Remove-Module $ModuleName -Force
+                Import-Module $ModulePath -Force
+            } | Should -Not -Throw
+        }
+
+        It 'Should expose its cmdlets after a re-import' {
+            Import-Module $ModulePath -Force
+            Remove-Module $ModuleName -Force
+            $ReimportedInfo = Import-Module $ModulePath -Force -PassThru
+
+            $ReimportedInfo.ExportedCommands.Keys | Should -Contain "Connect-MgGraph"
+            $ReimportedInfo.ExportedCommands.Keys | Should -Contain "Invoke-MgGraphRequest"
+        }
+
+        It 'Should keep the same isolated assemblies loaded after a re-import' {
+            Import-Module $ModulePath -Force
+            Remove-Module $ModuleName -Force
+            Import-Module $ModulePath -Force
+
+            # Invoking a cmdlet forces the isolated dependencies (Azure.Identity / MSAL / Kiota) to bind.
+            # If the re-import left the load context in a broken state this throws instead of returning $null.
+            { Get-MgContext } | Should -Not -Throw
+        }
+    }
 }
