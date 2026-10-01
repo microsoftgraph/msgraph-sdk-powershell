@@ -38,6 +38,7 @@ $OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
 
 # Load PS Scripts
 $DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDocKiotaCompat.ps1" -Resolve
+$RemoveExpiredDeprecatedOperationsPS1 = Join-Path $PSScriptRoot ".\Remove-ExpiredDeprecatedOpenApiOperations.ps1" -Resolve
 
 if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
@@ -68,6 +69,10 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
         $RequestCount++
     }
 }
+
+# Remove operations whose deprecation removal date has passed and record the removals.
+& $RemoveExpiredDeprecatedOperationsPS1 -OpenApiFilesPath $OpenApiDocOutput
+
 $stopwatch.Stop()
 Write-Debug "Downloaded $GraphVersion Kiota-compatible OpenAPI files in '$($Stopwatch.Elapsed.TotalMinutes)` minutes."
 Write-Host -ForegroundColor Green "-------------Done-------------"
