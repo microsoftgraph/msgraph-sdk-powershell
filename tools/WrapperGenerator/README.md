@@ -368,6 +368,40 @@ The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each mo
 ## Gaps / not done yet
 
 - **Only v1.0 output is committed.** The beta docs exist (`openApiDocs_KiotaCompat/beta`) but no beta output is generated or checked in yet; the layout already accommodates it at `src/{Module}/wrapper/beta/`.
+
+## Migrate module AutoRest directives
+
+Cmdlet removals and renames in `src/<Module>/<Module>.md` are migrated one module at a time.
+Inventory them without changing the worktree:
+
+```powershell
+.\tools\Get-WrapperDirectiveMigrationInventory.ps1 -Module Compliance |
+    Format-Table Module,DirectiveIndex,Classification,Status,Implementation
+.\tools\Test-WrapperDirectiveMigrationInventory.ps1
+```
+
+`remove-path-by-operation` entries are resolved directly from operation IDs in both
+Kiota-compatible specifications. AutoRest `where` selectors operate on generated subjects and
+variants, so they require reviewed method/path evidence in
+`src/<Module>/wrapper/<Module>_directiveMigrationMap.json`; the tool deliberately reports an
+unreviewed selector as `Unresolved` instead of guessing. An automatically matched operation-ID
+directive is `Resolved`, not `Mapped`: it remains a candidate until its configuration and tests
+have been reviewed. `ExistingCoverage` distinguishes reviewed configuration, structural naming,
+and modules that contain unrelated or not-yet-reconciled entries.
+
+For each reviewed directive:
+
+1. Use exact method/path mappings for both v1.0 and beta. An absent profile must be marked
+   `absenceExpected`.
+2. Add only configuration the wrapper naming rules cannot already produce. Pin structural naming
+   behavior in `NamingTests` instead of adding redundant overrides.
+3. Keep the AutoRest directive active and annotate it with its wrapper disposition until the
+   service-module pipeline is retired.
+4. Run the inventory validation and WrapperGenerator tests. Generate committed profile output
+   only in a separately reviewed profile-specific change.
+
+The inventory command is read-only unless `-OutputPath` is supplied. JSON and CSV are supported
+for review artifacts; it never rewrites module markdown or configuration files.
 - **The runtime base exists; the polish around it does not.** `src/GraphWrapperRuntime/` ships `GraphClientCmdlet` with session-keyed request adapters over the shipped Authentication module's session, `-AccessToken` support, paging with a truncation warning and `-All`, delta-link validation against the session's service root, Ctrl+C cancellation, and one `GraphRequestFailed` error shape. Still open: per-cmdlet help and examples, a `SupportsShouldProcess` audit on destructive cmdlets, and an automated Windows PowerShell 5.1 gate leg (the dll targets it; the gates run on PowerShell 7 only).
 - **Body binding covers every shape reaching the classifier** — the omission oracle reports 0 failures across 2,235 body-writing cmdlets (24,003 members seen, 15,838 bound). That is a statement about the operations that generate, not about v1.0: see the coverage figure below. Classifications for shapes that do not occur (inline objects and enums, genuine unions, dictionaries, unresolvable references, unknown formats) are retained so a future corpus change is reported rather than silently mis-bound; [docs/edge-cases/body-binding-edge-cases.md](docs/edge-cases/body-binding-edge-cases.md) records each with its exit criteria.
 - **73.6% of v1.0 operations generate, deliberately.** Of 14,115 operations across the 38 specs (the DirectoryObjects re-slice removes the 16 publicKeyInfrastructure operations it double-declared with Identity.DirectoryManagement): 10,385 become cmdlets, 3,173 are suppressed because the published SDK ships no cmdlet for them (oracle-derived), and 557 are unsupported — 345 call segments on operations the spec does not class as an action or function, 125 routes that call a parameterized function before their final segment, 42 whose content response is neither a stream nor a resolvable entity, 24 with no wrapper emitter for the HTTP method, 13 OData parameter aliases, 6 unresolvable collection schemas, 2 missing request schemas. The three populations sum to 14,115 by construction. The rise from 61.3% is the OData `$`-segments — `$count`, `$ref` and `$value` were 2,304 unsupported operations and now have emitters of their own — plus PUT and the media/content downloads.

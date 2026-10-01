@@ -40,6 +40,8 @@ Everything else is a narrower tool for one of the scenarios below.
 | `Derive-ParityResolutions.ps1` | derives parity renames/suppressions for the whole surface | frozen input ledger, or `-CaptureInput` to build one | `data/parity-*.json`, ledger CSVs |
 | `Update-WrapperParityData.ps1` | orchestrates a clean parity refresh in an isolated copy | — | the four `data/parity-*` files |
 | `New-WrapperOutputManifest.ps1` | reviewable inventory of the committed output | the corpus | `docs/WrapperCmdlets-*.csv` |
+| `Get-WrapperDirectiveMigrationInventory.ps1` | classifies AutoRest directives and maps reviewed v1.0/beta operations | module `.md` files, OpenAPI specs, reviewed mapping ledger | pipeline objects; optional JSON/CSV |
+| `Test-WrapperDirectiveMigrationInventory.ps1` | validates the inventory tool, Compliance pilot mapping and read-only behavior | inventory tool + mapping ledger | console pass/fail |
 
 ## What depends on what
 

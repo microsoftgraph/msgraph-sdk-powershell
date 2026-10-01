@@ -121,6 +121,9 @@ public sealed class NamingTests
     [InlineData("GET", "/sites/{site-id}/drive", "Get", "MgSiteDefaultDrive")]
     [InlineData("GET", "/groups/{group-id}/sites/{site-id}/drive", "Get", "MgGroupSiteDefaultDrive")]
     [InlineData("GET", "/users/{user-id}/calendar/events", "Get", "MgUserDefaultCalendarEvent")]
+    // Compliance.md renames the nested dataSource Get1 variant by appending DataSource. The
+    // wrapper derives the same noun directly from the route, so no curated rename is needed.
+    [InlineData("GET", "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource", "Get", "MgComplianceEdiscoveryCaseNoncustodialDataSourceDataSource")]
     // nested-collection GET renamed by the Groups.md directive (subject $1ByGroup)
     [InlineData("GET", "/groups/{group-id}/groupLifecyclePolicies", "Get", "MgGroupLifecyclePolicyByGroup")]
     // boundary word-overlap collapse (Get-MgDomainNameReference)
@@ -204,6 +207,18 @@ public sealed class NamingTests
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photos"));
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photos/{userProfilePhoto-id}"));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/photo"));
+
+        // Compliance.md removes only the Update1/Delete1 variants for the nested dataSource
+        // navigation. The renamed GET and the parent noncustodialDataSource item remain.
+        const string complianceDataSource =
+            "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource";
+        const string complianceItem =
+            "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}";
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, complianceDataSource));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, complianceDataSource));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, complianceDataSource));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, complianceItem));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, complianceItem));
 
         // Suffix-matched suppressions apply under any root; siblings stay generated
         // (issue #3704: Info-wrapper navs ship nothing, their siblings ship).
