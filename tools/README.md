@@ -40,6 +40,7 @@ Everything else is a narrower tool for one of the scenarios below.
 | `Derive-ParityResolutions.ps1` | derives parity renames/suppressions for the whole surface | frozen input ledger, or `-CaptureInput` to build one | `data/parity-*.json`, ledger CSVs |
 | `Update-WrapperParityData.ps1` | orchestrates a clean parity refresh in an isolated copy | — | the four `data/parity-*` files |
 | `New-WrapperOutputManifest.ps1` | reviewable inventory of the committed output | the corpus | `docs/WrapperCmdlets-*.csv` |
+| [`Remove-ExpiredDeprecatedOpenApiOperations.ps1`](Remove-ExpiredDeprecatedOpenApiOperations.md) | prunes expired deprecated operations from one Kiota OpenAPI document or a profile directory | `openApiDocs_KiotaCompat` YAML | updated YAML and `deprecated-removals.json` |
 
 ## What depends on what
 
