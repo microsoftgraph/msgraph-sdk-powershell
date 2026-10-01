@@ -1,0 +1,57 @@
+{
+  "mappings": [
+    {
+      "module": "Compliance",
+      "directiveIndex": 1,
+      "classification": "CmdletSuppression",
+      "sourceContains": "variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Delete1$|^DeleteViaIdentity1$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress nested dataSource PATCH and DELETE; keep the parent noncustodialDataSource item operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+              "operationId": "compliance.ediscovery.cases.noncustodialDataSources.UpdateDataSource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+              "operationId": "compliance.ediscovery.cases.noncustodialDataSources.DeleteDataSource"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Compliance",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "variant: ^Get1$|^GetViaIdentity1$",
+      "implementation": "StructuralNaming",
+      "notes": "The wrapper derives the appended DataSource noun directly from the nested navigation path; NamingTests pins the result.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+              "operationId": "compliance.ediscovery.cases.noncustodialDataSources.GetDataSource"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
