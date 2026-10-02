@@ -12,7 +12,7 @@
 RootModule = './Microsoft.Graph.Authentication.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.41.0'
+ModuleVersion = '2.41.1'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
