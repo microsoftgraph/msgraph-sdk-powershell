@@ -4,7 +4,7 @@
 [CmdletBinding()]
 Param(
     [string] $RepositoryApiKey,
-    [string] $RepositoryName = "PSGallery",
+    [string] $RepositoryName = "PowerShell_V2_Build",
     [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [int] $ModulePreviewNumber = -1,
@@ -19,6 +19,14 @@ enum VersionState {
 }
 $ErrorActionPreference = 'Stop'
 $LASTEXITCODE = $null
+# CFSClean: authenticate module installs/queries to the private feed (credential from the build token).
+. (Join-Path $PSScriptRoot 'Get-CfsFeedCredential.ps1')
+$__cfsCred = Get-CfsFeedCredential
+if ($null -ne $__cfsCred) {
+    $PSDefaultParameterValues['Find-Module:Credential']    = $__cfsCred
+    $PSDefaultParameterValues['Install-Module:Credential'] = $__cfsCred
+    $PSDefaultParameterValues['Save-Module:Credential']    = $__cfsCred
+}
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }

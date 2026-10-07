@@ -15,8 +15,11 @@ if ($PSEdition -ne 'Core') {
 }
 
 if (!(Get-Module powershell-yaml -ListAvailable)) {
-    # Install Powershell-yaml
-    Install-Module powershell-yaml -Force
+    # Install Powershell-yaml from the private feed (PowerShell Gallery upstream). (CFSClean)
+    . (Join-Path $PSScriptRoot 'Get-CfsFeedCredential.ps1')
+    $__cfsCred = Get-CfsFeedCredential
+    if ($null -ne $__cfsCred) { $PSDefaultParameterValues['Install-Module:Credential'] = $__cfsCred }
+    Install-Module powershell-yaml -Repository (Get-CfsFeedName) -Force
 }
 
 $GraphVersion = "v1.0"
