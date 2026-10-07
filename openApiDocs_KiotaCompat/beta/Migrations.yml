@@ -5,7 +5,857 @@ info:
 servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
-paths: {}
+paths:
+  /solutions/migrations:
+    get:
+      tags:
+        - solutions.migrationsRoot
+      summary: Get migrations from solutions
+      operationId: solutions.GetMigrations
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.migrationsRoot'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.migrationsRoot
+      summary: Update the navigation property migrations in solutions
+      operationId: solutions.UpdateMigrations
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.migrationsRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.migrationsRoot'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.migrationsRoot
+      summary: Delete navigation property migrations for solutions
+      operationId: solutions.DeleteMigrations
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+  /solutions/migrations/crossTenantMigrationJobs:
+    get:
+      tags:
+        - solutions.migrationsRoot
+      summary: List crossTenantMigrationJob objects
+      description: Get a list of the crossTenantMigrationJob objects and their properties. By default 20 objects are returned. More can be retrieved through the @odata.nextLink url provided in the response.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/migrationsroot-list-crosstenantmigrationjobs?view=graph-rest-beta
+      operationId: solutions.migrations.ListCrossTenantMigrationJobs
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.crossTenantMigrationJobCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Create crossTenantMigrationJob
+      description: 'Create a new crossTenantMigrationJob. A job defines the migration batch but doesn''t start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/migrationsroot-post-crosstenantmigrationjobs?view=graph-rest-beta
+      operationId: solutions.migrations.CreateCrossTenantMigrationJobs
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}':
+    get:
+      tags:
+        - solutions.migrationsRoot
+      summary: Get crossTenantMigrationJob
+      description: 'Read the properties and relationships of crossTenantMigrationJob object. Includes details of the crossTenantMigrationJob , but not details of the individual crossTenantMigrationTasks of the crossTenantMigrationJob.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-get?view=graph-rest-beta
+      operationId: solutions.migrations.GetCrossTenantMigrationJobs
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.migrationsRoot
+      summary: Update crossTenantMigrationJob
+      description: 'Update the completeAfterDateTime of a crossTenantMigrationJob object. Only updates to the completeAfterDateTime are supported. Use this function to change when the crossTenantMigrationJob starts processing. If completeAfterDateTime is set to the past, the crossTenantMigrationJob starts processing.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-update?view=graph-rest-beta
+      operationId: solutions.migrations.UpdateCrossTenantMigrationJobs
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.migrationsRoot
+      summary: Delete navigation property crossTenantMigrationJobs for solutions
+      operationId: solutions.migrations.DeleteCrossTenantMigrationJobs
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/cancel':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action cancel
+      description: 'Cancel a crossTenantMigrationJob. All tasks within the job that were in a Sync state are canceled. If the job can''t be canceled, a 409 Conflict response is returned and the migrations continue. This response happens when a migration is already in progress or is in a terminal state.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-cancel?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.crossTenantMigrationJob.cancel
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationCancelResponse'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/migrate':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action migrate
+      description: 'Migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-migrate?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.crossTenantMigrationJob.migrate
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/validate':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action validate
+      description: 'Validate the configuration of a cross-tenant migration job asynchronously. This action doesn''t migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that affect an actual migration job. The job must be in a submitted or validateFailed status before you can call this action. This action is asynchronous. After you call the validate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of validatePassed or validateFailed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-validate?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.crossTenantMigrationJob.validate
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users':
+    get:
+      tags:
+        - solutions.migrationsRoot
+      summary: List crossTenantMigrationTask objects
+      description: 'Get a list of the crossTenantMigrationTasks for users in a crossTenantMigrationJob. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-list-users?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.ListUsers
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.crossTenantMigrationTaskCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Create new navigation property to users for solutions
+      operationId: solutions.migrations.crossTenantMigrationJobs.CreateUsers
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationTask'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationTask'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}':
+    get:
+      tags:
+        - solutions.migrationsRoot
+      summary: Get crossTenantMigrationTask
+      description: 'Read the properties and relationships of crossTenantMigrationTask, which shows the details of the migration task for a single user of a crossTenantMigrationJob. The crossTenantMigrationTask contains the status details of migrations for the workloads specified in the crossTenantMigrationJob. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationtask-get?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.GetUsers
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationTask'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.migrationsRoot
+      summary: Update the navigation property users in solutions
+      operationId: solutions.migrations.crossTenantMigrationJobs.UpdateUsers
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationTask'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationTask'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.migrationsRoot
+      summary: Delete navigation property users for solutions
+      operationId: solutions.migrations.crossTenantMigrationJobs.DeleteUsers
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}/cancel':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action cancel
+      description: 'Cancel a specific crossTenantMigrationTask for a User within a CrossTenantMigrationJob.  If the User migration can''t be canceled or is in a terminal state, a 409 CONFLICT response code is returned, and the migration continues.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationtask-cancel?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.crossTenantMigrationJob.users.crossTenantMigrationTask.cancel
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationCancelResponse'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/$count':
+    get:
+      tags:
+        - solutions.migrationsRoot
+      summary: Get the number of the resource
+      operationId: solutions.migrations.crossTenantMigrationJobs.users.GetCount-f918
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+  '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')':
+    get:
+      tags:
+        - solutions.migrationsRoot
+      summary: Get crossTenantMigrationJob
+      description: 'Read the properties and relationships of crossTenantMigrationJob object. Includes details of the crossTenantMigrationJob , but not details of the individual crossTenantMigrationTasks of the crossTenantMigrationJob.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-get?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.GetByDisplayName
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.migrationsRoot
+      summary: Update crossTenantMigrationJob
+      description: 'Update the completeAfterDateTime of a crossTenantMigrationJob object. Only updates to the completeAfterDateTime are supported. Use this function to change when the crossTenantMigrationJob starts processing. If completeAfterDateTime is set to the past, the crossTenantMigrationJob starts processing.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-update?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.UpdateByDisplayName
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.migrationsRoot
+      summary: Delete navigation property crossTenantMigrationJobs for solutions
+      operationId: solutions.migrations.crossTenantMigrationJobs.DeleteByDisplayName
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: operation
+  '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/cancel':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action cancel
+      description: 'Cancel a crossTenantMigrationJob. All tasks within the job that were in a Sync state are canceled. If the job can''t be canceled, a 409 Conflict response is returned and the migrations continue. This response happens when a migration is already in progress or is in a terminal state.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-cancel?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.displayName.cancel
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationCancelResponse'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/migrate':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action migrate
+      description: 'Migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-migrate?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.displayName.migrate
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  '/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/validate':
+    post:
+      tags:
+        - solutions.migrationsRoot
+      summary: Invoke action validate
+      description: 'Validate the configuration of a cross-tenant migration job asynchronously. This action doesn''t migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that affect an actual migration job. The job must be in a submitted or validateFailed status before you can call this action. This action is asynchronous. After you call the validate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of validatePassed or validateFailed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-validate?view=graph-rest-beta
+      operationId: solutions.migrations.crossTenantMigrationJobs.displayName.validate
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.crossTenantMigrationJob'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
+      x-ms-docs-operation-type: action
+  /solutions/migrations/crossTenantMigrationJobs/$count:
+    get:
+      tags:
+        - solutions.migrationsRoot
+      summary: Get the number of the resource
+      operationId: solutions.migrations.crossTenantMigrationJobs.GetCount-63b8
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2026-07-09'
+        date: '2023-11-15'
+        version: 2023-11/PrivatePreview:CrossTenantContentMigrationAPI
 components:
   schemas:
     microsoft.graph.migrationsRoot:
