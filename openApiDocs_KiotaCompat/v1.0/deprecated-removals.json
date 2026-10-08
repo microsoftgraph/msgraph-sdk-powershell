@@ -1,0 +1,224 @@
+{
+  "generatedAtUtc": "2026-10-06T23:51:18.5023686Z",
+  "cutoffDate": "2026-10-04",
+  "bufferDays": 2,
+  "modules": {
+    "Compliance": {
+      "/privacy/subjectRightsRequests": {
+        "operationsRemoved": [
+          "get",
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}": {
+        "operationsRemoved": [
+          "get",
+          "patch",
+          "delete"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}/mailboxSettings": {
+        "operationsRemoved": [
+          "get",
+          "patch"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}/serviceProvisioningErrors": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}/serviceProvisioningErrors/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers(userPrincipalName=''{userPrincipalName}'')": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}/mailboxSettings": {
+        "operationsRemoved": [
+          "get",
+          "patch"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}/serviceProvisioningErrors": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}/serviceProvisioningErrors/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators(userPrincipalName=''{userPrincipalName}'')": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/getFinalAttachment()": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/getFinalReport()": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/notes": {
+        "operationsRemoved": [
+          "get",
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/notes/{authoredNote-id}": {
+        "operationsRemoved": [
+          "get",
+          "patch",
+          "delete"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/notes/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/{subjectRightsRequest-id}/team": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/privacy/subjectRightsRequests/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      }
+    },
+    "Identity.SignIns": {
+      "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders/{identityProvider-id}": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/identityProviders": {
+        "operationsRemoved": [
+          "get",
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/identityProviders/{identityProvider-id}": {
+        "operationsRemoved": [
+          "get",
+          "patch",
+          "delete"
+        ],
+        "uriRemoved": true
+      },
+      "/identityProviders/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/identityProviders/availableProviderTypes()": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      }
+    },
+    "Security": {
+      "/security/alerts": {
+        "operationsRemoved": [
+          "get",
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/security/alerts/{alert-id}": {
+        "operationsRemoved": [
+          "get",
+          "patch"
+        ],
+        "uriRemoved": true
+      },
+      "/security/alerts/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      }
+    }
+  }
+}
