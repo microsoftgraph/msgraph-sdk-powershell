@@ -54,7 +54,7 @@ Singularization runs per camel-case word (so `termsAndConditions` → `TermAndCo
 
 A few published names aren't algorithmic, and the spec publishes some routes the SDK never shipped. `CmdletConfigurator.cs` contains the shared matching engine, while each module owns its curated data in `src\<Module>\wrapper\<Module>_cmdletConfigurations.cs` — renames mirroring the SDK's hand-written AutoRest directives, and suppressions for routes that ship nothing — with every entry citing its evidence: the directive when one exists, otherwise the shipped-command inventory. Module ownership is organizational; all configured entries are compiled into the generator and matched globally. Examples: the `GET /users/{id}/calendar` rename to `…UserDefaultCalendar` (Calendar.md), the `Solution` prefix strip under `/solutions/*` with the BackupRestore exception (Bookings.md), and the self-referential `sites/{id}/sites` rename to `SubSite`/`GroupSubSite` (Sites.md) — without which the sub-sites cmdlets would collide with `Get-MgSite` itself. The generator fails loudly on any such file collision rather than silently overwriting.
 
-On top of the curated entries sits a **derived** layer: `tools/Derive-CollisionResolutions.ps1` replays every route from the checked-in collision inventory (`data/collision-inventory.v1.0.txt`, captured with `--no-collision-data`) against the shipped-command inventory and emits `data/collision-suppressions.v1.0.json` and `data/collision-renames.v1.0.json` — one exact-match entry per contested method+route, each carrying its oracle evidence. The files are embedded into the generator at build time (generation never reads the 22 MB oracle), applied only when `GeneratorConfig.UseCollisionData` is set, and the script's `-Validate` mode fails if the checked-in files drift from a fresh derivation. Two routes in all of v1.0 are **deferred cross-path merges** — the published SDK serves `Get-MgGroupPhoto` from both `/photo` and `/photos`, and `Get-MgShareListItem` from both `/listItem` and `/list/items`, as parameter-set variants of one cmdlet; the generator keeps the singleton side and suppresses the collection side until cross-path parameter sets land (see [docs/edge-cases/crosspath-merge-edge-cases.md](docs/edge-cases/crosspath-merge-edge-cases.md)). With the derived data applied, a full v1.0 generation across all 38 configured modules produces zero collisions.
+Alongside the curated entries sits a **derived** layer: `tools/Derive-CollisionResolutions.ps1` replays every route from the checked-in collision inventory (`data/collision-inventory.v1.0.txt`, captured with `--no-collision-data`) against the shipped-command inventory and emits `data/collision-suppressions.v1.0.json` and `data/collision-renames.v1.0.json` — one exact-match entry per contested method+route, each carrying its oracle evidence. The files are embedded into the generator at build time (generation never reads the 22 MB oracle), applied only when `GeneratorConfig.UseCollisionData` is set, and the script's `-Validate` mode fails if the checked-in files drift from a fresh derivation. Explicit curated noun/verb replacements take precedence over derived names and prevent a derived suppression from silently hiding the reviewed operation; an explicit curated suppression still wins. Broad prefix stripping does not rewrite a derived published noun. Two routes in all of v1.0 are **deferred cross-path merges** — the published SDK serves `Get-MgGroupPhoto` from both `/photo` and `/photos`, and `Get-MgShareListItem` from both `/listItem` and `/list/items`, as parameter-set variants of one cmdlet; the generator keeps the singleton side and suppresses the collection side until cross-path parameter sets land (see [docs/edge-cases/crosspath-merge-edge-cases.md](docs/edge-cases/crosspath-merge-edge-cases.md)). With the derived data applied, a full v1.0 generation across all 38 configured modules produces zero collisions.
 
 ## The one subtle part: list + item GET become one cmdlet
 
@@ -371,37 +371,111 @@ The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each mo
 
 ## Migrate module AutoRest directives
 
-Cmdlet removals and renames in `src/<Module>/<Module>.md` are migrated one module at a time.
-Inventory them without changing the worktree:
+Cmdlet removals and renames are migrated one configured module at a time, including inherited
+shared sources (`src\readme.graph.md` and its required default-output configuration), optional
+`src\<Module>\<Module>.md`, and both profile-local `readme.md` files. The configured roster is
+`config\ModulesMapping.jsonc`; modules without local markdown are included, dormant unconfigured
+directories are not. Shared sources apply to both profiles; profile-local sources apply only to
+their profile. Inventory them without changing the worktree:
 
 ```powershell
 .\tools\Get-WrapperDirectiveMigrationInventory.ps1 -Module Compliance |
-    Format-Table Module,DirectiveIndex,Classification,Status,Implementation
+    Format-Table Module,SourcePath,DirectiveIndex,Classification,Status,Implementation
 .\tools\Test-WrapperDirectiveMigrationInventory.ps1
+.\tools\Test-WrapperPublicationGate.ps1
 ```
 
-`remove-path-by-operation` entries are resolved directly from operation IDs in both
-Kiota-compatible specifications. AutoRest `where` selectors operate on generated subjects and
+`remove-path-by-operation` entries are resolved directly from operation IDs in the applicable
+Kiota-compatible specifications, using AutoRest's case-insensitive matching. AutoRest `where` selectors operate on generated subjects and
 variants, so they require reviewed method/path evidence in
 `src/<Module>/wrapper/<Module>_directiveMigrationMap.json`; the tool deliberately reports an
 unreviewed selector as `Unresolved` instead of guessing. An automatically matched operation-ID
 directive is `Resolved`, not `Mapped`: it remains a candidate until its configuration and tests
 have been reviewed. `ExistingCoverage` distinguishes reviewed configuration, structural naming,
-and modules that contain unrelated or not-yet-reconciled entries.
+and modules that contain unrelated or not-yet-reconciled entries. Operation-ID candidates also
+accept reviewed mappings, which must cover exactly the selector's current operation set.
+Parameter changes, cmdlet aliases, schema changes, source transforms, and formatting have
+separate deferred classifications; a cmdlet alias is not a parameter directive.
+An incomplete/no-effect selector remains unresolved until an explicit reviewed `NoEffect`
+disposition is recorded. Do not invent configuration or operation coverage for it.
 
-For each reviewed directive:
+**Ledger contract.** A directive is identified by `module`, repository-relative `sourcePath`,
+and `directiveIndex` (one-based within that source). Omitting `sourcePath` retains the old
+module-local identity. `sourceContains` remains supported for old ledgers, but strict completion
+requires `reviewed: true` and `sourceSha256` as emitted by the inventory. This fingerprint
+ignores comments, trailing whitespace and blank lines, not meaningful selector changes.
+Record `classification`, `implementation`, review `notes`, and both `profiles` declarations.
+Implementations are `CmdletConfigurator`, `StructuralNaming`, `ReviewedAbsence`, or `NoEffect`.
 
-1. Use exact method/path mappings for both v1.0 and beta. An absent profile must be marked
-   `absenceExpected`.
-2. Add only configuration the wrapper naming rules cannot already produce. Pin structural naming
-   behavior in `NamingTests` instead of adding redundant overrides.
-3. Keep the AutoRest directive active and annotate it with its wrapper disposition until the
-   service-module pipeline is retired.
-4. Run the inventory validation and WrapperGenerator tests. Generate committed profile output
-   only in a separately reviewed profile-specific change.
+Each applicable profile declares `specPath` and `specSha256` from the inventory (UTF-8 text
+with CRLF normalized to LF, so a different Git checkout's line endings do not invalidate review), and
+`operations: [{ "method": "GET", "path": "/exact/{id}/route", "operationId": "Exact.Id" }]`.
+An empty applicable operation set requires `absenceExpected: true`, empty `operations`, and
+an explanatory `absenceEvidence`, tied to an **existing** specification's actual identity.
+Optional `absentOperations` records historical method/path/operation-ID identities and fails if
+any reappears. Missing profile input cannot be relabeled as operation absence.
+For a beta-local directive, the v1.0 declaration is instead
+`{ "notApplicable": true, "operations": [] }`; it does not claim spec absence.
+The Compliance ledger illustrates reviewed current-spec absences: its historical nested
+dataSource routes no longer exist in either current spec. Historical naming/suppression tests
+are not evidence that those routes still generate.
 
-The inventory command is read-only unless `-OutputPath` is supplied. JSON and CSV are supported
-for review artifacts; it never rewrites module markdown or configuration files.
+**Curated entries.** Add only configuration structural naming cannot produce, in the existing
+module-owned partial class; cite the active AutoRest source and pin affected operations plus
+unaffected methods/neighbors. `OverrideKind.ReplaceVerb` uses an approved `PsVerb` name in
+`Value`, validated at startup. Entries accept optional trailing `ApiVersion: "v1.0"` or
+`ApiVersion: "beta"`; omitted means both profiles, preserving old entries. Null generator config
+remains curated-only with the normal v1.0 profile default. Paths remain lowercase and normalize
+parameter names. Use profile scoping for beta-only suppressions rather than globally hiding v1.
+Keep AutoRest directives active and annotate their wrapper disposition. Module-local ledgers
+can cite shared sources without editing the shared file in every module PR.
+
+**Independent module PRs target `powershell-v3`, after the shared prerequisite merges.**
+Run these checks from the module's isolated worktree (replace `Calendar` with its module):
+
+```powershell
+.\tools\Test-WrapperDirectiveMigrationInventory.ps1
+.\tools\Get-WrapperDirectiveMigrationInventory.ps1 -Module Calendar -FailOnUnresolved
+dotnet test .\tools\WrapperGenerator.Tests --configuration Release
+.\tools\Test-WrapperPublication.ps1 -Module Calendar -Configuration Release -ResultPath <session-artifact.json>
+```
+
+`-FailOnUnresolved` rejects invalid mappings, unresolved selectors, and automatically resolved
+but unreviewed candidates, including inherited directives. Inventory is read-only unless
+`-OutputPath` is supplied; JSON/CSV preserve source identities and profile evidence.
+
+The publication command runs these **full** commands for both profiles and validates their
+machine-readable results, not just their exit codes:
+
+```powershell
+.\tools\Build-WrapperModule.ps1 -Module Calendar -ApiVersion v1.0 -Configuration Release -StrictPublication -ResultPath <v1-result.json>
+.\tools\Build-WrapperModule.ps1 -Module Calendar -ApiVersion beta -Configuration Release -StrictPublication -ResultPath <beta-result.json>
+```
+
+It requires `Status OK`, positive emitted and compiled cmdlet counts, completed Kiota and wrapper
+generation and compilation, exact non-fallback spec hashes, fresh expected client/cmdlet/project
+files, both assemblies, and a matching manifest. Strict builds disable incremental compilation.
+`NO-CMDLETS`, missing specs, failed/skipped stages, stale artifacts, or only one passing profile
+all fail. `-GenerateOnly`, `-SkipKiota`, and `-NoCollisionData` are forbidden. Input fingerprints
+detect generator/configuration/spec/build/runtime changes during the pair; repeat both gates
+after any invalidating change. `-ResultPath` preserves per-profile logs/JSON alongside the summary.
+This gate proves generation/compilation, not reviewed directive coverage or naming parity.
+Capture the existing `Compare-WrapperCmdletNames.ps1 -GeneratedPath <profile Cmdlets>
+-OutLedger <profile.csv>` ledger separately for each profile and investigate directive-related
+regressions; disclose unrelated baseline mismatches rather than suppressing them.
+
+Each later module PR has exactly these **three commits**, with both profiles in the same PR:
+
+1. Configuration, reviewed mappings, module-specific regression tests, and related documentation,
+   after mapping/inventory and regression tests pass.
+2. Regenerated v1.0 client/cmdlet/project sources, only after **both** full profile gates pass.
+3. Regenerated beta client/cmdlet/project sources, after that same successful pair.
+
+Do not make either generated-source commit or open a partial/placeholder PR if the pair fails.
+Keep bin/obj, packages, transient logs and validation ledgers outside source commits. Report
+exact commands, outcomes and counts in the PR. This shared framework prerequisite does not
+regenerate module trees and does not use the later module PR's three-commit split.
+
 - **The runtime base exists; the polish around it does not.** `src/GraphWrapperRuntime/` ships `GraphClientCmdlet` with session-keyed request adapters over the shipped Authentication module's session, `-AccessToken` support, paging with a truncation warning and `-All`, delta-link validation against the session's service root, Ctrl+C cancellation, and one `GraphRequestFailed` error shape. Still open: per-cmdlet help and examples, a `SupportsShouldProcess` audit on destructive cmdlets, and an automated Windows PowerShell 5.1 gate leg (the dll targets it; the gates run on PowerShell 7 only).
 - **Body binding covers every shape reaching the classifier** — the omission oracle reports 0 failures across 2,235 body-writing cmdlets (24,003 members seen, 15,838 bound). That is a statement about the operations that generate, not about v1.0: see the coverage figure below. Classifications for shapes that do not occur (inline objects and enums, genuine unions, dictionaries, unresolvable references, unknown formats) are retained so a future corpus change is reported rather than silently mis-bound; [docs/edge-cases/body-binding-edge-cases.md](docs/edge-cases/body-binding-edge-cases.md) records each with its exit criteria.
 - **73.6% of v1.0 operations generate, deliberately.** Of 14,115 operations across the 38 specs (the DirectoryObjects re-slice removes the 16 publicKeyInfrastructure operations it double-declared with Identity.DirectoryManagement): 10,385 become cmdlets, 3,173 are suppressed because the published SDK ships no cmdlet for them (oracle-derived), and 557 are unsupported — 345 call segments on operations the spec does not class as an action or function, 125 routes that call a parameterized function before their final segment, 42 whose content response is neither a stream nor a resolvable entity, 24 with no wrapper emitter for the HTTP method, 13 OData parameter aliases, 6 unresolvable collection schemas, 2 missing request schemas. The three populations sum to 14,115 by construction. The rise from 61.3% is the OData `$`-segments — `$count`, `$ref` and `$value` were 2,304 unsupported operations and now have emitters of their own — plus PUT and the media/content downloads.

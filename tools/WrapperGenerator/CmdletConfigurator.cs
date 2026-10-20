@@ -17,24 +17,26 @@ namespace WrapperGenerator;
 // inventory (the oracle, MgCommandMetadata.json).
 public static partial class CmdletConfigurator
 {
-    private enum OverrideKind
+    internal enum OverrideKind
     {
         SuppressOperation,
         ReplaceNoun,
+        ReplaceVerb,
         StripNounPrefix,
     }
 
     // How Pattern is matched against the normalized path: the full path (Exact), its start
     // (Prefix), or its end (Suffix — for navs that recur under many roots, like
     // .../resourceRoleScopes/{}/scope appearing under several parents).
-    private enum PathMatch
+    internal enum PathMatch
     {
         Exact,
         Prefix,
         Suffix,
     }
 
-    private sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason);
+    internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason,
+        string? ApiVersion = null);
 
     // NormalizePath lowercases before matching, so a Pattern containing an uppercase letter can
     // never match anything: the entry is silently dead and the override looks applied but is not.
@@ -42,7 +44,21 @@ public static partial class CmdletConfigurator
     // until a camelCase path was added. Failing at startup beats debugging a missing rename.
     static CmdletConfigurator()
     {
-        var dead = Entries.FindAll(e => e.Pattern != e.Pattern.ToLowerInvariant());
+        ValidateEntries(Entries);
+    }
+
+    internal static void ValidateEntries(IReadOnlyList<Entry> entries)
+    {
+        var dead = new List<Entry>();
+        foreach (var entry in entries)
+        {
+            if (entry.Pattern != entry.Pattern.ToLowerInvariant())
+                dead.Add(entry);
+            if (entry.ApiVersion is not (null or "v1.0" or "beta"))
+                throw new InvalidOperationException($"Unsupported curated API profile '{entry.ApiVersion}'.");
+            if (entry.Kind == OverrideKind.ReplaceVerb)
+                _ = PsVerb.FromApprovedName(entry.Value ?? throw new InvalidOperationException("A curated verb is required."));
+        }
         if (dead.Count > 0)
         {
             throw new InvalidOperationException(
@@ -129,45 +145,63 @@ public static partial class CmdletConfigurator
         return NormalizePath(pathTemplate);
     }
 
-    // config carries the API version the derived collision data is keyed by; null (the unit
-    // tests' default) applies only the curated entries below, so a data-file change can never
-    // silently shift a pinned naming expectation.
     public static bool IsSuppressed(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config = null)
+        => IsSuppressed(httpMethod, pathTemplate, config, Entries);
+
+    internal static bool IsSuppressed(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config, IReadOnlyList<Entry> entries)
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
         var path = NormalizePath(pathTemplate);
-        if (config is { UseCollisionData: true } && DerivedCollisionResolutions.IsSuppressed(config.ApiVersion, httpMethod, path))
-            return true;
-        foreach (var entry in Entries)
+        var curatedName = false;
+        foreach (var entry in entries)
         {
-            if (entry.Kind == OverrideKind.SuppressOperation && Matches(entry, httpMethod, path))
+            if (!Matches(entry, httpMethod, path, config))
+                continue;
+            if (entry.Kind == OverrideKind.SuppressOperation)
                 return true;
+            curatedName |= entry.Kind is OverrideKind.ReplaceNoun or OverrideKind.ReplaceVerb;
         }
-        return false;
+        // An explicit reviewed name must not be silently hidden by stale derived data.
+        return !curatedName && config is { UseCollisionData: true }
+            && DerivedCollisionResolutions.IsSuppressed(config.ApiVersion, httpMethod, path);
     }
 
     // The published verb for an operation, when the oracle-derived data carries one. Only an
     // action or function needs it: CRUD verbs follow from the HTTP method, but an action's verb
     // is the SDK's own choice per operation (applyHold ships as Add-, removeHold as Remove-).
     public static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config)
+        => TryGetOverriddenVerb(httpMethod, pathTemplate, config, Entries);
+
+    internal static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config, IReadOnlyList<Entry> entries)
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
+        var path = NormalizePath(pathTemplate);
+        foreach (var entry in entries)
+            if (entry.Kind == OverrideKind.ReplaceVerb && Matches(entry, httpMethod, path, config))
+                return entry.Value;
         return config is { UseCollisionData: true }
-            && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, NormalizePath(pathTemplate), out var derived)
+            && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, path, out var derived)
             ? derived.Verb
             : null;
     }
 
     public static string ApplyNounOverrides(HttpMethod httpMethod, string pathTemplate, string noun, GeneratorConfig? config = null)
+        => ApplyNounOverrides(httpMethod, pathTemplate, noun, config, Entries);
+
+    internal static string ApplyNounOverrides(HttpMethod httpMethod, string pathTemplate, string noun, GeneratorConfig? config, IReadOnlyList<Entry> entries)
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
         ArgumentNullException.ThrowIfNull(noun);
         var path = NormalizePath(pathTemplate);
 
-        // A derived rename is the published noun verbatim; nothing curated may rewrite it.
+        foreach (var entry in entries)
+            if (entry.Kind == OverrideKind.ReplaceNoun && Matches(entry, httpMethod, path, config))
+                return entry.Value!;
+
+        // Broad prefix normalization must not rewrite a derived published noun.
         if (config is { UseCollisionData: true } && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, path, out var derived))
             return derived.Noun;
 
@@ -175,9 +209,9 @@ public static partial class CmdletConfigurator
         // Get-MgSolutionBackupRestore). Do not apply /solutions/* strip rules here.
         var skipSolutionStrip = path.StartsWith("/solutions/backuprestore", StringComparison.Ordinal);
 
-        foreach (var entry in Entries)
+        foreach (var entry in entries)
         {
-            if (!Matches(entry, httpMethod, path))
+            if (!Matches(entry, httpMethod, path, config))
                 continue;
             switch (entry.Kind)
             {
@@ -193,8 +227,11 @@ public static partial class CmdletConfigurator
         return noun;
     }
 
-    private static bool Matches(Entry entry, HttpMethod httpMethod, string normalizedPath)
+    private static bool Matches(Entry entry, HttpMethod httpMethod, string normalizedPath, GeneratorConfig? config)
     {
+        // Null config preserves curated-only tests; its profile is the normal v1.0 default.
+        if (entry.ApiVersion is not null && entry.ApiVersion != (config?.ApiVersion ?? "v1.0"))
+            return false;
         // HttpMethod's own equality is case-insensitive, so no string comparison is needed.
         if (entry.Method is not null && entry.Method != httpMethod)
             return false;

@@ -3,18 +3,28 @@
     {
       "module": "Compliance",
       "directiveIndex": 1,
+      "sourcePath": "src\\Compliance\\Compliance.md",
+      "sourceSha256": "5e23720c9e4d7ee0e4887499594c3d3a776f9cd8e0f590b010c6fb9f512fafea",
+      "reviewed": true,
       "classification": "CmdletSuppression",
       "sourceContains": "variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Delete1$|^DeleteViaIdentity1$",
-      "implementation": "CmdletConfigurator",
-      "notes": "Suppress nested dataSource PATCH and DELETE; keep the parent noncustodialDataSource item operations.",
+      "implementation": "ReviewedAbsence",
+      "notes": "Historical nested dataSource PATCH/DELETE tests remain useful, but neither current profile contains those routes. This is absence evidence, not current generated coverage.",
       "profiles": {
         "v1.0": {
+          "specPath": "openApiDocs_KiotaCompat\\v1.0\\Compliance.yml",
+          "specSha256": "c886237ed5bd0db01749d9c5d6363444a68a843fa48c594ee276f7ef048c5348",
+          "absenceEvidence": "Current v1.0 spec contains no nested compliance/ediscovery dataSource route.",
           "absenceExpected": true,
           "operations": []
         },
         "beta": {
-          "absenceExpected": false,
-          "operations": [
+          "specPath": "openApiDocs_KiotaCompat\\beta\\Compliance.yml",
+          "specSha256": "1f01a0caab1d4fd0266db99a0dde7d36dbe3ea306a2f35aacd3a82adf11d0dd8",
+          "absenceEvidence": "Current beta spec no longer contains the historical nested dataSource PATCH or DELETE route.",
+          "absenceExpected": true,
+          "operations": [],
+          "absentOperations": [
             {
               "method": "PATCH",
               "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
@@ -32,18 +42,28 @@
     {
       "module": "Compliance",
       "directiveIndex": 2,
+      "sourcePath": "src\\Compliance\\Compliance.md",
+      "sourceSha256": "2cc892a5ece5c31c442f2d0cc80df49b9b11160eb51b21aba09546087ca9b426",
+      "reviewed": true,
       "classification": "SubjectRename",
       "sourceContains": "variant: ^Get1$|^GetViaIdentity1$",
-      "implementation": "StructuralNaming",
-      "notes": "The wrapper derives the appended DataSource noun directly from the nested navigation path; NamingTests pins the result.",
+      "implementation": "ReviewedAbsence",
+      "notes": "NamingTests preserves historical structural naming, but the nested dataSource GET route is absent from both current specs. Do not count it as generated coverage.",
       "profiles": {
         "v1.0": {
+          "specPath": "openApiDocs_KiotaCompat\\v1.0\\Compliance.yml",
+          "specSha256": "c886237ed5bd0db01749d9c5d6363444a68a843fa48c594ee276f7ef048c5348",
+          "absenceEvidence": "Current v1.0 spec contains no nested compliance/ediscovery dataSource GET route.",
           "absenceExpected": true,
           "operations": []
         },
         "beta": {
-          "absenceExpected": false,
-          "operations": [
+          "specPath": "openApiDocs_KiotaCompat\\beta\\Compliance.yml",
+          "specSha256": "1f01a0caab1d4fd0266db99a0dde7d36dbe3ea306a2f35aacd3a82adf11d0dd8",
+          "absenceEvidence": "Current beta spec no longer contains the historical nested dataSource GET route.",
+          "absenceExpected": true,
+          "operations": [],
+          "absentOperations": [
             {
               "method": "GET",
               "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",

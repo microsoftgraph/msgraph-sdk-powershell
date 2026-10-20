@@ -171,7 +171,7 @@ public static class Naming
         };
 
         // The published SDK picks an action's verb per operation rather than from the method, so
-        // where the oracle-derived data records one it replaces the structural default.
+        // curated directives take precedence over derived data and the structural default.
         if (CmdletConfigurator.TryGetOverriddenVerb(operation.HttpMethod, operation.Path, config) is { } publishedVerb)
             verb = PsVerb.FromApprovedName(publishedVerb);
 

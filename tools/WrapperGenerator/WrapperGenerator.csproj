@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="WrapperGenerator.Tests" />
     <!-- Microsoft.OpenApi reads the spec; YamlReader is required for the .yml specs.
          Microsoft.Extensions.Logging.Abstractions supplies ILogger and the [LoggerMessage] source
          generator the generation service uses. -->

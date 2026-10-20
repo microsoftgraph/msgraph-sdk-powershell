@@ -214,8 +214,11 @@ public sealed class NamingTests
             "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource";
         const string complianceItem =
             "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}";
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, complianceDataSource));
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, complianceDataSource));
+        var historicalBeta = new GeneratorConfig("Test.Client", "unused", ApiVersion: "beta");
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, complianceDataSource, historicalBeta));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, complianceDataSource, historicalBeta));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, complianceDataSource));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, complianceDataSource));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, complianceDataSource));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, complianceItem));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, complianceItem));

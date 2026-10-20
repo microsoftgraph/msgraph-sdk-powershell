@@ -79,6 +79,13 @@ Also produce a package per module under <ArtifactsLocation>/<Module>/.
 .PARAMETER ArtifactsLocation
 Where -Pack writes packages. Default: <repo>/artifacts.
 
+.PARAMETER StrictPublication
+Require fresh full generation and compilation from the exact Kiota-compatible input.
+Rejects inner-loop switches and missing specs instead of falling back to AutoRest input.
+
+.PARAMETER ResultPath
+Optional JSON build evidence, including status, completed stages and artifact paths.
+
 .EXAMPLE
 .\tools\Build-WrapperModule.ps1 -Module Mail
 
@@ -117,11 +124,16 @@ param(
     [switch]$SkipKiota,
     [switch]$NoCollisionData,
     [switch]$GenerateOnly,
-    [switch]$Pack
+    [switch]$Pack,
+    [switch]$StrictPublication,
+    [string]$ResultPath
 )
 
 $ErrorActionPreference = 'Stop'
 if ($GenerateOnly -and $Pack) { throw '-GenerateOnly cannot be combined with -Pack.' }
+if ($StrictPublication -and ($GenerateOnly -or $SkipKiota -or $NoCollisionData)) {
+    throw '-StrictPublication requires full Kiota generation, collision enforcement and compilation.'
+}
 
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 if (-not $SpecRoot) { $SpecRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat' }
@@ -262,18 +274,24 @@ function Build-Module {
     $started = Get-Date
     $result = [pscustomobject]@{
         Module = $Name; Status = 'FAILED'; FailedAt = ''; CmdletCount = 0; Psd1 = ''; Nupkg = ''; Seconds = 0; Error = ''; Detail = ''
+        ApiVersion = $ApiVersion; SpecPath = ''; SpecSha256 = ''; StartedUtc = $started.ToUniversalTime().ToString('o')
+        FinishedUtc = ''; KiotaGenerated = $false; WrapperGenerated = $false; Compiled = $false
+        StrictPublication = [bool]$StrictPublication; EmittedCmdletCount = 0
+        AssemblyPath = ''; ClientAssemblyPath = ''; ClientPath = ''; CmdletsPath = ''
     }
 
     try {
         $spec = Join-Path $SpecRoot "$ApiVersion\$Name.yml"
         if (-not (Test-Path $spec)) {
             $fallback = Join-Path $repoRoot "openApiDocs\$ApiVersion\$Name.yml"
-            if (Test-Path $fallback) {
+            if (-not $StrictPublication -and (Test-Path $fallback)) {
                 Write-Warning "$Name has no doc under $SpecRoot; falling back to $fallback"
                 $spec = $fallback
             }
             else { $result.FailedAt = 'spec'; $result.Error = "no OpenAPI doc at $spec"; return $result }
         }
+        $result.SpecPath = (Resolve-Path -LiteralPath $spec).Path
+        $result.SpecSha256 = (Get-FileHash -LiteralPath $spec -Algorithm SHA256).Hash
 
         $moduleName = "Microsoft.Graph.Wrapper.$Name"
         $clientNs = "Microsoft.Graph.PowerShell.$Name.Client"
@@ -288,6 +306,8 @@ function Build-Module {
         $srcDir = Join-Path $repoRoot "src\$Name\wrapper\$ApiVersion"
         $clientDir = Join-Path $srcDir 'Client'
         $cmdletsDir = Join-Path $srcDir 'Cmdlets'
+        $result.ClientPath = Join-Path $clientDir 'ApiClient.cs'
+        $result.CmdletsPath = $cmdletsDir
         New-Item -ItemType Directory -Force -Path $srcDir | Out-Null
 
         if (-not $SkipKiota -or -not (Test-Path (Join-Path $clientDir 'ApiClient.cs'))) {
@@ -325,6 +345,7 @@ function Build-Module {
                 $result.Error = (Get-Content -Path $kiotaErrLog -Tail 3 -ErrorAction SilentlyContinue) -join ' | '
                 return $result
             }
+            $result.KiotaGenerated = $true
         }
 
         $wrapperOut = if ($NoCollisionData) {
@@ -345,6 +366,9 @@ function Build-Module {
             }
             return $result
         }
+        $result.WrapperGenerated = $true
+        $result.EmittedCmdletCount = @(Get-ChildItem $cmdletsDir -Filter '*.g.cs' -File |
+            Where-Object Name -ne 'Shared.g.cs').Count
 
         # With -NoCollisionData the generator REPORTS each cmdlet collision instead of throwing on
         # it, and that report is the collision inventory: data/collision-inventory.<version>.txt is
@@ -384,15 +408,20 @@ function Build-Module {
             RuntimeProjectPath = $runtimeCsprojRelative
         }
 
-        $buildOut = & dotnet build $csprojPath -c $Configuration --nologo -v minimal 2>&1
+        $buildArgs = @($csprojPath, '-c', $Configuration, '--nologo', '-v', 'minimal')
+        if ($StrictPublication) { $buildArgs += '--no-incremental' }
+        $buildOut = & dotnet build @buildArgs 2>&1
         if ($LASTEXITCODE -ne 0) {
             $result.FailedAt = 'build'
             $result.Error = ($buildOut | Where-Object { $_ -match 'error' } | Select-Object -First 3) -join ' | '
             return $result
         }
+        $result.Compiled = $true
 
         $binDir = Join-Path $srcDir "bin\$Configuration\$targetFramework"
         $assemblyPath = Join-Path $binDir "$moduleName.dll"
+        $result.AssemblyPath = $assemblyPath
+        $result.ClientAssemblyPath = Join-Path $binDir "$clientAssemblyName.dll"
         $cmdlets = @(Get-CompiledCmdletNames -AssemblyPath $assemblyPath)
         if ($cmdlets.Count -eq 0) {
             # A terminal SUCCESS, not a failure. Some specs are entirely action/function shaped
@@ -538,6 +567,7 @@ function Build-Module {
     }
     finally {
         $result.Seconds = [math]::Round(((Get-Date) - $started).TotalSeconds, 1)
+        $result.FinishedUtc = [DateTime]::UtcNow.ToString('o')
 
         # A failure part-way through leaves a half-generated tree behind - kiota runs with
         # --clean-output, so a timeout wipes the previous client and then writes nothing usable.
@@ -579,11 +609,12 @@ $noCmdlets = @($results | Where-Object Status -eq 'NO-CMDLETS')
 $failed = @($results | Where-Object Status -eq 'FAILED')
 
 Write-Host "$($built.Count) module(s) built, $($noCmdlets.Count) produced no cmdlets, $($failed.Count) failed." -ForegroundColor Cyan
+if ($ResultPath) { ConvertTo-Json -InputObject @($results) -Depth 6 | Set-Content -LiteralPath $ResultPath }
 if ($noCmdlets.Count) {
     # Named every run so a shrinking population stays visible: "all modules built" must never be
     # able to hide a module that quietly stopped producing anything.
     Write-Host "  no cmdlets: $(($noCmdlets.Module) -join ', ')" -ForegroundColor DarkYellow
 }
 
-if ($failed.Count) { exit 1 }
+if ($failed.Count -or ($StrictPublication -and $noCmdlets.Count)) { exit 1 }
 exit 0
