@@ -135,8 +135,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
             // A per-account record for the hinted user lets the credential be built silently
             // (no interactive browser / broker call) so the code path is exercised in-process.
-            var record = await BuildAuthRecordAsync("user@contoso.com").ConfigureAwait(false);
-            await AuthenticationHelpers.WriteAuthRecordAsync(record, "user@contoso.com").ConfigureAwait(false);
+            var record = await BuildAuthRecordAsync("user@contoso.com");
+            await AuthenticationHelpers.WriteAuthRecordAsync(record, "user@contoso.com");
             var keyedPath = AuthenticationHelpers.GetAuthRecordPath("user@contoso.com");
 
             try
@@ -725,7 +725,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         [Fact]
         public async Task MatchesLoginHintIsCaseInsensitiveAndRejectsMismatch()
         {
-            AuthenticationRecord record = await BuildAuthRecordAsync("User@Contoso.com").ConfigureAwait(false);
+            AuthenticationRecord record = await BuildAuthRecordAsync("User@Contoso.com");
 
             Assert.True(AuthenticationHelpers.MatchesLoginHint(record, "user@contoso.com"));
             Assert.True(AuthenticationHelpers.MatchesLoginHint(record, "  USER@CONTOSO.COM "));
@@ -737,11 +737,11 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         public async Task ResolveInteractiveAuthRecordDoesNotReuseDifferentUsersRecord()
         {
             // A saved record exists (legacy path) for a different user than the login hint.
-            await WriteLegacyAuthRecordAsync("alice@contoso.com").ConfigureAwait(false);
+            await WriteLegacyAuthRecordAsync("alice@contoso.com");
             var keyedPath = AuthenticationHelpers.GetAuthRecordPath("bob@contoso.com");
             try
             {
-                var resolved = await AuthenticationHelpers.ResolveInteractiveAuthRecordAsync("bob@contoso.com").ConfigureAwait(false);
+                var resolved = await AuthenticationHelpers.ResolveInteractiveAuthRecordAsync("bob@contoso.com");
 
                 // Must force a fresh interactive sign-in rather than reuse alice's record.
                 Assert.Null(resolved);
@@ -758,13 +758,13 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         public async Task ResolveInteractiveAuthRecordMigratesMatchingLegacyRecord()
         {
             // A legacy shared record exists for the SAME account as the login hint.
-            await WriteLegacyAuthRecordAsync("carol@contoso.com").ConfigureAwait(false);
+            await WriteLegacyAuthRecordAsync("carol@contoso.com");
             var keyedPath = AuthenticationHelpers.GetAuthRecordPath("carol@contoso.com");
             try
             {
                 Assert.False(File.Exists(keyedPath));
 
-                var resolved = await AuthenticationHelpers.ResolveInteractiveAuthRecordAsync("carol@contoso.com").ConfigureAwait(false);
+                var resolved = await AuthenticationHelpers.ResolveInteractiveAuthRecordAsync("carol@contoso.com");
 
                 Assert.NotNull(resolved);
                 Assert.Equal("carol@contoso.com", resolved.Username);
@@ -780,8 +780,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
         private static async Task WriteLegacyAuthRecordAsync(string username)
         {
-            var record = await BuildAuthRecordAsync(username).ConfigureAwait(false);
-            await AuthenticationHelpers.WriteAuthRecordAsync(record).ConfigureAwait(false);
+            var record = await BuildAuthRecordAsync(username);
+            await AuthenticationHelpers.WriteAuthRecordAsync(record);
         }
 
         private static async Task<AuthenticationRecord> BuildAuthRecordAsync(string username)
@@ -790,7 +790,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                        $"\"homeAccountId\":\"{Guid.NewGuid()}.{Guid.NewGuid()}\"," +
                        $"\"tenantId\":\"{Guid.NewGuid()}\",\"clientId\":\"{Guid.NewGuid()}\",\"version\":\"1.0\"}}";
             using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(json)))
-                return await AuthenticationRecord.DeserializeAsync(stream).ConfigureAwait(false);
+                return await AuthenticationRecord.DeserializeAsync(stream);
         }
 
         public void Dispose() => mockAuthRecord.DeleteCache();
