@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
             // A per-account record for the hinted user lets the credential be built silently
             // (no interactive browser / broker call) so the code path is exercised in-process.
-            var record = await BuildAuthRecordAsync("user@contoso.com").ConfigureAwait(false);
+            var record = await BuildAuthRecordAsync("user@contoso.com");
             await AuthenticationHelpers.WriteAuthRecordAsync(record, "user@contoso.com");
             var keyedPath = AuthenticationHelpers.GetAuthRecordPath("user@contoso.com");
 
