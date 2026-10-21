@@ -3,10 +3,11 @@
 Inventories module AutoRest directives for migration to WrapperGenerator configuration.
 
 .DESCRIPTION
-Reads src/<Module>/<Module>.md and classifies each directive group. Operation-ID suppressions
-are resolved directly against the v1.0 and beta Kiota-compatible OpenAPI documents. AutoRest
-subject/variant selectors cannot be translated safely from text alone, so reviewed mappings
-live beside each module configuration in src/<Module>/wrapper/<Module>_directiveMigrationMap.json.
+Reads only src/<Module>/<Module>.md and classifies each directive group. Profile-local readme
+files and src/readme.graph.md are not inventoried. Operation-ID regex matches are unreviewed
+candidates, not completed migrations. Reviewed mappings for suppressions and AutoRest where
+selectors live in src/<Module>/wrapper/<Module>_directiveMigrationMap.json and are validated
+against exact method/path/operation-ID evidence in both Kiota-compatible profiles.
 
 The command is read-only unless -OutputPath is supplied. It never edits module configuration
 or markdown files.
@@ -25,7 +26,10 @@ Optional .json or .csv output path.
 Write JSON to the pipeline instead of inventory objects.
 
 .PARAMETER FailOnUnresolved
-Exit with an error when any non-deferred directive remains unresolved.
+Require every non-deferred directive to be Mapped. Both Unresolved selectors and unreviewed
+Resolved candidates fail this completion gate. Deferred parameter/schema directives do not
+block completion. A module with no shared directives passes without a mapping ledger.
+Invalid or stale mappings always fail, even without this switch.
 #>
 [CmdletBinding()]
 param(
@@ -156,6 +160,16 @@ function Format-Operations {
     })
 }
 
+function Get-OperationIdRegex {
+    param([Parameter(Mandatory)][string]$Text)
+
+    $match = [regex]::Match($Text, '(?m)remove-path-by-operation:\s*(?<pattern>.+?)\s*$')
+    if (-not $match.Success) { throw [ArgumentException]::new('Could not read remove-path-by-operation pattern.') }
+    # AutoRest's JavaScript regex accepts the identity escape \_; .NET does not.
+    $pattern = $match.Groups['pattern'].Value.Trim("'", '"') -replace '\\_', '_'
+    return [regex]::new($pattern)
+}
+
 if (-not $Module -or $Module.Count -eq 0) {
     $Module = @(Get-ChildItem $srcRoot -Directory | Where-Object {
         Test-Path (Join-Path $_.FullName "$($_.Name).md")
@@ -212,52 +226,27 @@ foreach ($moduleName in $Module) {
                 'Schema/response directives are outside the cmdlet-surface migration.'
             }
         }
-        elseif ($directive.Classification -eq 'OperationIdSuppression') {
-            $match = [regex]::Match($directive.Text, '(?m)remove-path-by-operation:\s*(?<pattern>.+?)\s*$')
-            if (-not $match.Success) {
-                $status = 'Invalid'
-                $notes = 'Could not read remove-path-by-operation pattern.'
-            }
-            else {
-                $pattern = $match.Groups['pattern'].Value.Trim("'", '"')
-                try {
-                    # AutoRest evaluates JavaScript regular expressions, where an identity escape
-                    # such as \_ is accepted. .NET rejects it even though it means the same as _.
-                    $dotNetPattern = $pattern -replace '\\_', '_'
-                    $regex = [regex]::new($dotNetPattern)
-                    foreach ($profile in @('v1.0', 'beta')) {
-                        $profileMatches[$profile] = @($operationsByProfile[$profile] |
-                            Where-Object { $regex.IsMatch($_.OperationId) })
-                    }
-                    if ($profileMatches['v1.0'].Count + $profileMatches.beta.Count -gt 0) {
-                        $status = 'Resolved'
-                        $implementation = 'Candidate'
-                        $notes = if ($dotNetPattern -ne $pattern) {
-                            'Resolved directly after normalizing JavaScript identity escapes for .NET.'
-                        }
-                        else {
-                            'Resolved directly from the operation-ID regular expression.'
-                        }
-                    }
-                }
-                catch {
-                    $status = 'Unresolved'
-                    $notes = "AutoRest operation-ID regular expression requires manual review: $($_.Exception.Message)"
-                }
-            }
-        }
         elseif ($mapping) {
             [void]$usedMappings.Add($key)
             $implementation = "$($mapping.implementation)"
             $notes = "$($mapping.notes)"
             $missing = [System.Collections.Generic.List[string]]::new()
-            if ($mapping.classification -and
-                "$($mapping.classification)" -ne $directive.Classification) {
+            if ("$($mapping.classification)" -cne $directive.Classification) {
                 $missing.Add("classification changed from '$($mapping.classification)' to '$($directive.Classification)'")
             }
-            if ($mapping.sourceContains -and
-                -not $directive.Text.Contains("$($mapping.sourceContains)", [StringComparison]::Ordinal)) {
+            if ([string]::IsNullOrWhiteSpace($mapping.sourceContains)) {
+                $missing.Add('sourceContains evidence is required')
+            }
+            elseif (-not $directive.Text.Contains("$($mapping.sourceContains)", [StringComparison]::Ordinal)) {
                 $missing.Add("source directive no longer contains '$($mapping.sourceContains)'")
+            }
+            if ([string]::IsNullOrWhiteSpace($implementation)) {
+                $missing.Add('implementation disposition is required')
+            }
+            foreach ($profileName in $mapping.profiles.PSObject.Properties.Name) {
+                if ($profileName -cnotin @('v1.0', 'beta')) {
+                    $missing.Add("unsupported profile '$profileName'")
+                }
             }
             foreach ($profile in @('v1.0', 'beta')) {
                 $profileMap = $mapping.profiles.$profile
@@ -265,16 +254,35 @@ foreach ($moduleName in $Module) {
                     $missing.Add("$profile mapping declaration")
                     continue
                 }
-                foreach ($expected in @($profileMap.operations)) {
+                if ($profileMap.operations -isnot [array]) {
+                    $missing.Add("$profile operations must be an explicit array")
+                    continue
+                }
+                if ($profileMap.absenceExpected -isnot [bool]) {
+                    $missing.Add("$profile absenceExpected must be an explicit boolean")
+                }
+                if ($profileMap.operations.Count -gt 0 -and $profileMap.absenceExpected) {
+                    $missing.Add("$profile declares operations and absenceExpected")
+                }
+                $reviewedOperations = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+                foreach ($expected in $profileMap.operations) {
+                    $method = "$($expected.method)".ToUpperInvariant()
+                    $operationKey = "$method $($expected.path)"
+                    if (-not $reviewedOperations.Add($operationKey)) {
+                        $missing.Add("$profile duplicate operation '$operationKey'")
+                    }
+                    if ([string]::IsNullOrWhiteSpace($expected.operationId)) {
+                        $missing.Add("$profile $operationKey operationId evidence is required")
+                    }
                     $matches = @($operationsByProfile[$profile] | Where-Object {
-                        $_.Method -eq "$($expected.method)".ToUpperInvariant() -and
-                        $_.Path -eq "$($expected.path)"
+                        $_.Method -ceq $method -and
+                        $_.Path -ceq "$($expected.path)"
                     })
                     if ($matches.Count -ne 1) {
                         $missing.Add("$profile $($expected.method) $($expected.path) matched $($matches.Count) operations")
                     }
                     else {
-                        if ($expected.operationId -and $matches[0].OperationId -ne "$($expected.operationId)") {
+                        if ($matches[0].OperationId -cne "$($expected.operationId)") {
                             $missing.Add("$profile $($expected.method) $($expected.path) operationId changed from '$($expected.operationId)' to '$($matches[0].OperationId)'")
                         }
                         $profileMatches[$profile] += $matches[0]
@@ -283,6 +291,19 @@ foreach ($moduleName in $Module) {
                 if (@($profileMap.operations).Count -eq 0 -and -not $profileMap.absenceExpected) {
                     $missing.Add("$profile has no operations and is not marked absenceExpected")
                 }
+                if ($directive.Classification -eq 'OperationIdSuppression') {
+                    try {
+                        $regex = Get-OperationIdRegex $directive.Text
+                        $candidates = @($operationsByProfile[$profile] | Where-Object { $regex.IsMatch($_.OperationId) })
+                        $candidateKeys = @($candidates | ForEach-Object { "$($_.Method) $($_.Path)" })
+                        if (-not $reviewedOperations.SetEquals([string[]]$candidateKeys)) {
+                            $missing.Add("$profile evidence must cover exactly the operation-ID regex matches")
+                        }
+                    }
+                    catch [ArgumentException] {
+                        $missing.Add("operation-ID regex cannot be validated: $($_.Exception.Message)")
+                    }
+                }
             }
             if ($missing.Count -eq 0) {
                 $status = 'Mapped'
@@ -290,6 +311,23 @@ foreach ($moduleName in $Module) {
             else {
                 $status = 'Invalid'
                 $notes = (@($notes) + @($missing)) -join ' '
+            }
+        }
+        elseif ($directive.Classification -eq 'OperationIdSuppression') {
+            try {
+                $regex = Get-OperationIdRegex $directive.Text
+                foreach ($profile in @('v1.0', 'beta')) {
+                    $profileMatches[$profile] = @($operationsByProfile[$profile] |
+                        Where-Object { $regex.IsMatch($_.OperationId) })
+                }
+                if ($profileMatches['v1.0'].Count + $profileMatches.beta.Count -gt 0) {
+                    $status = 'Resolved'
+                    $implementation = 'Candidate'
+                    $notes = 'Operation-ID regex matches are candidates; reviewed mapping evidence is required.'
+                }
+            }
+            catch [ArgumentException] {
+                $notes = "AutoRest operation-ID regular expression requires manual review: $($_.Exception.Message)"
             }
         }
 
@@ -333,9 +371,9 @@ if ($invalid.Count -gt 0) {
     throw "Invalid directive migration mapping(s):`n$($details -join [Environment]::NewLine)"
 }
 if ($FailOnUnresolved) {
-    $unresolved = @($rows | Where-Object Status -eq 'Unresolved')
+    $unresolved = @($rows | Where-Object { $_.Status -notin @('Mapped', 'Deferred') })
     if ($unresolved.Count -gt 0) {
-        throw "$($unresolved.Count) non-deferred directive(s) remain unresolved."
+        throw "$($unresolved.Count) non-deferred directive(s) lack reviewed mappings (Unresolved or Resolved candidates)."
     }
 }
 
