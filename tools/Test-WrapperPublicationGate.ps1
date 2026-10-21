@@ -50,6 +50,58 @@ try {
     $results = @(ConvertTo-Json -InputObject $results -Depth 8 | ConvertFrom-Json)
     function Assert-Pair { Assert-WrapperPublicationResult -Results $results -ModuleName Widget -RepositoryRoot $fixture }
     Assert-Pair
+    foreach ($path in @('C:\repo\bin\Release\output.cs', 'C:\repo\obj\Debug\output.cs',
+        '/repo/bin/Release/output.cs', '/repo/obj/Debug/output.cs', 'C:\repo/obj\Debug/output.cs')) {
+        if (Test-WrapperPublicationSourcePath $path) { throw "Build output must be excluded for either separator: $path" }
+    }
+    foreach ($path in @('C:\repo\source\file.cs', '/repo/source/file.cs',
+        'C:\repo\binary\object.cs', '/repo/objects/binding.cs')) {
+        if (-not (Test-WrapperPublicationSourcePath $path)) { throw "Source path was incorrectly excluded: $path" }
+    }
+    $inputRoots = @('tools\WrapperGenerator', 'src\GraphWrapperRuntime\Runtime',
+        'src\Authentication\Authentication', 'src\Authentication\Authentication.Core')
+    foreach ($inputRoot in $inputRoots) {
+        $directory = Join-Path $fixture $inputRoot
+        New-Item -ItemType Directory -Path $directory -Force | Out-Null
+        'fixture source' | Set-Content (Join-Path $directory 'Input.cs')
+    }
+    New-Item -ItemType Directory -Path (Join-Path $fixture 'config') -Force | Out-Null
+    foreach ($relative in @('Repo.props', 'tools\Build-WrapperModule.ps1', 'tools\Test-WrapperPublication.ps1',
+        'tools\Templates\WrapperClient.csproj.template', 'config\ModulesMapping.jsonc', 'config\ModuleMetadata.json',
+        'src\Authentication\Authentication.Core\Microsoft.Graph.Authentication.Core.csproj')) {
+        'fixture compile input' | Set-Content (Join-Path $fixture $relative)
+    }
+    $savedRepoRoot = $repoRoot
+    try {
+        $repoRoot = $fixture
+        $fingerprint = Get-WrapperPublicationInputFingerprint Widget
+        foreach ($inputRoot in $inputRoots) {
+            foreach ($outputDirectory in @('bin', 'obj')) {
+                $directory = Join-Path $fixture "$inputRoot\$outputDirectory"
+                New-Item -ItemType Directory -Path $directory -Force | Out-Null
+                'new build output' | Set-Content (Join-Path $directory 'Input.cs')
+            }
+        }
+        if ($fingerprint -ne (Get-WrapperPublicationInputFingerprint Widget)) { throw 'Build outputs changed the input fingerprint.' }
+        foreach ($relative in @('src\Authentication\Authentication.Core\Input.cs',
+            'src\Authentication\Authentication.Core\Microsoft.Graph.Authentication.Core.csproj', 'Repo.props')) {
+            $path = Join-Path $fixture $relative
+            $original = [IO.File]::ReadAllText($path)
+            Add-Content -LiteralPath $path -Value 'changed compile input'
+            if ($fingerprint -eq (Get-WrapperPublicationInputFingerprint Widget)) { throw "Dependency input change was not detected: $relative" }
+            [IO.File]::WriteAllText($path, $original)
+            if ($fingerprint -ne (Get-WrapperPublicationInputFingerprint Widget)) { throw "Restored input did not restore fingerprint: $relative" }
+        }
+    } finally {
+        $repoRoot = $savedRepoRoot
+    }
+    foreach ($profile in @('v1.0', 'beta')) {
+        $clientObj = Join-Path $fixture "src\Widget\wrapper\$profile\Client\obj"
+        New-Item -ItemType Directory -Path $clientObj -Force | Out-Null
+        'compiler generated source' | Set-Content (Join-Path $clientObj 'OldAssemblyInfo.cs')
+        (Get-Item (Join-Path $clientObj 'OldAssemblyInfo.cs')).LastWriteTimeUtc = [DateTime]::UtcNow.AddDays(-1)
+    }
+    Assert-Pair
     Assert-Rejected { Assert-WrapperPublicationResult -Results @($results[0]) -ModuleName Widget -RepositoryRoot $fixture } 'exactly two'
     $r = $results[1]
     foreach ($status in @('NO-CMDLETS', 'FAILED', 'SKIPPED')) {
@@ -104,4 +156,4 @@ try {
 } finally {
     if (Test-Path -LiteralPath $fixture) { Remove-Item -LiteralPath $fixture -Recurse -Force }
 }
-Write-Host 'PASS: dual-profile publication rejects failed/empty/skipped/stale/fallback evidence and accepts a complete fresh pair.'
+Write-Host 'PASS: dependency fingerprints, cross-platform build-output exclusions, and dual-profile publication pass/failure contracts.'

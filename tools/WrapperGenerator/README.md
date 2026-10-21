@@ -457,7 +457,9 @@ generation and compilation, exact non-fallback spec hashes, fresh expected clien
 files, both assemblies, and a matching manifest. Strict builds disable incremental compilation.
 `NO-CMDLETS`, missing specs, failed/skipped stages, stale artifacts, or only one passing profile
 all fail. `-GenerateOnly`, `-SkipKiota`, and `-NoCollisionData` are forbidden. Input fingerprints
-detect generator/configuration/spec/build/runtime changes during the pair; repeat both gates
+detect generator/configuration/spec/build/runtime/authentication changes during the pair,
+including Authentication.Core and its imported Repo.props. Compiler bin/obj output is excluded
+with either path separator on every source scan; repeat both gates
 after any invalidating change. `-ResultPath` preserves per-profile logs/JSON alongside the summary.
 This gate proves generation/compilation, not reviewed directive coverage or naming parity.
 Capture the existing `Compare-WrapperCmdletNames.ps1 -GeneratedPath <profile Cmdlets>

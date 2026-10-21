@@ -20,6 +20,10 @@ param(
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 
+function Test-WrapperPublicationSourcePath([string]$Path) {
+    $Path -notmatch '[/\\](bin|obj)[/\\]'
+}
+
 function Assert-WrapperPublicationResult {
     param(
         [Parameter(Mandatory)][object[]]$Results,
@@ -71,7 +75,7 @@ function Assert-WrapperPublicationResult {
         if ($emitted.Count -ne $r.EmittedCmdletCount) { throw "$ModuleName/$profile emitted count changed." }
         $files += @($emitted.FullName)
         $files += @(Get-ChildItem -LiteralPath (Join-Path $root 'Client') -Filter '*.cs' -File -Recurse |
-            Where-Object { $_.FullName -notmatch '\\(bin|obj)\\' } | ForEach-Object FullName)
+            Where-Object { Test-WrapperPublicationSourcePath $_.FullName } | ForEach-Object FullName)
         foreach ($path in $files) {
             if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { throw "Missing publication artifact: $path" }
             $file = Get-Item -LiteralPath $path
@@ -90,15 +94,19 @@ function Assert-WrapperPublicationResult {
 function Get-WrapperPublicationInputFingerprint([string]$ModuleName) {
     $paths = @(
         Get-ChildItem (Join-Path $repoRoot 'tools\WrapperGenerator') -File -Recurse |
-            Where-Object { $_.FullName -notmatch '\\(bin|obj)\\' }
-        Get-ChildItem (Join-Path $repoRoot 'src') -Filter '*_cmdletConfigurations.cs' -File -Recurse
+            Where-Object { Test-WrapperPublicationSourcePath $_.FullName }
+        Get-ChildItem (Join-Path $repoRoot 'src') -Filter '*_cmdletConfigurations.cs' -File -Recurse |
+            Where-Object { Test-WrapperPublicationSourcePath $_.FullName }
         Get-ChildItem (Join-Path $repoRoot 'src\GraphWrapperRuntime\Runtime') -File -Recurse |
-            Where-Object { $_.FullName -notmatch '\\(bin|obj)\\' }
+            Where-Object { Test-WrapperPublicationSourcePath $_.FullName }
         Get-ChildItem (Join-Path $repoRoot 'src\Authentication\Authentication') -File -Recurse |
-            Where-Object { $_.FullName -notmatch '\\(bin|obj)\\' }
+            Where-Object { Test-WrapperPublicationSourcePath $_.FullName }
+        Get-ChildItem (Join-Path $repoRoot 'src\Authentication\Authentication.Core') -File -Recurse |
+            Where-Object { Test-WrapperPublicationSourcePath $_.FullName }
         Get-Item (Join-Path $repoRoot 'tools\Build-WrapperModule.ps1'), (Join-Path $repoRoot 'tools\Test-WrapperPublication.ps1'),
             (Join-Path $repoRoot 'tools\Templates\WrapperClient.csproj.template'),
             (Join-Path $repoRoot 'tools\Templates\WrapperModule.csproj.template'),
+            (Join-Path $repoRoot 'Repo.props'),
             (Join-Path $repoRoot 'config\ModulesMapping.jsonc'), (Join-Path $repoRoot 'config\ModuleMetadata.json'),
             (Join-Path $repoRoot "openApiDocs_KiotaCompat\v1.0\$ModuleName.yml"),
             (Join-Path $repoRoot "openApiDocs_KiotaCompat\beta\$ModuleName.yml")
