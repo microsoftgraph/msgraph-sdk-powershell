@@ -336,6 +336,70 @@ paths:
     Save-TranslationLedger
     Assert-TranslationFailure { & $fixtureTool -FailOnUnresolved } 'exactly equivalent method/path'
 
+    @'
+``` yaml
+directive:
+  - where:
+      subject: ^(\w*[a-z])GraphOPre(\w*)$
+    set:
+      subject: $1Of$2
+```
+'@ | Set-Content $sharedSource
+    '# no local directives' | Set-Content $localSource
+    $castSource = @'
+openapi: 3.0.0
+paths:
+  /objects/{object-id}/microsoft.graph.group:
+    get:
+      operationId: user_GetMemberGraphOPreAsGroup
+    patch:
+      operationId: user_UpdateMemberGraphOPreAsGroup
+  /objects/microsoft.graph.group:
+    get:
+      operationId: user_ListMemberGraphOPreAsGroup
+components:
+  schemas:
+    microsoft.graph.group:
+      type: object
+    microsoft.graph.administrativeUnit:
+      type: object
+'@
+    $castCurrent = $castSource.Replace('/microsoft.graph.group:', '/graph.group:').
+        Replace('user_GetMemberGraphOPreAsGroup', 'users.GetMemberOf.AsGroup').
+        Replace('user_UpdateMemberGraphOPreAsGroup', 'users.UpdateMemberOf.AsGroup').
+        Replace('user_ListMemberGraphOPreAsGroup', 'users.ListMemberOf.AsGroup')
+    foreach ($profile in @('v1.0', 'beta')) {
+        $castSource | Set-Content (Join-Path $fixture "openApiDocs\$profile\Widget.yml")
+        $castCurrent | Set-Content (Join-Path $fixture "openApiDocs_KiotaCompat\$profile\Widget.yml")
+    }
+    $castRow = @(& $fixtureTool -MappingPath $emptyLedger)[0]
+    if ($castRow.BetaSourceOperations.Count -ne 3 -or $castRow.BetaOperations.Count -ne 3) { throw 'Proven same-type terminal cast aliases must preserve item/collection routes and methods.' }
+    $document = @{ mappings = @((New-TranslationMapping $castRow)) }
+    Save-TranslationLedger
+    & $fixtureTool -FailOnUnresolved | Out-Null
+    $castsJson = ConvertTo-Json -InputObject $document -Depth 15
+    foreach ($badCastSpec in @(
+        $castCurrent.Replace('/graph.group:', '/graph.administrativeUnit:'),
+        $castCurrent.Replace('    get:', '    delete:'),
+        $castCurrent.Replace('    microsoft.graph.group:', '    microsoft.graph.Group:'),
+        $castCurrent.Replace('  schemas:', '  responses:'),
+        $castCurrent.Replace('/graph.group:', '/graph.Group:'),
+        $castCurrent.Replace('/graph.group:', '/other.group:')
+    )) {
+        $badCastSpec | Set-Content $betaSpec
+        $document = $castsJson | ConvertFrom-Json -AsHashtable
+        $fresh = @(& $fixtureTool -MappingPath $emptyLedger)[0]
+        $document.mappings[0].profiles.beta.specSha256 = $fresh.BetaSpecSha256
+        Save-TranslationLedger
+        Assert-TranslationFailure { & $fixtureTool -FailOnUnresolved } 'matched 0 operations|removed source operation requires|exactly equivalent method/path'
+    }
+    $castCurrent | Set-Content $betaSpec
+    $document = $castsJson | ConvertFrom-Json -AsHashtable
+    $document.mappings[0].profiles.beta.operations = @()
+    $document.mappings[0].profiles.beta.absenceExpected = $true
+    Save-TranslationLedger
+    Assert-TranslationFailure { & $fixtureTool -FailOnUnresolved } 'exactly equivalent method/path'
+
     # Pin the real corpus, including all eleven inherited beta GraphBPre operations.
     $crossRows = @(& $tool -Module CrossDeviceExperiences -MappingPath $emptyLedger)
     $crossSuppression = $crossRows | Where-Object Classification -eq 'OperationIdSuppression'
@@ -350,6 +414,14 @@ paths:
     ConvertTo-Json -InputObject $document -Depth 15 | Set-Content $realLedger
     $mapped = @(& $tool -Module CrossDeviceExperiences -MappingPath $realLedger)
     if (@($mapped | Where-Object Status -eq 'Mapped').Count -ne 2) { throw 'Real CrossDevice translations must accept truthful source/target identities.' }
+    $crossCasts = $crossRows | Where-Object { $_.SourcePath -eq 'src\readme.graph.md' -and $_.DirectiveIndex -eq 22 }
+    if ($crossCasts.V1SourceOperations.Count -or $crossCasts.BetaSourceOperations.Count -ne 12 -or
+        $crossCasts.BetaOperations.Count -ne 12 -or @($crossCasts.BetaOperations | Where-Object { $_ -cmatch '/graph\.(group|administrativeUnit) \[' }).Count -ne 8) {
+        throw 'Actual GraphOPre must retain all twelve beta targets, including eight proven same-type cast aliases.'
+    }
+    $castDocument = @{ mappings = @((New-TranslationMapping $crossCasts)) }
+    ConvertTo-Json -InputObject $castDocument -Depth 15 | Set-Content $realLedger
+    & $tool -Module CrossDeviceExperiences -MappingPath $realLedger | Out-Null
     $document.mappings[0].profiles.beta.Remove('sourceSpec')
     $document.mappings[0].profiles.beta.operations = @()
     $document.mappings[0].profiles.beta.absenceExpected = $true

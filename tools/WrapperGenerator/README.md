@@ -467,11 +467,15 @@ triples, including an explicit `[]` when none match. The inventory emits
 Current `operations` must pin the exact current IDs and cover all direct current-ID matches
 plus all original candidates' equivalent current routes. Equivalence preserves the HTTP method
 and case-sensitive fixed path syntax; `{parameter-name}` spelling is normalized.
-The only namespace normalization removes a terminal `microsoft.graph.` qualifier from a POST
+Call namespace normalization removes a terminal `microsoft.graph.` qualifier from a POST
 action or GET function when **both pinned specs** declare the same
 `x-ms-docs-operation-type: action` or `function`. The call name, argument syntax, fixed route
-prefix, and method must otherwise match. Type casts, navigation, intermediate qualified segments,
-other namespaces, and arbitrary action/type substitutions are not equivalent.
+prefix, and method must otherwise match. A terminal type cast may shorten
+`microsoft.graph.<Type>` to `graph.<Type>` only when both pinned specs declare that exact,
+case-sensitive `microsoft.graph.<Type>` in `components.schemas`, neither operation is an action
+or function, and the method, type name and fixed route prefix are unchanged. This includes
+item and collection casts, not arbitrary type substitution. Navigation, intermediate qualified
+segments, other namespaces, and arbitrary action/type substitutions are not equivalent.
 Missing/extra/duplicate mappings, unmatched source IDs, changed hashes, arbitrary targets, and
 ambiguous equivalent routes fail. A selected original route with no equivalent current route
 requires its exact original triple in `absentOperations`, with a per-entry `absenceEvidence`.
@@ -517,18 +521,23 @@ build also rewrites documentation; validation-only staging can reuse its publish
 layout without those rewrites. Do not include unrelated Authentication/doc output in a module
 migration commit or install anything globally.
 
-Select the staged module for this session and inherited gate processes, excluding incompatible
-user/system module locations rather than relying on an installed version or only prepending a
-lower version to their search path. Keep PowerShell's built-in modules available and restore
-the environment afterwards:
+Prepend the staged module for this session and inherited gate processes, preserving the
+complete original `PSModulePath`. On Windows, a new `pwsh` may reconstruct missing user/system
+locations **ahead of** a custom path if the inherited path is truncated. Verify resolution in
+the same fresh-child shape used by the gate and abort if an installed module wins. Restore the
+environment afterwards:
 
 ```powershell
 $savedModulePath = $env:PSModulePath
 $authModules = 'C:\Temp\graph-module-stage\Modules' # complete repository-built module staged here
 try {
-    $env:PSModulePath = $authModules + [IO.Path]::PathSeparator + (Join-Path $PSHOME 'Modules')
-    pwsh -NoProfile -NonInteractive -Command 'Import-Module Microsoft.Graph.Authentication -PassThru | Select-Object Name,Version,Path'
-    # Verify the printed module path/version is the staged checkout build, then run the gates below here.
+    $env:PSModulePath = $authModules + [IO.Path]::PathSeparator + $savedModulePath
+    $resolvedAuth = pwsh -NoProfile -NonInteractive -Command '(Import-Module Microsoft.Graph.Authentication -PassThru -ErrorAction Stop).ModuleBase'
+    if ($LASTEXITCODE -ne 0 -or -not "$resolvedAuth".StartsWith(
+        $authModules + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
+        throw "Authentication did not resolve to the repository-built stage: $resolvedAuth"
+    }
+    # Run the gates below here with the verified staged module path.
 } finally {
     $env:PSModulePath = $savedModulePath
 }

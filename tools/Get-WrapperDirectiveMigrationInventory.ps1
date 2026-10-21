@@ -162,9 +162,12 @@ function Get-Spec([string]$ModuleName, [string]$Profile, [switch]$AutoRest) {
     if ($specCache.ContainsKey($relative)) { return $specCache[$relative] }
     $path = Join-Path $repoRoot $relative
     $operations = [Collections.Generic.List[object]]::new()
+    $schemaNames = [Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
     $exists = Test-Path -LiteralPath $path -PathType Leaf
     if ($exists) {
         $inPaths = $false
+        $inComponents = $false
+        $inSchemas = $false
         $currentPath = $null
         $currentMethod = $null
         $currentOperation = $null
@@ -179,7 +182,16 @@ function Get-Spec([string]$ModuleName, [string]$Profile, [switch]$AutoRest) {
             if ($boundary) { $currentOperation = $null; $operationType = '' }
             if ($line -match '^\S') {
                 $inPaths = $line -match '^paths:\s*(#.*)?$'
+                $inComponents = $line -match '^components:\s*(#.*)?$'
+                $inSchemas = $false
                 $currentPath = $null
+                continue
+            }
+            if ($inComponents) {
+                if ($line -match '^  \S') { $inSchemas = $line -match '^  schemas:\s*(#.*)?$' }
+                elseif ($inSchemas -and $line -match '^    (?<key>''(?:[^'']|'''')*''|"(?:[^"\\]|\\.)*"|[^\s:]+):(?:\s|$)') {
+                    [void]$schemaNames.Add((ConvertFrom-SpecScalar $Matches.key "${relative}:${lineNumber}"))
+                }
                 continue
             }
             if (-not $inPaths) { continue }
@@ -225,6 +237,7 @@ function Get-Spec([string]$ModuleName, [string]$Profile, [switch]$AutoRest) {
         Sha256 = if ($exists) { Get-SpecFingerprint $path } else { '' }
         Operations = @($operations)
         RouteIndex = $routeIndex
+        SchemaNames = $schemaNames
     }
     $specCache[$relative]
 }
@@ -244,7 +257,7 @@ function Get-OperationIdPattern($Directive) {
     }
 }
 
-function Get-EquivalentOperations($Operation, $Spec) {
+function Get-EquivalentOperations($Operation, $Spec, $SourceSpec) {
     $key = Get-OperationRouteKey $Operation
     if ($Spec.RouteIndex.ContainsKey($key)) { @($Spec.RouteIndex[$key]) }
     $callPattern = if ($Operation.OperationType -ceq 'action' -and $Operation.Method -ceq 'POST') {
@@ -257,6 +270,17 @@ function Get-EquivalentOperations($Operation, $Spec) {
         $key = Get-OperationRouteKey @{ Method = $Operation.Method; Path = $unqualifiedPath }
         if ($Spec.RouteIndex.ContainsKey($key)) {
             @($Spec.RouteIndex[$key] | Where-Object { $_.OperationType -ceq $Operation.OperationType })
+        }
+    }
+    if ($Operation.OperationType -notin @('action', 'function') -and
+        $Operation.Path -cmatch '/microsoft\.graph\.(?<type>[A-Za-z_][A-Za-z0-9_]*)$') {
+        $typeName = "microsoft.graph.$($Matches.type)"
+        if ($SourceSpec.SchemaNames.Contains($typeName) -and $Spec.SchemaNames.Contains($typeName)) {
+            $castPath = $Operation.Path -creplace '/microsoft\.graph\.([A-Za-z_][A-Za-z0-9_]*)$', '/graph.$1'
+            $key = Get-OperationRouteKey @{ Method = $Operation.Method; Path = $castPath }
+            if ($Spec.RouteIndex.ContainsKey($key)) {
+                @($Spec.RouteIndex[$key] | Where-Object { $_.OperationType -notin @('action', 'function') })
+            }
         }
     }
 }
@@ -327,7 +351,7 @@ foreach ($moduleName in $Module) {
                         $sourceSpecs[$profile] = Get-Spec $moduleName $profile -AutoRest
                         $sourceCandidates[$profile] = @($sourceSpecs[$profile].Operations | Where-Object { $regex.IsMatch($_.OperationId) })
                         $equivalentCandidates[$profile] = @($sourceCandidates[$profile] | ForEach-Object {
-                            Get-EquivalentOperations $_ $specs[$profile]
+                            Get-EquivalentOperations $_ $specs[$profile] $sourceSpecs[$profile]
                         })
                     }
                     $profileMatches = $candidateMatches.Clone()
@@ -419,7 +443,7 @@ foreach ($moduleName in $Module) {
                         }
                         $translated = [Collections.Generic.List[object]]::new()
                         foreach ($original in $sourceCandidates[$profile]) {
-                            $equivalents = @(Get-EquivalentOperations $original $spec)
+                            $equivalents = @(Get-EquivalentOperations $original $spec $originalSpec)
                             $absences = @($profileMap.absentOperations | Where-Object {
                                 $_.method -ceq $original.Method -and $_.path -ceq $original.Path -and $_.operationId -ceq $original.OperationId
                             })
