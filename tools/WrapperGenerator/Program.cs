@@ -16,11 +16,12 @@ internal static class Program
 {
     private static readonly JsonSerializerOptions LockFileJsonOptions = new() { WriteIndented = true };
 
-    private static async Task<int> Main(string[] args)
+    internal static async Task<int> Main(string[] args)
     {
         string? specPath = null;
         string? outputPath = null;
         string? clientNamespace = null;
+        string? module = null;
         var apiVersion = "v1.0";
         var useCollisionData = true;
         var logLevel = LogLevel.Warning;
@@ -41,6 +42,9 @@ internal static class Program
                     break;
                 case "--api-version":
                     apiVersion = ArgValue(args, ref i);
+                    break;
+                case "--module":
+                    module = ArgValue(args, ref i);
                     break;
                 case "--log-level":
                     if (!Enum.TryParse(ArgValue(args, ref i), ignoreCase: true, out logLevel))
@@ -71,7 +75,17 @@ internal static class Program
         if (specPath is null || outputPath is null || clientNamespace is null)
         {
             Console.Error.WriteLine(
-                "Usage: WrapperGenerator -d <openapi> -o <output> -n <namespace> [--api-version v1.0|beta] [--no-collision-data] [--log-level Information] [--include-path '<glob>#GET,POST' ...]");
+                "Usage: WrapperGenerator -d <openapi> -o <output> -n <namespace> [--module <configured-module>] [--api-version v1.0|beta] [--no-collision-data] [--log-level Information] [--include-path '<glob>#GET,POST' ...]");
+            return 2;
+        }
+
+        try
+        {
+            GeneratorConfig.ValidateModule(module);
+        }
+        catch (ArgumentException error)
+        {
+            Console.Error.WriteLine(error.Message);
             return 2;
         }
 
@@ -86,7 +100,7 @@ internal static class Program
         IncludePathFilter.Apply(document, includePaths);
 
         var config = new GeneratorConfig(ClientNamespaceName: clientNamespace, OutputPath: outputPath,
-            ApiVersion: apiVersion, UseCollisionData: useCollisionData);
+            ApiVersion: apiVersion, UseCollisionData: useCollisionData, Module: module);
         // The generation service writes only *.g.cs. Also write a minimal kiota-lock.json recording
         // the source spec path, so downstream tooling that keys off it — notably
         // tools/Compare-WrapperCmdletNames.ps1, which reads the v1.0/beta segment out of it to scope

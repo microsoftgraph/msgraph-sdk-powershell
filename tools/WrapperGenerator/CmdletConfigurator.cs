@@ -36,7 +36,7 @@ public static partial class CmdletConfigurator
     }
 
     internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason,
-        string? ApiVersion = null);
+        string? ApiVersion = null, string? Module = null);
 
     // NormalizePath lowercases before matching, so a Pattern containing an uppercase letter can
     // never match anything: the entry is silently dead and the override looks applied but is not.
@@ -56,6 +56,7 @@ public static partial class CmdletConfigurator
                 dead.Add(entry);
             if (entry.ApiVersion is not (null or "v1.0" or "beta"))
                 throw new InvalidOperationException($"Unsupported curated API profile '{entry.ApiVersion}'.");
+            GeneratorConfig.ValidateModule(entry.Module);
             if (entry.Kind == OverrideKind.ReplaceVerb)
                 _ = PsVerb.FromApprovedName(entry.Value ?? throw new InvalidOperationException("A curated verb is required."));
         }
@@ -154,10 +155,8 @@ public static partial class CmdletConfigurator
         ArgumentNullException.ThrowIfNull(pathTemplate);
         var path = NormalizePath(pathTemplate);
         var curatedName = false;
-        foreach (var entry in entries)
+        foreach (var entry in MatchingEntries(entries, httpMethod, path, config))
         {
-            if (!Matches(entry, httpMethod, path, config))
-                continue;
             if (entry.Kind == OverrideKind.SuppressOperation)
                 return true;
             curatedName |= entry.Kind is OverrideKind.ReplaceNoun or OverrideKind.ReplaceVerb;
@@ -178,8 +177,8 @@ public static partial class CmdletConfigurator
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
         var path = NormalizePath(pathTemplate);
-        foreach (var entry in entries)
-            if (entry.Kind == OverrideKind.ReplaceVerb && Matches(entry, httpMethod, path, config))
+        foreach (var entry in MatchingEntries(entries, httpMethod, path, config))
+            if (entry.Kind == OverrideKind.ReplaceVerb)
                 return entry.Value;
         return config is { UseCollisionData: true }
             && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, path, out var derived)
@@ -197,8 +196,8 @@ public static partial class CmdletConfigurator
         ArgumentNullException.ThrowIfNull(noun);
         var path = NormalizePath(pathTemplate);
 
-        foreach (var entry in entries)
-            if (entry.Kind == OverrideKind.ReplaceNoun && Matches(entry, httpMethod, path, config))
+        foreach (var entry in MatchingEntries(entries, httpMethod, path, config))
+            if (entry.Kind == OverrideKind.ReplaceNoun)
                 return entry.Value!;
 
         // Broad prefix normalization must not rewrite a derived published noun.
@@ -209,10 +208,8 @@ public static partial class CmdletConfigurator
         // Get-MgSolutionBackupRestore). Do not apply /solutions/* strip rules here.
         var skipSolutionStrip = path.StartsWith("/solutions/backuprestore", StringComparison.Ordinal);
 
-        foreach (var entry in entries)
+        foreach (var entry in MatchingEntries(entries, httpMethod, path, config))
         {
-            if (!Matches(entry, httpMethod, path, config))
-                continue;
             switch (entry.Kind)
             {
                 case OverrideKind.ReplaceNoun:
@@ -227,6 +224,16 @@ public static partial class CmdletConfigurator
         return noun;
     }
 
+    private static IEnumerable<Entry> MatchingEntries(IReadOnlyList<Entry> entries, HttpMethod method, string path, GeneratorConfig? config)
+    {
+        GeneratorConfig.ValidateModule(config?.Module);
+        // Module-specific rules precede legacy globals; retain registration order within each scope.
+        foreach (var scoped in new[] { true, false })
+            foreach (var entry in entries)
+                if ((entry.Module is not null) == scoped && Matches(entry, method, path, config))
+                    yield return entry;
+    }
+
     private static bool Matches(Entry entry, HttpMethod httpMethod, string normalizedPath, GeneratorConfig? config)
     {
         // Null config preserves curated-only tests; its profile is the normal v1.0 default.
@@ -235,11 +242,16 @@ public static partial class CmdletConfigurator
         // HttpMethod's own equality is case-insensitive, so no string comparison is needed.
         if (entry.Method is not null && entry.Method != httpMethod)
             return false;
-        return entry.Match switch
+        var pathMatches = entry.Match switch
         {
             PathMatch.Exact => string.Equals(normalizedPath, entry.Pattern, StringComparison.Ordinal),
             PathMatch.Prefix => normalizedPath.StartsWith(entry.Pattern, StringComparison.Ordinal),
             _ => normalizedPath.EndsWith(entry.Pattern, StringComparison.Ordinal),
         };
+        if (!pathMatches || entry.Module is null)
+            return pathMatches;
+        if (config?.Module is null)
+            throw new InvalidOperationException($"Module context is required for scoped curated entry '{entry.Module}': {entry.Reason}");
+        return string.Equals(entry.Module, config.Module, StringComparison.Ordinal);
     }
 }

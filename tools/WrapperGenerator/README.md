@@ -500,10 +500,40 @@ module-owned partial class; cite the active AutoRest source and pin affected ope
 unaffected methods/neighbors. `OverrideKind.ReplaceVerb` uses an approved `PsVerb` name in
 `Value`, validated at startup. Entries accept optional trailing `ApiVersion: "v1.0"` or
 `ApiVersion: "beta"`; omitted means both profiles, preserving old entries. Null generator config
-remains curated-only with the normal v1.0 profile default. Paths remain lowercase and normalize
+remains curated-only with the normal v1.0 profile default for legacy unscoped rules. Paths remain lowercase and normalize
 parameter names. Use profile scoping for beta-only suppressions rather than globally hiding v1.
 Keep AutoRest directives active and annotate their wrapper disposition. Module-local ledgers
 can cite shared sources without editing the shared file in every module PR.
+
+**Module isolation is required for new migration entries.** Specify the exact canonical module
+key from `config\ModulesMapping.jsonc`, including dots and case, in every new module-owned entry:
+
+```csharp
+new(OverrideKind.SuppressOperation, HttpMethod.Post, "/administrativeunits/getbyids",
+    PathMatch.Exact, null, "Devices.ServiceAnnouncement.md local admin selector",
+    ApiVersion: "beta", Module: "Devices.ServiceAnnouncement"),
+```
+
+The same route can belong to another slice, such as Identity.DirectoryManagement. A shared
+inherited directive does not authorize a module PR to change that other module's output.
+This requirement also applies to already-prepared module migration entries and their tests.
+Existing legacy entries without `Module` remain global; do not mass-scope them in a module PR.
+
+Supply context explicitly with `GeneratorConfig(..., Module: "Devices.ServiceAnnouncement")`
+or CLI `--module Devices.ServiceAnnouncement`. `Build-WrapperModule.ps1` passes its actual
+module name in both normal and no-collision-data generation; coverage tools do likewise.
+The generator embeds the real configured roster and rejects unknown, collapsed, or wrongly
+cased identities. It never guesses identity from a C# namespace or filesystem/caller location.
+Omitting module context retains legacy behavior only where no scoped rule would otherwise
+apply; an applicable scoped rule without context fails visibly rather than being skipped.
+Standalone migration generation must always pass `--module`, even with `--no-collision-data`.
+
+Matching module-scoped noun/verb rules precede legacy globals irrespective of file aggregation
+order. Existing registration order remains the tie-breaker within the same scope, explicit
+curated suppression still wins, and the curated/derived precedence rules above remain intact.
+`Module` and `ApiVersion` restrictions both apply to all override kinds, including prefix strips.
+Tests must include identical method/path operations in another configured module, both profiles,
+unaffected methods/neighbors, explicit module context, and any applicable legacy global overlap.
 
 **Independent module PRs target `powershell-v3`, after the shared prerequisite merges.**
 Run these checks from the module's isolated worktree (replace `Calendar` with its module):

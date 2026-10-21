@@ -137,7 +137,7 @@ foreach ($name in $Module) {
 
     $log = & dotnet run --project $generator -c Release -- `
         -d $spec -o (Join-Path $env:TEMP "binding-oracle-$name") -n "Microsoft.Graph.PowerShell.$name.Client" `
-        --api-version $ApiVersion --log-level Information 2>&1
+        --module $name --api-version $ApiVersion --log-level Information 2>&1
     # A failed generation produces no diagnostics, which would make every unbound member look
     # like an uncited omission - or worse, make a module with no cmdlets look clean.
     if ($LASTEXITCODE -ne 0) {

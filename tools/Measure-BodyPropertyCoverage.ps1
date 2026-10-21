@@ -47,7 +47,7 @@ foreach ($spec in $specs) {
 
     # Information level so the per-property diagnostics are emitted.
     $log = & dotnet run --project $generator -c Release -- `
-        -d $spec.FullName -o $out -n "Microsoft.Graph.PowerShell.$module.Client" --api-version $ApiVersion --log-level Information 2>&1
+        -d $spec.FullName -o $out -n "Microsoft.Graph.PowerShell.$module.Client" --module $module --api-version $ApiVersion --log-level Information 2>&1
     # A module that failed to generate emits no diagnostics, so its properties would silently
     # count as zero unbound and flatter the total.
     if ($LASTEXITCODE -ne 0) {

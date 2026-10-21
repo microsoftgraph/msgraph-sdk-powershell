@@ -349,9 +349,9 @@ function Build-Module {
         }
 
         $wrapperOut = if ($NoCollisionData) {
-            & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --api-version $ApiVersion --no-collision-data 2>&1
+            & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --module $Name --api-version $ApiVersion --no-collision-data 2>&1
         } else {
-            & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --api-version $ApiVersion 2>&1
+            & dotnet run --project $generatorProject -c $Configuration -- -d $spec -o $cmdletsDir -n $clientNs --module $Name --api-version $ApiVersion 2>&1
         }
         if ($LASTEXITCODE -ne 0) {
             # Skip warnings precede the failure; the exception message is what identifies it.

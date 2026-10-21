@@ -14,9 +14,11 @@ namespace WrapperGenerator.Tests;
 public sealed class DirectiveMigrationGenerationTests
 {
     [Theory]
-    [InlineData("v1.0", true)]
-    [InlineData("beta", false)]
-    public async Task HistoricalBetaSuppressionKeepsOtherMethodsAndNeighboringRoutes(string profile, bool emitsPatch)
+    [InlineData("v1.0", "Compliance", true)]
+    [InlineData("beta", "Compliance", false)]
+    [InlineData("v1.0", "People", true)]
+    [InlineData("beta", "People", true)]
+    public async Task HistoricalBetaSuppressionKeepsOtherModulesMethodsAndNeighboringRoutes(string profile, string module, bool emitsPatch)
     {
         // This deliberately synthetic historical route is absent from the current corpus.
         // Current-spec absence is checked separately by the inventory/ledger tests.
@@ -76,7 +78,7 @@ public sealed class DirectiveMigrationGenerationTests
         Directory.CreateDirectory(output);
         try
         {
-            var config = new GeneratorConfig("Test.Client", output, ApiVersion: profile, UseCollisionData: false);
+            var config = new GeneratorConfig("Test.Client", output, ApiVersion: profile, UseCollisionData: false, Module: module);
             await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance).GenerateAsync(CancellationToken.None);
             const string noun = "MgComplianceEdiscoveryCaseNoncustodialDataSource";
             Assert.True(File.Exists(Path.Combine(output, $"Get{noun}DataSource.g.cs")));

@@ -15,12 +15,12 @@ public static partial class CmdletConfigurator
             "/compliance/ediscovery/cases/{}/noncustodialdatasources/{}/datasource",
             Match: PathMatch.Exact, Value: null,
             Reason: "Compliance.md removes Update1 for ComplianceEdiscoveryCaseNoncustodialDataSource",
-            ApiVersion: "beta"),
+            ApiVersion: "beta", Module: "Compliance"),
         new(OverrideKind.SuppressOperation, HttpMethod.Delete,
             "/compliance/ediscovery/cases/{}/noncustodialdatasources/{}/datasource",
             Match: PathMatch.Exact, Value: null,
             Reason: "Compliance.md removes Delete1 for ComplianceEdiscoveryCaseNoncustodialDataSource",
-            ApiVersion: "beta"),
+            ApiVersion: "beta", Module: "Compliance"),
 
         // Compliance.md renames the corresponding Get1 variant by appending DataSource.
         // The wrapper's path-based naming already emits that published noun, so no override

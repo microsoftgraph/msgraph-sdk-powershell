@@ -43,6 +43,7 @@ public sealed partial class PowerShellWrapperGenerationService
         ArgumentNullException.ThrowIfNull(document);
         ArgumentNullException.ThrowIfNull(configuration);
         ArgumentNullException.ThrowIfNull(logger);
+        GeneratorConfig.ValidateModule(configuration.Module);
         this.document = document;
         config = configuration;
         this.logger = logger;
