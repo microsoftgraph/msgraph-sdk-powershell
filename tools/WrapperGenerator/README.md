@@ -382,18 +382,22 @@ their profile. Inventory them without changing the worktree:
 .\tools\Get-WrapperDirectiveMigrationInventory.ps1 -Module Compliance |
     Format-Table Module,SourcePath,DirectiveIndex,Classification,Status,Implementation
 .\tools\Test-WrapperDirectiveMigrationInventory.ps1
+.\tools\Test-WrapperDirectiveSourceTranslation.ps1
 .\tools\Test-WrapperPublicationGate.ps1
 ```
 
-`remove-path-by-operation` entries are resolved directly from operation IDs in the applicable
-Kiota-compatible specifications, using AutoRest's case-insensitive matching. AutoRest `where` selectors operate on generated subjects and
+`remove-path-by-operation` entries select operation IDs using AutoRest's case-insensitive
+matching. Inventory includes direct matches in the applicable Kiota-compatible specification
+and same-method/path candidates selected in the checked-in original AutoRest specification.
+These are review candidates, not automatically approved translations. AutoRest `where` selectors operate on generated subjects and
 variants, so they require reviewed method/path evidence in
-`src/<Module>/wrapper/<Module>_directiveMigrationMap.json`; the tool deliberately reports an
-unreviewed selector as `Unresolved` instead of guessing. An automatically matched operation-ID
-directive is `Resolved`, not `Mapped`: it remains a candidate until its configuration and tests
+`src/<Module>/wrapper/<Module>_directiveMigrationMap.json`; unfamiliar selectors are deliberately
+`Unresolved` instead of guessed. Automatically matched operation IDs or recognized literal
+markers are `Resolved`, not `Mapped`: they remain candidates until their configuration and tests
 have been reviewed. `ExistingCoverage` distinguishes reviewed configuration, structural naming,
 and modules that contain unrelated or not-yet-reconciled entries. Operation-ID candidates also
-accept reviewed mappings, which must cover exactly the selector's current operation set.
+accept reviewed mappings, which must cover exactly the selector's current operation set and,
+when IDs have changed, its explicitly reviewed original-to-current route translations.
 Parameter changes, cmdlet aliases, schema changes, source transforms, and formatting have
 separate deferred classifications; a cmdlet alias is not a parameter directive.
 An incomplete/no-effect selector remains unresolved until an explicit reviewed `NoEffect`
@@ -420,6 +424,73 @@ The Compliance ledger illustrates reviewed current-spec absences: its historical
 dataSource routes no longer exist in either current spec. Historical naming/suppression tests
 are not evidence that those routes still generate.
 
+**Changed operation IDs.** Zero current-ID regex matches do **not** prove an API disappeared.
+For operation-ID suppressions with changed/missing matches, and the existing literal
+`Graph[BWAFOR]Pre` subject-to-By/With/At/For/Of/Or renames, strict completion requires a reviewed
+`sourceSpec` in each applicable profile. This is additive evidence in the existing ledger, not
+another configurator or an arbitrary replacement selector:
+
+```json
+{
+  "specPath": "openApiDocs_KiotaCompat\\beta\\CrossDeviceExperiences.yml",
+  "specSha256": "<current canonical-LF hash>",
+  "operations": [
+    {
+      "method": "DELETE",
+      "path": "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+      "operationId": "users.devices.DeleteRefRegisteredOwners"
+    }
+  ],
+  "sourceSpec": {
+    "specPath": "openApiDocs\\beta\\CrossDeviceExperiences.yml",
+    "specSha256": "<original canonical-LF hash>",
+    "operations": [
+      {
+        "method": "DELETE",
+        "path": "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+        "operationId": "user.device_DeleteRegisteredOwnerGraphBPreRef"
+      }
+    ]
+  }
+}
+```
+
+This fragment illustrates one selected route; a real profile must enumerate **every** selected
+original route and every required current target. `sourceSpec.specPath` must identify the
+same module/profile's checked-in `openApiDocs` counterpart, with its actual canonical UTF-8/LF
+hash. `sourceSpec.operations` must exactly equal all original selector-matched method/path/ID
+triples, including an explicit `[]` when none match. The inventory emits
+`V1SourceSpecPath/Sha256`, `BetaSourceSpecPath/Sha256`, and
+`V1SourceOperations`/`BetaSourceOperations` for review. Source/current hashes, directive
+`sourceSha256`, and `reviewed: true` are mandatory for translations even outside strict mode.
+
+Current `operations` must pin the exact current IDs and cover all direct current-ID matches
+plus all original candidates' equivalent current routes. Equivalence preserves the HTTP method
+and case-sensitive fixed path syntax; `{parameter-name}` spelling is normalized.
+The only namespace normalization removes a terminal `microsoft.graph.` qualifier from a POST
+action or GET function when **both pinned specs** declare the same
+`x-ms-docs-operation-type: action` or `function`. The call name, argument syntax, fixed route
+prefix, and method must otherwise match. Type casts, navigation, intermediate qualified segments,
+other namespaces, and arbitrary action/type substitutions are not equivalent.
+Missing/extra/duplicate mappings, unmatched source IDs, changed hashes, arbitrary targets, and
+ambiguous equivalent routes fail. A selected original route with no equivalent current route
+requires its exact original triple in `absentOperations`, with a per-entry `absenceEvidence`.
+If the entire profile has no targets, its normal `absenceExpected`/`absenceEvidence` also remain
+required. An equivalent route with a renamed ID cannot be declared absent.
+
+Literal preposition markers identify original review candidates, not an emulation of AutoRest's
+subject/variant engine; other selectors still need their existing explicit reviewed mappings.
+Existing non-translated ledgers retain their schema and default source identity. YAML inventory
+decodes plain, single-quoted (including doubled apostrophes), and double-quoted path scalars
+without borrowing a previous path. Malformed keys, missing operation IDs, duplicate operations,
+inline operations, and referenced path items fail visibly instead of becoming false absence.
+Inventory includes supported spec identities even when the generator deliberately does not
+emit them, such as alternate-key routes; this does not expand generator support.
+The focused source-translation suite runs as part of the inventory suite and includes real
+CrossDeviceExperiences GraphBPre/collection-reference, People analytics, DirectoryObjects
+getByIds, and BackupRestore quoted-function regressions, plus ChangeNotifications-shaped
+qualified action/function fixtures.
+
 **Curated entries.** Add only configuration structural naming cannot produce, in the existing
 module-owned partial class; cite the active AutoRest source and pin affected operations plus
 unaffected methods/neighbors. `OverrideKind.ReplaceVerb` uses an approved `PsVerb` name in
@@ -432,6 +503,36 @@ can cite shared sources without editing the shared file in every module PR.
 
 **Independent module PRs target `powershell-v3`, after the shared prerequisite merges.**
 Run these checks from the module's isolated worktree (replace `Calendar` with its module):
+
+**Authentication prerequisite.** The compiled-cmdlet check imports Authentication in a fresh
+PowerShell child process. Use Authentication **and Authentication.Core built from this checkout**,
+not an independently installed SDK release with potentially incompatible Kiota dependencies.
+The existing `src\Authentication\Authentication\build-module.ps1 -Release` publishes their
+module closure under its `artifacts` directory, including both nested assemblies, manifest,
+startup/custom scripts, and `Dependencies`, `Dependencies\Core`, and `Dependencies\Desktop`
+assets from the netstandard2.0/net6.0/net472 publishes. Preserve that layout when staging the
+complete module at `<stage>\Modules\Microsoft.Graph.Authentication\<manifest-version>`.
+A DLL-only `dotnet build` output is not an equivalent importable module. The full Authentication
+build also rewrites documentation; validation-only staging can reuse its publish/dependency
+layout without those rewrites. Do not include unrelated Authentication/doc output in a module
+migration commit or install anything globally.
+
+Select the staged module for this session and inherited gate processes, excluding incompatible
+user/system module locations rather than relying on an installed version or only prepending a
+lower version to their search path. Keep PowerShell's built-in modules available and restore
+the environment afterwards:
+
+```powershell
+$savedModulePath = $env:PSModulePath
+$authModules = 'C:\Temp\graph-module-stage\Modules' # complete repository-built module staged here
+try {
+    $env:PSModulePath = $authModules + [IO.Path]::PathSeparator + (Join-Path $PSHOME 'Modules')
+    pwsh -NoProfile -NonInteractive -Command 'Import-Module Microsoft.Graph.Authentication -PassThru | Select-Object Name,Version,Path'
+    # Verify the printed module path/version is the staged checkout build, then run the gates below here.
+} finally {
+    $env:PSModulePath = $savedModulePath
+}
+```
 
 ```powershell
 .\tools\Test-WrapperDirectiveMigrationInventory.ps1

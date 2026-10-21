@@ -190,6 +190,7 @@ paths:
 } finally {
     if (Test-Path -LiteralPath $fixture) { Remove-Item -LiteralPath $fixture -Recurse -Force }
 }
+& (Join-Path $PSScriptRoot 'Test-WrapperDirectiveSourceTranslation.ps1')
 $after = & git -C $repo status --porcelain
 if (($before -join "`n") -ne ($after -join "`n")) { throw 'Read-only inventory changed the worktree.' }
 Write-Host 'PASS: configured roster, effective sources, classifications, reviewed mappings, strict completion and current Compliance absences.'
