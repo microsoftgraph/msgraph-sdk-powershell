@@ -1,14 +1,25 @@
 # tools/
 
-This directory holds two separate toolchains.
+The supported v3 toolchain uses Kiota and WrapperGenerator. It does not require an
+AutoRest submodule, Node.js, npm, or Rush.
 
 **The Kiota wrapper generator** — the 13 `*-Wrapper*`, `Derive-*` and `Test-BodyBindingCoverage`
 scripts documented below. They generate, build, package and verify the wrapper modules under
 `src/<Module>/wrapper/<ApiVersion>/`.
 
-**The AutoRest v2 pipeline** — everything else (`GenerateModules.ps1`, `BuildModule.ps1`,
-`PackModule.ps1`, `PublishModule.ps1`, and the rest). Those build the shipping
-`Microsoft.Graph.*` modules and are driven from `build.proj`; they are not covered here.
+**Authentication and shared helpers** — `GenerateAuthenticationModule.ps1` continues to use
+`BuildModule.ps1`, `TestModule.ps1`, `PackModule.ps1`, and `PublishModule.ps1`.
+Authentication targets in `build.proj` remain available; v3 service modules use
+`Build-WrapperModule.ps1` instead.
+
+The legacy AutoRest generation scripts and their CI, SDK release, weekly-generation, and
+command-metadata-refresh pipeline entry points have been retired from this branch. Use
+`.azure-pipelines/wrapper-release.yml` for the v3 wrapper release flow. Azure DevOps definitions
+that reference the removed pipeline YAML files must be retired separately by their owners.
+
+Module directive markdown and `src/readme.graph.md` are retained as historical migration
+inputs, not as an executable v3 AutoRest generation path. Keep them available while directives
+are migrated to the wrapper cmdlet configuration framework.
 
 The generator itself is documented in
 [WrapperGenerator/README.md](WrapperGenerator/README.md) — what it emits and why. This file is
