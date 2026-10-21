@@ -36,6 +36,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             internal const string CannotAccessFile = "Could not {0} file at '{1}'. Please ensure you have access to this file and try again in a few minutes..";
             internal const string InvalidCertificateThumbprint = "'{0}' must have a length of 40. Ensure you have the right certificate thumbprint then try again.";
             public const string CannotInferFileName = "Could not infer file name from the response. Please specify the file name in -OutFile explicitly.";
+            public const string UserProvidedAccessTokenParameterNotSupported = "-{0} is not supported when Connect-MgGraph was called with -AccessToken. The provided access token is used as-is; call Get-MgAccessToken without -{0}, or call Connect-MgGraph with a different authentication method.";
         }
     }
 }
