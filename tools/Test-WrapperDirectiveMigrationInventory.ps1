@@ -35,8 +35,6 @@ foreach ($classification in @('DeferredParameter', 'DeferredCmdletAlias', 'Defer
 }
 $betaLocal = @($all | Where-Object { $_.Module -eq 'Bookings' -and $_.SourcePath -eq 'src\Bookings\beta\readme.md' })
 if ($betaLocal.Count -ne 3 -or @($betaLocal | Where-Object { $_.Profiles.Count -ne 1 -or $_.Profiles[0] -ne 'beta' }).Count) { throw 'Profile-local sources must not leak across profiles.' }
-if (-not @($all | Where-Object { $_.Module -eq 'Calendar' -and $_.Implementation -eq 'Candidate' }).Count) { throw 'Real operation-ID matches should remain candidates.' }
-Assert-Fails { & $tool -Module Compliance -FailOnUnresolved } 'unresolved or unreviewed'
 Assert-Fails { & $tool -Module DeviceManagement.Actions } 'not configured'
 
 $fixture = Join-Path ([IO.Path]::GetTempPath()) "directive-inventory-$([guid]::NewGuid())"
@@ -93,7 +91,7 @@ paths:
     $ledger = Join-Path $fixture 'src\Widget\wrapper\Widget_directiveMigrationMap.json'
     $rows = @(& $fixtureTool)
     $operation = $rows | Where-Object Classification -eq 'OperationIdSuppression'
-    if ($operation.Status -ne 'Resolved' -or $operation.V1Operations.Count -ne 1 -or $operation.BetaOperations.Count -ne 1) { throw 'Operation-ID resolution must honor AutoRest case-insensitive matching without selecting neighbors.' }
+    if ($operation.Status -ne 'Resolved' -or $operation.Implementation -ne 'Candidate' -or $operation.V1Operations.Count -ne 1 -or $operation.BetaOperations.Count -ne 1) { throw 'Unreviewed operation-ID matches must remain candidates, honoring AutoRest case-insensitive matching without selecting neighbors.' }
     Assert-Fails { & $fixtureTool -FailOnUnresolved } 'unreviewed candidates'
     $maps = @()
     foreach ($row in $rows | Where-Object Status -ne 'Deferred') {
