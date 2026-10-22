@@ -60,6 +60,54 @@ public sealed class UsersDirectiveMigrationTests
     }
 
     [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task ReviewedLedgerRetainsEveryRealSuccessorAndNeverClaimsApiAbsence(string profile)
+    {
+        var compatible = await ReadSpec("openApiDocs_KiotaCompat", profile);
+        var source = File.ReadAllText(Path.Combine(RepoRoot(), "src", "Users", "Users.md"));
+        using var ledger = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot(),
+            "src", "Users", "wrapper", "Users_directiveMigrationMap.json")));
+        var mappings = ledger.RootElement.GetProperty("mappings").EnumerateArray().ToArray();
+        Assert.Equal(4, mappings.Length);
+        foreach (var mapping in mappings)
+        {
+            Assert.Equal("Users", mapping.GetProperty("module").GetString());
+            Assert.Contains(mapping.GetProperty("sourceContains").GetString()!, source, StringComparison.Ordinal);
+            var profileMapping = mapping.GetProperty("profiles").GetProperty(profile);
+            Assert.False(profileMapping.GetProperty("absenceExpected").GetBoolean());
+            var operations = profileMapping.GetProperty("operations").EnumerateArray().ToArray();
+            Assert.NotEmpty(operations);
+            foreach (var operation in operations)
+            {
+                var method = new HttpMethod(operation.GetProperty("method").GetString()!);
+                var path = operation.GetProperty("path").GetString()!;
+                Assert.Equal(operation.GetProperty("operationId").GetString(),
+                    compatible.Paths[path].Operations![method].OperationId);
+            }
+        }
+
+        var rootMapping = mappings[0].GetProperty("profiles").GetProperty(profile);
+        Assert.Equal("Legacy", rootMapping.GetProperty("operationIdSource").GetString());
+        var bridges = rootMapping.GetProperty("operations").EnumerateArray().ToArray();
+        Assert.Equal(RootTodo.Length, bridges.Length);
+        foreach (var expected in RootTodo)
+        {
+            Assert.Single(bridges, bridge =>
+                bridge.GetProperty("method").GetString() == expected.Method
+                && bridge.GetProperty("path").GetString() == expected.Path
+                && bridge.GetProperty("operationId").GetString() == expected.CurrentId
+                && bridge.GetProperty("legacyPath").GetString() == expected.Path
+                && bridge.GetProperty("legacyOperationId").GetString() == expected.LegacyId);
+        }
+        Assert.Equal("SupersededBySuppression", mappings[2].GetProperty("implementation").GetString());
+        var subsumed = Assert.Single(mappings[2].GetProperty("profiles").GetProperty(profile)
+            .GetProperty("operations").EnumerateArray());
+        Assert.Equal("/users/{user-id}/todo", subsumed.GetProperty("path").GetString());
+        Assert.Equal("users.GetTodo", subsumed.GetProperty("operationId").GetString());
+    }
+
+    [Theory]
     [InlineData("v1.0", true)]
     [InlineData("v1.0", false)]
     [InlineData("beta", true)]
