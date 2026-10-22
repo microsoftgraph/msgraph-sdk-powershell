@@ -1,10 +1,22 @@
 # BusinessScenario
 
+## AutoRest Configuration
+
+``` yaml
+require:
+  - $(this-folder)/../readme.graph.md
+```
+
 ## Shared-directive migration audit
 
 The shared `src\BusinessScenario\BusinessScenario.md` file did not exist at the
 reviewed base `51d441eeb5f1afb57299a74564963f564baec930`. This document records that
-absence; it does not introduce an AutoRest configuration or generation pipeline.
+absence and introduces no new directives or generation pipeline. The standard
+`tools\Templates\module.md` require above preserves the legacy default wiring:
+`Copy-ModuleTemplate` skips existing files, so an audit-only file at this path
+would otherwise prevent that require from being created. The referenced global
+directives remain unchanged and outside this migration's scope; the v3 wrapper
+builder does not consume this markdown configuration.
 There are **zero shared cmdlet directives** to migrate. The existing
 `wrapper\BusinessScenario_cmdletConfigurations.cs` collection remains empty, and
 `wrapper\BusinessScenario_directiveMigrationMap.json` deliberately contains an
