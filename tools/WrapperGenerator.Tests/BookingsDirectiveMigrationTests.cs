@@ -16,6 +16,7 @@ namespace WrapperGenerator.Tests;
 public sealed class BookingsDirectiveMigrationTests
 {
     private sealed record ReviewedOperation(string Method, string Path, string OperationId);
+    private sealed record PublishedOperation(string Command, string Method, string Path);
 
     [Theory]
     [InlineData("v1.0", 209, 207)]
@@ -148,6 +149,65 @@ public sealed class BookingsDirectiveMigrationTests
         }
         Assert.Equal("MgSolutionBackupRestore",
             Naming.Resolve(new OperationInfo(HttpMethod.Get, "/solutions/backupRestore"), config).Noun);
+    }
+
+    [Fact]
+    public async Task ReviewedBetaRouteSelectionPolicyPreservesEveryPairAndPublishedDefault()
+    {
+        var operations = await ReadOperationsAsync("beta");
+        using var ledger = ReadLedger();
+        var policy = ledger.RootElement.GetProperty("routeSelectionPolicy");
+        Assert.Equal("beta", policy.GetProperty("profile").GetString());
+        var pairs = policy.GetProperty("pairs").EnumerateArray().ToArray();
+        Assert.Equal(53, pairs.Length);
+        using var oracle = JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            FindRepoRoot(), "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
+        var published = oracle.RootElement.EnumerateArray()
+            .Where(o => o.GetProperty("ApiVersion").GetString() == "beta")
+            .Select(o => new PublishedOperation(
+                o.GetProperty("Command").GetString()!,
+                o.GetProperty("Method").GetString()!,
+                o.GetProperty("Uri").GetString()!))
+            .ToArray();
+        var declared = pairs.SelectMany(pair =>
+        {
+            var method = pair.GetProperty("method").GetString()!;
+            return new[]
+            {
+                new ReviewedOperation(method, pair.GetProperty("defaultPath").GetString()!,
+                    pair.GetProperty("defaultOperationId").GetString()!),
+                new ReviewedOperation(method, pair.GetProperty("alternativePath").GetString()!,
+                    pair.GetProperty("alternativeOperationId").GetString()!),
+            };
+        }).ToArray();
+        Assert.Equal(106, declared.Distinct().Count());
+        foreach (var operation in declared)
+            Assert.Contains(operation, operations);
+        Assert.Equal(
+            Sorted(operations.Where(o => !o.Path.StartsWith("/solutions", StringComparison.Ordinal)).ToArray()),
+            Sorted(declared.Where(o => !o.Path.StartsWith("/solutions", StringComparison.Ordinal)).ToArray()));
+        Assert.Equal(50, pairs.Count(p => !p.GetProperty("defaultPath").GetString()!
+            .StartsWith("/solutions/", StringComparison.Ordinal)));
+        Assert.Equal(3, pairs.Count(p => p.GetProperty("defaultPath").GetString()!
+            .StartsWith("/solutions/", StringComparison.Ordinal)));
+
+        foreach (var pair in pairs)
+        {
+            var method = pair.GetProperty("method").GetString()!;
+            var defaultPath = pair.GetProperty("defaultPath").GetString()!;
+            var alternativePath = pair.GetProperty("alternativePath").GetString()!;
+            var legacy = defaultPath.StartsWith("/solutions/", StringComparison.Ordinal) ? alternativePath : defaultPath;
+            var solutions = defaultPath.StartsWith("/solutions/", StringComparison.Ordinal) ? defaultPath : alternativePath;
+            Assert.Equal(CmdletConfigurator.NormalizePathTemplate("/solutions" + legacy),
+                CmdletConfigurator.NormalizePathTemplate(solutions));
+            Assert.Contains(published, operation =>
+                operation.Command == pair.GetProperty("publishedCommand").GetString() &&
+                operation.Method == method &&
+                CmdletConfigurator.NormalizePathTemplate(operation.Path) == CmdletConfigurator.NormalizePathTemplate(defaultPath));
+            Assert.DoesNotContain(published, operation =>
+                operation.Method == method &&
+                CmdletConfigurator.NormalizePathTemplate(operation.Path) == CmdletConfigurator.NormalizePathTemplate(alternativePath));
+        }
     }
 
     private static JsonDocument ReadLedger() => JsonDocument.Parse(File.ReadAllText(

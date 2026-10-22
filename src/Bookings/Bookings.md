@@ -26,6 +26,13 @@ this migration. Parameter aliases/transforms and schema/response directives rema
 deferred; none occur in these three shared groups. Keep the AutoRest directives
 active until the service-module pipeline is retired.
 
+The separately authorized beta multi-route capability is additive, not a migration
+of ignored profile-local directives. The adjacent ledger's `routeSelectionPolicy`
+records all 53 duplicate route pairs and their published defaults: 50 legacy
+top-level routes and three `/solutions` actions. Both routes must remain available
+through explicit selection. Runtime opt-in awaits the separately implemented shared
+feature; the policy evidence alone does not resolve generation collisions.
+
 ``` yaml
 directive:
 # Remove invalid paths.

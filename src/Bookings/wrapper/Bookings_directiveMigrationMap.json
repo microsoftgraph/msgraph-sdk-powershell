@@ -2427,5 +2427,439 @@
         }
       }
     }
-  ]
+  ],
+  "routeSelectionPolicy": {
+    "profile": "beta",
+    "scope": "Separately authorized additive route selection, not migration of ignored profile-local directives. Preserve both URLs and use the published route as the per-pair default.",
+    "implementation": "PendingSharedMultiRouteSupport",
+    "oracleSource": "src/Authentication/Authentication/custom/common/MgCommandMetadata.json",
+    "oracleBlob": "f64393c503da5958c9169e7879545835da0d0fc7",
+    "notes": "Fifty pairs default to legacy top-level paths. Appointment cancel, calendarView cancel, and getStaffAvailability default to solutions paths. Published command names are evidence only; this policy does not override the baseline Mg beta prefix or action verbs.",
+    "pairs": [
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses",
+        "defaultOperationId": "bookingBusinesses.bookingBusiness.ListBookingBusiness",
+        "alternativePath": "/solutions/bookingBusinesses",
+        "alternativeOperationId": "solutions.ListBookingBusinesses",
+        "publishedCommand": "Get-MgBetaBookingBusiness"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingBusinesses",
+        "defaultOperationId": "bookingBusinesses.bookingBusiness.CreateBookingBusiness",
+        "alternativePath": "/solutions/bookingBusinesses",
+        "alternativeOperationId": "solutions.CreateBookingBusinesses",
+        "publishedCommand": "New-MgBetaBookingBusiness"
+      },
+      {
+        "method": "DELETE",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}",
+        "defaultOperationId": "bookingBusinesses.bookingBusiness.DeleteBookingBusiness",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}",
+        "alternativeOperationId": "solutions.DeleteBookingBusinesses",
+        "publishedCommand": "Remove-MgBetaBookingBusiness"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}",
+        "defaultOperationId": "bookingBusinesses.bookingBusiness.GetBookingBusiness",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}",
+        "alternativeOperationId": "solutions.GetBookingBusinesses",
+        "publishedCommand": "Get-MgBetaBookingBusiness"
+      },
+      {
+        "method": "PATCH",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}",
+        "defaultOperationId": "bookingBusinesses.bookingBusiness.UpdateBookingBusiness",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}",
+        "alternativeOperationId": "solutions.UpdateBookingBusinesses",
+        "publishedCommand": "Update-MgBetaBookingBusiness"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/appointments",
+        "defaultOperationId": "bookingBusinesses.ListAppointments",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments",
+        "alternativeOperationId": "solutions.bookingBusinesses.ListAppointments",
+        "publishedCommand": "Get-MgBetaBookingBusinessAppointment"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/appointments",
+        "defaultOperationId": "bookingBusinesses.CreateAppointments",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments",
+        "alternativeOperationId": "solutions.bookingBusinesses.CreateAppointments",
+        "publishedCommand": "New-MgBetaBookingBusinessAppointment"
+      },
+      {
+        "method": "DELETE",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+        "defaultOperationId": "bookingBusinesses.DeleteAppointments",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.DeleteAppointments",
+        "publishedCommand": "Remove-MgBetaBookingBusinessAppointment"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+        "defaultOperationId": "bookingBusinesses.GetAppointments",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.GetAppointments",
+        "publishedCommand": "Get-MgBetaBookingBusinessAppointment"
+      },
+      {
+        "method": "PATCH",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+        "defaultOperationId": "bookingBusinesses.UpdateAppointments",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.UpdateAppointments",
+        "publishedCommand": "Update-MgBetaBookingBusinessAppointment"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/appointments/$count",
+        "defaultOperationId": "bookingBusinesses.appointments.GetCount-2f19",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/$count",
+        "alternativeOperationId": "solutions.bookingBusinesses.appointments.GetCount-205a",
+        "publishedCommand": "Get-MgBetaBookingBusinessAppointmentCount"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/calendarView",
+        "defaultOperationId": "bookingBusinesses.ListCalendarView",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView",
+        "alternativeOperationId": "solutions.bookingBusinesses.ListCalendarView",
+        "publishedCommand": "Get-MgBetaBookingBusinessCalendarView"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/calendarView",
+        "defaultOperationId": "bookingBusinesses.CreateCalendarView",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView",
+        "alternativeOperationId": "solutions.bookingBusinesses.CreateCalendarView",
+        "publishedCommand": "New-MgBetaBookingBusinessCalendarView"
+      },
+      {
+        "method": "DELETE",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+        "defaultOperationId": "bookingBusinesses.DeleteCalendarView",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.DeleteCalendarView",
+        "publishedCommand": "Remove-MgBetaBookingBusinessCalendarView"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+        "defaultOperationId": "bookingBusinesses.GetCalendarView",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.GetCalendarView",
+        "publishedCommand": "Get-MgBetaBookingBusinessCalendarView"
+      },
+      {
+        "method": "PATCH",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+        "defaultOperationId": "bookingBusinesses.UpdateCalendarView",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.UpdateCalendarView",
+        "publishedCommand": "Update-MgBetaBookingBusinessCalendarView"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/calendarView/$count",
+        "defaultOperationId": "bookingBusinesses.calendarView.GetCount-fa3d",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/$count",
+        "alternativeOperationId": "solutions.bookingBusinesses.calendarView.GetCount-f3a3",
+        "publishedCommand": "Get-MgBetaBookingBusinessCalendarViewCount"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customers",
+        "defaultOperationId": "bookingBusinesses.ListCustomers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers",
+        "alternativeOperationId": "solutions.bookingBusinesses.ListCustomers",
+        "publishedCommand": "Get-MgBetaBookingBusinessCustomer"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customers",
+        "defaultOperationId": "bookingBusinesses.CreateCustomers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers",
+        "alternativeOperationId": "solutions.bookingBusinesses.CreateCustomers",
+        "publishedCommand": "New-MgBetaBookingBusinessCustomer"
+      },
+      {
+        "method": "DELETE",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}",
+        "defaultOperationId": "bookingBusinesses.DeleteCustomers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.DeleteCustomers",
+        "publishedCommand": "Remove-MgBetaBookingBusinessCustomer"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}",
+        "defaultOperationId": "bookingBusinesses.GetCustomers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.GetCustomers",
+        "publishedCommand": "Get-MgBetaBookingBusinessCustomer"
+      },
+      {
+        "method": "PATCH",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}",
+        "defaultOperationId": "bookingBusinesses.UpdateCustomers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.UpdateCustomers",
+        "publishedCommand": "Update-MgBetaBookingBusinessCustomer"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customers/$count",
+        "defaultOperationId": "bookingBusinesses.customers.GetCount-f551",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/$count",
+        "alternativeOperationId": "solutions.bookingBusinesses.customers.GetCount-1771",
+        "publishedCommand": "Get-MgBetaBookingBusinessCustomerCount"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customQuestions",
+        "defaultOperationId": "bookingBusinesses.ListCustomQuestions",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions",
+        "alternativeOperationId": "solutions.bookingBusinesses.ListCustomQuestions",
+        "publishedCommand": "Get-MgBetaBookingBusinessCustomQuestion"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customQuestions",
+        "defaultOperationId": "bookingBusinesses.CreateCustomQuestions",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions",
+        "alternativeOperationId": "solutions.bookingBusinesses.CreateCustomQuestions",
+        "publishedCommand": "New-MgBetaBookingBusinessCustomQuestion"
+      },
+      {
+        "method": "DELETE",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+        "defaultOperationId": "bookingBusinesses.DeleteCustomQuestions",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.DeleteCustomQuestions",
+        "publishedCommand": "Remove-MgBetaBookingBusinessCustomQuestion"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+        "defaultOperationId": "bookingBusinesses.GetCustomQuestions",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.GetCustomQuestions",
+        "publishedCommand": "Get-MgBetaBookingBusinessCustomQuestion"
+      },
+      {
+        "method": "PATCH",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+        "defaultOperationId": "bookingBusinesses.UpdateCustomQuestions",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.UpdateCustomQuestions",
+        "publishedCommand": "Update-MgBetaBookingBusinessCustomQuestion"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/customQuestions/$count",
+        "defaultOperationId": "bookingBusinesses.customQuestions.GetCount-90cf",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/$count",
+        "alternativeOperationId": "solutions.bookingBusinesses.customQuestions.GetCount-385a",
+        "publishedCommand": "Get-MgBetaBookingBusinessCustomQuestionCount"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/publish",
+        "defaultOperationId": "bookingBusinesses.bookingBusiness.publish",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/publish",
+        "alternativeOperationId": "solutions.bookingBusinesses.bookingBusiness.publish",
+        "publishedCommand": "Publish-MgBetaBookingBusiness"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/services",
+        "defaultOperationId": "bookingBusinesses.ListServices",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/services",
+        "alternativeOperationId": "solutions.bookingBusinesses.ListServices",
+        "publishedCommand": "Get-MgBetaBookingBusinessService"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/services",
+        "defaultOperationId": "bookingBusinesses.CreateServices",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/services",
+        "alternativeOperationId": "solutions.bookingBusinesses.CreateServices",
+        "publishedCommand": "New-MgBetaBookingBusinessService"
+      },
+      {
+        "method": "DELETE",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+        "defaultOperationId": "bookingBusinesses.DeleteServices",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.DeleteServices",
+        "publishedCommand": "Remove-MgBetaBookingBusinessService"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+        "defaultOperationId": "bookingBusinesses.GetServices",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.GetServices",
+        "publishedCommand": "Get-MgBetaBookingBusinessService"
+      },
+      {
+        "method": "PATCH",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+        "defaultOperationId": "bookingBusinesses.UpdateServices",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.UpdateServices",
+        "publishedCommand": "Update-MgBetaBookingBusinessService"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/services/$count",
+        "defaultOperationId": "bookingBusinesses.services.GetCount-e71d",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/$count",
+        "alternativeOperationId": "solutions.bookingBusinesses.services.GetCount-35c3",
+        "publishedCommand": "Get-MgBetaBookingBusinessServiceCount"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/staffMembers",
+        "defaultOperationId": "bookingBusinesses.ListStaffMembers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers",
+        "alternativeOperationId": "solutions.bookingBusinesses.ListStaffMembers",
+        "publishedCommand": "Get-MgBetaBookingBusinessStaffMember"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/staffMembers",
+        "defaultOperationId": "bookingBusinesses.CreateStaffMembers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers",
+        "alternativeOperationId": "solutions.bookingBusinesses.CreateStaffMembers",
+        "publishedCommand": "New-MgBetaBookingBusinessStaffMember"
+      },
+      {
+        "method": "DELETE",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}",
+        "defaultOperationId": "bookingBusinesses.DeleteStaffMembers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.DeleteStaffMembers",
+        "publishedCommand": "Remove-MgBetaBookingBusinessStaffMember"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}",
+        "defaultOperationId": "bookingBusinesses.GetStaffMembers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.GetStaffMembers",
+        "publishedCommand": "Get-MgBetaBookingBusinessStaffMember"
+      },
+      {
+        "method": "PATCH",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}",
+        "defaultOperationId": "bookingBusinesses.UpdateStaffMembers",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}",
+        "alternativeOperationId": "solutions.bookingBusinesses.UpdateStaffMembers",
+        "publishedCommand": "Update-MgBetaBookingBusinessStaffMember"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/staffMembers/$count",
+        "defaultOperationId": "bookingBusinesses.staffMembers.GetCount-2251",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/$count",
+        "alternativeOperationId": "solutions.bookingBusinesses.staffMembers.GetCount-7947",
+        "publishedCommand": "Get-MgBetaBookingBusinessStaffMemberCount"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingBusinesses/{bookingBusiness-id}/unpublish",
+        "defaultOperationId": "bookingBusinesses.bookingBusiness.unpublish",
+        "alternativePath": "/solutions/bookingBusinesses/{bookingBusiness-id}/unpublish",
+        "alternativeOperationId": "solutions.bookingBusinesses.bookingBusiness.unpublish",
+        "publishedCommand": "Unpublish-MgBetaBookingBusiness"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingBusinesses/$count",
+        "defaultOperationId": "bookingBusinesses.GetCount-011d",
+        "alternativePath": "/solutions/bookingBusinesses/$count",
+        "alternativeOperationId": "solutions.bookingBusinesses.GetCount-b75b",
+        "publishedCommand": "Get-MgBetaBookingBusinessCount"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingCurrencies",
+        "defaultOperationId": "bookingCurrencies.bookingCurrency.ListBookingCurrency",
+        "alternativePath": "/solutions/bookingCurrencies",
+        "alternativeOperationId": "solutions.ListBookingCurrencies",
+        "publishedCommand": "Get-MgBetaBookingCurrency"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/bookingCurrencies",
+        "defaultOperationId": "bookingCurrencies.bookingCurrency.CreateBookingCurrency",
+        "alternativePath": "/solutions/bookingCurrencies",
+        "alternativeOperationId": "solutions.CreateBookingCurrencies",
+        "publishedCommand": "New-MgBetaBookingCurrency"
+      },
+      {
+        "method": "DELETE",
+        "defaultPath": "/bookingCurrencies/{bookingCurrency-id}",
+        "defaultOperationId": "bookingCurrencies.bookingCurrency.DeleteBookingCurrency",
+        "alternativePath": "/solutions/bookingCurrencies/{bookingCurrency-id}",
+        "alternativeOperationId": "solutions.DeleteBookingCurrencies",
+        "publishedCommand": "Remove-MgBetaBookingCurrency"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingCurrencies/{bookingCurrency-id}",
+        "defaultOperationId": "bookingCurrencies.bookingCurrency.GetBookingCurrency",
+        "alternativePath": "/solutions/bookingCurrencies/{bookingCurrency-id}",
+        "alternativeOperationId": "solutions.GetBookingCurrencies",
+        "publishedCommand": "Get-MgBetaBookingCurrency"
+      },
+      {
+        "method": "PATCH",
+        "defaultPath": "/bookingCurrencies/{bookingCurrency-id}",
+        "defaultOperationId": "bookingCurrencies.bookingCurrency.UpdateBookingCurrency",
+        "alternativePath": "/solutions/bookingCurrencies/{bookingCurrency-id}",
+        "alternativeOperationId": "solutions.UpdateBookingCurrencies",
+        "publishedCommand": "Update-MgBetaBookingCurrency"
+      },
+      {
+        "method": "GET",
+        "defaultPath": "/bookingCurrencies/$count",
+        "defaultOperationId": "bookingCurrencies.GetCount-60a7",
+        "alternativePath": "/solutions/bookingCurrencies/$count",
+        "alternativeOperationId": "solutions.bookingCurrencies.GetCount-f6c6",
+        "publishedCommand": "Get-MgBetaBookingCurrencyCount"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/cancel",
+        "defaultOperationId": "solutions.bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel",
+        "alternativePath": "/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/cancel",
+        "alternativeOperationId": "bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel",
+        "publishedCommand": "Stop-MgBetaBookingBusinessAppointment"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/cancel",
+        "defaultOperationId": "solutions.bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel",
+        "alternativePath": "/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/cancel",
+        "alternativeOperationId": "bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel",
+        "publishedCommand": "Stop-MgBetaBookingBusinessCalendarView"
+      },
+      {
+        "method": "POST",
+        "defaultPath": "/solutions/bookingBusinesses/{bookingBusiness-id}/getStaffAvailability",
+        "defaultOperationId": "solutions.bookingBusinesses.bookingBusiness.getStaffAvailability",
+        "alternativePath": "/bookingBusinesses/{bookingBusiness-id}/getStaffAvailability",
+        "alternativeOperationId": "bookingBusinesses.bookingBusiness.getStaffAvailability",
+        "publishedCommand": "Get-MgBetaBookingBusinessStaffAvailability"
+      }
+    ]
+  }
 }
