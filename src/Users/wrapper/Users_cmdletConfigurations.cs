@@ -20,6 +20,10 @@ public static partial class CmdletConfigurator
         new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/users/{}/photo", PathMatch.Exact, null,
             "Users.md directive 4: remove Update UserPhoto; retain photo reads and content operations"),
 
+        new(OverrideKind.ReplaceNoun, HttpMethod.Delete, "/users/{}/sponsors/{}/$ref", PathMatch.Exact,
+            "UserSponsorDirectoryObjectByRef",
+            "Published beta metadata and Learn: item SponsorDirectoryObjectByRef is distinct from collection SponsorByRef"),
+
         // Get-MgUserPhoto serves both /photo and /photos; the /photos routes ship no distinct
         // cmdlet, and generating them would collide with the singleton's noun.
         new(OverrideKind.SuppressOperation, Method: null, "/users/{}/photos", Match: PathMatch.Exact, Value: null,

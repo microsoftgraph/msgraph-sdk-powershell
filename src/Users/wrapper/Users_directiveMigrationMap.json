@@ -11,7 +11,18 @@
       "beta": "82ce2bdab5d5849ecd2a2e2ee459618b7edef10e"
     },
     "lineage": "Original operation-ID regex evaluated case-sensitively on actual same-profile openApiDocs Users.yml: exactly three matches per profile, all surviving at the exact same method/path with renamed IDs. user_GetOutlook does not match lowercase outlook. No actual removals or action/function qualification translations.",
-    "coverage": "Exact module entries preserve v1.0 derived suppressions while supplying the missing beta coverage. Existing curated /photos suppressions remain unchanged. The unreachable UserTodo List rename is subsumed, not implemented as a new public noun."
+    "coverage": "Exact module entries preserve v1.0 derived suppressions while supplying the missing beta coverage. Existing curated /photos suppressions remain unchanged. The unreachable UserTodo List rename is subsumed, not implemented as a new public noun.",
+    "betaCollisionRepair": {
+      "method": "DELETE",
+      "path": "/users/{user-id}/sponsors/{directoryObject-id}/$ref",
+      "operationId": "users.sponsors.DeleteRefDirectoryObject",
+      "noun": "UserSponsorDirectoryObjectByRef",
+      "evidence": "The repository's beta MgCommandMetadata row independently publishes Remove-MgBetaUserSponsorDirectoryObjectByRef for this exact item URI. It is not the root Remove-MgBetaUserSponsorByRef command. No route is suppressed or renamed speculatively.",
+      "publishedHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetausersponsordirectoryobjectbyref?view=graph-powershell-beta",
+      "publishedHelpCommit": "07b0cf8f6305213f3c3830c301fca69a3e82ed17",
+      "requiredParameters": ["UserId", "DirectoryObjectId"],
+      "rootNeighbor": "DELETE /users/{user-id}/sponsors/$ref remains separately named SponsorByRef; compatible spec requires string @id, published help exposes mandatory Id. Existing ordinary emitter does not bind this query; this baseline limitation is not an all-surface fidelity pass."
+    }
   },
   "mappings": [
     {

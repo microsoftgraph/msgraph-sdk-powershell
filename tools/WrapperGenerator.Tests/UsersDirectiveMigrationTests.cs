@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.OpenApi;
@@ -116,6 +117,40 @@ public sealed class UsersDirectiveMigrationTests
         // case-sensitive legacy selector to an operation it did not select in beta.
         Assert.Equal(profile == "v1.0",
             CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/outlook", config));
+    }
+
+    [Theory]
+    [InlineData("v1.0", "Mg")]
+    [InlineData("beta", "MgBeta")]
+    public async Task SponsorItemUsesItsExactPublishedNounWithoutDroppingEitherRoute(string profile, string publishedPrefix)
+    {
+        const string item = "/users/{user-id}/sponsors/{directoryObject-id}/$ref";
+        const string root = "/users/{user-id}/sponsors/$ref";
+        var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
+        var config = new GeneratorConfig("Test.Client", "unused", profile);
+        using var metadata = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot(),
+            "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
+        foreach (var (path, noun) in new[]
+        {
+            (item, "UserSponsorDirectoryObjectByRef"),
+            (root, "UserSponsorByRef"),
+        })
+        {
+            Assert.True(document.Paths[path].Operations!.ContainsKey(HttpMethod.Delete));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, path, config));
+            Assert.Equal("Mg" + noun, Naming.Resolve(new OperationInfo(HttpMethod.Delete, path), config).Noun);
+            Assert.Single(metadata.RootElement.EnumerateArray(), row =>
+                row.GetProperty("ApiVersion").GetString() == profile
+                && row.GetProperty("Command").GetString() == "Remove-" + publishedPrefix + noun
+                && row.GetProperty("Method").GetString() == "DELETE"
+                && row.GetProperty("Uri").GetString() == path);
+        }
+
+        var query = Assert.Single(document.Paths[root].Operations![HttpMethod.Delete].Parameters!,
+            parameter => parameter.Name == "@id");
+        Assert.True(query.Required);
+        Assert.Equal(ParameterLocation.Query, query.In);
+        Assert.Equal(JsonSchemaType.String, query.Schema!.Type);
     }
 
     private static void AssertSuppressed(OpenApiDocument document, GeneratorConfig config,
