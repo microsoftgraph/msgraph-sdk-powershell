@@ -14,19 +14,14 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Users.Actions
 {
-    [GraphRoute("POST", "/users/{user-id}/changePassword")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgUserChangePassword", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
-
-    public class InvokeMgUserChangePasswordCommand : GraphClientCmdlet
+    [GraphRoute("POST", "/users/{user-id}/invalidateAllRefreshTokens")]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgInvalidateAllUserRefreshToken", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse))]
+    public class InvokeMgInvalidateAllUserRefreshTokenCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false)]
-        public string? CurrentPassword { get; set; }
-
-        [Parameter(Mandatory = false)]
-        public string? NewPassword { get; set; }
 
 
 
@@ -39,26 +34,18 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
             if (!ShouldProcess(UserId, "Invoke"))
                 return;
 
-            var body = new global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.ChangePassword.ChangePasswordPostRequestBody();
-
-    if (this.IsParameterBound(nameof(CurrentPassword)))
-        body.CurrentPassword = CurrentPassword;
-
-    if (this.IsParameterBound(nameof(NewPassword)))
-        body.NewPassword = NewPassword;
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-
+            global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse? result;
             try
             {
-                client.Users[UserId].ChangePassword.PostAsync(body, requestConfiguration =>
+                result = client.Users[UserId].InvalidateAllRefreshTokens.PostAsInvalidateAllRefreshTokensPostResponseAsync(requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
-                })
-                    .GetAwaiter().GetResult();
+                }).GetAwaiter().GetResult();
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
@@ -66,6 +53,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
                 return;
             }
 
+            WriteObject(result);
         }
     }
 }
