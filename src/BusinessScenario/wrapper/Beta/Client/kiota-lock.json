@@ -1,8 +1,8 @@
 {
   "descriptionHash": "AD0D7E434FB86F492382174BD8DC04118D2A53730918FEADFAA8A33923374EE38477E07C712AEBCA00FE66701B8DBCFE486D6A4A8B64A5F1139C15E6E5A0C26F",
-  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/Beta/BusinessScenario.yml",
+  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/beta/BusinessScenario.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.BusinessScenario.Client",
