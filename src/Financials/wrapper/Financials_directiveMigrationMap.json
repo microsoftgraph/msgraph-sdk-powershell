@@ -1,0 +1,38 @@
+{
+  "audit": {
+    "module": "Financials",
+    "source": "src/Financials/Financials.md",
+    "disposition": "No shared cmdlet directives; no migration overrides required.",
+    "sharedCmdletDirectiveCount": 0,
+    "deferredParameterDirectiveCount": 0,
+    "deferredSchemaDirectiveCount": 0,
+    "requiredProfiles": [
+      "beta"
+    ],
+    "excludedProfiles": {
+      "v1.0": "No openApiDocs_KiotaCompat/v1.0/Financials.yml; legacy fallback is not permitted."
+    },
+    "ignoredSources": [
+      "src/readme.graph.md",
+      "All profile-local readme directives"
+    ],
+    "specEvidence": {
+      "beta": {
+        "path": "openApiDocs_KiotaCompat/beta/Financials.yml",
+        "gitBlob": "73134c9aaac7e9ddf6207de84e9a5e51695ab424",
+        "operationCount": 648,
+        "operationsByMethod": {
+          "GET": 307,
+          "POST": 50,
+          "PATCH": 131,
+          "DELETE": 137,
+          "PUT": 23
+        }
+      }
+    },
+    "existingCoverage": "FinancialsCmdletConfigurations remains empty. Real beta operations are checked with curated and derived configuration enabled; no redundant overrides are added.",
+    "regressionTests": "tools/WrapperGenerator.Tests/FinancialsDirectiveMigrationTests.cs",
+    "generationGate": "Targeted regression coverage only. Full beta Kiota generation, wrapper build, compiled discovery, and nonzero exports remain required before publication."
+  },
+  "mappings": []
+}
