@@ -76,6 +76,7 @@ public sealed class CalendarDirectiveMigrationTests
             Assert.Equal(operation.GetProperty("legacyOperationId").GetString(), oldOperation.OperationId);
             if (CmdletConfigurator.NormalizePathTemplate(oldPath) != CmdletConfigurator.NormalizePathTemplate(path))
             {
+                Assert.Equal("UnqualifyFinalOperation", operation.GetProperty("legacyPathTranslation").GetString());
                 var kind = OperationType(oldOperation);
                 Assert.True(kind is "action" or "function");
                 Assert.Equal(kind, OperationType(spec.Paths[path].Operations![method]));
@@ -86,6 +87,10 @@ public sealed class CalendarDirectiveMigrationTests
                 Assert.Equal(CmdletConfigurator.NormalizePathTemplate(string.Join("/", parts)),
                     CmdletConfigurator.NormalizePathTemplate(path));
                 translatedCalls++;
+            }
+            else
+            {
+                Assert.False(operation.TryGetProperty("legacyPathTranslation", out _));
             }
         }
         Assert.Equal(profile == "v1.0" ? 53 : 54, translatedCalls);

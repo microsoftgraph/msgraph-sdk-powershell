@@ -98,7 +98,8 @@
               "path": "/groups/{group-id}/calendar/calendarView/delta()",
               "operationId": "groups.group.calendar.calendarView.delta",
               "legacyPath": "/groups/{group-id}/calendar/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "group.calendar.calendarView_delta"
+              "legacyOperationId": "group.calendar.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -140,7 +141,8 @@
               "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/createUploadSession",
               "operationId": "groups.group.calendar.events.event.attachments.createUploadSession",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/attachments/microsoft.graph.createUploadSession",
-              "legacyOperationId": "group.calendar.event.attachment_createUploadSession"
+              "legacyOperationId": "group.calendar.event.attachment_createUploadSession",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -203,63 +205,72 @@
               "path": "/groups/{group-id}/calendar/events/{event-id}/instances/delta()",
               "operationId": "groups.group.calendar.events.event.instances.delta",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/instances/microsoft.graph.delta()",
-              "legacyOperationId": "group.calendar.event.instance_delta"
+              "legacyOperationId": "group.calendar.event.instance_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/accept",
               "operationId": "groups.group.calendar.events.event.accept",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.accept",
-              "legacyOperationId": "group.calendar.event_accept"
+              "legacyOperationId": "group.calendar.event_accept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/cancel",
               "operationId": "groups.group.calendar.events.event.cancel",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.cancel",
-              "legacyOperationId": "group.calendar.event_cancel"
+              "legacyOperationId": "group.calendar.event_cancel",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/decline",
               "operationId": "groups.group.calendar.events.event.decline",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.decline",
-              "legacyOperationId": "group.calendar.event_decline"
+              "legacyOperationId": "group.calendar.event_decline",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/dismissReminder",
               "operationId": "groups.group.calendar.events.event.dismissReminder",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.dismissReminder",
-              "legacyOperationId": "group.calendar.event_dismissReminder"
+              "legacyOperationId": "group.calendar.event_dismissReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/forward",
               "operationId": "groups.group.calendar.events.event.forward",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.forward",
-              "legacyOperationId": "group.calendar.event_forward"
+              "legacyOperationId": "group.calendar.event_forward",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/permanentDelete",
               "operationId": "groups.group.calendar.events.event.permanentDelete",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "group.calendar.event_permanentDelete"
+              "legacyOperationId": "group.calendar.event_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/snoozeReminder",
               "operationId": "groups.group.calendar.events.event.snoozeReminder",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.snoozeReminder",
-              "legacyOperationId": "group.calendar.event_snoozeReminder"
+              "legacyOperationId": "group.calendar.event_snoozeReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/tentativelyAccept",
               "operationId": "groups.group.calendar.events.event.tentativelyAccept",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.tentativelyAccept",
-              "legacyOperationId": "group.calendar.event_tentativelyAccept"
+              "legacyOperationId": "group.calendar.event_tentativelyAccept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -273,7 +284,8 @@
               "path": "/groups/{group-id}/calendar/events/delta()",
               "operationId": "groups.group.calendar.events.delta",
               "legacyPath": "/groups/{group-id}/calendar/events/microsoft.graph.delta()",
-              "legacyOperationId": "group.calendar.event_delta"
+              "legacyOperationId": "group.calendar.event_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -287,7 +299,8 @@
               "path": "/groups/{group-id}/calendarView/delta()",
               "operationId": "groups.group.calendarView.delta",
               "legacyPath": "/groups/{group-id}/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "group.calendarView_delta"
+              "legacyOperationId": "group.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "PATCH",
@@ -301,7 +314,8 @@
               "path": "/users/{user-id}/calendar/calendarView/delta()",
               "operationId": "users.user.calendar.calendarView.delta",
               "legacyPath": "/users/{user-id}/calendar/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.calendarView_delta"
+              "legacyOperationId": "user.calendar.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -364,7 +378,8 @@
               "path": "/users/{user-id}/calendar/events/{event-id}/attachments/createUploadSession",
               "operationId": "users.user.calendar.events.event.attachments.createUploadSession",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/attachments/microsoft.graph.createUploadSession",
-              "legacyOperationId": "user.calendar.event.attachment_createUploadSession"
+              "legacyOperationId": "user.calendar.event.attachment_createUploadSession",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -427,63 +442,72 @@
               "path": "/users/{user-id}/calendar/events/{event-id}/instances/delta()",
               "operationId": "users.user.calendar.events.event.instances.delta",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/instances/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.event.instance_delta"
+              "legacyOperationId": "user.calendar.event.instance_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/accept",
               "operationId": "users.user.calendar.events.event.accept",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.accept",
-              "legacyOperationId": "user.calendar.event_accept"
+              "legacyOperationId": "user.calendar.event_accept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/cancel",
               "operationId": "users.user.calendar.events.event.cancel",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.cancel",
-              "legacyOperationId": "user.calendar.event_cancel"
+              "legacyOperationId": "user.calendar.event_cancel",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/decline",
               "operationId": "users.user.calendar.events.event.decline",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.decline",
-              "legacyOperationId": "user.calendar.event_decline"
+              "legacyOperationId": "user.calendar.event_decline",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/dismissReminder",
               "operationId": "users.user.calendar.events.event.dismissReminder",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.dismissReminder",
-              "legacyOperationId": "user.calendar.event_dismissReminder"
+              "legacyOperationId": "user.calendar.event_dismissReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/forward",
               "operationId": "users.user.calendar.events.event.forward",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.forward",
-              "legacyOperationId": "user.calendar.event_forward"
+              "legacyOperationId": "user.calendar.event_forward",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/permanentDelete",
               "operationId": "users.user.calendar.events.event.permanentDelete",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "user.calendar.event_permanentDelete"
+              "legacyOperationId": "user.calendar.event_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/snoozeReminder",
               "operationId": "users.user.calendar.events.event.snoozeReminder",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.snoozeReminder",
-              "legacyOperationId": "user.calendar.event_snoozeReminder"
+              "legacyOperationId": "user.calendar.event_snoozeReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/tentativelyAccept",
               "operationId": "users.user.calendar.events.event.tentativelyAccept",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.tentativelyAccept",
-              "legacyOperationId": "user.calendar.event_tentativelyAccept"
+              "legacyOperationId": "user.calendar.event_tentativelyAccept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -497,7 +521,8 @@
               "path": "/users/{user-id}/calendar/events/delta()",
               "operationId": "users.user.calendar.events.delta",
               "legacyPath": "/users/{user-id}/calendar/events/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.event_delta"
+              "legacyOperationId": "user.calendar.event_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -574,7 +599,8 @@
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/delta()",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.delta",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendarGroup.calendar.calendarView_delta"
+              "legacyOperationId": "user.calendarGroup.calendar.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -651,7 +677,8 @@
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/createUploadSession",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.attachments.createUploadSession",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession",
-              "legacyOperationId": "user.calendarGroup.calendar.event.attachment_createUploadSession"
+              "legacyOperationId": "user.calendarGroup.calendar.event.attachment_createUploadSession",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -714,63 +741,72 @@
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/delta()",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.delta",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendarGroup.calendar.event.instance_delta"
+              "legacyOperationId": "user.calendarGroup.calendar.event.instance_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/accept",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.accept",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.accept",
-              "legacyOperationId": "user.calendarGroup.calendar.event_accept"
+              "legacyOperationId": "user.calendarGroup.calendar.event_accept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/cancel",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.cancel",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.cancel",
-              "legacyOperationId": "user.calendarGroup.calendar.event_cancel"
+              "legacyOperationId": "user.calendarGroup.calendar.event_cancel",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/decline",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.decline",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.decline",
-              "legacyOperationId": "user.calendarGroup.calendar.event_decline"
+              "legacyOperationId": "user.calendarGroup.calendar.event_decline",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/dismissReminder",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.dismissReminder",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.dismissReminder",
-              "legacyOperationId": "user.calendarGroup.calendar.event_dismissReminder"
+              "legacyOperationId": "user.calendarGroup.calendar.event_dismissReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/forward",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.forward",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.forward",
-              "legacyOperationId": "user.calendarGroup.calendar.event_forward"
+              "legacyOperationId": "user.calendarGroup.calendar.event_forward",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/permanentDelete",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.permanentDelete",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "user.calendarGroup.calendar.event_permanentDelete"
+              "legacyOperationId": "user.calendarGroup.calendar.event_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/snoozeReminder",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.snoozeReminder",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.snoozeReminder",
-              "legacyOperationId": "user.calendarGroup.calendar.event_snoozeReminder"
+              "legacyOperationId": "user.calendarGroup.calendar.event_snoozeReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/tentativelyAccept",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.tentativelyAccept",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.tentativelyAccept",
-              "legacyOperationId": "user.calendarGroup.calendar.event_tentativelyAccept"
+              "legacyOperationId": "user.calendarGroup.calendar.event_tentativelyAccept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -784,28 +820,32 @@
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/delta()",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.delta",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendarGroup.calendar.event_delta"
+              "legacyOperationId": "user.calendarGroup.calendar.event_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/allowedCalendarSharingRoles(User='{User}')",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.allowedCalendarSharingRoles",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/microsoft.graph.allowedCalendarSharingRoles(User='{User}')",
-              "legacyOperationId": "user.calendarGroup.calendar_allowedCalendarSharingRole"
+              "legacyOperationId": "user.calendarGroup.calendar_allowedCalendarSharingRole",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/getSchedule",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.getSchedule",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/microsoft.graph.getSchedule",
-              "legacyOperationId": "user.calendarGroup.calendar_getSchedule"
+              "legacyOperationId": "user.calendarGroup.calendar_getSchedule",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/permanentDelete",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.permanentDelete",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "user.calendarGroup.calendar_permanentDelete"
+              "legacyOperationId": "user.calendarGroup.calendar_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -833,7 +873,8 @@
               "path": "/users/{user-id}/calendars/{calendar-id}/calendarView/delta()",
               "operationId": "users.user.calendars.calendar.calendarView.delta",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.calendarView_delta"
+              "legacyOperationId": "user.calendar.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -896,7 +937,8 @@
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/createUploadSession",
               "operationId": "users.user.calendars.calendar.events.event.attachments.createUploadSession",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession",
-              "legacyOperationId": "user.calendar.event.attachment_createUploadSession"
+              "legacyOperationId": "user.calendar.event.attachment_createUploadSession",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -959,63 +1001,72 @@
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/delta()",
               "operationId": "users.user.calendars.calendar.events.event.instances.delta",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.event.instance_delta"
+              "legacyOperationId": "user.calendar.event.instance_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/accept",
               "operationId": "users.user.calendars.calendar.events.event.accept",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.accept",
-              "legacyOperationId": "user.calendar.event_accept"
+              "legacyOperationId": "user.calendar.event_accept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/cancel",
               "operationId": "users.user.calendars.calendar.events.event.cancel",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.cancel",
-              "legacyOperationId": "user.calendar.event_cancel"
+              "legacyOperationId": "user.calendar.event_cancel",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/decline",
               "operationId": "users.user.calendars.calendar.events.event.decline",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.decline",
-              "legacyOperationId": "user.calendar.event_decline"
+              "legacyOperationId": "user.calendar.event_decline",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/dismissReminder",
               "operationId": "users.user.calendars.calendar.events.event.dismissReminder",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.dismissReminder",
-              "legacyOperationId": "user.calendar.event_dismissReminder"
+              "legacyOperationId": "user.calendar.event_dismissReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/forward",
               "operationId": "users.user.calendars.calendar.events.event.forward",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.forward",
-              "legacyOperationId": "user.calendar.event_forward"
+              "legacyOperationId": "user.calendar.event_forward",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/permanentDelete",
               "operationId": "users.user.calendars.calendar.events.event.permanentDelete",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "user.calendar.event_permanentDelete"
+              "legacyOperationId": "user.calendar.event_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/snoozeReminder",
               "operationId": "users.user.calendars.calendar.events.event.snoozeReminder",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.snoozeReminder",
-              "legacyOperationId": "user.calendar.event_snoozeReminder"
+              "legacyOperationId": "user.calendar.event_snoozeReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/tentativelyAccept",
               "operationId": "users.user.calendars.calendar.events.event.tentativelyAccept",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.tentativelyAccept",
-              "legacyOperationId": "user.calendar.event_tentativelyAccept"
+              "legacyOperationId": "user.calendar.event_tentativelyAccept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1029,7 +1080,8 @@
               "path": "/users/{user-id}/calendars/{calendar-id}/events/delta()",
               "operationId": "users.user.calendars.calendar.events.delta",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.event_delta"
+              "legacyOperationId": "user.calendar.event_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1043,7 +1095,8 @@
               "path": "/users/{user-id}/calendarView/delta()",
               "operationId": "users.user.calendarView.delta",
               "legacyPath": "/users/{user-id}/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendarView_delta"
+              "legacyOperationId": "user.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             }
           ]
         },
@@ -1057,7 +1110,8 @@
               "path": "/groups/{group-id}/calendar/calendarView/delta()",
               "operationId": "groups.group.calendar.calendarView.delta",
               "legacyPath": "/groups/{group-id}/calendar/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "group.calendar.calendarView_delta"
+              "legacyOperationId": "group.calendar.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1099,7 +1153,8 @@
               "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/createUploadSession",
               "operationId": "groups.group.calendar.events.event.attachments.createUploadSession",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/attachments/microsoft.graph.createUploadSession",
-              "legacyOperationId": "group.calendar.event.attachment_createUploadSession"
+              "legacyOperationId": "group.calendar.event.attachment_createUploadSession",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1162,63 +1217,72 @@
               "path": "/groups/{group-id}/calendar/events/{event-id}/instances/delta()",
               "operationId": "groups.group.calendar.events.event.instances.delta",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/instances/microsoft.graph.delta()",
-              "legacyOperationId": "group.calendar.event.instance_delta"
+              "legacyOperationId": "group.calendar.event.instance_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/accept",
               "operationId": "groups.group.calendar.events.event.accept",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.accept",
-              "legacyOperationId": "group.calendar.event_accept"
+              "legacyOperationId": "group.calendar.event_accept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/cancel",
               "operationId": "groups.group.calendar.events.event.cancel",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.cancel",
-              "legacyOperationId": "group.calendar.event_cancel"
+              "legacyOperationId": "group.calendar.event_cancel",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/decline",
               "operationId": "groups.group.calendar.events.event.decline",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.decline",
-              "legacyOperationId": "group.calendar.event_decline"
+              "legacyOperationId": "group.calendar.event_decline",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/dismissReminder",
               "operationId": "groups.group.calendar.events.event.dismissReminder",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.dismissReminder",
-              "legacyOperationId": "group.calendar.event_dismissReminder"
+              "legacyOperationId": "group.calendar.event_dismissReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/forward",
               "operationId": "groups.group.calendar.events.event.forward",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.forward",
-              "legacyOperationId": "group.calendar.event_forward"
+              "legacyOperationId": "group.calendar.event_forward",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/permanentDelete",
               "operationId": "groups.group.calendar.events.event.permanentDelete",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "group.calendar.event_permanentDelete"
+              "legacyOperationId": "group.calendar.event_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/snoozeReminder",
               "operationId": "groups.group.calendar.events.event.snoozeReminder",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.snoozeReminder",
-              "legacyOperationId": "group.calendar.event_snoozeReminder"
+              "legacyOperationId": "group.calendar.event_snoozeReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/calendar/events/{event-id}/tentativelyAccept",
               "operationId": "groups.group.calendar.events.event.tentativelyAccept",
               "legacyPath": "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.tentativelyAccept",
-              "legacyOperationId": "group.calendar.event_tentativelyAccept"
+              "legacyOperationId": "group.calendar.event_tentativelyAccept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1232,7 +1296,8 @@
               "path": "/groups/{group-id}/calendar/events/delta()",
               "operationId": "groups.group.calendar.events.delta",
               "legacyPath": "/groups/{group-id}/calendar/events/microsoft.graph.delta()",
-              "legacyOperationId": "group.calendar.event_delta"
+              "legacyOperationId": "group.calendar.event_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1246,7 +1311,8 @@
               "path": "/groups/{group-id}/calendarView/delta()",
               "operationId": "groups.group.calendarView.delta",
               "legacyPath": "/groups/{group-id}/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "group.calendarView_delta"
+              "legacyOperationId": "group.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "PATCH",
@@ -1260,7 +1326,8 @@
               "path": "/users/{user-id}/calendar/calendarView/delta()",
               "operationId": "users.user.calendar.calendarView.delta",
               "legacyPath": "/users/{user-id}/calendar/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.calendarView_delta"
+              "legacyOperationId": "user.calendar.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1323,7 +1390,8 @@
               "path": "/users/{user-id}/calendar/events/{event-id}/attachments/createUploadSession",
               "operationId": "users.user.calendar.events.event.attachments.createUploadSession",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/attachments/microsoft.graph.createUploadSession",
-              "legacyOperationId": "user.calendar.event.attachment_createUploadSession"
+              "legacyOperationId": "user.calendar.event.attachment_createUploadSession",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1386,63 +1454,72 @@
               "path": "/users/{user-id}/calendar/events/{event-id}/instances/delta()",
               "operationId": "users.user.calendar.events.event.instances.delta",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/instances/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.event.instance_delta"
+              "legacyOperationId": "user.calendar.event.instance_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/accept",
               "operationId": "users.user.calendar.events.event.accept",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.accept",
-              "legacyOperationId": "user.calendar.event_accept"
+              "legacyOperationId": "user.calendar.event_accept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/cancel",
               "operationId": "users.user.calendar.events.event.cancel",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.cancel",
-              "legacyOperationId": "user.calendar.event_cancel"
+              "legacyOperationId": "user.calendar.event_cancel",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/decline",
               "operationId": "users.user.calendar.events.event.decline",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.decline",
-              "legacyOperationId": "user.calendar.event_decline"
+              "legacyOperationId": "user.calendar.event_decline",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/dismissReminder",
               "operationId": "users.user.calendar.events.event.dismissReminder",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.dismissReminder",
-              "legacyOperationId": "user.calendar.event_dismissReminder"
+              "legacyOperationId": "user.calendar.event_dismissReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/forward",
               "operationId": "users.user.calendar.events.event.forward",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.forward",
-              "legacyOperationId": "user.calendar.event_forward"
+              "legacyOperationId": "user.calendar.event_forward",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/permanentDelete",
               "operationId": "users.user.calendar.events.event.permanentDelete",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "user.calendar.event_permanentDelete"
+              "legacyOperationId": "user.calendar.event_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/snoozeReminder",
               "operationId": "users.user.calendar.events.event.snoozeReminder",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.snoozeReminder",
-              "legacyOperationId": "user.calendar.event_snoozeReminder"
+              "legacyOperationId": "user.calendar.event_snoozeReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendar/events/{event-id}/tentativelyAccept",
               "operationId": "users.user.calendar.events.event.tentativelyAccept",
               "legacyPath": "/users/{user-id}/calendar/events/{event-id}/microsoft.graph.tentativelyAccept",
-              "legacyOperationId": "user.calendar.event_tentativelyAccept"
+              "legacyOperationId": "user.calendar.event_tentativelyAccept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1456,7 +1533,8 @@
               "path": "/users/{user-id}/calendar/events/delta()",
               "operationId": "users.user.calendar.events.delta",
               "legacyPath": "/users/{user-id}/calendar/events/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.event_delta"
+              "legacyOperationId": "user.calendar.event_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1533,7 +1611,8 @@
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/delta()",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.delta",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendarGroup.calendar.calendarView_delta"
+              "legacyOperationId": "user.calendarGroup.calendar.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1610,7 +1689,8 @@
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/createUploadSession",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.attachments.createUploadSession",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession",
-              "legacyOperationId": "user.calendarGroup.calendar.event.attachment_createUploadSession"
+              "legacyOperationId": "user.calendarGroup.calendar.event.attachment_createUploadSession",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1673,63 +1753,72 @@
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/delta()",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.delta",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendarGroup.calendar.event.instance_delta"
+              "legacyOperationId": "user.calendarGroup.calendar.event.instance_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/accept",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.accept",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.accept",
-              "legacyOperationId": "user.calendarGroup.calendar.event_accept"
+              "legacyOperationId": "user.calendarGroup.calendar.event_accept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/cancel",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.cancel",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.cancel",
-              "legacyOperationId": "user.calendarGroup.calendar.event_cancel"
+              "legacyOperationId": "user.calendarGroup.calendar.event_cancel",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/decline",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.decline",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.decline",
-              "legacyOperationId": "user.calendarGroup.calendar.event_decline"
+              "legacyOperationId": "user.calendarGroup.calendar.event_decline",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/dismissReminder",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.dismissReminder",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.dismissReminder",
-              "legacyOperationId": "user.calendarGroup.calendar.event_dismissReminder"
+              "legacyOperationId": "user.calendarGroup.calendar.event_dismissReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/forward",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.forward",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.forward",
-              "legacyOperationId": "user.calendarGroup.calendar.event_forward"
+              "legacyOperationId": "user.calendarGroup.calendar.event_forward",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/permanentDelete",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.permanentDelete",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "user.calendarGroup.calendar.event_permanentDelete"
+              "legacyOperationId": "user.calendarGroup.calendar.event_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/snoozeReminder",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.snoozeReminder",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.snoozeReminder",
-              "legacyOperationId": "user.calendarGroup.calendar.event_snoozeReminder"
+              "legacyOperationId": "user.calendarGroup.calendar.event_snoozeReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/tentativelyAccept",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.tentativelyAccept",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.tentativelyAccept",
-              "legacyOperationId": "user.calendarGroup.calendar.event_tentativelyAccept"
+              "legacyOperationId": "user.calendarGroup.calendar.event_tentativelyAccept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1743,28 +1832,32 @@
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/delta()",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.events.delta",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendarGroup.calendar.event_delta"
+              "legacyOperationId": "user.calendarGroup.calendar.event_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/allowedCalendarSharingRoles(User='{User}')",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.allowedCalendarSharingRoles",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/microsoft.graph.allowedCalendarSharingRoles(User='{User}')",
-              "legacyOperationId": "user.calendarGroup.calendar_allowedCalendarSharingRole"
+              "legacyOperationId": "user.calendarGroup.calendar_allowedCalendarSharingRole",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/getSchedule",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.getSchedule",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/microsoft.graph.getSchedule",
-              "legacyOperationId": "user.calendarGroup.calendar_getSchedule"
+              "legacyOperationId": "user.calendarGroup.calendar_getSchedule",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/permanentDelete",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.calendar.permanentDelete",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "user.calendarGroup.calendar_permanentDelete"
+              "legacyOperationId": "user.calendarGroup.calendar_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1778,7 +1871,8 @@
               "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/delta()",
               "operationId": "users.user.calendarGroups.calendarGroup.calendars.delta",
               "legacyPath": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendarGroup.calendar_delta"
+              "legacyOperationId": "user.calendarGroup.calendar_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "PATCH",
@@ -1799,7 +1893,8 @@
               "path": "/users/{user-id}/calendars/{calendar-id}/calendarView/delta()",
               "operationId": "users.user.calendars.calendar.calendarView.delta",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.calendarView_delta"
+              "legacyOperationId": "user.calendar.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1862,7 +1957,8 @@
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/createUploadSession",
               "operationId": "users.user.calendars.calendar.events.event.attachments.createUploadSession",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/microsoft.graph.createUploadSession",
-              "legacyOperationId": "user.calendar.event.attachment_createUploadSession"
+              "legacyOperationId": "user.calendar.event.attachment_createUploadSession",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1925,63 +2021,72 @@
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/delta()",
               "operationId": "users.user.calendars.calendar.events.event.instances.delta",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.event.instance_delta"
+              "legacyOperationId": "user.calendar.event.instance_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/accept",
               "operationId": "users.user.calendars.calendar.events.event.accept",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.accept",
-              "legacyOperationId": "user.calendar.event_accept"
+              "legacyOperationId": "user.calendar.event_accept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/cancel",
               "operationId": "users.user.calendars.calendar.events.event.cancel",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.cancel",
-              "legacyOperationId": "user.calendar.event_cancel"
+              "legacyOperationId": "user.calendar.event_cancel",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/decline",
               "operationId": "users.user.calendars.calendar.events.event.decline",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.decline",
-              "legacyOperationId": "user.calendar.event_decline"
+              "legacyOperationId": "user.calendar.event_decline",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/dismissReminder",
               "operationId": "users.user.calendars.calendar.events.event.dismissReminder",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.dismissReminder",
-              "legacyOperationId": "user.calendar.event_dismissReminder"
+              "legacyOperationId": "user.calendar.event_dismissReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/forward",
               "operationId": "users.user.calendars.calendar.events.event.forward",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.forward",
-              "legacyOperationId": "user.calendar.event_forward"
+              "legacyOperationId": "user.calendar.event_forward",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/permanentDelete",
               "operationId": "users.user.calendars.calendar.events.event.permanentDelete",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.permanentDelete",
-              "legacyOperationId": "user.calendar.event_permanentDelete"
+              "legacyOperationId": "user.calendar.event_permanentDelete",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/snoozeReminder",
               "operationId": "users.user.calendars.calendar.events.event.snoozeReminder",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.snoozeReminder",
-              "legacyOperationId": "user.calendar.event_snoozeReminder"
+              "legacyOperationId": "user.calendar.event_snoozeReminder",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/tentativelyAccept",
               "operationId": "users.user.calendars.calendar.events.event.tentativelyAccept",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/microsoft.graph.tentativelyAccept",
-              "legacyOperationId": "user.calendar.event_tentativelyAccept"
+              "legacyOperationId": "user.calendar.event_tentativelyAccept",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -1995,7 +2100,8 @@
               "path": "/users/{user-id}/calendars/{calendar-id}/events/delta()",
               "operationId": "users.user.calendars.calendar.events.delta",
               "legacyPath": "/users/{user-id}/calendars/{calendar-id}/events/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendar.event_delta"
+              "legacyOperationId": "user.calendar.event_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
@@ -2009,7 +2115,8 @@
               "path": "/users/{user-id}/calendarView/delta()",
               "operationId": "users.user.calendarView.delta",
               "legacyPath": "/users/{user-id}/calendarView/microsoft.graph.delta()",
-              "legacyOperationId": "user.calendarView_delta"
+              "legacyOperationId": "user.calendarView_delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             }
           ]
         }
