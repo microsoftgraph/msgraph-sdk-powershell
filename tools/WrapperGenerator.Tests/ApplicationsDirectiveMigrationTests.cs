@@ -37,7 +37,14 @@ public sealed class ApplicationsDirectiveMigrationTests
             var evidence = mapping.GetProperty("profiles").GetProperty(profile);
             var operations = evidence.GetProperty("operations").EnumerateArray().ToArray();
             Assert.Equal(operations.Length == 0, evidence.GetProperty("absenceExpected").GetBoolean());
-            Assert.Equal(index switch { 1 => 2, 2 => 9, 3 when profile == "beta" => 6, _ => 0 }, operations.Length);
+            Assert.Equal(index switch
+            {
+                1 => 2,
+                2 => 9,
+                3 when profile == "beta" => 6,
+                4 => profile == "beta" ? 12 : 7,
+                _ => 0,
+            }, operations.Length);
 
             foreach (var operation in operations)
             {
@@ -50,7 +57,7 @@ public sealed class ApplicationsDirectiveMigrationTests
                 foreach (var useCollisionData in new[] { false, true })
                 {
                     var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
-                    Assert.Equal(index is 1 or 2, CmdletConfigurator.IsSuppressed(method, path, config));
+                    Assert.Equal(index is 1 or 2 or 4, CmdletConfigurator.IsSuppressed(method, path, config));
                     if (index == 3)
                     {
                         var expected = "MgOnPremisePublishingProfile" +
@@ -81,6 +88,35 @@ public sealed class ApplicationsDirectiveMigrationTests
         var legacySelector = new Regex(pattern);
         Assert.DoesNotContain(document.Paths.Values.SelectMany(p => p.Operations!.Values),
             o => legacySelector.IsMatch(o.OperationId!));
+
+        using var legacyStream = File.OpenRead(Path.Combine(root, "openApiDocs", profile, "Applications.yml"));
+        var legacyResult = await OpenApiDocument.LoadAsync(legacyStream, settings: settings,
+            cancellationToken: TestContext.Current.CancellationToken);
+        var legacyDocument = Assert.IsType<OpenApiDocument>(legacyResult.Document);
+        var legacyMatches = legacyDocument.Paths.SelectMany(p => p.Value.Operations!
+            .Where(o => legacySelector.IsMatch(o.Value.OperationId!))
+            .Select(o => $"{o.Key.Method} {CmdletConfigurator.NormalizePathTemplate(p.Key)}"))
+            .OrderBy(p => p).ToArray();
+        var translatedMatches = mappings[3].GetProperty("profiles").GetProperty(profile)
+            .GetProperty("operations").EnumerateArray()
+            .Select(o => $"{o.GetProperty("method").GetString()} " +
+                CmdletConfigurator.NormalizePathTemplate(o.GetProperty("path").GetString()!))
+            .OrderBy(p => p).ToArray();
+        Assert.Equal(profile == "beta" ? 12 : 7, legacyMatches.Length);
+        Assert.Equal(legacyMatches, translatedMatches);
+        Assert.Equal("Legacy", mappings[3].GetProperty("profiles").GetProperty(profile)
+            .GetProperty("operationIdSource").GetString());
+        foreach (var operation in mappings[3].GetProperty("profiles").GetProperty(profile)
+            .GetProperty("operations").EnumerateArray())
+        {
+            var method = new HttpMethod(operation.GetProperty("method").GetString()!);
+            var legacyPath = operation.GetProperty("legacyPath").GetString()!;
+            var legacyId = operation.GetProperty("legacyOperationId").GetString()!;
+            Assert.Matches(legacySelector, legacyId);
+            Assert.Equal(legacyId, legacyDocument.Paths[legacyPath].Operations![method].OperationId);
+            Assert.Equal(CmdletConfigurator.NormalizePathTemplate(legacyPath),
+                CmdletConfigurator.NormalizePathTemplate(operation.GetProperty("path").GetString()!));
+        }
     }
 
     [Theory]
@@ -125,7 +161,7 @@ public sealed class ApplicationsDirectiveMigrationTests
     [InlineData("v1.0", true)]
     [InlineData("beta", false)]
     [InlineData("beta", true)]
-    public void LegacyIdAbsenceDoesNotSuppressModernReferenceOperations(string profile, bool useCollisionData)
+    public void TranslatedLegacyCollectionSuppressionRetainsItemReferenceNeighbors(string profile, bool useCollisionData)
     {
         var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
         string[] paths =
@@ -139,7 +175,12 @@ public sealed class ApplicationsDirectiveMigrationTests
             "/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}/$ref",
         ];
         foreach (var path in paths)
+        {
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, path, config));
+            var collectionReference = Regex.Replace(path, @"/\{[^}]+\}/\$ref$", "/$ref");
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, collectionReference, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, collectionReference, config));
+        }
 
         if (profile == "beta")
         {
@@ -148,6 +189,14 @@ public sealed class ApplicationsDirectiveMigrationTests
                 config));
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete,
                 "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/$ref",
+                config));
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
+                "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref",
+                config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
+                "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf", config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post,
+                "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref",
                 config));
             Assert.Equal("MgOnPremisePublishingProfileAgentGroup", Naming.Resolve(new OperationInfo(HttpMethod.Get,
                 "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups"), config).Noun);

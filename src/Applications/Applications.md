@@ -40,9 +40,9 @@ directive:
     set:
       subject: $1
 #Prevent paths from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0
-# Wrapper migration: reviewed operation-ID absence in both compatible specs. None
-# of these legacy IDs match; modern DeleteRef operations are not replacements for
-# this exact selector and are deliberately not suppressed. See the reviewed ledger.
+# Wrapper migration: legacy source IDs bridge by exact method and normalized path
+# to seven compatible operations in v1.0 and twelve in beta. Suppress only those
+# collection-reference routes, retaining item-reference neighbors; see the ledger.
   - remove-path-by-operation: ^application_DeleteOwnerGraphBPreRef$|^application_DeleteAppManagementPolicyGraphBPreRef$|^application_DeleteTokenIssuancePolicyGraphBPreRef$|^application_DeleteTokenLifetimePolicyGraphBPreRef$|^servicePrincipal_DeleteClaimsMappingPolicyGraphBPreRef$|^servicePrincipal_DeleteHomeRealmDiscoveryPolicyGraphBPreRef$|^servicePrincipal_DeleteOwnerGraphBPreRef$|^onPremisesPublishingProfile.agentGroup.agent_DeleteAgentGroupGraphBPreRef$|^onPremisesPublishingProfile.connectorGroup_DeleteMemberGraphBPreRef$|^onPremisesPublishingProfile.connector_ListMemberGraphOPreGraphBPreRef$|^onPremisesPublishingProfile.publishedResource_DeleteAgentGroupGraphBPreRef$|^onPremisesPublishingProfile.agentGroup.publishedResource_DeleteAgentGroupGraphBPreRef$
 
   # Set parameter alias

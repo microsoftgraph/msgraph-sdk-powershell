@@ -204,16 +204,155 @@
       "directiveIndex": 4,
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: ^application_DeleteOwnerGraphBPreRef$",
-      "implementation": "ReviewedAbsence",
-      "notes": "All twelve original legacy operation-ID alternatives have zero matches in both current compatible specs. This is exact selector absence, not API or profile absence: modern applications.*, servicePrincipals.* and onPremisesPublishingProfiles.* DeleteRef operations still exist with different IDs and are not suppressed by this directive. Do not infer replacement paths from the old singular IDs or remove existing derived reference naming.",
+      "implementation": "CmdletConfigurator",
+      "notes": "The same-profile legacy openApiDocs specifications match seven selected operations in v1.0 and twelve in beta. Every selected legacy operation survives at exactly the same HTTP method and normalized path in the compatible specification, with a renamed operation ID. Suppress these collection-reference operations only; keep item-reference neighbors and existing derived naming. No selected source route was removed. The five publishing-profile source selectors have no v1.0 match, where publishing-profile APIs are absent.",
       "profiles": {
         "v1.0": {
-          "absenceExpected": true,
-          "operations": []
+          "operationIdSource": "Legacy",
+          "notes": "Reviewed the complete original legacy regex match set: seven operations, all surviving by exact method and normalized path.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/applications/{application-id}/appManagementPolicies/$ref",
+              "operationId": "applications.DeleteRefAppManagementPolicies",
+              "legacyPath": "/applications/{application-id}/appManagementPolicies/$ref",
+              "legacyOperationId": "application_DeleteAppManagementPolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/applications/{application-id}/owners/$ref",
+              "operationId": "applications.DeleteRefOwners",
+              "legacyPath": "/applications/{application-id}/owners/$ref",
+              "legacyOperationId": "application_DeleteOwnerGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/applications/{application-id}/tokenIssuancePolicies/$ref",
+              "operationId": "applications.DeleteRefTokenIssuancePolicies",
+              "legacyPath": "/applications/{application-id}/tokenIssuancePolicies/$ref",
+              "legacyOperationId": "application_DeleteTokenIssuancePolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/applications/{application-id}/tokenLifetimePolicies/$ref",
+              "operationId": "applications.DeleteRefTokenLifetimePolicies",
+              "legacyPath": "/applications/{application-id}/tokenLifetimePolicies/$ref",
+              "legacyOperationId": "application_DeleteTokenLifetimePolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref",
+              "operationId": "servicePrincipals.DeleteRefClaimsMappingPolicies",
+              "legacyPath": "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref",
+              "legacyOperationId": "servicePrincipal_DeleteClaimsMappingPolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref",
+              "operationId": "servicePrincipals.DeleteRefHomeRealmDiscoveryPolicies",
+              "legacyPath": "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref",
+              "legacyOperationId": "servicePrincipal_DeleteHomeRealmDiscoveryPolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/owners/$ref",
+              "operationId": "servicePrincipals.DeleteRefOwners",
+              "legacyPath": "/servicePrincipals/{servicePrincipal-id}/owners/$ref",
+              "legacyOperationId": "servicePrincipal_DeleteOwnerGraphBPreRef"
+            }
+          ]
         },
         "beta": {
-          "absenceExpected": true,
-          "operations": []
+          "operationIdSource": "Legacy",
+          "notes": "Reviewed the complete original legacy regex match set: twelve operations, all surviving by exact method and normalized path.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/applications/{application-id}/appManagementPolicies/$ref",
+              "operationId": "applications.DeleteRefAppManagementPolicies",
+              "legacyPath": "/applications/{application-id}/appManagementPolicies/$ref",
+              "legacyOperationId": "application_DeleteAppManagementPolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/applications/{application-id}/owners/$ref",
+              "operationId": "applications.DeleteRefOwners",
+              "legacyPath": "/applications/{application-id}/owners/$ref",
+              "legacyOperationId": "application_DeleteOwnerGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/applications/{application-id}/tokenIssuancePolicies/$ref",
+              "operationId": "applications.DeleteRefTokenIssuancePolicies",
+              "legacyPath": "/applications/{application-id}/tokenIssuancePolicies/$ref",
+              "legacyOperationId": "application_DeleteTokenIssuancePolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/applications/{application-id}/tokenLifetimePolicies/$ref",
+              "operationId": "applications.DeleteRefTokenLifetimePolicies",
+              "legacyPath": "/applications/{application-id}/tokenLifetimePolicies/$ref",
+              "legacyOperationId": "application_DeleteTokenLifetimePolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/$ref",
+              "operationId": "onPremisesPublishingProfiles.agentGroups.agents.DeleteRefAgentGroups",
+              "legacyPath": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/$ref",
+              "legacyOperationId": "onPremisesPublishingProfile.agentGroup.agent_DeleteAgentGroupGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups/$ref",
+              "operationId": "onPremisesPublishingProfiles.agentGroups.publishedResources.DeleteRefAgentGroups",
+              "legacyPath": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups/$ref",
+              "legacyOperationId": "onPremisesPublishingProfile.agentGroup.publishedResource_DeleteAgentGroupGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/$ref",
+              "operationId": "onPremisesPublishingProfiles.connectorGroups.DeleteRefMembers",
+              "legacyPath": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/$ref",
+              "legacyOperationId": "onPremisesPublishingProfile.connectorGroup_DeleteMemberGraphBPreRef"
+            },
+            {
+              "method": "GET",
+              "path": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref",
+              "operationId": "onPremisesPublishingProfiles.connectors.ListRefMemberOf",
+              "legacyPath": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref",
+              "legacyOperationId": "onPremisesPublishingProfile.connector_ListMemberGraphOPreGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/$ref",
+              "operationId": "onPremisesPublishingProfiles.publishedResources.DeleteRefAgentGroups",
+              "legacyPath": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/$ref",
+              "legacyOperationId": "onPremisesPublishingProfile.publishedResource_DeleteAgentGroupGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref",
+              "operationId": "servicePrincipals.DeleteRefClaimsMappingPolicies",
+              "legacyPath": "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref",
+              "legacyOperationId": "servicePrincipal_DeleteClaimsMappingPolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref",
+              "operationId": "servicePrincipals.DeleteRefHomeRealmDiscoveryPolicies",
+              "legacyPath": "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref",
+              "legacyOperationId": "servicePrincipal_DeleteHomeRealmDiscoveryPolicyGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/owners/$ref",
+              "operationId": "servicePrincipals.DeleteRefOwners",
+              "legacyPath": "/servicePrincipals/{servicePrincipal-id}/owners/$ref",
+              "legacyOperationId": "servicePrincipal_DeleteOwnerGraphBPreRef"
+            }
+          ]
         }
       }
     }
