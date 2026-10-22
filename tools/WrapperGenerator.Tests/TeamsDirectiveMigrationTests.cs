@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -168,6 +170,66 @@ public sealed class TeamsDirectiveMigrationTests
         Assert.Equal("users.user.chats.getAllMessages", actual.OperationId);
         Assert.DoesNotContain(Document("openApiDocs_KiotaCompat", profile).Paths.Keys,
             path => path.StartsWith("/users/", StringComparison.Ordinal) && path.Contains("/onlineMeetings", StringComparison.Ordinal));
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task SingleRouteMigrationEmissionRetainsRenamedOperationsAndNeighbors(string profile)
+    {
+        var original = Document("openApiDocs_KiotaCompat", profile);
+        var selected = new OpenApiDocument { Components = original.Components, Paths = new OpenApiPaths() };
+        using var ledger = ReadLedger();
+        var mappings = ledger.RootElement.GetProperty("mappings").EnumerateArray()
+            .Where(mapping => mapping.GetProperty("directiveIndex").GetInt32() < 9).ToArray();
+        foreach (var mapping in mappings)
+        foreach (var evidence in mapping.GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())
+            Include(evidence.GetProperty("path").GetString()!, new HttpMethod(evidence.GetProperty("method").GetString()!));
+        Include("/users/{user-id}/joinedTeams", HttpMethod.Get);
+        Include("/teams/{team-id}/channels", HttpMethod.Get);
+        Include("/chats/{chat-id}/messages/{chatMessage-id}", HttpMethod.Patch);
+
+        var output = Path.Combine(Path.GetTempPath(), "teams-directive-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var service = new PowerShellWrapperGenerationService(selected,
+                new GeneratorConfig("Microsoft.Graph.PowerShell.Teams.Client", output, profile), NullLogger.Instance);
+            await service.GenerateAsync(CancellationToken.None);
+            var sources = Directory.GetFiles(output, "*.g.cs").ToDictionary(file => new FileInfo(file).Name, File.ReadAllText);
+            Assert.Contains("GetMgUserJoinedTeam.g.cs", sources.Keys);
+            Assert.Contains("GetMgTeamChannel.g.cs", sources.Keys);
+            Assert.Contains("UpdateMgChatMessage.g.cs", sources.Keys);
+
+            foreach (var mapping in mappings)
+            foreach (var evidence in mapping.GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())
+            {
+                var path = evidence.GetProperty("path").GetString()!;
+                var route = $"[GraphRoute(\"{evidence.GetProperty("method").GetString()}\", \"{path}\")]";
+                if (mapping.GetProperty("directiveIndex").GetInt32() <= 5)
+                    Assert.DoesNotContain(sources.Values, source => source.Contains(route, StringComparison.Ordinal));
+                else
+                {
+                    var noun = evidence.GetProperty("expectedNoun").GetString()!;
+                    Assert.Contains("GetMg" + noun + ".g.cs", sources.Keys);
+                    Assert.Contains(sources.Values, source => source.Contains(route, StringComparison.Ordinal));
+                }
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+
+        void Include(string path, HttpMethod method)
+        {
+            if (!selected.Paths.TryGetValue(path, out var item))
+            {
+                item = new OpenApiPathItem { Operations = new Dictionary<HttpMethod, OpenApiOperation>() };
+                selected.Paths.Add(path, item);
+            }
+            item.Operations![method] = original.Paths[path].Operations![method];
+        }
     }
 
     private static OperationKind Kind(OpenApiOperation operation) =>
