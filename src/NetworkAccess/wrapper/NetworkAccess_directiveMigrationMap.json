@@ -28,8 +28,7 @@
             {
               "method": "PATCH",
               "path": "/networkAccess/forwardingPolicies/{forwardingPolicy-id}/policyRules/{policyRule-id}",
-              "operationId": "networkAccess.forwardingPolicies.UpdatePolicyRules",
-              "legacyOperationId": "networkAccess.forwardingPolicy_UpdatePolicyRule"
+              "operationId": "networkAccess.forwardingPolicies.UpdatePolicyRules"
             }
           ]
         }
