@@ -53,19 +53,37 @@ public sealed class GroupsDirectiveMigrationTests
         var legacyDocument = profile == "v1.0" ? LegacyV1Spec.Value : LegacyBetaSpec.Value;
         var selectedLegacy = legacyDocument.Paths.SelectMany(path => path.Value.Operations!
             .Where(operation => Regex.IsMatch(operation.Value.OperationId!, pattern))
-            .Select(operation => (Path: path.Key, Method: operation.Key, Id: operation.Value.OperationId))).ToArray();
+            .Select(operation => (Path: path.Key, Method: operation.Key, Operation: operation.Value))).ToArray();
         Assert.Equal(profile == "v1.0" ? 7 : 10, selectedLegacy.Length);
+        var qualifiedBridges = 0;
         foreach (var legacy in selectedLegacy)
         {
             var match = Assert.Single(document.Paths, path => BridgePath(path.Key) == BridgePath(legacy.Path)
                 && path.Value.Operations!.ContainsKey(legacy.Method));
+            if (CmdletConfigurator.NormalizePathTemplate(match.Key) != CmdletConfigurator.NormalizePathTemplate(legacy.Path))
+            {
+                qualifiedBridges++;
+                var legacySlash = legacy.Path.LastIndexOf('/');
+                var compatibleSlash = match.Key.LastIndexOf('/');
+                Assert.Equal(legacy.Path[..legacySlash], match.Key[..compatibleSlash]);
+                Assert.Equal("microsoft.graph." + match.Key[(compatibleSlash + 1)..], legacy.Path[(legacySlash + 1)..]);
+                Assert.True(legacy.Method == HttpMethod.Get || legacy.Method == HttpMethod.Post);
+                var kind = legacy.Method == HttpMethod.Get ? "function" : "action";
+                foreach (var operation in new[] { legacy.Operation, match.Value.Operations![legacy.Method] })
+                {
+                    Assert.NotNull(operation.Extensions);
+                    Assert.True(operation.Extensions.TryGetValue("x-ms-docs-operation-type", out var extension));
+                    Assert.Equal(kind, Assert.IsType<JsonNodeExtension>(extension).Node?.ToString().Trim('"'));
+                }
+            }
             candidates.Add($"{legacy.Method.Method} {match.Key}");
             var evidence = Assert.Single(mappings[0].GetProperty("profiles").GetProperty(profile).GetProperty("operations")
                 .EnumerateArray(), operation => operation.GetProperty("method").GetString() == legacy.Method.Method
                     && operation.GetProperty("path").GetString() == match.Key);
             Assert.Equal(legacy.Path, evidence.GetProperty("legacyPath").GetString());
-            Assert.Equal(legacy.Id, evidence.GetProperty("legacyOperationId").GetString());
+            Assert.Equal(legacy.Operation.OperationId, evidence.GetProperty("legacyOperationId").GetString());
         }
+        Assert.Equal(profile == "v1.0" ? 2 : 5, qualifiedBridges);
         var reviewed = mappings[0].GetProperty("profiles").GetProperty(profile).GetProperty("operations")
             .EnumerateArray().Select(operation => $"{operation.GetProperty("method").GetString()} {operation.GetProperty("path").GetString()}")
             .OrderBy(key => key);
