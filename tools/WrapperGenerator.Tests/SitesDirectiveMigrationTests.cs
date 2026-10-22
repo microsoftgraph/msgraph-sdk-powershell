@@ -186,6 +186,107 @@ public sealed class SitesDirectiveMigrationTests
         }
     }
 
+    [Fact]
+    public void BetaRecursiveRouteEvidenceRetainsAllExactUnsuppressedOperations()
+    {
+        var root = FindRepoRoot();
+        var legacy = ReadSpec(Path.Combine(root, "openApiDocs", "beta", "Sites.yml"));
+        var current = ReadSpec(Path.Combine(root, "openApiDocs_KiotaCompat", "beta", "Sites.yml"));
+        using var evidence = JsonDocument.Parse(File.ReadAllText(Path.Combine(root, "src", "Sites", "wrapper", "Sites_multiRouteEvidence.json")));
+        var groups = evidence.RootElement.GetProperty("groups").EnumerateArray().ToArray();
+        Assert.Equal(84, groups.Length);
+        var exactRoutes = new HashSet<string>(StringComparer.Ordinal);
+        var config = new GeneratorConfig("Test.Client", "unused", "beta");
+        foreach (var group in groups)
+        foreach (var route in group.GetProperty("routes").EnumerateArray())
+        {
+            var method = new HttpMethod(route.GetProperty("method").GetString()!);
+            var path = route.GetProperty("path").GetString()!;
+            Assert.True(exactRoutes.Add($"{method} {path}"));
+            Assert.Equal(route.GetProperty("operationId").GetString(), current.Paths[path].Operations![method].OperationId);
+            Assert.Equal(route.GetProperty("legacyOperationId").GetString(),
+                legacy.Paths[route.GetProperty("legacyPath").GetString()!].Operations![method].OperationId);
+            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config));
+            var naming = Naming.Resolve(new OperationInfo(method, path), config);
+            Assert.Equal(group.GetProperty("publicCommand").GetString(), $"{naming.VerbName}-{naming.Noun}");
+        }
+        Assert.Equal(192, exactRoutes.Count);
+    }
+
+    [Fact]
+    public void BetaPublishedDefaultsUsePinnedSyntaxAndUniqueActualPathContractsNotLossyUris()
+    {
+        var root = FindRepoRoot();
+        using var evidence = JsonDocument.Parse(File.ReadAllText(Path.Combine(root, "src", "Sites", "wrapper", "Sites_multiRouteEvidence.json")));
+        var current = ReadSpec(Path.Combine(root, "openApiDocs_KiotaCompat", "beta", "Sites.yml"));
+        var metadataDisagreements = 0;
+        foreach (var group in evidence.RootElement.GetProperty("groups").EnumerateArray())
+        {
+            var proof = group.GetProperty("publishedDefaultProof");
+            Assert.Equal("UniqueDefaultContract", proof.GetProperty("status").GetString());
+            Assert.Equal("07b0cf8f6305213f3c3830c301fca69a3e82ed17", proof.GetProperty("sourceCommit").GetString());
+            Assert.Contains("/07b0cf8f6305213f3c3830c301fca69a3e82ed17/", proof.GetProperty("url").GetString()!);
+            Assert.Matches("^[A-F0-9]{64}$", proof.GetProperty("contentSha256").GetString()!);
+            var mandatory = Regex.Matches(proof.GetProperty("syntax").GetString()!, @"(?<!\[)-(?<name>[A-Za-z][A-Za-z0-9]*)\s+<")
+                .Select(match => match.Groups["name"].Value).ToHashSet(StringComparer.Ordinal);
+            Assert.True(mandatory.SetEquals(proof.GetProperty("mandatoryParameters").EnumerateArray().Select(value => value.GetString()!)));
+            var requiredIds = mandatory.Where(name => Regex.IsMatch(name, @"Id\d*$")).ToHashSet(StringComparer.Ordinal);
+            var matches = group.GetProperty("routes").EnumerateArray().Where(route =>
+                requiredIds.SetEquals(Naming.Resolve(new OperationInfo(
+                    new HttpMethod(route.GetProperty("method").GetString()!), route.GetProperty("path").GetString()!)).PathParamNames)).ToArray();
+            var actual = Assert.Single(matches);
+            Assert.Equal("Direct", actual.GetProperty("name").GetString());
+            Assert.Equal("Direct", group.GetProperty("defaultRoute").GetString());
+            var recorded = Assert.Single(proof.GetProperty("candidateRoutes").EnumerateArray());
+            Assert.Equal(actual.GetProperty("path").GetString(), recorded.GetProperty("path").GetString());
+            var operation = current.Paths[actual.GetProperty("path").GetString()!].Operations![new HttpMethod(actual.GetProperty("method").GetString()!)];
+            Assert.DoesNotContain(operation.Parameters ?? [], parameter => parameter.Required && parameter.In != ParameterLocation.Path);
+            if (group.GetProperty("metadataRouteCandidate").GetString() != group.GetProperty("defaultRoute").GetString())
+                metadataDisagreements++;
+        }
+        Assert.Equal(60, metadataDisagreements);
+    }
+
+    [Fact]
+    public void BetaRecursiveRouteFamiliesHaveMatchingBodyResponseAndQueryContracts()
+    {
+        var root = FindRepoRoot();
+        using var evidence = JsonDocument.Parse(File.ReadAllText(Path.Combine(root, "src", "Sites", "wrapper", "Sites_multiRouteEvidence.json")));
+        var current = ReadSpec(Path.Combine(root, "openApiDocs_KiotaCompat", "beta", "Sites.yml"));
+        foreach (var group in evidence.RootElement.GetProperty("groups").EnumerateArray())
+        {
+            var shapes = group.GetProperty("routes").EnumerateArray().GroupBy(route =>
+            {
+                var path = route.GetProperty("path").GetString()!;
+                return route.GetProperty("method").GetString() == "GET" && path.EndsWith('}') ? "Item" : "CollectionOrSingle";
+            });
+            foreach (var shape in shapes)
+            {
+                var contracts = shape.Select(route =>
+                {
+                    var path = route.GetProperty("path").GetString()!;
+                    var operation = current.Paths[path].Operations![new HttpMethod(route.GetProperty("method").GetString()!)];
+                    var body = MediaSignature(operation.RequestBody?.Content);
+                    var response = string.Join("|", operation.Responses!.OrderBy(pair => pair.Key).Select(pair =>
+                        $"{pair.Key}:{MediaSignature(pair.Value.Content)}"));
+                    var parameters = string.Join("|", (operation.Parameters ?? []).Concat(current.Paths[path].Parameters ?? [])
+                        .Where(parameter => parameter.In != ParameterLocation.Path)
+                        .OrderBy(parameter => parameter.In).ThenBy(parameter => parameter.Name)
+                        .Select(parameter => $"{parameter.In}:{parameter.Name}:{parameter.Required}:{SchemaSignature(parameter.Schema)}"));
+                    return $"{body};{response};{parameters}";
+                }).Distinct(StringComparer.Ordinal);
+                Assert.Single(contracts);
+            }
+        }
+    }
+
+    private static string SchemaSignature(IOpenApiSchema? schema) =>
+        schema is OpenApiSchemaReference reference ? $"ref:{reference.Reference?.Id}"
+            : schema is null ? "none" : $"{schema.Type}:{schema.Format}:{SchemaSignature(schema.Items)}";
+
+    private static string MediaSignature(IDictionary<string, IOpenApiMediaType>? content) =>
+        content is null ? "" : string.Join("|", content.OrderBy(pair => pair.Key).Select(pair => $"{pair.Key}:{SchemaSignature(pair.Value.Schema)}"));
+
     private static OpenApiDocument ReadSpec(string path)
     {
         var settings = new OpenApiReaderSettings();
