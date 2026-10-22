@@ -549,11 +549,16 @@ namespace {{ctx.CmdletNamespace}}
     // An OData /$value read: the raw bytes behind a resource (a photo, an uploaded file). Kiota
     // types it as Stream from a plain GetAsync on the Content builder. -OutFile matches the
     // published surface (Get-MgUserPhotoContent -OutFile <path>).
-    public static string EmitContentGet(CmdletNaming naming, EmitContext ctx, string returnTypeName, bool returnsStream)
+    public static string EmitContentGet(CmdletNaming naming, EmitContext ctx, string returnTypeName, bool returnsStream,
+        bool useStoppingToken = false)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
         ArgumentNullException.ThrowIfNull(returnTypeName);
+        var bindings = HeaderBindingsFor(naming.HeaderParams, extraIndent: "                ") + GenericHeadersBinding("                ");
+        var call = useStoppingToken
+            ? $"client.{naming.BuilderExpression}.GetAsync(requestConfiguration =>\n                {{{bindings}\n                }}, StoppingToken)"
+            : EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null);
 
         return $$"""
 #nullable enable
@@ -588,7 +593,7 @@ namespace {{ctx.CmdletNamespace}}
             {{returnTypeName}}? result;
             try
             {
-                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null)}}.GetAwaiter().GetResult();
+                result = {{call}}.GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}
 {{(returnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
@@ -829,7 +834,7 @@ namespace {{ctx.CmdletNamespace}}
     ];
 
     public static string EmitListGet(CmdletNaming naming, EmitContext ctx, string entityType, string collectionResponseType, IReadOnlySet<string> queryParamNames,
-        IReadOnlyList<StringQueryParameter>? extraQueryParameters = null)
+        IReadOnlyList<StringQueryParameter>? extraQueryParameters = null, string methodName = "GetAsync")
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
@@ -891,7 +896,7 @@ namespace {{ctx.CmdletNamespace}}
             {{collectionResponseType}}? result;
             try
             {
-                result = client.{{naming.BuilderExpression}}.GetAsync(requestConfiguration =>
+                result = client.{{naming.BuilderExpression}}.{{methodName}}(requestConfiguration =>
                 {
 {{bindings}}
 {{HeaderBindings(naming)}}
@@ -912,7 +917,7 @@ namespace {{ctx.CmdletNamespace}}
                         // The nextLink already carries the original query state, and a raw-URL
                         // builder ignores templated query parameters anyway - so the continuation
                         // re-applies headers only; query bindings here would be dead code.
-                        result = client.{{naming.BuilderExpression}}.WithUrl(nextLink).GetAsync(requestConfiguration =>
+                        result = client.{{naming.BuilderExpression}}.WithUrl(nextLink).{{methodName}}(requestConfiguration =>
                         {{{continuationHeaders}}
                         }, StoppingToken).GetAwaiter().GetResult();
                         if (result?.Value is { } page)
@@ -1207,7 +1212,8 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
-    public static string EmitRemove(CmdletNaming naming, EmitContext ctx)
+    public static string EmitRemove(CmdletNaming naming, EmitContext ctx,
+        IReadOnlyList<StringQueryParameter>? extraQueryParameters = null)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
@@ -1228,7 +1234,7 @@ namespace {{ctx.CmdletNamespace}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming)}}{{ExtraQueryDeclarations(extraQueryParameters)}}
 {{HeaderParamDecls(naming)}}
 {{GenericHeadersParamDecl()}}
 
@@ -1243,7 +1249,9 @@ namespace {{ctx.CmdletNamespace}}
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                {{EmitCallWithOptionalHeaders(naming, "DeleteAsync", null)}}
+                {{(extraQueryParameters is { Count: > 0 }
+                    ? EmitCallOn($"client.{naming.BuilderExpression}", naming, "DeleteAsync", null, ExtraQueryBindings(extraQueryParameters))
+                    : EmitCallWithOptionalHeaders(naming, "DeleteAsync", null))}}
                     .GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}

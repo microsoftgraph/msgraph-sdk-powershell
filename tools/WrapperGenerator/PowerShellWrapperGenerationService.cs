@@ -153,6 +153,7 @@ public sealed partial class PowerShellWrapperGenerationService
         var deltaOperations = new List<DeltaOperationRecord>();
         var multiRouteGroups = PrepareMultiRouteGroups();
         var multiRouteOperations = new List<MultiRouteOperation>();
+        var referenceDeleteQueries = PrepareReferenceDeleteQueryBindings(multiRouteGroups);
 
         foreach (var (pathTemplate, pathItem) in document.Paths)
         {
@@ -164,6 +165,11 @@ public sealed partial class PowerShellWrapperGenerationService
                 // calls on a resource rather than CRUD over one, which decides the verb, the
                 // request shape and the kiota member the call goes through.
                 var operationKind = ClassifyOperationKind(operation, httpMethod);
+                var routeGroup = multiRouteGroups.FirstOrDefault(g => g.Routes.Any(r =>
+                    MatchesRoute(r, httpMethod.Method, pathTemplate)));
+                var referenceDeleteQuery = httpMethod == HttpMethod.Delete
+                    ? referenceDeleteQueries.SingleOrDefault(b => b.Path.Equals(pathTemplate, StringComparison.OrdinalIgnoreCase))
+                    : null;
 
                 // Operation shapes the emitters cannot produce a valid cmdlet for yet are
                 // skipped up front instead of emitted malformed: OData $-segments would produce
@@ -187,8 +193,12 @@ public sealed partial class PowerShellWrapperGenerationService
 
                 // Skip operations the published SDK deliberately does not ship. CmdletConfigurator
                 // holds the citation for each one.
-                if (CmdletConfigurator.IsSuppressed(httpMethod, pathTemplate, config))
+                if (CmdletConfigurator.IsSuppressed(httpMethod, pathTemplate, config)
+                    && !(routeGroup?.IncludeDerivedSuppressedRoutes == true
+                        && !CmdletConfigurator.IsCuratedSuppressed(httpMethod, pathTemplate)))
                 {
+                    if (referenceDeleteQuery is not null)
+                        throw new InvalidOperationException($"Reviewed reference DELETE query target is suppressed: {pathTemplate}.");
                     LogSuppressedOperation(httpMethod.Method, pathTemplate);
                     continue;
                 }
@@ -214,10 +224,18 @@ public sealed partial class PowerShellWrapperGenerationService
 
                 var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams, operationKind), config);
 
-                if (multiRouteGroups.Any(g => g.Routes.Any(r => MatchesRoute(r, httpMethod.Method, pathTemplate))))
+                if (referenceDeleteQuery is not null)
+                {
+                    var configuredDelete = EmitConfiguredReferenceDelete(cmdletNaming, ctx, operation,
+                        referenceDeleteQuery, (pathItem.Parameters ?? []).ToArray());
+                    written += await WriteCmdletFileAsync(cmdletNaming, configuredDelete, cancellationToken).ConfigureAwait(false);
+                    continue;
+                }
+
+                if (routeGroup is not null)
                 {
                     multiRouteOperations.Add(new(cmdletNaming, operation, queryParams,
-                        pathItem.Operations?.ContainsKey(HttpMethod.Get) == true));
+                        pathItem.Operations?.ContainsKey(HttpMethod.Get) == true, (pathItem.Parameters ?? []).ToArray()));
                     continue;
                 }
 
@@ -874,9 +892,12 @@ public sealed partial class PowerShellWrapperGenerationService
     // resolve is dropped with a diagnostic rather than emitted against a guessed type name,
     // which would fail the module compile.
     private (IReadOnlyList<CmdletProperty> Scalars, IReadOnlyList<ComplexParameter> Complex, IReadOnlyList<UntypedParameter> Untyped) BindBodyProperties(
-        IOpenApiSchema bodySchema, EmitContext ctx, CmdletNaming naming, string entityType)
+        IOpenApiSchema bodySchema, EmitContext ctx, CmdletNaming naming, string entityType, bool requireCompleteBinding = false)
     {
         var classified = SchemaProperties.Classify(bodySchema, ResolveComponentSchema);
+        if (requireCompleteBinding && classified.Unsupported.Count > 0)
+            throw new InvalidOperationException($"Unsupported route-specific body properties at {naming.SourcePath}: "
+                + string.Join(", ", classified.Unsupported.Select(p => $"{p.OpenApiName} ({p.Shape})")));
         var (scalars, complex, untyped) = SchemaProperties.ResolveParameterNameCollisions(
             classified.Scalars, classified.Complex, classified.Untyped, naming.PathParamNames);
 

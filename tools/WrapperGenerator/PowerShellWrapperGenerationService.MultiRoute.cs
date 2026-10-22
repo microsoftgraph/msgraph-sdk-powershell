@@ -11,7 +11,7 @@ namespace WrapperGenerator;
 public sealed partial class PowerShellWrapperGenerationService
 {
     private sealed record MultiRouteOperation(CmdletNaming Naming, OpenApiOperation Operation,
-        IReadOnlyList<string> QueryParams, bool CanReFetch);
+        IReadOnlyList<string> QueryParams, bool CanReFetch, IReadOnlyList<IOpenApiParameter> PathItemParameters);
 
     private static bool MatchesRoute(MultiRoute route, string method, string path) =>
         route.Method.Equals(method, StringComparison.OrdinalIgnoreCase)
@@ -44,6 +44,12 @@ public sealed partial class PowerShellWrapperGenerationService
             if (!group.Routes.Any(r => r.Name == group.DefaultRoute)
                 || group.Routes.Select(r => r.Name).Distinct(StringComparer.OrdinalIgnoreCase).Count() < 2)
                 throw new InvalidOperationException("Multi-route group requires at least two route names and an explicit matching default.");
+            if ((group.AllowAsymmetricRoutes || group.AllowExplicitRouteSelection) && group.SelectorParameter is null)
+                throw new InvalidOperationException("Asymmetric or explicit multi-route groups require an explicit selector parameter.");
+            if (group.AllowPublishedParameterInference && !group.AllowExplicitRouteSelection)
+                throw new InvalidOperationException("Published parameter inference requires the explicit per-route parameter policy.");
+            if (group.Routes.Any(r => r.QueryBindings.Count > 0) && !group.AllowReferenceDelete)
+                throw new InvalidOperationException("Explicit multi-route query bindings require the reviewed reference DELETE policy.");
         }
         return groups;
     }
@@ -69,8 +75,10 @@ public sealed partial class PowerShellWrapperGenerationService
             var selected = members.Select(m => m!).ToArray();
             var first = selected[0].Naming;
             if (selected.Any(o => o.Naming.VerbName != first.VerbName || o.Naming.Noun != first.Noun
-                || !o.Naming.SourceMethod.Equals(first.SourceMethod, StringComparison.OrdinalIgnoreCase) || o.Naming.Kind != first.Kind))
+                || !o.Naming.SourceMethod.Equals(first.SourceMethod, StringComparison.OrdinalIgnoreCase)
+                || (!group.AllowMixedReadOperations && o.Naming.Kind != first.Kind)))
                 throw new InvalidOperationException("Multi-route members must resolve to the same public command, HTTP method and operation kind after naming overrides.");
+            ValidateMultiRoutePolicies(group, selected);
 
             var workers = new List<CmdletEmitter.RouteWorker>();
             var sources = new List<string>();
@@ -81,9 +89,10 @@ public sealed partial class PowerShellWrapperGenerationService
                 var method = naming.SourceMethod.ToUpperInvariant();
                 if (naming.NormalizedPath.Contains('@', StringComparison.Ordinal)
                     || HasParameterizedIntermediateSegment(naming.SourcePath)
-                    || (method == "GET" && (HasBinarySuccessContent(op.Operation)
+                    || (method == "GET" && ((HasBinarySuccessContent(op.Operation) && !group.AllowMediaRoutes)
                         || TryGetRequestJsonSchema(op.Operation) is not null
-                        || (EndsWithEmittableODataSegment(naming.SourcePath) && !EndsWithSegment(naming.SourcePath, "$count")))))
+                        || (EndsWithEmittableODataSegment(naming.SourcePath) && !EndsWithSegment(naming.SourcePath, "$count")
+                            && !group.AllowMediaRoutes))))
                     throw new InvalidOperationException($"Unsupported multi-route operation shape: {method} {naming.SourcePath}.");
                 var workerNaming = Naming.WithSuffix(naming, $"_Route{i}");
                 var shape = "Invoke";
@@ -91,13 +100,60 @@ public sealed partial class PowerShellWrapperGenerationService
                 string? source;
                 IReadOnlyList<CmdletEmitter.DispatchParameter> bodyParameters = [];
                 var extraQueryParameters = method == "GET"
-                    ? GetExtraQueryParameters(op.Operation) : [];
-                if (naming.Kind == OperationKind.Resource && method == "GET"
+                    ? GetExtraQueryParameters(op.Operation)
+                    : group.AllowReferenceDelete ? GetReferenceDeleteQueries(group.Routes[i], op.Operation) : [];
+                if (group.AllowMediaRoutes && method == "GET")
+                {
+                    if (op.QueryParams.Count != 0
+                        || !TryResolveOperationReturnType(op.Operation, ctx, naming, false,
+                            out var contentType, out _, out var contentStream)
+                        || contentType is null || !contentStream)
+                        throw new InvalidOperationException($"Unsupported reviewed media GET contract: {naming.SourcePath}.");
+                    shape = "Get";
+                    outputType = "byte[]";
+                    bodyParameters = [new("OutFile", "string?")];
+                    source = CmdletEmitter.EmitContentGet(workerNaming, ctx, contentType, true, useStoppingToken: true);
+                }
+                else if (naming.Kind == OperationKind.Resource && method == "GET"
                     && EndsWithSegment(naming.SourcePath, "$count"))
                 {
                     shape = "Scalar";
                     outputType = "int";
                     source = CmdletEmitter.EmitScalarGet(workerNaming, ctx, "int", op.QueryParams.ToHashSet(), extraQueryParameters);
+                }
+                else if (naming.Kind == OperationKind.Function && group.AllowZeroArgumentFunctions)
+                {
+                    if (!group.AllowZeroArgumentFunctions || naming.FunctionParameters.Count != 0
+                        || !LastSegment(naming.SourcePath).EndsWith("()", StringComparison.Ordinal)
+                        || IsDeltaCall(naming.SourcePath) || (!group.AllowMixedReadOperations && op.QueryParams.Count != 0)
+                        || naming.HeaderParams.Count != 0
+                        || !TryResolveOperationReturnType(op.Operation, ctx, naming, false,
+                            out outputType, out var functionMethod, out var functionStream)
+                        || outputType is null || functionStream)
+                        throw new InvalidOperationException($"Unsupported multi-route function shape: {naming.SourcePath}.");
+                    if (group.AllowMixedReadOperations)
+                    {
+                        var response = TryGetSuccessJsonSchema(op.Operation);
+                        var value = response is null ? null : FindProperty(response, "value");
+                        var nextLink = response is null ? null : FindProperty(response, "@odata.nextLink");
+                        if (nextLink?.Type is not { } nextLinkType
+                            || (nextLinkType & ~JsonSchemaType.Null) != JsonSchemaType.String
+                            || nextLink.GetReferenceId() is not null
+                            || nextLink.AnyOf?.Count > 0 || nextLink.OneOf?.Count > 0)
+                            throw new InvalidOperationException($"Mixed read function response requires a plain string '@odata.nextLink' pagination member: {naming.SourcePath}.");
+                        if (value is null || !TryResolveListEntityTypeName(value, ctx.ModelsNamespace, out var entity)
+                            || extraQueryParameters.Any(p => p.Name != "model" || p.Required))
+                            throw new InvalidOperationException($"Mixed reads require a typed paged function returning the common entity collection and only an optional string 'model' query: {naming.SourcePath}.");
+                        shape = "List";
+                        source = CmdletEmitter.EmitListGet(workerNaming, ctx, entity, outputType,
+                            op.QueryParams.ToHashSet(), extraQueryParameters, functionMethod);
+                        outputType = entity;
+                    }
+                    else
+                    {
+                        shape = "Get";
+                        source = CmdletEmitter.EmitFunction(workerNaming, ctx, new(functionMethod, outputType, null), op.QueryParams.ToHashSet());
+                    }
                 }
                 else if (naming.Kind == OperationKind.Resource && method == "GET")
                 {
@@ -123,9 +179,12 @@ public sealed partial class PowerShellWrapperGenerationService
                 }
                 else
                 {
-                    if (op.QueryParams.Count != 0 || HasNonJsonRequestContent(op.Operation)
+                    if ((op.QueryParams.Count != 0 && !group.AllowReferenceDelete) || HasNonJsonRequestContent(op.Operation)
+                        || (group.AllowRouteSpecificBodies && op.Operation.RequestBody?.Content?.Keys.Any(contentType =>
+                            !contentType.StartsWith("application/json", StringComparison.OrdinalIgnoreCase)
+                            && !contentType.EndsWith("+json", StringComparison.OrdinalIgnoreCase)) == true)
                         || HasBinarySuccessContent(op.Operation) || naming.Kind == OperationKind.Function
-                        || EndsWithEmittableODataSegment(naming.SourcePath))
+                        || (EndsWithEmittableODataSegment(naming.SourcePath) && !group.AllowReferenceDelete && !group.AllowMediaRoutes))
                         throw new InvalidOperationException($"Unsupported multi-route operation shape: {naming.SourceMethod} {naming.SourcePath}.");
                     var body = TryGetRequestJsonSchema(op.Operation);
                     if (method == "DELETE" && body is not null)
@@ -140,7 +199,8 @@ public sealed partial class PowerShellWrapperGenerationService
                             ? $"global::{ctx.ClientNamespace}.{naming.OperationTypeNamespace}.{naming.OperationTypeName}PostRequestBody"
                             : TryResolveEntityTypeName(body, ctx.ModelsNamespace, out var entity) ? entity
                             : throw new InvalidOperationException($"Unsupported multi-route request body: {naming.SourcePath}.");
-                        (scalars, complex, untyped) = BindBodyProperties(body, ctx, naming, bodyType);
+                        (scalars, complex, untyped) = BindBodyProperties(body, ctx, naming, bodyType,
+                            requireCompleteBinding: group.AllowRouteSpecificBodies);
                         bodyParameters = CmdletEmitter.BodyDispatchParameters(scalars, complex, untyped);
                     }
                     if (naming.Kind == OperationKind.Action)
@@ -154,7 +214,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     {
                         source = method switch
                         {
-                            "DELETE" => CmdletEmitter.EmitRemove(workerNaming, ctx),
+                            "DELETE" => CmdletEmitter.EmitRemove(workerNaming, ctx, extraQueryParameters),
                             "POST" when bodyType is not null => CmdletEmitter.EmitNew(workerNaming, ctx, bodyType, scalars, complex, untyped),
                             "PATCH" when bodyType is not null => CmdletEmitter.EmitUpdate(workerNaming, ctx, bodyType, scalars, complex, untyped, op.CanReFetch),
                             "PUT" when bodyType is not null => CmdletEmitter.EmitUpdate(workerNaming, ctx, bodyType, scalars, complex, untyped,
@@ -205,21 +265,115 @@ public sealed partial class PowerShellWrapperGenerationService
             foreach (var worker in shape.Skip(1))
             {
                 var operation = operations[workers.ToList().IndexOf(worker)].Operation;
-                if (SchemaSignature(TryGetRequestJsonSchema(baselineOp)) != SchemaSignature(TryGetRequestJsonSchema(operation))
-                    || SchemaSignature(TryGetSuccessJsonSchema(baselineOp)) != SchemaSignature(TryGetSuccessJsonSchema(operation))
-                    || ParameterSignature(baselineOp) != ParameterSignature(operation))
+                if ((!group.AllowRouteSpecificBodies
+                        && SchemaSignature(TryGetRequestJsonSchema(baselineOp)) != SchemaSignature(TryGetRequestJsonSchema(operation)))
+                    || (!group.AllowResponseUnion
+                        && !(group.AllowMixedReadOperations && shape.Key == "List"
+                            && baseline.OutputType == worker.OutputType)
+                        && SchemaSignature(TryGetSuccessJsonSchema(baselineOp)) != SchemaSignature(TryGetSuccessJsonSchema(operation)))
+                    || (group.AllowMixedReadOperations
+                        ? !CompatibleMixedReadParameters(baselineOp, operation)
+                        : ParameterSignature(baselineOp, !group.AllowReferenceDelete) != ParameterSignature(operation, !group.AllowReferenceDelete)))
                     throw new InvalidOperationException($"Incompatible multi-route body, response, query or header shape: {worker.Naming.SourcePath}.");
             }
         }
-        if (group.SelectorParameter is not null && workers.GroupBy(w => w.RouteName)
+        if (group.SelectorParameter is not null && !group.AllowAsymmetricRoutes && workers.GroupBy(w => w.RouteName)
             .Any(f => !f.Select(w => w.Shape).Order().SequenceEqual(workers.Where(w => w.RouteName == group.DefaultRoute).Select(w => w.Shape).Order())))
             throw new InvalidOperationException("Selected multi-route families must expose the same operation shapes.");
+        if (group.AllowMixedReadOperations && workers.Select(w => w.OutputType).Distinct(StringComparer.Ordinal).Count() != 1)
+            throw new InvalidOperationException("Mixed read workers must emit the same entity type; differing envelope types do not authorize differing payload models.");
     }
 
-    private static string ParameterSignature(OpenApiOperation operation) =>
-        string.Join("|", (operation.Parameters ?? []).Where(p => p.In != ParameterLocation.Path)
+    private static string ParameterSignature(OpenApiOperation operation, bool includeQueries = true) =>
+        string.Join("|", (operation.Parameters ?? []).Where(p => p.In != ParameterLocation.Path
+                && (includeQueries || p.In != ParameterLocation.Query))
             .OrderBy(p => p.In).ThenBy(p => p.Name, StringComparer.Ordinal)
             .Select(p => $"{p.In}:{p.Name}:{p.Required}:{SchemaSignature(p.Schema)}"));
+
+    private static bool CompatibleMixedReadParameters(OpenApiOperation left, OpenApiOperation right)
+    {
+        var leftParameters = (left.Parameters ?? []).Where(p => p.In != ParameterLocation.Path)
+            .ToDictionary(p => (p.In, p.Name));
+        var rightParameters = (right.Parameters ?? []).Where(p => p.In != ParameterLocation.Path)
+            .ToDictionary(p => (p.In, p.Name));
+        foreach (var key in leftParameters.Keys.Union(rightParameters.Keys))
+        {
+            var inLeft = leftParameters.TryGetValue(key, out var leftParameter);
+            var inRight = rightParameters.TryGetValue(key, out var rightParameter);
+            if (inLeft && inRight)
+            {
+                if (leftParameter!.Required != rightParameter!.Required
+                    || SchemaSignature(leftParameter.Schema) != SchemaSignature(rightParameter.Schema))
+                    return false;
+            }
+            else
+            {
+                var parameter = inLeft ? leftParameter! : rightParameter!;
+                if (parameter.In != ParameterLocation.Query || parameter.Name != "model"
+                    || parameter.Required || !IsPlainStringQuery(parameter))
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    private static void ValidateMultiRoutePolicies(MultiRouteGroup group, IReadOnlyList<MultiRouteOperation> operations)
+    {
+        var naming = operations[0].Naming;
+        var method = naming.SourceMethod.ToUpperInvariant();
+        var extension = group.AllowZeroArgumentFunctions || group.AllowAsymmetricRoutes || group.AllowResponseUnion
+            || group.AllowRouteSpecificBodies || group.AllowReferenceDelete || group.AllowMediaRoutes || group.AllowExplicitRouteSelection
+            || group.AllowMixedReadOperations;
+        if (extension && method == "GET" && operations.Any(o => o.Operation.RequestBody is not null))
+            throw new InvalidOperationException("Reviewed GET route extensions do not support any request body.");
+        if (extension
+            && operations.Any(o => o.PathItemParameters.Any(p => p.In is ParameterLocation.Query or ParameterLocation.Header)))
+            throw new InvalidOperationException("Reviewed route extensions do not support path-item query or header parameters; explicit operation binding is required.");
+        if (group.AllowMixedReadOperations && (method != "GET" || operations.Count != 3
+            || operations.Count(o => o.Naming.Kind == OperationKind.Function) != 1
+            || operations.Count(o => o.Naming.Kind == OperationKind.Resource) != 2
+            || !group.AllowZeroArgumentFunctions || !group.AllowAsymmetricRoutes
+            || !group.AllowExplicitRouteSelection || !group.AllowPublishedParameterInference))
+            throw new InvalidOperationException("Mixed reads require exactly one zero-argument paged GET function and its resource list/item family, with asymmetric explicit selection and reviewed Published inference.");
+        if (group.AllowZeroArgumentFunctions && (!group.AllowMixedReadOperations && naming.Kind != OperationKind.Function || method != "GET"))
+            throw new InvalidOperationException("The zero-argument function policy applies only to GET functions.");
+        if (group.AllowAsymmetricRoutes && (!group.AllowMixedReadOperations && naming.Kind != OperationKind.Resource || method != "GET"))
+            throw new InvalidOperationException("The asymmetric route policy applies only to resource GET groups.");
+        if (group.AllowRouteSpecificBodies && (naming.Kind != OperationKind.Action || method != "POST"
+            || (group.SelectorParameter is not null && !group.AllowExplicitRouteSelection)))
+            throw new InvalidOperationException("Route-specific body plans require POST actions with parent discrimination or an explicit route-selection policy.");
+        if (group.AllowResponseUnion && !(naming.Kind == OperationKind.Resource && method == "GET"
+            || naming.Kind == OperationKind.Action && method == "POST"))
+            throw new InvalidOperationException("Response unions are supported only for reviewed resource GET or POST action groups.");
+        if (group.AllowReferenceDelete && (naming.Kind != OperationKind.Resource || method != "DELETE"
+            || operations.Any(o => !EndsWithSegment(o.Naming.SourcePath, "$ref"))))
+            throw new InvalidOperationException("The reference DELETE policy requires exact resource DELETE /$ref routes.");
+        if (group.AllowMediaRoutes && (naming.Kind != OperationKind.Resource || method is not ("GET" or "DELETE")
+            || operations.Any(o => !EndsWithSegment(o.Naming.SourcePath, "$value"))))
+            throw new InvalidOperationException("The media route policy requires exact resource GET or DELETE /$value routes.");
+        if (group.AllowExplicitRouteSelection && !(
+            naming.Kind == OperationKind.Action && method == "POST"
+            || (naming.Kind == OperationKind.Resource || group.AllowMixedReadOperations) && method == "GET" && (group.AllowAsymmetricRoutes
+                || operations.All(o => EndsWithSegment(o.Naming.SourcePath, "$count")))))
+            throw new InvalidOperationException("Explicit route selection is supported only for reviewed scalar counts, asymmetric resource GETs or POST actions.");
+    }
+
+    private static IReadOnlyList<CmdletEmitter.StringQueryParameter> GetReferenceDeleteQueries(MultiRoute route, OpenApiOperation operation)
+    {
+        var queries = (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Query).ToArray();
+        if (queries.Length == 0 && route.QueryBindings.Count == 0)
+            return [];
+        if (queries.Length != 1 || queries[0].Name != "@id" || !queries[0].Required
+            || !IsPlainStringQuery(queries[0]) || route.QueryBindings.Count != 1
+            || route.QueryBindings[0].QueryName != "@id" || route.QueryBindings[0].ParameterName != "MemberReferenceUri")
+            throw new InvalidOperationException($"Reference DELETE requires an explicit MemberReferenceUri binding for the spec's required string '@id' query: {route.Path}.");
+        return [new("@id", "MemberReferenceUri", true) { BuilderPropertyName = "Id" }];
+    }
+
+    private static bool IsPlainStringQuery(IOpenApiParameter parameter) =>
+        parameter.Schema?.Type == JsonSchemaType.String && parameter.Schema.GetReferenceId() is null
+        && !(parameter.Schema.Enum?.Count > 0 || parameter.Schema.AllOf?.Count > 0
+            || parameter.Schema.AnyOf?.Count > 0 || parameter.Schema.OneOf?.Count > 0);
 
     private static IReadOnlyList<CmdletEmitter.StringQueryParameter> GetExtraQueryParameters(OpenApiOperation operation)
     {
@@ -227,10 +381,7 @@ public sealed partial class PowerShellWrapperGenerationService
         var standard = new HashSet<string>(["$filter", "$select", "$expand", "$orderby", "$search", "$top", "$skip", "$count"], StringComparer.Ordinal);
         foreach (var parameter in (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Query && !standard.Contains(p.Name!)))
         {
-            if (parameter.Name is null || !IsRouteIdentifier(parameter.Name)
-                || parameter.Schema?.Type != JsonSchemaType.String || parameter.Schema.GetReferenceId() is not null
-                || parameter.Schema.Enum?.Count > 0 || parameter.Schema.AllOf?.Count > 0
-                || parameter.Schema.AnyOf?.Count > 0 || parameter.Schema.OneOf?.Count > 0)
+            if (parameter.Name is null || !IsRouteIdentifier(parameter.Name) || !IsPlainStringQuery(parameter))
                 throw new InvalidOperationException($"Unsupported multi-route query parameter '{parameter.Name}': only plain named strings and existing OData query options are supported.");
             parameters.Add(new(parameter.Name, char.ToUpperInvariant(parameter.Name[0]) + parameter.Name[1..], parameter.Required));
         }

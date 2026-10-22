@@ -6,7 +6,10 @@ namespace WrapperGenerator;
 
 public static partial class CmdletEmitter
 {
-    public sealed record StringQueryParameter(string Name, string PsName, bool Required);
+    public sealed record StringQueryParameter(string Name, string PsName, bool Required)
+    {
+        public string BuilderPropertyName { get; init; } = PsName;
+    }
 
     private static string ExtraQueryDeclarations(IReadOnlyList<StringQueryParameter>? parameters) =>
         parameters is not { Count: > 0 } ? "" : "\n" + string.Join("\n", parameters.Select(p =>
@@ -16,7 +19,7 @@ public static partial class CmdletEmitter
     private static string ExtraQueryBindings(IReadOnlyList<StringQueryParameter>? parameters) =>
         parameters is not { Count: > 0 } ? "" : "\n" + string.Join("\n", parameters.Select(p =>
             $"                    if (this.IsParameterBound(nameof({p.PsName})))\n"
-            + $"                        requestConfiguration.QueryParameters.{p.PsName} = {p.PsName};"));
+            + $"                        requestConfiguration.QueryParameters.{p.BuilderPropertyName} = {p.PsName};"));
 
     public sealed record DispatchParameter(string Name, string Type, bool Mandatory = false, int? Position = null, string? Alias = null);
 
@@ -34,8 +37,28 @@ public static partial class CmdletEmitter
 
     private static void ValidateMultiRouteBinding(MultiRouteGroup group, IReadOnlyList<RouteWorker> workers)
     {
+        if ((group.AllowAsymmetricRoutes || group.AllowExplicitRouteSelection) && group.SelectorParameter is null)
+            throw new InvalidOperationException("Asymmetric or explicit multi-route groups require an explicit selector parameter.");
+        if (group.AllowPublishedParameterInference && !group.AllowExplicitRouteSelection)
+            throw new InvalidOperationException("Published parameter inference requires the explicit per-route parameter policy.");
         var parameters = workers.SelectMany(w => w.Parameters).ToArray();
         var names = parameters.Select(p => p.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        if (group.AllowExplicitRouteSelection)
+        {
+            var positions = new Dictionary<int, string>();
+            foreach (var parameter in parameters.GroupBy(p => p.Name, StringComparer.OrdinalIgnoreCase))
+            {
+                var declaredPositions = parameter.Select(p => p.Position).Distinct().ToArray();
+                if (declaredPositions.Length > 1)
+                    throw new InvalidOperationException($"Explicit route parameter '{parameter.Key}' has incompatible positional contracts.");
+                if (declaredPositions[0] is { } position)
+                {
+                    if (positions.TryGetValue(position, out var previous) && !previous.Equals(parameter.Key, StringComparison.OrdinalIgnoreCase))
+                        throw new InvalidOperationException($"Explicit route parameters '{previous}' and '{parameter.Key}' share position {position}.");
+                    positions[position] = parameter.Key;
+                }
+            }
+        }
         if (parameters.Any(p => IsReservedDispatchParameterName(p.Name)
             || (p.Alias is { } alias && IsReservedDispatchParameterName(alias))))
             throw new InvalidOperationException("Multi-route parameter or alias conflicts with a runtime or PowerShell common parameter.");
@@ -77,7 +100,7 @@ public static partial class CmdletEmitter
                     throw new InvalidOperationException("Multi-route default parameter set shadows a route with fewer mandatory parameters; choose a shallower default or an explicit selector.");
             }
         }
-        if (group.SelectorParameter is not null && workers.GroupBy(w => w.Shape)
+        if (group.SelectorParameter is not null && !group.AllowExplicitRouteSelection && workers.GroupBy(w => w.Shape)
             .Any(shape => shape.Skip(1).Any(w => !shape.First().Parameters.SequenceEqual(w.Parameters))))
             throw new InvalidOperationException("Selected multi-route operations require identical public parameters.");
     }
@@ -125,21 +148,24 @@ public static partial class CmdletEmitter
     {
         ValidateMultiRouteBinding(group, workers);
         var naming = workers[0].Naming;
-        string SetName(RouteWorker worker) => group.SelectorParameter is null
-            ? worker.RouteName + worker.Shape : worker.Shape;
+        string SetName(RouteWorker worker) => group.AllowExplicitRouteSelection ? "Route"
+            : group.SelectorParameter is null ? worker.RouteName + worker.Shape : worker.Shape;
         var defaultWorker = workers.Where(w => w.RouteName == group.DefaultRoute).OrderBy(w => w.Shape == "List" ? 0 : 1).First();
         var declarations = new List<string>();
         foreach (var parameter in workers.SelectMany(w => w.Parameters).GroupBy(p => p.Name, StringComparer.OrdinalIgnoreCase))
         {
             var first = parameter.First();
-            if (parameter.Any(p => p.Type != first.Type || p.Mandatory != first.Mandatory || p.Alias != first.Alias))
+            if (parameter.Any(p => p.Type != first.Type
+                || (!group.AllowExplicitRouteSelection && p.Mandatory != first.Mandatory) || p.Alias != first.Alias))
                 throw new InvalidOperationException($"Incompatible multi-route parameter {first.Name}.");
             var attributes = workers.Where(w => w.Parameters.Any(p => p.Name.Equals(first.Name, StringComparison.OrdinalIgnoreCase)))
                 .GroupBy(SetName).Select(s =>
                 {
                     var p = s.First().Parameters.Single(p => p.Name.Equals(first.Name, StringComparison.OrdinalIgnoreCase));
+                    var mandatory = p.Mandatory && (!group.AllowExplicitRouteSelection || workers.All(w =>
+                        w.Parameters.Any(other => other.Name.Equals(p.Name, StringComparison.OrdinalIgnoreCase) && other.Mandatory)));
                     var position = p.Position is { } i ? $", Position = {i}" : "";
-                    return $"        [Parameter(Mandatory = {p.Mandatory.ToString().ToLowerInvariant()}, ParameterSetName = \"{s.Key}\"{position})]";
+                    return $"        [Parameter(Mandatory = {mandatory.ToString().ToLowerInvariant()}, ParameterSetName = \"{s.Key}\"{position})]";
                 });
             var initializer = first.Type == "string" ? " = string.Empty;" : "";
             var aliasAttribute = first.Alias is null ? "" : $"\n        [Alias(\"{first.Alias}\")]";
@@ -163,6 +189,16 @@ public static partial class CmdletEmitter
             $", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.{(naming.SourceMethod.Equals("DELETE", StringComparison.OrdinalIgnoreCase) ? "High" : "Medium")}";
         var outputs = workers.Where(w => w.OutputType is not null).Select(w =>
             $"    [OutputType(typeof({w.OutputType}), ParameterSetName = new[] {{ \"{SetName(w)}\" }})]").Distinct();
+        var dispatchSelection = group.AllowAsymmetricRoutes || group.AllowExplicitRouteSelection
+            ? AsymmetricRouteSelection(group, workers) : $$"""
+            var route = {{routeExpression}};
+            var internalCmdletName = (route, ParameterSetName) switch
+            {
+{{string.Join("\n", cases)}}
+                _ => throw new InvalidOperationException("Unsupported route and parameter set combination."),
+            };
+            var parameters = new Dictionary<string, object>(MyInvocation.BoundParameters);{{removeSelector}}
+""";
         return $$"""
 #nullable enable
 
@@ -183,13 +219,7 @@ namespace {{ctx.CmdletNamespace}}
 {{selector}}
         protected override void ProcessRecord()
         {
-            var route = {{routeExpression}};
-            var internalCmdletName = (route, ParameterSetName) switch
-            {
-{{string.Join("\n", cases)}}
-                _ => throw new InvalidOperationException("Unsupported route and parameter set combination."),
-            };
-            var parameters = new Dictionary<string, object>(MyInvocation.BoundParameters);{{removeSelector}}
+{{dispatchSelection}}
             try
             {
                 InvokeCommand.InvokeScript(
