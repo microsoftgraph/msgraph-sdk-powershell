@@ -121,6 +121,60 @@ public sealed class NotesDirectiveMigrationTests
                 CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config));
     }
 
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task PublishedSectionGroupRoutesRetainTheirActualParameterContracts(string profile)
+    {
+        var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
+        foreach (var (root, id) in new[] { ("groups", "group-id"), ("sites", "site-id"), ("users", "user-id") })
+        {
+            var list = $"/{root}/{{{id}}}/onenote/sectionGroups";
+            var get = list + "/{sectionGroup-id}";
+            var nested = get + "/sectionGroups";
+            foreach (var (path, operationId, isList) in new[]
+            {
+                (list, $"{root}.onenote.ListSectionGroups", true),
+                (get, $"{root}.onenote.GetSectionGroups", false),
+                (nested, $"{root}.onenote.sectionGroups.ListSectionGroups", true),
+            })
+            {
+                var item = document.Paths[path];
+                Assert.Empty(item.Parameters ?? []);
+                var operation = item.Operations![HttpMethod.Get];
+                Assert.Equal(operationId, operation.OperationId);
+                var parameters = operation.Parameters!;
+                Assert.All(parameters, parameter =>
+                {
+                    Assert.Equal(ParameterLocation.Query, parameter.In);
+                    Assert.False(parameter.Required);
+                    Assert.False(parameter.Explode);
+                    Assert.Equal(ParameterStyle.Form, parameter.Style);
+                });
+                var expectedNames = isList
+                    ? new[] { "$count", "$expand", "$filter", "$orderby", "$search", "$select", "$skip", "$top" }
+                    : new[] { "$expand", "$select" };
+                Assert.Equal(expectedNames, parameters.Select(parameter => parameter.Name).OrderBy(name => name));
+                foreach (var parameter in parameters)
+                {
+                    var expectedType = parameter.Name switch
+                    {
+                        "$count" => JsonSchemaType.Boolean,
+                        "$skip" or "$top" => JsonSchemaType.Integer,
+                        "$expand" or "$select" or "$orderby" => JsonSchemaType.Array,
+                        _ => JsonSchemaType.String,
+                    };
+                    Assert.Equal(expectedType, parameter.Schema!.Type);
+                    if (expectedType == JsonSchemaType.Array)
+                        Assert.Equal(JsonSchemaType.String, parameter.Schema.Items!.Type);
+                }
+                Assert.Equal(isList ? "microsoft.graph.sectionGroupCollectionResponse" : "microsoft.graph.sectionGroup",
+                    Assert.IsType<OpenApiSchemaReference>(
+                        operation.Responses!["2XX"].Content!["application/json"].Schema).Reference!.Id);
+            }
+        }
+    }
+
     [Fact]
     public void SharedWhereSelectorsAndActionsRemainActiveAndUnchanged()
     {
