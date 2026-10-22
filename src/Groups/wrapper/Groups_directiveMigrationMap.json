@@ -1,4 +1,94 @@
 {
+  "generationRepairs": [
+    {
+      "profiles": ["v1.0", "beta"],
+      "method": "DELETE",
+      "path": "/groups/{group-id}/acceptedSenders/{directoryObject-id}/$ref",
+      "operationId": "groups.acceptedSenders.DeleteRefDirectoryObject",
+      "disposition": "ReplaceNoun",
+      "noun": "GroupAcceptedSenderDirectoryObjectByRef",
+      "notes": "Full beta generation exposed an item/collection DELETE collision. The published item command includes DirectoryObject; retain the collection route rather than suppressing it just to resolve the collision. Existing v1.0 derived rename agrees."
+    },
+    {
+      "profiles": ["v1.0", "beta"],
+      "method": "DELETE",
+      "path": "/groups/{group-id}/members/{directoryObject-id}/$ref",
+      "operationId": "groups.members.DeleteRefDirectoryObject",
+      "disposition": "ReplaceNoun",
+      "noun": "GroupMemberDirectoryObjectByRef",
+      "notes": "Full beta generation exposed an item/collection DELETE collision. The published item command includes DirectoryObject; retain the collection route rather than suppressing it just to resolve the collision. Existing v1.0 derived rename agrees."
+    },
+    {
+      "profiles": ["v1.0", "beta"],
+      "method": "DELETE",
+      "path": "/groups/{group-id}/owners/{directoryObject-id}/$ref",
+      "operationId": "groups.owners.DeleteRefDirectoryObject",
+      "disposition": "ReplaceNoun",
+      "noun": "GroupOwnerDirectoryObjectByRef",
+      "notes": "Full beta generation exposed an item/collection DELETE collision. The published item command includes DirectoryObject; retain the collection route rather than suppressing it just to resolve the collision. Existing v1.0 derived rename agrees."
+    },
+    {
+      "profiles": ["v1.0", "beta"],
+      "method": "DELETE",
+      "path": "/groups/{group-id}/rejectedSenders/{directoryObject-id}/$ref",
+      "operationId": "groups.rejectedSenders.DeleteRefDirectoryObject",
+      "disposition": "ReplaceNoun",
+      "noun": "GroupRejectedSenderDirectoryObjectByRef",
+      "notes": "Full beta generation exposed an item/collection DELETE collision. The published item command includes DirectoryObject; retain the collection route rather than suppressing it just to resolve the collision. Existing v1.0 derived rename agrees."
+    },
+    {
+      "profiles": ["v1.0", "beta"],
+      "method": "POST",
+      "path": "/groups/{group-id}/groupLifecyclePolicies",
+      "operationId": "groups.CreateGroupLifecyclePolicies",
+      "disposition": "SuppressUnpublished",
+      "counterpart": {
+        "method": "POST",
+        "path": "/groupLifecyclePolicies",
+        "command": "New-MgGroupLifecyclePolicy"
+      },
+      "notes": "No published metadata row for nested POST in either profile. The top-level POST owns the published New command. Exact suppression follows existing v1.0 derived collision data, not a widened interpretation of directive 1."
+    },
+    {
+      "profiles": ["v1.0", "beta"],
+      "method": "GET",
+      "path": "/groups/{group-id}/photos/{profilePhoto-id}/$value",
+      "operationId": "groups.GetPhotosContent",
+      "disposition": "SuppressUnpublished",
+      "counterpart": {
+        "method": "GET",
+        "path": "/groups/{group-id}/photo/$value",
+        "command": "Get-MgGroupPhotoContent"
+      },
+      "notes": "No published item-content GET in either profile. Preserve singleton photo/$value GET. Exact suppression follows existing v1.0 derived collision data."
+    },
+    {
+      "profiles": ["v1.0", "beta"],
+      "method": "DELETE",
+      "path": "/groups/{group-id}/photos/{profilePhoto-id}/$value",
+      "operationId": "groups.DeletePhotosContent",
+      "disposition": "SuppressUnpublished",
+      "counterpart": {
+        "method": "DELETE",
+        "path": "/groups/{group-id}/photo/$value",
+        "command": "Remove-MgGroupPhotoContent"
+      },
+      "notes": "No published item-content DELETE in either profile. Preserve singleton photo/$value DELETE. Exact suppression follows existing v1.0 derived collision data."
+    },
+    {
+      "profiles": ["v1.0", "beta"],
+      "method": "GET",
+      "path": "/groups/{group-id}/photos",
+      "operationId": "groups.ListPhotos",
+      "disposition": "DeferredCrossPathMerge",
+      "counterpart": {
+        "method": "GET",
+        "path": "/groups/{group-id}/photo",
+        "command": "Get-MgGroupPhoto"
+      },
+      "notes": "Both routes ARE published under the same command. Retain singleton until cross-path parameter-set merging is supported, matching the explicit v1.0 derived deferred-merge disposition. This is a documented wrapper limitation, NOT an absence claim."
+    }
+  ],
   "mappings": [
     {
       "module": "Groups",

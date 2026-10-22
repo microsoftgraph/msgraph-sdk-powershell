@@ -17,6 +17,7 @@ public sealed class GroupsDirectiveMigrationTests
     private static readonly string RepoRoot = FindRepoRoot();
     private static readonly Lazy<OpenApiDocument> V1Spec = new(() => ReadSpec("v1.0"));
     private static readonly Lazy<OpenApiDocument> BetaSpec = new(() => ReadSpec("beta"));
+    private static readonly Lazy<Dictionary<string, string[]>> PublishedCommands = new(ReadPublishedCommands);
 
     [Theory]
     [InlineData("v1.0")]
@@ -175,6 +176,72 @@ public sealed class GroupsDirectiveMigrationTests
         var httpMethod = new HttpMethod(method);
         Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(httpMethod, path, null));
         Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(httpMethod, path, "Unchanged"));
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public void GenerationCollisionRepairsHaveExactPublishedEvidence(string profile, bool useCollisionData)
+    {
+        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        using var ledger = ReadLedger();
+        var repairs = ledger.RootElement.GetProperty("generationRepairs").EnumerateArray().ToArray();
+        Assert.Equal(8, repairs.Length);
+        foreach (var repair in repairs)
+        {
+            Assert.Contains(profile, repair.GetProperty("profiles").EnumerateArray().Select(p => p.GetString()));
+            var method = new HttpMethod(repair.GetProperty("method").GetString()!);
+            var path = repair.GetProperty("path").GetString()!;
+            Assert.Equal(repair.GetProperty("operationId").GetString(), SpecOperation(profile, method, path).OperationId);
+            var published = Commands(profile, method, path);
+            var disposition = repair.GetProperty("disposition").GetString();
+            if (disposition == "ReplaceNoun")
+            {
+                var noun = "Mg" + repair.GetProperty("noun").GetString();
+                Assert.Contains("Remove-" + noun, published);
+                AssertRoute(profile, config, method, path, "Remove", noun);
+                var collection = Regex.Replace(path, @"/\{directoryObject-id\}", "");
+                Assert.NotNull(SpecOperation(profile, method, collection));
+                if (profile == "beta" || !useCollisionData)
+                    Assert.False(CmdletConfigurator.IsSuppressed(method, collection, config));
+                continue;
+            }
+
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config));
+            var counterpart = repair.GetProperty("counterpart");
+            var counterpartMethod = new HttpMethod(counterpart.GetProperty("method").GetString()!);
+            var counterpartPath = counterpart.GetProperty("path").GetString()!;
+            Assert.NotNull(SpecOperation(profile, counterpartMethod, counterpartPath));
+            Assert.False(CmdletConfigurator.IsSuppressed(counterpartMethod, counterpartPath, config));
+            var expected = counterpart.GetProperty("command").GetString();
+            Assert.Contains(expected, Commands(profile, counterpartMethod, counterpartPath));
+            var name = Naming.Resolve(new OperationInfo(counterpartMethod, counterpartPath), config);
+            Assert.Equal(expected, $"{name.VerbName}-{name.Noun}");
+            if (disposition == "SuppressUnpublished")
+                Assert.Empty(published);
+            else
+            {
+                Assert.Equal("DeferredCrossPathMerge", disposition);
+                Assert.Contains(expected, published);
+            }
+        }
+    }
+
+    private static string[] Commands(string profile, HttpMethod method, string path) =>
+        PublishedCommands.Value.TryGetValue($"{profile}|{method.Method}|{path}", out var commands) ? commands : [];
+
+    private static Dictionary<string, string[]> ReadPublishedCommands()
+    {
+        using var document = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot,
+            "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
+        return document.RootElement.EnumerateArray()
+            .GroupBy(row => $"{row.GetProperty("ApiVersion").GetString()}|{row.GetProperty("Method").GetString()}|{row.GetProperty("Uri").GetString()}",
+                StringComparer.Ordinal)
+            .ToDictionary(group => group.Key, group => group.Select(row =>
+                row.GetProperty("Command").GetString()!.Replace("-MgBeta", "-Mg", StringComparison.Ordinal)).Distinct().ToArray(),
+                StringComparer.Ordinal);
     }
 
     private static void AssertRoute(string profile, GeneratorConfig config, HttpMethod method, string path,
