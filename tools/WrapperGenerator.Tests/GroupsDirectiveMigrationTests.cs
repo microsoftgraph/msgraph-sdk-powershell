@@ -82,6 +82,10 @@ public sealed class GroupsDirectiveMigrationTests
                     && operation.GetProperty("path").GetString() == match.Key);
             Assert.Equal(legacy.Path, evidence.GetProperty("legacyPath").GetString());
             Assert.Equal(legacy.Operation.OperationId, evidence.GetProperty("legacyOperationId").GetString());
+            if (CmdletConfigurator.NormalizePathTemplate(match.Key) != CmdletConfigurator.NormalizePathTemplate(legacy.Path))
+                Assert.Equal("UnqualifyFinalOperation", evidence.GetProperty("legacyPathTranslation").GetString());
+            else
+                Assert.False(evidence.TryGetProperty("legacyPathTranslation", out _));
         }
         Assert.Equal(profile == "v1.0" ? 2 : 5, qualifiedBridges);
         var reviewed = mappings[0].GetProperty("profiles").GetProperty(profile).GetProperty("operations")

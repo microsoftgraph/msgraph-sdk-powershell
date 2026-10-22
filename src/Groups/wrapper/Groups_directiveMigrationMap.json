@@ -114,6 +114,7 @@
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup",
               "operationId": "groups.group.groupLifecyclePolicies.groupLifecyclePolicy.addGroup",
+              "legacyPathTranslation": "UnqualifyFinalOperation",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.addGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_addGroup"
             },
@@ -121,6 +122,7 @@
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/removeGroup",
               "operationId": "groups.group.groupLifecyclePolicies.groupLifecyclePolicy.removeGroup",
+              "legacyPathTranslation": "UnqualifyFinalOperation",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.removeGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_removeGroup"
             },
@@ -170,6 +172,7 @@
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup",
               "operationId": "groups.group.groupLifecyclePolicies.groupLifecyclePolicy.addGroup",
+              "legacyPathTranslation": "UnqualifyFinalOperation",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.addGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_addGroup"
             },
@@ -177,6 +180,7 @@
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/removeGroup",
               "operationId": "groups.group.groupLifecyclePolicies.groupLifecyclePolicy.removeGroup",
+              "legacyPathTranslation": "UnqualifyFinalOperation",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.removeGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_removeGroup"
             },
@@ -191,6 +195,7 @@
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/renewGroup",
               "operationId": "groups.group.groupLifecyclePolicies.renewGroup",
+              "legacyPathTranslation": "UnqualifyFinalOperation",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/microsoft.graph.renewGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_renewGroup"
             },
@@ -219,6 +224,7 @@
               "method": "GET",
               "path": "/users/{user-id}/joinedGroups/delta()",
               "operationId": "users.user.joinedGroups.delta",
+              "legacyPathTranslation": "UnqualifyFinalOperation",
               "legacyPath": "/users/{user-id}/joinedGroups/microsoft.graph.delta()",
               "legacyOperationId": "user.joinedGroup_delta"
             },
@@ -226,6 +232,7 @@
               "method": "POST",
               "path": "/users/{user-id}/joinedGroups/evaluateDynamicMembership",
               "operationId": "users.user.joinedGroups.evaluateDynamicMembership",
+              "legacyPathTranslation": "UnqualifyFinalOperation",
               "legacyPath": "/users/{user-id}/joinedGroups/microsoft.graph.evaluateDynamicMembership",
               "legacyOperationId": "user.joinedGroup_evaluateDynamicMembership"
             }
