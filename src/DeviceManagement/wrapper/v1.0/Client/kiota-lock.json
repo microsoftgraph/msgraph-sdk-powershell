@@ -2,7 +2,7 @@
   "descriptionHash": "0D499DB03BA03D23E06DD9D766B7346512AFD616F53E4B6F4C829185BAFD31F3796CA461437AE0147317EAD79A0AA5F9F7617486DB784D695DC6243DECA3C31B",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/DeviceManagement.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.DeviceManagement.Client",
