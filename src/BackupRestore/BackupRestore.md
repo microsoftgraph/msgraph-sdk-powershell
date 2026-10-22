@@ -3,8 +3,10 @@
 ## Reviewed source and scope
 
 At baseline `51d441eeb5`, `src\BackupRestore\BackupRestore.md` did not
-exist. This file records that absence; it does not introduce an AutoRest
-configuration or recreate directives from another source.
+exist. This file records that absence; it introduces no directive migration and
+does not recreate directives from another source. The standard template
+`require` below preserves legacy AutoRest wiring: `Copy-ModuleTemplate` only
+creates a configuration when this file is absent.
 
 There are **zero shared cmdlet directives** to migrate and zero entries in
 `wrapper\BackupRestore_cmdletConfigurations.cs`. The reviewed
@@ -16,6 +18,19 @@ audit. No configuration is copied from Bookings or inferred from those sources.
 Parameter aliases/transforms and schema/response directive classes remain
 **Deferred**; this audit does not implement them or claim to inventory excluded
 files.
+
+## AutoRest Configuration
+
+> see <https://aka.ms/autorest>
+
+``` yaml
+require:
+  - $(this-folder)/../readme.graph.md
+```
+
+This is the existing `tools\Templates\module.md` wiring, not a migration of global
+directives. Global directives remain unchanged and ignored by this audit. No
+module directive block or overrides are introduced.
 
 ## Compatible specification evidence
 
