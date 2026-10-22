@@ -1,0 +1,157 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Text.Json;
+using System.Text.RegularExpressions;
+using System.Threading;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.Reader;
+using WrapperGenerator;
+using Xunit;
+
+namespace WrapperGenerator.Tests;
+
+public sealed class PeopleDirectiveMigrationTests
+{
+    private const string Analytics = "/users/{user-id}/analytics";
+    private const string Statistics = Analytics + "/activityStatistics";
+    private const string StatisticsItem = Statistics + "/{activityStatistics-id}";
+    private static readonly string RepoRoot = FindRepoRoot();
+
+    [Theory]
+    [InlineData("v1.0", 0)]
+    [InlineData("beta", 3)]
+    public void OriginalSelectorHasCompleteExactUniqueLegacyBridges(string profile, int count)
+    {
+        var source = File.ReadAllText(Path.Combine(RepoRoot, "src", "People", "People.md"));
+        var selector = Regex.Match(source, @"(?m)^\s+- remove-path-by-operation: (.+)\r?$").Groups[1].Value;
+        Assert.NotEmpty(selector);
+        var legacy = ReadOperations("openApiDocs", profile);
+        var compatible = ReadOperations("openApiDocs_KiotaCompat", profile);
+        var selected = legacy.Where(op => Regex.IsMatch(op.Id, selector)).ToArray();
+        Assert.Equal(count, selected.Length);
+        using var ledger = ReadLedger();
+        var evidence = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles")
+            .GetProperty(profile).GetProperty("operations").EnumerateArray().ToArray();
+        Assert.Equal(count, evidence.Length);
+
+        foreach (var old in selected)
+        {
+            var current = Assert.Single(compatible, op => op.Method == old.Method && op.Path == old.Path);
+            var bridge = Assert.Single(evidence, op =>
+                op.GetProperty("method").GetString() == old.Method &&
+                op.GetProperty("legacyPath").GetString() == old.Path &&
+                op.GetProperty("legacyOperationId").GetString() == old.Id);
+            Assert.Equal(current.Path, bridge.GetProperty("path").GetString());
+            Assert.Equal(current.Id, bridge.GetProperty("operationId").GetString());
+            Assert.NotEqual(old.Id, current.Id);
+            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(current.Method), current.Path, Config(profile)));
+        }
+
+        Assert.DoesNotContain(compatible, op => Regex.IsMatch(op.Id, selector));
+        Assert.Equal(count, compatible.Count(op =>
+            CmdletConfigurator.IsSuppressed(new HttpMethod(op.Method), op.Path, Config(profile))));
+    }
+
+    [Theory]
+    [InlineData("GET", Statistics, "Get")]
+    [InlineData("POST", Statistics, "New")]
+    [InlineData("GET", StatisticsItem, "Get")]
+    [InlineData("PATCH", StatisticsItem, "Update")]
+    [InlineData("DELETE", StatisticsItem, "Remove")]
+    public void RenamesFiveSurvivingStatisticsOperationsWithoutSuppressingThem(string method, string path, string verb)
+    {
+        var current = Assert.Single(ReadOperations("openApiDocs_KiotaCompat", "beta"),
+            op => op.Method == method && op.Path == path);
+        var old = Assert.Single(ReadOperations("openApiDocs", "beta"),
+            op => op.Method == method && op.Path == path);
+        Assert.StartsWith("user.analytic_", old.Id);
+        Assert.StartsWith("users.analytics.", current.Id);
+        foreach (var useCollisionData in new[] { false, true })
+        {
+            var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config));
+            var naming = Naming.Resolve(new OperationInfo(new HttpMethod(method), path), config);
+            Assert.Equal("MgUserActivityStatistics", naming.Noun);
+            Assert.Equal(verb, naming.VerbName);
+            Assert.Equal(path, naming.SourcePath);
+            Assert.Contains(".Analytics.ActivityStatistics", naming.BuilderExpression);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", "GET", "/users/{user-id}/people", "MgUserPerson")]
+    [InlineData("v1.0", "GET", "/users/{user-id}/people/{person-id}", "MgUserPerson")]
+    [InlineData("v1.0", "GET", "/users/{user-id}/people/$count", "MgUserPersonCount")]
+    [InlineData("beta", "GET", "/users/{user-id}/people", "MgUserPerson")]
+    [InlineData("beta", "GET", "/users/{user-id}/people/{person-id}", "MgUserPerson")]
+    [InlineData("beta", "GET", "/users/{user-id}/people/$count", "MgUserPersonCount")]
+    [InlineData("beta", "GET", Statistics + "/$count", "MgUserAnalyticActivityStatisticsCount")]
+    [InlineData("beta", "GET", "/users/{user-id}/profile", "MgUserProfile")]
+    [InlineData("beta", "POST", "/users/{user-id}/profile/projects", "MgUserProfileProject")]
+    [InlineData("beta", "PATCH", "/users/{user-id}/profile/projects/{projectParticipation-id}", "MgUserProfileProject")]
+    public void KeepsActualUnaffectedNeighborsAndOriginalRoutes(string profile, string method, string path, string noun)
+    {
+        Assert.Single(ReadOperations("openApiDocs_KiotaCompat", profile),
+            op => op.Method == method && op.Path == path);
+        var config = Config(profile);
+        Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config));
+        var naming = Naming.Resolve(new OperationInfo(new HttpMethod(method), path), config);
+        Assert.Equal(noun, naming.Noun);
+        Assert.Equal(path, naming.SourcePath);
+        Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(new HttpMethod(method), path, config));
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void InsightRenamesAreReviewedAbsencesInBothRealSources(string profile)
+    {
+        foreach (var root in new[] { "openApiDocs", "openApiDocs_KiotaCompat" })
+        {
+            var operations = ReadOperations(root, profile);
+            Assert.NotEmpty(operations);
+            Assert.DoesNotContain(operations, op => op.Path.Contains("insight", StringComparison.OrdinalIgnoreCase));
+            if (profile == "v1.0")
+                Assert.DoesNotContain(operations, op => op.Path.StartsWith(Analytics, StringComparison.Ordinal));
+        }
+    }
+
+    [Fact]
+    public void ExactOverridesDoNotBroadenToOtherMethodsOrDescendants()
+    {
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, Analytics, Config("beta")));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, Statistics + "/child", Config("beta")));
+        Assert.Equal("Original", CmdletConfigurator.ApplyNounOverrides(
+            HttpMethod.Get, Statistics + "/$count", "Original", Config("beta")));
+        Assert.Equal("Original", CmdletConfigurator.ApplyNounOverrides(
+            HttpMethod.Put, StatisticsItem, "Original", Config("beta")));
+    }
+
+    private static GeneratorConfig Config(string profile) => new("Test.Client", "unused", profile);
+
+    private static JsonDocument ReadLedger() => JsonDocument.Parse(File.ReadAllText(
+        Path.Combine(RepoRoot, "src", "People", "wrapper", "People_directiveMigrationMap.json")));
+
+    private static IReadOnlyList<(string Method, string Path, string Id)> ReadOperations(string root, string profile)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(RepoRoot, root, profile, "People.yml"));
+        var result = OpenApiDocument.LoadAsync(stream, settings: settings, cancellationToken: CancellationToken.None)
+            .GetAwaiter().GetResult();
+        Assert.NotNull(result.Document);
+        return result.Document.Paths.SelectMany(path => path.Value.Operations!
+            .Select(op => (op.Key.Method, path.Key, op.Value.OperationId!))).ToArray();
+    }
+
+    private static string FindRepoRoot()
+    {
+        var directory = new DirectoryInfo(AppContext.BaseDirectory);
+        while (directory is not null && !Directory.Exists(Path.Combine(directory.FullName, "openApiDocs_KiotaCompat")))
+            directory = directory.Parent;
+        return directory?.FullName ?? throw new InvalidOperationException("Could not locate compatible spec root.");
+    }
+}
