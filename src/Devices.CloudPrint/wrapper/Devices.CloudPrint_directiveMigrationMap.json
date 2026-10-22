@@ -1,4 +1,37 @@
 {
+  "generationPrerequisites": [
+    {
+      "classification": "ExistingReviewedCollisionPolicy",
+      "profiles": ["v1.0", "beta"],
+      "existingPolicy": "tools/WrapperGenerator/data/collision-suppressions.v1.0.json",
+      "publishedMetadata": "src/Authentication/Authentication/custom/common/MgCommandMetadata.json",
+      "notes": "Full beta generation exposed the same two reference-deletion collisions already resolved by the reviewed v1.0 collision policy. Both profiles' published Remove-Mg(Beta)PrintShareAllowedGroupByRef and Remove-Mg(Beta)PrintShareAllowedUserByRef metadata records the collection $ref DELETE (including Delete/Delete1 variants). Extend only the existing exact item-DELETE suppressions to beta/no-data; retain collection GET/POST/DELETE. This is an explicit generation prerequisite, not an invented third shared directive or a new whole-collection suppression. Cross-path variant support remains subject to the existing reviewed policy.",
+      "suppress": [
+        {
+          "method": "DELETE",
+          "path": "/print/shares/{printerShare-id}/allowedGroups/{group-id}/$ref",
+          "operationId": "print.shares.allowedGroups.DeleteRefGroup"
+        },
+        {
+          "method": "DELETE",
+          "path": "/print/shares/{printerShare-id}/allowedUsers/{user-id}/$ref",
+          "operationId": "print.shares.allowedUsers.DeleteRefUser"
+        }
+      ],
+      "retain": [
+        {
+          "method": "DELETE",
+          "path": "/print/shares/{printerShare-id}/allowedGroups/$ref",
+          "operationId": "print.shares.DeleteRefAllowedGroups"
+        },
+        {
+          "method": "DELETE",
+          "path": "/print/shares/{printerShare-id}/allowedUsers/$ref",
+          "operationId": "print.shares.DeleteRefAllowedUsers"
+        }
+      ]
+    }
+  ],
   "mappings": [
     {
       "module": "Devices.CloudPrint",

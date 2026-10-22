@@ -1,6 +1,8 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
 using Microsoft.OpenApi;
@@ -33,6 +35,53 @@ public sealed class DevicesCloudPrintDirectiveMigrationTests
             }
         }
         Assert.True(operationCount > 0, "Absence must be reviewed against a nonempty spec.");
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public void ExistingReviewedReferenceCollisionPolicyKeepsPublishedCollectionRoutes(string profile, bool useCollisionData)
+    {
+        var document = LoadSpec(profile);
+        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        using var metadata = JsonDocument.Parse(File.ReadAllText(Path.Combine(FindRepoRoot(),
+            "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
+        foreach (var (collection, item, noun) in new[]
+        {
+            ("allowedGroups", "group-id", "Group"),
+            ("allowedUsers", "user-id", "User"),
+        })
+        {
+            var collectionPath = $"/print/shares/{{printerShare-id}}/{collection}/$ref";
+            var itemPath = $"/print/shares/{{printerShare-id}}/{collection}/{{{item}}}/$ref";
+            AssertOperation(document, HttpMethod.Delete, itemPath, $"print.shares.{collection}.DeleteRef{noun}");
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, itemPath, config));
+            foreach (var (method, operation) in new[]
+            {
+                (HttpMethod.Get, "ListRef"),
+                (HttpMethod.Post, "CreateRef"),
+                (HttpMethod.Delete, "DeleteRef"),
+            })
+            {
+                AssertOperation(document, method, collectionPath,
+                    $"print.shares.{operation}Allowed{noun}s");
+                Assert.False(CmdletConfigurator.IsSuppressed(method, collectionPath, config));
+            }
+            var command = $"Remove-Mg{(profile == "beta" ? "Beta" : "")}PrintShareAllowed{noun}ByRef";
+            var published = metadata.RootElement.EnumerateArray().Where(row =>
+                row.GetProperty("ApiVersion").GetString() == profile &&
+                row.GetProperty("Command").GetString() == command).ToArray();
+            var publishedRoute = Assert.Single(published);
+            Assert.Equal("DELETE", publishedRoute.GetProperty("Method").GetString());
+            Assert.Equal(collectionPath, publishedRoute.GetProperty("Uri").GetString());
+            if (profile == "v1.0")
+            {
+                Assert.True(DerivedCollisionResolutions.IsSuppressed(profile, HttpMethod.Delete,
+                    CmdletConfigurator.NormalizePathTemplate(itemPath)));
+            }
+        }
     }
 
     [Theory]
@@ -94,14 +143,7 @@ public sealed class DevicesCloudPrintDirectiveMigrationTests
 
     private static OpenApiDocument LoadSpec(string profile, string specRoot = "openApiDocs_KiotaCompat")
     {
-        var directory = AppContext.BaseDirectory;
-        while (directory is not null &&
-            !File.Exists(Path.Combine(directory, "src", "Devices.CloudPrint", "Devices.CloudPrint.md")))
-        {
-            directory = Path.GetDirectoryName(directory);
-        }
-        Assert.NotNull(directory);
-        var path = Path.Combine(directory, specRoot, profile, "Devices.CloudPrint.yml");
+        var path = Path.Combine(FindRepoRoot(), specRoot, profile, "Devices.CloudPrint.yml");
         Assert.True(File.Exists(path), $"Required spec missing: {path}");
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
@@ -110,5 +152,17 @@ public sealed class DevicesCloudPrintDirectiveMigrationTests
             .GetAwaiter().GetResult();
         Assert.NotNull(result.Document);
         return result.Document;
+    }
+
+    private static string FindRepoRoot()
+    {
+        var directory = AppContext.BaseDirectory;
+        while (directory is not null &&
+            !File.Exists(Path.Combine(directory, "src", "Devices.CloudPrint", "Devices.CloudPrint.md")))
+        {
+            directory = Path.GetDirectoryName(directory);
+        }
+        Assert.NotNull(directory);
+        return directory;
     }
 }
