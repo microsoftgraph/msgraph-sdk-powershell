@@ -3,7 +3,6 @@
 using Microsoft.Graph.PowerShell.Planner.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Planner.Client.Models;
 using Microsoft.Graph.PowerShell.Planner.Client.Planner.Buckets;
-using Microsoft.Graph.PowerShell.Planner.Client.Planner.Goals;
 using Microsoft.Graph.PowerShell.Planner.Client.Planner.Plans;
 using Microsoft.Graph.PowerShell.Planner.Client.Planner.Rosters;
 using Microsoft.Graph.PowerShell.Planner.Client.Planner.Tasks;
@@ -27,11 +26,6 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Planner
         public global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Buckets.BucketsRequestBuilder Buckets
         {
             get => new global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Buckets.BucketsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The goals property</summary>
-        public global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Goals.GoalsRequestBuilder Goals
-        {
-            get => new global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Goals.GoalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The plans property</summary>
         public global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Plans.PlansRequestBuilder Plans

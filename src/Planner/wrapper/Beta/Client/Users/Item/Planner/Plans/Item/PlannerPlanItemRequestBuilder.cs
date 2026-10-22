@@ -6,7 +6,6 @@ using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Ar
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Buckets;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Details;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.GetUsageRights;
-using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Goals;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.HistoryItems;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.MoveToContainer;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Tasks;
@@ -46,11 +45,6 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Ite
         public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.GetUsageRights.GetUsageRightsRequestBuilder GetUsageRights
         {
             get => new global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.GetUsageRights.GetUsageRightsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The goals property</summary>
-        public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Goals.GoalsRequestBuilder Goals
-        {
-            get => new global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Goals.GoalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The historyItems property</summary>
         public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.HistoryItems.HistoryItemsRequestBuilder HistoryItems
