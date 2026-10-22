@@ -10,6 +10,9 @@ selectors live in src/<Module>/wrapper/<Module>_directiveMigrationMap.json and a
 against exact method/path/operation-ID evidence in both Kiota-compatible profiles.
 An unavailable compatible profile can be explicitly excluded only while its spec is absent;
 this is not an assertion that API operations are absent.
+An explicit per-profile operationIdSource: Legacy disposition can bridge actual regex-matched
+IDs in openApiDocs to exact compatible evidence by unique method/normalized path. Literal
+compatible matching remains the default; absent legacy selectors never imply successors.
 
 The command is read-only unless -OutputPath is supplied. It never edits module configuration
 or markdown files.
@@ -46,6 +49,7 @@ $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $srcRoot = Join-Path $repoRoot 'src'
 $specRoot = Join-Path $repoRoot 'openApiDocs_KiotaCompat'
+$legacySpecRoot = Join-Path $repoRoot 'openApiDocs'
 
 function Get-DirectiveClassification {
     param([Parameter(Mandatory)][string]$Text)
@@ -125,10 +129,11 @@ function Get-ModuleDirectives {
 function Get-SpecOperations {
     param(
         [Parameter(Mandatory)][string]$ModuleName,
-        [Parameter(Mandatory)][string]$Profile
+        [Parameter(Mandatory)][string]$Profile,
+        [string]$Root = $specRoot
     )
 
-    $path = Join-Path (Join-Path $specRoot $Profile) "$ModuleName.yml"
+    $path = Join-Path (Join-Path $Root $Profile) "$ModuleName.yml"
     if (-not (Test-Path $path)) { return @() }
     $operations = [System.Collections.Generic.List[object]]::new()
     $currentPath = $null
@@ -175,6 +180,134 @@ function Get-OperationIdRegex {
     # AutoRest's JavaScript regex accepts the identity escape \_; .NET does not.
     $pattern = $match.Groups['pattern'].Value.Trim("'", '"') -replace '\\_', '_'
     return [regex]::new($pattern)
+}
+
+function Get-NormalizedOperationKey {
+    param([string]$Method, [string]$Path)
+
+    $normalizedPath = [regex]::Replace($Path, '\{[^}]*\}', '{}').TrimEnd('/').ToLowerInvariant()
+    return "$($Method.ToUpperInvariant()) $normalizedPath"
+}
+
+function Test-LegacyOperationTranslation {
+    param(
+        [object]$Directive,
+        [object]$ProfileMap,
+        [string]$ModuleName,
+        [string]$Profile,
+        [object[]]$CompatibleOperations
+    )
+
+    if ($Directive.Classification -ne 'OperationIdSuppression') {
+        return "$Profile legacy translation is only supported for OperationIdSuppression"
+    }
+    if ([string]::IsNullOrWhiteSpace($ProfileMap.notes)) {
+        "$Profile legacy translation notes are required"
+    }
+    if ($ProfileMap.absenceExpected -cne $false) {
+        "$Profile legacy translation requires absenceExpected: false, not an API-absence claim"
+    }
+    $legacyPath = Join-Path (Join-Path $legacySpecRoot $Profile) "$ModuleName.yml"
+    $compatiblePath = Join-Path (Join-Path $specRoot $Profile) "$ModuleName.yml"
+    if (-not (Test-Path $legacyPath) -or -not (Test-Path $compatiblePath)) {
+        return "$Profile legacy translation requires both same-module/profile legacy and compatible specs"
+    }
+    try {
+        $regex = Get-OperationIdRegex $Directive.Text
+    }
+    catch [ArgumentException] {
+        return "$Profile legacy operation-ID regex cannot be validated: $($_.Exception.Message)"
+    }
+    $legacyOperations = @(Get-SpecOperations -ModuleName $ModuleName -Profile $Profile -Root $legacySpecRoot)
+    $sourceMatches = @($legacyOperations | Where-Object { $regex.IsMatch($_.OperationId) })
+    if ($sourceMatches.Count -eq 0) {
+        return "$Profile original operation-ID regex matches no legacy operations; successors cannot be inferred"
+    }
+    $sourceKeys = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+    foreach ($operation in $sourceMatches) {
+        [void]$sourceKeys.Add("$($operation.Method) $($operation.Path) [$($operation.OperationId)]")
+    }
+    $reviewedKeys = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+    $removed = @()
+    if ($ProfileMap.PSObject.Properties['removedLegacyOperations']) {
+        if ($ProfileMap.removedLegacyOperations -isnot [array]) {
+            "$Profile removedLegacyOperations must be an explicit array"
+        }
+        else { $removed = $ProfileMap.removedLegacyOperations }
+    }
+    $evidence = @(
+        foreach ($operation in $ProfileMap.operations) {
+            [pscustomobject]@{
+                Method = "$($operation.method)".ToUpperInvariant()
+                Path = "$($operation.legacyPath)"
+                OperationId = "$($operation.legacyOperationId)"
+                CompatiblePath = "$($operation.path)"
+                Removed = $false
+                Notes = ''
+            }
+        }
+        foreach ($operation in $removed) {
+            [pscustomobject]@{
+                Method = "$($operation.method)".ToUpperInvariant()
+                Path = "$($operation.path)"
+                OperationId = "$($operation.operationId)"
+                CompatiblePath = ''
+                Removed = $true
+                Notes = "$($operation.notes)"
+            }
+        }
+    )
+    foreach ($expected in $evidence) {
+        $key = "$($expected.Method) $($expected.Path) [$($expected.OperationId)]"
+        if (-not $reviewedKeys.Add($key)) {
+            "$Profile duplicate legacy evidence '$key'"
+        }
+        if (-not $sourceKeys.Contains($key)) {
+            "$Profile legacy evidence '$key' is not an exact original regex match"
+        }
+        $normalizedKey = Get-NormalizedOperationKey $expected.Method $expected.Path
+        $oldMatches = @($legacyOperations | Where-Object {
+            (Get-NormalizedOperationKey $_.Method $_.Path) -ceq $normalizedKey
+        })
+        if ($oldMatches.Count -ne 1) {
+            "$Profile legacy method/normalized path '$normalizedKey' matched $($oldMatches.Count) operations; bridge must be unique"
+        }
+        $currentMatches = @($CompatibleOperations | Where-Object {
+            (Get-NormalizedOperationKey $_.Method $_.Path) -ceq $normalizedKey
+        })
+        if ($expected.Removed) {
+            if ([string]::IsNullOrWhiteSpace($expected.Notes)) {
+                "$Profile removed legacy operation '$key' requires review notes"
+            }
+            if ($currentMatches.Count -ne 0) {
+                "$Profile removed legacy operation '$key' still has $($currentMatches.Count) compatible method/normalized-path matches"
+            }
+            # A qualified legacy action may survive under its bare name. Do not mistake a
+            # converter path change for removal; this helper does not yet translate that shape.
+            $possiblePath = $expected.Path -replace '/microsoft\.graph\.([a-zA-Z_][a-zA-Z0-9_]*(?:\(.*\))?)/?$', '/$1'
+            $possibleKey = Get-NormalizedOperationKey $expected.Method ($possiblePath -replace '\(\)$', '')
+            $possibleSuccessors = @($CompatibleOperations | Where-Object {
+                (Get-NormalizedOperationKey $_.Method ($_.Path -replace '\(\)$', '')) -ceq $possibleKey
+            })
+            if ($currentMatches.Count -eq 0 -and $possibleSuccessors.Count -gt 0) {
+                "$Profile cannot verify removal of '$key': a qualified/bare or empty-argument compatible counterpart needs reviewed path translation"
+            }
+        }
+        else {
+            if ([string]::IsNullOrWhiteSpace($expected.Path) -or [string]::IsNullOrWhiteSpace($expected.OperationId)) {
+                "$Profile legacyPath and legacyOperationId evidence are required"
+            }
+            if ((Get-NormalizedOperationKey $expected.Method $expected.CompatiblePath) -cne $normalizedKey) {
+                "$Profile legacy and compatible method/normalized path must be identical for '$key'"
+            }
+            if ($currentMatches.Count -ne 1) {
+                "$Profile compatible method/normalized path '$normalizedKey' matched $($currentMatches.Count) operations; bridge must be unique"
+            }
+        }
+    }
+    if (-not $reviewedKeys.SetEquals($sourceKeys)) {
+        "$Profile legacy evidence must account for the complete original regex match set ($($sourceMatches.Count) operations)"
+    }
 }
 
 if (-not $Module -or $Module.Count -eq 0) {
@@ -265,10 +398,24 @@ foreach ($moduleName in $Module) {
                     $missing.Add("$profile operations must be an explicit array")
                     continue
                 }
+                $usesLegacyIds = $profileMap.operationIdSource -ceq 'Legacy'
+                if ($profileMap.PSObject.Properties['operationIdSource'] -and -not $usesLegacyIds) {
+                    $missing.Add("$profile operationIdSource must be 'Legacy' when supplied")
+                }
+                if (-not $usesLegacyIds -and (
+                    $profileMap.PSObject.Properties['removedLegacyOperations'] -or
+                    @($profileMap.operations | Where-Object {
+                        $_.PSObject.Properties['legacyPath'] -or $_.PSObject.Properties['legacyOperationId']
+                    }).Count -gt 0)) {
+                    $missing.Add("$profile legacy evidence requires explicit operationIdSource: Legacy")
+                }
                 if ($profileMap.PSObject.Properties['excluded'] -and $profileMap.excluded -isnot [bool]) {
                     $missing.Add("$profile excluded must be a boolean")
                 }
                 if ($profileMap.excluded -is [bool] -and $profileMap.excluded) {
+                    if ($usesLegacyIds) {
+                        $missing.Add("$profile cannot combine exclusion with legacy translation")
+                    }
                     $specPath = Join-Path (Join-Path $specRoot $profile) "$moduleName.yml"
                     if (Test-Path $specPath) {
                         $missing.Add("$profile cannot be excluded because its compatible spec exists")
@@ -315,10 +462,17 @@ foreach ($moduleName in $Module) {
                         $profileMatches[$profile] += $matches[0]
                     }
                 }
-                if (@($profileMap.operations).Count -eq 0 -and -not $profileMap.absenceExpected) {
+                if (@($profileMap.operations).Count -eq 0 -and -not $profileMap.absenceExpected -and -not $usesLegacyIds) {
                     $missing.Add("$profile has no operations and is not marked absenceExpected")
                 }
-                if ($directive.Classification -eq 'OperationIdSuppression') {
+                if ($usesLegacyIds) {
+                    foreach ($issue in @(Test-LegacyOperationTranslation -Directive $directive -ProfileMap $profileMap `
+                        -ModuleName $moduleName -Profile $profile -CompatibleOperations $operationsByProfile[$profile])) {
+                        $missing.Add($issue)
+                    }
+                    $notes = "$notes $profile reviewed legacy operation-ID translation: $($profileMap.notes)".Trim()
+                }
+                elseif ($directive.Classification -eq 'OperationIdSuppression') {
                     try {
                         $regex = Get-OperationIdRegex $directive.Text
                         $candidates = @($operationsByProfile[$profile] | Where-Object { $regex.IsMatch($_.OperationId) })

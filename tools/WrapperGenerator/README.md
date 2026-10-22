@@ -438,6 +438,56 @@ the shared-directive-only scope. A spec added later invalidates the exclusion un
 Quoted YAML function keys are decoded before exact path comparison, so doubled single quotes
 in a key such as `User=''{User}''` become the literal `User='{User}'` in ledger evidence.
 
+### Reviewed legacy operation-ID conversion
+
+Literal operation-ID matching against compatible specifications remains the default. Some
+shared suppression regexes instead name old operation IDs that actually exist in the
+same module/profile under `openApiDocs`. Opt into a reviewed translation for that profile,
+not an inferred alias or a rewritten regex:
+
+```json
+"v1.0": {
+  "operationIdSource": "Legacy",
+  "notes": "Reviewed the complete original legacy regex match set against compatible routes.",
+  "absenceExpected": false,
+  "operations": [
+    {
+      "method": "PATCH",
+      "path": "/auditLogs",
+      "operationId": "auditLogs.auditLogRoot.UpdateAuditLogRoot",
+      "legacyPath": "/auditLogs",
+      "legacyOperationId": "auditLog.auditLogRoot_UpdateAuditLogRoot"
+    }
+  ],
+  "removedLegacyOperations": []
+}
+```
+
+This disposition is supported only for `OperationIdSuppression`. Both actual
+`openApiDocs/<profile>/<Module>.yml` and compatible specifications must exist. The original
+shared regex must match at least one legacy operation, and the ledger must account for its
+**entire** match set. Each surviving operation needs exact old path/ID and current method/path/ID
+evidence. The bridge must be unique by method and normalized path in both specifications;
+normalization erases `{parameter}` names, lowercases the path, and trims trailing slashes.
+Exact evidence remains case-sensitive. No changed methods, different route shapes, subject
+variants, guessed successors, or operations absent from the legacy regex set are inferred.
+
+If an actual matched legacy operation has been pruned, record its old `method`, `path`,
+`operationId`, and review `notes` in `removedLegacyOperations`. This is accepted only when
+there are zero current compatible method/normalized-path matches. Surviving and removed
+evidence together must cover the complete source set without duplicates. A wholly pruned
+source set can have `operations: []` with all entries explicitly reviewed as removed;
+`absenceExpected` must still be `false`, not a substitute API-absence assertion.
+Translation cannot be combined with profile exclusion. If the regex also matches nothing
+in the legacy specification, leave the directive unresolved rather than inventing lineage.
+Supplying legacy evidence without the explicit disposition fails.
+This bridge does not yet translate qualified-to-bare final action/function segments or
+changed empty argument syntax. Potential counterparts such as `microsoft.graph.refresh`
+versus `refresh`, or `delta` versus `delta()`, reject a removal claim instead of silently
+dropping a surviving operation; they require separately reviewed path-translation support.
+
+### Completion and audit
+
 Use the existing switch as a **reviewed completion gate** after reconciling a module's ledger:
 
 ```powershell
