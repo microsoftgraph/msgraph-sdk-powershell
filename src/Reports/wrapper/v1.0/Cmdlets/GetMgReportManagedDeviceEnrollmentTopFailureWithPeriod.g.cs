@@ -14,9 +14,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Reports
 {
     [GraphRoute("GET", "/reports/managedDeviceEnrollmentTopFailures(period='{period}')")]
-    [Cmdlet(VerbsCommon.Get, "MgReportManagedDeviceEnrollmentTopFailuresWithPeriod")]
+    [Cmdlet(VerbsCommon.Get, "MgReportManagedDeviceEnrollmentTopFailureWithPeriod")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Reports.Client.Models.Report))]
-    public class GetMgReportManagedDeviceEnrollmentTopFailuresWithPeriodCommand : GraphClientCmdlet
+    public class GetMgReportManagedDeviceEnrollmentTopFailureWithPeriodCommand : GraphClientCmdlet
     {
 
 

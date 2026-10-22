@@ -14,9 +14,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Reports
 {
     [GraphRoute("GET", "/reports/managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')")]
-    [Cmdlet(VerbsCommon.Get, "MgReportManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken")]
+    [Cmdlet(VerbsCommon.Get, "MgReportManagedDeviceEnrollmentFailureDetailWithSkipWithTopWithFilterWithSkipToken")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Reports.Client.Models.Report))]
-    public class GetMgReportManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenCommand : GraphClientCmdlet
+    public class GetMgReportManagedDeviceEnrollmentFailureDetailWithSkipWithTopWithFilterWithSkipTokenCommand : GraphClientCmdlet
     {
 
 
