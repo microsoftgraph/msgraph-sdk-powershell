@@ -1,0 +1,221 @@
+{
+  "mappings": [
+    {
+      "module": "Applications",
+      "directiveIndex": 1,
+      "classification": "CmdletSuppression",
+      "sourceContains": "variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1",
+      "implementation": "CmdletConfigurator",
+      "notes": "Validate1 selects the collection-bound validateCredentials overload. The item-bound overload includes synchronizationJob-id and remains available. The v1.0 collision suppression ledger already identifies the collection as the unshipped counterpart of the item-bound Test-Mg*SynchronizationJobCredential command; curated exact POST entries extend this shared behavior to beta and collision-data-disabled runs without renaming retained actions.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/applications/{application-id}/synchronization/jobs/validateCredentials",
+              "operationId": "applications.application.synchronization.jobs.validateCredentials"
+            },
+            {
+              "method": "POST",
+              "path": "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/validateCredentials",
+              "operationId": "servicePrincipals.servicePrincipal.synchronization.jobs.validateCredentials"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/applications/{application-id}/synchronization/jobs/validateCredentials",
+              "operationId": "applications.application.synchronization.jobs.validateCredentials"
+            },
+            {
+              "method": "POST",
+              "path": "/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/validateCredentials",
+              "operationId": "servicePrincipals.servicePrincipal.synchronization.jobs.validateCredentials"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Applications",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: (ServicePrincipal)FederatedIdentityCredential.*",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress the nine servicePrincipal federatedIdentityCredentials operations in each compatible profile: collection GET/POST, item GET/PATCH/DELETE, name-keyed GET/PATCH/DELETE, and count GET. Existing v1.0 parity data covers the six non-name-keyed operations only; shared exact method/path entries complete beta and name-keyed coverage. Application federated credentials and the servicePrincipal parent remain unaffected. Profile-local readmes and src/readme.graph.md are intentionally ignored.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials",
+              "operationId": "servicePrincipals.ListFederatedIdentityCredentials"
+            },
+            {
+              "method": "POST",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials",
+              "operationId": "servicePrincipals.CreateFederatedIdentityCredentials"
+            },
+            {
+              "method": "GET",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}",
+              "operationId": "servicePrincipals.GetFederatedIdentityCredentials"
+            },
+            {
+              "method": "PATCH",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}",
+              "operationId": "servicePrincipals.UpdateFederatedIdentityCredentials"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}",
+              "operationId": "servicePrincipals.DeleteFederatedIdentityCredentials"
+            },
+            {
+              "method": "GET",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials(name='{name}')",
+              "operationId": "servicePrincipals.federatedIdentityCredentials.GetByName"
+            },
+            {
+              "method": "PATCH",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials(name='{name}')",
+              "operationId": "servicePrincipals.federatedIdentityCredentials.UpdateByName"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials(name='{name}')",
+              "operationId": "servicePrincipals.federatedIdentityCredentials.DeleteByName"
+            },
+            {
+              "method": "GET",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/$count",
+              "operationId": "servicePrincipals.federatedIdentityCredentials.GetCount-d9cd"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials",
+              "operationId": "servicePrincipals.ListFederatedIdentityCredentials"
+            },
+            {
+              "method": "POST",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials",
+              "operationId": "servicePrincipals.CreateFederatedIdentityCredentials"
+            },
+            {
+              "method": "GET",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}",
+              "operationId": "servicePrincipals.GetFederatedIdentityCredentials"
+            },
+            {
+              "method": "PATCH",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}",
+              "operationId": "servicePrincipals.UpdateFederatedIdentityCredentials"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}",
+              "operationId": "servicePrincipals.DeleteFederatedIdentityCredentials"
+            },
+            {
+              "method": "GET",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials(name='{name}')",
+              "operationId": "servicePrincipals.federatedIdentityCredentials.GetByName"
+            },
+            {
+              "method": "PATCH",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials(name='{name}')",
+              "operationId": "servicePrincipals.federatedIdentityCredentials.UpdateByName"
+            },
+            {
+              "method": "DELETE",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials(name='{name}')",
+              "operationId": "servicePrincipals.federatedIdentityCredentials.DeleteByName"
+            },
+            {
+              "method": "GET",
+              "path": "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/$count",
+              "operationId": "servicePrincipals.federatedIdentityCredentials.GetCount-d9cd"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Applications",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(OnPremisePublishingProfile)(\\1)+",
+      "implementation": "StructuralNaming",
+      "notes": "The beta root collection, item and count operations share the onPremisesPublishingProfiles.onPremisesPublishingProfile tag that produces the repeated AutoRest subject. Path-based naming already emits one OnPremisePublishingProfile noun (with Count for the count operation); no override is required. Nested agent/connector/published-resource routes retain their additional nouns. The v1.0 compatible spec has no onPremisesPublishingProfiles paths.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/onPremisesPublishingProfiles",
+              "operationId": "onPremisesPublishingProfiles.onPremisesPublishingProfile.ListOnPremisesPublishingProfile"
+            },
+            {
+              "method": "POST",
+              "path": "/onPremisesPublishingProfiles",
+              "operationId": "onPremisesPublishingProfiles.onPremisesPublishingProfile.CreateOnPremisesPublishingProfile"
+            },
+            {
+              "method": "GET",
+              "path": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}",
+              "operationId": "onPremisesPublishingProfiles.onPremisesPublishingProfile.GetOnPremisesPublishingProfile"
+            },
+            {
+              "method": "PATCH",
+              "path": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}",
+              "operationId": "onPremisesPublishingProfiles.onPremisesPublishingProfile.UpdateOnPremisesPublishingProfile"
+            },
+            {
+              "method": "DELETE",
+              "path": "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}",
+              "operationId": "onPremisesPublishingProfiles.onPremisesPublishingProfile.DeleteOnPremisesPublishingProfile"
+            },
+            {
+              "method": "GET",
+              "path": "/onPremisesPublishingProfiles/$count",
+              "operationId": "onPremisesPublishingProfiles.GetCount-9962"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Applications",
+      "directiveIndex": 4,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^application_DeleteOwnerGraphBPreRef$",
+      "implementation": "ReviewedAbsence",
+      "notes": "All twelve original legacy operation-ID alternatives have zero matches in both current compatible specs. This is exact selector absence, not API or profile absence: modern applications.*, servicePrincipals.* and onPremisesPublishingProfiles.* DeleteRef operations still exist with different IDs and are not suppressed by this directive. Do not infer replacement paths from the old singular IDs or remove existing derived reference naming.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    }
+  ]
+}
