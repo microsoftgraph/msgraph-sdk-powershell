@@ -26,7 +26,7 @@ public sealed partial class PowerShellWrapperGenerationService
             if (group.Routes.Count < 2 || group.Routes.Count > 32)
                 throw new InvalidOperationException("Multi-route groups require 2 to 32 exact operations.");
             if (group.SelectorParameter is { } selector
-                && (!IsRouteIdentifier(selector) || !char.IsUpper(selector[0]) || ReservedParameterNames.Contains(selector)))
+                && (!IsRouteIdentifier(selector) || !char.IsUpper(selector[0]) || CmdletEmitter.IsReservedDispatchParameterName(selector)))
                 throw new InvalidOperationException($"Invalid multi-route selector parameter '{selector}'.");
             var labels = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var route in group.Routes)
@@ -50,11 +50,6 @@ public sealed partial class PowerShellWrapperGenerationService
 
     private static bool IsRouteIdentifier(string value) =>
         Regex.IsMatch(value, "^[A-Za-z][A-Za-z0-9]*$", RegexOptions.CultureInvariant);
-
-    private static readonly HashSet<string> ReservedParameterNames = new(
-        ["AccessToken", "Headers", "Verbose", "Debug", "ErrorAction", "WarningAction", "InformationAction",
-         "ProgressAction", "ErrorVariable", "WarningVariable", "InformationVariable", "OutVariable",
-         "OutBuffer", "PipelineVariable", "WhatIf", "Confirm"], StringComparer.OrdinalIgnoreCase);
 
     private async Task<int> EmitMultiRouteOperationsAsync(IReadOnlyList<MultiRouteGroup> groups,
         IReadOnlyList<MultiRouteOperation> operations, EmitContext ctx, CancellationToken cancellationToken)
@@ -177,11 +172,6 @@ public sealed partial class PowerShellWrapperGenerationService
                         : shape == "Scalar" && q is not ("$filter" or "$search"))))
                     throw new InvalidOperationException($"Unsupported multi-route query option for {shape}: {naming.SourcePath}.");
                 var parameters = CmdletEmitter.GetDispatchParameters(naming, shape, op.QueryParams.ToHashSet(), bodyParameters, extraQueryParameters);
-                if (parameters.Any(p => ReservedParameterNames.Contains(p.Name)))
-                    throw new InvalidOperationException($"Multi-route parameter conflicts with a runtime or PowerShell common parameter: {naming.SourcePath}.");
-                if (group.SelectorParameter is { } selector
-                    && parameters.Any(p => p.Name.Equals(selector, StringComparison.OrdinalIgnoreCase)))
-                    throw new InvalidOperationException($"Multi-route selector '{selector}' conflicts with an existing parameter.");
                 workers.Add(new(naming, workerNaming, group.Routes[i].Name, shape, parameters, outputType));
                 sources.Add(source);
             }
@@ -199,20 +189,6 @@ public sealed partial class PowerShellWrapperGenerationService
     private static void ValidateMultiRouteWorkers(MultiRouteGroup group, IReadOnlyList<MultiRouteOperation> operations,
         IReadOnlyList<CmdletEmitter.RouteWorker> workers)
     {
-        if (group.SelectorParameter is null)
-        {
-            var defaultWorker = workers.Where(w => w.RouteName == group.DefaultRoute)
-                .OrderBy(w => w.Shape == "List" ? 0 : 1).First();
-            var defaultIds = defaultWorker.Naming.PathParamNames.ToHashSet(StringComparer.OrdinalIgnoreCase);
-            for (var i = 0; i < workers.Count; i++)
-            {
-                if (workers.Take(i).Any(previous => previous.Naming.PathParamNames.ToHashSet(StringComparer.OrdinalIgnoreCase)
-                    .SetEquals(workers[i].Naming.PathParamNames)))
-                    throw new InvalidOperationException("Multi-route operations with identical path parameters require an explicit selector.");
-                if (workers[i].Naming.PathParamNames.ToHashSet(StringComparer.OrdinalIgnoreCase).IsProperSubsetOf(defaultIds))
-                    throw new InvalidOperationException("Multi-route default parameter set shadows a route with fewer path parameters; choose a shallower default or an explicit selector.");
-            }
-        }
         foreach (var family in workers.GroupBy(w => w.RouteName))
         {
             if (family.GroupBy(w => w.Shape).Any(g => g.Count() != 1))
@@ -233,11 +209,6 @@ public sealed partial class PowerShellWrapperGenerationService
                     || SchemaSignature(TryGetSuccessJsonSchema(baselineOp)) != SchemaSignature(TryGetSuccessJsonSchema(operation))
                     || ParameterSignature(baselineOp) != ParameterSignature(operation))
                     throw new InvalidOperationException($"Incompatible multi-route body, response, query or header shape: {worker.Naming.SourcePath}.");
-                if (group.SelectorParameter is not null)
-                {
-                    if (!baseline.Parameters.SequenceEqual(worker.Parameters))
-                        throw new InvalidOperationException($"Selected multi-route operations require identical public parameters: {worker.Naming.SourcePath}.");
-                }
             }
         }
         if (group.SelectorParameter is not null && workers.GroupBy(w => w.RouteName)

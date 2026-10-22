@@ -39,10 +39,10 @@ function Assert-DispatchTest([bool]$Condition, [string]$Message) {
     if (-not $Condition) { throw $Message }
 }
 
-function New-DispatchWorker($Verb, $Noun, $Method, $Path, $Label, $Shape, $Index, $Parameters) {
+function New-DispatchWorker($Verb, $Noun, $Method, $Path, $Label, $Shape, $Index, $Parameters, [string[]]$PathParameters = @()) {
     $naming = [WrapperGenerator.CmdletNaming]::new(
         $(if ($Verb -eq 'Update') { 'VerbsData' } else { 'VerbsCommon' }), $Verb, $Noun,
-        "${Verb}${Noun}Command", [string[]]@(), 'Unused', [WrapperGenerator.HeaderParam[]]@(),
+        "${Verb}${Noun}Command", $PathParameters, 'Unused', [WrapperGenerator.HeaderParam[]]@(),
         [WrapperGenerator.OperationKind]::Resource, $null, '', '', '', $null, '', $Path, $Method)
     [WrapperGenerator.CmdletEmitter+RouteWorker]::new(
         $naming, [WrapperGenerator.Naming]::WithSuffix($naming, "_Route$Index"),
@@ -61,6 +61,23 @@ function Write-DispatchSource($Workers, $DefaultRoute, $Selector = 'Route') {
     $path = Join-Path $fixtureRoot ($Workers[0].Naming.ClassName + '.cs')
     Set-Content $path $source
     $path
+}
+
+function Assert-DispatchRejected($Workers, $DefaultRoute, $Selector, [string]$Description, [string]$ExpectedMessage) {
+    $failure = $null
+    try { $null = Write-DispatchSource $Workers $DefaultRoute $Selector }
+    catch { $failure = $_.Exception.GetBaseException() }
+    Assert-DispatchTest ($failure -is [System.InvalidOperationException]) "Emitter must reject $Description with InvalidOperationException, not emit unusable source: $failure"
+    Assert-DispatchTest ($failure.Message -match $ExpectedMessage) "Emitter rejected $Description for the wrong reason: $failure"
+    $path = Join-Path $fixtureRoot ($Workers[0].Naming.ClassName + '.cs')
+    Assert-DispatchTest (-not (Test-Path $path)) "Invalid plan reached source compilation: $Description"
+}
+
+function Assert-BinderRejected([scriptblock]$Script, [string]$ErrorId, [string]$Description) {
+    $failure = $null
+    try { $null = & $Script }
+    catch { $failure = $_ }
+    Assert-DispatchTest ($null -ne $failure -and $failure.FullyQualifiedErrorId -eq $ErrorId) "PowerShell must reject $Description with ${ErrorId}: $failure"
 }
 
 function Register-StubWorker([string]$Name, [switch]$Mutation) {
@@ -99,6 +116,103 @@ try {
     Import-Module Microsoft.Graph.Authentication -ErrorAction Stop
     $null = [System.Reflection.Assembly]::LoadFrom($GeneratorAssembly)
     $null = [System.Reflection.Assembly]::LoadFrom($RuntimeAssembly)
+
+    # The list's required query parameter makes its effective mandatory set identical to the item's path IDs.
+    $children = New-DispatchWorker Get MgRouteShadow GET '/widgets/{widget-id}/widgets' Children List 0 @() @('WidgetId')
+    $childrenParameters = [WrapperGenerator.CmdletEmitter]::GetDispatchParameters(
+        $children.Naming, 'List', [System.Collections.Generic.HashSet[string]]::new(),
+        [WrapperGenerator.CmdletEmitter+DispatchParameter[]]@(),
+        [WrapperGenerator.CmdletEmitter+StringQueryParameter[]]@(
+            [WrapperGenerator.CmdletEmitter+StringQueryParameter]::new('parentId', 'ParentId', $true)))
+    $shadowWorkers = @(
+        [WrapperGenerator.CmdletEmitter+RouteWorker]::new(
+            $children.Naming, $children.InternalNaming, 'Children', 'List', $childrenParameters, 'string')
+        New-DispatchWorker Get MgRouteShadow GET '/widgets/{widget-id}/widgets/{parent-id}' Item Get 1 @(
+            [WrapperGenerator.CmdletEmitter+DispatchParameter]::new('WidgetId', 'string', $true, 0)
+            [WrapperGenerator.CmdletEmitter+DispatchParameter]::new('ParentId', 'string', $true, 1)
+        ) @('WidgetId', 'ParentId')
+    )
+    $shadowBinder = @'
+[CmdletBinding(__DEFAULT__)]
+param(
+    [Parameter(Mandatory, ParameterSetName = 'ChildrenList')]
+    [Parameter(Mandatory, ParameterSetName = 'ItemGet')]
+    [string]$WidgetId,
+    [Parameter(Mandatory, ParameterSetName = 'ChildrenList')]
+    [Parameter(Mandatory, ParameterSetName = 'ItemGet')]
+    [string]$ParentId,
+    [Parameter(ParameterSetName = 'ChildrenList')][switch]$All
+)
+$PSCmdlet.ParameterSetName
+'@
+    foreach ($defaultRoute in 'Children', 'Item') {
+        $setName = if ($defaultRoute -eq 'Children') { 'ChildrenList' } else { 'ItemGet' }
+        $bind = [scriptblock]::Create($shadowBinder.Replace('__DEFAULT__', "DefaultParameterSetName = '$setName'"))
+        Assert-DispatchTest ((& $bind -WidgetId w -ParentId p) -eq $setName) 'Identical mandatory parameters must reproduce default-dependent route shadowing in PowerShell.'
+        Assert-DispatchRejected $shadowWorkers $defaultRoute $null "identical effective mandatory sets with $defaultRoute as default" 'identical mandatory'
+    }
+    $bind = [scriptblock]::Create($shadowBinder.Replace('__DEFAULT__', ''))
+    Assert-BinderRejected { & $bind -WidgetId w -ParentId p } 'AmbiguousParameterSet' 'identical mandatory sets without a default'
+
+    foreach ($query in @(
+        @{ Name = 'Property'; Alias = 'Select'; Selector = 'sElEcT' }
+        @{ Name = 'ExpandProperty'; Alias = 'Expand'; Selector = 'eXpAnD' }
+        @{ Name = 'Sort'; Alias = 'OrderBy'; Selector = 'oRdErBy' }
+    )) {
+        $bind = [scriptblock]::Create(
+            "[CmdletBinding()] param([Alias('$($query.Alias)')][string[]]`$$($query.Name), [string]`$$($query.Selector)) 'unexpected'")
+        Assert-BinderRejected $bind 'ParameterNameConflictsWithAlias' "$($query.Selector) selector versus $($query.Name) alias"
+        $parameters = @([WrapperGenerator.CmdletEmitter+DispatchParameter]::new($query.Name, 'string[]?', $false, $null, $query.Alias))
+        $workers = @(
+            New-DispatchWorker Get MgRouteAliasConflict GET '/legacy/widgets' Legacy List 0 $parameters
+            New-DispatchWorker Get MgRouteAliasConflict GET '/solutions/widgets' Solutions List 1 $parameters
+        )
+        Assert-DispatchRejected $workers Legacy $query.Selector "$($query.Selector) selector versus $($query.Name) alias" 'selector'
+    }
+
+    # Aliases belong to the whole dispatcher, even when their parameters come from different workers.
+    foreach ($secondAlias in $false, $true) {
+        $secondDeclaration = if ($secondAlias) { "[Alias('sElEcT')][string[]]`$OtherProperty" } else { '[string[]]$sElEcT' }
+        $bind = [scriptblock]::Create("[CmdletBinding()] param([Alias('Select')][string[]]`$Property, $secondDeclaration) 'unexpected'")
+        $errorId = if ($secondAlias) { 'AliasDeclaredMultipleTimes' } else { 'ParameterNameConflictsWithAlias' }
+        Assert-BinderRejected $bind $errorId 'case-insensitive cross-worker parameter aliases'
+        $secondParameter = if ($secondAlias) {
+            [WrapperGenerator.CmdletEmitter+DispatchParameter]::new('OtherProperty', 'string[]?', $false, $null, 'sElEcT')
+        } else { [WrapperGenerator.CmdletEmitter+DispatchParameter]::new('sElEcT', 'string[]?', $false, $null) }
+        $workers = @(
+            New-DispatchWorker Get MgRouteAliasConflict GET '/legacy/widgets' Legacy List 0 @(
+                [WrapperGenerator.CmdletEmitter+DispatchParameter]::new('Property', 'string[]?', $false, $null, 'Select')
+            )
+            New-DispatchWorker Get MgRouteAliasConflict GET '/solutions/widgets/{widget-id}' Solutions Get 1 @($secondParameter)
+        )
+        Assert-DispatchRejected $workers Legacy Route 'case-insensitive cross-worker parameter aliases' 'alias'
+    }
+
+    foreach ($alias in 'vb', 'db', 'ea', 'wa', 'infa', 'proga', 'ev', 'wv', 'iv', 'ov', 'ob', 'pv', 'cf', 'wi') {
+        $selector = $alias.ToUpperInvariant()
+        $mutation = $alias -in 'cf', 'wi'
+        $binding = if ($mutation) { '[CmdletBinding(SupportsShouldProcess)]' } else { '[CmdletBinding()]' }
+        $bind = [scriptblock]::Create("$binding param([string]`$$selector) 'unexpected'")
+        Assert-BinderRejected $bind 'ParameterNameConflictsWithAlias' "selector $selector versus a common PowerShell alias"
+        $verb, $method = if ($mutation) { 'Remove', 'DELETE' } else { 'Get', 'GET' }
+        $workers = @(
+            New-DispatchWorker $verb MgRouteCommonConflict $method '/legacy/widgets' Legacy Invoke 0 @()
+            New-DispatchWorker $verb MgRouteCommonConflict $method '/solutions/widgets' Solutions Invoke 1 @()
+        )
+        Assert-DispatchRejected $workers Legacy $selector "selector $selector versus a common PowerShell alias" 'common parameter|selector'
+        foreach ($asAlias in $false, $true) {
+            $parameter = if ($asAlias) {
+                $bind = [scriptblock]::Create("$binding param([Alias('$selector')][string]`$Custom) 'unexpected'")
+                Assert-BinderRejected $bind 'AliasParameterNameAlreadyExistsForCommand' "parameter alias $selector versus a common PowerShell alias"
+                [WrapperGenerator.CmdletEmitter+DispatchParameter]::new('Custom', 'string?', $false, $null, $selector)
+            } else { [WrapperGenerator.CmdletEmitter+DispatchParameter]::new($selector, 'string?', $false, $null) }
+            $workers = @(
+                New-DispatchWorker $verb MgRouteCommonConflict $method '/legacy/widgets' Legacy Invoke 0 @($parameter)
+                New-DispatchWorker $verb MgRouteCommonConflict $method '/solutions/widgets' Solutions Invoke 1 @($parameter)
+            )
+            Assert-DispatchRejected $workers Legacy Route "parameter or alias $selector versus a common PowerShell alias" 'common parameter'
+        }
+    }
 
     $list = @(
         [WrapperGenerator.CmdletEmitter+DispatchParameter]::new('All', 'SwitchParameter', $false, $null)
@@ -194,7 +308,7 @@ try {
     $getType = (Get-Command Get-MgRouteProbe).ImplementingType
     $routes = @($getType.GetCustomAttributesData() | Where-Object { $_.AttributeType.Name -eq 'GraphRouteAttribute' })
     Assert-DispatchTest ($routes.Count -eq 4) 'Compiled dispatcher lost exact source operation metadata.'
-    'Emitted multi-route dispatchers compiled and passed routing, binding, forwarding, WhatIf and error checks.'
+    'Emitted multi-route dispatchers passed mandatory-set and alias rejection, compilation, routing, binding, forwarding, WhatIf and error checks.'
 }
 finally {
     foreach ($name in $workerNames) { Remove-Item "Function:\global:$name" -ErrorAction SilentlyContinue }

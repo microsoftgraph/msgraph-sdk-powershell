@@ -659,6 +659,53 @@ public sealed class MultiRouteTests
     }
 
     [Theory]
+    [InlineData("$select", "Select")]
+    [InlineData("$select", "SeLeCt")]
+    [InlineData("$expand", "Expand")]
+    [InlineData("$orderby", "OrderBy")]
+    public async Task SelectorCannotShadowAQueryParameterAlias(string query, string selector)
+    {
+        var document = Document();
+        foreach (var root in new[] { Legacy, Solutions })
+        {
+            var operation = Get(document, list: true);
+            operation.Parameters = Queries(query).ToList();
+            Add(document, "GET", root, operation);
+        }
+
+        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
+            Generate(document, [Group("GET", "") with { SelectorParameter = selector }]));
+
+        Assert.Contains($"selector '{selector}' conflicts with an existing parameter or alias", ex.Message);
+    }
+
+    [Theory]
+    [InlineData("select")]
+    [InlineData("SELECT")]
+    public async Task PublicQueryNamesCannotConflictWithAnotherParametersAlias(string queryName)
+    {
+        var document = Document();
+        foreach (var root in new[] { Legacy, Solutions })
+        {
+            var operation = Get(document, list: true);
+            operation.Parameters =
+            [
+                .. Queries("$select"),
+                new OpenApiParameter
+                {
+                    Name = queryName, In = ParameterLocation.Query,
+                    Schema = new OpenApiSchema { Type = JsonSchemaType.String },
+                },
+            ];
+            Add(document, "GET", root, operation);
+        }
+
+        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [Group("GET", "")]));
+
+        Assert.Contains("parameter alias 'Select' conflicts with another parameter or alias", ex.Message);
+    }
+
+    [Theory]
     [InlineData("AccessToken")]
     [InlineData("Headers")]
     [InlineData("WhatIf")]
@@ -667,6 +714,20 @@ public sealed class MultiRouteTests
     [InlineData("Debug")]
     [InlineData("ErrorAction")]
     [InlineData("PipelineVariable")]
+    [InlineData("Vb")]
+    [InlineData("Db")]
+    [InlineData("Ea")]
+    [InlineData("Wa")]
+    [InlineData("Infa")]
+    [InlineData("Proga")]
+    [InlineData("Ev")]
+    [InlineData("Wv")]
+    [InlineData("Iv")]
+    [InlineData("Ov")]
+    [InlineData("Ob")]
+    [InlineData("Pv")]
+    [InlineData("Wi")]
+    [InlineData("Cf")]
     [InlineData("class")]
     [InlineData("namespace")]
     [InlineData("route")]
@@ -753,7 +814,7 @@ public sealed class MultiRouteTests
         var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
             Generate(TwoItems(), [Group("GET", Item) with { SelectorParameter = null }]));
 
-        Assert.Contains("identical path parameters require an explicit selector", ex.Message);
+        Assert.Contains("identical mandatory parameters", ex.Message);
     }
 
     [Theory]
@@ -776,7 +837,7 @@ public sealed class MultiRouteTests
         var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
             Generate(document, [new MultiRouteGroup("v1.0", ordered, "Root")]));
 
-        Assert.Contains("identical path parameters require an explicit selector", ex.Message);
+        Assert.Contains("identical mandatory parameters", ex.Message);
     }
 
     [Fact]
@@ -795,7 +856,45 @@ public sealed class MultiRouteTests
 
         var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
 
-        Assert.Contains("identical path parameters require an explicit selector", ex.Message);
+        Assert.Contains("identical mandatory parameters", ex.Message);
+    }
+
+    [Theory]
+    [InlineData(false, "Children")]
+    [InlineData(false, "Item")]
+    [InlineData(true, "Children")]
+    public async Task RequiredQueriesParticipateInAmbiguityChecksWithinEachSelectorLabel(bool selector, string defaultRoute)
+    {
+        var (document, group) = RequiredQueryBindingFixture(selector, defaultRoute);
+
+        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
+
+        Assert.Contains("identical mandatory parameters", ex.Message);
+    }
+
+    [Theory]
+    [InlineData("Children")]
+    [InlineData("Item")]
+    public async Task RequiredQueriesParticipateInDefaultShadowChecksWithoutChangingAValidDefault(string defaultRoute)
+    {
+        var (document, group) = RequiredQueryBindingFixture(selector: false, defaultRoute);
+        document.Paths["/widgets/{widget-id}/widgets"].Operations![HttpMethod.Get].Parameters!.Add(
+            new OpenApiParameter
+            {
+                Name = "start", In = ParameterLocation.Query, Required = true,
+                Schema = new OpenApiSchema { Type = JsonSchemaType.String },
+            });
+
+        if (defaultRoute == "Children")
+        {
+            var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
+            Assert.Contains("default parameter set shadows a route", ex.Message);
+            return;
+        }
+
+        var files = await Generate(document, [group]);
+        Assert.Contains("DefaultParameterSetName = \"ItemGet\"", files["GetMgWidget.g.cs"]);
+        Assert.Contains("public string Start", files["GetMgWidget.g.cs"]);
     }
 
     [Theory]
@@ -1097,6 +1196,30 @@ public sealed class MultiRouteTests
             }
         }
         return (document, new MultiRouteGroup("v1.0", routes, "Legacy", "Route"));
+    }
+
+    private static (OpenApiDocument Document, MultiRouteGroup Group) RequiredQueryBindingFixture(bool selector, string defaultRoute)
+    {
+        var document = Document();
+        var routes = new List<MultiRoute>();
+        foreach (var prefix in selector ? new[] { "", "/solutions" } : new[] { "" })
+        {
+            var path = prefix + "/widgets/{widget-id}/widgets";
+            var children = Get(document, list: true);
+            children.Parameters =
+            [
+                new OpenApiParameter
+                {
+                    Name = "parentId", In = ParameterLocation.Query, Required = true,
+                    Schema = new OpenApiSchema { Type = JsonSchemaType.String },
+                },
+            ];
+            Add(document, "GET", path, children);
+            Add(document, "GET", path + "/{parent-id}", Get(document));
+            routes.Add(new("GET", path, selector ? (prefix.Length == 0 ? "Legacy" : "Solutions") : "Children"));
+            routes.Add(new("GET", path + "/{parent-id}", selector ? routes[^1].Name : "Item"));
+        }
+        return (document, new("v1.0", routes, selector ? "Legacy" : defaultRoute, selector ? "Route" : null));
     }
 
     private static OpenApiDocument Document() => new()

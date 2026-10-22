@@ -79,6 +79,11 @@ duplicate membership. Unopted groups retain the original
 collision diagnostics. This does not activate any module migration, change an excluded
 profile-local directive, or broadly deduplicate collisions.
 
+Binding checks compare all emitted mandatory parameters, including required queries, across
+shapes within each selector label (or across the whole group without a selector). Selector,
+parameter and alias conflicts are case-insensitive, including existing query aliases such as
+`Select` and PowerShell common-parameter aliases such as `ea`.
+
 ### Published Bookings defaults
 
 The module owner's reviewed beta evidence covers 53 pairs / 106 operations in 45 public

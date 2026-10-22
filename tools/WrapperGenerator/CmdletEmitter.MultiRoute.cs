@@ -23,6 +23,65 @@ public static partial class CmdletEmitter
     public sealed record RouteWorker(CmdletNaming Naming, CmdletNaming InternalNaming, string RouteName,
         string Shape, IReadOnlyList<DispatchParameter> Parameters, string? OutputType);
 
+    private static readonly HashSet<string> ReservedDispatchParameterNames = new(
+        ["AccessToken", "Headers", "Verbose", "Debug", "ErrorAction", "WarningAction", "InformationAction",
+         "ProgressAction", "ErrorVariable", "WarningVariable", "InformationVariable", "OutVariable",
+         "OutBuffer", "PipelineVariable", "WhatIf", "Confirm",
+         "vb", "db", "ea", "wa", "infa", "proga", "ev", "wv", "iv", "ov", "ob", "pv", "wi", "cf"],
+        StringComparer.OrdinalIgnoreCase);
+
+    internal static bool IsReservedDispatchParameterName(string name) => ReservedDispatchParameterNames.Contains(name);
+
+    private static void ValidateMultiRouteBinding(MultiRouteGroup group, IReadOnlyList<RouteWorker> workers)
+    {
+        var parameters = workers.SelectMany(w => w.Parameters).ToArray();
+        var names = parameters.Select(p => p.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        if (parameters.Any(p => IsReservedDispatchParameterName(p.Name)
+            || (p.Alias is { } alias && IsReservedDispatchParameterName(alias))))
+            throw new InvalidOperationException("Multi-route parameter or alias conflicts with a runtime or PowerShell common parameter.");
+        if (group.SelectorParameter is { } selector)
+        {
+            if (IsReservedDispatchParameterName(selector) || parameters.Any(p =>
+                p.Name.Equals(selector, StringComparison.OrdinalIgnoreCase)
+                || string.Equals(p.Alias, selector, StringComparison.OrdinalIgnoreCase)))
+                throw new InvalidOperationException($"Multi-route selector '{selector}' conflicts with an existing parameter or alias.");
+        }
+        var aliasOwners = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var parameter in parameters.Where(p => p.Alias is not null))
+        {
+            var alias = parameter.Alias!;
+            if (names.Contains(alias) || (aliasOwners.TryGetValue(alias, out var owner)
+                && !owner.Equals(parameter.Name, StringComparison.OrdinalIgnoreCase)))
+                throw new InvalidOperationException($"Multi-route parameter alias '{alias}' conflicts with another parameter or alias.");
+            aliasOwners[alias] = parameter.Name;
+        }
+
+        var defaultWorker = workers.Where(w => w.RouteName == group.DefaultRoute)
+            .OrderBy(w => w.Shape == "List" ? 0 : 1).First();
+        // The selector discriminates route labels, not List/Get within one label. Required
+        // queries participate in PowerShell binding just like path IDs.
+        foreach (var partition in workers.GroupBy(w => group.SelectorParameter is null ? "" : w.RouteName))
+        {
+            var peers = partition.ToArray();
+            var mandatory = peers.Select(w => w.Parameters.Where(p => p.Mandatory)
+                .Select(p => p.Name).ToHashSet(StringComparer.OrdinalIgnoreCase)).ToArray();
+            var partitionDefault = group.SelectorParameter is null ? defaultWorker
+                : peers.FirstOrDefault(w => w.Shape == defaultWorker.Shape);
+            var defaultMandatory = partitionDefault?.Parameters.Where(p => p.Mandatory)
+                .Select(p => p.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            for (var i = 0; i < peers.Length; i++)
+            {
+                if (mandatory.Take(i).Any(previous => previous.SetEquals(mandatory[i])))
+                    throw new InvalidOperationException("Multi-route parameter sets have identical mandatory parameters and cannot be selected unambiguously.");
+                if (defaultMandatory is not null && mandatory[i].IsProperSubsetOf(defaultMandatory))
+                    throw new InvalidOperationException("Multi-route default parameter set shadows a route with fewer mandatory parameters; choose a shallower default or an explicit selector.");
+            }
+        }
+        if (group.SelectorParameter is not null && workers.GroupBy(w => w.Shape)
+            .Any(shape => shape.Skip(1).Any(w => !shape.First().Parameters.SequenceEqual(w.Parameters))))
+            throw new InvalidOperationException("Selected multi-route operations require identical public parameters.");
+    }
+
     public static IReadOnlyList<DispatchParameter> BodyDispatchParameters(
         IReadOnlyList<CmdletProperty> scalars, IReadOnlyList<ComplexParameter> complex,
         IReadOnlyList<UntypedParameter> untyped) =>
@@ -64,6 +123,7 @@ public static partial class CmdletEmitter
 
     public static string EmitMultiRouteDispatcher(MultiRouteGroup group, IReadOnlyList<RouteWorker> workers, EmitContext ctx)
     {
+        ValidateMultiRouteBinding(group, workers);
         var naming = workers[0].Naming;
         string SetName(RouteWorker worker) => group.SelectorParameter is null
             ? worker.RouteName + worker.Shape : worker.Shape;
@@ -74,10 +134,10 @@ public static partial class CmdletEmitter
             var first = parameter.First();
             if (parameter.Any(p => p.Type != first.Type || p.Mandatory != first.Mandatory || p.Alias != first.Alias))
                 throw new InvalidOperationException($"Incompatible multi-route parameter {first.Name}.");
-            var attributes = workers.Where(w => w.Parameters.Any(p => p.Name == first.Name))
+            var attributes = workers.Where(w => w.Parameters.Any(p => p.Name.Equals(first.Name, StringComparison.OrdinalIgnoreCase)))
                 .GroupBy(SetName).Select(s =>
                 {
-                    var p = s.First().Parameters.Single(p => p.Name == first.Name);
+                    var p = s.First().Parameters.Single(p => p.Name.Equals(first.Name, StringComparison.OrdinalIgnoreCase));
                     var position = p.Position is { } i ? $", Position = {i}" : "";
                     return $"        [Parameter(Mandatory = {p.Mandatory.ToString().ToLowerInvariant()}, ParameterSetName = \"{s.Key}\"{position})]";
                 });
