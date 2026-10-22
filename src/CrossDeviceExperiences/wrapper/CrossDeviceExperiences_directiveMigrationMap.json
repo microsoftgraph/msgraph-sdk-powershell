@@ -1,0 +1,133 @@
+{
+  "scope": {
+    "source": "src/CrossDeviceExperiences/CrossDeviceExperiences.md",
+    "ignored": [
+      "src/readme.graph.md",
+      "src/CrossDeviceExperiences/v1.0/readme.md",
+      "src/CrossDeviceExperiences/beta/readme.md"
+    ],
+    "deferred": "Parameter aliases/transforms and schema/response directives remain deferred; none occur in the shared source."
+  },
+  "mappings": [
+    {
+      "module": "CrossDeviceExperiences",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^user.device_DeleteRegisteredOwnerGraphBPreRef$|^user.device_DeleteRegisteredUserGraphBPreRef$",
+      "implementation": "ExpectedAbsence",
+      "notes": "Neither historical operation ID exists in either current compatible specification. The v1.0 document contains only activity routes, with no user devices navigation. Beta retains device and registered-owner/user reference routes under distinct users.devices.* operation IDs; the historical selector does not select them. No override is required, and no replacement operation is inferred from route similarity. Existing curated/derived behavior is retained without adding a redundant or broader suppression.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": [],
+          "evidence": {
+            "spec": "openApiDocs_KiotaCompat/v1.0/CrossDeviceExperiences.yml",
+            "gitBlob": "d4be32474617fd2fb80ac3a5bb3f94489a2e968b",
+            "pathCount": 8,
+            "operationCount": 14,
+            "selector": "^user.device_DeleteRegisteredOwnerGraphBPreRef$|^user.device_DeleteRegisteredUserGraphBPreRef$",
+            "selectorMatchCount": 0,
+            "search": "Parse every path and HTTP operation in the compatible document and apply the unchanged shared selector to each operationId.",
+            "unaffectedOperations": [
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/activities",
+                "operationId": "users.ListActivities"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/activities/{userActivity-id}",
+                "operationId": "users.DeleteActivities"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}",
+                "operationId": "users.activities.DeleteHistoryItems"
+              }
+            ]
+          }
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": [],
+          "evidence": {
+            "spec": "openApiDocs_KiotaCompat/beta/CrossDeviceExperiences.yml",
+            "gitBlob": "3d2d078feed71def2045120a347904e482795151",
+            "pathCount": 77,
+            "operationCount": 101,
+            "selector": "^user.device_DeleteRegisteredOwnerGraphBPreRef$|^user.device_DeleteRegisteredUserGraphBPreRef$",
+            "selectorMatchCount": 0,
+            "search": "Parse every path and HTTP operation in the compatible document and apply the unchanged shared selector to each operationId.",
+            "unaffectedOperations": [
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/activities",
+                "operationId": "users.ListActivities"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/activities/{userActivity-id}",
+                "operationId": "users.DeleteActivities"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/devices/{device-id}",
+                "operationId": "users.DeleteDevices"
+              },
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/devices/{device-id}/registeredOwners",
+                "operationId": "users.devices.ListRegisteredOwners"
+              },
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/devices/{device-id}/registeredUsers",
+                "operationId": "users.devices.ListRegisteredUsers"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/$ref",
+                "operationId": "users.devices.registeredOwners.DeleteRefDirectoryObject"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/$ref",
+                "operationId": "users.devices.registeredUsers.DeleteRefDirectoryObject"
+              },
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+                "operationId": "users.devices.ListRefRegisteredOwners"
+              },
+              {
+                "method": "POST",
+                "path": "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+                "operationId": "users.devices.CreateRefRegisteredOwners"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+                "operationId": "users.devices.DeleteRefRegisteredOwners"
+              },
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/devices/{device-id}/registeredUsers/$ref",
+                "operationId": "users.devices.ListRefRegisteredUsers"
+              },
+              {
+                "method": "POST",
+                "path": "/users/{user-id}/devices/{device-id}/registeredUsers/$ref",
+                "operationId": "users.devices.CreateRefRegisteredUsers"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/devices/{device-id}/registeredUsers/$ref",
+                "operationId": "users.devices.DeleteRefRegisteredUsers"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
