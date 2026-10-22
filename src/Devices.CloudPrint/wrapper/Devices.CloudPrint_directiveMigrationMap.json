@@ -1,0 +1,52 @@
+{
+  "mappings": [
+    {
+      "module": "Devices.CloudPrint",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^print(_.*Report|\\.report.*)",
+      "implementation": "ReviewedAbsence",
+      "notes": "Reviewed all operation IDs in both compatible Devices.CloudPrint specs: none match the exact shared report regex. No suppression or invented route is needed. DevicesCloudPrintDirectiveMigrationTests pins absence and keeps unrelated print operations available.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Devices.CloudPrint",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "variant: ^Create$|^CreateExpanded$",
+      "implementation": "CmdletConfigurator",
+      "notes": "New PrintPrinter Create/CreateExpanded are the ordinary collection POST print.CreatePrinters in both profiles. The separately identified POST /print/printers/create action (print.printers.create) remains: v1.0 derived naming exposes that action as New-MgPrintPrinter. Existing parity-suppressions.v1.0.json already suppresses the ordinary POST with derived data enabled; one exact curated entry supplies the missing beta/no-data coverage without adding duplicate per-profile overrides. Printer GET, item PATCH/DELETE, job POST, and the create action remain available.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/print/printers",
+              "operationId": "print.CreatePrinters"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/print/printers",
+              "operationId": "print.CreatePrinters"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
