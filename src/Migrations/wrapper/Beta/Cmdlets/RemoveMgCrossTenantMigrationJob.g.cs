@@ -10,11 +10,12 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Migrations
 {
-    [GraphRoute("DELETE", "/solutions/migrations")]
-    [Cmdlet(VerbsCommon.Remove, "MgMigration", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgMigrationCommand : GraphClientCmdlet
+    [GraphRoute("DELETE", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}")]
+    [Cmdlet(VerbsCommon.Remove, "MgCrossTenantMigrationJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    public class RemoveMgCrossTenantMigrationJobCommand : GraphClientCmdlet
     {
-
+        [Parameter(Mandatory = true, Position = 0)]
+        public string CrossTenantMigrationJobId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -26,7 +27,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(null, "Remove"))
+            if (!ShouldProcess(CrossTenantMigrationJobId, "Remove"))
                 return;
 
         var requestAdapter = GetRequestAdapter();
@@ -35,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.Solutions.Migrations.DeleteAsync(requestConfiguration =>
+                client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, null);
+                ThrowGraphRequestFailed(ex, CrossTenantMigrationJobId);
                 return;
             }
         }

@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Migrations
 {
     [GraphRoute("GET", "/solutions/migrations/crossTenantMigrationJobs")]
-    [Cmdlet(VerbsCommon.Get, "MgMigrationCrossTenantMigrationJob_List")]
+    [Cmdlet(VerbsCommon.Get, "MgCrossTenantMigrationJob_List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob))]
-    public class GetMgMigrationCrossTenantMigrationJob_ListCommand : GraphClientCmdlet
+    public class GetMgCrossTenantMigrationJob_ListCommand : GraphClientCmdlet
     {
 
 

@@ -8,16 +8,14 @@ using Microsoft.Graph.PowerShell.Migrations.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Migrations
 {
-    [GraphRoute("GET", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users")]
-    [Cmdlet(VerbsCommon.Get, "MgMigrationCrossTenantMigrationJobUser", DefaultParameterSetName = "List")]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationTaskCollectionResponse), ParameterSetName = new[] { "List" })]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationTask), ParameterSetName = new[] { "Get" })]
-    public class GetMgMigrationCrossTenantMigrationJobUserCommand : GraphClientCmdlet
+    [GraphRoute("GET", "/solutions/migrations/crossTenantMigrationJobs")]
+    [Cmdlet(VerbsCommon.Get, "MgCrossTenantMigrationJob", DefaultParameterSetName = "List")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJobCollectionResponse), ParameterSetName = new[] { "List" })]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob), ParameterSetName = new[] { "Get" })]
+    public class GetMgCrossTenantMigrationJobCommand : GraphClientCmdlet
     {
-        [Parameter(Mandatory = true, Position = 0)]
+        [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string CrossTenantMigrationJobId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
-        public string CrossTenantMigrationTaskId { get; set; } = string.Empty;
 
 
 
@@ -58,11 +56,11 @@ namespace Microsoft.Graph.PowerShell.Migrations
 
 
 
-        // Delegates to Get-MgMigrationCrossTenantMigrationJobUser_Get or Get-MgMigrationCrossTenantMigrationJobUser_List, the two cmdlets
+        // Delegates to Get-MgCrossTenantMigrationJob_Get or Get-MgCrossTenantMigrationJob_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgMigrationCrossTenantMigrationJobUser_Get" : "Get-MgMigrationCrossTenantMigrationJobUser_List";
+            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgCrossTenantMigrationJob_Get" : "Get-MgCrossTenantMigrationJob_List";
             try
             {
                 InvokeCommand.InvokeScript(
@@ -85,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? CrossTenantMigrationTaskId : CrossTenantMigrationJobId);
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? CrossTenantMigrationJobId : null);
                 return;
             }
         }

@@ -14,10 +14,10 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Migrations
 {
-    [GraphRoute("POST", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/migrate")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgMigrationCrossTenantMigrationJobMigrate", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob))]
-    public class InvokeMgMigrationCrossTenantMigrationJobMigrateCommand : GraphClientCmdlet
+    [GraphRoute("POST", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/cancel")]
+    [Cmdlet(VerbsLifecycle.Stop, "MgCrossTenantMigrationJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationCancelResponse))]
+    public class StopMgCrossTenantMigrationJobCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string CrossTenantMigrationJobId { get; set; } = string.Empty;
@@ -31,17 +31,17 @@ namespace Microsoft.Graph.PowerShell.Migrations
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(CrossTenantMigrationJobId, "Invoke"))
+            if (!ShouldProcess(CrossTenantMigrationJobId, "Stop"))
                 return;
 
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob? result;
+            Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationCancelResponse? result;
             try
             {
-                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Migrate.PostAsync(requestConfiguration =>
+                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Cancel.PostAsync(requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);

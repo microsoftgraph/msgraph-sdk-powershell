@@ -12,15 +12,13 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Migrations
 {
-    [GraphRoute("GET", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}")]
-    [Cmdlet(VerbsCommon.Get, "MgMigrationCrossTenantMigrationJobUser_Get")]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationTask))]
-    public class GetMgMigrationCrossTenantMigrationJobUser_GetCommand : GraphClientCmdlet
+    [GraphRoute("GET", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}")]
+    [Cmdlet(VerbsCommon.Get, "MgCrossTenantMigrationJob_Get")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob))]
+    public class GetMgCrossTenantMigrationJob_GetCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string CrossTenantMigrationJobId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 1)]
-        public string CrossTenantMigrationTaskId { get; set; } = string.Empty;
 
 
 
@@ -39,10 +37,10 @@ namespace Microsoft.Graph.PowerShell.Migrations
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationTask? result;
+            Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob? result;
             try
             {
-                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Users[CrossTenantMigrationTaskId].GetAsync(requestConfiguration =>
+                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Property)))
                         requestConfiguration.QueryParameters.Select = Property;
@@ -57,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, CrossTenantMigrationTaskId);
+                ThrowGraphRequestFailed(ex, CrossTenantMigrationJobId);
                 return;
             }
 

@@ -1,18 +1,23 @@
 #nullable enable
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Management.Automation;
 using System.Net.Http;
 using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Migrations.Client;
+using Microsoft.Graph.PowerShell.Migrations.Client.Models;
+using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Migrations
 {
-    [GraphRoute("DELETE", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}")]
-    [Cmdlet(VerbsCommon.Remove, "MgMigrationCrossTenantMigrationJobUser", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgMigrationCrossTenantMigrationJobUserCommand : GraphClientCmdlet
+    [GraphRoute("POST", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}/cancel")]
+    [Cmdlet(VerbsLifecycle.Stop, "MgCrossTenantMigrationJobUser", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationCancelResponse))]
+    public class StopMgCrossTenantMigrationJobUserCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string CrossTenantMigrationJobId { get; set; } = string.Empty;
@@ -20,39 +25,37 @@ namespace Microsoft.Graph.PowerShell.Migrations
         public string CrossTenantMigrationTaskId { get; set; } = string.Empty;
 
 
-        [Parameter(Mandatory = false,
-            HelpMessage = "Sets the 'If-Match' request header (for example an ETag for optimistic concurrency; some Graph APIs require it even where the spec marks it optional).")]
-        public string? IfMatch { get; set; }
+
+
 
 
 
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(CrossTenantMigrationTaskId, "Remove"))
+            if (!ShouldProcess(CrossTenantMigrationTaskId, "Stop"))
                 return;
+
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            // DeleteAsync returns a plain Task: a standard delete response has no body.
+            Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationCancelResponse? result;
             try
             {
-                client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Users[CrossTenantMigrationTaskId].DeleteAsync(requestConfiguration =>
+                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Users[CrossTenantMigrationTaskId].Cancel.PostAsync(requestConfiguration =>
                 {
 
-                        if (this.IsParameterBound(nameof(IfMatch)))
-                            requestConfiguration.Headers.Add("If-Match", IfMatch!);
-
                         AddRequestHeaders(requestConfiguration.Headers);
-                })
-                    .GetAwaiter().GetResult();
+                }).GetAwaiter().GetResult();
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
                 ThrowGraphRequestFailed(ex, CrossTenantMigrationTaskId);
                 return;
             }
+
+            WriteObject(result);
         }
     }
 }
