@@ -1,8 +1,8 @@
 {
   "descriptionHash": "924994469729E1749860DDAD8BCCE9D674237D17D2285642A902E794B293E21FBEF3E9A082363EF7CAF2BFBFC073ABA6FDE18BF86223AF02B72913812C49D949",
-  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/Beta/PersonalContacts.yml",
+  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/beta/PersonalContacts.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.PersonalContacts.Client",
