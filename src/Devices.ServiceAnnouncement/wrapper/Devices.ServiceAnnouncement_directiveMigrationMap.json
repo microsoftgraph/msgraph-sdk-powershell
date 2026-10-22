@@ -1,0 +1,151 @@
+{
+  "mappings": [
+    {
+      "module": "Devices.ServiceAnnouncement",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^admin(?!\\.serviceAnnouncement).*$|^admin.serviceAnnouncement_CreateHealthOverview$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The selector targets legacy operation IDs, not the converted dotted/plural compatible IDs. Reviewed same-profile legacy matches bridge uniquely by HTTP method and normalized path (including removal of microsoft.graph. action/function qualifiers). Suppress 22 service/root operations in both profiles plus nine beta administrativeUnits operations. Existing v1.0 parity suppressions remain authoritative; shared curated entries supply beta coverage and the attachmentsArchive PUT not covered by derived data. No API absence is asserted. Profile-local readmes and src/readme.graph.md are ignored.",
+      "profiles": {
+        "v1.0": {
+          "operationIdSource": "Legacy",
+          "notes": "Reviewed the complete selector against openApiDocs/v1.0/Devices.ServiceAnnouncement.yml. All 22 legacy matches have exactly one method/normalized-path counterpart in the compatible profile; operation IDs were converted, not APIs removed.",
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/admin/serviceAnnouncement", "operationId": "admin.GetServiceAnnouncement", "legacyPath": "/admin/serviceAnnouncement", "legacyOperationId": "admin_GetServiceAnnouncement" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement", "operationId": "admin.UpdateServiceAnnouncement", "legacyPath": "/admin/serviceAnnouncement", "legacyOperationId": "admin_UpdateServiceAnnouncement" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement", "operationId": "admin.DeleteServiceAnnouncement", "legacyPath": "/admin/serviceAnnouncement", "legacyOperationId": "admin_DeleteServiceAnnouncement" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/healthOverviews", "operationId": "admin.serviceAnnouncement.CreateHealthOverviews", "legacyPath": "/admin/serviceAnnouncement/healthOverviews", "legacyOperationId": "admin.serviceAnnouncement_CreateHealthOverview" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "operationId": "admin.serviceAnnouncement.UpdateHealthOverviews", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "legacyOperationId": "admin.serviceAnnouncement_UpdateHealthOverview" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "operationId": "admin.serviceAnnouncement.DeleteHealthOverviews", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "legacyOperationId": "admin.serviceAnnouncement_DeleteHealthOverview" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues", "operationId": "admin.serviceAnnouncement.healthOverviews.CreateIssues", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues", "legacyOperationId": "admin.serviceAnnouncement.healthOverview_CreateIssue" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.healthOverviews.UpdateIssues", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "legacyOperationId": "admin.serviceAnnouncement.healthOverview_UpdateIssue" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.healthOverviews.DeleteIssues", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "legacyOperationId": "admin.serviceAnnouncement.healthOverview_DeleteIssue" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/issues", "operationId": "admin.serviceAnnouncement.CreateIssues", "legacyPath": "/admin/serviceAnnouncement/issues", "legacyOperationId": "admin.serviceAnnouncement_CreateIssue" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.UpdateIssues", "legacyPath": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "legacyOperationId": "admin.serviceAnnouncement_UpdateIssue" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.DeleteIssues", "legacyPath": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "legacyOperationId": "admin.serviceAnnouncement_DeleteIssue" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages", "operationId": "admin.serviceAnnouncement.CreateMessages", "legacyPath": "/admin/serviceAnnouncement/messages", "legacyOperationId": "admin.serviceAnnouncement_CreateMessage" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "operationId": "admin.serviceAnnouncement.UpdateMessages", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "legacyOperationId": "admin.serviceAnnouncement_UpdateMessage" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "operationId": "admin.serviceAnnouncement.DeleteMessages", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "legacyOperationId": "admin.serviceAnnouncement_DeleteMessage" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments", "operationId": "admin.serviceAnnouncement.messages.CreateAttachments", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments", "legacyOperationId": "admin.serviceAnnouncement.message_CreateAttachment" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "operationId": "admin.serviceAnnouncement.messages.UpdateAttachments", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "legacyOperationId": "admin.serviceAnnouncement.message_UpdateAttachment" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "operationId": "admin.serviceAnnouncement.messages.DeleteAttachments", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "legacyOperationId": "admin.serviceAnnouncement.message_DeleteAttachment" },
+            { "method": "PUT", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "operationId": "admin.serviceAnnouncement.messages.UpdateAttachmentsContent", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "legacyOperationId": "admin.serviceAnnouncement.message_SetAttachmentsContent" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "operationId": "admin.serviceAnnouncement.messages.DeleteAttachmentsContent", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "legacyOperationId": "admin.serviceAnnouncement.message_DeleteAttachmentsContent" },
+            { "method": "PUT", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "operationId": "admin.serviceAnnouncement.UpdateMessagesAttachmentsArchive", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "legacyOperationId": "admin.serviceAnnouncement_SetMessagesAttachmentsArchive" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "operationId": "admin.serviceAnnouncement.DeleteMessagesAttachmentsArchive", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "legacyOperationId": "admin.serviceAnnouncement_DeleteMessagesAttachmentsArchive" }
+          ]
+        },
+        "beta": {
+          "operationIdSource": "Legacy",
+          "notes": "Reviewed the complete selector against openApiDocs/beta/Devices.ServiceAnnouncement.yml: 22 same-path service/root operations and nine administrativeUnits action/function operations. Each has one compatible counterpart. Only those nine opt into UnqualifyFinalOperation; both actual specifications identify them as matching actions (POST) or the delta function (GET). No missing-API disposition is used.",
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/admin/serviceAnnouncement", "operationId": "admin.GetServiceAnnouncement", "legacyPath": "/admin/serviceAnnouncement", "legacyOperationId": "admin_GetServiceAnnouncement" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement", "operationId": "admin.UpdateServiceAnnouncement", "legacyPath": "/admin/serviceAnnouncement", "legacyOperationId": "admin_UpdateServiceAnnouncement" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement", "operationId": "admin.DeleteServiceAnnouncement", "legacyPath": "/admin/serviceAnnouncement", "legacyOperationId": "admin_DeleteServiceAnnouncement" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/healthOverviews", "operationId": "admin.serviceAnnouncement.CreateHealthOverviews", "legacyPath": "/admin/serviceAnnouncement/healthOverviews", "legacyOperationId": "admin.serviceAnnouncement_CreateHealthOverview" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "operationId": "admin.serviceAnnouncement.UpdateHealthOverviews", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "legacyOperationId": "admin.serviceAnnouncement_UpdateHealthOverview" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "operationId": "admin.serviceAnnouncement.DeleteHealthOverviews", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "legacyOperationId": "admin.serviceAnnouncement_DeleteHealthOverview" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues", "operationId": "admin.serviceAnnouncement.healthOverviews.CreateIssues", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues", "legacyOperationId": "admin.serviceAnnouncement.healthOverview_CreateIssue" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.healthOverviews.UpdateIssues", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "legacyOperationId": "admin.serviceAnnouncement.healthOverview_UpdateIssue" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.healthOverviews.DeleteIssues", "legacyPath": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "legacyOperationId": "admin.serviceAnnouncement.healthOverview_DeleteIssue" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/issues", "operationId": "admin.serviceAnnouncement.CreateIssues", "legacyPath": "/admin/serviceAnnouncement/issues", "legacyOperationId": "admin.serviceAnnouncement_CreateIssue" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.UpdateIssues", "legacyPath": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "legacyOperationId": "admin.serviceAnnouncement_UpdateIssue" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.DeleteIssues", "legacyPath": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "legacyOperationId": "admin.serviceAnnouncement_DeleteIssue" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages", "operationId": "admin.serviceAnnouncement.CreateMessages", "legacyPath": "/admin/serviceAnnouncement/messages", "legacyOperationId": "admin.serviceAnnouncement_CreateMessage" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "operationId": "admin.serviceAnnouncement.UpdateMessages", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "legacyOperationId": "admin.serviceAnnouncement_UpdateMessage" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "operationId": "admin.serviceAnnouncement.DeleteMessages", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "legacyOperationId": "admin.serviceAnnouncement_DeleteMessage" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments", "operationId": "admin.serviceAnnouncement.messages.CreateAttachments", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments", "legacyOperationId": "admin.serviceAnnouncement.message_CreateAttachment" },
+            { "method": "PATCH", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "operationId": "admin.serviceAnnouncement.messages.UpdateAttachments", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "legacyOperationId": "admin.serviceAnnouncement.message_UpdateAttachment" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "operationId": "admin.serviceAnnouncement.messages.DeleteAttachments", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "legacyOperationId": "admin.serviceAnnouncement.message_DeleteAttachment" },
+            { "method": "PUT", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "operationId": "admin.serviceAnnouncement.messages.UpdateAttachmentsContent", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "legacyOperationId": "admin.serviceAnnouncement.message_SetAttachmentsContent" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "operationId": "admin.serviceAnnouncement.messages.DeleteAttachmentsContent", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "legacyOperationId": "admin.serviceAnnouncement.message_DeleteAttachmentsContent" },
+            { "method": "PUT", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "operationId": "admin.serviceAnnouncement.UpdateMessagesAttachmentsArchive", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "legacyOperationId": "admin.serviceAnnouncement_SetMessagesAttachmentsArchive" },
+            { "method": "DELETE", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "operationId": "admin.serviceAnnouncement.DeleteMessagesAttachmentsArchive", "legacyPath": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "legacyOperationId": "admin.serviceAnnouncement_DeleteMessagesAttachmentsArchive" },
+            { "method": "POST", "path": "/administrativeUnits/{administrativeUnit-id}/checkMemberGroups", "operationId": "administrativeUnits.administrativeUnit.checkMemberGroups", "legacyPath": "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberGroups", "legacyOperationId": "administrativeUnit_checkMemberGroup", "legacyPathTranslation": "UnqualifyFinalOperation" },
+            { "method": "POST", "path": "/administrativeUnits/{administrativeUnit-id}/checkMemberObjects", "operationId": "administrativeUnits.administrativeUnit.checkMemberObjects", "legacyPath": "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberObjects", "legacyOperationId": "administrativeUnit_checkMemberObject", "legacyPathTranslation": "UnqualifyFinalOperation" },
+            { "method": "POST", "path": "/administrativeUnits/{administrativeUnit-id}/getMemberGroups", "operationId": "administrativeUnits.administrativeUnit.getMemberGroups", "legacyPath": "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberGroups", "legacyOperationId": "administrativeUnit_getMemberGroup", "legacyPathTranslation": "UnqualifyFinalOperation" },
+            { "method": "POST", "path": "/administrativeUnits/{administrativeUnit-id}/getMemberObjects", "operationId": "administrativeUnits.administrativeUnit.getMemberObjects", "legacyPath": "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberObjects", "legacyOperationId": "administrativeUnit_getMemberObject", "legacyPathTranslation": "UnqualifyFinalOperation" },
+            { "method": "POST", "path": "/administrativeUnits/{administrativeUnit-id}/restore", "operationId": "administrativeUnits.administrativeUnit.restore", "legacyPath": "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.restore", "legacyOperationId": "administrativeUnit_restore", "legacyPathTranslation": "UnqualifyFinalOperation" },
+            { "method": "GET", "path": "/administrativeUnits/delta()", "operationId": "administrativeUnits.delta", "legacyPath": "/administrativeUnits/microsoft.graph.delta()", "legacyOperationId": "administrativeUnit_delta", "legacyPathTranslation": "UnqualifyFinalOperation" },
+            { "method": "POST", "path": "/administrativeUnits/getByIds", "operationId": "administrativeUnits.getByIds", "legacyPath": "/administrativeUnits/microsoft.graph.getByIds", "legacyOperationId": "administrativeUnit_getGraphBPreId", "legacyPathTranslation": "UnqualifyFinalOperation" },
+            { "method": "POST", "path": "/administrativeUnits/getUserOwnedObjects", "operationId": "administrativeUnits.getUserOwnedObjects", "legacyPath": "/administrativeUnits/microsoft.graph.getUserOwnedObjects", "legacyOperationId": "administrativeUnit_getUserOwnedObject", "legacyPathTranslation": "UnqualifyFinalOperation" },
+            { "method": "POST", "path": "/administrativeUnits/validateProperties", "operationId": "administrativeUnits.validateProperties", "legacyPath": "/administrativeUnits/microsoft.graph.validateProperties", "legacyOperationId": "administrativeUnit_validateProperty", "legacyPathTranslation": "UnqualifyFinalOperation" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Devices.ServiceAnnouncement",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: (.*)AdminServiceAnnouncement(.*)",
+      "implementation": "CmdletConfigurator",
+      "notes": "Strip Admin from the 25 surviving service announcement operations in each profile. The shared path-bounded prefix rule covers beta and structural naming. Existing v1.0 derived nouns/verbs take precedence; no redundant per-operation noun overrides or action/incidentReport renames are added. Directive 1 removes the root and writes before this rename. Parameter aliases/transforms and schema/response classes remain deferred; none occur in the shared source.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews", "operationId": "admin.serviceAnnouncement.ListHealthOverviews" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "operationId": "admin.serviceAnnouncement.GetHealthOverviews" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues", "operationId": "admin.serviceAnnouncement.healthOverviews.ListIssues" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.healthOverviews.GetIssues" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}/incidentReport()", "operationId": "admin.serviceAnnouncement.healthOverviews.serviceHealth.issues.serviceHealthIssue.incidentReport" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/$count", "operationId": "admin.serviceAnnouncement.healthOverviews.issues.GetCount-fd80" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/$count", "operationId": "admin.serviceAnnouncement.healthOverviews.GetCount-51c2" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/issues", "operationId": "admin.serviceAnnouncement.ListIssues" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.GetIssues" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}/incidentReport()", "operationId": "admin.serviceAnnouncement.issues.serviceHealthIssue.incidentReport" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/issues/$count", "operationId": "admin.serviceAnnouncement.issues.GetCount-e140" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages", "operationId": "admin.serviceAnnouncement.ListMessages" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "operationId": "admin.serviceAnnouncement.GetMessages" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments", "operationId": "admin.serviceAnnouncement.messages.ListAttachments" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "operationId": "admin.serviceAnnouncement.messages.GetAttachments" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "operationId": "admin.serviceAnnouncement.messages.GetAttachmentsContent" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/$count", "operationId": "admin.serviceAnnouncement.messages.attachments.GetCount-e0ef" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "operationId": "admin.serviceAnnouncement.GetMessagesAttachmentsArchive" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/$count", "operationId": "admin.serviceAnnouncement.messages.GetCount-0cc9" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/archive", "operationId": "admin.serviceAnnouncement.messages.archive" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/favorite", "operationId": "admin.serviceAnnouncement.messages.favorite" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/markRead", "operationId": "admin.serviceAnnouncement.messages.markRead" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/markUnread", "operationId": "admin.serviceAnnouncement.messages.markUnread" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/unarchive", "operationId": "admin.serviceAnnouncement.messages.unarchive" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/unfavorite", "operationId": "admin.serviceAnnouncement.messages.unfavorite" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews", "operationId": "admin.serviceAnnouncement.ListHealthOverviews" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}", "operationId": "admin.serviceAnnouncement.GetHealthOverviews" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues", "operationId": "admin.serviceAnnouncement.healthOverviews.ListIssues" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.healthOverviews.GetIssues" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}/incidentReport()", "operationId": "admin.serviceAnnouncement.healthOverviews.serviceHealth.issues.serviceHealthIssue.incidentReport" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/$count", "operationId": "admin.serviceAnnouncement.healthOverviews.issues.GetCount-fd80" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/healthOverviews/$count", "operationId": "admin.serviceAnnouncement.healthOverviews.GetCount-51c2" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/issues", "operationId": "admin.serviceAnnouncement.ListIssues" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}", "operationId": "admin.serviceAnnouncement.GetIssues" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}/incidentReport()", "operationId": "admin.serviceAnnouncement.issues.serviceHealthIssue.incidentReport" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/issues/$count", "operationId": "admin.serviceAnnouncement.issues.GetCount-e140" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages", "operationId": "admin.serviceAnnouncement.ListMessages" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}", "operationId": "admin.serviceAnnouncement.GetMessages" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments", "operationId": "admin.serviceAnnouncement.messages.ListAttachments" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}", "operationId": "admin.serviceAnnouncement.messages.GetAttachments" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/{serviceAnnouncementAttachment-id}/content", "operationId": "admin.serviceAnnouncement.messages.GetAttachmentsContent" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachments/$count", "operationId": "admin.serviceAnnouncement.messages.attachments.GetCount-e0ef" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/{serviceUpdateMessage-id}/attachmentsArchive", "operationId": "admin.serviceAnnouncement.GetMessagesAttachmentsArchive" },
+            { "method": "GET", "path": "/admin/serviceAnnouncement/messages/$count", "operationId": "admin.serviceAnnouncement.messages.GetCount-0cc9" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/archive", "operationId": "admin.serviceAnnouncement.messages.archive" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/favorite", "operationId": "admin.serviceAnnouncement.messages.favorite" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/markRead", "operationId": "admin.serviceAnnouncement.messages.markRead" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/markUnread", "operationId": "admin.serviceAnnouncement.messages.markUnread" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/unarchive", "operationId": "admin.serviceAnnouncement.messages.unarchive" },
+            { "method": "POST", "path": "/admin/serviceAnnouncement/messages/unfavorite", "operationId": "admin.serviceAnnouncement.messages.unfavorite" }
+          ]
+        }
+      }
+    }
+  ]
+}
