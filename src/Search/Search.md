@@ -71,3 +71,43 @@ its item, and the nested item `activity` navigation all produce
 `Get-MgExternalIndustryDataRunActivity`. These are not shared-directive migration
 mappings. No suppressions or renames are invented to hide them; full beta
 generation remains blocked pending a separately reviewed resolution.
+
+#### Queued Release pipeline evidence
+
+Both profiles were subsequently attempted, sequentially, through the
+coordinator's shared four-slot queue using Kiota
+`1.36.1+fd3bf87790149b87f40f7eae1a5feb9016625943` and an unmodified official
+Authentication `2.38.1` module in the prescribed process-local environment.
+Each invocation ran the complete existing builder with compatible specifications
+and no skip flags.
+
+| Profile | Actual pipeline outcome | Compiled exports |
+| --- | --- | --- |
+| v1.0 | Exit 0, module status `OK`, Release manifest imports successfully | 72 |
+| beta | Exit 1, module status `FAILED` at `wrapper-generator`, same three collisions above | Not compiled |
+
+The v1.0 regeneration changes only `Client/kiota-lock.json` from Kiota `1.34.1`
+to `1.36.1`; generated client sources, cmdlets, projects and the cmdlet lock
+remain byte-identical after Git line-ending normalization. Compiled parity
+reports 62 of 63 route-bearing cmdlets matching, plus nine dispatchers; the
+existing qualified `addActivities` action still differs from its published
+`Add-MgExternalConnectionItemActivity` name. This audit does not change that
+unrelated baseline behavior. The builder removed its incomplete beta output
+after the failed attempt; neither beta compilation nor an export count is claimed.
+
+Published parameter-set evidence confirms that the beta collisions cannot be
+fixed by inventing distinct public nouns or suppressing routes missing from
+metadata. The published
+[Statistics command](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search/get-mgbetaexternalindustrydatarunstatistics?view=graph-powershell-beta)
+has a default `Get1` set without a run ID and a `Get` set requiring
+`IndustryDataRunId`, corresponding to the collection and item functions.
+The published
+[Activity command](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search/get-mgbetaexternalindustrydatarunactivity?view=graph-powershell-beta)
+defaults to `List` with `IndustryDataRunId`; both `Get` and `Get1` require
+`IndustryDataRunId` and `IndustryDataRunActivityId`. Its compatible item and
+nested `activity` routes have identical ID requirements and optional
+`$select`/`$expand` queries, but return different schemas:
+`microsoft.graph.industryData.industryDataRunActivity` and
+`microsoft.graph.industryData.industryDataActivity`. Preserving all routes
+therefore requires a separately reviewed shared dispatch capability and an
+explicit selection policy, not a module-local suppression or guessed rename.
