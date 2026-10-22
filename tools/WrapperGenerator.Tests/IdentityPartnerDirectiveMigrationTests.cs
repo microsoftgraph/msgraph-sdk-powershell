@@ -44,6 +44,7 @@ public sealed class IdentityPartnerDirectiveMigrationTests
         var moduleRoot = Path.Combine(FindRepoRoot(), "src", "Identity.Partner");
         var audit = File.ReadAllText(Path.Combine(moduleRoot, "Identity.Partner.md"));
         Assert.DoesNotMatch(@"(?m)^\s*directive:\s*$", audit);
+        Assert.Matches(@"(?m)^require:\r?\n  - \$\(this-folder\)/\.\./readme\.graph\.md\r?$", audit);
 
         using var ledger = JsonDocument.Parse(File.ReadAllText(
             Path.Combine(moduleRoot, "wrapper", "Identity.Partner_directiveMigrationMap.json")));

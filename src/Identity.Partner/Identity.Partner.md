@@ -17,6 +17,19 @@ All profile-local readmes, including `v1.0\readme.md` and `beta\readme.md`, and
 `src\readme.graph.md` are explicitly outside this audit. They are not sources
 for overrides, mappings, or suppression assertions.
 
+## Legacy configuration compatibility
+
+``` yaml
+require:
+  - $(this-folder)/../readme.graph.md
+```
+
+This is the existing `tools\Templates\module.md` default configuration include.
+`Copy-ModuleTemplate` creates that default only when the shared file is absent,
+so this audit file must retain the include to preserve legacy configuration
+wiring. The global file and its directives remain unchanged and ignored by
+this migration; this include adds no module directive entries or v3 overrides.
+
 ## Compatible specification evidence
 
 Both required profiles are present; neither is excluded. Only the
