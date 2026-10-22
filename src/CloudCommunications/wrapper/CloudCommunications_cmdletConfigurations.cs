@@ -1,3 +1,72 @@
 using System.Collections.Generic;
+using System.Net.Http;
+
 namespace WrapperGenerator;
-public static partial class CmdletConfigurator { private static readonly List<Entry> CloudCommunicationsCmdletConfigurations = []; }
+
+public static partial class CmdletConfigurator
+{
+    private static readonly List<Entry> CloudCommunicationsCmdletConfigurations =
+    [
+        // The reviewed ledger bridges all 13 original legacy-ID matches per profile.
+        // Exact methods and paths keep the neighboring call/callRecord operations intact.
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/communications",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes cloudCommunication_GetCloudCommunication"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/communications",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes cloudCommunication_UpdateCloudCommunication"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/communications/callrecords",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication_ListCallRecord"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Post, "/communications/callrecords",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication_CreateCallRecord"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/communications/callrecords/{}",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication_UpdateCallRecord"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/communications/callrecords/{}",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication_DeleteCallRecord"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/communications/callrecords/{}/sessions/{}/segments",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication.callRecord.session_ListSegment"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Post, "/communications/callrecords/{}/sessions/{}/segments",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication.callRecord.session_CreateSegment"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/communications/callrecords/{}/sessions/{}/segments/{}",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication.callRecord.session_GetSegment"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/communications/callrecords/{}/sessions/{}/segments/{}",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication.callRecord.session_UpdateSegment"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/communications/callrecords/{}/sessions/{}/segments/{}",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication.callRecord.session_DeleteSegment"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/communications/calls",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication_ListCall"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/communications/calls/{}",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes communication_UpdateCall"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post,
+            "/communications/calls/{}/participants/muteall",
+            Match: PathMatch.Exact, Value: "MuteAllCommunicationCallParticipant",
+            Reason: "CloudCommunications.md renames the collection-bound Mute1 action, not an individual participant's mute"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post,
+            "/communications/onlinemeetings/createorget",
+            Match: PathMatch.Exact, Value: "CreateOrGetCommunicationOnlineMeeting",
+            Reason: "CloudCommunications.md renames Create1; the action metadata already supplies Invoke"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Post,
+            "/users/{}/onlinemeetings/createorget",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes numbered UserOnlineMeeting Create variants, not collection POST"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get,
+            "/users/{}/onlinemeetings/getallrecordings(meetingorganizeruserid='@meetingorganizeruserid',startdatetime=@startdatetime,enddatetime=@enddatetime)",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes AllUserOnlineMeetingRecording to avoid its alias conflict (#3241)"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get,
+            "/users/{}/onlinemeetings/getalltranscripts(meetingorganizeruserid='@meetingorganizeruserid',startdatetime=@startdatetime,enddatetime=@enddatetime)",
+            Match: PathMatch.Exact, Value: null,
+            Reason: "CloudCommunications.md removes AllUserOnlineMeetingTranscript to avoid its alias conflict (#3241)"),
+    ];
+}

@@ -1,0 +1,356 @@
+{
+  "notes": "Shared CloudCommunications.md only; profile-local directives (including virtual-appointment SMS variants) and src/readme.graph.md are excluded. No shared parameter/schema directives require deferral. Compatible spec blobs at merged base 51d441eeb5: v1.0 71d2e73d74e255d74a0fbb492f72ac5e0782383f; beta d50be6813fa468a77007b2e6984daf61587abe9d. Required profiles: v1.0 and beta; neither is excluded.",
+  "mappings": [
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^communication(.cloudCommunication_.*CloudCommunication|_(List|Create|Update|Delete)CallRecord|.callRecord.session_.*Segment|(_List|_Update)Call)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The original regex matches 13 actual legacy operations per profile, not the renamed compatible IDs. Every old match bridges uniquely by method and normalized path to the listed compatible operation. Suppress those exact methods/paths in both profiles, including without derived data; retain item GET callRecords, POST/GET-item/DELETE calls, and all unrelated descendants. Existing v1.0 parity suppression covers only part of this shared directive.",
+      "profiles": {
+        "v1.0": {
+          "operationIdSource": "Legacy",
+          "notes": "All 13 matches from openApiDocs/v1.0/CloudCommunications.yml bridge to openApiDocs_KiotaCompat/v1.0/CloudCommunications.yml; no operation is absent or pruned.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/communications",
+              "operationId": "communications.cloudCommunications.GetCloudCommunications",
+              "legacyPath": "/communications",
+              "legacyOperationId": "communication.cloudCommunication_GetCloudCommunication"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications",
+              "operationId": "communications.cloudCommunications.UpdateCloudCommunications",
+              "legacyPath": "/communications",
+              "legacyOperationId": "communication.cloudCommunication_UpdateCloudCommunication"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords",
+              "operationId": "communications.ListCallRecords",
+              "legacyPath": "/communications/callRecords",
+              "legacyOperationId": "communication_ListCallRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/communications/callRecords",
+              "operationId": "communications.CreateCallRecords",
+              "legacyPath": "/communications/callRecords",
+              "legacyOperationId": "communication_CreateCallRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/callRecords/{callRecord-id}",
+              "operationId": "communications.UpdateCallRecords",
+              "legacyPath": "/communications/callRecords/{callRecord-id}",
+              "legacyOperationId": "communication_UpdateCallRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/communications/callRecords/{callRecord-id}",
+              "operationId": "communications.DeleteCallRecords",
+              "legacyPath": "/communications/callRecords/{callRecord-id}",
+              "legacyOperationId": "communication_DeleteCallRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "operationId": "communications.callRecords.sessions.ListSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "legacyOperationId": "communication.callRecord.session_ListSegment"
+            },
+            {
+              "method": "POST",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "operationId": "communications.callRecords.sessions.CreateSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "legacyOperationId": "communication.callRecord.session_CreateSegment"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communications.callRecords.sessions.GetSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "legacyOperationId": "communication.callRecord.session_GetSegment"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communications.callRecords.sessions.UpdateSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "legacyOperationId": "communication.callRecord.session_UpdateSegment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communications.callRecords.sessions.DeleteSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "legacyOperationId": "communication.callRecord.session_DeleteSegment"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/calls",
+              "operationId": "communications.ListCalls",
+              "legacyPath": "/communications/calls",
+              "legacyOperationId": "communication_ListCall"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/calls/{call-id}",
+              "operationId": "communications.UpdateCalls",
+              "legacyPath": "/communications/calls/{call-id}",
+              "legacyOperationId": "communication_UpdateCall"
+            }
+          ]
+        },
+        "beta": {
+          "operationIdSource": "Legacy",
+          "notes": "All 13 matches from openApiDocs/beta/CloudCommunications.yml bridge to openApiDocs_KiotaCompat/beta/CloudCommunications.yml; no operation is absent or pruned.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/communications",
+              "operationId": "communications.cloudCommunications.GetCloudCommunications",
+              "legacyPath": "/communications",
+              "legacyOperationId": "communication.cloudCommunication_GetCloudCommunication"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications",
+              "operationId": "communications.cloudCommunications.UpdateCloudCommunications",
+              "legacyPath": "/communications",
+              "legacyOperationId": "communication.cloudCommunication_UpdateCloudCommunication"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords",
+              "operationId": "communications.ListCallRecords",
+              "legacyPath": "/communications/callRecords",
+              "legacyOperationId": "communication_ListCallRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/communications/callRecords",
+              "operationId": "communications.CreateCallRecords",
+              "legacyPath": "/communications/callRecords",
+              "legacyOperationId": "communication_CreateCallRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/callRecords/{callRecord-id}",
+              "operationId": "communications.UpdateCallRecords",
+              "legacyPath": "/communications/callRecords/{callRecord-id}",
+              "legacyOperationId": "communication_UpdateCallRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/communications/callRecords/{callRecord-id}",
+              "operationId": "communications.DeleteCallRecords",
+              "legacyPath": "/communications/callRecords/{callRecord-id}",
+              "legacyOperationId": "communication_DeleteCallRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "operationId": "communications.callRecords.sessions.ListSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "legacyOperationId": "communication.callRecord.session_ListSegment"
+            },
+            {
+              "method": "POST",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "operationId": "communications.callRecords.sessions.CreateSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "legacyOperationId": "communication.callRecord.session_CreateSegment"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communications.callRecords.sessions.GetSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "legacyOperationId": "communication.callRecord.session_GetSegment"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communications.callRecords.sessions.UpdateSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "legacyOperationId": "communication.callRecord.session_UpdateSegment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communications.callRecords.sessions.DeleteSegments",
+              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "legacyOperationId": "communication.callRecord.session_DeleteSegment"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/calls",
+              "operationId": "communications.ListCalls",
+              "legacyPath": "/communications/calls",
+              "legacyOperationId": "communication_ListCall"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/calls/{call-id}",
+              "operationId": "communications.UpdateCalls",
+              "legacyPath": "/communications/calls/{call-id}",
+              "legacyOperationId": "communication_UpdateCall"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: MuteAll$1",
+      "implementation": "CmdletConfigurator",
+      "notes": "Mute1 denotes the collection-bound beta muteAll action (legacy communication.call.participant_muteAll); it is not the individual participant mute action. Rename to Invoke-MgMuteAllCommunicationCallParticipant. The action metadata supplies Invoke; no verb override is needed.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "notes": "Neither compatible nor legacy v1.0 contains the collection-bound muteAll action; individual participant mute remains present and unchanged.",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/communications/calls/{call-id}/participants/muteAll",
+              "operationId": "communications.calls.call.participants.muteAll"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 3,
+      "classification": "SubjectAndVerbRename",
+      "sourceContains": "variant: ^Create1$|^CreateExpanded1$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Create1 identifies collection-bound createOrGet, not POST /communications/onlineMeetings. The shared noun override emits CreateOrGetCommunicationOnlineMeeting in both profiles; x-ms-docs-operation-type: action supplies Invoke structurally, so no redundant ReplaceVerb entry is needed. Existing v1.0 parity rename agrees and remains authoritative.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/communications/onlineMeetings/createOrGet",
+              "operationId": "communications.onlineMeetings.createOrGet"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/communications/onlineMeetings/createOrGet",
+              "operationId": "communications.onlineMeetings.createOrGet"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "variant: ^(Create|CreateExpanded|CreateViaIdentity|CreateViaIdentityExpanded)([1-9]{1,2})$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The actual numbered UserOnlineMeeting create operation in both specs is user-bound createOrGet (legacy user.onlineMeeting_createOrGet); suppress only this POST action, preserving ordinary collection POST and item CRUD. Existing v1.0 derived suppression agrees; the curated entry also covers beta and collision-data-disabled generation.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onlineMeetings/createOrGet",
+              "operationId": "users.user.onlineMeetings.createOrGet"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onlineMeetings/createOrGet",
+              "operationId": "users.user.onlineMeetings.createOrGet"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 5,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^AllUserOnlineMeetingRecording$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only user-bound getAllRecordings (legacy user.onlineMeeting_getAllRecording) for the #3241 alias conflict. Keep communication-bound and adhoc-call functions and meeting-level recordings navigation operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onlineMeetings/getAllRecordings(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
+              "operationId": "users.user.onlineMeetings.getAllRecordings"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onlineMeetings/getAllRecordings(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
+              "operationId": "users.user.onlineMeetings.getAllRecordings"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 6,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^AllUserOnlineMeetingTranscript$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only user-bound getAllTranscripts (legacy user.onlineMeeting_getAllTranscript) for the #3241 alias conflict. Keep communication-bound and adhoc-call functions and meeting-level transcripts navigation operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onlineMeetings/getAllTranscripts(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
+              "operationId": "users.user.onlineMeetings.getAllTranscripts"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onlineMeetings/getAllTranscripts(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
+              "operationId": "users.user.onlineMeetings.getAllTranscripts"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
