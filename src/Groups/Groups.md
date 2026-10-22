@@ -120,7 +120,8 @@ directive:
     set:
       subject: $1Content
 # Group 16: direct sites collection/item GETs absent from both compatible Groups specs.
-# Nested site getByPath functions remain available and must not be renamed to AllGroupSite.
+# Nested site getByPath operations remain in the specs and must not be renamed to AllGroupSite.
+# Their intermediate parameterized functions are a separate baseline emitter limitation.
   - where:
       verb: Get
       subject: ^(GroupSite)$
@@ -128,6 +129,7 @@ directive:
       subject: All$1
 # Group 17: curated PATCH /groups/{id}/photo suppression covers both profiles;
 # existing v1.0 derived parity agrees. GET photo and PUT photo/$value remain untouched.
+# PUT content is unsuppressed but has a preexisting unsupported-response emission limitation.
   - where:
       verb: Update
       subject: ^GroupPhoto$
