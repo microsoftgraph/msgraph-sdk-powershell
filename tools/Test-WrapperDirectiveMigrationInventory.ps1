@@ -5,7 +5,7 @@ Validates reviewed directive mappings and the completion gate using isolated fix
 .DESCRIPTION
 Copies the inventory tool and preserved Compliance pilot inputs into a temporary repository
 layout. Exact fixture specifications exercise valid and stale evidence independently of live
-API pruning. Also checks read-only live candidate, deferred, and empty-module inventory.
+API pruning. Also checks read-only live deferred and empty-module inventory.
 This is not a claim that every live module ledger passes; audit those modules separately.
 #>
 [CmdletBinding()]
