@@ -408,9 +408,10 @@ For each reviewed directive:
    `profiles`, each with an explicit `operations` array and boolean `absenceExpected` unless
    explicitly excluded for a missing compatible specification as described below. Every
    operation needs exact `method`, case-sensitive `path`, and case-sensitive `operationId`
-   evidence from that profile. An absent profile requires `operations: []` and
-   `absenceExpected: true`; it cannot also declare operations. Operation-ID suppressions must
-   cover exactly the regex's matched operation set in each profile, not a reviewed subset.
+   evidence from that profile. A present profile with no selected operations requires
+   `operations: []` and `absenceExpected: true`; it cannot also declare operations.
+   Operation-ID suppressions must cover exactly the regex's matched operation set in each
+   profile, not a reviewed subset.
    Both profiles may declare reviewed absence when neither has matching operations.
 2. Add only configuration the wrapper naming rules cannot already produce. Pin structural naming
    behavior in `NamingTests` instead of adding redundant overrides.
@@ -478,8 +479,11 @@ there are zero current compatible method/normalized-path matches. Surviving and 
 evidence together must cover the complete source set without duplicates. A wholly pruned
 source set can have `operations: []` with all entries explicitly reviewed as removed;
 `absenceExpected` must still be `false`, not a substitute API-absence assertion.
-Translation cannot be combined with profile exclusion. If the regex also matches nothing
-in the legacy specification, leave the directive unresolved rather than inventing lineage.
+Translation cannot be combined with profile exclusion. If the original regex matches nothing
+in the legacy specification, do not use `Legacy` or infer successor operations. An independently
+reviewed **default literal no-match audit** can still be `Mapped` with `operations: []`,
+`absenceExpected: true`, and no Legacy fields. Notes and module tests must distinguish selector
+absence from API-operation absence. Without that review, the directive remains `Unresolved`.
 Supplying legacy evidence without the explicit disposition fails.
 For a reviewed final-operation converter change, add
 `"legacyPathTranslation": "UnqualifyFinalOperation"` to that **surviving operation** record.
