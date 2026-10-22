@@ -1,8 +1,8 @@
 {
   "descriptionHash": "015014B3A02B148ACCFB30AE4F5B31465917C7FF96C8DC7DD006406C09329391358BFAE3DE0842FF58D3D0B6841D0C0F627E95EBC009B8F7F684B952AD40F6A3",
-  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/Beta/Users.Functions.yml",
+  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/beta/Users.Functions.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Users.Functions.Client",
