@@ -11,8 +11,8 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("DELETE", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/contentVersions/{mobileAppContent-id}/containedApps/{mobileContainedApp-id}")]
-    [Cmdlet(VerbsCommon.Remove, "MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedAppCommand : GraphClientCmdlet
+    [Cmdlet(VerbsCommon.Remove, "MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    public class RemoveMgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedAppCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;

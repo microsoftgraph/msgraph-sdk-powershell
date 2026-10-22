@@ -9,10 +9,10 @@ using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("GET", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/contentVersions/{mobileAppContent-id}/containedApps")]
-    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp", DefaultParameterSetName = "List")]
+    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileContainedAppCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileContainedApp), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedAppCommand : GraphClientCmdlet
+    public class GetMgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedAppCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;
@@ -60,11 +60,11 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        // Delegates to Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp_Get or Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp_List, the two cmdlets
+        // Delegates to Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp_Get or Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp_Get" : "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersionContainedApp_List";
+            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp_Get" : "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp_List";
             try
             {
                 InvokeCommand.InvokeScript(

@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("POST", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedIOSLobApp/assignments")]
-    [Cmdlet(VerbsCommon.New, "MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet(VerbsCommon.New, "MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppAssignment))]
-    public class NewMgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignmentCommand : GraphClientCmdlet
+    public class NewMgDeviceAppManagementMobileAppAsManagediOSLobAppAssignmentCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;

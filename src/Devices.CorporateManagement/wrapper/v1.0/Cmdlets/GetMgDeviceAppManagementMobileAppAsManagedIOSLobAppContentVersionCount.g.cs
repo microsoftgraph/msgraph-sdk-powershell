@@ -12,9 +12,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("GET", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedIOSLobApp/contentVersions/$count")]
-    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionCount")]
+    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionCount")]
     [OutputType(typeof(int))]
-    public class GetMgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionCountCommand : GraphClientCmdlet
+    public class GetMgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionCountCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;

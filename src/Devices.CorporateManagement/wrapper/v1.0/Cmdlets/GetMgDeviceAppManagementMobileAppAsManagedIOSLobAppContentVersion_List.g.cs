@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("GET", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedIOSLobApp/contentVersions")]
-    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersion_List")]
+    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion_List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppContent))]
-    public class GetMgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersion_ListCommand : GraphClientCmdlet
+    public class GetMgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion_ListCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;

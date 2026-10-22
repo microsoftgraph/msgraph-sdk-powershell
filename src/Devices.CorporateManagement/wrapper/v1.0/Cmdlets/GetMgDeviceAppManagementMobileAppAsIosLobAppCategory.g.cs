@@ -9,10 +9,10 @@ using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("GET", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/categories")]
-    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsIosLobAppCategory", DefaultParameterSetName = "List")]
+    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsiOSLobAppCategory", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppCategoryCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppCategory), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceAppManagementMobileAppAsIosLobAppCategoryCommand : GraphClientCmdlet
+    public class GetMgDeviceAppManagementMobileAppAsiOSLobAppCategoryCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;
@@ -58,11 +58,11 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        // Delegates to Get-MgDeviceAppManagementMobileAppAsIosLobAppCategory_Get or Get-MgDeviceAppManagementMobileAppAsIosLobAppCategory_List, the two cmdlets
+        // Delegates to Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategory_Get or Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategory_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsIosLobAppCategory_Get" : "Get-MgDeviceAppManagementMobileAppAsIosLobAppCategory_List";
+            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategory_Get" : "Get-MgDeviceAppManagementMobileAppAsiOSLobAppCategory_List";
             try
             {
                 InvokeCommand.InvokeScript(

@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("GET", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedIOSLobApp/categories/{mobileAppCategory-id}")]
-    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsManagedIOSLobAppCategory_Get")]
+    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsManagediOSLobAppCategory_Get")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppCategory))]
-    public class GetMgDeviceAppManagementMobileAppAsManagedIOSLobAppCategory_GetCommand : GraphClientCmdlet
+    public class GetMgDeviceAppManagementMobileAppAsManagediOSLobAppCategory_GetCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;
