@@ -106,6 +106,46 @@ public sealed class EducationDirectiveMigrationTests
             "/groups/{group-id}/members/{member-id}/$ref", config));
     }
 
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public void KeepsPublishedCategoryCountAndDeltaRoutesWithoutNestedNameCollisions(string profile, bool useCollisionData)
+    {
+        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var operations = ReadOperations(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Education.yml"));
+        using var oracle = JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            FindRepoRoot(), "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
+        foreach (var suffix in new[] { "$count", "delta" })
+        {
+            var nestedPath = $"/education/classes/{{}}/assignments/{{}}/categories/{suffix}";
+            var publishedPath = $"/education/classes/{{}}/assignmentcategories/{suffix}";
+            var nested = Assert.Single(operations, operation => operation.Method == HttpMethod.Get
+                && CmdletConfigurator.NormalizePathTemplate(operation.Path) == nestedPath);
+            var published = Assert.Single(operations, operation => operation.Method == HttpMethod.Get
+                && CmdletConfigurator.NormalizePathTemplate(operation.Path) == publishedPath);
+            var publishedCommands = oracle.RootElement.EnumerateArray().Where(command =>
+                command.GetProperty("ApiVersion").GetString() == profile
+                && command.GetProperty("Method").GetString() == "GET"
+                && command.GetProperty("Uri").GetString() is { } uri
+                && CmdletConfigurator.NormalizePathTemplate(uri) == publishedPath).ToArray();
+            Assert.Single(publishedCommands);
+            Assert.DoesNotContain(oracle.RootElement.EnumerateArray(), command =>
+                command.GetProperty("ApiVersion").GetString() == profile
+                && command.GetProperty("Method").GetString() == "GET"
+                && command.GetProperty("Uri").GetString() is { } uri
+                && CmdletConfigurator.NormalizePathTemplate(uri) == nestedPath);
+            Assert.True(CmdletConfigurator.IsSuppressed(nested.Method, nested.Path, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(published.Method, published.Path, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, nested.Path, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
+                $"/education/me/assignments/{{assignment-id}}/categories/{suffix}", config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
+                $"/education/users/{{user-id}}/assignments/{{assignment-id}}/categories/{suffix}", config));
+        }
+    }
+
     private static SpecOperation[] ReadOperations(string path)
     {
         var settings = new OpenApiReaderSettings();
