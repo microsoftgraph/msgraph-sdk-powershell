@@ -1,0 +1,163 @@
+{
+  "mappings": [
+    {
+      "module": "DeviceManagement.Enrollment",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^(deviceManagement_.*UserExperienceAnalytic.*|roleManagement\\..*\\.roleDefinition\\.inheritsPermissionsFrom.*)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Reviewed the complete original regex match set in each actual same-profile legacy spec, then bridged all surviving operations. Preserve inherited navigation CRUD and direct role-definition assignedPrincipals functions. No selected legacy operation was removed.",
+      "profiles": {
+        "v1.0": {
+          "operationIdSource": "Legacy",
+          "notes": "The original selector matches zero actual legacy operations. Neither analytics nor inherited role routes exist in this profile.",
+          "absenceExpected": true,
+          "operations": [],
+          "removedLegacyOperations": []
+        },
+        "beta": {
+          "operationIdSource": "Legacy",
+          "notes": "All eleven original legacy regex matches survive. Three assignedPrincipals functions have a verified final namespace conversion; the other eight paths are unchanged.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
+              "operationId": "deviceManagement.ListUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
+              "legacyOperationId": "deviceManagement_ListUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
+              "operationId": "deviceManagement.CreateUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
+              "legacyOperationId": "deviceManagement_CreateUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
+              "operationId": "deviceManagement.GetUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
+              "legacyOperationId": "deviceManagement_GetUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
+              "operationId": "deviceManagement.UpdateUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
+              "legacyOperationId": "deviceManagement_UpdateUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
+              "operationId": "deviceManagement.DeleteUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
+              "legacyOperationId": "deviceManagement_DeleteUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+              "operationId": "roleManagement.cloudPC.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals",
+              "legacyPath": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+              "legacyOperationId": "roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_assignedPrincipal",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
+              "operationId": "roleManagement.cloudPC.roleDefinitions.inheritsPermissionsFrom.GetCount-643c",
+              "legacyPath": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
+              "legacyOperationId": "roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+              "operationId": "roleManagement.deviceManagement.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals",
+              "legacyPath": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+              "legacyOperationId": "roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_assignedPrincipal",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
+              "operationId": "roleManagement.deviceManagement.roleDefinitions.inheritsPermissionsFrom.GetCount-fb75",
+              "legacyPath": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
+              "legacyOperationId": "roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+              "operationId": "roleManagement.exchange.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals",
+              "legacyPath": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+              "legacyOperationId": "roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_assignedPrincipal",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
+              "operationId": "roleManagement.exchange.roleDefinitions.inheritsPermissionsFrom.GetCount-63fc",
+              "legacyPath": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
+              "legacyOperationId": "roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_GetCount"
+            }
+          ],
+          "removedLegacyOperations": []
+        }
+      }
+    },
+    {
+      "module": "DeviceManagement.Enrollment",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DeviceManagementWindowAutopilotDeviceIdentity$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The legacy Window subject identifies PATCH on the windowsAutopilotDeviceIdentities item, not POST updateDeviceProperties. Preserve the existing v1.0 derived suppression and other item operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}",
+              "operationId": "deviceManagement.UpdateWindowsAutopilotDeviceIdentities"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}",
+              "operationId": "deviceManagement.UpdateWindowsAutopilotDeviceIdentities"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "DeviceManagement.Enrollment",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DeviceManagementUserExperienceAnalyticNotAutopilotReadyDeviceCount$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only GET analytics /$count. Its dotted legacy operation ID is not selected by directive 1. The v1.0 spec contains no analytics route.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/$count",
+              "operationId": "deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice.GetCount-106d"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
