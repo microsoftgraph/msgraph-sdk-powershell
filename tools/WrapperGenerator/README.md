@@ -481,10 +481,22 @@ source set can have `operations: []` with all entries explicitly reviewed as rem
 Translation cannot be combined with profile exclusion. If the regex also matches nothing
 in the legacy specification, leave the directive unresolved rather than inventing lineage.
 Supplying legacy evidence without the explicit disposition fails.
-This bridge does not yet translate qualified-to-bare final action/function segments or
-changed empty argument syntax. Potential counterparts such as `microsoft.graph.refresh`
-versus `refresh`, or `delta` versus `delta()`, reject a removal claim instead of silently
-dropping a surviving operation; they require separately reviewed path-translation support.
+For a reviewed final-operation converter change, add
+`"legacyPathTranslation": "UnqualifyFinalOperation"` to that **surviving operation** record.
+The exact old and new paths/IDs remain mandatory. This opt-in permits only:
+
+- Final `microsoft.graph.<operation>` to bare `<operation>`, under the same normalized parent.
+  Function spelling may additionally differ by an empty `()` suffix; nonempty arguments must
+  remain identical apart from placeholder names.
+- Bare `delta` to `delta()` or the reverse, only for an actual function.
+
+Both specifications must explicitly declare the same `x-ms-docs-operation-type` (`action` or
+`function`), with POST for actions and GET for functions. The compatible counterpart must be
+unique, and every original legacy regex match still needs complete accounting. No resource
+or cast conversion, earlier path-segment rewrite, generic alias, changed argument shape, or
+variant expansion is accepted. Unknown translation names fail rather than being ignored.
+Potential qualified/bare or empty-argument counterparts reject a removal claim even without
+the opt-in, so a surviving operation cannot be silently reclassified as removed.
 
 ### Completion and audit
 

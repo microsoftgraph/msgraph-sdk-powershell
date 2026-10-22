@@ -13,6 +13,9 @@ this is not an assertion that API operations are absent.
 An explicit per-profile operationIdSource: Legacy disposition can bridge actual regex-matched
 IDs in openApiDocs to exact compatible evidence by unique method/normalized path. Literal
 compatible matching remains the default; absent legacy selectors never imply successors.
+The per-operation legacyPathTranslation: UnqualifyFinalOperation opt-in additionally permits
+only reviewed final-operation qualification removal or function delta/delta() spelling, guarded
+by both actual operations' kind/method metadata and a unique same-parent counterpart.
 
 The command is read-only unless -OutputPath is supplied. It never edits module configuration
 or markdown files.
@@ -138,6 +141,8 @@ function Get-SpecOperations {
     $operations = [System.Collections.Generic.List[object]]::new()
     $currentPath = $null
     $currentMethod = $null
+    $currentOperation = $null
+    $currentOperationType = ''
     foreach ($line in Get-Content $path) {
         if ($line -match "^\s{2}(?:'(?<single>/.*)'|`"(?<double>/.*)`"|(?<plain>/.*)):\s*$") {
             $currentPath = if ($Matches.ContainsKey('single')) {
@@ -147,18 +152,29 @@ function Get-SpecOperations {
             elseif ($Matches.ContainsKey('double')) { $Matches.double }
             else { $Matches.plain }
             $currentMethod = $null
+            $currentOperation = $null
+            $currentOperationType = ''
             continue
         }
         if ($currentPath -and $line -match '^\s{4}(?<method>get|post|put|patch|delete|head|options|trace):\s*$') {
             $currentMethod = $Matches.method.ToUpperInvariant()
+            $currentOperation = $null
+            $currentOperationType = ''
+            continue
+        }
+        if (($currentMethod -or $currentOperation) -and $line -match '^\s{6}x-ms-docs-operation-type:\s*(?<kind>.+?)\s*$') {
+            $currentOperationType = $Matches.kind.Trim("'", '"')
+            if ($currentOperation) { $currentOperation.OperationType = $currentOperationType }
             continue
         }
         if ($currentPath -and $currentMethod -and $line -match '^\s{6}operationId:\s*(?<id>.+?)\s*$') {
-            $operations.Add([pscustomobject]@{
+            $currentOperation = [pscustomobject]@{
                 Method = $currentMethod
                 Path = $currentPath
                 OperationId = $Matches.id.Trim("'", '"')
-            })
+                OperationType = $currentOperationType
+            }
+            $operations.Add($currentOperation)
             $currentMethod = $null
         }
     }
@@ -187,6 +203,65 @@ function Get-NormalizedOperationKey {
 
     $normalizedPath = [regex]::Replace($Path, '\{[^}]*\}', '{}').TrimEnd('/').ToLowerInvariant()
     return "$($Method.ToUpperInvariant()) $normalizedPath"
+}
+
+function Get-FinalOperationKey {
+    param([string]$Method, [string]$Path)
+
+    $possiblePath = $Path -creplace '/microsoft\.graph\.([a-zA-Z_][a-zA-Z0-9_]*(?:\(.*\))?)/?$', '/$1'
+    return Get-NormalizedOperationKey $Method ($possiblePath -replace '\(\)$', '')
+}
+
+function Test-FinalOperationTranslation {
+    param([object]$LegacyOperation, [object]$CompatibleOperation)
+
+    $kind = $LegacyOperation.OperationType
+    if ($kind -cnotin @('action', 'function') -or $kind -cne $CompatibleOperation.OperationType) {
+        return 'both actual operations must declare the same action/function kind'
+    }
+    $requiredMethod = if ($kind -ceq 'action') { 'POST' } else { 'GET' }
+    if ($LegacyOperation.Method -cne $requiredMethod -or $CompatibleOperation.Method -cne $requiredMethod) {
+        return "$kind translation requires HTTP $requiredMethod on both operations"
+    }
+    $oldPath = $LegacyOperation.Path.TrimEnd('/')
+    $newPath = $CompatibleOperation.Path.TrimEnd('/')
+    $oldSplit = $oldPath.LastIndexOf('/')
+    $newSplit = $newPath.LastIndexOf('/')
+    if ((Get-NormalizedOperationKey $requiredMethod $oldPath.Substring(0, $oldSplit)) -cne
+        (Get-NormalizedOperationKey $requiredMethod $newPath.Substring(0, $newSplit))) {
+        return 'final-operation translation requires the same normalized parent'
+    }
+    $oldTerminal = [regex]::Replace($oldPath.Substring($oldSplit + 1), '\{[^}]*\}', '{}')
+    $newTerminal = [regex]::Replace($newPath.Substring($newSplit + 1), '\{[^}]*\}', '{}')
+    $qualified = [regex]::Match($oldTerminal, '^microsoft\.graph\.(?<bare>[a-zA-Z_][a-zA-Z0-9_]*(?:\(.*\))?)$')
+    if ($qualified.Success) {
+        $bare = $qualified.Groups['bare'].Value
+        if ($bare -ceq $newTerminal -or
+            ($kind -ceq 'function' -and ($bare -creplace '\(\)$', '') -ceq ($newTerminal -creplace '\(\)$', ''))) {
+            return
+        }
+    }
+    elseif ($kind -ceq 'function' -and
+        (($oldTerminal -ceq 'delta' -and $newTerminal -ceq 'delta()') -or
+         ($oldTerminal -ceq 'delta()' -and $newTerminal -ceq 'delta'))) {
+        return
+    }
+    return 'only exact final microsoft.graph. qualification removal or function delta/delta() equivalence is supported'
+}
+
+function New-OperationLookup {
+    param([object[]]$Operations, [switch]$FinalOperation)
+
+    $lookup = [System.Collections.Generic.Dictionary[string, System.Collections.Generic.List[object]]]::new([StringComparer]::Ordinal)
+    foreach ($operation in $Operations) {
+        $key = if ($FinalOperation) { Get-FinalOperationKey $operation.Method $operation.Path }
+        else { Get-NormalizedOperationKey $operation.Method $operation.Path }
+        if (-not $lookup.ContainsKey($key)) {
+            $lookup[$key] = [System.Collections.Generic.List[object]]::new()
+        }
+        $lookup[$key].Add($operation)
+    }
+    return ,$lookup
 }
 
 function Test-LegacyOperationTranslation {
@@ -223,6 +298,9 @@ function Test-LegacyOperationTranslation {
     if ($sourceMatches.Count -eq 0) {
         return "$Profile original operation-ID regex matches no legacy operations; successors cannot be inferred"
     }
+    $legacyLookup = New-OperationLookup $legacyOperations
+    $compatibleLookup = New-OperationLookup $CompatibleOperations
+    $finalOperationLookup = New-OperationLookup $CompatibleOperations -FinalOperation
     $sourceKeys = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
     foreach ($operation in $sourceMatches) {
         [void]$sourceKeys.Add("$($operation.Method) $($operation.Path) [$($operation.OperationId)]")
@@ -242,6 +320,7 @@ function Test-LegacyOperationTranslation {
                 Path = "$($operation.legacyPath)"
                 OperationId = "$($operation.legacyOperationId)"
                 CompatiblePath = "$($operation.path)"
+                Translation = $operation.PSObject.Properties['legacyPathTranslation']
                 Removed = $false
                 Notes = ''
             }
@@ -252,6 +331,7 @@ function Test-LegacyOperationTranslation {
                 Path = "$($operation.path)"
                 OperationId = "$($operation.operationId)"
                 CompatiblePath = ''
+                Translation = $operation.PSObject.Properties['legacyPathTranslation']
                 Removed = $true
                 Notes = "$($operation.notes)"
             }
@@ -266,15 +346,19 @@ function Test-LegacyOperationTranslation {
             "$Profile legacy evidence '$key' is not an exact original regex match"
         }
         $normalizedKey = Get-NormalizedOperationKey $expected.Method $expected.Path
-        $oldMatches = @($legacyOperations | Where-Object {
-            (Get-NormalizedOperationKey $_.Method $_.Path) -ceq $normalizedKey
-        })
+        $oldMatches = @()
+        if ($legacyLookup.ContainsKey($normalizedKey)) { $oldMatches = $legacyLookup[$normalizedKey].ToArray() }
         if ($oldMatches.Count -ne 1) {
             "$Profile legacy method/normalized path '$normalizedKey' matched $($oldMatches.Count) operations; bridge must be unique"
         }
-        $currentMatches = @($CompatibleOperations | Where-Object {
-            (Get-NormalizedOperationKey $_.Method $_.Path) -ceq $normalizedKey
-        })
+        $usesFinalTranslation = $expected.Translation -and $expected.Translation.Value -ceq 'UnqualifyFinalOperation'
+        if ($expected.Translation -and (-not $usesFinalTranslation -or $expected.Removed)) {
+            "$Profile legacyPathTranslation must be 'UnqualifyFinalOperation' on a surviving operation"
+        }
+        $currentKey = if ($usesFinalTranslation) { Get-FinalOperationKey $expected.Method $expected.Path } else { $normalizedKey }
+        $lookup = if ($usesFinalTranslation) { $finalOperationLookup } else { $compatibleLookup }
+        $currentMatches = @()
+        if ($lookup.ContainsKey($currentKey)) { $currentMatches = $lookup[$currentKey].ToArray() }
         if ($expected.Removed) {
             if ([string]::IsNullOrWhiteSpace($expected.Notes)) {
                 "$Profile removed legacy operation '$key' requires review notes"
@@ -282,13 +366,10 @@ function Test-LegacyOperationTranslation {
             if ($currentMatches.Count -ne 0) {
                 "$Profile removed legacy operation '$key' still has $($currentMatches.Count) compatible method/normalized-path matches"
             }
-            # A qualified legacy action may survive under its bare name. Do not mistake a
-            # converter path change for removal; this helper does not yet translate that shape.
-            $possiblePath = $expected.Path -replace '/microsoft\.graph\.([a-zA-Z_][a-zA-Z0-9_]*(?:\(.*\))?)/?$', '/$1'
-            $possibleKey = Get-NormalizedOperationKey $expected.Method ($possiblePath -replace '\(\)$', '')
-            $possibleSuccessors = @($CompatibleOperations | Where-Object {
-                (Get-NormalizedOperationKey $_.Method ($_.Path -replace '\(\)$', '')) -ceq $possibleKey
-            })
+            # Potential converter counterparts block removal even without the translation opt-in.
+            $possibleKey = Get-FinalOperationKey $expected.Method $expected.Path
+            $possibleSuccessors = @()
+            if ($finalOperationLookup.ContainsKey($possibleKey)) { $possibleSuccessors = $finalOperationLookup[$possibleKey].ToArray() }
             if ($currentMatches.Count -eq 0 -and $possibleSuccessors.Count -gt 0) {
                 "$Profile cannot verify removal of '$key': a qualified/bare or empty-argument compatible counterpart needs reviewed path translation"
             }
@@ -297,7 +378,17 @@ function Test-LegacyOperationTranslation {
             if ([string]::IsNullOrWhiteSpace($expected.Path) -or [string]::IsNullOrWhiteSpace($expected.OperationId)) {
                 "$Profile legacyPath and legacyOperationId evidence are required"
             }
-            if ((Get-NormalizedOperationKey $expected.Method $expected.CompatiblePath) -cne $normalizedKey) {
+            if ($usesFinalTranslation) {
+                if ($currentMatches.Count -eq 1 -and $currentMatches[0].Path -cne $expected.CompatiblePath) {
+                    "$Profile legacy path translation must select the exact unique compatible counterpart for '$key'"
+                }
+                if ($oldMatches.Count -eq 1 -and $currentMatches.Count -eq 1) {
+                    foreach ($issue in @(Test-FinalOperationTranslation $oldMatches[0] $currentMatches[0])) {
+                        "$Profile legacy path translation for '$key': $issue"
+                    }
+                }
+            }
+            elseif ((Get-NormalizedOperationKey $expected.Method $expected.CompatiblePath) -cne $normalizedKey) {
                 "$Profile legacy and compatible method/normalized path must be identical for '$key'"
             }
             if ($currentMatches.Count -ne 1) {
@@ -405,7 +496,8 @@ foreach ($moduleName in $Module) {
                 if (-not $usesLegacyIds -and (
                     $profileMap.PSObject.Properties['removedLegacyOperations'] -or
                     @($profileMap.operations | Where-Object {
-                        $_.PSObject.Properties['legacyPath'] -or $_.PSObject.Properties['legacyOperationId']
+                        $_.PSObject.Properties['legacyPath'] -or $_.PSObject.Properties['legacyOperationId'] -or
+                        $_.PSObject.Properties['legacyPathTranslation']
                     }).Count -gt 0)) {
                     $missing.Add("$profile legacy evidence requires explicit operationIdSource: Legacy")
                 }
