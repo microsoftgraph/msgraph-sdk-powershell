@@ -1,0 +1,468 @@
+{
+  "mappings": [
+    {
+      "module": "Groups",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "group\\.groupLifecyclePolicy_.*$|group_(Get|Create|Update|Delete)GroupLifecyclePolicies$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Reviewed the complete literal operation-ID regex against both compatible specs. Its old singular/underscore IDs do not match the current plural lifecycle/team/site IDs. Only two beta joinedGroups IDs match; suppress exactly those operations, not their parent collection. Preserve existing unrelated lifecycle/photos curated and v1.0 derived behavior.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/joinedGroups/delta()",
+              "operationId": "users.user.joinedGroups.delta"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/joinedGroups/evaluateDynamicMembership",
+              "operationId": "users.user.joinedGroups.evaluateDynamicMembership"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: $1ByGroup",
+      "implementation": "CmdletConfigurator",
+      "notes": "Existing exact GET collection override emits GroupLifecyclePolicyByGroup. Shipped metadata identifies its List variant at the nested collection; the top-level policy collection keeps GroupLifecyclePolicy.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/groupLifecyclePolicies",
+              "operationId": "groups.ListGroupLifecyclePolicies"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/groupLifecyclePolicies",
+              "operationId": "groups.ListGroupLifecyclePolicies"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupLifecyclePolicy)(\\1)+",
+      "implementation": "StructuralNaming",
+      "notes": "Top-level policy CRUD (List/Create/Get/Update/DeleteGroupLifecyclePolicy) already derives GroupLifecyclePolicy, without AutoRest's duplicate subject. No redundant override. Count and policy actions remain distinct neighboring operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groupLifecyclePolicies",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.ListGroupLifecyclePolicy"
+            },
+            {
+              "method": "POST",
+              "path": "/groupLifecyclePolicies",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.CreateGroupLifecyclePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.GetGroupLifecyclePolicy"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.UpdateGroupLifecyclePolicy"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.DeleteGroupLifecyclePolicy"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groupLifecyclePolicies",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.ListGroupLifecyclePolicy"
+            },
+            {
+              "method": "POST",
+              "path": "/groupLifecyclePolicies",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.CreateGroupLifecyclePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.GetGroupLifecyclePolicy"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.UpdateGroupLifecyclePolicy"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.DeleteGroupLifecyclePolicy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "variant: Validate1|ValidateExpanded1",
+      "implementation": "CmdletConfigurator",
+      "notes": "Validate1/ValidateExpanded1 is the unbound action. Suppress POST /groups/validateProperties, not the bound /groups/{id}/validateProperties whose shipped Validate variants remain. Existing v1.0 collision suppression agrees.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/validateProperties",
+              "operationId": "groups.validateProperties"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/validateProperties",
+              "operationId": "groups.validateProperties"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 5,
+      "classification": "SubjectRename",
+      "sourceContains": "variant: Evaluate1|EvaluateExpanded1",
+      "implementation": "CmdletConfigurator",
+      "notes": "Shipped beta metadata and examples identify Evaluate1/Expanded1 as unbound evaluation of a membership rule. Emit Test-GroupDynamicMembershipRule only for that action; bound evaluation is not the Rule variant. Neither evaluation action exists in the v1.0 compatible spec.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/evaluateDynamicMembership$",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/evaluateDynamicMembership",
+              "operationId": "groups.evaluateDynamicMembership"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 6,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: $1From$2",
+      "implementation": "CmdletConfigurator",
+      "notes": "The shipped Remove action is top-level policy removeGroup. Curated exact noun and verb overrides extend existing v1.0 derived parity to beta and collision-data-disabled runs. Already-suppressed nested policy actions remain suppressed.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/removeGroup",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.removeGroup"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/removeGroup",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.removeGroup"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 7,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: $1To$2",
+      "implementation": "CmdletConfigurator",
+      "notes": "The shipped Add action is top-level policy addGroup. Curated exact noun and verb overrides extend existing v1.0 derived parity to beta and collision-data-disabled runs. Already-suppressed nested policy actions remain suppressed.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.addGroup"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup",
+              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.addGroup"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 8,
+      "classification": "CmdletSuppression",
+      "sourceContains": "variant: ^Renew1$|^RenewExpanded1$|^RenewViaIdentity$|^RenewViaIdentityExpanded$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Renew1 and identity variants select the nested beta collection action requiring a GroupId. Existing curated nested lifecycle prefix suppression already removes it; no wider or redundant override. The unbound Renew/Expanded action is retained by directive 9. Neither renewGroup action exists in v1.0.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/groupLifecyclePolicies/renewGroup$",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/groupLifecyclePolicies/renewGroup",
+              "operationId": "groups.group.groupLifecyclePolicies.renewGroup"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 9,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: $1$2",
+      "implementation": "CmdletConfigurator",
+      "notes": "After directive 8 removes nested Renew1/identity variants, the shipped Renew/Expanded action is POST /groupLifecyclePolicies/renewGroup. Retain Invoke and emit RenewGroupLifecyclePolicy. Do not confuse it with /groups/{id}/renew, which exists in both profiles.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groupLifecyclePolicies/renewGroup$",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groupLifecyclePolicies/renewGroup",
+              "operationId": "groupLifecyclePolicies.renewGroup"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 10,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenote)Notebook(RecentNotebook)$",
+      "implementation": "CompatibleSpecAbsence",
+      "notes": "No /groups/{id}/onenote paths exist in either compatible Groups spec, including notebooks/getRecentNotebooks(includePersonalNotebooks=...). Retain AutoRest's recent-notebook rename; do not invent a wrapper mapping or copy stale v1.0 derived routes.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 11,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenotePage)$",
+      "implementation": "CompatibleSpecAbsence",
+      "notes": "No OneNote paths exist in either compatible Groups spec, including POST /groups/{id}/onenote/pages/{id}/onenotePatchContent. This directive renames the content action, not a speculative PATCH route. Retain AutoRest without adding an inactive wrapper override.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 12,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenoteSectionPage)$",
+      "implementation": "CompatibleSpecAbsence",
+      "notes": "No OneNote paths exist in either compatible Groups spec, including POST /groups/{id}/onenote/sections/{id}/pages/{id}/onenotePatchContent. Retain AutoRest's section-page content-action rename without inventing compatible operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 13,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenoteNotebookSectionPage)$",
+      "implementation": "CompatibleSpecAbsence",
+      "notes": "No OneNote paths exist in either compatible Groups spec, including POST /groups/{id}/onenote/notebooks/{id}/sections/{id}/pages/{id}/onenotePatchContent. Retain AutoRest's notebook-section-page content-action rename without inventing compatible operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 14,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenoteSectionGroupSectionPage)$",
+      "implementation": "CompatibleSpecAbsence",
+      "notes": "No OneNote paths exist in either compatible Groups spec, including POST /groups/{id}/onenote/sectionGroups/{id}/sections/{id}/pages/{id}/onenotePatchContent. Retain AutoRest's section-group-section-page content-action rename without inventing compatible operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 15,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$",
+      "implementation": "CompatibleSpecAbsence",
+      "notes": "No OneNote paths exist in either compatible Groups spec, including POST /groups/{id}/onenote/notebooks/{id}/sectionGroups/{id}/sections/{id}/pages/{id}/onenotePatchContent. Retain AutoRest's notebook-section-group-page content-action rename without inventing compatible operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/onenote(?:/|$)",
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 16,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: All$1",
+      "implementation": "CompatibleSpecAbsence",
+      "notes": "Neither compatible Groups spec contains direct /groups/{id}/sites collection/item GETs. The remaining /sites/{id}/getByPath(...) and beta contentModels/getByName(...) operations are different subjects, not evidence for AllGroupSite. Preserve those neighboring functions/actions.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/sites(?:/\\{[^}]+\\})?$",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "absencePathPattern": "^/groups/\\{[^}]+\\}/sites(?:/\\{[^}]+\\})?$",
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Groups",
+      "directiveIndex": 17,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^GroupPhoto$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only PATCH /groups/{id}/photo metadata in both profiles. Existing v1.0 derived parity agrees. Keep GET photo and PUT photo/$value content; do not expand the existing photos-item suppression or infer an entire photo subtree removal.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/photo",
+              "operationId": "groups.UpdatePhoto"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/photo",
+              "operationId": "groups.UpdatePhoto"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

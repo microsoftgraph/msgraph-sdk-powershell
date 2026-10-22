@@ -17,84 +17,116 @@ require:
 
 ``` yaml
 directive:
+# Wrapper migration: all 17 shared groups are reviewed in wrapper/Groups_directiveMigrationMap.json;
+# GroupsDirectiveMigrationTests pins compatible v1.0/beta operations and neighboring behavior.
+# Keep every AutoRest directive active until the service-module pipeline is retired.
+# There are no deferred parameter/schema groups here. Profile-local readmes and readme.graph.md
+# are outside this audit; existing unrelated curated/derived behavior is retained.
+# Group 1: the exact operation-ID regex matches no v1.0 operations and only beta
+# joinedGroups delta/evaluateDynamicMembership. Curated exact overrides suppress those two;
+# changed plural operation IDs do not justify suppressing entire lifecycle/team/site subtrees.
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from  group_DeleteAcceptedSenderGraphBPreRef
   - remove-path-by-operation: group\.groupLifecyclePolicy_.*$|group_(Get|Create|Update|Delete)GroupLifecyclePolicies$|group\.team.*$|user\.joinedGroup.*$|group\.site\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|.*\.calendar\.event\..*$|.*\.event\..*$|^group_DeleteAcceptedSenderGraphBPreRef$|^group_DeleteMemberGraphBPreRef$|^group_DeleteOwnerGraphBPreRef$|^group_DeleteOwnerGraphBPreRef$|^group_DeleteRejectedSenderGraphBPreRef$
+# Group 2: existing curated GET /groups/{id}/groupLifecyclePolicies rename supplies ByGroup.
   - where:
       verb: Get
       subject: ^(GroupLifecyclePolicy)$
       variant: ^List$
     set:
       subject: $1ByGroup
+# Group 3: structural naming already supplies GroupLifecyclePolicy for top-level CRUD.
   - where:
       subject: ^(GroupLifecyclePolicy)(\1)+
     set:
       subject: $1
+# Group 4: curated POST /groups/validateProperties suppression removes only unbound Validate1.
   - where:
       verb: Test
       subject: ^GroupProperty$
       variant: Validate1|ValidateExpanded1
     remove: true
+# Group 5: beta unbound POST /groups/evaluateDynamicMembership becomes
+# Test-GroupDynamicMembershipRule; bound evaluation stays distinct. Absent in v1.0.
   - where:
       verb: Test
       subject: ^(GroupDynamicMembership)$
       variant: Evaluate1|EvaluateExpanded1
     set:
       subject: $1Rule
+# Group 6: curated noun/verb overrides preserve Remove-GroupFromLifecyclePolicy in both profiles;
+# existing v1.0 derived parity agrees.
   - where:
       verb: Remove
       subject: ^(Group)(LifecyclePolicy)Group$
     set:
       subject: $1From$2
+# Group 7: curated noun/verb overrides preserve Add-GroupToLifecyclePolicy in both profiles;
+# existing v1.0 derived parity agrees.
   - where:
       verb: Add
       subject: ^(Group)(LifecyclePolicy)Group$
     set:
       subject: $1To$2
+# Group 8: existing nested lifecycle prefix suppression covers beta Renew1 at
+# /groups/{id}/groupLifecyclePolicies/renewGroup. This action is absent in v1.0.
   - where:
       verb: Invoke
       subject: ^(RenewGroup)(LifecyclePolicy)Group$
       variant: ^Renew1$|^RenewExpanded1$|^RenewViaIdentity$|^RenewViaIdentityExpanded$
     remove: true
+# Group 9: curated rename retains beta POST /groupLifecyclePolicies/renewGroup as
+# Invoke-RenewGroupLifecyclePolicy. Absent in v1.0; do not rename /groups/{id}/renew.
   - where:
       verb: Invoke
       subject: ^(RenewGroup)(LifecyclePolicy)Group$
     set:
       subject: $1$2
+# Group 10: recent-notebook function absent from both compatible Groups specs;
+# retain this AutoRest rename without inventing wrapper routes.
   - where:
       verb: Get
       subject: ^(GroupOnenote)Notebook(RecentNotebook)$
     set:
       subject: $1$2
+# Group 11: OneNote page-content action absent from both compatible Groups specs.
   - where:
       verb: Update
       subject: ^(GroupOnenotePage)$
     set:
       subject: $1Content
+# Group 12: OneNote section page-content action absent from both compatible Groups specs.
   - where:
       verb: Update
       subject: ^(GroupOnenoteSectionPage)$
     set:
       subject: $1Content
+# Group 13: OneNote notebook section page-content action absent from both compatible Groups specs.
   - where:
       verb: Update
       subject: ^(GroupOnenoteNotebookSectionPage)$
     set:
       subject: $1Content
+# Group 14: OneNote section-group section page-content action absent from both compatible Groups specs.
   - where:
       verb: Update
       subject: ^(GroupOnenoteSectionGroupSectionPage)$
     set:
       subject: $1Content
+# Group 15: OneNote notebook section-group page-content action absent from both compatible Groups specs.
   - where:
       verb: Update
       subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
     set:
       subject: $1Content
+# Group 16: direct sites collection/item GETs absent from both compatible Groups specs.
+# Nested site getByPath functions remain available and must not be renamed to AllGroupSite.
   - where:
       verb: Get
       subject: ^(GroupSite)$
     set:
       subject: All$1
+# Group 17: curated PATCH /groups/{id}/photo suppression covers both profiles;
+# existing v1.0 derived parity agrees. GET photo and PUT photo/$value remain untouched.
   - where:
       verb: Update
       subject: ^GroupPhoto$
