@@ -1,5 +1,77 @@
 {
   "notes": "Shared CloudCommunications.md only; profile-local directives (including virtual-appointment SMS variants) and src/readme.graph.md are excluded. No shared parameter/schema directives require deferral. Compatible spec blobs at merged base 51d441eeb5: v1.0 71d2e73d74e255d74a0fbb492f72ac5e0782383f; beta d50be6813fa468a77007b2e6984daf61587abe9d. Required profiles: v1.0 and beta; neither is excluded.",
+  "betaCollisionPolicy": {
+    "status": "PreparedPendingCanonicalMerge",
+    "sourceCollisionEvents": 26,
+    "publicCommandGroups": 20,
+    "reviewedCompatibleOperations": 48,
+    "publishedEvidence": {
+      "package": "Microsoft.Graph.Beta.CloudCommunications",
+      "version": "2.38.0",
+      "url": "https://www.powershellgallery.com/api/v2/package/Microsoft.Graph.Beta.CloudCommunications/2.38.0",
+      "sha256": "BE21FFEF7F8F1B0D30ACC110589715E64A4FA31BC3E4A62051213E167D20C336",
+      "method": "Actual fresh-process public CmdletBinding and parameter-set dispatch correlated with compiled API URI construction IL; not first-URI command metadata.",
+      "attendanceAndRecordingDeleteDefaults": "All 18 nonmixed groups select the actual published singleton report/record collection/item/count or singleton recording DELETE default.",
+      "recordingGetDefault": "Both published commands default to Get2, the collection-bound getAllRecordings alias-argument function; no colliding singleton or plural recording route is the published default."
+    },
+    "recordingGet": {
+      "selectorParameter": "Route",
+      "selectorRequired": true,
+      "allowedRoles": [ "Binary", "Recordings" ],
+      "publishedChoiceAllowed": false,
+      "defaultOrFallbackAllowed": false,
+      "intentionalSdkDeviation": "Require an explicit route rather than choose a substitute for the unavailable published Get2 function default.",
+      "aggregatePolicy": {
+        "communication": "Keep the existing unsupported alias-argument function deferred; no invented argument declarations, guessed Kiota member, raw-URL fallback or noun override.",
+        "user": "Preserve exact shared directive 5 suppression. Never restore the selected user getAllRecordings function to imitate the published default."
+      },
+      "roleValidation": "Typed per-role workers must reject missing IDs and unsupported parameters before Graph; no parameter dropping, fallback or pruning.",
+      "operations": [
+        {
+          "method": "GET",
+          "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
+          "operationId": "communications.GetOnlineMeetingsRecording",
+          "role": "Binary",
+          "response": "application/octet-stream; string/binary"
+        },
+        {
+          "method": "GET",
+          "path": "/communications/onlineMeetings/{onlineMeeting-id}/recordings",
+          "operationId": "communications.onlineMeetings.ListRecordings",
+          "role": "Recordings",
+          "response": "application/json; microsoft.graph.callRecordingCollectionResponse"
+        },
+        {
+          "method": "GET",
+          "path": "/communications/onlineMeetings/{onlineMeeting-id}/recordings/{callRecording-id}",
+          "operationId": "communications.onlineMeetings.GetRecordings",
+          "role": "Recordings",
+          "response": "application/json; microsoft.graph.callRecording"
+        },
+        {
+          "method": "GET",
+          "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
+          "operationId": "users.GetOnlineMeetingsRecording",
+          "role": "Binary",
+          "response": "application/octet-stream; string/binary"
+        },
+        {
+          "method": "GET",
+          "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings",
+          "operationId": "users.onlineMeetings.ListRecordings",
+          "role": "Recordings",
+          "response": "application/json; microsoft.graph.callRecordingCollectionResponse"
+        },
+        {
+          "method": "GET",
+          "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings/{callRecording-id}",
+          "operationId": "users.onlineMeetings.GetRecordings",
+          "role": "Recordings",
+          "response": "application/json; microsoft.graph.callRecording"
+        }
+      ]
+    }
+  },
   "mappings": [
     {
       "module": "CloudCommunications",

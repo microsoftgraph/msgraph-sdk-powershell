@@ -22,6 +22,29 @@ virtual-appointment SMS variants) and `src/readme.graph.md` are excluded. This f
 contains no parameter or schema/response directives to defer. Keep the AutoRest
 directives active until the service-module pipeline is retired.
 
+### Reviewed beta wrapper collision policy
+
+The beta attendance-report and recording aliases retain every reviewed compatible
+route. Attendance operations use the singleton defaults verified from the actual
+Microsoft.Graph.Beta.CloudCommunications 2.38.0 public proxies and compiled route
+dispatch, not the first URI in command metadata.
+
+The reviewed beta recording GET policy intentionally differs from that published
+SDK: both communication-bound and user-bound commands require an explicit
+`-Route Binary` or `-Route Recordings`, with no `Published` choice or default
+fallback. `Binary` selects the singleton `/recording` download. `Recordings`
+selects `/recordings` or `/recordings/{callRecording-id}` according to the supplied
+item ID. Each role validates its own required IDs and supported parameters before
+calling Graph; neither role discards parameters or falls back to another route.
+
+The published `Get2` default selects the collection-bound `getAllRecordings`
+alias-argument function, not any of these three routes. The communication-bound
+function remains unsupported by the current alias-argument generator, and the
+user-bound function remains explicitly suppressed by shared directive 5 below.
+Neither is restored to manufacture default compatibility. This policy is prepared
+in the adjacent migration ledger; activation requires the canonical shared
+dispatcher capability and its normal target-branch merge.
+
 ``` yaml
 directive:
 # Remove invalid paths.
