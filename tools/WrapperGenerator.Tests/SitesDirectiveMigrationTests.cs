@@ -280,6 +280,69 @@ public sealed class SitesDirectiveMigrationTests
         }
     }
 
+    [Fact]
+    public void OnlySixChildGroupsNeedAnExplicitSelectorForAmbiguousMandatoryIds()
+    {
+        using var evidence = JsonDocument.Parse(File.ReadAllText(Path.Combine(FindRepoRoot(), "src", "Sites", "wrapper", "Sites_multiRouteEvidence.json")));
+        var ambiguousGroups = 0;
+        var ordinaryGroups = 0;
+        foreach (var group in evidence.RootElement.GetProperty("groups").EnumerateArray())
+        {
+            var routes = group.GetProperty("routes").EnumerateArray().ToArray();
+            var duplicates = routes.GroupBy(route => string.Join(",", Naming.Resolve(new OperationInfo(
+                    new HttpMethod(route.GetProperty("method").GetString()!), route.GetProperty("path").GetString()!))
+                .PathParamNames.OrderBy(name => name, StringComparer.Ordinal)), StringComparer.Ordinal)
+                .Where(contract => contract.Count() > 1).ToArray();
+            if (duplicates.Length == 0)
+            {
+                ordinaryGroups++;
+                Assert.Equal(JsonValueKind.Null, group.GetProperty("selectorParameter").ValueKind);
+                Assert.False(group.GetProperty("allowAsymmetricRoutes").GetBoolean());
+                Assert.False(group.GetProperty("allowExplicitRouteSelection").GetBoolean());
+                Assert.False(group.GetProperty("allowPublishedParameterInference").GetBoolean());
+                continue;
+            }
+            ambiguousGroups++;
+            Assert.Equal("Route", group.GetProperty("selectorParameter").GetString());
+            Assert.True(group.GetProperty("allowAsymmetricRoutes").GetBoolean());
+            Assert.True(group.GetProperty("allowExplicitRouteSelection").GetBoolean());
+            Assert.True(group.GetProperty("allowPublishedParameterInference").GetBoolean());
+            Assert.Equal(4, routes.Length);
+            Assert.EndsWith("Child", group.GetProperty("publicCommand").GetString()!);
+            var sharedContract = Assert.Single(duplicates).ToArray();
+            Assert.Equal(2, sharedContract.Length);
+            Assert.Contains(sharedContract, route => route.GetProperty("name").GetString() == "Direct"
+                && route.GetProperty("path").GetString()!.EndsWith('}'));
+            Assert.Contains(sharedContract, route => route.GetProperty("name").GetString() == "Nested"
+                && route.GetProperty("path").GetString()!.EndsWith("/children", StringComparison.Ordinal));
+        }
+        Assert.Equal(6, ambiguousGroups);
+        Assert.Equal(78, ordinaryGroups);
+    }
+
+    [Fact]
+    public void EveryRecursiveGetFamilyIsAnActualStructuralListItemPair()
+    {
+        using var evidence = JsonDocument.Parse(File.ReadAllText(Path.Combine(FindRepoRoot(), "src", "Sites", "wrapper", "Sites_multiRouteEvidence.json")));
+        var pairs = 0;
+        foreach (var group in evidence.RootElement.GetProperty("groups").EnumerateArray())
+        {
+            var routes = group.GetProperty("routes").EnumerateArray().ToArray();
+            if (routes.Length != 4)
+                continue;
+            foreach (var family in routes.GroupBy(route => route.GetProperty("name").GetString()))
+            {
+                var list = Assert.Single(family, route => !route.GetProperty("path").GetString()!.EndsWith('}'));
+                var item = Assert.Single(family, route => route.GetProperty("path").GetString()!.EndsWith('}'));
+                var listNaming = Naming.Resolve(new OperationInfo(HttpMethod.Get, list.GetProperty("path").GetString()!));
+                var itemNaming = Naming.Resolve(new OperationInfo(HttpMethod.Get, item.GetProperty("path").GetString()!));
+                Assert.True(Naming.IsListItemPair(listNaming, itemNaming), $"{group.GetProperty("publicCommand").GetString()} {family.Key}");
+                pairs++;
+            }
+        }
+        Assert.Equal(24, pairs);
+    }
+
     private static string SchemaSignature(IOpenApiSchema? schema) =>
         schema is OpenApiSchemaReference reference ? $"ref:{reference.Reference?.Id}"
             : schema is null ? "none" : $"{schema.Type}:{schema.Format}:{SchemaSignature(schema.Items)}";

@@ -14,6 +14,7 @@
     "Nested": 0,
     "unresolved": 0
   },
+  "dispatchPolicy": "78 ordinary mandatory-ID-discriminated groups require no new policy flags. Only six Child GET groups have identical DirectGet/NestedList mandatory IDs and require an explicit Route selector with reviewed asymmetric/explicit/published-inference opt-ins. All 24 collection/item pairs must satisfy Naming.IsListItemPair.",
   "groups": [
     {
       "profile": "beta",
@@ -102,13 +103,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreGroupSetChild -GroupId <string> -GroupId1 <string> -SetId <string>\n -SiteId <string> [-ExpandProperty <string[]>] [-Property <string[]>] [-Filter <string>]\n [-Search <string>] [-Skip <int>] [-Sort <string[]>] [-Top <int>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All]\n [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "ExplicitSelectorWithPublishedParameterInference",
+      "allowAsymmetricRoutes": true,
+      "allowExplicitRouteSelection": true,
+      "allowPublishedParameterInference": true
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreGroupSetChildCount",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreGroupSetChildCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -166,13 +171,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreGroupSetChildCount -GroupId <string> -GroupId1 <string> -SetId <string>\n -SiteId <string> [-Filter <string>] [-Search <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreGroupSetChildRelation",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -256,13 +265,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelation -GroupId <string> -GroupId1 <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-Filter <string>] [-Search <string>] [-Skip <int>] [-Sort <string[]>]\n [-Top <int>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All]\n [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreGroupSetChildRelationCount",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelationCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -321,13 +334,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelationCount -GroupId <string> -GroupId1 <string>\n -SetId <string> -SiteId <string> -TermId <string> [-Filter <string>] [-Search <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreGroupSetChildRelationFromTerm",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelationFromTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -387,13 +404,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelationFromTerm -GroupId <string> -GroupId1 <string>\n -RelationId <string> -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreGroupSetChildRelationSet",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelationSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -453,13 +474,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelationSet -GroupId <string> -GroupId1 <string>\n -RelationId <string> -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreGroupSetChildRelationToTerm",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelationToTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -519,13 +544,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreGroupSetChildRelationToTerm -GroupId <string> -GroupId1 <string>\n -RelationId <string> -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreGroupSetChildSet",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreGroupSetChildSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -584,7 +613,11 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreGroupSetChildSet -GroupId <string> -GroupId1 <string> -SetId <string>\n -SiteId <string> -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
@@ -672,13 +705,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetChild -GroupId <string> -SetId <string> -SiteId <string>\n [-ExpandProperty <string[]>] [-Property <string[]>] [-Filter <string>] [-Search <string>]\n [-Skip <int>] [-Sort <string[]>] [-Top <int>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All] [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "ExplicitSelectorWithPublishedParameterInference",
+      "allowAsymmetricRoutes": true,
+      "allowExplicitRouteSelection": true,
+      "allowPublishedParameterInference": true
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetChildCount",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetChildCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -735,13 +772,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetChildCount -GroupId <string> -SetId <string> -SiteId <string>\n [-Filter <string>] [-Search <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetChildRelation",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -824,13 +865,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetChildRelation -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>] [-Filter <string>]\n [-Search <string>] [-Skip <int>] [-Sort <string[]>] [-Top <int>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All]\n [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetChildRelationCount",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetChildRelationCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -888,13 +933,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetChildRelationCount -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-Filter <string>] [-Search <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetChildRelationFromTerm",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetChildRelationFromTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -953,13 +1002,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetChildRelationFromTerm -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetChildRelationSet",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetChildRelationSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1018,13 +1071,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetChildRelationSet -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetChildRelationToTerm",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetChildRelationToTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1083,13 +1140,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetChildRelationToTerm -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetChildSet",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetChildSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1147,7 +1208,11 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetChildSet -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
@@ -1236,13 +1301,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChild -GroupId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> [-ExpandProperty <string[]>] [-Property <string[]>]\n [-Filter <string>] [-Search <string>] [-Skip <int>] [-Sort <string[]>] [-Top <int>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All]\n [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "ExplicitSelectorWithPublishedParameterInference",
+      "allowAsymmetricRoutes": true,
+      "allowExplicitRouteSelection": true,
+      "allowPublishedParameterInference": true
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetParentGroupSetChildCount",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1300,13 +1369,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildCount -GroupId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> [-Filter <string>] [-Search <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetParentGroupSetChildRelation",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1390,13 +1463,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation -GroupId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-Filter <string>] [-Search <string>] [-Skip <int>] [-Sort <string[]>]\n [-Top <int>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All]\n [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationCount",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelationCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1455,13 +1532,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelationCount -GroupId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-Filter <string>] [-Search <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationFromTerm",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelationFromTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1521,13 +1602,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelationFromTerm -GroupId <string>\n -RelationId <string> -SetId <string> -SetId1 <string> -SiteId <string> -TermId <string>\n [-ExpandProperty <string[]>] [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationSet",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelationSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1587,13 +1672,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelationSet -GroupId <string> -RelationId <string>\n -SetId <string> -SetId1 <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetParentGroupSetChildRelationToTerm",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelationToTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1653,13 +1742,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelationToTerm -GroupId <string>\n -RelationId <string> -SetId <string> -SetId1 <string> -SiteId <string> -TermId <string>\n [-ExpandProperty <string[]>] [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgGroupSiteTermStoreSetParentGroupSetChildSet",
       "publishedCommand": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1718,7 +1811,11 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaGroupSiteTermStoreSetParentGroupSetChildSet -GroupId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
@@ -1806,13 +1903,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreGroupSetChild -GroupId <string> -SetId <string> -SiteId <string>\n [-ExpandProperty <string[]>] [-Property <string[]>] [-Filter <string>] [-Search <string>]\n [-Skip <int>] [-Sort <string[]>] [-Top <int>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All] [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "ExplicitSelectorWithPublishedParameterInference",
+      "allowAsymmetricRoutes": true,
+      "allowExplicitRouteSelection": true,
+      "allowPublishedParameterInference": true
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreGroupSetChildCount",
       "publishedCommand": "Get-MgBetaSiteTermStoreGroupSetChildCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1869,13 +1970,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreGroupSetChildCount -GroupId <string> -SetId <string> -SiteId <string>\n [-Filter <string>] [-Search <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreGroupSetChildRelation",
       "publishedCommand": "Get-MgBetaSiteTermStoreGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -1958,13 +2063,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreGroupSetChildRelation -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>] [-Filter <string>]\n [-Search <string>] [-Skip <int>] [-Sort <string[]>] [-Top <int>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All]\n [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreGroupSetChildRelationCount",
       "publishedCommand": "Get-MgBetaSiteTermStoreGroupSetChildRelationCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2022,13 +2131,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreGroupSetChildRelationCount -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-Filter <string>] [-Search <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreGroupSetChildRelationFromTerm",
       "publishedCommand": "Get-MgBetaSiteTermStoreGroupSetChildRelationFromTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2087,13 +2200,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreGroupSetChildRelationFromTerm -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreGroupSetChildRelationSet",
       "publishedCommand": "Get-MgBetaSiteTermStoreGroupSetChildRelationSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2152,13 +2269,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreGroupSetChildRelationSet -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreGroupSetChildRelationToTerm",
       "publishedCommand": "Get-MgBetaSiteTermStoreGroupSetChildRelationToTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2217,13 +2338,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreGroupSetChildRelationToTerm -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreGroupSetChildSet",
       "publishedCommand": "Get-MgBetaSiteTermStoreGroupSetChildSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2281,7 +2406,11 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreGroupSetChildSet -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
@@ -2368,13 +2497,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetChild -SetId <string> -SiteId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-Filter <string>] [-Search <string>] [-Skip <int>] [-Sort <string[]>]\n [-Top <int>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All]\n [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "ExplicitSelectorWithPublishedParameterInference",
+      "allowAsymmetricRoutes": true,
+      "allowExplicitRouteSelection": true,
+      "allowPublishedParameterInference": true
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetChildCount",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetChildCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2430,13 +2563,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetChildCount -SetId <string> -SiteId <string> [-Filter <string>]\n [-Search <string>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetChildRelation",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2518,13 +2655,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetChildRelation -SetId <string> -SiteId <string> -TermId <string>\n [-ExpandProperty <string[]>] [-Property <string[]>] [-Filter <string>] [-Search <string>]\n [-Skip <int>] [-Sort <string[]>] [-Top <int>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All] [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetChildRelationCount",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetChildRelationCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2581,13 +2722,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetChildRelationCount -SetId <string> -SiteId <string> -TermId <string>\n [-Filter <string>] [-Search <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetChildRelationFromTerm",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetChildRelationFromTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2645,13 +2790,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetChildRelationFromTerm -RelationId <string> -SetId <string>\n -SiteId <string> -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetChildRelationSet",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetChildRelationSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2709,13 +2858,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetChildRelationSet -RelationId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetChildRelationToTerm",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetChildRelationToTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2773,13 +2926,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetChildRelationToTerm -RelationId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetChildSet",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetChildSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2836,7 +2993,11 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetChildSet -SetId <string> -SiteId <string> -TermId <string>\n [-ExpandProperty <string[]>] [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
@@ -2924,13 +3085,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetParentGroupSetChild -SetId <string> -SetId1 <string> -SiteId <string>\n [-ExpandProperty <string[]>] [-Property <string[]>] [-Filter <string>] [-Search <string>]\n [-Skip <int>] [-Sort <string[]>] [-Top <int>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All] [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "ExplicitSelectorWithPublishedParameterInference",
+      "allowAsymmetricRoutes": true,
+      "allowExplicitRouteSelection": true,
+      "allowPublishedParameterInference": true
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetParentGroupSetChildCount",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetParentGroupSetChildCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -2987,13 +3152,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetParentGroupSetChildCount -SetId <string> -SetId1 <string> -SiteId <string>\n [-Filter <string>] [-Search <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetParentGroupSetChildRelation",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3076,13 +3245,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelation -SetId <string> -SetId1 <string>\n -SiteId <string> -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>]\n [-Filter <string>] [-Search <string>] [-Skip <int>] [-Sort <string[]>] [-Top <int>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-PageSize <int>] [-All]\n [-CountVariable <string>]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetParentGroupSetChildRelationCount",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelationCount",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3140,13 +3313,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelationCount -SetId <string> -SetId1 <string>\n -SiteId <string> -TermId <string> [-Filter <string>] [-Search <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetParentGroupSetChildRelationFromTerm",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelationFromTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3205,13 +3382,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelationFromTerm -RelationId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetParentGroupSetChildRelationSet",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelationSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3270,13 +3451,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelationSet -RelationId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetParentGroupSetChildRelationToTerm",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelationToTerm",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3335,13 +3520,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetParentGroupSetChildRelationToTerm -RelationId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-ExpandProperty <string[]>]\n [-Property <string[]>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Get-MgSiteTermStoreSetParentGroupSetChildSet",
       "publishedCommand": "Get-MgBetaSiteTermStoreSetParentGroupSetChildSet",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3399,13 +3588,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Get-MgBetaSiteTermStoreSetParentGroupSetChildSet -SetId <string> -SetId1 <string> -SiteId <string>\n -TermId <string> [-ExpandProperty <string[]>] [-Property <string[]>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgGroupSiteTermStoreGroupSetChild",
       "publishedCommand": "New-MgBetaGroupSiteTermStoreGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3467,13 +3660,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaGroupSiteTermStoreGroupSetChild -GroupId <string> -GroupId1 <string> -SetId <string>\n -SiteId <string> [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-Children <IMicrosoftGraphTermStoreTerm[]>] [-CreatedDateTime <datetime>]\n [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>] [-Id <string>]\n [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>] [-LastModifiedDateTime <datetime>]\n [-Properties <IMicrosoftGraphKeyValue[]>] [-Relations <IMicrosoftGraphTermStoreRelation[]>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgGroupSiteTermStoreGroupSetChildRelation",
       "publishedCommand": "New-MgBetaGroupSiteTermStoreGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3536,13 +3733,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaGroupSiteTermStoreGroupSetChildRelation -GroupId <string> -GroupId1 <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>]\n [-Relationship <string>] [-Set <IMicrosoftGraphTermStoreSet>]\n [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgGroupSiteTermStoreSetChild",
       "publishedCommand": "New-MgBetaGroupSiteTermStoreSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3603,13 +3804,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaGroupSiteTermStoreSetChild -GroupId <string> -SetId <string> -SiteId <string>\n [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-Children <IMicrosoftGraphTermStoreTerm[]>] [-CreatedDateTime <datetime>]\n [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>] [-Id <string>]\n [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>] [-LastModifiedDateTime <datetime>]\n [-Properties <IMicrosoftGraphKeyValue[]>] [-Relations <IMicrosoftGraphTermStoreRelation[]>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgGroupSiteTermStoreSetChildRelation",
       "publishedCommand": "New-MgBetaGroupSiteTermStoreSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3671,13 +3876,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaGroupSiteTermStoreSetChildRelation -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>] [-Relationship <string>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgGroupSiteTermStoreSetParentGroupSetChild",
       "publishedCommand": "New-MgBetaGroupSiteTermStoreSetParentGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3739,13 +3948,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaGroupSiteTermStoreSetParentGroupSetChild -GroupId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-Children <IMicrosoftGraphTermStoreTerm[]>]\n [-CreatedDateTime <datetime>] [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]\n [-Id <string>] [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]\n [-LastModifiedDateTime <datetime>] [-Properties <IMicrosoftGraphKeyValue[]>]\n [-Relations <IMicrosoftGraphTermStoreRelation[]>] [-Set <IMicrosoftGraphTermStoreSet>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgGroupSiteTermStoreSetParentGroupSetChildRelation",
       "publishedCommand": "New-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3808,13 +4021,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation -GroupId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>]\n [-Relationship <string>] [-Set <IMicrosoftGraphTermStoreSet>]\n [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgSiteTermStoreGroupSetChild",
       "publishedCommand": "New-MgBetaSiteTermStoreGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3875,13 +4092,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaSiteTermStoreGroupSetChild -GroupId <string> -SetId <string> -SiteId <string>\n [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-Children <IMicrosoftGraphTermStoreTerm[]>] [-CreatedDateTime <datetime>]\n [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>] [-Id <string>]\n [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>] [-LastModifiedDateTime <datetime>]\n [-Properties <IMicrosoftGraphKeyValue[]>] [-Relations <IMicrosoftGraphTermStoreRelation[]>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgSiteTermStoreGroupSetChildRelation",
       "publishedCommand": "New-MgBetaSiteTermStoreGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -3943,13 +4164,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaSiteTermStoreGroupSetChildRelation -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>] [-Relationship <string>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgSiteTermStoreSetChild",
       "publishedCommand": "New-MgBetaSiteTermStoreSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4009,13 +4234,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaSiteTermStoreSetChild -SetId <string> -SiteId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-Children <IMicrosoftGraphTermStoreTerm[]>]\n [-CreatedDateTime <datetime>] [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]\n [-Id <string>] [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]\n [-LastModifiedDateTime <datetime>] [-Properties <IMicrosoftGraphKeyValue[]>]\n [-Relations <IMicrosoftGraphTermStoreRelation[]>] [-Set <IMicrosoftGraphTermStoreSet>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgSiteTermStoreSetChildRelation",
       "publishedCommand": "New-MgBetaSiteTermStoreSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4076,13 +4305,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaSiteTermStoreSetChildRelation -SetId <string> -SiteId <string> -TermId <string>\n [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>] [-Relationship <string>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgSiteTermStoreSetParentGroupSetChild",
       "publishedCommand": "New-MgBetaSiteTermStoreSetParentGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4143,13 +4376,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaSiteTermStoreSetParentGroupSetChild -SetId <string> -SetId1 <string> -SiteId <string>\n [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-Children <IMicrosoftGraphTermStoreTerm[]>] [-CreatedDateTime <datetime>]\n [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>] [-Id <string>]\n [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>] [-LastModifiedDateTime <datetime>]\n [-Properties <IMicrosoftGraphKeyValue[]>] [-Relations <IMicrosoftGraphTermStoreRelation[]>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "New-MgSiteTermStoreSetParentGroupSetChildRelation",
       "publishedCommand": "New-MgBetaSiteTermStoreSetParentGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4211,13 +4448,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "New-MgBetaSiteTermStoreSetParentGroupSetChildRelation -SetId <string> -SetId1 <string>\n -SiteId <string> -TermId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>]\n [-Relationship <string>] [-Set <IMicrosoftGraphTermStoreSet>]\n [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgGroupSiteTermStoreGroupSetChild",
       "publishedCommand": "Remove-MgBetaGroupSiteTermStoreGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4276,13 +4517,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaGroupSiteTermStoreGroupSetChild -GroupId <string> -GroupId1 <string> -SetId <string>\n -SiteId <string> -TermId <string> [-IfMatch <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgGroupSiteTermStoreGroupSetChildRelation",
       "publishedCommand": "Remove-MgBetaGroupSiteTermStoreGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4342,13 +4587,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaGroupSiteTermStoreGroupSetChildRelation -GroupId <string> -GroupId1 <string>\n -RelationId <string> -SetId <string> -SiteId <string> -TermId <string> [-IfMatch <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru]\n [-Proxy <uri>] [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgGroupSiteTermStoreSetChild",
       "publishedCommand": "Remove-MgBetaGroupSiteTermStoreSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4406,13 +4655,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaGroupSiteTermStoreSetChild -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-IfMatch <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgGroupSiteTermStoreSetChildRelation",
       "publishedCommand": "Remove-MgBetaGroupSiteTermStoreSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4471,13 +4724,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaGroupSiteTermStoreSetChildRelation -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-IfMatch <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru]\n [-Proxy <uri>] [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgGroupSiteTermStoreSetParentGroupSetChild",
       "publishedCommand": "Remove-MgBetaGroupSiteTermStoreSetParentGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4536,13 +4793,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaGroupSiteTermStoreSetParentGroupSetChild -GroupId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-IfMatch <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru]\n [-Proxy <uri>] [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgGroupSiteTermStoreSetParentGroupSetChildRelation",
       "publishedCommand": "Remove-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4602,13 +4863,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation -GroupId <string> -RelationId <string>\n -SetId <string> -SetId1 <string> -SiteId <string> -TermId <string> [-IfMatch <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru]\n [-Proxy <uri>] [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgSiteTermStoreGroupSetChild",
       "publishedCommand": "Remove-MgBetaSiteTermStoreGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4666,13 +4931,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaSiteTermStoreGroupSetChild -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-IfMatch <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgSiteTermStoreGroupSetChildRelation",
       "publishedCommand": "Remove-MgBetaSiteTermStoreGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4731,13 +5000,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaSiteTermStoreGroupSetChildRelation -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-IfMatch <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru]\n [-Proxy <uri>] [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgSiteTermStoreSetChild",
       "publishedCommand": "Remove-MgBetaSiteTermStoreSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4794,13 +5067,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaSiteTermStoreSetChild -SetId <string> -SiteId <string> -TermId <string>\n [-IfMatch <string>] [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru]\n [-Proxy <uri>] [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgSiteTermStoreSetChildRelation",
       "publishedCommand": "Remove-MgBetaSiteTermStoreSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4858,13 +5135,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaSiteTermStoreSetChildRelation -RelationId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-IfMatch <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgSiteTermStoreSetParentGroupSetChild",
       "publishedCommand": "Remove-MgBetaSiteTermStoreSetParentGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4922,13 +5203,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaSiteTermStoreSetParentGroupSetChild -SetId <string> -SetId1 <string> -SiteId <string>\n -TermId <string> [-IfMatch <string>] [-ResponseHeadersVariable <string>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Remove-MgSiteTermStoreSetParentGroupSetChildRelation",
       "publishedCommand": "Remove-MgBetaSiteTermStoreSetParentGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -4987,13 +5272,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Remove-MgBetaSiteTermStoreSetParentGroupSetChildRelation -RelationId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-IfMatch <string>]\n [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-PassThru]\n [-Proxy <uri>] [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgGroupSiteTermStoreGroupSetChild",
       "publishedCommand": "Update-MgBetaGroupSiteTermStoreGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5056,13 +5345,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaGroupSiteTermStoreGroupSetChild -GroupId <string> -GroupId1 <string> -SetId <string>\n -SiteId <string> -TermId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-Children <IMicrosoftGraphTermStoreTerm[]>]\n [-CreatedDateTime <datetime>] [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]\n [-Id <string>] [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]\n [-LastModifiedDateTime <datetime>] [-Properties <IMicrosoftGraphKeyValue[]>]\n [-Relations <IMicrosoftGraphTermStoreRelation[]>] [-Set <IMicrosoftGraphTermStoreSet>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgGroupSiteTermStoreGroupSetChildRelation",
       "publishedCommand": "Update-MgBetaGroupSiteTermStoreGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5126,13 +5419,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaGroupSiteTermStoreGroupSetChildRelation -GroupId <string> -GroupId1 <string>\n -RelationId <string> -SetId <string> -SiteId <string> -TermId <string>\n [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>] [-Relationship <string>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgGroupSiteTermStoreSetChild",
       "publishedCommand": "Update-MgBetaGroupSiteTermStoreSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5194,13 +5491,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaGroupSiteTermStoreSetChild -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-Children <IMicrosoftGraphTermStoreTerm[]>] [-CreatedDateTime <datetime>]\n [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>] [-Id <string>]\n [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>] [-LastModifiedDateTime <datetime>]\n [-Properties <IMicrosoftGraphKeyValue[]>] [-Relations <IMicrosoftGraphTermStoreRelation[]>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgGroupSiteTermStoreSetChildRelation",
       "publishedCommand": "Update-MgBetaGroupSiteTermStoreSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5263,13 +5564,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaGroupSiteTermStoreSetChildRelation -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>]\n [-Relationship <string>] [-Set <IMicrosoftGraphTermStoreSet>]\n [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgGroupSiteTermStoreSetParentGroupSetChild",
       "publishedCommand": "Update-MgBetaGroupSiteTermStoreSetParentGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5332,13 +5637,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaGroupSiteTermStoreSetParentGroupSetChild -GroupId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-Children <IMicrosoftGraphTermStoreTerm[]>]\n [-CreatedDateTime <datetime>] [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]\n [-Id <string>] [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]\n [-LastModifiedDateTime <datetime>] [-Properties <IMicrosoftGraphKeyValue[]>]\n [-Relations <IMicrosoftGraphTermStoreRelation[]>] [-Set <IMicrosoftGraphTermStoreSet>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgGroupSiteTermStoreSetParentGroupSetChildRelation",
       "publishedCommand": "Update-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5402,13 +5711,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation -GroupId <string> -RelationId <string>\n -SetId <string> -SetId1 <string> -SiteId <string> -TermId <string>\n [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>] [-Relationship <string>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgSiteTermStoreGroupSetChild",
       "publishedCommand": "Update-MgBetaSiteTermStoreGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5470,13 +5783,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaSiteTermStoreGroupSetChild -GroupId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-Children <IMicrosoftGraphTermStoreTerm[]>] [-CreatedDateTime <datetime>]\n [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>] [-Id <string>]\n [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>] [-LastModifiedDateTime <datetime>]\n [-Properties <IMicrosoftGraphKeyValue[]>] [-Relations <IMicrosoftGraphTermStoreRelation[]>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgSiteTermStoreGroupSetChildRelation",
       "publishedCommand": "Update-MgBetaSiteTermStoreGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5539,13 +5856,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaSiteTermStoreGroupSetChildRelation -GroupId <string> -RelationId <string>\n -SetId <string> -SiteId <string> -TermId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>]\n [-Relationship <string>] [-Set <IMicrosoftGraphTermStoreSet>]\n [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgSiteTermStoreSetChild",
       "publishedCommand": "Update-MgBetaSiteTermStoreSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5606,13 +5927,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaSiteTermStoreSetChild -SetId <string> -SiteId <string> -TermId <string>\n [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-Children <IMicrosoftGraphTermStoreTerm[]>] [-CreatedDateTime <datetime>]\n [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>] [-Id <string>]\n [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>] [-LastModifiedDateTime <datetime>]\n [-Properties <IMicrosoftGraphKeyValue[]>] [-Relations <IMicrosoftGraphTermStoreRelation[]>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgSiteTermStoreSetChildRelation",
       "publishedCommand": "Update-MgBetaSiteTermStoreSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5674,13 +5999,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaSiteTermStoreSetChildRelation -RelationId <string> -SetId <string> -SiteId <string>\n -TermId <string> [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>] [-Relationship <string>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break]\n [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]\n [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]\n [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgSiteTermStoreSetParentGroupSetChild",
       "publishedCommand": "Update-MgBetaSiteTermStoreSetParentGroupSetChild",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Direct",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5742,13 +6071,17 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaSiteTermStoreSetParentGroupSetChild -SetId <string> -SetId1 <string> -SiteId <string>\n -TermId <string> [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]\n [-Children <IMicrosoftGraphTermStoreTerm[]>] [-CreatedDateTime <datetime>]\n [-Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>] [-Id <string>]\n [-Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>] [-LastModifiedDateTime <datetime>]\n [-Properties <IMicrosoftGraphKeyValue[]>] [-Relations <IMicrosoftGraphTermStoreRelation[]>]\n [-Set <IMicrosoftGraphTermStoreSet>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     },
     {
       "profile": "beta",
       "publicCommand": "Update-MgSiteTermStoreSetParentGroupSetChildRelation",
       "publishedCommand": "Update-MgBetaSiteTermStoreSetParentGroupSetChildRelation",
-      "selectorParameter": "Route",
+      "selectorParameter": null,
       "metadataRouteCandidate": "Nested",
       "notes": "Published default independently proven by pinned Learn (Default) syntax and unique exact actual mandatory path-ID contract, NOT first-URI metadata. Preserve both exact Direct/Nested request trees and existing curated suppressions. Omission/Published preserves the proven default; no operation suppressed or new noun invented.",
       "metadataUriEvidence": [
@@ -5811,7 +6144,11 @@
         ],
         "defaultRoute": "Direct",
         "syntax": "Update-MgBetaSiteTermStoreSetParentGroupSetChildRelation -RelationId <string> -SetId <string>\n -SetId1 <string> -SiteId <string> -TermId <string> [-ResponseHeadersVariable <string>]\n [-AdditionalProperties <hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <string>]\n [-Relationship <string>] [-Set <IMicrosoftGraphTermStoreSet>]\n [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Break] [-Headers <IDictionary>]\n [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]\n [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]"
-      }
+      },
+      "dispatchPolicy": "MandatoryPathIdDiscrimination",
+      "allowAsymmetricRoutes": false,
+      "allowExplicitRouteSelection": false,
+      "allowPublishedParameterInference": false
     }
   ]
 }
