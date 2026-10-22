@@ -6,20 +6,22 @@ public static partial class CmdletConfigurator
 {
     private static readonly List<Entry> BookingsCmdletConfigurations =
     [
-        // The SDK ships no cmdlets for the /solutions root singleton itself (Get-MgSolution /
-        // Update-MgSolution do not exist): src/Bookings/Bookings.md removes every solutionsRoot
-        // operation with remove-path-by-operation ^solution\.solutionsRoot.*$. Exact-path, all
-        // methods, so operations on children like /solutions/bookingBusinesses are unaffected.
+        // Retain the existing /solutions compatibility suppression. Bookings.md's literal
+        // ^solution\.solutionsRoot.*$ matches neither compatible spec: both use plural
+        // solutions.solutionsRoot IDs. The adjacent migration ledger records that absence
+        // separately from the actual root operations; children remain unaffected.
         new(OverrideKind.SuppressOperation, Method: null, "/solutions", Match: PathMatch.Exact, Value: null,
-            Reason: "Bookings.md remove-path-by-operation ^solution\\.solutionsRoot.*$"),
+            Reason: "Retained /solutions compatibility suppression; literal Bookings.md ^solution\\.solutionsRoot.*$ selector is absent in compatible specs"),
 
         // Most nouns under /solutions/ drop the "Solution" prefix (for example
         // Get-MgBookingBusiness, Get-MgVirtualEventWebinar). BackupRestore is a known
         // exception where published cmdlets keep the Solution prefix.
+        // Bookings_directiveMigrationMap.json reviews the shared SubjectRename coverage;
+        // BookingsDirectiveMigrationTests pins both profiles and the BackupRestore exception.
         new(OverrideKind.StripNounPrefix, Method: null, "/solutions/", Match: PathMatch.Prefix, Value: "Solution",
             Reason: "Bookings/VirtualEvents naming pattern under /solutions/*; BackupRestore is explicitly excluded in ApplyNounOverrides"),
 
         new(OverrideKind.SuppressOperation, Method: null, "/solutions/virtualevents", Match: PathMatch.Exact, Value: null,
-            Reason: "oracle: the virtualEvents root node ships nothing; children ship (Get-MgVirtualEventWebinar)"),
+            Reason: "Bookings.md shared VirtualEvent Get/Delete/Update variants; exact root only, children remain active"),
     ];
 }
