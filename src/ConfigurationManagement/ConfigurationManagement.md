@@ -1,10 +1,22 @@
 # ConfigurationManagement
 
+## AutoRest Configuration
+
+> see <https://aka.ms/autorest>
+
+``` yaml
+require:
+  - $(this-folder)/../readme.graph.md
+```
+
 ## Shared directive migration audit
 
 At the reviewed `powershell-v3` baseline `51d441eeb5`, this module had no
-`ConfigurationManagement.md` shared directive file. This file records that audit;
-it introduces no AutoRest configuration or directives.
+`ConfigurationManagement.md` shared directive file. This file records that audit
+and introduces no new directives. The standard template `require` above preserves
+legacy global configuration wiring: `Copy-ModuleTemplate` creates the module file
+only when absent, so this audit file must retain that wiring itself. The required
+global directives remain unchanged and outside this migration's scope.
 
 There are **zero shared cmdlet directives** to migrate. The existing
 `wrapper/ConfigurationManagement_cmdletConfigurations.cs` is intentionally empty
