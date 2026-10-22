@@ -22,8 +22,8 @@ they compile against.
 The module is named Microsoft.Graph.Wrapper.<Module> so it imports side by side with an
 installed official Microsoft.Graph.<Module> without collision.
 
-The manifest exports EVERY cmdlet, including the internal *_Get/*_List workers: the public
-Get-* dispatchers forward to the workers by name via InvokeCommand.InvokeScript, so a
+The manifest exports EVERY cmdlet, including the internal *_Get/*_List and *_RouteN workers:
+public dispatchers forward to the workers by name via InvokeCommand.InvokeScript, so a
 manifest that hides the workers breaks dispatch ("term not recognized"). Worker visibility
 needs its own dispatch design and is tracked in the module-wiring issue.
 

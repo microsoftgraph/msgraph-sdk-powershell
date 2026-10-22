@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 
@@ -23,6 +24,7 @@ public static partial class CmdletConfigurator
         ReplaceNoun,
         StripNounPrefix,
         ReplaceVerb,
+        MergeRoutes,
     }
 
     // How Pattern is matched against the normalized path: the full path (Exact), its start
@@ -35,7 +37,17 @@ public static partial class CmdletConfigurator
         Suffix,
     }
 
-    internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason);
+    internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason,
+        MultiRouteGroup? RouteGroup = null);
+
+    internal static Entry MergeRoutes(MultiRouteGroup group, string reason) =>
+        new(OverrideKind.MergeRoutes, null, "", PathMatch.Exact, null, reason, group);
+
+    internal static IEnumerable<MultiRouteGroup> GetMultiRouteGroups(GeneratorConfig config) =>
+        Entries.Where(e => e.Kind == OverrideKind.MergeRoutes).Select(e => e.RouteGroup
+            ?? throw new InvalidOperationException("MergeRoutes entry requires a route group."))
+            .Concat(config.MultiRouteGroups ?? [])
+            .Where(g => g.ApiVersion.Equals(config.ApiVersion, StringComparison.OrdinalIgnoreCase));
 
     // NormalizePath lowercases before matching, so a Pattern containing an uppercase letter can
     // never match anything: the entry is silently dead and the override looks applied but is not.

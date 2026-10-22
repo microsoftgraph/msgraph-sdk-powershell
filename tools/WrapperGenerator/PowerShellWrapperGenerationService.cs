@@ -151,6 +151,8 @@ public sealed partial class PowerShellWrapperGenerationService
         // Delta operations are held back for the same reason GETs are: the parameterless form and
         // its token form are one command, so the decision needs both before either is emitted.
         var deltaOperations = new List<DeltaOperationRecord>();
+        var multiRouteGroups = PrepareMultiRouteGroups();
+        var multiRouteOperations = new List<MultiRouteOperation>();
 
         foreach (var (pathTemplate, pathItem) in document.Paths)
         {
@@ -211,6 +213,13 @@ public sealed partial class PowerShellWrapperGenerationService
                 // operations rather than intercepting every GET.
 
                 var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams, operationKind), config);
+
+                if (multiRouteGroups.Any(g => g.Routes.Any(r => MatchesRoute(r, httpMethod.Method, pathTemplate))))
+                {
+                    multiRouteOperations.Add(new(cmdletNaming, operation, queryParams,
+                        pathItem.Operations?.ContainsKey(HttpMethod.Get) == true));
+                    continue;
+                }
 
                 // An action or function is emitted from its own shape: it is never half of a
                 // list/item pair, and its request and response types are the per-operation
@@ -338,6 +347,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
         written += await EmitGetOperationsAsync(getOperations, ctx, cancellationToken).ConfigureAwait(false);
         written += await EmitDeltaOperationsAsync(deltaOperations, ctx, cancellationToken).ConfigureAwait(false);
+        written += await EmitMultiRouteOperationsAsync(multiRouteGroups, multiRouteOperations, ctx, cancellationToken).ConfigureAwait(false);
 
         // All collisions for the run are reported together so one generation surfaces the
         // complete list; see docs/edge-cases/naming-edge-cases.md for how each kind is resolved.
