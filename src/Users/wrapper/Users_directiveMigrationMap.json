@@ -1,0 +1,150 @@
+{
+  "audit": {
+    "source": "src/Users/Users.md",
+    "baseline": "51d441eeb5",
+    "requiredProfiles": ["v1.0", "beta"],
+    "excludedProfiles": [],
+    "ignored": ["src/Users/v1.0/readme.md", "src/Users/beta/readme.md", "src/readme.graph.md"],
+    "deferred": "Parameter aliases/transforms and schema/response directives; none occur in the shared source.",
+    "compatibleSpecBlobs": {
+      "v1.0": "0d36575d756dbf5f302913140e61710f57b6e51f",
+      "beta": "82ce2bdab5d5849ecd2a2e2ee459618b7edef10e"
+    },
+    "lineage": "Original operation-ID regex evaluated case-sensitively on actual same-profile openApiDocs Users.yml: exactly three matches per profile, all surviving at the exact same method/path with renamed IDs. user_GetOutlook does not match lowercase outlook. No actual removals or action/function qualification translations.",
+    "coverage": "Exact module entries preserve v1.0 derived suppressions while supplying the missing beta coverage. Existing curated /photos suppressions remain unchanged. The unreachable UserTodo List rename is subsumed, not implemented as a new public noun."
+  },
+  "mappings": [
+    {
+      "module": "Users",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: user_(Get|Create|Update|Delete|Set)(Todo|outlook)",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress exactly root todo GET/PATCH/DELETE, preserving nested todo/lists. The complete original legacy match set has three surviving operations in each profile; uppercase user_GetOutlook is not selected.",
+      "profiles": {
+        "v1.0": {
+          "operationIdSource": "Legacy",
+          "notes": "All three actual original-regex matches are uniquely bridged by exact method/path; compatible literal-ID matches are zero because IDs changed, not because APIs disappeared.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/todo",
+              "operationId": "users.GetTodo",
+              "legacyPath": "/users/{user-id}/todo",
+              "legacyOperationId": "user_GetTodo"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/todo",
+              "operationId": "users.UpdateTodo",
+              "legacyPath": "/users/{user-id}/todo",
+              "legacyOperationId": "user_UpdateTodo"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/todo",
+              "operationId": "users.DeleteTodo",
+              "legacyPath": "/users/{user-id}/todo",
+              "legacyOperationId": "user_DeleteTodo"
+            }
+          ]
+        },
+        "beta": {
+          "operationIdSource": "Legacy",
+          "notes": "All three actual original-regex matches are uniquely bridged by exact method/path; compatible literal-ID matches are zero because IDs changed, not because APIs disappeared.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/todo",
+              "operationId": "users.GetTodo",
+              "legacyPath": "/users/{user-id}/todo",
+              "legacyOperationId": "user_GetTodo"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/todo",
+              "operationId": "users.UpdateTodo",
+              "legacyPath": "/users/{user-id}/todo",
+              "legacyOperationId": "user_UpdateTodo"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/todo",
+              "operationId": "users.DeleteTodo",
+              "legacyPath": "/users/{user-id}/todo",
+              "legacyOperationId": "user_DeleteTodo"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UserLicenseDetail$",
+      "implementation": "CmdletConfigurator",
+      "notes": "New UserLicenseDetail selects only POST /users/{user-id}/licenseDetails: legacy user_CreateLicenseDetail -> compatible users.CreateLicenseDetails in both profiles. Retain collection/item reads and item mutations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "POST", "path": "/users/{user-id}/licenseDetails", "operationId": "users.CreateLicenseDetails" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "POST", "path": "/users/{user-id}/licenseDetails", "operationId": "users.CreateLicenseDetails" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "variant: List",
+      "implementation": "SupersededBySuppression",
+      "notes": "The earlier operation-ID directive removes the root todo path before this Get UserTodo List rename can act. Actual legacy user_GetTodo returns singleton microsoft.graph.todo (not a List collection), and its exact GET successor survives in both compatible specs but is suppressed by directive 1. Evidence records this route's lineage, not API absence or an invented List variant. Nested GET /todo/lists already structurally produces UserTodoList; no redundant rename.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/todo", "operationId": "users.GetTodo" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/todo", "operationId": "users.GetTodo" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UserPhoto$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Update UserPhoto selects only PATCH /users/{user-id}/photo: legacy user_UpdatePhoto -> compatible users.UpdatePhoto in both profiles. Preserve singleton GET and GET/PUT photo/$value, plus the pre-existing curated /photos behavior.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "PATCH", "path": "/users/{user-id}/photo", "operationId": "users.UpdatePhoto" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "PATCH", "path": "/users/{user-id}/photo", "operationId": "users.UpdatePhoto" }
+          ]
+        }
+      }
+    }
+  ]
+}
