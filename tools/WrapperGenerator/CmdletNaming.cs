@@ -170,8 +170,8 @@ public static class Naming
                 : throw new NotSupportedException($"No cmdlet verb mapping for HTTP method '{operation.HttpMethod}'."),
         };
 
-        // The published SDK picks an action's verb per operation rather than from the method, so
-        // where the oracle-derived data records one it replaces the structural default.
+        // Published per-operation verbs, from derived data or a curated shared directive,
+        // replace the structural default through the same approved-verb validation.
         if (CmdletConfigurator.TryGetOverriddenVerb(operation.HttpMethod, operation.Path, config) is { } publishedVerb)
             verb = PsVerb.FromApprovedName(publishedVerb);
 
