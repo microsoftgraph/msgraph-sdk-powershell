@@ -2,7 +2,7 @@
   "descriptionHash": "3E9B3412247A712A633CA4B24E0AE224FC6D70FCA52F20998634502155E8179C535F40236EE4F4FAA203F29ED0C7ABC9A504BBE5EDEB19A2D385C6A2B8340AA0",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/ConfigurationManagement.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.ConfigurationManagement.Client",
