@@ -80,7 +80,8 @@ directive:
 # Group 11: bridge the full original legacy selector set, not literal converted IDs.
 # Four collection-addressed DELETE $ref routes survive in each profile and are
 # suppressed; item-addressed DELETE $ref, GET, and POST neighbors remain available.
-# The beta directory/featureRolloutPolicies lineage requires separate absence review;
-# the pre-existing policies/featureRolloutPolicies lineage belongs to Identity.SignIns.
+# The beta directory/featureRolloutPolicies lineage is a reviewed removed duplicate
+# with zero compatible counterparts. The independently pre-existing Identity.SignIns
+# policies/featureRolloutPolicies lineage is unchanged, not a root-relocation mapping.
   - remove-path-by-operation: ^device_DeleteRegisteredOwnerGraphBPreRef$|^device_DeleteRegisteredUserGraphBPreRef$|^directory.administrativeUnit_DeleteMemberGraphBPreRef$|^directoryRole_DeleteMemberGraphBPreRef$|^directory.featureRolloutPolicy_ListAppliesToGraphBPreRef$
 ```

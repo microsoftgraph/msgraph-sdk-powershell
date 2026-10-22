@@ -866,7 +866,7 @@
               "method": "GET",
               "path": "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
               "operationId": "directory.featureRolloutPolicy_ListAppliesToGraphBPreRef",
-              "notes": "The entire /directory/featureRolloutPolicies lineage is absent from the compatible Identity.DirectoryManagement beta spec. The /policies/featureRolloutPolicies lineage is independently present in BOTH legacy and compatible Identity.SignIns beta specs (old policy.featureRolloutPolicy_ListAppliesToGraphBPreRef; current policies.featureRolloutPolicies.ListRefAppliesTo). It is not an inferred moved successor and is not changed by this module migration."
+              "notes": "Authorized reviewed removal of the duplicate directory lineage: the entire /directory/featureRolloutPolicies lineage is absent from the compatible Identity.DirectoryManagement beta spec, with 0 same-module/profile compatible counterparts for this exact selected GET path. The /policies/featureRolloutPolicies lineage is independently present in BOTH legacy and compatible Identity.SignIns beta specs (old policy.featureRolloutPolicy_ListAppliesToGraphBPreRef; current policies.featureRolloutPolicies.ListRefAppliesTo); exact neighbor evidence is recorded separately above. It is not an inferred moved successor and is not changed or suppressed by this module migration."
             }
           ]
         }
