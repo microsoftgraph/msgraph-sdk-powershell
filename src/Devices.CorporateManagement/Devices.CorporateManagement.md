@@ -21,8 +21,9 @@ directive:
 # records exact v1.0/beta evidence. DevicesCorporateManagementDirectiveMigrationTests
 # pins reviewed naming and unaffected neighbors. Keep all AutoRest directives active.
 # Remove paths that are too long.
-# Reviewed absence: this legacy operation-ID expression matches neither compatible
-# profile. Do not infer a subtree suppression from the old operation-ID spelling.
+# Wrapper migration: actual legacy IDs select zero v1.0 operations and two beta GETs.
+# Exact method/path translation to compatible IDs suppresses nested deviceStatuses/{id}/policy
+# and deviceStatuses/$count under wdacSupplementalPolicies, not the status collection/items.
   - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicy.deviceStatus.*$|^deviceManagement.deviceHealthScript.deviceRunState.managedDevice_deleteUserFromSharedAppleDevice|^deviceAppManagement.mobileApp.userStatus.deviceStatus.app.microsoft.graph.iosVppApp_.*$|^deviceAppManagement.managedAppRegistration.(appliedPolicy|Intendedpolicy).microsoft.graph.*_.*$
 # Rename cmdlets with duplicates in their name.
 # Wrapper migration: structural naming emits the singleton root once; exact

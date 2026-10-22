@@ -15,6 +15,13 @@ public static partial class CmdletConfigurator
             new(OverrideKind.SuppressOperation, Method: null, "/deviceappmanagement/mobileapps/{}/categories", Match: PathMatch.Prefix, Value: null,
                 Reason: "oracle: nested app categories ship nothing; the set ships top-level (mobileAppCategories)"),
 
+            new(OverrideKind.SuppressOperation, HttpMethod.Get, "/deviceappmanagement/wdacsupplementalpolicies/{}/devicestatuses/{}/policy",
+                PathMatch.Exact, Value: null,
+                "Devices.CorporateManagement.md legacy wdacSupplementalPolicy.deviceStatus_GetPolicy selector"),
+            new(OverrideKind.SuppressOperation, HttpMethod.Get, "/deviceappmanagement/wdacsupplementalpolicies/{}/devicestatuses/$count",
+                PathMatch.Exact, Value: null,
+                "Devices.CorporateManagement.md legacy wdacSupplementalPolicy.deviceStatus_GetCount selector"),
+
             new(OverrideKind.ReplaceNoun, Method: null, "/deviceappmanagement/deviceappmanagementtasks",
                 PathMatch.Exact, "DeviceAppManagementTask",
                 "Devices.CorporateManagement.md collapses repeated DeviceAppManagement prefixes"),

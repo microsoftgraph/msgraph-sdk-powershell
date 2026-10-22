@@ -5,16 +5,35 @@
       "directiveIndex": 1,
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicy.deviceStatus.*$|^deviceManagement.deviceHealthScript.deviceRunState.managedDevice_deleteUserFromSharedAppleDevice|^deviceAppManagement.mobileApp.userStatus.deviceStatus.app.microsoft.graph.iosVppApp_.*$|^deviceAppManagement.managedAppRegistration.(appliedPolicy|Intendedpolicy).microsoft.graph.*_.*$",
-      "implementation": "ReviewedAbsence",
-      "notes": "The exact legacy operation-ID regex matches zero operations in both compatible profiles. Current differently spelled IDs are not inferred suppressions.",
+      "implementation": "CmdletConfigurator",
+      "notes": "The selector has zero literal compatible-ID matches, but actual beta legacy IDs select two surviving GET routes. Unique exact method/normalized-path translation records both old/new IDs and suppresses only nested deviceStatuses/{id}/policy and deviceStatuses/$count. Actual legacy v1.0 also has zero selector matches; this is selector absence, not API-operation absence.",
       "profiles": {
         "v1.0": {
           "absenceExpected": true,
-          "operations": []
+          "operations": [],
+          "notes": "Selector matches neither actual legacy nor literal compatible operation IDs in v1.0; no API-operation absence is inferred."
         },
         "beta": {
-          "absenceExpected": true,
-          "operations": []
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy",
+              "operationId": "deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.GetPolicy",
+              "legacyPath": "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy",
+              "legacyOperationId": "deviceAppManagement.wdacSupplementalPolicy.deviceStatus_GetPolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/$count",
+              "operationId": "deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.GetCount-c722",
+              "legacyPath": "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/$count",
+              "legacyOperationId": "deviceAppManagement.wdacSupplementalPolicy.deviceStatus_GetCount"
+            }
+          ],
+          "operationIdSource": "Legacy",
+          "notes": "Both actual beta legacy selector matches survive as unique exact method/normalized-path compatible operations with changed IDs. No selected legacy routes were removed.",
+          "removedLegacyOperations": []
         }
       }
     },

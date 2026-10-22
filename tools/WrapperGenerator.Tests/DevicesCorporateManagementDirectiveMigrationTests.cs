@@ -167,4 +167,51 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
             directory = Path.GetDirectoryName(directory);
         return directory ?? throw new InvalidOperationException("Repository root not found.");
     }
+
+    [Theory]
+    [InlineData("v1.0", 0)]
+    [InlineData("beta", 2)]
+    public async Task LegacyLongPathSelectorSuppressesOnlySurvivingExactRoutes(string profile, int expectedCount)
+    {
+        var root = FindRepoRoot();
+        var source = File.ReadAllText(Path.Combine(root, "src", Module, Module + ".md"));
+        var selector = new Regex(Regex.Match(source, @"remove-path-by-operation: ([^\r\n]+)").Groups[1].Value);
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var legacyStream = File.OpenRead(Path.Combine(root, "openApiDocs", profile, Module + ".yml"));
+        var legacy = (await OpenApiDocument.LoadAsync(legacyStream, settings: settings,
+            cancellationToken: TestContext.Current.CancellationToken)).Document!;
+        using var compatibleStream = File.OpenRead(Path.Combine(root, "openApiDocs_KiotaCompat", profile, Module + ".yml"));
+        var compatible = (await OpenApiDocument.LoadAsync(compatibleStream, settings: settings,
+            cancellationToken: TestContext.Current.CancellationToken)).Document!;
+        var selected = legacy.Paths.SelectMany(path => path.Value.Operations!
+                .Where(operation => selector.IsMatch(operation.Value.OperationId!))
+                .Select(operation => (Path: path.Key, Method: operation.Key, Operation: operation.Value)))
+            .ToArray();
+        Assert.Equal(expectedCount, selected.Length);
+        foreach (var operation in selected)
+        {
+            var path = Assert.Single(compatible.Paths, path =>
+                CmdletConfigurator.NormalizePathTemplate(path.Key) == CmdletConfigurator.NormalizePathTemplate(operation.Path));
+            var translated = path.Value.Operations![operation.Method];
+            Assert.NotEqual(operation.Operation.OperationId, translated.OperationId);
+            foreach (var data in new[] { false, true })
+                Assert.True(CmdletConfigurator.IsSuppressed(operation.Method, path.Key,
+                    new GeneratorConfig("Test.Client", "unused", profile, data)));
+        }
+        if (profile != "beta")
+            return;
+
+        const string statuses = "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses";
+        var config = new GeneratorConfig("Test.Client", "unused", profile);
+        Assert.Equal("deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.GetPolicy",
+            compatible.Paths[statuses + "/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy"].Operations![HttpMethod.Get].OperationId);
+        Assert.Equal("deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.GetCount-c722",
+            compatible.Paths[statuses + "/$count"].Operations![HttpMethod.Get].OperationId);
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, statuses, config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, statuses, config));
+        foreach (var method in new[] { HttpMethod.Get, HttpMethod.Patch, HttpMethod.Delete })
+            Assert.False(CmdletConfigurator.IsSuppressed(method, statuses + "/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}", config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, statuses + "/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy", config));
+    }
 }
