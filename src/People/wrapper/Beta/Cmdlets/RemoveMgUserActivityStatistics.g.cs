@@ -10,12 +10,14 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.People
 {
-    [GraphRoute("DELETE", "/users/{user-id}/analytics")]
-    [Cmdlet(VerbsCommon.Remove, "MgUserAnalytic", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgUserAnalyticCommand : GraphClientCmdlet
+    [GraphRoute("DELETE", "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}")]
+    [Cmdlet(VerbsCommon.Remove, "MgUserActivityStatistics", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    public class RemoveMgUserActivityStatisticsCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string ActivityStatisticsId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -27,7 +29,7 @@ namespace Microsoft.Graph.PowerShell.People
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(UserId, "Remove"))
+            if (!ShouldProcess(ActivityStatisticsId, "Remove"))
                 return;
 
         var requestAdapter = GetRequestAdapter();
@@ -36,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.People
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.Users[UserId].Analytics.DeleteAsync(requestConfiguration =>
+                client.Users[UserId].Analytics.ActivityStatistics[ActivityStatisticsId].DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
@@ -48,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.People
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, UserId);
+                ThrowGraphRequestFailed(ex, ActivityStatisticsId);
                 return;
             }
         }

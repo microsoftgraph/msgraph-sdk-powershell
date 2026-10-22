@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.People
 {
     [GraphRoute("PATCH", "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}")]
-    [Cmdlet(VerbsData.Update, "MgUserAnalyticActivityStatistics", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet(VerbsData.Update, "MgUserActivityStatistics", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.People.Client.Models.ActivityStatistics))]
-    public class UpdateMgUserAnalyticActivityStatisticsCommand : GraphClientCmdlet
+    public class UpdateMgUserActivityStatisticsCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
