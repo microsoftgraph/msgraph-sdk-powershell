@@ -38,6 +38,25 @@ public sealed class NotesDirectiveMigrationTests
     }
 
     [Fact]
+    public void EveryReviewedProfileDeclaresAnExplicitNonemptyOperationArray()
+    {
+        using var ledger = JsonDocument.Parse(File.ReadAllText(
+            Path.Combine(RepoRoot(), "src", "Notes", "wrapper", "Notes_directiveMigrationMap.json")));
+        var mappings = ledger.RootElement.GetProperty("mappings");
+        Assert.Equal(9, mappings.GetArrayLength());
+        var expectedCounts = new[] { 298, 15, 15, 1, 1, 1, 1, 1, 1 };
+        for (var index = 0; index < mappings.GetArrayLength(); index++)
+        foreach (var profile in new[] { "v1.0", "beta" })
+        {
+            var declaration = mappings[index].GetProperty("profiles").GetProperty(profile);
+            Assert.False(declaration.GetProperty("absenceExpected").GetBoolean());
+            var operations = declaration.GetProperty("operations");
+            Assert.Equal(JsonValueKind.Array, operations.ValueKind);
+            Assert.Equal(expectedCounts[index], operations.GetArrayLength());
+        }
+    }
+
+    [Fact]
     public void PreservesInvalidOriginalAndRepairsExactlyOneTerminalParenthesis()
     {
         using var ledger = JsonDocument.Parse(File.ReadAllText(
@@ -172,6 +191,50 @@ public sealed class NotesDirectiveMigrationTests
                     Assert.IsType<OpenApiSchemaReference>(
                         operation.Responses!["2XX"].Content!["application/json"].Schema).Reference!.Id);
             }
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task BroadSiteRenameAccountsForAllCandidatesAfterEarlierSuppressions(string profile)
+    {
+        using var ledger = JsonDocument.Parse(File.ReadAllText(
+            Path.Combine(RepoRoot(), "src", "Notes", "wrapper", "Notes_directiveMigrationMap.json")));
+        var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
+        var candidates = document.Paths.Where(path => path.Key.StartsWith("/sites/{site-id}/onenote", StringComparison.Ordinal))
+            .SelectMany(path => path.Value.Operations!.Select(op => (Path: path.Key, Method: op.Key)))
+            .Where(op => (op.Method == HttpMethod.Patch && !Regex.IsMatch(op.Path, @"/pages/\{[^}]+\}$")) ||
+                (op.Method == HttpMethod.Post && op.Path.EndsWith("/onenotePatchContent", StringComparison.Ordinal)))
+            .Select(op => $"{op.Method} {op.Path}").ToHashSet();
+        var evidence = ledger.RootElement.GetProperty("mappings")[2].GetProperty("profiles")
+            .GetProperty(profile).GetProperty("operations").EnumerateArray().ToArray();
+        Assert.Equal(15, candidates.Count);
+        Assert.Equal(15, evidence.Length);
+        Assert.True(candidates.SetEquals(evidence.Select(op =>
+            $"{op.GetProperty("method").GetString()} {op.GetProperty("path").GetString()}")));
+        var config = new GeneratorConfig("Notes", "", profile);
+        Assert.Equal(11, evidence.Count(op => CmdletConfigurator.IsSuppressed(
+            new HttpMethod(op.GetProperty("method").GetString()!), op.GetProperty("path").GetString()!, config)));
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void EarlierSuppressionWinsOverEveryNestedGroupContentRename(string profile)
+    {
+        using var ledger = JsonDocument.Parse(File.ReadAllText(
+            Path.Combine(RepoRoot(), "src", "Notes", "wrapper", "Notes_directiveMigrationMap.json")));
+        var config = new GeneratorConfig("Notes", "", profile);
+        foreach (var index in new[] { 5, 6, 7, 8 })
+        {
+            var mapping = ledger.RootElement.GetProperty("mappings")[index];
+            Assert.Equal("SupersededByEarlierSuppression", mapping.GetProperty("implementation").GetString());
+            var profileMap = mapping.GetProperty("profiles").GetProperty(profile);
+            Assert.False(profileMap.GetProperty("absenceExpected").GetBoolean());
+            var operation = Assert.Single(profileMap.GetProperty("operations").EnumerateArray());
+            Assert.Equal("POST", operation.GetProperty("method").GetString());
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post, operation.GetProperty("path").GetString()!, config));
         }
     }
 

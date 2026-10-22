@@ -4685,19 +4685,23 @@
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
-          "operations": {
-            "method": "GET",
-            "path": "/groups/{group-id}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})",
-            "operationId": "groups.group.onenote.notebooks.getRecentNotebooks"
-          }
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})",
+              "operationId": "groups.group.onenote.notebooks.getRecentNotebooks"
+            }
+          ]
         },
         "beta": {
           "absenceExpected": false,
-          "operations": {
-            "method": "GET",
-            "path": "/groups/{group-id}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})",
-            "operationId": "groups.group.onenote.notebooks.getRecentNotebooks"
-          }
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})",
+              "operationId": "groups.group.onenote.notebooks.getRecentNotebooks"
+            }
+          ]
         }
       }
     },
@@ -4711,19 +4715,23 @@
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         },
         "beta": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         }
       }
     },
@@ -4737,19 +4745,23 @@
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         },
         "beta": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         }
       }
     },
@@ -4763,19 +4775,23 @@
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         },
         "beta": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         }
       }
     },
@@ -4789,19 +4805,23 @@
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         },
         "beta": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         }
       }
     },
@@ -4815,19 +4835,23 @@
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         },
         "beta": {
           "absenceExpected": false,
-          "operations": {
-            "method": "POST",
-            "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
-            "operationId": "groups.group.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
-          }
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "groups.group.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent"
+            }
+          ]
         }
       }
     }
