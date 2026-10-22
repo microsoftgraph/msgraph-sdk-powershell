@@ -6,7 +6,7 @@
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: ^print(_.*Report|\\.report.*)",
       "implementation": "ReviewedAbsence",
-      "notes": "Reviewed all operation IDs in both compatible Devices.CloudPrint specs: none match the exact shared report regex. No suppression or invented route is needed. DevicesCloudPrintDirectiveMigrationTests pins absence and keeps unrelated print operations available.",
+      "notes": "Reviewed all operation IDs in both legacy openApiDocs and compatible openApiDocs_KiotaCompat Devices.CloudPrint specs for v1.0 and beta: none match the exact shared report regex. This is genuine legacy-selector absence, not an absence inferred from converted operation IDs. No suppression or invented route is needed. DevicesCloudPrintDirectiveMigrationTests pins absence in all four documents and keeps unrelated print operations available.",
       "profiles": {
         "v1.0": {
           "absenceExpected": true,

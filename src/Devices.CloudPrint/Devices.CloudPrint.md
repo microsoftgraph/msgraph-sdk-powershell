@@ -22,7 +22,7 @@ schema/response directives are present; those directive classes remain deferred.
 ``` yaml
 directive:
 # Wrapper migration: no operation IDs match this report selector in either
-# compatible spec. The adjacent Devices.CloudPrint_directiveMigrationMap.json
+# legacy or compatible profile spec. Devices.CloudPrint_directiveMigrationMap.json
 # records reviewed absence; DevicesCloudPrintDirectiveMigrationTests pins it.
 # Keep the AutoRest directive active until the service-module pipeline is retired.
   - remove-path-by-operation: ^print(_.*Report|\.report.*)

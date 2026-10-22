@@ -13,11 +13,13 @@ namespace WrapperGenerator.Tests;
 public sealed class DevicesCloudPrintDirectiveMigrationTests
 {
     [Theory]
-    [InlineData("v1.0")]
-    [InlineData("beta")]
-    public void ReportSelectorHasReviewedAbsenceInCompatibleSpec(string profile)
+    [InlineData("v1.0", "openApiDocs")]
+    [InlineData("beta", "openApiDocs")]
+    [InlineData("v1.0", "openApiDocs_KiotaCompat")]
+    [InlineData("beta", "openApiDocs_KiotaCompat")]
+    public void ReportSelectorHasReviewedAbsenceInLegacyAndCompatibleSpecs(string profile, string specRoot)
     {
-        var document = LoadSpec(profile);
+        var document = LoadSpec(profile, specRoot);
         var selector = new Regex(@"^print(_.*Report|\.report.*)", RegexOptions.CultureInvariant);
         var operationCount = 0;
         foreach (var path in document.Paths)
@@ -30,7 +32,7 @@ public sealed class DevicesCloudPrintDirectiveMigrationTests
                 operationCount++;
             }
         }
-        Assert.True(operationCount > 0, "Absence must be reviewed against a nonempty compatible spec.");
+        Assert.True(operationCount > 0, "Absence must be reviewed against a nonempty spec.");
     }
 
     [Theory]
@@ -90,7 +92,7 @@ public sealed class DevicesCloudPrintDirectiveMigrationTests
         Assert.Equal(operationId, operation.OperationId);
     }
 
-    private static OpenApiDocument LoadSpec(string profile)
+    private static OpenApiDocument LoadSpec(string profile, string specRoot = "openApiDocs_KiotaCompat")
     {
         var directory = AppContext.BaseDirectory;
         while (directory is not null &&
@@ -99,8 +101,8 @@ public sealed class DevicesCloudPrintDirectiveMigrationTests
             directory = Path.GetDirectoryName(directory);
         }
         Assert.NotNull(directory);
-        var path = Path.Combine(directory, "openApiDocs_KiotaCompat", profile, "Devices.CloudPrint.yml");
-        Assert.True(File.Exists(path), $"Required compatible spec missing: {path}");
+        var path = Path.Combine(directory, specRoot, profile, "Devices.CloudPrint.yml");
+        Assert.True(File.Exists(path), $"Required spec missing: {path}");
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
         using var stream = File.OpenRead(path);
