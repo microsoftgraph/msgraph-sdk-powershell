@@ -79,6 +79,33 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
         Path.Combine(FindRepoRoot(), "src", "CrossDeviceExperiences", "wrapper",
             "CrossDeviceExperiences_directiveMigrationMap.json")));
 
+    [Theory]
+    [InlineData("registeredOwners", "RegisteredOwner")]
+    [InlineData("registeredUsers", "RegisteredUser")]
+    public async Task BetaItemReferenceDeleteUsesPublishedNounWithoutSuppressingCollectionDelete(
+        string navigation, string noun)
+    {
+        var document = await ReadSpecAsync("beta");
+        var itemPath = $"/users/{{user-id}}/devices/{{device-id}}/{navigation}/{{directoryObject-id}}/$ref";
+        var collectionPath = $"/users/{{user-id}}/devices/{{device-id}}/{navigation}/$ref";
+        Assert.Equal($"users.devices.{navigation}.DeleteRefDirectoryObject",
+            document.Paths[itemPath].Operations![HttpMethod.Delete].OperationId);
+        Assert.Equal($"users.devices.DeleteRef{navigation[..1].ToUpperInvariant()}{navigation[1..]}",
+            document.Paths[collectionPath].Operations![HttpMethod.Delete].OperationId);
+        var config = new GeneratorConfig("Test.Client", "unused", "beta");
+        var item = Naming.Resolve(new OperationInfo(HttpMethod.Delete, itemPath), config);
+        var collection = Naming.Resolve(new OperationInfo(HttpMethod.Delete, collectionPath), config);
+        Assert.Equal($"MgUserDevice{noun}DirectoryObjectByRef", item.Noun);
+        Assert.Equal($"MgUserDevice{noun}ByRef", collection.Noun);
+        Assert.NotEqual(item.ClassName, collection.ClassName);
+        Assert.Equal("Remove", item.VerbName);
+        Assert.Equal("Remove", collection.VerbName);
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, itemPath, config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, collectionPath, config));
+        Assert.Equal($"MgUserDevice{noun}ByRef",
+            Naming.Resolve(new OperationInfo(HttpMethod.Get, collectionPath), config).Noun);
+    }
+
     private static async Task<OpenApiDocument> ReadSpecAsync(string profile)
     {
         var settings = new OpenApiReaderSettings();
