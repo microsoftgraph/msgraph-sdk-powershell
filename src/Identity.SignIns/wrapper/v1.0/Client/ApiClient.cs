@@ -3,7 +3,6 @@
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.DataPolicyOperations;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Identity;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.IdentityProtection;
-using Microsoft.Graph.PowerShell.Identity.SignIns.Client.IdentityProviders;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.InformationProtection;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Invitations;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Oauth2PermissionGrants;
@@ -43,11 +42,6 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client
         public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.IdentityProtection.IdentityProtectionRequestBuilder IdentityProtection
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.IdentityProtection.IdentityProtectionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The identityProviders property</summary>
-        public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.IdentityProviders.IdentityProvidersRequestBuilder IdentityProviders
-        {
-            get => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.IdentityProviders.IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The informationProtection property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.InformationProtection.InformationProtectionRequestBuilder InformationProtection
