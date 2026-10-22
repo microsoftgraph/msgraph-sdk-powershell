@@ -1,8 +1,8 @@
 {
   "descriptionHash": "E53648C740810AA50C7438897FBB143D286760102F13C6B81BCE8FE0251DBB3FC0248686673119F586579444A35A9615A9643D4D1055AFA243FEF8FEC43E0689",
-  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/Beta/ChangeNotifications.yml",
+  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/beta/ChangeNotifications.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.ChangeNotifications.Client",
