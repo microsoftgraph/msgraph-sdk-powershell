@@ -54,6 +54,15 @@ Singularization runs per camel-case word (so `termsAndConditions` → `TermAndCo
 
 A few published names aren't algorithmic, and the spec publishes some routes the SDK never shipped. `CmdletConfigurator.cs` contains the shared matching engine, while each module owns its curated data in `src\<Module>\wrapper\<Module>_cmdletConfigurations.cs` — renames mirroring the SDK's hand-written AutoRest directives, and suppressions for routes that ship nothing — with every entry citing its evidence: the directive when one exists, otherwise the shipped-command inventory. Module ownership is organizational; all configured entries are compiled into the generator and matched globally. Examples: the `GET /users/{id}/calendar` rename to `…UserDefaultCalendar` (Calendar.md), the `Solution` prefix strip under `/solutions/*` with the BackupRestore exception (Bookings.md), and the self-referential `sites/{id}/sites` rename to `SubSite`/`GroupSubSite` (Sites.md) — without which the sub-sites cmdlets would collide with `Get-MgSite` itself. The generator fails loudly on any such file collision rather than silently overwriting.
 
+Curated `OverrideKind.ReplaceVerb` entries use the same `Entry` method/path matching and put the
+approved PowerShell verb (for example, `"Invoke"`) in `Value`. Pair one with a separate
+`ReplaceNoun` entry when a reviewed shared directive needs both. These entries are unscoped:
+they apply with null configuration, with derived data disabled, and in either API profile.
+An enabled derived rename remains authoritative, including a null derived verb that preserves
+the structural default; curated verbs are only a fallback when no derived rename matches.
+Unmatched operations keep their existing verbs. `Naming.Resolve` validates the selected verb
+through the existing approved-verb set before emitting the cmdlet attribute and class name.
+
 On top of the curated entries sits a **derived** layer: `tools/Derive-CollisionResolutions.ps1` replays every route from the checked-in collision inventory (`data/collision-inventory.v1.0.txt`, captured with `--no-collision-data`) against the shipped-command inventory and emits `data/collision-suppressions.v1.0.json` and `data/collision-renames.v1.0.json` — one exact-match entry per contested method+route, each carrying its oracle evidence. The files are embedded into the generator at build time (generation never reads the 22 MB oracle), applied only when `GeneratorConfig.UseCollisionData` is set, and the script's `-Validate` mode fails if the checked-in files drift from a fresh derivation. Two routes in all of v1.0 are **deferred cross-path merges** — the published SDK serves `Get-MgGroupPhoto` from both `/photo` and `/photos`, and `Get-MgShareListItem` from both `/listItem` and `/list/items`, as parameter-set variants of one cmdlet; the generator keeps the singleton side and suppresses the collection side until cross-path parameter sets land (see [docs/edge-cases/crosspath-merge-edge-cases.md](docs/edge-cases/crosspath-merge-edge-cases.md)). With the derived data applied, a full v1.0 generation across all 38 configured modules produces zero collisions.
 
 ## The one subtle part: list + item GET become one cmdlet
@@ -396,7 +405,8 @@ For each reviewed directive:
 
 1. Record `classification`, an exact `sourceContains` anchor, and an `implementation` disposition,
    preserving the existing Compliance pilot format. Declare both `v1.0` and `beta` under
-   `profiles`, each with an explicit `operations` array and boolean `absenceExpected`. Every
+   `profiles`, each with an explicit `operations` array and boolean `absenceExpected` unless
+   explicitly excluded for a missing compatible specification as described below. Every
    operation needs exact `method`, case-sensitive `path`, and case-sensitive `operationId`
    evidence from that profile. An absent profile requires `operations: []` and
    `absenceExpected: true`; it cannot also declare operations. Operation-ID suppressions must
@@ -408,6 +418,25 @@ For each reviewed directive:
    service-module pipeline is retired.
 4. Run the inventory validation and WrapperGenerator tests. Generate committed profile output
    only in a separately reviewed profile-specific change.
+
+When `openApiDocs_KiotaCompat/<profile>/<Module>.yml` is unavailable, use an explicit profile
+exclusion rather than claiming the API operations are absent:
+
+```json
+"beta": {
+  "excluded": true,
+  "operations": [],
+  "notes": "Missing compatible spec; no API-operation absence assertion."
+}
+```
+
+An excluded profile must have an empty operations array, explanatory notes, and no
+`absenceExpected` property. Exclusion fails if the compatible specification exists, even if
+it contains no matching operations. Nonexcluded profiles retain the existing exact evidence
+and `absenceExpected` requirements. Exclusions appear in inventory notes and do not expand
+the shared-directive-only scope. A spec added later invalidates the exclusion until reviewed.
+Quoted YAML function keys are decoded before exact path comparison, so doubled single quotes
+in a key such as `User=''{User}''` become the literal `User='{User}'` in ledger evidence.
 
 Use the existing switch as a **reviewed completion gate** after reconciling a module's ledger:
 
