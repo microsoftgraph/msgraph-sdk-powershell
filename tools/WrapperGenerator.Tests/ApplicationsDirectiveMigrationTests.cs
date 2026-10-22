@@ -203,6 +203,35 @@ public sealed class ApplicationsDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData("/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/$ref",
+        "OnPremisePublishingProfileAgentGroupOnPremiseAgentGroupByRef", "OnPremisePublishingProfileAgentGroupByRef")]
+    [InlineData("/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/$ref",
+        "OnPremisePublishingProfileConnectorMemberOfConnectorGroupByRef", "OnPremisePublishingProfileConnectorMemberOfByRef")]
+    [InlineData("/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}/$ref",
+        "ServicePrincipalTokenIssuancePolicyTokenIssuancePolicyByRef", "ServicePrincipalTokenIssuancePolicyByRef")]
+    [InlineData("/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}/$ref",
+        "ServicePrincipalTokenLifetimePolicyTokenLifetimePolicyByRef", "ServicePrincipalTokenLifetimePolicyByRef")]
+    public void PublishedItemReferenceNounsPreserveBothDeleteRoutes(string itemPath, string itemNoun, string collectionNoun)
+    {
+        var collectionPath = Regex.Replace(itemPath, @"/\{[^}]+\}/\$ref$", "/$ref");
+        foreach (var useCollisionData in new[] { false, true })
+        {
+            var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, itemPath, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, collectionPath, config));
+            var item = Naming.Resolve(new OperationInfo(HttpMethod.Delete, itemPath), config);
+            var collection = Naming.Resolve(new OperationInfo(HttpMethod.Delete, collectionPath), config);
+            Assert.Equal("Mg" + itemNoun, item.Noun);
+            Assert.Equal("Mg" + collectionNoun, collection.Noun);
+            Assert.Equal("Remove", item.VerbName);
+            Assert.Equal("Remove", collection.VerbName);
+            Assert.NotEqual(item.ClassName, collection.ClassName);
+            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Get, itemPath, config));
+            Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(HttpMethod.Get, itemPath, "Unchanged", config));
+        }
+    }
+
     private static string FindRepoRoot()
     {
         var dir = AppContext.BaseDirectory;

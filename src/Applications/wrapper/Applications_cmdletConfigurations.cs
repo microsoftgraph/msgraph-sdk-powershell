@@ -84,5 +84,25 @@ public static partial class CmdletConfigurator
         new(OverrideKind.SuppressOperation, HttpMethod.Delete,
             "/onpremisespublishingprofiles/{}/publishedresources/{}/agentgroups/$ref",
             PathMatch.Exact, null, "Applications.md removes onPremisesPublishingProfile.publishedResource_DeleteAgentGroupGraphBPreRef"),
+
+        // Published item-reference nouns distinguish these DELETEs from their retained
+        // collection-reference DELETEs. The agent-group command's Delete1 parameter set
+        // selects the shorter agents/{id} route (Microsoft Learn, docs commit 07b0cf8f).
+        new(OverrideKind.ReplaceNoun, HttpMethod.Delete,
+            "/onpremisespublishingprofiles/{}/agents/{}/agentgroups/{}/$ref",
+            PathMatch.Exact, "OnPremisePublishingProfileAgentGroupOnPremiseAgentGroupByRef",
+            "Published Remove-MgBetaOnPremisePublishingProfileAgentGroupOnPremiseAgentGroupByRef Delete1"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Delete,
+            "/onpremisespublishingprofiles/{}/connectors/{}/memberof/{}/$ref",
+            PathMatch.Exact, "OnPremisePublishingProfileConnectorMemberOfConnectorGroupByRef",
+            "MgCommandMetadata.json publishes the item-reference ConnectorGroup noun"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Delete,
+            "/serviceprincipals/{}/tokenissuancepolicies/{}/$ref",
+            PathMatch.Exact, "ServicePrincipalTokenIssuancePolicyTokenIssuancePolicyByRef",
+            "MgCommandMetadata.json publishes the item-reference TokenIssuancePolicy noun"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Delete,
+            "/serviceprincipals/{}/tokenlifetimepolicies/{}/$ref",
+            PathMatch.Exact, "ServicePrincipalTokenLifetimePolicyTokenLifetimePolicyByRef",
+            "MgCommandMetadata.json publishes the item-reference TokenLifetimePolicy noun"),
     ];
 }
