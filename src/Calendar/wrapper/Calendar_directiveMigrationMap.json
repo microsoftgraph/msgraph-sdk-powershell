@@ -1,0 +1,200 @@
+{
+  "scope": "Only src/Calendar/Calendar.md; global and profile-local directives are excluded. Parameter aliases/transforms and schema/response directives remain deferred.",
+  "prerequisite": "Reviewed inventory PR #3837 is merged. Its shared follow-up must add curated OverrideKind.ReplaceVerb support and correctly parse YAML-quoted function paths before this migration can compile and pass its final strict gate on powershell-v3.",
+  "specBlobs": {
+    "v1.0": "f8cbbb7420cd4c881bae4662fd0a3ff5bcc3182b",
+    "beta": "a1b424a75a626b3a390e1993de3cda01264a3959"
+  },
+  "mappings": [
+    {
+      "module": "Calendar",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: (user|group)_(Update|Delete)Calendar$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The unmodified case-sensitive legacy regex matches exactly 26 operations per present compatible profile. Existing user default-calendar event-item prefix suppressions cover ten matches per profile; exact rules supply the remaining matches in beta as well as v1.0. v1.0 derived data already covers these routes but is not loaded for beta. Legacy underscore CRUD branches, singular calendarGroup branches and GraphBPrePlaceId branches have no literal matches in either present spec: modern CRUD IDs include users.UpdateCalendar, users.calendar.GetEvents and users.calendarGroups.calendars.GetEvents. Do not reinterpret plural/dotted IDs as regex matches or broaden this directive into subject-derived subtree pruning. Existing curated and derived suppression coverage outside the literal match set is retained.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/groups/{group-id}/calendar/calendarView/delta()", "operationId": "groups.group.calendar.calendarView.delta" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/createUploadSession", "operationId": "groups.group.calendar.events.event.attachments.createUploadSession" },
+            { "method": "GET", "path": "/groups/{group-id}/calendar/events/{event-id}/instances/delta()", "operationId": "groups.group.calendar.events.event.instances.delta" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/accept", "operationId": "groups.group.calendar.events.event.accept" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/cancel", "operationId": "groups.group.calendar.events.event.cancel" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/decline", "operationId": "groups.group.calendar.events.event.decline" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/dismissReminder", "operationId": "groups.group.calendar.events.event.dismissReminder" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/forward", "operationId": "groups.group.calendar.events.event.forward" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/permanentDelete", "operationId": "groups.group.calendar.events.event.permanentDelete" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/snoozeReminder", "operationId": "groups.group.calendar.events.event.snoozeReminder" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/tentativelyAccept", "operationId": "groups.group.calendar.events.event.tentativelyAccept" },
+            { "method": "GET", "path": "/groups/{group-id}/calendar/events/delta()", "operationId": "groups.group.calendar.events.delta" },
+            { "method": "GET", "path": "/groups/{group-id}/calendarView/delta()", "operationId": "groups.group.calendarView.delta" },
+            { "method": "GET", "path": "/users/{user-id}/calendar/calendarView/delta()", "operationId": "users.user.calendar.calendarView.delta" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/attachments/createUploadSession", "operationId": "users.user.calendar.events.event.attachments.createUploadSession" },
+            { "method": "GET", "path": "/users/{user-id}/calendar/events/{event-id}/instances/delta()", "operationId": "users.user.calendar.events.event.instances.delta" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/accept", "operationId": "users.user.calendar.events.event.accept" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/cancel", "operationId": "users.user.calendar.events.event.cancel" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/decline", "operationId": "users.user.calendar.events.event.decline" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/dismissReminder", "operationId": "users.user.calendar.events.event.dismissReminder" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/forward", "operationId": "users.user.calendar.events.event.forward" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/permanentDelete", "operationId": "users.user.calendar.events.event.permanentDelete" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/snoozeReminder", "operationId": "users.user.calendar.events.event.snoozeReminder" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/tentativelyAccept", "operationId": "users.user.calendar.events.event.tentativelyAccept" },
+            { "method": "GET", "path": "/users/{user-id}/calendar/events/delta()", "operationId": "users.user.calendar.events.delta" },
+            { "method": "GET", "path": "/users/{user-id}/calendarView/delta()", "operationId": "users.user.calendarView.delta" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/groups/{group-id}/calendar/calendarView/delta()", "operationId": "groups.group.calendar.calendarView.delta" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/createUploadSession", "operationId": "groups.group.calendar.events.event.attachments.createUploadSession" },
+            { "method": "GET", "path": "/groups/{group-id}/calendar/events/{event-id}/instances/delta()", "operationId": "groups.group.calendar.events.event.instances.delta" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/accept", "operationId": "groups.group.calendar.events.event.accept" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/cancel", "operationId": "groups.group.calendar.events.event.cancel" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/decline", "operationId": "groups.group.calendar.events.event.decline" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/dismissReminder", "operationId": "groups.group.calendar.events.event.dismissReminder" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/forward", "operationId": "groups.group.calendar.events.event.forward" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/permanentDelete", "operationId": "groups.group.calendar.events.event.permanentDelete" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/snoozeReminder", "operationId": "groups.group.calendar.events.event.snoozeReminder" },
+            { "method": "POST", "path": "/groups/{group-id}/calendar/events/{event-id}/tentativelyAccept", "operationId": "groups.group.calendar.events.event.tentativelyAccept" },
+            { "method": "GET", "path": "/groups/{group-id}/calendar/events/delta()", "operationId": "groups.group.calendar.events.delta" },
+            { "method": "GET", "path": "/groups/{group-id}/calendarView/delta()", "operationId": "groups.group.calendarView.delta" },
+            { "method": "GET", "path": "/users/{user-id}/calendar/calendarView/delta()", "operationId": "users.user.calendar.calendarView.delta" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/attachments/createUploadSession", "operationId": "users.user.calendar.events.event.attachments.createUploadSession" },
+            { "method": "GET", "path": "/users/{user-id}/calendar/events/{event-id}/instances/delta()", "operationId": "users.user.calendar.events.event.instances.delta" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/accept", "operationId": "users.user.calendar.events.event.accept" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/cancel", "operationId": "users.user.calendar.events.event.cancel" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/decline", "operationId": "users.user.calendar.events.event.decline" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/dismissReminder", "operationId": "users.user.calendar.events.event.dismissReminder" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/forward", "operationId": "users.user.calendar.events.event.forward" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/permanentDelete", "operationId": "users.user.calendar.events.event.permanentDelete" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/snoozeReminder", "operationId": "users.user.calendar.events.event.snoozeReminder" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/tentativelyAccept", "operationId": "users.user.calendar.events.event.tentativelyAccept" },
+            { "method": "GET", "path": "/users/{user-id}/calendar/events/delta()", "operationId": "users.user.calendar.events.delta" },
+            { "method": "GET", "path": "/users/{user-id}/calendarView/delta()", "operationId": "users.user.calendarView.delta" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(CalendarUserEventCalendar|CalendarUserCalendar)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The default-calendar function maps to Invoke-CalendarUserCalendarAllowedCalendarSharingRoles. The v1.0 derived rename already supplies that noun and Invoke; separate exact curated noun/verb fallbacks preserve the same shared disposition in beta and without derived data. Curated ReplaceVerb requires the central shared-framework follow-up, not a module-local engine patch. The CalendarUserEventCalendar alternative is absent in both present profiles: no /users/{id}/events/{id}/calendar/allowedCalendarSharingRoles function exists. Named-calendar functions are not guessed into this selector. The pre-existing shared Mg-versus-MgBeta prefix discrepancy remains outside this module change.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/calendar/allowedCalendarSharingRoles(User='{User}')", "operationId": "users.user.calendar.allowedCalendarSharingRoles" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/calendar/allowedCalendarSharingRoles(User='{User}')", "operationId": "users.user.calendar.allowedCalendarSharingRoles" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(User)(Calendar)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Existing exact GET /users/{id}/calendar noun override implements both legacy Get and GetViaIdentity variants as UserDefaultCalendar. Collection and named-calendar item nouns remain UserCalendar.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/calendar", "operationId": "users.GetCalendar" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/calendar", "operationId": "users.GetCalendar" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 4,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(User)(CalendarEvent)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Existing exact collection override implements List/Create variants as UserDefaultCalendarEvent. The present Cancel operation is already removed by directive 1 and the existing user event-item prefix; suppression wins, so do not add a redundant rename or revive it. Expanded/identity variants share their underlying HTTP operation.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/calendar/events", "operationId": "users.calendar.ListEvents" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events", "operationId": "users.calendar.CreateEvents" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/cancel", "operationId": "users.user.calendar.events.event.cancel" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/calendar/events", "operationId": "users.calendar.ListEvents" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events", "operationId": "users.calendar.CreateEvents" },
+            { "method": "POST", "path": "/users/{user-id}/calendar/events/{event-id}/cancel", "operationId": "users.user.calendar.events.event.cancel" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 5,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^(UserCalendarSchedule)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The legacy Get verb is an action name, not HTTP GET. Both default and named-calendar POST getSchedule routes collapse to the UserCalendarSchedule subject; v1.0 derived collision suppressions already cover both. Exact method/path entries extend that reviewed coverage to beta. Group scheduling and calendar-group scheduling are not this subject.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "POST", "path": "/users/{user-id}/calendar/getSchedule", "operationId": "users.user.calendar.getSchedule" },
+            { "method": "POST", "path": "/users/{user-id}/calendars/{calendar-id}/getSchedule", "operationId": "users.user.calendars.calendar.getSchedule" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "POST", "path": "/users/{user-id}/calendar/getSchedule", "operationId": "users.user.calendar.getSchedule" },
+            { "method": "POST", "path": "/users/{user-id}/calendars/{calendar-id}/getSchedule", "operationId": "users.user.calendars.calendar.getSchedule" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 6,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UserCalendarEventDelta$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress the default- and named-calendar event delta GET functions, including the default route also selected by directive 1. v1.0 derived suppressions already cover both; exact rules preserve the same shared disposition in beta. The /users/{id}/events/delta() neighbor remains available.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/calendar/events/delta()", "operationId": "users.user.calendar.events.delta" },
+            { "method": "GET", "path": "/users/{user-id}/calendars/{calendar-id}/events/delta()", "operationId": "users.user.calendars.calendar.events.delta" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/calendar/events/delta()", "operationId": "users.user.calendar.events.delta" },
+            { "method": "GET", "path": "/users/{user-id}/calendars/{calendar-id}/events/delta()", "operationId": "users.user.calendars.calendar.events.delta" }
+          ]
+        }
+      }
+    }
+  ]
+}
