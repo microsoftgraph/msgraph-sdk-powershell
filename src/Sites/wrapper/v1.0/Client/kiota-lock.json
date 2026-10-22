@@ -2,7 +2,7 @@
   "descriptionHash": "1223F4530082062CD705D9A6430ACFF8894B023D3053C4F9B73EE69C585A4E90F08CFD347C7F8169201ABA4A163854D4FE1031ABFE6293E96AEE459998B3CD4A",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Sites.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Sites.Client",
