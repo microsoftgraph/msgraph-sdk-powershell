@@ -8,6 +8,8 @@ files and src/readme.graph.md are not inventoried. Operation-ID regex matches ar
 candidates, not completed migrations. Reviewed mappings for suppressions and AutoRest where
 selectors live in src/<Module>/wrapper/<Module>_directiveMigrationMap.json and are validated
 against exact method/path/operation-ID evidence in both Kiota-compatible profiles.
+An unavailable compatible profile can be explicitly excluded only while its spec is absent;
+this is not an assertion that API operations are absent.
 
 The command is read-only unless -OutputPath is supplied. It never edits module configuration
 or markdown files.
@@ -132,8 +134,13 @@ function Get-SpecOperations {
     $currentPath = $null
     $currentMethod = $null
     foreach ($line in Get-Content $path) {
-        if ($line -match "^\s{2}['`"]?(?<path>/[^'`"]+)['`"]?:\s*$") {
-            $currentPath = $Matches.path
+        if ($line -match "^\s{2}(?:'(?<single>/.*)'|`"(?<double>/.*)`"|(?<plain>/.*)):\s*$") {
+            $currentPath = if ($Matches.ContainsKey('single')) {
+                # YAML single-quoted keys escape a literal quote by doubling it.
+                $Matches.single.Replace("''", "'")
+            }
+            elseif ($Matches.ContainsKey('double')) { $Matches.double }
+            else { $Matches.plain }
             $currentMethod = $null
             continue
         }
@@ -256,6 +263,26 @@ foreach ($moduleName in $Module) {
                 }
                 if ($profileMap.operations -isnot [array]) {
                     $missing.Add("$profile operations must be an explicit array")
+                    continue
+                }
+                if ($profileMap.PSObject.Properties['excluded'] -and $profileMap.excluded -isnot [bool]) {
+                    $missing.Add("$profile excluded must be a boolean")
+                }
+                if ($profileMap.excluded -is [bool] -and $profileMap.excluded) {
+                    $specPath = Join-Path (Join-Path $specRoot $profile) "$moduleName.yml"
+                    if (Test-Path $specPath) {
+                        $missing.Add("$profile cannot be excluded because its compatible spec exists")
+                    }
+                    if ($profileMap.operations.Count -ne 0) {
+                        $missing.Add("$profile excluded profile must not declare operations")
+                    }
+                    if ($profileMap.PSObject.Properties['absenceExpected']) {
+                        $missing.Add("$profile excluded profile must not declare absenceExpected")
+                    }
+                    if ([string]::IsNullOrWhiteSpace($profileMap.notes)) {
+                        $missing.Add("$profile exclusion notes are required")
+                    }
+                    $notes = "$notes $profile excluded: $($profileMap.notes)".Trim()
                     continue
                 }
                 if ($profileMap.absenceExpected -isnot [bool]) {
