@@ -2,7 +2,7 @@
   "descriptionHash": "A6BF5B9E9D88FD2905D0D378A6E407F703CA75E9EB825AC79EB3A35BB8BE44D1D9D5EE623698B9FD7478662B0355552B6DDC4E79AE899ADE8A85F951DC1AAC98",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Identity.DirectoryManagement.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client",
