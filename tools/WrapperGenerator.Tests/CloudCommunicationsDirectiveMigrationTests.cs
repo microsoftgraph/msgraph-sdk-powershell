@@ -69,6 +69,115 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
     }
 
     [Theory]
+    [InlineData("/communications/onlineMeetings/{onlineMeeting-id}")]
+    [InlineData("/users/{user-id}/onlineMeetings/{onlineMeeting-id}")]
+    public async Task BetaRecordingRoutesHaveDistinctBinaryAndTypedJsonContracts(string parent)
+    {
+        var document = await LoadSpec("beta");
+        var binary = document.Paths[parent + "/recording"].Operations![HttpMethod.Get];
+        var list = document.Paths[parent + "/recordings"].Operations![HttpMethod.Get];
+        var item = document.Paths[parent + "/recordings/{callRecording-id}"].Operations![HttpMethod.Get];
+        var binaryResponse = Assert.Single(binary.Responses!, response => response.Key.StartsWith('2')).Value;
+        var binaryContent = Assert.Single(binaryResponse.Content!);
+        Assert.Equal("application/octet-stream", binaryContent.Key);
+        Assert.Equal(JsonSchemaType.String, binaryContent.Value.Schema!.Type);
+        Assert.Equal("binary", binaryContent.Value.Schema.Format);
+        Assert.Null(binary.RequestBody);
+        Assert.Empty(binary.Parameters ?? []);
+
+        foreach (var operation in new[] { list, item })
+        {
+            Assert.Null(operation.RequestBody);
+            Assert.DoesNotContain(operation.Parameters ?? [], parameter =>
+                parameter.In != ParameterLocation.Path && parameter.Required);
+        }
+        var listResponse = Assert.Single(list.Responses!, response => response.Key.StartsWith('2')).Value;
+        var itemResponse = Assert.Single(item.Responses!, response => response.Key.StartsWith('2')).Value;
+        Assert.Equal("microsoft.graph.callRecordingCollectionResponse",
+            listResponse.Content!["application/json"].Schema!.GetReferenceId());
+        Assert.Equal("microsoft.graph.callRecording",
+            itemResponse.Content!["application/json"].Schema!.GetReferenceId());
+        Assert.Equal(
+            new[] { "$count", "$expand", "$filter", "$orderby", "$search", "$select", "$skip", "$top" },
+            list.Parameters!.Where(parameter => parameter.In == ParameterLocation.Query).Select(parameter => parameter.Name).Order());
+        Assert.Equal(
+            new[] { "$expand", "$select" },
+            item.Parameters!.Where(parameter => parameter.In == ParameterLocation.Query).Select(parameter => parameter.Name).Order());
+
+        foreach (var suffix in new[] { "/recording", "/recordings/{callRecording-id}" })
+        {
+            var remove = document.Paths[parent + suffix].Operations![HttpMethod.Delete];
+            Assert.Null(remove.RequestBody);
+            Assert.True(remove.Responses!.ContainsKey("204"));
+            var header = Assert.Single(remove.Parameters!, parameter => parameter.In == ParameterLocation.Header);
+            Assert.Equal("If-Match", header.Name);
+            Assert.False(header.Required);
+            Assert.Equal(JsonSchemaType.String, header.Schema!.Type);
+        }
+    }
+
+    [Theory]
+    [InlineData("/communications/onlineMeetings/{onlineMeeting-id}", "communications.onlineMeetings")]
+    [InlineData("/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "users.onlineMeetings")]
+    public async Task BetaAttendanceAliasesPreserveExactSameShapeOperationContracts(string parent, string idPrefix)
+    {
+        var document = await LoadSpec("beta");
+        const string plural = "/attendanceReports/{meetingAttendanceReport-id}";
+        const string singleton = "/meetingAttendanceReport";
+        (HttpMethod Method, string Child, string PluralId, string SingletonId, string? Body)[] pairs =
+        [
+            (HttpMethod.Patch, "", "UpdateAttendanceReports", "UpdateMeetingAttendanceReport", "meetingAttendanceReport"),
+            (HttpMethod.Delete, "", "DeleteAttendanceReports", "DeleteMeetingAttendanceReport", null),
+            (HttpMethod.Post, "/attendanceRecords", "attendanceReports.CreateAttendanceRecords", "meetingAttendanceReport.CreateAttendanceRecords", "attendanceRecord"),
+            (HttpMethod.Patch, "/attendanceRecords/{attendanceRecord-id}", "attendanceReports.UpdateAttendanceRecords", "meetingAttendanceReport.UpdateAttendanceRecords", "attendanceRecord"),
+            (HttpMethod.Delete, "/attendanceRecords/{attendanceRecord-id}", "attendanceReports.DeleteAttendanceRecords", "meetingAttendanceReport.DeleteAttendanceRecords", null),
+            (HttpMethod.Get, "/attendanceRecords", "attendanceReports.ListAttendanceRecords", "meetingAttendanceReport.ListAttendanceRecords", null),
+            (HttpMethod.Get, "/attendanceRecords/{attendanceRecord-id}", "attendanceReports.GetAttendanceRecords", "meetingAttendanceReport.GetAttendanceRecords", null),
+        ];
+        foreach (var (method, child, pluralId, singletonId, body) in pairs)
+        {
+            var pluralPath = parent + plural + child;
+            var singletonPath = parent + singleton + child;
+            AssertOperation(document, method, pluralPath, idPrefix + "." + pluralId);
+            AssertOperation(document, method, singletonPath, idPrefix + "." + singletonId);
+            var left = document.Paths[pluralPath].Operations![method];
+            var right = document.Paths[singletonPath].Operations![method];
+            Assert.DoesNotContain(left.Parameters ?? [], parameter => parameter.In != ParameterLocation.Path && parameter.Required);
+            Assert.DoesNotContain(right.Parameters ?? [], parameter => parameter.In != ParameterLocation.Path && parameter.Required);
+            Assert.Equal(
+                (left.Parameters ?? []).Where(parameter => parameter.In != ParameterLocation.Path).Select(parameter => $"{parameter.In}:{parameter.Name}:{parameter.Required}").Order(),
+                (right.Parameters ?? []).Where(parameter => parameter.In != ParameterLocation.Path).Select(parameter => $"{parameter.In}:{parameter.Name}:{parameter.Required}").Order());
+            if (body is null)
+            {
+                Assert.Null(left.RequestBody);
+                Assert.Null(right.RequestBody);
+            }
+            else
+            {
+                Assert.Equal("microsoft.graph." + body, left.RequestBody!.Content!["application/json"].Schema!.GetReferenceId());
+                Assert.Equal("microsoft.graph." + body, right.RequestBody!.Content!["application/json"].Schema!.GetReferenceId());
+                Assert.Equal(left.RequestBody.Required, right.RequestBody.Required);
+            }
+            if (method == HttpMethod.Delete)
+            {
+                Assert.True(left.Responses!.ContainsKey("204"));
+                Assert.True(right.Responses!.ContainsKey("204"));
+                var header = Assert.Single(left.Parameters!, parameter => parameter.In == ParameterLocation.Header);
+                Assert.Equal("If-Match", header.Name);
+                Assert.False(header.Required);
+            }
+            else
+            {
+                var leftResponse = Assert.Single(left.Responses!, response => response.Key.StartsWith('2')).Value;
+                var rightResponse = Assert.Single(right.Responses!, response => response.Key.StartsWith('2')).Value;
+                Assert.Equal(
+                    leftResponse.Content!["application/json"].Schema!.GetReferenceId(),
+                    rightResponse.Content!["application/json"].Schema!.GetReferenceId());
+            }
+        }
+    }
+
+    [Theory]
     [InlineData("v1.0", false)]
     [InlineData("v1.0", true)]
     [InlineData("beta", false)]
