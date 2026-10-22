@@ -208,7 +208,7 @@ function Get-NormalizedOperationKey {
 function Get-FinalOperationKey {
     param([string]$Method, [string]$Path)
 
-    $possiblePath = $Path -creplace '/microsoft\.graph\.([a-zA-Z_][a-zA-Z0-9_]*(?:\(.*\))?)/?$', '/$1'
+    $possiblePath = $Path.TrimEnd('/') -creplace '/microsoft\.graph\.([a-zA-Z_][a-zA-Z0-9_]*(?:\(.*\))?)$', '/$1'
     return Get-NormalizedOperationKey $Method ($possiblePath -replace '\(\)$', '')
 }
 

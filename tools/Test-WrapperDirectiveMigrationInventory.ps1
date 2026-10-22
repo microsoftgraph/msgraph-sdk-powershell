@@ -430,6 +430,9 @@ paths:
     foreach ($case in @(
         @{ OldPath = '/widgets/{old-id}/microsoft.graph.refresh'; NewPath = '/widgets/{widget-id}/refresh'; Method = 'POST' }
         @{ OldPath = '/widgets/{old-id}/delta'; NewPath = '/widgets/{widget-id}/delta()'; Method = 'GET' }
+        @{ OldPath = '/widgets/{old-id}/delta'; NewPath = '/widgets/{widget-id}/delta()/'; Method = 'GET' }
+        @{ OldPath = '/widgets/{old-id}/delta()/'; NewPath = '/widgets/{widget-id}/delta/'; Method = 'GET' }
+        @{ OldPath = '/widgets/{old-id}/microsoft.graph.delta()//'; NewPath = '/widgets/{widget-id}/delta//'; Method = 'GET' }
     )) {
         Write-FixtureFile 'openApiDocs\v1.0\LegacyBridge.yml' ($legacySpec + "`n  '$($case.OldPath)':`n    $($case.Method.ToLowerInvariant()):`n      operationId: legacy_ConvertedWidget")
         Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' ($currentSpec + "`n  '$($case.NewPath)':`n    $($case.Method.ToLowerInvariant()):`n      operationId: widgets.Converted")
@@ -450,6 +453,10 @@ paths:
         @{ Old = '/widgets/{old-id}/microsoft.graph.delta()'; New = '/widgets/{widget-id}/delta'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
         @{ Old = '/widgets/{old-id}/delta'; New = '/widgets/{widget-id}/delta()'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
         @{ Old = '/widgets/{old-id}/delta()'; New = '/widgets/{widget-id}/delta'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/delta'; New = '/widgets/{widget-id}/delta()/'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/delta()/'; New = '/widgets/{widget-id}/delta/'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.delta()//'; New = '/widgets/{widget-id}/delta//'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh//'; New = '/widgets/{widget-id}/refresh/'; Method = 'POST'; OldKind = 'action'; NewKind = 'action' }
         @{ Old = "/widgets/{old-id}/microsoft.graph.resolve(Input='{old-input}')"; New = "/widgets/{widget-id}/resolve(Input='{input}')"; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
         @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/widgets/{widget-id}/refresh'; Method = 'POST'; OldKind = ''; NewKind = 'action'; Error = 'both actual operations must declare the same action/function kind' }
         @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/widgets/{widget-id}/refresh'; Method = 'POST'; OldKind = 'action'; NewKind = ''; Error = 'both actual operations must declare the same action/function kind' }

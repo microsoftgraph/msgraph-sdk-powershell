@@ -497,6 +497,8 @@ or cast conversion, earlier path-segment rewrite, generic alias, changed argumen
 variant expansion is accepted. Unknown translation names fail rather than being ignored.
 Potential qualified/bare or empty-argument counterparts reject a removal claim even without
 the opt-in, so a surviving operation cannot be silently reclassified as removed.
+Trailing slashes on both paths are trimmed before terminal qualification or empty-argument
+comparison; the exact recorded paths and IDs are still validated against their specifications.
 
 ### Completion and audit
 
