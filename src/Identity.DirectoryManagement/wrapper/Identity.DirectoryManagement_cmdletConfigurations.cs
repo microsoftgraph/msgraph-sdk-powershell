@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Net.Http;
 
 namespace WrapperGenerator;
 
@@ -6,6 +7,29 @@ public static partial class CmdletConfigurator
 {
     private static readonly List<Entry> IdentityDirectoryManagementCmdletConfigurations =
     [
+        // Shared Identity.DirectoryManagement.md groups 2-3 remove only the untyped list/count.
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/directory/deleteditems", PathMatch.Exact, null,
+            Reason: "shared directive: Get DirectoryDeletedItem List"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/directory/deleteditems/$count", PathMatch.Exact, null,
+            Reason: "shared directive: Get DirectoryDeletedItemCount"),
+
+        // Group 11 keeps the item-addressed reference deletes, not the legacy collection variants.
+        // v1.0 derived collision data already agrees; these also cover beta and structural-only runs.
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/devices/{}/registeredowners/$ref", PathMatch.Exact, null,
+            Reason: "shared directive: device_DeleteRegisteredOwnerGraphBPreRef"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/devices/{}/registeredusers/$ref", PathMatch.Exact, null,
+            Reason: "shared directive: device_DeleteRegisteredUserGraphBPreRef"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/directory/administrativeunits/{}/members/$ref", PathMatch.Exact, null,
+            Reason: "shared directive: directory.administrativeUnit_DeleteMemberGraphBPreRef"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/directoryroles/{}/members/$ref", PathMatch.Exact, null,
+            Reason: "shared directive: directoryRole_DeleteMemberGraphBPreRef"),
+
+        // Group 7 renames the beta setting entity, but not SettingCount or nested resources.
+        new(OverrideKind.ReplaceNoun, Method: null, "/settings", PathMatch.Exact, "DirectorySetting",
+            Reason: "shared directive: SettingDirectorySetting -> DirectorySetting"),
+        new(OverrideKind.ReplaceNoun, Method: null, "/settings/{}", PathMatch.Exact, "DirectorySetting",
+            Reason: "shared directive: SettingDirectorySetting -> DirectorySetting"),
+
         // ---- Naming-parity sweep (2026-08-13): one of the two rules proved safe. ----
         //
         // Both safe rules were measured against the whole corpus first: each fixes real

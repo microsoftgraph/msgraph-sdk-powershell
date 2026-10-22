@@ -1,0 +1,876 @@
+{
+  "scope": "Only shared Identity.DirectoryManagement.md; all profile-specific readmes and src/readme.graph.md are ignored. Parameter aliases/transforms and schema/response changes are deferred.",
+  "compatibleSpecBlobs": {
+    "v1.0": "5569eb79e13fe9115308d54d3d073d9ef309006e",
+    "beta": "7a529879f20eb141d36765a4e67b95550092d226"
+  },
+  "legacySpecBlobs": {
+    "v1.0": "1316cc4dc691f62659f88ff1e985f3e7a2a51b49",
+    "beta": "29148ef3e8787c023b2f94325e1fe3ecc22eb4f6"
+  },
+  "independentNeighborEvidence": [
+    {
+      "module": "Identity.SignIns",
+      "profile": "beta",
+      "notes": "This policies lineage already existed independently alongside the removed directory lineage in the legacy specs. It is not a resource-root translation and is outside this module's migration.",
+      "method": "GET",
+      "legacyPath": "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
+      "legacyOperationId": "policy.featureRolloutPolicy_ListAppliesToGraphBPreRef",
+      "legacySpecBlob": "3bae4bc7964a818e46591f07248bb3a8d5acdb85",
+      "path": "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
+      "operationId": "policies.featureRolloutPolicies.ListRefAppliesTo",
+      "compatibleSpecBlob": "f39001bb356f6a2b5525141150e7ee165ef21501"
+    }
+  ],
+  "deferredDirectives": [
+    {
+      "notes": "This is a cmdlet alias directive; the inventory classifies alias-bearing directives as DeferredParameter. Alias emission is deferred, not silently dropped or represented as a noun override. The active source is retained.",
+      "directiveIndex": 9,
+      "classification": "DeferredParameter"
+    }
+  ],
+  "mappings": [
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^tenantRelationship\\.managedTenant\\.managementTemplateStepVersion\\.deployment_changeDeploymentStatus$",
+      "implementation": "ReviewedNoMatch",
+      "notes": "Original selector matches zero actual same-module legacy IDs and zero compatible IDs in both profiles. No tenantRelationships managedTenant deployment lineage exists in either module spec. This records an unmatched historical selector, not a renamed-ID API-absence inference.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": [],
+          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": [],
+          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        }
+      }
+    },
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryDeletedItem$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only the untyped GET collection List variant, not item GET/DELETE or typed collection/item casts.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems",
+              "operationId": "directory.ListDeletedItems",
+              "legacyPath": "/directory/deletedItems",
+              "legacyOperationId": "directory_ListDeletedItem"
+            }
+          ],
+          "notes": "Reviewed 1 actual legacy source operations and 1 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems",
+              "operationId": "directory.ListDeletedItems",
+              "legacyPath": "/directory/deletedItems",
+              "legacyOperationId": "directory_ListDeletedItem"
+            }
+          ],
+          "notes": "Reviewed 1 actual legacy source operations and 1 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        }
+      }
+    },
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryDeletedItem(Count)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only untyped deletedItems count. The v1.0 parity suppression already agrees; shared configuration also covers beta and structural-only runs. Typed cast counts remain.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/$count",
+              "operationId": "directory.deletedItems.GetCount-665f",
+              "legacyPath": "/directory/deletedItems/$count",
+              "legacyOperationId": "directory.deletedItem_GetCount"
+            }
+          ],
+          "notes": "Reviewed 1 actual legacy source operations and 1 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/$count",
+              "operationId": "directory.deletedItems.GetCount-665f",
+              "legacyPath": "/directory/deletedItems/$count",
+              "legacyOperationId": "directory.deletedItem_GetCount"
+            }
+          ],
+          "notes": "Reviewed 1 actual legacy source operations and 1 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        }
+      }
+    },
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: (^Delta)(DirectoryDeletedItem)",
+      "implementation": "ReviewedAbsence",
+      "notes": "Neither actual source nor compatible profile has any deletedItems delta operation, including typed lineages. Contacts and template delta functions are distinct neighbors; deletedItems restore/check/get actions are not delta and remain.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": [],
+          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": [],
+          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        }
+      }
+    },
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 5,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(DirectorySettingTemplate|DirectoryRoleTemplate)(\\1)+",
+      "implementation": "StructuralNaming",
+      "notes": "Actual legacy repeated template subjects originate from the root entity CRUD IDs listed below. Structural path naming emits one DirectoryRoleTemplate/DirectorySettingTemplate noun. Actions and counts have distinct legacy subjects and are not selected. Setting templates are beta-only.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directoryRoleTemplates",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.ListDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates",
+              "legacyOperationId": "directoryRoleTemplate_ListDirectoryRoleTemplate"
+            },
+            {
+              "method": "POST",
+              "path": "/directoryRoleTemplates",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.CreateDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates",
+              "legacyOperationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate"
+            },
+            {
+              "method": "GET",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.GetDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "legacyOperationId": "directoryRoleTemplate_GetDirectoryRoleTemplate"
+            },
+            {
+              "method": "PATCH",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.UpdateDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "legacyOperationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate"
+            },
+            {
+              "method": "DELETE",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.DeleteDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "legacyOperationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate"
+            }
+          ],
+          "notes": "Reviewed 5 actual legacy source operations and 5 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directoryRoleTemplates",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.ListDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates",
+              "legacyOperationId": "directoryRoleTemplate_ListDirectoryRoleTemplate"
+            },
+            {
+              "method": "POST",
+              "path": "/directoryRoleTemplates",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.CreateDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates",
+              "legacyOperationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate"
+            },
+            {
+              "method": "GET",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.GetDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "legacyOperationId": "directoryRoleTemplate_GetDirectoryRoleTemplate"
+            },
+            {
+              "method": "PATCH",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.UpdateDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "legacyOperationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate"
+            },
+            {
+              "method": "DELETE",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplates.directoryRoleTemplate.DeleteDirectoryRoleTemplate",
+              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "legacyOperationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate"
+            },
+            {
+              "method": "GET",
+              "path": "/directorySettingTemplates",
+              "operationId": "directorySettingTemplates.directorySettingTemplate.ListDirectorySettingTemplate",
+              "legacyPath": "/directorySettingTemplates",
+              "legacyOperationId": "directorySettingTemplate_ListDirectorySettingTemplate"
+            },
+            {
+              "method": "POST",
+              "path": "/directorySettingTemplates",
+              "operationId": "directorySettingTemplates.directorySettingTemplate.CreateDirectorySettingTemplate",
+              "legacyPath": "/directorySettingTemplates",
+              "legacyOperationId": "directorySettingTemplate_CreateDirectorySettingTemplate"
+            },
+            {
+              "method": "GET",
+              "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
+              "operationId": "directorySettingTemplates.directorySettingTemplate.GetDirectorySettingTemplate",
+              "legacyPath": "/directorySettingTemplates/{directorySettingTemplate-id}",
+              "legacyOperationId": "directorySettingTemplate_GetDirectorySettingTemplate"
+            },
+            {
+              "method": "PATCH",
+              "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
+              "operationId": "directorySettingTemplates.directorySettingTemplate.UpdateDirectorySettingTemplate",
+              "legacyPath": "/directorySettingTemplates/{directorySettingTemplate-id}",
+              "legacyOperationId": "directorySettingTemplate_UpdateDirectorySettingTemplate"
+            },
+            {
+              "method": "DELETE",
+              "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
+              "operationId": "directorySettingTemplates.directorySettingTemplate.DeleteDirectorySettingTemplate",
+              "legacyPath": "/directorySettingTemplates/{directorySettingTemplate-id}",
+              "legacyOperationId": "directorySettingTemplate_DeleteDirectorySettingTemplate"
+            }
+          ],
+          "notes": "Reviewed 10 actual legacy source operations and 10 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        }
+      }
+    },
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 6,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: (^Contact)(OrgContact$)",
+      "implementation": "StructuralNaming",
+      "notes": "The contact.orgContact CRUD lineage is selected, not contact navigation/action lineages. Structural /contacts collection/item naming already emits Contact. Preserve directReports/manager/memberOf/count/delta neighbors.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/contacts",
+              "operationId": "contacts.orgContact.ListOrgContact",
+              "legacyPath": "/contacts",
+              "legacyOperationId": "contact.orgContact_ListOrgContact"
+            },
+            {
+              "method": "GET",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contacts.orgContact.GetOrgContact",
+              "legacyPath": "/contacts/{orgContact-id}",
+              "legacyOperationId": "contact.orgContact_GetOrgContact"
+            },
+            {
+              "method": "PATCH",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contacts.orgContact.UpdateOrgContact",
+              "legacyPath": "/contacts/{orgContact-id}",
+              "legacyOperationId": "contact.orgContact_UpdateOrgContact"
+            },
+            {
+              "method": "DELETE",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contacts.orgContact.DeleteOrgContact",
+              "legacyPath": "/contacts/{orgContact-id}",
+              "legacyOperationId": "contact.orgContact_DeleteOrgContact"
+            }
+          ],
+          "notes": "Reviewed 4 actual legacy source operations and 4 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/contacts",
+              "operationId": "contacts.orgContact.ListOrgContact",
+              "legacyPath": "/contacts",
+              "legacyOperationId": "contact.orgContact_ListOrgContact"
+            },
+            {
+              "method": "GET",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contacts.orgContact.GetOrgContact",
+              "legacyPath": "/contacts/{orgContact-id}",
+              "legacyOperationId": "contact.orgContact_GetOrgContact"
+            },
+            {
+              "method": "PATCH",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contacts.orgContact.UpdateOrgContact",
+              "legacyPath": "/contacts/{orgContact-id}",
+              "legacyOperationId": "contact.orgContact_UpdateOrgContact"
+            },
+            {
+              "method": "DELETE",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contacts.orgContact.DeleteOrgContact",
+              "legacyPath": "/contacts/{orgContact-id}",
+              "legacyOperationId": "contact.orgContact_DeleteOrgContact"
+            }
+          ],
+          "notes": "Reviewed 4 actual legacy source operations and 4 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        }
+      }
+    },
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 7,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(Setting)(DirectorySetting)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Beta-only /settings entity CRUD receives exact collection/item noun overrides to DirectorySetting. SettingCount and nested resources are outside the selector. v1.0 lacks both the actual legacy and compatible /settings lineage.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": [],
+          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/settings",
+              "operationId": "settings.directorySetting.ListDirectorySetting",
+              "legacyPath": "/settings",
+              "legacyOperationId": "setting.directorySetting_ListDirectorySetting"
+            },
+            {
+              "method": "POST",
+              "path": "/settings",
+              "operationId": "settings.directorySetting.CreateDirectorySetting",
+              "legacyPath": "/settings",
+              "legacyOperationId": "setting.directorySetting_CreateDirectorySetting"
+            },
+            {
+              "method": "GET",
+              "path": "/settings/{directorySetting-id}",
+              "operationId": "settings.directorySetting.GetDirectorySetting",
+              "legacyPath": "/settings/{directorySetting-id}",
+              "legacyOperationId": "setting.directorySetting_GetDirectorySetting"
+            },
+            {
+              "method": "PATCH",
+              "path": "/settings/{directorySetting-id}",
+              "operationId": "settings.directorySetting.UpdateDirectorySetting",
+              "legacyPath": "/settings/{directorySetting-id}",
+              "legacyOperationId": "setting.directorySetting_UpdateDirectorySetting"
+            },
+            {
+              "method": "DELETE",
+              "path": "/settings/{directorySetting-id}",
+              "operationId": "settings.directorySetting.DeleteDirectorySetting",
+              "legacyPath": "/settings/{directorySetting-id}",
+              "legacyOperationId": "setting.directorySetting_DeleteDirectorySetting"
+            }
+          ],
+          "notes": "Reviewed 5 actual legacy source operations and 5 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        }
+      }
+    },
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 8,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(DirectoryDeleted)ItemAs(.*)$",
+      "implementation": "StructuralNaming",
+      "notes": "Review in sequence with groups 9 and 10, not as a standalone public rename. Group 8 temporarily removes ItemAs for alias construction; group 10 restores it. All 12 actual legacy typed list/item operations bridge to graph casts. The final structural noun is DirectoryDeletedItemAs<Type>. Cast counts have CountAs, do not match this selector, and remain unchanged.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
+              "operationId": "directory.GetDeletedItems.AsAdministrativeUnit",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
+              "legacyOperationId": "directory_GetDeletedItemAsAdministrativeUnit"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
+              "operationId": "directory.GetDeletedItems.AsApplication",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
+              "legacyOperationId": "directory_GetDeletedItemAsApplication"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
+              "operationId": "directory.GetDeletedItems.AsDevice",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
+              "legacyOperationId": "directory_GetDeletedItemAsDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
+              "operationId": "directory.GetDeletedItems.AsGroup",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
+              "legacyOperationId": "directory_GetDeletedItemAsGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
+              "operationId": "directory.GetDeletedItems.AsServicePrincipal",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
+              "legacyOperationId": "directory_GetDeletedItemAsServicePrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
+              "operationId": "directory.GetDeletedItems.AsUser",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
+              "legacyOperationId": "directory_GetDeletedItemAsUser"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.administrativeUnit",
+              "operationId": "directory.ListDeletedItems.AsAdministrativeUnit",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.administrativeUnit",
+              "legacyOperationId": "directory_ListDeletedItemAsAdministrativeUnit"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.application",
+              "operationId": "directory.ListDeletedItems.AsApplication",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.application",
+              "legacyOperationId": "directory_ListDeletedItemAsApplication"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.device",
+              "operationId": "directory.ListDeletedItems.AsDevice",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.device",
+              "legacyOperationId": "directory_ListDeletedItemAsDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.group",
+              "operationId": "directory.ListDeletedItems.AsGroup",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.group",
+              "legacyOperationId": "directory_ListDeletedItemAsGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.servicePrincipal",
+              "operationId": "directory.ListDeletedItems.AsServicePrincipal",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.servicePrincipal",
+              "legacyOperationId": "directory_ListDeletedItemAsServicePrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.user",
+              "operationId": "directory.ListDeletedItems.AsUser",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.user",
+              "legacyOperationId": "directory_ListDeletedItemAsUser"
+            }
+          ],
+          "notes": "Reviewed 12 actual legacy source operations and 12 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
+              "operationId": "directory.GetDeletedItems.AsAdministrativeUnit",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
+              "legacyOperationId": "directory_GetDeletedItemAsAdministrativeUnit"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
+              "operationId": "directory.GetDeletedItems.AsApplication",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
+              "legacyOperationId": "directory_GetDeletedItemAsApplication"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
+              "operationId": "directory.GetDeletedItems.AsDevice",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
+              "legacyOperationId": "directory_GetDeletedItemAsDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
+              "operationId": "directory.GetDeletedItems.AsGroup",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
+              "legacyOperationId": "directory_GetDeletedItemAsGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
+              "operationId": "directory.GetDeletedItems.AsServicePrincipal",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
+              "legacyOperationId": "directory_GetDeletedItemAsServicePrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
+              "operationId": "directory.GetDeletedItems.AsUser",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
+              "legacyOperationId": "directory_GetDeletedItemAsUser"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.administrativeUnit",
+              "operationId": "directory.ListDeletedItems.AsAdministrativeUnit",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.administrativeUnit",
+              "legacyOperationId": "directory_ListDeletedItemAsAdministrativeUnit"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.application",
+              "operationId": "directory.ListDeletedItems.AsApplication",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.application",
+              "legacyOperationId": "directory_ListDeletedItemAsApplication"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.device",
+              "operationId": "directory.ListDeletedItems.AsDevice",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.device",
+              "legacyOperationId": "directory_ListDeletedItemAsDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.group",
+              "operationId": "directory.ListDeletedItems.AsGroup",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.group",
+              "legacyOperationId": "directory_ListDeletedItemAsGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.servicePrincipal",
+              "operationId": "directory.ListDeletedItems.AsServicePrincipal",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.servicePrincipal",
+              "legacyOperationId": "directory_ListDeletedItemAsServicePrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.user",
+              "operationId": "directory.ListDeletedItems.AsUser",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.user",
+              "legacyOperationId": "directory_ListDeletedItemAsUser"
+            }
+          ],
+          "notes": "Reviewed 12 actual legacy source operations and 12 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        }
+      }
+    },
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 10,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(DirectoryDeleted)(application|administrativeUnit|appRoleAssignment|directoryObject|directoryRole|device|group|orgContact|servicePrincipal|user)$",
+      "implementation": "StructuralNaming",
+      "notes": "Consumes group 8 temporary nouns and restores DirectoryDeletedItemAs<Type>; no additional standalone lineage is invented from the type alternatives. Both sources have administrativeUnit/application/device/group/servicePrincipal/user list/item casts only. No appRoleAssignment/directoryObject/directoryRole/orgContact cast exists in these sources. Group 9 aliases remain deferred.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
+              "operationId": "directory.GetDeletedItems.AsAdministrativeUnit",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
+              "legacyOperationId": "directory_GetDeletedItemAsAdministrativeUnit"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
+              "operationId": "directory.GetDeletedItems.AsApplication",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
+              "legacyOperationId": "directory_GetDeletedItemAsApplication"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
+              "operationId": "directory.GetDeletedItems.AsDevice",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
+              "legacyOperationId": "directory_GetDeletedItemAsDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
+              "operationId": "directory.GetDeletedItems.AsGroup",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
+              "legacyOperationId": "directory_GetDeletedItemAsGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
+              "operationId": "directory.GetDeletedItems.AsServicePrincipal",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
+              "legacyOperationId": "directory_GetDeletedItemAsServicePrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
+              "operationId": "directory.GetDeletedItems.AsUser",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
+              "legacyOperationId": "directory_GetDeletedItemAsUser"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.administrativeUnit",
+              "operationId": "directory.ListDeletedItems.AsAdministrativeUnit",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.administrativeUnit",
+              "legacyOperationId": "directory_ListDeletedItemAsAdministrativeUnit"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.application",
+              "operationId": "directory.ListDeletedItems.AsApplication",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.application",
+              "legacyOperationId": "directory_ListDeletedItemAsApplication"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.device",
+              "operationId": "directory.ListDeletedItems.AsDevice",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.device",
+              "legacyOperationId": "directory_ListDeletedItemAsDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.group",
+              "operationId": "directory.ListDeletedItems.AsGroup",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.group",
+              "legacyOperationId": "directory_ListDeletedItemAsGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.servicePrincipal",
+              "operationId": "directory.ListDeletedItems.AsServicePrincipal",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.servicePrincipal",
+              "legacyOperationId": "directory_ListDeletedItemAsServicePrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.user",
+              "operationId": "directory.ListDeletedItems.AsUser",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.user",
+              "legacyOperationId": "directory_ListDeletedItemAsUser"
+            }
+          ],
+          "notes": "Reviewed 12 actual legacy source operations and 12 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
+              "operationId": "directory.GetDeletedItems.AsAdministrativeUnit",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
+              "legacyOperationId": "directory_GetDeletedItemAsAdministrativeUnit"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
+              "operationId": "directory.GetDeletedItems.AsApplication",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
+              "legacyOperationId": "directory_GetDeletedItemAsApplication"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
+              "operationId": "directory.GetDeletedItems.AsDevice",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
+              "legacyOperationId": "directory_GetDeletedItemAsDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
+              "operationId": "directory.GetDeletedItems.AsGroup",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
+              "legacyOperationId": "directory_GetDeletedItemAsGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
+              "operationId": "directory.GetDeletedItems.AsServicePrincipal",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
+              "legacyOperationId": "directory_GetDeletedItemAsServicePrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
+              "operationId": "directory.GetDeletedItems.AsUser",
+              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
+              "legacyOperationId": "directory_GetDeletedItemAsUser"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.administrativeUnit",
+              "operationId": "directory.ListDeletedItems.AsAdministrativeUnit",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.administrativeUnit",
+              "legacyOperationId": "directory_ListDeletedItemAsAdministrativeUnit"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.application",
+              "operationId": "directory.ListDeletedItems.AsApplication",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.application",
+              "legacyOperationId": "directory_ListDeletedItemAsApplication"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.device",
+              "operationId": "directory.ListDeletedItems.AsDevice",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.device",
+              "legacyOperationId": "directory_ListDeletedItemAsDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.group",
+              "operationId": "directory.ListDeletedItems.AsGroup",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.group",
+              "legacyOperationId": "directory_ListDeletedItemAsGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.servicePrincipal",
+              "operationId": "directory.ListDeletedItems.AsServicePrincipal",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.servicePrincipal",
+              "legacyOperationId": "directory_ListDeletedItemAsServicePrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/graph.user",
+              "operationId": "directory.ListDeletedItems.AsUser",
+              "legacyPath": "/directory/deletedItems/microsoft.graph.user",
+              "legacyOperationId": "directory_ListDeletedItemAsUser"
+            }
+          ],
+          "notes": "Reviewed 12 actual legacy source operations and 12 exact compatible operations; old paths and IDs are retained with each surviving operation."
+        }
+      }
+    },
+    {
+      "module": "Identity.DirectoryManagement",
+      "directiveIndex": 11,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^device_DeleteRegisteredOwnerGraphBPreRef$|^device_DeleteRegisteredUserGraphBPreRef$|^directory.administrativeUnit_DeleteMemberGraphBPreRef$|^directoryRole_DeleteMemberGraphBPreRef$|^directory.featureRolloutPolicy_ListAppliesToGraphBPreRef$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Evaluate the complete original selector against actual same-module legacy source: four matches v1.0, five beta. Four exact method/path reference DELETE successors per profile are suppressed; item-addressed DELETE and collection GET/POST survive. v1.0 derived collision suppressions already agree and retain precedence. Beta additionally selected the obsolete /directory/featureRolloutPolicies reference GET; its separately reviewed removal is recorded, not mapped to the pre-existing Identity.SignIns /policies lineage.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/devices/{device-id}/registeredOwners/$ref",
+              "operationId": "devices.DeleteRefRegisteredOwners",
+              "legacyPath": "/devices/{device-id}/registeredOwners/$ref",
+              "legacyOperationId": "device_DeleteRegisteredOwnerGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/devices/{device-id}/registeredUsers/$ref",
+              "operationId": "devices.DeleteRefRegisteredUsers",
+              "legacyPath": "/devices/{device-id}/registeredUsers/$ref",
+              "legacyOperationId": "device_DeleteRegisteredUserGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
+              "operationId": "directory.administrativeUnits.DeleteRefMembers",
+              "legacyPath": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
+              "legacyOperationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/directoryRoles/{directoryRole-id}/members/$ref",
+              "operationId": "directoryRoles.DeleteRefMembers",
+              "legacyPath": "/directoryRoles/{directoryRole-id}/members/$ref",
+              "legacyOperationId": "directoryRole_DeleteMemberGraphBPreRef"
+            }
+          ],
+          "operationIdSource": "Legacy",
+          "notes": "Reviewed the complete actual v1.0 legacy regex match set (4); 4 exact method/path compatible successors; 0 reviewed obsolete source operations. No resource-root or final operation translation.",
+          "removedLegacyOperations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/devices/{device-id}/registeredOwners/$ref",
+              "operationId": "devices.DeleteRefRegisteredOwners",
+              "legacyPath": "/devices/{device-id}/registeredOwners/$ref",
+              "legacyOperationId": "device_DeleteRegisteredOwnerGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/devices/{device-id}/registeredUsers/$ref",
+              "operationId": "devices.DeleteRefRegisteredUsers",
+              "legacyPath": "/devices/{device-id}/registeredUsers/$ref",
+              "legacyOperationId": "device_DeleteRegisteredUserGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
+              "operationId": "directory.administrativeUnits.DeleteRefMembers",
+              "legacyPath": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
+              "legacyOperationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/directoryRoles/{directoryRole-id}/members/$ref",
+              "operationId": "directoryRoles.DeleteRefMembers",
+              "legacyPath": "/directoryRoles/{directoryRole-id}/members/$ref",
+              "legacyOperationId": "directoryRole_DeleteMemberGraphBPreRef"
+            }
+          ],
+          "operationIdSource": "Legacy",
+          "notes": "Reviewed the complete actual beta legacy regex match set (5); 4 exact method/path compatible successors; 1 reviewed obsolete source operations. No resource-root or final operation translation.",
+          "removedLegacyOperations": [
+            {
+              "method": "GET",
+              "path": "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
+              "operationId": "directory.featureRolloutPolicy_ListAppliesToGraphBPreRef",
+              "notes": "The entire /directory/featureRolloutPolicies lineage is absent from the compatible Identity.DirectoryManagement beta spec. The /policies/featureRolloutPolicies lineage is independently present in BOTH legacy and compatible Identity.SignIns beta specs (old policy.featureRolloutPolicy_ListAppliesToGraphBPreRef; current policies.featureRolloutPolicies.ListRefAppliesTo). It is not an inferred moved successor and is not changed by this module migration."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
