@@ -19,10 +19,10 @@ require:
 # Directives go here!
 directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0.
-# Wrapper migration: reviewed expected absence in BOTH v1.0 and beta compatible
-# specs; neither historical operation ID matches a current operation. No wrapper
-# suppression is needed. In particular, the live beta users.devices.* reference
-# operations are not replacements selected by this expression and remain available.
+# Wrapper migration: the actual legacy v1.0 spec has no selector matches. In beta,
+# both selected collection DELETE /registeredOwners/$ref and /registeredUsers/$ref
+# survive conversion with renamed operation IDs. Exact method/path suppressions
+# retain that source intent; item-reference DELETEs and collection GET/POST remain.
 # Exact spec/search and unaffected-route evidence is recorded in
 # wrapper/CrossDeviceExperiences_directiveMigrationMap.json and pinned by
 # CrossDeviceExperiencesDirectiveMigrationTests. Keep this AutoRest directive active

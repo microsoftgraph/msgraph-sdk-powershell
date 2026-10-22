@@ -3,14 +3,18 @@ using System.Net.Http;
 namespace WrapperGenerator;
 public static partial class CmdletConfigurator
 {
-    // The shared operation-ID selector matches neither compatible profile. The adjacent
-    // CrossDeviceExperiences_directiveMigrationMap.json records the reviewed absence;
-    // do not suppress the distinct live beta registeredOwners/registeredUsers routes.
+    // The adjacent migration ledger bridges both actual legacy beta selector matches
+    // to unchanged method/path pairs with converted IDs. v1.0 has no source matches.
     private static readonly List<Entry> CrossDeviceExperiencesCmdletConfigurations =
     [
-        // Beta has both item and collection reference deletes. Keep both operations,
-        // using the published item noun to avoid colliding with the collection noun.
-        // These baseline naming repairs are not translations of the absent selector.
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete,
+            "/users/{}/devices/{}/registeredowners/$ref", PathMatch.Exact, null,
+            "CrossDeviceExperiences.md: user.device_DeleteRegisteredOwnerGraphBPreRef survives as users.devices.DeleteRefRegisteredOwners."),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete,
+            "/users/{}/devices/{}/registeredusers/$ref", PathMatch.Exact, null,
+            "CrossDeviceExperiences.md: user.device_DeleteRegisteredUserGraphBPreRef survives as users.devices.DeleteRefRegisteredUsers."),
+        // Independent published item nouns; the shared selector suppresses collection
+        // deletes only, not these item-reference operations.
         new(OverrideKind.ReplaceNoun, HttpMethod.Delete,
             "/users/{}/devices/{}/registeredowners/{}/$ref", PathMatch.Exact,
             "UserDeviceRegisteredOwnerDirectoryObjectByRef",
