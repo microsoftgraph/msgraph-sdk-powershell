@@ -1,6 +1,6 @@
 {
   "scope": "Only src/Calendar/Calendar.md; global and profile-local directives are excluded. Parameter aliases/transforms and schema/response directives remain deferred.",
-  "prerequisite": "Reviewed inventory PR #3837 is merged. Its shared follow-up must add curated OverrideKind.ReplaceVerb support and correctly parse YAML-quoted function paths before this migration can compile and pass its final strict gate on powershell-v3.",
+  "prerequisite": "Reviewed inventory PR #3837 and shared-framework follow-up PR #3838 are merged into powershell-v3. The shared engine supplies curated OverrideKind.ReplaceVerb support and correctly parses YAML-quoted function paths; no module-local framework patches are required.",
   "specBlobs": {
     "v1.0": "f8cbbb7420cd4c881bae4662fd0a3ff5bcc3182b",
     "beta": "a1b424a75a626b3a390e1993de3cda01264a3959"
