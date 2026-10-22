@@ -17,7 +17,16 @@ require:
 
 ``` yaml
 directive:
+# Wrapper migration: exact surviving legacy operation-ID selections are suppressed
+# in wrapper/Files_cmdletConfigurations.cs; Files_directiveMigrationMap.json
+# accounts for all 56 v1.0 and 272 beta legacy matches, including pruned routes.
+# Collection ListActivity GETs are not selected. FilesDirectiveMigrationTests pins
+# both profiles and neighboring routes. Keep this AutoRest directive active.
   - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activity$|.*\.activity.*$|share\..*_createLink
+# Wrapper migration: existing GET-only GroupDefaultDrive/UserDefaultDrive overrides
+# already implement this rename; the adjacent ledger records exact spec evidence.
+# Keep this AutoRest directive active. Profile-local/global readmes are ignored;
+# parameter/schema migration remains deferred (none occur in this shared file).
   - where:
       verb: Get
       subject: ^(Group|User)(Drive)$
