@@ -1,0 +1,128 @@
+{
+  "mappings": [
+    {
+      "module": "Education",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^education.class.assignment_DeleteCategoryGraphBPreRef$|^education.class_DeleteMemberGraphBPreRef$|^education.class_DeleteTeacherGraphBPreRef$|^education.me.assignment_DeleteCategoryGraphBPreRef$|^education.school_DeleteClassGraphBPreRef$|^education.school_DeleteUserGraphBPreRef$|^education.user.assignment_DeleteCategoryGraphBPreRef$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only the seven collection-reference DELETE operations selected by the active shared Education.md directive. Every actual legacy regex match has a unique same-method, unchanged-path compatible counterpart; converted operation IDs are not absence evidence. Existing collision-suppressions.v1.0.json already suppresses these seven routes, but beta has no derived suppression data. Exact curated DELETE entries cover beta and data-off generation without removing the existing plain-category and user-self-navigation suppressions. Preserve collection-reference GET/POST and item-reference DELETE. No shared deferred parameter/schema directives exist. Profile-local readmes and src/readme.graph.md are intentionally excluded.",
+      "profiles": {
+        "v1.0": {
+          "operationIdSource": "Legacy",
+          "notes": "Reviewed all seven actual regex matches in openApiDocs/v1.0/Education.yml against openApiDocs_KiotaCompat/v1.0/Education.yml (blob f24bd03c8dda669888d1cbf103b48b90905f2424); all bridge by exact method/path. No operations were removed.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/$ref",
+              "operationId": "education.classes.assignments.DeleteRefCategories",
+              "legacyPath": "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/$ref",
+              "legacyOperationId": "education.class.assignment_DeleteCategoryGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/classes/{educationClass-id}/members/$ref",
+              "operationId": "education.classes.DeleteRefMembers",
+              "legacyPath": "/education/classes/{educationClass-id}/members/$ref",
+              "legacyOperationId": "education.class_DeleteMemberGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/classes/{educationClass-id}/teachers/$ref",
+              "operationId": "education.classes.DeleteRefTeachers",
+              "legacyPath": "/education/classes/{educationClass-id}/teachers/$ref",
+              "legacyOperationId": "education.class_DeleteTeacherGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/me/assignments/{educationAssignment-id}/categories/$ref",
+              "operationId": "education.me.assignments.DeleteRefCategories",
+              "legacyPath": "/education/me/assignments/{educationAssignment-id}/categories/$ref",
+              "legacyOperationId": "education.me.assignment_DeleteCategoryGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/schools/{educationSchool-id}/classes/$ref",
+              "operationId": "education.schools.DeleteRefClasses",
+              "legacyPath": "/education/schools/{educationSchool-id}/classes/$ref",
+              "legacyOperationId": "education.school_DeleteClassGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/schools/{educationSchool-id}/users/$ref",
+              "operationId": "education.schools.DeleteRefUsers",
+              "legacyPath": "/education/schools/{educationSchool-id}/users/$ref",
+              "legacyOperationId": "education.school_DeleteUserGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/$ref",
+              "operationId": "education.users.assignments.DeleteRefCategories",
+              "legacyPath": "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/$ref",
+              "legacyOperationId": "education.user.assignment_DeleteCategoryGraphBPreRef"
+            }
+          ],
+          "removedLegacyOperations": []
+        },
+        "beta": {
+          "operationIdSource": "Legacy",
+          "notes": "Reviewed all seven actual regex matches in openApiDocs/beta/Education.yml against openApiDocs_KiotaCompat/beta/Education.yml (blob bc65aef148cb966688102a40171ec70a9fce9cd4); all bridge by exact method/path. No operations were removed.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/$ref",
+              "operationId": "education.classes.assignments.DeleteRefCategories",
+              "legacyPath": "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/$ref",
+              "legacyOperationId": "education.class.assignment_DeleteCategoryGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/classes/{educationClass-id}/members/$ref",
+              "operationId": "education.classes.DeleteRefMembers",
+              "legacyPath": "/education/classes/{educationClass-id}/members/$ref",
+              "legacyOperationId": "education.class_DeleteMemberGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/classes/{educationClass-id}/teachers/$ref",
+              "operationId": "education.classes.DeleteRefTeachers",
+              "legacyPath": "/education/classes/{educationClass-id}/teachers/$ref",
+              "legacyOperationId": "education.class_DeleteTeacherGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/me/assignments/{educationAssignment-id}/categories/$ref",
+              "operationId": "education.me.assignments.DeleteRefCategories",
+              "legacyPath": "/education/me/assignments/{educationAssignment-id}/categories/$ref",
+              "legacyOperationId": "education.me.assignment_DeleteCategoryGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/schools/{educationSchool-id}/classes/$ref",
+              "operationId": "education.schools.DeleteRefClasses",
+              "legacyPath": "/education/schools/{educationSchool-id}/classes/$ref",
+              "legacyOperationId": "education.school_DeleteClassGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/schools/{educationSchool-id}/users/$ref",
+              "operationId": "education.schools.DeleteRefUsers",
+              "legacyPath": "/education/schools/{educationSchool-id}/users/$ref",
+              "legacyOperationId": "education.school_DeleteUserGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/$ref",
+              "operationId": "education.users.assignments.DeleteRefCategories",
+              "legacyPath": "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/$ref",
+              "legacyOperationId": "education.user.assignment_DeleteCategoryGraphBPreRef"
+            }
+          ],
+          "removedLegacyOperations": []
+        }
+      }
+    }
+  ]
+}
