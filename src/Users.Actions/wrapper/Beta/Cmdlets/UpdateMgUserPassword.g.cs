@@ -14,14 +14,19 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Users.Actions
 {
-    [GraphRoute("POST", "/users/{user-id}/removeAllDevicesFromManagement")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgUserRemoveAllDevicesFromManagement", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [GraphRoute("POST", "/users/{user-id}/changePassword")]
+    [Cmdlet(VerbsData.Update, "MgUserPassword", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
 
-    public class InvokeMgUserRemoveAllDevicesFromManagementCommand : GraphClientCmdlet
+    public class UpdateMgUserPasswordCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
 
+        [Parameter(Mandatory = false)]
+        public string? CurrentPassword { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? NewPassword { get; set; }
 
 
 
@@ -31,9 +36,16 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(UserId, "Invoke"))
+            if (!ShouldProcess(UserId, "Update"))
                 return;
 
+            var body = new global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.ChangePassword.ChangePasswordPostRequestBody();
+
+    if (this.IsParameterBound(nameof(CurrentPassword)))
+        body.CurrentPassword = CurrentPassword;
+
+    if (this.IsParameterBound(nameof(NewPassword)))
+        body.NewPassword = NewPassword;
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
@@ -41,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
 
             try
             {
-                client.Users[UserId].RemoveAllDevicesFromManagement.PostAsync(requestConfiguration =>
+                client.Users[UserId].ChangePassword.PostAsync(body, requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
