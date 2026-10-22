@@ -165,6 +165,101 @@ public sealed class SecurityDirectiveMigrationTests
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, "/security"));
     }
 
+    [Fact]
+    public void BetaActionCollisionsRetainBothContractsAndPublishedItemDefaults()
+    {
+        using var metadata = JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            RepoRoot.Value, "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
+        var document = Specs.Value["openApiDocs_KiotaCompat|beta"];
+        foreach (var (collection, id, noun) in new[]
+        {
+            ("custodians", "ediscoveryCustodian-id", "Custodian"),
+            ("noncustodialDataSources", "ediscoveryNoncustodialDataSource-id", "NoncustodialDataSource"),
+        })
+        foreach (var (action, verb, suffix) in new[]
+        {
+            ("applyHold", "Add", "Hold"), ("removeHold", "Remove", "Hold"), ("updateIndex", "Update", "Index"),
+        })
+        {
+            var root = $"/security/cases/ediscoveryCases/{{ediscoveryCase-id}}/{collection}";
+            var itemPath = $"{root}/{{{id}}}/microsoft.graph.security.{action}";
+            var collectionPath = $"{root}/microsoft.graph.security.{action}";
+            var item = document.Paths[itemPath].Operations![HttpMethod.Post];
+            var bulk = document.Paths[collectionPath].Operations![HttpMethod.Post];
+            Assert.Null(item.RequestBody);
+            Assert.NotNull(bulk.RequestBody);
+            Assert.True(bulk.RequestBody.Required);
+            var media = Assert.Single(bulk.RequestBody.Content!);
+            Assert.Equal("application/json", media.Key);
+            var property = Assert.Single(media.Value.Schema!.Properties!);
+            Assert.Equal("ids", property.Key);
+            Assert.Equal(JsonSchemaType.Array, property.Value.Type);
+            Assert.Equal(JsonSchemaType.String, property.Value.Items!.Type & ~JsonSchemaType.Null);
+            Assert.True(media.Value.Schema.Required is null || media.Value.Schema.Required.Count == 0);
+            Assert.Equal(new[] { "204" }, item.Responses!.Keys.Where(k => k.StartsWith("2", StringComparison.Ordinal)));
+            Assert.Equal(new[] { "204" }, bulk.Responses!.Keys.Where(k => k.StartsWith("2", StringComparison.Ordinal)));
+            Assert.True(item.Responses["204"].Content is null || item.Responses["204"].Content!.Count == 0);
+            Assert.True(bulk.Responses["204"].Content is null || bulk.Responses["204"].Content!.Count == 0);
+            Assert.True(item.Parameters is null || item.Parameters.Count == 0);
+            Assert.True(bulk.Parameters is null || bulk.Parameters.Count == 0);
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, itemPath, Config("beta")));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, collectionPath, Config("beta")));
+            var published = PublishedDefault(metadata, $"{verb}-MgBetaSecurityCaseEdiscoveryCase{noun}{suffix}");
+            Assert.Equal(itemPath.Replace("/microsoft.graph.security.", "/", StringComparison.Ordinal),
+                published.GetProperty("Uri").GetString());
+            Assert.Contains(published.GetProperty("Variants").EnumerateArray(),
+                v => v.GetString()!.EndsWith("Expanded", StringComparison.Ordinal));
+        }
+    }
+
+    [Fact]
+    public void BetaCountCollisionsRetainBothRoutesAndPublishedDefaultDifferences()
+    {
+        using var metadata = JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            RepoRoot.Value, "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
+        var document = Specs.Value["openApiDocs_KiotaCompat|beta"];
+        foreach (var (top, nested, noun, nestedDefault) in new[]
+        {
+            ("articleIndicators", "articles/{article-id}/indicators", "ArticleIndicator", false),
+            ("hostComponents", "hosts/{host-id}/components", "HostComponent", false),
+            ("hostCookies", "hosts/{host-id}/cookies", "HostCookie", false),
+            ("hostPairs", "hosts/{host-id}/hostPairs", "HostPair", false),
+            ("hostPorts", "hosts/{host-id}/ports", "HostPort", false),
+            ("hostSslCertificates", "hosts/{host-id}/sslCertificates", "HostSslCertificate", true),
+            ("hostTrackers", "hosts/{host-id}/trackers", "HostTracker", true),
+        })
+        {
+            var topPath = $"/security/threatIntelligence/{top}/$count";
+            var nestedPath = $"/security/threatIntelligence/{nested}/$count";
+            foreach (var path in new[] { topPath, nestedPath })
+            {
+                var operation = document.Paths[path].Operations![HttpMethod.Get];
+                Assert.Null(operation.RequestBody);
+                var queries = operation.Parameters!;
+                Assert.Equal(new[] { "$filter", "$search" }, queries.Select(p => p.Name).OrderBy(n => n));
+                Assert.All(queries, p =>
+                {
+                    Assert.Equal(ParameterLocation.Query, p.In);
+                    Assert.False(p.Required);
+                    Assert.Equal(JsonSchemaType.String, p.Schema!.Type);
+                });
+                var media = Assert.Single(operation.Responses!["2XX"].Content!);
+                Assert.Equal("text/plain", media.Key);
+                Assert.Equal(JsonSchemaType.Integer, media.Value.Schema!.Type);
+                Assert.Equal("int32", media.Value.Schema.Format);
+                Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, Config("beta")));
+            }
+            var published = PublishedDefault(metadata, $"Get-MgBetaSecurityThreatIntelligence{noun}Count");
+            Assert.Equal(nestedDefault ? nestedPath : topPath, published.GetProperty("Uri").GetString());
+            Assert.Contains(published.GetProperty("Variants").EnumerateArray(), v => v.GetString() == "Get1");
+        }
+    }
+
+    private static JsonElement PublishedDefault(JsonDocument metadata, string command) =>
+        Assert.Single(metadata.RootElement.EnumerateArray(),
+            row => row.GetProperty("ApiVersion").GetString() == "beta" &&
+                row.GetProperty("Command").GetString() == command);
+
     private static GeneratorConfig Config(string profile) => new("Test.Client", "unused", profile);
 
     private static JsonDocument ReadLedger() =>
