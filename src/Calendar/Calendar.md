@@ -22,6 +22,8 @@ directive:
 # 26 exact operation-ID matches per compatible profile, plus absent legacy CRUD
 # selector branches. Calendar_cmdletConfigurations.cs covers both profiles without
 # relying on v1.0-only derived data. Existing curated coverage is retained.
+# The ledger separately reconciles six existing derived collision suppressions
+# across both profiles; these are not counted as literal legacy-regex matches.
   - remove-path-by-operation: (user|group)_(Update|Delete)Calendar$|(user|group)..*_(Get|Create|Update|Delete)CalendarView$|(user|group).(calendar).calendarView.*$|user.calendar_(Get|Update|Delete)Event$|(user|group).(calendar).event.*$|(user|group)_.*CalendarView$|(user|group).calendarView.*$|user.calendarGroup_(Get|Update|Delete)Calendar$|user.calendarGroup.calendar.*$|(group|user).event_(Create|Update|Create)Calendar$|(user|group).event.calendar.*$|placeAsRoomList.room_(Get|Update|Delete)GraphBPrePlaceId$|placeAsRoomList.workspace_(Get|Update|Delete)GraphBPrePlaceId$
 # Rename cmdlets.
 # Wrapper migration: exact noun and Invoke verb fallbacks cover the default-user-

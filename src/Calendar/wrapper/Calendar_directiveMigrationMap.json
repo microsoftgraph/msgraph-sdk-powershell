@@ -5,6 +5,32 @@
     "v1.0": "f8cbbb7420cd4c881bae4662fd0a3ff5bcc3182b",
     "beta": "a1b424a75a626b3a390e1993de3cda01264a3959"
   },
+  "collisionReconciliation": {
+    "source": "tools/WrapperGenerator/data/collision-suppressions.v1.0.json",
+    "notes": "The first real full beta build exposed five collisions because existing derived collision data is v1.0-only. Reconcile its six exact suppressed routes in module configuration, rather than broadening the original operation-ID regex. The published MgCommandMetadata.json oracle contains no exact method/path row for any of these routes in either profile. Both profiles retain GET /groups/{group-id}/calendar/calendarView (Get-Mg[Beta]GroupCalendarView), GET /users/{user-id}/calendar/calendarView (Get-Mg[Beta]UserCalendarView), and POST /users/{user-id}/calendar/permanentDelete (Remove-Mg[Beta]UserCalendarPermanent). Neither profile publishes a user calendar event count route. The default-calendar permanentDelete beta verb/noun remains a pre-existing structural parity difference outside the shared rename directive; it is not suppressed. Regression coverage checks real spec IDs, oracle absence, existing derived provenance, exact suppression, retained neighbors and successful subset emission.",
+    "profiles": {
+      "v1.0": {
+        "operations": [
+          { "method": "GET", "path": "/groups/{group-id}/calendarView", "operationId": "groups.ListCalendarView" },
+          { "method": "GET", "path": "/users/{user-id}/calendarView", "operationId": "users.ListCalendarView" },
+          { "method": "GET", "path": "/users/{user-id}/calendars/{calendar-id}/calendarView", "operationId": "users.calendars.ListCalendarView" },
+          { "method": "GET", "path": "/users/{user-id}/calendar/events/$count", "operationId": "users.calendar.events.GetCount-1a22" },
+          { "method": "GET", "path": "/users/{user-id}/calendars/{calendar-id}/events/$count", "operationId": "users.calendars.events.GetCount-efc7" },
+          { "method": "POST", "path": "/users/{user-id}/calendars/{calendar-id}/permanentDelete", "operationId": "users.user.calendars.calendar.permanentDelete" }
+        ]
+      },
+      "beta": {
+        "operations": [
+          { "method": "GET", "path": "/groups/{group-id}/calendarView", "operationId": "groups.ListCalendarView" },
+          { "method": "GET", "path": "/users/{user-id}/calendarView", "operationId": "users.ListCalendarView" },
+          { "method": "GET", "path": "/users/{user-id}/calendars/{calendar-id}/calendarView", "operationId": "users.calendars.ListCalendarView" },
+          { "method": "GET", "path": "/users/{user-id}/calendar/events/$count", "operationId": "users.calendar.events.GetCount-1a22" },
+          { "method": "GET", "path": "/users/{user-id}/calendars/{calendar-id}/events/$count", "operationId": "users.calendars.events.GetCount-efc7" },
+          { "method": "POST", "path": "/users/{user-id}/calendars/{calendar-id}/permanentDelete", "operationId": "users.user.calendars.calendar.permanentDelete" }
+        ]
+      }
+    }
+  },
   "mappings": [
     {
       "module": "Calendar",

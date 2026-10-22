@@ -145,6 +145,49 @@ public sealed class CalendarDirectiveMigrationTests
     [Theory]
     [InlineData("v1.0")]
     [InlineData("beta")]
+    public void ExistingCollisionSuppressionsHaveExactSpecAndBothProfileOracleEvidence(string profile)
+    {
+        using var ledger = ReadLedger();
+        var reconciliation = ledger.RootElement.GetProperty("collisionReconciliation");
+        using var derived = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot,
+            reconciliation.GetProperty("source").GetString()!.Replace('/', Path.DirectorySeparatorChar))));
+        using var oracle = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot,
+            "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
+        var operations = reconciliation.GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray().ToArray();
+        Assert.Equal(6, operations.Length);
+        foreach (var operation in operations)
+        {
+            var method = new HttpMethod(operation.GetProperty("method").GetString()!);
+            var path = operation.GetProperty("path").GetString()!;
+            var normalized = CmdletConfigurator.NormalizePathTemplate(path);
+            Assert.Equal(operation.GetProperty("operationId").GetString(), Spec(profile).Paths[path].Operations![method].OperationId);
+            Assert.Contains(derived.RootElement.EnumerateArray(), d =>
+                d.GetProperty("method").GetString() == method.Method
+                && d.GetProperty("uri").GetString() == normalized
+                && d.GetProperty("action").GetString() == "suppress");
+            Assert.DoesNotContain(oracle.RootElement.EnumerateArray(), row =>
+                row.GetProperty("ApiVersion").GetString() == profile
+                && row.GetProperty("Method").GetString() == method.Method
+                && row.GetProperty("Uri").GetString() is { } uri
+                && CmdletConfigurator.NormalizePathTemplate(uri) == normalized);
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, new GeneratorConfig("Test.Client", "", profile)));
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path));
+        }
+        foreach (var path in new[] { "/groups/{group-id}/calendar/calendarView", "/users/{user-id}/calendar/calendarView" })
+        {
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, new GeneratorConfig("Test.Client", "", profile)));
+            Assert.Contains(oracle.RootElement.EnumerateArray(), row =>
+                row.GetProperty("ApiVersion").GetString() == profile
+                && row.GetProperty("Method").GetString() == "GET"
+                && row.GetProperty("Uri").GetString() == path);
+        }
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/calendar/permanentDelete",
+            new GeneratorConfig("Test.Client", "", profile)));
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
     public async Task TargetedGenerationUsesRealProfileOperationsAndPreservesNeighbors(string profile)
     {
         var source = Spec(profile);
@@ -167,6 +210,15 @@ public sealed class CalendarDirectiveMigrationTests
             "/users/{user-id}/events/{event-id}/cancel",
             "/groups/{group-id}/calendar/events/{event-id}",
             "/groups/{group-id}/calendar/events/{event-id}/cancel",
+            "/groups/{group-id}/calendarView",
+            "/groups/{group-id}/calendar/calendarView",
+            "/users/{user-id}/calendarView",
+            "/users/{user-id}/calendar/calendarView",
+            "/users/{user-id}/calendars/{calendar-id}/calendarView",
+            "/users/{user-id}/calendar/events/$count",
+            "/users/{user-id}/calendars/{calendar-id}/events/$count",
+            "/users/{user-id}/calendars/{calendar-id}/permanentDelete",
+            "/users/{user-id}/calendar/permanentDelete",
             SharingPath,
         ];
         foreach (var path in paths)
@@ -186,6 +238,10 @@ public sealed class CalendarDirectiveMigrationTests
             Assert.Contains("GetMgUserEventDelta.g.cs", files);
             Assert.Contains(profile == "v1.0" ? "StopMgUserEvent.g.cs" : "InvokeMgUserEventCancel.g.cs", files);
             Assert.Contains("GetMgGroupCalendarEvent.g.cs", files);
+            Assert.Contains("GetMgGroupCalendarView.g.cs", files);
+            Assert.Contains("GetMgUserCalendarView.g.cs", files);
+            Assert.Contains(profile == "v1.0" ? "RemoveMgUserCalendarPermanent.g.cs" : "InvokeMgUserCalendarPermanentDelete.g.cs", files);
+            Assert.DoesNotContain("GetMgUserCalendarEventCount.g.cs", files);
             Assert.DoesNotContain(files, f => f!.Contains("CalendarEventDelta", StringComparison.Ordinal));
             Assert.DoesNotContain(files, f => f!.Contains("CalendarGetSchedule", StringComparison.Ordinal));
             Assert.DoesNotContain(files, f => f!.Contains("CalendarEventCancel", StringComparison.Ordinal));

@@ -78,5 +78,20 @@ public static partial class CmdletConfigurator
             Reason: "Calendar.md directives 1 and 6 remove the default-calendar event delta"),
         new(OverrideKind.SuppressOperation, HttpMethod.Get, "/users/{}/calendars/{}/events/delta", Match: PathMatch.Exact, Value: null,
             Reason: "Calendar.md directive 6 removes Get-UserCalendarEventDelta"),
+
+        // Reconcile existing v1.0 collision suppressions for beta, not additional regex
+        // matches. Both-profile oracle evidence and retained routes are in the ledger.
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/groups/{}/calendarview", Match: PathMatch.Exact, Value: null,
+            Reason: "existing collision suppression: group calendarView ships from /calendar/calendarView"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/users/{}/calendarview", Match: PathMatch.Exact, Value: null,
+            Reason: "existing collision suppression: user calendarView ships from /calendar/calendarView"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/users/{}/calendars/{}/calendarview", Match: PathMatch.Exact, Value: null,
+            Reason: "existing collision suppression: user calendarView ships from /calendar/calendarView"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/users/{}/calendar/events/$count", Match: PathMatch.Exact, Value: null,
+            Reason: "existing collision suppression: no published default-calendar event count route"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/users/{}/calendars/{}/events/$count", Match: PathMatch.Exact, Value: null,
+            Reason: "existing collision suppression: no published named-calendar event count route"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Post, "/users/{}/calendars/{}/permanentdelete", Match: PathMatch.Exact, Value: null,
+            Reason: "existing collision suppression: permanentDelete ships from the default calendar"),
     ];
 }
