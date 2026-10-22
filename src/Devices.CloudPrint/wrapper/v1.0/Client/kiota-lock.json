@@ -2,7 +2,7 @@
   "descriptionHash": "CA9040F966CFC045EAA59CD677790F24B42D8A89C8998795EDCF6A09B645C348B447B1B49C054D2317619A7F40855978B04C029DAF4D6D7F147DC21904F6ED09",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Devices.CloudPrint.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Devices.CloudPrint.Client",
