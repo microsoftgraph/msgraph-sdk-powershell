@@ -153,6 +153,43 @@ public sealed class UsersDirectiveMigrationTests
         Assert.Equal(JsonSchemaType.String, query.Schema!.Type);
     }
 
+    [Fact]
+    public async Task BetaPhotoMediaRoutesAreDistinctAndPublishedDefaultIsTheSingleton()
+    {
+        const string singleton = "/users/{user-id}/photo/$value";
+        const string item = "/users/{user-id}/photos/{profilePhoto-id}/$value";
+        var document = await ReadSpec("openApiDocs_KiotaCompat", "beta");
+        var config = new GeneratorConfig("Test.Client", "unused", "beta");
+        using var metadata = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot(),
+            "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
+        foreach (var (method, singletonId, itemId, command) in new[]
+        {
+            (HttpMethod.Get, "users.GetPhotoContent", "users.GetPhotosContent", "Get-MgBetaUserPhotoContent"),
+            (HttpMethod.Delete, "users.DeletePhotoContent", "users.DeletePhotosContent", "Remove-MgBetaUserPhotoContent"),
+        })
+        {
+            Assert.Equal(singletonId, document.Paths[singleton].Operations![method].OperationId);
+            Assert.Equal(itemId, document.Paths[item].Operations![method].OperationId);
+            Assert.False(CmdletConfigurator.IsSuppressed(method, singleton, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(method, item, config));
+            Assert.Equal(new[] { "UserId" }, Naming.Resolve(new OperationInfo(method, singleton), config).PathParamNames);
+            Assert.Equal(new[] { "UserId", "ProfilePhotoId" },
+                Naming.Resolve(new OperationInfo(method, item), config).PathParamNames);
+            var published = Assert.Single(metadata.RootElement.EnumerateArray(), row =>
+                row.GetProperty("ApiVersion").GetString() == "beta"
+                && row.GetProperty("Command").GetString() == command);
+            Assert.Equal(singleton, published.GetProperty("Uri").GetString());
+        }
+        foreach (var path in new[] { singleton, item })
+        {
+            var binary = document.Paths[path].Operations![HttpMethod.Get]
+                .Responses!["2XX"].Content!["application/octet-stream"].Schema!;
+            Assert.Equal(JsonSchemaType.String, binary.Type);
+            Assert.Equal("binary", binary.Format);
+            Assert.True(document.Paths[path].Operations![HttpMethod.Delete].Responses!.ContainsKey("204"));
+        }
+    }
+
     private static void AssertSuppressed(OpenApiDocument document, GeneratorConfig config,
         string methodName, string path, string operationId)
     {

@@ -12,6 +12,17 @@
     },
     "lineage": "Original operation-ID regex evaluated case-sensitively on actual same-profile openApiDocs Users.yml: exactly three matches per profile, all surviving at the exact same method/path with renamed IDs. user_GetOutlook does not match lowercase outlook. No actual removals or action/function qualification translations.",
     "coverage": "Exact module entries preserve v1.0 derived suppressions while supplying the missing beta coverage. Existing curated /photos suppressions remain unchanged. The unreachable UserTodo List rename is subsumed, not implemented as a new public noun.",
+    "betaPhotoMediaContract": {
+      "profile": "beta",
+      "defaultPath": "/users/{user-id}/photo/$value",
+      "additionalPath": "/users/{user-id}/photos/{profilePhoto-id}/$value",
+      "methods": ["GET", "DELETE"],
+      "publishedHelpCommit": "07b0cf8f6305213f3c3830c301fca69a3e82ed17",
+      "getHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/get-mgbetauserphotocontent?view=graph-powershell-beta",
+      "deleteHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetauserphotocontent?view=graph-powershell-beta",
+      "defaultEvidence": "Published Get (Default) requires UserId and OutFile; Get1 additionally requires ProfilePhotoId. Delete (Default) requires UserId; Delete1 additionally requires ProfilePhotoId. Thus the singleton is independently verified as the published default, not guessed from the metadata oracle's first URI.",
+      "routeFidelity": "Both actual compatible routes remain unsuppressed. GET is binary application/octet-stream with 2XX response; DELETE has 204. A full beta build requires reviewed opt-in media routing support; do not treat the absent initial beta output or generator collision as permission to drop either route."
+    },
     "betaCollisionRepair": {
       "method": "DELETE",
       "path": "/users/{user-id}/sponsors/{directoryObject-id}/$ref",
