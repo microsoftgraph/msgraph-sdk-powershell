@@ -103,6 +103,8 @@ constructor are unchanged. These additional **init-only flags default to false**
 | `AllowPublishedParameterInference` | Only with explicit per-route parameters: prefer a compatible published-default family, otherwise require exactly one compatible alternate based on bound parameters. |
 | `AllowMixedReadOperations` | The reviewed three-operation paged aggregate zero-argument function plus resource List/Get family, returning the same entity type. |
 | `IncludeDerivedSuppressedRoutes` | Restore only exact reviewed group members from derived suppression data; never bypass a curated shared suppression. |
+| `AllowMixedMediaReads` | Beta-only explicit Binary/List/Item resource-read plans for the reviewed recording groups; not general media/function merging. |
+| `RequireExplicitRoute` | Only with the mixed-media policy: mandatory `Route Binary|Recordings`, an empty internal default and no Published value, inference or fallback. |
 
 The flags do not rename, unsuppress, or infer membership for any operation. Exact route
 lists, API-profile matching, published defaults, common parameter/alias conflict checks,
@@ -334,6 +336,61 @@ rather than silently losing its required input. Focused engine callers can suppl
 `GeneratorConfig.ReferenceDeleteQueryBindings`; module entries are read through
 `CmdletConfigurator.GetReferenceDeleteQueryBindings`.
 
+### CloudCommunications beta: required selection when the old default is unavailable
+
+The independently pinned official 2.38.0 proxy and compiled dispatch prove that the old
+recording GET default (`Get2`) is an aggregate `getAllRecordings` function, not one of the
+three colliding recording routes. Its current COMM form uses three undeclared `@` alias
+arguments and remains baseline-unsupported. The USER aggregate is intentionally removed
+by immutable shared directive #5. These are **different reasons** for unavailability;
+neither permits restoring the suppressed operation, guessing an alias binding, or calling
+one of the remaining endpoints the old published default.
+
+For the two reviewed beta groups only, the surviving resource GETs have explicit plans:
+
+```csharp
+MergeRoutes(new MultiRouteGroup("beta",
+[
+    new("GET", binarySingletonPath, "Binary") { ReadKind = MultiRouteReadKind.Binary },
+    new("GET", jsonCollectionPath, "Recordings") { ReadKind = MultiRouteReadKind.List },
+    new("GET", jsonItemPath, "Recordings") { ReadKind = MultiRouteReadKind.Item },
+], DefaultRoute: "", SelectorParameter: "Route")
+{
+    AllowMixedMediaReads = true,
+    RequireExplicitRoute = true,
+    AllowAsymmetricRoutes = true,
+    AllowExplicitRouteSelection = true,
+    AllowResponseUnion = true,
+}, "Old Get2 unavailable: COMM unsupported aliases; USER shared-source suppression.")
+```
+
+The exact parents are `/communications/onlineMeetings/{onlineMeeting-id}` and
+`/users/{user-id}/onlineMeetings/{onlineMeeting-id}`. Binary appends `/recording`; JSON
+collection appends `/recordings`; JSON item additionally appends `/{callRecording-id}`.
+`MultiRoute.ReadKind` defaults to `Auto` for every existing group and is otherwise allowed
+only by this narrowly reviewed policy. It must agree with the actual response contract.
+All three methods remain resource GETs; aggregate functions are not members.
+
+This is an explicitly documented **beta deviation**: `Route` is mandatory and accepts
+only `Binary` or `Recordings`, case-insensitively. There is no `Published` option,
+initializer, implicit endpoint default, inference or fallback. The empty constructor
+`DefaultRoute` represents absence of a default, not a Binary default. Omission fails
+before any worker or authentication; passing `Published` fails validation.
+
+Binary selects the typed stream worker, returning bytes or writing optional `OutFile`,
+with stream disposal and request cancellation. It accepts no JSON query options or
+recording ID. Recordings selects the typed JSON list when no recording ID is bound, or
+the typed JSON item when it is. Only JSON List accepts paging/list options; JSON Item
+accepts select/expand. `OutFile` is rejected for either JSON role, and item IDs combined
+with list-only options fail rather than being ignored. Public output metadata is the
+explicit bytes/recording-model union; all three exact routes retain metadata.
+
+The policy requires the demonstrated optional OData query sets and compatible shared
+parent IDs, no request body or declared operation headers, and no derived-suppression
+bypass. Generic caller `Headers` still forwards to every selected worker. Existing
+optional Published groups, homogeneous `/$value` groups, alias guards and curated
+suppression priority are unchanged.
+
 ### Published Bookings defaults
 
 The module owner's reviewed beta evidence covers 53 pairs / 106 operations in 45 public
@@ -371,6 +428,11 @@ and `Test-WrapperOrdinaryReferenceDelete.ps1` accept a compiled typed fixture as
 (`-FixtureAssembly`) and use only local/mock requests: media bytes/OutFile, disposal,
 errors/cancellation; aggregate Model/paging/headers and inference; and the exact ordinary
 `Id`/`@id` contract. They do not require tenant data or make Graph network calls.
+`Test-WrapperRequiredMediaRoutes.ps1` and the actual-client
+`Test-WrapperMixedMediaReads.ps1 -FixtureAssembly <dll>` gate pin the beta required-choice
+deviation: no omitted/Published route, no worker on invalid parameters, real binary/JSON
+requests, paging, OutFile/bytes, disposal, cancellation and truthful output metadata,
+without live Graph calls.
 
 ## Group photo: `/photo` vs `/photos`
 

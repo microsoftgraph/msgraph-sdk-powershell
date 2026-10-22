@@ -17,20 +17,39 @@ public static partial class CmdletEmitter
             + $"{Literal(w.InternalNaming.VerbName + "-" + w.InternalNaming.Noun)}, "
             + $"{Names(w.Parameters.SelectMany(p => p.Alias is null ? new[] { p.Name } : new[] { p.Name, p.Alias! }))}, "
             + $"{Names(w.Parameters.Where(p => p.Mandatory).Select(p => p.Name))}),");
-        var selector = group.SelectorParameter is { } name ? name : "\"Published\"";
+        var selector = group.SelectorParameter is { } name ? name : group.RequireExplicitRoute ? "\"\"" : "\"Published\"";
         var removeSelector = group.SelectorParameter is { } parameter
             ? $"\n            parameters.Remove({Literal(parameter)});"
             : "";
-        var publishedCandidateFilter = group.AllowExplicitRouteSelection
+        var publishedCandidateFilter = group.RequireExplicitRoute ? "" : group.AllowExplicitRouteSelection
             ? group.AllowPublishedParameterInference
                 ? "false"
                 : $"!string.Equals(candidate.Label, {Literal(group.DefaultRoute)}, StringComparison.OrdinalIgnoreCase)"
             : "!string.Equals(candidate.Shape, ParameterSetName, StringComparison.OrdinalIgnoreCase)";
+        var publishedDeclaration = group.RequireExplicitRoute ? "" :
+            "\n            var publishedRoute = string.Equals(selectedRoute, \"Published\", StringComparison.OrdinalIgnoreCase);";
+        var candidateFilter = group.RequireExplicitRoute
+            ? "!string.Equals(candidate.Label, selectedRoute, StringComparison.OrdinalIgnoreCase)"
+            : $"""
+publishedRoute
+                    ? {publishedCandidateFilter}
+                    : !string.Equals(candidate.Label, selectedRoute, StringComparison.OrdinalIgnoreCase)
+""";
+        var defaultPreference = group.RequireExplicitRoute ? "" : $$"""
+            if (publishedRoute)
+            {
+                var defaultRoutes = new List<int>();
+                foreach (var routeIndex in compatibleRoutes)
+                    if (string.Equals(routeCandidates[routeIndex].Label, {{Literal(group.DefaultRoute)}}, StringComparison.OrdinalIgnoreCase))
+                        defaultRoutes.Add(routeIndex);
+                if (defaultRoutes.Count > 0)
+                    compatibleRoutes = defaultRoutes;
+            }
+""";
 
         return $$"""
             var parameters = new Dictionary<string, object>(MyInvocation.BoundParameters, StringComparer.OrdinalIgnoreCase);{{removeSelector}}
-            var selectedRoute = {{selector}};
-            var publishedRoute = string.Equals(selectedRoute, "Published", StringComparison.OrdinalIgnoreCase);
+            var selectedRoute = {{selector}};{{publishedDeclaration}}
             var routeCandidates = new (string Label, string Shape, string Command, string[] Allowed, string[] Required)[]
             {
 {{string.Join("\n", routes)}}
@@ -46,9 +65,7 @@ public static partial class CmdletEmitter
             for (var routeIndex = 0; routeIndex < routeCandidates.Length; routeIndex++)
             {
                 var candidate = routeCandidates[routeIndex];
-                if (publishedRoute
-                    ? {{publishedCandidateFilter}}
-                    : !string.Equals(candidate.Label, selectedRoute, StringComparison.OrdinalIgnoreCase))
+                if ({{candidateFilter}})
                     continue;
                 var allowed = new HashSet<string>(candidate.Allowed, StringComparer.OrdinalIgnoreCase);
                 var missing = new List<string>();
@@ -65,15 +82,7 @@ public static partial class CmdletEmitter
                 if (missing.Count == 0 && unsupported.Count == 0)
                     compatibleRoutes.Add(routeIndex);
             }
-            if (publishedRoute)
-            {
-                var defaultRoutes = new List<int>();
-                foreach (var routeIndex in compatibleRoutes)
-                    if (string.Equals(routeCandidates[routeIndex].Label, {{Literal(group.DefaultRoute)}}, StringComparison.OrdinalIgnoreCase))
-                        defaultRoutes.Add(routeIndex);
-                if (defaultRoutes.Count > 0)
-                    compatibleRoutes = defaultRoutes;
-            }
+{{defaultPreference}}
             if (compatibleRoutes.Count != 1)
             {
                 var message = "Cannot select a unique Graph route for '" + selectedRoute

@@ -39,6 +39,9 @@ public static partial class CmdletEmitter
     {
         if ((group.AllowAsymmetricRoutes || group.AllowExplicitRouteSelection) && group.SelectorParameter is null)
             throw new InvalidOperationException("Asymmetric or explicit multi-route groups require an explicit selector parameter.");
+        if (group.RequireExplicitRoute && (!group.AllowMixedMediaReads || !group.AllowExplicitRouteSelection
+            || group.SelectorParameter != "Route" || group.DefaultRoute.Length != 0))
+            throw new InvalidOperationException("Required mixed-media selection must have a mandatory Route selector and no endpoint default.");
         if (group.AllowPublishedParameterInference && !group.AllowExplicitRouteSelection)
             throw new InvalidOperationException("Published parameter inference requires the explicit per-route parameter policy.");
         var parameters = workers.SelectMany(w => w.Parameters).ToArray();
@@ -79,7 +82,7 @@ public static partial class CmdletEmitter
             aliasOwners[alias] = parameter.Name;
         }
 
-        var defaultWorker = workers.Where(w => w.RouteName == group.DefaultRoute)
+        var defaultWorker = group.RequireExplicitRoute ? workers[0] : workers.Where(w => w.RouteName == group.DefaultRoute)
             .OrderBy(w => w.Shape == "List" ? 0 : 1).First();
         // The selector discriminates route labels, not List/Get within one label. Required
         // queries participate in PowerShell binding just like path IDs.
@@ -88,7 +91,7 @@ public static partial class CmdletEmitter
             var peers = partition.ToArray();
             var mandatory = peers.Select(w => w.Parameters.Where(p => p.Mandatory)
                 .Select(p => p.Name).ToHashSet(StringComparer.OrdinalIgnoreCase)).ToArray();
-            var partitionDefault = group.SelectorParameter is null ? defaultWorker
+            var partitionDefault = group.RequireExplicitRoute ? null : group.SelectorParameter is null ? defaultWorker
                 : peers.FirstOrDefault(w => w.Shape == defaultWorker.Shape);
             var defaultMandatory = partitionDefault?.Parameters.Where(p => p.Mandatory)
                 .Select(p => p.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
@@ -150,7 +153,8 @@ public static partial class CmdletEmitter
         var naming = workers[0].Naming;
         string SetName(RouteWorker worker) => group.AllowExplicitRouteSelection ? "Route"
             : group.SelectorParameter is null ? worker.RouteName + worker.Shape : worker.Shape;
-        var defaultWorker = workers.Where(w => w.RouteName == group.DefaultRoute).OrderBy(w => w.Shape == "List" ? 0 : 1).First();
+        var defaultWorker = group.RequireExplicitRoute ? workers[0]
+            : workers.Where(w => w.RouteName == group.DefaultRoute).OrderBy(w => w.Shape == "List" ? 0 : 1).First();
         var declarations = new List<string>();
         foreach (var parameter in workers.SelectMany(w => w.Parameters).GroupBy(p => p.Name, StringComparer.OrdinalIgnoreCase))
         {
@@ -173,11 +177,12 @@ public static partial class CmdletEmitter
         }
 
         var labels = workers.Select(w => w.RouteName).Distinct(StringComparer.Ordinal).ToArray();
+        var selectorValues = group.RequireExplicitRoute ? labels : new[] { "Published" }.Concat(labels);
         var selector = group.SelectorParameter is { } selectorName
             ? $$"""
-        [Parameter]
-        [ValidateSet("Published", {{string.Join(", ", labels.Select(l => $"\"{l}\""))}})]
-        public string {{selectorName}} { get; set; } = "Published";
+        [Parameter{{(group.RequireExplicitRoute ? "(Mandatory = true)" : "")}}]
+        [ValidateSet({{string.Join(", ", selectorValues.Select(l => $"\"{l}\""))}})]
+        public string {{selectorName}} { get; set; } = {{(group.RequireExplicitRoute ? "string.Empty" : "\"Published\"")}};
 """
             : "";
         var routeExpression = group.SelectorParameter is null ? "\"\"" :

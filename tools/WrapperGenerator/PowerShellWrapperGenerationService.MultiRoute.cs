@@ -41,15 +41,19 @@ public sealed partial class PowerShellWrapperGenerationService
                 if (!seen.Add(route.Method + " " + route.Path))
                     throw new InvalidOperationException($"Operation belongs to more than one multi-route member: {route.Method} {route.Path}.");
             }
-            if (!group.Routes.Any(r => r.Name == group.DefaultRoute)
+            if ((group.RequireExplicitRoute ? !string.IsNullOrEmpty(group.DefaultRoute) : !group.Routes.Any(r => r.Name == group.DefaultRoute))
                 || group.Routes.Select(r => r.Name).Distinct(StringComparer.OrdinalIgnoreCase).Count() < 2)
-                throw new InvalidOperationException("Multi-route group requires at least two route names and an explicit matching default.");
+                throw new InvalidOperationException("Multi-route groups require at least two route names and a matching default, or an empty default for required-route selection.");
             if ((group.AllowAsymmetricRoutes || group.AllowExplicitRouteSelection) && group.SelectorParameter is null)
                 throw new InvalidOperationException("Asymmetric or explicit multi-route groups require an explicit selector parameter.");
             if (group.AllowPublishedParameterInference && !group.AllowExplicitRouteSelection)
                 throw new InvalidOperationException("Published parameter inference requires the explicit per-route parameter policy.");
             if (group.Routes.Any(r => r.QueryBindings.Count > 0) && !group.AllowReferenceDelete)
                 throw new InvalidOperationException("Explicit multi-route query bindings require the reviewed reference DELETE policy.");
+            if (group.RequireExplicitRoute != group.AllowMixedMediaReads)
+                throw new InvalidOperationException("Required route selection is supported only by the reviewed mixed-media read policy.");
+            if (!group.AllowMixedMediaReads && group.Routes.Any(r => r.ReadKind != MultiRouteReadKind.Auto))
+                throw new InvalidOperationException("Explicit read plans require the reviewed mixed-media read policy.");
         }
         return groups;
     }
@@ -87,9 +91,10 @@ public sealed partial class PowerShellWrapperGenerationService
                 var op = selected[i];
                 var naming = op.Naming;
                 var method = naming.SourceMethod.ToUpperInvariant();
+                var binaryRead = group.AllowMixedMediaReads && group.Routes[i].ReadKind == MultiRouteReadKind.Binary;
                 if (naming.NormalizedPath.Contains('@', StringComparison.Ordinal)
                     || HasParameterizedIntermediateSegment(naming.SourcePath)
-                    || (method == "GET" && ((HasBinarySuccessContent(op.Operation) && !group.AllowMediaRoutes)
+                    || (method == "GET" && ((HasBinarySuccessContent(op.Operation) && !group.AllowMediaRoutes && !binaryRead)
                         || TryGetRequestJsonSchema(op.Operation) is not null
                         || (EndsWithEmittableODataSegment(naming.SourcePath) && !EndsWithSegment(naming.SourcePath, "$count")
                             && !group.AllowMediaRoutes))))
@@ -102,7 +107,7 @@ public sealed partial class PowerShellWrapperGenerationService
                 var extraQueryParameters = method == "GET"
                     ? GetExtraQueryParameters(op.Operation)
                     : group.AllowReferenceDelete ? GetReferenceDeleteQueries(group.Routes[i], op.Operation) : [];
-                if (group.AllowMediaRoutes && method == "GET")
+                if ((group.AllowMediaRoutes || binaryRead) && method == "GET")
                 {
                     if (op.QueryParams.Count != 0
                         || !TryResolveOperationReturnType(op.Operation, ctx, naming, false,
@@ -136,10 +141,7 @@ public sealed partial class PowerShellWrapperGenerationService
                         var response = TryGetSuccessJsonSchema(op.Operation);
                         var value = response is null ? null : FindProperty(response, "value");
                         var nextLink = response is null ? null : FindProperty(response, "@odata.nextLink");
-                        if (nextLink?.Type is not { } nextLinkType
-                            || (nextLinkType & ~JsonSchemaType.Null) != JsonSchemaType.String
-                            || nextLink.GetReferenceId() is not null
-                            || nextLink.AnyOf?.Count > 0 || nextLink.OneOf?.Count > 0)
+                        if (!IsStringNextLinkSchema(nextLink))
                             throw new InvalidOperationException($"Mixed read function response requires a plain string '@odata.nextLink' pagination member: {naming.SourcePath}.");
                         if (value is null || !TryResolveListEntityTypeName(value, ctx.ModelsNamespace, out var entity)
                             || extraQueryParameters.Any(p => p.Name != "model" || p.Required))
@@ -227,6 +229,8 @@ public sealed partial class PowerShellWrapperGenerationService
                 }
                 if (source is null)
                     throw new InvalidOperationException($"No supported multi-route worker for {naming.SourceMethod} {naming.SourcePath}.");
+                if (group.AllowMixedMediaReads && shape != (group.Routes[i].ReadKind == MultiRouteReadKind.List ? "List" : "Get"))
+                    throw new InvalidOperationException($"Mixed-media read plan does not match the actual response shape: {naming.SourcePath}.");
                 if (method == "GET" && op.QueryParams.Any(q => q.StartsWith('$')
                     && (shape == "Get" ? q is not ("$select" or "$expand")
                         : shape == "Scalar" && q is not ("$filter" or "$search"))))
@@ -271,7 +275,9 @@ public sealed partial class PowerShellWrapperGenerationService
                         && !(group.AllowMixedReadOperations && shape.Key == "List"
                             && baseline.OutputType == worker.OutputType)
                         && SchemaSignature(TryGetSuccessJsonSchema(baselineOp)) != SchemaSignature(TryGetSuccessJsonSchema(operation)))
-                    || (group.AllowMixedReadOperations
+                    || (group.AllowMixedMediaReads
+                        ? false // Every role is checked against its own exact supported query/header contract.
+                        : group.AllowMixedReadOperations
                         ? !CompatibleMixedReadParameters(baselineOp, operation)
                         : ParameterSignature(baselineOp, !group.AllowReferenceDelete) != ParameterSignature(operation, !group.AllowReferenceDelete)))
                     throw new InvalidOperationException($"Incompatible multi-route body, response, query or header shape: {worker.Naming.SourcePath}.");
@@ -282,6 +288,9 @@ public sealed partial class PowerShellWrapperGenerationService
             throw new InvalidOperationException("Selected multi-route families must expose the same operation shapes.");
         if (group.AllowMixedReadOperations && workers.Select(w => w.OutputType).Distinct(StringComparer.Ordinal).Count() != 1)
             throw new InvalidOperationException("Mixed read workers must emit the same entity type; differing envelope types do not authorize differing payload models.");
+        if (group.AllowMixedMediaReads && workers.Where((_, i) => group.Routes[i].ReadKind != MultiRouteReadKind.Binary)
+            .Select(w => w.OutputType).Distinct(StringComparer.Ordinal).Count() != 1)
+            throw new InvalidOperationException("Mixed-media JSON list/item workers must emit the same recording entity type.");
     }
 
     private static string ParameterSignature(OpenApiOperation operation, bool includeQueries = true) =>
@@ -323,7 +332,7 @@ public sealed partial class PowerShellWrapperGenerationService
         var method = naming.SourceMethod.ToUpperInvariant();
         var extension = group.AllowZeroArgumentFunctions || group.AllowAsymmetricRoutes || group.AllowResponseUnion
             || group.AllowRouteSpecificBodies || group.AllowReferenceDelete || group.AllowMediaRoutes || group.AllowExplicitRouteSelection
-            || group.AllowMixedReadOperations;
+            || group.AllowMixedReadOperations || group.AllowMixedMediaReads;
         if (extension && method == "GET" && operations.Any(o => o.Operation.RequestBody is not null))
             throw new InvalidOperationException("Reviewed GET route extensions do not support any request body.");
         if (extension
@@ -337,6 +346,8 @@ public sealed partial class PowerShellWrapperGenerationService
             throw new InvalidOperationException("Mixed reads require exactly one zero-argument paged GET function and its resource list/item family, with asymmetric explicit selection and reviewed Published inference.");
         if (group.AllowZeroArgumentFunctions && (!group.AllowMixedReadOperations && naming.Kind != OperationKind.Function || method != "GET"))
             throw new InvalidOperationException("The zero-argument function policy applies only to GET functions.");
+        if (group.AllowMixedMediaReads)
+            ValidateMixedMediaReadPolicy(group, operations);
         if (group.AllowAsymmetricRoutes && (!group.AllowMixedReadOperations && naming.Kind != OperationKind.Resource || method != "GET"))
             throw new InvalidOperationException("The asymmetric route policy applies only to resource GET groups.");
         if (group.AllowRouteSpecificBodies && (naming.Kind != OperationKind.Action || method != "POST"
@@ -374,6 +385,10 @@ public sealed partial class PowerShellWrapperGenerationService
         parameter.Schema?.Type == JsonSchemaType.String && parameter.Schema.GetReferenceId() is null
         && !(parameter.Schema.Enum?.Count > 0 || parameter.Schema.AllOf?.Count > 0
             || parameter.Schema.AnyOf?.Count > 0 || parameter.Schema.OneOf?.Count > 0);
+
+    private static bool IsStringNextLinkSchema(IOpenApiSchema? schema) =>
+        schema?.Type is { } type && (type & ~JsonSchemaType.Null) == JsonSchemaType.String
+        && schema.GetReferenceId() is null && !(schema.AnyOf?.Count > 0 || schema.OneOf?.Count > 0);
 
     private static IReadOnlyList<CmdletEmitter.StringQueryParameter> GetExtraQueryParameters(OpenApiOperation operation)
     {
