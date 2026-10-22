@@ -20,6 +20,15 @@
       "allowedRoles": [ "Binary", "Recordings" ],
       "publishedChoiceAllowed": false,
       "defaultOrFallbackAllowed": false,
+      "canonicalPreparedConfiguration": {
+        "defaultRoute": "",
+        "allowMixedMediaReads": true,
+        "requireExplicitRoute": true,
+        "allowAsymmetricRoutes": true,
+        "allowExplicitRouteSelection": true,
+        "allowResponseUnion": true,
+        "activation": "Only after the canonical capability lands through its normal target-branch merge."
+      },
       "intentionalSdkDeviation": "Require an explicit route rather than choose a substitute for the unavailable published Get2 function default.",
       "aggregatePolicy": {
         "communication": "Keep the existing unsupported alias-argument function deferred; no invented argument declarations, guessed Kiota member, raw-URL fallback or noun override.",
@@ -32,6 +41,7 @@
           "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
           "operationId": "communications.GetOnlineMeetingsRecording",
           "role": "Binary",
+          "readKind": "Binary",
           "response": "application/octet-stream; string/binary"
         },
         {
@@ -39,6 +49,7 @@
           "path": "/communications/onlineMeetings/{onlineMeeting-id}/recordings",
           "operationId": "communications.onlineMeetings.ListRecordings",
           "role": "Recordings",
+          "readKind": "List",
           "response": "application/json; microsoft.graph.callRecordingCollectionResponse"
         },
         {
@@ -46,6 +57,7 @@
           "path": "/communications/onlineMeetings/{onlineMeeting-id}/recordings/{callRecording-id}",
           "operationId": "communications.onlineMeetings.GetRecordings",
           "role": "Recordings",
+          "readKind": "Item",
           "response": "application/json; microsoft.graph.callRecording"
         },
         {
@@ -53,6 +65,7 @@
           "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
           "operationId": "users.GetOnlineMeetingsRecording",
           "role": "Binary",
+          "readKind": "Binary",
           "response": "application/octet-stream; string/binary"
         },
         {
@@ -60,6 +73,7 @@
           "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings",
           "operationId": "users.onlineMeetings.ListRecordings",
           "role": "Recordings",
+          "readKind": "List",
           "response": "application/json; microsoft.graph.callRecordingCollectionResponse"
         },
         {
@@ -67,6 +81,7 @@
           "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings/{callRecording-id}",
           "operationId": "users.onlineMeetings.GetRecordings",
           "role": "Recordings",
+          "readKind": "Item",
           "response": "application/json; microsoft.graph.callRecording"
         }
       ]
