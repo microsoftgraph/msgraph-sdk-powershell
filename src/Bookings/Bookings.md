@@ -19,6 +19,9 @@ The three shared cmdlet directive groups below have been audited against the v1.
 and beta Kiota-compatible specifications. Exact reviewed evidence is recorded in
 `wrapper/Bookings_directiveMigrationMap.json`; `BookingsDirectiveMigrationTests`
 pins the existing curated behavior without adding redundant overrides.
+The root suppression's original IDs are resolved against the legacy specs and
+explicitly bridged to their compatible counterparts; generation uses only the
+compatible specifications.
 
 Profile-local directives in `v1.0/readme.md` and `beta/readme.md`, all other
 profile-local readme directives, and `src/readme.graph.md` are explicitly outside
@@ -36,10 +39,10 @@ feature; the policy evidence alone does not resolve generation collisions.
 ``` yaml
 directive:
 # Remove invalid paths.
-# Wrapper audit: the literal singular solution\.solutionsRoot selector matches no
-# operation IDs in either compatible spec. Their actual root IDs begin with
-# solutions.solutionsRoot; retain the existing exact /solutions suppression as
-# compatibility behavior, not as a claimed literal-selector match.
+# Wrapper audit: this selector matches GET/PATCH /solutions in both legacy source
+# specs. The ledger explicitly bridges their singular/underscore IDs to the
+# compatible plural/dotted solutions.solutionsRoot IDs. Existing exact root
+# suppression covers both translated operations; this is not API absence.
   - remove-path-by-operation: ^solution\.solutionsRoot.*$
 # Remove cmdlets
 # Wrapper audit: existing exact /solutions/virtualEvents suppression covers GET,

@@ -16,37 +16,47 @@
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: ^solution\\.solutionsRoot.*$",
       "implementation": "CmdletConfigurator",
-      "notes": "Reviewed expected absence: the literal singular solution selector matches no operation IDs in either compatible spec. Actual GET/PATCH /solutions IDs use plural solutions.solutionsRoot and are recorded separately in compatibilityOperations. Retain the existing exact-path suppression for SDK compatibility, without claiming these are literal-selector matches.",
+      "notes": "The original selector matches GET/PATCH /solutions in both legacy AutoRest specs. Explicitly bridge each exact legacy method/path/operation-ID to the compatible operation rather than treating the singular-to-plural ID conversion as API absence. Existing exact-path suppression already implements both translated root operations.",
       "profiles": {
         "v1.0": {
-          "absenceExpected": true,
-          "operations": [],
-          "compatibilityOperations": [
+          "operationIdSource": "Legacy",
+          "notes": "Legacy root operation IDs solution.solutionsRoot_GetSolutionsRoot and solution.solutionsRoot_UpdateSolutionsRoot translate to compatible plural/dotted IDs on the same exact GET/PATCH /solutions routes.",
+          "absenceExpected": false,
+          "operations": [
             {
               "method": "GET",
               "path": "/solutions",
-              "operationId": "solutions.solutionsRoot.GetSolutionsRoot"
+              "operationId": "solutions.solutionsRoot.GetSolutionsRoot",
+              "legacyPath": "/solutions",
+              "legacyOperationId": "solution.solutionsRoot_GetSolutionsRoot"
             },
             {
               "method": "PATCH",
               "path": "/solutions",
-              "operationId": "solutions.solutionsRoot.UpdateSolutionsRoot"
+              "operationId": "solutions.solutionsRoot.UpdateSolutionsRoot",
+              "legacyPath": "/solutions",
+              "legacyOperationId": "solution.solutionsRoot_UpdateSolutionsRoot"
             }
           ]
         },
         "beta": {
-          "absenceExpected": true,
-          "operations": [],
-          "compatibilityOperations": [
+          "operationIdSource": "Legacy",
+          "notes": "Legacy root operation IDs solution.solutionsRoot_GetSolutionsRoot and solution.solutionsRoot_UpdateSolutionsRoot translate to compatible plural/dotted IDs on the same exact GET/PATCH /solutions routes.",
+          "absenceExpected": false,
+          "operations": [
             {
               "method": "GET",
               "path": "/solutions",
-              "operationId": "solutions.solutionsRoot.GetSolutionsRoot"
+              "operationId": "solutions.solutionsRoot.GetSolutionsRoot",
+              "legacyPath": "/solutions",
+              "legacyOperationId": "solution.solutionsRoot_GetSolutionsRoot"
             },
             {
               "method": "PATCH",
               "path": "/solutions",
-              "operationId": "solutions.solutionsRoot.UpdateSolutionsRoot"
+              "operationId": "solutions.solutionsRoot.UpdateSolutionsRoot",
+              "legacyPath": "/solutions",
+              "legacyOperationId": "solution.solutionsRoot_UpdateSolutionsRoot"
             }
           ]
         }

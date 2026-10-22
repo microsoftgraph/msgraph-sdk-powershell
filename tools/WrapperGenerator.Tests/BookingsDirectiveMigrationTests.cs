@@ -39,12 +39,23 @@ public sealed class BookingsDirectiveMigrationTests
         }
 
         var root = mappings.Single(m => m.GetProperty("directiveIndex").GetInt32() == 1);
-        Assert.True(root.GetProperty("profiles").GetProperty(profile).GetProperty("absenceExpected").GetBoolean());
-        Assert.Empty(ReadEvidence(root, profile, "operations"));
+        var rootProfile = root.GetProperty("profiles").GetProperty(profile);
+        Assert.Equal("Legacy", rootProfile.GetProperty("operationIdSource").GetString());
+        Assert.False(rootProfile.GetProperty("absenceExpected").GetBoolean());
         Assert.DoesNotContain(operations, o => Regex.IsMatch(o.OperationId, @"^solution\.solutionsRoot.*$"));
         Assert.Equal(
             Sorted(operations.Where(o => o.Path == "/solutions").ToArray()),
-            Sorted(ReadEvidence(root, profile, "compatibilityOperations")));
+            Sorted(ReadEvidence(root, profile, "operations")));
+        var legacyOperations = await ReadOperationsAsync(profile, "openApiDocs");
+        var originalMatches = legacyOperations.Where(o => Regex.IsMatch(o.OperationId, @"^solution\.solutionsRoot.*$")).ToArray();
+        Assert.Equal(2, originalMatches.Length);
+        Assert.Equal(Sorted(originalMatches), Sorted(ReadEvidence(root, profile, "operations", legacy: true)));
+        foreach (var bridge in rootProfile.GetProperty("operations").EnumerateArray())
+        {
+            Assert.Equal(
+                CmdletConfigurator.NormalizePathTemplate(bridge.GetProperty("legacyPath").GetString()!),
+                CmdletConfigurator.NormalizePathTemplate(bridge.GetProperty("path").GetString()!));
+        }
 
         var suppression = mappings.Single(m => m.GetProperty("directiveIndex").GetInt32() == 2);
         var suppressed = ReadEvidence(suppression, profile, "operations");
@@ -73,7 +84,7 @@ public sealed class BookingsDirectiveMigrationTests
         var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
         using var ledger = ReadLedger();
         var mappings = ledger.RootElement.GetProperty("mappings").EnumerateArray().ToArray();
-        foreach (var operation in ReadEvidence(mappings[0], profile, "compatibilityOperations")
+        foreach (var operation in ReadEvidence(mappings[0], profile, "operations")
             .Concat(ReadEvidence(mappings[1], profile, "operations")))
         {
             Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(operation.Method), operation.Path, config));
@@ -213,23 +224,23 @@ public sealed class BookingsDirectiveMigrationTests
     private static JsonDocument ReadLedger() => JsonDocument.Parse(File.ReadAllText(
         Path.Combine(FindRepoRoot(), "src", "Bookings", "wrapper", "Bookings_directiveMigrationMap.json")));
 
-    private static ReviewedOperation[] ReadEvidence(JsonElement mapping, string profile, string property) =>
+    private static ReviewedOperation[] ReadEvidence(JsonElement mapping, string profile, string property, bool legacy = false) =>
         mapping.GetProperty("profiles").GetProperty(profile).GetProperty(property).EnumerateArray()
             .Select(o => new ReviewedOperation(
                 o.GetProperty("method").GetString()!,
-                o.GetProperty("path").GetString()!,
-                o.GetProperty("operationId").GetString()!))
+                o.GetProperty(legacy ? "legacyPath" : "path").GetString()!,
+                o.GetProperty(legacy ? "legacyOperationId" : "operationId").GetString()!))
             .ToArray();
 
     private static ReviewedOperation[] Sorted(ReviewedOperation[] operations) =>
         operations.OrderBy(o => o.Path, StringComparer.Ordinal).ThenBy(o => o.Method, StringComparer.Ordinal).ToArray();
 
-    private static async Task<ReviewedOperation[]> ReadOperationsAsync(string profile)
+    private static async Task<ReviewedOperation[]> ReadOperationsAsync(string profile, string specRoot = "openApiDocs_KiotaCompat")
     {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
         using var stream = File.OpenRead(
-            Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Bookings.yml"));
+            Path.Combine(FindRepoRoot(), specRoot, profile, "Bookings.yml"));
         var result = await OpenApiDocument.LoadAsync(
             stream, settings: settings, cancellationToken: CancellationToken.None);
         Assert.NotNull(result.Document);
