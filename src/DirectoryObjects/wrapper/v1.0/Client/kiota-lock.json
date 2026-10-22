@@ -2,7 +2,7 @@
   "descriptionHash": "AF25131E2BB975E19A26F4BD8E5C4107F9AE894C88EA32662D91DC9CA0DF54CA4B0664B0C5D9097BFED289736AB17B772CA09E1AB351B05303A0E39D6B8F79B3",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/DirectoryObjects.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.DirectoryObjects.Client",

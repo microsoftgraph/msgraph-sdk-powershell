@@ -1,0 +1,338 @@
+{
+  "reviewScope": {
+    "source": "src/DirectoryObjects/DirectoryObjects.md",
+    "sharedCmdletGroups": 17,
+    "ignoredSources": [
+      "src/DirectoryObjects/v1.0/readme.md",
+      "src/DirectoryObjects/beta/readme.md",
+      "src/readme.graph.md"
+    ],
+    "deferredClasses": ["DeferredParameter", "DeferredSchema"],
+    "deferredGroups": 0,
+    "coverage": "No curated DirectoryObjects overrides exist. Preserve all seven live v1.0 derived action renames and the existing v1.0 restore suppression; neither is introduced by these shared directives. The derived v1.0 upload rename names an absent route and is left unchanged; no derived entry restores PKI paths. No additional compatible operation requires suppression for this migration.",
+    "evidence": "Every original verb and anchored subject is retained, with no variant restriction. Literal Mg/MgBeta prefixes are not stripped. Legacy evidence is module audit metadata, not operationIdSource:Legacy translation: these are where/subject directives, not operation-ID regex selectors.",
+    "specs": [
+      { "path": "openApiDocs/v1.0/DirectoryObjects.yml", "operations": 15, "pkiOperations": 0 },
+      { "path": "openApiDocs/beta/DirectoryObjects.yml", "operations": 31, "pkiOperations": 16 },
+      { "path": "openApiDocs_KiotaCompat/v1.0/DirectoryObjects.yml", "blob": "aaa86bd4f4b05528584e72147c0939f6e6b93a4f", "operations": 15, "pkiOperations": 0 },
+      { "path": "openApiDocs_KiotaCompat/beta/DirectoryObjects.yml", "blob": "e741181824f9153f8f359f3c3153e58b8f190fc0", "operations": 15, "pkiOperations": 0 }
+    ]
+  },
+  "mappings": [
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 1,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$",
+      "sourceSelector": { "verb": "Remove", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Remove subject selects legacy beta authority-item DELETE. Exact path is absent from both compatible specs; legacy v1.0 contains no PKI operations. Group 4 repeats this selector.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "DELETE", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/{certificateAuthorityDetail-id}", "operationId": "directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_DeleteCertificateAuthority" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$",
+      "sourceSelector": { "verb": "Update", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Update subject selects legacy beta configuration-item PATCH. Exact path is absent from both compatible specs; legacy v1.0 contains no PKI operations.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "PATCH", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}", "operationId": "directory.publicKeyInfrastructure_UpdateCertificateBasedAuthConfiguration" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructure$",
+      "sourceSelector": { "verb": "Update", "subject": "^DirectoryPublicKeyInfrastructure$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Update subject selects legacy beta PKI PATCH. Exact path is absent from both compatible specs; legacy v1.0 contains no PKI operations.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "PATCH", "path": "/directory/publicKeyInfrastructure", "operationId": "directory_UpdatePublicKeyInfrastructure" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$",
+      "sourceSelector": { "verb": "Remove", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Exact duplicate of group 1, not a new variant or operation. Retained separately; its legacy beta authority-item DELETE path is absent from both compatible specs.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "DELETE", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/{certificateAuthorityDetail-id}", "operationId": "directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_DeleteCertificateAuthority" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 5,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$",
+      "sourceSelector": { "verb": "New", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted New subject selects legacy beta authority-collection POST. Exact path is absent from both compatible specs; legacy v1.0 contains no PKI operations.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "POST", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities", "operationId": "directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_CreateCertificateAuthority" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 6,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^MgDirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$",
+      "sourceSelector": { "verb": "New", "subject": "^MgDirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$", "variant": null },
+      "implementation": "LiteralSelectorNoMatch",
+      "notes": "Literal Mg prefix is not part of the AutoRest subject, so this selector matches no legacy operation in either profile. Do not silently repair it. The unprefixed configuration POST (directory.publicKeyInfrastructure_CreateCertificateBasedAuthConfiguration) is covered by group 14; its path is also absent from both compatible specs.",
+      "legacyEvidence": { "v1.0": [], "beta": [] },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 7,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UploadDirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$",
+      "sourceSelector": { "verb": "Invoke", "subject": "^UploadDirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Invoke subject selects the actual legacy beta microsoft.graph.upload action POST. Neither its qualified source path nor an unqualified upload successor exists in either compatible module. The existing derived v1.0 upload rename is not a live operation and is not removed or duplicated.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "POST", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/microsoft.graph.upload", "operationId": "directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_upload" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 8,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCount$",
+      "sourceSelector": { "verb": "Get", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCount$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Get Count subject selects legacy beta configuration count GET, not collection/item GET. Exact path is absent from both compatible specs; legacy v1.0 contains no PKI operations.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "GET", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/$count", "operationId": "directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_GetCount" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 9,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^MgBetaDirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthorityCount$",
+      "sourceSelector": { "verb": "Get", "subject": "^MgBetaDirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthorityCount$", "variant": null },
+      "implementation": "LiteralSelectorNoMatch",
+      "notes": "Literal MgBeta prefix is not part of the AutoRest subject, so this selector matches no legacy operation in either profile. Do not silently repair it. The unprefixed authority count GET (directory.publicKeyInfrastructure.certificateBasedAuthConfiguration.certificateAuthority_GetCount) is covered by group 13; its path is absent from both compatible specs.",
+      "legacyEvidence": { "v1.0": [], "beta": [] },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 10,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$",
+      "sourceSelector": { "verb": "Get", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "No variant restriction: account for BOTH legacy beta authority collection and item GETs, not the separately named Count route. Both paths are absent from both compatible specs.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "GET", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities", "operationId": "directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_ListCertificateAuthority" },
+          { "method": "GET", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/{certificateAuthorityDetail-id}", "operationId": "directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_GetCertificateAuthority" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 11,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$",
+      "sourceSelector": { "verb": "Get", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "No variant restriction: account for BOTH legacy beta configuration collection and item GETs, not the separately named Count route. Both paths are absent from both compatible specs.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "GET", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations", "operationId": "directory.publicKeyInfrastructure_ListCertificateBasedAuthConfiguration" },
+          { "method": "GET", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}", "operationId": "directory.publicKeyInfrastructure_GetCertificateBasedAuthConfiguration" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 12,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructure$",
+      "sourceSelector": { "verb": "Get", "subject": "^DirectoryPublicKeyInfrastructure$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Get subject selects legacy beta PKI GET. Exact path is absent from both compatible specs; legacy v1.0 contains no PKI operations.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "GET", "path": "/directory/publicKeyInfrastructure", "operationId": "directory_GetPublicKeyInfrastructure" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 13,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthorityCount$",
+      "sourceSelector": { "verb": "Get", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthorityCount$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Get Count subject selects legacy beta authority count GET, not collection/item GET. Exact path is absent from both compatible specs; this is the valid unprefixed counterpart to group 9.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "GET", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/$count", "operationId": "directory.publicKeyInfrastructure.certificateBasedAuthConfiguration.certificateAuthority_GetCount" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 14,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$",
+      "sourceSelector": { "verb": "New", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted New subject selects legacy beta configuration-collection POST. Exact path is absent from both compatible specs; this is the valid unprefixed counterpart to group 6.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "POST", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations", "operationId": "directory.publicKeyInfrastructure_CreateCertificateBasedAuthConfiguration" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 15,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructure$",
+      "sourceSelector": { "verb": "Remove", "subject": "^DirectoryPublicKeyInfrastructure$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Remove subject selects legacy beta PKI DELETE. Exact path is absent from both compatible specs; legacy v1.0 contains no PKI operations.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "DELETE", "path": "/directory/publicKeyInfrastructure", "operationId": "directory_DeletePublicKeyInfrastructure" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 16,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$",
+      "sourceSelector": { "verb": "Remove", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfiguration$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Remove subject selects legacy beta configuration-item DELETE. Exact path is absent from both compatible specs; legacy v1.0 contains no PKI operations.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "DELETE", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}", "operationId": "directory.publicKeyInfrastructure_DeleteCertificateBasedAuthConfiguration" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "DirectoryObjects",
+      "directiveIndex": 17,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$",
+      "sourceSelector": { "verb": "Update", "subject": "^DirectoryPublicKeyInfrastructureCertificateBasedAuthConfigurationCertificateAuthority$", "variant": null },
+      "implementation": "NoCompatibleOperation",
+      "notes": "Unrestricted Update subject selects legacy beta authority-item PATCH. Exact path is absent from both compatible specs; legacy v1.0 contains no PKI operations.",
+      "legacyEvidence": {
+        "v1.0": [],
+        "beta": [
+          { "method": "PATCH", "path": "/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{certificateBasedAuthPki-id}/certificateAuthorities/{certificateAuthorityDetail-id}", "operationId": "directory.publicKeyInfrastructure.certificateBasedAuthConfiguration_UpdateCertificateAuthority" }
+        ]
+      },
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    }
+  ]
+}
