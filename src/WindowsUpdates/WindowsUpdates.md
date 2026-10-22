@@ -15,27 +15,48 @@ require:
 
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
+The shared cmdlet migration is reviewed for beta only. There is no matching
+`openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml`; v1.0 is excluded, not evidence
+that its API operations are absent. The adjacent wrapper configuration and
+`WindowsUpdates_directiveMigrationMap.json` record exact method/path/ID evidence;
+`WindowsUpdatesDirectiveMigrationTests` pins the outcomes and neighboring routes.
+All AutoRest directives below remain active. Profile-local and global directives
+are outside this migration. Parameter aliases/transforms and schema/response
+directives remain deferred; the temporary Wu alias group is also not implemented.
+
 ``` yaml
 directive:
 # Remove invalid paths.
+# Wrapper migration: evaluate this original regex against actual legacy beta IDs:
+# 59 matches, all with verified compatible successors. Suppress those routes only;
+# ID renaming is not API removal and does not justify pruning other audience children.
   - remove-path-by-operation: ^(admin(_.*Window|.window_.*Update|.window.update.deployment_.*Audience)|admin(?!\.window).*|admin\.window\.update(\.deploymentAudience(\.|\_).*)|.*DeploymentAudience)|admin\.window\.update\.updatePolicy\.audience_updateAudience$
 # Pluralize.
+# Wrapper migration: exact surviving-route noun overrides replace the structural
+# AdminWindowsUpdate prefix with WindowsUpdates, preserving every unique suffix.
   - where:
       subject: (.*)AdminWindowUpdate(.*)
     set:
       subject: $1WindowsUpdates$2
 # Remove cmdlets.
+# Wrapper migration: suppress the catalog singleton, not catalog entry reads/count.
   - where:
       subject: ^WindowsUpdatesCatalog$
     remove: true
+# Wrapper migration: suppress only the selected resource writes, not reads/actions.
   - where:
       verb: New|Remove|Update
       subject: ^WindowsUpdates(CatalogEntry|DeploymentAudienceMember|DeploymentAudienceExclusion)$
     remove: true
+# Wrapper migration: suppress plain exclusion addMembers/removeMembers. Preserve
+# distinct ById operations: their actual legacy subjects contain GraphBPreId,
+# not the literal ById suffix, and the published beta metadata retains them.
   - where:
       verb: Add|Remove
       subject: ^WindowsUpdatesDeploymentAudience(ExclusionMember|ExclusionMemberById)$
     remove: true
+# Wrapper migration: suppress plain member/exclusion enrollment operations while
+# preserving the distinct legacy GraphBPreId (current ById) routes.
   - where:
       verb: Invoke
       subject: ^(Enroll|UnEnroll)WindowsUpdatesDeploymentAudience(ExclusionAsset|ExclusionAssetById|MemberAsset|MemberAssetById)$
@@ -43,10 +64,16 @@ directive:
 # Remove conflicting numbered variants from overlapping API paths.
 # /deployments/{deployment-id}/audience/ variants conflict with /deploymentAudiences/{deploymentAudience-id}/ variants.
 # /updatePolicies/ variants conflict with /policies/ variants.
+# Wrapper migration: the earlier operation-ID rule already removes all 49 direct
+# deploymentAudiences operations. No surviving deployment audience child is
+# removed just because an AutoRest variant was numbered.
   - where:
       subject: (.*)WindowsUpdatesDeploymentAudience(.*)
       variant: .*1$
     remove: true
+# Wrapper migration: distinguish updatePolicies collection/item/count from
+# policies with exact WindowsUpdatesUpdatePolicy nouns; retain all methods and
+# leave descendant PolicyAudience/PolicyComplianceChange suffixes unchanged.
   - where:
       subject: ^WindowsUpdatesPolicy(Count)?$
       variant: .*1$
@@ -54,11 +81,15 @@ directive:
       subject: WindowsUpdatesUpdatePolicy$1
 # Alias cmdlets.
 # NB: We have to rename the command to the desired alias name, alias based on the rename, then undo the rename due to - https://github.com/Azure/autorest.powershell/issues/769
+# Wrapper migration: deferred alias/temporary-rename group; do not emit Wu primary
+# cmdlet names. Parameter aliases/transforms and schema/response changes are deferred.
   - where:
       subject: (.*)(WindowsUpdates)(.*)
     set:
       subject: $1Wu$3
       alias: ${verb}-Mg${subject-prefix}${subject}
+# Wrapper migration: final WindowsUpdates restoration is already supplied by the
+# reviewed exact-route noun configuration; no additional temporary rename.
   - where:
       subject: (.*)(Wu)(.*)
     set:
