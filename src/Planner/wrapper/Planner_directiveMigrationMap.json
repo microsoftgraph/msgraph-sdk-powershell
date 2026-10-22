@@ -2949,6 +2949,11 @@
             },
             {
               "method": "GET",
+              "path": "/users/{user-id}/planner/plans/$count",
+              "operationId": "users.planner.plans.GetCount-b724"
+            },
+            {
+              "method": "GET",
               "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
               "operationId": "users.planner.tasks.GetAssignedToTaskBoardFormat"
             },
@@ -3006,6 +3011,11 @@
               "method": "DELETE",
               "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat",
               "operationId": "users.planner.tasks.DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/$count",
+              "operationId": "users.planner.tasks.GetCount-8740"
             }
           ]
         },
@@ -3364,6 +3374,11 @@
             },
             {
               "method": "GET",
+              "path": "/users/{user-id}/planner/plans/$count",
+              "operationId": "users.planner.plans.GetCount-b724"
+            },
+            {
+              "method": "GET",
               "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
               "operationId": "users.planner.tasks.GetAssignedToTaskBoardFormat"
             },
@@ -3461,6 +3476,11 @@
               "method": "DELETE",
               "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat",
               "operationId": "users.planner.tasks.DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/$count",
+              "operationId": "users.planner.tasks.GetCount-8740"
             }
           ]
         }

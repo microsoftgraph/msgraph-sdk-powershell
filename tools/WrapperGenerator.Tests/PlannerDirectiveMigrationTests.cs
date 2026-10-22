@@ -123,4 +123,16 @@ public sealed class PlannerDirectiveMigrationTests
     {
         Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, new("Test.Client", "unused", "beta")));
     }
+
+    [Theory]
+    [InlineData("/users/{user-id}/planner/plans/$count")]
+    [InlineData("/users/{user-id}/planner/tasks/$count")]
+    public void CountSubjectsMatchTheDescendantDirectiveEvenWithoutALegacyOperationType(string path)
+    {
+        foreach (var profile in new[] { "v1.0", "beta" })
+        {
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path));
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, new("Test.Client", "unused", profile)));
+        }
+    }
 }
