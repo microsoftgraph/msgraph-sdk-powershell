@@ -2,7 +2,7 @@
   "descriptionHash": "E600035C70BF2D470147414D40CCCFAD76D1F64D62E80A0B7C5AC4940ADA0151B6EACC8D8B98889C9DDD9745283F051E4D53D320DE249901BE9C5418550E46CB",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Users.Functions.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Users.Functions.Client",
