@@ -1,0 +1,932 @@
+{
+  "module": "Users.Actions",
+  "scope": {
+    "source": "src\\Users.Actions\\Users.Actions.md",
+    "requiredProfiles": [
+      "v1.0",
+      "beta"
+    ],
+    "excludedProfiles": [],
+    "ignoredSources": [
+      "src\\Users.Actions\\v1.0\\readme.md",
+      "src\\Users.Actions\\beta\\readme.md",
+      "src\\readme.graph.md"
+    ],
+    "deferredClasses": [
+      "Parameter aliases and transforms",
+      "Schema/response directives"
+    ],
+    "sourcePolicy": "Shared directives only; all profile-local groups explicitly ignored and unmodified.",
+    "limitations": "This ledger does not claim full baseline emitter coverage or Mg/MgBeta name parity outside the four surviving shared rename groups."
+  },
+  "mappings": [
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: .*exceptionOccurrence.*|user\\.joinedTeam.*|user\\.onenote\\..*.parent.*|user.*\\.calendarView.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|user\\.calendar\\.event.*|user\\.calendarGroup\\.calendar.*|user\\.calendar\\.event.*|user\\.event\\.calendar\\.event.*|user\\.pendingAccessReviewInstance\\.stage\\.decision.*|user\\.pendingAccessReviewInstance(\\.decision|\\.stage\\.decision)\\.instance.*",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Original regex evaluated on ALL actual same-profile legacy operations (20 v1.0, 30 beta): zero matches in both. Actual compatible IDs also yield zero. absenceExpected describes this empty selector, NOT API/action absence. Every actual action has a unique metadata-guarded qualified-final-segment successor in operationAudit; no removal or suppression is invented.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(UserDeviceFromManagement)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Shared All rename: exact POST removeAllDevicesFromManagement. Existing v1.0 derived verb/noun remains authoritative. Curated fallback is needed for beta and retains Remove-AllUserDeviceFromManagement, including the published All placement.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/removeAllDevicesFromManagement",
+              "operationId": "users.user.removeAllDevicesFromManagement"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/removeAllDevicesFromManagement",
+              "operationId": "users.user.removeAllDevicesFromManagement"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(Invalidate)(UserRefreshToken)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Shared Invalidate-All rename: beta POST invalidateAllRefreshTokens has an actual qualified legacy counterpart. No same-module v1.0 counterpart exists in either source; no revokeSignInSessions or other action is substituted. Exact noun fallback, unchanged Invoke verb.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/invalidateAllRefreshTokens",
+              "operationId": "users.user.invalidateAllRefreshTokens"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 4,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(UserOwnedObject)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Shared ByType rename: beta POST getUserOwnedObjects is a collection-bound action, not GET /users/{id}/ownedObjects. Actual published beta metadata confirms Get-MgBetaUserOwnedObjectByType. Exact verb/noun fallback; absent from both v1.0 module specs.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/getUserOwnedObjects",
+              "operationId": "users.getUserOwnedObjects"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 5,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^(UserOnlineMeeting)$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: neither actual legacy nor compatible module spec has an onlineMeeting GET operation. No route suppression is added. This does not assert that onlineMeeting APIs are removed from Graph.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 6,
+      "classification": "SubjectAndVerbRename",
+      "sourceContains": "subject: ^(UserOnlineMeeting)$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: neither actual module spec has an onlineMeetings/createOrGet action. Do not migrate profile-local groups or suppress another module route to manufacture coverage.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 7,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(UserOnenotePage)$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: no onenote page PATCH/content operation exists in either actual module spec. No guessed numbered variant or cross-module override.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 8,
+      "classification": "SubjectAndVerbRename",
+      "sourceContains": "subject: ^(UserPassword)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Shared password verb rename: actual POST changePassword counterpart survives both profiles. Existing v1.0 derived Update-UserPassword stays authoritative; exact curated verb/noun fallback provides the same shared behavior in beta.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/changePassword",
+              "operationId": "users.user.changePassword"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/changePassword",
+              "operationId": "users.user.changePassword"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 9,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(User)(CalendarSchedule)$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: no calendar getSchedule action exists in either actual legacy/compatible module spec. No variant-to-route guess; no profile-local directive imported.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 10,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(Reply)(UserMessage|UserMailFolderMessage|UserMailFolderChildFolderMessage)$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: no message reply/replyAll action exists in either actual module spec, including mailFolder/childFolder routes. No numbered variant guess.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 11,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(User)(Message|MailFolderMessage|MailFolderChildFolderMessage)(Reply)$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: no createReply/createReplyAll action exists in either actual module spec, including mailFolder/childFolder routes. No numbered variant guess.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 12,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(UserManagedDeviceLogCollection)Request(DownloadUrl)$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: no managed-device logCollectionRequests/createDownloadUrl action exists in either actual module spec. No unrelated module configuration copied.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 13,
+      "classification": "SubjectAndVerbRename",
+      "sourceContains": "subject: ^(UserManagedDevice)$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: no managed-device windowsDefenderUpdateSignatures action exists in either actual module spec. No global derived suppression changed.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 14,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^Bulk(UserManagedDevice)RestoreCloudPc$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: no managed-device bulkRestoreCloudPc action exists in either actual module spec. Other modules and profile-local sources remain out of scope.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 15,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^Bulk(UserManagedDevice)ReprovisionCloudPc$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: no managed-device bulkReprovisionCloudPc action exists in either actual module spec. Other modules and profile-local sources remain out of scope.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Actions",
+      "directiveIndex": 16,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^Cloud(UserManagedDevice)$",
+      "implementation": "ReviewedNoMatchingModuleOperation",
+      "notes": "Reviewed module scope: no managed-device reprovisionCloudPc action exists in either actual module spec. Other modules and profile-local sources remain out of scope.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    }
+  ],
+  "operationAudit": [
+    {
+      "profile": "v1.0",
+      "legacySpec": "openApiDocs\\v1.0\\Users.Actions.yml",
+      "legacySpecBlob": "161a667ae1163bbec5a300d87a7a3285ba85170f",
+      "compatibleSpec": "openApiDocs_KiotaCompat\\v1.0\\Users.Actions.yml",
+      "compatibleSpecBlob": "0c140046e29e17087ee8a02947d4a33f60812544",
+      "legacyOperationCount": 20,
+      "compatibleOperationCount": 20,
+      "originalRegexLegacyMatches": 0,
+      "originalRegexCompatibleMatches": 0,
+      "exactPathOverlap": 0,
+      "kindGuardedUniqueFinalSegmentBridges": 20,
+      "removedOperations": [],
+      "operations": [
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.assignLicense",
+          "oldOperationId": "user_assignLicense",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/assignLicense",
+          "newOperationId": "users.user.assignLicense",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.changePassword",
+          "oldOperationId": "user_changePassword",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/changePassword",
+          "newOperationId": "users.user.changePassword",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.checkMemberGroups",
+          "oldOperationId": "user_checkMemberGroup",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/checkMemberGroups",
+          "newOperationId": "users.user.checkMemberGroups",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.checkMemberObjects",
+          "oldOperationId": "user_checkMemberObject",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/checkMemberObjects",
+          "newOperationId": "users.user.checkMemberObjects",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.exportPersonalData",
+          "oldOperationId": "user_exportPersonalData",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/exportPersonalData",
+          "newOperationId": "users.user.exportPersonalData",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.findMeetingTimes",
+          "oldOperationId": "user_findMeetingTime",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/findMeetingTimes",
+          "newOperationId": "users.user.findMeetingTimes",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.getMailTips",
+          "oldOperationId": "user_getMailTip",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/getMailTips",
+          "newOperationId": "users.user.getMailTips",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.getMemberGroups",
+          "oldOperationId": "user_getMemberGroup",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/getMemberGroups",
+          "newOperationId": "users.user.getMemberGroups",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.getMemberObjects",
+          "oldOperationId": "user_getMemberObject",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/getMemberObjects",
+          "newOperationId": "users.user.getMemberObjects",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.removeAllDevicesFromManagement",
+          "oldOperationId": "user_removeAllDevicesFromManagement",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/removeAllDevicesFromManagement",
+          "newOperationId": "users.user.removeAllDevicesFromManagement",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.reprocessLicenseAssignment",
+          "oldOperationId": "user_reprocessLicenseAssignment",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/reprocessLicenseAssignment",
+          "newOperationId": "users.user.reprocessLicenseAssignment",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.restore",
+          "oldOperationId": "user_restore",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/restore",
+          "newOperationId": "users.user.restore",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.retryServiceProvisioning",
+          "oldOperationId": "user_retryServiceProvisioning",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/retryServiceProvisioning",
+          "newOperationId": "users.user.retryServiceProvisioning",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.revokeSignInSessions",
+          "oldOperationId": "user_revokeSignInSession",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/revokeSignInSessions",
+          "newOperationId": "users.user.revokeSignInSessions",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.sendMail",
+          "oldOperationId": "user_sendMail",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/sendMail",
+          "newOperationId": "users.user.sendMail",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.translateExchangeIds",
+          "oldOperationId": "user_translateExchangeId",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/translateExchangeIds",
+          "newOperationId": "users.user.translateExchangeIds",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.wipeManagedAppRegistrationsByDeviceTag",
+          "oldOperationId": "user_wipeManagedAppRegistrationsGraphBPreDeviceTag",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/wipeManagedAppRegistrationsByDeviceTag",
+          "newOperationId": "users.user.wipeManagedAppRegistrationsByDeviceTag",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/microsoft.graph.getAvailableExtensionProperties",
+          "oldOperationId": "user_getAvailableExtensionProperty",
+          "oldMetadataKind": "action",
+          "newPath": "/users/getAvailableExtensionProperties",
+          "newOperationId": "users.getAvailableExtensionProperties",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/microsoft.graph.getByIds",
+          "oldOperationId": "user_getGraphBPreId",
+          "oldMetadataKind": "action",
+          "newPath": "/users/getByIds",
+          "newOperationId": "users.getByIds",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/microsoft.graph.validateProperties",
+          "oldOperationId": "user_validateProperty",
+          "oldMetadataKind": "action",
+          "newPath": "/users/validateProperties",
+          "newOperationId": "users.validateProperties",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        }
+      ]
+    },
+    {
+      "profile": "beta",
+      "legacySpec": "openApiDocs\\beta\\Users.Actions.yml",
+      "legacySpecBlob": "855f5e2151b45aa6b89f52ac3fd757274cb4dcf1",
+      "compatibleSpec": "openApiDocs_KiotaCompat\\beta\\Users.Actions.yml",
+      "compatibleSpecBlob": "7cf97dde83463e501da1e05b7fac8a2970d34504",
+      "legacyOperationCount": 30,
+      "compatibleOperationCount": 30,
+      "originalRegexLegacyMatches": 0,
+      "originalRegexCompatibleMatches": 0,
+      "exactPathOverlap": 0,
+      "kindGuardedUniqueFinalSegmentBridges": 30,
+      "removedOperations": [],
+      "operations": [
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.assignLicense",
+          "oldOperationId": "user_assignLicense",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/assignLicense",
+          "newOperationId": "users.user.assignLicense",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.changePassword",
+          "oldOperationId": "user_changePassword",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/changePassword",
+          "newOperationId": "users.user.changePassword",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.checkMemberGroups",
+          "oldOperationId": "user_checkMemberGroup",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/checkMemberGroups",
+          "newOperationId": "users.user.checkMemberGroups",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.checkMemberObjects",
+          "oldOperationId": "user_checkMemberObject",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/checkMemberObjects",
+          "newOperationId": "users.user.checkMemberObjects",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.convertExternalToInternalMemberUser",
+          "oldOperationId": "user_convertExternalToInternalMemberUser",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/convertExternalToInternalMemberUser",
+          "newOperationId": "users.user.convertExternalToInternalMemberUser",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.deletePasswordSingleSignOnCredentials",
+          "oldOperationId": "user_deletePasswordSingleSignOnCredential",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/deletePasswordSingleSignOnCredentials",
+          "newOperationId": "users.user.deletePasswordSingleSignOnCredentials",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.exportPersonalData",
+          "oldOperationId": "user_exportPersonalData",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/exportPersonalData",
+          "newOperationId": "users.user.exportPersonalData",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.findMeetingLocations",
+          "oldOperationId": "user_findMeetingLocation",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/findMeetingLocations",
+          "newOperationId": "users.user.findMeetingLocations",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.findMeetingTimes",
+          "oldOperationId": "user_findMeetingTime",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/findMeetingTimes",
+          "newOperationId": "users.user.findMeetingTimes",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.getMailTips",
+          "oldOperationId": "user_getMailTip",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/getMailTips",
+          "newOperationId": "users.user.getMailTips",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.getMemberGroups",
+          "oldOperationId": "user_getMemberGroup",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/getMemberGroups",
+          "newOperationId": "users.user.getMemberGroups",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.getMemberObjects",
+          "oldOperationId": "user_getMemberObject",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/getMemberObjects",
+          "newOperationId": "users.user.getMemberObjects",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.getPasswordSingleSignOnCredentials",
+          "oldOperationId": "user_getPasswordSingleSignOnCredential",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/getPasswordSingleSignOnCredentials",
+          "newOperationId": "users.user.getPasswordSingleSignOnCredentials",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.invalidateAllRefreshTokens",
+          "oldOperationId": "user_invalidateAllRefreshToken",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/invalidateAllRefreshTokens",
+          "newOperationId": "users.user.invalidateAllRefreshTokens",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.removeAllDevicesFromManagement",
+          "oldOperationId": "user_removeAllDevicesFromManagement",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/removeAllDevicesFromManagement",
+          "newOperationId": "users.user.removeAllDevicesFromManagement",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.reprocessLicenseAssignment",
+          "oldOperationId": "user_reprocessLicenseAssignment",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/reprocessLicenseAssignment",
+          "newOperationId": "users.user.reprocessLicenseAssignment",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.restore",
+          "oldOperationId": "user_restore",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/restore",
+          "newOperationId": "users.user.restore",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.retryServiceProvisioning",
+          "oldOperationId": "user_retryServiceProvisioning",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/retryServiceProvisioning",
+          "newOperationId": "users.user.retryServiceProvisioning",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.revokeSignInSessions",
+          "oldOperationId": "user_revokeSignInSession",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/revokeSignInSessions",
+          "newOperationId": "users.user.revokeSignInSessions",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.sendMail",
+          "oldOperationId": "user_sendMail",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/sendMail",
+          "newOperationId": "users.user.sendMail",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.translateExchangeIds",
+          "oldOperationId": "user_translateExchangeId",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/translateExchangeIds",
+          "newOperationId": "users.user.translateExchangeIds",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.unblockManagedApps",
+          "oldOperationId": "user_unblockManagedApp",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/unblockManagedApps",
+          "newOperationId": "users.user.unblockManagedApps",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.wipeAndBlockManagedApps",
+          "oldOperationId": "user_wipeAndBlockManagedApp",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/wipeAndBlockManagedApps",
+          "newOperationId": "users.user.wipeAndBlockManagedApps",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.wipeManagedAppRegistrationByDeviceTag",
+          "oldOperationId": "user_wipeManagedAppRegistrationGraphBPreDeviceTag",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/wipeManagedAppRegistrationByDeviceTag",
+          "newOperationId": "users.user.wipeManagedAppRegistrationByDeviceTag",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.wipeManagedAppRegistrationsByAzureAdDeviceId",
+          "oldOperationId": "user_wipeManagedAppRegistrationsGraphBPreAzureAdDeviceId",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/wipeManagedAppRegistrationsByAzureAdDeviceId",
+          "newOperationId": "users.user.wipeManagedAppRegistrationsByAzureAdDeviceId",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/{user-id}/microsoft.graph.wipeManagedAppRegistrationsByDeviceTag",
+          "oldOperationId": "user_wipeManagedAppRegistrationsGraphBPreDeviceTag",
+          "oldMetadataKind": "action",
+          "newPath": "/users/{user-id}/wipeManagedAppRegistrationsByDeviceTag",
+          "newOperationId": "users.user.wipeManagedAppRegistrationsByDeviceTag",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/microsoft.graph.getByIds",
+          "oldOperationId": "user_getGraphBPreId",
+          "oldMetadataKind": "action",
+          "newPath": "/users/getByIds",
+          "newOperationId": "users.getByIds",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/microsoft.graph.getUserOwnedObjects",
+          "oldOperationId": "user_getUserOwnedObject",
+          "oldMetadataKind": "action",
+          "newPath": "/users/getUserOwnedObjects",
+          "newOperationId": "users.getUserOwnedObjects",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/microsoft.graph.validatePassword",
+          "oldOperationId": "user_validatePassword",
+          "oldMetadataKind": "action",
+          "newPath": "/users/validatePassword",
+          "newOperationId": "users.validatePassword",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        },
+        {
+          "method": "POST",
+          "oldPath": "/users/microsoft.graph.validateProperties",
+          "oldOperationId": "user_validateProperty",
+          "oldMetadataKind": "action",
+          "newPath": "/users/validateProperties",
+          "newOperationId": "users.validateProperties",
+          "newMetadataKind": "action",
+          "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
+          "selectedByOriginalSuppressionRegex": false
+        }
+      ]
+    }
+  ]
+}
