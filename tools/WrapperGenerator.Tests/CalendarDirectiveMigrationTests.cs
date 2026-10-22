@@ -19,6 +19,8 @@ public sealed class CalendarDirectiveMigrationTests
     private static readonly string RepoRoot = FindRepoRoot();
     private static readonly Lazy<OpenApiDocument> V1 = new(() => ReadSpec("v1.0"));
     private static readonly Lazy<OpenApiDocument> Beta = new(() => ReadSpec("beta"));
+    private static readonly Lazy<OpenApiDocument> LegacyV1 = new(() => ReadSpec("v1.0", "openApiDocs"));
+    private static readonly Lazy<OpenApiDocument> LegacyBeta = new(() => ReadSpec("beta", "openApiDocs"));
     private const string SharingPath = "/users/{user-id}/calendar/allowedCalendarSharingRoles(User='{User}')";
 
     [Theory]
@@ -50,16 +52,50 @@ public sealed class CalendarDirectiveMigrationTests
 
         var pattern = Regex.Match(source, @"(?m)^\s*- remove-path-by-operation: (.+)\r?$").Groups[1].Value.Trim();
         var regex = new Regex(pattern);
-        var matched = spec.Paths.SelectMany(p => p.Value.Operations!
+        var legacy = LegacySpec(profile);
+        var legacyMap = directives[0].GetProperty("profiles").GetProperty(profile);
+        Assert.Equal("Legacy", legacyMap.GetProperty("operationIdSource").GetString());
+        Assert.False(legacyMap.TryGetProperty("removedLegacyOperations", out _));
+        var matched = legacy.Paths.SelectMany(p => p.Value.Operations!
             .Where(o => regex.IsMatch(o.Value.OperationId!))
             .Select(o => $"{o.Key.Method.ToUpperInvariant()} {p.Key} [{o.Value.OperationId}]"))
             .OrderBy(x => x, StringComparer.Ordinal).ToArray();
-        var reviewed = directives[0].GetProperty("profiles").GetProperty(profile).GetProperty("operations")
-            .EnumerateArray().Select(o =>
-                $"{o.GetProperty("method").GetString()} {o.GetProperty("path").GetString()} [{o.GetProperty("operationId").GetString()}]")
+        var operations = legacyMap.GetProperty("operations").EnumerateArray().ToArray();
+        var reviewed = operations.Select(o =>
+                $"{o.GetProperty("method").GetString()} {o.GetProperty("legacyPath").GetString()} [{o.GetProperty("legacyOperationId").GetString()}]")
             .OrderBy(x => x, StringComparer.Ordinal).ToArray();
-        Assert.Equal(26, matched.Length);
+        Assert.Equal(profile == "v1.0" ? 136 : 137, matched.Length);
         Assert.Equal(matched, reviewed);
+        var translatedCalls = 0;
+        foreach (var operation in operations)
+        {
+            var method = new HttpMethod(operation.GetProperty("method").GetString()!);
+            var oldPath = operation.GetProperty("legacyPath").GetString()!;
+            var path = operation.GetProperty("path").GetString()!;
+            var oldOperation = legacy.Paths[oldPath].Operations![method];
+            Assert.Equal(operation.GetProperty("legacyOperationId").GetString(), oldOperation.OperationId);
+            if (CmdletConfigurator.NormalizePathTemplate(oldPath) != CmdletConfigurator.NormalizePathTemplate(path))
+            {
+                var kind = OperationType(oldOperation);
+                Assert.True(kind is "action" or "function");
+                Assert.Equal(kind, OperationType(spec.Paths[path].Operations![method]));
+                Assert.Equal(kind == "action" ? HttpMethod.Post : HttpMethod.Get, method);
+                var parts = oldPath.Split('/');
+                Assert.StartsWith("microsoft.graph.", parts[^1]);
+                parts[^1] = parts[^1]["microsoft.graph.".Length..];
+                Assert.Equal(CmdletConfigurator.NormalizePathTemplate(string.Join("/", parts)),
+                    CmdletConfigurator.NormalizePathTemplate(path));
+                translatedCalls++;
+            }
+        }
+        Assert.Equal(profile == "v1.0" ? 53 : 54, translatedCalls);
+        var currentLiteralMatches = spec.Paths.SelectMany(p => p.Value.Operations!
+            .Where(o => regex.IsMatch(o.Value.OperationId!))
+            .Select(o => $"{o.Key.Method.ToUpperInvariant()} {p.Key} [{o.Value.OperationId}]")).ToArray();
+        Assert.Equal(26, currentLiteralMatches.Length);
+        foreach (var literal in currentLiteralMatches)
+            Assert.Contains(operations, o =>
+                $"{o.GetProperty("method").GetString()} {o.GetProperty("path").GetString()} [{o.GetProperty("operationId").GetString()}]" == literal);
     }
 
     [Theory]
@@ -87,7 +123,11 @@ public sealed class CalendarDirectiveMigrationTests
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/events/{event-id}/cancel", config));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/groups/{group-id}/calendar/getSchedule", config));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/groups/{group-id}/calendar/events/{event-id}", config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/groups/{group-id}/calendar/events/{event-id}", config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, "/groups/{group-id}/calendar/events/{event-id}", config));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/groups/{group-id}/calendar/events", config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars", config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars", config));
     }
 
     [Theory]
@@ -128,15 +168,19 @@ public sealed class CalendarDirectiveMigrationTests
     [Theory]
     [InlineData("v1.0")]
     [InlineData("beta")]
-    public void AbsentLegacyBranchesAreNotFabricatedOrBroadened(string profile)
+    public void RenamedLegacyCrudOperationsAreNotMisclassifiedAsAbsent(string profile)
     {
         var spec = Spec(profile);
         Assert.DoesNotContain(spec.Paths.Keys, p =>
             p.StartsWith("/users/{user-id}/events/{event-id}/calendar/", StringComparison.Ordinal)
             && p.Contains("allowedCalendarSharingRoles", StringComparison.Ordinal));
-        var ids = spec.Paths.SelectMany(p => p.Value.Operations!.Values).Select(o => o.OperationId!).ToArray();
-        Assert.DoesNotContain(ids, id => Regex.IsMatch(id,
-            @"(user|group)_(Update|Delete)Calendar$|user\.calendarGroup_(Get|Update|Delete)Calendar$|user\.calendarGroup\.calendar.*$|placeAsRoomList\.(room|workspace)_(Get|Update|Delete)GraphBPrePlaceId$"));
+        Assert.Equal("user_UpdateCalendar", LegacySpec(profile).Paths["/users/{user-id}/calendar"].Operations![HttpMethod.Patch].OperationId);
+        const string groupItem = "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}";
+        Assert.Equal("user.calendarGroup_GetCalendar", LegacySpec(profile).Paths[groupItem].Operations![HttpMethod.Get].OperationId);
+        Assert.Equal("users.calendarGroups.GetCalendars", spec.Paths[groupItem].Operations![HttpMethod.Get].OperationId);
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, groupItem));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
+            groupItem + "/allowedCalendarSharingRoles(User='{User}')"));
         Assert.Equal("users.UpdateCalendar", spec.Paths["/users/{user-id}/calendar"].Operations![HttpMethod.Patch].OperationId);
         Assert.Equal("users.calendar.GetEvents", spec.Paths["/users/{user-id}/calendar/events/{event-id}"].Operations![HttpMethod.Get].OperationId);
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/calendar"));
@@ -219,10 +263,19 @@ public sealed class CalendarDirectiveMigrationTests
             "/users/{user-id}/calendars/{calendar-id}/events/$count",
             "/users/{user-id}/calendars/{calendar-id}/permanentDelete",
             "/users/{user-id}/calendar/permanentDelete",
+            "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars",
             SharingPath,
         ];
         foreach (var path in paths)
             subset.Paths.Add(path, source.Paths[path]);
+        using var ledger = ReadLedger();
+        foreach (var operation in ledger.RootElement.GetProperty("mappings")[0]
+                     .GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())
+        {
+            var path = operation.GetProperty("path").GetString()!;
+            if (!subset.Paths.ContainsKey(path))
+                subset.Paths.Add(path, source.Paths[path]);
+        }
 
         var output = Path.Combine(Path.GetTempPath(), "calendar-directive-tests", Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(output);
@@ -240,6 +293,11 @@ public sealed class CalendarDirectiveMigrationTests
             Assert.Contains("GetMgGroupCalendarEvent.g.cs", files);
             Assert.Contains("GetMgGroupCalendarView.g.cs", files);
             Assert.Contains("GetMgUserCalendarView.g.cs", files);
+            Assert.Contains("GetMgUserCalendarGroupCalendar.g.cs", files);
+            Assert.Contains("NewMgUserCalendarGroupCalendar.g.cs", files);
+            Assert.DoesNotContain("GetMgUserCalendarGroupCalendar_Get.g.cs", files);
+            Assert.DoesNotContain("GetMgUserCalendarGroupCalendar_List.g.cs", files);
+            Assert.DoesNotContain(files, f => f!.Contains("CalendarGroupCalendarAllowedCalendarSharingRoles", StringComparison.Ordinal));
             Assert.Contains(profile == "v1.0" ? "RemoveMgUserCalendarPermanent.g.cs" : "InvokeMgUserCalendarPermanentDelete.g.cs", files);
             Assert.DoesNotContain("GetMgUserCalendarEventCount.g.cs", files);
             Assert.DoesNotContain(files, f => f!.Contains("CalendarEventDelta", StringComparison.Ordinal));
@@ -259,11 +317,18 @@ public sealed class CalendarDirectiveMigrationTests
 
     private static OpenApiDocument Spec(string profile) => profile == "v1.0" ? V1.Value : Beta.Value;
 
-    private static OpenApiDocument ReadSpec(string profile)
+    private static OpenApiDocument LegacySpec(string profile) => profile == "v1.0" ? LegacyV1.Value : LegacyBeta.Value;
+
+    private static string? OperationType(OpenApiOperation operation) =>
+        operation.Extensions is not null
+        && operation.Extensions.TryGetValue("x-ms-docs-operation-type", out var extension)
+        && extension is JsonNodeExtension node ? node.Node?.ToString().Trim('"') : null;
+
+    private static OpenApiDocument ReadSpec(string profile, string specRoot = "openApiDocs_KiotaCompat")
     {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
-        using var stream = File.OpenRead(Path.Combine(RepoRoot, "openApiDocs_KiotaCompat", profile, "Calendar.yml"));
+        using var stream = File.OpenRead(Path.Combine(RepoRoot, specRoot, profile, "Calendar.yml"));
         var result = OpenApiDocument.LoadAsync(stream, settings: settings, cancellationToken: CancellationToken.None)
             .GetAwaiter().GetResult();
         Assert.NotNull(result.Document);
