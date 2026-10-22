@@ -1,0 +1,213 @@
+{
+  "mappings": [
+    {
+      "module": "Security",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^security(.case.ediscoveryCase.noncustodialDataSource_.*DataSource)$|^security_DeleteAttackSimulation$|^security_UpdateAttackSimulation$|^security_GetAttackSimulation$|^security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Evaluate the unchanged regex against actual same-profile openApiDocs first. Every selected operation survives at its exact method/path with a renamed compatible ID. Reuse existing attackSimulation container suppression; scope new dataSource and aggregatedAppsDetails suppressions exactly. No API absence, namespace translation, or route pruning is claimed.",
+      "profiles": {
+        "v1.0": {
+          "operationIdSource": "Legacy",
+          "notes": "Complete original legacy regex set: six operations, all six exact method/path successors retained and suppressed.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/security/attackSimulation",
+              "operationId": "security.GetAttackSimulation",
+              "legacyPath": "/security/attackSimulation",
+              "legacyOperationId": "security_GetAttackSimulation"
+            },
+            {
+              "method": "PATCH",
+              "path": "/security/attackSimulation",
+              "operationId": "security.UpdateAttackSimulation",
+              "legacyPath": "/security/attackSimulation",
+              "legacyOperationId": "security_UpdateAttackSimulation"
+            },
+            {
+              "method": "DELETE",
+              "path": "/security/attackSimulation",
+              "operationId": "security.DeleteAttackSimulation",
+              "legacyPath": "/security/attackSimulation",
+              "legacyOperationId": "security_DeleteAttackSimulation"
+            },
+            {
+              "method": "GET",
+              "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.GetDataSource",
+              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_GetDataSource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.UpdateDataSource",
+              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.DeleteDataSource",
+              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource"
+            }
+          ],
+          "removedLegacyOperations": []
+        },
+        "beta": {
+          "operationIdSource": "Legacy",
+          "notes": "Complete original legacy regex set: seven operations, all seven exact method/path successors retained and suppressed. The additional selected operation is an actual function, not inferred absence from renamed IDs.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/security/attackSimulation",
+              "operationId": "security.GetAttackSimulation",
+              "legacyPath": "/security/attackSimulation",
+              "legacyOperationId": "security_GetAttackSimulation"
+            },
+            {
+              "method": "PATCH",
+              "path": "/security/attackSimulation",
+              "operationId": "security.UpdateAttackSimulation",
+              "legacyPath": "/security/attackSimulation",
+              "legacyOperationId": "security_UpdateAttackSimulation"
+            },
+            {
+              "method": "DELETE",
+              "path": "/security/attackSimulation",
+              "operationId": "security.DeleteAttackSimulation",
+              "legacyPath": "/security/attackSimulation",
+              "legacyOperationId": "security_DeleteAttackSimulation"
+            },
+            {
+              "method": "GET",
+              "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.GetDataSource",
+              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_GetDataSource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.UpdateDataSource",
+              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.DeleteDataSource",
+              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource"
+            },
+            {
+              "method": "GET",
+              "path": "/security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{cloudAppDiscoveryReport-id}/microsoft.graph.security.aggregatedAppsDetails(period={period})",
+              "operationId": "security.dataDiscovery.cloudAppDiscovery.uploadedStreams.cloudAppDiscoveryReport.aggregatedAppsDetails",
+              "legacyPath": "/security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{cloudAppDiscoveryReport-id}/microsoft.graph.security.aggregatedAppsDetails(period={period})",
+              "legacyOperationId": "security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail"
+            }
+          ],
+          "removedLegacyOperations": []
+        }
+      }
+    },
+    {
+      "module": "Security",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "verb: Get|Update",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress GET and PATCH /security, preserving every child. Existing derived v1.0 coverage is retained; shared curated entries also cover beta.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/security", "operationId": "security.security.GetSecurity" },
+            { "method": "PATCH", "path": "/security", "operationId": "security.security.UpdateSecurity" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/security", "operationId": "security.security.GetSecurity" },
+            { "method": "PATCH", "path": "/security", "operationId": "security.security.UpdateSecurity" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Security",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^SecurityAttackSimulation$",
+      "implementation": "CmdletConfigurator",
+      "notes": "PATCH /security/attackSimulation is already suppressed by the exact existing container entry and directive 1. No redundant override added.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "PATCH", "path": "/security/attackSimulation", "operationId": "security.UpdateAttackSimulation" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "PATCH", "path": "/security/attackSimulation", "operationId": "security.UpdateAttackSimulation" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Security",
+      "directiveIndex": 4,
+      "classification": "SubjectRename",
+      "sourceContains": "variant: Delete1|^DeleteExpanded$",
+      "implementation": "ReviewedApiRemoval",
+      "notes": "Published metadata maps Delete1/DeleteExpanded to POST /security/tiIndicators/deleteTiIndicators (Remove-MgBetaSecurityTiIndicatorMultiple), not item DELETE. Actual beta legacy source is POST /security/tiIndicators/microsoft.graph.deleteTiIndicators [security.tiIndicator_deleteTiIndicator]. Compatible beta contains neither qualified nor unqualified action, nor any tiIndicators route; no successor is invented. Legacy and compatible v1.0 contain neither action. SecurityDirectiveMigrationTests pin this absence and neighboring surviving routes.",
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "Security",
+      "directiveIndex": 5,
+      "classification": "SubjectRename",
+      "sourceContains": "variant: Update1|UpdateExpanded1",
+      "implementation": "ReviewedApiRemoval",
+      "notes": "Published metadata maps Update1/UpdateExpanded1 to beta bulk actions, not item PATCH. Actual legacy beta operations: POST /security/alerts/microsoft.graph.updateAlerts [security.alert_updateAlert] and POST /security/tiIndicators/microsoft.graph.updateTiIndicators [security.tiIndicator_updateTiIndicator]. Compatible beta has neither qualified nor unqualified action and no alerts or tiIndicators route. Legacy and compatible v1.0 have neither bulk action. No speculative rename or replacement is added.",
+      "profiles": {
+        "v1.0": { "absenceExpected": true, "operations": [] },
+        "beta": { "absenceExpected": true, "operations": [] }
+      }
+    },
+    {
+      "module": "Security",
+      "directiveIndex": 6,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: $1V2Count",
+      "implementation": "StructuralNaming",
+      "notes": "Published Get1 selects GET /security/alerts_v2/$count [legacy security.alerts_v2_GetCount], not /security/alerts/$count. Structural naming already yields Get-MgSecurityAlertV2Count in both profiles; preserve the existing Mg prefix convention without an unrelated beta runtime change.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/security/alerts_v2/$count", "operationId": "security.alerts_v2.GetCount-9522" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/security/alerts_v2/$count", "operationId": "security.alerts_v2.GetCount-9522" }
+          ]
+        }
+      }
+    }
+  ]
+}
