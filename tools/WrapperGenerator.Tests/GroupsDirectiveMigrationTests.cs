@@ -17,6 +17,8 @@ public sealed class GroupsDirectiveMigrationTests
     private static readonly string RepoRoot = FindRepoRoot();
     private static readonly Lazy<OpenApiDocument> V1Spec = new(() => ReadSpec("v1.0"));
     private static readonly Lazy<OpenApiDocument> BetaSpec = new(() => ReadSpec("beta"));
+    private static readonly Lazy<OpenApiDocument> LegacyV1Spec = new(() => ReadSpec("v1.0", compatible: false));
+    private static readonly Lazy<OpenApiDocument> LegacyBetaSpec = new(() => ReadSpec("beta", compatible: false));
     private static readonly Lazy<Dictionary<string, string[]>> PublishedCommands = new(ReadPublishedCommands);
 
     [Theory]
@@ -47,11 +49,27 @@ public sealed class GroupsDirectiveMigrationTests
         var pattern = Regex.Match(source, @"(?m)^\s+- remove-path-by-operation:\s*(.+)$").Groups[1].Value.Trim();
         var candidates = document.Paths.SelectMany(path => path.Value.Operations!
             .Where(operation => Regex.IsMatch(operation.Value.OperationId!, pattern))
-            .Select(operation => $"{operation.Key.Method} {path.Key}")).OrderBy(key => key);
+            .Select(operation => $"{operation.Key.Method} {path.Key}")).ToHashSet(StringComparer.Ordinal);
+        var legacyDocument = profile == "v1.0" ? LegacyV1Spec.Value : LegacyBetaSpec.Value;
+        var selectedLegacy = legacyDocument.Paths.SelectMany(path => path.Value.Operations!
+            .Where(operation => Regex.IsMatch(operation.Value.OperationId!, pattern))
+            .Select(operation => (Path: path.Key, Method: operation.Key, Id: operation.Value.OperationId))).ToArray();
+        Assert.Equal(profile == "v1.0" ? 7 : 10, selectedLegacy.Length);
+        foreach (var legacy in selectedLegacy)
+        {
+            var match = Assert.Single(document.Paths, path => BridgePath(path.Key) == BridgePath(legacy.Path)
+                && path.Value.Operations!.ContainsKey(legacy.Method));
+            candidates.Add($"{legacy.Method.Method} {match.Key}");
+            var evidence = Assert.Single(mappings[0].GetProperty("profiles").GetProperty(profile).GetProperty("operations")
+                .EnumerateArray(), operation => operation.GetProperty("method").GetString() == legacy.Method.Method
+                    && operation.GetProperty("path").GetString() == match.Key);
+            Assert.Equal(legacy.Path, evidence.GetProperty("legacyPath").GetString());
+            Assert.Equal(legacy.Id, evidence.GetProperty("legacyOperationId").GetString());
+        }
         var reviewed = mappings[0].GetProperty("profiles").GetProperty(profile).GetProperty("operations")
             .EnumerateArray().Select(operation => $"{operation.GetProperty("method").GetString()} {operation.GetProperty("path").GetString()}")
             .OrderBy(key => key);
-        Assert.Equal(candidates, reviewed);
+        Assert.Equal(candidates.OrderBy(key => key), reviewed);
     }
 
     [Theory]
@@ -160,6 +178,9 @@ public sealed class GroupsDirectiveMigrationTests
     [InlineData("PATCH", "/groups/{id}/photo/$value")]
     [InlineData("POST", "/users/{id}/joinedGroups")]
     [InlineData("GET", "/users/{id}/joinedGroups/delta()/child")]
+    [InlineData("GET", "/groups/{id}/members/$ref")]
+    [InlineData("POST", "/groups/{id}/members/$ref")]
+    [InlineData("DELETE", "/groups/{id}/members/$ref/child")]
     public void NewSuppressionsDoNotPruneMethodsOrSubtrees(string method, string path)
     {
         Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path));
@@ -204,12 +225,17 @@ public sealed class GroupsDirectiveMigrationTests
                 AssertRoute(profile, config, method, path, "Remove", noun);
                 var collection = Regex.Replace(path, @"/\{directoryObject-id\}", "");
                 Assert.NotNull(SpecOperation(profile, method, collection));
-                if (profile == "beta" || !useCollisionData)
-                    Assert.False(CmdletConfigurator.IsSuppressed(method, collection, config));
+                Assert.True(CmdletConfigurator.IsSuppressed(method, collection, config));
                 continue;
             }
 
             Assert.True(CmdletConfigurator.IsSuppressed(method, path, config));
+            using var existingPolicy = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot,
+                "tools", "WrapperGenerator", "data", "collision-suppressions.v1.0.json")));
+            Assert.Contains(existingPolicy.RootElement.EnumerateArray(), entry =>
+                entry.GetProperty("method").GetString() == method.Method
+                && entry.GetProperty("uri").GetString() == CmdletConfigurator.NormalizePathTemplate(path)
+                && entry.GetProperty("action").GetString() == "suppress");
             var counterpart = repair.GetProperty("counterpart");
             var counterpartMethod = new HttpMethod(counterpart.GetProperty("method").GetString()!);
             var counterpartPath = counterpart.GetProperty("path").GetString()!;
@@ -265,11 +291,14 @@ public sealed class GroupsDirectiveMigrationTests
 
     private static OpenApiDocument Spec(string profile) => profile == "v1.0" ? V1Spec.Value : BetaSpec.Value;
 
-    private static OpenApiDocument ReadSpec(string profile)
+    private static string BridgePath(string path) =>
+        CmdletConfigurator.NormalizePathTemplate(path).Replace("/microsoft.graph.", "/", StringComparison.Ordinal);
+
+    private static OpenApiDocument ReadSpec(string profile, bool compatible = true)
     {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
-        using var stream = File.OpenRead(Path.Combine(RepoRoot, "openApiDocs_KiotaCompat", profile, "Groups.yml"));
+        using var stream = File.OpenRead(Path.Combine(RepoRoot, compatible ? "openApiDocs_KiotaCompat" : "openApiDocs", profile, "Groups.yml"));
         var result = OpenApiDocument.LoadAsync(stream, settings: settings).GetAwaiter().GetResult();
         return result.Document ?? throw new InvalidOperationException($"Could not parse compatible {profile} Groups spec.");
     }
