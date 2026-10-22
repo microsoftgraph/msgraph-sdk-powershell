@@ -1,50 +1,48 @@
 #nullable enable
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Management.Automation;
 using System.Net.Http;
 using Microsoft.Graph.Wrapper.Runtime;
 using Microsoft.Graph.PowerShell.Migrations.Client;
+using Microsoft.Graph.PowerShell.Migrations.Client.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Migrations
 {
-    [GraphRoute("GET", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/$count")]
-    [Cmdlet(VerbsCommon.Get, "MgMigrationCrossTenantMigrationJobUserCount")]
-    [OutputType(typeof(int))]
-    public class GetMgMigrationCrossTenantMigrationJobUserCountCommand : GraphClientCmdlet
+    [GraphRoute("POST", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/validate")]
+    [Cmdlet(VerbsDiagnostic.Test, "MgCrossTenantMigrationJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob))]
+    public class TestMgCrossTenantMigrationJobCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string CrossTenantMigrationJobId { get; set; } = string.Empty;
 
 
 
-        [Parameter(Mandatory = false)]
-        public string? Filter { get; set; }
 
-        [Parameter(Mandatory = false)]
-        public string? Search { get; set; }
+
 
 
 
         protected override void ProcessRecord()
         {
+            if (!ShouldProcess(CrossTenantMigrationJobId, "Test"))
+                return;
+
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            int? result;
+            Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob? result;
             try
             {
-                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Users.Count.GetAsync(requestConfiguration =>
+                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Validate.PostAsync(requestConfiguration =>
                 {
-                    if (this.IsParameterBound(nameof(Filter)))
-                        requestConfiguration.QueryParameters.Filter = Filter;
-
-                    if (this.IsParameterBound(nameof(Search)))
-                        requestConfiguration.QueryParameters.Search = Search;
 
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
@@ -55,8 +53,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
                 return;
             }
 
-            if (result is not null)
-                WriteObject(result);
+            WriteObject(result);
         }
     }
 }

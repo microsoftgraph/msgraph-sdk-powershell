@@ -1,8 +1,8 @@
 {
   "descriptionHash": "3C99F5698BBD027BCD0240A390038BF3E5B04140EA2CB8784DA0B6AD7BC0535C01E8DEF2A52FD0F2C7EEA74CF8A0A00F50511A32D72BE70BBE6B4E9A821FB0D2",
-  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/Beta/Migrations.yml",
+  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/beta/Migrations.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Migrations.Client",
