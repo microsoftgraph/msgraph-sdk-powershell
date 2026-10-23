@@ -1,0 +1,178 @@
+{
+  "scope": {
+    "source": "src/CrossDeviceExperiences/CrossDeviceExperiences.md",
+    "ignored": [
+      "src/readme.graph.md",
+      "src/CrossDeviceExperiences/v1.0/readme.md",
+      "src/CrossDeviceExperiences/beta/readme.md"
+    ],
+    "deferred": "Parameter aliases/transforms and schema/response directives remain deferred; none occur in the shared source."
+  },
+  "generationPrerequisites": [
+    {
+      "profile": "beta",
+      "classification": "BaselineCollisionRename",
+      "notes": "Independent exact item-only noun overrides use the published beta oracle names. These item-reference routes are not selected by the shared directive, which suppresses only collection reference deletes. The shared generator's existing Mg rather than MgBeta prefix remains unchanged.",
+      "oracle": "src/Authentication/Authentication/custom/common/MgCommandMetadata.json",
+      "operations": [
+        {
+          "method": "DELETE",
+          "path": "/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/$ref",
+          "operationId": "users.devices.registeredOwners.DeleteRefDirectoryObject",
+          "publishedCommand": "Remove-MgBetaUserDeviceRegisteredOwnerDirectoryObjectByRef",
+          "replacementNoun": "UserDeviceRegisteredOwnerDirectoryObjectByRef"
+        },
+        {
+          "method": "DELETE",
+          "path": "/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/$ref",
+          "operationId": "users.devices.registeredUsers.DeleteRefDirectoryObject",
+          "publishedCommand": "Remove-MgBetaUserDeviceRegisteredUserDirectoryObjectByRef",
+          "replacementNoun": "UserDeviceRegisteredUserDirectoryObjectByRef"
+        }
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "module": "CrossDeviceExperiences",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^user.device_DeleteRegisteredOwnerGraphBPreRef$|^user.device_DeleteRegisteredUserGraphBPreRef$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Evaluate the unchanged selector against actual same-profile legacy specifications, not renamed compatible IDs. v1.0 has no legacy matches. Both beta matches survive at unchanged method/path with converted IDs, so suppress exactly the two collection reference DELETE operations. Preserve item-reference deletes and collection GET/POST. Independent published item nouns are recorded under generationPrerequisites.",
+      "profiles": {
+        "v1.0": {
+          "notes": "Actual legacy and compatible v1.0 specs both contain only activity routes; original selector matches zero legacy operations.",
+          "absenceExpected": true,
+          "operations": [],
+          "evidence": {
+            "spec": "openApiDocs_KiotaCompat/v1.0/CrossDeviceExperiences.yml",
+            "gitBlob": "d4be32474617fd2fb80ac3a5bb3f94489a2e968b",
+            "pathCount": 8,
+            "operationCount": 14,
+            "selector": "^user.device_DeleteRegisteredOwnerGraphBPreRef$|^user.device_DeleteRegisteredUserGraphBPreRef$",
+            "selectorMatchCount": 0,
+            "legacySpec": "openApiDocs/v1.0/CrossDeviceExperiences.yml",
+            "legacyGitBlob": "d3c154f50de2c35fdfc46578f6988d7cfc1938ac",
+            "legacyOperationCount": 14,
+            "legacySelectorMatchCount": 0,
+            "survivingLegacyMatchCount": 0,
+            "removedLegacyMatchCount": 0,
+            "search": "Parse both actual same-profile specs, match the original selector against legacy IDs first, and bridge by HTTP method plus normalized path.",
+            "unaffectedOperations": [
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/activities",
+                "operationId": "users.ListActivities"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/activities/{userActivity-id}",
+                "operationId": "users.DeleteActivities"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}",
+                "operationId": "users.activities.DeleteHistoryItems"
+              }
+            ]
+          }
+        },
+        "beta": {
+          "operationIdSource": "Legacy",
+          "notes": "Complete original legacy match set: two collection reference DELETEs, both surviving uniquely at identical method/path with renamed compatible IDs; zero removals. Item reference DELETEs are not selected.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+              "operationId": "users.devices.DeleteRefRegisteredOwners",
+              "legacyPath": "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+              "legacyOperationId": "user.device_DeleteRegisteredOwnerGraphBPreRef"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/devices/{device-id}/registeredUsers/$ref",
+              "operationId": "users.devices.DeleteRefRegisteredUsers",
+              "legacyPath": "/users/{user-id}/devices/{device-id}/registeredUsers/$ref",
+              "legacyOperationId": "user.device_DeleteRegisteredUserGraphBPreRef"
+            }
+          ],
+          "removedLegacyOperations": [],
+          "evidence": {
+            "spec": "openApiDocs_KiotaCompat/beta/CrossDeviceExperiences.yml",
+            "gitBlob": "3d2d078feed71def2045120a347904e482795151",
+            "pathCount": 77,
+            "operationCount": 101,
+            "selector": "^user.device_DeleteRegisteredOwnerGraphBPreRef$|^user.device_DeleteRegisteredUserGraphBPreRef$",
+            "selectorMatchCount": 0,
+            "legacySpec": "openApiDocs/beta/CrossDeviceExperiences.yml",
+            "legacyGitBlob": "b4d46b00016bf459fd7537063eedcd6e0893eff2",
+            "legacyOperationCount": 100,
+            "legacySelectorMatchCount": 2,
+            "survivingLegacyMatchCount": 2,
+            "removedLegacyMatchCount": 0,
+            "search": "Parse both actual same-profile specs, match the original selector against legacy IDs first, and bridge by HTTP method plus normalized path.",
+            "unaffectedOperations": [
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/activities",
+                "operationId": "users.ListActivities"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/activities/{userActivity-id}",
+                "operationId": "users.DeleteActivities"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/devices/{device-id}",
+                "operationId": "users.DeleteDevices"
+              },
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/devices/{device-id}/registeredOwners",
+                "operationId": "users.devices.ListRegisteredOwners"
+              },
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/devices/{device-id}/registeredUsers",
+                "operationId": "users.devices.ListRegisteredUsers"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/$ref",
+                "operationId": "users.devices.registeredOwners.DeleteRefDirectoryObject"
+              },
+              {
+                "method": "DELETE",
+                "path": "/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/$ref",
+                "operationId": "users.devices.registeredUsers.DeleteRefDirectoryObject"
+              },
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+                "operationId": "users.devices.ListRefRegisteredOwners"
+              },
+              {
+                "method": "POST",
+                "path": "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+                "operationId": "users.devices.CreateRefRegisteredOwners"
+              },
+              {
+                "method": "GET",
+                "path": "/users/{user-id}/devices/{device-id}/registeredUsers/$ref",
+                "operationId": "users.devices.ListRefRegisteredUsers"
+              },
+              {
+                "method": "POST",
+                "path": "/users/{user-id}/devices/{device-id}/registeredUsers/$ref",
+                "operationId": "users.devices.CreateRefRegisteredUsers"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
