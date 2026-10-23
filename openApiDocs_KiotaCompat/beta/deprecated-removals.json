@@ -1,6 +1,6 @@
 {
-  "generatedAtUtc": "2026-10-06T23:52:28.7533292Z",
-  "cutoffDate": "2026-10-04",
+  "generatedAtUtc": "2026-10-23T19:31:13.9823247Z",
+  "cutoffDate": "2026-10-21",
   "bufferDays": 2,
   "modules": {
     "CloudCommunications": {
@@ -4549,6 +4549,108 @@
         "uriRemoved": true
       }
     },
+    "Migrations": {
+      "/solutions/migrations": {
+        "operationsRemoved": [
+          "get",
+          "patch",
+          "delete"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs": {
+        "operationsRemoved": [
+          "get",
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}": {
+        "operationsRemoved": [
+          "get",
+          "patch",
+          "delete"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/cancel": {
+        "operationsRemoved": [
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/migrate": {
+        "operationsRemoved": [
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/validate": {
+        "operationsRemoved": [
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users": {
+        "operationsRemoved": [
+          "get",
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}": {
+        "operationsRemoved": [
+          "get",
+          "patch",
+          "delete"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}/cancel": {
+        "operationsRemoved": [
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')": {
+        "operationsRemoved": [
+          "get",
+          "patch",
+          "delete"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/cancel": {
+        "operationsRemoved": [
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/migrate": {
+        "operationsRemoved": [
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs(displayName=''{displayName}'')/validate": {
+        "operationsRemoved": [
+          "post"
+        ],
+        "uriRemoved": true
+      },
+      "/solutions/migrations/crossTenantMigrationJobs/$count": {
+        "operationsRemoved": [
+          "get"
+        ],
+        "uriRemoved": true
+      }
+    },
     "NetworkAccess": {
       "/networkAccess/connectivity/branches": {
         "operationsRemoved": [
@@ -5676,12 +5778,6 @@
         "uriRemoved": true
       },
       "/users/{user-id}/outlook/tasks/$count": {
-        "operationsRemoved": [
-          "get"
-        ],
-        "uriRemoved": true
-      },
-      "/users/{user-id}/settings/exchange": {
         "operationsRemoved": [
           "get"
         ],
