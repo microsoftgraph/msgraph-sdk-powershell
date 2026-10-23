@@ -7644,7 +7644,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta
@@ -7727,7 +7727,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete unifiedRoleDefinition
-      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\r\n- Cloud PC\r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra ID) "
+      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. For the directory provider, deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\r\n- Cloud PC\r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra ID) "
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta
@@ -8079,6 +8079,43 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.restore':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_restore
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
@@ -8201,6 +8238,35 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.cloudPC.roleDefinition_restore
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /roleManagement/cloudPC/roleDefinitions/$count:
     get:
       tags:
@@ -10211,6 +10277,43 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.restore':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_restore
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
@@ -10333,6 +10436,35 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.deviceManagement.roleDefinition_restore
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /roleManagement/deviceManagement/roleDefinitions/$count:
     get:
       tags:
@@ -11813,7 +11945,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta
@@ -12240,6 +12372,43 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.restore':
+    post:
+      tags:
+        - roleManagement.unifiedRbacApplication
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_restore
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
@@ -12362,6 +12531,35 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - roleManagement.unifiedRbacApplication
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.exchange.roleDefinition_restore
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: The unique identifier of unifiedRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /roleManagement/exchange/roleDefinitions/$count:
     get:
       tags:
@@ -15435,6 +15633,8 @@ components:
         - title: rbacApplication
           type: object
           properties:
+            deletedItems:
+              $ref: '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
             resourceNamespaces:
               type: array
               items:
@@ -16042,6 +16242,20 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+    microsoft.graph.directoryRoleManagementDeletedItemContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryRoleManagementDeletedItemContainer
+          type: object
+          properties:
+            roleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              description: The soft-deleted custom role definitions in the directory.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.approval:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
