@@ -90,6 +90,31 @@ the gate and the derivation cannot drift apart. Without `-CaptureInput` it requi
 
 ## Scenarios
 
+### I need to refresh the Kiota-compatible OpenAPI documents
+
+```powershell
+.\tools\UpdateOpenApiKiotaCompat.ps1
+.\tools\UpdateOpenApiKiotaCompat.ps1 -BetaGraphVersion
+```
+
+The refresh keeps `fileName=openapi` and `style=Plain` as the source of the documents.
+Discriminators, `anyOf`/`oneOf`, navigation properties and response codes remain available
+for Kiota client generation. Expired deprecated operations are still pruned as before.
+
+Operation IDs follow the existing PowerShell OpenAPI naming so operation-ID-based directives
+are easier to migrate. DevX ignores `singularizeOperationIds` for `style=Plain`, so the downloader
+requests a second view of the same Kiota source with `style=Powershell`,
+`singularizeOperationIds=true` and `format=json`. Only its operation IDs are copied, matched by
+path and HTTP method; none of its schemas, parameters or responses are used. Missing or
+ambiguous operation-ID mappings fail the refresh rather than silently leaving mixed naming.
+
+`TweakOpenApi.ps1 -OperationIdsOnly` then applies the existing preposition and word corrections.
+This mode does not rewrite success response codes or mark navigation properties read-only.
+For example, `auditLogs.auditLogRoot.UpdateAuditLogRoot` becomes
+`auditLog.auditLogRoot_UpdateAuditLogRoot`. The existing `openApiDocs` refresh is unchanged.
+These changes take effect on the next refresh; they do not regenerate the committed corpus
+or rewrite existing wrapper directive migration ledgers.
+
 ### I changed the generator and want to see what it did to the output
 
 ```powershell

@@ -54,6 +54,15 @@ Singularization runs per camel-case word (so `termsAndConditions` → `TermAndCo
 
 A few published names aren't algorithmic, and the spec publishes some routes the SDK never shipped. `CmdletConfigurator.cs` contains the shared matching engine, while each module owns its curated data in `src\<Module>\wrapper\<Module>_cmdletConfigurations.cs` — renames mirroring the SDK's hand-written AutoRest directives, and suppressions for routes that ship nothing — with every entry citing its evidence: the directive when one exists, otherwise the shipped-command inventory. Module ownership is organizational; all configured entries are compiled into the generator and matched globally. Examples: the `GET /users/{id}/calendar` rename to `…UserDefaultCalendar` (Calendar.md), the `Solution` prefix strip under `/solutions/*` with the BackupRestore exception (Bookings.md), and the self-referential `sites/{id}/sites` rename to `SubSite`/`GroupSubSite` (Sites.md) — without which the sub-sites cmdlets would collide with `Get-MgSite` itself. The generator fails loudly on any such file collision rather than silently overwriting.
 
+Curated `OverrideKind.ReplaceVerb` entries use the same `Entry` method/path matching and put the
+approved PowerShell verb (for example, `"Invoke"`) in `Value`. Pair one with a separate
+`ReplaceNoun` entry when a reviewed shared directive needs both. These entries are unscoped:
+they apply with null configuration, with derived data disabled, and in either API profile.
+An enabled derived rename remains authoritative, including a null derived verb that preserves
+the structural default; curated verbs are only a fallback when no derived rename matches.
+Unmatched operations keep their existing verbs. `Naming.Resolve` validates the selected verb
+through the existing approved-verb set before emitting the cmdlet attribute and class name.
+
 On top of the curated entries sits a **derived** layer: `tools/Derive-CollisionResolutions.ps1` replays every route from the checked-in collision inventory (`data/collision-inventory.v1.0.txt`, captured with `--no-collision-data`) against the shipped-command inventory and emits `data/collision-suppressions.v1.0.json` and `data/collision-renames.v1.0.json` — one exact-match entry per contested method+route, each carrying its oracle evidence. The files are embedded into the generator at build time (generation never reads the 22 MB oracle), applied only when `GeneratorConfig.UseCollisionData` is set, and the script's `-Validate` mode fails if the checked-in files drift from a fresh derivation. Two routes in all of v1.0 are **deferred cross-path merges** — the published SDK serves `Get-MgGroupPhoto` from both `/photo` and `/photos`, and `Get-MgShareListItem` from both `/listItem` and `/list/items`, as parameter-set variants of one cmdlet; the generator keeps the singleton side and suppresses the collection side until cross-path parameter sets land (see [docs/edge-cases/crosspath-merge-edge-cases.md](docs/edge-cases/crosspath-merge-edge-cases.md)). With the derived data applied, a full v1.0 generation across all 38 configured modules produces zero collisions.
 
 ## The one subtle part: list + item GET become one cmdlet
@@ -371,8 +380,11 @@ The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each mo
 
 ## Migrate module AutoRest directives
 
-Cmdlet removals and renames in `src/<Module>/<Module>.md` are migrated one module at a time.
-Inventory them without changing the worktree:
+Cmdlet removals and renames in the shared `src/<Module>/<Module>.md` file are migrated one
+module at a time. Profile-specific directives (including `src/<Module>/beta/readme.md` and
+`src/<Module>/v1.0/readme.md`) and all directives in `src/readme.graph.md` are explicitly out
+of scope. Parameter aliases/transforms and schema/response directives remain `Deferred`.
+Inventory shared directives without changing the worktree:
 
 ```powershell
 .\tools\Get-WrapperDirectiveMigrationInventory.ps1 -Module Compliance |
@@ -380,25 +392,72 @@ Inventory them without changing the worktree:
 .\tools\Test-WrapperDirectiveMigrationInventory.ps1
 ```
 
-`remove-path-by-operation` entries are resolved directly from operation IDs in both
-Kiota-compatible specifications. AutoRest `where` selectors operate on generated subjects and
-variants, so they require reviewed method/path evidence in
-`src/<Module>/wrapper/<Module>_directiveMigrationMap.json`; the tool deliberately reports an
-unreviewed selector as `Unresolved` instead of guessing. An automatically matched operation-ID
-directive is `Resolved`, not `Mapped`: it remains a candidate until its configuration and tests
-have been reviewed. `ExistingCoverage` distinguishes reviewed configuration, structural naming,
-and modules that contain unrelated or not-yet-reconciled entries.
+`remove-path-by-operation` regexes identify operation-ID candidates in both Kiota-compatible
+specifications; a regex match alone is never a reviewed migration. AutoRest `where` selectors
+operate on generated subjects and variants, so an unreviewed selector remains `Unresolved`
+instead of being guessed. Both kinds use the same reviewed ledger,
+`src/<Module>/wrapper/<Module>_directiveMigrationMap.json`, keyed by module and the shared
+file's one-based directive ordinal. A reviewed operation-ID suppression becomes `Mapped`, not
+an unused ledger entry or a `Resolved`/`Candidate`. `ExistingCoverage` distinguishes reviewed
+configuration, structural naming, and unrelated or not-yet-reconciled configuration entries.
 
 For each reviewed directive:
 
-1. Use exact method/path mappings for both v1.0 and beta. An absent profile must be marked
-   `absenceExpected`.
+1. Record `classification`, an exact `sourceContains` anchor, and an `implementation` disposition,
+   preserving the existing Compliance pilot format. Declare both `v1.0` and `beta` under
+   `profiles`, each with an explicit `operations` array and boolean `absenceExpected` unless
+   explicitly excluded for a missing compatible specification as described below. Every
+   operation needs exact `method`, case-sensitive `path`, and case-sensitive `operationId`
+   evidence from that profile. An absent profile requires `operations: []` and
+   `absenceExpected: true`; it cannot also declare operations. Operation-ID suppressions must
+   cover exactly the regex's matched operation set in each profile, not a reviewed subset.
+   Both profiles may declare reviewed absence when neither has matching operations.
 2. Add only configuration the wrapper naming rules cannot already produce. Pin structural naming
    behavior in `NamingTests` instead of adding redundant overrides.
 3. Keep the AutoRest directive active and annotate it with its wrapper disposition until the
    service-module pipeline is retired.
 4. Run the inventory validation and WrapperGenerator tests. Generate committed profile output
    only in a separately reviewed profile-specific change.
+
+When `openApiDocs_KiotaCompat/<profile>/<Module>.yml` is unavailable, use an explicit profile
+exclusion rather than claiming the API operations are absent:
+
+```json
+"beta": {
+  "excluded": true,
+  "operations": [],
+  "notes": "Missing compatible spec; no API-operation absence assertion."
+}
+```
+
+An excluded profile must have an empty operations array, explanatory notes, and no
+`absenceExpected` property. Exclusion fails if the compatible specification exists, even if
+it contains no matching operations. Nonexcluded profiles retain the existing exact evidence
+and `absenceExpected` requirements. Exclusions appear in inventory notes and do not expand
+the shared-directive-only scope. A spec added later invalidates the exclusion until reviewed.
+Quoted YAML function keys are decoded before exact path comparison, so doubled single quotes
+in a key such as `User=''{User}''` become the literal `User='{User}'` in ledger evidence.
+
+Use the existing switch as a **reviewed completion gate** after reconciling a module's ledger:
+
+```powershell
+.\tools\Get-WrapperDirectiveMigrationInventory.ps1 -Module <Module> -FailOnUnresolved
+```
+
+`-FailOnUnresolved` now requires every non-deferred directive to be `Mapped`: it rejects
+`Resolved` candidates as well as `Unresolved` selectors. Deferred directives do not block this
+cmdlet-only gate. Invalid, stale, duplicate, or unused mappings fail even without the switch.
+Source/classification drift, missing profile evidence, changed operation IDs, and incomplete
+operation-ID suppression coverage require renewed review, not an automatic regex-based pass.
+Pruned operations can invalidate an existing ledger, including a pilot; reconcile these in
+the owning module audit rather than inventing replacement operations.
+
+A module with no shared directives (or an empty `directive:` block) returns zero rows and
+passes the completion gate without a ledger. Record that empty inventory as the module's audit
+disposition in its review; do not add fake overrides or operation mappings. Ignored profile-local
+or global directives do not change that result. The validation script uses isolated exact
+fixtures for valid Compliance and operation-ID mappings, including stale-evidence rejection,
+plus read-only live inventory checks; passing those tests does not certify a live module ledger.
 
 The inventory command is read-only unless `-OutputPath` is supplied. JSON and CSV are supported
 for review artifacts; it never rewrites module markdown or configuration files.

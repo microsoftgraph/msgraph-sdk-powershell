@@ -17,24 +17,25 @@ namespace WrapperGenerator;
 // inventory (the oracle, MgCommandMetadata.json).
 public static partial class CmdletConfigurator
 {
-    private enum OverrideKind
+    internal enum OverrideKind
     {
         SuppressOperation,
         ReplaceNoun,
         StripNounPrefix,
+        ReplaceVerb,
     }
 
     // How Pattern is matched against the normalized path: the full path (Exact), its start
     // (Prefix), or its end (Suffix — for navs that recur under many roots, like
     // .../resourceRoleScopes/{}/scope appearing under several parents).
-    private enum PathMatch
+    internal enum PathMatch
     {
         Exact,
         Prefix,
         Suffix,
     }
 
-    private sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason);
+    internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason);
 
     // NormalizePath lowercases before matching, so a Pattern containing an uppercase letter can
     // never match anything: the entry is silently dead and the override looks applied but is not.
@@ -147,17 +148,25 @@ public static partial class CmdletConfigurator
         return false;
     }
 
-    // The published verb for an operation, when the oracle-derived data carries one. Only an
-    // action or function needs it: CRUD verbs follow from the HTTP method, but an action's verb
-    // is the SDK's own choice per operation (applyHold ships as Add-, removeHold as Remove-).
-    public static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config)
+    // Derived names remain authoritative, including a null verb that keeps the structural
+    // default. Otherwise a shared directive may require a curated verb in either profile.
+    public static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config) =>
+        TryGetOverriddenVerb(httpMethod, pathTemplate, config, Entries);
+
+    internal static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config, IReadOnlyList<Entry> entries)
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
-        return config is { UseCollisionData: true }
-            && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, NormalizePath(pathTemplate), out var derived)
-            ? derived.Verb
-            : null;
+        var path = NormalizePath(pathTemplate);
+        if (config is { UseCollisionData: true }
+            && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, path, out var derived))
+            return derived.Verb;
+        foreach (var entry in entries)
+        {
+            if (entry.Kind == OverrideKind.ReplaceVerb && Matches(entry, httpMethod, path))
+                return entry.Value;
+        }
+        return null;
     }
 
     public static string ApplyNounOverrides(HttpMethod httpMethod, string pathTemplate, string noun, GeneratorConfig? config = null)

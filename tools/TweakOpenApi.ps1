@@ -7,7 +7,10 @@ Param(
     [string] $OpenAPIFilesPath,
 
     [Parameter(Mandatory = $false)]
-    [Switch] $SetNavigationPropertiesAsReadOnly
+    [Switch] $SetNavigationPropertiesAsReadOnly,
+
+    [Parameter(Mandatory = $false)]
+    [Switch] $OperationIdsOnly
 )
 
 $prepositionReplacements = @{
@@ -27,12 +30,30 @@ $wordReplacements = @{
 $targetOperationIdRegex = [Regex]::new("([a-z*])($($prepositionReplacements.Keys -join "|"))([A-Z*]|$)", "Compiled")
 $stopwatch = [system.diagnostics.stopwatch]::StartNew()
 # Tweak prepositions in operationIds to byPass https://github.com/Azure/autorest.powershell/issues/795.
-Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
+Get-ChildItem -Path $OpenAPIFilesPath -File | Where-Object {
+    $_.Extension -in @('.yml', '.yaml')
+} | ForEach-Object {
     $filePath = $_.FullName
     $modified = $false
-    $updatedContent = Get-Content $filePath | ForEach-Object {
-        if ($_.contains("operationId:")) {
-            $operationId = $_
+    $inPaths = $false
+    if ($OperationIdsOnly.IsPresent) {
+        # Keep line endings and final-newline behavior unchanged in Kiota-compatible documents.
+        $lines = [regex]::Split([System.IO.File]::ReadAllText($filePath), '(\r\n|\n|\r)')
+    }
+    else {
+        $lines = Get-Content $filePath
+    }
+    $updatedContent = $lines | ForEach-Object {
+        if ($OperationIdsOnly.IsPresent -and $_ -match '^\S') {
+            $inPaths = $_ -match '^paths:'
+        }
+        $idMatch = $null
+        if ($OperationIdsOnly.IsPresent -and $inPaths -and $_.StartsWith('      operationId:')) {
+            $idMatch = [regex]::Match($_, '^(?<prefix>      operationId:[ \t]*)(?<quote>[''"]?)(?<id>[^''"\s#]+)\k<quote>(?<suffix>[ \t]*(?:#.*)?)$')
+        }
+        if (($_.contains("operationId:") -and -not $OperationIdsOnly.IsPresent) -or
+            ($null -ne $idMatch -and $idMatch.Success)) {
+            $operationId = if ($OperationIdsOnly.IsPresent) { $idMatch.Groups['id'].Value } else { $_ }
             $wordReplacements.Keys | ForEach-Object {
                 if ($operationId.EndsWith($_, "CurrentCultureIgnoreCase")) {
                     $operationId = ($operationId -replace $_, $wordReplacements[$_])
@@ -41,7 +62,7 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
                 }
             }
 
-            if (($targetOperationIdRegex.Match($_)).Success) {
+            if (($targetOperationIdRegex.Match($operationId)).Success) {
                 $prepositionReplacements.Keys | ForEach-Object {
                     # Replace prepositions with replacement word.
                     #e.g., 'applications_GetCreatedOnBehalfOfByRef' will be renamed to 'applications_GetCreatedOnBehalfGraphOPreGraphBPreRef'.
@@ -51,7 +72,15 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
                 }
             }
             
+            if ($OperationIdsOnly.IsPresent) {
+                return $idMatch.Groups['prefix'].Value + $idMatch.Groups['quote'].Value +
+                    $operationId + $idMatch.Groups['quote'].Value + $idMatch.Groups['suffix'].Value
+            }
             return $operationId
+        }
+
+        if ($OperationIdsOnly.IsPresent) {
+            return $_
         }
 
         if ($SetNavigationPropertiesAsReadOnly.IsPresent -and $_.contains("x-ms-navigationProperty: true")) {
@@ -70,7 +99,14 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
 
         return $_
     }
-    if ($modified) { $updatedContent | Out-File $filePath -Force }
+    if ($modified) {
+        if ($OperationIdsOnly.IsPresent) {
+            [System.IO.File]::WriteAllText($filePath, ($updatedContent -join ''), [System.Text.UTF8Encoding]::new($false))
+        }
+        else {
+            $updatedContent | Out-File $filePath -Force
+        }
+    }
 }
 $stopwatch.Stop()
 Write-Debug "Tweaked '$OpenAPIFilesPath' OpenAPI files in '$($stopwatch.Elapsed.TotalMinutes)' minutes."
