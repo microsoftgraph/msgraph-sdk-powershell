@@ -408,9 +408,10 @@ For each reviewed directive:
    `profiles`, each with an explicit `operations` array and boolean `absenceExpected` unless
    explicitly excluded for a missing compatible specification as described below. Every
    operation needs exact `method`, case-sensitive `path`, and case-sensitive `operationId`
-   evidence from that profile. An absent profile requires `operations: []` and
-   `absenceExpected: true`; it cannot also declare operations. Operation-ID suppressions must
-   cover exactly the regex's matched operation set in each profile, not a reviewed subset.
+   evidence from that profile. A present profile with no selected operations requires
+   `operations: []` and `absenceExpected: true`; it cannot also declare operations.
+   Operation-ID suppressions must cover exactly the regex's matched operation set in each
+   profile, not a reviewed subset.
    Both profiles may declare reviewed absence when neither has matching operations.
 2. Add only configuration the wrapper naming rules cannot already produce. Pin structural naming
    behavior in `NamingTests` instead of adding redundant overrides.
@@ -437,6 +438,73 @@ and `absenceExpected` requirements. Exclusions appear in inventory notes and do 
 the shared-directive-only scope. A spec added later invalidates the exclusion until reviewed.
 Quoted YAML function keys are decoded before exact path comparison, so doubled single quotes
 in a key such as `User=''{User}''` become the literal `User='{User}'` in ledger evidence.
+
+### Reviewed legacy operation-ID conversion
+
+Literal operation-ID matching against compatible specifications remains the default. Some
+shared suppression regexes instead name old operation IDs that actually exist in the
+same module/profile under `openApiDocs`. Opt into a reviewed translation for that profile,
+not an inferred alias or a rewritten regex:
+
+```json
+"v1.0": {
+  "operationIdSource": "Legacy",
+  "notes": "Reviewed the complete original legacy regex match set against compatible routes.",
+  "absenceExpected": false,
+  "operations": [
+    {
+      "method": "PATCH",
+      "path": "/auditLogs",
+      "operationId": "auditLogs.auditLogRoot.UpdateAuditLogRoot",
+      "legacyPath": "/auditLogs",
+      "legacyOperationId": "auditLog.auditLogRoot_UpdateAuditLogRoot"
+    }
+  ],
+  "removedLegacyOperations": []
+}
+```
+
+This disposition is supported only for `OperationIdSuppression`. Both actual
+`openApiDocs/<profile>/<Module>.yml` and compatible specifications must exist. The original
+shared regex must match at least one legacy operation, and the ledger must account for its
+**entire** match set. Each surviving operation needs exact old path/ID and current method/path/ID
+evidence. The bridge must be unique by method and normalized path in both specifications;
+normalization erases `{parameter}` names, lowercases the path, and trims trailing slashes.
+Exact evidence remains case-sensitive. No changed methods, different route shapes, subject
+variants, guessed successors, or operations absent from the legacy regex set are inferred.
+
+If an actual matched legacy operation has been pruned, record its old `method`, `path`,
+`operationId`, and review `notes` in `removedLegacyOperations`. This is accepted only when
+there are zero current compatible method/normalized-path matches. Surviving and removed
+evidence together must cover the complete source set without duplicates. A wholly pruned
+source set can have `operations: []` with all entries explicitly reviewed as removed;
+`absenceExpected` must still be `false`, not a substitute API-absence assertion.
+Translation cannot be combined with profile exclusion. If the original regex matches nothing
+in the legacy specification, do not use `Legacy` or infer successor operations. An independently
+reviewed **default literal no-match audit** can still be `Mapped` with `operations: []`,
+`absenceExpected: true`, and no Legacy fields. Notes and module tests must distinguish selector
+absence from API-operation absence. Without that review, the directive remains `Unresolved`.
+Supplying legacy evidence without the explicit disposition fails.
+For a reviewed final-operation converter change, add
+`"legacyPathTranslation": "UnqualifyFinalOperation"` to that **surviving operation** record.
+The exact old and new paths/IDs remain mandatory. This opt-in permits only:
+
+- Final `microsoft.graph.<operation>` to bare `<operation>`, under the same normalized parent.
+  Function spelling may additionally differ by an empty `()` suffix; nonempty arguments must
+  remain identical apart from placeholder names.
+- Bare `delta` to `delta()` or the reverse, only for an actual function.
+
+Both specifications must explicitly declare the same `x-ms-docs-operation-type` (`action` or
+`function`), with POST for actions and GET for functions. The compatible counterpart must be
+unique, and every original legacy regex match still needs complete accounting. No resource
+or cast conversion, earlier path-segment rewrite, generic alias, changed argument shape, or
+variant expansion is accepted. Unknown translation names fail rather than being ignored.
+Potential qualified/bare or empty-argument counterparts reject a removal claim even without
+the opt-in, so a surviving operation cannot be silently reclassified as removed.
+Trailing slashes on both paths are trimmed before terminal qualification or empty-argument
+comparison; the exact recorded paths and IDs are still validated against their specifications.
+
+### Completion and audit
 
 Use the existing switch as a **reviewed completion gate** after reconciling a module's ledger:
 
