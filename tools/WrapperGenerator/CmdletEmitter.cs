@@ -8,7 +8,7 @@ namespace WrapperGenerator;
 // selected OpenAPI operation: mandatory path-id parameters, an optional -AccessToken with a
 // Connect-MgGraph fallback, a ShouldProcess gate on mutating calls, and the Kiota client's
 // property/indexer chain for the actual request.
-public static class CmdletEmitter
+public static partial class CmdletEmitter
 {
     // Transport acquisition lives on GraphClientCmdlet in Microsoft.Graph.Wrapper.Runtime: the
     // session path reuses one adapter keyed to the session HttpClient's identity, the token
@@ -139,8 +139,9 @@ public static class CmdletEmitter
     // are documented without it, so an unbound -OutFile writes the bytes to the pipeline
     // instead, and both documented usages work.
     // The [GraphRoute] attribute line for a cmdlet class. See GraphRouteAttribute in Microsoft.Graph.Wrapper.Runtime.
-    private static string RouteAttr(CmdletNaming naming) =>
-        $"    [GraphRoute(\"{EscapeLiteral(naming.SourceMethod)}\", \"{EscapeLiteral(naming.SourcePath)}\")]";
+    private static string RouteAttr(CmdletNaming naming, string? parameterSetName = null) =>
+        $"    [GraphRoute(\"{EscapeLiteral(naming.SourceMethod)}\", \"{EscapeLiteral(naming.SourcePath)}\""
+        + (parameterSetName is null ? "" : $", ParameterSetName = \"{EscapeLiteral(parameterSetName)}\"") + ")]";
 
     private static string OutFileParamDecl() => """
 
@@ -548,11 +549,16 @@ namespace {{ctx.CmdletNamespace}}
     // An OData /$value read: the raw bytes behind a resource (a photo, an uploaded file). Kiota
     // types it as Stream from a plain GetAsync on the Content builder. -OutFile matches the
     // published surface (Get-MgUserPhotoContent -OutFile <path>).
-    public static string EmitContentGet(CmdletNaming naming, EmitContext ctx, string returnTypeName, bool returnsStream)
+    public static string EmitContentGet(CmdletNaming naming, EmitContext ctx, string returnTypeName, bool returnsStream,
+        bool useStoppingToken = false)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
         ArgumentNullException.ThrowIfNull(returnTypeName);
+        var bindings = HeaderBindingsFor(naming.HeaderParams, extraIndent: "                ") + GenericHeadersBinding("                ");
+        var call = useStoppingToken
+            ? $"client.{naming.BuilderExpression}.GetAsync(requestConfiguration =>\n                {{{bindings}\n                }}, StoppingToken)"
+            : EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null);
 
         return $$"""
 #nullable enable
@@ -587,7 +593,7 @@ namespace {{ctx.CmdletNamespace}}
             {{returnTypeName}}? result;
             try
             {
-                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null)}}.GetAwaiter().GetResult();
+                result = {{call}}.GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}
 {{(returnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
@@ -661,7 +667,8 @@ namespace {{ctx.CmdletNamespace}}
     // A GET whose response is a single scalar rather than a resource: /$count returns int, and a
     // single-valued navigation's /$ref returns the one reference URL as a string. Neither is an
     // entity read nor half of a list/item pair, so the CLR type is passed in.
-    public static string EmitScalarGet(CmdletNaming naming, EmitContext ctx, string clrType, IReadOnlySet<string> queryParamNames)
+    public static string EmitScalarGet(CmdletNaming naming, EmitContext ctx, string clrType, IReadOnlySet<string> queryParamNames,
+        IReadOnlyList<StringQueryParameter>? extraQueryParameters = null)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
@@ -673,8 +680,8 @@ namespace {{ctx.CmdletNamespace}}
         var applicable = CollectionQueryOptions
             .Where(o => o.ODataName is "$filter" or "$search" && queryParamNames.Contains(o.ODataName))
             .ToList();
-        var queryParamDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl(null)));
-        var queryBindings = string.Join("\n\n", applicable.Select(o => o.Binding));
+        var queryParamDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl(null))) + ExtraQueryDeclarations(extraQueryParameters);
+        var queryBindings = string.Join("\n\n", applicable.Select(o => o.Binding)) + ExtraQueryBindings(extraQueryParameters);
 
         return $$"""
 #nullable enable
@@ -723,7 +730,8 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
-    public static string EmitItemGet(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlySet<string> queryParamNames)
+    public static string EmitItemGet(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlySet<string> queryParamNames,
+        IReadOnlyList<StringQueryParameter>? extraQueryParameters = null)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
@@ -735,8 +743,8 @@ namespace {{ctx.CmdletNamespace}}
         var applicable = CollectionQueryOptions
             .Where(o => o.ODataName is "$select" or "$expand" && queryParamNames.Contains(o.ODataName))
             .ToList();
-        var queryParamDecls = string.Join("\n", applicable.Select(o => o.ParamDecl(null)));
-        var queryBindings = string.Join("\n\n", applicable.Select(o => o.Binding));
+        var queryParamDecls = string.Join("\n", applicable.Select(o => o.ParamDecl(null))) + ExtraQueryDeclarations(extraQueryParameters);
+        var queryBindings = string.Join("\n\n", applicable.Select(o => o.Binding)) + ExtraQueryBindings(extraQueryParameters);
 
         return $$"""
 #nullable enable
@@ -825,14 +833,15 @@ namespace {{ctx.CmdletNamespace}}
             "                    if (Count.IsPresent)\n                        requestConfiguration.QueryParameters.Count = true;"),
     ];
 
-    public static string EmitListGet(CmdletNaming naming, EmitContext ctx, string entityType, string collectionResponseType, IReadOnlySet<string> queryParamNames)
+    public static string EmitListGet(CmdletNaming naming, EmitContext ctx, string entityType, string collectionResponseType, IReadOnlySet<string> queryParamNames,
+        IReadOnlyList<StringQueryParameter>? extraQueryParameters = null, string methodName = "GetAsync")
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
         ArgumentNullException.ThrowIfNull(queryParamNames);
         var applicable = CollectionQueryOptions.Where(o => queryParamNames.Contains(o.ODataName)).ToList();
-        var paramDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl(null)));
-        var bindings = string.Join("\n\n", applicable.Select(o => o.Binding));
+        var paramDecls = string.Join("\n\n", applicable.Select(o => o.ParamDecl(null))) + ExtraQueryDeclarations(extraQueryParameters);
+        var bindings = string.Join("\n\n", applicable.Select(o => o.Binding)) + ExtraQueryBindings(extraQueryParameters);
 
         // -Top is a TOTAL cap under -All, at whole-page granularity - the published ListCmdlet's
         // semantics: limit = Top, iterate while fetched < limit, and whole final pages ship
@@ -887,7 +896,7 @@ namespace {{ctx.CmdletNamespace}}
             {{collectionResponseType}}? result;
             try
             {
-                result = client.{{naming.BuilderExpression}}.GetAsync(requestConfiguration =>
+                result = client.{{naming.BuilderExpression}}.{{methodName}}(requestConfiguration =>
                 {
 {{bindings}}
 {{HeaderBindings(naming)}}
@@ -908,7 +917,7 @@ namespace {{ctx.CmdletNamespace}}
                         // The nextLink already carries the original query state, and a raw-URL
                         // builder ignores templated query parameters anyway - so the continuation
                         // re-applies headers only; query bindings here would be dead code.
-                        result = client.{{naming.BuilderExpression}}.WithUrl(nextLink).GetAsync(requestConfiguration =>
+                        result = client.{{naming.BuilderExpression}}.WithUrl(nextLink).{{methodName}}(requestConfiguration =>
                         {{{continuationHeaders}}
                         }, StoppingToken).GetAwaiter().GetResult();
                         if (result?.Value is { } page)
@@ -1203,7 +1212,8 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
-    public static string EmitRemove(CmdletNaming naming, EmitContext ctx)
+    public static string EmitRemove(CmdletNaming naming, EmitContext ctx,
+        IReadOnlyList<StringQueryParameter>? extraQueryParameters = null)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
@@ -1224,7 +1234,7 @@ namespace {{ctx.CmdletNamespace}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming)}}{{ExtraQueryDeclarations(extraQueryParameters)}}
 {{HeaderParamDecls(naming)}}
 {{GenericHeadersParamDecl()}}
 
@@ -1239,7 +1249,9 @@ namespace {{ctx.CmdletNamespace}}
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                {{EmitCallWithOptionalHeaders(naming, "DeleteAsync", null)}}
+                {{(extraQueryParameters is { Count: > 0 }
+                    ? EmitCallOn($"client.{naming.BuilderExpression}", naming, "DeleteAsync", null, ExtraQueryBindings(extraQueryParameters))
+                    : EmitCallWithOptionalHeaders(naming, "DeleteAsync", null))}}
                     .GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}

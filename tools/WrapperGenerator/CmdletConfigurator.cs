@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 
@@ -23,6 +24,8 @@ public static partial class CmdletConfigurator
         ReplaceNoun,
         StripNounPrefix,
         ReplaceVerb,
+        MergeRoutes,
+        BindReferenceDeleteQuery,
     }
 
     // How Pattern is matched against the normalized path: the full path (Exact), its start
@@ -35,7 +38,27 @@ public static partial class CmdletConfigurator
         Suffix,
     }
 
-    internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason);
+    internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason,
+        MultiRouteGroup? RouteGroup = null, ReferenceDeleteQueryBinding? ReferenceDeleteQuery = null);
+
+    internal static Entry MergeRoutes(MultiRouteGroup group, string reason) =>
+        new(OverrideKind.MergeRoutes, null, "", PathMatch.Exact, null, reason, group);
+
+    internal static IEnumerable<MultiRouteGroup> GetMultiRouteGroups(GeneratorConfig config) =>
+        Entries.Where(e => e.Kind == OverrideKind.MergeRoutes).Select(e => e.RouteGroup
+            ?? throw new InvalidOperationException("MergeRoutes entry requires a route group."))
+            .Concat(config.MultiRouteGroups ?? [])
+            .Where(g => g.ApiVersion.Equals(config.ApiVersion, StringComparison.OrdinalIgnoreCase));
+
+    internal static Entry BindReferenceDeleteQuery(ReferenceDeleteQueryBinding binding, string reason) =>
+        new(OverrideKind.BindReferenceDeleteQuery, HttpMethod.Delete, "", PathMatch.Exact, null, reason,
+            ReferenceDeleteQuery: binding);
+
+    internal static IEnumerable<ReferenceDeleteQueryBinding> GetReferenceDeleteQueryBindings(GeneratorConfig config) =>
+        Entries.Where(e => e.Kind == OverrideKind.BindReferenceDeleteQuery).Select(e => e.ReferenceDeleteQuery
+            ?? throw new InvalidOperationException("BindReferenceDeleteQuery entry requires a reviewed binding."))
+            .Concat(config.ReferenceDeleteQueryBindings)
+            .Where(b => b.ApiVersion.Equals(config.ApiVersion, StringComparison.OrdinalIgnoreCase));
 
     // NormalizePath lowercases before matching, so a Pattern containing an uppercase letter can
     // never match anything: the entry is silently dead and the override looks applied but is not.
@@ -140,6 +163,12 @@ public static partial class CmdletConfigurator
         var path = NormalizePath(pathTemplate);
         if (config is { UseCollisionData: true } && DerivedCollisionResolutions.IsSuppressed(config.ApiVersion, httpMethod, path))
             return true;
+        return IsCuratedSuppressed(httpMethod, pathTemplate);
+    }
+
+    internal static bool IsCuratedSuppressed(HttpMethod httpMethod, string pathTemplate)
+    {
+        var path = NormalizePath(pathTemplate);
         foreach (var entry in Entries)
         {
             if (entry.Kind == OverrideKind.SuppressOperation && Matches(entry, httpMethod, path))
