@@ -1,4 +1,37 @@
 {
+  "review": {
+    "baseCommit": "b16f02829cf7c0f5f54aff1f54567ec9543be9f0",
+    "scope": "Only src/Compliance/Compliance.md; global and profile-specific readme directives excluded. Parameter/schema directives remain deferred; none occur in this shared file.",
+    "compatibleSpecs": {
+      "v1.0": {
+        "path": "openApiDocs_KiotaCompat/v1.0/Compliance.yml",
+        "blobHash": "5359293c806144e221afd84a7051cfe486906f68"
+      },
+      "beta": {
+        "path": "openApiDocs_KiotaCompat/beta/Compliance.yml",
+        "blobHash": "9375aab1f35c429d71acd13befe02e97336de92c"
+      }
+    },
+    "availableOperationsInBothProfiles": [
+      {
+        "method": "GET",
+        "path": "/compliance",
+        "operationId": "compliance.compliance.GetCompliance"
+      },
+      {
+        "method": "PATCH",
+        "path": "/compliance",
+        "operationId": "compliance.compliance.UpdateCompliance"
+      }
+    ],
+    "retiredPath": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+    "retiredOperationIds": [
+      "compliance.ediscovery.cases.noncustodialDataSources.UpdateDataSource",
+      "compliance.ediscovery.cases.noncustodialDataSources.DeleteDataSource",
+      "compliance.ediscovery.cases.noncustodialDataSources.GetDataSource"
+    ],
+    "evidence": "Both complete compatible-spec path inventories contain only /compliance. All three previously cited beta operations and their entire eDiscovery route family were already absent at the reviewed base. Retired operations are historical evidence only, not current API mappings. Retain dormant exact suppression entries to preserve shared directive semantics; no redundant rename override is needed."
+  },
   "mappings": [
     {
       "module": "Compliance",
@@ -6,26 +39,15 @@
       "classification": "CmdletSuppression",
       "sourceContains": "variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Delete1$|^DeleteViaIdentity1$",
       "implementation": "CmdletConfigurator",
-      "notes": "Suppress nested dataSource PATCH and DELETE; keep the parent noncustodialDataSource item operations.",
+      "notes": "Expected absence in both profiles: the nested dataSource PATCH and DELETE and all eDiscovery parent routes are retired from the compatible specs. Existing exact suppressions are retained as dormant semantic coverage, not claimed as generated-operation coverage. Root GET/PATCH /compliance remain unaffected.",
       "profiles": {
         "v1.0": {
           "absenceExpected": true,
           "operations": []
         },
         "beta": {
-          "absenceExpected": false,
-          "operations": [
-            {
-              "method": "PATCH",
-              "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
-              "operationId": "compliance.ediscovery.cases.noncustodialDataSources.UpdateDataSource"
-            },
-            {
-              "method": "DELETE",
-              "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
-              "operationId": "compliance.ediscovery.cases.noncustodialDataSources.DeleteDataSource"
-            }
-          ]
+          "absenceExpected": true,
+          "operations": []
         }
       }
     },
@@ -35,21 +57,15 @@
       "classification": "SubjectRename",
       "sourceContains": "variant: ^Get1$|^GetViaIdentity1$",
       "implementation": "StructuralNaming",
-      "notes": "The wrapper derives the appended DataSource noun directly from the nested navigation path; NamingTests pins the result.",
+      "notes": "Expected absence in both profiles: the nested dataSource GET and all eDiscovery routes are retired from the compatible specs. Structural naming retains the appended DataSource noun without a redundant override. Its synthetic naming regression is not evidence of an available or generated API.",
       "profiles": {
         "v1.0": {
           "absenceExpected": true,
           "operations": []
         },
         "beta": {
-          "absenceExpected": false,
-          "operations": [
-            {
-              "method": "GET",
-              "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
-              "operationId": "compliance.ediscovery.cases.noncustodialDataSources.GetDataSource"
-            }
-          ]
+          "absenceExpected": true,
+          "operations": []
         }
       }
     }
