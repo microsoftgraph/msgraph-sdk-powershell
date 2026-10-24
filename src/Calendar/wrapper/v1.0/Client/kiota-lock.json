@@ -2,7 +2,7 @@
   "descriptionHash": "F1B2B684A74FCC834C973FEED70BC00D5D9F17F7BFABC40F688CE6356D1A786253B08618B40BB55C22E5A6DBB0CC5BA7C15124F21CE375976254F6A91F53B6A9",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Calendar.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Calendar.Client",

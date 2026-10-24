@@ -1,0 +1,65 @@
+#nullable enable
+
+using System;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Calendar.Client;
+using Microsoft.Graph.PowerShell.Calendar.Client.Models;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Calendar
+{
+    [GraphRoute("GET", "/places/{place-id}/graph.floor")]
+    [Cmdlet(VerbsCommon.Get, "MgPlaceAsFloor_Get")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Calendar.Client.Models.Floor))]
+    public class GetMgPlaceAsFloor_GetCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string PlaceId { get; set; } = string.Empty;
+
+
+
+        [Parameter(Mandatory = false)]
+        [Alias("Select")]
+        public string[]? Property { get; set; }
+        [Parameter(Mandatory = false)]
+        [Alias("Expand")]
+        public string[]? ExpandProperty { get; set; }
+
+
+
+        protected override void ProcessRecord()
+        {
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Calendar.Client.Models.Floor? result;
+            try
+            {
+                result = client.Places[PlaceId].GraphFloor.GetAsync(requestConfiguration =>
+                {
+                    if (this.IsParameterBound(nameof(Property)))
+                        requestConfiguration.QueryParameters.Select = Property;
+
+                    if (this.IsParameterBound(nameof(ExpandProperty)))
+                        requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
+
+
+        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, PlaceId);
+                return;
+            }
+
+            WriteObject(result);
+        }
+    }
+}
