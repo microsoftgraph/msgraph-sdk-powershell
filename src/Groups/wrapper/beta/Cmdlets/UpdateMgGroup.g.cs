@@ -42,6 +42,9 @@ namespace Microsoft.Graph.PowerShell.Groups
         public string? Description { get; set; }
 
         [Parameter(Mandatory = false)]
+        public bool? DisableNesting { get; set; }
+
+        [Parameter(Mandatory = false)]
         public string? DisplayName { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -220,6 +223,9 @@ namespace Microsoft.Graph.PowerShell.Groups
 
     if (this.IsParameterBound(nameof(Description)))
         body.Description = Description;
+
+    if (this.IsParameterBound(nameof(DisableNesting)))
+        body.DisableNesting = DisableNesting;
 
     if (this.IsParameterBound(nameof(DisplayName)))
         body.DisplayName = DisplayName;

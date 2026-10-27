@@ -9,11 +9,13 @@ namespace Microsoft.Graph.PowerShell.Groups.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CloudPcPoolCapabilityConfiguration : IAdditionalDataHolder, IParsable
+    public partial class ChecklistCapability : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates whether custom extension fields are enabled for the checklist item.</summary>
+        public bool? Extensions { get; set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,21 +25,21 @@ namespace Microsoft.Graph.PowerShell.Groups.Client.Models
         public string OdataType { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Groups.Client.Models.CloudPcPoolCapabilityConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Groups.Client.Models.ChecklistCapability"/> and sets the default values.
         /// </summary>
-        public CloudPcPoolCapabilityConfiguration()
+        public ChecklistCapability()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Groups.Client.Models.CloudPcPoolCapabilityConfiguration"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Groups.Client.Models.ChecklistCapability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Microsoft.Graph.PowerShell.Groups.Client.Models.CloudPcPoolCapabilityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.PowerShell.Groups.Client.Models.ChecklistCapability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.PowerShell.Groups.Client.Models.CloudPcPoolCapabilityConfiguration();
+            return new global::Microsoft.Graph.PowerShell.Groups.Client.Models.ChecklistCapability();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,6 +49,7 @@ namespace Microsoft.Graph.PowerShell.Groups.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "extensions", n => { Extensions = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -57,6 +60,7 @@ namespace Microsoft.Graph.PowerShell.Groups.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("extensions", Extensions);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
