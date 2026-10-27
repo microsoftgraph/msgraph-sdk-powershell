@@ -35,7 +35,8 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Users.Item.De
         {
         }
         /// <summary>
-        /// Invoke action provision
+        /// Provision a device on behalf of an approved Virtual Desktop Infrastructure (VDI) provider. This action wraps the Zero Touch Deployment (ZTD) protocol to create a device in a pending state in the customer&apos;s directory. The device can&apos;t be used for authentication until it completes its registration. The created device is stamped with a system label that identifies the approved VDI provider. Only VDI applications on Microsoft&apos;s approved list of VDI providers can successfully call this action. Calls from other applications are blocked even when the application is granted the required permission.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-provision?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.ProvisionResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Users.Item.De
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.ProvisionResponse>(requestInfo, global::Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.ProvisionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action provision
+        /// Provision a device on behalf of an approved Virtual Desktop Infrastructure (VDI) provider. This action wraps the Zero Touch Deployment (ZTD) protocol to create a device in a pending state in the customer&apos;s directory. The device can&apos;t be used for authentication until it completes its registration. The created device is stamped with a system label that identifies the approved VDI provider. Only VDI applications on Microsoft&apos;s approved list of VDI providers can successfully call this action. Calls from other applications are blocked even when the application is granted the required permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -137,6 +137,9 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
         public Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.AlternativeSecurityId[]? AlternativeSecurityIds { get; set; }
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.CloudLicensing.DeviceCloudLicensing? CloudLicensing { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.OnPremisesExtensionAttributes? ExtensionAttributes { get; set; }
 
 
@@ -264,6 +267,9 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
 
     if (this.IsParameterBound(nameof(AlternativeSecurityIds)))
         body.AlternativeSecurityIds = AlternativeSecurityIds!.ToList();
+
+    if (this.IsParameterBound(nameof(CloudLicensing)))
+        body.CloudLicensing = CloudLicensing;
 
     if (this.IsParameterBound(nameof(ExtensionAttributes)))
         body.ExtensionAttributes = ExtensionAttributes;

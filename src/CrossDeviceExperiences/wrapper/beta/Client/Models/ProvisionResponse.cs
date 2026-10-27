@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The challenge property</summary>
+        /// <summary>The cryptographic challenge that the device uses to complete its registration with the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Challenge { get; set; }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models
 #else
         public string Challenge { get; set; }
 #endif
-        /// <summary>The deviceId property</summary>
+        /// <summary>The unique identifier of the provisioned device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId { get; set; }
