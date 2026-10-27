@@ -49,12 +49,11 @@ public sealed class BookingsDirectiveMigrationTests
         var legacyOperations = await ReadOperationsAsync(profile, "openApiDocs");
         var originalMatches = legacyOperations.Where(o => Regex.IsMatch(o.OperationId, @"^solution\.solutionsRoot.*$")).ToArray();
         Assert.Equal(2, originalMatches.Length);
-        Assert.Equal(Sorted(originalMatches), Sorted(ReadEvidence(root, profile, "operations", legacy: true)));
+        Assert.Equal(Sorted(originalMatches), Sorted(ReadEvidence(root, profile, "operations")));
         foreach (var bridge in rootProfile.GetProperty("operations").EnumerateArray())
         {
-            Assert.Equal(
-                CmdletConfigurator.NormalizePathTemplate(bridge.GetProperty("legacyPath").GetString()!),
-                CmdletConfigurator.NormalizePathTemplate(bridge.GetProperty("path").GetString()!));
+            Assert.False(bridge.TryGetProperty("legacyPath", out _));
+            Assert.False(bridge.TryGetProperty("legacyOperationId", out _));
         }
 
         var suppression = mappings.Single(m => m.GetProperty("directiveIndex").GetInt32() == 2);
@@ -180,12 +179,12 @@ public sealed class BookingsDirectiveMigrationTests
     private static JsonDocument ReadLedger() => JsonDocument.Parse(File.ReadAllText(
         Path.Combine(FindRepoRoot(), "src", "Bookings", "wrapper", "Bookings_directiveMigrationMap.json")));
 
-    private static ReviewedOperation[] ReadEvidence(JsonElement mapping, string profile, string property, bool legacy = false) =>
+    private static ReviewedOperation[] ReadEvidence(JsonElement mapping, string profile, string property) =>
         mapping.GetProperty("profiles").GetProperty(profile).GetProperty(property).EnumerateArray()
             .Select(o => new ReviewedOperation(
                 o.GetProperty("method").GetString()!,
-                o.GetProperty(legacy ? "legacyPath" : "path").GetString()!,
-                o.GetProperty(legacy ? "legacyOperationId" : "operationId").GetString()!))
+                o.GetProperty("path").GetString()!,
+                o.GetProperty("operationId").GetString()!))
             .ToArray();
 
     private static ReviewedOperation[] Sorted(ReviewedOperation[] operations) =>

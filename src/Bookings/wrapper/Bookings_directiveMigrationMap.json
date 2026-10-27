@@ -19,42 +19,34 @@
       "notes": "Evaluate the original selector against the complete actual historical match set and current compatible specs. Both now use solution.solutionsRoot_GetSolutionsRoot / UpdateSolutionsRoot on exact GET/PATCH /solutions. Existing exact root suppression covers both; no API absence or legacy-default route policy is inferred.",
       "profiles": {
         "v1.0": {
-          "notes": "Original and current compatible root IDs agree after the PowerShell operation-ID projection. Historical exact method/path/ID evidence is retained per operation.",
+          "notes": "Historical GET /solutions is solution.solutionsRoot_GetSolutionsRoot; PATCH /solutions is solution.solutionsRoot_UpdateSolutionsRoot. Tests verify the complete original selector match set in openApiDocs/v1.0/Bookings.yml and equality with these current compatible operations.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/solutions",
-              "operationId": "solution.solutionsRoot_GetSolutionsRoot",
-              "legacyPath": "/solutions",
-              "legacyOperationId": "solution.solutionsRoot_GetSolutionsRoot"
+              "operationId": "solution.solutionsRoot_GetSolutionsRoot"
             },
             {
               "method": "PATCH",
               "path": "/solutions",
-              "operationId": "solution.solutionsRoot_UpdateSolutionsRoot",
-              "legacyPath": "/solutions",
-              "legacyOperationId": "solution.solutionsRoot_UpdateSolutionsRoot"
+              "operationId": "solution.solutionsRoot_UpdateSolutionsRoot"
             }
           ]
         },
         "beta": {
-          "notes": "Original and current compatible root IDs agree after the PowerShell operation-ID projection. Historical exact method/path/ID evidence is retained per operation.",
+          "notes": "Historical GET /solutions is solution.solutionsRoot_GetSolutionsRoot; PATCH /solutions is solution.solutionsRoot_UpdateSolutionsRoot. Tests verify the complete original selector match set in openApiDocs/beta/Bookings.yml and equality with these current compatible operations.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/solutions",
-              "operationId": "solution.solutionsRoot_GetSolutionsRoot",
-              "legacyPath": "/solutions",
-              "legacyOperationId": "solution.solutionsRoot_GetSolutionsRoot"
+              "operationId": "solution.solutionsRoot_GetSolutionsRoot"
             },
             {
               "method": "PATCH",
               "path": "/solutions",
-              "operationId": "solution.solutionsRoot_UpdateSolutionsRoot",
-              "legacyPath": "/solutions",
-              "legacyOperationId": "solution.solutionsRoot_UpdateSolutionsRoot"
+              "operationId": "solution.solutionsRoot_UpdateSolutionsRoot"
             }
           ]
         }
