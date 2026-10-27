@@ -20,7 +20,7 @@ public sealed class WindowsUpdatesDirectiveMigrationTests
     private static readonly Lazy<IReadOnlyList<Route>> Legacy = new(() => ReadRoutes("openApiDocs"));
 
     [Fact]
-    public void OriginalOperationIdSelectorHasCompleteActualLegacyBridge()
+    public void OriginalOperationIdSelectorHasCompleteActualLegacyAndCurrentCoverage()
     {
         var markdown = File.ReadAllText(Path.Combine(RepoRoot, "src", "WindowsUpdates", "WindowsUpdates.md"));
         var pattern = Regex.Match(markdown, @"(?m)^\s+- remove-path-by-operation: (.+)$")
@@ -29,26 +29,58 @@ public sealed class WindowsUpdatesDirectiveMigrationTests
         var expected = Legacy.Value.Where(route => Regex.IsMatch(route.OperationId, pattern)).ToArray();
         Assert.Equal(266, Legacy.Value.Count);
         Assert.Equal(59, expected.Length);
-        Assert.Equal(8, Compatible.Value.Count(route => Regex.IsMatch(route.OperationId, pattern)));
+        var currentSelected = Compatible.Value.Where(route => Regex.IsMatch(route.OperationId, pattern)).ToArray();
+        Assert.Equal(59, currentSelected.Length);
+        Assert.Equal(
+            expected.Select(route => route.Method + " " + Normalize(route.Path)).OrderBy(key => key).ToArray(),
+            currentSelected.Select(route => route.Method + " " + Normalize(route.Path)).OrderBy(key => key).ToArray());
 
         using var ledger = ReadLedger();
         var profile = Mapping(ledger, 1).GetProperty("profiles").GetProperty("beta");
-        Assert.Equal("Legacy", profile.GetProperty("operationIdSource").GetString());
-        Assert.Empty(profile.GetProperty("removedLegacyOperations").EnumerateArray());
+        Assert.False(profile.TryGetProperty("operationIdSource", out _));
+        Assert.False(profile.TryGetProperty("removedLegacyOperations", out _));
         var bridges = profile.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(expected.Length, bridges.Length);
+        var changedIds = 0;
         foreach (var old in expected)
         {
+            var successor = Assert.Single(currentSelected, route =>
+                route.Method == old.Method && Normalize(route.Path) == Normalize(old.Path));
             var bridge = Assert.Single(bridges, row =>
                 row.GetProperty("method").GetString() == old.Method &&
-                row.GetProperty("legacyPath").GetString() == old.Path &&
-                row.GetProperty("legacyOperationId").GetString() == old.OperationId);
-            var successor = Assert.Single(Compatible.Value, route =>
-                route.Method == old.Method && Normalize(route.Path) == Normalize(old.Path));
+                row.GetProperty("path").GetString() == successor.Path);
             Assert.Equal(successor.Path, bridge.GetProperty("path").GetString());
             Assert.Equal(successor.OperationId, bridge.GetProperty("operationId").GetString());
-            Assert.NotEqual(old.OperationId, successor.OperationId);
+            Assert.False(bridge.TryGetProperty("legacyPath", out _));
+            Assert.False(bridge.TryGetProperty("legacyOperationId", out _));
+            if (old.OperationId != successor.OperationId)
+            {
+                changedIds++;
+                var separator = old.OperationId.LastIndexOf('_');
+                Assert.True(separator > 0);
+                Assert.Equal(old.OperationId.Insert(separator, ".updatableAsset"), successor.OperationId);
+            }
         }
+        Assert.Equal(8, changedIds);
+    }
+
+    [Fact]
+    public void AllMappedOperationsRecordExactRefreshedIdsWithoutAssumingGlobalIdEquality()
+    {
+        using var ledger = ReadLedger();
+        foreach (var mapping in ledger.RootElement.GetProperty("mappings").EnumerateArray())
+        {
+            foreach (var operation in mapping.GetProperty("profiles").GetProperty("beta")
+                         .GetProperty("operations").EnumerateArray())
+            {
+                var current = Assert.Single(Compatible.Value, route =>
+                    route.Method == operation.GetProperty("method").GetString() &&
+                    route.Path == operation.GetProperty("path").GetString());
+                Assert.Equal(current.OperationId, operation.GetProperty("operationId").GetString());
+            }
+        }
+        Assert.Equal(24, Legacy.Value.Count(old => old.OperationId != Assert.Single(Compatible.Value,
+            route => route.Method == old.Method && Normalize(route.Path) == Normalize(old.Path)).OperationId));
     }
 
     [Theory]

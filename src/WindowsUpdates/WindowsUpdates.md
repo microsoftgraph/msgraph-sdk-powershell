@@ -30,6 +30,9 @@ directive:
 # Wrapper migration: evaluate this original regex against actual legacy beta IDs:
 # 59 matches, all with verified compatible successors. Suppress those routes only;
 # ID renaming is not API removal and does not justify pruning other audience children.
+# After the aligned-ID spec refresh, the compatible literal regex selects exactly
+# those same 59 routes. Eight selected IDs still differ; tests compare both actual
+# sources and the ledger records exact current IDs without unmerged helper fields.
   - remove-path-by-operation: ^(admin(_.*Window|.window_.*Update|.window.update.deployment_.*Audience)|admin(?!\.window).*|admin\.window\.update(\.deploymentAudience(\.|\_).*)|.*DeploymentAudience)|admin\.window\.update\.updatePolicy\.audience_updateAudience$
 # Pluralize.
 # Wrapper migration: exact surviving-route noun overrides replace the structural
