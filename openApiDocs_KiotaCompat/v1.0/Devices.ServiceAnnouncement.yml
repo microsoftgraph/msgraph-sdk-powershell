@@ -12,7 +12,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncement from admin
       description: A container for service communications resources. Read-only.
-      operationId: admin.GetServiceAnnouncement
+      operationId: admin_GetServiceAnnouncement
       parameters:
         - name: $select
           in: query
@@ -50,7 +50,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property serviceAnnouncement in admin
-      operationId: admin.UpdateServiceAnnouncement
+      operationId: admin_UpdateServiceAnnouncement
       requestBody:
         description: New navigation property values
         content:
@@ -74,7 +74,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property serviceAnnouncement for admin
-      operationId: admin.DeleteServiceAnnouncement
+      operationId: admin_DeleteServiceAnnouncement
       parameters:
         - name: If-Match
           in: header
@@ -99,7 +99,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.ListHealthOverviews
+      operationId: admin.serviceAnnouncement_ListHealthOverview
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -151,7 +151,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to healthOverviews for admin
-      operationId: admin.serviceAnnouncement.CreateHealthOverviews
+      operationId: admin.serviceAnnouncement_CreateHealthOverview
       requestBody:
         description: New navigation property
         content:
@@ -180,7 +180,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.GetHealthOverviews
+      operationId: admin.serviceAnnouncement_GetHealthOverview
       parameters:
         - name: $select
           in: query
@@ -218,7 +218,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property healthOverviews in admin
-      operationId: admin.serviceAnnouncement.UpdateHealthOverviews
+      operationId: admin.serviceAnnouncement_UpdateHealthOverview
       requestBody:
         description: New navigation property values
         content:
@@ -242,7 +242,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property healthOverviews for admin
-      operationId: admin.serviceAnnouncement.DeleteHealthOverviews
+      operationId: admin.serviceAnnouncement_DeleteHealthOverview
       parameters:
         - name: If-Match
           in: header
@@ -264,7 +264,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get issues from admin
       description: 'A collection of issues that happened on the service, with detailed information for each issue.'
-      operationId: admin.serviceAnnouncement.healthOverviews.ListIssues
+      operationId: admin.serviceAnnouncement.healthOverview_ListIssue
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -316,7 +316,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to issues for admin
-      operationId: admin.serviceAnnouncement.healthOverviews.CreateIssues
+      operationId: admin.serviceAnnouncement.healthOverview_CreateIssue
       requestBody:
         description: New navigation property
         content:
@@ -342,7 +342,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get issues from admin
       description: 'A collection of issues that happened on the service, with detailed information for each issue.'
-      operationId: admin.serviceAnnouncement.healthOverviews.GetIssues
+      operationId: admin.serviceAnnouncement.healthOverview_GetIssue
       parameters:
         - name: $select
           in: query
@@ -380,7 +380,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property issues in admin
-      operationId: admin.serviceAnnouncement.healthOverviews.UpdateIssues
+      operationId: admin.serviceAnnouncement.healthOverview_UpdateIssue
       requestBody:
         description: New navigation property values
         content:
@@ -404,7 +404,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property issues for admin
-      operationId: admin.serviceAnnouncement.healthOverviews.DeleteIssues
+      operationId: admin.serviceAnnouncement.healthOverview_DeleteIssue
       parameters:
         - name: If-Match
           in: header
@@ -429,7 +429,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.healthOverviews.serviceHealth.issues.serviceHealthIssue.incidentReport
+      operationId: admin.serviceAnnouncement.healthOverview.serviceHealth.issue.serviceHealthIssue_incidentReport
       responses:
         2XX:
           description: Success
@@ -452,7 +452,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.healthOverviews.issues.GetCount-fd80
+      operationId: admin.serviceAnnouncement.healthOverview.issue_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -468,7 +468,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.healthOverviews.GetCount-51c2
+      operationId: admin.serviceAnnouncement.healthOverview_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -488,7 +488,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.ListIssues
+      operationId: admin.serviceAnnouncement_ListIssue
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -540,7 +540,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to issues for admin
-      operationId: admin.serviceAnnouncement.CreateIssues
+      operationId: admin.serviceAnnouncement_CreateIssue
       requestBody:
         description: New navigation property
         content:
@@ -569,7 +569,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.GetIssues
+      operationId: admin.serviceAnnouncement_GetIssue
       parameters:
         - name: $select
           in: query
@@ -607,7 +607,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property issues in admin
-      operationId: admin.serviceAnnouncement.UpdateIssues
+      operationId: admin.serviceAnnouncement_UpdateIssue
       requestBody:
         description: New navigation property values
         content:
@@ -631,7 +631,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property issues for admin
-      operationId: admin.serviceAnnouncement.DeleteIssues
+      operationId: admin.serviceAnnouncement_DeleteIssue
       parameters:
         - name: If-Match
           in: header
@@ -656,7 +656,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.issues.serviceHealthIssue.incidentReport
+      operationId: admin.serviceAnnouncement.issue.serviceHealthIssue_incidentReport
       responses:
         2XX:
           description: Success
@@ -679,7 +679,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.issues.GetCount-e140
+      operationId: admin.serviceAnnouncement.issue_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -699,7 +699,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.ListMessages
+      operationId: admin.serviceAnnouncement_ListMessage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -751,7 +751,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to messages for admin
-      operationId: admin.serviceAnnouncement.CreateMessages
+      operationId: admin.serviceAnnouncement_CreateMessage
       requestBody:
         description: New navigation property
         content:
@@ -780,7 +780,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.GetMessages
+      operationId: admin.serviceAnnouncement_GetMessage
       parameters:
         - name: $select
           in: query
@@ -818,7 +818,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property messages in admin
-      operationId: admin.serviceAnnouncement.UpdateMessages
+      operationId: admin.serviceAnnouncement_UpdateMessage
       requestBody:
         description: New navigation property values
         content:
@@ -842,7 +842,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property messages for admin
-      operationId: admin.serviceAnnouncement.DeleteMessages
+      operationId: admin.serviceAnnouncement_DeleteMessage
       parameters:
         - name: If-Match
           in: header
@@ -867,7 +867,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages.ListAttachments
+      operationId: admin.serviceAnnouncement.message_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -919,7 +919,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to attachments for admin
-      operationId: admin.serviceAnnouncement.messages.CreateAttachments
+      operationId: admin.serviceAnnouncement.message_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -948,7 +948,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages.GetAttachments
+      operationId: admin.serviceAnnouncement.message_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -986,7 +986,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property attachments in admin
-      operationId: admin.serviceAnnouncement.messages.UpdateAttachments
+      operationId: admin.serviceAnnouncement.message_UpdateAttachment
       requestBody:
         description: New navigation property values
         content:
@@ -1010,7 +1010,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property attachments for admin
-      operationId: admin.serviceAnnouncement.messages.DeleteAttachments
+      operationId: admin.serviceAnnouncement.message_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -1035,7 +1035,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages.GetAttachmentsContent
+      operationId: admin.serviceAnnouncement.message_GetAttachmentsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -1053,7 +1053,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Update content for the navigation property attachments in admin
       description: The attachment content.
-      operationId: admin.serviceAnnouncement.messages.UpdateAttachmentsContent
+      operationId: admin.serviceAnnouncement.message_SetAttachmentsContent
       requestBody:
         description: New media content.
         content:
@@ -1078,7 +1078,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Delete content for the navigation property attachments in admin
       description: The attachment content.
-      operationId: admin.serviceAnnouncement.messages.DeleteAttachmentsContent
+      operationId: admin.serviceAnnouncement.message_DeleteAttachmentsContent
       parameters:
         - name: If-Match
           in: header
@@ -1098,7 +1098,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.messages.attachments.GetCount-e0ef
+      operationId: admin.serviceAnnouncement.message.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1118,7 +1118,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.GetMessagesAttachmentsArchive
+      operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       responses:
         2XX:
           description: Retrieved media content
@@ -1136,7 +1136,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Update attachmentsArchive for the navigation property messages in admin
       description: The zip file that contains all attachments for a message.
-      operationId: admin.serviceAnnouncement.UpdateMessagesAttachmentsArchive
+      operationId: admin.serviceAnnouncement_SetMessagesAttachmentsArchive
       requestBody:
         description: New media content.
         content:
@@ -1157,7 +1157,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Delete attachmentsArchive for the navigation property messages in admin
       description: The zip file that contains all attachments for a message.
-      operationId: admin.serviceAnnouncement.DeleteMessagesAttachmentsArchive
+      operationId: admin.serviceAnnouncement_DeleteMessagesAttachmentsArchive
       parameters:
         - name: If-Match
           in: header
@@ -1177,7 +1177,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.messages.GetCount-0cc9
+      operationId: admin.serviceAnnouncement.message_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1197,7 +1197,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages.archive
+      operationId: admin.serviceAnnouncement.message_archive
       requestBody:
         description: Action parameters
         content:
@@ -1237,7 +1237,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages.favorite
+      operationId: admin.serviceAnnouncement.message_favorite
       requestBody:
         description: Action parameters
         content:
@@ -1277,7 +1277,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages.markRead
+      operationId: admin.serviceAnnouncement.message_markRead
       requestBody:
         description: Action parameters
         content:
@@ -1317,7 +1317,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages.markUnread
+      operationId: admin.serviceAnnouncement.message_markUnread
       requestBody:
         description: Action parameters
         content:
@@ -1357,7 +1357,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages.unarchive
+      operationId: admin.serviceAnnouncement.message_unarchive
       requestBody:
         description: Action parameters
         content:
@@ -1397,7 +1397,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
-      operationId: admin.serviceAnnouncement.messages.unfavorite
+      operationId: admin.serviceAnnouncement.message_unfavorite
       requestBody:
         description: Action parameters
         content:
@@ -1723,6 +1723,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -1910,6 +1911,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -2178,6 +2180,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -2536,6 +2541,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
