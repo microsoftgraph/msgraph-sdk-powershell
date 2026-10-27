@@ -12,7 +12,7 @@ paths:
         - users.contactFolder
       summary: Get contactFolders from users
       description: The user's contacts folders. Read-only. Nullable.
-      operationId: users.ListContactFolders
+      operationId: user_ListContactFolder
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -64,7 +64,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to contactFolders for users
-      operationId: users.CreateContactFolders
+      operationId: user_CreateContactFolder
       requestBody:
         description: New navigation property
         content:
@@ -90,7 +90,7 @@ paths:
         - users.contactFolder
       summary: Get contactFolders from users
       description: The user's contacts folders. Read-only. Nullable.
-      operationId: users.GetContactFolders
+      operationId: user_GetContactFolder
       parameters:
         - name: $select
           in: query
@@ -128,7 +128,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property contactFolders in users
-      operationId: users.UpdateContactFolders
+      operationId: user_UpdateContactFolder
       requestBody:
         description: New navigation property values
         content:
@@ -152,7 +152,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property contactFolders for users
-      operationId: users.DeleteContactFolders
+      operationId: user_DeleteContactFolder
       parameters:
         - name: If-Match
           in: header
@@ -174,7 +174,7 @@ paths:
         - users.contactFolder
       summary: Get childFolders from users
       description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-      operationId: users.contactFolders.ListChildFolders
+      operationId: user.contactFolder_ListChildFolder
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -226,7 +226,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to childFolders for users
-      operationId: users.contactFolders.CreateChildFolders
+      operationId: user.contactFolder_CreateChildFolder
       requestBody:
         description: New navigation property
         content:
@@ -252,7 +252,7 @@ paths:
         - users.contactFolder
       summary: Get childFolders from users
       description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-      operationId: users.contactFolders.GetChildFolders
+      operationId: user.contactFolder_GetChildFolder
       parameters:
         - name: $select
           in: query
@@ -290,7 +290,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property childFolders in users
-      operationId: users.contactFolders.UpdateChildFolders
+      operationId: user.contactFolder_UpdateChildFolder
       requestBody:
         description: New navigation property values
         content:
@@ -314,7 +314,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property childFolders for users
-      operationId: users.contactFolders.DeleteChildFolders
+      operationId: user.contactFolder_DeleteChildFolder
       parameters:
         - name: If-Match
           in: header
@@ -336,7 +336,7 @@ paths:
         - users.contactFolder
       summary: Get contacts from users
       description: The contacts in the folder. Navigation property. Read-only. Nullable.
-      operationId: users.contactFolders.childFolders.ListContacts
+      operationId: user.contactFolder.childFolder_ListContact
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -388,7 +388,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to contacts for users
-      operationId: users.contactFolders.childFolders.CreateContacts
+      operationId: user.contactFolder.childFolder_CreateContact
       requestBody:
         description: New navigation property
         content:
@@ -414,7 +414,7 @@ paths:
         - users.contactFolder
       summary: Get contacts from users
       description: The contacts in the folder. Navigation property. Read-only. Nullable.
-      operationId: users.contactFolders.childFolders.GetContacts
+      operationId: user.contactFolder.childFolder_GetContact
       parameters:
         - name: $select
           in: query
@@ -452,7 +452,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property contacts in users
-      operationId: users.contactFolders.childFolders.UpdateContacts
+      operationId: user.contactFolder.childFolder_UpdateContact
       requestBody:
         description: New navigation property values
         content:
@@ -476,7 +476,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property contacts for users
-      operationId: users.contactFolders.childFolders.DeleteContacts
+      operationId: user.contactFolder.childFolder_DeleteContact
       parameters:
         - name: If-Match
           in: header
@@ -498,7 +498,7 @@ paths:
         - users.contactFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: users.contactFolders.childFolders.contacts.ListExtensions
+      operationId: user.contactFolder.childFolder.contact_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -550,7 +550,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to extensions for users
-      operationId: users.contactFolders.childFolders.contacts.CreateExtensions
+      operationId: user.contactFolder.childFolder.contact_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -576,7 +576,7 @@ paths:
         - users.contactFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: users.contactFolders.childFolders.contacts.GetExtensions
+      operationId: user.contactFolder.childFolder.contact_GetExtension
       parameters:
         - name: $select
           in: query
@@ -614,7 +614,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property extensions in users
-      operationId: users.contactFolders.childFolders.contacts.UpdateExtensions
+      operationId: user.contactFolder.childFolder.contact_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -638,7 +638,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property extensions for users
-      operationId: users.contactFolders.childFolders.contacts.DeleteExtensions
+      operationId: user.contactFolder.childFolder.contact_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -659,7 +659,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get the number of the resource
-      operationId: users.contactFolders.childFolders.contacts.extensions.GetCount-5b30
+      operationId: user.contactFolder.childFolder.contact.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -675,7 +675,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Invoke action permanentDelete
-      operationId: users.user.contactFolders.contactFolder.childFolders.contactFolder.contacts.contact.permanentDelete
+      operationId: user.contactFolder.childFolder.contactFolder.contact_permanentDelete
       responses:
         '204':
           description: Success
@@ -690,7 +690,7 @@ paths:
         - users.contactFolder
       summary: Get photo from users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contactFolders.childFolders.contacts.GetPhoto
+      operationId: user.contactFolder.childFolder.contact_GetPhoto
       parameters:
         - name: $select
           in: query
@@ -728,7 +728,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property photo in users
-      operationId: users.contactFolders.childFolders.contacts.UpdatePhoto
+      operationId: user.contactFolder.childFolder.contact_UpdatePhoto
       requestBody:
         description: New navigation property values
         content:
@@ -754,7 +754,7 @@ paths:
         - users.contactFolder
       summary: Get media content for the navigation property photo from users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contactFolders.childFolders.contacts.GetPhotoContent
+      operationId: user.contactFolder.childFolder.contact_GetPhotoContent
       responses:
         2XX:
           description: Retrieved media content
@@ -772,7 +772,7 @@ paths:
         - users.contactFolder
       summary: Update media content for the navigation property photo in users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contactFolders.childFolders.contacts.UpdatePhotoContent
+      operationId: user.contactFolder.childFolder.contact_SetPhotoContent
       requestBody:
         description: New media content.
         content:
@@ -793,7 +793,7 @@ paths:
         - users.contactFolder
       summary: Delete media content for the navigation property photo in users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contactFolders.childFolders.contacts.DeletePhotoContent
+      operationId: user.contactFolder.childFolder.contact_DeletePhotoContent
       parameters:
         - name: If-Match
           in: header
@@ -813,7 +813,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get the number of the resource
-      operationId: users.contactFolders.childFolders.contacts.GetCount-6cbe
+      operationId: user.contactFolder.childFolder.contact_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -833,7 +833,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: users.user.contactFolders.contactFolder.childFolders.contactFolder.contacts.delta
+      operationId: user.contactFolder.childFolder.contactFolder.contact_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -899,7 +899,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Invoke action permanentDelete
-      operationId: users.user.contactFolders.contactFolder.childFolders.contactFolder.permanentDelete
+      operationId: user.contactFolder.childFolder.contactFolder_permanentDelete
       responses:
         '204':
           description: Success
@@ -913,7 +913,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get the number of the resource
-      operationId: users.contactFolders.childFolders.GetCount-9149
+      operationId: user.contactFolder.childFolder_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -933,7 +933,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
-      operationId: users.user.contactFolders.contactFolder.childFolders.delta
+      operationId: user.contactFolder.childFolder_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1000,7 +1000,7 @@ paths:
         - users.contactFolder
       summary: Get contacts from users
       description: The contacts in the folder. Navigation property. Read-only. Nullable.
-      operationId: users.contactFolders.ListContacts
+      operationId: user.contactFolder_ListContact
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1052,7 +1052,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to contacts for users
-      operationId: users.contactFolders.CreateContacts
+      operationId: user.contactFolder_CreateContact
       requestBody:
         description: New navigation property
         content:
@@ -1078,7 +1078,7 @@ paths:
         - users.contactFolder
       summary: Get contacts from users
       description: The contacts in the folder. Navigation property. Read-only. Nullable.
-      operationId: users.contactFolders.GetContacts
+      operationId: user.contactFolder_GetContact
       parameters:
         - name: $select
           in: query
@@ -1116,7 +1116,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property contacts in users
-      operationId: users.contactFolders.UpdateContacts
+      operationId: user.contactFolder_UpdateContact
       requestBody:
         description: New navigation property values
         content:
@@ -1140,7 +1140,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property contacts for users
-      operationId: users.contactFolders.DeleteContacts
+      operationId: user.contactFolder_DeleteContact
       parameters:
         - name: If-Match
           in: header
@@ -1162,7 +1162,7 @@ paths:
         - users.contactFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: users.contactFolders.contacts.ListExtensions
+      operationId: user.contactFolder.contact_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1214,7 +1214,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to extensions for users
-      operationId: users.contactFolders.contacts.CreateExtensions
+      operationId: user.contactFolder.contact_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -1240,7 +1240,7 @@ paths:
         - users.contactFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: users.contactFolders.contacts.GetExtensions
+      operationId: user.contactFolder.contact_GetExtension
       parameters:
         - name: $select
           in: query
@@ -1278,7 +1278,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property extensions in users
-      operationId: users.contactFolders.contacts.UpdateExtensions
+      operationId: user.contactFolder.contact_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -1302,7 +1302,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property extensions for users
-      operationId: users.contactFolders.contacts.DeleteExtensions
+      operationId: user.contactFolder.contact_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -1323,7 +1323,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get the number of the resource
-      operationId: users.contactFolders.contacts.extensions.GetCount-8e14
+      operationId: user.contactFolder.contact.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1339,7 +1339,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Invoke action permanentDelete
-      operationId: users.user.contactFolders.contactFolder.contacts.contact.permanentDelete
+      operationId: user.contactFolder.contact_permanentDelete
       responses:
         '204':
           description: Success
@@ -1354,7 +1354,7 @@ paths:
         - users.contactFolder
       summary: Get photo from users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contactFolders.contacts.GetPhoto
+      operationId: user.contactFolder.contact_GetPhoto
       parameters:
         - name: $select
           in: query
@@ -1392,7 +1392,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property photo in users
-      operationId: users.contactFolders.contacts.UpdatePhoto
+      operationId: user.contactFolder.contact_UpdatePhoto
       requestBody:
         description: New navigation property values
         content:
@@ -1418,7 +1418,7 @@ paths:
         - users.contactFolder
       summary: Get media content for the navigation property photo from users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contactFolders.contacts.GetPhotoContent
+      operationId: user.contactFolder.contact_GetPhotoContent
       responses:
         2XX:
           description: Retrieved media content
@@ -1436,7 +1436,7 @@ paths:
         - users.contactFolder
       summary: Update media content for the navigation property photo in users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contactFolders.contacts.UpdatePhotoContent
+      operationId: user.contactFolder.contact_SetPhotoContent
       requestBody:
         description: New media content.
         content:
@@ -1457,7 +1457,7 @@ paths:
         - users.contactFolder
       summary: Delete media content for the navigation property photo in users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contactFolders.contacts.DeletePhotoContent
+      operationId: user.contactFolder.contact_DeletePhotoContent
       parameters:
         - name: If-Match
           in: header
@@ -1477,7 +1477,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get the number of the resource
-      operationId: users.contactFolders.contacts.GetCount-5cc4
+      operationId: user.contactFolder.contact_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1497,7 +1497,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: users.user.contactFolders.contactFolder.contacts.delta
+      operationId: user.contactFolder.contact_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1563,7 +1563,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Invoke action permanentDelete
-      operationId: users.user.contactFolders.contactFolder.permanentDelete
+      operationId: user.contactFolder_permanentDelete
       responses:
         '204':
           description: Success
@@ -1577,7 +1577,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get the number of the resource
-      operationId: users.contactFolders.GetCount-72bb
+      operationId: user.contactFolder_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1597,7 +1597,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
-      operationId: users.user.contactFolders.delta
+      operationId: user.contactFolder_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1664,7 +1664,7 @@ paths:
         - users.contact
       summary: Get contacts from users
       description: The user's contacts. Read-only. Nullable.
-      operationId: users.ListContacts
+      operationId: user_ListContact
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1716,7 +1716,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to contacts for users
-      operationId: users.CreateContacts
+      operationId: user_CreateContact
       requestBody:
         description: New navigation property
         content:
@@ -1742,7 +1742,7 @@ paths:
         - users.contact
       summary: Get contacts from users
       description: The user's contacts. Read-only. Nullable.
-      operationId: users.GetContacts
+      operationId: user_GetContact
       parameters:
         - name: $select
           in: query
@@ -1780,7 +1780,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property contacts in users
-      operationId: users.UpdateContacts
+      operationId: user_UpdateContact
       requestBody:
         description: New navigation property values
         content:
@@ -1804,7 +1804,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property contacts for users
-      operationId: users.DeleteContacts
+      operationId: user_DeleteContact
       parameters:
         - name: If-Match
           in: header
@@ -1826,7 +1826,7 @@ paths:
         - users.contact
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: users.contacts.ListExtensions
+      operationId: user.contact_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1878,7 +1878,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to extensions for users
-      operationId: users.contacts.CreateExtensions
+      operationId: user.contact_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -1904,7 +1904,7 @@ paths:
         - users.contact
       summary: Get extensions from users
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      operationId: users.contacts.GetExtensions
+      operationId: user.contact_GetExtension
       parameters:
         - name: $select
           in: query
@@ -1942,7 +1942,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property extensions in users
-      operationId: users.contacts.UpdateExtensions
+      operationId: user.contact_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -1966,7 +1966,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property extensions for users
-      operationId: users.contacts.DeleteExtensions
+      operationId: user.contact_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -1987,7 +1987,7 @@ paths:
       tags:
         - users.contact
       summary: Get the number of the resource
-      operationId: users.contacts.extensions.GetCount-e5d6
+      operationId: user.contact.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2003,7 +2003,7 @@ paths:
       tags:
         - users.contact
       summary: Invoke action permanentDelete
-      operationId: users.user.contacts.contact.permanentDelete
+      operationId: user.contact_permanentDelete
       responses:
         '204':
           description: Success
@@ -2018,7 +2018,7 @@ paths:
         - users.contact
       summary: Get photo from users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contacts.GetPhoto
+      operationId: user.contact_GetPhoto
       parameters:
         - name: $select
           in: query
@@ -2056,7 +2056,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property photo in users
-      operationId: users.contacts.UpdatePhoto
+      operationId: user.contact_UpdatePhoto
       requestBody:
         description: New navigation property values
         content:
@@ -2082,7 +2082,7 @@ paths:
         - users.contact
       summary: Get media content for the navigation property photo from users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contacts.GetPhotoContent
+      operationId: user.contact_GetPhotoContent
       responses:
         2XX:
           description: Retrieved media content
@@ -2100,7 +2100,7 @@ paths:
         - users.contact
       summary: Update media content for the navigation property photo in users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contacts.UpdatePhotoContent
+      operationId: user.contact_SetPhotoContent
       requestBody:
         description: New media content.
         content:
@@ -2121,7 +2121,7 @@ paths:
         - users.contact
       summary: Delete media content for the navigation property photo in users
       description: Optional contact picture. You can get or set a photo for a contact.
-      operationId: users.contacts.DeletePhotoContent
+      operationId: user.contact_DeletePhotoContent
       parameters:
         - name: If-Match
           in: header
@@ -2141,7 +2141,7 @@ paths:
       tags:
         - users.contact
       summary: Get the number of the resource
-      operationId: users.contacts.GetCount-4943
+      operationId: user.contact_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2161,7 +2161,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: users.user.contacts.delta
+      operationId: user.contact_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2630,6 +2630,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -2817,6 +2818,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -3085,6 +3087,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -3443,6 +3448,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'

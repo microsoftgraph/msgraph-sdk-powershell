@@ -12,7 +12,7 @@ paths:
         - deviceManagement.deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
       description: Retrieves the effective permissions of the currently authenticated user
-      operationId: deviceManagement.getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -47,7 +47,7 @@ paths:
       tags:
         - deviceManagement.deviceManagement.Functions
       summary: Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
-      operationId: deviceManagement.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+      operationId: deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevice
       responses:
         2XX:
           description: Success
@@ -68,7 +68,7 @@ paths:
       tags:
         - deviceManagement.deviceManagement.Functions
       summary: Invoke function verifyWindowsEnrollmentAutoDiscovery
-      operationId: deviceManagement.verifyWindowsEnrollmentAutoDiscovery
+      operationId: deviceManagement_verifyWindowsEnrollmentAutoDiscovery
       responses:
         2XX:
           description: Success
