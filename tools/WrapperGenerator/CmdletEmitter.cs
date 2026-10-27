@@ -117,9 +117,9 @@ public static partial class CmdletEmitter
     // Post/Patch/DeleteAsync always take a requestConfiguration lambda, because -Headers exists
     // on every cmdlet. Reuses the same binding fragments the GET emitters use, at this call
     // site's deeper indent, so there is one binding implementation instead of three.
-    private static string EmitCallWithOptionalHeaders(CmdletNaming naming, string method, string? bodyArg)
+    private static string EmitCallWithOptionalHeaders(CmdletNaming naming, EmitContext ctx, string method, string? bodyArg)
     {
-        var call = $"client.{naming.BuilderExpression}.{method}(";
+        var call = $"{ResourceCallReceiver(naming, ctx)}.{method}(";
         var args = bodyArg is null ? "" : bodyArg + ", ";
         var bindings = HeaderBindingsFor(naming.HeaderParams, extraIndent: "                ") + GenericHeadersBinding("                ");
         return $"{call}{args}requestConfiguration =>\n                {{{bindings}\n                }})";
@@ -202,14 +202,9 @@ public static partial class CmdletEmitter
                 public string {{p.PsName}} { get; set; } = string.Empty;
         """));
 
-    // A parameterized OData function has no fluent accessor that can carry its arguments: these
-    // OpenAPI documents declare no path parameters at all, so kiota emits the accessor with an
-    // empty signature and leaves the placeholders in the URL template. The builder's public
-    // path-parameter constructor takes the same dictionary the accessor would have populated,
-    // so the values are supplied there and kiota expands its own template as usual.
-    private static string FunctionBuilderConstruction(CmdletNaming naming, EmitContext ctx)
+    // Constructors for functions and composite keys share the same parent/template bindings.
+    private static List<string> BuilderPathParameterEntries(CmdletNaming naming)
     {
-        var builderType = $"global::{ctx.ClientNamespace}.{naming.OperationTypeNamespace}.{naming.OperationMemberName}RequestBuilder";
         var entries = new List<string>
         {
             // ApiClient assigns the adapter's BaseUrl, so constructing the client above is what
@@ -218,6 +213,15 @@ public static partial class CmdletEmitter
         };
         entries.AddRange(naming.PathParamTemplates
             .Select((template, i) => $"            {{ \"{EscapeLiteral(ToTemplateKey(template))}\", {naming.PathParamNames[i]} }},"));
+        return entries;
+    }
+
+    // These function routes have zero-argument accessors. Their public constructor binds both
+    // parent and inline function parameters without replacing Kiota's URL template.
+    private static string FunctionBuilderConstruction(CmdletNaming naming, EmitContext ctx)
+    {
+        var builderType = $"global::{ctx.ClientNamespace}.{naming.OperationTypeNamespace}.{naming.OperationMemberName}RequestBuilder";
+        var entries = BuilderPathParameterEntries(naming);
         entries.AddRange(naming.FunctionParameters
             .Select(p => $"            {{ \"{EscapeLiteral(ToTemplateKey(p.TemplateName))}\", {p.PsName} }},"));
 
@@ -229,6 +233,19 @@ public static partial class CmdletEmitter
                     };
                     var requestBuilder = new {{builderType}}(pathParameters, requestAdapter);
             """;
+    }
+
+    private static string ResourceCallReceiver(CmdletNaming naming, EmitContext ctx)
+    {
+        if (naming.CompositeKeyBuilderNamespace.Length == 0)
+            return $"client.{naming.BuilderExpression}";
+
+        // Kiota's zero-argument composite accessor cannot bind the keys. Use its public typed
+        // constructor, preserving Kiota's URL template and every parent/composite path value.
+        var member = naming.CompositeKeyBuilderNamespace.Split('.')[^1];
+        var builderType = $"global::{ctx.ClientNamespace}.{naming.CompositeKeyBuilderNamespace}.{member}RequestBuilder";
+        var entries = string.Join(" ", BuilderPathParameterEntries(naming).Select(entry => entry.Trim()));
+        return $"new {builderType}(new global::System.Collections.Generic.Dictionary<string, object> {{ {entries} }}, requestAdapter)";
     }
 
     // The receiver the request method is called on: the fluent chain for an ordinary operation,
@@ -781,7 +798,7 @@ namespace {{ctx.CmdletNamespace}}
             {{entityType}}? result;
             try
             {
-                result = client.{{naming.BuilderExpression}}.GetAsync(requestConfiguration =>
+                result = {{ResourceCallReceiver(naming, ctx)}}.GetAsync(requestConfiguration =>
                 {
 {{queryBindings}}
 {{HeaderBindings(naming)}}
@@ -1136,7 +1153,7 @@ namespace {{ctx.CmdletNamespace}}
             {{entityType}}? result;
             try
             {
-                result = {{EmitCallWithOptionalHeaders(naming, "PostAsync", "body")}}.GetAwaiter().GetResult();
+                result = {{EmitCallWithOptionalHeaders(naming, ctx, "PostAsync", "body")}}.GetAwaiter().GetResult();
             }
 {{CatchBlock("body")}}
 
@@ -1198,11 +1215,11 @@ namespace {{ctx.CmdletNamespace}}
             {{entityType}}? result;
             try
             {
-                result = {{EmitCallWithOptionalHeaders(naming, httpMethodName, "body")}}.GetAwaiter().GetResult();
+                result = {{EmitCallWithOptionalHeaders(naming, ctx, httpMethodName, "body")}}.GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}
 
-{{(reFetchAfterUpdate ? ReFetchBlock(naming) : "")}}
+{{(reFetchAfterUpdate ? ReFetchBlock(naming, ctx) : "")}}
             if (result is not null)
                 WriteObject(result);
         }
@@ -1250,8 +1267,8 @@ namespace {{ctx.CmdletNamespace}}
             try
             {
                 {{(extraQueryParameters is { Count: > 0 }
-                    ? EmitCallOn($"client.{naming.BuilderExpression}", naming, "DeleteAsync", null, ExtraQueryBindings(extraQueryParameters))
-                    : EmitCallWithOptionalHeaders(naming, "DeleteAsync", null))}}
+                    ? EmitCallOn(ResourceCallReceiver(naming, ctx), naming, "DeleteAsync", null, ExtraQueryBindings(extraQueryParameters))
+                    : EmitCallWithOptionalHeaders(naming, ctx, "DeleteAsync", null))}}
                     .GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}
@@ -1266,14 +1283,14 @@ namespace {{ctx.CmdletNamespace}}
     // schemaExtension update), so Update re-fetches to return the updated resource — but
     // only when the path actually has a GET (PATCH-only resources like /places/{id} have no
     // GetAsync on their builder; found by compiling the Calendar module).
-    private static string ReFetchBlock(CmdletNaming naming) => $$"""
+    private static string ReFetchBlock(CmdletNaming naming, EmitContext ctx) => $$"""
 
             if (result is null)
             {
                 WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
                 try
                 {
-                    result = client.{{naming.BuilderExpression}}.GetAsync().GetAwaiter().GetResult();
+                    result = {{ResourceCallReceiver(naming, ctx)}}.GetAsync().GetAwaiter().GetResult();
                 }
 {{CatchBlock(TargetId(naming), "    ")}}
             }
