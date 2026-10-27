@@ -6,7 +6,7 @@ namespace WrapperGenerator;
 public static partial class CmdletConfigurator
 {
     private const string ServiceAnnouncementSuppression =
-        "Devices.ServiceAnnouncement.md directive 1: legacy operation-ID selector, bridged by method and normalized path; see Devices.ServiceAnnouncement_directiveMigrationMap.json";
+        "Devices.ServiceAnnouncement.md directive 1: complete legacy/current selector equality reviewed by method and normalized path; see Devices.ServiceAnnouncement_directiveMigrationMap.json";
 
     private static readonly List<Entry> DevicesServiceAnnouncementCmdletConfigurations =
     [

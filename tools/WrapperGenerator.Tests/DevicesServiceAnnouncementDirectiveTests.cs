@@ -67,29 +67,37 @@ public sealed class DevicesServiceAnnouncementDirectiveTests
             .Where(operation => Regex.IsMatch(operation.Id, selector)).ToList();
         Assert.Equal(expectedCount, selected.Count);
         var compatible = Operations(await LoadSpec("openApiDocs_KiotaCompat", profile)).ToList();
+        var currentSelected = compatible.Where(operation => Regex.IsMatch(operation.Id, selector)).ToList();
+        Assert.Equal(expectedCount, currentSelected.Count);
         using var ledger = JsonDocument.Parse(File.ReadAllText(Path.Combine(FindRepoRoot(), "src",
             "Devices.ServiceAnnouncement", "wrapper", "Devices.ServiceAnnouncement_directiveMigrationMap.json")));
         var profileMap = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles").GetProperty(profile);
-        Assert.Equal("Legacy", profileMap.GetProperty("operationIdSource").GetString());
+        Assert.False(profileMap.TryGetProperty("operationIdSource", out _));
         var reviewed = profileMap.GetProperty("operations").EnumerateArray().ToList();
         Assert.Equal(expectedCount, reviewed.Count);
+        var translatedCount = 0;
         foreach (var operation in selected)
         {
             var bridged = Assert.Single(compatible, candidate =>
                 candidate.Method == operation.Method && BridgePath(candidate.Path) == BridgePath(operation.Path));
-            var evidence = Assert.Single(reviewed, evidence =>
+            Assert.Equal(operation.Id, bridged.Id);
+            Assert.Contains(bridged, currentSelected);
+            Assert.Single(reviewed, evidence =>
                 evidence.GetProperty("method").GetString() == bridged.Method.Method &&
                 evidence.GetProperty("path").GetString() == bridged.Path &&
                 evidence.GetProperty("operationId").GetString() == bridged.Id);
-            Assert.Equal(operation.Path, evidence.GetProperty("legacyPath").GetString());
-            Assert.Equal(operation.Id, evidence.GetProperty("legacyOperationId").GetString());
             if (operation.Path != bridged.Path)
             {
+                translatedCount++;
                 Assert.NotEqual(OperationKind.Resource, operation.Kind);
                 Assert.Equal(operation.Kind, bridged.Kind);
-                Assert.Equal("UnqualifyFinalOperation", evidence.GetProperty("legacyPathTranslation").GetString());
+                var separator = bridged.Path.LastIndexOf('/');
+                Assert.Equal(
+                    bridged.Path[..(separator + 1)] + "microsoft.graph." + bridged.Path[(separator + 1)..],
+                    operation.Path);
             }
         }
+        Assert.Equal(profile == "beta" ? 9 : 0, translatedCount);
         foreach (var operation in compatible)
         {
             var expected = selected.Any(candidate =>
