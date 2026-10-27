@@ -263,7 +263,7 @@ function Get-OpenApiPruningPlan {
             $rangesToRemove.Add([pscustomobject]@{ Start = $path.Start; End = $pathEnd })
             $removalEntries.Add([pscustomobject]@{
                 Uri               = $path.Uri
-                OperationsRemoved = @($operations.Method)
+                OperationsRemoved = @($operations | ForEach-Object Method)
                 UriRemoved        = $true
                 Retirement        = [ordered]@{
                     reason      = 'Retired root-level Bookings beta URI; use /solutions instead.'

@@ -57,7 +57,8 @@ directory must already exist.
 
 - Expired operations are removed individually.
 - A URI path is removed only when no HTTP operations remain.
-- Deprecated operations without `removalDate` are retained.
+- Deprecated operations without `removalDate` are retained unless covered by the explicit
+  reviewed Bookings retirement policy.
 - An invalid `removalDate` stops processing before any OpenAPI document is changed.
 - The JSON report is keyed by module filename and URI and lists removed methods plus whether the
   URI itself was removed.

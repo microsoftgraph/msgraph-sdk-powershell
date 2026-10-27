@@ -137,6 +137,10 @@ components:
         & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate
         Get-Content $spec -Raw | Should -Match '(?m)^paths: \{\}'
         Get-Content $spec -Raw | Should -Not -Match 'business-id'
+        $report = Get-Content (Join-Path $casePath 'deprecated-removals.json') -Raw | ConvertFrom-Json
+        $entry = $report.modules.Bookings.PSObject.Properties['/bookingBusinesses/{business-id}'].Value
+        @($entry.operationsRemoved).Count | Should -Be 0
+        $entry.uriRemoved | Should -BeTrue
     }
 
     It 'removes all 29 historical source paths and 53 operations without changing retained source text' {
