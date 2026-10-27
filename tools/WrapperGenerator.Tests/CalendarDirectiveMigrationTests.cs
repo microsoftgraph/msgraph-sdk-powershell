@@ -53,54 +53,56 @@ public sealed class CalendarDirectiveMigrationTests
         var pattern = Regex.Match(source, @"(?m)^\s*- remove-path-by-operation: (.+)\r?$").Groups[1].Value.Trim();
         var regex = new Regex(pattern);
         var legacy = LegacySpec(profile);
-        var legacyMap = directives[0].GetProperty("profiles").GetProperty(profile);
-        Assert.Equal("Legacy", legacyMap.GetProperty("operationIdSource").GetString());
-        Assert.False(legacyMap.TryGetProperty("removedLegacyOperations", out _));
+        var profileMap = directives[0].GetProperty("profiles").GetProperty(profile);
+        Assert.False(profileMap.TryGetProperty("operationIdSource", out _));
+        Assert.False(profileMap.TryGetProperty("removedLegacyOperations", out _));
         var matched = legacy.Paths.SelectMany(p => p.Value.Operations!
             .Where(o => regex.IsMatch(o.Value.OperationId!))
-            .Select(o => $"{o.Key.Method.ToUpperInvariant()} {p.Key} [{o.Value.OperationId}]"))
-            .OrderBy(x => x, StringComparer.Ordinal).ToArray();
-        var operations = legacyMap.GetProperty("operations").EnumerateArray().ToArray();
+            .Select(o => (Method: o.Key, Path: p.Key, Operation: o.Value))).ToArray();
+        var operations = profileMap.GetProperty("operations").EnumerateArray().ToArray();
         var reviewed = operations.Select(o =>
-                $"{o.GetProperty("method").GetString()} {o.GetProperty("legacyPath").GetString()} [{o.GetProperty("legacyOperationId").GetString()}]")
+                $"{o.GetProperty("method").GetString()} {o.GetProperty("path").GetString()} [{o.GetProperty("operationId").GetString()}]")
             .OrderBy(x => x, StringComparer.Ordinal).ToArray();
         Assert.Equal(profile == "v1.0" ? 136 : 137, matched.Length);
-        Assert.Equal(matched, reviewed);
+        Assert.Equal(matched.Length, operations.Length);
         var translatedCalls = 0;
-        foreach (var operation in operations)
+        var survivors = matched.Select(old =>
         {
-            var method = new HttpMethod(operation.GetProperty("method").GetString()!);
-            var oldPath = operation.GetProperty("legacyPath").GetString()!;
-            var path = operation.GetProperty("path").GetString()!;
-            var oldOperation = legacy.Paths[oldPath].Operations![method];
-            Assert.Equal(operation.GetProperty("legacyOperationId").GetString(), oldOperation.OperationId);
-            if (CmdletConfigurator.NormalizePathTemplate(oldPath) != CmdletConfigurator.NormalizePathTemplate(path))
+            var oldPath = CmdletConfigurator.NormalizePathTemplate(old.Path);
+            var kind = OperationType(old.Operation);
+            var parts = old.Path.Split('/');
+            var translated = parts[^1].StartsWith("microsoft.graph.", StringComparison.Ordinal);
+            if (translated)
             {
-                Assert.Equal("UnqualifyFinalOperation", operation.GetProperty("legacyPathTranslation").GetString());
-                var kind = OperationType(oldOperation);
                 Assert.True(kind is "action" or "function");
-                Assert.Equal(kind, OperationType(spec.Paths[path].Operations![method]));
-                Assert.Equal(kind == "action" ? HttpMethod.Post : HttpMethod.Get, method);
-                var parts = oldPath.Split('/');
-                Assert.StartsWith("microsoft.graph.", parts[^1]);
+                Assert.Equal(kind == "action" ? HttpMethod.Post : HttpMethod.Get, old.Method);
                 parts[^1] = parts[^1]["microsoft.graph.".Length..];
-                Assert.Equal(CmdletConfigurator.NormalizePathTemplate(string.Join("/", parts)),
-                    CmdletConfigurator.NormalizePathTemplate(path));
+                oldPath = CmdletConfigurator.NormalizePathTemplate(string.Join("/", parts));
                 translatedCalls++;
             }
-            else
-            {
-                Assert.False(operation.TryGetProperty("legacyPathTranslation", out _));
-            }
-        }
+            var successor = Assert.Single(spec.Paths
+                .Where(p => CmdletConfigurator.NormalizePathTemplate(p.Key) == oldPath
+                    && p.Value.Operations!.ContainsKey(old.Method)));
+            var current = successor.Value.Operations![old.Method];
+            if (translated)
+                Assert.Equal(kind, OperationType(current));
+            Assert.Equal(old.Operation.OperationId, current.OperationId);
+            return $"{old.Method.Method.ToUpperInvariant()} {successor.Key} [{current.OperationId}]";
+        }).OrderBy(x => x, StringComparer.Ordinal).ToArray();
+        Assert.Equal(survivors.Length, survivors.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(survivors, reviewed);
         Assert.Equal(profile == "v1.0" ? 53 : 54, translatedCalls);
         var currentLiteralMatches = spec.Paths.SelectMany(p => p.Value.Operations!
             .Where(o => regex.IsMatch(o.Value.OperationId!))
-            .Select(o => $"{o.Key.Method.ToUpperInvariant()} {p.Key} [{o.Value.OperationId}]")).ToArray();
-        Assert.Equal(26, currentLiteralMatches.Length);
-        foreach (var literal in currentLiteralMatches)
-            Assert.Contains(operations, o =>
-                $"{o.GetProperty("method").GetString()} {o.GetProperty("path").GetString()} [{o.GetProperty("operationId").GetString()}]" == literal);
+            .Select(o => $"{o.Key.Method.ToUpperInvariant()} {p.Key} [{o.Value.OperationId}]"))
+            .OrderBy(x => x, StringComparer.Ordinal).ToArray();
+        Assert.Equal(survivors, currentLiteralMatches);
+        foreach (var operation in operations)
+        {
+            Assert.False(operation.TryGetProperty("legacyPath", out _));
+            Assert.False(operation.TryGetProperty("legacyOperationId", out _));
+            Assert.False(operation.TryGetProperty("legacyPathTranslation", out _));
+        }
     }
 
     [Theory]
@@ -173,7 +175,7 @@ public sealed class CalendarDirectiveMigrationTests
     [Theory]
     [InlineData("v1.0")]
     [InlineData("beta")]
-    public void RenamedLegacyCrudOperationsAreNotMisclassifiedAsAbsent(string profile)
+    public void AlignedLegacyCrudOperationsStaySuppressed(string profile)
     {
         var spec = Spec(profile);
         Assert.DoesNotContain(spec.Paths.Keys, p =>
@@ -182,12 +184,12 @@ public sealed class CalendarDirectiveMigrationTests
         Assert.Equal("user_UpdateCalendar", LegacySpec(profile).Paths["/users/{user-id}/calendar"].Operations![HttpMethod.Patch].OperationId);
         const string groupItem = "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}";
         Assert.Equal("user.calendarGroup_GetCalendar", LegacySpec(profile).Paths[groupItem].Operations![HttpMethod.Get].OperationId);
-        Assert.Equal("users.calendarGroups.GetCalendars", spec.Paths[groupItem].Operations![HttpMethod.Get].OperationId);
+        Assert.Equal("user.calendarGroup_GetCalendar", spec.Paths[groupItem].Operations![HttpMethod.Get].OperationId);
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, groupItem));
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
             groupItem + "/allowedCalendarSharingRoles(User='{User}')"));
-        Assert.Equal("users.UpdateCalendar", spec.Paths["/users/{user-id}/calendar"].Operations![HttpMethod.Patch].OperationId);
-        Assert.Equal("users.calendar.GetEvents", spec.Paths["/users/{user-id}/calendar/events/{event-id}"].Operations![HttpMethod.Get].OperationId);
+        Assert.Equal("user_UpdateCalendar", spec.Paths["/users/{user-id}/calendar"].Operations![HttpMethod.Patch].OperationId);
+        Assert.Equal("user.calendar_GetEvent", spec.Paths["/users/{user-id}/calendar/events/{event-id}"].Operations![HttpMethod.Get].OperationId);
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/calendar"));
     }
 

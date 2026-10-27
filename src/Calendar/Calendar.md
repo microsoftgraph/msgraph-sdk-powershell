@@ -19,13 +19,14 @@ require:
 directive:
 # Remove paths that are not valid.
 # Wrapper migration: evaluate this selector against the actual legacy profile.
-# All 136 v1.0 and 137 beta matches survive in the compatible specs, including
-# renamed CRUD IDs and qualified-to-bare action/function paths. The adjacent ledger
-# records exact old/new method/path/ID evidence; 26 literal compatible-ID matches
-# alone are incomplete. Exact module entries cover both profiles without relying
-# on v1.0-only derived data. No surviving legacy match is classified as absent.
+# All 136 v1.0 and 137 beta matches survive in the current compatible specs.
+# Operation-ID alignment now makes the literal current selector cover that exact
+# set; the adjacent ledger uses the existing inventory schema. Module tests retain
+# independent complete legacy proof, including qualified final action/function
+# paths. Exact entries cover both profiles without relying on v1.0-only derived
+# data. No surviving legacy match is classified as absent.
 # The ledger separately reconciles six existing derived collision suppressions
-# across both profiles; these are not counted as literal legacy-regex matches.
+# across both profiles; their separate provenance does not broaden this selector.
   - remove-path-by-operation: (user|group)_(Update|Delete)Calendar$|(user|group)..*_(Get|Create|Update|Delete)CalendarView$|(user|group).(calendar).calendarView.*$|user.calendar_(Get|Update|Delete)Event$|(user|group).(calendar).event.*$|(user|group)_.*CalendarView$|(user|group).calendarView.*$|user.calendarGroup_(Get|Update|Delete)Calendar$|user.calendarGroup.calendar.*$|(group|user).event_(Create|Update|Create)Calendar$|(user|group).event.calendar.*$|placeAsRoomList.room_(Get|Update|Delete)GraphBPrePlaceId$|placeAsRoomList.workspace_(Get|Update|Delete)GraphBPrePlaceId$
 # Rename cmdlets.
 # Wrapper migration: exact noun and Invoke verb fallbacks cover the default-user-
