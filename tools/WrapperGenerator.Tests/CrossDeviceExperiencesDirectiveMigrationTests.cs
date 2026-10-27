@@ -35,11 +35,13 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
         Assert.Equal(selector, evidence.GetProperty("selector").GetString());
 
         var document = await ReadSpecAsync(profile);
-        var operations = document.Paths.Values.SelectMany(path => path.Operations!.Values).ToArray();
+        var operations = document.Paths.SelectMany(path => path.Value.Operations!
+            .Select(operation => (Method: operation.Key, Path: path.Key, Operation: operation.Value))).ToArray();
         Assert.Equal(evidence.GetProperty("pathCount").GetInt32(), document.Paths.Count);
         Assert.Equal(evidence.GetProperty("operationCount").GetInt32(), operations.Length);
-        Assert.Equal(0, evidence.GetProperty("selectorMatchCount").GetInt32());
-        Assert.DoesNotContain(operations, operation => Regex.IsMatch(operation.OperationId!, selector));
+        var literalMatches = operations.Where(operation =>
+            Regex.IsMatch(operation.Operation.OperationId!, selector)).ToArray();
+        Assert.Equal(evidence.GetProperty("selectorMatchCount").GetInt32(), literalMatches.Length);
         var legacy = await ReadSpecAsync(profile, "openApiDocs");
         var legacyOperations = legacy.Paths.SelectMany(path => path.Value.Operations!
             .Select(operation => (Method: operation.Key, Path: path.Key, Operation: operation.Value))).ToArray();
@@ -49,22 +51,31 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
         Assert.Equal(evidence.GetProperty("legacySelectorMatchCount").GetInt32(), sourceMatches.Length);
         var reviewed = profileMap.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(sourceMatches.Length, reviewed.Length);
+        Assert.Equal(sourceMatches.Length, literalMatches.Length);
+        Assert.Equal(
+            sourceMatches.Select(operation => $"{operation.Method} {CmdletConfigurator.NormalizePathTemplate(operation.Path)}")
+                .OrderBy(key => key, StringComparer.Ordinal),
+            literalMatches.Select(operation => $"{operation.Method} {CmdletConfigurator.NormalizePathTemplate(operation.Path)}")
+                .OrderBy(key => key, StringComparer.Ordinal));
+        Assert.False(profileMap.TryGetProperty("operationIdSource", out _));
+        Assert.False(profileMap.TryGetProperty("removedLegacyOperations", out _));
         Assert.Equal(evidence.GetProperty("survivingLegacyMatchCount").GetInt32(), reviewed.Length);
         Assert.Equal(0, evidence.GetProperty("removedLegacyMatchCount").GetInt32());
         foreach (var expected in reviewed)
         {
             var method = new HttpMethod(expected.GetProperty("method").GetString()!);
-            var oldPath = expected.GetProperty("legacyPath").GetString()!;
             var newPath = expected.GetProperty("path").GetString()!;
             var old = Assert.Single(sourceMatches, operation =>
-                operation.Method == method && operation.Path == oldPath);
-            Assert.Equal(expected.GetProperty("legacyOperationId").GetString(), old.Operation.OperationId);
-            Assert.Equal(CmdletConfigurator.NormalizePathTemplate(oldPath),
+                operation.Method == method
+                && CmdletConfigurator.NormalizePathTemplate(operation.Path)
+                    == CmdletConfigurator.NormalizePathTemplate(newPath));
+            Assert.Equal(expected.GetProperty("operationId").GetString(), old.Operation.OperationId);
+            Assert.Equal(CmdletConfigurator.NormalizePathTemplate(old.Path),
                 CmdletConfigurator.NormalizePathTemplate(newPath));
             var counterpart = Assert.Single(document.Paths.SelectMany(path => path.Value.Operations!
                 .Where(operation => operation.Key == method
                     && CmdletConfigurator.NormalizePathTemplate(path.Key)
-                        == CmdletConfigurator.NormalizePathTemplate(oldPath))
+                        == CmdletConfigurator.NormalizePathTemplate(old.Path))
                 .Select(operation => (Path: path.Key, Operation: operation.Value))));
             Assert.Equal(newPath, counterpart.Path);
             Assert.Equal(expected.GetProperty("operationId").GetString(), counterpart.Operation.OperationId);
@@ -76,9 +87,7 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
             Assert.DoesNotContain(document.Paths.Keys, path => path.Contains("/devices", StringComparison.Ordinal));
         else
         {
-            Assert.Equal("Legacy", profileMap.GetProperty("operationIdSource").GetString());
             Assert.Equal(2, sourceMatches.Length);
-            Assert.Empty(profileMap.GetProperty("removedLegacyOperations").EnumerateArray());
         }
     }
 
@@ -125,9 +134,9 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
         var document = await ReadSpecAsync("beta");
         var itemPath = $"/users/{{user-id}}/devices/{{device-id}}/{navigation}/{{directoryObject-id}}/$ref";
         var collectionPath = $"/users/{{user-id}}/devices/{{device-id}}/{navigation}/$ref";
-        Assert.Equal($"users.devices.{navigation}.DeleteRefDirectoryObject",
+        Assert.Equal($"user.device.{noun[..1].ToLowerInvariant()}{noun[1..]}_DeleteDirectoryObjectGraphBPreRef",
             document.Paths[itemPath].Operations![HttpMethod.Delete].OperationId);
-        Assert.Equal($"users.devices.DeleteRef{navigation[..1].ToUpperInvariant()}{navigation[1..]}",
+        Assert.Equal($"user.device_Delete{noun}GraphBPreRef",
             document.Paths[collectionPath].Operations![HttpMethod.Delete].OperationId);
         var config = new GeneratorConfig("Test.Client", "unused", "beta");
         var item = Naming.Resolve(new OperationInfo(HttpMethod.Delete, itemPath), config);

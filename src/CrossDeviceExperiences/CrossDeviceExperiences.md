@@ -21,7 +21,8 @@ directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0.
 # Wrapper migration: the actual legacy v1.0 spec has no selector matches. In beta,
 # both selected collection DELETE /registeredOwners/$ref and /registeredUsers/$ref
-# survive conversion with renamed operation IDs. Exact method/path suppressions
+# survive in the aligned compatible spec with the same operation IDs. Literal
+# selector matches equal the complete legacy survivor set. Exact suppressions
 # retain that source intent; item-reference DELETEs and collection GET/POST remain.
 # Exact spec/search and unaffected-route evidence is recorded in
 # wrapper/CrossDeviceExperiences_directiveMigrationMap.json and pinned by
