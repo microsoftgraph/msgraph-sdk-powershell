@@ -7,10 +7,10 @@ public static partial class CmdletConfigurator
     private static readonly List<Entry> BookingsCmdletConfigurations =
     [
         // Bookings.md's original selector matches GET/PATCH /solutions in both legacy specs.
-        // The adjacent ledger bridges those singular/underscore IDs to the compatible
-        // plural/dotted solutions.solutionsRoot IDs. Suppress only the exact root.
+        // The current compatible refresh preserves those original IDs. The adjacent ledger
+        // pins both source identities. Suppress only the exact root.
         new(OverrideKind.SuppressOperation, Method: null, "/solutions", Match: PathMatch.Exact, Value: null,
-            Reason: "Bookings.md ^solution\\.solutionsRoot.*$; reviewed exact legacy-to-compatible GET/PATCH /solutions bridges"),
+            Reason: "Bookings.md ^solution\\.solutionsRoot.*$; reviewed GET/PATCH /solutions in both historical and compatible specs"),
 
         // Most nouns under /solutions/ drop the "Solution" prefix (for example
         // Get-MgBookingBusiness, Get-MgVirtualEventWebinar). BackupRestore is a known

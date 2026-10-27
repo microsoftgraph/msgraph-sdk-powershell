@@ -15,7 +15,11 @@ param(
     [string] $ReportPath,
 
     [Parameter(Mandatory = $false)]
-    [datetime] $ReferenceDateUtc = [datetime]::UtcNow
+    [datetime] $ReferenceDateUtc = [datetime]::UtcNow,
+
+    [Parameter(Mandatory = $false)]
+    [ValidateSet('v1.0', 'beta')]
+    [string] $GraphVersion
 )
 
 $ErrorActionPreference = 'Stop'
@@ -162,6 +166,10 @@ function Get-OpenApiPruningPlan {
 
     $fileContent = Read-TextFile -Path $File.FullName
     $lines = [regex]::Split($fileContent.Text, '(?<=\n)')
+    $profile = $GraphVersion
+    if (-not $profile -and $fileContent.Text -match '(?m)^info:\s*\r?\n(?:(?:[ \t]+[^\r\n]*|[ \t]*#.*)\r?\n)*?  version:\s*[''"]?(?<version>beta|v1\.0)[''"]?\s*(?:#.*)?\r?$') {
+        $profile = $Matches.version
+    }
     $pathsStart = -1
     $pathsEnd = $lines.Count
 
@@ -240,6 +248,30 @@ function Get-OpenApiPruningPlan {
                     Method = $method
                 })
             }
+        }
+
+        # These beta routes were retired without reliable upstream deprecation annotations.
+        # Match complete root segments only; /solutions/... and similarly named roots survive.
+        $retiredBookingsRoot = $File.BaseName -ieq 'Bookings' -and
+            $path.Uri -match '^/(bookingBusinesses|bookingCurrencies)(?:/|$)'
+        if ($retiredBookingsRoot -and -not $profile) {
+            throw "Cannot determine GraphVersion for Bookings retirement policy in '$($File.FullName)'. Specify -GraphVersion."
+        }
+        $retirementDate = [datetime]'2024-04-30'
+        if ($retiredBookingsRoot -and $profile -eq 'beta' -and $retirementDate -le $CutoffDate) {
+            $removedPathCount++
+            $rangesToRemove.Add([pscustomobject]@{ Start = $path.Start; End = $pathEnd })
+            $removalEntries.Add([pscustomobject]@{
+                Uri               = $path.Uri
+                OperationsRemoved = @($operations.Method)
+                UriRemoved        = $true
+                Retirement        = [ordered]@{
+                    reason      = 'Retired root-level Bookings beta URI; use /solutions instead.'
+                    removalDate = '2024-04-30'
+                    source      = 'https://devblogs.microsoft.com/microsoft365dev/breaking-changes-in-microsoft-bookings-graph-apis-beta/'
+                }
+            })
+            continue
         }
 
         if ($operations.Count -eq 0) {
@@ -359,6 +391,9 @@ foreach ($plan in $pruningPlans) {
             operationsRemoved = @($entry.OperationsRemoved)
             uriRemoved        = $entry.UriRemoved
         }
+        if ($entry.PSObject.Properties['Retirement']) {
+            $moduleRemovals[$entry.Uri].retirement = $entry.Retirement
+        }
     }
     $modules[$plan.File.BaseName] = $moduleRemovals
     $totalOperationsRemoved += $plan.RemovedCount
@@ -405,4 +440,8 @@ finally {
     }
 }
 
-Write-Host "Removed $totalOperationsRemoved expired deprecated operation(s). Report: $fullReportPath"
+$retiredPaths = @($pruningPlans.RemovalEntries | Where-Object { $null -ne $_ -and $_.PSObject.Properties['Retirement'] })
+if ($retiredPaths.Count -gt 0) {
+    Write-Host "Removed $($retiredPaths.Count) retired Bookings beta path(s) under the reviewed 2024-04-30 policy."
+}
+Write-Host "Removed $totalOperationsRemoved expired deprecated or explicitly retired operation(s). Report: $fullReportPath"

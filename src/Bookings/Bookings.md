@@ -19,9 +19,9 @@ The three shared cmdlet directive groups below have been audited against the v1.
 and beta Kiota-compatible specifications. Exact reviewed evidence is recorded in
 `wrapper/Bookings_directiveMigrationMap.json`; `BookingsDirectiveMigrationTests`
 pins the existing curated behavior without adding redundant overrides.
-The root suppression's original IDs are resolved against the legacy specs and
-explicitly bridged to their compatible counterparts; generation uses only the
-compatible specifications.
+The root suppression's original IDs are checked against both historical and
+compatible specs. The current compatible refresh preserves PowerShell operation
+IDs, so the exact root IDs now match the original selector directly.
 
 Profile-local directives in `v1.0/readme.md` and `beta/readme.md`, all other
 profile-local readme directives, and `src/readme.graph.md` are explicitly outside
@@ -29,20 +29,20 @@ this migration. Parameter aliases/transforms and schema/response directives rema
 deferred; none occur in these three shared groups. Keep the AutoRest directives
 active until the service-module pipeline is retired.
 
-The separately authorized beta multi-route capability is additive, not a migration
-of ignored profile-local directives. The adjacent ledger's `routeSelectionPolicy`
-records all 53 duplicate route pairs and their published defaults: 50 legacy
-top-level routes and three `/solutions` actions. Both routes must remain available
-through explicit selection. Runtime opt-in awaits the separately implemented shared
-feature; the policy evidence alone does not resolve generation collisions.
+Microsoft [retired the root-level Bookings beta routes on 2024-04-30](https://devblogs.microsoft.com/microsoft365dev/breaking-changes-in-microsoft-bookings-graph-apis-beta/).
+The active compatible beta input removes `/bookingBusinesses`, `/bookingCurrencies`,
+and their descendants; the existing pruner enforces this policy on both bulk refresh
+and standalone download even without upstream deprecation annotations. Their
+`/solutions/...` successors remain active. Historical source specs and directives
+remain intact. Historical command metadata is not evidence that a retired route
+is still supported; the prepared legacy-default multi-route policy is withdrawn.
 
 ``` yaml
 directive:
 # Remove invalid paths.
 # Wrapper audit: this selector matches GET/PATCH /solutions in both legacy source
-# specs. The ledger explicitly bridges their singular/underscore IDs to the
-# compatible plural/dotted solutions.solutionsRoot IDs. Existing exact root
-# suppression covers both translated operations; this is not API absence.
+# specs and the current compatible specs, which preserve the original IDs.
+# Existing exact root suppression covers both operations; this is not API absence.
   - remove-path-by-operation: ^solution\.solutionsRoot.*$
 # Remove cmdlets
 # Wrapper audit: existing exact /solutions/virtualEvents suppression covers GET,

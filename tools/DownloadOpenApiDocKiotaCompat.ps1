@@ -15,6 +15,9 @@ Param(
     [string] $GraphVersion,
     [switch] $ForceRefresh,
     [switch] $SingularizeOperationIds,
+    # The bulk refresh prunes the complete profile once, retaining a single aggregate report.
+    [Parameter(DontShow)]
+    [switch] $DeferPruning,
     [int] $RequestCount = 1
 )
 
@@ -32,6 +35,7 @@ $Retries = 3
 $Delay = 3
 $Retrycount = 0
 $Completed = $false
+$Downloaded = $false
 while (-not $Completed) {
     try {
         $requestUrl = $OpenApiServiceUrl
@@ -47,6 +51,7 @@ while (-not $Completed) {
             & (Join-Path $PSScriptRoot 'Utilities\Set-OpenApiOperationIds.ps1') `
                 -OpenApiFilePath $outputPath -OperationIdDocument $operationIdDocument
         }
+        $Downloaded = $true
         $Completed = $true
     }
     catch {
@@ -90,4 +95,9 @@ while (-not $Completed) {
             }
         }
     }
+}
+
+if ($Downloaded -and -not $DeferPruning) {
+    & (Join-Path $PSScriptRoot 'Remove-ExpiredDeprecatedOpenApiOperations.ps1') `
+        -OpenApiFilesPath $outputPath -GraphVersion $GraphVersion
 }
