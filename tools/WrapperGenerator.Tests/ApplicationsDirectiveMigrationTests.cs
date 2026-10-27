@@ -86,8 +86,6 @@ public sealed class ApplicationsDirectiveMigrationTests
         var pattern = Regex.Match(source, @"(?m)^\s*- remove-path-by-operation: (.+)\r?$").Groups[1].Value.Trim();
         Assert.NotEmpty(pattern);
         var legacySelector = new Regex(pattern);
-        Assert.DoesNotContain(document.Paths.Values.SelectMany(p => p.Operations!.Values),
-            o => legacySelector.IsMatch(o.OperationId!));
 
         using var legacyStream = File.OpenRead(Path.Combine(root, "openApiDocs", profile, "Applications.yml"));
         var legacyResult = await OpenApiDocument.LoadAsync(legacyStream, settings: settings,
@@ -104,18 +102,23 @@ public sealed class ApplicationsDirectiveMigrationTests
             .OrderBy(p => p).ToArray();
         Assert.Equal(profile == "beta" ? 12 : 7, legacyMatches.Length);
         Assert.Equal(legacyMatches, translatedMatches);
-        Assert.Equal("Legacy", mappings[3].GetProperty("profiles").GetProperty(profile)
-            .GetProperty("operationIdSource").GetString());
+        var currentMatches = document.Paths.SelectMany(p => p.Value.Operations!
+            .Where(o => legacySelector.IsMatch(o.Value.OperationId!))
+            .Select(o => $"{o.Key.Method} {CmdletConfigurator.NormalizePathTemplate(p.Key)}"))
+            .OrderBy(p => p).ToArray();
+        Assert.Equal(legacyMatches, currentMatches);
+        Assert.False(mappings[3].GetProperty("profiles").GetProperty(profile)
+            .TryGetProperty("operationIdSource", out _));
         foreach (var operation in mappings[3].GetProperty("profiles").GetProperty(profile)
             .GetProperty("operations").EnumerateArray())
         {
             var method = new HttpMethod(operation.GetProperty("method").GetString()!);
-            var legacyPath = operation.GetProperty("legacyPath").GetString()!;
-            var legacyId = operation.GetProperty("legacyOperationId").GetString()!;
-            Assert.Matches(legacySelector, legacyId);
-            Assert.Equal(legacyId, legacyDocument.Paths[legacyPath].Operations![method].OperationId);
-            Assert.Equal(CmdletConfigurator.NormalizePathTemplate(legacyPath),
-                CmdletConfigurator.NormalizePathTemplate(operation.GetProperty("path").GetString()!));
+            var path = operation.GetProperty("path").GetString()!;
+            var operationId = operation.GetProperty("operationId").GetString()!;
+            Assert.Matches(legacySelector, operationId);
+            Assert.Equal(operationId, legacyDocument.Paths[path].Operations![method].OperationId);
+            Assert.False(operation.TryGetProperty("legacyOperationId", out _));
+            Assert.False(operation.TryGetProperty("legacyPath", out _));
         }
     }
 
@@ -229,6 +232,25 @@ public sealed class ApplicationsDirectiveMigrationTests
             Assert.NotEqual(item.ClassName, collection.ClassName);
             Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Get, itemPath, config));
             Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(HttpMethod.Get, itemPath, "Unchanged", config));
+        }
+    }
+
+    [Theory]
+    [InlineData("/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups", "MgOnPremisePublishingProfileAgentGroup", 1)]
+    [InlineData("/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}", "MgOnPremisePublishingProfileAgentGroup", 2)]
+    [InlineData("/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups", "MgOnPremisePublishingProfileAgentGroup", 2)]
+    [InlineData("/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/$count", "MgOnPremisePublishingProfileAgentGroupCount", 1)]
+    [InlineData("/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/$count", "MgOnPremisePublishingProfileAgentGroupCount", 2)]
+    public void PublishedAgentGroupFamilyRemainsAvailableForReviewedDispatch(string path, string noun, int pathParameterCount)
+    {
+        foreach (var useCollisionData in new[] { false, true })
+        {
+            var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config));
+            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), config);
+            Assert.Equal(noun, naming.Noun);
+            Assert.Equal("Get", naming.VerbName);
+            Assert.Equal(pathParameterCount, naming.PathParamNames.Count);
         }
     }
 
