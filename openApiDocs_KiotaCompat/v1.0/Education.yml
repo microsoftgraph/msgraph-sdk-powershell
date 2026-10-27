@@ -11,7 +11,7 @@ paths:
       tags:
         - education.educationRoot
       summary: Get education
-      operationId: education.educationRoot.GetEducationRoot
+      operationId: education.educationRoot_GetEducationRoot
       parameters:
         - name: $select
           in: query
@@ -49,7 +49,7 @@ paths:
       tags:
         - education.educationRoot
       summary: Update education
-      operationId: education.educationRoot.UpdateEducationRoot
+      operationId: education.educationRoot_UpdateEducationRoot
       requestBody:
         description: New property values
         content:
@@ -78,7 +78,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list?view=graph-rest-1.0
-      operationId: education.ListClasses
+      operationId: education_ListClass
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -134,7 +134,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-post?view=graph-rest-1.0
-      operationId: education.CreateClasses
+      operationId: education_CreateClass
       requestBody:
         description: New navigation property
         content:
@@ -163,7 +163,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-get?view=graph-rest-1.0
-      operationId: education.GetClasses
+      operationId: education_GetClass
       parameters:
         - name: $select
           in: query
@@ -205,7 +205,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-update?view=graph-rest-1.0
-      operationId: education.UpdateClasses
+      operationId: education_UpdateClass
       requestBody:
         description: New navigation property values
         content:
@@ -233,7 +233,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-delete?view=graph-rest-1.0
-      operationId: education.DeleteClasses
+      operationId: education_DeleteClass
       parameters:
         - name: If-Match
           in: header
@@ -258,7 +258,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list-categories?view=graph-rest-1.0
-      operationId: education.classes.ListAssignmentCategories
+      operationId: education.class_ListAssignmentCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -314,7 +314,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-1.0
-      operationId: education.classes.CreateAssignmentCategories
+      operationId: education.class_CreateAssignmentCategory
       requestBody:
         description: New navigation property
         content:
@@ -343,7 +343,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationcategory-get?view=graph-rest-1.0
-      operationId: education.classes.GetAssignmentCategories
+      operationId: education.class_GetAssignmentCategory
       parameters:
         - name: $select
           in: query
@@ -381,7 +381,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property assignmentCategories in education
-      operationId: education.classes.UpdateAssignmentCategories
+      operationId: education.class_UpdateAssignmentCategory
       requestBody:
         description: New navigation property values
         content:
@@ -409,7 +409,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationcategory-delete?view=graph-rest-1.0
-      operationId: education.classes.DeleteAssignmentCategories
+      operationId: education.class_DeleteAssignmentCategory
       parameters:
         - name: If-Match
           in: header
@@ -430,7 +430,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignmentCategories.GetCount-8570
+      operationId: education.class.assignmentCategory_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -450,7 +450,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignmentCategories.delta
+      operationId: education.class.educationClass.assignmentCategory_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -520,7 +520,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignmentdefaults-get?view=graph-rest-1.0
-      operationId: education.classes.GetAssignmentDefaults
+      operationId: education.class_GetAssignmentDefault
       parameters:
         - name: $select
           in: query
@@ -562,7 +562,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignmentdefaults-update?view=graph-rest-1.0
-      operationId: education.classes.UpdateAssignmentDefaults
+      operationId: education.class_UpdateAssignmentDefault
       requestBody:
         description: New navigation property values
         content:
@@ -586,7 +586,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property assignmentDefaults for education
-      operationId: education.classes.DeleteAssignmentDefaults
+      operationId: education.class_DeleteAssignmentDefault
       parameters:
         - name: If-Match
           in: header
@@ -611,7 +611,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list-assignments?view=graph-rest-1.0
-      operationId: education.classes.ListAssignments
+      operationId: education.class_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -667,7 +667,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-post-assignments?view=graph-rest-1.0
-      operationId: education.classes.CreateAssignments
+      operationId: education.class_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -696,7 +696,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-get?view=graph-rest-1.0
-      operationId: education.classes.GetAssignments
+      operationId: education.class_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -738,7 +738,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-update?view=graph-rest-1.0
-      operationId: education.classes.UpdateAssignments
+      operationId: education.class_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -766,7 +766,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-delete?view=graph-rest-1.0
-      operationId: education.classes.DeleteAssignments
+      operationId: education.class_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -791,7 +791,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
-      operationId: education.classes.assignments.ListCategories
+      operationId: education.class.assignment_ListCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -847,7 +847,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0
-      operationId: education.classes.assignments.CreateCategories
+      operationId: education.class.assignment_CreateCategory
       requestBody:
         description: New navigation property
         content:
@@ -876,7 +876,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0
-      operationId: education.classes.assignments.categories.DeleteRefEducationCategory
+      operationId: education.class.assignment.category_DeleteEducationCategoryGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -897,7 +897,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.categories.GetCount-639a
+      operationId: education.class.assignment.category_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -917,7 +917,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
-      operationId: education.classes.assignments.ListRefCategories
+      operationId: education.class.assignment_ListCategoryGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -953,7 +953,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0
-      operationId: education.classes.assignments.CreateRefCategories
+      operationId: education.class.assignment_CreateCategoryGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -972,7 +972,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0
-      operationId: education.classes.assignments.DeleteRefCategories
+      operationId: education.class.assignment_DeleteCategoryGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -1005,7 +1005,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.categories.delta
+      operationId: education.class.educationClass.assignment.educationAssignment.category_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1072,7 +1072,7 @@ paths:
         - education.educationClass
       summary: Get gradingCategory from education
       description: 'When set, enables users to weight assignments differently when computing a class average grade.'
-      operationId: education.classes.assignments.GetGradingCategory
+      operationId: education.class.assignment_GetGradingCategory
       parameters:
         - name: $select
           in: query
@@ -1112,7 +1112,7 @@ paths:
         - education.educationClass
       summary: Get gradingScheme from education
       description: 'When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.'
-      operationId: education.classes.assignments.GetGradingScheme
+      operationId: education.class.assignment_GetGradingScheme
       parameters:
         - name: $select
           in: query
@@ -1155,7 +1155,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.activate
+      operationId: education.class.educationClass.assignment.educationAssignment_activate
       responses:
         2XX:
           description: Success
@@ -1180,7 +1180,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-deactivate?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.deactivate
+      operationId: education.class.educationClass.assignment.educationAssignment_deactivate
       responses:
         2XX:
           description: Success
@@ -1205,7 +1205,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.publish
+      operationId: education.class.educationClass.assignment.educationAssignment_publish
       responses:
         2XX:
           description: Success
@@ -1230,7 +1230,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.setUpFeedbackResourcesFolder
+      operationId: education.class.educationClass.assignment.educationAssignment_setUpFeedbackResourcesFolder
       responses:
         2XX:
           description: Success
@@ -1255,7 +1255,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.setUpResourcesFolder
+      operationId: education.class.educationClass.assignment.educationAssignment_setUpResourcesFolder
       responses:
         2XX:
           description: Success
@@ -1280,7 +1280,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
-      operationId: education.classes.assignments.ListResources
+      operationId: education.class.assignment_ListResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1336,7 +1336,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0
-      operationId: education.classes.assignments.CreateResources
+      operationId: education.class.assignment_CreateResource
       requestBody:
         description: New navigation property
         content:
@@ -1365,7 +1365,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignmentresource-get?view=graph-rest-1.0
-      operationId: education.classes.assignments.GetResources
+      operationId: education.class.assignment_GetResource
       parameters:
         - name: $select
           in: query
@@ -1403,7 +1403,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property resources in education
-      operationId: education.classes.assignments.UpdateResources
+      operationId: education.class.assignment_UpdateResource
       requestBody:
         description: New navigation property values
         content:
@@ -1431,7 +1431,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignmentresource-delete?view=graph-rest-1.0
-      operationId: education.classes.assignments.DeleteResources
+      operationId: education.class.assignment_DeleteResource
       parameters:
         - name: If-Match
           in: header
@@ -1456,7 +1456,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignmentresource-list-dependentresources?view=graph-rest-1.0
-      operationId: education.classes.assignments.resources.ListDependentResources
+      operationId: education.class.assignment.resource_ListDependentResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1508,7 +1508,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to dependentResources for education
-      operationId: education.classes.assignments.resources.CreateDependentResources
+      operationId: education.class.assignment.resource_CreateDependentResource
       requestBody:
         description: New navigation property
         content:
@@ -1534,7 +1534,7 @@ paths:
         - education.educationClass
       summary: Get dependentResources from education
       description: A collection of assignment resources that depend on the parent educationAssignmentResource.
-      operationId: education.classes.assignments.resources.GetDependentResources
+      operationId: education.class.assignment.resource_GetDependentResource
       parameters:
         - name: $select
           in: query
@@ -1572,7 +1572,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property dependentResources in education
-      operationId: education.classes.assignments.resources.UpdateDependentResources
+      operationId: education.class.assignment.resource_UpdateDependentResource
       requestBody:
         description: New navigation property values
         content:
@@ -1596,7 +1596,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property dependentResources for education
-      operationId: education.classes.assignments.resources.DeleteDependentResources
+      operationId: education.class.assignment.resource_DeleteDependentResource
       parameters:
         - name: If-Match
           in: header
@@ -1617,7 +1617,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.resources.dependentResources.GetCount-618c
+      operationId: education.class.assignment.resource.dependentResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1633,7 +1633,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.resources.GetCount-f57b
+      operationId: education.class.assignment.resource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1653,7 +1653,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
-      operationId: education.classes.assignments.GetRubric
+      operationId: education.class.assignment_GetRubric
       parameters:
         - name: $select
           in: query
@@ -1695,7 +1695,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0
-      operationId: education.classes.assignments.UpdateRubric
+      operationId: education.class.assignment_UpdateRubric
       requestBody:
         description: New navigation property values
         content:
@@ -1723,7 +1723,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0
-      operationId: education.classes.assignments.DeleteRubric
+      operationId: education.class.assignment_DeleteRubric
       parameters:
         - name: If-Match
           in: header
@@ -1748,7 +1748,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
-      operationId: education.classes.assignments.GetRefRubric
+      operationId: education.class.assignment_GetRubricGraphBPreRef
       responses:
         2XX:
           description: Retrieved navigation property link
@@ -1769,7 +1769,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0
-      operationId: education.classes.assignments.UpdateRefRubric
+      operationId: education.class.assignment_SetRubricGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPutBody'
       responses:
@@ -1788,7 +1788,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0
-      operationId: education.classes.assignments.DeleteRefRubric
+      operationId: education.class.assignment_DeleteRubricGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -1813,7 +1813,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
-      operationId: education.classes.assignments.ListSubmissions
+      operationId: education.class.assignment_ListSubmission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1865,7 +1865,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to submissions for education
-      operationId: education.classes.assignments.CreateSubmissions
+      operationId: education.class.assignment_CreateSubmission
       requestBody:
         description: New navigation property
         content:
@@ -1894,7 +1894,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-get?view=graph-rest-1.0
-      operationId: education.classes.assignments.GetSubmissions
+      operationId: education.class.assignment_GetSubmission
       parameters:
         - name: $select
           in: query
@@ -1932,7 +1932,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property submissions in education
-      operationId: education.classes.assignments.UpdateSubmissions
+      operationId: education.class.assignment_UpdateSubmission
       requestBody:
         description: New navigation property values
         content:
@@ -1956,7 +1956,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property submissions for education
-      operationId: education.classes.assignments.DeleteSubmissions
+      operationId: education.class.assignment_DeleteSubmission
       parameters:
         - name: If-Match
           in: header
@@ -1981,7 +1981,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.excuse
+      operationId: education.class.educationClass.assignment.educationAssignment.submission.educationSubmission_excuse
       responses:
         2XX:
           description: Success
@@ -2006,7 +2006,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.reassign
+      operationId: education.class.educationClass.assignment.educationAssignment.submission.educationSubmission_reassign
       responses:
         2XX:
           description: Success
@@ -2031,7 +2031,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.return
+      operationId: education.class.educationClass.assignment.educationAssignment.submission.educationSubmission_return
       responses:
         2XX:
           description: Success
@@ -2056,7 +2056,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-setupresourcesfolder?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
+      operationId: education.class.educationClass.assignment.educationAssignment.submission.educationSubmission_setUpResourcesFolder
       responses:
         2XX:
           description: Success
@@ -2081,7 +2081,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.submit
+      operationId: education.class.educationClass.assignment.educationAssignment.submission.educationSubmission_submit
       responses:
         2XX:
           description: Success
@@ -2106,7 +2106,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.unsubmit
+      operationId: education.class.educationClass.assignment.educationAssignment.submission.educationSubmission_unsubmit
       responses:
         2XX:
           description: Success
@@ -2131,7 +2131,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.ListOutcomes
+      operationId: education.class.assignment.submission_ListOutcome
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2187,7 +2187,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationfeedbackresourceoutcome-post-outcomes?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.CreateOutcomes
+      operationId: education.class.assignment.submission_CreateOutcome
       requestBody:
         description: New navigation property
         content:
@@ -2212,7 +2212,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get outcomes from education
-      operationId: education.classes.assignments.submissions.GetOutcomes
+      operationId: education.class.assignment.submission_GetOutcome
       parameters:
         - name: $select
           in: query
@@ -2254,7 +2254,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationoutcome-update?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.UpdateOutcomes
+      operationId: education.class.assignment.submission_UpdateOutcome
       requestBody:
         description: New navigation property values
         content:
@@ -2282,7 +2282,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationfeedbackresourceoutcome-delete?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.DeleteOutcomes
+      operationId: education.class.assignment.submission_DeleteOutcome
       parameters:
         - name: If-Match
           in: header
@@ -2303,7 +2303,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.submissions.outcomes.GetCount-2ffd
+      operationId: education.class.assignment.submission.outcome_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2323,7 +2323,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.ListResources
+      operationId: education.class.assignment.submission_ListResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2379,7 +2379,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-post-resources?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.CreateResources
+      operationId: education.class.assignment.submission_CreateResource
       requestBody:
         description: New navigation property
         content:
@@ -2408,7 +2408,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmissionresource-get?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.GetResources
+      operationId: education.class.assignment.submission_GetResource
       parameters:
         - name: $select
           in: query
@@ -2446,7 +2446,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property resources in education
-      operationId: education.classes.assignments.submissions.UpdateResources
+      operationId: education.class.assignment.submission_UpdateResource
       requestBody:
         description: New navigation property values
         content:
@@ -2474,7 +2474,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmissionresource-delete?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.DeleteResources
+      operationId: education.class.assignment.submission_DeleteResource
       parameters:
         - name: If-Match
           in: header
@@ -2499,7 +2499,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmissionresource-list-dependentresources?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.resources.ListDependentResources
+      operationId: education.class.assignment.submission.resource_ListDependentResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2551,7 +2551,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to dependentResources for education
-      operationId: education.classes.assignments.submissions.resources.CreateDependentResources
+      operationId: education.class.assignment.submission.resource_CreateDependentResource
       requestBody:
         description: New navigation property
         content:
@@ -2577,7 +2577,7 @@ paths:
         - education.educationClass
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.classes.assignments.submissions.resources.GetDependentResources
+      operationId: education.class.assignment.submission.resource_GetDependentResource
       parameters:
         - name: $select
           in: query
@@ -2615,7 +2615,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property dependentResources in education
-      operationId: education.classes.assignments.submissions.resources.UpdateDependentResources
+      operationId: education.class.assignment.submission.resource_UpdateDependentResource
       requestBody:
         description: New navigation property values
         content:
@@ -2639,7 +2639,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property dependentResources for education
-      operationId: education.classes.assignments.submissions.resources.DeleteDependentResources
+      operationId: education.class.assignment.submission.resource_DeleteDependentResource
       parameters:
         - name: If-Match
           in: header
@@ -2660,7 +2660,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.submissions.resources.dependentResources.GetCount-7cb6
+      operationId: education.class.assignment.submission.resource.dependentResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2676,7 +2676,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.submissions.resources.GetCount-3e92
+      operationId: education.class.assignment.submission.resource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2696,7 +2696,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-list-submittedresources?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.ListSubmittedResources
+      operationId: education.class.assignment.submission_ListSubmittedResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2748,7 +2748,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to submittedResources for education
-      operationId: education.classes.assignments.submissions.CreateSubmittedResources
+      operationId: education.class.assignment.submission_CreateSubmittedResource
       requestBody:
         description: New navigation property
         content:
@@ -2777,7 +2777,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmittedsubmissionresource-get?view=graph-rest-1.0
-      operationId: education.classes.assignments.submissions.GetSubmittedResources
+      operationId: education.class.assignment.submission_GetSubmittedResource
       parameters:
         - name: $select
           in: query
@@ -2815,7 +2815,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property submittedResources in education
-      operationId: education.classes.assignments.submissions.UpdateSubmittedResources
+      operationId: education.class.assignment.submission_UpdateSubmittedResource
       requestBody:
         description: New navigation property values
         content:
@@ -2839,7 +2839,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property submittedResources for education
-      operationId: education.classes.assignments.submissions.DeleteSubmittedResources
+      operationId: education.class.assignment.submission_DeleteSubmittedResource
       parameters:
         - name: If-Match
           in: header
@@ -2861,7 +2861,7 @@ paths:
         - education.educationClass
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.classes.assignments.submissions.submittedResources.ListDependentResources
+      operationId: education.class.assignment.submission.submittedResource_ListDependentResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2913,7 +2913,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to dependentResources for education
-      operationId: education.classes.assignments.submissions.submittedResources.CreateDependentResources
+      operationId: education.class.assignment.submission.submittedResource_CreateDependentResource
       requestBody:
         description: New navigation property
         content:
@@ -2939,7 +2939,7 @@ paths:
         - education.educationClass
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.classes.assignments.submissions.submittedResources.GetDependentResources
+      operationId: education.class.assignment.submission.submittedResource_GetDependentResource
       parameters:
         - name: $select
           in: query
@@ -2977,7 +2977,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property dependentResources in education
-      operationId: education.classes.assignments.submissions.submittedResources.UpdateDependentResources
+      operationId: education.class.assignment.submission.submittedResource_UpdateDependentResource
       requestBody:
         description: New navigation property values
         content:
@@ -3001,7 +3001,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property dependentResources for education
-      operationId: education.classes.assignments.submissions.submittedResources.DeleteDependentResources
+      operationId: education.class.assignment.submission.submittedResource_DeleteDependentResource
       parameters:
         - name: If-Match
           in: header
@@ -3022,7 +3022,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.submissions.submittedResources.dependentResources.GetCount-3895
+      operationId: education.class.assignment.submission.submittedResource.dependentResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3038,7 +3038,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.submissions.submittedResources.GetCount-ecf9
+      operationId: education.class.assignment.submission.submittedResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3054,7 +3054,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.submissions.GetCount-231f
+      operationId: education.class.assignment.submission_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3070,7 +3070,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignments.GetCount-a470
+      operationId: education.class.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3090,7 +3090,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-1.0
-      operationId: education.classes.educationClass.assignments.delta
+      operationId: education.class.educationClass.assignment_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3157,7 +3157,7 @@ paths:
         - education.educationClass
       summary: Get assignmentSettings from education
       description: Specifies class-level assignments settings.
-      operationId: education.classes.GetAssignmentSettings
+      operationId: education.class_GetAssignmentSetting
       parameters:
         - name: $select
           in: query
@@ -3199,7 +3199,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-1.0
-      operationId: education.classes.UpdateAssignmentSettings
+      operationId: education.class_UpdateAssignmentSetting
       requestBody:
         description: New navigation property values
         content:
@@ -3223,7 +3223,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property assignmentSettings for education
-      operationId: education.classes.DeleteAssignmentSettings
+      operationId: education.class_DeleteAssignmentSetting
       parameters:
         - name: If-Match
           in: header
@@ -3245,7 +3245,7 @@ paths:
         - education.educationClass
       summary: Get defaultGradingScheme from education
       description: The default grading scheme for assignments created in this class.
-      operationId: education.classes.assignmentSettings.GetDefaultGradingScheme
+      operationId: education.class.assignmentSetting_GetDefaultGradingScheme
       parameters:
         - name: $select
           in: query
@@ -3285,7 +3285,7 @@ paths:
         - education.educationClass
       summary: Get gradingCategories from education
       description: 'When set, enables users to weight assignments differently when computing a class average grade.'
-      operationId: education.classes.assignmentSettings.ListGradingCategories
+      operationId: education.class.assignmentSetting_ListGradingCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3337,7 +3337,7 @@ paths:
       tags:
         - education.educationClass
       summary: Create new navigation property to gradingCategories for education
-      operationId: education.classes.assignmentSettings.CreateGradingCategories
+      operationId: education.class.assignmentSetting_CreateGradingCategory
       requestBody:
         description: New navigation property
         content:
@@ -3363,7 +3363,7 @@ paths:
         - education.educationClass
       summary: Get gradingCategories from education
       description: 'When set, enables users to weight assignments differently when computing a class average grade.'
-      operationId: education.classes.assignmentSettings.GetGradingCategories
+      operationId: education.class.assignmentSetting_GetGradingCategory
       parameters:
         - name: $select
           in: query
@@ -3405,7 +3405,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationgradingcategory-update?view=graph-rest-1.0
-      operationId: education.classes.assignmentSettings.UpdateGradingCategories
+      operationId: education.class.assignmentSetting_UpdateGradingCategory
       requestBody:
         description: New navigation property values
         content:
@@ -3429,7 +3429,7 @@ paths:
       tags:
         - education.educationClass
       summary: Delete navigation property gradingCategories for education
-      operationId: education.classes.assignmentSettings.DeleteGradingCategories
+      operationId: education.class.assignmentSetting_DeleteGradingCategory
       parameters:
         - name: If-Match
           in: header
@@ -3450,7 +3450,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignmentSettings.gradingCategories.GetCount-c354
+      operationId: education.class.assignmentSetting.gradingCategory_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3467,7 +3467,7 @@ paths:
         - education.educationClass
       summary: Get educationGradingScheme
       description: Read the properties and relationships of an educationGradingScheme object.
-      operationId: education.classes.assignmentSettings.ListGradingSchemes
+      operationId: education.class.assignmentSetting_ListGradingScheme
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3523,7 +3523,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignmentsettings-post-gradingschemes?view=graph-rest-1.0
-      operationId: education.classes.assignmentSettings.CreateGradingSchemes
+      operationId: education.class.assignmentSetting_CreateGradingScheme
       requestBody:
         description: New navigation property
         content:
@@ -3552,7 +3552,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationgradingscheme-get?view=graph-rest-1.0
-      operationId: education.classes.assignmentSettings.GetGradingSchemes
+      operationId: education.class.assignmentSetting_GetGradingScheme
       parameters:
         - name: $select
           in: query
@@ -3590,7 +3590,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the navigation property gradingSchemes in education
-      operationId: education.classes.assignmentSettings.UpdateGradingSchemes
+      operationId: education.class.assignmentSetting_UpdateGradingScheme
       requestBody:
         description: New navigation property values
         content:
@@ -3618,7 +3618,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationgradingscheme-delete?view=graph-rest-1.0
-      operationId: education.classes.assignmentSettings.DeleteGradingSchemes
+      operationId: education.class.assignmentSetting_DeleteGradingScheme
       parameters:
         - name: If-Match
           in: header
@@ -3639,7 +3639,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.assignmentSettings.gradingSchemes.GetCount-c040
+      operationId: education.class.assignmentSetting.gradingScheme_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3656,7 +3656,7 @@ paths:
         - education.educationClass
       summary: Get group from education
       description: The underlying Microsoft 365 group object.
-      operationId: education.classes.GetGroup
+      operationId: education.class_GetGroup
       parameters:
         - name: $select
           in: query
@@ -3696,7 +3696,7 @@ paths:
         - education.educationClass
       summary: Get serviceProvisioningErrors property value
       description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
-      operationId: education.classes.group.ListServiceProvisioningErrors
+      operationId: education.class.group_ListServiceProvisioningError
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3748,7 +3748,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.group.ServiceProvisioningErrors.GetCount-5a91
+      operationId: education.class.group.ServiceProvisioningError_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3768,7 +3768,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
-      operationId: education.classes.ListMembers
+      operationId: education.class_ListMember
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3825,7 +3825,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0
-      operationId: education.classes.members.DeleteRefEducationUser
+      operationId: education.class.member_DeleteEducationUserGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -3846,7 +3846,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.members.GetCount-4459
+      operationId: education.class.member_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3866,7 +3866,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
-      operationId: education.classes.ListRefMembers
+      operationId: education.class_ListMemberGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3902,7 +3902,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-post-members?view=graph-rest-1.0
-      operationId: education.classes.CreateRefMembers
+      operationId: education.class_CreateMemberGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -3921,7 +3921,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0
-      operationId: education.classes.DeleteRefMembers
+      operationId: education.class_DeleteMemberGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -3954,7 +3954,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-getrecentlymodifiedsubmissions?view=graph-rest-1.0
-      operationId: education.classes.educationClass.getRecentlyModifiedSubmissions
+      operationId: education.class.educationClass_getRecentlyModifiedSubmission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4024,7 +4024,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list-modules?view=graph-rest-1.0
-      operationId: education.classes.ListModules
+      operationId: education.class_ListModule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4080,7 +4080,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-post-module?view=graph-rest-1.0
-      operationId: education.classes.CreateModules
+      operationId: education.class_CreateModule
       requestBody:
         description: New navigation property
         content:
@@ -4109,7 +4109,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmodule-get?view=graph-rest-1.0
-      operationId: education.classes.GetModules
+      operationId: education.class_GetModule
       parameters:
         - name: $select
           in: query
@@ -4151,7 +4151,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmodule-update?view=graph-rest-1.0
-      operationId: education.classes.UpdateModules
+      operationId: education.class_UpdateModule
       requestBody:
         description: New navigation property values
         content:
@@ -4179,7 +4179,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmodule-delete?view=graph-rest-1.0
-      operationId: education.classes.DeleteModules
+      operationId: education.class_DeleteModule
       parameters:
         - name: If-Match
           in: header
@@ -4204,7 +4204,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmodule-pin?view=graph-rest-1.0
-      operationId: education.classes.educationClass.modules.educationModule.pin
+      operationId: education.class.educationClass.module.educationModule_pin
       responses:
         2XX:
           description: Success
@@ -4229,7 +4229,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmodule-publish?view=graph-rest-1.0
-      operationId: education.classes.educationClass.modules.educationModule.publish
+      operationId: education.class.educationClass.module.educationModule_publish
       responses:
         2XX:
           description: Success
@@ -4254,7 +4254,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmodule-setupresourcesfolder?view=graph-rest-1.0
-      operationId: education.classes.educationClass.modules.educationModule.setUpResourcesFolder
+      operationId: education.class.educationClass.module.educationModule_setUpResourcesFolder
       responses:
         2XX:
           description: Success
@@ -4279,7 +4279,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmodule-unpin?view=graph-rest-1.0
-      operationId: education.classes.educationClass.modules.educationModule.unpin
+      operationId: education.class.educationClass.module.educationModule_unpin
       responses:
         2XX:
           description: Success
@@ -4304,7 +4304,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmodule-list-resources?view=graph-rest-1.0
-      operationId: education.classes.modules.ListResources
+      operationId: education.class.module_ListResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4360,7 +4360,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmodule-post-resources?view=graph-rest-1.0
-      operationId: education.classes.modules.CreateResources
+      operationId: education.class.module_CreateResource
       requestBody:
         description: New navigation property
         content:
@@ -4389,7 +4389,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmoduleresource-get?view=graph-rest-1.0
-      operationId: education.classes.modules.GetResources
+      operationId: education.class.module_GetResource
       parameters:
         - name: $select
           in: query
@@ -4431,7 +4431,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmoduleresource-update?view=graph-rest-1.0
-      operationId: education.classes.modules.UpdateResources
+      operationId: education.class.module_UpdateResource
       requestBody:
         description: New navigation property values
         content:
@@ -4459,7 +4459,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationmoduleresource-delete?view=graph-rest-1.0
-      operationId: education.classes.modules.DeleteResources
+      operationId: education.class.module_DeleteResource
       parameters:
         - name: If-Match
           in: header
@@ -4480,7 +4480,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.modules.resources.GetCount-2a6c
+      operationId: education.class.module.resource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4496,7 +4496,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.modules.GetCount-7c88
+      operationId: education.class.module_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4516,7 +4516,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list-schools?view=graph-rest-1.0
-      operationId: education.classes.ListSchools
+      operationId: education.class_ListSchool
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4570,7 +4570,7 @@ paths:
         - education.educationClass
       summary: Get schools from education
       description: All schools that this class is associated with. Nullable.
-      operationId: education.classes.GetSchools
+      operationId: education.class_GetSchool
       parameters:
         - name: $select
           in: query
@@ -4609,7 +4609,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.schools.GetCount-fef1
+      operationId: education.class.school_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4629,7 +4629,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0
-      operationId: education.classes.ListTeachers
+      operationId: education.class_ListTeacher
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4686,7 +4686,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-delete-teachers?view=graph-rest-1.0
-      operationId: education.classes.teachers.DeleteRefEducationUser
+      operationId: education.class.teacher_DeleteEducationUserGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -4707,7 +4707,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.teachers.GetCount-4305
+      operationId: education.class.teacher_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4727,7 +4727,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0
-      operationId: education.classes.ListRefTeachers
+      operationId: education.class_ListTeacherGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4763,7 +4763,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-post-teachers?view=graph-rest-1.0
-      operationId: education.classes.CreateRefTeachers
+      operationId: education.class_CreateTeacherGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -4782,7 +4782,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-delete-teachers?view=graph-rest-1.0
-      operationId: education.classes.DeleteRefTeachers
+      operationId: education.class_DeleteTeacherGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -4811,7 +4811,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get the number of the resource
-      operationId: education.classes.GetCount-fe5a
+      operationId: education.class_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4831,7 +4831,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-delta?view=graph-rest-1.0
-      operationId: education.classes.delta
+      operationId: education.class_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4897,7 +4897,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get me from education
-      operationId: education.GetMe
+      operationId: education_GetMe
       parameters:
         - name: $select
           in: query
@@ -4935,7 +4935,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property me in education
-      operationId: education.UpdateMe
+      operationId: education_UpdateMe
       requestBody:
         description: New navigation property values
         content:
@@ -4959,7 +4959,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property me for education
-      operationId: education.DeleteMe
+      operationId: education_DeleteMe
       parameters:
         - name: If-Match
           in: header
@@ -4984,7 +4984,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-1.0
-      operationId: education.me.ListAssignments
+      operationId: education.me_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5036,7 +5036,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to assignments for education
-      operationId: education.me.CreateAssignments
+      operationId: education.me_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -5062,7 +5062,7 @@ paths:
         - education.educationUser
       summary: Get assignments from education
       description: Assignments belonging to the user.
-      operationId: education.me.GetAssignments
+      operationId: education.me_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -5100,7 +5100,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property assignments in education
-      operationId: education.me.UpdateAssignments
+      operationId: education.me_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -5124,7 +5124,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property assignments for education
-      operationId: education.me.DeleteAssignments
+      operationId: education.me_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -5146,7 +5146,7 @@ paths:
         - education.educationUser
       summary: Get categories from education
       description: 'When set, enables users to easily find assignments of a given type. Read-only. Nullable.'
-      operationId: education.me.assignments.ListCategories
+      operationId: education.me.assignment_ListCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5198,7 +5198,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to categories for education
-      operationId: education.me.assignments.CreateCategories
+      operationId: education.me.assignment_CreateCategory
       requestBody:
         description: New navigation property
         content:
@@ -5223,7 +5223,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property categories for education
-      operationId: education.me.assignments.categories.DeleteRefEducationCategory
+      operationId: education.me.assignment.category_DeleteEducationCategoryGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -5244,7 +5244,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.categories.GetCount-da6c
+      operationId: education.me.assignment.category_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5261,7 +5261,7 @@ paths:
         - education.educationUser
       summary: Get ref of categories from education
       description: 'When set, enables users to easily find assignments of a given type. Read-only. Nullable.'
-      operationId: education.me.assignments.ListRefCategories
+      operationId: education.me.assignment_ListCategoryGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5293,7 +5293,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to categories for education
-      operationId: education.me.assignments.CreateRefCategories
+      operationId: education.me.assignment_CreateCategoryGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -5308,7 +5308,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property categories for education
-      operationId: education.me.assignments.DeleteRefCategories
+      operationId: education.me.assignment_DeleteCategoryGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -5341,7 +5341,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.categories.delta
+      operationId: education.me.assignment.educationAssignment.category_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5408,7 +5408,7 @@ paths:
         - education.educationUser
       summary: Get gradingCategory from education
       description: 'When set, enables users to weight assignments differently when computing a class average grade.'
-      operationId: education.me.assignments.GetGradingCategory
+      operationId: education.me.assignment_GetGradingCategory
       parameters:
         - name: $select
           in: query
@@ -5448,7 +5448,7 @@ paths:
         - education.educationUser
       summary: Get gradingScheme from education
       description: 'When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.'
-      operationId: education.me.assignments.GetGradingScheme
+      operationId: education.me.assignment_GetGradingScheme
       parameters:
         - name: $select
           in: query
@@ -5491,7 +5491,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.activate
+      operationId: education.me.assignment.educationAssignment_activate
       responses:
         2XX:
           description: Success
@@ -5516,7 +5516,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-deactivate?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.deactivate
+      operationId: education.me.assignment.educationAssignment_deactivate
       responses:
         2XX:
           description: Success
@@ -5541,7 +5541,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.publish
+      operationId: education.me.assignment.educationAssignment_publish
       responses:
         2XX:
           description: Success
@@ -5566,7 +5566,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.setUpFeedbackResourcesFolder
+      operationId: education.me.assignment.educationAssignment_setUpFeedbackResourcesFolder
       responses:
         2XX:
           description: Success
@@ -5591,7 +5591,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.setUpResourcesFolder
+      operationId: education.me.assignment.educationAssignment_setUpResourcesFolder
       responses:
         2XX:
           description: Success
@@ -5613,7 +5613,7 @@ paths:
         - education.educationUser
       summary: Get resources from education
       description: Learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.
-      operationId: education.me.assignments.ListResources
+      operationId: education.me.assignment_ListResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5665,7 +5665,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to resources for education
-      operationId: education.me.assignments.CreateResources
+      operationId: education.me.assignment_CreateResource
       requestBody:
         description: New navigation property
         content:
@@ -5691,7 +5691,7 @@ paths:
         - education.educationUser
       summary: Get resources from education
       description: Learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.
-      operationId: education.me.assignments.GetResources
+      operationId: education.me.assignment_GetResource
       parameters:
         - name: $select
           in: query
@@ -5729,7 +5729,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
-      operationId: education.me.assignments.UpdateResources
+      operationId: education.me.assignment_UpdateResource
       requestBody:
         description: New navigation property values
         content:
@@ -5753,7 +5753,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
-      operationId: education.me.assignments.DeleteResources
+      operationId: education.me.assignment_DeleteResource
       parameters:
         - name: If-Match
           in: header
@@ -5775,7 +5775,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of assignment resources that depend on the parent educationAssignmentResource.
-      operationId: education.me.assignments.resources.ListDependentResources
+      operationId: education.me.assignment.resource_ListDependentResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5827,7 +5827,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to dependentResources for education
-      operationId: education.me.assignments.resources.CreateDependentResources
+      operationId: education.me.assignment.resource_CreateDependentResource
       requestBody:
         description: New navigation property
         content:
@@ -5853,7 +5853,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of assignment resources that depend on the parent educationAssignmentResource.
-      operationId: education.me.assignments.resources.GetDependentResources
+      operationId: education.me.assignment.resource_GetDependentResource
       parameters:
         - name: $select
           in: query
@@ -5891,7 +5891,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property dependentResources in education
-      operationId: education.me.assignments.resources.UpdateDependentResources
+      operationId: education.me.assignment.resource_UpdateDependentResource
       requestBody:
         description: New navigation property values
         content:
@@ -5915,7 +5915,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property dependentResources for education
-      operationId: education.me.assignments.resources.DeleteDependentResources
+      operationId: education.me.assignment.resource_DeleteDependentResource
       parameters:
         - name: If-Match
           in: header
@@ -5936,7 +5936,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.resources.dependentResources.GetCount-7e26
+      operationId: education.me.assignment.resource.dependentResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5952,7 +5952,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.resources.GetCount-c8bf
+      operationId: education.me.assignment.resource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5969,7 +5969,7 @@ paths:
         - education.educationUser
       summary: Get rubric from education
       description: 'When set, the grading rubric attached to this assignment.'
-      operationId: education.me.assignments.GetRubric
+      operationId: education.me.assignment_GetRubric
       parameters:
         - name: $select
           in: query
@@ -6007,7 +6007,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property rubric in education
-      operationId: education.me.assignments.UpdateRubric
+      operationId: education.me.assignment_UpdateRubric
       requestBody:
         description: New navigation property values
         content:
@@ -6031,7 +6031,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property rubric for education
-      operationId: education.me.assignments.DeleteRubric
+      operationId: education.me.assignment_DeleteRubric
       parameters:
         - name: If-Match
           in: header
@@ -6053,7 +6053,7 @@ paths:
         - education.educationUser
       summary: Get ref of rubric from education
       description: 'When set, the grading rubric attached to this assignment.'
-      operationId: education.me.assignments.GetRefRubric
+      operationId: education.me.assignment_GetRubricGraphBPreRef
       responses:
         2XX:
           description: Retrieved navigation property link
@@ -6070,7 +6070,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the ref of navigation property rubric in education
-      operationId: education.me.assignments.UpdateRefRubric
+      operationId: education.me.assignment_SetRubricGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPutBody'
       responses:
@@ -6085,7 +6085,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property rubric for education
-      operationId: education.me.assignments.DeleteRefRubric
+      operationId: education.me.assignment_DeleteRubricGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -6107,7 +6107,7 @@ paths:
         - education.educationUser
       summary: Get submissions from education
       description: 'Once published, there''s a submission object for each student representing their work and grade. Read-only. Nullable.'
-      operationId: education.me.assignments.ListSubmissions
+      operationId: education.me.assignment_ListSubmission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6159,7 +6159,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submissions for education
-      operationId: education.me.assignments.CreateSubmissions
+      operationId: education.me.assignment_CreateSubmission
       requestBody:
         description: New navigation property
         content:
@@ -6185,7 +6185,7 @@ paths:
         - education.educationUser
       summary: Get submissions from education
       description: 'Once published, there''s a submission object for each student representing their work and grade. Read-only. Nullable.'
-      operationId: education.me.assignments.GetSubmissions
+      operationId: education.me.assignment_GetSubmission
       parameters:
         - name: $select
           in: query
@@ -6223,7 +6223,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submissions in education
-      operationId: education.me.assignments.UpdateSubmissions
+      operationId: education.me.assignment_UpdateSubmission
       requestBody:
         description: New navigation property values
         content:
@@ -6247,7 +6247,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submissions for education
-      operationId: education.me.assignments.DeleteSubmissions
+      operationId: education.me.assignment_DeleteSubmission
       parameters:
         - name: If-Match
           in: header
@@ -6272,7 +6272,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.excuse
+      operationId: education.me.assignment.educationAssignment.submission.educationSubmission_excuse
       responses:
         2XX:
           description: Success
@@ -6297,7 +6297,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.reassign
+      operationId: education.me.assignment.educationAssignment.submission.educationSubmission_reassign
       responses:
         2XX:
           description: Success
@@ -6322,7 +6322,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.return
+      operationId: education.me.assignment.educationAssignment.submission.educationSubmission_return
       responses:
         2XX:
           description: Success
@@ -6347,7 +6347,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-setupresourcesfolder?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
+      operationId: education.me.assignment.educationAssignment.submission.educationSubmission_setUpResourcesFolder
       responses:
         2XX:
           description: Success
@@ -6372,7 +6372,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.submit
+      operationId: education.me.assignment.educationAssignment.submission.educationSubmission_submit
       responses:
         2XX:
           description: Success
@@ -6397,7 +6397,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-1.0
-      operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.unsubmit
+      operationId: education.me.assignment.educationAssignment.submission.educationSubmission_unsubmit
       responses:
         2XX:
           description: Success
@@ -6418,7 +6418,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      operationId: education.me.assignments.submissions.ListOutcomes
+      operationId: education.me.assignment.submission_ListOutcome
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6470,7 +6470,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to outcomes for education
-      operationId: education.me.assignments.submissions.CreateOutcomes
+      operationId: education.me.assignment.submission_CreateOutcome
       requestBody:
         description: New navigation property
         content:
@@ -6495,7 +6495,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      operationId: education.me.assignments.submissions.GetOutcomes
+      operationId: education.me.assignment.submission_GetOutcome
       parameters:
         - name: $select
           in: query
@@ -6533,7 +6533,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property outcomes in education
-      operationId: education.me.assignments.submissions.UpdateOutcomes
+      operationId: education.me.assignment.submission_UpdateOutcome
       requestBody:
         description: New navigation property values
         content:
@@ -6557,7 +6557,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property outcomes for education
-      operationId: education.me.assignments.submissions.DeleteOutcomes
+      operationId: education.me.assignment.submission_DeleteOutcome
       parameters:
         - name: If-Match
           in: header
@@ -6578,7 +6578,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.submissions.outcomes.GetCount-86b6
+      operationId: education.me.assignment.submission.outcome_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6594,7 +6594,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      operationId: education.me.assignments.submissions.ListResources
+      operationId: education.me.assignment.submission_ListResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6646,7 +6646,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to resources for education
-      operationId: education.me.assignments.submissions.CreateResources
+      operationId: education.me.assignment.submission_CreateResource
       requestBody:
         description: New navigation property
         content:
@@ -6671,7 +6671,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      operationId: education.me.assignments.submissions.GetResources
+      operationId: education.me.assignment.submission_GetResource
       parameters:
         - name: $select
           in: query
@@ -6709,7 +6709,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
-      operationId: education.me.assignments.submissions.UpdateResources
+      operationId: education.me.assignment.submission_UpdateResource
       requestBody:
         description: New navigation property values
         content:
@@ -6733,7 +6733,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
-      operationId: education.me.assignments.submissions.DeleteResources
+      operationId: education.me.assignment.submission_DeleteResource
       parameters:
         - name: If-Match
           in: header
@@ -6755,7 +6755,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.me.assignments.submissions.resources.ListDependentResources
+      operationId: education.me.assignment.submission.resource_ListDependentResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6807,7 +6807,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to dependentResources for education
-      operationId: education.me.assignments.submissions.resources.CreateDependentResources
+      operationId: education.me.assignment.submission.resource_CreateDependentResource
       requestBody:
         description: New navigation property
         content:
@@ -6833,7 +6833,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.me.assignments.submissions.resources.GetDependentResources
+      operationId: education.me.assignment.submission.resource_GetDependentResource
       parameters:
         - name: $select
           in: query
@@ -6871,7 +6871,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property dependentResources in education
-      operationId: education.me.assignments.submissions.resources.UpdateDependentResources
+      operationId: education.me.assignment.submission.resource_UpdateDependentResource
       requestBody:
         description: New navigation property values
         content:
@@ -6895,7 +6895,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property dependentResources for education
-      operationId: education.me.assignments.submissions.resources.DeleteDependentResources
+      operationId: education.me.assignment.submission.resource_DeleteDependentResource
       parameters:
         - name: If-Match
           in: header
@@ -6916,7 +6916,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.submissions.resources.dependentResources.GetCount-20a6
+      operationId: education.me.assignment.submission.resource.dependentResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6932,7 +6932,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.submissions.resources.GetCount-4a0c
+      operationId: education.me.assignment.submission.resource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6948,7 +6948,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      operationId: education.me.assignments.submissions.ListSubmittedResources
+      operationId: education.me.assignment.submission_ListSubmittedResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7000,7 +7000,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submittedResources for education
-      operationId: education.me.assignments.submissions.CreateSubmittedResources
+      operationId: education.me.assignment.submission_CreateSubmittedResource
       requestBody:
         description: New navigation property
         content:
@@ -7025,7 +7025,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      operationId: education.me.assignments.submissions.GetSubmittedResources
+      operationId: education.me.assignment.submission_GetSubmittedResource
       parameters:
         - name: $select
           in: query
@@ -7063,7 +7063,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submittedResources in education
-      operationId: education.me.assignments.submissions.UpdateSubmittedResources
+      operationId: education.me.assignment.submission_UpdateSubmittedResource
       requestBody:
         description: New navigation property values
         content:
@@ -7087,7 +7087,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submittedResources for education
-      operationId: education.me.assignments.submissions.DeleteSubmittedResources
+      operationId: education.me.assignment.submission_DeleteSubmittedResource
       parameters:
         - name: If-Match
           in: header
@@ -7109,7 +7109,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.me.assignments.submissions.submittedResources.ListDependentResources
+      operationId: education.me.assignment.submission.submittedResource_ListDependentResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7161,7 +7161,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to dependentResources for education
-      operationId: education.me.assignments.submissions.submittedResources.CreateDependentResources
+      operationId: education.me.assignment.submission.submittedResource_CreateDependentResource
       requestBody:
         description: New navigation property
         content:
@@ -7187,7 +7187,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.me.assignments.submissions.submittedResources.GetDependentResources
+      operationId: education.me.assignment.submission.submittedResource_GetDependentResource
       parameters:
         - name: $select
           in: query
@@ -7225,7 +7225,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property dependentResources in education
-      operationId: education.me.assignments.submissions.submittedResources.UpdateDependentResources
+      operationId: education.me.assignment.submission.submittedResource_UpdateDependentResource
       requestBody:
         description: New navigation property values
         content:
@@ -7249,7 +7249,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property dependentResources for education
-      operationId: education.me.assignments.submissions.submittedResources.DeleteDependentResources
+      operationId: education.me.assignment.submission.submittedResource_DeleteDependentResource
       parameters:
         - name: If-Match
           in: header
@@ -7270,7 +7270,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.submissions.submittedResources.dependentResources.GetCount-58f3
+      operationId: education.me.assignment.submission.submittedResource.dependentResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7286,7 +7286,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.submissions.submittedResources.GetCount-a574
+      operationId: education.me.assignment.submission.submittedResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7302,7 +7302,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.submissions.GetCount-39e1
+      operationId: education.me.assignment.submission_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7318,7 +7318,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.assignments.GetCount-d634
+      operationId: education.me.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7338,7 +7338,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-1.0
-      operationId: education.me.assignments.delta
+      operationId: education.me.assignment_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7408,7 +7408,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0
-      operationId: education.me.ListClasses
+      operationId: education.me_ListClass
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7462,7 +7462,7 @@ paths:
         - education.educationUser
       summary: Get classes from education
       description: Classes to which the user belongs. Nullable.
-      operationId: education.me.GetClasses
+      operationId: education.me_GetClass
       parameters:
         - name: $select
           in: query
@@ -7501,7 +7501,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.classes.GetCount-94ca
+      operationId: education.me.class_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7521,7 +7521,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-1.0
-      operationId: education.me.ListRubrics
+      operationId: education.me_ListRubric
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7577,7 +7577,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-1.0
-      operationId: education.me.CreateRubrics
+      operationId: education.me_CreateRubric
       requestBody:
         description: New navigation property
         content:
@@ -7606,7 +7606,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationrubric-get?view=graph-rest-1.0
-      operationId: education.me.GetRubrics
+      operationId: education.me_GetRubric
       parameters:
         - name: $select
           in: query
@@ -7648,7 +7648,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationrubric-update?view=graph-rest-1.0
-      operationId: education.me.UpdateRubrics
+      operationId: education.me_UpdateRubric
       requestBody:
         description: New navigation property values
         content:
@@ -7676,7 +7676,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationrubric-delete?view=graph-rest-1.0
-      operationId: education.me.DeleteRubrics
+      operationId: education.me_DeleteRubric
       parameters:
         - name: If-Match
           in: header
@@ -7697,7 +7697,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.rubrics.GetCount-346e
+      operationId: education.me.rubric_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7717,7 +7717,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-list-schools?view=graph-rest-1.0
-      operationId: education.me.ListSchools
+      operationId: education.me_ListSchool
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7771,7 +7771,7 @@ paths:
         - education.educationUser
       summary: Get schools from education
       description: Schools to which the user belongs. Nullable.
-      operationId: education.me.GetSchools
+      operationId: education.me_GetSchool
       parameters:
         - name: $select
           in: query
@@ -7810,7 +7810,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.schools.GetCount-c9bf
+      operationId: education.me.school_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7827,7 +7827,7 @@ paths:
         - education.educationUser
       summary: Get taughtClasses from education
       description: Classes for which the user is a teacher.
-      operationId: education.me.ListTaughtClasses
+      operationId: education.me_ListTaughtClass
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7881,7 +7881,7 @@ paths:
         - education.educationUser
       summary: Get taughtClasses from education
       description: Classes for which the user is a teacher.
-      operationId: education.me.GetTaughtClasses
+      operationId: education.me_GetTaughtClass
       parameters:
         - name: $select
           in: query
@@ -7920,7 +7920,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.taughtClasses.GetCount-94df
+      operationId: education.me.taughtClass_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7940,7 +7940,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0
-      operationId: education.me.GetUser
+      operationId: education.me_GetUser
       parameters:
         - name: $select
           in: query
@@ -7980,7 +7980,7 @@ paths:
         - education.educationUser
       summary: Get mailboxSettings property value
       description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.'
-      operationId: education.me.user.GetMailboxSettings
+      operationId: education.me.user_GetMailboxSetting
       parameters:
         - name: $select
           in: query
@@ -8017,7 +8017,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update property mailboxSettings value.
-      operationId: education.me.user.UpdateMailboxSettings
+      operationId: education.me.user_UpdateMailboxSetting
       requestBody:
         description: New property values
         content:
@@ -8042,7 +8042,7 @@ paths:
         - education.educationUser
       summary: Get serviceProvisioningErrors property value
       description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
-      operationId: education.me.user.ListServiceProvisioningErrors
+      operationId: education.me.user_ListServiceProvisioningError
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8094,7 +8094,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.me.user.ServiceProvisioningErrors.GetCount-b2a3
+      operationId: education.me.user.ServiceProvisioningError_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8110,7 +8110,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Get reports from education
-      operationId: education.GetReports
+      operationId: education_GetReport
       parameters:
         - name: $select
           in: query
@@ -8148,7 +8148,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Update the navigation property reports in education
-      operationId: education.UpdateReports
+      operationId: education_UpdateReport
       requestBody:
         description: New navigation property values
         content:
@@ -8172,7 +8172,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Delete navigation property reports for education
-      operationId: education.DeleteReports
+      operationId: education_DeleteReport
       parameters:
         - name: If-Match
           in: header
@@ -8197,7 +8197,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportsroot-list-readingassignmentsubmissions?view=graph-rest-1.0
-      operationId: education.reports.ListReadingAssignmentSubmissions
+      operationId: education.report_ListReadingAssignmentSubmission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8249,7 +8249,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Create new navigation property to readingAssignmentSubmissions for education
-      operationId: education.reports.CreateReadingAssignmentSubmissions
+      operationId: education.report_CreateReadingAssignmentSubmission
       requestBody:
         description: New navigation property
         content:
@@ -8275,7 +8275,7 @@ paths:
         - education.reportsRoot
       summary: Get readingAssignmentSubmissions from education
       description: Details of submitted reading assignments.
-      operationId: education.reports.GetReadingAssignmentSubmissions
+      operationId: education.report_GetReadingAssignmentSubmission
       parameters:
         - name: $select
           in: query
@@ -8313,7 +8313,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Update the navigation property readingAssignmentSubmissions in education
-      operationId: education.reports.UpdateReadingAssignmentSubmissions
+      operationId: education.report_UpdateReadingAssignmentSubmission
       requestBody:
         description: New navigation property values
         content:
@@ -8337,7 +8337,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Delete navigation property readingAssignmentSubmissions for education
-      operationId: education.reports.DeleteReadingAssignmentSubmissions
+      operationId: education.report_DeleteReadingAssignmentSubmission
       parameters:
         - name: If-Match
           in: header
@@ -8358,7 +8358,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Get the number of the resource
-      operationId: education.reports.readingAssignmentSubmissions.GetCount-536e
+      operationId: education.report.readingAssignmentSubmission_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8378,7 +8378,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportsroot-list-readingcoachpassages?view=graph-rest-1.0
-      operationId: education.reports.ListReadingCoachPassages
+      operationId: education.report_ListReadingCoachPassage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8430,7 +8430,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Create new navigation property to readingCoachPassages for education
-      operationId: education.reports.CreateReadingCoachPassages
+      operationId: education.report_CreateReadingCoachPassage
       requestBody:
         description: New navigation property
         content:
@@ -8456,7 +8456,7 @@ paths:
         - education.reportsRoot
       summary: Get readingCoachPassages from education
       description: Details of practiced Reading Coach passages.
-      operationId: education.reports.GetReadingCoachPassages
+      operationId: education.report_GetReadingCoachPassage
       parameters:
         - name: $select
           in: query
@@ -8494,7 +8494,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Update the navigation property readingCoachPassages in education
-      operationId: education.reports.UpdateReadingCoachPassages
+      operationId: education.report_UpdateReadingCoachPassage
       requestBody:
         description: New navigation property values
         content:
@@ -8518,7 +8518,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Delete navigation property readingCoachPassages for education
-      operationId: education.reports.DeleteReadingCoachPassages
+      operationId: education.report_DeleteReadingCoachPassage
       parameters:
         - name: If-Match
           in: header
@@ -8539,7 +8539,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Get the number of the resource
-      operationId: education.reports.readingCoachPassages.GetCount-ce63
+      operationId: education.report.readingCoachPassage_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8559,7 +8559,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportsroot-list-reflectcheckinresponses?view=graph-rest-1.0
-      operationId: education.reports.ListReflectCheckInResponses
+      operationId: education.report_ListReflectCheckInResponse
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8611,7 +8611,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Create new navigation property to reflectCheckInResponses for education
-      operationId: education.reports.CreateReflectCheckInResponses
+      operationId: education.report_CreateReflectCheckInResponse
       requestBody:
         description: New navigation property
         content:
@@ -8637,7 +8637,7 @@ paths:
         - education.reportsRoot
       summary: Get reflectCheckInResponses from education
       description: Details of check-in responses.
-      operationId: education.reports.GetReflectCheckInResponses
+      operationId: education.report_GetReflectCheckInResponse
       parameters:
         - name: $select
           in: query
@@ -8675,7 +8675,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Update the navigation property reflectCheckInResponses in education
-      operationId: education.reports.UpdateReflectCheckInResponses
+      operationId: education.report_UpdateReflectCheckInResponse
       requestBody:
         description: New navigation property values
         content:
@@ -8699,7 +8699,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Delete navigation property reflectCheckInResponses for education
-      operationId: education.reports.DeleteReflectCheckInResponses
+      operationId: education.report_DeleteReflectCheckInResponse
       parameters:
         - name: If-Match
           in: header
@@ -8720,7 +8720,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Get the number of the resource
-      operationId: education.reports.reflectCheckInResponses.GetCount-1316
+      operationId: education.report.reflectCheckInResponse_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8740,7 +8740,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportsroot-list-speakerassignmentsubmissions?view=graph-rest-1.0
-      operationId: education.reports.ListSpeakerAssignmentSubmissions
+      operationId: education.report_ListSpeakerAssignmentSubmission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8792,7 +8792,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Create new navigation property to speakerAssignmentSubmissions for education
-      operationId: education.reports.CreateSpeakerAssignmentSubmissions
+      operationId: education.report_CreateSpeakerAssignmentSubmission
       requestBody:
         description: New navigation property
         content:
@@ -8818,7 +8818,7 @@ paths:
         - education.reportsRoot
       summary: Get speakerAssignmentSubmissions from education
       description: Details of submitted speaker assignments.
-      operationId: education.reports.GetSpeakerAssignmentSubmissions
+      operationId: education.report_GetSpeakerAssignmentSubmission
       parameters:
         - name: $select
           in: query
@@ -8856,7 +8856,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Update the navigation property speakerAssignmentSubmissions in education
-      operationId: education.reports.UpdateSpeakerAssignmentSubmissions
+      operationId: education.report_UpdateSpeakerAssignmentSubmission
       requestBody:
         description: New navigation property values
         content:
@@ -8880,7 +8880,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Delete navigation property speakerAssignmentSubmissions for education
-      operationId: education.reports.DeleteSpeakerAssignmentSubmissions
+      operationId: education.report_DeleteSpeakerAssignmentSubmission
       parameters:
         - name: If-Match
           in: header
@@ -8901,7 +8901,7 @@ paths:
       tags:
         - education.reportsRoot
       summary: Get the number of the resource
-      operationId: education.reports.speakerAssignmentSubmissions.GetCount-e40d
+      operationId: education.report.speakerAssignmentSubmission_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8921,7 +8921,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-list?view=graph-rest-1.0
-      operationId: education.ListSchools
+      operationId: education_ListSchool
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8977,7 +8977,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-post?view=graph-rest-1.0
-      operationId: education.CreateSchools
+      operationId: education_CreateSchool
       requestBody:
         description: New navigation property
         content:
@@ -9006,7 +9006,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-get?view=graph-rest-1.0
-      operationId: education.GetSchools
+      operationId: education_GetSchool
       parameters:
         - name: $select
           in: query
@@ -9048,7 +9048,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-update?view=graph-rest-1.0
-      operationId: education.UpdateSchools
+      operationId: education_UpdateSchool
       requestBody:
         description: New navigation property values
         content:
@@ -9076,7 +9076,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-delete?view=graph-rest-1.0
-      operationId: education.DeleteSchools
+      operationId: education_DeleteSchool
       parameters:
         - name: If-Match
           in: header
@@ -9098,7 +9098,7 @@ paths:
         - education.educationSchool
       summary: Get administrativeUnit from education
       description: The underlying administrativeUnit for this school.
-      operationId: education.schools.GetAdministrativeUnit
+      operationId: education.school_GetAdministrativeUnit
       parameters:
         - name: $select
           in: query
@@ -9136,7 +9136,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Update the navigation property administrativeUnit in education
-      operationId: education.schools.UpdateAdministrativeUnit
+      operationId: education.school_UpdateAdministrativeUnit
       requestBody:
         description: New navigation property values
         content:
@@ -9165,7 +9165,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
-      operationId: education.schools.ListClasses
+      operationId: education.school_ListClass
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9222,7 +9222,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-delete-classes?view=graph-rest-1.0
-      operationId: education.schools.classes.DeleteRefEducationClass
+      operationId: education.school.class_DeleteEducationClassGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -9243,7 +9243,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get the number of the resource
-      operationId: education.schools.classes.GetCount-d3ee
+      operationId: education.school.class_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9263,7 +9263,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
-      operationId: education.schools.ListRefClasses
+      operationId: education.school_ListClassGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9299,7 +9299,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-post-classes?view=graph-rest-1.0
-      operationId: education.schools.CreateRefClasses
+      operationId: education.school_CreateClassGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -9318,7 +9318,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-delete-classes?view=graph-rest-1.0
-      operationId: education.schools.DeleteRefClasses
+      operationId: education.school_DeleteClassGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -9351,7 +9351,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
-      operationId: education.schools.ListUsers
+      operationId: education.school_ListUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9408,7 +9408,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-delete-users?view=graph-rest-1.0
-      operationId: education.schools.users.DeleteRefEducationUser
+      operationId: education.school.user_DeleteEducationUserGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -9429,7 +9429,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get the number of the resource
-      operationId: education.schools.users.GetCount-e5a6
+      operationId: education.school.user_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9449,7 +9449,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
-      operationId: education.schools.ListRefUsers
+      operationId: education.school_ListUserGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9485,7 +9485,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-post-users?view=graph-rest-1.0
-      operationId: education.schools.CreateRefUsers
+      operationId: education.school_CreateUserGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -9504,7 +9504,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-delete-users?view=graph-rest-1.0
-      operationId: education.schools.DeleteRefUsers
+      operationId: education.school_DeleteUserGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -9533,7 +9533,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Get the number of the resource
-      operationId: education.schools.GetCount-c02b
+      operationId: education.school_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9553,7 +9553,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationschool-delta?view=graph-rest-1.0
-      operationId: education.schools.delta
+      operationId: education.school_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9623,7 +9623,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-list?view=graph-rest-1.0
-      operationId: education.ListUsers
+      operationId: education_ListUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9679,7 +9679,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-post?view=graph-rest-1.0
-      operationId: education.CreateUsers
+      operationId: education_CreateUser
       requestBody:
         description: New navigation property
         content:
@@ -9708,7 +9708,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-get?view=graph-rest-1.0
-      operationId: education.GetUsers
+      operationId: education_GetUser
       parameters:
         - name: $select
           in: query
@@ -9750,7 +9750,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-update?view=graph-rest-1.0
-      operationId: education.UpdateUsers
+      operationId: education_UpdateUser
       requestBody:
         description: New navigation property values
         content:
@@ -9778,7 +9778,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-delete?view=graph-rest-1.0
-      operationId: education.DeleteUsers
+      operationId: education_DeleteUser
       parameters:
         - name: If-Match
           in: header
@@ -9803,7 +9803,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-1.0
-      operationId: education.users.ListAssignments
+      operationId: education.user_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9855,7 +9855,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to assignments for education
-      operationId: education.users.CreateAssignments
+      operationId: education.user_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -9881,7 +9881,7 @@ paths:
         - education.educationUser
       summary: Get assignments from education
       description: Assignments belonging to the user.
-      operationId: education.users.GetAssignments
+      operationId: education.user_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -9919,7 +9919,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property assignments in education
-      operationId: education.users.UpdateAssignments
+      operationId: education.user_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -9943,7 +9943,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property assignments for education
-      operationId: education.users.DeleteAssignments
+      operationId: education.user_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -9965,7 +9965,7 @@ paths:
         - education.educationUser
       summary: Get categories from education
       description: 'When set, enables users to easily find assignments of a given type. Read-only. Nullable.'
-      operationId: education.users.assignments.ListCategories
+      operationId: education.user.assignment_ListCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10017,7 +10017,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to categories for education
-      operationId: education.users.assignments.CreateCategories
+      operationId: education.user.assignment_CreateCategory
       requestBody:
         description: New navigation property
         content:
@@ -10042,7 +10042,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property categories for education
-      operationId: education.users.assignments.categories.DeleteRefEducationCategory
+      operationId: education.user.assignment.category_DeleteEducationCategoryGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -10063,7 +10063,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.categories.GetCount-0551
+      operationId: education.user.assignment.category_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10080,7 +10080,7 @@ paths:
         - education.educationUser
       summary: Get ref of categories from education
       description: 'When set, enables users to easily find assignments of a given type. Read-only. Nullable.'
-      operationId: education.users.assignments.ListRefCategories
+      operationId: education.user.assignment_ListCategoryGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10112,7 +10112,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property ref to categories for education
-      operationId: education.users.assignments.CreateRefCategories
+      operationId: education.user.assignment_CreateCategoryGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -10127,7 +10127,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property categories for education
-      operationId: education.users.assignments.DeleteRefCategories
+      operationId: education.user.assignment_DeleteCategoryGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -10160,7 +10160,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.categories.delta
+      operationId: education.user.educationUser.assignment.educationAssignment.category_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10227,7 +10227,7 @@ paths:
         - education.educationUser
       summary: Get gradingCategory from education
       description: 'When set, enables users to weight assignments differently when computing a class average grade.'
-      operationId: education.users.assignments.GetGradingCategory
+      operationId: education.user.assignment_GetGradingCategory
       parameters:
         - name: $select
           in: query
@@ -10267,7 +10267,7 @@ paths:
         - education.educationUser
       summary: Get gradingScheme from education
       description: 'When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.'
-      operationId: education.users.assignments.GetGradingScheme
+      operationId: education.user.assignment_GetGradingScheme
       parameters:
         - name: $select
           in: query
@@ -10310,7 +10310,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.activate
+      operationId: education.user.educationUser.assignment.educationAssignment_activate
       responses:
         2XX:
           description: Success
@@ -10335,7 +10335,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-deactivate?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.deactivate
+      operationId: education.user.educationUser.assignment.educationAssignment_deactivate
       responses:
         2XX:
           description: Success
@@ -10360,7 +10360,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.publish
+      operationId: education.user.educationUser.assignment.educationAssignment_publish
       responses:
         2XX:
           description: Success
@@ -10385,7 +10385,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.setUpFeedbackResourcesFolder
+      operationId: education.user.educationUser.assignment.educationAssignment_setUpFeedbackResourcesFolder
       responses:
         2XX:
           description: Success
@@ -10410,7 +10410,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.setUpResourcesFolder
+      operationId: education.user.educationUser.assignment.educationAssignment_setUpResourcesFolder
       responses:
         2XX:
           description: Success
@@ -10432,7 +10432,7 @@ paths:
         - education.educationUser
       summary: Get resources from education
       description: Learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.
-      operationId: education.users.assignments.ListResources
+      operationId: education.user.assignment_ListResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10484,7 +10484,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to resources for education
-      operationId: education.users.assignments.CreateResources
+      operationId: education.user.assignment_CreateResource
       requestBody:
         description: New navigation property
         content:
@@ -10510,7 +10510,7 @@ paths:
         - education.educationUser
       summary: Get resources from education
       description: Learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.
-      operationId: education.users.assignments.GetResources
+      operationId: education.user.assignment_GetResource
       parameters:
         - name: $select
           in: query
@@ -10548,7 +10548,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
-      operationId: education.users.assignments.UpdateResources
+      operationId: education.user.assignment_UpdateResource
       requestBody:
         description: New navigation property values
         content:
@@ -10572,7 +10572,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
-      operationId: education.users.assignments.DeleteResources
+      operationId: education.user.assignment_DeleteResource
       parameters:
         - name: If-Match
           in: header
@@ -10594,7 +10594,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of assignment resources that depend on the parent educationAssignmentResource.
-      operationId: education.users.assignments.resources.ListDependentResources
+      operationId: education.user.assignment.resource_ListDependentResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10646,7 +10646,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to dependentResources for education
-      operationId: education.users.assignments.resources.CreateDependentResources
+      operationId: education.user.assignment.resource_CreateDependentResource
       requestBody:
         description: New navigation property
         content:
@@ -10672,7 +10672,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of assignment resources that depend on the parent educationAssignmentResource.
-      operationId: education.users.assignments.resources.GetDependentResources
+      operationId: education.user.assignment.resource_GetDependentResource
       parameters:
         - name: $select
           in: query
@@ -10710,7 +10710,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property dependentResources in education
-      operationId: education.users.assignments.resources.UpdateDependentResources
+      operationId: education.user.assignment.resource_UpdateDependentResource
       requestBody:
         description: New navigation property values
         content:
@@ -10734,7 +10734,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property dependentResources for education
-      operationId: education.users.assignments.resources.DeleteDependentResources
+      operationId: education.user.assignment.resource_DeleteDependentResource
       parameters:
         - name: If-Match
           in: header
@@ -10755,7 +10755,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.resources.dependentResources.GetCount-e1ee
+      operationId: education.user.assignment.resource.dependentResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10771,7 +10771,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.resources.GetCount-69da
+      operationId: education.user.assignment.resource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10788,7 +10788,7 @@ paths:
         - education.educationUser
       summary: Get rubric from education
       description: 'When set, the grading rubric attached to this assignment.'
-      operationId: education.users.assignments.GetRubric
+      operationId: education.user.assignment_GetRubric
       parameters:
         - name: $select
           in: query
@@ -10826,7 +10826,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property rubric in education
-      operationId: education.users.assignments.UpdateRubric
+      operationId: education.user.assignment_UpdateRubric
       requestBody:
         description: New navigation property values
         content:
@@ -10850,7 +10850,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property rubric for education
-      operationId: education.users.assignments.DeleteRubric
+      operationId: education.user.assignment_DeleteRubric
       parameters:
         - name: If-Match
           in: header
@@ -10872,7 +10872,7 @@ paths:
         - education.educationUser
       summary: Get ref of rubric from education
       description: 'When set, the grading rubric attached to this assignment.'
-      operationId: education.users.assignments.GetRefRubric
+      operationId: education.user.assignment_GetRubricGraphBPreRef
       responses:
         2XX:
           description: Retrieved navigation property link
@@ -10889,7 +10889,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the ref of navigation property rubric in education
-      operationId: education.users.assignments.UpdateRefRubric
+      operationId: education.user.assignment_SetRubricGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPutBody'
       responses:
@@ -10904,7 +10904,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete ref of navigation property rubric for education
-      operationId: education.users.assignments.DeleteRefRubric
+      operationId: education.user.assignment_DeleteRubricGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -10926,7 +10926,7 @@ paths:
         - education.educationUser
       summary: Get submissions from education
       description: 'Once published, there''s a submission object for each student representing their work and grade. Read-only. Nullable.'
-      operationId: education.users.assignments.ListSubmissions
+      operationId: education.user.assignment_ListSubmission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10978,7 +10978,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submissions for education
-      operationId: education.users.assignments.CreateSubmissions
+      operationId: education.user.assignment_CreateSubmission
       requestBody:
         description: New navigation property
         content:
@@ -11004,7 +11004,7 @@ paths:
         - education.educationUser
       summary: Get submissions from education
       description: 'Once published, there''s a submission object for each student representing their work and grade. Read-only. Nullable.'
-      operationId: education.users.assignments.GetSubmissions
+      operationId: education.user.assignment_GetSubmission
       parameters:
         - name: $select
           in: query
@@ -11042,7 +11042,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submissions in education
-      operationId: education.users.assignments.UpdateSubmissions
+      operationId: education.user.assignment_UpdateSubmission
       requestBody:
         description: New navigation property values
         content:
@@ -11066,7 +11066,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submissions for education
-      operationId: education.users.assignments.DeleteSubmissions
+      operationId: education.user.assignment_DeleteSubmission
       parameters:
         - name: If-Match
           in: header
@@ -11091,7 +11091,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.excuse
+      operationId: education.user.educationUser.assignment.educationAssignment.submission.educationSubmission_excuse
       responses:
         2XX:
           description: Success
@@ -11116,7 +11116,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.reassign
+      operationId: education.user.educationUser.assignment.educationAssignment.submission.educationSubmission_reassign
       responses:
         2XX:
           description: Success
@@ -11141,7 +11141,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.return
+      operationId: education.user.educationUser.assignment.educationAssignment.submission.educationSubmission_return
       responses:
         2XX:
           description: Success
@@ -11166,7 +11166,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-setupresourcesfolder?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
+      operationId: education.user.educationUser.assignment.educationAssignment.submission.educationSubmission_setUpResourcesFolder
       responses:
         2XX:
           description: Success
@@ -11191,7 +11191,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.submit
+      operationId: education.user.educationUser.assignment.educationAssignment.submission.educationSubmission_submit
       responses:
         2XX:
           description: Success
@@ -11216,7 +11216,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.unsubmit
+      operationId: education.user.educationUser.assignment.educationAssignment.submission.educationSubmission_unsubmit
       responses:
         2XX:
           description: Success
@@ -11237,7 +11237,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      operationId: education.users.assignments.submissions.ListOutcomes
+      operationId: education.user.assignment.submission_ListOutcome
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11289,7 +11289,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to outcomes for education
-      operationId: education.users.assignments.submissions.CreateOutcomes
+      operationId: education.user.assignment.submission_CreateOutcome
       requestBody:
         description: New navigation property
         content:
@@ -11314,7 +11314,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get outcomes from education
-      operationId: education.users.assignments.submissions.GetOutcomes
+      operationId: education.user.assignment.submission_GetOutcome
       parameters:
         - name: $select
           in: query
@@ -11352,7 +11352,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property outcomes in education
-      operationId: education.users.assignments.submissions.UpdateOutcomes
+      operationId: education.user.assignment.submission_UpdateOutcome
       requestBody:
         description: New navigation property values
         content:
@@ -11376,7 +11376,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property outcomes for education
-      operationId: education.users.assignments.submissions.DeleteOutcomes
+      operationId: education.user.assignment.submission_DeleteOutcome
       parameters:
         - name: If-Match
           in: header
@@ -11397,7 +11397,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.submissions.outcomes.GetCount-c6c3
+      operationId: education.user.assignment.submission.outcome_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11413,7 +11413,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      operationId: education.users.assignments.submissions.ListResources
+      operationId: education.user.assignment.submission_ListResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11465,7 +11465,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to resources for education
-      operationId: education.users.assignments.submissions.CreateResources
+      operationId: education.user.assignment.submission_CreateResource
       requestBody:
         description: New navigation property
         content:
@@ -11490,7 +11490,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get resources from education
-      operationId: education.users.assignments.submissions.GetResources
+      operationId: education.user.assignment.submission_GetResource
       parameters:
         - name: $select
           in: query
@@ -11528,7 +11528,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property resources in education
-      operationId: education.users.assignments.submissions.UpdateResources
+      operationId: education.user.assignment.submission_UpdateResource
       requestBody:
         description: New navigation property values
         content:
@@ -11552,7 +11552,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property resources for education
-      operationId: education.users.assignments.submissions.DeleteResources
+      operationId: education.user.assignment.submission_DeleteResource
       parameters:
         - name: If-Match
           in: header
@@ -11574,7 +11574,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.users.assignments.submissions.resources.ListDependentResources
+      operationId: education.user.assignment.submission.resource_ListDependentResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11626,7 +11626,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to dependentResources for education
-      operationId: education.users.assignments.submissions.resources.CreateDependentResources
+      operationId: education.user.assignment.submission.resource_CreateDependentResource
       requestBody:
         description: New navigation property
         content:
@@ -11652,7 +11652,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.users.assignments.submissions.resources.GetDependentResources
+      operationId: education.user.assignment.submission.resource_GetDependentResource
       parameters:
         - name: $select
           in: query
@@ -11690,7 +11690,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property dependentResources in education
-      operationId: education.users.assignments.submissions.resources.UpdateDependentResources
+      operationId: education.user.assignment.submission.resource_UpdateDependentResource
       requestBody:
         description: New navigation property values
         content:
@@ -11714,7 +11714,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property dependentResources for education
-      operationId: education.users.assignments.submissions.resources.DeleteDependentResources
+      operationId: education.user.assignment.submission.resource_DeleteDependentResource
       parameters:
         - name: If-Match
           in: header
@@ -11735,7 +11735,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.submissions.resources.dependentResources.GetCount-ebf2
+      operationId: education.user.assignment.submission.resource.dependentResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11751,7 +11751,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.submissions.resources.GetCount-cb98
+      operationId: education.user.assignment.submission.resource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11767,7 +11767,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      operationId: education.users.assignments.submissions.ListSubmittedResources
+      operationId: education.user.assignment.submission_ListSubmittedResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11819,7 +11819,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to submittedResources for education
-      operationId: education.users.assignments.submissions.CreateSubmittedResources
+      operationId: education.user.assignment.submission_CreateSubmittedResource
       requestBody:
         description: New navigation property
         content:
@@ -11844,7 +11844,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get submittedResources from education
-      operationId: education.users.assignments.submissions.GetSubmittedResources
+      operationId: education.user.assignment.submission_GetSubmittedResource
       parameters:
         - name: $select
           in: query
@@ -11882,7 +11882,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property submittedResources in education
-      operationId: education.users.assignments.submissions.UpdateSubmittedResources
+      operationId: education.user.assignment.submission_UpdateSubmittedResource
       requestBody:
         description: New navigation property values
         content:
@@ -11906,7 +11906,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property submittedResources for education
-      operationId: education.users.assignments.submissions.DeleteSubmittedResources
+      operationId: education.user.assignment.submission_DeleteSubmittedResource
       parameters:
         - name: If-Match
           in: header
@@ -11928,7 +11928,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.users.assignments.submissions.submittedResources.ListDependentResources
+      operationId: education.user.assignment.submission.submittedResource_ListDependentResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11980,7 +11980,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to dependentResources for education
-      operationId: education.users.assignments.submissions.submittedResources.CreateDependentResources
+      operationId: education.user.assignment.submission.submittedResource_CreateDependentResource
       requestBody:
         description: New navigation property
         content:
@@ -12006,7 +12006,7 @@ paths:
         - education.educationUser
       summary: Get dependentResources from education
       description: A collection of submission resources that depend on the parent educationSubmissionResource.
-      operationId: education.users.assignments.submissions.submittedResources.GetDependentResources
+      operationId: education.user.assignment.submission.submittedResource_GetDependentResource
       parameters:
         - name: $select
           in: query
@@ -12044,7 +12044,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property dependentResources in education
-      operationId: education.users.assignments.submissions.submittedResources.UpdateDependentResources
+      operationId: education.user.assignment.submission.submittedResource_UpdateDependentResource
       requestBody:
         description: New navigation property values
         content:
@@ -12068,7 +12068,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property dependentResources for education
-      operationId: education.users.assignments.submissions.submittedResources.DeleteDependentResources
+      operationId: education.user.assignment.submission.submittedResource_DeleteDependentResource
       parameters:
         - name: If-Match
           in: header
@@ -12089,7 +12089,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.submissions.submittedResources.dependentResources.GetCount-ce4e
+      operationId: education.user.assignment.submission.submittedResource.dependentResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12105,7 +12105,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.submissions.submittedResources.GetCount-6158
+      operationId: education.user.assignment.submission.submittedResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12121,7 +12121,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.submissions.GetCount-fe47
+      operationId: education.user.assignment.submission_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12137,7 +12137,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.assignments.GetCount-d390
+      operationId: education.user.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12157,7 +12157,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-1.0
-      operationId: education.users.educationUser.assignments.delta
+      operationId: education.user.educationUser.assignment_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12224,7 +12224,7 @@ paths:
         - education.educationUser
       summary: Get classes from education
       description: Classes to which the user belongs. Nullable.
-      operationId: education.users.ListClasses
+      operationId: education.user_ListClass
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12278,7 +12278,7 @@ paths:
         - education.educationUser
       summary: Get classes from education
       description: Classes to which the user belongs. Nullable.
-      operationId: education.users.GetClasses
+      operationId: education.user_GetClass
       parameters:
         - name: $select
           in: query
@@ -12317,7 +12317,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.classes.GetCount-4517
+      operationId: education.user.class_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12334,7 +12334,7 @@ paths:
         - education.educationUser
       summary: Get rubrics from education
       description: 'When set, the grading rubric attached to the assignment.'
-      operationId: education.users.ListRubrics
+      operationId: education.user_ListRubric
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12386,7 +12386,7 @@ paths:
       tags:
         - education.educationUser
       summary: Create new navigation property to rubrics for education
-      operationId: education.users.CreateRubrics
+      operationId: education.user_CreateRubric
       requestBody:
         description: New navigation property
         content:
@@ -12412,7 +12412,7 @@ paths:
         - education.educationUser
       summary: Get rubrics from education
       description: 'When set, the grading rubric attached to the assignment.'
-      operationId: education.users.GetRubrics
+      operationId: education.user_GetRubric
       parameters:
         - name: $select
           in: query
@@ -12450,7 +12450,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the navigation property rubrics in education
-      operationId: education.users.UpdateRubrics
+      operationId: education.user_UpdateRubric
       requestBody:
         description: New navigation property values
         content:
@@ -12474,7 +12474,7 @@ paths:
       tags:
         - education.educationUser
       summary: Delete navigation property rubrics for education
-      operationId: education.users.DeleteRubrics
+      operationId: education.user_DeleteRubric
       parameters:
         - name: If-Match
           in: header
@@ -12495,7 +12495,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.rubrics.GetCount-7e40
+      operationId: education.user.rubric_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12512,7 +12512,7 @@ paths:
         - education.educationUser
       summary: Get schools from education
       description: Schools to which the user belongs. Nullable.
-      operationId: education.users.ListSchools
+      operationId: education.user_ListSchool
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12566,7 +12566,7 @@ paths:
         - education.educationUser
       summary: Get schools from education
       description: Schools to which the user belongs. Nullable.
-      operationId: education.users.GetSchools
+      operationId: education.user_GetSchool
       parameters:
         - name: $select
           in: query
@@ -12605,7 +12605,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.schools.GetCount-a99c
+      operationId: education.user.school_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12625,7 +12625,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-list-taughtclasses?view=graph-rest-1.0
-      operationId: education.users.ListTaughtClasses
+      operationId: education.user_ListTaughtClass
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12679,7 +12679,7 @@ paths:
         - education.educationUser
       summary: Get taughtClasses from education
       description: Classes for which the user is a teacher.
-      operationId: education.users.GetTaughtClasses
+      operationId: education.user_GetTaughtClass
       parameters:
         - name: $select
           in: query
@@ -12718,7 +12718,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.taughtClasses.GetCount-788d
+      operationId: education.user.taughtClass_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12735,7 +12735,7 @@ paths:
         - education.educationUser
       summary: Get user from education
       description: The directory user that corresponds to this user.
-      operationId: education.users.GetUser
+      operationId: education.user_GetUser
       parameters:
         - name: $select
           in: query
@@ -12775,7 +12775,7 @@ paths:
         - education.educationUser
       summary: Get mailboxSettings property value
       description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.'
-      operationId: education.users.user.GetMailboxSettings
+      operationId: education.user_GetMailboxSetting
       parameters:
         - name: $select
           in: query
@@ -12812,7 +12812,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update property mailboxSettings value.
-      operationId: education.users.user.UpdateMailboxSettings
+      operationId: education.user_UpdateMailboxSetting
       requestBody:
         description: New property values
         content:
@@ -12837,7 +12837,7 @@ paths:
         - education.educationUser
       summary: Get serviceProvisioningErrors property value
       description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
-      operationId: education.users.user.ListServiceProvisioningErrors
+      operationId: education.user_ListServiceProvisioningError
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12889,7 +12889,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.user.ServiceProvisioningErrors.GetCount-9dc6
+      operationId: education.user.ServiceProvisioningError_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12905,7 +12905,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get the number of the resource
-      operationId: education.users.GetCount-6be9
+      operationId: education.user_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12925,7 +12925,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-delta?view=graph-rest-1.0
-      operationId: education.users.delta
+      operationId: education.user_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13770,7 +13770,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.'
             assignedLicenses:
               type: array
               items:
@@ -15849,6 +15849,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -16036,6 +16037,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -16304,6 +16306,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -16662,6 +16667,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
@@ -19171,6 +19177,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               description: Represents a platform credential instance registered to a user on Mac OS.
               x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -20740,11 +20752,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               anyOf:
@@ -24228,6 +24240,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -24384,6 +24397,29 @@ components:
               type: string
               default: '#microsoft.graph.platformCredentialAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.platformCredentialAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -27981,6 +28017,18 @@ components:
             resource:
               type: string
               description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+            vapidPublicKey:
+              type: string
+              description: 'Optional. The application server''s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.'
+              nullable: true
+            webPushEncryptionP256dhPublicKey:
+              type: string
+              description: 'Optional. The subscriber''s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''p256dh''). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
+            webPushEncryptionSecret:
+              type: string
+              description: 'Optional. The subscriber''s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''auth''). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.subscription'
