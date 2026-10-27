@@ -20,7 +20,8 @@ require:
 directive:
 # Wrapper migration: the adjacent wrapper/Education_directiveMigrationMap.json
 # bridges all seven actual legacy DELETE matches in each profile to compatible
-# collection /$ref operations by exact method/path; converted operation IDs differ.
+# collection /$ref operations by exact method/path. The refreshed compatible IDs
+# now match the original selector exactly: seven survivors, no missed operations.
 # Education_cmdletConfigurations.cs suppresses only those DELETE operations in
 # v1.0 and beta, including data-off runs. Existing v1.0 collision suppressions agree;
 # GET/POST collection references and item-reference DELETE remain available.

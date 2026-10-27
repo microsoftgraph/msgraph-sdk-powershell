@@ -17,6 +17,24 @@ public sealed class EducationDirectiveMigrationTests
 {
     private sealed record SpecOperation(HttpMethod Method, string Path, string OperationId);
 
+    private static readonly SpecOperation[] OriginalSelection =
+    [
+        new(HttpMethod.Delete, "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/$ref",
+            "education.class.assignment_DeleteCategoryGraphBPreRef"),
+        new(HttpMethod.Delete, "/education/classes/{educationClass-id}/members/$ref",
+            "education.class_DeleteMemberGraphBPreRef"),
+        new(HttpMethod.Delete, "/education/classes/{educationClass-id}/teachers/$ref",
+            "education.class_DeleteTeacherGraphBPreRef"),
+        new(HttpMethod.Delete, "/education/me/assignments/{educationAssignment-id}/categories/$ref",
+            "education.me.assignment_DeleteCategoryGraphBPreRef"),
+        new(HttpMethod.Delete, "/education/schools/{educationSchool-id}/classes/$ref",
+            "education.school_DeleteClassGraphBPreRef"),
+        new(HttpMethod.Delete, "/education/schools/{educationSchool-id}/users/$ref",
+            "education.school_DeleteUserGraphBPreRef"),
+        new(HttpMethod.Delete, "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/$ref",
+            "education.user.assignment_DeleteCategoryGraphBPreRef"),
+    ];
+
     [Theory]
     [InlineData("v1.0", false)]
     [InlineData("v1.0", true)]
@@ -32,17 +50,16 @@ public sealed class EducationDirectiveMigrationTests
         var legacy = ReadOperations(Path.Combine(root, "openApiDocs", profile, "Education.yml"));
         var compatible = ReadOperations(Path.Combine(root, "openApiDocs_KiotaCompat", profile, "Education.yml"));
         var selected = legacy.Where(operation => selector.IsMatch(operation.OperationId)).ToArray();
-        Assert.Equal(7, selected.Length);
-        Assert.DoesNotContain(compatible, operation => selector.IsMatch(operation.OperationId));
+        Assert.Equal(OriginalSelection.OrderBy(operation => operation.Path), selected.OrderBy(operation => operation.Path));
+        var currentSelection = compatible.Where(operation => selector.IsMatch(operation.OperationId)).ToArray();
+        Assert.Equal(selected.Length, currentSelection.Length);
 
         using var ledger = JsonDocument.Parse(File.ReadAllText(
             Path.Combine(root, "src", "Education", "wrapper", "Education_directiveMigrationMap.json")));
         var mapping = Assert.Single(ledger.RootElement.GetProperty("mappings").EnumerateArray());
         Assert.Contains(mapping.GetProperty("sourceContains").GetString()!, source, StringComparison.Ordinal);
         var profileMap = mapping.GetProperty("profiles").GetProperty(profile);
-        Assert.Equal("Legacy", profileMap.GetProperty("operationIdSource").GetString());
         Assert.False(profileMap.GetProperty("absenceExpected").GetBoolean());
-        Assert.Empty(profileMap.GetProperty("removedLegacyOperations").EnumerateArray());
         var reviewed = profileMap.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(selected.Length, reviewed.Length);
         var covered = new HashSet<SpecOperation>();
@@ -53,14 +70,16 @@ public sealed class EducationDirectiveMigrationTests
             var method = new HttpMethod(expected.GetProperty("method").GetString()!);
             var old = Assert.Single(selected, operation =>
                 operation.Method == method
-                && operation.Path == expected.GetProperty("legacyPath").GetString()
-                && operation.OperationId == expected.GetProperty("legacyOperationId").GetString());
+                && CmdletConfigurator.NormalizePathTemplate(operation.Path)
+                    == CmdletConfigurator.NormalizePathTemplate(expected.GetProperty("path").GetString()!));
             Assert.True(covered.Add(old), $"Duplicate legacy evidence: {old}");
             var counterpart = Assert.Single(compatible, operation =>
                 operation.Method == method
                 && CmdletConfigurator.NormalizePathTemplate(operation.Path) == CmdletConfigurator.NormalizePathTemplate(old.Path));
             Assert.Equal(expected.GetProperty("path").GetString(), counterpart.Path);
             Assert.Equal(expected.GetProperty("operationId").GetString(), counterpart.OperationId);
+            Assert.Equal(old.OperationId, counterpart.OperationId);
+            Assert.Contains(counterpart, currentSelection);
             Assert.Equal(HttpMethod.Delete, counterpart.Method);
             Assert.True(CmdletConfigurator.IsSuppressed(method, counterpart.Path, config));
             Assert.True(CmdletConfigurator.IsSuppressed(method,
