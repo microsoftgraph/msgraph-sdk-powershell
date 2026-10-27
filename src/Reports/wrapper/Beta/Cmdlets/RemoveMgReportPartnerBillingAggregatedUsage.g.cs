@@ -10,12 +10,11 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Reports
 {
-    [GraphRoute("DELETE", "/auditLogs/auditActivityTypes/{auditActivityType-id}")]
-    [Cmdlet(VerbsCommon.Remove, "MgAuditLogAuditActivityType", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgAuditLogAuditActivityTypeCommand : GraphClientCmdlet
+    [GraphRoute("DELETE", "/reports/partners/billing/aggregatedUsage")]
+    [Cmdlet(VerbsCommon.Remove, "MgReportPartnerBillingAggregatedUsage", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    public class RemoveMgReportPartnerBillingAggregatedUsageCommand : GraphClientCmdlet
     {
-        [Parameter(Mandatory = true, Position = 0)]
-        public string AuditActivityTypeId { get; set; } = string.Empty;
+
 
 
         [Parameter(Mandatory = false,
@@ -27,7 +26,7 @@ namespace Microsoft.Graph.PowerShell.Reports
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(AuditActivityTypeId, "Remove"))
+            if (!ShouldProcess(null, "Remove"))
                 return;
 
         var requestAdapter = GetRequestAdapter();
@@ -36,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Reports
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.AuditLogs.AuditActivityTypes[AuditActivityTypeId].DeleteAsync(requestConfiguration =>
+                client.Reports.Partners.Billing.AggregatedUsage.DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
@@ -48,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Reports
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, AuditActivityTypeId);
+                ThrowGraphRequestFailed(ex, null);
                 return;
             }
         }

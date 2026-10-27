@@ -12,6 +12,14 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing
     public partial class Billing : global::Microsoft.Graph.PowerShell.Reports.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The aggregatedUsage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage? AggregatedUsage { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage AggregatedUsage { get; set; }
+#endif
         /// <summary>Represents metadata for the exported data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +70,7 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "aggregatedUsage", n => { AggregatedUsage = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage>(global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage.CreateFromDiscriminatorValue); } },
                 { "manifests", n => { Manifests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Manifest>(global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Manifest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Operation>(global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Operation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reconciliation", n => { Reconciliation = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BillingReconciliation>(global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BillingReconciliation.CreateFromDiscriminatorValue); } },
@@ -76,6 +85,7 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage>("aggregatedUsage", AggregatedUsage);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Manifest>("manifests", Manifests);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Operation>("operations", Operations);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BillingReconciliation>("reconciliation", Reconciliation);

@@ -12,10 +12,10 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Reports
 {
-    [GraphRoute("PATCH", "/reports/microsoftAppsFileStorageContainerUsageSummary")]
-    [Cmdlet(VerbsData.Update, "MgReportMicrosoftAppFileStorageContainerUsageSummary", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Reports.Client.Models.MicrosoftAppsFileStorageContainerUsage))]
-    public class UpdateMgReportMicrosoftAppFileStorageContainerUsageSummaryCommand : GraphClientCmdlet
+    [GraphRoute("PATCH", "/reports/partners/billing/aggregatedUsage/billed")]
+    [Cmdlet(VerbsData.Update, "MgReportPartnerBillingAggregatedUsageBilled", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BilledAggregatedUsage))]
+    public class UpdateMgReportPartnerBillingAggregatedUsageBilledCommand : GraphClientCmdlet
     {
 
 
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.PowerShell.Reports
             if (!ShouldProcess(null, "Update"))
                 return;
 
-            var body = new Microsoft.Graph.PowerShell.Reports.Client.Models.MicrosoftAppsFileStorageContainerUsage();
+            var body = new Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BilledAggregatedUsage();
 
 
 
@@ -39,10 +39,10 @@ namespace Microsoft.Graph.PowerShell.Reports
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Reports.Client.Models.MicrosoftAppsFileStorageContainerUsage? result;
+            Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BilledAggregatedUsage? result;
             try
             {
-                result = client.Reports.MicrosoftAppsFileStorageContainerUsageSummary.PatchAsync(body, requestConfiguration =>
+                result = client.Reports.Partners.Billing.AggregatedUsage.Billed.PatchAsync(body, requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.Reports
                 WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
                 try
                 {
-                    result = client.Reports.MicrosoftAppsFileStorageContainerUsageSummary.GetAsync().GetAwaiter().GetResult();
+                    result = client.Reports.Partners.Billing.AggregatedUsage.Billed.GetAsync().GetAwaiter().GetResult();
                 }
                 catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {

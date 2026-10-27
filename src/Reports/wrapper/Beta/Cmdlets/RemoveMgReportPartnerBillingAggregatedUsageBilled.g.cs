@@ -10,9 +10,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Reports
 {
-    [GraphRoute("DELETE", "/reports/azureADPremiumLicenseInsight")]
-    [Cmdlet(VerbsCommon.Remove, "MgReportAzureADPremiumLicenseInsight", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgReportAzureADPremiumLicenseInsightCommand : GraphClientCmdlet
+    [GraphRoute("DELETE", "/reports/partners/billing/aggregatedUsage/billed")]
+    [Cmdlet(VerbsCommon.Remove, "MgReportPartnerBillingAggregatedUsageBilled", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    public class RemoveMgReportPartnerBillingAggregatedUsageBilledCommand : GraphClientCmdlet
     {
 
 
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Reports
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.Reports.AzureADPremiumLicenseInsight.DeleteAsync(requestConfiguration =>
+                client.Reports.Partners.Billing.AggregatedUsage.Billed.DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))

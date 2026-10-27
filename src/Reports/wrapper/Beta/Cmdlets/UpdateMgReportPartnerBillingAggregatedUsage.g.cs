@@ -12,14 +12,16 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Reports
 {
-    [GraphRoute("PATCH", "/reports/identityAnalytics")]
-    [Cmdlet(VerbsData.Update, "MgReportIdentityAnalytic", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Reports.Client.Models.IdentityAnalyticsRoot))]
-    public class UpdateMgReportIdentityAnalyticCommand : GraphClientCmdlet
+    [GraphRoute("PATCH", "/reports/partners/billing/aggregatedUsage")]
+    [Cmdlet(VerbsData.Update, "MgReportPartnerBillingAggregatedUsage", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage))]
+    public class UpdateMgReportPartnerBillingAggregatedUsageCommand : GraphClientCmdlet
     {
 
 
 
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BilledAggregatedUsage? Billed { get; set; }
 
 
 
@@ -31,18 +33,20 @@ namespace Microsoft.Graph.PowerShell.Reports
             if (!ShouldProcess(null, "Update"))
                 return;
 
-            var body = new Microsoft.Graph.PowerShell.Reports.Client.Models.IdentityAnalyticsRoot();
+            var body = new Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage();
 
 
+    if (this.IsParameterBound(nameof(Billed)))
+        body.Billed = Billed;
 
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Reports.Client.Models.IdentityAnalyticsRoot? result;
+            Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage? result;
             try
             {
-                result = client.Reports.IdentityAnalytics.PatchAsync(body, requestConfiguration =>
+                result = client.Reports.Partners.Billing.AggregatedUsage.PatchAsync(body, requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
@@ -60,7 +64,7 @@ namespace Microsoft.Graph.PowerShell.Reports
                 WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
                 try
                 {
-                    result = client.Reports.IdentityAnalytics.GetAsync().GetAwaiter().GetResult();
+                    result = client.Reports.Partners.Billing.AggregatedUsage.GetAsync().GetAwaiter().GetResult();
                 }
                 catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
