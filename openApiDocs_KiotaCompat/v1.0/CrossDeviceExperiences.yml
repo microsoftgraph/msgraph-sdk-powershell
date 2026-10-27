@@ -12,7 +12,7 @@ paths:
         - users.userActivity
       summary: Get activities from users
       description: The user's activities across devices. Read-only. Nullable.
-      operationId: users.ListActivities
+      operationId: user_ListActivity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -64,7 +64,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to activities for users
-      operationId: users.CreateActivities
+      operationId: user_CreateActivity
       requestBody:
         description: New navigation property
         content:
@@ -90,7 +90,7 @@ paths:
         - users.userActivity
       summary: Get activities from users
       description: The user's activities across devices. Read-only. Nullable.
-      operationId: users.GetActivities
+      operationId: user_GetActivity
       parameters:
         - name: $select
           in: query
@@ -128,7 +128,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property activities in users
-      operationId: users.UpdateActivities
+      operationId: user_UpdateActivity
       requestBody:
         description: New navigation property values
         content:
@@ -152,7 +152,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property activities for users
-      operationId: users.DeleteActivities
+      operationId: user_DeleteActivity
       parameters:
         - name: If-Match
           in: header
@@ -174,7 +174,7 @@ paths:
         - users.userActivity
       summary: Get historyItems from users
       description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-      operationId: users.activities.ListHistoryItems
+      operationId: user.activity_ListHistoryItem
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -226,7 +226,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to historyItems for users
-      operationId: users.activities.CreateHistoryItems
+      operationId: user.activity_CreateHistoryItem
       requestBody:
         description: New navigation property
         content:
@@ -252,7 +252,7 @@ paths:
         - users.userActivity
       summary: Get historyItems from users
       description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-      operationId: users.activities.GetHistoryItems
+      operationId: user.activity_GetHistoryItem
       parameters:
         - name: $select
           in: query
@@ -290,7 +290,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property historyItems in users
-      operationId: users.activities.UpdateHistoryItems
+      operationId: user.activity_UpdateHistoryItem
       requestBody:
         description: New navigation property values
         content:
@@ -314,7 +314,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property historyItems for users
-      operationId: users.activities.DeleteHistoryItems
+      operationId: user.activity_DeleteHistoryItem
       parameters:
         - name: If-Match
           in: header
@@ -336,7 +336,7 @@ paths:
         - users.userActivity
       summary: Get activity from users
       description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems.GetActivity
+      operationId: user.activity.historyItem_GetActivity
       parameters:
         - name: $select
           in: query
@@ -375,7 +375,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get the number of the resource
-      operationId: users.activities.historyItems.GetCount-625e
+      operationId: user.activity.historyItem_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -391,7 +391,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get the number of the resource
-      operationId: users.activities.GetCount-39cc
+      operationId: user.activity_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -411,7 +411,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/projectrome-get-recent-activities?view=graph-rest-1.0
-      operationId: users.user.activities.recent
+      operationId: user.activity_recent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -724,6 +724,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -911,6 +912,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -1179,6 +1181,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -1537,6 +1542,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
