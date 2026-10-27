@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta
         {
         }
         /// <summary>
-        /// Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
+        /// Get a set of calendar resources added, updated, or deleted in a user&apos;s mailbox. Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta.DeltaGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
+        /// Get a set of calendar resources added, updated, or deleted in a user&apos;s mailbox. Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta.DeltaResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta.DeltaResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
+        /// Get a set of calendar resources added, updated, or deleted in a user&apos;s mailbox. Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta
             return new global::Microsoft.Graph.PowerShell.Calendar.Client.Users.Item.Calendars.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
+        /// Get a set of calendar resources added, updated, or deleted in a user&apos;s mailbox. Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 
