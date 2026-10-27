@@ -16,19 +16,17 @@ complete route groups; introducing the capability does not remove a suppression.
 
 ## Explicit reviewed multi-route groups
 
-Module-owned `*_cmdletConfigurations.cs` entries can retain several live routes under one
-public command without inventing another noun. The opt-in is an entry in the existing
-`CmdletConfigurator` configuration list:
+Module-owned `*_cmdletConfigurations.cs` entries can retain several reviewed, supported
+routes under one public command without inventing another noun. Spec or proxy presence
+alone does not establish current service support; check retirement announcements before
+curating a group. The opt-in is an entry in the existing `CmdletConfigurator` configuration
+list. This schematic example assumes `reviewedRoutes` contains exact method/path entries
+with `Primary` and `Alternate` family labels:
 
 ```csharp
-MergeRoutes(new MultiRouteGroup("beta",
-[
-    new("GET", "/bookingBusinesses", "Legacy"),
-    new("GET", "/bookingBusinesses/{bookingBusiness-id}", "Legacy"),
-    new("GET", "/solutions/bookingBusinesses", "Solutions"),
-    new("GET", "/solutions/bookingBusinesses/{bookingBusiness-id}", "Solutions"),
-], DefaultRoute: "Legacy", SelectorParameter: "Route"),
-    "Reviewed shared directive and published default-route evidence.")
+MergeRoutes(new MultiRouteGroup("beta", reviewedRoutes,
+    DefaultRoute: "Primary", SelectorParameter: "Route"),
+    "Reviewed supported routes and default-route evidence.")
 ```
 
 `MultiRoute(Method, Path, Name)` identifies an **exact source-spec method/path** and a
@@ -43,9 +41,9 @@ also accepts these records for focused engine callers and fixtures.
 Two dispatch modes are available:
 
 - With `SelectorParameter: "Route"`, the public cmdlet accepts
-  `-Route Published|Legacy|Solutions` (labels come from the group).
+  `-Route Published|Primary|Alternate` (labels come from the group).
   Omission and `Published` use the group's **explicit** `DefaultRoute`, never input order
-  or the shallowest subtree. `Legacy` and `Solutions` always select those routes. Corresponding
+  or the shallowest subtree. `Primary` and `Alternate` select their reviewed routes. Corresponding
   operations must have identical public parameter shapes. List/item selection still uses the
   existing item ID, with `List`/`Get` parameter sets.
 - Without a selector, existing mandatory path IDs discriminate route families.
@@ -68,8 +66,9 @@ reclassified as Graph failures.
 Supported opt-in shapes are entity list/item GETs, scalar `/$count` GETs, JSON
 POST/PATCH/PUT, DELETE (including collection-only DELETE), and JSON/bodyless actions.
 Plain named string queries are preserved with their declared requiredness on opted-in GET
-workers and dispatchers. This covers Bookings calendarView's required `start` and `end` on
-both list and item routes. Existing OData query options and aliases retain their ordinary
+workers and dispatchers. Historical synthetic calendarView fixtures cover required `start`
+and `end` strings on both list and item shapes; they do not establish service validity.
+Existing OData query options and aliases retain their ordinary
 bindings; continuation links retain their query state and headers. Other extra query types, functions/delta, media, and reference operations are rejected
 unless covered by the explicit reviewed extension policies below. No flag enables delta,
 parameterized functions, or arbitrary query aliases.
@@ -391,15 +390,28 @@ bypass. Generic caller `Headers` still forwards to every selected worker. Existi
 optional Published groups, homogeneous `/$value` groups, alias guards and curated
 suppression priority are unchanged.
 
-### Published Bookings defaults
+### Bookings retirement: legacy beta roots are not supported alternatives
 
-The module owner's reviewed beta evidence covers 53 pairs / 106 operations in 45 public
-groups (eight list/item groups and 37 two-operation groups, including eight scalar counts).
-Fifty operation pairs publish the legacy default; three actions publish the `/solutions`
-default: appointment `cancel`, calendarView `cancel`, and `getStaffAvailability`.
-Those three action groups must specify `DefaultRoute: "Solutions"`; the remaining groups
-use `"Legacy"`. `-Route Published` preserves this distinction while both explicit routes
-remain reachable. These are module-owned opt-ins, not a generator hard-coded route list.
+Microsoft's [Bookings breaking-change announcement](https://devblogs.microsoft.com/microsoft365dev/breaking-changes-in-microsoft-bookings-graph-apis-beta/)
+retired the `/beta/bookingBusinesses` and `/beta/bookingCurrencies` families effective
+**April 30, 2024**, replacing them with `/beta/solutions/bookingBusinesses` and
+`/beta/solutions/bookingCurrencies`. The announcement states that requests to the old
+paths after that date return an error. This retirement concerns these Bookings beta
+families; it is not evidence that unrelated cross-path routes are retired.
+
+Do not configure the retired roots as current supported alternatives or a `Published`
+default. Their continued presence in compatible specs, older proxies or command metadata
+does not make them service-valid. Earlier guidance to opt Bookings into both roots with
+a Legacy default is withdrawn. Removing the legacy URI pattern from Bookings specs and
+module output is separate module-owned work; the generic dispatcher does not authorize
+restoring it.
+
+Retained Bookings paths and `Legacy`/`Solutions` labels in regression fixtures are
+**historical synthetic generator coverage**, not current configuration recommendations.
+The historical 106-operation / 45-group / 151-file source probe and 22-operation typed
+compile demonstrate emission and compilation only. They are neither full module builds
+nor live API checks, and do not require publishing both Bookings roots. Generic multi-route
+support remains applicable to separately reviewed, non-retired route families.
 
 ### Route evidence and focused gates
 
