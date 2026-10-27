@@ -4,7 +4,7 @@
       "profiles": ["v1.0", "beta"],
       "method": "DELETE",
       "path": "/groups/{group-id}/acceptedSenders/{directoryObject-id}/$ref",
-      "operationId": "groups.acceptedSenders.DeleteRefDirectoryObject",
+      "operationId": "group.acceptedSender_DeleteDirectoryObjectGraphBPreRef",
       "disposition": "ReplaceNoun",
       "noun": "GroupAcceptedSenderDirectoryObjectByRef",
       "notes": "Full beta generation exposed an item/collection DELETE collision. The published item command includes DirectoryObject and must remain. Collection DELETE is separately removed by directive 1's reviewed legacy bridge, not as a collision workaround. Existing v1.0 derived rename agrees."
@@ -13,7 +13,7 @@
       "profiles": ["v1.0", "beta"],
       "method": "DELETE",
       "path": "/groups/{group-id}/members/{directoryObject-id}/$ref",
-      "operationId": "groups.members.DeleteRefDirectoryObject",
+      "operationId": "group.member_DeleteDirectoryObjectGraphBPreRef",
       "disposition": "ReplaceNoun",
       "noun": "GroupMemberDirectoryObjectByRef",
       "notes": "Full beta generation exposed an item/collection DELETE collision. The published item command includes DirectoryObject and must remain. Collection DELETE is separately removed by directive 1's reviewed legacy bridge, not as a collision workaround. Existing v1.0 derived rename agrees."
@@ -22,7 +22,7 @@
       "profiles": ["v1.0", "beta"],
       "method": "DELETE",
       "path": "/groups/{group-id}/owners/{directoryObject-id}/$ref",
-      "operationId": "groups.owners.DeleteRefDirectoryObject",
+      "operationId": "group.owner_DeleteDirectoryObjectGraphBPreRef",
       "disposition": "ReplaceNoun",
       "noun": "GroupOwnerDirectoryObjectByRef",
       "notes": "Full beta generation exposed an item/collection DELETE collision. The published item command includes DirectoryObject and must remain. Collection DELETE is separately removed by directive 1's reviewed legacy bridge, not as a collision workaround. Existing v1.0 derived rename agrees."
@@ -31,7 +31,7 @@
       "profiles": ["v1.0", "beta"],
       "method": "DELETE",
       "path": "/groups/{group-id}/rejectedSenders/{directoryObject-id}/$ref",
-      "operationId": "groups.rejectedSenders.DeleteRefDirectoryObject",
+      "operationId": "group.rejectedSender_DeleteDirectoryObjectGraphBPreRef",
       "disposition": "ReplaceNoun",
       "noun": "GroupRejectedSenderDirectoryObjectByRef",
       "notes": "Full beta generation exposed an item/collection DELETE collision. The published item command includes DirectoryObject and must remain. Collection DELETE is separately removed by directive 1's reviewed legacy bridge, not as a collision workaround. Existing v1.0 derived rename agrees."
@@ -40,7 +40,7 @@
       "profiles": ["v1.0", "beta"],
       "method": "POST",
       "path": "/groups/{group-id}/groupLifecyclePolicies",
-      "operationId": "groups.CreateGroupLifecyclePolicies",
+      "operationId": "group_CreateGroupLifecyclePolicy",
       "disposition": "SuppressUnpublished",
       "counterpart": {
         "method": "POST",
@@ -53,7 +53,7 @@
       "profiles": ["v1.0", "beta"],
       "method": "GET",
       "path": "/groups/{group-id}/photos/{profilePhoto-id}/$value",
-      "operationId": "groups.GetPhotosContent",
+      "operationId": "group_GetPhotosContent",
       "disposition": "SuppressUnpublished",
       "counterpart": {
         "method": "GET",
@@ -66,7 +66,7 @@
       "profiles": ["v1.0", "beta"],
       "method": "DELETE",
       "path": "/groups/{group-id}/photos/{profilePhoto-id}/$value",
-      "operationId": "groups.DeletePhotosContent",
+      "operationId": "group_DeletePhotosContent",
       "disposition": "SuppressUnpublished",
       "counterpart": {
         "method": "DELETE",
@@ -79,7 +79,7 @@
       "profiles": ["v1.0", "beta"],
       "method": "GET",
       "path": "/groups/{group-id}/photos",
-      "operationId": "groups.ListPhotos",
+      "operationId": "group_ListPhoto",
       "disposition": "DeferredCrossPathMerge",
       "counterpart": {
         "method": "GET",
@@ -96,143 +96,134 @@
       "classification": "OperationIdSuppression",
       "sourceContains": "group\\.groupLifecyclePolicy_.*$|group_(Get|Create|Update|Delete)GroupLifecyclePolicies$",
       "implementation": "CmdletConfigurator",
-      "notes": "Reviewed the complete literal selector against same-profile legacy openApiDocs IDs, then bridged each selected operation uniquely by method and normalized route to compatible IDs. The 7 v1.0 / 10 beta matches include four collection-reference DELETEs, nested lifecycle add/remove/count (+ beta renew), and beta joinedGroups delta/evaluate. Raw compatible-ID matching alone finds 0/2 and is not an absence claim. Nested lifecycle operations retain existing prefix suppression; other matches use exact suppressions. Do not suppress entire lifecycle/team/site subtrees.",
+      "notes": "Current aligned compatible IDs literally select the same complete 7 v1.0 / 10 beta operations as the actual legacy source: four collection-reference DELETEs, nested lifecycle add/remove/count (+ beta renew), and beta joinedGroups delta/evaluate. Tests independently require exact current/legacy endpoint-set equality and preserve both-side IDs and guarded final-qualification evidence. Current literal evidence needs no Legacy-only helper or path-translation opt-in. Nested lifecycle operations retain existing prefix suppression; other matches use exact suppressions. Do not suppress entire lifecycle/team/site subtrees.",
       "profiles": {
         "v1.0": {
-          "operationIdSource": "Legacy",
-          "notes": "All 7 source regex matches translate uniquely; only action namespace qualification and parameter naming are normalized. No selected legacy route is removed.",
+          "notes": "All 7 original selections survive and match the current regex literally. Exact legacy paths/IDs remain recorded; 2 historical final-operation qualification conversions are independently kind-guarded in tests. No selected legacy route is removed.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/acceptedSenders/$ref",
-              "operationId": "groups.DeleteRefAcceptedSenders",
+              "operationId": "group_DeleteAcceptedSenderGraphBPreRef",
               "legacyPath": "/groups/{group-id}/acceptedSenders/$ref",
               "legacyOperationId": "group_DeleteAcceptedSenderGraphBPreRef"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup",
-              "operationId": "groups.group.groupLifecyclePolicies.groupLifecyclePolicy.addGroup",
-              "legacyPathTranslation": "UnqualifyFinalOperation",
+              "operationId": "group.groupLifecyclePolicy_addGroup",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.addGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_addGroup"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/removeGroup",
-              "operationId": "groups.group.groupLifecyclePolicies.groupLifecyclePolicy.removeGroup",
-              "legacyPathTranslation": "UnqualifyFinalOperation",
+              "operationId": "group.groupLifecyclePolicy_removeGroup",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.removeGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_removeGroup"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/groupLifecyclePolicies/$count",
-              "operationId": "groups.groupLifecyclePolicies.GetCount-ba70",
+              "operationId": "group.groupLifecyclePolicy_GetCount",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/$count",
               "legacyOperationId": "group.groupLifecyclePolicy_GetCount"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/members/$ref",
-              "operationId": "groups.DeleteRefMembers",
+              "operationId": "group_DeleteMemberGraphBPreRef",
               "legacyPath": "/groups/{group-id}/members/$ref",
               "legacyOperationId": "group_DeleteMemberGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/owners/$ref",
-              "operationId": "groups.DeleteRefOwners",
+              "operationId": "group_DeleteOwnerGraphBPreRef",
               "legacyPath": "/groups/{group-id}/owners/$ref",
               "legacyOperationId": "group_DeleteOwnerGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/rejectedSenders/$ref",
-              "operationId": "groups.DeleteRefRejectedSenders",
+              "operationId": "group_DeleteRejectedSenderGraphBPreRef",
               "legacyPath": "/groups/{group-id}/rejectedSenders/$ref",
               "legacyOperationId": "group_DeleteRejectedSenderGraphBPreRef"
             }
           ]
         },
         "beta": {
-          "operationIdSource": "Legacy",
-          "notes": "All 10 source regex matches translate uniquely, including qualified nested lifecycle actions and joinedGroups delta/evaluation. No selected legacy route is removed.",
+          "notes": "All 10 original selections survive and match the current regex literally. Exact legacy paths/IDs remain recorded; 5 historical final-operation qualification conversions are independently kind-guarded in tests. No selected legacy route is removed.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/acceptedSenders/$ref",
-              "operationId": "groups.DeleteRefAcceptedSenders",
+              "operationId": "group_DeleteAcceptedSenderGraphBPreRef",
               "legacyPath": "/groups/{group-id}/acceptedSenders/$ref",
               "legacyOperationId": "group_DeleteAcceptedSenderGraphBPreRef"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup",
-              "operationId": "groups.group.groupLifecyclePolicies.groupLifecyclePolicy.addGroup",
-              "legacyPathTranslation": "UnqualifyFinalOperation",
+              "operationId": "group.groupLifecyclePolicy_addGroup",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.addGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_addGroup"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/removeGroup",
-              "operationId": "groups.group.groupLifecyclePolicies.groupLifecyclePolicy.removeGroup",
-              "legacyPathTranslation": "UnqualifyFinalOperation",
+              "operationId": "group.groupLifecyclePolicy_removeGroup",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.removeGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_removeGroup"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/groupLifecyclePolicies/$count",
-              "operationId": "groups.groupLifecyclePolicies.GetCount-ba70",
+              "operationId": "group.groupLifecyclePolicy_GetCount",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/$count",
               "legacyOperationId": "group.groupLifecyclePolicy_GetCount"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/renewGroup",
-              "operationId": "groups.group.groupLifecyclePolicies.renewGroup",
-              "legacyPathTranslation": "UnqualifyFinalOperation",
+              "operationId": "group.groupLifecyclePolicy_renewGroup",
               "legacyPath": "/groups/{group-id}/groupLifecyclePolicies/microsoft.graph.renewGroup",
               "legacyOperationId": "group.groupLifecyclePolicy_renewGroup"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/members/$ref",
-              "operationId": "groups.DeleteRefMembers",
+              "operationId": "group_DeleteMemberGraphBPreRef",
               "legacyPath": "/groups/{group-id}/members/$ref",
               "legacyOperationId": "group_DeleteMemberGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/owners/$ref",
-              "operationId": "groups.DeleteRefOwners",
+              "operationId": "group_DeleteOwnerGraphBPreRef",
               "legacyPath": "/groups/{group-id}/owners/$ref",
               "legacyOperationId": "group_DeleteOwnerGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/rejectedSenders/$ref",
-              "operationId": "groups.DeleteRefRejectedSenders",
+              "operationId": "group_DeleteRejectedSenderGraphBPreRef",
               "legacyPath": "/groups/{group-id}/rejectedSenders/$ref",
               "legacyOperationId": "group_DeleteRejectedSenderGraphBPreRef"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/joinedGroups/delta()",
-              "operationId": "users.user.joinedGroups.delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation",
+              "operationId": "user.joinedGroup_delta",
               "legacyPath": "/users/{user-id}/joinedGroups/microsoft.graph.delta()",
               "legacyOperationId": "user.joinedGroup_delta"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/joinedGroups/evaluateDynamicMembership",
-              "operationId": "users.user.joinedGroups.evaluateDynamicMembership",
-              "legacyPathTranslation": "UnqualifyFinalOperation",
+              "operationId": "user.joinedGroup_evaluateDynamicMembership",
               "legacyPath": "/users/{user-id}/joinedGroups/microsoft.graph.evaluateDynamicMembership",
               "legacyOperationId": "user.joinedGroup_evaluateDynamicMembership"
             }
@@ -254,7 +245,7 @@
             {
               "method": "GET",
               "path": "/groups/{group-id}/groupLifecyclePolicies",
-              "operationId": "groups.ListGroupLifecyclePolicies"
+              "operationId": "group_ListGroupLifecyclePolicy"
             }
           ]
         },
@@ -264,7 +255,7 @@
             {
               "method": "GET",
               "path": "/groups/{group-id}/groupLifecyclePolicies",
-              "operationId": "groups.ListGroupLifecyclePolicies"
+              "operationId": "group_ListGroupLifecyclePolicy"
             }
           ]
         }
@@ -284,27 +275,27 @@
             {
               "method": "GET",
               "path": "/groupLifecyclePolicies",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.ListGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_ListGroupLifecyclePolicy"
             },
             {
               "method": "POST",
               "path": "/groupLifecyclePolicies",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.CreateGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_CreateGroupLifecyclePolicy"
             },
             {
               "method": "GET",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.GetGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_GetGroupLifecyclePolicy"
             },
             {
               "method": "PATCH",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.UpdateGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_UpdateGroupLifecyclePolicy"
             },
             {
               "method": "DELETE",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.DeleteGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_DeleteGroupLifecyclePolicy"
             }
           ]
         },
@@ -314,27 +305,27 @@
             {
               "method": "GET",
               "path": "/groupLifecyclePolicies",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.ListGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_ListGroupLifecyclePolicy"
             },
             {
               "method": "POST",
               "path": "/groupLifecyclePolicies",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.CreateGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_CreateGroupLifecyclePolicy"
             },
             {
               "method": "GET",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.GetGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_GetGroupLifecyclePolicy"
             },
             {
               "method": "PATCH",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.UpdateGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_UpdateGroupLifecyclePolicy"
             },
             {
               "method": "DELETE",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.DeleteGroupLifecyclePolicy"
+              "operationId": "groupLifecyclePolicy_DeleteGroupLifecyclePolicy"
             }
           ]
         }
@@ -354,7 +345,7 @@
             {
               "method": "POST",
               "path": "/groups/validateProperties",
-              "operationId": "groups.validateProperties"
+              "operationId": "group_validateProperty"
             }
           ]
         },
@@ -364,7 +355,7 @@
             {
               "method": "POST",
               "path": "/groups/validateProperties",
-              "operationId": "groups.validateProperties"
+              "operationId": "group_validateProperty"
             }
           ]
         }
@@ -389,7 +380,7 @@
             {
               "method": "POST",
               "path": "/groups/evaluateDynamicMembership",
-              "operationId": "groups.evaluateDynamicMembership"
+              "operationId": "group_evaluateDynamicMembership"
             }
           ]
         }
@@ -409,7 +400,7 @@
             {
               "method": "POST",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/removeGroup",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.removeGroup"
+              "operationId": "groupLifecyclePolicy_removeGroup"
             }
           ]
         },
@@ -419,7 +410,7 @@
             {
               "method": "POST",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/removeGroup",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.removeGroup"
+              "operationId": "groupLifecyclePolicy_removeGroup"
             }
           ]
         }
@@ -439,7 +430,7 @@
             {
               "method": "POST",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.addGroup"
+              "operationId": "groupLifecyclePolicy_addGroup"
             }
           ]
         },
@@ -449,7 +440,7 @@
             {
               "method": "POST",
               "path": "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup",
-              "operationId": "groupLifecyclePolicies.groupLifecyclePolicy.addGroup"
+              "operationId": "groupLifecyclePolicy_addGroup"
             }
           ]
         }
@@ -474,7 +465,7 @@
             {
               "method": "POST",
               "path": "/groups/{group-id}/groupLifecyclePolicies/renewGroup",
-              "operationId": "groups.group.groupLifecyclePolicies.renewGroup"
+              "operationId": "group.groupLifecyclePolicy_renewGroup"
             }
           ]
         }
@@ -499,7 +490,7 @@
             {
               "method": "POST",
               "path": "/groupLifecyclePolicies/renewGroup",
-              "operationId": "groupLifecyclePolicies.renewGroup"
+              "operationId": "groupLifecyclePolicy_renewGroup"
             }
           ]
         }
@@ -659,7 +650,7 @@
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/photo",
-              "operationId": "groups.UpdatePhoto"
+              "operationId": "group_UpdatePhoto"
             }
           ]
         },
@@ -669,7 +660,7 @@
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/photo",
-              "operationId": "groups.UpdatePhoto"
+              "operationId": "group_UpdatePhoto"
             }
           ]
         }

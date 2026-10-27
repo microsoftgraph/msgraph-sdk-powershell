@@ -22,10 +22,11 @@ directive:
 # Keep every AutoRest directive active until the service-module pipeline is retired.
 # There are no deferred parameter/schema groups here. Profile-local readmes and readme.graph.md
 # are outside this audit; existing unrelated curated/derived behavior is retained.
-# Group 1: source selectors bridge 7 v1.0 and 10 beta legacy operations to exact compatible
-# method/path/new-ID evidence. Four collection-reference DELETEs and beta joinedGroups calls
+# Group 1: aligned compatible IDs now match the complete original 7 v1.0 / 10 beta
+# source selections literally; the ledger/tests retain exact legacy and qualified-path proof.
+# Four collection-reference DELETEs and beta joinedGroups calls
 # use exact suppressions; existing nested lifecycle suppression covers add/remove/count/renew.
-# Raw compatible-ID regex matches (0/2) alone do not establish source-selector absence.
+# No legacy-only inventory support or removed-operation claims are needed.
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from  group_DeleteAcceptedSenderGraphBPreRef
   - remove-path-by-operation: group\.groupLifecyclePolicy_.*$|group_(Get|Create|Update|Delete)GroupLifecyclePolicies$|group\.team.*$|user\.joinedGroup.*$|group\.site\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|.*\.calendar\.event\..*$|.*\.event\..*$|^group_DeleteAcceptedSenderGraphBPreRef$|^group_DeleteMemberGraphBPreRef$|^group_DeleteOwnerGraphBPreRef$|^group_DeleteOwnerGraphBPreRef$|^group_DeleteRejectedSenderGraphBPreRef$
 # Group 2: existing curated GET /groups/{id}/groupLifecyclePolicies rename supplies ByGroup.

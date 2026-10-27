@@ -50,6 +50,8 @@ public sealed class GroupsDirectiveMigrationTests
         var candidates = document.Paths.SelectMany(path => path.Value.Operations!
             .Where(operation => Regex.IsMatch(operation.Value.OperationId!, pattern))
             .Select(operation => $"{operation.Key.Method} {path.Key}")).ToHashSet(StringComparer.Ordinal);
+        Assert.Equal(profile == "v1.0" ? 7 : 10, candidates.Count);
+        Assert.False(mappings[0].GetProperty("profiles").GetProperty(profile).TryGetProperty("operationIdSource", out _));
         var legacyDocument = profile == "v1.0" ? LegacyV1Spec.Value : LegacyBetaSpec.Value;
         var selectedLegacy = legacyDocument.Paths.SelectMany(path => path.Value.Operations!
             .Where(operation => Regex.IsMatch(operation.Value.OperationId!, pattern))
@@ -76,16 +78,14 @@ public sealed class GroupsDirectiveMigrationTests
                     Assert.Equal(kind, Assert.IsType<JsonNodeExtension>(extension).Node?.ToString().Trim('"'));
                 }
             }
-            candidates.Add($"{legacy.Method.Method} {match.Key}");
+            Assert.Contains($"{legacy.Method.Method} {match.Key}", candidates);
+            Assert.Equal(legacy.Operation.OperationId, match.Value.Operations![legacy.Method].OperationId);
             var evidence = Assert.Single(mappings[0].GetProperty("profiles").GetProperty(profile).GetProperty("operations")
                 .EnumerateArray(), operation => operation.GetProperty("method").GetString() == legacy.Method.Method
                     && operation.GetProperty("path").GetString() == match.Key);
             Assert.Equal(legacy.Path, evidence.GetProperty("legacyPath").GetString());
             Assert.Equal(legacy.Operation.OperationId, evidence.GetProperty("legacyOperationId").GetString());
-            if (CmdletConfigurator.NormalizePathTemplate(match.Key) != CmdletConfigurator.NormalizePathTemplate(legacy.Path))
-                Assert.Equal("UnqualifyFinalOperation", evidence.GetProperty("legacyPathTranslation").GetString());
-            else
-                Assert.False(evidence.TryGetProperty("legacyPathTranslation", out _));
+            Assert.False(evidence.TryGetProperty("legacyPathTranslation", out _));
         }
         Assert.Equal(profile == "v1.0" ? 2 : 5, qualifiedBridges);
         var reviewed = mappings[0].GetProperty("profiles").GetProperty(profile).GetProperty("operations")
