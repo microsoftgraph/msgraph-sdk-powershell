@@ -23,6 +23,9 @@ directive:
 # ActivityStatistics IDs; those operations remain available. No v1.0 selector
 # matches exist. People_directiveMigrationMap.json records the complete old/new
 # operation evidence; PeopleDirectiveMigrationTests pins the affected neighbors.
+# Refreshed powershell-v3 compatible IDs now align with the legacy source: the
+# literal selector matches exactly every original survivor (v1.0 zero, beta three).
+# The ledger uses supported literal evidence, not the unmerged Legacy helper.
 # Keep all original shared directives active until the AutoRest pipeline retires.
   - remove-path-by-operation: ^user_(Get|Create|Update|Delete)Analytic$|^user.analytic_(Create|Update|Delete)ActivityStatistic$|^user_.*Insight$|^user.insight_(Create|Update|Delete)(Shared|Trending|Used)$
 # Modify generated .cs cmdlets.

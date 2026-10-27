@@ -23,34 +23,48 @@ public sealed class PeopleDirectiveMigrationTests
     [Theory]
     [InlineData("v1.0", 0)]
     [InlineData("beta", 3)]
-    public void OriginalSelectorHasCompleteExactUniqueLegacyBridges(string profile, int count)
+    public void CurrentLiteralSelectorEqualsEveryOriginalLegacySelectedSurvivor(string profile, int count)
     {
         var source = File.ReadAllText(Path.Combine(RepoRoot, "src", "People", "People.md"));
-        var selector = Regex.Match(source, @"(?m)^\s+- remove-path-by-operation: (.+)\r?$").Groups[1].Value;
+        var selector = Regex.Match(source, @"(?m)^\s+- remove-path-by-operation: ([^\r\n]+)\r?$").Groups[1].Value;
         Assert.NotEmpty(selector);
         var legacy = ReadOperations("openApiDocs", profile);
         var compatible = ReadOperations("openApiDocs_KiotaCompat", profile);
         var selected = legacy.Where(op => Regex.IsMatch(op.Id, selector)).ToArray();
+        var literal = compatible.Where(op => Regex.IsMatch(op.Id, selector)).ToArray();
         Assert.Equal(count, selected.Length);
+        Assert.Equal(count, literal.Length);
         using var ledger = ReadLedger();
-        var evidence = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles")
-            .GetProperty(profile).GetProperty("operations").EnumerateArray().ToArray();
+        var profileMapping = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles")
+            .GetProperty(profile);
+        Assert.False(profileMapping.TryGetProperty("operationIdSource", out _));
+        var evidence = profileMapping.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(count, evidence.Length);
+        var lineage = ledger.RootElement.GetProperty("audit").GetProperty("legacySuppressionLineage")
+            .EnumerateArray().ToArray();
 
         foreach (var old in selected)
         {
             var current = Assert.Single(compatible, op => op.Method == old.Method && op.Path == old.Path);
+            Assert.Contains(current, literal);
             var bridge = Assert.Single(evidence, op =>
                 op.GetProperty("method").GetString() == old.Method &&
-                op.GetProperty("legacyPath").GetString() == old.Path &&
-                op.GetProperty("legacyOperationId").GetString() == old.Id);
+                op.GetProperty("path").GetString() == old.Path);
             Assert.Equal(current.Path, bridge.GetProperty("path").GetString());
             Assert.Equal(current.Id, bridge.GetProperty("operationId").GetString());
-            Assert.NotEqual(old.Id, current.Id);
+            Assert.Equal(old.Id, current.Id);
+            Assert.False(bridge.TryGetProperty("legacyPath", out _));
+            Assert.False(bridge.TryGetProperty("legacyOperationId", out _));
+            var original = Assert.Single(lineage, op =>
+                op.GetProperty("method").GetString() == old.Method &&
+                op.GetProperty("path").GetString() == old.Path);
+            Assert.Equal(old.Id, original.GetProperty("operationId").GetString());
+            Assert.Equal(current.Id, original.GetProperty("compatibleOperationId").GetString());
             Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(current.Method), current.Path, Config(profile)));
         }
 
-        Assert.DoesNotContain(compatible, op => Regex.IsMatch(op.Id, selector));
+        Assert.All(literal, current =>
+            Assert.Single(selected, old => old.Method == current.Method && old.Path == current.Path));
         Assert.Equal(count, compatible.Count(op =>
             CmdletConfigurator.IsSuppressed(new HttpMethod(op.Method), op.Path, Config(profile))));
     }
@@ -68,7 +82,13 @@ public sealed class PeopleDirectiveMigrationTests
         var old = Assert.Single(ReadOperations("openApiDocs", "beta"),
             op => op.Method == method && op.Path == path);
         Assert.StartsWith("user.analytic_", old.Id);
-        Assert.StartsWith("users.analytics.", current.Id);
+        Assert.Equal(old.Id, current.Id);
+        using var ledger = ReadLedger();
+        var evidence = ledger.RootElement.GetProperty("mappings")[1].GetProperty("profiles")
+            .GetProperty("beta").GetProperty("operations").EnumerateArray().ToArray();
+        var reviewed = Assert.Single(evidence, op =>
+            op.GetProperty("method").GetString() == method && op.GetProperty("path").GetString() == path);
+        Assert.Equal(current.Id, reviewed.GetProperty("operationId").GetString());
         foreach (var useCollisionData in new[] { false, true })
         {
             var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
