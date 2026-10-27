@@ -9,11 +9,21 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CloudPcPoolCapabilityConfiguration : IAdditionalDataHolder, IParsable
+    public partial class ChatMention : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Character position of the mention within the message content.</summary>
+        public int? Index { get; set; }
+        /// <summary>Identifier of the mentioned user or application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Mentioned { get; set; }
+#nullable restore
+#else
+        public string Mentioned { get; set; }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,22 +32,24 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
 #else
         public string OdataType { get; set; }
 #endif
+        /// <summary>Type of the mentioned entity. The possible values are: user, application, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatMentionType? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Education.Client.Models.CloudPcPoolCapabilityConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatMention"/> and sets the default values.
         /// </summary>
-        public CloudPcPoolCapabilityConfiguration()
+        public ChatMention()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Education.Client.Models.CloudPcPoolCapabilityConfiguration"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatMention"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Microsoft.Graph.PowerShell.Education.Client.Models.CloudPcPoolCapabilityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatMention CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.PowerShell.Education.Client.Models.CloudPcPoolCapabilityConfiguration();
+            return new global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatMention();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +59,10 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "index", n => { Index = n.GetIntValue(); } },
+                { "mentioned", n => { Mentioned = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatMentionType>(); } },
             };
         }
         /// <summary>
@@ -57,7 +72,10 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("index", Index);
+            writer.WriteStringValue("mentioned", Mentioned);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Education.Client.Models.ChatMentionType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

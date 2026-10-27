@@ -23,9 +23,22 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.bucket" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.Bucket(),
+                "#microsoft.graph.categoryDefinition" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.CategoryDefinition(),
+                "#microsoft.graph.checklistItemV4" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.ChecklistItemV4(),
+                "#microsoft.graph.contentLink" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.ContentLink(),
+                "#microsoft.graph.customChoiceOption" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.CustomChoiceOption(),
+                "#microsoft.graph.customFieldDefinition" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.CustomFieldDefinition(),
+                "#microsoft.graph.customFieldValue" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.CustomFieldValue(),
+                "#microsoft.graph.dependency" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.Dependency(),
+                "#microsoft.graph.goal" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.Goal(),
+                "#microsoft.graph.historyItem" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.HistoryItem(),
+                "#microsoft.graph.plan" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.Plan(),
+                "#microsoft.graph.planContextLink" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlanContextLink(),
                 "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerAssignedToTaskBoardTaskFormat(),
                 "#microsoft.graph.plannerBucket" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerBucket(),
                 "#microsoft.graph.plannerBucketTaskBoardTaskFormat" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerBucketTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerChatMessage" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerChatMessage(),
                 "#microsoft.graph.plannerGoal" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerGoal(),
                 "#microsoft.graph.plannerHistoryItem" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerHistoryItem(),
                 "#microsoft.graph.plannerPlan" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerPlan(),
@@ -34,6 +47,8 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
                 "#microsoft.graph.plannerTask" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerTask(),
                 "#microsoft.graph.plannerTaskDetails" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerTaskDetails(),
                 "#microsoft.graph.plannerUser" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerUser(),
+                "#microsoft.graph.task" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.TaskObject(),
+                "#microsoft.graph.userAssignment" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.UserAssignment(),
                 _ => new global::Microsoft.Graph.PowerShell.Education.Client.Models.PlannerDelta(),
             };
         }
