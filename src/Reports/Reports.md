@@ -29,9 +29,11 @@ directive:
 # Remove invalid paths.
 # Wrapper migration: exact surviving method/path operations are suppressed in
 # Reports_cmdletConfigurations.cs. Reports_directiveMigrationMap.json records the
-# complete same-profile legacy-ID match set and compatible-ID translations,
-# including explicitly pruned beta routes. New routes with no source match are
-# not inferred from a broad root-prefix match. Keep all AutoRest directives active.
+# complete original legacy match set (beta: 66 survivors and 18 pruned routes).
+# After #3861 aligned IDs, the unchanged regex literally also selects 17 additional
+# beta resource mutations; each is separately justified in sourceReview. The
+# baseline inventory validates every current match (v1.0: 34; beta: 83).
+# Use exact entries, not broad root prefixes. Keep all AutoRest directives active.
   - remove-path-by-operation: auditLog\.auditLogRoot.*|report.reportRoot.*|(auditLog|report)_(Create|Delete|Update).*
 # Remove cmdlets
 # Wrapper migration: reviewed absence in both compatible and legacy Reports specs.

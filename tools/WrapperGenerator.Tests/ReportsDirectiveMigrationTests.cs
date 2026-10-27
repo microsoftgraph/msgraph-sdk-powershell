@@ -31,24 +31,45 @@ public sealed class ReportsDirectiveMigrationTests
     };
 
     [Theory]
-    [InlineData("v1.0", false, 34, 0)]
-    [InlineData("v1.0", true, 34, 0)]
-    [InlineData("beta", false, 66, 18)]
-    [InlineData("beta", true, 66, 18)]
+    [InlineData("v1.0", false, 34, 0, 0)]
+    [InlineData("v1.0", true, 34, 0, 0)]
+    [InlineData("beta", false, 66, 18, 17)]
+    [InlineData("beta", true, 66, 18, 17)]
     public void SuppressionAccountsForEveryActualLegacyMatch(
-        string profile, bool useCollisionData, int survivorCount, int removedCount)
+        string profile, bool useCollisionData, int survivorCount, int removedCount, int additionalCount)
     {
         var current = Specs[profile].Value;
         var legacy = ReadSpec("openApiDocs", profile);
         var mapping = Mapping(2).GetProperty("profiles").GetProperty(profile);
-        Assert.Equal("Legacy", mapping.GetProperty("operationIdSource").GetString());
+        Assert.False(mapping.TryGetProperty("operationIdSource", out _));
         Assert.False(mapping.GetProperty("absenceExpected").GetBoolean());
         var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
         var accounted = new HashSet<string>(StringComparer.Ordinal);
-        var survivors = mapping.GetProperty("operations").EnumerateArray().ToArray();
-        var removed = mapping.GetProperty("removedLegacyOperations").EnumerateArray().ToArray();
+        var sourceReview = mapping.GetProperty("sourceReview");
+        var survivors = sourceReview.GetProperty("survivingLegacyOperations").EnumerateArray().ToArray();
+        var removed = sourceReview.GetProperty("removedLegacyOperations").EnumerateArray().ToArray();
+        var additional = sourceReview.GetProperty("additionalCurrentOperations").EnumerateArray().ToArray();
+        var candidates = mapping.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(survivorCount, survivors.Length);
         Assert.Equal(removedCount, removed.Length);
+        Assert.Equal(additionalCount, additional.Length);
+        Assert.Equal(survivorCount + removedCount, sourceReview.GetProperty("legacyMatchCount").GetInt32());
+        Assert.Equal(survivorCount + additionalCount, candidates.Length);
+        var currentKeys = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var entry in candidates)
+        {
+            var method = new HttpMethod(Text(entry, "method"));
+            var path = Text(entry, "path");
+            var operationId = Text(entry, "operationId");
+            Assert.Equal(operationId, current.Paths[path].Operations![method].OperationId);
+            Assert.Matches(LegacySuppression, operationId);
+            Assert.True(currentKeys.Add($"{method} {path}"));
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config));
+        }
+        var literalMatches = current.Paths.SelectMany(path => path.Value.Operations!
+            .Where(operation => Regex.IsMatch(operation.Value.OperationId!, LegacySuppression))
+            .Select(operation => $"{operation.Key} {path.Key}"));
+        Assert.True(currentKeys.SetEquals(literalMatches), "The current ledger must cover exactly the unchanged literal regex.");
 
         foreach (var entry in survivors)
         {
@@ -61,6 +82,7 @@ public sealed class ReportsDirectiveMigrationTests
             Assert.Matches(LegacySuppression, legacyId);
             Assert.Equal(CmdletConfigurator.NormalizePathTemplate(legacyPath), CmdletConfigurator.NormalizePathTemplate(path));
             Assert.True(accounted.Add($"{method} {legacyPath} {legacyId}"));
+            Assert.Contains($"{method} {path}", currentKeys);
             Assert.True(CmdletConfigurator.IsSuppressed(method, path, config), $"{profile}: {method} {path}");
         }
 
@@ -82,6 +104,57 @@ public sealed class ReportsDirectiveMigrationTests
             .Where(operation => Regex.IsMatch(operation.Value.OperationId!, LegacySuppression))
             .Select(operation => $"{operation.Key} {path.Key} {operation.Value.OperationId}"));
         Assert.True(accounted.SetEquals(expected), "The ledger must account for the complete source regex set.");
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void AdditionalBetaMatchesAreExactlyReviewedResourceMutationsNotSuccessorsOrOverloads(bool useCollisionData)
+    {
+        var spec = Specs["beta"].Value;
+        var legacy = ReadSpec("openApiDocs", "beta");
+        var review = Mapping(2).GetProperty("profiles").GetProperty("beta").GetProperty("sourceReview");
+        var additions = review.GetProperty("additionalCurrentOperations").EnumerateArray().ToArray();
+        var expected = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "POST /auditLogs/auditActivityTypes",
+            "PATCH /auditLogs/auditActivityTypes/{auditActivityType-id}",
+            "DELETE /auditLogs/auditActivityTypes/{auditActivityType-id}",
+            "POST /auditLogs/signInEventsAppSummary",
+            "PATCH /auditLogs/signInEventsAppSummary/{signInEventsAppActivity-appId}",
+            "DELETE /auditLogs/signInEventsAppSummary/{signInEventsAppActivity-appId}",
+            "POST /auditLogs/signInEventsSummary",
+            "PATCH /auditLogs/signInEventsSummary/{signInEventsActivity-id}",
+            "DELETE /auditLogs/signInEventsSummary/{signInEventsActivity-id}",
+            "PATCH /reports/azureADPremiumLicenseInsight",
+            "DELETE /reports/azureADPremiumLicenseInsight",
+            "PATCH /reports/correlations/{identityCorrelation-id}",
+            "DELETE /reports/correlations/{identityCorrelation-id}",
+            "PATCH /reports/identityAnalytics",
+            "DELETE /reports/identityAnalytics",
+            "PATCH /reports/microsoftAppsFileStorageContainerUsageSummary",
+            "DELETE /reports/microsoftAppsFileStorageContainerUsageSummary",
+        };
+        Assert.Equal(17, additions.Length);
+        Assert.True(expected.SetEquals(additions.Select(entry => $"{Text(entry, "method")} {Text(entry, "path")}")));
+        var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+        foreach (var entry in additions)
+        {
+            var method = new HttpMethod(Text(entry, "method"));
+            var path = Text(entry, "path");
+            Assert.DoesNotContain("(", path, StringComparison.Ordinal);
+            Assert.DoesNotContain(legacy.Paths, candidate =>
+                CmdletConfigurator.NormalizePathTemplate(candidate.Key) == CmdletConfigurator.NormalizePathTemplate(path)
+                && candidate.Value.Operations!.ContainsKey(method));
+            var operation = spec.Paths[path].Operations![method];
+            var kind = Assert.IsType<JsonNodeExtension>(operation.Extensions!["x-ms-docs-operation-type"]);
+            Assert.Equal("operation", kind.Node!.ToString().Trim('"'));
+            Assert.False(string.IsNullOrWhiteSpace(Text(entry, "previousCompatibleOperationId")));
+            Assert.Contains("Not an action/function, argument overload, or inferred replacement", Text(entry, "notes"), StringComparison.Ordinal);
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config));
+            Assert.True(spec.Paths[path].Operations!.ContainsKey(HttpMethod.Get));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config));
+        }
     }
 
     [Theory]
@@ -111,9 +184,13 @@ public sealed class ReportsDirectiveMigrationTests
             [
                 .. neighbors,
                 (HttpMethod.Post, "/deviceManagement/reports/getCertificatesReport"),
-                (HttpMethod.Post, "/auditLogs/auditActivityTypes"),
-                (HttpMethod.Patch, "/reports/azureADPremiumLicenseInsight"),
-                (HttpMethod.Delete, "/reports/correlations/{identityCorrelation-id}"),
+                (HttpMethod.Get, "/auditLogs/auditActivityTypes"),
+                (HttpMethod.Get, "/auditLogs/signInEventsAppSummary"),
+                (HttpMethod.Get, "/auditLogs/signInEventsSummary"),
+                (HttpMethod.Get, "/reports/azureADPremiumLicenseInsight"),
+                (HttpMethod.Get, "/reports/correlations/{identityCorrelation-id}"),
+                (HttpMethod.Get, "/reports/identityAnalytics"),
+                (HttpMethod.Get, "/reports/microsoftAppsFileStorageContainerUsageSummary"),
                 (HttpMethod.Get, "/reports/applicationSignInDetailedSummary"),
                 (HttpMethod.Get, "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}"),
                 (HttpMethod.Get, "/reports/applicationSignInDetailedSummary/$count"),
@@ -201,18 +278,18 @@ public sealed class ReportsDirectiveMigrationTests
 
     private static IEnumerable<FunctionCase> FunctionCases(string profile)
     {
-        yield return new("/reports/deviceConfigurationDeviceActivity()", "reports.deviceConfigurationDeviceActivity", "ReportDeviceConfigurationDeviceActivity");
-        yield return new("/reports/deviceConfigurationUserActivity()", "reports.deviceConfigurationUserActivity", "ReportDeviceConfigurationUserActivity");
-        yield return new("/reports/managedDeviceEnrollmentTopFailures()", "reports.managedDeviceEnrollmentTopFailures-9ce7", "ReportManagedDeviceEnrollmentTopFailure");
-        yield return new("/reports/managedDeviceEnrollmentTopFailures(period='{period}')", "reports.managedDeviceEnrollmentTopFailures-2157", "ReportManagedDeviceEnrollmentTopFailureWithPeriod");
-        yield return new("/reports/managedDeviceEnrollmentFailureDetails()", "reports.managedDeviceEnrollmentFailureDetails-8191", "ReportManagedDeviceEnrollmentFailureDetail");
-        yield return new("/reports/managedDeviceEnrollmentFailureDetails" + FailureArguments, "reports.managedDeviceEnrollmentFailureDetails-aa46", "ReportManagedDeviceEnrollmentFailureDetailWithSkipWithTopWithFilterWithSkipToken");
+        yield return new("/reports/deviceConfigurationDeviceActivity()", "report_deviceConfigurationDeviceActivity", "ReportDeviceConfigurationDeviceActivity");
+        yield return new("/reports/deviceConfigurationUserActivity()", "report_deviceConfigurationUserActivity", "ReportDeviceConfigurationUserActivity");
+        yield return new("/reports/managedDeviceEnrollmentTopFailures()", "report_managedDeviceEnrollmentTopFailure", "ReportManagedDeviceEnrollmentTopFailure");
+        yield return new("/reports/managedDeviceEnrollmentTopFailures(period='{period}')", "report_managedDeviceEnrollmentTopFailure", "ReportManagedDeviceEnrollmentTopFailureWithPeriod");
+        yield return new("/reports/managedDeviceEnrollmentFailureDetails()", "report_managedDeviceEnrollmentFailureDetail", "ReportManagedDeviceEnrollmentFailureDetail");
+        yield return new("/reports/managedDeviceEnrollmentFailureDetails" + FailureArguments, "report_managedDeviceEnrollmentFailureDetail", "ReportManagedDeviceEnrollmentFailureDetailWithSkipWithTopWithFilterWithSkipToken");
         if (profile != "beta")
             yield break;
-        yield return new("/reports/managedDeviceEnrollmentAbandonmentDetails" + FailureArguments, "reports.managedDeviceEnrollmentAbandonmentDetails", "ReportManagedDeviceEnrollmentAbandonmentDetail");
-        yield return new("/reports/managedDeviceEnrollmentAbandonmentSummary" + FailureArguments, "reports.managedDeviceEnrollmentAbandonmentSummary", "ReportManagedDeviceEnrollmentAbandonmentSummary");
-        yield return new("/reports/managedDeviceEnrollmentFailureTrends()", "reports.managedDeviceEnrollmentFailureTrends", "ReportManagedDeviceEnrollmentFailureTrend");
-        yield return new("/reports/getAzureADApplicationSignInSummary(period='{period}')", "reports.getAzureADApplicationSignInSummary", "ReportAzureAdApplicationSignInSummary");
+        yield return new("/reports/managedDeviceEnrollmentAbandonmentDetails" + FailureArguments, "report_managedDeviceEnrollmentAbandonmentDetail", "ReportManagedDeviceEnrollmentAbandonmentDetail");
+        yield return new("/reports/managedDeviceEnrollmentAbandonmentSummary" + FailureArguments, "report_managedDeviceEnrollmentAbandonmentSummary", "ReportManagedDeviceEnrollmentAbandonmentSummary");
+        yield return new("/reports/managedDeviceEnrollmentFailureTrends()", "report_managedDeviceEnrollmentFailureTrend", "ReportManagedDeviceEnrollmentFailureTrend");
+        yield return new("/reports/getAzureADApplicationSignInSummary(period='{period}')", "report_getAzureADApplicationSignInSummary", "ReportAzureAdApplicationSignInSummary");
     }
 
     private static JsonElement Mapping(int index)

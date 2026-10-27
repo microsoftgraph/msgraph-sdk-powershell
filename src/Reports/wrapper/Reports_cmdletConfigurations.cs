@@ -5,7 +5,7 @@ namespace WrapperGenerator;
 
 public static partial class CmdletConfigurator
 {
-    private const string ReportsSuppressionReason = "Reports.md: remove-path-by-operation; reviewed legacy-ID bridge";
+    private const string ReportsSuppressionReason = "Reports.md: remove-path-by-operation; reviewed literal-compatible selector";
 
     private static readonly List<Entry> ReportsCmdletConfigurations =
     [
@@ -75,6 +75,26 @@ public static partial class CmdletConfigurator
         new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/reports/sla", PathMatch.Exact, null, ReportsSuppressionReason),
         new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/reports/userinsights", PathMatch.Exact, null, ReportsSuppressionReason),
         new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/reports/userinsights", PathMatch.Exact, null, ReportsSuppressionReason),
+
+        // Additional beta resource mutations selected literally after #3861 aligned IDs.
+        // The ledger separately preserves all original 84 source matches and their outcomes.
+        new(OverrideKind.SuppressOperation, HttpMethod.Post, "/auditlogs/auditactivitytypes", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/auditlogs/auditactivitytypes/{}", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/auditlogs/auditactivitytypes/{}", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Post, "/auditlogs/signineventsappsummary", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/auditlogs/signineventsappsummary/{}", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/auditlogs/signineventsappsummary/{}", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Post, "/auditlogs/signineventssummary", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/auditlogs/signineventssummary/{}", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/auditlogs/signineventssummary/{}", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/reports/azureadpremiumlicenseinsight", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/reports/azureadpremiumlicenseinsight", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/reports/correlations/{}", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/reports/correlations/{}", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/reports/identityanalytics", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/reports/identityanalytics", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/reports/microsoftappsfilestoragecontainerusagesummary", PathMatch.Exact, null, ReportsSuppressionReason),
+        new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/reports/microsoftappsfilestoragecontainerusagesummary", PathMatch.Exact, null, ReportsSuppressionReason),
 
         // Functions already use Get. Keep distinct overload routes distinct rather than
         // suppressing them as if AutoRest's numbered variants were duplicate operations.
