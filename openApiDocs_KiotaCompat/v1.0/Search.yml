@@ -11,7 +11,7 @@ paths:
       tags:
         - external.external
       summary: Get external
-      operationId: external.external.GetExternal
+      operationId: external_GetExternal
       parameters:
         - name: $select
           in: query
@@ -49,7 +49,7 @@ paths:
       tags:
         - external.external
       summary: Update external
-      operationId: external.external.UpdateExternal
+      operationId: external_UpdateExternal
       requestBody:
         description: New property values
         content:
@@ -78,7 +78,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
-      operationId: external.ListConnections
+      operationId: external_ListConnection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -134,7 +134,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
-      operationId: external.CreateConnections
+      operationId: external_CreateConnection
       requestBody:
         description: New navigation property
         content:
@@ -163,7 +163,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
-      operationId: external.GetConnections
+      operationId: external_GetConnection
       parameters:
         - name: $select
           in: query
@@ -205,7 +205,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
-      operationId: external.UpdateConnections
+      operationId: external_UpdateConnection
       requestBody:
         description: New navigation property values
         content:
@@ -233,7 +233,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
-      operationId: external.DeleteConnections
+      operationId: external_DeleteConnection
       parameters:
         - name: If-Match
           in: header
@@ -255,7 +255,7 @@ paths:
         - external.externalConnection
       summary: Get externalGroup
       description: Get an externalGroup object.
-      operationId: external.connections.ListGroups
+      operationId: external.connection_ListGroup
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -311,7 +311,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
-      operationId: external.connections.CreateGroups
+      operationId: external.connection_CreateGroup
       requestBody:
         description: New navigation property
         content:
@@ -340,7 +340,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0
-      operationId: external.connections.GetGroups
+      operationId: external.connection_GetGroup
       parameters:
         - name: $select
           in: query
@@ -382,7 +382,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0
-      operationId: external.connections.UpdateGroups
+      operationId: external.connection_UpdateGroup
       requestBody:
         description: New navigation property values
         content:
@@ -410,7 +410,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
-      operationId: external.connections.DeleteGroups
+      operationId: external.connection_DeleteGroup
       parameters:
         - name: If-Match
           in: header
@@ -432,7 +432,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.'
-      operationId: external.connections.groups.ListMembers
+      operationId: external.connection.group_ListMember
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -488,7 +488,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
-      operationId: external.connections.groups.CreateMembers
+      operationId: external.connection.group_CreateMember
       requestBody:
         description: New navigation property
         content:
@@ -514,7 +514,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.'
-      operationId: external.connections.groups.GetMembers
+      operationId: external.connection.group_GetMember
       parameters:
         - name: $select
           in: query
@@ -552,7 +552,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property members in external
-      operationId: external.connections.groups.UpdateMembers
+      operationId: external.connection.group_UpdateMember
       requestBody:
         description: New navigation property values
         content:
@@ -580,7 +580,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
-      operationId: external.connections.groups.DeleteMembers
+      operationId: external.connection.group_DeleteMember
       parameters:
         - name: If-Match
           in: header
@@ -601,7 +601,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get the number of the resource
-      operationId: external.connections.groups.members.GetCount-482b
+      operationId: external.connection.group.member_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -617,7 +617,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get the number of the resource
-      operationId: external.connections.groups.GetCount-51f5
+      operationId: external.connection.group_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -634,7 +634,7 @@ paths:
         - external.externalConnection
       summary: Get externalItem
       description: Read the properties and relationships of an externalItem object.
-      operationId: external.connections.ListItems
+      operationId: external.connection_ListItem
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -686,7 +686,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to items for external
-      operationId: external.connections.CreateItems
+      operationId: external.connection_CreateItem
       requestBody:
         description: New navigation property
         content:
@@ -715,7 +715,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
-      operationId: external.connections.GetItems
+      operationId: external.connection_GetItem
       parameters:
         - name: $select
           in: query
@@ -757,7 +757,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0
-      operationId: external.connections.SetItems
+      operationId: external.connection_SetItem
       requestBody:
         description: New navigation property values
         content:
@@ -785,7 +785,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
-      operationId: external.connections.DeleteItems
+      operationId: external.connection_DeleteItem
       parameters:
         - name: If-Match
           in: header
@@ -807,7 +807,7 @@ paths:
         - external.externalConnection
       summary: Get activities from external
       description: Returns a list of activities performed on the item. Write-only.
-      operationId: external.connections.items.ListActivities
+      operationId: external.connection.item_ListActivity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -859,7 +859,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to activities for external
-      operationId: external.connections.items.CreateActivities
+      operationId: external.connection.item_CreateActivity
       requestBody:
         description: New navigation property
         content:
@@ -885,7 +885,7 @@ paths:
         - external.externalConnection
       summary: Get activities from external
       description: Returns a list of activities performed on the item. Write-only.
-      operationId: external.connections.items.GetActivities
+      operationId: external.connection.item_GetActivity
       parameters:
         - name: $select
           in: query
@@ -923,7 +923,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property activities in external
-      operationId: external.connections.items.UpdateActivities
+      operationId: external.connection.item_UpdateActivity
       requestBody:
         description: New navigation property values
         content:
@@ -947,7 +947,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property activities for external
-      operationId: external.connections.items.DeleteActivities
+      operationId: external.connection.item_DeleteActivity
       parameters:
         - name: If-Match
           in: header
@@ -969,7 +969,7 @@ paths:
         - external.externalConnection
       summary: Get performedBy from external
       description: Represents an identity used to identify who is responsible for the activity.
-      operationId: external.connections.items.activities.GetPerformedBy
+      operationId: external.connection.item.activity_GetPerformedGraphBPre
       parameters:
         - name: $select
           in: query
@@ -1008,7 +1008,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get the number of the resource
-      operationId: external.connections.items.activities.GetCount-d5b5
+      operationId: external.connection.item.activity_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1028,7 +1028,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-addactivities?view=graph-rest-1.0
-      operationId: external.connections.externalConnection.items.externalItem.addActivities
+      operationId: external.connection.externalConnection.item.externalItem_addActivity
       requestBody:
         description: Action parameters
         content:
@@ -1070,7 +1070,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get the number of the resource
-      operationId: external.connections.items.GetCount-e4dc
+      operationId: external.connection.item_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1087,7 +1087,7 @@ paths:
         - external.externalConnection
       summary: Get connectionOperation
       description: Read the properties and relationships of a connectionOperation object.
-      operationId: external.connections.ListOperations
+      operationId: external.connection_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1139,7 +1139,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to operations for external
-      operationId: external.connections.CreateOperations
+      operationId: external.connection_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -1168,7 +1168,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0
-      operationId: external.connections.GetOperations
+      operationId: external.connection_GetOperation
       parameters:
         - name: $select
           in: query
@@ -1206,7 +1206,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property operations in external
-      operationId: external.connections.UpdateOperations
+      operationId: external.connection_UpdateOperation
       requestBody:
         description: New navigation property values
         content:
@@ -1230,7 +1230,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property operations for external
-      operationId: external.connections.DeleteOperations
+      operationId: external.connection_DeleteOperation
       parameters:
         - name: If-Match
           in: header
@@ -1251,7 +1251,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get the number of the resource
-      operationId: external.connections.operations.GetCount-f5c4
+      operationId: external.connection.operation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1271,7 +1271,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
-      operationId: external.connections.GetSchema
+      operationId: external.connection_GetSchema
       parameters:
         - name: $select
           in: query
@@ -1313,7 +1313,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
-      operationId: external.connections.UpdateSchema
+      operationId: external.connection_UpdateSchema
       requestBody:
         description: New navigation property values
         content:
@@ -1338,7 +1338,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get the number of the resource
-      operationId: external.connections.GetCount-5ccf
+      operationId: external.connection_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1354,7 +1354,7 @@ paths:
       tags:
         - search.searchEntity
       summary: Get search
-      operationId: search.searchEntity.GetSearchEntity
+      operationId: search.searchEntity_GetSearchEntity
       parameters:
         - name: $select
           in: query
@@ -1392,7 +1392,7 @@ paths:
       tags:
         - search.searchEntity
       summary: Update search
-      operationId: search.searchEntity.UpdateSearchEntity
+      operationId: search.searchEntity_UpdateSearchEntity
       requestBody:
         description: New property values
         content:
@@ -1421,7 +1421,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
-      operationId: search.ListAcronyms
+      operationId: search_ListAcronym
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1477,7 +1477,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
-      operationId: search.CreateAcronyms
+      operationId: search_CreateAcronym
       requestBody:
         description: New navigation property
         content:
@@ -1506,7 +1506,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
-      operationId: search.GetAcronyms
+      operationId: search_GetAcronym
       parameters:
         - name: $select
           in: query
@@ -1548,7 +1548,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
-      operationId: search.UpdateAcronyms
+      operationId: search_UpdateAcronym
       requestBody:
         description: New navigation property values
         content:
@@ -1576,7 +1576,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
-      operationId: search.DeleteAcronyms
+      operationId: search_DeleteAcronym
       parameters:
         - name: If-Match
           in: header
@@ -1597,7 +1597,7 @@ paths:
       tags:
         - search.acronym
       summary: Get the number of the resource
-      operationId: search.acronyms.GetCount-b41d
+      operationId: search.acronym_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1617,7 +1617,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
-      operationId: search.ListBookmarks
+      operationId: search_ListBookmark
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1673,7 +1673,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
-      operationId: search.CreateBookmarks
+      operationId: search_CreateBookmark
       requestBody:
         description: New navigation property
         content:
@@ -1702,7 +1702,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
-      operationId: search.GetBookmarks
+      operationId: search_GetBookmark
       parameters:
         - name: $select
           in: query
@@ -1744,7 +1744,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
-      operationId: search.UpdateBookmarks
+      operationId: search_UpdateBookmark
       requestBody:
         description: New navigation property values
         content:
@@ -1772,7 +1772,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
-      operationId: search.DeleteBookmarks
+      operationId: search_DeleteBookmark
       parameters:
         - name: If-Match
           in: header
@@ -1793,7 +1793,7 @@ paths:
       tags:
         - search.bookmark
       summary: Get the number of the resource
-      operationId: search.bookmarks.GetCount-b2b7
+      operationId: search.bookmark_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1813,7 +1813,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
-      operationId: search.query
+      operationId: search_query
       requestBody:
         description: Action parameters
         content:
@@ -1858,7 +1858,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
-      operationId: search.ListQnas
+      operationId: search_ListQna
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1914,7 +1914,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
-      operationId: search.CreateQnas
+      operationId: search_CreateQna
       requestBody:
         description: New navigation property
         content:
@@ -1943,7 +1943,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
-      operationId: search.GetQnas
+      operationId: search_GetQna
       parameters:
         - name: $select
           in: query
@@ -1985,7 +1985,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
-      operationId: search.UpdateQnas
+      operationId: search_UpdateQna
       requestBody:
         description: New navigation property values
         content:
@@ -2013,7 +2013,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
-      operationId: search.DeleteQnas
+      operationId: search_DeleteQna
       parameters:
         - name: If-Match
           in: header
@@ -2034,7 +2034,7 @@ paths:
       tags:
         - search.qna
       summary: Get the number of the resource
-      operationId: search.qnas.GetCount-ef94
+      operationId: search.qna_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2712,6 +2712,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -2899,6 +2900,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -3167,6 +3169,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -3525,6 +3530,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'

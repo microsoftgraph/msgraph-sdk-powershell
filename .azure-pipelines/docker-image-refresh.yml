@@ -4,7 +4,7 @@
 # Scheduled rebuild of the microsoftgraph/powershell container image.
 #
 # Why this pipeline exists:
-#   The release pipeline (sdk-release.yml) only builds and pushes this image on `v*` tags, so
+#   The legacy v2 release pipeline only built and pushed this image on `v*` tags, so
 #   between releases the published digest goes stale and keeps accruing Ubuntu USN / PowerShell
 #   CVEs. That is the root cause of the two S360 "Replace Vulnerable Registry Reference" items.
 #   This lightweight pipeline rebuilds the image on a cadence against a patched base and pushes a
@@ -53,7 +53,7 @@ extends:
   parameters:
     # The 1ES template injects an SDL/compliance stage that MUST run on a Windows pool, so the
     # template-level pool is Windows. The actual container build overrides to a Linux pool at the
-    # job level below. (Same pattern as sdk-release.yml.)
+    # job level below.
     pool: ${{ parameters.WindowsPool }}
     settings:
       networkIsolationPolicy: Permissive
