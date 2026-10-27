@@ -161,7 +161,7 @@ $moduleMetadataPath = Join-Path $repoRoot 'config\ModuleMetadata.json'
 $fullVersion = "$ModuleVersion-$Prerelease"
 
 # The population is the specs this generator can actually read, intersected with the modules the
-# repository is configured to ship - the same two inputs tools/GenerateServiceModule.ps1 uses.
+# repository is configured to ship.
 # Which of them yield CMDLETS is deliberately not decided here: a spec that generates only
 # Shared.g.cs falls out downstream as "no cmdlets emitted", measured per run from the compiled
 # assembly. Encoding those names as an exclusion list would keep excusing a module after the
@@ -279,7 +279,7 @@ function Build-Module {
         $clientNs = "Microsoft.Graph.PowerShell.$Name.Client"
         # src/<Module>/wrapper/<ApiVersion>/ - NOT src/<Module>/<ApiVersion>/wrapper/.
         # AutoRest is configured with clear-output-folder: true and an output folder of
-        # src/<Module>/<ApiVersion> (src/readme.graph.md:41-42, GenerateServiceModule.ps1:53), so
+        # src/<Module>/<ApiVersion> (historical src/readme.graph.md:41-42), so
         # it wipes that directory on every run. Committed wrapper source placed inside it is
         # silently deleted the next time anyone regenerates the AutoRest modules - observed:
         # generating Mail removed its wrapper tree. src/<Module>/ itself is not cleared, so
