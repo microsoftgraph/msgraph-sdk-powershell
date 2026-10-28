@@ -115,6 +115,10 @@ public sealed partial class PowerShellWrapperGenerationService
                             && !contentType.EndsWith("+json", StringComparison.OrdinalIgnoreCase)) == true))
                         throw new InvalidOperationException($"Unsupported non-JSON entity GET group response: {path}.");
                     var response = TryGetSuccessJsonSchema(operation);
+                    if (response is not null && (operation.Responses ?? []).Where(r => r.Key.StartsWith('2'))
+                        .SelectMany(r => (r.Value.Content ?? new Dictionary<string, IOpenApiMediaType>()).Values)
+                        .Any(media => SchemaSignature(media.Schema) != SchemaSignature(response)))
+                        throw new InvalidOperationException($"Incompatible success response schemas in GET group member: {path}.");
                     if (response is null || response.AnyOf?.Count > 0 || response.OneOf?.Count > 0)
                         throw new InvalidOperationException($"Unsupported GET group response or union: {path}.");
                     if (FindProperty(response, "value") is { } value)
