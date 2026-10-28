@@ -17,7 +17,7 @@ public static partial class CmdletEmitter
          "ProgressAction", "ErrorVariable", "WarningVariable", "InformationVariable", "OutVariable",
          "OutBuffer", "PipelineVariable", "WhatIf", "Confirm", "ParameterSetName", "MyInvocation", "InvokeCommand",
          "ProcessRecord", "ShouldProcess", "WriteObject", "WriteVerbose", "ThrowTerminatingError",
-         "ThrowGraphRequestFailed", "GetRequestAdapter", "AddRequestHeaders", "IsParameterBound", "UntypedValue",
+         "ThrowGraphRequestFailed", "GetRequestAdapter", "AddRequestHeaders", "IsParameterBound", "UntypedValue", "Stopping", "StoppingToken",
          "vb", "db", "ea", "wa", "infa", "proga", "ev", "wv", "iv", "ov", "ob", "pv", "wi", "cf"],
         StringComparer.OrdinalIgnoreCase);
 
