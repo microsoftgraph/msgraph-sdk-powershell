@@ -9,12 +9,17 @@ not add a route switch, infer new public nouns, or make a retired endpoint suppo
 ## Exact reviewed configuration
 
 Module-owned `*_cmdletConfigurations.cs` arrays can contain entries produced by
-`CmdletConfigurator.MergeRoutes(group, reason)`. The minimal records are:
+`CmdletConfigurator.GroupVariants(group, reason)`. The minimal records are:
 
 ```csharp
-MultiRoute(string Method, string Path, string Name)
-MultiRouteGroup(string ApiVersion, IReadOnlyList<MultiRoute> Routes, string DefaultRoute)
+OperationVariant(string Method, string Path, string Name)
+OperationVariantGroup(string ApiVersion, IReadOnlyList<OperationVariant> Routes, string DefaultRoute)
 ```
+
+These names describe compatible variants of **one public command**. Existing mandatory
+path IDs select its parameter set; registration does not add a `Route` parameter or
+an endpoint selector. HTTP routes and `GraphRouteAttribute` still describe the actual
+requests made by each typed worker.
 
 `Method` is `GET`, `POST`, `PATCH`, `PUT` or `DELETE`; every member of a group uses the
 same method and operation kind. `Path` is the exact source-spec path, including named placeholders.
@@ -26,7 +31,7 @@ otherwise its single operation is the default.
 All members must already resolve to the same public name through existing naming rules
 and derived-data precedence. The annotation does not rename, unsuppress or classify away
 an operation. Focused callers can provide the same groups through the optional
-`GeneratorConfig.MultiRouteGroups` argument; module groups are globally aggregated and
+`GeneratorConfig.OperationVariantGroups` argument; module groups are globally aggregated and
 filtered by API profile.
 
 ### Applications acceptance case
@@ -46,14 +51,14 @@ These are compatible parameter-set variants, not different operations needing a 
 The module-owned entries for exactly those paths are:
 
 ```csharp
-MergeRoutes(new MultiRouteGroup("beta",
+GroupVariants(new OperationVariantGroup("beta",
 [
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups", "Root"),
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}", "Root"),
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups", "Agent"),
 ], DefaultRoute: "Root"), "Reviewed 2.38.1 List/Get/List2 contracts and exact worker URLs."),
 
-MergeRoutes(new MultiRouteGroup("beta",
+GroupVariants(new OperationVariantGroup("beta",
 [
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/$count", "Root"),
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/$count", "Agent"),
@@ -94,7 +99,7 @@ For example, after separately reviewing the service and published naming/paramet
 contracts, two repeated resource paths can retain their ordinary `Update-MgWidget` name:
 
 ```csharp
-MergeRoutes(new MultiRouteGroup("v1.0",
+GroupVariants(new OperationVariantGroup("v1.0",
 [
     new("PATCH", "/widgets/{widget-id}", "Root"),
     new("PATCH", "/widgets/{parent-id}/widgets/{widget-id}", "Parent"),

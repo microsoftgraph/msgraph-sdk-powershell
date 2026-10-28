@@ -48,7 +48,7 @@ public static partial class CmdletEmitter
          .. complexProperties.Select(p => new DispatchParameter(p.ParameterName, p.ElementNullableTypeName + "?")),
          .. untypedProperties.Select(p => new DispatchParameter(p.ParameterName, "object?"))];
 
-    private static void ValidateRouteDispatch(MultiRouteGroup group, IReadOnlyList<RouteWorker> workers)
+    private static void ValidateRouteDispatch(OperationVariantGroup group, IReadOnlyList<RouteWorker> workers)
     {
         var isGet = workers.Count > 0 && workers[0].Naming.SourceMethod == "GET";
         if (workers.Count < 2 || workers.Count > 32
@@ -106,7 +106,7 @@ public static partial class CmdletEmitter
                 throw new InvalidOperationException($"Operation variant alias '{alias.Key}' conflicts with a parameter.");
     }
 
-    public static string EmitMultiRouteDispatcher(MultiRouteGroup group, IReadOnlyList<RouteWorker> workers, EmitContext ctx)
+    public static string EmitMultiRouteDispatcher(OperationVariantGroup group, IReadOnlyList<RouteWorker> workers, EmitContext ctx)
     {
         ValidateRouteDispatch(group, workers);
         static string SetName(RouteWorker worker) => worker.RouteName + worker.Shape;

@@ -54,10 +54,10 @@ function New-DispatchWorker([string]$Path, [string]$Label, [string]$Shape, [int]
 }
 
 function Write-DispatchSource($Workers) {
-    $routes = [WrapperGenerator.MultiRoute[]]@($Workers | ForEach-Object {
-        [WrapperGenerator.MultiRoute]::new('GET', $_.Naming.SourcePath, $_.RouteName)
+    $routes = [WrapperGenerator.OperationVariant[]]@($Workers | ForEach-Object {
+        [WrapperGenerator.OperationVariant]::new('GET', $_.Naming.SourcePath, $_.RouteName)
     })
-    $group = [WrapperGenerator.MultiRouteGroup]::new('beta', $routes, 'Root')
+    $group = [WrapperGenerator.OperationVariantGroup]::new('beta', $routes, 'Root')
     $context = [WrapperGenerator.EmitContext]::new('RouteInvocationFixture.Client')
     $source = [WrapperGenerator.CmdletEmitter]::EmitMultiRouteDispatcher(
         $group, [WrapperGenerator.CmdletEmitter+RouteWorker[]]$Workers, $context)

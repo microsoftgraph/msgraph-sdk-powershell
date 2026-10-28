@@ -122,10 +122,10 @@ public sealed class MultiRouteTests
         var document = Document();
         var routes = new[]
         {
-            new MultiRoute("GET", WidgetRoot, "Root"),
-            new MultiRoute("GET", WidgetRoot + "/{widget-id}", "Root"),
-            new MultiRoute("GET", WidgetParent, "Parent"),
-            new MultiRoute("GET", WidgetParent + "/{widget-id}", "Parent"),
+            new OperationVariant("GET", WidgetRoot, "Root"),
+            new OperationVariant("GET", WidgetRoot + "/{widget-id}", "Root"),
+            new OperationVariant("GET", WidgetParent, "Parent"),
+            new OperationVariant("GET", WidgetParent + "/{widget-id}", "Parent"),
         };
         for (var i = 0; i < routes.Length; i++)
             Add(document, "GET", routes[i].Path, Get(document, list: i % 2 == 0));
@@ -152,8 +152,8 @@ public sealed class MultiRouteTests
         var document = Document();
         var routes = new[]
         {
-            new MultiRoute("GET", WidgetRoot + "/{widget-id}", "Root"),
-            new MultiRoute("GET", WidgetParent + "/{widget-id}", "Parent"),
+            new OperationVariant("GET", WidgetRoot + "/{widget-id}", "Root"),
+            new OperationVariant("GET", WidgetParent + "/{widget-id}", "Parent"),
         };
         foreach (var route in routes)
             Add(document, "GET", route.Path, Get(document));
@@ -172,8 +172,8 @@ public sealed class MultiRouteTests
         var document = Document();
         var routes = new[]
         {
-            new MultiRoute("GET", WidgetRoot + "/$count", "Root"),
-            new MultiRoute("GET", WidgetParent + "/$count", "Parent"),
+            new OperationVariant("GET", WidgetRoot + "/$count", "Root"),
+            new OperationVariant("GET", WidgetParent + "/$count", "Parent"),
         };
         foreach (var route in routes)
             Add(document, "GET", route.Path, Count());
@@ -268,16 +268,17 @@ public sealed class MultiRouteTests
     {
         var (_, group) = Widgets();
 
-        var entry = CmdletConfigurator.MergeRoutes(group, "Reviewed natural path-ID sets");
+        var entry = CmdletConfigurator.GroupVariants(group, "Reviewed natural path-ID sets");
         var config = new GeneratorConfig(Client, ".", "V1.0", false, [group, group with { ApiVersion = "beta" }]);
 
-        Assert.Equal(CmdletConfigurator.OverrideKind.MergeRoutes, entry.Kind);
-        Assert.Same(group, entry.RouteGroup);
+        Assert.Equal(CmdletConfigurator.OverrideKind.GroupVariants, entry.Kind);
+        Assert.Same(group, entry.VariantGroup);
+        Assert.Null(entry.ApiVersion);
         Assert.Equal("Reviewed natural path-ID sets", entry.Reason);
-        Assert.Contains(group, CmdletConfigurator.GetMultiRouteGroups(config));
-        Assert.DoesNotContain(CmdletConfigurator.GetMultiRouteGroups(config), g => g.ApiVersion == "beta");
-        Assert.Equal(3, typeof(MultiRoute).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
-        Assert.Equal(3, typeof(MultiRouteGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Contains(group, CmdletConfigurator.GetOperationVariantGroups(config));
+        Assert.DoesNotContain(CmdletConfigurator.GetOperationVariantGroups(config), g => g.ApiVersion == "beta");
+        Assert.Equal(3, typeof(OperationVariant).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Equal(3, typeof(OperationVariantGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
         Assert.Equal(5, typeof(GeneratorConfig).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
     }
 
@@ -288,7 +289,7 @@ public sealed class MultiRouteTests
         foreach (var apiVersion in new[] { "v1.0", "beta" })
         {
             var plain = new GeneratorConfig(Client, ".", apiVersion, true);
-            var grouped = plain with { MultiRouteGroups = [group with { ApiVersion = apiVersion }] };
+            var grouped = plain with { OperationVariantGroups = [group with { ApiVersion = apiVersion }] };
             foreach (var path in new[]
             {
                 Root, Agent,
@@ -321,7 +322,7 @@ public sealed class MultiRouteTests
     public async Task InvalidReviewedGroupConfigurationFailsBeforeTouchingExistingOutput(string scenario)
     {
         var (document, group) = Widgets();
-        IReadOnlyList<MultiRouteGroup> groups = [scenario switch
+        IReadOnlyList<OperationVariantGroup> groups = [scenario switch
         {
             "empty" => group with { Routes = [] },
             "single" => group with { Routes = [group.Routes[0]] },
@@ -530,7 +531,7 @@ public sealed class MultiRouteTests
     public async Task AmbiguousMandatorySetsAndInvalidListItemFamiliesAreRejected(string scenario)
     {
         var document = Document();
-        MultiRouteGroup group;
+        OperationVariantGroup group;
         if (scenario == "identical-list-and-singleton")
         {
             var singleton = WidgetRoot + "/{parent-id}";
@@ -576,7 +577,7 @@ public sealed class MultiRouteTests
         Add(document, "GET", WidgetRoot, Get(document, list: true));
         Add(document, "GET", WidgetParent, widget);
         var (_, invalid) = Widgets();
-        IReadOnlyList<MultiRouteGroup> all = [.. groups, invalid with { ApiVersion = "beta" }];
+        IReadOnlyList<OperationVariantGroup> all = [.. groups, invalid with { ApiVersion = "beta" }];
         var output = OutputPath();
         try
         {
@@ -597,7 +598,7 @@ public sealed class MultiRouteTests
     public async Task CliPreflightRejectsGroupsBeforeCreatingOutputOrChangingTheLockMarker(string scenario)
     {
         OpenApiDocument document;
-        IReadOnlyList<MultiRouteGroup> groups;
+        IReadOnlyList<OperationVariantGroup> groups;
         string apiVersion;
         if (scenario == "partial-applications")
         {
@@ -708,7 +709,7 @@ public sealed class MultiRouteTests
     }
 
     private static async Task RejectWithoutWrites(
-        OpenApiDocument document, IReadOnlyList<MultiRouteGroup> groups, string apiVersion = "v1.0")
+        OpenApiDocument document, IReadOnlyList<OperationVariantGroup> groups, string apiVersion = "v1.0")
     {
         var output = OutputPath();
         Directory.CreateDirectory(output);
@@ -732,7 +733,7 @@ public sealed class MultiRouteTests
         }
     }
 
-    private static (OpenApiDocument Document, MultiRouteGroup[] Groups) Applications()
+    private static (OpenApiDocument Document, OperationVariantGroup[] Groups) Applications()
     {
         var document = Document();
         Add(document, "GET", Root, Get(document, list: true));
@@ -747,7 +748,7 @@ public sealed class MultiRouteTests
         ]);
     }
 
-    private static (OpenApiDocument Document, MultiRouteGroup Group) Widgets()
+    private static (OpenApiDocument Document, OperationVariantGroup Group) Widgets()
     {
         var document = Document();
         Add(document, "GET", WidgetRoot, Get(document, list: true));
@@ -862,7 +863,7 @@ public sealed class MultiRouteTests
         Path.Combine(Directory.GetCurrentDirectory(), ".multi-route-tests-" + Guid.NewGuid().ToString("N"));
 
     private static async Task<Dictionary<string, string>> Generate(
-        OpenApiDocument document, IReadOnlyList<MultiRouteGroup>? groups = null, string apiVersion = "v1.0",
+        OpenApiDocument document, IReadOnlyList<OperationVariantGroup>? groups = null, string apiVersion = "v1.0",
         bool useCollisionData = false)
     {
         var output = OutputPath();
@@ -879,7 +880,7 @@ public sealed class MultiRouteTests
     }
 
     private static Task GenerateAt(
-        OpenApiDocument document, IReadOnlyList<MultiRouteGroup>? groups, string output, string apiVersion,
+        OpenApiDocument document, IReadOnlyList<OperationVariantGroup>? groups, string output, string apiVersion,
         bool useCollisionData = false)
     {
         document.RegisterComponents();

@@ -24,7 +24,7 @@ public static partial class CmdletConfigurator
         ReplaceNoun,
         StripNounPrefix,
         ReplaceVerb,
-        MergeRoutes,
+        GroupVariants,
     }
 
     // How Pattern is matched against the normalized path: the full path (Exact), its start
@@ -38,15 +38,16 @@ public static partial class CmdletConfigurator
     }
 
     internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason,
-        string? ApiVersion = null, MultiRouteGroup? RouteGroup = null);
+        string? ApiVersion = null, OperationVariantGroup? VariantGroup = null);
 
-    internal static Entry MergeRoutes(MultiRouteGroup group, string reason) =>
-        new(OverrideKind.MergeRoutes, null, "", PathMatch.Exact, null, reason, RouteGroup: group);
+    // One command's compatible parameter-set variants, not a public endpoint selector.
+    internal static Entry GroupVariants(OperationVariantGroup group, string reason) =>
+        new(OverrideKind.GroupVariants, null, "", PathMatch.Exact, null, reason, VariantGroup: group);
 
-    internal static IEnumerable<MultiRouteGroup> GetMultiRouteGroups(GeneratorConfig config) =>
-        Entries.Where(e => e.Kind == OverrideKind.MergeRoutes).Select(e => e.RouteGroup
-            ?? throw new InvalidOperationException("MergeRoutes entry requires a route group."))
-            .Concat(config.MultiRouteGroups ?? [])
+    internal static IEnumerable<OperationVariantGroup> GetOperationVariantGroups(GeneratorConfig config) =>
+        Entries.Where(e => e.Kind == OverrideKind.GroupVariants).Select(e => e.VariantGroup
+            ?? throw new InvalidOperationException("GroupVariants entry requires an operation variant group."))
+            .Concat(config.OperationVariantGroups ?? [])
             .Where(g => g.ApiVersion.Equals(config.ApiVersion, StringComparison.OrdinalIgnoreCase));
 
     // NormalizePath lowercases before matching, so a Pattern containing an uppercase letter can

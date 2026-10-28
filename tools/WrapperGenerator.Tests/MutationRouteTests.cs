@@ -130,8 +130,8 @@ public sealed class MutationRouteTests
             Generate(fixture.Document, [beta], useCollisionData: true));
         Assert.Contains("collision", ex.Message, StringComparison.OrdinalIgnoreCase);
         Assert.Contains(fixture.Stem + ".g.cs", ex.Message);
-        Assert.Equal(3, typeof(MultiRoute).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
-        Assert.Equal(3, typeof(MultiRouteGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Equal(3, typeof(OperationVariant).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Equal(3, typeof(OperationVariantGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
     }
 
     [Theory]
@@ -853,7 +853,7 @@ public sealed class MutationRouteTests
         }
     }
 
-    private sealed record Fixture(OpenApiDocument Document, MultiRouteGroup Group,
+    private sealed record Fixture(OpenApiDocument Document, OperationVariantGroup Group,
         OpenApiSchema[] Bodies, string Family, string Method, string Verb, string Noun)
     {
         public string Stem => Verb + Noun;
@@ -1042,7 +1042,7 @@ public sealed class MutationRouteTests
     private static OpenApiOperation Operation(Fixture fixture, int index) =>
         fixture.Document.Paths[fixture.Group.Routes[index].Path].Operations![new HttpMethod(fixture.Method)];
 
-    private static MultiRouteGroup MoveRight(Fixture fixture, string path)
+    private static OperationVariantGroup MoveRight(Fixture fixture, string path)
     {
         var operation = Operation(fixture, 1);
         operation.Parameters = [Parameter("ConsistencyLevel", ParameterLocation.Header)];
@@ -1062,7 +1062,7 @@ public sealed class MutationRouteTests
         Path.Combine(Directory.GetCurrentDirectory(), ".mutation-route-tests-" + Guid.NewGuid().ToString("N"));
 
     private static async Task<Dictionary<string, string>> Generate(OpenApiDocument document,
-        IReadOnlyList<MultiRouteGroup>? groups = null, string apiVersion = "v1.0", bool useCollisionData = false)
+        IReadOnlyList<OperationVariantGroup>? groups = null, string apiVersion = "v1.0", bool useCollisionData = false)
     {
         var output = OutputPath();
         try
@@ -1077,7 +1077,7 @@ public sealed class MutationRouteTests
         }
     }
 
-    private static Task GenerateAt(OpenApiDocument document, IReadOnlyList<MultiRouteGroup>? groups, string output,
+    private static Task GenerateAt(OpenApiDocument document, IReadOnlyList<OperationVariantGroup>? groups, string output,
         string apiVersion = "v1.0", bool useCollisionData = false)
     {
         document.RegisterComponents();
@@ -1086,7 +1086,7 @@ public sealed class MutationRouteTests
             .GenerateAsync(CancellationToken.None);
     }
 
-    private static async Task RejectBeforeWrites(OpenApiDocument document, IReadOnlyList<MultiRouteGroup> groups)
+    private static async Task RejectBeforeWrites(OpenApiDocument document, IReadOnlyList<OperationVariantGroup> groups)
     {
         document.RegisterComponents();
         foreach (var cli in new[] { false, true })
@@ -1104,7 +1104,7 @@ public sealed class MutationRouteTests
             }
             try
             {
-                var config = new GeneratorConfig(Client, output, UseCollisionData: false, MultiRouteGroups: groups);
+                var config = new GeneratorConfig(Client, output, UseCollisionData: false, OperationVariantGroups: groups);
                 var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => cli
                     ? WrapperGenerator.Program.GenerateAsync(document, config,
                         Path.Combine(Directory.GetCurrentDirectory(), "mutation-spec.yml"), NullLogger.Instance, CancellationToken.None)

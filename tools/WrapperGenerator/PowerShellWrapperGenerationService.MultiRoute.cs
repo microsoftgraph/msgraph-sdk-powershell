@@ -21,7 +21,7 @@ public sealed partial class PowerShellWrapperGenerationService
     {
         var plans = new List<PreparedRouteGroup>();
         var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        foreach (var group in CmdletConfigurator.GetMultiRouteGroups(config))
+        foreach (var group in CmdletConfigurator.GetOperationVariantGroups(config))
         {
             if (group.Routes.Count < 2 || group.Routes.Count > 32
                 || !group.Routes.Any(r => r.Name == group.DefaultRoute)
