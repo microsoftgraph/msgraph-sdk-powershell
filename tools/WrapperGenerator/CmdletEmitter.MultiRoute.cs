@@ -15,7 +15,7 @@ public static partial class CmdletEmitter
     private static readonly HashSet<string> ReservedDispatchParameterNames = new(
         ["AccessToken", "Headers", "Verbose", "Debug", "ErrorAction", "WarningAction", "InformationAction",
          "ProgressAction", "ErrorVariable", "WarningVariable", "InformationVariable", "OutVariable",
-         "OutBuffer", "PipelineVariable", "WhatIf", "Confirm",
+         "OutBuffer", "PipelineVariable", "WhatIf", "Confirm", "ParameterSetName", "MyInvocation", "InvokeCommand",
          "vb", "db", "ea", "wa", "infa", "proga", "ev", "wv", "iv", "ov", "ob", "pv", "wi", "cf"],
         StringComparer.OrdinalIgnoreCase);
 
