@@ -6,6 +6,17 @@ public static partial class CmdletConfigurator
 {
     private static readonly List<Entry> BookingsCmdletConfigurations =
     [
+        // Retired 2024-04-30: https://devblogs.microsoft.com/microsoft365dev/breaking-changes-in-microsoft-bookings-graph-apis-beta/
+        // Suppress cmdlets only; keep the source/client routes and supported /solutions successors.
+        new(OverrideKind.SuppressOperation, Method: null, "/bookingbusinesses", Match: PathMatch.Exact, Value: null,
+            Reason: "Retired root-level Bookings beta API; use /solutions/bookingBusinesses", ApiVersion: "beta"),
+        new(OverrideKind.SuppressOperation, Method: null, "/bookingbusinesses/", Match: PathMatch.Prefix, Value: null,
+            Reason: "Retired root-level Bookings beta API descendants; use /solutions/bookingBusinesses", ApiVersion: "beta"),
+        new(OverrideKind.SuppressOperation, Method: null, "/bookingcurrencies", Match: PathMatch.Exact, Value: null,
+            Reason: "Retired root-level Bookings beta API; use /solutions/bookingCurrencies", ApiVersion: "beta"),
+        new(OverrideKind.SuppressOperation, Method: null, "/bookingcurrencies/", Match: PathMatch.Prefix, Value: null,
+            Reason: "Retired root-level Bookings beta API descendants; use /solutions/bookingCurrencies", ApiVersion: "beta"),
+
         // Bookings.md's original selector matches GET/PATCH /solutions in both legacy specs.
         // The current compatible refresh preserves those original IDs. The adjacent ledger
         // pins both source identities. Suppress only the exact root.

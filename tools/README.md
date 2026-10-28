@@ -99,10 +99,11 @@ the gate and the derivation cannot drift apart. Without `-CaptureInput` it requi
 
 The refresh keeps `fileName=openapi` and `style=Plain` as the source of the documents.
 Discriminators, `anyOf`/`oneOf`, navigation properties and response codes remain available
-for Kiota client generation. Expired deprecated operations and the explicitly
-[retired root-level Bookings beta URI families](Remove-ExpiredDeprecatedOpenApiOperations.md)
-are pruned. The same pruning runs on standalone `DownloadOpenApiDocKiotaCompat.ps1` calls,
-so missing upstream deprecation annotations cannot reintroduce the retired routes.
+for Kiota client generation. [Expired deprecated operations](Remove-ExpiredDeprecatedOpenApiOperations.md)
+are pruned, including on standalone `DownloadOpenApiDocKiotaCompat.ps1` calls.
+Retired root-level Bookings beta cmdlets are instead suppressed by
+`src/Bookings/wrapper/Bookings_cmdletConfigurations.cs`; their OpenAPI and Kiota HTTP
+client routes remain present when not annotated as expired.
 
 Operation IDs follow the existing PowerShell OpenAPI naming so operation-ID-based directives
 are easier to migrate. DevX ignores `singularizeOperationIds` for `style=Plain`, so the downloader

@@ -74,8 +74,8 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
 # Keep legacy operation-ID directives usable without changing Kiota-compatible schemas.
 & $TweakOpenApiPS1 -OpenAPIFilesPath $OpenApiDocOutput -OperationIdsOnly
 
-# Remove expired operations and explicitly retired URI families, recording the complete profile.
-& $RemoveExpiredDeprecatedOperationsPS1 -OpenApiFilesPath $OpenApiDocOutput -GraphVersion $GraphVersion
+# Remove expired deprecated operations, recording the complete profile.
+& $RemoveExpiredDeprecatedOperationsPS1 -OpenApiFilesPath $OpenApiDocOutput
 
 $stopwatch.Stop()
 Write-Debug "Downloaded $GraphVersion Kiota-compatible OpenAPI files in '$($Stopwatch.Elapsed.TotalMinutes)` minutes."

@@ -7,7 +7,7 @@
     ],
     "excluded": "All profile-local readme directives (including Bookings/v1.0/readme.md and Bookings/beta/readme.md) and src/readme.graph.md are explicitly ignored.",
     "deferred": "Parameter aliases/transforms and schema/response directives remain deferred; none occur in the three shared groups.",
-    "naming": "Retain the existing Solution-prefix strip and BackupRestore exception without redundant overrides. The retired beta root families are removed at the compatible-input boundary, not renamed or kept selectable. The baseline uses Mg in both profiles; unrelated beta prefix/verb parity remains out of scope."
+    "naming": "Retain the existing Solution-prefix strip and BackupRestore exception without redundant overrides. The retired beta root families are suppressed by module cmdlet configuration, not renamed or kept selectable as cmdlets. The compatible input and Kiota HTTP client retain those routes. The baseline uses Mg in both profiles; unrelated beta prefix/verb parity remains out of scope."
   },
   "mappings": [
     {
@@ -108,7 +108,7 @@
       "classification": "SubjectRename",
       "sourceContains": "subject: ^Solution(.*)$",
       "implementation": "CmdletConfigurator",
-      "notes": "Existing StripNounPrefix removes Solution from all live /solutions/ child nouns. Enumerate every exact compatible operation, including the suppressed virtualEvents root. Preserve the existing BackupRestore exception; retired beta top-level Bookings routes are removed by the sourced input policy, not cmdlet suppressions.",
+      "notes": "Existing StripNounPrefix removes Solution from all live /solutions/ child nouns. Enumerate every exact compatible operation, including the suppressed virtualEvents root. Preserve the existing BackupRestore exception; retired beta top-level Bookings cmdlets are suppressed separately by beta-only module configuration.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -2440,9 +2440,9 @@
       "/solutions/bookingBusinesses",
       "/solutions/bookingCurrencies"
     ],
-    "removedPaths": 29,
-    "removedOperations": 53,
-    "implementation": "Remove-ExpiredDeprecatedOpenApiOperations.ps1; both supported compatible refresh entrypoints.",
-    "notes": "Retire exact roots and descendants by segment, case-insensitively, even without upstream metadata. Do not retain a selectable Legacy route or infer service support from historical command metadata. Preserve historical specs/directives and every live compatible solutions operation."
+    "suppressedPaths": 29,
+    "suppressedOperations": 53,
+    "implementation": "Bookings_cmdletConfigurations.cs; beta-only SuppressOperation entries.",
+    "notes": "Suppress cmdlets for exact roots and descendants by segment, case-insensitively, even without upstream metadata. Do not retain a selectable Legacy cmdlet route or infer service support from historical command metadata. Preserve source/compatible specs, generated Kiota HTTP client routes, historical directives, v1.0 behavior, and every live compatible solutions operation."
   }
 }

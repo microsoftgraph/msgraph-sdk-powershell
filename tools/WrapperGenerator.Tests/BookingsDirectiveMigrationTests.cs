@@ -19,7 +19,7 @@ public sealed class BookingsDirectiveMigrationTests
 
     [Theory]
     [InlineData("v1.0", 209, 207)]
-    [InlineData("beta", 256, 254)]
+    [InlineData("beta", 309, 254)]
     public async Task ReviewedLedgerPinsCompleteCompatibleOperationEvidence(
         string profile, int operationCount, int renamedOperationCount)
     {
@@ -128,8 +128,10 @@ public sealed class BookingsDirectiveMigrationTests
             Assert.Equal(noun, Naming.Resolve(new OperationInfo(httpMethod, path), config).Noun);
         }
 
-        Assert.All(operations, operation =>
-            Assert.False(Regex.IsMatch(operation.Path, @"^/(bookingBusinesses|bookingCurrencies)(/|$)", RegexOptions.IgnoreCase)));
+        Assert.All(operations.Where(o =>
+            Regex.IsMatch(o.Path, @"^/(bookingBusinesses|bookingCurrencies)(/|$)", RegexOptions.IgnoreCase)),
+            operation => Assert.True(CmdletConfigurator.IsSuppressed(
+                new HttpMethod(operation.Method), operation.Path, config)));
     }
 
     [Theory]
@@ -149,8 +151,10 @@ public sealed class BookingsDirectiveMigrationTests
             Naming.Resolve(new OperationInfo(HttpMethod.Get, "/solutions/backupRestore"), config).Noun);
     }
 
-    [Fact]
-    public async Task RetiredBetaRootsStayHistoricalWhileSolutionsSuccessorsRemainActive()
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task RetiredBetaCmdletsAreSuppressedWithoutRemovingSourceOrSolutionsSuccessors(bool useCollisionData)
     {
         var operations = await ReadOperationsAsync("beta");
         using var ledger = ReadLedger();
@@ -158,21 +162,60 @@ public sealed class BookingsDirectiveMigrationTests
         var policy = ledger.RootElement.GetProperty("retirementPolicy");
         Assert.Equal("beta", policy.GetProperty("profile").GetString());
         Assert.Equal("2024-04-30", policy.GetProperty("removalDate").GetString());
+        Assert.Equal("Bookings_cmdletConfigurations.cs; beta-only SuppressOperation entries.",
+            policy.GetProperty("implementation").GetString());
         var historical = await ReadOperationsAsync("beta", "openApiDocs");
         var retired = historical.Where(o =>
             Regex.IsMatch(o.Path, @"^/(bookingBusinesses|bookingCurrencies)(/|$)", RegexOptions.IgnoreCase)).ToArray();
-        Assert.Equal(53, retired.Length);
-        Assert.Equal(29, retired.Select(o => o.Path).Distinct().Count());
+        Assert.Equal(53, policy.GetProperty("suppressedOperations").GetInt32());
+        Assert.Equal(policy.GetProperty("suppressedOperations").GetInt32(), retired.Length);
+        Assert.Equal(29, policy.GetProperty("suppressedPaths").GetInt32());
+        Assert.Equal(policy.GetProperty("suppressedPaths").GetInt32(), retired.Select(o => o.Path).Distinct().Count());
+        var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
         foreach (var operation in retired)
         {
-            Assert.DoesNotContain(operations, current =>
-                current.Method == operation.Method && current.Path == operation.Path);
-            var successor = "/solutions" + operation.Path;
-            if (operation.Method == "POST")
-                successor = Regex.Replace(successor, @"/microsoft\.graph\.([^/]+)$", "/$1");
-            Assert.Contains(operations, current => current.Method == operation.Method &&
+            var compatiblePath = operation.Method == "POST"
+                ? Regex.Replace(operation.Path, @"/microsoft\.graph\.([^/]+)$", "/$1")
+                : operation.Path;
+            Assert.Contains(operations, current =>
+                current.Method == operation.Method && current.Path == compatiblePath);
+            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(operation.Method), operation.Path, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(operation.Method), compatiblePath, config));
+            var successor = "/solutions" + compatiblePath;
+            var supported = Assert.Single(operations, current => current.Method == operation.Method &&
                 CmdletConfigurator.NormalizePathTemplate(current.Path) ==
                 CmdletConfigurator.NormalizePathTemplate(successor));
+            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(supported.Method), supported.Path, config));
+        }
+    }
+
+    [Theory]
+    [InlineData("/bookingBusinesses", true)]
+    [InlineData("/BOOKINGBUSINESSES/", true)]
+    [InlineData("/bookingBusinesses/{renamed-id}/appointments/{id}/cancel", true)]
+    [InlineData("/bookingCurrencies", true)]
+    [InlineData("/BOOKINGCURRENCIES/", true)]
+    [InlineData("/bookingCurrencies/{renamed-id}", true)]
+    [InlineData("/bookingBusinessesArchive", false)]
+    [InlineData("/bookingCurrencies-extra/child", false)]
+    [InlineData("/other/bookingBusinesses", false)]
+    [InlineData("/solutions/bookingBusinesses", false)]
+    [InlineData("/solutions/bookingBusinesses/{id}/appointments", false)]
+    [InlineData("/solutions/bookingCurrencies", false)]
+    [InlineData("/solutions/bookingCurrencies/{id}", false)]
+    public void RetirementMatchesCompleteRootSegmentsAndBetaOnly(string path, bool retired)
+    {
+        foreach (var method in new[] { "GET", "POST", "PATCH", "DELETE", "PUT", "OPTIONS", "HEAD", "TRACE" })
+        {
+            var httpMethod = new HttpMethod(method);
+            foreach (var useCollisionData in new[] { false, true })
+            {
+                var beta = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+                var v1 = new GeneratorConfig("Test.Client", "unused", "v1.0", useCollisionData);
+                Assert.Equal(retired, CmdletConfigurator.IsSuppressed(httpMethod, path, beta));
+                Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, v1));
+            }
+            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path));
         }
     }
 
